@@ -255,9 +255,17 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn log_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_destination(input.into());
@@ -265,9 +273,17 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn set_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_destination(input);
@@ -275,9 +291,17 @@ impl CreateFlowLogsFluentBuilder {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn get_log_destination(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_destination()

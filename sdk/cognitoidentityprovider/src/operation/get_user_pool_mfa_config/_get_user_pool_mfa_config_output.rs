@@ -9,9 +9,12 @@ pub struct GetUserPoolMfaConfigOutput {
     pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     _request_id: Option<String>,
@@ -27,9 +30,12 @@ impl GetUserPoolMfaConfigOutput {
     }
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
@@ -87,9 +93,12 @@ impl GetUserPoolMfaConfigOutputBuilder {
     }
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn mfa_configuration(mut self, input: crate::types::UserPoolMfaType) -> Self {
         self.mfa_configuration = ::std::option::Option::Some(input);
@@ -97,9 +106,12 @@ impl GetUserPoolMfaConfigOutputBuilder {
     }
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.mfa_configuration = input;
@@ -107,9 +119,12 @@ impl GetUserPoolMfaConfigOutputBuilder {
     }
     /// <p>The multi-factor authentication (MFA) configuration. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration

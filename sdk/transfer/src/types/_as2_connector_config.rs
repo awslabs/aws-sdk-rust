@@ -12,20 +12,22 @@ pub struct As2ConnectorConfig {
     pub message_subject: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the AS2 file is compressed.</p>
     pub compression: ::std::option::Option<crate::types::CompressionEnum>,
-    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>The algorithm that is used to encrypt the file.</p><note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     pub encryption_algorithm: ::std::option::Option<crate::types::EncryptionAlg>,
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlg>,
-    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub mdn_signing_algorithm: ::std::option::Option<crate::types::MdnSigningAlg>,
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
-    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
+    /// <li>
+    /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub mdn_response: ::std::option::Option<crate::types::MdnResponse>,
     /// <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic authentication, you must provide the name or Amazon Resource Name (ARN) of a secret in Secrets Manager.</p>
@@ -35,8 +37,10 @@ pub struct As2ConnectorConfig {
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
-    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
+    /// <li>
+    /// <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li>
+    /// <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
@@ -59,7 +63,7 @@ impl As2ConnectorConfig {
     pub fn compression(&self) -> ::std::option::Option<&crate::types::CompressionEnum> {
         self.compression.as_ref()
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>The algorithm that is used to encrypt the file.</p><note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     pub fn encryption_algorithm(&self) -> ::std::option::Option<&crate::types::EncryptionAlg> {
@@ -69,7 +73,7 @@ impl As2ConnectorConfig {
     pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlg> {
         self.signing_algorithm.as_ref()
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn mdn_signing_algorithm(&self) -> ::std::option::Option<&crate::types::MdnSigningAlg> {
@@ -77,8 +81,10 @@ impl As2ConnectorConfig {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
-    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
+    /// <li>
+    /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn mdn_response(&self) -> ::std::option::Option<&crate::types::MdnResponse> {
         self.mdn_response.as_ref()
@@ -90,8 +96,10 @@ impl As2ConnectorConfig {
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
-    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
+    /// <li>
+    /// <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li>
+    /// <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
@@ -177,21 +185,21 @@ impl As2ConnectorConfigBuilder {
     pub fn get_compression(&self) -> &::std::option::Option<crate::types::CompressionEnum> {
         &self.compression
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>The algorithm that is used to encrypt the file.</p><note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlg) -> Self {
         self.encryption_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>The algorithm that is used to encrypt the file.</p><note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     pub fn set_encryption_algorithm(mut self, input: ::std::option::Option<crate::types::EncryptionAlg>) -> Self {
         self.encryption_algorithm = input;
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>The algorithm that is used to encrypt the file.</p><note>
     /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     pub fn get_encryption_algorithm(&self) -> &::std::option::Option<crate::types::EncryptionAlg> {
@@ -211,21 +219,21 @@ impl As2ConnectorConfigBuilder {
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlg> {
         &self.signing_algorithm
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn mdn_signing_algorithm(mut self, input: crate::types::MdnSigningAlg) -> Self {
         self.mdn_signing_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn set_mdn_signing_algorithm(mut self, input: ::std::option::Option<crate::types::MdnSigningAlg>) -> Self {
         self.mdn_signing_algorithm = input;
         self
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>The signing algorithm for the MDN response.</p><note>
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn get_mdn_signing_algorithm(&self) -> &::std::option::Option<crate::types::MdnSigningAlg> {
@@ -233,8 +241,10 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
-    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
+    /// <li>
+    /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn mdn_response(mut self, input: crate::types::MdnResponse) -> Self {
         self.mdn_response = ::std::option::Option::Some(input);
@@ -242,8 +252,10 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
-    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
+    /// <li>
+    /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn set_mdn_response(mut self, input: ::std::option::Option<crate::types::MdnResponse>) -> Self {
         self.mdn_response = input;
@@ -251,8 +263,10 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
-    /// <li><p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
-    /// <li><p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
+    /// <li>
+    /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Specifies that no MDN response is required.</p></li>
     /// </ul>
     pub fn get_mdn_response(&self) -> &::std::option::Option<crate::types::MdnResponse> {
         &self.mdn_response
@@ -264,8 +278,10 @@ impl As2ConnectorConfigBuilder {
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
-    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
+    /// <li>
+    /// <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li>
+    /// <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
@@ -280,8 +296,10 @@ impl As2ConnectorConfigBuilder {
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
-    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
+    /// <li>
+    /// <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li>
+    /// <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>
@@ -296,8 +314,10 @@ impl As2ConnectorConfigBuilder {
     /// <p>Replace <code>user-name</code> and <code>user-password</code> with the credentials for the actual user that is being authenticated.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
-    /// <li><p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
+    /// <li>
+    /// <p>You are storing these credentials in Secrets Manager, <i>not passing them directly</i> into this API.</p></li>
+    /// <li>
+    /// <p>If you are using the API, SDKs, or CloudFormation to configure your connector, then you must create the secret before you can enable Basic authentication. However, if you are using the Amazon Web Services management console, you can have the system create the secret for you.</p></li>
     /// </ul>
     /// <p>If you have previously enabled Basic authentication for a connector, you can disable it by using the <code>UpdateConnector</code> API call. For example, if you are using the CLI, you can run the following command to remove Basic authentication:</p>
     /// <p><code>update-connector --connector-id my-connector-id --as2-config 'BasicAuthSecretId=""'</code></p>

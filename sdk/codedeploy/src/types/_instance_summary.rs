@@ -11,12 +11,18 @@ pub struct InstanceSummary {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment status for this instance:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: The deployment is pending for this instance.</p></li>
-    /// <li><p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
-    /// <li><p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
-    /// <li><p><code>Failed</code>: The deployment has failed for this instance.</p></li>
-    /// <li><p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
-    /// <li><p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The deployment is pending for this instance.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The deployment has failed for this instance.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>A timestamp that indicates when the instance information was last updated.</p>
@@ -25,8 +31,10 @@ pub struct InstanceSummary {
     pub lifecycle_events: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleEvent>>,
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
-    /// <li><p>BLUE: The instance is part of the original environment.</p></li>
-    /// <li><p>GREEN: The instance is part of the replacement environment.</p></li>
+    /// <li>
+    /// <p>BLUE: The instance is part of the original environment.</p></li>
+    /// <li>
+    /// <p>GREEN: The instance is part of the replacement environment.</p></li>
     /// </ul>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
 }
@@ -41,12 +49,18 @@ impl InstanceSummary {
     }
     /// <p>The deployment status for this instance:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: The deployment is pending for this instance.</p></li>
-    /// <li><p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
-    /// <li><p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
-    /// <li><p><code>Failed</code>: The deployment has failed for this instance.</p></li>
-    /// <li><p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
-    /// <li><p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The deployment is pending for this instance.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The deployment has failed for this instance.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.status.as_ref()
@@ -63,8 +77,10 @@ impl InstanceSummary {
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
-    /// <li><p>BLUE: The instance is part of the original environment.</p></li>
-    /// <li><p>GREEN: The instance is part of the replacement environment.</p></li>
+    /// <li>
+    /// <p>BLUE: The instance is part of the original environment.</p></li>
+    /// <li>
+    /// <p>GREEN: The instance is part of the replacement environment.</p></li>
     /// </ul>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
@@ -119,12 +135,18 @@ impl InstanceSummaryBuilder {
     }
     /// <p>The deployment status for this instance:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: The deployment is pending for this instance.</p></li>
-    /// <li><p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
-    /// <li><p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
-    /// <li><p><code>Failed</code>: The deployment has failed for this instance.</p></li>
-    /// <li><p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
-    /// <li><p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The deployment is pending for this instance.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The deployment has failed for this instance.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -132,12 +154,18 @@ impl InstanceSummaryBuilder {
     }
     /// <p>The deployment status for this instance:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: The deployment is pending for this instance.</p></li>
-    /// <li><p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
-    /// <li><p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
-    /// <li><p><code>Failed</code>: The deployment has failed for this instance.</p></li>
-    /// <li><p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
-    /// <li><p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The deployment is pending for this instance.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The deployment has failed for this instance.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InstanceStatus>) -> Self {
         self.status = input;
@@ -145,12 +173,18 @@ impl InstanceSummaryBuilder {
     }
     /// <p>The deployment status for this instance:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: The deployment is pending for this instance.</p></li>
-    /// <li><p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
-    /// <li><p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
-    /// <li><p><code>Failed</code>: The deployment has failed for this instance.</p></li>
-    /// <li><p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
-    /// <li><p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: The deployment is pending for this instance.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: The deployment is in progress for this instance.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: The deployment has succeeded for this instance.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: The deployment has failed for this instance.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: The deployment has been skipped for this instance.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: The deployment status is unknown for this instance.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InstanceStatus> {
         &self.status
@@ -191,8 +225,10 @@ impl InstanceSummaryBuilder {
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
-    /// <li><p>BLUE: The instance is part of the original environment.</p></li>
-    /// <li><p>GREEN: The instance is part of the replacement environment.</p></li>
+    /// <li>
+    /// <p>BLUE: The instance is part of the original environment.</p></li>
+    /// <li>
+    /// <p>GREEN: The instance is part of the replacement environment.</p></li>
     /// </ul>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
@@ -200,8 +236,10 @@ impl InstanceSummaryBuilder {
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
-    /// <li><p>BLUE: The instance is part of the original environment.</p></li>
-    /// <li><p>GREEN: The instance is part of the replacement environment.</p></li>
+    /// <li>
+    /// <p>BLUE: The instance is part of the original environment.</p></li>
+    /// <li>
+    /// <p>GREEN: The instance is part of the replacement environment.</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<crate::types::InstanceType>) -> Self {
         self.instance_type = input;
@@ -209,8 +247,10 @@ impl InstanceSummaryBuilder {
     }
     /// <p>Information about which environment an instance belongs to in a blue/green deployment.</p>
     /// <ul>
-    /// <li><p>BLUE: The instance is part of the original environment.</p></li>
-    /// <li><p>GREEN: The instance is part of the replacement environment.</p></li>
+    /// <li>
+    /// <p>BLUE: The instance is part of the original environment.</p></li>
+    /// <li>
+    /// <p>GREEN: The instance is part of the replacement environment.</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::InstanceType> {
         &self.instance_type

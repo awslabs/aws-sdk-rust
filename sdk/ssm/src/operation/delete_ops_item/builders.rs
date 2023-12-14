@@ -22,13 +22,17 @@ impl DeleteOpsItemInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteOpsItem`.
 ///
-/// <p>Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem.</p> <important>
+/// <p>Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem.</p><important>
 /// <p>Note the following important information about this operation.</p>
 /// <ul>
-/// <li><p>Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.</p></li>
-/// <li><p>This operation uses an <i>eventual consistency model</i>, which means the system can take a few minutes to complete this operation. If you delete an OpsItem and immediately call, for example, <code>GetOpsItem</code>, the deleted OpsItem might still appear in the response.</p></li>
-/// <li><p>This operation is idempotent. The system doesn't throw an exception if you repeatedly call this operation for the same OpsItem. If the first call is successful, all additional calls return the same successful response as the first call.</p></li>
-/// <li><p>This operation doesn't support cross-account calls. A delegated administrator or management account can't delete OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more information about cross-account administration, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html">Setting up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.</p></li>
+/// <li>
+/// <p>Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.</p></li>
+/// <li>
+/// <p>This operation uses an <i>eventual consistency model</i>, which means the system can take a few minutes to complete this operation. If you delete an OpsItem and immediately call, for example, <code>GetOpsItem</code>, the deleted OpsItem might still appear in the response.</p></li>
+/// <li>
+/// <p>This operation is idempotent. The system doesn't throw an exception if you repeatedly call this operation for the same OpsItem. If the first call is successful, all additional calls return the same successful response as the first call.</p></li>
+/// <li>
+/// <p>This operation doesn't support cross-account calls. A delegated administrator or management account can't delete OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more information about cross-account administration, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html">Setting up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.</p></li>
 /// </ul>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

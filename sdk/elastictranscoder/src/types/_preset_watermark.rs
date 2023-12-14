@@ -10,35 +10,48 @@ pub struct PresetWatermark {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum width of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p> <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p>
+    /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
     pub max_width: ::std::option::Option<::std::string::String>,
     /// <p>The maximum height of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
     pub max_height: ::std::option::Option<::std::string::String>,
     /// <p>A value that controls scaling of the watermark:</p>
     /// <ul>
-    /// <li><p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li><p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
-    /// <li><p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
+    /// <li>
+    /// <p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
+    /// <li>
+    /// <p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
+    /// <li>
+    /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
     pub sizing_policy: ::std::option::Option<::std::string::String>,
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
-    /// <li><p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
+    /// <li>
+    /// <p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
+    /// <li>
+    /// <p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
     pub horizontal_align: ::std::option::Option<::std::string::String>,
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
@@ -46,16 +59,21 @@ pub struct PresetWatermark {
     pub horizontal_offset: ::std::option::Option<::std::string::String>,
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
-    /// <li><p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
+    /// <li>
+    /// <p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
+    /// <li>
+    /// <p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
     pub vertical_align: ::std::option::Option<::std::string::String>,
     /// <p><code>VerticalOffset</code></p>
     /// <p>The amount by which you want the vertical position of the watermark to be offset from the position specified by VerticalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.</p>
     /// <p><code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
@@ -67,8 +85,10 @@ pub struct PresetWatermark {
     pub opacity: ::std::option::Option<::std::string::String>,
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
     /// <ul>
-    /// <li><p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
-    /// <li><p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
     pub target: ::std::option::Option<::std::string::String>,
 }
@@ -79,16 +99,21 @@ impl PresetWatermark {
     }
     /// <p>The maximum width of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p> <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p>
+    /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
     pub fn max_width(&self) -> ::std::option::Option<&str> {
         self.max_width.as_deref()
     }
     /// <p>The maximum height of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
     pub fn max_height(&self) -> ::std::option::Option<&str> {
@@ -96,26 +121,34 @@ impl PresetWatermark {
     }
     /// <p>A value that controls scaling of the watermark:</p>
     /// <ul>
-    /// <li><p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li><p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
-    /// <li><p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
+    /// <li>
+    /// <p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
+    /// <li>
+    /// <p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
+    /// <li>
+    /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
     pub fn sizing_policy(&self) -> ::std::option::Option<&str> {
         self.sizing_policy.as_deref()
     }
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
-    /// <li><p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
+    /// <li>
+    /// <p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
+    /// <li>
+    /// <p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
     pub fn horizontal_align(&self) -> ::std::option::Option<&str> {
         self.horizontal_align.as_deref()
     }
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
@@ -125,9 +158,12 @@ impl PresetWatermark {
     }
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
-    /// <li><p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
+    /// <li>
+    /// <p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
+    /// <li>
+    /// <p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
     pub fn vertical_align(&self) -> ::std::option::Option<&str> {
         self.vertical_align.as_deref()
@@ -135,8 +171,10 @@ impl PresetWatermark {
     /// <p><code>VerticalOffset</code></p>
     /// <p>The amount by which you want the vertical position of the watermark to be offset from the position specified by VerticalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.</p>
     /// <p><code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
@@ -152,8 +190,10 @@ impl PresetWatermark {
     }
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
     /// <ul>
-    /// <li><p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
-    /// <li><p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
@@ -198,8 +238,11 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The maximum width of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p> <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p>
+    /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
     pub fn max_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_width = ::std::option::Option::Some(input.into());
@@ -207,8 +250,11 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The maximum width of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p> <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p>
+    /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
     pub fn set_max_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_width = input;
@@ -216,16 +262,21 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The maximum width of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p> <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxWidth</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p>
+    /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxWidth</code>.</p></li>
     /// </ul>
     pub fn get_max_width(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_width
     }
     /// <p>The maximum height of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
     pub fn max_height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -234,8 +285,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The maximum height of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
     pub fn set_max_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -244,8 +297,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The maximum height of the watermark in one of the following formats:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 16 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code> to specify whether you want Elastic Transcoder to include the black bars that are added by Elastic Transcoder, if any, in the calculation.</p></li>
     /// </ul>
     /// <p>If you specify the value in pixels, it must be less than or equal to the value of <code>MaxHeight</code>.</p>
     pub fn get_max_height(&self) -> &::std::option::Option<::std::string::String> {
@@ -253,9 +308,12 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A value that controls scaling of the watermark:</p>
     /// <ul>
-    /// <li><p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li><p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
-    /// <li><p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
+    /// <li>
+    /// <p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
+    /// <li>
+    /// <p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
+    /// <li>
+    /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
     pub fn sizing_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sizing_policy = ::std::option::Option::Some(input.into());
@@ -263,9 +321,12 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A value that controls scaling of the watermark:</p>
     /// <ul>
-    /// <li><p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li><p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
-    /// <li><p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
+    /// <li>
+    /// <p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
+    /// <li>
+    /// <p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
+    /// <li>
+    /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
     pub fn set_sizing_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sizing_policy = input;
@@ -273,18 +334,24 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A value that controls scaling of the watermark:</p>
     /// <ul>
-    /// <li><p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
-    /// <li><p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
-    /// <li><p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
+    /// <li>
+    /// <p><b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding the other value.</p></li>
+    /// <li>
+    /// <p><b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code> are different, the watermark will be distorted.</p></li>
+    /// <li>
+    /// <p><b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale the watermark up.</p></li>
     /// </ul>
     pub fn get_sizing_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.sizing_policy
     }
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
-    /// <li><p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
+    /// <li>
+    /// <p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
+    /// <li>
+    /// <p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
     pub fn horizontal_align(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.horizontal_align = ::std::option::Option::Some(input.into());
@@ -292,9 +359,12 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
-    /// <li><p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
+    /// <li>
+    /// <p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
+    /// <li>
+    /// <p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
     pub fn set_horizontal_align(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.horizontal_align = input;
@@ -302,17 +372,22 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
-    /// <li><p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
+    /// <li>
+    /// <p><b>Left</b>: The left edge of the watermark is aligned with the left border of the video.</p></li>
+    /// <li>
+    /// <p><b>Right</b>: The right edge of the watermark is aligned with the right border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the left and right borders.</p></li>
     /// </ul>
     pub fn get_horizontal_align(&self) -> &::std::option::Option<::std::string::String> {
         &self.horizontal_align
     }
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
@@ -323,8 +398,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
@@ -335,8 +412,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The amount by which you want the horizontal position of the watermark to be offset from the position specified by HorizontalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of MaxWidth.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>, the left side of the watermark appears 5 pixels from the left border of the output video.</p>
     /// <p><code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code> is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the watermark to extend beyond the left or right border and Elastic Transcoder has not added black bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark extends into the black bars. If the watermark extends beyond the black bars, it is cropped.</p>
@@ -346,9 +425,12 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
-    /// <li><p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
+    /// <li>
+    /// <p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
+    /// <li>
+    /// <p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
     pub fn vertical_align(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vertical_align = ::std::option::Option::Some(input.into());
@@ -356,9 +438,12 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
-    /// <li><p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
+    /// <li>
+    /// <p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
+    /// <li>
+    /// <p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
     pub fn set_vertical_align(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vertical_align = input;
@@ -366,9 +451,12 @@ impl PresetWatermarkBuilder {
     }
     /// <p>The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:</p>
     /// <ul>
-    /// <li><p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
-    /// <li><p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
-    /// <li><p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
+    /// <li>
+    /// <p><b>Top</b>: The top edge of the watermark is aligned with the top border of the video.</p></li>
+    /// <li>
+    /// <p><b>Bottom</b>: The bottom edge of the watermark is aligned with the bottom border of the video.</p></li>
+    /// <li>
+    /// <p><b>Center</b>: The watermark is centered between the top and bottom borders.</p></li>
     /// </ul>
     pub fn get_vertical_align(&self) -> &::std::option::Option<::std::string::String> {
         &self.vertical_align
@@ -376,8 +464,10 @@ impl PresetWatermarkBuilder {
     /// <p><code>VerticalOffset</code></p>
     /// <p>The amount by which you want the vertical position of the watermark to be offset from the position specified by VerticalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.</p>
     /// <p><code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
@@ -390,8 +480,10 @@ impl PresetWatermarkBuilder {
     /// <p><code>VerticalOffset</code></p>
     /// <p>The amount by which you want the vertical position of the watermark to be offset from the position specified by VerticalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.</p>
     /// <p><code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
@@ -404,8 +496,10 @@ impl PresetWatermarkBuilder {
     /// <p><code>VerticalOffset</code></p>
     /// <p>The amount by which you want the vertical position of the watermark to be offset from the position specified by VerticalAlign:</p>
     /// <ul>
-    /// <li><p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
-    /// <li><p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
+    /// <li>
+    /// <p>number of pixels (px): The minimum value is 0 pixels, and the maximum value is the value of <code>MaxHeight</code>.</p></li>
+    /// <li>
+    /// <p>integer percentage (%): The range of valid values is 0 to 100.</p></li>
     /// </ul>
     /// <p>For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code> for <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the top border of the output video.</p>
     /// <p><code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top or Bottom.</p>
@@ -433,8 +527,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
     /// <ul>
-    /// <li><p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
-    /// <li><p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
@@ -442,8 +538,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
     /// <ul>
-    /// <li><p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
-    /// <li><p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
@@ -451,8 +549,10 @@ impl PresetWatermarkBuilder {
     }
     /// <p>A value that determines how Elastic Transcoder interprets values that you specified for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>, and <code>MaxHeight</code>:</p>
     /// <ul>
-    /// <li><p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
-    /// <li><p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video excluding black bars added by Elastic Transcoder, if any.</p></li>
+    /// <li>
+    /// <p><b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>, if specified as a percentage, are calculated based on the borders of the video including black bars added by Elastic Transcoder, if any.</p></li>
     /// </ul>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target

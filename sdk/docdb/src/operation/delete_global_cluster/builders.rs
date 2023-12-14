@@ -22,7 +22,7 @@ impl DeleteGlobalClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteGlobalCluster`.
 ///
-/// <p>Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before attempting to delete a global cluster.</p> <note>
+/// <p>Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before attempting to delete a global cluster.</p><note>
 /// <p>This action only applies to Amazon DocumentDB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

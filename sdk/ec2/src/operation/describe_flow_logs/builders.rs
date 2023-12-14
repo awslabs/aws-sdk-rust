@@ -135,20 +135,28 @@ impl DescribeFlowLogsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p></li>
-    /// <li><p><code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p></li>
-    /// <li><p><code>flow-log-id</code> - The ID of the flow log.</p></li>
-    /// <li><p><code>log-group-name</code> - The name of the log group.</p></li>
-    /// <li><p><code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p></li>
-    /// <li><p><code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p></li>
+    /// <li>
+    /// <p><code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p></li>
+    /// <li>
+    /// <p><code>flow-log-id</code> - The ID of the flow log.</p></li>
+    /// <li>
+    /// <p><code>log-group-name</code> - The name of the log group.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p></li>
+    /// <li>
+    /// <p><code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
@@ -156,20 +164,28 @@ impl DescribeFlowLogsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p></li>
-    /// <li><p><code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p></li>
-    /// <li><p><code>flow-log-id</code> - The ID of the flow log.</p></li>
-    /// <li><p><code>log-group-name</code> - The name of the log group.</p></li>
-    /// <li><p><code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p></li>
-    /// <li><p><code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p></li>
+    /// <li>
+    /// <p><code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p></li>
+    /// <li>
+    /// <p><code>flow-log-id</code> - The ID of the flow log.</p></li>
+    /// <li>
+    /// <p><code>log-group-name</code> - The name of the log group.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p></li>
+    /// <li>
+    /// <p><code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -177,20 +193,28 @@ impl DescribeFlowLogsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p></li>
-    /// <li><p><code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p></li>
-    /// <li><p><code>flow-log-id</code> - The ID of the flow log.</p></li>
-    /// <li><p><code>log-group-name</code> - The name of the log group.</p></li>
-    /// <li><p><code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p></li>
-    /// <li><p><code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p></li>
+    /// <li>
+    /// <p><code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p></li>
+    /// <li>
+    /// <p><code>flow-log-id</code> - The ID of the flow log.</p></li>
+    /// <li>
+    /// <p><code>log-group-name</code> - The name of the log group.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p></li>
+    /// <li>
+    /// <p><code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filter()

@@ -10,15 +10,19 @@ pub struct CreateDbClusterInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35.</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code></p>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -40,9 +44,12 @@ pub struct CreateDbClusterInput {
     /// <p>The name of the master user for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).</p>
@@ -52,10 +59,14 @@ pub struct CreateDbClusterInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -72,7 +83,8 @@ pub struct CreateDbClusterInput {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
     /// </ul>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -87,7 +99,7 @@ pub struct CreateDbClusterInput {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
-    /// <p>Default value is <code>standard </code></p> <note>
+    /// <p>Default value is <code>standard </code></p><note>
     /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub storage_type: ::std::option::Option<::std::string::String>,
@@ -103,7 +115,8 @@ impl CreateDbClusterInput {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35.</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -111,9 +124,12 @@ impl CreateDbClusterInput {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code></p>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -151,9 +167,12 @@ impl CreateDbClusterInput {
     /// <p>The name of the master user for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
@@ -167,10 +186,14 @@ impl CreateDbClusterInput {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -197,7 +220,8 @@ impl CreateDbClusterInput {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
     /// </ul>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -224,7 +248,7 @@ impl CreateDbClusterInput {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
-    /// <p>Default value is <code>standard </code></p> <note>
+    /// <p>Default value is <code>standard </code></p><note>
     /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
@@ -289,7 +313,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35.</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -299,7 +324,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35.</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
@@ -309,7 +335,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>Default: 1</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 1 to 35.</p></li>
+    /// <li>
+    /// <p>Must be a value from 1 to 35.</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
@@ -317,9 +344,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code></p>
     /// This field is required.
@@ -330,9 +360,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code></p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -342,9 +375,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code></p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,9 +489,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The name of the master user for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_username = ::std::option::Option::Some(input.into());
@@ -464,9 +503,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The name of the master user for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
@@ -475,9 +517,12 @@ impl CreateDbClusterInputBuilder {
     /// <p>The name of the master user for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word for the chosen database engine.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word for the chosen database engine.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
@@ -503,10 +548,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -516,10 +565,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -529,10 +582,14 @@ impl CreateDbClusterInputBuilder {
     /// <p>The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
@@ -601,7 +658,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
     /// </ul>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -612,7 +670,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
     /// </ul>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -623,7 +682,8 @@ impl CreateDbClusterInputBuilder {
     /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon Web Services account that owns the KMS encryption key that is used to encrypt the new cluster, you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
     /// <p>If an encryption key is not specified in <code>KmsKeyId</code>:</p>
     /// <ul>
-    /// <li><p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
+    /// <li>
+    /// <p>If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default encryption key.</p></li>
     /// </ul>
     /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Regions.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -694,7 +754,7 @@ impl CreateDbClusterInputBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
-    /// <p>Default value is <code>standard </code></p> <note>
+    /// <p>Default value is <code>standard </code></p><note>
     /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -704,7 +764,7 @@ impl CreateDbClusterInputBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
-    /// <p>Default value is <code>standard </code></p> <note>
+    /// <p>Default value is <code>standard </code></p><note>
     /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -714,7 +774,7 @@ impl CreateDbClusterInputBuilder {
     /// <p>The storage type to associate with the DB cluster.</p>
     /// <p>For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     /// <p>Valid values for storage type - <code>standard | iopt1</code></p>
-    /// <p>Default value is <code>standard </code></p> <note>
+    /// <p>Default value is <code>standard </code></p><note>
     /// <p>When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>, the storage type is returned in the response. The storage type isn't returned when you set it to <code>standard</code>.</p>
     /// </note>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {

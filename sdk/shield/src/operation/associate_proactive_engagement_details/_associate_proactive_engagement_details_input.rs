@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateProactiveEngagementDetailsInput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub emergency_contact_list: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>,
 }
 impl AssociateProactiveEngagementDetailsInput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     ///
@@ -39,7 +39,7 @@ impl AssociateProactiveEngagementDetailsInputBuilder {
     /// To override the contents of this collection use [`set_emergency_contact_list`](Self::set_emergency_contact_list).
     ///
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub fn emergency_contact_list(mut self, input: crate::types::EmergencyContact) -> Self {
@@ -49,7 +49,7 @@ impl AssociateProactiveEngagementDetailsInputBuilder {
         self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub fn set_emergency_contact_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>>) -> Self {
@@ -57,7 +57,7 @@ impl AssociateProactiveEngagementDetailsInputBuilder {
         self
     }
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support.</p>
-    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p> <note>
+    /// <p>To enable proactive engagement, the contact list must include at least one phone number.</p><note>
     /// <p>The contacts that you provide here replace any contacts that were already defined. If you already have contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and then provide it here.</p>
     /// </note>
     pub fn get_emergency_contact_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmergencyContact>> {

@@ -6,32 +6,38 @@ pub struct ModifyTenantDatabaseInput {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing tenant database.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
     pub tenant_db_name: ::std::option::Option<::std::string::String>,
-    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p> <note>
+    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
     /// <p>Amazon RDS operations never return the password, so this action provides a way to regain access to a tenant database user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
     /// </ul>
     /// <p>Length constraints:</p>
     /// <ul>
-    /// <li><p>Must contain between 8 and 30 characters.</p></li>
+    /// <li>
+    /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be the string null or any other reserved word.</p></li>
-    /// <li><p>Can't be longer than 8 characters.</p></li>
+    /// <li>
+    /// <p>Can't be the string null or any other reserved word.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub new_tenant_db_name: ::std::option::Option<::std::string::String>,
 }
@@ -39,7 +45,8 @@ impl ModifyTenantDatabaseInput {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -47,21 +54,24 @@ impl ModifyTenantDatabaseInput {
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing tenant database.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
     pub fn tenant_db_name(&self) -> ::std::option::Option<&str> {
         self.tenant_db_name.as_deref()
     }
-    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p> <note>
+    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
     /// <p>Amazon RDS operations never return the password, so this action provides a way to regain access to a tenant database user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
     /// </ul>
     /// <p>Length constraints:</p>
     /// <ul>
-    /// <li><p>Must contain between 8 and 30 characters.</p></li>
+    /// <li>
+    /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -69,8 +79,10 @@ impl ModifyTenantDatabaseInput {
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be the string null or any other reserved word.</p></li>
-    /// <li><p>Can't be longer than 8 characters.</p></li>
+    /// <li>
+    /// <p>Can't be the string null or any other reserved word.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub fn new_tenant_db_name(&self) -> ::std::option::Option<&str> {
         self.new_tenant_db_name.as_deref()
@@ -106,7 +118,8 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,7 +129,8 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -125,7 +139,8 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The identifier of the DB instance that contains the tenant database that you are modifying. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -133,7 +148,8 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing tenant database.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
     /// This field is required.
     pub fn tenant_db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -143,7 +159,8 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing tenant database.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
     pub fn set_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_db_name = input;
@@ -152,51 +169,58 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The user-supplied name of the tenant database that you want to modify. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing tenant database.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing tenant database.</p></li>
     /// </ul>
     pub fn get_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenant_db_name
     }
-    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p> <note>
+    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
     /// <p>Amazon RDS operations never return the password, so this action provides a way to regain access to a tenant database user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
     /// </ul>
     /// <p>Length constraints:</p>
     /// <ul>
-    /// <li><p>Must contain between 8 and 30 characters.</p></li>
+    /// <li>
+    /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p> <note>
+    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
     /// <p>Amazon RDS operations never return the password, so this action provides a way to regain access to a tenant database user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
     /// </ul>
     /// <p>Length constraints:</p>
     /// <ul>
-    /// <li><p>Must contain between 8 and 30 characters.</p></li>
+    /// <li>
+    /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
-    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p> <note>
+    /// <p>The new password for the master user of the specified tenant database in your DB instance.</p><note>
     /// <p>Amazon RDS operations never return the password, so this action provides a way to regain access to a tenant database user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except <code>/</code>, <code>"</code> (double quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single quote).</p></li>
     /// </ul>
     /// <p>Length constraints:</p>
     /// <ul>
-    /// <li><p>Must contain between 8 and 30 characters.</p></li>
+    /// <li>
+    /// <p>Must contain between 8 and 30 characters.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -204,8 +228,10 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be the string null or any other reserved word.</p></li>
-    /// <li><p>Can't be longer than 8 characters.</p></li>
+    /// <li>
+    /// <p>Can't be the string null or any other reserved word.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub fn new_tenant_db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_tenant_db_name = ::std::option::Option::Some(input.into());
@@ -214,8 +240,10 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be the string null or any other reserved word.</p></li>
-    /// <li><p>Can't be longer than 8 characters.</p></li>
+    /// <li>
+    /// <p>Can't be the string null or any other reserved word.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub fn set_new_tenant_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_tenant_db_name = input;
@@ -224,8 +252,10 @@ impl ModifyTenantDatabaseInputBuilder {
     /// <p>The new name of the tenant database when renaming a tenant database. This parameter isn’t case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be the string null or any other reserved word.</p></li>
-    /// <li><p>Can't be longer than 8 characters.</p></li>
+    /// <li>
+    /// <p>Can't be the string null or any other reserved word.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 8 characters.</p></li>
     /// </ul>
     pub fn get_new_tenant_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_tenant_db_name

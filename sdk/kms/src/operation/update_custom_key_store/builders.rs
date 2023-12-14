@@ -24,7 +24,7 @@ impl UpdateCustomKeyStoreInputBuilder {
 ///
 /// <p>Changes the properties of a custom key store. You can use this operation to change the properties of an CloudHSM key store or an external key store.</p>
 /// <p>Use the required <code>CustomKeyStoreId</code> parameter to identify the custom key store. Use the remaining optional parameters to change its properties. This operation does not return any property values. To verify the updated property values, use the <code>DescribeCustomKeyStores</code> operation.</p>
-/// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p> <important>
+/// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of a key store that you own and manage.</p><important>
 /// <p>When updating the properties of an external key store, verify that the updated settings connect your key store, via the external key store proxy, to the same external key manager as the previous settings, or to a backup or snapshot of the external key manager with the same cryptographic keys. If the updated connection settings fail, you can fix them and retry, although an extended delay might disrupt Amazon Web Services services. However, if KMS permanently loses its access to cryptographic keys, ciphertext encrypted under those keys is unrecoverable.</p>
 /// </important> <note>
 /// <p>For external key stores:</p>
@@ -41,11 +41,16 @@ impl UpdateCustomKeyStoreInputBuilder {
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:UpdateCustomKeyStore</a> (IAM policy)</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>ConnectCustomKeyStore</code></p></li>
-/// <li><p><code>CreateCustomKeyStore</code></p></li>
-/// <li><p><code>DeleteCustomKeyStore</code></p></li>
-/// <li><p><code>DescribeCustomKeyStores</code></p></li>
-/// <li><p><code>DisconnectCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>ConnectCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>CreateCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>DeleteCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>DescribeCustomKeyStores</code></p></li>
+/// <li>
+/// <p><code>DisconnectCustomKeyStore</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCustomKeyStoreFluentBuilder {
@@ -146,7 +151,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
     pub fn get_custom_key_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_key_store_id()
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -154,7 +159,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
         self.inner = self.inner.new_custom_key_store_name(input.into());
         self
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>
@@ -162,7 +167,7 @@ impl UpdateCustomKeyStoreFluentBuilder {
         self.inner = self.inner.set_new_custom_key_store_name(input);
         self
     }
-    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p> <important>
+    /// <p>Changes the friendly name of the custom key store to the value that you specify. The custom key store name must be unique in the Amazon Web Services account.</p><important>
     /// <p>Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.</p>
     /// </important>
     /// <p>To change this value, an CloudHSM key store must be disconnected. An external key store can be connected or disconnected.</p>

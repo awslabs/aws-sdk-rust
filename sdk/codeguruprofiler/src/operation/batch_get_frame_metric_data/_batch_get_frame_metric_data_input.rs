@@ -14,9 +14,12 @@ pub struct BatchGetFrameMetricDataInput {
     pub period: ::std::option::Option<::std::string::String>,
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub target_resolution: ::std::option::Option<crate::types::AggregationPeriod>,
     /// <p>The details of the metrics that are used to request a time series of values. The metric includes the name of the frame, the aggregation type to calculate the metric value for the frame, and the thread states to use to get the count for the metric value of the frame.</p>
@@ -41,9 +44,12 @@ impl BatchGetFrameMetricDataInput {
     }
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn target_resolution(&self) -> ::std::option::Option<&crate::types::AggregationPeriod> {
         self.target_resolution.as_ref()
@@ -133,9 +139,12 @@ impl BatchGetFrameMetricDataInputBuilder {
     }
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn target_resolution(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.target_resolution = ::std::option::Option::Some(input);
@@ -143,9 +152,12 @@ impl BatchGetFrameMetricDataInputBuilder {
     }
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn set_target_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.target_resolution = input;
@@ -153,9 +165,12 @@ impl BatchGetFrameMetricDataInputBuilder {
     }
     /// <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn get_target_resolution(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         &self.target_resolution

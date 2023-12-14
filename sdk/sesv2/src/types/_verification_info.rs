@@ -10,11 +10,16 @@ pub struct VerificationInfo {
     pub last_success_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
     /// <ul>
-    /// <li><p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
-    /// <li><p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
-    /// <li><p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
-    /// <li><p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
-    /// <li><p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
+    /// <li>
+    /// <p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
+    /// <li>
+    /// <p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
+    /// <li>
+    /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
     pub error_type: ::std::option::Option<crate::types::VerificationError>,
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
@@ -31,11 +36,16 @@ impl VerificationInfo {
     }
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
     /// <ul>
-    /// <li><p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
-    /// <li><p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
-    /// <li><p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
-    /// <li><p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
-    /// <li><p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
+    /// <li>
+    /// <p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
+    /// <li>
+    /// <p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
+    /// <li>
+    /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
     pub fn error_type(&self) -> ::std::option::Option<&crate::types::VerificationError> {
         self.error_type.as_ref()
@@ -92,11 +102,16 @@ impl VerificationInfoBuilder {
     }
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
     /// <ul>
-    /// <li><p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
-    /// <li><p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
-    /// <li><p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
-    /// <li><p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
-    /// <li><p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
+    /// <li>
+    /// <p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
+    /// <li>
+    /// <p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
+    /// <li>
+    /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
     pub fn error_type(mut self, input: crate::types::VerificationError) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -104,11 +119,16 @@ impl VerificationInfoBuilder {
     }
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
     /// <ul>
-    /// <li><p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
-    /// <li><p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
-    /// <li><p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
-    /// <li><p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
-    /// <li><p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
+    /// <li>
+    /// <p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
+    /// <li>
+    /// <p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
+    /// <li>
+    /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::VerificationError>) -> Self {
         self.error_type = input;
@@ -116,11 +136,16 @@ impl VerificationInfoBuilder {
     }
     /// <p>Provides the reason for the failure describing why Amazon SES was not able to successfully verify the identity. Below are the possible values:</p>
     /// <ul>
-    /// <li><p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
-    /// <li><p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
-    /// <li><p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
-    /// <li><p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
-    /// <li><p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
+    /// <li>
+    /// <p><code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value contained within the record was invalid. Ensure you have published the correct values for the record.</p></li>
+    /// <li>
+    /// <p><code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested type of DNS record. Ensure that you have published the correct type of DNS record.</p></li>
+    /// <li>
+    /// <p><code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable at the time of the request. Ensure that you have published the required DNS record(s).</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining the verification status of the domain.</p></li>
+    /// <li>
+    /// <p><code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable to complete the request.</p></li>
     /// </ul>
     pub fn get_error_type(&self) -> &::std::option::Option<crate::types::VerificationError> {
         &self.error_type

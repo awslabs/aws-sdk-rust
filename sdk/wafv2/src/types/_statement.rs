@@ -17,22 +17,20 @@ pub struct Statement {
     pub size_constraint_statement: ::std::option::Option<crate::types::SizeConstraintStatement>,
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
     /// <ul>
-    /// <li><p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
-    /// <li><p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
+    /// <li>
+    /// <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
+    /// <li>
+    /// <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
     /// </ul>
     /// <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.</p>
-    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:
-    /// <iso country code>
+    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:clientip:geo:country:
-    /// <iso country code></iso></code>.</p>
-    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:
-    /// <iso country code>
+    /// </iso></code> and <code>awswaf:clientip:geo:country:<iso country code></iso></code>.</p>
+    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:forwardedip:geo:country:
-    /// <iso country code></iso></code>.</p>
+    /// </iso></code> and <code>awswaf:forwardedip:geo:country:<iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
     pub geo_match_statement: ::std::option::Option<crate::types::GeoMatchStatement>,
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
@@ -49,28 +47,42 @@ pub struct Statement {
     /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition.</p>
     /// <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
     /// </ul>
     /// <p>The rule would create different aggregation instances according to your aggregation criteria, for example:</p>
     /// <ul>
-    /// <li><p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1: count 3</p></li>
-    /// <li><p>IP address 127.0.0.0: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1: count 3</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0: count 1</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>HTTP method POST: count 2</p></li>
-    /// <li><p>HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method POST: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method GET: count 2</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
     /// </ul></li>
     /// </ul>
     /// <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually.</p>
@@ -87,7 +99,7 @@ pub struct Statement {
     /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     pub not_statement: ::std::option::Option<crate::types::NotStatement>,
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p><note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub managed_rule_group_statement: ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
@@ -118,22 +130,20 @@ impl Statement {
     }
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
     /// <ul>
-    /// <li><p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
-    /// <li><p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
+    /// <li>
+    /// <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
+    /// <li>
+    /// <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
     /// </ul>
     /// <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.</p>
-    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:
-    /// <iso country code>
+    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:clientip:geo:country:
-    /// <iso country code></iso></code>.</p>
-    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:
-    /// <iso country code>
+    /// </iso></code> and <code>awswaf:clientip:geo:country:<iso country code></iso></code>.</p>
+    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:forwardedip:geo:country:
-    /// <iso country code></iso></code>.</p>
+    /// </iso></code> and <code>awswaf:forwardedip:geo:country:<iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
     pub fn geo_match_statement(&self) -> ::std::option::Option<&crate::types::GeoMatchStatement> {
         self.geo_match_statement.as_ref()
@@ -158,28 +168,42 @@ impl Statement {
     /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition.</p>
     /// <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
     /// </ul>
     /// <p>The rule would create different aggregation instances according to your aggregation criteria, for example:</p>
     /// <ul>
-    /// <li><p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1: count 3</p></li>
-    /// <li><p>IP address 127.0.0.0: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1: count 3</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0: count 1</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>HTTP method POST: count 2</p></li>
-    /// <li><p>HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method POST: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method GET: count 2</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
     /// </ul></li>
     /// </ul>
     /// <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually.</p>
@@ -204,7 +228,7 @@ impl Statement {
         self.not_statement.as_ref()
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p><note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn managed_rule_group_statement(&self) -> ::std::option::Option<&crate::types::ManagedRuleGroupStatement> {
@@ -312,22 +336,20 @@ impl StatementBuilder {
     }
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
     /// <ul>
-    /// <li><p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
-    /// <li><p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
+    /// <li>
+    /// <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
+    /// <li>
+    /// <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
     /// </ul>
     /// <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.</p>
-    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:
-    /// <iso country code>
+    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:clientip:geo:country:
-    /// <iso country code></iso></code>.</p>
-    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:
-    /// <iso country code>
+    /// </iso></code> and <code>awswaf:clientip:geo:country:<iso country code></iso></code>.</p>
+    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:forwardedip:geo:country:
-    /// <iso country code></iso></code>.</p>
+    /// </iso></code> and <code>awswaf:forwardedip:geo:country:<iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
     pub fn geo_match_statement(mut self, input: crate::types::GeoMatchStatement) -> Self {
         self.geo_match_statement = ::std::option::Option::Some(input);
@@ -335,22 +357,20 @@ impl StatementBuilder {
     }
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
     /// <ul>
-    /// <li><p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
-    /// <li><p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
+    /// <li>
+    /// <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
+    /// <li>
+    /// <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
     /// </ul>
     /// <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.</p>
-    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:
-    /// <iso country code>
+    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:clientip:geo:country:
-    /// <iso country code></iso></code>.</p>
-    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:
-    /// <iso country code>
+    /// </iso></code> and <code>awswaf:clientip:geo:country:<iso country code></iso></code>.</p>
+    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:forwardedip:geo:country:
-    /// <iso country code></iso></code>.</p>
+    /// </iso></code> and <code>awswaf:forwardedip:geo:country:<iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
     pub fn set_geo_match_statement(mut self, input: ::std::option::Option<crate::types::GeoMatchStatement>) -> Self {
         self.geo_match_statement = input;
@@ -358,22 +378,20 @@ impl StatementBuilder {
     }
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
     /// <ul>
-    /// <li><p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
-    /// <li><p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
+    /// <li>
+    /// <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array.</p></li>
+    /// <li>
+    /// <p>Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more label match rules to run after the geo match rule and configure them to match against the geographic labels and handle the requests as needed.</p></li>
     /// </ul>
     /// <p>WAF labels requests using the alpha-2 country and region codes from the International Organization for Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.</p>
-    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:
-    /// <iso country code>
+    /// <p>If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:clientip:geo:country:
-    /// <iso country code></iso></code>.</p>
-    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:
-    /// <iso country code>
+    /// </iso></code> and <code>awswaf:clientip:geo:country:<iso country code></iso></code>.</p>
+    /// <p>If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:<iso country code>
     /// -
     /// <iso region code></iso>
-    /// </iso></code> and <code>awswaf:forwardedip:geo:country:
-    /// <iso country code></iso></code>.</p>
+    /// </iso></code> and <code>awswaf:forwardedip:geo:country:<iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.</p>
     pub fn get_geo_match_statement(&self) -> &::std::option::Option<crate::types::GeoMatchStatement> {
         &self.geo_match_statement
@@ -437,28 +455,42 @@ impl StatementBuilder {
     /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition.</p>
     /// <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
     /// </ul>
     /// <p>The rule would create different aggregation instances according to your aggregation criteria, for example:</p>
     /// <ul>
-    /// <li><p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1: count 3</p></li>
-    /// <li><p>IP address 127.0.0.0: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1: count 3</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0: count 1</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>HTTP method POST: count 2</p></li>
-    /// <li><p>HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method POST: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method GET: count 2</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
     /// </ul></li>
     /// </ul>
     /// <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually.</p>
@@ -476,28 +508,42 @@ impl StatementBuilder {
     /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition.</p>
     /// <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
     /// </ul>
     /// <p>The rule would create different aggregation instances according to your aggregation criteria, for example:</p>
     /// <ul>
-    /// <li><p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1: count 3</p></li>
-    /// <li><p>IP address 127.0.0.0: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1: count 3</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0: count 1</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>HTTP method POST: count 2</p></li>
-    /// <li><p>HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method POST: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method GET: count 2</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
     /// </ul></li>
     /// </ul>
     /// <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually.</p>
@@ -515,28 +561,42 @@ impl StatementBuilder {
     /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition.</p>
     /// <p>For example, assume the rule evaluates web requests with the following IP address and HTTP method values:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET</p></li>
     /// </ul>
     /// <p>The rule would create different aggregation instances according to your aggregation criteria, for example:</p>
     /// <ul>
-    /// <li><p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is just the IP address, then each individual address is an aggregation instance, and WAF counts requests separately for each. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1: count 3</p></li>
-    /// <li><p>IP address 127.0.0.0: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1: count 3</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0: count 1</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is HTTP method, then each individual HTTP method is an aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>HTTP method POST: count 2</p></li>
-    /// <li><p>HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method POST: count 2</p></li>
+    /// <li>
+    /// <p>HTTP method GET: count 2</p></li>
     /// </ul></li>
-    /// <li><p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
+    /// <li>
+    /// <p>If the aggregation criteria is IP address and HTTP method, then each IP address and each HTTP method would contribute to the combined aggregation instance. The aggregation instances and request counts for our example would be the following:</p>
     /// <ul>
-    /// <li><p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
-    /// <li><p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
-    /// <li><p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method POST: count 1</p></li>
+    /// <li>
+    /// <p>IP address 10.1.1.1, HTTP method GET: count 2</p></li>
+    /// <li>
+    /// <p>IP address 127.0.0.0, HTTP method POST: count 1</p></li>
     /// </ul></li>
     /// </ul>
     /// <p>For any n-tuple of aggregation keys, each unique combination of values for the keys defines a separate aggregation instance, which WAF counts and rate-limits individually.</p>
@@ -591,7 +651,7 @@ impl StatementBuilder {
         &self.not_statement
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p><note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn managed_rule_group_statement(mut self, input: crate::types::ManagedRuleGroupStatement) -> Self {
@@ -599,7 +659,7 @@ impl StatementBuilder {
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p><note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn set_managed_rule_group_statement(mut self, input: ::std::option::Option<crate::types::ManagedRuleGroupStatement>) -> Self {
@@ -607,7 +667,7 @@ impl StatementBuilder {
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
-    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p> <note>
+    /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed rule group inside another rule group. You can only reference a managed rule group as a top-level statement within a rule that you define in a web ACL.</p><note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn get_managed_rule_group_statement(&self) -> &::std::option::Option<crate::types::ManagedRuleGroupStatement> {

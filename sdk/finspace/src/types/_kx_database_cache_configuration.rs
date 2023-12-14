@@ -6,7 +6,8 @@
 pub struct KxDatabaseCacheConfiguration {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
+    /// <li>
+    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub cache_type: ::std::string::String,
     /// <p>Specifies the portions of database that will be loaded into the cache for access.</p>
@@ -17,7 +18,8 @@ pub struct KxDatabaseCacheConfiguration {
 impl KxDatabaseCacheConfiguration {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
+    /// <li>
+    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub fn cache_type(&self) -> &str {
         use std::ops::Deref;
@@ -51,7 +53,8 @@ pub struct KxDatabaseCacheConfigurationBuilder {
 impl KxDatabaseCacheConfigurationBuilder {
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
+    /// <li>
+    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     /// This field is required.
     pub fn cache_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl KxDatabaseCacheConfigurationBuilder {
     }
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
+    /// <li>
+    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub fn set_cache_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_type = input;
@@ -68,7 +72,8 @@ impl KxDatabaseCacheConfigurationBuilder {
     }
     /// <p>The type of disk cache. This parameter is used to map the database path to cache storage. The valid values are:</p>
     /// <ul>
-    /// <li><p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
+    /// <li>
+    /// <p>CACHE_1000 – This type provides at least 1000 MB/s disk access throughput.</p></li>
     /// </ul>
     pub fn get_cache_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_type

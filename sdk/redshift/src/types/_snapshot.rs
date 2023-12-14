@@ -12,9 +12,12 @@ pub struct Snapshot {
     pub snapshot_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The snapshot status. The value of the status depends on the API operation used:</p>
     /// <ul>
-    /// <li><p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
-    /// <li><p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
-    /// <li><p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
+    /// <li>
+    /// <p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
+    /// <li>
+    /// <p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
+    /// <li>
+    /// <p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the cluster is listening on.</p>
@@ -100,9 +103,12 @@ impl Snapshot {
     }
     /// <p>The snapshot status. The value of the status depends on the API operation used:</p>
     /// <ul>
-    /// <li><p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
-    /// <li><p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
-    /// <li><p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
+    /// <li>
+    /// <p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
+    /// <li>
+    /// <p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
+    /// <li>
+    /// <p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -338,9 +344,12 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot status. The value of the status depends on the API operation used:</p>
     /// <ul>
-    /// <li><p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
-    /// <li><p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
-    /// <li><p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
+    /// <li>
+    /// <p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
+    /// <li>
+    /// <p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
+    /// <li>
+    /// <p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -348,9 +357,12 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot status. The value of the status depends on the API operation used:</p>
     /// <ul>
-    /// <li><p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
-    /// <li><p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
-    /// <li><p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
+    /// <li>
+    /// <p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
+    /// <li>
+    /// <p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
+    /// <li>
+    /// <p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -358,9 +370,12 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot status. The value of the status depends on the API operation used:</p>
     /// <ul>
-    /// <li><p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
-    /// <li><p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
-    /// <li><p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
+    /// <li>
+    /// <p><code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating".</p></li>
+    /// <li>
+    /// <p><code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p></li>
+    /// <li>
+    /// <p><code>DeleteClusterSnapshot</code> returns status as "deleted".</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -10,15 +10,15 @@ pub struct GameSessionConnectionInfo {
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -40,15 +40,15 @@ impl GameSessionConnectionInfo {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -126,15 +126,15 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -145,15 +145,15 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -164,15 +164,15 @@ impl GameSessionConnectionInfoBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>

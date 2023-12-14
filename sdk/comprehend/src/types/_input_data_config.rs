@@ -9,8 +9,10 @@ pub struct InputDataConfig {
     pub s3_uri: ::std::string::String,
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li><p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li><p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
@@ -25,8 +27,10 @@ impl InputDataConfig {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li><p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li><p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
     pub fn input_format(&self) -> ::std::option::Option<&crate::types::InputFormat> {
         self.input_format.as_ref()
@@ -72,8 +76,10 @@ impl InputDataConfigBuilder {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li><p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li><p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
     pub fn input_format(mut self, input: crate::types::InputFormat) -> Self {
         self.input_format = ::std::option::Option::Some(input);
@@ -81,8 +87,10 @@ impl InputDataConfigBuilder {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li><p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li><p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
     pub fn set_input_format(mut self, input: ::std::option::Option<crate::types::InputFormat>) -> Self {
         self.input_format = input;
@@ -90,8 +98,10 @@ impl InputDataConfigBuilder {
     }
     /// <p>Specifies how the text in an input file should be processed:</p>
     /// <ul>
-    /// <li><p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
-    /// <li><p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.</p></li>
+    /// <li>
+    /// <p><code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p></li>
     /// </ul>
     pub fn get_input_format(&self) -> &::std::option::Option<crate::types::InputFormat> {
         &self.input_format

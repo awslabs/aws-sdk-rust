@@ -14,10 +14,14 @@ pub struct GetFunctionEventInvokeConfigOutput {
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
     /// <ul>
-    /// <li><p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li><p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li><p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li><p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li>
+    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
+    /// <li>
+    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
+    /// <li>
+    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
+    /// <li>
+    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub destination_config: ::std::option::Option<crate::types::DestinationConfig>,
     _request_id: Option<String>,
@@ -42,10 +46,14 @@ impl GetFunctionEventInvokeConfigOutput {
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
     /// <ul>
-    /// <li><p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li><p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li><p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li><p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li>
+    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
+    /// <li>
+    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
+    /// <li>
+    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
+    /// <li>
+    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub fn destination_config(&self) -> ::std::option::Option<&crate::types::DestinationConfig> {
         self.destination_config.as_ref()
@@ -134,10 +142,14 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
     /// <ul>
-    /// <li><p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li><p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li><p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li><p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li>
+    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
+    /// <li>
+    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
+    /// <li>
+    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
+    /// <li>
+    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub fn destination_config(mut self, input: crate::types::DestinationConfig) -> Self {
         self.destination_config = ::std::option::Option::Some(input);
@@ -146,10 +158,14 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
     /// <ul>
-    /// <li><p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li><p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li><p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li><p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li>
+    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
+    /// <li>
+    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
+    /// <li>
+    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
+    /// <li>
+    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub fn set_destination_config(mut self, input: ::std::option::Option<crate::types::DestinationConfig>) -> Self {
         self.destination_config = input;
@@ -158,10 +174,14 @@ impl GetFunctionEventInvokeConfigOutputBuilder {
     /// <p>A destination for events after they have been sent to a function for processing.</p>
     /// <p class="title"><b>Destinations</b></p>
     /// <ul>
-    /// <li><p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
-    /// <li><p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
-    /// <li><p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
-    /// <li><p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
+    /// <li>
+    /// <p><b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p></li>
+    /// <li>
+    /// <p><b>Queue</b> - The ARN of a standard SQS queue.</p></li>
+    /// <li>
+    /// <p><b>Topic</b> - The ARN of a standard SNS topic.</p></li>
+    /// <li>
+    /// <p><b>Event Bus</b> - The ARN of an Amazon EventBridge event bus.</p></li>
     /// </ul>
     pub fn get_destination_config(&self) -> &::std::option::Option<crate::types::DestinationConfig> {
         &self.destination_config

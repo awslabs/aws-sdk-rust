@@ -10,9 +10,12 @@ pub struct ApiAssociation {
     pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the status of an association.</p>
     /// <ul>
-    /// <li><p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
-    /// <li><p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
-    /// <li><p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
+    /// <li>
+    /// <p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
+    /// <li>
+    /// <p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
     pub association_status: ::std::option::Option<crate::types::AssociationStatus>,
     /// <p>Details about the last deployment status.</p>
@@ -29,9 +32,12 @@ impl ApiAssociation {
     }
     /// <p>Identifies the status of an association.</p>
     /// <ul>
-    /// <li><p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
-    /// <li><p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
-    /// <li><p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
+    /// <li>
+    /// <p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
+    /// <li>
+    /// <p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
     pub fn association_status(&self) -> ::std::option::Option<&crate::types::AssociationStatus> {
         self.association_status.as_ref()
@@ -88,9 +94,12 @@ impl ApiAssociationBuilder {
     }
     /// <p>Identifies the status of an association.</p>
     /// <ul>
-    /// <li><p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
-    /// <li><p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
-    /// <li><p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
+    /// <li>
+    /// <p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
+    /// <li>
+    /// <p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
@@ -98,9 +107,12 @@ impl ApiAssociationBuilder {
     }
     /// <p>Identifies the status of an association.</p>
     /// <ul>
-    /// <li><p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
-    /// <li><p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
-    /// <li><p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
+    /// <li>
+    /// <p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
+    /// <li>
+    /// <p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
     pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::AssociationStatus>) -> Self {
         self.association_status = input;
@@ -108,9 +120,12 @@ impl ApiAssociationBuilder {
     }
     /// <p>Identifies the status of an association.</p>
     /// <ul>
-    /// <li><p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
-    /// <li><p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
-    /// <li><p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
+    /// <li>
+    /// <p><b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p></li>
+    /// <li>
+    /// <p><b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p></li>
+    /// <li>
+    /// <p><b>FAILED</b>: The API association has failed. You can modify associations after failure.</p></li>
     /// </ul>
     pub fn get_association_status(&self) -> &::std::option::Option<crate::types::AssociationStatus> {
         &self.association_status

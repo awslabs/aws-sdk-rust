@@ -11,33 +11,53 @@ pub struct Run {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>BUILTIN_FUZZ</p></li>
-    /// <li><p>BUILTIN_EXPLORER</p> <note>
+    /// <li>
+    /// <p>BUILTIN_FUZZ</p></li>
+    /// <li>
+    /// <p>BUILTIN_EXPLORER</p><note>
     /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
     /// </note></li>
-    /// <li><p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_PYTHON</p></li>
-    /// <li><p>APPIUM_NODE</p></li>
-    /// <li><p>APPIUM_RUBY</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON</p></li>
-    /// <li><p>APPIUM_WEB_NODE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY</p></li>
-    /// <li><p>CALABASH</p></li>
-    /// <li><p>INSTRUMENTATION</p></li>
-    /// <li><p>UIAUTOMATION</p></li>
-    /// <li><p>UIAUTOMATOR</p></li>
-    /// <li><p>XCTEST</p></li>
-    /// <li><p>XCTEST_UI</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY</p></li>
+    /// <li>
+    /// <p>CALABASH</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR</p></li>
+    /// <li>
+    /// <p>XCTEST</p></li>
+    /// <li>
+    /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>ANDROID</p></li>
-    /// <li><p>IOS</p></li>
+    /// <li>
+    /// <p>ANDROID</p></li>
+    /// <li>
+    /// <p>IOS</p></li>
     /// </ul>
     pub platform: ::std::option::Option<crate::types::DevicePlatform>,
     /// <p>When the run was created.</p>
@@ -45,27 +65,43 @@ pub struct Run {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PENDING_CONCURRENCY</p></li>
-    /// <li><p>PENDING_DEVICE</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SCHEDULING</p></li>
-    /// <li><p>PREPARING</p></li>
-    /// <li><p>RUNNING</p></li>
-    /// <li><p>COMPLETED</p></li>
-    /// <li><p>STOPPING</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PENDING_CONCURRENCY</p></li>
+    /// <li>
+    /// <p>PENDING_DEVICE</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SCHEDULING</p></li>
+    /// <li>
+    /// <p>PREPARING</p></li>
+    /// <li>
+    /// <p>RUNNING</p></li>
+    /// <li>
+    /// <p>COMPLETED</p></li>
+    /// <li>
+    /// <p>STOPPING</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PASSED</p></li>
-    /// <li><p>WARNED</p></li>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>SKIPPED</p></li>
-    /// <li><p>ERRORED</p></li>
-    /// <li><p>STOPPED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PASSED</p></li>
+    /// <li>
+    /// <p>WARNED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>SKIPPED</p></li>
+    /// <li>
+    /// <p>ERRORED</p></li>
+    /// <li>
+    /// <p>STOPPED</p></li>
     /// </ul>
     pub result: ::std::option::Option<crate::types::ExecutionResult>,
     /// <p>The run's start time.</p>
@@ -80,7 +116,7 @@ pub struct Run {
     pub total_jobs: ::std::option::Option<i32>,
     /// <p>The total number of completed jobs.</p>
     pub completed_jobs: ::std::option::Option<i32>,
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
@@ -134,26 +170,44 @@ impl Run {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>BUILTIN_FUZZ</p></li>
-    /// <li><p>BUILTIN_EXPLORER</p> <note>
+    /// <li>
+    /// <p>BUILTIN_FUZZ</p></li>
+    /// <li>
+    /// <p>BUILTIN_EXPLORER</p><note>
     /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
     /// </note></li>
-    /// <li><p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_PYTHON</p></li>
-    /// <li><p>APPIUM_NODE</p></li>
-    /// <li><p>APPIUM_RUBY</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON</p></li>
-    /// <li><p>APPIUM_WEB_NODE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY</p></li>
-    /// <li><p>CALABASH</p></li>
-    /// <li><p>INSTRUMENTATION</p></li>
-    /// <li><p>UIAUTOMATION</p></li>
-    /// <li><p>UIAUTOMATOR</p></li>
-    /// <li><p>XCTEST</p></li>
-    /// <li><p>XCTEST_UI</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY</p></li>
+    /// <li>
+    /// <p>CALABASH</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR</p></li>
+    /// <li>
+    /// <p>XCTEST</p></li>
+    /// <li>
+    /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.r#type.as_ref()
@@ -161,8 +215,10 @@ impl Run {
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>ANDROID</p></li>
-    /// <li><p>IOS</p></li>
+    /// <li>
+    /// <p>ANDROID</p></li>
+    /// <li>
+    /// <p>IOS</p></li>
     /// </ul>
     pub fn platform(&self) -> ::std::option::Option<&crate::types::DevicePlatform> {
         self.platform.as_ref()
@@ -174,15 +230,24 @@ impl Run {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PENDING_CONCURRENCY</p></li>
-    /// <li><p>PENDING_DEVICE</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SCHEDULING</p></li>
-    /// <li><p>PREPARING</p></li>
-    /// <li><p>RUNNING</p></li>
-    /// <li><p>COMPLETED</p></li>
-    /// <li><p>STOPPING</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PENDING_CONCURRENCY</p></li>
+    /// <li>
+    /// <p>PENDING_DEVICE</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SCHEDULING</p></li>
+    /// <li>
+    /// <p>PREPARING</p></li>
+    /// <li>
+    /// <p>RUNNING</p></li>
+    /// <li>
+    /// <p>COMPLETED</p></li>
+    /// <li>
+    /// <p>STOPPING</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
@@ -190,13 +255,20 @@ impl Run {
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PASSED</p></li>
-    /// <li><p>WARNED</p></li>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>SKIPPED</p></li>
-    /// <li><p>ERRORED</p></li>
-    /// <li><p>STOPPED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PASSED</p></li>
+    /// <li>
+    /// <p>WARNED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>SKIPPED</p></li>
+    /// <li>
+    /// <p>ERRORED</p></li>
+    /// <li>
+    /// <p>STOPPED</p></li>
     /// </ul>
     pub fn result(&self) -> ::std::option::Option<&crate::types::ExecutionResult> {
         self.result.as_ref()
@@ -225,7 +297,7 @@ impl Run {
     pub fn completed_jobs(&self) -> ::std::option::Option<i32> {
         self.completed_jobs
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
@@ -381,26 +453,44 @@ impl RunBuilder {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>BUILTIN_FUZZ</p></li>
-    /// <li><p>BUILTIN_EXPLORER</p> <note>
+    /// <li>
+    /// <p>BUILTIN_FUZZ</p></li>
+    /// <li>
+    /// <p>BUILTIN_EXPLORER</p><note>
     /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
     /// </note></li>
-    /// <li><p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_PYTHON</p></li>
-    /// <li><p>APPIUM_NODE</p></li>
-    /// <li><p>APPIUM_RUBY</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON</p></li>
-    /// <li><p>APPIUM_WEB_NODE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY</p></li>
-    /// <li><p>CALABASH</p></li>
-    /// <li><p>INSTRUMENTATION</p></li>
-    /// <li><p>UIAUTOMATION</p></li>
-    /// <li><p>UIAUTOMATOR</p></li>
-    /// <li><p>XCTEST</p></li>
-    /// <li><p>XCTEST_UI</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY</p></li>
+    /// <li>
+    /// <p>CALABASH</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR</p></li>
+    /// <li>
+    /// <p>XCTEST</p></li>
+    /// <li>
+    /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -409,26 +499,44 @@ impl RunBuilder {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>BUILTIN_FUZZ</p></li>
-    /// <li><p>BUILTIN_EXPLORER</p> <note>
+    /// <li>
+    /// <p>BUILTIN_FUZZ</p></li>
+    /// <li>
+    /// <p>BUILTIN_EXPLORER</p><note>
     /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
     /// </note></li>
-    /// <li><p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_PYTHON</p></li>
-    /// <li><p>APPIUM_NODE</p></li>
-    /// <li><p>APPIUM_RUBY</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON</p></li>
-    /// <li><p>APPIUM_WEB_NODE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY</p></li>
-    /// <li><p>CALABASH</p></li>
-    /// <li><p>INSTRUMENTATION</p></li>
-    /// <li><p>UIAUTOMATION</p></li>
-    /// <li><p>UIAUTOMATOR</p></li>
-    /// <li><p>XCTEST</p></li>
-    /// <li><p>XCTEST_UI</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY</p></li>
+    /// <li>
+    /// <p>CALABASH</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR</p></li>
+    /// <li>
+    /// <p>XCTEST</p></li>
+    /// <li>
+    /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.r#type = input;
@@ -437,26 +545,44 @@ impl RunBuilder {
     /// <p>The run's type.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
-    /// <li><p>BUILTIN_FUZZ</p></li>
-    /// <li><p>BUILTIN_EXPLORER</p> <note>
+    /// <li>
+    /// <p>BUILTIN_FUZZ</p></li>
+    /// <li>
+    /// <p>BUILTIN_EXPLORER</p><note>
     /// <p>For Android, an app explorer that traverses an Android app, interacting with it and capturing screenshots at the same time.</p>
     /// </note></li>
-    /// <li><p>APPIUM_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_PYTHON</p></li>
-    /// <li><p>APPIUM_NODE</p></li>
-    /// <li><p>APPIUM_RUBY</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_JUNIT</p></li>
-    /// <li><p>APPIUM_WEB_JAVA_TESTNG</p></li>
-    /// <li><p>APPIUM_WEB_PYTHON</p></li>
-    /// <li><p>APPIUM_WEB_NODE</p></li>
-    /// <li><p>APPIUM_WEB_RUBY</p></li>
-    /// <li><p>CALABASH</p></li>
-    /// <li><p>INSTRUMENTATION</p></li>
-    /// <li><p>UIAUTOMATION</p></li>
-    /// <li><p>UIAUTOMATOR</p></li>
-    /// <li><p>XCTEST</p></li>
-    /// <li><p>XCTEST_UI</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_RUBY</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_JUNIT</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_JAVA_TESTNG</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_PYTHON</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_NODE</p></li>
+    /// <li>
+    /// <p>APPIUM_WEB_RUBY</p></li>
+    /// <li>
+    /// <p>CALABASH</p></li>
+    /// <li>
+    /// <p>INSTRUMENTATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATION</p></li>
+    /// <li>
+    /// <p>UIAUTOMATOR</p></li>
+    /// <li>
+    /// <p>XCTEST</p></li>
+    /// <li>
+    /// <p>XCTEST_UI</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TestType> {
         &self.r#type
@@ -464,8 +590,10 @@ impl RunBuilder {
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>ANDROID</p></li>
-    /// <li><p>IOS</p></li>
+    /// <li>
+    /// <p>ANDROID</p></li>
+    /// <li>
+    /// <p>IOS</p></li>
     /// </ul>
     pub fn platform(mut self, input: crate::types::DevicePlatform) -> Self {
         self.platform = ::std::option::Option::Some(input);
@@ -474,8 +602,10 @@ impl RunBuilder {
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>ANDROID</p></li>
-    /// <li><p>IOS</p></li>
+    /// <li>
+    /// <p>ANDROID</p></li>
+    /// <li>
+    /// <p>IOS</p></li>
     /// </ul>
     pub fn set_platform(mut self, input: ::std::option::Option<crate::types::DevicePlatform>) -> Self {
         self.platform = input;
@@ -484,8 +614,10 @@ impl RunBuilder {
     /// <p>The run's platform.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>ANDROID</p></li>
-    /// <li><p>IOS</p></li>
+    /// <li>
+    /// <p>ANDROID</p></li>
+    /// <li>
+    /// <p>IOS</p></li>
     /// </ul>
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::DevicePlatform> {
         &self.platform
@@ -507,15 +639,24 @@ impl RunBuilder {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PENDING_CONCURRENCY</p></li>
-    /// <li><p>PENDING_DEVICE</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SCHEDULING</p></li>
-    /// <li><p>PREPARING</p></li>
-    /// <li><p>RUNNING</p></li>
-    /// <li><p>COMPLETED</p></li>
-    /// <li><p>STOPPING</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PENDING_CONCURRENCY</p></li>
+    /// <li>
+    /// <p>PENDING_DEVICE</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SCHEDULING</p></li>
+    /// <li>
+    /// <p>PREPARING</p></li>
+    /// <li>
+    /// <p>RUNNING</p></li>
+    /// <li>
+    /// <p>COMPLETED</p></li>
+    /// <li>
+    /// <p>STOPPING</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -524,15 +665,24 @@ impl RunBuilder {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PENDING_CONCURRENCY</p></li>
-    /// <li><p>PENDING_DEVICE</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SCHEDULING</p></li>
-    /// <li><p>PREPARING</p></li>
-    /// <li><p>RUNNING</p></li>
-    /// <li><p>COMPLETED</p></li>
-    /// <li><p>STOPPING</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PENDING_CONCURRENCY</p></li>
+    /// <li>
+    /// <p>PENDING_DEVICE</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SCHEDULING</p></li>
+    /// <li>
+    /// <p>PREPARING</p></li>
+    /// <li>
+    /// <p>RUNNING</p></li>
+    /// <li>
+    /// <p>COMPLETED</p></li>
+    /// <li>
+    /// <p>STOPPING</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
@@ -541,15 +691,24 @@ impl RunBuilder {
     /// <p>The run's status.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PENDING_CONCURRENCY</p></li>
-    /// <li><p>PENDING_DEVICE</p></li>
-    /// <li><p>PROCESSING</p></li>
-    /// <li><p>SCHEDULING</p></li>
-    /// <li><p>PREPARING</p></li>
-    /// <li><p>RUNNING</p></li>
-    /// <li><p>COMPLETED</p></li>
-    /// <li><p>STOPPING</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PENDING_CONCURRENCY</p></li>
+    /// <li>
+    /// <p>PENDING_DEVICE</p></li>
+    /// <li>
+    /// <p>PROCESSING</p></li>
+    /// <li>
+    /// <p>SCHEDULING</p></li>
+    /// <li>
+    /// <p>PREPARING</p></li>
+    /// <li>
+    /// <p>RUNNING</p></li>
+    /// <li>
+    /// <p>COMPLETED</p></li>
+    /// <li>
+    /// <p>STOPPING</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.status
@@ -557,13 +716,20 @@ impl RunBuilder {
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PASSED</p></li>
-    /// <li><p>WARNED</p></li>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>SKIPPED</p></li>
-    /// <li><p>ERRORED</p></li>
-    /// <li><p>STOPPED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PASSED</p></li>
+    /// <li>
+    /// <p>WARNED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>SKIPPED</p></li>
+    /// <li>
+    /// <p>ERRORED</p></li>
+    /// <li>
+    /// <p>STOPPED</p></li>
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = ::std::option::Option::Some(input);
@@ -572,13 +738,20 @@ impl RunBuilder {
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PASSED</p></li>
-    /// <li><p>WARNED</p></li>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>SKIPPED</p></li>
-    /// <li><p>ERRORED</p></li>
-    /// <li><p>STOPPED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PASSED</p></li>
+    /// <li>
+    /// <p>WARNED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>SKIPPED</p></li>
+    /// <li>
+    /// <p>ERRORED</p></li>
+    /// <li>
+    /// <p>STOPPED</p></li>
     /// </ul>
     pub fn set_result(mut self, input: ::std::option::Option<crate::types::ExecutionResult>) -> Self {
         self.result = input;
@@ -587,13 +760,20 @@ impl RunBuilder {
     /// <p>The run's result.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
-    /// <li><p>PENDING</p></li>
-    /// <li><p>PASSED</p></li>
-    /// <li><p>WARNED</p></li>
-    /// <li><p>FAILED</p></li>
-    /// <li><p>SKIPPED</p></li>
-    /// <li><p>ERRORED</p></li>
-    /// <li><p>STOPPED</p></li>
+    /// <li>
+    /// <p>PENDING</p></li>
+    /// <li>
+    /// <p>PASSED</p></li>
+    /// <li>
+    /// <p>WARNED</p></li>
+    /// <li>
+    /// <p>FAILED</p></li>
+    /// <li>
+    /// <p>SKIPPED</p></li>
+    /// <li>
+    /// <p>ERRORED</p></li>
+    /// <li>
+    /// <p>STOPPED</p></li>
     /// </ul>
     pub fn get_result(&self) -> &::std::option::Option<crate::types::ExecutionResult> {
         &self.result
@@ -682,21 +862,21 @@ impl RunBuilder {
     pub fn get_completed_jobs(&self) -> &::std::option::Option<i32> {
         &self.completed_jobs
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
         self.billing_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub fn set_billing_method(mut self, input: ::std::option::Option<crate::types::BillingMethod>) -> Self {
         self.billing_method = input;
         self
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p><note>
     /// <p>If you have unmetered device slots, you must set this to <code>unmetered</code> to use them. Otherwise, the run is counted toward metered device minutes.</p>
     /// </note>
     pub fn get_billing_method(&self) -> &::std::option::Option<crate::types::BillingMethod> {

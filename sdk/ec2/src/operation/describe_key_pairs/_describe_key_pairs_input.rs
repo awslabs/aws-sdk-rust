@@ -5,11 +5,16 @@
 pub struct DescribeKeyPairsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li><p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li><p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
+    /// <li>
+    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
+    /// <li>
+    /// <p><code>key-name</code> - The name of the key pair.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
@@ -32,11 +37,16 @@ pub struct DescribeKeyPairsInput {
 impl DescribeKeyPairsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li><p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li><p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
+    /// <li>
+    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
+    /// <li>
+    /// <p><code>key-name</code> - The name of the key pair.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
@@ -96,11 +106,16 @@ impl DescribeKeyPairsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li><p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li><p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
+    /// <li>
+    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
+    /// <li>
+    /// <p><code>key-name</code> - The name of the key pair.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
@@ -116,11 +131,16 @@ impl DescribeKeyPairsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li><p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li><p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
+    /// <li>
+    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
+    /// <li>
+    /// <p><code>key-name</code> - The name of the key pair.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
@@ -134,11 +154,16 @@ impl DescribeKeyPairsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>key-pair-id</code> - The ID of the key pair.</p></li>
-    /// <li><p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
-    /// <li><p><code>key-name</code> - The name of the key pair.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>key-pair-id</code> - The ID of the key pair.</p></li>
+    /// <li>
+    /// <p><code>fingerprint</code> - The fingerprint of the key pair.</p></li>
+    /// <li>
+    /// <p><code>key-name</code> - The name of the key pair.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify

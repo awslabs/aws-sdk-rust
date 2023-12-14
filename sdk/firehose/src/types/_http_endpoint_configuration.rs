@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HttpEndpointConfiguration {
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p><important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
     pub url: ::std::string::String,
@@ -14,7 +14,7 @@ pub struct HttpEndpointConfiguration {
     pub access_key: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointConfiguration {
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p><important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
     pub fn url(&self) -> &str {
@@ -55,7 +55,7 @@ pub struct HttpEndpointConfigurationBuilder {
     pub(crate) access_key: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointConfigurationBuilder {
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p><important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
     /// This field is required.
@@ -63,14 +63,14 @@ impl HttpEndpointConfigurationBuilder {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p><important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL of the HTTP endpoint selected as the destination.</p> <important>
+    /// <p>The URL of the HTTP endpoint selected as the destination.</p><important>
     /// <p>If you choose an HTTP endpoint as your destination, review and follow the instructions in the <a href="https://docs.aws.amazon.com/firehose/latest/dev/httpdeliveryrequestresponse.html">Appendix - HTTP Endpoint Delivery Request and Response Specifications</a>.</p>
     /// </important>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {

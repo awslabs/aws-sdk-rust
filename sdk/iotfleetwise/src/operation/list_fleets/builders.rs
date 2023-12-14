@@ -22,7 +22,7 @@ impl ListFleetsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListFleets`.
 ///
-/// <p>Retrieves information for each created fleet in an Amazon Web Services account.</p> <note>
+/// <p>Retrieves information for each created fleet in an Amazon Web Services account.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

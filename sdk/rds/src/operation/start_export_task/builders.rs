@@ -157,16 +157,23 @@ impl StartExportTaskFluentBuilder {
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
     /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
     /// <ul>
-    /// <li><p>s3:PutObject*</p></li>
-    /// <li><p>s3:GetObject*</p></li>
-    /// <li><p>s3:ListBucket</p></li>
-    /// <li><p>s3:DeleteObject*</p></li>
-    /// <li><p>s3:GetBucketLocation</p></li>
+    /// <li>
+    /// <p>s3:PutObject*</p></li>
+    /// <li>
+    /// <p>s3:GetObject*</p></li>
+    /// <li>
+    /// <p>s3:ListBucket</p></li>
+    /// <li>
+    /// <p>s3:DeleteObject*</p></li>
+    /// <li>
+    /// <p>s3:GetBucketLocation</p></li>
     /// </ul>
     /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:s3:::<i>your-s3-bucket</i> </code></p></li>
-    /// <li><p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i> </code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
     /// </ul>
     pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
@@ -175,16 +182,23 @@ impl StartExportTaskFluentBuilder {
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
     /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
     /// <ul>
-    /// <li><p>s3:PutObject*</p></li>
-    /// <li><p>s3:GetObject*</p></li>
-    /// <li><p>s3:ListBucket</p></li>
-    /// <li><p>s3:DeleteObject*</p></li>
-    /// <li><p>s3:GetBucketLocation</p></li>
+    /// <li>
+    /// <p>s3:PutObject*</p></li>
+    /// <li>
+    /// <p>s3:GetObject*</p></li>
+    /// <li>
+    /// <p>s3:ListBucket</p></li>
+    /// <li>
+    /// <p>s3:DeleteObject*</p></li>
+    /// <li>
+    /// <p>s3:GetBucketLocation</p></li>
     /// </ul>
     /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:s3:::<i>your-s3-bucket</i> </code></p></li>
-    /// <li><p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i> </code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
     /// </ul>
     pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
@@ -193,31 +207,47 @@ impl StartExportTaskFluentBuilder {
     /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
     /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
     /// <ul>
-    /// <li><p>s3:PutObject*</p></li>
-    /// <li><p>s3:GetObject*</p></li>
-    /// <li><p>s3:ListBucket</p></li>
-    /// <li><p>s3:DeleteObject*</p></li>
-    /// <li><p>s3:GetBucketLocation</p></li>
+    /// <li>
+    /// <p>s3:PutObject*</p></li>
+    /// <li>
+    /// <p>s3:GetObject*</p></li>
+    /// <li>
+    /// <p>s3:ListBucket</p></li>
+    /// <li>
+    /// <p>s3:DeleteObject*</p></li>
+    /// <li>
+    /// <p>s3:GetBucketLocation</p></li>
     /// </ul>
     /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:s3:::<i>your-s3-bucket</i> </code></p></li>
-    /// <li><p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i> </code></p></li>
+    /// <li>
+    /// <p><code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code></p></li>
     /// </ul>
     pub fn get_iam_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_role_arn()
     }
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
-    /// <li><p>kms:Encrypt</p></li>
-    /// <li><p>kms:Decrypt</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li><p>kms:ReEncryptFrom</p></li>
-    /// <li><p>kms:ReEncryptTo</p></li>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:RetireGrant</p></li>
+    /// <li>
+    /// <p>kms:Encrypt</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
+    /// <li>
+    /// <p>kms:ReEncryptFrom</p></li>
+    /// <li>
+    /// <p>kms:ReEncryptTo</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -225,15 +255,24 @@ impl StartExportTaskFluentBuilder {
     }
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
-    /// <li><p>kms:Encrypt</p></li>
-    /// <li><p>kms:Decrypt</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li><p>kms:ReEncryptFrom</p></li>
-    /// <li><p>kms:ReEncryptTo</p></li>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:RetireGrant</p></li>
+    /// <li>
+    /// <p>kms:Encrypt</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
+    /// <li>
+    /// <p>kms:ReEncryptFrom</p></li>
+    /// <li>
+    /// <p>kms:ReEncryptTo</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -241,15 +280,24 @@ impl StartExportTaskFluentBuilder {
     }
     /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
     /// <ul>
-    /// <li><p>kms:Encrypt</p></li>
-    /// <li><p>kms:Decrypt</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:GenerateDataKeyWithoutPlaintext</p></li>
-    /// <li><p>kms:ReEncryptFrom</p></li>
-    /// <li><p>kms:ReEncryptTo</p></li>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:RetireGrant</p></li>
+    /// <li>
+    /// <p>kms:Encrypt</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKeyWithoutPlaintext</p></li>
+    /// <li>
+    /// <p>kms:ReEncryptFrom</p></li>
+    /// <li>
+    /// <p>kms:ReEncryptTo</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:RetireGrant</p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
@@ -275,10 +323,14 @@ impl StartExportTaskFluentBuilder {
     /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li><p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li><p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li><p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li>
+    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
+    /// <li>
+    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
+    /// <li>
+    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li>
+    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
     pub fn export_only(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.export_only(input.into());
@@ -287,10 +339,14 @@ impl StartExportTaskFluentBuilder {
     /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li><p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li><p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li><p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li>
+    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
+    /// <li>
+    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
+    /// <li>
+    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li>
+    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
     pub fn set_export_only(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_export_only(input);
@@ -299,10 +355,14 @@ impl StartExportTaskFluentBuilder {
     /// <p>The data to be exported from the snapshot or cluster. If this parameter isn't provided, all of the data is exported.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>database</code> - Export all the data from a specified database.</p></li>
-    /// <li><p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
-    /// <li><p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
-    /// <li><p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li>
+    /// <p><code>database</code> - Export all the data from a specified database.</p></li>
+    /// <li>
+    /// <p><code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p></li>
+    /// <li>
+    /// <p><code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
+    /// <li>
+    /// <p><code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p></li>
     /// </ul>
     pub fn get_export_only(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_export_only()

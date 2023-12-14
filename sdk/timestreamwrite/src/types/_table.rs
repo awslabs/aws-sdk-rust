@@ -12,8 +12,10 @@ pub struct Table {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub table_status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>The retention duration for the memory store and magnetic store.</p>
@@ -42,8 +44,10 @@ impl Table {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn table_status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
         self.table_status.as_ref()
@@ -135,8 +139,10 @@ impl TableBuilder {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn table_status(mut self, input: crate::types::TableStatus) -> Self {
         self.table_status = ::std::option::Option::Some(input);
@@ -144,8 +150,10 @@ impl TableBuilder {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn set_table_status(mut self, input: ::std::option::Option<crate::types::TableStatus>) -> Self {
         self.table_status = input;
@@ -153,8 +161,10 @@ impl TableBuilder {
     }
     /// <p>The current state of the table:</p>
     /// <ul>
-    /// <li><p><code>DELETING</code> - The table is being deleted.</p></li>
-    /// <li><p><code>ACTIVE</code> - The table is ready for use.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The table is being deleted.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The table is ready for use.</p></li>
     /// </ul>
     pub fn get_table_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
         &self.table_status

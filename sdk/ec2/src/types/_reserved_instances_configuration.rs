@@ -6,7 +6,7 @@
 pub struct ReservedInstancesConfiguration {
     /// <p>The Availability Zone for the modified Reserved Instances.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The number of modified Reserved Instances.</p> <note>
+    /// <p>The number of modified Reserved Instances.</p><note>
     /// <p>This is a required field for a request.</p>
     /// </note>
     pub instance_count: ::std::option::Option<i32>,
@@ -22,7 +22,7 @@ impl ReservedInstancesConfiguration {
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
+    /// <p>The number of modified Reserved Instances.</p><note>
     /// <p>This is a required field for a request.</p>
     /// </note>
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
@@ -73,21 +73,21 @@ impl ReservedInstancesConfigurationBuilder {
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
+    /// <p>The number of modified Reserved Instances.</p><note>
     /// <p>This is a required field for a request.</p>
     /// </note>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
+    /// <p>The number of modified Reserved Instances.</p><note>
     /// <p>This is a required field for a request.</p>
     /// </note>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
-    /// <p>The number of modified Reserved Instances.</p> <note>
+    /// <p>The number of modified Reserved Instances.</p><note>
     /// <p>This is a required field for a request.</p>
     /// </note>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {

@@ -29,9 +29,12 @@ pub struct CreateRemoteAccessSessionInput {
     pub configuration: ::std::option::Option<crate::types::CreateRemoteAccessSessionConfiguration>,
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li>
+    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public devices, Device Farm always signs your apps again.</p>
@@ -84,9 +87,12 @@ impl CreateRemoteAccessSessionInput {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li>
+    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn interaction_mode(&self) -> ::std::option::Option<&crate::types::InteractionMode> {
         self.interaction_mode.as_ref()
@@ -275,9 +281,12 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li>
+    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
         self.interaction_mode = ::std::option::Option::Some(input);
@@ -285,9 +294,12 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li>
+    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
         self.interaction_mode = input;
@@ -295,9 +307,12 @@ impl CreateRemoteAccessSessionInputBuilder {
     }
     /// <p>The interaction mode of the remote access session. Valid values are:</p>
     /// <ul>
-    /// <li><p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
-    /// <li><p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
+    /// <li>
+    /// <p>INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You cannot run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>NO_VIDEO: You are connected to the device, but cannot interact with it or view the screen. This mode has the fastest test execution speed. You can run XCUITest framework-based tests in this mode.</p></li>
+    /// <li>
+    /// <p>VIDEO_ONLY: You can view the screen, but cannot touch or rotate it. You can run XCUITest framework-based tests and watch the screen in this mode.</p></li>
     /// </ul>
     pub fn get_interaction_mode(&self) -> &::std::option::Option<crate::types::InteractionMode> {
         &self.interaction_mode

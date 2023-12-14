@@ -130,11 +130,16 @@ impl GetCurrentUserDataFluentBuilder {
     }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li><p>Queues: 100</p></li>
-    /// <li><p>Routing profiles: 100</p></li>
-    /// <li><p>Agents: 100</p></li>
-    /// <li><p>Contact states: 9</p></li>
-    /// <li><p>User hierarchy groups: 1</p></li>
+    /// <li>
+    /// <p>Queues: 100</p></li>
+    /// <li>
+    /// <p>Routing profiles: 100</p></li>
+    /// <li>
+    /// <p>Agents: 100</p></li>
+    /// <li>
+    /// <p>Contact states: 9</p></li>
+    /// <li>
+    /// <p>User hierarchy groups: 1</p></li>
     /// </ul>
     /// <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
@@ -144,11 +149,16 @@ impl GetCurrentUserDataFluentBuilder {
     }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li><p>Queues: 100</p></li>
-    /// <li><p>Routing profiles: 100</p></li>
-    /// <li><p>Agents: 100</p></li>
-    /// <li><p>Contact states: 9</p></li>
-    /// <li><p>User hierarchy groups: 1</p></li>
+    /// <li>
+    /// <p>Queues: 100</p></li>
+    /// <li>
+    /// <p>Routing profiles: 100</p></li>
+    /// <li>
+    /// <p>Agents: 100</p></li>
+    /// <li>
+    /// <p>Contact states: 9</p></li>
+    /// <li>
+    /// <p>User hierarchy groups: 1</p></li>
     /// </ul>
     /// <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
@@ -158,11 +168,16 @@ impl GetCurrentUserDataFluentBuilder {
     }
     /// <p>The filters to apply to returned user data. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li><p>Queues: 100</p></li>
-    /// <li><p>Routing profiles: 100</p></li>
-    /// <li><p>Agents: 100</p></li>
-    /// <li><p>Contact states: 9</p></li>
-    /// <li><p>User hierarchy groups: 1</p></li>
+    /// <li>
+    /// <p>Queues: 100</p></li>
+    /// <li>
+    /// <p>Routing profiles: 100</p></li>
+    /// <li>
+    /// <p>Agents: 100</p></li>
+    /// <li>
+    /// <p>Contact states: 9</p></li>
+    /// <li>
+    /// <p>User hierarchy groups: 1</p></li>
     /// </ul>
     /// <p>The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>

@@ -7,9 +7,12 @@ pub struct CreateWebAclMigrationStackInput {
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration:</p>
     /// <ul>
-    /// <li><p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
-    /// <li><p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
-    /// <li><p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
+    /// <li>
+    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
+    /// <li>
+    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
+    /// <li>
+    /// <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
     /// </ul>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception.</p>
@@ -22,9 +25,12 @@ impl CreateWebAclMigrationStackInput {
     }
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration:</p>
     /// <ul>
-    /// <li><p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
-    /// <li><p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
-    /// <li><p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
+    /// <li>
+    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
+    /// <li>
+    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
+    /// <li>
+    /// <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
     /// </ul>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
@@ -67,9 +73,12 @@ impl CreateWebAclMigrationStackInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration:</p>
     /// <ul>
-    /// <li><p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
-    /// <li><p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
-    /// <li><p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
+    /// <li>
+    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
+    /// <li>
+    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
+    /// <li>
+    /// <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
     /// </ul>
     /// This field is required.
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,9 +87,12 @@ impl CreateWebAclMigrationStackInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration:</p>
     /// <ul>
-    /// <li><p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
-    /// <li><p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
-    /// <li><p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
+    /// <li>
+    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
+    /// <li>
+    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
+    /// <li>
+    /// <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
     /// </ul>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
@@ -88,9 +100,12 @@ impl CreateWebAclMigrationStackInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to store the CloudFormation template in. The S3 bucket must be configured as follows for the migration:</p>
     /// <ul>
-    /// <li><p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
-    /// <li><p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
-    /// <li><p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
+    /// <li>
+    /// <p>The bucket name must start with <code>aws-waf-migration-</code>. For example, <code>aws-waf-migration-my-web-acl</code>.</p></li>
+    /// <li>
+    /// <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2.</p></li>
+    /// <li>
+    /// <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section.</p></li>
     /// </ul>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name

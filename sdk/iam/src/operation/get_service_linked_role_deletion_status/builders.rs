@@ -109,8 +109,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
-    /// <service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -121,8 +120,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.inner = self.inner.deletion_task_id(input.into());
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
-    /// <service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
     /// /
     /// <role-name>
     /// /
@@ -133,8 +131,7 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.inner = self.inner.set_deletion_task_id(input);
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/
-    /// <service-principal-name>
+    /// <p>The deletion task identifier. This identifier is returned by the <code>DeleteServiceLinkedRole</code> operation in the format <code>task/aws-service-role/<service-principal-name>
     /// /
     /// <role-name>
     /// /

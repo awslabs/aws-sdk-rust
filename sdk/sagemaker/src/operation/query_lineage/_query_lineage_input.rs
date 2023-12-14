@@ -11,11 +11,16 @@ pub struct QueryLineageInput {
     pub include_edges: ::std::option::Option<bool>,
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
-    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
-    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
-    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
-    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<crate::types::QueryFilters>,
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
@@ -42,11 +47,16 @@ impl QueryLineageInput {
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
-    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
-    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
-    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
-    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::QueryFilters> {
         self.filters.as_ref()
@@ -134,11 +144,16 @@ impl QueryLineageInputBuilder {
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
-    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
-    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
-    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
-    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::QueryFilters) -> Self {
         self.filters = ::std::option::Option::Some(input);
@@ -146,11 +161,16 @@ impl QueryLineageInputBuilder {
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
-    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
-    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
-    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
-    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::QueryFilters>) -> Self {
         self.filters = input;
@@ -158,11 +178,16 @@ impl QueryLineageInputBuilder {
     }
     /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
     /// <ul>
-    /// <li><p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
-    /// <li><p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
-    /// <li><p>CreatedBefore - Filter entities created before this date.</p></li>
-    /// <li><p>ModifiedBefore - Filter entities modified before this date.</p></li>
-    /// <li><p>ModifiedAfter - Filter entities modified after this date.</p></li>
+    /// <li>
+    /// <p>Properties - Key-value pairs to match on the lineage entities' properties.</p></li>
+    /// <li>
+    /// <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p></li>
+    /// <li>
+    /// <p>CreatedBefore - Filter entities created before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedBefore - Filter entities modified before this date.</p></li>
+    /// <li>
+    /// <p>ModifiedAfter - Filter entities modified after this date.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::QueryFilters> {
         &self.filters

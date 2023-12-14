@@ -22,7 +22,7 @@ impl ListSignalCatalogNodesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSignalCatalogNodes`.
 ///
-/// <p>Lists of information about the signals (nodes) specified in a signal catalog.</p> <note>
+/// <p>Lists of information about the signals (nodes) specified in a signal catalog.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

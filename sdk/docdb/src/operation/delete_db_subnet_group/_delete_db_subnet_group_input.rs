@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbSubnetGroupInput {
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints:</p>
@@ -13,7 +13,7 @@ pub struct DeleteDbSubnetGroupInput {
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints:</p>
@@ -37,7 +37,7 @@ pub struct DeleteDbSubnetGroupInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInputBuilder {
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints:</p>
@@ -48,7 +48,7 @@ impl DeleteDbSubnetGroupInputBuilder {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints:</p>
@@ -58,7 +58,7 @@ impl DeleteDbSubnetGroupInputBuilder {
         self.db_subnet_group_name = input;
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints:</p>

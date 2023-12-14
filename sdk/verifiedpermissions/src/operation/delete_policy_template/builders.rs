@@ -22,7 +22,7 @@ impl DeletePolicyTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePolicyTemplate`.
 ///
-/// <p>Deletes the specified policy template from the policy store.</p> <important>
+/// <p>Deletes the specified policy template from the policy store.</p><important>
 /// <p>This operation also deletes any policies that were created from the specified policy template. Those policies are immediately removed from all future API responses, and are asynchronously deleted from the policy store.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

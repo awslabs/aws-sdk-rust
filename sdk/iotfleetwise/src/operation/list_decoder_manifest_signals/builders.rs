@@ -22,7 +22,7 @@ impl ListDecoderManifestSignalsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDecoderManifestSignals`.
 ///
-/// <p>A list of information about signal decoders specified in a decoder manifest.</p> <note>
+/// <p>A list of information about signal decoders specified in a decoder manifest.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -5,7 +5,7 @@
 pub struct DeleteCampaignOutput {
     /// <p>The name of the deleted campaign.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p><note>
     /// <p>The ARN isn’t returned if a campaign doesn’t exist.</p>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl DeleteCampaignOutput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p><note>
     /// <p>The ARN isn’t returned if a campaign doesn’t exist.</p>
     /// </note>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -58,21 +58,21 @@ impl DeleteCampaignOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p><note>
     /// <p>The ARN isn’t returned if a campaign doesn’t exist.</p>
     /// </note>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p><note>
     /// <p>The ARN isn’t returned if a campaign doesn’t exist.</p>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the deleted campaign.</p><note>
     /// <p>The ARN isn’t returned if a campaign doesn’t exist.</p>
     /// </note>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {

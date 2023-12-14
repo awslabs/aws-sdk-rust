@@ -22,7 +22,7 @@ impl DeleteProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
-/// <p>Deletes a project. To delete a project, it must not have any placements associated with it.</p> <note>
+/// <p>Deletes a project. To delete a project, it must not have any placements associated with it.</p><note>
 /// <p>When you delete a project, all associated data becomes irretrievable.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -244,10 +244,14 @@ impl CreateLocationObjectStorageFluentBuilder {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li><p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li><p>Any intermediate certificates</p></li>
-    /// <li><p>base64 encoding</p></li>
-    /// <li><p>A <code>.pem</code> extension</p></li>
+    /// <li>
+    /// <p>The certificate of the signing certificate authority (CA)</p></li>
+    /// <li>
+    /// <p>Any intermediate certificates</p></li>
+    /// <li>
+    /// <p>base64 encoding</p></li>
+    /// <li>
+    /// <p>A <code>.pem</code> extension</p></li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
@@ -257,10 +261,14 @@ impl CreateLocationObjectStorageFluentBuilder {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li><p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li><p>Any intermediate certificates</p></li>
-    /// <li><p>base64 encoding</p></li>
-    /// <li><p>A <code>.pem</code> extension</p></li>
+    /// <li>
+    /// <p>The certificate of the signing certificate authority (CA)</p></li>
+    /// <li>
+    /// <p>Any intermediate certificates</p></li>
+    /// <li>
+    /// <p>base64 encoding</p></li>
+    /// <li>
+    /// <p>A <code>.pem</code> extension</p></li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
@@ -270,10 +278,14 @@ impl CreateLocationObjectStorageFluentBuilder {
     }
     /// <p>Specifies a file with the certificates that are used to sign the object storage server's certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The file you specify must include the following:</p>
     /// <ul>
-    /// <li><p>The certificate of the signing certificate authority (CA)</p></li>
-    /// <li><p>Any intermediate certificates</p></li>
-    /// <li><p>base64 encoding</p></li>
-    /// <li><p>A <code>.pem</code> extension</p></li>
+    /// <li>
+    /// <p>The certificate of the signing certificate authority (CA)</p></li>
+    /// <li>
+    /// <p>Any intermediate certificates</p></li>
+    /// <li>
+    /// <p>base64 encoding</p></li>
+    /// <li>
+    /// <p>A <code>.pem</code> extension</p></li>
     /// </ul>
     /// <p>The file can be up to 32768 bytes (before base64 encoding).</p>
     /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>

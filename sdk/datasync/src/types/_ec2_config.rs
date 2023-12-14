@@ -7,9 +7,11 @@ pub struct Ec2Config {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
-    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li>
+    /// <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
+    /// </ul><note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
     pub subnet_arn: ::std::string::String,
@@ -20,9 +22,11 @@ impl Ec2Config {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
-    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li>
+    /// <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
+    /// </ul><note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
     pub fn subnet_arn(&self) -> &str {
@@ -53,9 +57,11 @@ impl Ec2ConfigBuilder {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
-    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li>
+    /// <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
+    /// </ul><note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
     /// This field is required.
@@ -66,9 +72,11 @@ impl Ec2ConfigBuilder {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
-    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li>
+    /// <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
+    /// </ul><note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
     pub fn set_subnet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -78,9 +86,11 @@ impl Ec2ConfigBuilder {
     /// <p>Specifies the ARN of a subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network interfaces</a> for managing traffic during your transfer.</p>
     /// <p>The subnet must be located:</p>
     /// <ul>
-    /// <li><p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
-    /// <li><p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>In the same virtual private cloud (VPC) as the Amazon EFS file system.</p></li>
+    /// <li>
+    /// <p>In the same Availability Zone as at least one mount target for the Amazon EFS file system.</p></li>
+    /// </ul><note>
     /// <p>You don't need to specify a subnet that includes a file system mount target.</p>
     /// </note>
     pub fn get_subnet_arn(&self) -> &::std::option::Option<::std::string::String> {

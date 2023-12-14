@@ -25,10 +25,14 @@ impl DescribeForecastExportJobInputBuilder {
 /// <p>Describes a forecast export job created using the <code>CreateForecastExportJob</code> operation.</p>
 /// <p>In addition to listing the properties provided by the user in the <code>CreateForecastExportJob</code> request, this operation lists the following properties:</p>
 /// <ul>
-/// <li><p><code>CreationTime</code></p></li>
-/// <li><p><code>LastModificationTime</code></p></li>
-/// <li><p><code>Status</code></p></li>
-/// <li><p><code>Message</code> - If an error occurred, information about the error.</p></li>
+/// <li>
+/// <p><code>CreationTime</code></p></li>
+/// <li>
+/// <p><code>LastModificationTime</code></p></li>
+/// <li>
+/// <p><code>Status</code></p></li>
+/// <li>
+/// <p><code>Message</code> - If an error occurred, information about the error.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeForecastExportJobFluentBuilder {

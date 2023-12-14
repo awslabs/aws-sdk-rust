@@ -152,8 +152,10 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>gre-key</code> - The ID of a trunk interface association.</p></li>
-    /// <li><p><code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p></li>
+    /// <li>
+    /// <p><code>gre-key</code> - The ID of a trunk interface association.</p></li>
+    /// <li>
+    /// <p><code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -161,8 +163,10 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>gre-key</code> - The ID of a trunk interface association.</p></li>
-    /// <li><p><code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p></li>
+    /// <li>
+    /// <p><code>gre-key</code> - The ID of a trunk interface association.</p></li>
+    /// <li>
+    /// <p><code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -170,8 +174,10 @@ impl DescribeTrunkInterfaceAssociationsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>gre-key</code> - The ID of a trunk interface association.</p></li>
-    /// <li><p><code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p></li>
+    /// <li>
+    /// <p><code>gre-key</code> - The ID of a trunk interface association.</p></li>
+    /// <li>
+    /// <p><code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

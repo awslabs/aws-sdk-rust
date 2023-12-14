@@ -9,12 +9,16 @@ pub struct ConfigureShard {
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li><p>Redis (cluster mode disabled)</p>
+    /// <li>
+    /// <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li><p>If Multi-AZ: 1</p></li>
-    /// <li><p>If Multi-AZ: 0</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 1</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
-    /// <li><p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li>
+    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub new_replica_count: ::std::option::Option<i32>,
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
@@ -30,12 +34,16 @@ impl ConfigureShard {
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li><p>Redis (cluster mode disabled)</p>
+    /// <li>
+    /// <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li><p>If Multi-AZ: 1</p></li>
-    /// <li><p>If Multi-AZ: 0</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 1</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
-    /// <li><p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li>
+    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub fn new_replica_count(&self) -> ::std::option::Option<i32> {
         self.new_replica_count
@@ -88,12 +96,16 @@ impl ConfigureShardBuilder {
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li><p>Redis (cluster mode disabled)</p>
+    /// <li>
+    /// <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li><p>If Multi-AZ: 1</p></li>
-    /// <li><p>If Multi-AZ: 0</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 1</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
-    /// <li><p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li>
+    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     /// This field is required.
     pub fn new_replica_count(mut self, input: i32) -> Self {
@@ -103,12 +115,16 @@ impl ConfigureShardBuilder {
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li><p>Redis (cluster mode disabled)</p>
+    /// <li>
+    /// <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li><p>If Multi-AZ: 1</p></li>
-    /// <li><p>If Multi-AZ: 0</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 1</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
-    /// <li><p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li>
+    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.new_replica_count = input;
@@ -117,12 +133,16 @@ impl ConfigureShardBuilder {
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
-    /// <li><p>Redis (cluster mode disabled)</p>
+    /// <li>
+    /// <p>Redis (cluster mode disabled)</p>
     /// <ul>
-    /// <li><p>If Multi-AZ: 1</p></li>
-    /// <li><p>If Multi-AZ: 0</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 1</p></li>
+    /// <li>
+    /// <p>If Multi-AZ: 0</p></li>
     /// </ul></li>
-    /// <li><p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
+    /// <li>
+    /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub fn get_new_replica_count(&self) -> &::std::option::Option<i32> {
         &self.new_replica_count

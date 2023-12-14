@@ -9,17 +9,29 @@ pub struct CreateKxChangesetInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
-    /// <li><p>PUT – Adds or updates files in a database.</p></li>
-    /// <li><p>DELETE – Deletes files in a database.</p></li>
+    /// <li>
+    /// <p>PUT – Adds or updates files in a database.</p></li>
+    /// <li>
+    /// <p>DELETE – Deletes files in a database.</p></li>
     /// </ul>
     /// <p>All the change requests require a mandatory <code>dbPath</code> attribute that defines the path within the database directory. All database paths must start with a leading / and end with a trailing /. The <code>s3Path</code> attribute defines the s3 source file path and is required for a PUT change type. The <code>s3path</code> must end with a trailing / if it is a directory and must end without a trailing / if it is a file.</p>
     /// <p>Here are few examples of how you can use the change request object:</p>
     /// <ol>
-    /// <li><p>This request adds a single sym file at database root location.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p> <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
-    /// <li><p>This request deletes the 2020.01.02 partition of the database.</p> <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
-    /// <li><p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p> <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request adds a single sym file at database root location.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
+    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request deletes the 2020.01.02 partition of the database.</p>
+    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <li>
+    /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
+    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
     pub change_requests: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>,
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
@@ -36,17 +48,29 @@ impl CreateKxChangesetInput {
     }
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
-    /// <li><p>PUT – Adds or updates files in a database.</p></li>
-    /// <li><p>DELETE – Deletes files in a database.</p></li>
+    /// <li>
+    /// <p>PUT – Adds or updates files in a database.</p></li>
+    /// <li>
+    /// <p>DELETE – Deletes files in a database.</p></li>
     /// </ul>
     /// <p>All the change requests require a mandatory <code>dbPath</code> attribute that defines the path within the database directory. All database paths must start with a leading / and end with a trailing /. The <code>s3Path</code> attribute defines the s3 source file path and is required for a PUT change type. The <code>s3path</code> must end with a trailing / if it is a directory and must end without a trailing / if it is a file.</p>
     /// <p>Here are few examples of how you can use the change request object:</p>
     /// <ol>
-    /// <li><p>This request adds a single sym file at database root location.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p> <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
-    /// <li><p>This request deletes the 2020.01.02 partition of the database.</p> <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
-    /// <li><p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p> <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request adds a single sym file at database root location.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
+    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request deletes the 2020.01.02 partition of the database.</p>
+    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <li>
+    /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
+    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_requests.is_none()`.
@@ -111,17 +135,29 @@ impl CreateKxChangesetInputBuilder {
     ///
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
-    /// <li><p>PUT – Adds or updates files in a database.</p></li>
-    /// <li><p>DELETE – Deletes files in a database.</p></li>
+    /// <li>
+    /// <p>PUT – Adds or updates files in a database.</p></li>
+    /// <li>
+    /// <p>DELETE – Deletes files in a database.</p></li>
     /// </ul>
     /// <p>All the change requests require a mandatory <code>dbPath</code> attribute that defines the path within the database directory. All database paths must start with a leading / and end with a trailing /. The <code>s3Path</code> attribute defines the s3 source file path and is required for a PUT change type. The <code>s3path</code> must end with a trailing / if it is a directory and must end without a trailing / if it is a file.</p>
     /// <p>Here are few examples of how you can use the change request object:</p>
     /// <ol>
-    /// <li><p>This request adds a single sym file at database root location.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p> <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
-    /// <li><p>This request deletes the 2020.01.02 partition of the database.</p> <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
-    /// <li><p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p> <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request adds a single sym file at database root location.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
+    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request deletes the 2020.01.02 partition of the database.</p>
+    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <li>
+    /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
+    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
     pub fn change_requests(mut self, input: crate::types::ChangeRequest) -> Self {
         let mut v = self.change_requests.unwrap_or_default();
@@ -131,17 +167,29 @@ impl CreateKxChangesetInputBuilder {
     }
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
-    /// <li><p>PUT – Adds or updates files in a database.</p></li>
-    /// <li><p>DELETE – Deletes files in a database.</p></li>
+    /// <li>
+    /// <p>PUT – Adds or updates files in a database.</p></li>
+    /// <li>
+    /// <p>DELETE – Deletes files in a database.</p></li>
     /// </ul>
     /// <p>All the change requests require a mandatory <code>dbPath</code> attribute that defines the path within the database directory. All database paths must start with a leading / and end with a trailing /. The <code>s3Path</code> attribute defines the s3 source file path and is required for a PUT change type. The <code>s3path</code> must end with a trailing / if it is a directory and must end without a trailing / if it is a file.</p>
     /// <p>Here are few examples of how you can use the change request object:</p>
     /// <ol>
-    /// <li><p>This request adds a single sym file at database root location.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p> <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
-    /// <li><p>This request deletes the 2020.01.02 partition of the database.</p> <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
-    /// <li><p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p> <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request adds a single sym file at database root location.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
+    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request deletes the 2020.01.02 partition of the database.</p>
+    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <li>
+    /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
+    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
     pub fn set_change_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>>) -> Self {
         self.change_requests = input;
@@ -149,17 +197,29 @@ impl CreateKxChangesetInputBuilder {
     }
     /// <p>A list of change request objects that are run in order. A change request object consists of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType can has the following values:</p>
     /// <ul>
-    /// <li><p>PUT – Adds or updates files in a database.</p></li>
-    /// <li><p>DELETE – Deletes files in a database.</p></li>
+    /// <li>
+    /// <p>PUT – Adds or updates files in a database.</p></li>
+    /// <li>
+    /// <p>DELETE – Deletes files in a database.</p></li>
     /// </ul>
     /// <p>All the change requests require a mandatory <code>dbPath</code> attribute that defines the path within the database directory. All database paths must start with a leading / and end with a trailing /. The <code>s3Path</code> attribute defines the s3 source file path and is required for a PUT change type. The <code>s3path</code> must end with a trailing / if it is a directory and must end without a trailing / if it is a file.</p>
     /// <p>Here are few examples of how you can use the change request object:</p>
     /// <ol>
-    /// <li><p>This request adds a single sym file at database root location.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p> <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
-    /// <li><p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p> <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
-    /// <li><p>This request deletes the 2020.01.02 partition of the database.</p> <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
-    /// <li><p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p> <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request adds a single sym file at database root location.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition of the database.</p>
+    /// <p><code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code></p></li>
+    /// <li>
+    /// <p>This request adds files in the given <code>s3Path</code> under the <i>taq</i> table partition of the database.</p>
+    /// <p><code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
+    /// <li>
+    /// <p>This request deletes the 2020.01.02 partition of the database.</p>
+    /// <p><code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code></p></li>
+    /// <li>
+    /// <p>The <i>DELETE</i> request allows you to delete the existing files under the 2020.01.02 partition of the database, and the <i>PUT</i> request adds a new taq table under it.</p>
+    /// <p><code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code></p></li>
     /// </ol>
     pub fn get_change_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeRequest>> {
         &self.change_requests

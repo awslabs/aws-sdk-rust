@@ -22,7 +22,7 @@ impl RegisterRobotInputBuilder {
 }
 /// Fluent builder constructing a request to `RegisterRobot`.
 ///
-/// <p>Registers a robot with a fleet.</p> <important>
+/// <p>Registers a robot with a fleet.</p><important>
 /// <p>This API is no longer supported and will throw an error if used.</p>
 /// </important>
 #[deprecated(

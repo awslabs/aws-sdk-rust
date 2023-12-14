@@ -16,7 +16,7 @@ pub struct UpdateContainerServiceInput {
     pub is_disabled: ::std::option::Option<bool>,
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
@@ -47,7 +47,7 @@ impl UpdateContainerServiceInput {
     }
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
@@ -153,7 +153,7 @@ impl UpdateContainerServiceInputBuilder {
     ///
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
@@ -165,7 +165,7 @@ impl UpdateContainerServiceInputBuilder {
     }
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
@@ -178,7 +178,7 @@ impl UpdateContainerServiceInputBuilder {
     }
     /// <p>The public domain names to use with the container service, such as <code>example.com</code> and <code>www.example.com</code>.</p>
     /// <p>You can specify up to four public domain names for a container service. The domain names that you specify are used when you create a deployment with a container configured as the public endpoint of your container service.</p>
-    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p> <important>
+    /// <p>If you don't specify public domain names, then you can use the default domain of the container service.</p><important>
     /// <p>You must create and validate an SSL/TLS certificate before you can use public domain names with your container service. Use the <code>CreateCertificate</code> action to create a certificate for the public domain names you want to use with your container service.</p>
     /// </important>
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>

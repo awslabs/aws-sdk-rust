@@ -22,7 +22,7 @@ impl ListChannelBansInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChannelBans`.
 ///
-/// <p>Lists all the users and bots banned from a particular channel.</p> <note>
+/// <p>Lists all the users and bots banned from a particular channel.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

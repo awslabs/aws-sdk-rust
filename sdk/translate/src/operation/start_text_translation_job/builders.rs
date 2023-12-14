@@ -236,7 +236,7 @@ impl StartTextTranslationJobFluentBuilder {
     ///
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
     /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
-    /// <p>This parameter accepts only one parallel data resource.</p> <note>
+    /// <p>This parameter accepts only one parallel data resource.</p><note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
@@ -247,7 +247,7 @@ impl StartTextTranslationJobFluentBuilder {
     }
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
     /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
-    /// <p>This parameter accepts only one parallel data resource.</p> <note>
+    /// <p>This parameter accepts only one parallel data resource.</p><note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
@@ -258,7 +258,7 @@ impl StartTextTranslationJobFluentBuilder {
     }
     /// <p>The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.</p>
     /// <p>When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.</p>
-    /// <p>This parameter accepts only one parallel data resource.</p> <note>
+    /// <p>This parameter accepts only one parallel data resource.</p><note>
     /// <p>Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see <a href="http://aws.amazon.com/translate/pricing/">Amazon Translate pricing</a>.</p>
     /// </note>
     /// <p>For a list of available parallel data resources, use the <code>ListParallelData</code> operation.</p>
@@ -282,9 +282,12 @@ impl StartTextTranslationJobFluentBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: not supported.</p></li>
-    /// <li><p>Formality: sets the formality level of the output text.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: not supported.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the output text.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.inner = self.inner.settings(input);
@@ -292,9 +295,12 @@ impl StartTextTranslationJobFluentBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: not supported.</p></li>
-    /// <li><p>Formality: sets the formality level of the output text.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: not supported.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the output text.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn set_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.inner = self.inner.set_settings(input);
@@ -302,9 +308,12 @@ impl StartTextTranslationJobFluentBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: not supported.</p></li>
-    /// <li><p>Formality: sets the formality level of the output text.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in your translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: not supported.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the output text.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in your translation output.</p></li>
     /// </ul>
     pub fn get_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         self.inner.get_settings()

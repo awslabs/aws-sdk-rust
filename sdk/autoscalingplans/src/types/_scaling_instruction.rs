@@ -2,7 +2,7 @@
 
 /// <p>Describes a scaling instruction for a scalable resource in a scaling plan. Each scaling instruction applies to one resource.</p>
 /// <p>AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified.</p>
-/// <p>AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast.</p> <important>
+/// <p>AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast.</p><important>
 /// <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html">Best Practices for AWS Auto Scaling</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
@@ -12,24 +12,38 @@ pub struct ScalingInstruction {
     pub service_namespace: crate::types::ServiceNamespace,
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
-    /// <li><p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
-    /// <li><p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
-    /// <li><p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
-    /// <li><p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
-    /// <li><p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
-    /// <li><p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
     /// </ul>
     pub resource_id: ::std::string::String,
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
-    /// <li><p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
-    /// <li><p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
-    /// <li><p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
-    /// <li><p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
+    /// <li>
+    /// <p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <li>
+    /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
     /// </ul>
     pub scalable_dimension: crate::types::ScalableDimension,
     /// <p>The minimum capacity of the resource.</p>
@@ -49,9 +63,12 @@ pub struct ScalingInstruction {
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
-    /// <li><p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
-    /// <li><p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
+    /// <li>
+    /// <p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
     /// </ul>
     /// <p>Only valid when configuring predictive scaling.</p>
     pub predictive_scaling_max_capacity_behavior: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
@@ -77,12 +94,18 @@ impl ScalingInstruction {
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
-    /// <li><p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
-    /// <li><p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
-    /// <li><p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
-    /// <li><p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
-    /// <li><p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
-    /// <li><p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
     /// </ul>
     pub fn resource_id(&self) -> &str {
         use std::ops::Deref;
@@ -90,14 +113,22 @@ impl ScalingInstruction {
     }
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
-    /// <li><p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
-    /// <li><p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
-    /// <li><p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
-    /// <li><p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
+    /// <li>
+    /// <p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <li>
+    /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
     /// </ul>
     pub fn scalable_dimension(&self) -> &crate::types::ScalableDimension {
         &self.scalable_dimension
@@ -132,9 +163,12 @@ impl ScalingInstruction {
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
-    /// <li><p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
-    /// <li><p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
+    /// <li>
+    /// <p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
     /// </ul>
     /// <p>Only valid when configuring predictive scaling.</p>
     pub fn predictive_scaling_max_capacity_behavior(&self) -> ::std::option::Option<&crate::types::PredictiveScalingMaxCapacityBehavior> {
@@ -207,12 +241,18 @@ impl ScalingInstructionBuilder {
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
-    /// <li><p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
-    /// <li><p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
-    /// <li><p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
-    /// <li><p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
-    /// <li><p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
-    /// <li><p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -221,12 +261,18 @@ impl ScalingInstructionBuilder {
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
-    /// <li><p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
-    /// <li><p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
-    /// <li><p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
-    /// <li><p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
-    /// <li><p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
-    /// <li><p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
@@ -234,26 +280,40 @@ impl ScalingInstructionBuilder {
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
-    /// <li><p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
-    /// <li><p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
-    /// <li><p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
-    /// <li><p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
-    /// <li><p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
-    /// <li><p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
+    /// <li>
+    /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p></li>
+    /// <li>
+    /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p></li>
+    /// <li>
+    /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example: <code>table/my-table</code>.</p></li>
+    /// <li>
+    /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p></li>
+    /// <li>
+    /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
-    /// <li><p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
-    /// <li><p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
-    /// <li><p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
-    /// <li><p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
+    /// <li>
+    /// <p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <li>
+    /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
     /// </ul>
     /// This field is required.
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
@@ -262,14 +322,22 @@ impl ScalingInstructionBuilder {
     }
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
-    /// <li><p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
-    /// <li><p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
-    /// <li><p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
-    /// <li><p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
+    /// <li>
+    /// <p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <li>
+    /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.scalable_dimension = input;
@@ -277,14 +345,22 @@ impl ScalingInstructionBuilder {
     }
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
-    /// <li><p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
-    /// <li><p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
-    /// <li><p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
-    /// <li><p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
-    /// <li><p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
-    /// <li><p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
+    /// <li>
+    /// <p><code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p></li>
+    /// <li>
+    /// <p><code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p></li>
+    /// <li>
+    /// <p><code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p></li>
+    /// <li>
+    /// <p><code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p></li>
     /// </ul>
     pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         &self.scalable_dimension
@@ -393,9 +469,12 @@ impl ScalingInstructionBuilder {
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
-    /// <li><p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
-    /// <li><p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
+    /// <li>
+    /// <p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
     /// </ul>
     /// <p>Only valid when configuring predictive scaling.</p>
     pub fn predictive_scaling_max_capacity_behavior(mut self, input: crate::types::PredictiveScalingMaxCapacityBehavior) -> Self {
@@ -405,9 +484,12 @@ impl ScalingInstructionBuilder {
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
-    /// <li><p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
-    /// <li><p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
+    /// <li>
+    /// <p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
     /// </ul>
     /// <p>Only valid when configuring predictive scaling.</p>
     pub fn set_predictive_scaling_max_capacity_behavior(
@@ -420,9 +502,12 @@ impl ScalingInstructionBuilder {
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
-    /// <li><p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
-    /// <li><p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
+    /// <li>
+    /// <p><code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity. The maximum capacity is enforced as a hard limit.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity.</p></li>
+    /// <li>
+    /// <p><code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource capacity higher than the maximum capacity by a specified buffer value. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs.</p></li>
     /// </ul>
     /// <p>Only valid when configuring predictive scaling.</p>
     pub fn get_predictive_scaling_max_capacity_behavior(&self) -> &::std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior> {

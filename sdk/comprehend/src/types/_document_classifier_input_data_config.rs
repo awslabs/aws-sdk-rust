@@ -7,8 +7,11 @@
 pub struct DocumentClassifierInputDataConfig {
     /// <p>The format of your training data:</p>
     /// <ul>
-    /// <li><p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
-    /// <li><p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
     pub data_format: ::std::option::Option<crate::types::DocumentClassifierDataFormat>,
@@ -30,9 +33,12 @@ pub struct DocumentClassifierInputDataConfig {
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// <p>By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type:</p>
     /// <ul>
-    /// <li><p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
+    /// <li>
+    /// <p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
     /// </ul>
     /// <p><code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
     /// <p>For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide.</p>
@@ -41,8 +47,11 @@ pub struct DocumentClassifierInputDataConfig {
 impl DocumentClassifierInputDataConfig {
     /// <p>The format of your training data:</p>
     /// <ul>
-    /// <li><p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
-    /// <li><p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
     pub fn data_format(&self) -> ::std::option::Option<&crate::types::DocumentClassifierDataFormat> {
@@ -80,9 +89,12 @@ impl DocumentClassifierInputDataConfig {
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// <p>By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type:</p>
     /// <ul>
-    /// <li><p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
+    /// <li>
+    /// <p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
     /// </ul>
     /// <p><code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
     /// <p>For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide.</p>
@@ -113,8 +125,11 @@ pub struct DocumentClassifierInputDataConfigBuilder {
 impl DocumentClassifierInputDataConfigBuilder {
     /// <p>The format of your training data:</p>
     /// <ul>
-    /// <li><p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
-    /// <li><p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
     pub fn data_format(mut self, input: crate::types::DocumentClassifierDataFormat) -> Self {
@@ -123,8 +138,11 @@ impl DocumentClassifierInputDataConfigBuilder {
     }
     /// <p>The format of your training data:</p>
     /// <ul>
-    /// <li><p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
-    /// <li><p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
     pub fn set_data_format(mut self, input: ::std::option::Option<crate::types::DocumentClassifierDataFormat>) -> Self {
@@ -133,8 +151,11 @@ impl DocumentClassifierInputDataConfigBuilder {
     }
     /// <p>The format of your training data:</p>
     /// <ul>
-    /// <li><p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
-    /// <li><p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p> <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the first column, and documents are provided in the second. If you use this value, you must provide the <code>S3Uri</code> parameter in your request.</p></li>
+    /// <li>
+    /// <p><code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON object that contains a training document and its associated labels.</p>
+    /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.</p></li>
     /// </ul>
     /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.</p>
     pub fn get_data_format(&self) -> &::std::option::Option<crate::types::DocumentClassifierDataFormat> {
@@ -242,9 +263,12 @@ impl DocumentClassifierInputDataConfigBuilder {
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// <p>By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type:</p>
     /// <ul>
-    /// <li><p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
+    /// <li>
+    /// <p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
     /// </ul>
     /// <p><code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
     /// <p>For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide.</p>
@@ -255,9 +279,12 @@ impl DocumentClassifierInputDataConfigBuilder {
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// <p>By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type:</p>
     /// <ul>
-    /// <li><p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
+    /// <li>
+    /// <p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
     /// </ul>
     /// <p><code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
     /// <p>For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide.</p>
@@ -268,9 +295,12 @@ impl DocumentClassifierInputDataConfigBuilder {
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     /// <p>By default, Amazon Comprehend performs the following actions to extract text from files, based on the input file type:</p>
     /// <ul>
-    /// <li><p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
-    /// <li><p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
+    /// <li>
+    /// <p><b>Word files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Digital PDF files</b> - Amazon Comprehend parser extracts the text.</p></li>
+    /// <li>
+    /// <p><b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract <code>DetectDocumentText</code> API to extract the text.</p></li>
     /// </ul>
     /// <p><code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
     /// <p>For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide.</p>

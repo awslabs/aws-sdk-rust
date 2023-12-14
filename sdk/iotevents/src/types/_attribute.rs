@@ -5,8 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors.</p>
-    /// <p>Syntax: <code>
-    /// <field-name>
+    /// <p>Syntax: <code><field-name>
     /// .
     /// <field-name>
     /// ...
@@ -16,8 +15,7 @@ pub struct Attribute {
 }
 impl Attribute {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors.</p>
-    /// <p>Syntax: <code>
-    /// <field-name>
+    /// <p>Syntax: <code><field-name>
     /// .
     /// <field-name>
     /// ...
@@ -43,8 +41,7 @@ pub struct AttributeBuilder {
 }
 impl AttributeBuilder {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors.</p>
-    /// <p>Syntax: <code>
-    /// <field-name>
+    /// <p>Syntax: <code><field-name>
     /// .
     /// <field-name>
     /// ...
@@ -56,8 +53,7 @@ impl AttributeBuilder {
         self
     }
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors.</p>
-    /// <p>Syntax: <code>
-    /// <field-name>
+    /// <p>Syntax: <code><field-name>
     /// .
     /// <field-name>
     /// ...
@@ -68,8 +64,7 @@ impl AttributeBuilder {
         self
     }
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors.</p>
-    /// <p>Syntax: <code>
-    /// <field-name>
+    /// <p>Syntax: <code><field-name>
     /// .
     /// <field-name>
     /// ...

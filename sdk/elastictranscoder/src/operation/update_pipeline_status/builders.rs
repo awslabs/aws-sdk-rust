@@ -125,8 +125,10 @@ impl UpdatePipelineStatusFluentBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status(input.into());
@@ -134,8 +136,10 @@ impl UpdatePipelineStatusFluentBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -143,8 +147,10 @@ impl UpdatePipelineStatusFluentBuilder {
     }
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
-    /// <li><p><code>Active</code>: The pipeline is processing jobs.</p></li>
-    /// <li><p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Active</code>: The pipeline is processing jobs.</p></li>
+    /// <li>
+    /// <p><code>Paused</code>: The pipeline is not currently processing jobs.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_status()

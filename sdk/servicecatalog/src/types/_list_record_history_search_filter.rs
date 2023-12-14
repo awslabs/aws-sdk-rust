@@ -6,8 +6,10 @@
 pub struct ListRecordHistorySearchFilter {
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li><p><code>product</code> - Filter results based on the specified product identifier.</p></li>
-    /// <li><p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
+    /// <li>
+    /// <p><code>product</code> - Filter results based on the specified product identifier.</p></li>
+    /// <li>
+    /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The filter value.</p>
@@ -16,8 +18,10 @@ pub struct ListRecordHistorySearchFilter {
 impl ListRecordHistorySearchFilter {
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li><p><code>product</code> - Filter results based on the specified product identifier.</p></li>
-    /// <li><p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
+    /// <li>
+    /// <p><code>product</code> - Filter results based on the specified product identifier.</p></li>
+    /// <li>
+    /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -44,8 +48,10 @@ pub struct ListRecordHistorySearchFilterBuilder {
 impl ListRecordHistorySearchFilterBuilder {
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li><p><code>product</code> - Filter results based on the specified product identifier.</p></li>
-    /// <li><p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
+    /// <li>
+    /// <p><code>product</code> - Filter results based on the specified product identifier.</p></li>
+    /// <li>
+    /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -53,8 +59,10 @@ impl ListRecordHistorySearchFilterBuilder {
     }
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li><p><code>product</code> - Filter results based on the specified product identifier.</p></li>
-    /// <li><p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
+    /// <li>
+    /// <p><code>product</code> - Filter results based on the specified product identifier.</p></li>
+    /// <li>
+    /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
@@ -62,8 +70,10 @@ impl ListRecordHistorySearchFilterBuilder {
     }
     /// <p>The filter key.</p>
     /// <ul>
-    /// <li><p><code>product</code> - Filter results based on the specified product identifier.</p></li>
-    /// <li><p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
+    /// <li>
+    /// <p><code>product</code> - Filter results based on the specified product identifier.</p></li>
+    /// <li>
+    /// <p><code>provisionedproduct</code> - Filter results based on the provisioned product identifier.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

@@ -10,9 +10,12 @@ pub struct BatchGetFrameMetricDataOutput {
     pub end_time: ::aws_smithy_types::DateTime,
     /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub resolution: crate::types::AggregationPeriod,
     /// <p>List of instances, or time steps, in the time series. For example, if the <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code> is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the list that are each five minutes appart.</p>
@@ -34,9 +37,12 @@ impl BatchGetFrameMetricDataOutput {
     }
     /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn resolution(&self) -> &crate::types::AggregationPeriod {
         &self.resolution
@@ -114,9 +120,12 @@ impl BatchGetFrameMetricDataOutputBuilder {
     }
     /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     /// This field is required.
     pub fn resolution(mut self, input: crate::types::AggregationPeriod) -> Self {
@@ -125,9 +134,12 @@ impl BatchGetFrameMetricDataOutputBuilder {
     }
     /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn set_resolution(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.resolution = input;
@@ -135,9 +147,12 @@ impl BatchGetFrameMetricDataOutputBuilder {
     }
     /// <p>Resolution or granularity of the profile data used to generate the time series. This is the value used to jump through time steps in a time series. There are 3 valid values.</p>
     /// <ul>
-    /// <li><p><code>P1D</code> — 1 day</p></li>
-    /// <li><p><code>PT1H</code> — 1 hour</p></li>
-    /// <li><p><code>PT5M</code> — 5 minutes</p></li>
+    /// <li>
+    /// <p><code>P1D</code> — 1 day</p></li>
+    /// <li>
+    /// <p><code>PT1H</code> — 1 hour</p></li>
+    /// <li>
+    /// <p><code>PT5M</code> — 5 minutes</p></li>
     /// </ul>
     pub fn get_resolution(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         &self.resolution

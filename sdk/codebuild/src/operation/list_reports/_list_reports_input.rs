@@ -5,8 +5,10 @@
 pub struct ListReportsInput {
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
@@ -19,8 +21,10 @@ pub struct ListReportsInput {
 impl ListReportsInput {
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
@@ -57,8 +61,10 @@ pub struct ListReportsInputBuilder {
 impl ListReportsInputBuilder {
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -66,8 +72,10 @@ impl ListReportsInputBuilder {
     }
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
@@ -75,8 +83,10 @@ impl ListReportsInputBuilder {
     }
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order

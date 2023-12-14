@@ -5,10 +5,13 @@
 /// <p>You can use <code>AndAllFilters</code> and <code>AndOrFilters</code> in combination with each other or with other operations such as <code>EqualsTo</code>. For example:</p>
 /// <p><code>AndAllFilters</code></p>
 /// <ul>
-/// <li><p><code>EqualsTo</code>: "Department", "HR"</p></li>
-/// <li><p><code>AndOrFilters</code></p>
+/// <li>
+/// <p><code>EqualsTo</code>: "Department", "HR"</p></li>
+/// <li>
+/// <p><code>AndOrFilters</code></p>
 /// <ul>
-/// <li><p><code>ContainsAny</code>: "Project Name", ["new hires", "new hiring"]</p></li>
+/// <li>
+/// <p><code>ContainsAny</code>: "Project Name", ["new hires", "new hiring"]</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>This example filters results or documents that belong to the HR department <i>and</i> belong to projects that contain "new hires" <i>or</i> "new hiring" in the project name (must use <code>ContainAny</code> with <code>StringListValue</code>). This example is filtering with a depth of 2.</p>

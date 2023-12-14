@@ -9,8 +9,10 @@ pub struct DescribeTrafficMirrorFiltersInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>description</code>: The Traffic Mirror filter description.</p></li>
-    /// <li><p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
+    /// <li>
+    /// <p><code>description</code>: The Traffic Mirror filter description.</p></li>
+    /// <li>
+    /// <p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -31,8 +33,10 @@ impl DescribeTrafficMirrorFiltersInput {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>description</code>: The Traffic Mirror filter description.</p></li>
-    /// <li><p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
+    /// <li>
+    /// <p><code>description</code>: The Traffic Mirror filter description.</p></li>
+    /// <li>
+    /// <p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -106,8 +110,10 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>description</code>: The Traffic Mirror filter description.</p></li>
-    /// <li><p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
+    /// <li>
+    /// <p><code>description</code>: The Traffic Mirror filter description.</p></li>
+    /// <li>
+    /// <p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -117,8 +123,10 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>description</code>: The Traffic Mirror filter description.</p></li>
-    /// <li><p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
+    /// <li>
+    /// <p><code>description</code>: The Traffic Mirror filter description.</p></li>
+    /// <li>
+    /// <p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -126,8 +134,10 @@ impl DescribeTrafficMirrorFiltersInputBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>description</code>: The Traffic Mirror filter description.</p></li>
-    /// <li><p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
+    /// <li>
+    /// <p><code>description</code>: The Traffic Mirror filter description.</p></li>
+    /// <li>
+    /// <p><code>traffic-mirror-filter-id</code>: The ID of the Traffic Mirror filter.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

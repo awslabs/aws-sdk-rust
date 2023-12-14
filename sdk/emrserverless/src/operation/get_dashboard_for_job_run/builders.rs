@@ -23,7 +23,7 @@ impl GetDashboardForJobRunInputBuilder {
 /// Fluent builder constructing a request to `GetDashboardForJobRun`.
 ///
 /// <p>Creates and returns a URL that you can use to access the application UIs for a job run.</p>
-/// <p>For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.</p> <note>
+/// <p>For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.</p><note>
 /// <p>The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

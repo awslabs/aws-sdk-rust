@@ -8,7 +8,7 @@ pub struct NodegroupScalingConfig {
     pub min_size: ::std::option::Option<i32>,
     /// <p>The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub max_size: ::std::option::Option<i32>,
-    /// <p>The current number of nodes that the managed node group should maintain.</p> <important>
+    /// <p>The current number of nodes that the managed node group should maintain.</p><important>
     /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
@@ -24,7 +24,7 @@ impl NodegroupScalingConfig {
     pub fn max_size(&self) -> ::std::option::Option<i32> {
         self.max_size
     }
-    /// <p>The current number of nodes that the managed node group should maintain.</p> <important>
+    /// <p>The current number of nodes that the managed node group should maintain.</p><important>
     /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
@@ -77,7 +77,7 @@ impl NodegroupScalingConfigBuilder {
     pub fn get_max_size(&self) -> &::std::option::Option<i32> {
         &self.max_size
     }
-    /// <p>The current number of nodes that the managed node group should maintain.</p> <important>
+    /// <p>The current number of nodes that the managed node group should maintain.</p><important>
     /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
@@ -86,7 +86,7 @@ impl NodegroupScalingConfigBuilder {
         self.desired_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current number of nodes that the managed node group should maintain.</p> <important>
+    /// <p>The current number of nodes that the managed node group should maintain.</p><important>
     /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
@@ -95,7 +95,7 @@ impl NodegroupScalingConfigBuilder {
         self.desired_size = input;
         self
     }
-    /// <p>The current number of nodes that the managed node group should maintain.</p> <important>
+    /// <p>The current number of nodes that the managed node group should maintain.</p><important>
     /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>

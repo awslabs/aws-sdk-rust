@@ -6,8 +6,10 @@
 pub struct ReportExportConfig {
     /// <p>The export configuration type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub export_config_type: ::std::option::Option<crate::types::ReportExportConfigType>,
     /// <p>A <code>S3ReportExportConfig</code> object that contains information about the S3 bucket where the run of a report is exported.</p>
@@ -16,8 +18,10 @@ pub struct ReportExportConfig {
 impl ReportExportConfig {
     /// <p>The export configuration type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn export_config_type(&self) -> ::std::option::Option<&crate::types::ReportExportConfigType> {
         self.export_config_type.as_ref()
@@ -44,8 +48,10 @@ pub struct ReportExportConfigBuilder {
 impl ReportExportConfigBuilder {
     /// <p>The export configuration type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn export_config_type(mut self, input: crate::types::ReportExportConfigType) -> Self {
         self.export_config_type = ::std::option::Option::Some(input);
@@ -53,8 +59,10 @@ impl ReportExportConfigBuilder {
     }
     /// <p>The export configuration type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn set_export_config_type(mut self, input: ::std::option::Option<crate::types::ReportExportConfigType>) -> Self {
         self.export_config_type = input;
@@ -62,8 +70,10 @@ impl ReportExportConfigBuilder {
     }
     /// <p>The export configuration type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn get_export_config_type(&self) -> &::std::option::Option<crate::types::ReportExportConfigType> {
         &self.export_config_type

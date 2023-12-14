@@ -125,9 +125,12 @@ impl PutRecordFluentBuilder {
     ///
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li><p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
-    /// <li><p>Update the record returned from <code>GetRecord</code>.</p></li>
-    /// <li><p>Use <code>PutRecord</code> to update feature values.</p></li>
+    /// <li>
+    /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
+    /// <li>
+    /// <p>Update the record returned from <code>GetRecord</code>.</p></li>
+    /// <li>
+    /// <p>Use <code>PutRecord</code> to update feature values.</p></li>
     /// </ul>
     pub fn record(mut self, input: crate::types::FeatureValue) -> Self {
         self.inner = self.inner.record(input);
@@ -135,9 +138,12 @@ impl PutRecordFluentBuilder {
     }
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li><p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
-    /// <li><p>Update the record returned from <code>GetRecord</code>.</p></li>
-    /// <li><p>Use <code>PutRecord</code> to update feature values.</p></li>
+    /// <li>
+    /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
+    /// <li>
+    /// <p>Update the record returned from <code>GetRecord</code>.</p></li>
+    /// <li>
+    /// <p>Use <code>PutRecord</code> to update feature values.</p></li>
     /// </ul>
     pub fn set_record(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>>) -> Self {
         self.inner = self.inner.set_record(input);
@@ -145,9 +151,12 @@ impl PutRecordFluentBuilder {
     }
     /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:</p>
     /// <ul>
-    /// <li><p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
-    /// <li><p>Update the record returned from <code>GetRecord</code>.</p></li>
-    /// <li><p>Use <code>PutRecord</code> to update feature values.</p></li>
+    /// <li>
+    /// <p>Use <code>GetRecord</code> to retrieve the latest record.</p></li>
+    /// <li>
+    /// <p>Update the record returned from <code>GetRecord</code>.</p></li>
+    /// <li>
+    /// <p>Use <code>PutRecord</code> to update feature values.</p></li>
     /// </ul>
     pub fn get_record(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureValue>> {
         self.inner.get_record()

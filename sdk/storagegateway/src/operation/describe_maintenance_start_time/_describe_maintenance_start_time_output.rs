@@ -2,11 +2,16 @@
 
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
-/// <li><p><code>DescribeMaintenanceStartTimeOutput$DayOfMonth</code></p></li>
-/// <li><p><code>DescribeMaintenanceStartTimeOutput$DayOfWeek</code></p></li>
-/// <li><p><code>DescribeMaintenanceStartTimeOutput$HourOfDay</code></p></li>
-/// <li><p><code>DescribeMaintenanceStartTimeOutput$MinuteOfHour</code></p></li>
-/// <li><p><code>DescribeMaintenanceStartTimeOutput$Timezone</code></p></li>
+/// <li>
+/// <p><code>DescribeMaintenanceStartTimeOutput$DayOfMonth</code></p></li>
+/// <li>
+/// <p><code>DescribeMaintenanceStartTimeOutput$DayOfWeek</code></p></li>
+/// <li>
+/// <p><code>DescribeMaintenanceStartTimeOutput$HourOfDay</code></p></li>
+/// <li>
+/// <p><code>DescribeMaintenanceStartTimeOutput$MinuteOfHour</code></p></li>
+/// <li>
+/// <p><code>DescribeMaintenanceStartTimeOutput$Timezone</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

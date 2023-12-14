@@ -18,9 +18,12 @@ pub struct WriteJourneyRequest {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li>
+    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
@@ -34,8 +37,10 @@ pub struct WriteJourneyRequest {
     pub start_condition: ::std::option::Option<crate::types::StartCondition>,
     /// <p>The status of the journey. Valid values are:</p>
     /// <ul>
-    /// <li><p>DRAFT - Saves the journey and doesn't publish it.</p></li>
-    /// <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li>
+    /// <p>DRAFT - Saves the journey and doesn't publish it.</p></li>
+    /// <li>
+    /// <p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
     /// </ul>
     /// <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the
     /// <link linkend="apps-application-id-journeys-journey-id-state">Journey State resource.</p>
@@ -54,8 +59,10 @@ pub struct WriteJourneyRequest {
     pub closed_days: ::std::option::Option<crate::types::ClosedDays>,
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <li>
+    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li>
+    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -88,9 +95,12 @@ impl WriteJourneyRequest {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li>
+    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
@@ -114,8 +124,10 @@ impl WriteJourneyRequest {
     }
     /// <p>The status of the journey. Valid values are:</p>
     /// <ul>
-    /// <li><p>DRAFT - Saves the journey and doesn't publish it.</p></li>
-    /// <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li>
+    /// <p>DRAFT - Saves the journey and doesn't publish it.</p></li>
+    /// <li>
+    /// <p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
     /// </ul>
     /// <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the
     /// <link linkend="apps-application-id-journeys-journey-id-state">Journey State resource.</p>
@@ -148,8 +160,10 @@ impl WriteJourneyRequest {
     }
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <li>
+    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li>
+    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -287,9 +301,12 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li>
+    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
@@ -298,9 +315,12 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li>
+    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
@@ -309,9 +329,12 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
-    /// <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
-    /// <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
+    /// <li>
+    /// <p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li>
+    /// <li>
+    /// <p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
     pub fn get_quiet_time(&self) -> &::std::option::Option<crate::types::QuietTime> {
@@ -375,8 +398,10 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>The status of the journey. Valid values are:</p>
     /// <ul>
-    /// <li><p>DRAFT - Saves the journey and doesn't publish it.</p></li>
-    /// <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li>
+    /// <p>DRAFT - Saves the journey and doesn't publish it.</p></li>
+    /// <li>
+    /// <p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
     /// </ul>
     /// <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the
     /// <link linkend="apps-application-id-journeys-journey-id-state">Journey State resource.</p>
@@ -386,8 +411,10 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>The status of the journey. Valid values are:</p>
     /// <ul>
-    /// <li><p>DRAFT - Saves the journey and doesn't publish it.</p></li>
-    /// <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li>
+    /// <p>DRAFT - Saves the journey and doesn't publish it.</p></li>
+    /// <li>
+    /// <p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
     /// </ul>
     /// <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the
     /// <link linkend="apps-application-id-journeys-journey-id-state">Journey State resource.</p>
@@ -397,8 +424,10 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>The status of the journey. Valid values are:</p>
     /// <ul>
-    /// <li><p>DRAFT - Saves the journey and doesn't publish it.</p></li>
-    /// <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
+    /// <li>
+    /// <p>DRAFT - Saves the journey and doesn't publish it.</p></li>
+    /// <li>
+    /// <p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li>
     /// </ul>
     /// <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the
     /// <link linkend="apps-application-id-journeys-journey-id-state">Journey State resource.</p>
@@ -495,8 +524,10 @@ impl WriteJourneyRequestBuilder {
     ///
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <li>
+    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li>
+    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -508,8 +539,10 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <li>
+    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li>
+    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>
@@ -522,8 +555,10 @@ impl WriteJourneyRequestBuilder {
     }
     /// <p>An array of time zone estimation methods, if any, to use for determining an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a> time zone if the Endpoint does not have a value for the Demographic.Timezone attribute.</p>
     /// <ul>
-    /// <li><p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
-    /// <li><p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p> <note>
+    /// <li>
+    /// <p>PHONE_NUMBER - A time zone is determined based on the Endpoint.Address and Endpoint.Location.Country.</p></li>
+    /// <li>
+    /// <p>POSTAL_CODE - A time zone is determined based on the Endpoint.Location.PostalCode and Endpoint.Location.Country.</p><note>
     /// <p>POSTAL_CODE detection is only supported in the United States, United Kingdom, Australia, New Zealand, Canada, France, Italy, Spain, Germany and in regions where Amazon Pinpoint is available.</p>
     /// </note></li>
     /// </ul>

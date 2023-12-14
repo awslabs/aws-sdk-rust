@@ -3,10 +3,14 @@
 /// <p>The quick response fields to query quick responses by.</p>
 /// <p>The following is the list of supported field names.</p>
 /// <ul>
-/// <li><p>content</p></li>
-/// <li><p>name</p></li>
-/// <li><p>description</p></li>
-/// <li><p>shortcutKey</p></li>
+/// <li>
+/// <p>content</p></li>
+/// <li>
+/// <p>name</p></li>
+/// <li>
+/// <p>description</p></li>
+/// <li>
+/// <p>shortcutKey</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

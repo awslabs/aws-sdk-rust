@@ -30,11 +30,11 @@ pub struct EngineTranscribeSettings {
     /// <p>Specify the level of stability to use when you enable partial results stabilization (<code>EnablePartialResultsStabilization</code>).</p>
     /// <p>Low stability provides the highest accuracy. High stability transcribes faster, but with slightly lower accuracy.</p>
     pub partial_results_stability: ::std::option::Option<crate::types::TranscribePartialResultsStability>,
-    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p> <note>
+    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p><note>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     /// </note>
     pub content_identification_type: ::std::option::Option<crate::types::TranscribeContentIdentificationType>,
-    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p> <note>
+    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p><note>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>.</p>
     /// </note>
     pub content_redaction_type: ::std::option::Option<crate::types::TranscribeContentRedactionType>,
@@ -55,7 +55,7 @@ pub struct EngineTranscribeSettings {
     pub identify_language: bool,
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub language_options: ::std::option::Option<::std::string::String>,
@@ -111,13 +111,13 @@ impl EngineTranscribeSettings {
     pub fn partial_results_stability(&self) -> ::std::option::Option<&crate::types::TranscribePartialResultsStability> {
         self.partial_results_stability.as_ref()
     }
-    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p> <note>
+    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p><note>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     /// </note>
     pub fn content_identification_type(&self) -> ::std::option::Option<&crate::types::TranscribeContentIdentificationType> {
         self.content_identification_type.as_ref()
     }
-    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p> <note>
+    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p><note>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>.</p>
     /// </note>
     pub fn content_redaction_type(&self) -> ::std::option::Option<&crate::types::TranscribeContentRedactionType> {
@@ -146,7 +146,7 @@ impl EngineTranscribeSettings {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn language_options(&self) -> ::std::option::Option<&str> {
@@ -330,41 +330,41 @@ impl EngineTranscribeSettingsBuilder {
     pub fn get_partial_results_stability(&self) -> &::std::option::Option<crate::types::TranscribePartialResultsStability> {
         &self.partial_results_stability
     }
-    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p> <note>
+    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p><note>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     /// </note>
     pub fn content_identification_type(mut self, input: crate::types::TranscribeContentIdentificationType) -> Self {
         self.content_identification_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p> <note>
+    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p><note>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     /// </note>
     pub fn set_content_identification_type(mut self, input: ::std::option::Option<crate::types::TranscribeContentIdentificationType>) -> Self {
         self.content_identification_type = input;
         self
     }
-    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p> <note>
+    /// <p>Labels all personally identifiable information (PII) identified in your transcript. If you don't include <code>PiiEntityTypes</code>, all PII is identified.</p><note>
     /// <p>You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.</p>
     /// </note>
     pub fn get_content_identification_type(&self) -> &::std::option::Option<crate::types::TranscribeContentIdentificationType> {
         &self.content_identification_type
     }
-    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p> <note>
+    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p><note>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>.</p>
     /// </note>
     pub fn content_redaction_type(mut self, input: crate::types::TranscribeContentRedactionType) -> Self {
         self.content_redaction_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p> <note>
+    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p><note>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>.</p>
     /// </note>
     pub fn set_content_redaction_type(mut self, input: ::std::option::Option<crate::types::TranscribeContentRedactionType>) -> Self {
         self.content_redaction_type = input;
         self
     }
-    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p> <note>
+    /// <p>Content redaction is performed at the segment level. If you don't include <code>PiiEntityTypes</code>, all PII is redacted.</p><note>
     /// <p>You can’t set <code>ContentRedactionType</code> and <code>ContentIdentificationType</code>.</p>
     /// </note>
     pub fn get_content_redaction_type(&self) -> &::std::option::Option<crate::types::TranscribeContentRedactionType> {
@@ -441,7 +441,7 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -450,7 +450,7 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -459,7 +459,7 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn get_language_options(&self) -> &::std::option::Option<::std::string::String> {

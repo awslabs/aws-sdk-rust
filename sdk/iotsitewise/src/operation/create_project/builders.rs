@@ -22,7 +22,7 @@ impl CreateProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateProject`.
 ///
-/// <p>Creates a project in the specified portal.</p> <note>
+/// <p>Creates a project in the specified portal.</p><note>
 /// <p>Make sure that the project name and description don't contain confidential information.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

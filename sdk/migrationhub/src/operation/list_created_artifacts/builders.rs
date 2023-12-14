@@ -24,9 +24,12 @@ impl ListCreatedArtifactsInputBuilder {
 ///
 /// <p>Lists the created artifacts attached to a given migration task in an update stream. This API has the following traits:</p>
 /// <ul>
-/// <li><p>Gets the list of the created artifacts while migration is taking place.</p></li>
-/// <li><p>Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code> API.</p></li>
-/// <li><p>Lists created artifacts in a paginated interface.</p></li>
+/// <li>
+/// <p>Gets the list of the created artifacts while migration is taking place.</p></li>
+/// <li>
+/// <p>Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code> API.</p></li>
+/// <li>
+/// <p>Lists created artifacts in a paginated interface.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCreatedArtifactsFluentBuilder {

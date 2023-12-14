@@ -2,7 +2,8 @@
 
 /// <p>A JSON object containing the following fields:</p>
 /// <ul>
-/// <li><p><code>DeleteBandwidthRateLimitInput$BandwidthType</code></p></li>
+/// <li>
+/// <p><code>DeleteBandwidthRateLimitInput$BandwidthType</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

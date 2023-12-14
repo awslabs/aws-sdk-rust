@@ -15,9 +15,12 @@ pub enum Error {
     ConcurrentModification(crate::types::error::ConcurrentModification),
     /// <p>The cause of this error depends on the operation that you're performing:</p>
     /// <ul>
-    /// <li><p><b>Create a public hosted zone:</b> Two hosted zones that have the same name or that have a parent/child relationship (example.com and test.example.com) can't have any common name servers. You tried to create a hosted zone that has the same name as an existing hosted zone or that's the parent or child of an existing hosted zone, and you specified a delegation set that shares one or more name servers with the existing hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p></li>
-    /// <li><p><b>Create a private hosted zone:</b> A hosted zone with the specified name already exists and is already associated with the Amazon VPC that you specified.</p></li>
-    /// <li><p><b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already associated with another hosted zone that has the same name.</p></li>
+    /// <li>
+    /// <p><b>Create a public hosted zone:</b> Two hosted zones that have the same name or that have a parent/child relationship (example.com and test.example.com) can't have any common name servers. You tried to create a hosted zone that has the same name as an existing hosted zone or that's the parent or child of an existing hosted zone, and you specified a delegation set that shares one or more name servers with the existing hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p></li>
+    /// <li>
+    /// <p><b>Create a private hosted zone:</b> A hosted zone with the specified name already exists and is already associated with the Amazon VPC that you specified.</p></li>
+    /// <li>
+    /// <p><b>Associate VPCs with a private hosted zone:</b> The VPC that you specified is already associated with another hosted zone that has the same name.</p></li>
     /// </ul>
     ConflictingDomainExists(crate::types::error::ConflictingDomainExists),
     /// <p>You tried to update a traffic policy instance by using a traffic policy version that has a different DNS type than the current type for the instance. You specified the type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.</p>
@@ -36,8 +39,10 @@ pub enum Error {
     DelegationSetNotReusable(crate::types::error::DelegationSetNotReusable),
     /// <p>The health check you're attempting to create already exists. Amazon Route 53 returns this error when you submit a request that has the following values:</p>
     /// <ul>
-    /// <li><p>The same value for <code>CallerReference</code> as an existing health check, and one or more values that differ from the existing health check that has the same caller reference.</p></li>
-    /// <li><p>The same value for <code>CallerReference</code> as a health check that you created and later deleted, regardless of the other settings in the request.</p></li>
+    /// <li>
+    /// <p>The same value for <code>CallerReference</code> as an existing health check, and one or more values that differ from the existing health check that has the same caller reference.</p></li>
+    /// <li>
+    /// <p>The same value for <code>CallerReference</code> as a health check that you created and later deleted, regardless of the other settings in the request.</p></li>
     /// </ul>
     HealthCheckAlreadyExists(crate::types::error::HealthCheckAlreadyExists),
     /// <p>This error code is not in use.</p>
@@ -59,11 +64,16 @@ pub enum Error {
     IncompatibleVersion(crate::types::error::IncompatibleVersion),
     /// <p>Amazon Route 53 doesn't have the permissions required to create log streams and send query logs to log streams. Possible causes include the following:</p>
     /// <ul>
-    /// <li><p>There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.</p></li>
-    /// <li><p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p></li>
-    /// <li><p>The resource policy hasn't finished propagating yet.</p></li>
-    /// <li><p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
-    /// <li><p>The Key management service (KMS) key you specified is marked as disabled for the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
+    /// <li>
+    /// <p>There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.</p></li>
+    /// <li>
+    /// <p>The resource policy that includes the log group ARN in the value for <code>Resource</code> doesn't have the necessary permissions.</p></li>
+    /// <li>
+    /// <p>The resource policy hasn't finished propagating yet.</p></li>
+    /// <li>
+    /// <p>The Key management service (KMS) key you specified doesn’t exist or it can’t be used with the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
+    /// <li>
+    /// <p>The Key management service (KMS) key you specified is marked as disabled for the log group associated with query log. Update or provide a resource policy to grant permissions for the KMS key.</p></li>
     /// </ul>
     InsufficientCloudWatchLogsResourcePolicy(crate::types::error::InsufficientCloudWatchLogsResourcePolicy),
     /// <p>Parameter name is not valid.</p>

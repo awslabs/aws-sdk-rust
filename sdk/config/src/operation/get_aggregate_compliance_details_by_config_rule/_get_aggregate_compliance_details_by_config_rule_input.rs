@@ -11,7 +11,7 @@ pub struct GetAggregateComplianceDetailsByConfigRuleInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source region from where the data is aggregated.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
-    /// <p>The resource compliance status.</p> <note>
+    /// <p>The resource compliance status.</p><note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
@@ -37,7 +37,7 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
     pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
-    /// <p>The resource compliance status.</p> <note>
+    /// <p>The resource compliance status.</p><note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ComplianceType> {
@@ -133,21 +133,21 @@ impl GetAggregateComplianceDetailsByConfigRuleInputBuilder {
     pub fn get_aws_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_region
     }
-    /// <p>The resource compliance status.</p> <note>
+    /// <p>The resource compliance status.</p><note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
         self.compliance_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource compliance status.</p> <note>
+    /// <p>The resource compliance status.</p><note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub fn set_compliance_type(mut self, input: ::std::option::Option<crate::types::ComplianceType>) -> Self {
         self.compliance_type = input;
         self
     }
-    /// <p>The resource compliance status.</p> <note>
+    /// <p>The resource compliance status.</p><note>
     /// <p>For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.</p>
     /// </note>
     pub fn get_compliance_type(&self) -> &::std::option::Option<crate::types::ComplianceType> {

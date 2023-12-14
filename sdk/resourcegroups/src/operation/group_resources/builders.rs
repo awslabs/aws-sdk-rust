@@ -22,18 +22,21 @@ impl GroupResourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `GroupResources`.
 ///
-/// <p>Adds the specified resources to the specified group.</p> <important>
+/// <p>Adds the specified resources to the specified group.</p><important>
 /// <p>You can use this operation with only resource groups that are configured with the following types:</p>
 /// <ul>
-/// <li><p><code>AWS::EC2::HostManagement</code></p></li>
-/// <li><p><code>AWS::EC2::CapacityReservationPool</code></p></li>
+/// <li>
+/// <p><code>AWS::EC2::HostManagement</code></p></li>
+/// <li>
+/// <p><code>AWS::EC2::CapacityReservationPool</code></p></li>
 /// </ul>
 /// <p>Other resource group type and resource types aren't currently supported by this operation.</p>
 /// </important>
 /// <p><b>Minimum permissions</b></p>
 /// <p>To run this command, you must have the following permissions:</p>
 /// <ul>
-/// <li><p><code>resource-groups:GroupResources</code></p></li>
+/// <li>
+/// <p><code>resource-groups:GroupResources</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GroupResourcesFluentBuilder {

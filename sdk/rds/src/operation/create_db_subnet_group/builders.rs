@@ -111,9 +111,12 @@ impl CreateDBSubnetGroupFluentBuilder {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p></li>
-    /// <li><p>Must not be default.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p></li>
+    /// <li>
+    /// <p>Must not be default.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,9 +126,12 @@ impl CreateDBSubnetGroupFluentBuilder {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p></li>
-    /// <li><p>Must not be default.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p></li>
+    /// <li>
+    /// <p>Must not be default.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -135,9 +141,12 @@ impl CreateDBSubnetGroupFluentBuilder {
     /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p></li>
-    /// <li><p>Must not be default.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p></li>
+    /// <li>
+    /// <p>Must not be default.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {

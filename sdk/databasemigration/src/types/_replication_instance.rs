@@ -7,9 +7,12 @@ pub struct ReplicationInstance {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub replication_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -18,19 +21,32 @@ pub struct ReplicationInstance {
     pub replication_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li><p><code>"available"</code></p></li>
-    /// <li><p><code>"creating"</code></p></li>
-    /// <li><p><code>"deleted"</code></p></li>
-    /// <li><p><code>"deleting"</code></p></li>
-    /// <li><p><code>"failed"</code></p></li>
-    /// <li><p><code>"modifying"</code></p></li>
-    /// <li><p><code>"upgrading"</code></p></li>
-    /// <li><p><code>"rebooting"</code></p></li>
-    /// <li><p><code>"resetting-master-credentials"</code></p></li>
-    /// <li><p><code>"storage-full"</code></p></li>
-    /// <li><p><code>"incompatible-credentials"</code></p></li>
-    /// <li><p><code>"incompatible-network"</code></p></li>
-    /// <li><p><code>"maintenance"</code></p></li>
+    /// <li>
+    /// <p><code>"available"</code></p></li>
+    /// <li>
+    /// <p><code>"creating"</code></p></li>
+    /// <li>
+    /// <p><code>"deleted"</code></p></li>
+    /// <li>
+    /// <p><code>"deleting"</code></p></li>
+    /// <li>
+    /// <p><code>"failed"</code></p></li>
+    /// <li>
+    /// <p><code>"modifying"</code></p></li>
+    /// <li>
+    /// <p><code>"upgrading"</code></p></li>
+    /// <li>
+    /// <p><code>"rebooting"</code></p></li>
+    /// <li>
+    /// <p><code>"resetting-master-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"storage-full"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-network"</code></p></li>
+    /// <li>
+    /// <p><code>"maintenance"</code></p></li>
     /// </ul>
     pub replication_instance_status: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) that is allocated for the replication instance.</p>
@@ -88,9 +104,12 @@ impl ReplicationInstance {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn replication_instance_identifier(&self) -> ::std::option::Option<&str> {
@@ -103,19 +122,32 @@ impl ReplicationInstance {
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li><p><code>"available"</code></p></li>
-    /// <li><p><code>"creating"</code></p></li>
-    /// <li><p><code>"deleted"</code></p></li>
-    /// <li><p><code>"deleting"</code></p></li>
-    /// <li><p><code>"failed"</code></p></li>
-    /// <li><p><code>"modifying"</code></p></li>
-    /// <li><p><code>"upgrading"</code></p></li>
-    /// <li><p><code>"rebooting"</code></p></li>
-    /// <li><p><code>"resetting-master-credentials"</code></p></li>
-    /// <li><p><code>"storage-full"</code></p></li>
-    /// <li><p><code>"incompatible-credentials"</code></p></li>
-    /// <li><p><code>"incompatible-network"</code></p></li>
-    /// <li><p><code>"maintenance"</code></p></li>
+    /// <li>
+    /// <p><code>"available"</code></p></li>
+    /// <li>
+    /// <p><code>"creating"</code></p></li>
+    /// <li>
+    /// <p><code>"deleted"</code></p></li>
+    /// <li>
+    /// <p><code>"deleting"</code></p></li>
+    /// <li>
+    /// <p><code>"failed"</code></p></li>
+    /// <li>
+    /// <p><code>"modifying"</code></p></li>
+    /// <li>
+    /// <p><code>"upgrading"</code></p></li>
+    /// <li>
+    /// <p><code>"rebooting"</code></p></li>
+    /// <li>
+    /// <p><code>"resetting-master-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"storage-full"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-network"</code></p></li>
+    /// <li>
+    /// <p><code>"maintenance"</code></p></li>
     /// </ul>
     pub fn replication_instance_status(&self) -> ::std::option::Option<&str> {
         self.replication_instance_status.as_deref()
@@ -264,9 +296,12 @@ impl ReplicationInstanceBuilder {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn replication_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -276,9 +311,12 @@ impl ReplicationInstanceBuilder {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn set_replication_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -288,9 +326,12 @@ impl ReplicationInstanceBuilder {
     /// <p>The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>myrepinstance</code></p>
     pub fn get_replication_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -315,19 +356,32 @@ impl ReplicationInstanceBuilder {
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li><p><code>"available"</code></p></li>
-    /// <li><p><code>"creating"</code></p></li>
-    /// <li><p><code>"deleted"</code></p></li>
-    /// <li><p><code>"deleting"</code></p></li>
-    /// <li><p><code>"failed"</code></p></li>
-    /// <li><p><code>"modifying"</code></p></li>
-    /// <li><p><code>"upgrading"</code></p></li>
-    /// <li><p><code>"rebooting"</code></p></li>
-    /// <li><p><code>"resetting-master-credentials"</code></p></li>
-    /// <li><p><code>"storage-full"</code></p></li>
-    /// <li><p><code>"incompatible-credentials"</code></p></li>
-    /// <li><p><code>"incompatible-network"</code></p></li>
-    /// <li><p><code>"maintenance"</code></p></li>
+    /// <li>
+    /// <p><code>"available"</code></p></li>
+    /// <li>
+    /// <p><code>"creating"</code></p></li>
+    /// <li>
+    /// <p><code>"deleted"</code></p></li>
+    /// <li>
+    /// <p><code>"deleting"</code></p></li>
+    /// <li>
+    /// <p><code>"failed"</code></p></li>
+    /// <li>
+    /// <p><code>"modifying"</code></p></li>
+    /// <li>
+    /// <p><code>"upgrading"</code></p></li>
+    /// <li>
+    /// <p><code>"rebooting"</code></p></li>
+    /// <li>
+    /// <p><code>"resetting-master-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"storage-full"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-network"</code></p></li>
+    /// <li>
+    /// <p><code>"maintenance"</code></p></li>
     /// </ul>
     pub fn replication_instance_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_instance_status = ::std::option::Option::Some(input.into());
@@ -335,19 +389,32 @@ impl ReplicationInstanceBuilder {
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li><p><code>"available"</code></p></li>
-    /// <li><p><code>"creating"</code></p></li>
-    /// <li><p><code>"deleted"</code></p></li>
-    /// <li><p><code>"deleting"</code></p></li>
-    /// <li><p><code>"failed"</code></p></li>
-    /// <li><p><code>"modifying"</code></p></li>
-    /// <li><p><code>"upgrading"</code></p></li>
-    /// <li><p><code>"rebooting"</code></p></li>
-    /// <li><p><code>"resetting-master-credentials"</code></p></li>
-    /// <li><p><code>"storage-full"</code></p></li>
-    /// <li><p><code>"incompatible-credentials"</code></p></li>
-    /// <li><p><code>"incompatible-network"</code></p></li>
-    /// <li><p><code>"maintenance"</code></p></li>
+    /// <li>
+    /// <p><code>"available"</code></p></li>
+    /// <li>
+    /// <p><code>"creating"</code></p></li>
+    /// <li>
+    /// <p><code>"deleted"</code></p></li>
+    /// <li>
+    /// <p><code>"deleting"</code></p></li>
+    /// <li>
+    /// <p><code>"failed"</code></p></li>
+    /// <li>
+    /// <p><code>"modifying"</code></p></li>
+    /// <li>
+    /// <p><code>"upgrading"</code></p></li>
+    /// <li>
+    /// <p><code>"rebooting"</code></p></li>
+    /// <li>
+    /// <p><code>"resetting-master-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"storage-full"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-network"</code></p></li>
+    /// <li>
+    /// <p><code>"maintenance"</code></p></li>
     /// </ul>
     pub fn set_replication_instance_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_instance_status = input;
@@ -355,19 +422,32 @@ impl ReplicationInstanceBuilder {
     }
     /// <p>The status of the replication instance. The possible return values include:</p>
     /// <ul>
-    /// <li><p><code>"available"</code></p></li>
-    /// <li><p><code>"creating"</code></p></li>
-    /// <li><p><code>"deleted"</code></p></li>
-    /// <li><p><code>"deleting"</code></p></li>
-    /// <li><p><code>"failed"</code></p></li>
-    /// <li><p><code>"modifying"</code></p></li>
-    /// <li><p><code>"upgrading"</code></p></li>
-    /// <li><p><code>"rebooting"</code></p></li>
-    /// <li><p><code>"resetting-master-credentials"</code></p></li>
-    /// <li><p><code>"storage-full"</code></p></li>
-    /// <li><p><code>"incompatible-credentials"</code></p></li>
-    /// <li><p><code>"incompatible-network"</code></p></li>
-    /// <li><p><code>"maintenance"</code></p></li>
+    /// <li>
+    /// <p><code>"available"</code></p></li>
+    /// <li>
+    /// <p><code>"creating"</code></p></li>
+    /// <li>
+    /// <p><code>"deleted"</code></p></li>
+    /// <li>
+    /// <p><code>"deleting"</code></p></li>
+    /// <li>
+    /// <p><code>"failed"</code></p></li>
+    /// <li>
+    /// <p><code>"modifying"</code></p></li>
+    /// <li>
+    /// <p><code>"upgrading"</code></p></li>
+    /// <li>
+    /// <p><code>"rebooting"</code></p></li>
+    /// <li>
+    /// <p><code>"resetting-master-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"storage-full"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-credentials"</code></p></li>
+    /// <li>
+    /// <p><code>"incompatible-network"</code></p></li>
+    /// <li>
+    /// <p><code>"maintenance"</code></p></li>
     /// </ul>
     pub fn get_replication_instance_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_status

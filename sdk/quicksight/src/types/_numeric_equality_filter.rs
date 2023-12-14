@@ -12,7 +12,8 @@ pub struct NumericEqualityFilter {
     pub value: ::std::option::Option<f64>,
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
-    /// <li><p><code>FILTER_ALL_VALUES</code></p></li>
+    /// <li>
+    /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
     pub select_all_options: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>,
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
@@ -23,9 +24,12 @@ pub struct NumericEqualityFilter {
     pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
-    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
-    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
+    /// <li>
+    /// <p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub null_option: crate::types::FilterNullOption,
 }
@@ -45,7 +49,8 @@ impl NumericEqualityFilter {
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
-    /// <li><p><code>FILTER_ALL_VALUES</code></p></li>
+    /// <li>
+    /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
     pub fn select_all_options(&self) -> ::std::option::Option<&crate::types::NumericFilterSelectAllOptions> {
         self.select_all_options.as_ref()
@@ -64,9 +69,12 @@ impl NumericEqualityFilter {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
-    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
-    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
+    /// <li>
+    /// <p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn null_option(&self) -> &crate::types::FilterNullOption {
         &self.null_option
@@ -139,7 +147,8 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
-    /// <li><p><code>FILTER_ALL_VALUES</code></p></li>
+    /// <li>
+    /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
     pub fn select_all_options(mut self, input: crate::types::NumericFilterSelectAllOptions) -> Self {
         self.select_all_options = ::std::option::Option::Some(input);
@@ -147,7 +156,8 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
-    /// <li><p><code>FILTER_ALL_VALUES</code></p></li>
+    /// <li>
+    /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
     pub fn set_select_all_options(mut self, input: ::std::option::Option<crate::types::NumericFilterSelectAllOptions>) -> Self {
         self.select_all_options = input;
@@ -155,7 +165,8 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>Select all of the values. Null is not the assigned value of select all.</p>
     /// <ul>
-    /// <li><p><code>FILTER_ALL_VALUES</code></p></li>
+    /// <li>
+    /// <p><code>FILTER_ALL_VALUES</code></p></li>
     /// </ul>
     pub fn get_select_all_options(&self) -> &::std::option::Option<crate::types::NumericFilterSelectAllOptions> {
         &self.select_all_options
@@ -205,9 +216,12 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
-    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
-    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
+    /// <li>
+    /// <p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     /// This field is required.
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
@@ -216,9 +230,12 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
-    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
-    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
+    /// <li>
+    /// <p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn set_null_option(mut self, input: ::std::option::Option<crate::types::FilterNullOption>) -> Self {
         self.null_option = input;
@@ -226,9 +243,12 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>This option determines how null values should be treated when filtering data.</p>
     /// <ul>
-    /// <li><p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
-    /// <li><p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
-    /// <li><p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
+    /// <li>
+    /// <p><code>ALL_VALUES</code>: Include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NULLS_ONLY</code>: Only include null values in filtered results.</p></li>
+    /// <li>
+    /// <p><code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p></li>
     /// </ul>
     pub fn get_null_option(&self) -> &::std::option::Option<crate::types::FilterNullOption> {
         &self.null_option

@@ -22,7 +22,7 @@ impl DeleteClusterSecurityGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteClusterSecurityGroup`.
 ///
-/// <p>Deletes an Amazon Redshift security group.</p> <note>
+/// <p>Deletes an Amazon Redshift security group.</p><note>
 /// <p>You cannot delete a security group that is associated with any clusters. You cannot delete the default security group.</p>
 /// </note>
 /// <p>For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>

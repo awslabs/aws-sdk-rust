@@ -14,9 +14,12 @@ pub struct EcsTaskSet {
     pub running_count: i64,
     /// <p>The status of the task set. There are three valid task set statuses:</p>
     /// <ul>
-    /// <li><p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
-    /// <li><p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
-    /// <li><p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of traffic served by this task set.</p>
@@ -45,9 +48,12 @@ impl EcsTaskSet {
     }
     /// <p>The status of the task set. There are three valid task set statuses:</p>
     /// <ul>
-    /// <li><p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
-    /// <li><p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
-    /// <li><p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -144,9 +150,12 @@ impl EcsTaskSetBuilder {
     }
     /// <p>The status of the task set. There are three valid task set statuses:</p>
     /// <ul>
-    /// <li><p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
-    /// <li><p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
-    /// <li><p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -154,9 +163,12 @@ impl EcsTaskSetBuilder {
     }
     /// <p>The status of the task set. There are three valid task set statuses:</p>
     /// <ul>
-    /// <li><p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
-    /// <li><p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
-    /// <li><p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -164,9 +176,12 @@ impl EcsTaskSetBuilder {
     }
     /// <p>The status of the task set. There are three valid task set statuses:</p>
     /// <ul>
-    /// <li><p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
-    /// <li><p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
-    /// <li><p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY</code>: Indicates the task set is serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: Indicates the task set is not serving production traffic.</p></li>
+    /// <li>
+    /// <p><code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are being deregistered from their target group.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

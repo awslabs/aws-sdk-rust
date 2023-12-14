@@ -5,14 +5,20 @@
 pub struct DescribePlacementGroupsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>group-name</code> - The name of the placement group.</p></li>
-    /// <li><p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
-    /// <li><p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
-    /// <li><p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li><p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>group-name</code> - The name of the placement group.</p></li>
+    /// <li>
+    /// <p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
+    /// <li>
+    /// <p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -26,14 +32,20 @@ pub struct DescribePlacementGroupsInput {
 impl DescribePlacementGroupsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>group-name</code> - The name of the placement group.</p></li>
-    /// <li><p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
-    /// <li><p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
-    /// <li><p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li><p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>group-name</code> - The name of the placement group.</p></li>
+    /// <li>
+    /// <p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
+    /// <li>
+    /// <p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -81,14 +93,20 @@ impl DescribePlacementGroupsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>group-name</code> - The name of the placement group.</p></li>
-    /// <li><p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
-    /// <li><p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
-    /// <li><p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li><p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>group-name</code> - The name of the placement group.</p></li>
+    /// <li>
+    /// <p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
+    /// <li>
+    /// <p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -98,14 +116,20 @@ impl DescribePlacementGroupsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>group-name</code> - The name of the placement group.</p></li>
-    /// <li><p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
-    /// <li><p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
-    /// <li><p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li><p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>group-name</code> - The name of the placement group.</p></li>
+    /// <li>
+    /// <p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
+    /// <li>
+    /// <p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -113,14 +137,20 @@ impl DescribePlacementGroupsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>group-name</code> - The name of the placement group.</p></li>
-    /// <li><p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
-    /// <li><p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
-    /// <li><p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
-    /// <li><p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
-    /// <li><p><code>tag:
-    /// <key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>group-name</code> - The name of the placement group.</p></li>
+    /// <li>
+    /// <p><code>group-arn</code> - The Amazon Resource Name (ARN) of the placement group.</p></li>
+    /// <li>
+    /// <p><code>spread-level</code> - The spread level for the placement group (<code>host</code> | <code>rack</code>).</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the placement group (<code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p></li>
+    /// <li>
+    /// <p><code>strategy</code> - The strategy of the placement group (<code>cluster</code> | <code>spread</code> | <code>partition</code>).</p></li>
+    /// <li>
+    /// <p><code>tag:<key></key></code> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific key, regardless of the tag value.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -11,8 +11,23 @@ pub struct TransformS3DataSource {
     pub s3_data_type: ::std::option::Option<crate::types::S3DataType>,
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
-    /// <li><p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
-    /// <li><p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p> <p>The manifest is an S3 object which is a JSON file with the following format:</p> <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p> <p><code>"relative/path/to/custdata-1",</code></p> <p><code>"relative/path/custdata-2",</code></p> <p><code>...</code></p> <p><code>"relative/path/custdata-N"</code></p> <p><code>]</code></p> <p>The preceding JSON matches the following <code>S3Uris</code>:</p> <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p> <p><code>...</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p> <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
+    /// <li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
+    /// <li>
+    /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
+    /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
+    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>"relative/path/to/custdata-1",</code></p>
+    /// <p><code>"relative/path/custdata-2",</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>"relative/path/custdata-N"</code></p>
+    /// <p><code>]</code></p>
+    /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p>
+    /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     pub s3_uri: ::std::option::Option<::std::string::String>,
 }
@@ -26,8 +41,23 @@ impl TransformS3DataSource {
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
-    /// <li><p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
-    /// <li><p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p> <p>The manifest is an S3 object which is a JSON file with the following format:</p> <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p> <p><code>"relative/path/to/custdata-1",</code></p> <p><code>"relative/path/custdata-2",</code></p> <p><code>...</code></p> <p><code>"relative/path/custdata-N"</code></p> <p><code>]</code></p> <p>The preceding JSON matches the following <code>S3Uris</code>:</p> <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p> <p><code>...</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p> <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
+    /// <li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
+    /// <li>
+    /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
+    /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
+    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>"relative/path/to/custdata-1",</code></p>
+    /// <p><code>"relative/path/custdata-2",</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>"relative/path/custdata-N"</code></p>
+    /// <p><code>]</code></p>
+    /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p>
+    /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
@@ -74,8 +104,23 @@ impl TransformS3DataSourceBuilder {
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
-    /// <li><p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
-    /// <li><p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p> <p>The manifest is an S3 object which is a JSON file with the following format:</p> <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p> <p><code>"relative/path/to/custdata-1",</code></p> <p><code>"relative/path/custdata-2",</code></p> <p><code>...</code></p> <p><code>"relative/path/custdata-N"</code></p> <p><code>]</code></p> <p>The preceding JSON matches the following <code>S3Uris</code>:</p> <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p> <p><code>...</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p> <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
+    /// <li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
+    /// <li>
+    /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
+    /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
+    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>"relative/path/to/custdata-1",</code></p>
+    /// <p><code>"relative/path/custdata-2",</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>"relative/path/custdata-N"</code></p>
+    /// <p><code>]</code></p>
+    /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p>
+    /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,8 +129,23 @@ impl TransformS3DataSourceBuilder {
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
-    /// <li><p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
-    /// <li><p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p> <p>The manifest is an S3 object which is a JSON file with the following format:</p> <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p> <p><code>"relative/path/to/custdata-1",</code></p> <p><code>"relative/path/custdata-2",</code></p> <p><code>...</code></p> <p><code>"relative/path/custdata-N"</code></p> <p><code>]</code></p> <p>The preceding JSON matches the following <code>S3Uris</code>:</p> <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p> <p><code>...</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p> <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
+    /// <li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
+    /// <li>
+    /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
+    /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
+    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>"relative/path/to/custdata-1",</code></p>
+    /// <p><code>"relative/path/custdata-2",</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>"relative/path/custdata-N"</code></p>
+    /// <p><code>]</code></p>
+    /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p>
+    /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
@@ -93,8 +153,23 @@ impl TransformS3DataSourceBuilder {
     }
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
-    /// <li><p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
-    /// <li><p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p> <p>The manifest is an S3 object which is a JSON file with the following format:</p> <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p> <p><code>"relative/path/to/custdata-1",</code></p> <p><code>"relative/path/custdata-2",</code></p> <p><code>...</code></p> <p><code>"relative/path/custdata-N"</code></p> <p><code>]</code></p> <p>The preceding JSON matches the following <code>S3Uris</code>:</p> <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p> <p><code>...</code></p> <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p> <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
+    /// <li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.</p></li>
+    /// <li>
+    /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
+    /// <p>The manifest is an S3 object which is a JSON file with the following format:</p>
+    /// <p><code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code></p>
+    /// <p><code>"relative/path/to/custdata-1",</code></p>
+    /// <p><code>"relative/path/custdata-2",</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>"relative/path/custdata-N"</code></p>
+    /// <p><code>]</code></p>
+    /// <p>The preceding JSON matches the following <code>S3Uris</code>:</p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code></p>
+    /// <p><code>...</code></p>
+    /// <p><code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code></p>
+    /// <p>The complete set of <code>S3Uris</code> in this manifest constitutes the input data for the channel for this datasource. The object that each <code>S3Uris</code> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</p></li>
     /// </ul>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri

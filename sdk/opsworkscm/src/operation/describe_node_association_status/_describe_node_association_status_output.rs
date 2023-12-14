@@ -6,9 +6,12 @@ pub struct DescribeNodeAssociationStatusOutput {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
-    /// <li><p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
-    /// <li><p><code>FAILED</code>: The association or disassociation failed.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The association or disassociation failed.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub node_association_status: ::std::option::Option<crate::types::NodeAssociationStatus>,
     /// <p>Attributes specific to the node association. In Puppet, the attibute PUPPET_NODE_CERT contains the signed certificate (the result of the CSR).</p>
@@ -19,9 +22,12 @@ impl DescribeNodeAssociationStatusOutput {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
-    /// <li><p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
-    /// <li><p><code>FAILED</code>: The association or disassociation failed.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The association or disassociation failed.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub fn node_association_status(&self) -> ::std::option::Option<&crate::types::NodeAssociationStatus> {
         self.node_association_status.as_ref()
@@ -57,9 +63,12 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
-    /// <li><p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
-    /// <li><p><code>FAILED</code>: The association or disassociation failed.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The association or disassociation failed.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub fn node_association_status(mut self, input: crate::types::NodeAssociationStatus) -> Self {
         self.node_association_status = ::std::option::Option::Some(input);
@@ -68,9 +77,12 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
-    /// <li><p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
-    /// <li><p><code>FAILED</code>: The association or disassociation failed.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The association or disassociation failed.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub fn set_node_association_status(mut self, input: ::std::option::Option<crate::types::NodeAssociationStatus>) -> Self {
         self.node_association_status = input;
@@ -79,9 +91,12 @@ impl DescribeNodeAssociationStatusOutputBuilder {
     /// <p>The status of the association or disassociation request.</p>
     /// <p class="title"><b>Possible values:</b></p>
     /// <ul>
-    /// <li><p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
-    /// <li><p><code>FAILED</code>: The association or disassociation failed.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code>: The association or disassociation succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The association or disassociation failed.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The association or disassociation is still in progress.</p></li>
     /// </ul>
     pub fn get_node_association_status(&self) -> &::std::option::Option<crate::types::NodeAssociationStatus> {
         &self.node_association_status

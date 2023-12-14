@@ -25,7 +25,8 @@ impl RetrieveEnvironmentInfoInputBuilder {
 /// <p>Retrieves the compiled information from a <code>RequestEnvironmentInfo</code> request.</p>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li><p><code>RequestEnvironmentInfo</code></p></li>
+/// <li>
+/// <p><code>RequestEnvironmentInfo</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoFluentBuilder {

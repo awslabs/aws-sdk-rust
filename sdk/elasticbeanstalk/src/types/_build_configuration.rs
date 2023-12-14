@@ -10,9 +10,12 @@ pub struct BuildConfiguration {
     pub code_build_service_role: ::std::string::String,
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li><p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
     /// </ul>
     pub compute_type: ::std::option::Option<crate::types::ComputeType>,
     /// <p>The ID of the Docker image to use for this build project.</p>
@@ -32,9 +35,12 @@ impl BuildConfiguration {
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li><p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
     /// </ul>
     pub fn compute_type(&self) -> ::std::option::Option<&crate::types::ComputeType> {
         self.compute_type.as_ref()
@@ -98,9 +104,12 @@ impl BuildConfigurationBuilder {
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li><p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
     /// </ul>
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
         self.compute_type = ::std::option::Option::Some(input);
@@ -108,9 +117,12 @@ impl BuildConfigurationBuilder {
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li><p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
     /// </ul>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
@@ -118,9 +130,12 @@ impl BuildConfigurationBuilder {
     }
     /// <p>Information about the compute resources the build project will use.</p>
     /// <ul>
-    /// <li><p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
-    /// <li><p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></p></li>
+    /// <li>
+    /// <p><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></p></li>
     /// </ul>
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
         &self.compute_type

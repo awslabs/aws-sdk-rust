@@ -197,9 +197,12 @@ impl PutSessionFluentBuilder {
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
     /// <ul>
-    /// <li><p><code>intentName</code></p></li>
-    /// <li><p>slot names</p></li>
-    /// <li><p><code>slotToElict</code></p></li>
+    /// <li>
+    /// <p><code>intentName</code></p></li>
+    /// <li>
+    /// <p>slot names</p></li>
+    /// <li>
+    /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
     pub fn recent_intent_summary_view(mut self, input: crate::types::IntentSummary) -> Self {
@@ -209,9 +212,12 @@ impl PutSessionFluentBuilder {
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
     /// <ul>
-    /// <li><p><code>intentName</code></p></li>
-    /// <li><p>slot names</p></li>
-    /// <li><p><code>slotToElict</code></p></li>
+    /// <li>
+    /// <p><code>intentName</code></p></li>
+    /// <li>
+    /// <p>slot names</p></li>
+    /// <li>
+    /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
     pub fn set_recent_intent_summary_view(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>>) -> Self {
@@ -221,9 +227,12 @@ impl PutSessionFluentBuilder {
     /// <p>A summary of the recent intents for the bot. You can use the intent summary view to set a checkpoint label on an intent and modify attributes of intents. You can also use it to remove or add intent summary objects to the list.</p>
     /// <p>An intent that you modify or add to the list must make sense for the bot. For example, the intent name must be valid for the bot. You must provide valid values for:</p>
     /// <ul>
-    /// <li><p><code>intentName</code></p></li>
-    /// <li><p>slot names</p></li>
-    /// <li><p><code>slotToElict</code></p></li>
+    /// <li>
+    /// <p><code>intentName</code></p></li>
+    /// <li>
+    /// <p>slot names</p></li>
+    /// <li>
+    /// <p><code>slotToElict</code></p></li>
     /// </ul>
     /// <p>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code> request, the contents of the new summary view replaces the old summary view. For example, if a <code>GetSession</code> request returns three intents in the summary view and you call <code>PutSession</code> with one intent in the summary view, the next call to <code>GetSession</code> will only return one intent.</p>
     pub fn get_recent_intent_summary_view(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntentSummary>> {
@@ -231,16 +240,25 @@ impl PutSessionFluentBuilder {
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm</code></p></li>
-    /// <li><p><code>audio/*</code> (defaults to mpeg)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm</code></p></li>
+    /// <li>
+    /// <p><code>audio/*</code> (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn accept(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -249,16 +267,25 @@ impl PutSessionFluentBuilder {
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm</code></p></li>
-    /// <li><p><code>audio/*</code> (defaults to mpeg)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm</code></p></li>
+    /// <li>
+    /// <p><code>audio/*</code> (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -267,16 +294,25 @@ impl PutSessionFluentBuilder {
     }
     /// <p>The message that Amazon Lex returns in the response can be either text or speech based depending on the value of this field.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
-    /// <li><p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
-    /// <li><p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
-    /// <li><p>The following are the accepted values:</p>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to generate the speech in the configuration that you specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG format.</p></li>
+    /// <li>
+    /// <p>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code> in 16-bit, little endian format.</p></li>
+    /// <li>
+    /// <p>The following are the accepted values:</p>
     /// <ul>
-    /// <li><p><code>audio/mpeg</code></p></li>
-    /// <li><p><code>audio/ogg</code></p></li>
-    /// <li><p><code>audio/pcm</code></p></li>
-    /// <li><p><code>audio/*</code> (defaults to mpeg)</p></li>
-    /// <li><p><code>text/plain; charset=utf-8</code></p></li>
+    /// <li>
+    /// <p><code>audio/mpeg</code></p></li>
+    /// <li>
+    /// <p><code>audio/ogg</code></p></li>
+    /// <li>
+    /// <p><code>audio/pcm</code></p></li>
+    /// <li>
+    /// <p><code>audio/*</code> (defaults to mpeg)</p></li>
+    /// <li>
+    /// <p><code>text/plain; charset=utf-8</code></p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {

@@ -9,11 +9,16 @@ pub struct CreateBackupInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -28,11 +33,16 @@ impl CreateBackupInput {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -91,11 +101,16 @@ impl CreateBackupInputBuilder {
     ///
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -105,11 +120,16 @@ impl CreateBackupInputBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -117,11 +137,16 @@ impl CreateBackupInputBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks-CM server backup.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for tag-supported AWS OpsWorks-CM resources.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

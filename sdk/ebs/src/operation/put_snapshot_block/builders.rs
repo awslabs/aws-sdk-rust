@@ -23,7 +23,7 @@ impl PutSnapshotBlockInputBuilder {
 /// Fluent builder constructing a request to `PutSnapshotBlock`.
 ///
 /// <p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p>
-/// <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p> <note>
+/// <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p><note>
 /// <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// </note>
 #[derive(::std::fmt::Debug)]
@@ -111,21 +111,21 @@ impl PutSnapshotBlockFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
         self
     }
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {

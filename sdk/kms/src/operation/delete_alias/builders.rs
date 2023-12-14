@@ -22,7 +22,7 @@ impl DeleteAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAlias`.
 ///
-/// <p>Deletes the specified alias.</p> <note>
+/// <p>Deletes the specified alias.</p><note>
 /// <p>Adding, deleting, or updating an alias can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// </note>
 /// <p>Because an alias is not a property of a KMS key, you can delete and change the aliases of a KMS key without affecting the KMS key. Also, aliases do not appear in the response from the <code>DescribeKey</code> operation. To get the aliases of all KMS keys, use the <code>ListAliases</code> operation.</p>
@@ -30,15 +30,20 @@ impl DeleteAliasInputBuilder {
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on an alias in a different Amazon Web Services account.</p>
 /// <p><b>Required permissions</b></p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteAlias</a> on the alias (IAM policy).</p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteAlias</a> on the KMS key (key policy).</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteAlias</a> on the alias (IAM policy).</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteAlias</a> on the KMS key (key policy).</p></li>
 /// </ul>
 /// <p>For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling access to aliases</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>CreateAlias</code></p></li>
-/// <li><p><code>ListAliases</code></p></li>
-/// <li><p><code>UpdateAlias</code></p></li>
+/// <li>
+/// <p><code>CreateAlias</code></p></li>
+/// <li>
+/// <p><code>ListAliases</code></p></li>
+/// <li>
+/// <p><code>UpdateAlias</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAliasFluentBuilder {

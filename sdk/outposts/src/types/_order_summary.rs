@@ -12,12 +12,17 @@ pub struct OrderSummary {
     pub order_type: ::std::option::Option<crate::types::OrderType>,
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li><p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
-    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
-    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
-    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - Customer should contact support.</p></li>
+    /// </ul><note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub status: ::std::option::Option<crate::types::OrderStatus>,
@@ -43,12 +48,17 @@ impl OrderSummary {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li><p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
-    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
-    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
-    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - Customer should contact support.</p></li>
+    /// </ul><note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OrderStatus> {
@@ -131,12 +141,17 @@ impl OrderSummaryBuilder {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li><p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
-    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
-    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
-    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - Customer should contact support.</p></li>
+    /// </ul><note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::OrderStatus) -> Self {
@@ -145,12 +160,17 @@ impl OrderSummaryBuilder {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li><p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
-    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
-    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
-    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - Customer should contact support.</p></li>
+    /// </ul><note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrderStatus>) -> Self {
@@ -159,12 +179,17 @@ impl OrderSummaryBuilder {
     }
     /// <p>The status of the order.</p>
     /// <ul>
-    /// <li><p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
-    /// <li><p><code>COMPLETED</code> - Order is complete.</p></li>
-    /// <li><p><code>CANCELLED</code> - Order is cancelled.</p></li>
-    /// <li><p><code>ERROR</code> - Customer should contact support.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>PREPARING</code> - Order is received and is being prepared.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For more information, see the <code>LineItem</code> status.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - Order is complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - Order is cancelled.</p></li>
+    /// <li>
+    /// <p><code>ERROR</code> - Customer should contact support.</p></li>
+    /// </ul><note>
     /// <p>The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OrderStatus> {

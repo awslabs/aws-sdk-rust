@@ -8,11 +8,11 @@ pub struct Webhook {
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>The CodeBuild endpoint where webhook events are sent.</p>
     pub payload_url: ::std::option::Option<::std::string::String>,
-    /// <p>The secret token of the associated repository.</p> <note>
+    /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
     pub secret: ::std::option::Option<::std::string::String>,
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub branch_filter: ::std::option::Option<::std::string::String>,
@@ -33,13 +33,13 @@ impl Webhook {
     pub fn payload_url(&self) -> ::std::option::Option<&str> {
         self.payload_url.as_deref()
     }
-    /// <p>The secret token of the associated repository.</p> <note>
+    /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
     pub fn secret(&self) -> ::std::option::Option<&str> {
         self.secret.as_deref()
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn branch_filter(&self) -> ::std::option::Option<&str> {
@@ -109,41 +109,41 @@ impl WebhookBuilder {
     pub fn get_payload_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload_url
     }
-    /// <p>The secret token of the associated repository.</p> <note>
+    /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
     pub fn secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The secret token of the associated repository.</p> <note>
+    /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
     pub fn set_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret = input;
         self
     }
-    /// <p>The secret token of the associated repository.</p> <note>
+    /// <p>The secret token of the associated repository.</p><note>
     /// <p>A Bitbucket webhook does not support <code>secret</code>.</p>
     /// </note>
     pub fn get_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn branch_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.branch_filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn set_branch_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_filter = input;
         self
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p><note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>.</p>
     /// </note>
     pub fn get_branch_filter(&self) -> &::std::option::Option<::std::string::String> {

@@ -22,7 +22,7 @@ impl ListMeetingsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMeetings`.
 ///
-/// <p>Lists up to 100 active Amazon Chime SDK meetings.</p> <important>
+/// <p>Lists up to 100 active Amazon Chime SDK meetings.</p><important>
 /// <p>ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls to this API.</p>
 /// </important>
 /// <p>For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>

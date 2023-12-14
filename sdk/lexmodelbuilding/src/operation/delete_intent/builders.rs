@@ -23,7 +23,7 @@ impl DeleteIntentInputBuilder {
 /// Fluent builder constructing a request to `DeleteIntent`.
 ///
 /// <p>Deletes all versions of the intent, including the <code>$LATEST</code> version. To delete a specific version of the intent, use the <code>DeleteIntentVersion</code> operation.</p>
-/// <p>You can delete a version of an intent only if it is not referenced. To delete an intent that is referred to in one or more bots (see <code>how-it-works</code>), you must remove those references first.</p> <note>
+/// <p>You can delete a version of an intent only if it is not referenced. To delete an intent that is referred to in one or more bots (see <code>how-it-works</code>), you must remove those references first.</p><note>
 /// <p>If you get the <code>ResourceInUseException</code> exception, it provides an example reference that shows where the intent is referenced. To remove the reference to the intent, either update the bot or delete it. If you get the same exception when you attempt to delete the intent again, repeat until the intent has no references and the call to <code>DeleteIntent</code> is successful.</p>
 /// </note>
 /// <p>This operation requires permission for the <code>lex:DeleteIntent</code> action.</p>

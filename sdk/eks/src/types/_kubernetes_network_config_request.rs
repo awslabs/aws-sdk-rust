@@ -6,10 +6,13 @@
 pub struct KubernetesNetworkConfigRequest {
     /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
-    /// <li><p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
-    /// <li><p>Between /24 and /12.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
+    /// <li>
+    /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
+    /// <li>
+    /// <p>Between /24 and /12.</p></li>
+    /// </ul><important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
     pub service_ipv4_cidr: ::std::option::Option<::std::string::String>,
@@ -20,10 +23,13 @@ pub struct KubernetesNetworkConfigRequest {
 impl KubernetesNetworkConfigRequest {
     /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
-    /// <li><p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
-    /// <li><p>Between /24 and /12.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
+    /// <li>
+    /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
+    /// <li>
+    /// <p>Between /24 and /12.</p></li>
+    /// </ul><important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
     pub fn service_ipv4_cidr(&self) -> ::std::option::Option<&str> {
@@ -52,10 +58,13 @@ pub struct KubernetesNetworkConfigRequestBuilder {
 impl KubernetesNetworkConfigRequestBuilder {
     /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
-    /// <li><p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
-    /// <li><p>Between /24 and /12.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
+    /// <li>
+    /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
+    /// <li>
+    /// <p>Between /24 and /12.</p></li>
+    /// </ul><important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
     pub fn service_ipv4_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -64,10 +73,13 @@ impl KubernetesNetworkConfigRequestBuilder {
     }
     /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
-    /// <li><p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
-    /// <li><p>Between /24 and /12.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
+    /// <li>
+    /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
+    /// <li>
+    /// <p>Between /24 and /12.</p></li>
+    /// </ul><important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
     pub fn set_service_ipv4_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -76,10 +88,13 @@ impl KubernetesNetworkConfigRequestBuilder {
     }
     /// <p>Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. We recommend that you specify a block that does not overlap with resources in other networks that are peered or connected to your VPC. The block must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
-    /// <li><p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
-    /// <li><p>Between /24 and /12.</p></li>
-    /// </ul> <important>
+    /// <li>
+    /// <p>Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or <code>192.168.0.0/16</code>.</p></li>
+    /// <li>
+    /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
+    /// <li>
+    /// <p>Between /24 and /12.</p></li>
+    /// </ul><important>
     /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
     /// </important>
     pub fn get_service_ipv4_cidr(&self) -> &::std::option::Option<::std::string::String> {

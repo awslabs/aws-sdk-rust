@@ -15,7 +15,7 @@ pub struct SimulationApplicationConfig {
     /// <p>A list of world configurations.</p>
     pub world_configs: ::std::option::Option<::std::vec::Vec<crate::types::WorldConfig>>,
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -24,7 +24,7 @@ pub struct SimulationApplicationConfig {
     pub use_default_upload_configurations: ::std::option::Option<bool>,
     /// <p>Information about tools configured for the simulation application.</p>
     pub tools: ::std::option::Option<::std::vec::Vec<crate::types::Tool>>,
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -59,7 +59,7 @@ impl SimulationApplicationConfig {
         self.world_configs.as_deref().unwrap_or_default()
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -74,7 +74,7 @@ impl SimulationApplicationConfig {
     pub fn tools(&self) -> &[crate::types::Tool] {
         self.tools.as_deref().unwrap_or_default()
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -190,7 +190,7 @@ impl SimulationApplicationConfigBuilder {
         &self.world_configs
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -201,7 +201,7 @@ impl SimulationApplicationConfigBuilder {
         self
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -212,7 +212,7 @@ impl SimulationApplicationConfigBuilder {
         self
     }
     /// <p>A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code> and <code>.gazebo</code> files are uploaded when the application terminates and all ROS topics will be recorded.</p>
-    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p> <important>
+    /// <p>If you set this value, you must specify an <code>outputLocation</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -241,7 +241,7 @@ impl SimulationApplicationConfigBuilder {
     pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tool>> {
         &self.tools
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -251,7 +251,7 @@ impl SimulationApplicationConfigBuilder {
         self.use_default_tools = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -261,7 +261,7 @@ impl SimulationApplicationConfigBuilder {
         self.use_default_tools = input;
         self
     }
-    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p> <important>
+    /// <p>A Boolean indicating whether to use default simulation application tools. The default tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(

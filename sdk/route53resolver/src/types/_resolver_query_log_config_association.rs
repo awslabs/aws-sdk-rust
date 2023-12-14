@@ -12,16 +12,22 @@ pub struct ResolverQueryLogConfigAssociation {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the specified query logging association. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus>,
     /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
     /// <ul>
-    /// <li><p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
     /// </ul>
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null.</p>
     pub error: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociationError>,
@@ -45,18 +51,24 @@ impl ResolverQueryLogConfigAssociation {
     }
     /// <p>The status of the specified query logging association. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigAssociationStatus> {
         self.status.as_ref()
     }
     /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
     /// <ul>
-    /// <li><p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
     /// </ul>
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ResolverQueryLogConfigAssociationError> {
@@ -135,10 +147,14 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>The status of the specified query logging association. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverQueryLogConfigAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -146,10 +162,14 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>The status of the specified query logging association. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus>) -> Self {
         self.status = input;
@@ -157,18 +177,24 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>The status of the specified query logging association. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
-    /// <li><p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
-    /// <li><p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
-    /// <li><p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: Resolver is deleting this query logging association.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus> {
         &self.status
     }
     /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
     /// <ul>
-    /// <li><p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
     /// </ul>
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null.</p>
     pub fn error(mut self, input: crate::types::ResolverQueryLogConfigAssociationError) -> Self {
@@ -177,8 +203,10 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
     /// <ul>
-    /// <li><p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
     /// </ul>
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ResolverQueryLogConfigAssociationError>) -> Self {
@@ -187,8 +215,10 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
     /// <ul>
-    /// <li><p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
-    /// <li><p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
+    /// <li>
+    /// <p><code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p></li>
+    /// <li>
+    /// <p><code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p></li>
     /// </ul>
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ResolverQueryLogConfigAssociationError> {

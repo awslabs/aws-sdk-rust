@@ -7,7 +7,8 @@ pub struct UpdatePlaceIndexOutput {
     pub index_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub index_arn: ::std::string::String,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -22,7 +23,8 @@ impl UpdatePlaceIndexOutput {
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn index_arn(&self) -> &str {
         use std::ops::Deref;
@@ -72,7 +74,8 @@ impl UpdatePlaceIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,7 +84,8 @@ impl UpdatePlaceIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
@@ -89,7 +93,8 @@ impl UpdatePlaceIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn

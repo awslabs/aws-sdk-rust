@@ -8,23 +8,29 @@ pub struct CreateGlobalClusterInput {
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
     /// <p>If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora uses the values from the specified source DB cluster:</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code></p></li>
-    /// <li><p><code>Engine</code></p></li>
-    /// <li><p><code>EngineVersion</code></p></li>
-    /// <li><p><code>StorageEncrypted</code></p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code></p></li>
+    /// <li>
+    /// <p><code>Engine</code></p></li>
+    /// <li>
+    /// <p><code>EngineVersion</code></p></li>
+    /// <li>
+    /// <p><code>StorageEncrypted</code></p></li>
     /// </ul>
     pub source_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The database engine to use for this global database cluster.</p>
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The engine version to use for this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
     /// </ul>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable deletion protection for the new global database cluster. The global database can't be deleted when deletion protection is enabled.</p>
@@ -32,13 +38,15 @@ pub struct CreateGlobalClusterInput {
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
     /// </ul>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable storage encryption for the new global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
     /// </ul>
     pub storage_encrypted: ::std::option::Option<bool>,
 }
@@ -50,10 +58,14 @@ impl CreateGlobalClusterInput {
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
     /// <p>If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora uses the values from the specified source DB cluster:</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code></p></li>
-    /// <li><p><code>Engine</code></p></li>
-    /// <li><p><code>EngineVersion</code></p></li>
-    /// <li><p><code>StorageEncrypted</code></p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code></p></li>
+    /// <li>
+    /// <p><code>Engine</code></p></li>
+    /// <li>
+    /// <p><code>EngineVersion</code></p></li>
+    /// <li>
+    /// <p><code>StorageEncrypted</code></p></li>
     /// </ul>
     pub fn source_db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_identifier.as_deref()
@@ -62,7 +74,8 @@ impl CreateGlobalClusterInput {
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -70,7 +83,8 @@ impl CreateGlobalClusterInput {
     /// <p>The engine version to use for this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
     /// </ul>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
@@ -82,7 +96,8 @@ impl CreateGlobalClusterInput {
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
     /// </ul>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
@@ -90,7 +105,8 @@ impl CreateGlobalClusterInput {
     /// <p>Specifies whether to enable storage encryption for the new global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
     /// </ul>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
@@ -133,10 +149,14 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
     /// <p>If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora uses the values from the specified source DB cluster:</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code></p></li>
-    /// <li><p><code>Engine</code></p></li>
-    /// <li><p><code>EngineVersion</code></p></li>
-    /// <li><p><code>StorageEncrypted</code></p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code></p></li>
+    /// <li>
+    /// <p><code>Engine</code></p></li>
+    /// <li>
+    /// <p><code>EngineVersion</code></p></li>
+    /// <li>
+    /// <p><code>StorageEncrypted</code></p></li>
     /// </ul>
     pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -145,10 +165,14 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
     /// <p>If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora uses the values from the specified source DB cluster:</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code></p></li>
-    /// <li><p><code>Engine</code></p></li>
-    /// <li><p><code>EngineVersion</code></p></li>
-    /// <li><p><code>StorageEncrypted</code></p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code></p></li>
+    /// <li>
+    /// <p><code>Engine</code></p></li>
+    /// <li>
+    /// <p><code>EngineVersion</code></p></li>
+    /// <li>
+    /// <p><code>StorageEncrypted</code></p></li>
     /// </ul>
     pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_identifier = input;
@@ -157,10 +181,14 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database.</p>
     /// <p>If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora uses the values from the specified source DB cluster:</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code></p></li>
-    /// <li><p><code>Engine</code></p></li>
-    /// <li><p><code>EngineVersion</code></p></li>
-    /// <li><p><code>StorageEncrypted</code></p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code></p></li>
+    /// <li>
+    /// <p><code>Engine</code></p></li>
+    /// <li>
+    /// <p><code>EngineVersion</code></p></li>
+    /// <li>
+    /// <p><code>StorageEncrypted</code></p></li>
     /// </ul>
     pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_identifier
@@ -169,7 +197,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -179,7 +208,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -189,7 +219,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>Valid Values: <code>aurora-mysql | aurora-postgresql</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.</p></li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
@@ -197,7 +228,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The engine version to use for this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
     /// </ul>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
@@ -206,7 +238,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The engine version to use for this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
     /// </ul>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
@@ -215,7 +248,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The engine version to use for this global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.</p></li>
     /// </ul>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
@@ -237,7 +271,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
     /// </ul>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
@@ -246,7 +281,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
     /// </ul>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
@@ -255,7 +291,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.</p></li>
     /// </ul>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
@@ -263,7 +300,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>Specifies whether to enable storage encryption for the new global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
     /// </ul>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -272,7 +310,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>Specifies whether to enable storage encryption for the new global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
     /// </ul>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
@@ -281,7 +320,8 @@ impl CreateGlobalClusterInputBuilder {
     /// <p>Specifies whether to enable storage encryption for the new global database cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.</p></li>
     /// </ul>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted

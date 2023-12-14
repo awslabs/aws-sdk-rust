@@ -16,8 +16,10 @@ pub struct CreateScheduledQueryInput {
     pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
     /// <ul>
-    /// <li><p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li><p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li>
+    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
+    /// <li>
+    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the IAM role that Timestream will assume when running the scheduled query.</p>
@@ -54,8 +56,10 @@ impl CreateScheduledQueryInput {
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
     /// <ul>
-    /// <li><p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li><p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li>
+    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
+    /// <li>
+    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -198,8 +202,10 @@ impl CreateScheduledQueryInputBuilder {
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
     /// <ul>
-    /// <li><p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li><p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li>
+    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
+    /// <li>
+    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -207,8 +213,10 @@ impl CreateScheduledQueryInputBuilder {
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
     /// <ul>
-    /// <li><p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li><p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li>
+    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
+    /// <li>
+    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
@@ -216,8 +224,10 @@ impl CreateScheduledQueryInputBuilder {
     }
     /// <p>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.</p>
     /// <ul>
-    /// <li><p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
-    /// <li><p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
+    /// <li>
+    /// <p>If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK generates a <code>ClientToken</code> on your behalf.</p></li>
+    /// <li>
+    /// <p>After 8 hours, any request with the same <code>ClientToken</code> is treated as a new request.</p></li>
     /// </ul>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token

@@ -22,7 +22,7 @@ impl ListDecoderManifestsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListDecoderManifests`.
 ///
-/// <p>Lists decoder manifests.</p> <note>
+/// <p>Lists decoder manifests.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

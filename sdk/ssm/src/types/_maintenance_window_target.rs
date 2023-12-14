@@ -12,14 +12,12 @@ pub struct MaintenanceWindowTarget {
     pub resource_type: ::std::option::Option<crate::types::MaintenanceWindowResourceType>,
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
-    /// <p><code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p><code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
     /// </instanceid1></code></p>
     /// <p>Tags are specified using the following format:</p>
-    /// <p><code>Key=
-    /// <tag name>
+    /// <p><code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -46,14 +44,12 @@ impl MaintenanceWindowTarget {
     }
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
-    /// <p><code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p><code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
     /// </instanceid1></code></p>
     /// <p>Tags are specified using the following format:</p>
-    /// <p><code>Key=
-    /// <tag name>
+    /// <p><code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -156,14 +152,12 @@ impl MaintenanceWindowTargetBuilder {
     ///
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
-    /// <p><code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p><code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
     /// </instanceid1></code></p>
     /// <p>Tags are specified using the following format:</p>
-    /// <p><code>Key=
-    /// <tag name>
+    /// <p><code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -175,14 +169,12 @@ impl MaintenanceWindowTargetBuilder {
     }
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
-    /// <p><code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p><code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
     /// </instanceid1></code></p>
     /// <p>Tags are specified using the following format:</p>
-    /// <p><code>Key=
-    /// <tag name>
+    /// <p><code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>
@@ -192,14 +184,12 @@ impl MaintenanceWindowTargetBuilder {
     }
     /// <p>The targets, either managed nodes or tags.</p>
     /// <p>Specify managed nodes using the following format:</p>
-    /// <p><code>Key=instanceids,Values=
-    /// <instanceid1>
+    /// <p><code>Key=instanceids,Values=<instanceid1>
     /// ,
     /// <instanceid2></instanceid2>
     /// </instanceid1></code></p>
     /// <p>Tags are specified using the following format:</p>
-    /// <p><code>Key=
-    /// <tag name>
+    /// <p><code>Key=<tag name>
     /// ,Values=
     /// <tag value></tag>
     /// </tag></code>.</p>

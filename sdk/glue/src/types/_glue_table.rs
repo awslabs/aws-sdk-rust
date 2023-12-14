@@ -14,8 +14,10 @@ pub struct GlueTable {
     pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
     /// <ul>
-    /// <li><p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
-    /// <li><p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
+    /// <li>
+    /// <p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
     /// </ul>
     pub additional_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -40,8 +42,10 @@ impl GlueTable {
     }
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
     /// <ul>
-    /// <li><p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
-    /// <li><p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
+    /// <li>
+    /// <p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
     /// </ul>
     pub fn additional_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.additional_options.as_ref()
@@ -129,8 +133,10 @@ impl GlueTableBuilder {
     ///
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
     /// <ul>
-    /// <li><p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
-    /// <li><p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
+    /// <li>
+    /// <p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
     /// </ul>
     pub fn additional_options(
         mut self,
@@ -144,8 +150,10 @@ impl GlueTableBuilder {
     }
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
     /// <ul>
-    /// <li><p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
-    /// <li><p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
+    /// <li>
+    /// <p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
     /// </ul>
     pub fn set_additional_options(
         mut self,
@@ -156,8 +164,10 @@ impl GlueTableBuilder {
     }
     /// <p>Additional options for the table. Currently there are two keys supported:</p>
     /// <ul>
-    /// <li><p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
-    /// <li><p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p><code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p></li>
+    /// <li>
+    /// <p><code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p></li>
     /// </ul>
     pub fn get_additional_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.additional_options

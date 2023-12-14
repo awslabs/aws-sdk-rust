@@ -16,10 +16,14 @@ pub struct Snapshot {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
-    /// <li><p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
     /// </ul>
     pub lifecycle: ::std::option::Option<crate::types::SnapshotLifecycle>,
     /// <p>Describes why a resource lifecycle state changed.</p>
@@ -52,10 +56,14 @@ impl Snapshot {
     }
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
-    /// <li><p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
     /// </ul>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::SnapshotLifecycle> {
         self.lifecycle.as_ref()
@@ -171,10 +179,14 @@ impl SnapshotBuilder {
     }
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
-    /// <li><p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::SnapshotLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
@@ -182,10 +194,14 @@ impl SnapshotBuilder {
     }
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
-    /// <li><p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
     /// </ul>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::SnapshotLifecycle>) -> Self {
         self.lifecycle = input;
@@ -193,10 +209,14 @@ impl SnapshotBuilder {
     }
     /// <p>The lifecycle status of the snapshot.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
-    /// <li><p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
-    /// <li><p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Amazon FSx is creating the snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Amazon FSx is deleting the snapshot.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - The snapshot is fully available.</p></li>
     /// </ul>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::SnapshotLifecycle> {
         &self.lifecycle

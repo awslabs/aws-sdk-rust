@@ -116,10 +116,14 @@ impl CreateAccountSubscriptionFluentBuilder {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
-    /// <li><p><code>FirstName</code></p></li>
-    /// <li><p><code>LastName</code></p></li>
-    /// <li><p><code>EmailAddress</code></p></li>
-    /// <li><p><code>ContactNumber</code></p></li>
+    /// <li>
+    /// <p><code>FirstName</code></p></li>
+    /// <li>
+    /// <p><code>LastName</code></p></li>
+    /// <li>
+    /// <p><code>EmailAddress</code></p></li>
+    /// <li>
+    /// <p><code>ContactNumber</code></p></li>
     /// </ul>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
         self.inner = self.inner.edition(input);
@@ -128,10 +132,14 @@ impl CreateAccountSubscriptionFluentBuilder {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
-    /// <li><p><code>FirstName</code></p></li>
-    /// <li><p><code>LastName</code></p></li>
-    /// <li><p><code>EmailAddress</code></p></li>
-    /// <li><p><code>ContactNumber</code></p></li>
+    /// <li>
+    /// <p><code>FirstName</code></p></li>
+    /// <li>
+    /// <p><code>LastName</code></p></li>
+    /// <li>
+    /// <p><code>EmailAddress</code></p></li>
+    /// <li>
+    /// <p><code>ContactNumber</code></p></li>
     /// </ul>
     pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.inner = self.inner.set_edition(input);
@@ -140,10 +148,14 @@ impl CreateAccountSubscriptionFluentBuilder {
     /// <p>The edition of Amazon QuickSight that you want your account to have. Currently, you can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.</p>
     /// <p>If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:</p>
     /// <ul>
-    /// <li><p><code>FirstName</code></p></li>
-    /// <li><p><code>LastName</code></p></li>
-    /// <li><p><code>EmailAddress</code></p></li>
-    /// <li><p><code>ContactNumber</code></p></li>
+    /// <li>
+    /// <p><code>FirstName</code></p></li>
+    /// <li>
+    /// <p><code>LastName</code></p></li>
+    /// <li>
+    /// <p><code>EmailAddress</code></p></li>
+    /// <li>
+    /// <p><code>ContactNumber</code></p></li>
     /// </ul>
     pub fn get_edition(&self) -> &::std::option::Option<crate::types::Edition> {
         self.inner.get_edition()

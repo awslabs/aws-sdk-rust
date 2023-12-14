@@ -13,8 +13,10 @@ pub struct CreateEnvironmentInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li>
+    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub federation_mode: ::std::option::Option<crate::types::FederationMode>,
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
@@ -23,8 +25,10 @@ pub struct CreateEnvironmentInput {
     pub superuser_parameters: ::std::option::Option<crate::types::SuperuserParameters>,
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
     /// </ul>
     pub data_bundles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -47,8 +51,10 @@ impl CreateEnvironmentInput {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li>
+    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn federation_mode(&self) -> ::std::option::Option<&crate::types::FederationMode> {
         self.federation_mode.as_ref()
@@ -63,8 +69,10 @@ impl CreateEnvironmentInput {
     }
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_bundles.is_none()`.
@@ -158,8 +166,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li>
+    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn federation_mode(mut self, input: crate::types::FederationMode) -> Self {
         self.federation_mode = ::std::option::Option::Some(input);
@@ -167,8 +177,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li>
+    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn set_federation_mode(mut self, input: ::std::option::Option<crate::types::FederationMode>) -> Self {
         self.federation_mode = input;
@@ -176,8 +188,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>Authentication mode for the environment.</p>
     /// <ul>
-    /// <li><p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
-    /// <li><p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
+    /// <li>
+    /// <p><code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your Identity provider.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> - Users access FinSpace via email and password managed within the FinSpace environment.</p></li>
     /// </ul>
     pub fn get_federation_mode(&self) -> &::std::option::Option<crate::types::FederationMode> {
         &self.federation_mode
@@ -216,8 +230,10 @@ impl CreateEnvironmentInputBuilder {
     ///
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
     /// </ul>
     pub fn data_bundles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_bundles.unwrap_or_default();
@@ -227,8 +243,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
     /// </ul>
     pub fn set_data_bundles(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_bundles = input;
@@ -236,8 +254,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The list of Amazon Resource Names (ARN) of the data bundles to install. Currently supported data bundle ARNs:</p>
     /// <ul>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
-    /// <li><p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p></li>
+    /// <li>
+    /// <p><code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p></li>
     /// </ul>
     pub fn get_data_bundles(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_bundles

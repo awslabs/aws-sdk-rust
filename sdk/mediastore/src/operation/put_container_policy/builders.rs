@@ -125,8 +125,10 @@ impl PutContainerPolicyFluentBuilder {
     }
     /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li><p>One <code>Version</code> tag</p></li>
-    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
+    /// <li>
+    /// <p>One <code>Version</code> tag</p></li>
+    /// <li>
+    /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
@@ -134,8 +136,10 @@ impl PutContainerPolicyFluentBuilder {
     }
     /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li><p>One <code>Version</code> tag</p></li>
-    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
+    /// <li>
+    /// <p>One <code>Version</code> tag</p></li>
+    /// <li>
+    /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
@@ -143,8 +147,10 @@ impl PutContainerPolicyFluentBuilder {
     }
     /// <p>The contents of the policy, which includes the following:</p>
     /// <ul>
-    /// <li><p>One <code>Version</code> tag</p></li>
-    /// <li><p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
+    /// <li>
+    /// <p>One <code>Version</code> tag</p></li>
+    /// <li>
+    /// <p>One <code>Statement</code> tag that contains the standard tags for the policy.</p></li>
     /// </ul>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()

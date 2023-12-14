@@ -6,8 +6,10 @@
 pub struct GridLayoutScreenCanvasSizeOptions {
     /// <p>This value determines the layout behavior when the viewport is resized.</p>
     /// <ul>
-    /// <li><p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
-    /// <li><p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
+    /// <li>
+    /// <p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
+    /// <li>
+    /// <p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
     /// </ul>
     pub resize_option: crate::types::ResizeOption,
     /// <p>The width that the view port will be optimized for when the layout renders.</p>
@@ -16,8 +18,10 @@ pub struct GridLayoutScreenCanvasSizeOptions {
 impl GridLayoutScreenCanvasSizeOptions {
     /// <p>This value determines the layout behavior when the viewport is resized.</p>
     /// <ul>
-    /// <li><p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
-    /// <li><p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
+    /// <li>
+    /// <p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
+    /// <li>
+    /// <p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
     /// </ul>
     pub fn resize_option(&self) -> &crate::types::ResizeOption {
         &self.resize_option
@@ -44,8 +48,10 @@ pub struct GridLayoutScreenCanvasSizeOptionsBuilder {
 impl GridLayoutScreenCanvasSizeOptionsBuilder {
     /// <p>This value determines the layout behavior when the viewport is resized.</p>
     /// <ul>
-    /// <li><p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
-    /// <li><p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
+    /// <li>
+    /// <p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
+    /// <li>
+    /// <p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resize_option(mut self, input: crate::types::ResizeOption) -> Self {
@@ -54,8 +60,10 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
     }
     /// <p>This value determines the layout behavior when the viewport is resized.</p>
     /// <ul>
-    /// <li><p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
-    /// <li><p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
+    /// <li>
+    /// <p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
+    /// <li>
+    /// <p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
     /// </ul>
     pub fn set_resize_option(mut self, input: ::std::option::Option<crate::types::ResizeOption>) -> Self {
         self.resize_option = input;
@@ -63,8 +71,10 @@ impl GridLayoutScreenCanvasSizeOptionsBuilder {
     }
     /// <p>This value determines the layout behavior when the viewport is resized.</p>
     /// <ul>
-    /// <li><p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
-    /// <li><p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
+    /// <li>
+    /// <p><code>FIXED</code>: A fixed width will be used when optimizing the layout. In the Amazon QuickSight console, this option is called <code>Classic</code>.</p></li>
+    /// <li>
+    /// <p><code>RESPONSIVE</code>: The width of the canvas will be responsive and optimized to the view port. In the Amazon QuickSight console, this option is called <code>Tiled</code>.</p></li>
     /// </ul>
     pub fn get_resize_option(&self) -> &::std::option::Option<crate::types::ResizeOption> {
         &self.resize_option

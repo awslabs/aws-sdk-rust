@@ -12,8 +12,10 @@ pub struct TerminateEnvironmentInput {
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
-    /// <li><p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
-    /// <li><p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
+    /// <li>
+    /// <p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
+    /// <li>
+    /// <p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a></p>
     /// <p>Default: <code>true</code></p>
@@ -35,8 +37,10 @@ impl TerminateEnvironmentInput {
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
-    /// <li><p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
-    /// <li><p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
+    /// <li>
+    /// <p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
+    /// <li>
+    /// <p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a></p>
     /// <p>Default: <code>true</code></p>
@@ -102,8 +106,10 @@ impl TerminateEnvironmentInputBuilder {
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
-    /// <li><p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
-    /// <li><p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
+    /// <li>
+    /// <p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
+    /// <li>
+    /// <p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a></p>
     /// <p>Default: <code>true</code></p>
@@ -114,8 +120,10 @@ impl TerminateEnvironmentInputBuilder {
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
-    /// <li><p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
-    /// <li><p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
+    /// <li>
+    /// <p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
+    /// <li>
+    /// <p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a></p>
     /// <p>Default: <code>true</code></p>
@@ -126,8 +134,10 @@ impl TerminateEnvironmentInputBuilder {
     }
     /// <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p>
     /// <ul>
-    /// <li><p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
-    /// <li><p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
+    /// <li>
+    /// <p><code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p></li>
+    /// <li>
+    /// <p><code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p></li>
     /// </ul>
     /// <p>For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a></p>
     /// <p>Default: <code>true</code></p>

@@ -14,28 +14,40 @@ pub struct PutBotInput {
     /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
     /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
     pub enable_model_improvements: ::std::option::Option<bool>,
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.</p>
@@ -43,9 +55,12 @@ pub struct PutBotInput {
     /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases:</p>
     /// <ul>
-    /// <li><p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
-    /// <li><p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
-    /// <li><p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
+    /// <li>
+    /// <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
     pub clarification_prompt: ::std::option::Option<crate::types::Prompt>,
     /// <p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.</p>
@@ -101,10 +116,14 @@ impl PutBotInput {
     /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
     /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
     pub fn enable_model_improvements(&self) -> ::std::option::Option<bool> {
@@ -113,18 +132,26 @@ impl PutBotInput {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn nlu_intent_confidence_threshold(&self) -> ::std::option::Option<f64> {
         self.nlu_intent_confidence_threshold
@@ -134,9 +161,12 @@ impl PutBotInput {
     /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases:</p>
     /// <ul>
-    /// <li><p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
-    /// <li><p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
-    /// <li><p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
+    /// <li>
+    /// <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
     pub fn clarification_prompt(&self) -> ::std::option::Option<&crate::types::Prompt> {
         self.clarification_prompt.as_ref()
@@ -279,10 +309,14 @@ impl PutBotInputBuilder {
     /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
     /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
     pub fn enable_model_improvements(mut self, input: bool) -> Self {
@@ -294,10 +328,14 @@ impl PutBotInputBuilder {
     /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
     /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
     pub fn set_enable_model_improvements(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -309,10 +347,14 @@ impl PutBotInputBuilder {
     /// <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p>
     /// <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>
     pub fn get_enable_model_improvements(&self) -> &::std::option::Option<bool> {
@@ -321,18 +363,26 @@ impl PutBotInputBuilder {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
         self.nlu_intent_confidence_threshold = ::std::option::Option::Some(input);
@@ -341,18 +391,26 @@ impl PutBotInputBuilder {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.nlu_intent_confidence_threshold = input;
@@ -361,18 +419,26 @@ impl PutBotInputBuilder {
     /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p>
     /// <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p>
     /// <ul>
-    /// <li><p>US East (N. Virginia) (us-east-1)</p></li>
-    /// <li><p>US West (Oregon) (us-west-2)</p></li>
-    /// <li><p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
-    /// <li><p>EU (Ireland) (eu-west-1)</p></li>
+    /// <li>
+    /// <p>US East (N. Virginia) (us-east-1)</p></li>
+    /// <li>
+    /// <p>US West (Oregon) (us-west-2)</p></li>
+    /// <li>
+    /// <p>Asia Pacific (Sydney) (ap-southeast-2)</p></li>
+    /// <li>
+    /// <p>EU (Ireland) (eu-west-1)</p></li>
     /// </ul>
     /// <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p>
     /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
     /// <ul>
-    /// <li><p>AMAZON.FallbackIntent</p></li>
-    /// <li><p>IntentA</p></li>
-    /// <li><p>IntentB</p></li>
-    /// <li><p>IntentC</p></li>
+    /// <li>
+    /// <p>AMAZON.FallbackIntent</p></li>
+    /// <li>
+    /// <p>IntentA</p></li>
+    /// <li>
+    /// <p>IntentB</p></li>
+    /// <li>
+    /// <p>IntentC</p></li>
     /// </ul>
     pub fn get_nlu_intent_confidence_threshold(&self) -> &::std::option::Option<f64> {
         &self.nlu_intent_confidence_threshold
@@ -382,9 +448,12 @@ impl PutBotInputBuilder {
     /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases:</p>
     /// <ul>
-    /// <li><p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
-    /// <li><p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
-    /// <li><p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
+    /// <li>
+    /// <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
     pub fn clarification_prompt(mut self, input: crate::types::Prompt) -> Self {
         self.clarification_prompt = ::std::option::Option::Some(input);
@@ -395,9 +464,12 @@ impl PutBotInputBuilder {
     /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases:</p>
     /// <ul>
-    /// <li><p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
-    /// <li><p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
-    /// <li><p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
+    /// <li>
+    /// <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
     pub fn set_clarification_prompt(mut self, input: ::std::option::Option<crate::types::Prompt>) -> Self {
         self.clarification_prompt = input;
@@ -408,9 +480,12 @@ impl PutBotInputBuilder {
     /// <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.</p>
     /// <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases:</p>
     /// <ul>
-    /// <li><p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
-    /// <li><p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
-    /// <li><p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says "Would you like anything else today?" the user says "Yes." Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p></li>
+    /// <li>
+    /// <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
+    /// <li>
+    /// <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p></li>
     /// </ul>
     pub fn get_clarification_prompt(&self) -> &::std::option::Option<crate::types::Prompt> {
         &self.clarification_prompt

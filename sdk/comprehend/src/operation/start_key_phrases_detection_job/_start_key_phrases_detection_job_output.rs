@@ -6,8 +6,7 @@ pub struct StartKeyPhrasesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -22,10 +21,14 @@ pub struct StartKeyPhrasesDetectionJobOutput {
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     _request_id: Option<String>,
@@ -36,8 +39,7 @@ impl StartKeyPhrasesDetectionJobOutput {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -54,10 +56,14 @@ impl StartKeyPhrasesDetectionJobOutput {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
@@ -100,8 +106,7 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
         &self.job_id
     }
     /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -118,8 +123,7 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -136,8 +140,7 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -154,10 +157,14 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -165,10 +172,14 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
@@ -176,10 +187,14 @@ impl StartKeyPhrasesDetectionJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status

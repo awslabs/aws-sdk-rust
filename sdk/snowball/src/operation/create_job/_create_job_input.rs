@@ -24,17 +24,21 @@ pub struct CreateJobInput {
     pub snowball_capacity_preference: ::std::option::Option<crate::types::SnowballCapacity>,
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for this job.</p>
     pub notification: ::std::option::Option<crate::types::Notification>,
     /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to provide only this <code>clusterId</code> value. The other job attributes are inherited from the cluster.</p>
     pub cluster_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -95,10 +99,14 @@ impl CreateJobInput {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
         self.shipping_option.as_ref()
@@ -111,7 +119,7 @@ impl CreateJobInput {
     pub fn cluster_id(&self) -> ::std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -305,10 +313,14 @@ impl CreateJobInputBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.shipping_option = ::std::option::Option::Some(input);
@@ -316,10 +328,14 @@ impl CreateJobInputBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
@@ -327,10 +343,14 @@ impl CreateJobInputBuilder {
     }
     /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the Snow device, rather it represents how quickly the Snow device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the US, you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
         &self.shipping_option
@@ -363,7 +383,7 @@ impl CreateJobInputBuilder {
     pub fn get_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_id
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -373,7 +393,7 @@ impl CreateJobInputBuilder {
         self.snowball_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>
@@ -383,7 +403,7 @@ impl CreateJobInputBuilder {
         self.snowball_type = input;
         self
     }
-    /// <p>The type of Snow Family devices to use for this job.</p> <note>
+    /// <p>The type of Snow Family devices to use for this job.</p><note>
     /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     /// <p>The type of Amazon Web Services Snow device to use for this job. Currently, the only supported device type for cluster jobs is <code>EDGE</code>.</p>

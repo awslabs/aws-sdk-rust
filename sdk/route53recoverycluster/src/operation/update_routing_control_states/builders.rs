@@ -28,8 +28,10 @@ impl UpdateRoutingControlStatesInputBuilder {
 /// <p><i>You must specify Regional endpoints when you work with API cluster operations to get or update routing control states in Route 53 ARC.</i></p>
 /// <p>To see a code example for getting a routing control state, including accessing Regional cluster endpoints in sequence, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/service_code_examples_actions.html">API examples</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.html"> Viewing and updating routing control states</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.html">Working with routing controls overall</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesFluentBuilder {

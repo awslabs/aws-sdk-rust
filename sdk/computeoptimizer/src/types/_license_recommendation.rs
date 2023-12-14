@@ -17,18 +17,25 @@ pub struct LicenseRecommendation {
     /// <p>The finding classification for an instance that runs on a license.</p>
     /// <p>Findings include:</p>
     /// <ul>
-    /// <li><p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
-    /// <li><p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
-    /// <li><p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
+    /// <li>
+    /// <p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
     /// </ul>
     pub finding: ::std::option::Option<crate::types::LicenseFinding>,
     /// <p>The reason for the finding classification for an instance that runs on a license.</p>
     /// <p>Finding reason codes include:</p>
     /// <ul>
-    /// <li><p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
-    /// <li><p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
-    /// <li><p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
-    /// <li><p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
+    /// <li>
+    /// <p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
     /// </ul>
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::LicenseFindingReasonCode>>,
     /// <p>An array of objects that describe the license recommendation options.</p>
@@ -60,9 +67,12 @@ impl LicenseRecommendation {
     /// <p>The finding classification for an instance that runs on a license.</p>
     /// <p>Findings include:</p>
     /// <ul>
-    /// <li><p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
-    /// <li><p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
-    /// <li><p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
+    /// <li>
+    /// <p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
     /// </ul>
     pub fn finding(&self) -> ::std::option::Option<&crate::types::LicenseFinding> {
         self.finding.as_ref()
@@ -70,10 +80,14 @@ impl LicenseRecommendation {
     /// <p>The reason for the finding classification for an instance that runs on a license.</p>
     /// <p>Finding reason codes include:</p>
     /// <ul>
-    /// <li><p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
-    /// <li><p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
-    /// <li><p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
-    /// <li><p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
+    /// <li>
+    /// <p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
@@ -188,9 +202,12 @@ impl LicenseRecommendationBuilder {
     /// <p>The finding classification for an instance that runs on a license.</p>
     /// <p>Findings include:</p>
     /// <ul>
-    /// <li><p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
-    /// <li><p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
-    /// <li><p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
+    /// <li>
+    /// <p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::LicenseFinding) -> Self {
         self.finding = ::std::option::Option::Some(input);
@@ -199,9 +216,12 @@ impl LicenseRecommendationBuilder {
     /// <p>The finding classification for an instance that runs on a license.</p>
     /// <p>Findings include:</p>
     /// <ul>
-    /// <li><p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
-    /// <li><p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
-    /// <li><p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
+    /// <li>
+    /// <p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
     /// </ul>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::LicenseFinding>) -> Self {
         self.finding = input;
@@ -210,9 +230,12 @@ impl LicenseRecommendationBuilder {
     /// <p>The finding classification for an instance that runs on a license.</p>
     /// <p>Findings include:</p>
     /// <ul>
-    /// <li><p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
-    /// <li><p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
-    /// <li><p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch Application Insights isn't enabled or is enabled with insufficient permissions.</p></li>
+    /// <li>
+    /// <p><code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure isn't using any of the SQL server license features you're paying for, a license is considered not optimized.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — When Compute Optimizer detects that all specifications of your license meet the performance requirements of your workload.</p></li>
     /// </ul>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::LicenseFinding> {
         &self.finding
@@ -224,10 +247,14 @@ impl LicenseRecommendationBuilder {
     /// <p>The reason for the finding classification for an instance that runs on a license.</p>
     /// <p>Finding reason codes include:</p>
     /// <ul>
-    /// <li><p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
-    /// <li><p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
-    /// <li><p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
-    /// <li><p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
+    /// <li>
+    /// <p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
     /// </ul>
     pub fn finding_reason_codes(mut self, input: crate::types::LicenseFindingReasonCode) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
@@ -238,10 +265,14 @@ impl LicenseRecommendationBuilder {
     /// <p>The reason for the finding classification for an instance that runs on a license.</p>
     /// <p>Finding reason codes include:</p>
     /// <ul>
-    /// <li><p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
-    /// <li><p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
-    /// <li><p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
-    /// <li><p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
+    /// <li>
+    /// <p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
     /// </ul>
     pub fn set_finding_reason_codes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseFindingReasonCode>>) -> Self {
         self.finding_reason_codes = input;
@@ -250,10 +281,14 @@ impl LicenseRecommendationBuilder {
     /// <p>The reason for the finding classification for an instance that runs on a license.</p>
     /// <p>Finding reason codes include:</p>
     /// <ul>
-    /// <li><p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
-    /// <li><p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
-    /// <li><p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
-    /// <li><p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
+    /// <li>
+    /// <p><code>Optimized</code> — All specifications of your license meet the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>LicenseOverprovisioned</code> — A license is considered over-provisioned when your license can be downgraded while still meeting the performance requirements of your workload.</p></li>
+    /// <li>
+    /// <p><code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights isn't configured properly.</p></li>
+    /// <li>
+    /// <p><code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application Insights error.</p></li>
     /// </ul>
     pub fn get_finding_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LicenseFindingReasonCode>> {
         &self.finding_reason_codes

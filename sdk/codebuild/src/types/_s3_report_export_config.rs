@@ -12,8 +12,10 @@ pub struct S3ReportExportConfig {
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The type of build output artifact to create. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
-    /// <li><p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
+    /// <li>
+    /// <p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
     /// </ul>
     pub packaging: ::std::option::Option<crate::types::ReportPackagingType>,
     /// <p>The encryption key for the report's encrypted raw data.</p>
@@ -36,8 +38,10 @@ impl S3ReportExportConfig {
     }
     /// <p>The type of build output artifact to create. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
-    /// <li><p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
+    /// <li>
+    /// <p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
     /// </ul>
     pub fn packaging(&self) -> ::std::option::Option<&crate::types::ReportPackagingType> {
         self.packaging.as_ref()
@@ -114,8 +118,10 @@ impl S3ReportExportConfigBuilder {
     }
     /// <p>The type of build output artifact to create. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
-    /// <li><p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
+    /// <li>
+    /// <p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
     /// </ul>
     pub fn packaging(mut self, input: crate::types::ReportPackagingType) -> Self {
         self.packaging = ::std::option::Option::Some(input);
@@ -123,8 +129,10 @@ impl S3ReportExportConfigBuilder {
     }
     /// <p>The type of build output artifact to create. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
-    /// <li><p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
+    /// <li>
+    /// <p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
     /// </ul>
     pub fn set_packaging(mut self, input: ::std::option::Option<crate::types::ReportPackagingType>) -> Self {
         self.packaging = input;
@@ -132,8 +140,10 @@ impl S3ReportExportConfigBuilder {
     }
     /// <p>The type of build output artifact to create. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
-    /// <li><p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified.</p></li>
+    /// <li>
+    /// <p><code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket.</p></li>
     /// </ul>
     pub fn get_packaging(&self) -> &::std::option::Option<crate::types::ReportPackagingType> {
         &self.packaging

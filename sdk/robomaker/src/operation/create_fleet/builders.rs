@@ -22,7 +22,7 @@ impl CreateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleet`.
 ///
-/// <p>Creates a fleet, a logical group of robots running the same robot application.</p> <important>
+/// <p>Creates a fleet, a logical group of robots running the same robot application.</p><important>
 /// <p>This API is no longer supported and will throw an error if used.</p>
 /// </important>
 #[deprecated(

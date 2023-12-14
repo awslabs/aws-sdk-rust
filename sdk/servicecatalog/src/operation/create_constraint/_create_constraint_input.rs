@@ -5,8 +5,10 @@
 pub struct CreateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
     /// <p>The portfolio identifier.</p>
@@ -24,7 +26,7 @@ pub struct CreateConstraintInput {
     /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
     /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p><note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
@@ -65,11 +67,16 @@ pub struct CreateConstraintInput {
     pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li><p><code>LAUNCH</code></p></li>
-    /// <li><p><code>NOTIFICATION</code></p></li>
-    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
-    /// <li><p><code>STACKSET</code></p></li>
-    /// <li><p><code>TEMPLATE</code></p></li>
+    /// <li>
+    /// <p><code>LAUNCH</code></p></li>
+    /// <li>
+    /// <p><code>NOTIFICATION</code></p></li>
+    /// <li>
+    /// <p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>STACKSET</code></p></li>
+    /// <li>
+    /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the constraint.</p>
@@ -80,8 +87,10 @@ pub struct CreateConstraintInput {
 impl CreateConstraintInput {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
@@ -105,7 +114,7 @@ impl CreateConstraintInput {
     /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
     /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p><note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
@@ -148,11 +157,16 @@ impl CreateConstraintInput {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li><p><code>LAUNCH</code></p></li>
-    /// <li><p><code>NOTIFICATION</code></p></li>
-    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
-    /// <li><p><code>STACKSET</code></p></li>
-    /// <li><p><code>TEMPLATE</code></p></li>
+    /// <li>
+    /// <p><code>LAUNCH</code></p></li>
+    /// <li>
+    /// <p><code>NOTIFICATION</code></p></li>
+    /// <li>
+    /// <p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>STACKSET</code></p></li>
+    /// <li>
+    /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -188,8 +202,10 @@ pub struct CreateConstraintInputBuilder {
 impl CreateConstraintInputBuilder {
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn accept_language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accept_language = ::std::option::Option::Some(input.into());
@@ -197,8 +213,10 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn set_accept_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept_language = input;
@@ -206,8 +224,10 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The language code.</p>
     /// <ul>
-    /// <li><p><code>jp</code> - Japanese</p></li>
-    /// <li><p><code>zh</code> - Chinese</p></li>
+    /// <li>
+    /// <p><code>jp</code> - Japanese</p></li>
+    /// <li>
+    /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
@@ -253,7 +273,7 @@ impl CreateConstraintInputBuilder {
     /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
     /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p><note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
@@ -307,7 +327,7 @@ impl CreateConstraintInputBuilder {
     /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
     /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p><note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
@@ -360,7 +380,7 @@ impl CreateConstraintInputBuilder {
     /// <p><code>{"RoleArn" : "arn:aws:iam::123456789012:role/LaunchRole"}</code></p>
     /// <p>Specify the <code>LocalRoleName</code> property as follows:</p>
     /// <p><code>{"LocalRoleName": "SCBasicLaunchRole"}</code></p>
-    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p> <note>
+    /// <p>If you specify the <code>LocalRoleName</code> property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.</p><note>
     /// <p>The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.</p>
     /// </note>
     /// <p>You cannot have both a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p>
@@ -403,11 +423,16 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li><p><code>LAUNCH</code></p></li>
-    /// <li><p><code>NOTIFICATION</code></p></li>
-    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
-    /// <li><p><code>STACKSET</code></p></li>
-    /// <li><p><code>TEMPLATE</code></p></li>
+    /// <li>
+    /// <p><code>LAUNCH</code></p></li>
+    /// <li>
+    /// <p><code>NOTIFICATION</code></p></li>
+    /// <li>
+    /// <p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>STACKSET</code></p></li>
+    /// <li>
+    /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -416,11 +441,16 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li><p><code>LAUNCH</code></p></li>
-    /// <li><p><code>NOTIFICATION</code></p></li>
-    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
-    /// <li><p><code>STACKSET</code></p></li>
-    /// <li><p><code>TEMPLATE</code></p></li>
+    /// <li>
+    /// <p><code>LAUNCH</code></p></li>
+    /// <li>
+    /// <p><code>NOTIFICATION</code></p></li>
+    /// <li>
+    /// <p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>STACKSET</code></p></li>
+    /// <li>
+    /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -428,11 +458,16 @@ impl CreateConstraintInputBuilder {
     }
     /// <p>The type of constraint.</p>
     /// <ul>
-    /// <li><p><code>LAUNCH</code></p></li>
-    /// <li><p><code>NOTIFICATION</code></p></li>
-    /// <li><p><code>RESOURCE_UPDATE</code></p></li>
-    /// <li><p><code>STACKSET</code></p></li>
-    /// <li><p><code>TEMPLATE</code></p></li>
+    /// <li>
+    /// <p><code>LAUNCH</code></p></li>
+    /// <li>
+    /// <p><code>NOTIFICATION</code></p></li>
+    /// <li>
+    /// <p><code>RESOURCE_UPDATE</code></p></li>
+    /// <li>
+    /// <p><code>STACKSET</code></p></li>
+    /// <li>
+    /// <p><code>TEMPLATE</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

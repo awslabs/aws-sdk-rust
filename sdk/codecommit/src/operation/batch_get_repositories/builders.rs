@@ -22,7 +22,7 @@ impl BatchGetRepositoriesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetRepositories`.
 ///
-/// <p>Returns information about one or more repositories.</p> <note>
+/// <p>Returns information about one or more repositories.</p><note>
 /// <p>The description field for a repository accepts all HTML characters and all valid Unicode characters. Applications that do not HTML-encode the description and display it in a webpage can expose users to potentially malicious code. Make sure that you HTML-encode the description field in any application that uses this API to display the repository description on a webpage.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -114,21 +114,21 @@ impl BatchGetRepositoriesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
-    /// <p>The names of the repositories to get information about.</p> <note>
+    /// <p>The names of the repositories to get information about.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository_names(input.into());
         self
     }
-    /// <p>The names of the repositories to get information about.</p> <note>
+    /// <p>The names of the repositories to get information about.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
-    /// <p>The names of the repositories to get information about.</p> <note>
+    /// <p>The names of the repositories to get information about.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

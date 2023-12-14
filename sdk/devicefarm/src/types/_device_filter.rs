@@ -100,15 +100,21 @@ pub struct DeviceFilter {
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"><b>Operator Values</b></p>
     /// <ul>
-    /// <li><p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li><p>The other operators require an array with a single element.</p></li>
+    /// <li>
+    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
+    /// <li>
+    /// <p>The other operators require an array with a single element.</p></li>
     /// </ul>
     /// <p class="title"><b>Attribute Values</b></p>
     /// <ul>
-    /// <li><p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li><p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li><p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li><p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li>
+    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
+    /// <li>
+    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
+    /// <li>
+    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub values: ::std::vec::Vec<::std::string::String>,
 }
@@ -212,15 +218,21 @@ impl DeviceFilter {
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"><b>Operator Values</b></p>
     /// <ul>
-    /// <li><p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li><p>The other operators require an array with a single element.</p></li>
+    /// <li>
+    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
+    /// <li>
+    /// <p>The other operators require an array with a single element.</p></li>
     /// </ul>
     /// <p class="title"><b>Attribute Values</b></p>
     /// <ul>
-    /// <li><p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li><p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li><p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li><p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li>
+    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
+    /// <li>
+    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
+    /// <li>
+    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -544,15 +556,21 @@ impl DeviceFilterBuilder {
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"><b>Operator Values</b></p>
     /// <ul>
-    /// <li><p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li><p>The other operators require an array with a single element.</p></li>
+    /// <li>
+    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
+    /// <li>
+    /// <p>The other operators require an array with a single element.</p></li>
     /// </ul>
     /// <p class="title"><b>Attribute Values</b></p>
     /// <ul>
-    /// <li><p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li><p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li><p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li><p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li>
+    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
+    /// <li>
+    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
+    /// <li>
+    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -563,15 +581,21 @@ impl DeviceFilterBuilder {
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"><b>Operator Values</b></p>
     /// <ul>
-    /// <li><p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li><p>The other operators require an array with a single element.</p></li>
+    /// <li>
+    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
+    /// <li>
+    /// <p>The other operators require an array with a single element.</p></li>
     /// </ul>
     /// <p class="title"><b>Attribute Values</b></p>
     /// <ul>
-    /// <li><p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li><p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li><p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li><p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li>
+    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
+    /// <li>
+    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
+    /// <li>
+    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
@@ -580,15 +604,21 @@ impl DeviceFilterBuilder {
     /// <p>An array of one or more filter values used in a device filter.</p>
     /// <p class="title"><b>Operator Values</b></p>
     /// <ul>
-    /// <li><p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
-    /// <li><p>The other operators require an array with a single element.</p></li>
+    /// <li>
+    /// <p>The IN and NOT_IN operators can take a values array that has more than one element.</p></li>
+    /// <li>
+    /// <p>The other operators require an array with a single element.</p></li>
     /// </ul>
     /// <p class="title"><b>Attribute Values</b></p>
     /// <ul>
-    /// <li><p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
-    /// <li><p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
-    /// <li><p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
-    /// <li><p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
+    /// <li>
+    /// <p>The PLATFORM attribute can be set to ANDROID or IOS.</p></li>
+    /// <li>
+    /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
+    /// <li>
+    /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values

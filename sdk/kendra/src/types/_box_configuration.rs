@@ -8,11 +8,16 @@ pub struct BoxConfiguration {
     pub enterprise_id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
-    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
-    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
+    /// <li>
+    /// <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li>
+    /// <p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li>
+    /// <p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub secret_arn: ::std::string::String,
@@ -47,11 +52,16 @@ impl BoxConfiguration {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
-    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
-    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
+    /// <li>
+    /// <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li>
+    /// <p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li>
+    /// <p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn secret_arn(&self) -> &str {
@@ -158,11 +168,16 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
-    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
-    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
+    /// <li>
+    /// <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li>
+    /// <p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li>
+    /// <p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     /// This field is required.
@@ -172,11 +187,16 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
-    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
-    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
+    /// <li>
+    /// <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li>
+    /// <p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li>
+    /// <p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -185,11 +205,16 @@ impl BoxConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to connect to your Box platform. The secret must contain a JSON structure with the following keys:</p>
     /// <ul>
-    /// <li><p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
-    /// <li><p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
-    /// <li><p>privateKey—A set of characters that make up an encryption key.</p></li>
-    /// <li><p>passphrase—A set of characters that act like a password.</p></li>
+    /// <li>
+    /// <p>clientID—The identifier of the client OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>clientSecret—A set of characters known only to the OAuth 2.0 authentication application created in Box.</p></li>
+    /// <li>
+    /// <p>publicKeyId—The identifier of the public key contained within an identity certificate.</p></li>
+    /// <li>
+    /// <p>privateKey—A set of characters that make up an encryption key.</p></li>
+    /// <li>
+    /// <p>passphrase—A set of characters that act like a password.</p></li>
     /// </ul>
     /// <p>You create an application in Box to generate the keys or credentials required for the secret. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data source</a>.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {

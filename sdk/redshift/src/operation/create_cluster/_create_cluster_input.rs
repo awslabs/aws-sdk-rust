@@ -9,26 +9,36 @@ pub struct CreateClusterInput {
     /// <p>Default: <code>dev</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
-    /// <li><p>Must contain only lowercase letters.</p></li>
-    /// <li><p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters.</p></li>
+    /// <li>
+    /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub db_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
-    /// <li><p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
-    /// <li><p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
+    /// <li>
+    /// <p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
+    /// <li>
+    /// <p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
@@ -39,22 +49,32 @@ pub struct CreateClusterInput {
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
-    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Must not contain a colon (:) or a slash (/).</p></li>
-    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must not contain a colon (:) or a slash (/).</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>The password associated with the admin user account for the cluster that is being created.</p>
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups to be associated with this cluster.</p>
@@ -81,9 +101,12 @@ pub struct CreateClusterInput {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <code>CreateClusterSnapshot</code>.</p>
@@ -168,9 +191,12 @@ impl CreateClusterInput {
     /// <p>Default: <code>dev</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
-    /// <li><p>Must contain only lowercase letters.</p></li>
-    /// <li><p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters.</p></li>
+    /// <li>
+    /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn db_name(&self) -> ::std::option::Option<&str> {
         self.db_name.as_deref()
@@ -178,11 +204,16 @@ impl CreateClusterInput {
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -190,8 +221,10 @@ impl CreateClusterInput {
     }
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
-    /// <li><p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
-    /// <li><p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
+    /// <li>
+    /// <p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
+    /// <li>
+    /// <p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
@@ -206,11 +239,16 @@ impl CreateClusterInput {
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
-    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Must not contain a colon (:) or a slash (/).</p></li>
-    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must not contain a colon (:) or a slash (/).</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
@@ -219,11 +257,16 @@ impl CreateClusterInput {
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -266,9 +309,12 @@ impl CreateClusterInput {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.cluster_parameter_group_name.as_deref()
@@ -509,9 +555,12 @@ impl CreateClusterInputBuilder {
     /// <p>Default: <code>dev</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
-    /// <li><p>Must contain only lowercase letters.</p></li>
-    /// <li><p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters.</p></li>
+    /// <li>
+    /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn db_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_name = ::std::option::Option::Some(input.into());
@@ -522,9 +571,12 @@ impl CreateClusterInputBuilder {
     /// <p>Default: <code>dev</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
-    /// <li><p>Must contain only lowercase letters.</p></li>
-    /// <li><p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters.</p></li>
+    /// <li>
+    /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_db_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_name = input;
@@ -535,9 +587,12 @@ impl CreateClusterInputBuilder {
     /// <p>Default: <code>dev</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1 to 64 alphanumeric characters.</p></li>
-    /// <li><p>Must contain only lowercase letters.</p></li>
-    /// <li><p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must contain 1 to 64 alphanumeric characters.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters.</p></li>
+    /// <li>
+    /// <p>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn get_db_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_name
@@ -545,11 +600,16 @@ impl CreateClusterInputBuilder {
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
     /// This field is required.
@@ -560,11 +620,16 @@ impl CreateClusterInputBuilder {
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
     pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -574,11 +639,16 @@ impl CreateClusterInputBuilder {
     /// <p>A unique identifier for the cluster. You use this identifier to refer to the cluster for any subsequent cluster operations such as deleting or modifying. The identifier also appears in the Amazon Redshift console.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>myexamplecluster</code></p>
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -586,8 +656,10 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
-    /// <li><p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
-    /// <li><p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
+    /// <li>
+    /// <p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
+    /// <li>
+    /// <p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
@@ -597,8 +669,10 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
-    /// <li><p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
-    /// <li><p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
+    /// <li>
+    /// <p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
+    /// <li>
+    /// <p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
@@ -608,8 +682,10 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The type of the cluster. When cluster type is specified as</p>
     /// <ul>
-    /// <li><p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
-    /// <li><p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
+    /// <li>
+    /// <p><code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.</p></li>
+    /// <li>
+    /// <p><code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.</p></li>
     /// </ul>
     /// <p>Valid Values: <code>multi-node</code> | <code>single-node</code></p>
     /// <p>Default: <code>multi-node</code></p>
@@ -637,11 +713,16 @@ impl CreateClusterInputBuilder {
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
-    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Must not contain a colon (:) or a slash (/).</p></li>
-    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must not contain a colon (:) or a slash (/).</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     /// This field is required.
     pub fn master_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -651,11 +732,16 @@ impl CreateClusterInputBuilder {
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
-    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Must not contain a colon (:) or a slash (/).</p></li>
-    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must not contain a colon (:) or a slash (/).</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn set_master_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_username = input;
@@ -664,11 +750,16 @@ impl CreateClusterInputBuilder {
     /// <p>The user name associated with the admin user account for the cluster that is being created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
-    /// <li><p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Must not contain a colon (:) or a slash (/).</p></li>
-    /// <li><p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
+    /// <li>
+    /// <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p></li>
+    /// <li>
+    /// <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Must not contain a colon (:) or a slash (/).</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p></li>
     /// </ul>
     pub fn get_master_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_username
@@ -677,11 +768,16 @@ impl CreateClusterInputBuilder {
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
@@ -691,11 +787,16 @@ impl CreateClusterInputBuilder {
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
@@ -705,11 +806,16 @@ impl CreateClusterInputBuilder {
     /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -830,9 +936,12 @@ impl CreateClusterInputBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -842,9 +951,12 @@ impl CreateClusterInputBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_parameter_group_name = input;
@@ -854,9 +966,12 @@ impl CreateClusterInputBuilder {
     /// <p>Default: The default Amazon Redshift cluster parameter group. For information about the default parameter group, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working with Amazon Redshift Parameter Groups</a></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn get_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_parameter_group_name

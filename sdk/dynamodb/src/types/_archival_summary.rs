@@ -8,7 +8,8 @@ pub struct ArchivalSummary {
     pub archival_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
-    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
+    /// <li>
+    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
     /// </ul>
     pub archival_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the backup the table was archived to, when applicable in the archival reason. If you wish to restore this backup to the same table name, you will need to delete the original table.</p>
@@ -21,7 +22,8 @@ impl ArchivalSummary {
     }
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
-    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
+    /// <li>
+    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
     /// </ul>
     pub fn archival_reason(&self) -> ::std::option::Option<&str> {
         self.archival_reason.as_deref()
@@ -63,7 +65,8 @@ impl ArchivalSummaryBuilder {
     }
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
-    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
+    /// <li>
+    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
     /// </ul>
     pub fn archival_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.archival_reason = ::std::option::Option::Some(input.into());
@@ -71,7 +74,8 @@ impl ArchivalSummaryBuilder {
     }
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
-    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
+    /// <li>
+    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
     /// </ul>
     pub fn set_archival_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.archival_reason = input;
@@ -79,7 +83,8 @@ impl ArchivalSummaryBuilder {
     }
     /// <p>The reason DynamoDB archived the table. Currently, the only possible value is:</p>
     /// <ul>
-    /// <li><p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
+    /// <li>
+    /// <p><code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to the table's KMS key being inaccessible for more than seven days. An On-Demand backup was created at the archival time.</p></li>
     /// </ul>
     pub fn get_archival_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.archival_reason

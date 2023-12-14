@@ -10,10 +10,14 @@ pub struct GrpcRetryPolicy {
     pub max_retries: i64,
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li><p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
-    /// <li><p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
-    /// <li><p><b>client-error</b> – HTTP status code 409</p></li>
-    /// <li><p><b>stream-error</b> – Retry on refused stream</p></li>
+    /// <li>
+    /// <p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
+    /// <li>
+    /// <p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
+    /// <li>
+    /// <p><b>client-error</b> – HTTP status code 409</p></li>
+    /// <li>
+    /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
     pub http_retry_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
@@ -32,10 +36,14 @@ impl GrpcRetryPolicy {
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li><p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
-    /// <li><p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
-    /// <li><p><b>client-error</b> – HTTP status code 409</p></li>
-    /// <li><p><b>stream-error</b> – Retry on refused stream</p></li>
+    /// <li>
+    /// <p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
+    /// <li>
+    /// <p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
+    /// <li>
+    /// <p><b>client-error</b> – HTTP status code 409</p></li>
+    /// <li>
+    /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_retry_events.is_none()`.
@@ -109,10 +117,14 @@ impl GrpcRetryPolicyBuilder {
     ///
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li><p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
-    /// <li><p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
-    /// <li><p><b>client-error</b> – HTTP status code 409</p></li>
-    /// <li><p><b>stream-error</b> – Retry on refused stream</p></li>
+    /// <li>
+    /// <p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
+    /// <li>
+    /// <p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
+    /// <li>
+    /// <p><b>client-error</b> – HTTP status code 409</p></li>
+    /// <li>
+    /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
     pub fn http_retry_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.http_retry_events.unwrap_or_default();
@@ -122,10 +134,14 @@ impl GrpcRetryPolicyBuilder {
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li><p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
-    /// <li><p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
-    /// <li><p><b>client-error</b> – HTTP status code 409</p></li>
-    /// <li><p><b>stream-error</b> – Retry on refused stream</p></li>
+    /// <li>
+    /// <p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
+    /// <li>
+    /// <p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
+    /// <li>
+    /// <p><b>client-error</b> – HTTP status code 409</p></li>
+    /// <li>
+    /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
     pub fn set_http_retry_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.http_retry_events = input;
@@ -133,10 +149,14 @@ impl GrpcRetryPolicyBuilder {
     }
     /// <p>Specify at least one of the following values.</p>
     /// <ul>
-    /// <li><p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
-    /// <li><p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
-    /// <li><p><b>client-error</b> – HTTP status code 409</p></li>
-    /// <li><p><b>stream-error</b> – Retry on refused stream</p></li>
+    /// <li>
+    /// <p><b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p></li>
+    /// <li>
+    /// <p><b>gateway-error</b> – HTTP status codes 502, 503, and 504</p></li>
+    /// <li>
+    /// <p><b>client-error</b> – HTTP status code 409</p></li>
+    /// <li>
+    /// <p><b>stream-error</b> – Retry on refused stream</p></li>
     /// </ul>
     pub fn get_http_retry_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.http_retry_events

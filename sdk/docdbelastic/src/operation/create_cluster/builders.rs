@@ -111,9 +111,12 @@ impl CreateClusterFluentBuilder {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p><i>Example</i>: <code>my-cluster</code></p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,9 +126,12 @@ impl CreateClusterFluentBuilder {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p><i>Example</i>: <code>my-cluster</code></p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -135,9 +141,12 @@ impl CreateClusterFluentBuilder {
     /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p><i>Example</i>: <code>my-cluster</code></p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -160,9 +169,12 @@ impl CreateClusterFluentBuilder {
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word.</p></li>
     /// </ul>
     pub fn admin_user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_name(input.into());
@@ -171,9 +183,12 @@ impl CreateClusterFluentBuilder {
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word.</p></li>
     /// </ul>
     pub fn set_admin_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_name(input);
@@ -182,9 +197,12 @@ impl CreateClusterFluentBuilder {
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must be from 1 to 63 letters or numbers.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot be a reserved word.</p></li>
+    /// <li>
+    /// <p>Must be from 1 to 63 letters or numbers.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot be a reserved word.</p></li>
     /// </ul>
     pub fn get_admin_user_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_user_name()
@@ -192,8 +210,10 @@ impl CreateClusterFluentBuilder {
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must contain from 8 to 100 characters.</p></li>
-    /// <li><p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li>
+    /// <p>Must contain from 8 to 100 characters.</p></li>
+    /// <li>
+    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
     /// </ul>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
@@ -202,8 +222,10 @@ impl CreateClusterFluentBuilder {
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must contain from 8 to 100 characters.</p></li>
-    /// <li><p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li>
+    /// <p>Must contain from 8 to 100 characters.</p></li>
+    /// <li>
+    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
     /// </ul>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
@@ -212,8 +234,10 @@ impl CreateClusterFluentBuilder {
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
     /// <p><i>Constraints</i>:</p>
     /// <ul>
-    /// <li><p>Must contain from 8 to 100 characters.</p></li>
-    /// <li><p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
+    /// <li>
+    /// <p>Must contain from 8 to 100 characters.</p></li>
+    /// <li>
+    /// <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p></li>
     /// </ul>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_user_password()

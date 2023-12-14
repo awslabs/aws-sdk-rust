@@ -9,10 +9,14 @@ pub struct Compliance {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li><p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li><p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li><p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li><p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <li>
+    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
+    /// <li>
+    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
+    /// <li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
     /// </ul></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ComplianceStatus>,
@@ -33,10 +37,14 @@ impl Compliance {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li><p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li><p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li><p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li><p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <li>
+    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
+    /// <li>
+    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
+    /// <li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
@@ -95,10 +103,14 @@ impl ComplianceBuilder {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li><p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li><p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li><p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li><p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <li>
+    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
+    /// <li>
+    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
+    /// <li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ComplianceStatus) -> Self {
@@ -110,10 +122,14 @@ impl ComplianceBuilder {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li><p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li><p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li><p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li><p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <li>
+    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
+    /// <li>
+    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
+    /// <li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComplianceStatus>) -> Self {
@@ -125,10 +141,14 @@ impl ComplianceBuilder {
     /// <ul>
     /// <li>
     /// <ul>
-    /// <li><p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
-    /// <li><p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
-    /// <li><p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
-    /// <li><p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
+    /// <li>
+    /// <p><code>PASSED</code> - Standards check passed for all evaluated resources.</p></li>
+    /// <li>
+    /// <p><code>WARNING</code> - Some information is missing or this check is not supported for your configuration.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Standards check failed for at least one evaluated resource.</p></li>
+    /// <li>
+    /// <p><code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage, API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>. If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives the finding.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComplianceStatus> {

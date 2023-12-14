@@ -18,8 +18,10 @@ pub struct ApplicationInfo {
     pub cwe_monitor_enabled: ::std::option::Option<bool>,
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li><p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
-    /// <li><p>“Configuring application, detected 1 Unconfigured Components”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Unconfigured Components”</p></li>
     /// </ul>
     pub remarks: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether auto-configuration is turned on for this application.</p>
@@ -56,8 +58,10 @@ impl ApplicationInfo {
     }
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li><p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
-    /// <li><p>“Configuring application, detected 1 Unconfigured Components”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Unconfigured Components”</p></li>
     /// </ul>
     pub fn remarks(&self) -> ::std::option::Option<&str> {
         self.remarks.as_deref()
@@ -184,8 +188,10 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li><p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
-    /// <li><p>“Configuring application, detected 1 Unconfigured Components”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Unconfigured Components”</p></li>
     /// </ul>
     pub fn remarks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remarks = ::std::option::Option::Some(input.into());
@@ -193,8 +199,10 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li><p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
-    /// <li><p>“Configuring application, detected 1 Unconfigured Components”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Unconfigured Components”</p></li>
     /// </ul>
     pub fn set_remarks(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remarks = input;
@@ -202,8 +210,10 @@ impl ApplicationInfoBuilder {
     }
     /// <p>The issues on the user side that block Application Insights from successfully monitoring an application. Example remarks include:</p>
     /// <ul>
-    /// <li><p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
-    /// <li><p>“Configuring application, detected 1 Unconfigured Components”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Errors, 3 Warnings”</p></li>
+    /// <li>
+    /// <p>“Configuring application, detected 1 Unconfigured Components”</p></li>
     /// </ul>
     pub fn get_remarks(&self) -> &::std::option::Option<::std::string::String> {
         &self.remarks

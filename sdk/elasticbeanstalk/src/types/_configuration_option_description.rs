@@ -12,25 +12,34 @@ pub struct ConfigurationOptionDescription {
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li><p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
-    /// <li><p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
-    /// <li><p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
+    /// <li>
+    /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
+    /// <li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <li>
+    /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
     pub change_severity: ::std::option::Option<::std::string::String>,
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li><p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
-    /// <li><p><code>false</code> : This configuration was not defined by the user.</p></li>
+    /// <li>
+    /// <p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
+    /// <li>
+    /// <p><code>false</code> : This configuration was not defined by the user.</p></li>
     /// </ul>
     /// <p>Constraint: You can remove only <code>UserDefined</code> options from a configuration.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub user_defined: ::std::option::Option<bool>,
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
-    /// <li><p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
-    /// <li><p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
-    /// <li><p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
+    /// <li>
+    /// <p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
+    /// <li>
+    /// <p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
+    /// <li>
+    /// <p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
     /// </ul>
     pub value_type: ::std::option::Option<crate::types::ConfigurationOptionValueType>,
     /// <p>If specified, values for the configuration option are selected from this list.</p>
@@ -59,17 +68,22 @@ impl ConfigurationOptionDescription {
     }
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li><p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
-    /// <li><p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
-    /// <li><p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
+    /// <li>
+    /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
+    /// <li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <li>
+    /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
     pub fn change_severity(&self) -> ::std::option::Option<&str> {
         self.change_severity.as_deref()
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li><p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
-    /// <li><p><code>false</code> : This configuration was not defined by the user.</p></li>
+    /// <li>
+    /// <p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
+    /// <li>
+    /// <p><code>false</code> : This configuration was not defined by the user.</p></li>
     /// </ul>
     /// <p>Constraint: You can remove only <code>UserDefined</code> options from a configuration.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -78,10 +92,14 @@ impl ConfigurationOptionDescription {
     }
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
-    /// <li><p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
-    /// <li><p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
-    /// <li><p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
+    /// <li>
+    /// <p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
+    /// <li>
+    /// <p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
+    /// <li>
+    /// <p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
     /// </ul>
     pub fn value_type(&self) -> ::std::option::Option<&crate::types::ConfigurationOptionValueType> {
         self.value_type.as_ref()
@@ -177,9 +195,12 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li><p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
-    /// <li><p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
-    /// <li><p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
+    /// <li>
+    /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
+    /// <li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <li>
+    /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
     pub fn change_severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_severity = ::std::option::Option::Some(input.into());
@@ -187,9 +208,12 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li><p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
-    /// <li><p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
-    /// <li><p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
+    /// <li>
+    /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
+    /// <li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <li>
+    /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
     pub fn set_change_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_severity = input;
@@ -197,17 +221,22 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
-    /// <li><p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
-    /// <li><p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
-    /// <li><p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
+    /// <li>
+    /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
+    /// <li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <li>
+    /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
     pub fn get_change_severity(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_severity
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li><p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
-    /// <li><p><code>false</code> : This configuration was not defined by the user.</p></li>
+    /// <li>
+    /// <p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
+    /// <li>
+    /// <p><code>false</code> : This configuration was not defined by the user.</p></li>
     /// </ul>
     /// <p>Constraint: You can remove only <code>UserDefined</code> options from a configuration.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -217,8 +246,10 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li><p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
-    /// <li><p><code>false</code> : This configuration was not defined by the user.</p></li>
+    /// <li>
+    /// <p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
+    /// <li>
+    /// <p><code>false</code> : This configuration was not defined by the user.</p></li>
     /// </ul>
     /// <p>Constraint: You can remove only <code>UserDefined</code> options from a configuration.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -228,8 +259,10 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
-    /// <li><p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
-    /// <li><p><code>false</code> : This configuration was not defined by the user.</p></li>
+    /// <li>
+    /// <p><code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings.</p></li>
+    /// <li>
+    /// <p><code>false</code> : This configuration was not defined by the user.</p></li>
     /// </ul>
     /// <p>Constraint: You can remove only <code>UserDefined</code> options from a configuration.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -238,10 +271,14 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
-    /// <li><p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
-    /// <li><p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
-    /// <li><p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
+    /// <li>
+    /// <p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
+    /// <li>
+    /// <p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
+    /// <li>
+    /// <p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
     /// </ul>
     pub fn value_type(mut self, input: crate::types::ConfigurationOptionValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
@@ -249,10 +286,14 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
-    /// <li><p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
-    /// <li><p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
-    /// <li><p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
+    /// <li>
+    /// <p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
+    /// <li>
+    /// <p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
+    /// <li>
+    /// <p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
     /// </ul>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ConfigurationOptionValueType>) -> Self {
         self.value_type = input;
@@ -260,10 +301,14 @@ impl ConfigurationOptionDescriptionBuilder {
     }
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
-    /// <li><p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
-    /// <li><p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
-    /// <li><p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p></li>
+    /// <li>
+    /// <p><code>List</code> : Values for this option are multiple selections from the possible values.</p></li>
+    /// <li>
+    /// <p><code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p></li>
+    /// <li>
+    /// <p><code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p></li>
     /// </ul>
     pub fn get_value_type(&self) -> &::std::option::Option<crate::types::ConfigurationOptionValueType> {
         &self.value_type

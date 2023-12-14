@@ -24,9 +24,12 @@ pub struct AwsApiGatewayStageDetails {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The version of the API documentation that is associated with the stage.</p>
@@ -85,9 +88,12 @@ impl AwsApiGatewayStageDetails {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.variables.as_ref()
@@ -278,9 +284,12 @@ impl AwsApiGatewayStageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn variables(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
@@ -292,9 +301,12 @@ impl AwsApiGatewayStageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn set_variables(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.variables = input;
@@ -304,9 +316,12 @@ impl AwsApiGatewayStageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn get_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.variables

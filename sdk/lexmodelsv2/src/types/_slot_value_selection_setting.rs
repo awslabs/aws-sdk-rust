@@ -6,8 +6,10 @@
 pub struct SlotValueSelectionSetting {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub resolution_strategy: crate::types::SlotValueResolutionStrategy,
@@ -19,8 +21,10 @@ pub struct SlotValueSelectionSetting {
 impl SlotValueSelectionSetting {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn resolution_strategy(&self) -> &crate::types::SlotValueResolutionStrategy {
@@ -53,8 +57,10 @@ pub struct SlotValueSelectionSettingBuilder {
 impl SlotValueSelectionSettingBuilder {
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     /// This field is required.
@@ -64,8 +70,10 @@ impl SlotValueSelectionSettingBuilder {
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn set_resolution_strategy(mut self, input: ::std::option::Option<crate::types::SlotValueResolutionStrategy>) -> Self {
@@ -74,8 +82,10 @@ impl SlotValueSelectionSettingBuilder {
     }
     /// <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
-    /// <li><p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
+    /// <li>
+    /// <p><code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p></li>
+    /// <li>
+    /// <p><code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p></li>
     /// </ul>
     /// <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p>
     pub fn get_resolution_strategy(&self) -> &::std::option::Option<crate::types::SlotValueResolutionStrategy> {

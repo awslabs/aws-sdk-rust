@@ -7,8 +7,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameSession {
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -40,15 +39,15 @@ pub struct GameSession {
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -68,8 +67,7 @@ pub struct GameSession {
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl GameSession {
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -127,15 +125,15 @@ impl GameSession {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -225,8 +223,7 @@ pub struct GameSessionBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl GameSessionBuilder {
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -237,8 +234,7 @@ impl GameSessionBuilder {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -249,8 +245,7 @@ impl GameSessionBuilder {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
     /// ::gamesession/
     /// <fleet id>
     /// /
@@ -422,15 +417,15 @@ impl GameSessionBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -441,15 +436,15 @@ impl GameSessionBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -460,15 +455,15 @@ impl GameSessionBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PutSnapshotBlockInput {
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct PutSnapshotBlockInput {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
 impl PutSnapshotBlockInput {
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
@@ -88,7 +88,7 @@ pub struct PutSnapshotBlockInputBuilder {
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
 }
 impl PutSnapshotBlockInputBuilder {
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     /// This field is required.
@@ -96,14 +96,14 @@ impl PutSnapshotBlockInputBuilder {
         self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
-    /// <p>The ID of the snapshot.</p> <important>
+    /// <p>The ID of the snapshot.</p><important>
     /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
     /// </important>
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {

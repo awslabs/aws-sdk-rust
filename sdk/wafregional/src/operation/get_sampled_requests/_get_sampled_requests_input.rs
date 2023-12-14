@@ -7,8 +7,10 @@ pub struct GetSampledRequestsInput {
     pub web_acl_id: ::std::option::Option<::std::string::String>,
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
@@ -23,8 +25,10 @@ impl GetSampledRequestsInput {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
@@ -72,8 +76,10 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -82,8 +88,10 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
@@ -91,8 +99,10 @@ impl GetSampledRequestsInputBuilder {
     }
     /// <p><code>RuleId</code> is one of three values:</p>
     /// <ul>
-    /// <li><p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
-    /// <li><p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
+    /// <li>
+    /// <p>The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return a sample of requests.</p></li>
+    /// <li>
+    /// <p><code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.</p></li>
     /// </ul>
     pub fn get_rule_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_id

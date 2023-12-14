@@ -151,21 +151,21 @@ impl AttachDiskFluentBuilder {
     pub fn get_disk_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_path()
     }
-    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p><important>
     /// <p>This value only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn auto_mounting(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_mounting(input);
         self
     }
-    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p><important>
     /// <p>This value only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn set_auto_mounting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_mounting(input);
         self
     }
-    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p> <important>
+    /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p><important>
     /// <p>This value only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn get_auto_mounting(&self) -> &::std::option::Option<bool> {

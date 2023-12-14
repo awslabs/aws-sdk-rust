@@ -22,7 +22,7 @@ impl DescribeEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeEvents`.
 ///
-/// <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note>
+/// <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p><note>
 /// <p>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

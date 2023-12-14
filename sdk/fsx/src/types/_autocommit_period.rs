@@ -9,11 +9,16 @@ pub struct AutocommitPeriod {
     pub r#type: ::std::option::Option<crate::types::AutocommitPeriodType>,
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Minutes</code>: 5 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 1 - 65,535</p></li>
-    /// <li><p><code>Days</code>: 1 - 3,650</p></li>
-    /// <li><p><code>Months</code>: 1 - 120</p></li>
-    /// <li><p><code>Years</code>: 1 - 10</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 5 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 1 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 1 - 3,650</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 1 - 120</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 1 - 10</p></li>
     /// </ul>
     pub value: ::std::option::Option<i32>,
 }
@@ -24,11 +29,16 @@ impl AutocommitPeriod {
     }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Minutes</code>: 5 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 1 - 65,535</p></li>
-    /// <li><p><code>Days</code>: 1 - 3,650</p></li>
-    /// <li><p><code>Months</code>: 1 - 120</p></li>
-    /// <li><p><code>Years</code>: 1 - 10</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 5 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 1 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 1 - 3,650</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 1 - 120</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 1 - 10</p></li>
     /// </ul>
     pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
@@ -66,11 +76,16 @@ impl AutocommitPeriodBuilder {
     }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Minutes</code>: 5 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 1 - 65,535</p></li>
-    /// <li><p><code>Days</code>: 1 - 3,650</p></li>
-    /// <li><p><code>Months</code>: 1 - 120</p></li>
-    /// <li><p><code>Years</code>: 1 - 10</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 5 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 1 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 1 - 3,650</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 1 - 120</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 1 - 10</p></li>
     /// </ul>
     pub fn value(mut self, input: i32) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -78,11 +93,16 @@ impl AutocommitPeriodBuilder {
     }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Minutes</code>: 5 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 1 - 65,535</p></li>
-    /// <li><p><code>Days</code>: 1 - 3,650</p></li>
-    /// <li><p><code>Months</code>: 1 - 120</p></li>
-    /// <li><p><code>Years</code>: 1 - 10</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 5 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 1 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 1 - 3,650</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 1 - 120</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 1 - 10</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
@@ -90,11 +110,16 @@ impl AutocommitPeriodBuilder {
     }
     /// <p>Defines the amount of time for the autocommit period of a file in an FSx for ONTAP SnapLock volume. The following ranges are valid:</p>
     /// <ul>
-    /// <li><p><code>Minutes</code>: 5 - 65,535</p></li>
-    /// <li><p><code>Hours</code>: 1 - 65,535</p></li>
-    /// <li><p><code>Days</code>: 1 - 3,650</p></li>
-    /// <li><p><code>Months</code>: 1 - 120</p></li>
-    /// <li><p><code>Years</code>: 1 - 10</p></li>
+    /// <li>
+    /// <p><code>Minutes</code>: 5 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Hours</code>: 1 - 65,535</p></li>
+    /// <li>
+    /// <p><code>Days</code>: 1 - 3,650</p></li>
+    /// <li>
+    /// <p><code>Months</code>: 1 - 120</p></li>
+    /// <li>
+    /// <p><code>Years</code>: 1 - 10</p></li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<i32> {
         &self.value

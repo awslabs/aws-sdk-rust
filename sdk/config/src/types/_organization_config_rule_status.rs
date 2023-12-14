@@ -9,15 +9,24 @@ pub struct OrganizationConfigRuleStatus {
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
     pub organization_rule_status: crate::types::OrganizationRuleStatus,
     /// <p>An error code that is returned when organization Config rule creation or deletion has failed.</p>
@@ -36,15 +45,24 @@ impl OrganizationConfigRuleStatus {
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
     pub fn organization_rule_status(&self) -> &crate::types::OrganizationRuleStatus {
         &self.organization_rule_status
@@ -98,15 +116,24 @@ impl OrganizationConfigRuleStatusBuilder {
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
     /// This field is required.
     pub fn organization_rule_status(mut self, input: crate::types::OrganizationRuleStatus) -> Self {
@@ -116,15 +143,24 @@ impl OrganizationConfigRuleStatusBuilder {
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
     pub fn set_organization_rule_status(mut self, input: ::std::option::Option<crate::types::OrganizationRuleStatus>) -> Self {
         self.organization_rule_status = input;
@@ -133,15 +169,24 @@ impl OrganizationConfigRuleStatusBuilder {
     /// <p>Indicates deployment status of an organization Config rule. When management account calls PutOrganizationConfigRule action for the first time, Config rule status is created in all the member accounts. When management account calls PutOrganizationConfigRule action for the second time, Config rule status is updated in all the member accounts. Additionally, Config rule status is updated when one or more member accounts join or leave an organization. Config rule status is deleted when the management account deletes OrganizationConfigRule in all the member accounts and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully created in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when an organization Config rule creation failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when an organization Config rule deletion failed in one or more member accounts within that organization.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully deleted from all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully updated in all the member accounts.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when an organization Config rule update failed in one or more member accounts within that organization.</p></li>
     /// </ul>
     pub fn get_organization_rule_status(&self) -> &::std::option::Option<crate::types::OrganizationRuleStatus> {
         &self.organization_rule_status

@@ -8,8 +8,10 @@
 pub struct RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
-    /// <li><p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
-    /// <li><p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
     pub targets: ::std::vec::Vec<::std::string::String>,
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.</p>
@@ -20,8 +22,10 @@ pub struct RulesSourceList {
 impl RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
-    /// <li><p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
-    /// <li><p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
     pub fn targets(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -59,8 +63,10 @@ impl RulesSourceListBuilder {
     ///
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
-    /// <li><p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
-    /// <li><p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
     pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
@@ -70,8 +76,10 @@ impl RulesSourceListBuilder {
     }
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
-    /// <li><p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
-    /// <li><p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
     pub fn set_targets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.targets = input;
@@ -79,8 +87,10 @@ impl RulesSourceListBuilder {
     }
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
-    /// <li><p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
-    /// <li><p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p></li>
+    /// <li>
+    /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.</p></li>
     /// </ul>
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.targets

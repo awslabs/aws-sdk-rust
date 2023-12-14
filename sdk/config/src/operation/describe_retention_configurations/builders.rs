@@ -22,7 +22,7 @@ impl DescribeRetentionConfigurationsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeRetentionConfigurations`.
 ///
-/// <p>Returns the details of one or more retention configurations. If the retention configuration name is not specified, this action returns the details for all the retention configurations for that account.</p> <note>
+/// <p>Returns the details of one or more retention configurations. If the retention configuration name is not specified, this action returns the details for all the retention configurations for that account.</p><note>
 /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -120,21 +120,21 @@ impl DescribeRetentionConfigurationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_retention_configuration_names`](Self::set_retention_configuration_names).
     ///
-    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub fn retention_configuration_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retention_configuration_names(input.into());
         self
     }
-    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub fn set_retention_configuration_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_retention_configuration_names(input);
         self
     }
-    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p> <note>
+    /// <p>A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.</p><note>
     /// <p>Currently, Config supports only one retention configuration per region in your account.</p>
     /// </note>
     pub fn get_retention_configuration_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

@@ -17,8 +17,10 @@ pub struct GetTableOutput {
     pub schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code></p></li>
     /// </ul>
     pub capacity_specification: ::std::option::Option<crate::types::CapacitySpecificationSummary>,
     /// <p>The encryption settings of the specified table.</p>
@@ -65,8 +67,10 @@ impl GetTableOutput {
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code></p></li>
     /// </ul>
     pub fn capacity_specification(&self) -> ::std::option::Option<&crate::types::CapacitySpecificationSummary> {
         self.capacity_specification.as_ref()
@@ -217,8 +221,10 @@ impl GetTableOutputBuilder {
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code></p></li>
     /// </ul>
     pub fn capacity_specification(mut self, input: crate::types::CapacitySpecificationSummary) -> Self {
         self.capacity_specification = ::std::option::Option::Some(input);
@@ -226,8 +232,10 @@ impl GetTableOutputBuilder {
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code></p></li>
     /// </ul>
     pub fn set_capacity_specification(mut self, input: ::std::option::Option<crate::types::CapacitySpecificationSummary>) -> Self {
         self.capacity_specification = input;
@@ -235,8 +243,10 @@ impl GetTableOutputBuilder {
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
-    /// <li><p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
-    /// <li><p><code>throughputMode:PROVISIONED</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PAY_PER_REQUEST</code></p></li>
+    /// <li>
+    /// <p><code>throughputMode:PROVISIONED</code></p></li>
     /// </ul>
     pub fn get_capacity_specification(&self) -> &::std::option::Option<crate::types::CapacitySpecificationSummary> {
         &self.capacity_specification

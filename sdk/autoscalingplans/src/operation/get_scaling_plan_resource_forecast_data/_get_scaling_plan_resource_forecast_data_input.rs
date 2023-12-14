@@ -15,10 +15,14 @@ pub struct GetScalingPlanResourceForecastDataInput {
     pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li><p><code>LoadForecast</code>: The load metric forecast.</p></li>
-    /// <li><p><code>CapacityForecast</code>: The capacity forecast.</p></li>
-    /// <li><p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
-    /// <li><p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>LoadForecast</code>: The load metric forecast.</p></li>
+    /// <li>
+    /// <p><code>CapacityForecast</code>: The capacity forecast.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
     /// </ul>
     pub forecast_data_type: ::std::option::Option<crate::types::ForecastDataType>,
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time.</p>
@@ -50,10 +54,14 @@ impl GetScalingPlanResourceForecastDataInput {
     }
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li><p><code>LoadForecast</code>: The load metric forecast.</p></li>
-    /// <li><p><code>CapacityForecast</code>: The capacity forecast.</p></li>
-    /// <li><p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
-    /// <li><p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>LoadForecast</code>: The load metric forecast.</p></li>
+    /// <li>
+    /// <p><code>CapacityForecast</code>: The capacity forecast.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
     /// </ul>
     pub fn forecast_data_type(&self) -> ::std::option::Option<&crate::types::ForecastDataType> {
         self.forecast_data_type.as_ref()
@@ -166,10 +174,14 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     }
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li><p><code>LoadForecast</code>: The load metric forecast.</p></li>
-    /// <li><p><code>CapacityForecast</code>: The capacity forecast.</p></li>
-    /// <li><p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
-    /// <li><p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>LoadForecast</code>: The load metric forecast.</p></li>
+    /// <li>
+    /// <p><code>CapacityForecast</code>: The capacity forecast.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
     /// </ul>
     /// This field is required.
     pub fn forecast_data_type(mut self, input: crate::types::ForecastDataType) -> Self {
@@ -178,10 +190,14 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     }
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li><p><code>LoadForecast</code>: The load metric forecast.</p></li>
-    /// <li><p><code>CapacityForecast</code>: The capacity forecast.</p></li>
-    /// <li><p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
-    /// <li><p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>LoadForecast</code>: The load metric forecast.</p></li>
+    /// <li>
+    /// <p><code>CapacityForecast</code>: The capacity forecast.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
     /// </ul>
     pub fn set_forecast_data_type(mut self, input: ::std::option::Option<crate::types::ForecastDataType>) -> Self {
         self.forecast_data_type = input;
@@ -189,10 +205,14 @@ impl GetScalingPlanResourceForecastDataInputBuilder {
     }
     /// <p>The type of forecast data to get.</p>
     /// <ul>
-    /// <li><p><code>LoadForecast</code>: The load metric forecast.</p></li>
-    /// <li><p><code>CapacityForecast</code>: The capacity forecast.</p></li>
-    /// <li><p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
-    /// <li><p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>LoadForecast</code>: The load metric forecast.</p></li>
+    /// <li>
+    /// <p><code>CapacityForecast</code>: The capacity forecast.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled scaling action. This data is calculated as the larger of two values: the capacity forecast or the minimum capacity in the scaling instruction.</p></li>
+    /// <li>
+    /// <p><code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled scaling action. The calculation used is determined by the predictive scaling maximum capacity behavior setting in the scaling instruction.</p></li>
     /// </ul>
     pub fn get_forecast_data_type(&self) -> &::std::option::Option<crate::types::ForecastDataType> {
         &self.forecast_data_type

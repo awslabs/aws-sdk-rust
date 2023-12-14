@@ -8,8 +8,10 @@ pub struct OrganizationCustomPolicyRuleMetadataNoPolicy {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
     /// <ul>
-    /// <li><p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
-    /// <li><p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
+    /// <li>
+    /// <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
+    /// <li>
+    /// <p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
     /// </ul>
     pub organization_config_rule_trigger_types: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationConfigRuleTriggerTypeNoSn>>,
     /// <p>A string, in JSON format, that is passed to your organization Config Custom Policy rule.</p>
@@ -36,8 +38,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
     }
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
     /// <ul>
-    /// <li><p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
-    /// <li><p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
+    /// <li>
+    /// <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
+    /// <li>
+    /// <p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organization_config_rule_trigger_types.is_none()`.
@@ -124,8 +128,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     ///
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
     /// <ul>
-    /// <li><p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
-    /// <li><p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
+    /// <li>
+    /// <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
+    /// <li>
+    /// <p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
     /// </ul>
     pub fn organization_config_rule_trigger_types(mut self, input: crate::types::OrganizationConfigRuleTriggerTypeNoSn) -> Self {
         let mut v = self.organization_config_rule_trigger_types.unwrap_or_default();
@@ -135,8 +141,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     }
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
     /// <ul>
-    /// <li><p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
-    /// <li><p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
+    /// <li>
+    /// <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
+    /// <li>
+    /// <p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
     /// </ul>
     pub fn set_organization_config_rule_trigger_types(
         mut self,
@@ -147,8 +155,10 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
     }
     /// <p>The type of notification that triggers Config to run an evaluation for a rule. For Config Custom Policy rules, Config supports change triggered notification types:</p>
     /// <ul>
-    /// <li><p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
-    /// <li><p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
+    /// <li>
+    /// <p><code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers a configuration item as a result of a resource change.</p></li>
+    /// <li>
+    /// <p><code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation when Config delivers an oversized configuration item. Config may generate this notification type when a resource changes and the notification exceeds the maximum size allowed by Amazon SNS.</p></li>
     /// </ul>
     pub fn get_organization_config_rule_trigger_types(
         &self,

@@ -20,7 +20,8 @@ pub struct PutSessionInput {
     pub request_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub response_content_type: ::std::option::Option<::std::string::String>,
 }
@@ -58,7 +59,8 @@ impl PutSessionInput {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn response_content_type(&self) -> ::std::option::Option<&str> {
         self.response_content_type.as_deref()
@@ -212,7 +214,8 @@ impl PutSessionInputBuilder {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn response_content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.response_content_type = ::std::option::Option::Some(input.into());
@@ -220,7 +223,8 @@ impl PutSessionInputBuilder {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn set_response_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.response_content_type = input;
@@ -228,7 +232,8 @@ impl PutSessionInputBuilder {
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.</p>
     /// <ul>
-    /// <li><p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
+    /// <li>
+    /// <p>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p></li>
     /// </ul>
     pub fn get_response_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.response_content_type

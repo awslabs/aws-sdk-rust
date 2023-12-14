@@ -25,11 +25,13 @@ impl DescribeFleetAttributesInputBuilder {
 /// <p>Retrieves core fleet-wide properties, including the computing hardware and deployment configuration for all instances in the fleet.</p>
 /// <p>This operation can be used in the following ways:</p>
 /// <ul>
-/// <li><p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs.</p></li>
-/// <li><p>To get attributes for all fleets, do not provide a fleet identifier.</p></li>
+/// <li>
+/// <p>To get attributes for one or more specific fleets, provide a list of fleet IDs or fleet ARNs.</p></li>
+/// <li>
+/// <p>To get attributes for all fleets, do not provide a fleet identifier.</p></li>
 /// </ul>
 /// <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages.</p>
-/// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found.</p> <note>
+/// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found.</p><note>
 /// <p>Some API operations limit the number of fleet IDs that allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p>
 /// </note>
 /// <p><b>Learn more</b></p>

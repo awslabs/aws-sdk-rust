@@ -183,11 +183,16 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If SourceIds are supplied, SourceType must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If SourceIds are supplied, SourceType must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub fn source_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_ids(input.into());
@@ -196,11 +201,16 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If SourceIds are supplied, SourceType must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If SourceIds are supplied, SourceType must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub fn set_source_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_source_ids(input);
@@ -209,11 +219,16 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If SourceIds are supplied, SourceType must also be provided.</p></li>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If SourceIds are supplied, SourceType must also be provided.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub fn get_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_ids()

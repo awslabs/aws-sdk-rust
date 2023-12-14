@@ -11,29 +11,44 @@ pub struct Severity {
     pub product: ::std::option::Option<f64>,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - No issue was found.</p></li>
-    /// <li><p><code>LOW</code> - The issue does not require action on its own.</p></li>
-    /// <li><p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
-    /// <li><p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
-    /// <li><p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - No issue was found.</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - The issue does not require action on its own.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, then <code>Label</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p>0 - <code>INFORMATIONAL</code></p></li>
-    /// <li><p>1–39 - <code>LOW</code></p></li>
-    /// <li><p>40–69 - <code>MEDIUM</code></p></li>
-    /// <li><p>70–89 - <code>HIGH</code></p></li>
-    /// <li><p>90–100 - <code>CRITICAL</code></p></li>
+    /// <li>
+    /// <p>0 - <code>INFORMATIONAL</code></p></li>
+    /// <li>
+    /// <p>1–39 - <code>LOW</code></p></li>
+    /// <li>
+    /// <p>40–69 - <code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p>70–89 - <code>HIGH</code></p></li>
+    /// <li>
+    /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub label: ::std::option::Option<crate::types::SeverityLabel>,
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - 0</p></li>
-    /// <li><p><code>LOW</code> - 1</p></li>
-    /// <li><p><code>MEDIUM</code> - 40</p></li>
-    /// <li><p><code>HIGH</code> - 70</p></li>
-    /// <li><p><code>CRITICAL</code> - 90</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - 0</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - 1</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - 40</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - 70</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - 90</p></li>
     /// </ul>
     pub normalized: ::std::option::Option<i32>,
     /// <p>The native severity from the finding product that generated the finding.</p>
@@ -47,19 +62,29 @@ impl Severity {
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - No issue was found.</p></li>
-    /// <li><p><code>LOW</code> - The issue does not require action on its own.</p></li>
-    /// <li><p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
-    /// <li><p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
-    /// <li><p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - No issue was found.</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - The issue does not require action on its own.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, then <code>Label</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p>0 - <code>INFORMATIONAL</code></p></li>
-    /// <li><p>1–39 - <code>LOW</code></p></li>
-    /// <li><p>40–69 - <code>MEDIUM</code></p></li>
-    /// <li><p>70–89 - <code>HIGH</code></p></li>
-    /// <li><p>90–100 - <code>CRITICAL</code></p></li>
+    /// <li>
+    /// <p>0 - <code>INFORMATIONAL</code></p></li>
+    /// <li>
+    /// <p>1–39 - <code>LOW</code></p></li>
+    /// <li>
+    /// <p>40–69 - <code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p>70–89 - <code>HIGH</code></p></li>
+    /// <li>
+    /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub fn label(&self) -> ::std::option::Option<&crate::types::SeverityLabel> {
         self.label.as_ref()
@@ -67,11 +92,16 @@ impl Severity {
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - 0</p></li>
-    /// <li><p><code>LOW</code> - 1</p></li>
-    /// <li><p><code>MEDIUM</code> - 40</p></li>
-    /// <li><p><code>HIGH</code> - 70</p></li>
-    /// <li><p><code>CRITICAL</code> - 90</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - 0</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - 1</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - 40</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - 70</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - 90</p></li>
     /// </ul>
     pub fn normalized(&self) -> ::std::option::Option<i32> {
         self.normalized
@@ -117,19 +147,29 @@ impl SeverityBuilder {
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - No issue was found.</p></li>
-    /// <li><p><code>LOW</code> - The issue does not require action on its own.</p></li>
-    /// <li><p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
-    /// <li><p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
-    /// <li><p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - No issue was found.</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - The issue does not require action on its own.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, then <code>Label</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p>0 - <code>INFORMATIONAL</code></p></li>
-    /// <li><p>1–39 - <code>LOW</code></p></li>
-    /// <li><p>40–69 - <code>MEDIUM</code></p></li>
-    /// <li><p>70–89 - <code>HIGH</code></p></li>
-    /// <li><p>90–100 - <code>CRITICAL</code></p></li>
+    /// <li>
+    /// <p>0 - <code>INFORMATIONAL</code></p></li>
+    /// <li>
+    /// <p>1–39 - <code>LOW</code></p></li>
+    /// <li>
+    /// <p>40–69 - <code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p>70–89 - <code>HIGH</code></p></li>
+    /// <li>
+    /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub fn label(mut self, input: crate::types::SeverityLabel) -> Self {
         self.label = ::std::option::Option::Some(input);
@@ -137,19 +177,29 @@ impl SeverityBuilder {
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - No issue was found.</p></li>
-    /// <li><p><code>LOW</code> - The issue does not require action on its own.</p></li>
-    /// <li><p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
-    /// <li><p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
-    /// <li><p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - No issue was found.</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - The issue does not require action on its own.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, then <code>Label</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p>0 - <code>INFORMATIONAL</code></p></li>
-    /// <li><p>1–39 - <code>LOW</code></p></li>
-    /// <li><p>40–69 - <code>MEDIUM</code></p></li>
-    /// <li><p>70–89 - <code>HIGH</code></p></li>
-    /// <li><p>90–100 - <code>CRITICAL</code></p></li>
+    /// <li>
+    /// <p>0 - <code>INFORMATIONAL</code></p></li>
+    /// <li>
+    /// <p>1–39 - <code>LOW</code></p></li>
+    /// <li>
+    /// <p>40–69 - <code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p>70–89 - <code>HIGH</code></p></li>
+    /// <li>
+    /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub fn set_label(mut self, input: ::std::option::Option<crate::types::SeverityLabel>) -> Self {
         self.label = input;
@@ -157,19 +207,29 @@ impl SeverityBuilder {
     }
     /// <p>The severity value of the finding. The allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - No issue was found.</p></li>
-    /// <li><p><code>LOW</code> - The issue does not require action on its own.</p></li>
-    /// <li><p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
-    /// <li><p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
-    /// <li><p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - No issue was found.</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - The issue does not require action on its own.</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - The issue must be addressed but not urgently.</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - The issue must be addressed as a priority.</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.</p></li>
     /// </ul>
     /// <p>If you provide <code>Normalized</code> and do not provide <code>Label</code>, then <code>Label</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p>0 - <code>INFORMATIONAL</code></p></li>
-    /// <li><p>1–39 - <code>LOW</code></p></li>
-    /// <li><p>40–69 - <code>MEDIUM</code></p></li>
-    /// <li><p>70–89 - <code>HIGH</code></p></li>
-    /// <li><p>90–100 - <code>CRITICAL</code></p></li>
+    /// <li>
+    /// <p>0 - <code>INFORMATIONAL</code></p></li>
+    /// <li>
+    /// <p>1–39 - <code>LOW</code></p></li>
+    /// <li>
+    /// <p>40–69 - <code>MEDIUM</code></p></li>
+    /// <li>
+    /// <p>70–89 - <code>HIGH</code></p></li>
+    /// <li>
+    /// <p>90–100 - <code>CRITICAL</code></p></li>
     /// </ul>
     pub fn get_label(&self) -> &::std::option::Option<crate::types::SeverityLabel> {
         &self.label
@@ -177,11 +237,16 @@ impl SeverityBuilder {
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - 0</p></li>
-    /// <li><p><code>LOW</code> - 1</p></li>
-    /// <li><p><code>MEDIUM</code> - 40</p></li>
-    /// <li><p><code>HIGH</code> - 70</p></li>
-    /// <li><p><code>CRITICAL</code> - 90</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - 0</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - 1</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - 40</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - 70</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - 90</p></li>
     /// </ul>
     pub fn normalized(mut self, input: i32) -> Self {
         self.normalized = ::std::option::Option::Some(input);
@@ -190,11 +255,16 @@ impl SeverityBuilder {
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - 0</p></li>
-    /// <li><p><code>LOW</code> - 1</p></li>
-    /// <li><p><code>MEDIUM</code> - 40</p></li>
-    /// <li><p><code>HIGH</code> - 70</p></li>
-    /// <li><p><code>CRITICAL</code> - 90</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - 0</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - 1</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - 40</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - 70</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - 90</p></li>
     /// </ul>
     pub fn set_normalized(mut self, input: ::std::option::Option<i32>) -> Self {
         self.normalized = input;
@@ -203,11 +273,16 @@ impl SeverityBuilder {
     /// <p>Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide <code>Label</code>.</p>
     /// <p>If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set automatically as follows.</p>
     /// <ul>
-    /// <li><p><code>INFORMATIONAL</code> - 0</p></li>
-    /// <li><p><code>LOW</code> - 1</p></li>
-    /// <li><p><code>MEDIUM</code> - 40</p></li>
-    /// <li><p><code>HIGH</code> - 70</p></li>
-    /// <li><p><code>CRITICAL</code> - 90</p></li>
+    /// <li>
+    /// <p><code>INFORMATIONAL</code> - 0</p></li>
+    /// <li>
+    /// <p><code>LOW</code> - 1</p></li>
+    /// <li>
+    /// <p><code>MEDIUM</code> - 40</p></li>
+    /// <li>
+    /// <p><code>HIGH</code> - 70</p></li>
+    /// <li>
+    /// <p><code>CRITICAL</code> - 90</p></li>
     /// </ul>
     pub fn get_normalized(&self) -> &::std::option::Option<i32> {
         &self.normalized

@@ -23,7 +23,7 @@ impl CreateNodegroupInputBuilder {
 /// Fluent builder constructing a request to `CreateNodegroup`.
 ///
 /// <p>Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster.</p>
-/// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+/// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the <i>Amazon EKS User Guide</i>.</p><note>
 /// <p>Windows AMI types are only supported for commercial Regions that support Windows Amazon EKS.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

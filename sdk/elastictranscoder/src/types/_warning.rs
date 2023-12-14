@@ -7,7 +7,7 @@
 pub struct Warning {
     /// <p>The code of the cross-regional warning.</p>
     pub code: ::std::option::Option<::std::string::String>,
-    /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
+    /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     pub message: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl Warning {
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
+    /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     pub fn message(&self) -> ::std::option::Option<&str> {
@@ -53,21 +53,21 @@ impl WarningBuilder {
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }
-    /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
+    /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
+    /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
+    /// <p>The message explaining what resources are in a different region from the pipeline.</p><note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {

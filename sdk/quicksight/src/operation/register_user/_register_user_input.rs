@@ -5,19 +5,26 @@
 pub struct RegisterUserInput {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
+    /// <li>
+    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li>
+    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The email address of the user that you want to register.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
-    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
-    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
-    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
-    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li>
+    /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub user_role: ::std::option::Option<crate::types::UserRole>,
     /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight.</p>
@@ -32,10 +39,14 @@ pub struct RegisterUserInput {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li><p>Create and update data sources</p></li>
-    /// <li><p>Create and update datasets</p></li>
-    /// <li><p>Create and update email reports</p></li>
-    /// <li><p>Subscribe to email reports</p></li>
+    /// <li>
+    /// <p>Create and update data sources</p></li>
+    /// <li>
+    /// <p>Create and update datasets</p></li>
+    /// <li>
+    /// <p>Create and update email reports</p></li>
+    /// <li>
+    /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
@@ -44,8 +55,10 @@ pub struct RegisterUserInput {
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
-    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
+    /// <li>
+    /// <p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub external_login_federation_provider_type: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
@@ -58,8 +71,10 @@ pub struct RegisterUserInput {
 impl RegisterUserInput {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
+    /// <li>
+    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li>
+    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
@@ -70,11 +85,16 @@ impl RegisterUserInput {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
-    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
-    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
-    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
-    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li>
+    /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn user_role(&self) -> ::std::option::Option<&crate::types::UserRole> {
         self.user_role.as_ref()
@@ -101,10 +121,14 @@ impl RegisterUserInput {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li><p>Create and update data sources</p></li>
-    /// <li><p>Create and update datasets</p></li>
-    /// <li><p>Create and update email reports</p></li>
-    /// <li><p>Subscribe to email reports</p></li>
+    /// <li>
+    /// <p>Create and update data sources</p></li>
+    /// <li>
+    /// <p>Create and update datasets</p></li>
+    /// <li>
+    /// <p>Create and update email reports</p></li>
+    /// <li>
+    /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
@@ -115,8 +139,10 @@ impl RegisterUserInput {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
-    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
+    /// <li>
+    /// <p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn external_login_federation_provider_type(&self) -> ::std::option::Option<&str> {
         self.external_login_federation_provider_type.as_deref()
@@ -164,8 +190,10 @@ pub struct RegisterUserInputBuilder {
 impl RegisterUserInputBuilder {
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
+    /// <li>
+    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li>
+    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     /// This field is required.
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
@@ -174,8 +202,10 @@ impl RegisterUserInputBuilder {
     }
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
+    /// <li>
+    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li>
+    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn set_identity_type(mut self, input: ::std::option::Option<crate::types::IdentityType>) -> Self {
         self.identity_type = input;
@@ -183,8 +213,10 @@ impl RegisterUserInputBuilder {
     }
     /// <p>Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:</p>
     /// <ul>
-    /// <li><p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
-    /// <li><p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
+    /// <li>
+    /// <p><code>IAM</code>: A user whose identity maps to an existing IAM user or role.</p></li>
+    /// <li>
+    /// <p><code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.</p></li>
     /// </ul>
     pub fn get_identity_type(&self) -> &::std::option::Option<crate::types::IdentityType> {
         &self.identity_type
@@ -206,11 +238,16 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
-    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
-    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
-    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
-    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li>
+    /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     /// This field is required.
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
@@ -219,11 +256,16 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
-    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
-    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
-    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
-    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li>
+    /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
         self.user_role = input;
@@ -231,11 +273,16 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The Amazon QuickSight role for the user. The user role can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
-    /// <li><p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
-    /// <li><p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
-    /// <li><p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
-    /// <li><p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>READER</code>: A user who has read-only access to dashboards.</p></li>
+    /// <li>
+    /// <p><code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and dashboards.</p></li>
+    /// <li>
+    /// <p><code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_READER</code>: This role isn't currently available for use.</p></li>
+    /// <li>
+    /// <p><code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p></li>
     /// </ul>
     pub fn get_user_role(&self) -> &::std::option::Option<crate::types::UserRole> {
         &self.user_role
@@ -314,10 +361,14 @@ impl RegisterUserInputBuilder {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li><p>Create and update data sources</p></li>
-    /// <li><p>Create and update datasets</p></li>
-    /// <li><p>Create and update email reports</p></li>
-    /// <li><p>Subscribe to email reports</p></li>
+    /// <li>
+    /// <p>Create and update data sources</p></li>
+    /// <li>
+    /// <p>Create and update datasets</p></li>
+    /// <li>
+    /// <p>Create and update email reports</p></li>
+    /// <li>
+    /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
@@ -329,10 +380,14 @@ impl RegisterUserInputBuilder {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li><p>Create and update data sources</p></li>
-    /// <li><p>Create and update datasets</p></li>
-    /// <li><p>Create and update email reports</p></li>
-    /// <li><p>Subscribe to email reports</p></li>
+    /// <li>
+    /// <p>Create and update data sources</p></li>
+    /// <li>
+    /// <p>Create and update datasets</p></li>
+    /// <li>
+    /// <p>Create and update email reports</p></li>
+    /// <li>
+    /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
@@ -344,10 +399,14 @@ impl RegisterUserInputBuilder {
     }
     /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p>
     /// <ul>
-    /// <li><p>Create and update data sources</p></li>
-    /// <li><p>Create and update datasets</p></li>
-    /// <li><p>Create and update email reports</p></li>
-    /// <li><p>Subscribe to email reports</p></li>
+    /// <li>
+    /// <p>Create and update data sources</p></li>
+    /// <li>
+    /// <p>Create and update datasets</p></li>
+    /// <li>
+    /// <p>Create and update email reports</p></li>
+    /// <li>
+    /// <p>Subscribe to email reports</p></li>
     /// </ul>
     /// <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p>
     /// <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user.</p>
@@ -358,8 +417,10 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
-    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
+    /// <li>
+    /// <p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn external_login_federation_provider_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.external_login_federation_provider_type = ::std::option::Option::Some(input.into());
@@ -367,8 +428,10 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
-    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
+    /// <li>
+    /// <p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn set_external_login_federation_provider_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_login_federation_provider_type = input;
@@ -376,8 +439,10 @@ impl RegisterUserInputBuilder {
     }
     /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
     /// <ul>
-    /// <li><p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
-    /// <li><p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
+    /// <li>
+    /// <p><code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed when the external provider is custom.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.</p></li>
     /// </ul>
     pub fn get_external_login_federation_provider_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_login_federation_provider_type

@@ -110,11 +110,16 @@ impl GetViolationDetailsFluentBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
-    /// <li><p>DNS Firewall</p></li>
-    /// <li><p>Imported Network Firewall</p></li>
-    /// <li><p>Network Firewall</p></li>
-    /// <li><p>Security group content audit</p></li>
-    /// <li><p>Third-party firewall</p></li>
+    /// <li>
+    /// <p>DNS Firewall</p></li>
+    /// <li>
+    /// <p>Imported Network Firewall</p></li>
+    /// <li>
+    /// <p>Network Firewall</p></li>
+    /// <li>
+    /// <p>Security group content audit</p></li>
+    /// <li>
+    /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
@@ -122,11 +127,16 @@ impl GetViolationDetailsFluentBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
-    /// <li><p>DNS Firewall</p></li>
-    /// <li><p>Imported Network Firewall</p></li>
-    /// <li><p>Network Firewall</p></li>
-    /// <li><p>Security group content audit</p></li>
-    /// <li><p>Third-party firewall</p></li>
+    /// <li>
+    /// <p>DNS Firewall</p></li>
+    /// <li>
+    /// <p>Imported Network Firewall</p></li>
+    /// <li>
+    /// <p>Network Firewall</p></li>
+    /// <li>
+    /// <p>Security group content audit</p></li>
+    /// <li>
+    /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
@@ -134,11 +144,16 @@ impl GetViolationDetailsFluentBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that you want the details for. You can get violation details for the following policy types:</p>
     /// <ul>
-    /// <li><p>DNS Firewall</p></li>
-    /// <li><p>Imported Network Firewall</p></li>
-    /// <li><p>Network Firewall</p></li>
-    /// <li><p>Security group content audit</p></li>
-    /// <li><p>Third-party firewall</p></li>
+    /// <li>
+    /// <p>DNS Firewall</p></li>
+    /// <li>
+    /// <p>Imported Network Firewall</p></li>
+    /// <li>
+    /// <p>Network Firewall</p></li>
+    /// <li>
+    /// <p>Security group content audit</p></li>
+    /// <li>
+    /// <p>Third-party firewall</p></li>
     /// </ul>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_id()

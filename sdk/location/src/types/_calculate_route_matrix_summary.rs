@@ -6,9 +6,12 @@
 pub struct CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
@@ -22,9 +25,12 @@ pub struct CalculateRouteMatrixSummary {
 impl CalculateRouteMatrixSummary {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -63,9 +69,12 @@ pub struct CalculateRouteMatrixSummaryBuilder {
 impl CalculateRouteMatrixSummaryBuilder {
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -75,9 +84,12 @@ impl CalculateRouteMatrixSummaryBuilder {
     }
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -86,9 +98,12 @@ impl CalculateRouteMatrixSummaryBuilder {
     }
     /// <p>The data provider of traffic and road network data used to calculate the routes. Indicates one of the available providers:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {

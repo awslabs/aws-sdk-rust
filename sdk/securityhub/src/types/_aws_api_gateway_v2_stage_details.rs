@@ -26,9 +26,12 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub stage_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Information about settings for logging access for the stage.</p>
@@ -79,9 +82,12 @@ impl AwsApiGatewayV2StageDetails {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn stage_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.stage_variables.as_ref()
@@ -255,9 +261,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn stage_variables(
         mut self,
@@ -273,9 +282,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn set_stage_variables(
         mut self,
@@ -288,9 +300,12 @@ impl AwsApiGatewayV2StageDetailsBuilder {
     /// <p>Variable names can have alphanumeric and underscore characters.</p>
     /// <p>Variable values can contain the following characters:</p>
     /// <ul>
-    /// <li><p>Uppercase and lowercase letters</p></li>
-    /// <li><p>Numbers</p></li>
-    /// <li><p>Special characters -._~:/?#&amp;=,</p></li>
+    /// <li>
+    /// <p>Uppercase and lowercase letters</p></li>
+    /// <li>
+    /// <p>Numbers</p></li>
+    /// <li>
+    /// <p>Special characters -._~:/?#&amp;=,</p></li>
     /// </ul>
     pub fn get_stage_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.stage_variables

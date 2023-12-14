@@ -10,11 +10,16 @@ pub struct RecordDetail {
     pub provisioned_product_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
-    /// <li><p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
-    /// <li><p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::RecordStatus>,
     /// <p>The UTC time stamp of the creation time.</p>
@@ -25,9 +30,12 @@ pub struct RecordDetail {
     pub provisioned_product_type: ::std::option::Option<::std::string::String>,
     /// <p>The record type.</p>
     /// <ul>
-    /// <li><p><code>PROVISION_PRODUCT</code></p></li>
-    /// <li><p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
-    /// <li><p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>PROVISION_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
     /// </ul>
     pub record_type: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the provisioned product.</p>
@@ -56,11 +64,16 @@ impl RecordDetail {
     }
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
-    /// <li><p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
-    /// <li><p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::RecordStatus> {
         self.status.as_ref()
@@ -79,9 +92,12 @@ impl RecordDetail {
     }
     /// <p>The record type.</p>
     /// <ul>
-    /// <li><p><code>PROVISION_PRODUCT</code></p></li>
-    /// <li><p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
-    /// <li><p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>PROVISION_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
     /// </ul>
     pub fn record_type(&self) -> ::std::option::Option<&str> {
         self.record_type.as_deref()
@@ -176,11 +192,16 @@ impl RecordDetailBuilder {
     }
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
-    /// <li><p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
-    /// <li><p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::RecordStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -188,11 +209,16 @@ impl RecordDetailBuilder {
     }
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
-    /// <li><p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
-    /// <li><p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RecordStatus>) -> Self {
         self.status = input;
@@ -200,11 +226,16 @@ impl RecordDetailBuilder {
     }
     /// <p>The status of the provisioned product.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
-    /// <li><p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
-    /// <li><p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The request was created but the operation has not started.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The requested operation is in progress.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a rollback.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The requested operation has successfully completed.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate using the error messages returned.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RecordStatus> {
         &self.status
@@ -253,9 +284,12 @@ impl RecordDetailBuilder {
     }
     /// <p>The record type.</p>
     /// <ul>
-    /// <li><p><code>PROVISION_PRODUCT</code></p></li>
-    /// <li><p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
-    /// <li><p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>PROVISION_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
     /// </ul>
     pub fn record_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_type = ::std::option::Option::Some(input.into());
@@ -263,9 +297,12 @@ impl RecordDetailBuilder {
     }
     /// <p>The record type.</p>
     /// <ul>
-    /// <li><p><code>PROVISION_PRODUCT</code></p></li>
-    /// <li><p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
-    /// <li><p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>PROVISION_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
     /// </ul>
     pub fn set_record_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_type = input;
@@ -273,9 +310,12 @@ impl RecordDetailBuilder {
     }
     /// <p>The record type.</p>
     /// <ul>
-    /// <li><p><code>PROVISION_PRODUCT</code></p></li>
-    /// <li><p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
-    /// <li><p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>PROVISION_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_PROVISIONED_PRODUCT</code></p></li>
+    /// <li>
+    /// <p><code>TERMINATE_PROVISIONED_PRODUCT</code></p></li>
     /// </ul>
     pub fn get_record_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_type

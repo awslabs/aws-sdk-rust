@@ -10,12 +10,18 @@ pub struct Ipv6CidrBlockAssociation {
     pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>associating</code></p></li>
-    /// <li><p><code>associated</code></p></li>
-    /// <li><p><code>disassociating</code></p></li>
-    /// <li><p><code>disassociated</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>failing</code></p></li>
+    /// <li>
+    /// <p><code>associating</code></p></li>
+    /// <li>
+    /// <p><code>associated</code></p></li>
+    /// <li>
+    /// <p><code>disassociating</code></p></li>
+    /// <li>
+    /// <p><code>disassociated</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>failing</code></p></li>
     /// </ul>
     pub cidr_block_state: ::std::option::Option<::std::string::String>,
 }
@@ -30,12 +36,18 @@ impl Ipv6CidrBlockAssociation {
     }
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>associating</code></p></li>
-    /// <li><p><code>associated</code></p></li>
-    /// <li><p><code>disassociating</code></p></li>
-    /// <li><p><code>disassociated</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>failing</code></p></li>
+    /// <li>
+    /// <p><code>associating</code></p></li>
+    /// <li>
+    /// <p><code>associated</code></p></li>
+    /// <li>
+    /// <p><code>disassociating</code></p></li>
+    /// <li>
+    /// <p><code>disassociated</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>failing</code></p></li>
     /// </ul>
     pub fn cidr_block_state(&self) -> ::std::option::Option<&str> {
         self.cidr_block_state.as_deref()
@@ -87,12 +99,18 @@ impl Ipv6CidrBlockAssociationBuilder {
     }
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>associating</code></p></li>
-    /// <li><p><code>associated</code></p></li>
-    /// <li><p><code>disassociating</code></p></li>
-    /// <li><p><code>disassociated</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>failing</code></p></li>
+    /// <li>
+    /// <p><code>associating</code></p></li>
+    /// <li>
+    /// <p><code>associated</code></p></li>
+    /// <li>
+    /// <p><code>disassociating</code></p></li>
+    /// <li>
+    /// <p><code>disassociated</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>failing</code></p></li>
     /// </ul>
     pub fn cidr_block_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr_block_state = ::std::option::Option::Some(input.into());
@@ -100,12 +118,18 @@ impl Ipv6CidrBlockAssociationBuilder {
     }
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>associating</code></p></li>
-    /// <li><p><code>associated</code></p></li>
-    /// <li><p><code>disassociating</code></p></li>
-    /// <li><p><code>disassociated</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>failing</code></p></li>
+    /// <li>
+    /// <p><code>associating</code></p></li>
+    /// <li>
+    /// <p><code>associated</code></p></li>
+    /// <li>
+    /// <p><code>disassociating</code></p></li>
+    /// <li>
+    /// <p><code>disassociated</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>failing</code></p></li>
     /// </ul>
     pub fn set_cidr_block_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_block_state = input;
@@ -113,12 +137,18 @@ impl Ipv6CidrBlockAssociationBuilder {
     }
     /// <p>Information about the state of the CIDR block. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>associating</code></p></li>
-    /// <li><p><code>associated</code></p></li>
-    /// <li><p><code>disassociating</code></p></li>
-    /// <li><p><code>disassociated</code></p></li>
-    /// <li><p><code>failed</code></p></li>
-    /// <li><p><code>failing</code></p></li>
+    /// <li>
+    /// <p><code>associating</code></p></li>
+    /// <li>
+    /// <p><code>associated</code></p></li>
+    /// <li>
+    /// <p><code>disassociating</code></p></li>
+    /// <li>
+    /// <p><code>disassociated</code></p></li>
+    /// <li>
+    /// <p><code>failed</code></p></li>
+    /// <li>
+    /// <p><code>failing</code></p></li>
     /// </ul>
     pub fn get_cidr_block_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr_block_state

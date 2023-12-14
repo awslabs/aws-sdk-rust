@@ -15,15 +15,24 @@ pub struct CreateKxVolumeOutput {
     pub nas1_configuration: ::std::option::Option<crate::types::KxNas1Configuration>,
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li><p>CREATING – The volume creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li><p>ACTIVE – The volume is active.</p></li>
-    /// <li><p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li><p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li><p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The volume creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The volume is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>UPDATED – The volume is successfully updated.</p></li>
+    /// <li>
+    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
+    /// <li>
+    /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxVolumeStatus>,
     /// <p>The error message when a failed state occurs.</p>
@@ -61,15 +70,24 @@ impl CreateKxVolumeOutput {
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li><p>CREATING – The volume creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li><p>ACTIVE – The volume is active.</p></li>
-    /// <li><p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li><p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li><p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The volume creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The volume is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>UPDATED – The volume is successfully updated.</p></li>
+    /// <li>
+    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
+    /// <li>
+    /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxVolumeStatus> {
         self.status.as_ref()
@@ -199,15 +217,24 @@ impl CreateKxVolumeOutputBuilder {
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li><p>CREATING – The volume creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li><p>ACTIVE – The volume is active.</p></li>
-    /// <li><p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li><p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li><p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The volume creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The volume is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>UPDATED – The volume is successfully updated.</p></li>
+    /// <li>
+    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
+    /// <li>
+    /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxVolumeStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -215,15 +242,24 @@ impl CreateKxVolumeOutputBuilder {
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li><p>CREATING – The volume creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li><p>ACTIVE – The volume is active.</p></li>
-    /// <li><p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li><p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li><p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The volume creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The volume is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>UPDATED – The volume is successfully updated.</p></li>
+    /// <li>
+    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
+    /// <li>
+    /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxVolumeStatus>) -> Self {
         self.status = input;
@@ -231,15 +267,24 @@ impl CreateKxVolumeOutputBuilder {
     }
     /// <p>The status of volume creation.</p>
     /// <ul>
-    /// <li><p>CREATING – The volume creation is in progress.</p></li>
-    /// <li><p>CREATE_FAILED – The volume creation has failed.</p></li>
-    /// <li><p>ACTIVE – The volume is active.</p></li>
-    /// <li><p>UPDATING – The volume is in the process of being updated.</p></li>
-    /// <li><p>UPDATE_FAILED – The update action failed.</p></li>
-    /// <li><p>UPDATED – The volume is successfully updated.</p></li>
-    /// <li><p>DELETING – The volume is in the process of being deleted.</p></li>
-    /// <li><p>DELETE_FAILED – The system failed to delete the volume.</p></li>
-    /// <li><p>DELETED – The volume is successfully deleted.</p></li>
+    /// <li>
+    /// <p>CREATING – The volume creation is in progress.</p></li>
+    /// <li>
+    /// <p>CREATE_FAILED – The volume creation has failed.</p></li>
+    /// <li>
+    /// <p>ACTIVE – The volume is active.</p></li>
+    /// <li>
+    /// <p>UPDATING – The volume is in the process of being updated.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED – The update action failed.</p></li>
+    /// <li>
+    /// <p>UPDATED – The volume is successfully updated.</p></li>
+    /// <li>
+    /// <p>DELETING – The volume is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p>DELETE_FAILED – The system failed to delete the volume.</p></li>
+    /// <li>
+    /// <p>DELETED – The volume is successfully deleted.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxVolumeStatus> {
         &self.status

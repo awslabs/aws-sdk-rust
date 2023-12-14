@@ -5,7 +5,7 @@
 pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
     pub approval_rule_template_name: ::std::option::Option<::std::string::String>,
-    /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
+    /// <p>The repository names that you want to disassociate from the approval rule template.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub repository_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,7 +15,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     pub fn approval_rule_template_name(&self) -> ::std::option::Option<&str> {
         self.approval_rule_template_name.as_deref()
     }
-    /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
+    /// <p>The repository names that you want to disassociate from the approval rule template.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     ///
@@ -58,7 +58,7 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_repository_names`](Self::set_repository_names).
     ///
-    /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
+    /// <p>The repository names that you want to disassociate from the approval rule template.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn repository_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -67,14 +67,14 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
         self.repository_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
+    /// <p>The repository names that you want to disassociate from the approval rule template.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn set_repository_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.repository_names = input;
         self
     }
-    /// <p>The repository names that you want to disassociate from the approval rule template.</p> <note>
+    /// <p>The repository names that you want to disassociate from the approval rule template.</p><note>
     /// <p>The length constraint limit is for each string in the array. The array itself can be empty.</p>
     /// </note>
     pub fn get_repository_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

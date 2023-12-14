@@ -9,8 +9,10 @@ pub struct ListDeploymentTargetsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li><p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li><p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
+    /// <li>
+    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
     pub target_filters: ::std::option::Option<::std::collections::HashMap<crate::types::TargetFilterName, ::std::vec::Vec<::std::string::String>>>,
 }
@@ -25,8 +27,10 @@ impl ListDeploymentTargetsInput {
     }
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li><p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li><p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
+    /// <li>
+    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
     pub fn target_filters(
         &self,
@@ -86,8 +90,10 @@ impl ListDeploymentTargetsInputBuilder {
     ///
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li><p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li><p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
+    /// <li>
+    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
     pub fn target_filters(mut self, k: crate::types::TargetFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.target_filters.unwrap_or_default();
@@ -97,8 +103,10 @@ impl ListDeploymentTargetsInputBuilder {
     }
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li><p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li><p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
+    /// <li>
+    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
     pub fn set_target_filters(
         mut self,
@@ -109,8 +117,10 @@ impl ListDeploymentTargetsInputBuilder {
     }
     /// <p>A key used to filter the returned targets. The two valid values are:</p>
     /// <ul>
-    /// <li><p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
-    /// <li><p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>.</p></li>
+    /// <li>
+    /// <p><code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>.</p></li>
     /// </ul>
     pub fn get_target_filters(
         &self,

@@ -136,15 +136,24 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
-    /// <li><p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
-    /// <li><p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
-    /// <li><p><code>instance-type</code> - The instance type that is covered by the reservation.</p></li>
-    /// <li><p><code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p></li>
-    /// <li><p><code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p></li>
-    /// <li><p><code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p></li>
-    /// <li><p><code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p></li>
-    /// <li><p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
+    /// <li>
+    /// <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type that is covered by the reservation.</p></li>
+    /// <li>
+    /// <p><code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p></li>
+    /// <li>
+    /// <p><code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p></li>
+    /// <li>
+    /// <p><code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p></li>
+    /// <li>
+    /// <p><code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p></li>
+    /// <li>
+    /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -152,15 +161,24 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
-    /// <li><p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
-    /// <li><p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
-    /// <li><p><code>instance-type</code> - The instance type that is covered by the reservation.</p></li>
-    /// <li><p><code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p></li>
-    /// <li><p><code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p></li>
-    /// <li><p><code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p></li>
-    /// <li><p><code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p></li>
-    /// <li><p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
+    /// <li>
+    /// <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type that is covered by the reservation.</p></li>
+    /// <li>
+    /// <p><code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p></li>
+    /// <li>
+    /// <p><code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p></li>
+    /// <li>
+    /// <p><code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p></li>
+    /// <li>
+    /// <p><code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p></li>
+    /// <li>
+    /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -168,15 +186,24 @@ impl DescribeReservedInstancesOfferingsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
-    /// <li><p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
-    /// <li><p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
-    /// <li><p><code>instance-type</code> - The instance type that is covered by the reservation.</p></li>
-    /// <li><p><code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p></li>
-    /// <li><p><code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p></li>
-    /// <li><p><code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p></li>
-    /// <li><p><code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p></li>
-    /// <li><p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p></li>
+    /// <li>
+    /// <p><code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p></li>
+    /// <li>
+    /// <p><code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type that is covered by the reservation.</p></li>
+    /// <li>
+    /// <p><code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p></li>
+    /// <li>
+    /// <p><code>product-description</code> - The Reserved Instance product platform description (<code>Linux/UNIX</code> | <code>Linux with SQL Server Standard</code> | <code>Linux with SQL Server Web</code> | <code>Linux with SQL Server Enterprise</code> | <code>SUSE Linux</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> | <code>Windows</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Web</code> | <code>Windows with SQL Server Enterprise</code>).</p></li>
+    /// <li>
+    /// <p><code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p></li>
+    /// <li>
+    /// <p><code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p></li>
+    /// <li>
+    /// <p><code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

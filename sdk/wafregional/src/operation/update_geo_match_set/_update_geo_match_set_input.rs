@@ -9,8 +9,11 @@ pub struct UpdateGeoMatchSetInput {
     pub change_token: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
-    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
+    /// <li>
+    /// <p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li>
+    /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
+    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>,
 }
@@ -25,8 +28,11 @@ impl UpdateGeoMatchSetInput {
     }
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
-    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
+    /// <li>
+    /// <p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li>
+    /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
+    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updates.is_none()`.
@@ -86,8 +92,11 @@ impl UpdateGeoMatchSetInputBuilder {
     ///
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
-    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
+    /// <li>
+    /// <p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li>
+    /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
+    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub fn updates(mut self, input: crate::types::GeoMatchSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
@@ -97,8 +106,11 @@ impl UpdateGeoMatchSetInputBuilder {
     }
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
-    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
+    /// <li>
+    /// <p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li>
+    /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
+    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub fn set_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>>) -> Self {
         self.updates = input;
@@ -106,8 +118,11 @@ impl UpdateGeoMatchSetInputBuilder {
     }
     /// <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert into or delete from an <code>GeoMatchSet</code>. For more information, see the applicable data types:</p>
     /// <ul>
-    /// <li><p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
-    /// <li><p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p> <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
+    /// <li>
+    /// <p><code>GeoMatchSetUpdate</code>: Contains <code>Action</code> and <code>GeoMatchConstraint</code></p></li>
+    /// <li>
+    /// <p><code>GeoMatchConstraint</code>: Contains <code>Type</code> and <code>Value</code></p>
+    /// <p>You can have only one <code>Type</code> and <code>Value</code> per <code>GeoMatchConstraint</code>. To add multiple countries, include multiple <code>GeoMatchSetUpdate</code> objects in your request.</p></li>
     /// </ul>
     pub fn get_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GeoMatchSetUpdate>> {
         &self.updates

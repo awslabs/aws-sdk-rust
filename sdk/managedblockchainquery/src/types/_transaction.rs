@@ -2,8 +2,10 @@
 
 /// <p>There are two possible types of transactions used for this data type:</p>
 /// <ul>
-/// <li><p>A Bitcoin transaction is a movement of BTC from one address to another.</p></li>
-/// <li><p>An Ethereum transaction refers to an action initiated by an externally owned account, which is an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action occurs within a transaction.</p></li>
+/// <li>
+/// <p>A Bitcoin transaction is a movement of BTC from one address to another.</p></li>
+/// <li>
+/// <p>An Ethereum transaction refers to an action initiated by an externally owned account, which is an account managed by a human, not a contract. For example, if Bob sends Alice 1 ETH, Bob's account must be debited and Alice's must be credited. This state-changing action occurs within a transaction.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

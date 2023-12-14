@@ -8,9 +8,12 @@ pub struct AttributeDefinition {
     pub attribute_name: ::std::string::String,
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
-    /// <li><p><code>S</code> - the attribute is of type String</p></li>
-    /// <li><p><code>N</code> - the attribute is of type Number</p></li>
-    /// <li><p><code>B</code> - the attribute is of type Binary</p></li>
+    /// <li>
+    /// <p><code>S</code> - the attribute is of type String</p></li>
+    /// <li>
+    /// <p><code>N</code> - the attribute is of type Number</p></li>
+    /// <li>
+    /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
     pub attribute_type: crate::types::ScalarAttributeType,
 }
@@ -22,9 +25,12 @@ impl AttributeDefinition {
     }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
-    /// <li><p><code>S</code> - the attribute is of type String</p></li>
-    /// <li><p><code>N</code> - the attribute is of type Number</p></li>
-    /// <li><p><code>B</code> - the attribute is of type Binary</p></li>
+    /// <li>
+    /// <p><code>S</code> - the attribute is of type String</p></li>
+    /// <li>
+    /// <p><code>N</code> - the attribute is of type Number</p></li>
+    /// <li>
+    /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
     pub fn attribute_type(&self) -> &crate::types::ScalarAttributeType {
         &self.attribute_type
@@ -62,9 +68,12 @@ impl AttributeDefinitionBuilder {
     }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
-    /// <li><p><code>S</code> - the attribute is of type String</p></li>
-    /// <li><p><code>N</code> - the attribute is of type Number</p></li>
-    /// <li><p><code>B</code> - the attribute is of type Binary</p></li>
+    /// <li>
+    /// <p><code>S</code> - the attribute is of type String</p></li>
+    /// <li>
+    /// <p><code>N</code> - the attribute is of type Number</p></li>
+    /// <li>
+    /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
     /// This field is required.
     pub fn attribute_type(mut self, input: crate::types::ScalarAttributeType) -> Self {
@@ -73,9 +82,12 @@ impl AttributeDefinitionBuilder {
     }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
-    /// <li><p><code>S</code> - the attribute is of type String</p></li>
-    /// <li><p><code>N</code> - the attribute is of type Number</p></li>
-    /// <li><p><code>B</code> - the attribute is of type Binary</p></li>
+    /// <li>
+    /// <p><code>S</code> - the attribute is of type String</p></li>
+    /// <li>
+    /// <p><code>N</code> - the attribute is of type Number</p></li>
+    /// <li>
+    /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<crate::types::ScalarAttributeType>) -> Self {
         self.attribute_type = input;
@@ -83,9 +95,12 @@ impl AttributeDefinitionBuilder {
     }
     /// <p>The data type for the attribute, where:</p>
     /// <ul>
-    /// <li><p><code>S</code> - the attribute is of type String</p></li>
-    /// <li><p><code>N</code> - the attribute is of type Number</p></li>
-    /// <li><p><code>B</code> - the attribute is of type Binary</p></li>
+    /// <li>
+    /// <p><code>S</code> - the attribute is of type String</p></li>
+    /// <li>
+    /// <p><code>N</code> - the attribute is of type Number</p></li>
+    /// <li>
+    /// <p><code>B</code> - the attribute is of type Binary</p></li>
     /// </ul>
     pub fn get_attribute_type(&self) -> &::std::option::Option<crate::types::ScalarAttributeType> {
         &self.attribute_type

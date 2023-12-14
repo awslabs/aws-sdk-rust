@@ -7,9 +7,12 @@ pub struct SendMessageInput {
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The content of the message.</p>
     /// <ul>
-    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li>
+    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li>
+    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li>
+    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -24,9 +27,12 @@ impl SendMessageInput {
     }
     /// <p>The content of the message.</p>
     /// <ul>
-    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li>
+    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li>
+    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li>
+    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
@@ -74,9 +80,12 @@ impl SendMessageInputBuilder {
     }
     /// <p>The content of the message.</p>
     /// <ul>
-    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li>
+    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li>
+    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li>
+    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -85,9 +94,12 @@ impl SendMessageInputBuilder {
     }
     /// <p>The content of the message.</p>
     /// <ul>
-    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li>
+    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li>
+    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li>
+    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
@@ -95,9 +107,12 @@ impl SendMessageInputBuilder {
     }
     /// <p>The content of the message.</p>
     /// <ul>
-    /// <li><p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
-    /// <li><p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
-    /// <li><p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
+    /// <li>
+    /// <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024.</p></li>
+    /// <li>
+    /// <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.</p></li>
+    /// <li>
+    /// <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p></li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content

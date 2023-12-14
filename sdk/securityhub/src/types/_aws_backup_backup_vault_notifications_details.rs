@@ -6,10 +6,14 @@
 pub struct AwsBackupBackupVaultNotificationsDetails {
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
     /// <ul>
-    /// <li><p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
-    /// <li><p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
-    /// <li><p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li><p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
+    /// <li>
+    /// <p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul>
     pub backup_vault_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a backup vault's events.</p>
@@ -18,10 +22,14 @@ pub struct AwsBackupBackupVaultNotificationsDetails {
 impl AwsBackupBackupVaultNotificationsDetails {
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
     /// <ul>
-    /// <li><p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
-    /// <li><p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
-    /// <li><p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li><p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
+    /// <li>
+    /// <p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.backup_vault_events.is_none()`.
@@ -54,10 +62,14 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     ///
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
     /// <ul>
-    /// <li><p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
-    /// <li><p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
-    /// <li><p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li><p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
+    /// <li>
+    /// <p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul>
     pub fn backup_vault_events(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.backup_vault_events.unwrap_or_default();
@@ -67,10 +79,14 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     }
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
     /// <ul>
-    /// <li><p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
-    /// <li><p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
-    /// <li><p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li><p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
+    /// <li>
+    /// <p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul>
     pub fn set_backup_vault_events(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.backup_vault_events = input;
@@ -78,10 +94,14 @@ impl AwsBackupBackupVaultNotificationsDetailsBuilder {
     }
     /// <p>An array of events that indicate the status of jobs to back up resources to the backup vault. The following events are supported:</p>
     /// <ul>
-    /// <li><p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
-    /// <li><p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
-    /// <li><p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
-    /// <li><p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>BACKUP_JOB_STARTED | BACKUP_JOB_COMPLETED</code></p></li>
+    /// <li>
+    /// <p><code>COPY_JOB_STARTED | COPY_JOB_SUCCESSFUL | COPY_JOB_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>RESTORE_JOB_STARTED | RESTORE_JOB_COMPLETED | RECOVERY_POINT_MODIFIED</code></p></li>
+    /// <li>
+    /// <p><code>S3_BACKUP_OBJECT_FAILED | S3_RESTORE_OBJECT_FAILED</code></p></li>
     /// </ul>
     pub fn get_backup_vault_events(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.backup_vault_events

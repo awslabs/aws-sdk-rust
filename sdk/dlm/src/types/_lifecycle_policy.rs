@@ -26,8 +26,10 @@ pub struct LifecyclePolicy {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li><p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
+    /// <li>
+    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub default_policy: ::std::option::Option<bool>,
 }
@@ -74,8 +76,10 @@ impl LifecyclePolicy {
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li><p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
+    /// <li>
+    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub fn default_policy(&self) -> ::std::option::Option<bool> {
         self.default_policy
@@ -253,8 +257,10 @@ impl LifecyclePolicyBuilder {
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li><p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
+    /// <li>
+    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub fn default_policy(mut self, input: bool) -> Self {
         self.default_policy = ::std::option::Option::Some(input);
@@ -262,8 +268,10 @@ impl LifecyclePolicyBuilder {
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li><p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
+    /// <li>
+    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub fn set_default_policy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_policy = input;
@@ -271,8 +279,10 @@ impl LifecyclePolicyBuilder {
     }
     /// <p><b>[Default policies only]</b> The type of default policy. Values include:</p>
     /// <ul>
-    /// <li><p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
-    /// <li><p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
+    /// <li>
+    /// <p><code>VOLUME</code> - Default policy for EBS snapshots</p></li>
+    /// <li>
+    /// <p><code>INSTANCE</code> - Default policy for EBS-backed AMIs</p></li>
     /// </ul>
     pub fn get_default_policy(&self) -> &::std::option::Option<bool> {
         &self.default_policy

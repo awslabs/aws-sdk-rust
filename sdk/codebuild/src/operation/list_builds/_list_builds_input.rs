@@ -5,8 +5,10 @@
 pub struct ListBuildsInput {
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
     /// </ul>
     pub sort_order: ::std::option::Option<crate::types::SortOrderType>,
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
@@ -15,8 +17,10 @@ pub struct ListBuildsInput {
 impl ListBuildsInput {
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
     /// </ul>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
@@ -43,8 +47,10 @@ pub struct ListBuildsInputBuilder {
 impl ListBuildsInputBuilder {
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
@@ -52,8 +58,10 @@ impl ListBuildsInputBuilder {
     }
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.sort_order = input;
@@ -61,8 +69,10 @@ impl ListBuildsInputBuilder {
     }
     /// <p>The order to list build IDs. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
-    /// <li><p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List the build IDs in descending order by build ID.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         &self.sort_order

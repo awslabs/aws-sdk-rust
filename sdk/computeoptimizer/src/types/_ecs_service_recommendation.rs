@@ -16,7 +16,7 @@ pub struct EcsServiceRecommendation {
     pub utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
     /// <p>The number of days the Amazon ECS service utilization metrics were analyzed.</p>
     pub lookback_period_in_days: f64,
-    /// <p>The launch type the Amazon ECS service is using.</p> <note>
+    /// <p>The launch type the Amazon ECS service is using.</p><note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub launch_type: ::std::option::Option<crate::types::EcsServiceLaunchType>,
@@ -25,18 +25,25 @@ pub struct EcsServiceRecommendation {
     /// <p>The finding classification of an Amazon ECS service.</p>
     /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
-    /// <li><p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
+    /// <li>
+    /// <p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
+    /// <li>
+    /// <p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
     /// </ul>
     pub finding: ::std::option::Option<crate::types::EcsServiceRecommendationFinding>,
     /// <p>The reason for the finding classification of an Amazon ECS service.</p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
     /// </ul>
     pub finding_reason_codes: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
     /// <p>An array of objects that describe the recommendation options for the Amazon ECS service.</p>
@@ -73,7 +80,7 @@ impl EcsServiceRecommendation {
     pub fn lookback_period_in_days(&self) -> f64 {
         self.lookback_period_in_days
     }
-    /// <p>The launch type the Amazon ECS service is using.</p> <note>
+    /// <p>The launch type the Amazon ECS service is using.</p><note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn launch_type(&self) -> ::std::option::Option<&crate::types::EcsServiceLaunchType> {
@@ -86,9 +93,12 @@ impl EcsServiceRecommendation {
     /// <p>The finding classification of an Amazon ECS service.</p>
     /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
-    /// <li><p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
+    /// <li>
+    /// <p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
+    /// <li>
+    /// <p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
     /// </ul>
     pub fn finding(&self) -> ::std::option::Option<&crate::types::EcsServiceRecommendationFinding> {
         self.finding.as_ref()
@@ -96,10 +106,14 @@ impl EcsServiceRecommendation {
     /// <p>The reason for the finding classification of an Amazon ECS service.</p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.finding_reason_codes.is_none()`.
@@ -235,21 +249,21 @@ impl EcsServiceRecommendationBuilder {
     pub fn get_lookback_period_in_days(&self) -> &::std::option::Option<f64> {
         &self.lookback_period_in_days
     }
-    /// <p>The launch type the Amazon ECS service is using.</p> <note>
+    /// <p>The launch type the Amazon ECS service is using.</p><note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn launch_type(mut self, input: crate::types::EcsServiceLaunchType) -> Self {
         self.launch_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The launch type the Amazon ECS service is using.</p> <note>
+    /// <p>The launch type the Amazon ECS service is using.</p><note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::EcsServiceLaunchType>) -> Self {
         self.launch_type = input;
         self
     }
-    /// <p>The launch type the Amazon ECS service is using.</p> <note>
+    /// <p>The launch type the Amazon ECS service is using.</p><note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::EcsServiceLaunchType> {
@@ -272,9 +286,12 @@ impl EcsServiceRecommendationBuilder {
     /// <p>The finding classification of an Amazon ECS service.</p>
     /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
-    /// <li><p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
+    /// <li>
+    /// <p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
+    /// <li>
+    /// <p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::EcsServiceRecommendationFinding) -> Self {
         self.finding = ::std::option::Option::Some(input);
@@ -283,9 +300,12 @@ impl EcsServiceRecommendationBuilder {
     /// <p>The finding classification of an Amazon ECS service.</p>
     /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
-    /// <li><p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
+    /// <li>
+    /// <p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
+    /// <li>
+    /// <p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
     /// </ul>
     pub fn set_finding(mut self, input: ::std::option::Option<crate::types::EcsServiceRecommendationFinding>) -> Self {
         self.finding = input;
@@ -294,9 +314,12 @@ impl EcsServiceRecommendationBuilder {
     /// <p>The finding classification of an Amazon ECS service.</p>
     /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
-    /// <li><p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
-    /// <li><p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
+    /// <li>
+    /// <p><b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p></li>
+    /// <li>
+    /// <p><b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs.</p></li>
+    /// <li>
+    /// <p><b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p></li>
     /// </ul>
     pub fn get_finding(&self) -> &::std::option::Option<crate::types::EcsServiceRecommendationFinding> {
         &self.finding
@@ -308,10 +331,14 @@ impl EcsServiceRecommendationBuilder {
     /// <p>The reason for the finding classification of an Amazon ECS service.</p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
     /// </ul>
     pub fn finding_reason_codes(mut self, input: crate::types::EcsServiceRecommendationFindingReasonCode) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
@@ -322,10 +349,14 @@ impl EcsServiceRecommendationBuilder {
     /// <p>The reason for the finding classification of an Amazon ECS service.</p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
     /// </ul>
     pub fn set_finding_reason_codes(
         mut self,
@@ -337,10 +368,14 @@ impl EcsServiceRecommendationBuilder {
     /// <p>The reason for the finding classification of an Amazon ECS service.</p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
-    /// <li><p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
-    /// <li><p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
+    /// <li>
+    /// <p><b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p></li>
     /// </ul>
     pub fn get_finding_reason_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>> {
         &self.finding_reason_codes

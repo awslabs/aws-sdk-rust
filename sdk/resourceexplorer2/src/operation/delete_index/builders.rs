@@ -22,7 +22,7 @@ impl DeleteIndexInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteIndex`.
 ///
-/// <p>Deletes the specified index and turns off Amazon Web Services Resource Explorer in the specified Amazon Web Services Region. When you delete an index, Resource Explorer stops discovering and indexing resources in that Region. Resource Explorer also deletes all views in that Region. These actions occur as asynchronous background tasks. You can check to see when the actions are complete by using the <code>GetIndex</code> operation and checking the <code>Status</code> response value.</p> <note>
+/// <p>Deletes the specified index and turns off Amazon Web Services Resource Explorer in the specified Amazon Web Services Region. When you delete an index, Resource Explorer stops discovering and indexing resources in that Region. Resource Explorer also deletes all views in that Region. These actions occur as asynchronous background tasks. You can check to see when the actions are complete by using the <code>GetIndex</code> operation and checking the <code>Status</code> response value.</p><note>
 /// <p>If the index you delete is the aggregator index for the Amazon Web Services account, you must wait 24 hours before you can promote another local index to be the aggregator index for the account. Users can't perform account-wide searches using Resource Explorer until another aggregator index is configured.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

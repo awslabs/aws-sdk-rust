@@ -7,13 +7,20 @@
 pub struct Relationship {
     /// <p>The type of relationship between the blocks in the IDs array and the current block. The following list describes the relationship types that can be returned.</p>
     /// <ul>
-    /// <li><p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
-    /// <li><p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
-    /// <li><p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
-    /// <li><p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
+    /// <li>
+    /// <p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
+    /// <li>
+    /// <p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::RelationshipType>,
     /// <p>An array of IDs for related blocks. You can get the type of the relationship from the <code>Type</code> element.</p>
@@ -22,13 +29,20 @@ pub struct Relationship {
 impl Relationship {
     /// <p>The type of relationship between the blocks in the IDs array and the current block. The following list describes the relationship types that can be returned.</p>
     /// <ul>
-    /// <li><p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
-    /// <li><p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
-    /// <li><p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
-    /// <li><p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
+    /// <li>
+    /// <p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
+    /// <li>
+    /// <p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
         self.r#type.as_ref()
@@ -57,13 +71,20 @@ pub struct RelationshipBuilder {
 impl RelationshipBuilder {
     /// <p>The type of relationship between the blocks in the IDs array and the current block. The following list describes the relationship types that can be returned.</p>
     /// <ul>
-    /// <li><p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
-    /// <li><p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
-    /// <li><p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
-    /// <li><p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
+    /// <li>
+    /// <p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
+    /// <li>
+    /// <p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::RelationshipType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -71,13 +92,20 @@ impl RelationshipBuilder {
     }
     /// <p>The type of relationship between the blocks in the IDs array and the current block. The following list describes the relationship types that can be returned.</p>
     /// <ul>
-    /// <li><p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
-    /// <li><p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
-    /// <li><p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
-    /// <li><p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
+    /// <li>
+    /// <p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
+    /// <li>
+    /// <p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RelationshipType>) -> Self {
         self.r#type = input;
@@ -85,13 +113,20 @@ impl RelationshipBuilder {
     }
     /// <p>The type of relationship between the blocks in the IDs array and the current block. The following list describes the relationship types that can be returned.</p>
     /// <ul>
-    /// <li><p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
-    /// <li><p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
-    /// <li><p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
-    /// <li><p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
-    /// <li><p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
-    /// <li><p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
-    /// <li><p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
+    /// <li>
+    /// <p><i>VALUE</i> - A list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair.</p></li>
+    /// <li>
+    /// <p><i>CHILD</i> - A list of IDs that identify blocks found within the current block object. For example, WORD blocks have a CHILD relationship to the LINE block type.</p></li>
+    /// <li>
+    /// <p><i>MERGED_CELL</i> - A list of IDs that identify each of the MERGED_CELL block types in a table.</p></li>
+    /// <li>
+    /// <p><i>ANSWER</i> - A list that contains the ID of the QUERY_RESULT block that’s associated with the corresponding QUERY block.</p></li>
+    /// <li>
+    /// <p><i>TABLE</i> - A list of IDs that identify associated TABLE block types.</p></li>
+    /// <li>
+    /// <p><i>TABLE_TITLE</i> - A list that contains the ID for the TABLE_TITLE block type in a table.</p></li>
+    /// <li>
+    /// <p><i>TABLE_FOOTER</i> - A list of IDs that identify the TABLE_FOOTER block types in a table.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RelationshipType> {
         &self.r#type

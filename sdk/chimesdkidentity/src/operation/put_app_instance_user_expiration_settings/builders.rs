@@ -22,7 +22,7 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutAppInstanceUserExpirationSettings`.
 ///
-/// <p>Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.</p> <note>
+/// <p>Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.</p><note>
 /// <p>A background process deletes expired <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion times may vary.</p>
 /// <p>Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p>
 /// </note>

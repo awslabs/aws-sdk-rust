@@ -22,7 +22,7 @@ impl UpdateTrustedTokenIssuerInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTrustedTokenIssuer`.
 ///
-/// <p>Updates the name of the trusted token issuer, or the path of a source attribute or destination attribute for a trusted token issuer configuration.</p> <note>
+/// <p>Updates the name of the trusted token issuer, or the path of a source attribute or destination attribute for a trusted token issuer configuration.</p><note>
 /// <p>Updating this trusted token issuer configuration might cause users to lose access to any applications that are configured to use the trusted token issuer.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

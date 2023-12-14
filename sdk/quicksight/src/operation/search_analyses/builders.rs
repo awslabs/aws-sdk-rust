@@ -22,7 +22,7 @@ impl SearchAnalysesInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchAnalyses`.
 ///
-/// <p>Searches for analyses that belong to the user specified in the filter.</p> <note>
+/// <p>Searches for analyses that belong to the user specified in the filter.</p><note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateRecommendationStatusFailedEntry {
-    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
+    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     pub entry_id: ::std::string::String,
@@ -12,7 +12,7 @@ pub struct BatchUpdateRecommendationStatusFailedEntry {
     pub error_message: ::std::string::String,
 }
 impl BatchUpdateRecommendationStatusFailedEntry {
-    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
+    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     pub fn entry_id(&self) -> &str {
@@ -40,7 +40,7 @@ pub struct BatchUpdateRecommendationStatusFailedEntryBuilder {
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateRecommendationStatusFailedEntryBuilder {
-    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
+    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     /// This field is required.
@@ -48,14 +48,14 @@ impl BatchUpdateRecommendationStatusFailedEntryBuilder {
         self.entry_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
+    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_id = input;
         self
     }
-    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p> <note>
+    /// <p>An identifier of an entry in this batch that is used to communicate the result.</p><note>
     /// <p>The <code>entryId</code>s of a batch request need to be unique within a request.</p>
     /// </note>
     pub fn get_entry_id(&self) -> &::std::option::Option<::std::string::String> {

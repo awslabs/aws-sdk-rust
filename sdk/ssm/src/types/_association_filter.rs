@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationFilter {
-    /// <p>The name of the filter.</p> <note>
+    /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
     pub key: crate::types::AssociationFilterKey,
@@ -12,7 +12,7 @@ pub struct AssociationFilter {
     pub value: ::std::string::String,
 }
 impl AssociationFilter {
-    /// <p>The name of the filter.</p> <note>
+    /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
     pub fn key(&self) -> &crate::types::AssociationFilterKey {
@@ -39,7 +39,7 @@ pub struct AssociationFilterBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationFilterBuilder {
-    /// <p>The name of the filter.</p> <note>
+    /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
     /// This field is required.
@@ -47,14 +47,14 @@ impl AssociationFilterBuilder {
         self.key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the filter.</p> <note>
+    /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::AssociationFilterKey>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The name of the filter.</p> <note>
+    /// <p>The name of the filter.</p><note>
     /// <p><code>InstanceId</code> has been deprecated.</p>
     /// </note>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::AssociationFilterKey> {

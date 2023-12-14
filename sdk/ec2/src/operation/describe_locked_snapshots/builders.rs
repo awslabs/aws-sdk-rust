@@ -114,7 +114,8 @@ impl DescribeLockedSnapshotsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code> | <code>governance</code> | <code>compliance</code> | <code>expired</code>).</p></li>
+    /// <li>
+    /// <p><code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code> | <code>governance</code> | <code>compliance</code> | <code>expired</code>).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -122,7 +123,8 @@ impl DescribeLockedSnapshotsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code> | <code>governance</code> | <code>compliance</code> | <code>expired</code>).</p></li>
+    /// <li>
+    /// <p><code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code> | <code>governance</code> | <code>compliance</code> | <code>expired</code>).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -130,7 +132,8 @@ impl DescribeLockedSnapshotsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code> | <code>governance</code> | <code>compliance</code> | <code>expired</code>).</p></li>
+    /// <li>
+    /// <p><code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code> | <code>governance</code> | <code>compliance</code> | <code>expired</code>).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

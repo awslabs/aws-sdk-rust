@@ -22,7 +22,7 @@ impl CancelSpotInstanceRequestsInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelSpotInstanceRequests`.
 ///
-/// <p>Cancels one or more Spot Instance requests.</p> <important>
+/// <p>Cancels one or more Spot Instance requests.</p><important>
 /// <p>Canceling a Spot Instance request does not terminate running Spot Instances associated with the request.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Location {
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p><note>
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub bucket: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct S3Location {
     pub object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3Location {
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p><note>
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
@@ -52,21 +52,21 @@ pub struct S3LocationBuilder {
     pub(crate) object_version: ::std::option::Option<::std::string::String>,
 }
 impl S3LocationBuilder {
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p><note>
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p><note>
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p><note>
     /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
     /// </note>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {

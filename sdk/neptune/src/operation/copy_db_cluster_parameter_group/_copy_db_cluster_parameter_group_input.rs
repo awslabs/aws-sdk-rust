@@ -6,18 +6,25 @@ pub struct CopyDbClusterParameterGroupInput {
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid DB cluster parameter group.</p></li>
-    /// <li><p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
-    /// <li><p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <li>
+    /// <p>Must specify a valid DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
     /// </ul>
     pub source_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code></p>
     pub target_db_cluster_parameter_group_identifier: ::std::option::Option<::std::string::String>,
@@ -30,9 +37,12 @@ impl CopyDbClusterParameterGroupInput {
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid DB cluster parameter group.</p></li>
-    /// <li><p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
-    /// <li><p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <li>
+    /// <p>Must specify a valid DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
     /// </ul>
     pub fn source_db_cluster_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
         self.source_db_cluster_parameter_group_identifier.as_deref()
@@ -40,10 +50,14 @@ impl CopyDbClusterParameterGroupInput {
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code></p>
     pub fn target_db_cluster_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
@@ -80,9 +94,12 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid DB cluster parameter group.</p></li>
-    /// <li><p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
-    /// <li><p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <li>
+    /// <p>Must specify a valid DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn source_db_cluster_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,9 +109,12 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid DB cluster parameter group.</p></li>
-    /// <li><p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
-    /// <li><p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <li>
+    /// <p>Must specify a valid DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
     /// </ul>
     pub fn set_source_db_cluster_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_db_cluster_parameter_group_identifier = input;
@@ -103,9 +123,12 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/neptune/latest/UserGuide/tagging.ARN.html#tagging.ARN.Constructing"> Constructing an Amazon Resource Name (ARN)</a>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid DB cluster parameter group.</p></li>
-    /// <li><p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
-    /// <li><p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
+    /// <li>
+    /// <p>Must specify a valid DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>, or a valid ARN.</p></li>
+    /// <li>
+    /// <p>If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.</p></li>
     /// </ul>
     pub fn get_source_db_cluster_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_db_cluster_parameter_group_identifier
@@ -113,10 +136,14 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code></p>
     /// This field is required.
@@ -127,10 +154,14 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code></p>
     pub fn set_target_db_cluster_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -140,10 +171,14 @@ impl CopyDbClusterParameterGroupInputBuilder {
     /// <p>The identifier for the copied DB cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-cluster-param-group1</code></p>
     pub fn get_target_db_cluster_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {

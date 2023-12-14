@@ -7,9 +7,12 @@ pub struct CreateReplicationTaskInput {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub replication_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the source endpoint.</p>
@@ -31,7 +34,7 @@ pub struct CreateReplicationTaskInput {
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub cdc_start_position: ::std::option::Option<::std::string::String>,
@@ -50,9 +53,12 @@ impl CreateReplicationTaskInput {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn replication_task_identifier(&self) -> ::std::option::Option<&str> {
         self.replication_task_identifier.as_deref()
@@ -90,7 +96,7 @@ impl CreateReplicationTaskInput {
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn cdc_start_position(&self) -> ::std::option::Option<&str> {
@@ -146,9 +152,12 @@ impl CreateReplicationTaskInputBuilder {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// This field is required.
     pub fn replication_task_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,9 +167,12 @@ impl CreateReplicationTaskInputBuilder {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_replication_task_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replication_task_identifier = input;
@@ -169,9 +181,12 @@ impl CreateReplicationTaskInputBuilder {
     /// <p>An identifier for the replication task.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn get_replication_task_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_task_identifier
@@ -286,7 +301,7 @@ impl CreateReplicationTaskInputBuilder {
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn cdc_start_position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -297,7 +312,7 @@ impl CreateReplicationTaskInputBuilder {
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn set_cdc_start_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -308,7 +323,7 @@ impl CreateReplicationTaskInputBuilder {
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
-    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p> <note>
+    /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p><note>
     /// <p>When you use this task setting with a source PostgreSQL database, a logical replication slot should already be created and associated with the source endpoint. You can verify this by setting the <code>slotName</code> extra connection attribute to the name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source for DMS</a>.</p>
     /// </note>
     pub fn get_cdc_start_position(&self) -> &::std::option::Option<::std::string::String> {

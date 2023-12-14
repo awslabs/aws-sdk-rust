@@ -22,7 +22,7 @@ impl DeleteCarrierGatewayInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteCarrierGateway`.
 ///
-/// <p>Deletes a carrier gateway.</p> <important>
+/// <p>Deletes a carrier gateway.</p><important>
 /// <p>If you do not delete the route that contains the carrier gateway as the Target, the route is a blackhole route. For information about how to delete a route, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

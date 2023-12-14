@@ -14,10 +14,14 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     pub index_size_bytes: ::std::option::Option<i64>,
     /// <p>The current status of the index.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATING</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>UPDATING</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATING</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub index_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of items in the index.</p>
@@ -48,10 +52,14 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
     }
     /// <p>The current status of the index.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATING</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>UPDATING</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATING</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn index_status(&self) -> ::std::option::Option<&str> {
         self.index_status.as_deref()
@@ -155,10 +163,14 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The current status of the index.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATING</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>UPDATING</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATING</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn index_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_status = ::std::option::Option::Some(input.into());
@@ -166,10 +178,14 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The current status of the index.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATING</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>UPDATING</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATING</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn set_index_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_status = input;
@@ -177,10 +193,14 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The current status of the index.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATING</code></p></li>
-    /// <li><p><code>DELETING</code></p></li>
-    /// <li><p><code>UPDATING</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATING</code></p></li>
+    /// <li>
+    /// <p><code>DELETING</code></p></li>
+    /// <li>
+    /// <p><code>UPDATING</code></p></li>
     /// </ul>
     pub fn get_index_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_status

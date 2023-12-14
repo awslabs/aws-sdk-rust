@@ -6,13 +6,20 @@
 pub struct Filter {
     /// <p>The following are keys you can use:</p>
     /// <ul>
-    /// <li><p><b>description</b>: Prefix match, not case-sensitive.</p></li>
-    /// <li><p><b>name</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>description</b>: Prefix match, not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>name</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
     /// </ul>
     pub key: ::std::option::Option<crate::types::FilterNameStringType>,
     /// <p>The keyword to filter for.</p>
@@ -22,13 +29,20 @@ pub struct Filter {
 impl Filter {
     /// <p>The following are keys you can use:</p>
     /// <ul>
-    /// <li><p><b>description</b>: Prefix match, not case-sensitive.</p></li>
-    /// <li><p><b>name</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>description</b>: Prefix match, not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>name</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
     /// </ul>
     pub fn key(&self) -> ::std::option::Option<&crate::types::FilterNameStringType> {
         self.key.as_ref()
@@ -58,13 +72,20 @@ pub struct FilterBuilder {
 impl FilterBuilder {
     /// <p>The following are keys you can use:</p>
     /// <ul>
-    /// <li><p><b>description</b>: Prefix match, not case-sensitive.</p></li>
-    /// <li><p><b>name</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>description</b>: Prefix match, not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>name</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
     /// </ul>
     pub fn key(mut self, input: crate::types::FilterNameStringType) -> Self {
         self.key = ::std::option::Option::Some(input);
@@ -72,13 +93,20 @@ impl FilterBuilder {
     }
     /// <p>The following are keys you can use:</p>
     /// <ul>
-    /// <li><p><b>description</b>: Prefix match, not case-sensitive.</p></li>
-    /// <li><p><b>name</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>description</b>: Prefix match, not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>name</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
     /// </ul>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::FilterNameStringType>) -> Self {
         self.key = input;
@@ -86,13 +114,20 @@ impl FilterBuilder {
     }
     /// <p>The following are keys you can use:</p>
     /// <ul>
-    /// <li><p><b>description</b>: Prefix match, not case-sensitive.</p></li>
-    /// <li><p><b>name</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
-    /// <li><p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>description</b>: Prefix match, not case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>name</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-key</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>tag-value</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>primary-region</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>owning-service</b>: Prefix match, case-sensitive.</p></li>
+    /// <li>
+    /// <p><b>all</b>: Breaks the filter value string into words and then searches all attributes for matches. Not case-sensitive.</p></li>
     /// </ul>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::FilterNameStringType> {
         &self.key

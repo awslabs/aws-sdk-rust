@@ -6,7 +6,7 @@ pub struct GetInstancesHealthStatusInput {
     /// <p>The ID of the service that the instance is associated with.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
+    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
     pub instances: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -22,7 +22,7 @@ impl GetInstancesHealthStatusInput {
         self.service_id.as_deref()
     }
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
+    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
     ///
@@ -77,7 +77,7 @@ impl GetInstancesHealthStatusInputBuilder {
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
     ///
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
+    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
     pub fn instances(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -87,7 +87,7 @@ impl GetInstancesHealthStatusInputBuilder {
         self
     }
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
+    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
     pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -95,7 +95,7 @@ impl GetInstancesHealthStatusInputBuilder {
         self
     }
     /// <p>An array that contains the IDs of all the instances that you want to get the health status for.</p>
-    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p> <note>
+    /// <p>If you omit <code>Instances</code>, Cloud Map returns the health status for all the instances that are associated with the specified service.</p><note>
     /// <p>To get the IDs for the instances that you've registered by using a specified service, submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a> request.</p>
     /// </note>
     pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

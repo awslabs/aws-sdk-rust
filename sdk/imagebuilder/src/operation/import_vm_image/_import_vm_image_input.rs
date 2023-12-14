@@ -5,7 +5,7 @@
 pub struct ImportVmImageInput {
     /// <p>The name of the base image that is created by the import process.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -40,7 +40,7 @@ impl ImportVmImageInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -120,7 +120,7 @@ impl ImportVmImageInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -141,7 +141,7 @@ impl ImportVmImageInputBuilder {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -161,7 +161,7 @@ impl ImportVmImageInputBuilder {
         self.semantic_version = input;
         self
     }
-    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version to attach to the base image that was created during the import process. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

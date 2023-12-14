@@ -8,10 +8,12 @@ pub struct Image {
     pub time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if:</p>
     /// <ul>
-    /// <li><p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
+    /// <li>
+    /// <p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
+    /// <li>
+    /// <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
     /// </ul>
     pub error: ::std::option::Option<crate::types::ImageError>,
     /// <p>An attribute of the <code>Image</code> object that is Base64 encoded.</p>
@@ -24,10 +26,12 @@ impl Image {
     }
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if:</p>
     /// <ul>
-    /// <li><p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
+    /// <li>
+    /// <p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
+    /// <li>
+    /// <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
     /// </ul>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ImageError> {
         self.error.as_ref()
@@ -69,10 +73,12 @@ impl ImageBuilder {
     }
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if:</p>
     /// <ul>
-    /// <li><p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
+    /// <li>
+    /// <p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
+    /// <li>
+    /// <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
     /// </ul>
     pub fn error(mut self, input: crate::types::ImageError) -> Self {
         self.error = ::std::option::Option::Some(input);
@@ -80,10 +86,12 @@ impl ImageBuilder {
     }
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if:</p>
     /// <ul>
-    /// <li><p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
+    /// <li>
+    /// <p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
+    /// <li>
+    /// <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
     /// </ul>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ImageError>) -> Self {
         self.error = input;
@@ -91,10 +99,12 @@ impl ImageBuilder {
     }
     /// <p>The error message shown when the image for the provided timestamp was not extracted due to a non-tryable error. An error will be returned if:</p>
     /// <ul>
-    /// <li><p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
+    /// <li>
+    /// <p>There is no media that exists for the specified <code>Timestamp</code>.</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
+    /// <li>
+    /// <p>The media for the specified time does not allow an image to be extracted. In this case the media is audio only, or the incorrect media has been ingested.</p></li>
     /// </ul>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ImageError> {
         &self.error

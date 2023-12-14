@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AssumeRoleWithSamlOutput {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
@@ -23,9 +23,12 @@ pub struct AssumeRoleWithSamlOutput {
     pub audience: ::std::option::Option<::std::string::String>,
     /// <p>A hash value based on the concatenation of the following:</p>
     /// <ul>
-    /// <li><p>The <code>Issuer</code> response value.</p></li>
-    /// <li><p>The Amazon Web Services account ID.</p></li>
-    /// <li><p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
+    /// <li>
+    /// <p>The <code>Issuer</code> response value.</p></li>
+    /// <li>
+    /// <p>The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
     /// </ul>
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
@@ -38,7 +41,7 @@ pub struct AssumeRoleWithSamlOutput {
     _request_id: Option<String>,
 }
 impl AssumeRoleWithSamlOutput {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
@@ -71,9 +74,12 @@ impl AssumeRoleWithSamlOutput {
     }
     /// <p>A hash value based on the concatenation of the following:</p>
     /// <ul>
-    /// <li><p>The <code>Issuer</code> response value.</p></li>
-    /// <li><p>The Amazon Web Services account ID.</p></li>
-    /// <li><p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
+    /// <li>
+    /// <p>The <code>Issuer</code> response value.</p></li>
+    /// <li>
+    /// <p>The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
     /// </ul>
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
@@ -132,21 +138,21 @@ pub struct AssumeRoleWithSamlOutputBuilder {
     _request_id: Option<String>,
 }
 impl AssumeRoleWithSamlOutputBuilder {
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
         self.credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn set_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
+    /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p><note>
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
@@ -241,9 +247,12 @@ impl AssumeRoleWithSamlOutputBuilder {
     }
     /// <p>A hash value based on the concatenation of the following:</p>
     /// <ul>
-    /// <li><p>The <code>Issuer</code> response value.</p></li>
-    /// <li><p>The Amazon Web Services account ID.</p></li>
-    /// <li><p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
+    /// <li>
+    /// <p>The <code>Issuer</code> response value.</p></li>
+    /// <li>
+    /// <p>The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
     /// </ul>
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
@@ -254,9 +263,12 @@ impl AssumeRoleWithSamlOutputBuilder {
     }
     /// <p>A hash value based on the concatenation of the following:</p>
     /// <ul>
-    /// <li><p>The <code>Issuer</code> response value.</p></li>
-    /// <li><p>The Amazon Web Services account ID.</p></li>
-    /// <li><p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
+    /// <li>
+    /// <p>The <code>Issuer</code> response value.</p></li>
+    /// <li>
+    /// <p>The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
     /// </ul>
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>
@@ -267,9 +279,12 @@ impl AssumeRoleWithSamlOutputBuilder {
     }
     /// <p>A hash value based on the concatenation of the following:</p>
     /// <ul>
-    /// <li><p>The <code>Issuer</code> response value.</p></li>
-    /// <li><p>The Amazon Web Services account ID.</p></li>
-    /// <li><p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
+    /// <li>
+    /// <p>The <code>Issuer</code> response value.</p></li>
+    /// <li>
+    /// <p>The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>The friendly name (the last part of the ARN) of the SAML provider in IAM.</p></li>
     /// </ul>
     /// <p>The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a user.</p>
     /// <p>The following pseudocode shows how the hash value is calculated:</p>

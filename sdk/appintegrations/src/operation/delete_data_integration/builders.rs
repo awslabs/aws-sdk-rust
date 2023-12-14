@@ -22,7 +22,7 @@ impl DeleteDataIntegrationInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataIntegration`.
 ///
-/// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role.</p> <note>
+/// <p>Deletes the DataIntegration. Only DataIntegrations that don't have any DataIntegrationAssociations can be deleted. Deleting a DataIntegration also deletes the underlying Amazon AppFlow flow and service linked role.</p><note>
 /// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -23,7 +23,7 @@ impl RegisterDeviceInputBuilder {
 /// Fluent builder constructing a request to `RegisterDevice`.
 ///
 /// <p>Registers a device to receive push sync notifications.</p>
-/// <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p> <examples>
+/// <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p><examples>
 /// <example>
 /// <name>
 /// RegisterDevice

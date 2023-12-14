@@ -25,9 +25,12 @@ impl DeletePolicyInputBuilder {
 /// <p>Deletes the specified managed policy.</p>
 /// <p>Before you can delete a managed policy, you must first detach the policy from all users, groups, and roles that it is attached to. In addition, you must delete all the policy's versions. The following steps describe the process for deleting a managed policy:</p>
 /// <ul>
-/// <li><p>Detach the policy from all users, groups, and roles that the policy is attached to, using <code>DetachUserPolicy</code>, <code>DetachGroupPolicy</code>, or <code>DetachRolePolicy</code>. To list all the users, groups, and roles that a policy is attached to, use <code>ListEntitiesForPolicy</code>.</p></li>
-/// <li><p>Delete all versions of the policy using <code>DeletePolicyVersion</code>. To list the policy's versions, use <code>ListPolicyVersions</code>. You cannot use <code>DeletePolicyVersion</code> to delete the version that is marked as the default version. You delete the policy's default version in the next step of the process.</p></li>
-/// <li><p>Delete the policy (this automatically deletes the policy's default version) using this operation.</p></li>
+/// <li>
+/// <p>Detach the policy from all users, groups, and roles that the policy is attached to, using <code>DetachUserPolicy</code>, <code>DetachGroupPolicy</code>, or <code>DetachRolePolicy</code>. To list all the users, groups, and roles that a policy is attached to, use <code>ListEntitiesForPolicy</code>.</p></li>
+/// <li>
+/// <p>Delete all versions of the policy using <code>DeletePolicyVersion</code>. To list the policy's versions, use <code>ListPolicyVersions</code>. You cannot use <code>DeletePolicyVersion</code> to delete the version that is marked as the default version. You delete the policy's default version in the next step of the process.</p></li>
+/// <li>
+/// <p>Delete the policy (this automatically deletes the policy's default version) using this operation.</p></li>
 /// </ul>
 /// <p>For information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

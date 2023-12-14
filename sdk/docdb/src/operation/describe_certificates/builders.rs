@@ -117,7 +117,8 @@ impl DescribeCertificatesFluentBuilder {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the specified certificate is returned. If this parameter is omitted, a list of up to <code>MaxRecords</code> certificates is returned. This parameter is not case sensitive.</p>
     /// <p>Constraints</p>
     /// <ul>
-    /// <li><p>Must match an existing <code>CertificateIdentifier</code>.</p></li>
+    /// <li>
+    /// <p>Must match an existing <code>CertificateIdentifier</code>.</p></li>
     /// </ul>
     pub fn certificate_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_identifier(input.into());
@@ -126,7 +127,8 @@ impl DescribeCertificatesFluentBuilder {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the specified certificate is returned. If this parameter is omitted, a list of up to <code>MaxRecords</code> certificates is returned. This parameter is not case sensitive.</p>
     /// <p>Constraints</p>
     /// <ul>
-    /// <li><p>Must match an existing <code>CertificateIdentifier</code>.</p></li>
+    /// <li>
+    /// <p>Must match an existing <code>CertificateIdentifier</code>.</p></li>
     /// </ul>
     pub fn set_certificate_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_identifier(input);
@@ -135,7 +137,8 @@ impl DescribeCertificatesFluentBuilder {
     /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the specified certificate is returned. If this parameter is omitted, a list of up to <code>MaxRecords</code> certificates is returned. This parameter is not case sensitive.</p>
     /// <p>Constraints</p>
     /// <ul>
-    /// <li><p>Must match an existing <code>CertificateIdentifier</code>.</p></li>
+    /// <li>
+    /// <p>Must match an existing <code>CertificateIdentifier</code>.</p></li>
     /// </ul>
     pub fn get_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_identifier()
@@ -162,8 +165,10 @@ impl DescribeCertificatesFluentBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Minimum: 20</p></li>
-    /// <li><p>Maximum: 100</p></li>
+    /// <li>
+    /// <p>Minimum: 20</p></li>
+    /// <li>
+    /// <p>Maximum: 100</p></li>
     /// </ul>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
@@ -173,8 +178,10 @@ impl DescribeCertificatesFluentBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Minimum: 20</p></li>
-    /// <li><p>Maximum: 100</p></li>
+    /// <li>
+    /// <p>Minimum: 20</p></li>
+    /// <li>
+    /// <p>Maximum: 100</p></li>
     /// </ul>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
@@ -184,8 +191,10 @@ impl DescribeCertificatesFluentBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Minimum: 20</p></li>
-    /// <li><p>Maximum: 100</p></li>
+    /// <li>
+    /// <p>Minimum: 20</p></li>
+    /// <li>
+    /// <p>Maximum: 100</p></li>
     /// </ul>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()

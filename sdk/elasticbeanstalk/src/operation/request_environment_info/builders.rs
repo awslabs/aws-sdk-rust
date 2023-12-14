@@ -28,7 +28,8 @@ impl RequestEnvironmentInfoInputBuilder {
 /// <p>Use <code>RetrieveEnvironmentInfo</code> to obtain the set of logs.</p>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li><p><code>RetrieveEnvironmentInfo</code></p></li>
+/// <li>
+/// <p><code>RetrieveEnvironmentInfo</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RequestEnvironmentInfoFluentBuilder {

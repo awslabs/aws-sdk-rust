@@ -124,8 +124,10 @@ impl UpdateReportGroupFluentBuilder {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
         self.inner = self.inner.export_config(input);
@@ -133,8 +135,10 @@ impl UpdateReportGroupFluentBuilder {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.inner = self.inner.set_export_config(input);
@@ -142,8 +146,10 @@ impl UpdateReportGroupFluentBuilder {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
         self.inner.get_export_config()

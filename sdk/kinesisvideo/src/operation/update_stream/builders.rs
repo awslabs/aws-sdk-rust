@@ -156,21 +156,21 @@ impl UpdateStreamFluentBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_current_version()
     }
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_name(input.into());
         self
     }
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_name(input);
         self
     }
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -142,11 +142,16 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p></li>
-    /// <li><p><code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p></li>
-    /// <li><p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
-    /// <li><p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
-    /// <li><p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -154,11 +159,16 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p></li>
-    /// <li><p><code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p></li>
-    /// <li><p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
-    /// <li><p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
-    /// <li><p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -166,11 +176,16 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p></li>
-    /// <li><p><code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p></li>
-    /// <li><p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
-    /// <li><p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
-    /// <li><p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p></li>
+    /// <li>
+    /// <p><code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

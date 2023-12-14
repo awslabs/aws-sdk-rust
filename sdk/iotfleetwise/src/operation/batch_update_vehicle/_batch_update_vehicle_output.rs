@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateVehicleOutput {
-    /// <p>A list of information about the batch of updated vehicles.</p> <note>
+    /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
     pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>,
@@ -12,7 +12,7 @@ pub struct BatchUpdateVehicleOutput {
     _request_id: Option<String>,
 }
 impl BatchUpdateVehicleOutput {
-    /// <p>A list of information about the batch of updated vehicles.</p> <note>
+    /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
     ///
@@ -52,7 +52,7 @@ impl BatchUpdateVehicleOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vehicles`](Self::set_vehicles).
     ///
-    /// <p>A list of information about the batch of updated vehicles.</p> <note>
+    /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
     pub fn vehicles(mut self, input: crate::types::UpdateVehicleResponseItem) -> Self {
@@ -61,14 +61,14 @@ impl BatchUpdateVehicleOutputBuilder {
         self.vehicles = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of information about the batch of updated vehicles.</p> <note>
+    /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
     pub fn set_vehicles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>>) -> Self {
         self.vehicles = input;
         self
     }
-    /// <p>A list of information about the batch of updated vehicles.</p> <note>
+    /// <p>A list of information about the batch of updated vehicles.</p><note>
     /// <p>This list contains only unique IDs for the vehicles that were updated.</p>
     /// </note>
     pub fn get_vehicles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateVehicleResponseItem>> {

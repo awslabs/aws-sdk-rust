@@ -7,9 +7,12 @@ pub struct DataSourceIntrospectionModelFieldType {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li><p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li><p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
+    /// <li>
+    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
+    /// <li>
+    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
     pub kind: ::std::option::Option<::std::string::String>,
     /// <p>The name of the data type that represents the field. For example, <code>String</code> is a valid <code>name</code> value.</p>
@@ -24,9 +27,12 @@ impl DataSourceIntrospectionModelFieldType {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li><p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li><p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
+    /// <li>
+    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
+    /// <li>
+    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
     pub fn kind(&self) -> ::std::option::Option<&str> {
         self.kind.as_deref()
@@ -67,9 +73,12 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li><p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li><p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
+    /// <li>
+    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
+    /// <li>
+    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
     pub fn kind(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kind = ::std::option::Option::Some(input.into());
@@ -78,9 +87,12 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li><p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li><p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
+    /// <li>
+    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
+    /// <li>
+    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
     pub fn set_kind(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kind = input;
@@ -89,9 +101,12 @@ impl DataSourceIntrospectionModelFieldTypeBuilder {
     /// <p>Specifies the classification of data. For example, this could be set to values like <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of the field.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
-    /// <li><p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
-    /// <li><p><code>List</code>: Indicates the field contains a list.</p></li>
+    /// <li>
+    /// <p><code>Scalar</code>: Indicates the value is a primitive type (scalar).</p></li>
+    /// <li>
+    /// <p><code>NonNull</code>: Indicates the field cannot be <code>null</code>.</p></li>
+    /// <li>
+    /// <p><code>List</code>: Indicates the field contains a list.</p></li>
     /// </ul>
     pub fn get_kind(&self) -> &::std::option::Option<::std::string::String> {
         &self.kind

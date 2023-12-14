@@ -22,8 +22,10 @@ pub struct ReactiveAnomaly {
     pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
-    /// <li><p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
-    /// <li><p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
+    /// <li>
+    /// <p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
+    /// <li>
+    /// <p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::AnomalyType>,
     /// <p>The name of the reactive anomaly.</p>
@@ -70,8 +72,10 @@ impl ReactiveAnomaly {
     }
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
-    /// <li><p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
-    /// <li><p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
+    /// <li>
+    /// <p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
+    /// <li>
+    /// <p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::AnomalyType> {
         self.r#type.as_ref()
@@ -235,8 +239,10 @@ impl ReactiveAnomalyBuilder {
     }
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
-    /// <li><p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
-    /// <li><p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
+    /// <li>
+    /// <p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
+    /// <li>
+    /// <p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::AnomalyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -244,8 +250,10 @@ impl ReactiveAnomalyBuilder {
     }
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
-    /// <li><p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
-    /// <li><p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
+    /// <li>
+    /// <p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
+    /// <li>
+    /// <p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AnomalyType>) -> Self {
         self.r#type = input;
@@ -253,8 +261,10 @@ impl ReactiveAnomalyBuilder {
     }
     /// <p>The type of the reactive anomaly. It can be one of the following types.</p>
     /// <ul>
-    /// <li><p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
-    /// <li><p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
+    /// <li>
+    /// <p><code>CAUSAL</code> - the anomaly can cause a new insight.</p></li>
+    /// <li>
+    /// <p><code>CONTEXTUAL</code> - the anomaly contains additional information about an insight or its causal anomaly.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AnomalyType> {
         &self.r#type

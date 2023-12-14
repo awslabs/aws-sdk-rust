@@ -11,7 +11,7 @@ pub struct SearchQueuesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters to be applied to search results.</p>
     pub search_filter: ::std::option::Option<crate::types::QueueSearchFilter>,
-    /// <p>The search criteria to be used to return queues.</p> <note>
+    /// <p>The search criteria to be used to return queues.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub search_criteria: ::std::option::Option<crate::types::QueueSearchCriteria>,
@@ -33,7 +33,7 @@ impl SearchQueuesInput {
     pub fn search_filter(&self) -> ::std::option::Option<&crate::types::QueueSearchFilter> {
         self.search_filter.as_ref()
     }
-    /// <p>The search criteria to be used to return queues.</p> <note>
+    /// <p>The search criteria to be used to return queues.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::QueueSearchCriteria> {
@@ -115,21 +115,21 @@ impl SearchQueuesInputBuilder {
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::QueueSearchFilter> {
         &self.search_filter
     }
-    /// <p>The search criteria to be used to return queues.</p> <note>
+    /// <p>The search criteria to be used to return queues.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::QueueSearchCriteria) -> Self {
         self.search_criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The search criteria to be used to return queues.</p> <note>
+    /// <p>The search criteria to be used to return queues.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::QueueSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
-    /// <p>The search criteria to be used to return queues.</p> <note>
+    /// <p>The search criteria to be used to return queues.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::QueueSearchCriteria> {

@@ -13,8 +13,10 @@ pub struct AwsCodeBuildProjectEnvironment {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
-    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li>
+    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub image_pull_credentials_type: ::std::option::Option<::std::string::String>,
@@ -45,8 +47,10 @@ impl AwsCodeBuildProjectEnvironment {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
-    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li>
+    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn image_pull_credentials_type(&self) -> ::std::option::Option<&str> {
@@ -140,8 +144,10 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
-    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li>
+    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn image_pull_credentials_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -151,8 +157,10 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
-    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li>
+    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn set_image_pull_credentials_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -162,8 +170,10 @@ impl AwsCodeBuildProjectEnvironmentBuilder {
     /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
-    /// <li><p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
+    /// <li>
+    /// <p><code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust the CodeBuild service principal.</p></li>
+    /// <li>
+    /// <p><code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service role.</p></li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you must use <code>CODEBUILD</code> credentials.</p>
     pub fn get_image_pull_credentials_type(&self) -> &::std::option::Option<::std::string::String> {

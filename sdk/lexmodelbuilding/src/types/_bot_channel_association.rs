@@ -10,7 +10,7 @@ pub struct BotChannelAssociation {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub bot_alias: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon Lex bot to which this association is being made.</p> <note>
+    /// <p>The name of the Amazon Lex bot to which this association is being made.</p><note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack, and Twilio.</p>
     /// </note>
     pub bot_name: ::std::option::Option<::std::string::String>,
@@ -22,9 +22,12 @@ pub struct BotChannelAssociation {
     pub bot_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the bot channel.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li><p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ChannelStatus>,
     /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that it failed to create the association.</p>
@@ -43,7 +46,7 @@ impl BotChannelAssociation {
     pub fn bot_alias(&self) -> ::std::option::Option<&str> {
         self.bot_alias.as_deref()
     }
-    /// <p>The name of the Amazon Lex bot to which this association is being made.</p> <note>
+    /// <p>The name of the Amazon Lex bot to which this association is being made.</p><note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack, and Twilio.</p>
     /// </note>
     pub fn bot_name(&self) -> ::std::option::Option<&str> {
@@ -63,9 +66,12 @@ impl BotChannelAssociation {
     }
     /// <p>The status of the bot channel.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li><p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChannelStatus> {
         self.status.as_ref()
@@ -154,21 +160,21 @@ impl BotChannelAssociationBuilder {
     pub fn get_bot_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.bot_alias
     }
-    /// <p>The name of the Amazon Lex bot to which this association is being made.</p> <note>
+    /// <p>The name of the Amazon Lex bot to which this association is being made.</p><note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack, and Twilio.</p>
     /// </note>
     pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon Lex bot to which this association is being made.</p> <note>
+    /// <p>The name of the Amazon Lex bot to which this association is being made.</p><note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack, and Twilio.</p>
     /// </note>
     pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
     }
-    /// <p>The name of the Amazon Lex bot to which this association is being made.</p> <note>
+    /// <p>The name of the Amazon Lex bot to which this association is being made.</p><note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack, and Twilio.</p>
     /// </note>
     pub fn get_bot_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -231,9 +237,12 @@ impl BotChannelAssociationBuilder {
     }
     /// <p>The status of the bot channel.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li><p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ChannelStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -241,9 +250,12 @@ impl BotChannelAssociationBuilder {
     }
     /// <p>The status of the bot channel.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li><p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChannelStatus>) -> Self {
         self.status = input;
@@ -251,9 +263,12 @@ impl BotChannelAssociationBuilder {
     }
     /// <p>The status of the bot channel.</p>
     /// <ul>
-    /// <li><p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
-    /// <li><p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
+    /// <li>
+    /// <p><code>CREATED</code> - The channel has been created and is ready for use.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - Channel creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - There was an error creating the channel. For information about the reason for the failure, see the <code>failureReason</code> field.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChannelStatus> {
         &self.status

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BandwidthRateLimitInterval {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
     pub average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
@@ -14,7 +14,7 @@ pub struct BandwidthRateLimitInterval {
     pub end_hour_of_day: i32,
     /// <p>The minute of the hour to start the bandwidth rate limit interval. The interval begins at the start of that minute. To begin an interval exactly at the start of the hour, use the value <code>0</code>.</p>
     pub start_minute_of_hour: i32,
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub end_minute_of_hour: i32,
@@ -22,7 +22,7 @@ pub struct BandwidthRateLimitInterval {
     pub days_of_week: ::std::vec::Vec<i32>,
 }
 impl BandwidthRateLimitInterval {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
     pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> ::std::option::Option<i64> {
@@ -40,7 +40,7 @@ impl BandwidthRateLimitInterval {
     pub fn start_minute_of_hour(&self) -> i32 {
         self.start_minute_of_hour
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub fn end_minute_of_hour(&self) -> i32 {
@@ -71,21 +71,21 @@ pub struct BandwidthRateLimitIntervalBuilder {
     pub(crate) days_of_week: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl BandwidthRateLimitIntervalBuilder {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
     pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
     pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p> <note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
     /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
     /// </note>
     pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
@@ -136,7 +136,7 @@ impl BandwidthRateLimitIntervalBuilder {
     pub fn get_start_minute_of_hour(&self) -> &::std::option::Option<i32> {
         &self.start_minute_of_hour
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     /// This field is required.
@@ -144,14 +144,14 @@ impl BandwidthRateLimitIntervalBuilder {
         self.end_minute_of_hour = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub fn set_end_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_minute_of_hour = input;
         self
     }
-    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p> <important>
+    /// <p>The minute of the hour to end the bandwidth rate limit interval.</p><important>
     /// <p>The bandwidth rate limit interval ends at the end of the minute. To end an interval at the end of an hour, use the value <code>59</code>.</p>
     /// </important>
     pub fn get_end_minute_of_hour(&self) -> &::std::option::Option<i32> {

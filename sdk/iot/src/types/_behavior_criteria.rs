@@ -6,10 +6,14 @@
 pub struct BehaviorCriteria {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
-    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
+    /// <li>
+    /// <p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li>
+    /// <p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The value to be compared with the <code>metric</code>.</p>
@@ -28,10 +32,14 @@ pub struct BehaviorCriteria {
 impl BehaviorCriteria {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
-    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
+    /// <li>
+    /// <p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li>
+    /// <p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
@@ -83,10 +91,14 @@ pub struct BehaviorCriteriaBuilder {
 impl BehaviorCriteriaBuilder {
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
-    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
+    /// <li>
+    /// <p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li>
+    /// <p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.comparison_operator = ::std::option::Option::Some(input);
@@ -94,10 +106,14 @@ impl BehaviorCriteriaBuilder {
     }
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
-    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
+    /// <li>
+    /// <p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li>
+    /// <p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn set_comparison_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.comparison_operator = input;
@@ -105,10 +121,14 @@ impl BehaviorCriteriaBuilder {
     }
     /// <p>The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators include:</p>
     /// <ul>
-    /// <li><p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
-    /// <li><p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
-    /// <li><p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
+    /// <li>
+    /// <p><code>string-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>number-list</code>: <code>in-set</code> and <code>not-in-set</code></p></li>
+    /// <li>
+    /// <p><code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code></p></li>
+    /// <li>
+    /// <p><code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>, and <code>greater-than-equals</code></p></li>
     /// </ul>
     pub fn get_comparison_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.comparison_operator

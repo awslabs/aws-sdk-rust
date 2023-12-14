@@ -16,15 +16,18 @@ pub struct SearchPlaceIndexForTextSummary {
     pub filter_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains the optional result count limit specified in the request.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The bounding box that fully contains all search results.</p> <note>
+    /// <p>The bounding box that fully contains all search results.</p><note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
     pub result_b_box: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
@@ -63,7 +66,7 @@ impl SearchPlaceIndexForTextSummary {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The bounding box that fully contains all search results.</p> <note>
+    /// <p>The bounding box that fully contains all search results.</p><note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
     ///
@@ -73,9 +76,12 @@ impl SearchPlaceIndexForTextSummary {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -229,7 +235,7 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_result_b_box`](Self::set_result_b_box).
     ///
-    /// <p>The bounding box that fully contains all search results.</p> <note>
+    /// <p>The bounding box that fully contains all search results.</p><note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
     pub fn result_b_box(mut self, input: f64) -> Self {
@@ -238,14 +244,14 @@ impl SearchPlaceIndexForTextSummaryBuilder {
         self.result_b_box = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The bounding box that fully contains all search results.</p> <note>
+    /// <p>The bounding box that fully contains all search results.</p><note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
     pub fn set_result_b_box(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.result_b_box = input;
         self
     }
-    /// <p>The bounding box that fully contains all search results.</p> <note>
+    /// <p>The bounding box that fully contains all search results.</p><note>
     /// <p>If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code> is contained within <code>FilterBBox</code>.</p>
     /// </note>
     pub fn get_result_b_box(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
@@ -253,9 +259,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -265,9 +274,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -276,9 +288,12 @@ impl SearchPlaceIndexForTextSummaryBuilder {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {

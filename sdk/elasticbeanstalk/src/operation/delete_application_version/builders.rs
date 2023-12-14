@@ -22,7 +22,7 @@ impl DeleteApplicationVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteApplicationVersion`.
 ///
-/// <p>Deletes the specified version from the specified application.</p> <note>
+/// <p>Deletes the specified version from the specified application.</p><note>
 /// <p>You cannot delete an application version that is associated with a running environment.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

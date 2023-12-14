@@ -18,9 +18,12 @@ pub struct RecommendationJobInputConfig {
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -29,9 +32,12 @@ pub struct RecommendationJobInputConfig {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -79,9 +85,12 @@ impl RecommendationJobInputConfig {
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -90,9 +99,12 @@ impl RecommendationJobInputConfig {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -228,9 +240,12 @@ impl RecommendationJobInputConfigBuilder {
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -239,9 +254,12 @@ impl RecommendationJobInputConfigBuilder {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -260,9 +278,12 @@ impl RecommendationJobInputConfigBuilder {
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -271,9 +292,12 @@ impl RecommendationJobInputConfigBuilder {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -292,9 +316,12 @@ impl RecommendationJobInputConfigBuilder {
     /// <p>The SageMaker execution role must have <code>kms:CreateGrant</code> permission in order to encrypt data on the storage volume of the endpoints created for inference recommendation. The inference recommendation job will fail asynchronously during endpoint configuration creation if the role passed does not have <code>kms:CreateGrant</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -303,9 +330,12 @@ impl RecommendationJobInputConfigBuilder {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/

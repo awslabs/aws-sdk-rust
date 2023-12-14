@@ -10,7 +10,7 @@ pub struct WebhookFilter {
     /// EVENT
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p> <note>
+    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
     /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only.</p>
     /// </note>
     /// </dd>
@@ -31,7 +31,7 @@ pub struct WebhookFilter {
     /// BASE_REF
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p> <note>
+    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p><note>
     /// <p>Works with pull request events only.</p>
     /// </note>
     /// </dd>
@@ -39,7 +39,7 @@ pub struct WebhookFilter {
     /// FILE_PATH
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -47,7 +47,7 @@ pub struct WebhookFilter {
     /// COMMIT_MESSAGE
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -66,7 +66,7 @@ impl WebhookFilter {
     /// EVENT
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p> <note>
+    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
     /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only.</p>
     /// </note>
     /// </dd>
@@ -87,7 +87,7 @@ impl WebhookFilter {
     /// BASE_REF
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p> <note>
+    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p><note>
     /// <p>Works with pull request events only.</p>
     /// </note>
     /// </dd>
@@ -95,7 +95,7 @@ impl WebhookFilter {
     /// FILE_PATH
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -103,7 +103,7 @@ impl WebhookFilter {
     /// COMMIT_MESSAGE
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -144,7 +144,7 @@ impl WebhookFilterBuilder {
     /// EVENT
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p> <note>
+    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
     /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only.</p>
     /// </note>
     /// </dd>
@@ -165,7 +165,7 @@ impl WebhookFilterBuilder {
     /// BASE_REF
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p> <note>
+    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p><note>
     /// <p>Works with pull request events only.</p>
     /// </note>
     /// </dd>
@@ -173,7 +173,7 @@ impl WebhookFilterBuilder {
     /// FILE_PATH
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -181,7 +181,7 @@ impl WebhookFilterBuilder {
     /// COMMIT_MESSAGE
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -197,7 +197,7 @@ impl WebhookFilterBuilder {
     /// EVENT
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p> <note>
+    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
     /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only.</p>
     /// </note>
     /// </dd>
@@ -218,7 +218,7 @@ impl WebhookFilterBuilder {
     /// BASE_REF
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p> <note>
+    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p><note>
     /// <p>Works with pull request events only.</p>
     /// </note>
     /// </dd>
@@ -226,7 +226,7 @@ impl WebhookFilterBuilder {
     /// FILE_PATH
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -234,7 +234,7 @@ impl WebhookFilterBuilder {
     /// COMMIT_MESSAGE
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -249,7 +249,7 @@ impl WebhookFilterBuilder {
     /// EVENT
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p> <note>
+    /// <p>A webhook event triggers a build when the provided <code>pattern</code> matches one of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>, <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request updated events.</p><note>
     /// <p>The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only.</p>
     /// </note>
     /// </dd>
@@ -270,7 +270,7 @@ impl WebhookFilterBuilder {
     /// BASE_REF
     /// </dt>
     /// <dd>
-    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p> <note>
+    /// <p>A webhook event triggers a build when the base reference matches the regular expression <code>pattern</code>. For example, <code>refs/heads/branch-name</code>.</p><note>
     /// <p>Works with pull request events only.</p>
     /// </note>
     /// </dd>
@@ -278,7 +278,7 @@ impl WebhookFilterBuilder {
     /// FILE_PATH
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>
@@ -286,7 +286,7 @@ impl WebhookFilterBuilder {
     /// COMMIT_MESSAGE
     /// </dt>
     /// <dd>
-    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p> <note>
+    /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
     /// </note>
     /// </dd>

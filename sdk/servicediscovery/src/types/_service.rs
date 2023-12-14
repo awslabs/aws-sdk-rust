@@ -16,7 +16,7 @@ pub struct Service {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances that are currently associated with the service. Instances that were previously associated with the service but that are deleted aren't included in the count. The count might not reflect pending registrations and deregistrations.</p>
     pub instance_count: ::std::option::Option<i32>,
-    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
     pub dns_config: ::std::option::Option<crate::types::DnsConfig>,
@@ -45,7 +45,7 @@ pub struct Service {
     /// <p><i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>.</p>
     /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route&nbsp;53 Pricing</a>.</p>
     pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub health_check_custom_config: ::std::option::Option<crate::types::HealthCheckCustomConfig>,
@@ -79,7 +79,7 @@ impl Service {
     pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
-    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
     pub fn dns_config(&self) -> ::std::option::Option<&crate::types::DnsConfig> {
@@ -114,7 +114,7 @@ impl Service {
     pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn health_check_custom_config(&self) -> ::std::option::Option<&crate::types::HealthCheckCustomConfig> {
@@ -238,21 +238,21 @@ impl ServiceBuilder {
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {
         &self.instance_count
     }
-    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
     pub fn dns_config(mut self, input: crate::types::DnsConfig) -> Self {
         self.dns_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
     pub fn set_dns_config(mut self, input: ::std::option::Option<crate::types::DnsConfig>) -> Self {
         self.dns_config = input;
         self
     }
-    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p> <important>
+    /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p><important>
     /// <p>The record types of a service can only be changed by deleting the service and recreating it with a new <code>Dnsconfig</code>.</p>
     /// </important>
     pub fn get_dns_config(&self) -> &::std::option::Option<crate::types::DnsConfig> {
@@ -349,21 +349,21 @@ impl ServiceBuilder {
     pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
         &self.health_check_config
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn health_check_custom_config(mut self, input: crate::types::HealthCheckCustomConfig) -> Self {
         self.health_check_custom_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn set_health_check_custom_config(mut self, input: ::std::option::Option<crate::types::HealthCheckCustomConfig>) -> Self {
         self.health_check_custom_config = input;
         self
     }
-    /// <p>A complex type that contains information about an optional custom health check.</p> <important>
+    /// <p>A complex type that contains information about an optional custom health check.</p><important>
     /// <p>If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both.</p>
     /// </important>
     pub fn get_health_check_custom_config(&self) -> &::std::option::Option<crate::types::HealthCheckCustomConfig> {

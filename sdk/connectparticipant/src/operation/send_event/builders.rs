@@ -22,7 +22,7 @@ impl SendEventInputBuilder {
 }
 /// Fluent builder constructing a request to `SendEvent`.
 ///
-/// <p>Sends an event.</p> <note>
+/// <p>Sends an event.</p><note>
 /// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
@@ -107,10 +107,14 @@ impl SendEventFluentBuilder {
     }
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
@@ -118,10 +122,14 @@ impl SendEventFluentBuilder {
     }
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
@@ -129,10 +137,14 @@ impl SendEventFluentBuilder {
     }
     /// <p>The content type of the request. Supported types are:</p>
     /// <ul>
-    /// <li><p>application/vnd.amazonaws.connect.event.typing</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
-    /// <li><p>application/vnd.amazonaws.connect.event.message.read</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.typing</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.message.delivered</p></li>
+    /// <li>
+    /// <p>application/vnd.amazonaws.connect.event.message.read</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content_type()

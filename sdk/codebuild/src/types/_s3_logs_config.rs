@@ -6,15 +6,17 @@
 pub struct S3LogsConfig {
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
     pub status: crate::types::LogsConfigStatusType,
     /// <p>The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Set to true if you do not want your S3 build log output encrypted. By default S3 build logs are encrypted.</p>
     pub encryption_disabled: ::std::option::Option<bool>,
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
     /// </note>
     /// <p>This property can be one of the following values:</p>
@@ -37,8 +39,10 @@ pub struct S3LogsConfig {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
-    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
+    /// <li>
+    /// <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li>
+    /// <p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -48,8 +52,10 @@ pub struct S3LogsConfig {
 impl S3LogsConfig {
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::LogsConfigStatusType {
         &self.status
@@ -62,7 +68,7 @@ impl S3LogsConfig {
     pub fn encryption_disabled(&self) -> ::std::option::Option<bool> {
         self.encryption_disabled
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
     /// </note>
     /// <p>This property can be one of the following values:</p>
@@ -85,8 +91,10 @@ impl S3LogsConfig {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
-    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
+    /// <li>
+    /// <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li>
+    /// <p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -114,8 +122,10 @@ pub struct S3LogsConfigBuilder {
 impl S3LogsConfigBuilder {
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::LogsConfigStatusType) -> Self {
@@ -124,8 +134,10 @@ impl S3LogsConfigBuilder {
     }
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LogsConfigStatusType>) -> Self {
         self.status = input;
@@ -133,8 +145,10 @@ impl S3LogsConfigBuilder {
     }
     /// <p>The current status of the S3 build logs. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
-    /// <li><p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code>: S3 build logs are enabled for this build project.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: S3 build logs are not enabled for this build project.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LogsConfigStatusType> {
         &self.status
@@ -167,7 +181,7 @@ impl S3LogsConfigBuilder {
     pub fn get_encryption_disabled(&self) -> &::std::option::Option<bool> {
         &self.encryption_disabled
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
     /// </note>
     /// <p>This property can be one of the following values:</p>
@@ -190,8 +204,10 @@ impl S3LogsConfigBuilder {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
-    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
+    /// <li>
+    /// <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li>
+    /// <p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -200,7 +216,7 @@ impl S3LogsConfigBuilder {
         self.bucket_owner_access = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
     /// </note>
     /// <p>This property can be one of the following values:</p>
@@ -223,8 +239,10 @@ impl S3LogsConfigBuilder {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
-    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
+    /// <li>
+    /// <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li>
+    /// <p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>
@@ -233,7 +251,7 @@ impl S3LogsConfigBuilder {
         self.bucket_owner_access = input;
         self
     }
-    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p> <note>
+    /// <p>Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.</p><note>
     /// <p>To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket.</p>
     /// </note>
     /// <p>This property can be one of the following values:</p>
@@ -256,8 +274,10 @@ impl S3LogsConfigBuilder {
     /// <dd>
     /// <p>The bucket owner has full access to the objects. Object ownership is determined by the following criteria:</p>
     /// <ul>
-    /// <li><p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
-    /// <li><p>Otherwise, the uploading account retains ownership of the objects.</p></li>
+    /// <li>
+    /// <p>If the bucket is configured with the <b>Bucket owner preferred</b> setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.</p></li>
+    /// <li>
+    /// <p>Otherwise, the uploading account retains ownership of the objects.</p></li>
     /// </ul>
     /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3 Object Ownership</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     /// </dd>

@@ -16,7 +16,7 @@ pub struct PolicyDetails {
     pub target_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p><b>[Custom snapshot and AMI policies only]</b> The schedules of policy-defined actions for snapshot and AMI lifecycle policies. A policy can have up to four schedules—one mandatory schedule and up to three optional schedules.</p>
     pub schedules: ::std::option::Option<::std::vec::Vec<crate::types::Schedule>>,
-    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p> <note>
+    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p><note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
@@ -26,14 +26,18 @@ pub struct PolicyDetails {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The type of policy to create. Specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>SIMPLIFIED</code> To create a default policy.</p></li>
-    /// <li><p><code>STANDARD</code> To create a custom policy.</p></li>
+    /// <li>
+    /// <p><code>SIMPLIFIED</code> To create a default policy.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code> To create a custom policy.</p></li>
     /// </ul>
     pub policy_language: ::std::option::Option<crate::types::PolicyLanguageValues>,
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
-    /// <li><p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
-    /// <li><p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::ResourceTypeValues>,
     /// <p><b>[Default policies only]</b> Specifies how often the policy should run and create snapshots or AMIs. The creation frequency can range from 1 to 7 days. If you do not specify a value, the default is 1.</p>
@@ -50,8 +54,10 @@ pub struct PolicyDetails {
     /// <p><b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
     /// <p>By default (<b>ExtendDeletion=false</b>):</p>
     /// <ul>
-    /// <li><p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
-    /// <li><p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
     /// </ul>
     /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
     /// <p>If you do not specify a value, the default is <code>false</code>.</p>
@@ -91,7 +97,7 @@ impl PolicyDetails {
     pub fn schedules(&self) -> &[crate::types::Schedule] {
         self.schedules.as_deref().unwrap_or_default()
     }
-    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p> <note>
+    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p><note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
@@ -109,16 +115,20 @@ impl PolicyDetails {
     }
     /// <p>The type of policy to create. Specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>SIMPLIFIED</code> To create a default policy.</p></li>
-    /// <li><p><code>STANDARD</code> To create a custom policy.</p></li>
+    /// <li>
+    /// <p><code>SIMPLIFIED</code> To create a default policy.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code> To create a custom policy.</p></li>
     /// </ul>
     pub fn policy_language(&self) -> ::std::option::Option<&crate::types::PolicyLanguageValues> {
         self.policy_language.as_ref()
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
-    /// <li><p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
-    /// <li><p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceTypeValues> {
         self.resource_type.as_ref()
@@ -147,8 +157,10 @@ impl PolicyDetails {
     /// <p><b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
     /// <p>By default (<b>ExtendDeletion=false</b>):</p>
     /// <ul>
-    /// <li><p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
-    /// <li><p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
     /// </ul>
     /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
     /// <p>If you do not specify a value, the default is <code>false</code>.</p>
@@ -290,21 +302,21 @@ impl PolicyDetailsBuilder {
     pub fn get_schedules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Schedule>> {
         &self.schedules
     }
-    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p> <note>
+    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p><note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
     pub fn parameters(mut self, input: crate::types::Parameters) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p> <note>
+    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p><note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
     pub fn set_parameters(mut self, input: ::std::option::Option<crate::types::Parameters>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p> <note>
+    /// <p><b>[Custom snapshot and AMI policies only]</b> A set of optional parameters for snapshot and AMI lifecycle policies.</p><note>
     /// <p>If you are modifying a policy that was created or previously modified using the Amazon Data Lifecycle Manager console, then you must include this parameter and specify either the default values or the new values that you require. You can't omit this parameter or set its values to null.</p>
     /// </note>
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
@@ -346,8 +358,10 @@ impl PolicyDetailsBuilder {
     }
     /// <p>The type of policy to create. Specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>SIMPLIFIED</code> To create a default policy.</p></li>
-    /// <li><p><code>STANDARD</code> To create a custom policy.</p></li>
+    /// <li>
+    /// <p><code>SIMPLIFIED</code> To create a default policy.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code> To create a custom policy.</p></li>
     /// </ul>
     pub fn policy_language(mut self, input: crate::types::PolicyLanguageValues) -> Self {
         self.policy_language = ::std::option::Option::Some(input);
@@ -355,8 +369,10 @@ impl PolicyDetailsBuilder {
     }
     /// <p>The type of policy to create. Specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>SIMPLIFIED</code> To create a default policy.</p></li>
-    /// <li><p><code>STANDARD</code> To create a custom policy.</p></li>
+    /// <li>
+    /// <p><code>SIMPLIFIED</code> To create a default policy.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code> To create a custom policy.</p></li>
     /// </ul>
     pub fn set_policy_language(mut self, input: ::std::option::Option<crate::types::PolicyLanguageValues>) -> Self {
         self.policy_language = input;
@@ -364,16 +380,20 @@ impl PolicyDetailsBuilder {
     }
     /// <p>The type of policy to create. Specify one of the following:</p>
     /// <ul>
-    /// <li><p><code>SIMPLIFIED</code> To create a default policy.</p></li>
-    /// <li><p><code>STANDARD</code> To create a custom policy.</p></li>
+    /// <li>
+    /// <p><code>SIMPLIFIED</code> To create a default policy.</p></li>
+    /// <li>
+    /// <p><code>STANDARD</code> To create a custom policy.</p></li>
     /// </ul>
     pub fn get_policy_language(&self) -> &::std::option::Option<crate::types::PolicyLanguageValues> {
         &self.policy_language
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
-    /// <li><p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
-    /// <li><p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::ResourceTypeValues) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -381,8 +401,10 @@ impl PolicyDetailsBuilder {
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
-    /// <li><p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
-    /// <li><p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceTypeValues>) -> Self {
         self.resource_type = input;
@@ -390,8 +412,10 @@ impl PolicyDetailsBuilder {
     }
     /// <p><b>[Default policies only]</b> Specify the type of default policy to create.</p>
     /// <ul>
-    /// <li><p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
-    /// <li><p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS snapshots, that creates snapshots of all volumes in the Region that do not have recent backups, specify <code>VOLUME</code>.</p></li>
+    /// <li>
+    /// <p>To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceTypeValues> {
         &self.resource_type
@@ -470,8 +494,10 @@ impl PolicyDetailsBuilder {
     /// <p><b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
     /// <p>By default (<b>ExtendDeletion=false</b>):</p>
     /// <ul>
-    /// <li><p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
-    /// <li><p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
     /// </ul>
     /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
     /// <p>If you do not specify a value, the default is <code>false</code>.</p>
@@ -483,8 +509,10 @@ impl PolicyDetailsBuilder {
     /// <p><b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
     /// <p>By default (<b>ExtendDeletion=false</b>):</p>
     /// <ul>
-    /// <li><p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
-    /// <li><p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
     /// </ul>
     /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
     /// <p>If you do not specify a value, the default is <code>false</code>.</p>
@@ -496,8 +524,10 @@ impl PolicyDetailsBuilder {
     /// <p><b>[Default policies only]</b> Defines the snapshot or AMI retention behavior for the policy if the source volume or instance is deleted, or if the policy enters the error, disabled, or deleted state.</p>
     /// <p>By default (<b>ExtendDeletion=false</b>):</p>
     /// <ul>
-    /// <li><p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
-    /// <li><p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete previously created snapshots or AMIs, up to but not including the last one, based on the specified retention period. If you want Amazon Data Lifecycle Manager to delete all snapshots or AMIs, including the last one, specify <code>true</code>.</p></li>
+    /// <li>
+    /// <p>If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue deleting snapshots or AMIs, including the last one, if the policy enters one of these states, specify <code>true</code>.</p></li>
     /// </ul>
     /// <p>If you enable extended deletion (<b>ExtendDeletion=true</b>), you override both default behaviors simultaneously.</p>
     /// <p>If you do not specify a value, the default is <code>false</code>.</p>

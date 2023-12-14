@@ -174,9 +174,12 @@ impl PublishLayerVersionFluentBuilder {
     }
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
-    /// <li><p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p></li>
-    /// <li><p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p></li>
-    /// <li><p>The full text of the license.</p></li>
+    /// <li>
+    /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p></li>
+    /// <li>
+    /// <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p></li>
+    /// <li>
+    /// <p>The full text of the license.</p></li>
     /// </ul>
     pub fn license_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_info(input.into());
@@ -184,9 +187,12 @@ impl PublishLayerVersionFluentBuilder {
     }
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
-    /// <li><p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p></li>
-    /// <li><p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p></li>
-    /// <li><p>The full text of the license.</p></li>
+    /// <li>
+    /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p></li>
+    /// <li>
+    /// <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p></li>
+    /// <li>
+    /// <p>The full text of the license.</p></li>
     /// </ul>
     pub fn set_license_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_info(input);
@@ -194,9 +200,12 @@ impl PublishLayerVersionFluentBuilder {
     }
     /// <p>The layer's software license. It can be any of the following:</p>
     /// <ul>
-    /// <li><p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p></li>
-    /// <li><p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p></li>
-    /// <li><p>The full text of the license.</p></li>
+    /// <li>
+    /// <p>An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example, <code>MIT</code>.</p></li>
+    /// <li>
+    /// <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p></li>
+    /// <li>
+    /// <p>The full text of the license.</p></li>
     /// </ul>
     pub fn get_license_info(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_license_info()

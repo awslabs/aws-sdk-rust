@@ -9,7 +9,7 @@ pub struct CreateApplicationInput {
     pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl CreateApplicationInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -101,7 +101,7 @@ impl CreateApplicationInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     /// This field is required.
@@ -109,14 +109,14 @@ impl CreateApplicationInputBuilder {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note>
+    /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p><note>
     /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p>
     /// </note>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

@@ -241,8 +241,10 @@ impl ActivateTypeFluentBuilder {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn version_bump(mut self, input: crate::types::VersionBump) -> Self {
         self.inner = self.inner.version_bump(input);
@@ -250,8 +252,10 @@ impl ActivateTypeFluentBuilder {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn set_version_bump(mut self, input: ::std::option::Option<crate::types::VersionBump>) -> Self {
         self.inner = self.inner.set_version_bump(input);
@@ -259,8 +263,10 @@ impl ActivateTypeFluentBuilder {
     }
     /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
     /// <ul>
-    /// <li><p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
-    /// <li><p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p></li>
+    /// <li>
+    /// <p><code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p></li>
     /// </ul>
     pub fn get_version_bump(&self) -> &::std::option::Option<crate::types::VersionBump> {
         self.inner.get_version_bump()

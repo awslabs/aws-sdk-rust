@@ -5,8 +5,10 @@
 pub struct DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li><p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
-    /// <li><p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
+    /// <li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <li>
+    /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
     pub mappings: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
@@ -16,8 +18,10 @@ pub struct DescribePatchGroupsOutput {
 impl DescribePatchGroupsOutput {
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li><p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
-    /// <li><p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
+    /// <li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <li>
+    /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mappings.is_none()`.
@@ -56,8 +60,10 @@ impl DescribePatchGroupsOutputBuilder {
     ///
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li><p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
-    /// <li><p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
+    /// <li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <li>
+    /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
     pub fn mappings(mut self, input: crate::types::PatchGroupPatchBaselineMapping) -> Self {
         let mut v = self.mappings.unwrap_or_default();
@@ -67,8 +73,10 @@ impl DescribePatchGroupsOutputBuilder {
     }
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li><p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
-    /// <li><p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
+    /// <li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <li>
+    /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
     pub fn set_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>>) -> Self {
         self.mappings = input;
@@ -76,8 +84,10 @@ impl DescribePatchGroupsOutputBuilder {
     }
     /// <p>Each entry in the array contains:</p>
     /// <ul>
-    /// <li><p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
-    /// <li><p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
+    /// <li>
+    /// <p><code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code></p></li>
+    /// <li>
+    /// <p><code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.</p></li>
     /// </ul>
     pub fn get_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchGroupPatchBaselineMapping>> {
         &self.mappings

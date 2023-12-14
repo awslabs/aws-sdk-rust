@@ -12,20 +12,34 @@ pub struct AwsRdsDbSnapshotDetails {
     pub snapshot_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>c</code></p></li>
-    /// <li><p><code>mariadb</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>oracle-ee</code></p></li>
-    /// <li><p><code>oracle-se</code></p></li>
-    /// <li><p><code>oracle-se1</code></p></li>
-    /// <li><p><code>oracle-se2</code></p></li>
-    /// <li><p><code>sqlserver-ee</code></p></li>
-    /// <li><p><code>sqlserver-ex</code></p></li>
-    /// <li><p><code>sqlserver-se</code></p></li>
-    /// <li><p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>c</code></p></li>
+    /// <li>
+    /// <p><code>mariadb</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se1</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ex</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
@@ -60,9 +74,12 @@ pub struct AwsRdsDbSnapshotDetails {
     pub source_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>gp2</code></p></li>
-    /// <li><p><code>io1</code></p></li>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>gp2</code></p></li>
+    /// <li>
+    /// <p><code>io1</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -95,20 +112,34 @@ impl AwsRdsDbSnapshotDetails {
     }
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>c</code></p></li>
-    /// <li><p><code>mariadb</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>oracle-ee</code></p></li>
-    /// <li><p><code>oracle-se</code></p></li>
-    /// <li><p><code>oracle-se1</code></p></li>
-    /// <li><p><code>oracle-se2</code></p></li>
-    /// <li><p><code>sqlserver-ee</code></p></li>
-    /// <li><p><code>sqlserver-ex</code></p></li>
-    /// <li><p><code>sqlserver-se</code></p></li>
-    /// <li><p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>c</code></p></li>
+    /// <li>
+    /// <p><code>mariadb</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se1</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ex</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -175,9 +206,12 @@ impl AwsRdsDbSnapshotDetails {
     }
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>gp2</code></p></li>
-    /// <li><p><code>io1</code></p></li>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>gp2</code></p></li>
+    /// <li>
+    /// <p><code>io1</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -297,20 +331,34 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     }
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>c</code></p></li>
-    /// <li><p><code>mariadb</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>oracle-ee</code></p></li>
-    /// <li><p><code>oracle-se</code></p></li>
-    /// <li><p><code>oracle-se1</code></p></li>
-    /// <li><p><code>oracle-se2</code></p></li>
-    /// <li><p><code>sqlserver-ee</code></p></li>
-    /// <li><p><code>sqlserver-ex</code></p></li>
-    /// <li><p><code>sqlserver-se</code></p></li>
-    /// <li><p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>c</code></p></li>
+    /// <li>
+    /// <p><code>mariadb</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se1</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ex</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -318,20 +366,34 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     }
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>c</code></p></li>
-    /// <li><p><code>mariadb</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>oracle-ee</code></p></li>
-    /// <li><p><code>oracle-se</code></p></li>
-    /// <li><p><code>oracle-se1</code></p></li>
-    /// <li><p><code>oracle-se2</code></p></li>
-    /// <li><p><code>sqlserver-ee</code></p></li>
-    /// <li><p><code>sqlserver-ex</code></p></li>
-    /// <li><p><code>sqlserver-se</code></p></li>
-    /// <li><p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>c</code></p></li>
+    /// <li>
+    /// <p><code>mariadb</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se1</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ex</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -339,20 +401,34 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     }
     /// <p>The name of the database engine to use for this DB instance. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
-    /// <li><p><code>c</code></p></li>
-    /// <li><p><code>mariadb</code></p></li>
-    /// <li><p><code>mysql</code></p></li>
-    /// <li><p><code>oracle-ee</code></p></li>
-    /// <li><p><code>oracle-se</code></p></li>
-    /// <li><p><code>oracle-se1</code></p></li>
-    /// <li><p><code>oracle-se2</code></p></li>
-    /// <li><p><code>sqlserver-ee</code></p></li>
-    /// <li><p><code>sqlserver-ex</code></p></li>
-    /// <li><p><code>sqlserver-se</code></p></li>
-    /// <li><p><code>sqlserver-web</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>c</code></p></li>
+    /// <li>
+    /// <p><code>mariadb</code></p></li>
+    /// <li>
+    /// <p><code>mysql</code></p></li>
+    /// <li>
+    /// <p><code>oracle-ee</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se1</code></p></li>
+    /// <li>
+    /// <p><code>oracle-se2</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ee</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-ex</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-se</code></p></li>
+    /// <li>
+    /// <p><code>sqlserver-web</code></p></li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
@@ -569,9 +645,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     }
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>gp2</code></p></li>
-    /// <li><p><code>io1</code></p></li>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>gp2</code></p></li>
+    /// <li>
+    /// <p><code>io1</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -579,9 +658,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     }
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>gp2</code></p></li>
-    /// <li><p><code>io1</code></p></li>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>gp2</code></p></li>
+    /// <li>
+    /// <p><code>io1</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
@@ -589,9 +671,12 @@ impl AwsRdsDbSnapshotDetailsBuilder {
     }
     /// <p>The storage type associated with the DB snapshot. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>gp2</code></p></li>
-    /// <li><p><code>io1</code></p></li>
-    /// <li><p><code>standard</code></p></li>
+    /// <li>
+    /// <p><code>gp2</code></p></li>
+    /// <li>
+    /// <p><code>io1</code></p></li>
+    /// <li>
+    /// <p><code>standard</code></p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type

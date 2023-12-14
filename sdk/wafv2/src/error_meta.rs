@@ -19,20 +19,29 @@ pub enum Error {
     WafInvalidOperationException(crate::types::error::WafInvalidOperationException),
     /// <p>The operation failed because WAF didn't recognize a parameter in the request. For example:</p>
     /// <ul>
-    /// <li><p>You specified a parameter name or value that isn't valid.</p></li>
-    /// <li><p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.</p></li>
-    /// <li><p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p></li>
-    /// <li><p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
+    /// <li>
+    /// <p>You specified a parameter name or value that isn't valid.</p></li>
+    /// <li>
+    /// <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested.</p></li>
+    /// <li>
+    /// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types available at <code>DefaultAction</code>.</p></li>
+    /// <li>
+    /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p></li>
     /// </ul>
     WafInvalidParameterException(crate::types::error::WafInvalidParameterException),
     /// <p>The operation failed because the specified policy isn't in the proper format.</p>
     /// <p>The policy specifications must conform to the following:</p>
     /// <ul>
-    /// <li><p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
-    /// <li><p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
-    /// <li><p><code>Effect</code> must specify <code>Allow</code>.</p></li>
-    /// <li><p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
-    /// <li><p>The policy must not include a <code>Resource</code> parameter.</p></li>
+    /// <li>
+    /// <p>The policy must be composed using IAM Policy version 2012-10-17.</p></li>
+    /// <li>
+    /// <p>The policy must include specifications for <code>Effect</code>, <code>Action</code>, and <code>Principal</code>.</p></li>
+    /// <li>
+    /// <p><code>Effect</code> must specify <code>Allow</code>.</p></li>
+    /// <li>
+    /// <p><code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard actions in the policy.</p></li>
+    /// <li>
+    /// <p>The policy must not include a <code>Resource</code> parameter.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM Policies</a>.</p>
     WafInvalidPermissionPolicyException(crate::types::error::WafInvalidPermissionPolicyException),

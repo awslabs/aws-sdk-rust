@@ -22,10 +22,10 @@ impl CreateDeploymentJobInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDeploymentJob`.
 ///
-/// <p>Deploys a specific version of a robot application to robots in a fleet.</p> <important>
+/// <p>Deploys a specific version of a robot application to robots in a fleet.</p><important>
 /// <p>This API is no longer supported and will throw an error if used.</p>
 /// </important>
-/// <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>.</p> <note>
+/// <p>The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot Application Version</a>.</p><note>
 /// <p>After 90 days, deployment jobs expire and will be deleted. They will no longer be accessible.</p>
 /// </note>
 #[deprecated(

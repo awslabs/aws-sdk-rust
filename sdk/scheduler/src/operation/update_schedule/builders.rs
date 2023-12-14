@@ -139,9 +139,12 @@ impl UpdateScheduleFluentBuilder {
     }
     /// <p>The expression that defines when the schedule runs. The following formats are supported.</p>
     /// <ul>
-    /// <li><p><code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code></p></li>
-    /// <li><p><code>rate</code> expression - <code>rate(value unit)</code></p></li>
-    /// <li><p><code>cron</code> expression - <code>cron(fields)</code></p></li>
+    /// <li>
+    /// <p><code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code></p></li>
+    /// <li>
+    /// <p><code>rate</code> expression - <code>rate(value unit)</code></p></li>
+    /// <li>
+    /// <p><code>cron</code> expression - <code>cron(fields)</code></p></li>
     /// </ul>
     /// <p>You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month.</p>
     /// <p>A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.</p>
@@ -153,9 +156,12 @@ impl UpdateScheduleFluentBuilder {
     }
     /// <p>The expression that defines when the schedule runs. The following formats are supported.</p>
     /// <ul>
-    /// <li><p><code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code></p></li>
-    /// <li><p><code>rate</code> expression - <code>rate(value unit)</code></p></li>
-    /// <li><p><code>cron</code> expression - <code>cron(fields)</code></p></li>
+    /// <li>
+    /// <p><code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code></p></li>
+    /// <li>
+    /// <p><code>rate</code> expression - <code>rate(value unit)</code></p></li>
+    /// <li>
+    /// <p><code>cron</code> expression - <code>cron(fields)</code></p></li>
     /// </ul>
     /// <p>You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month.</p>
     /// <p>A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.</p>
@@ -167,9 +173,12 @@ impl UpdateScheduleFluentBuilder {
     }
     /// <p>The expression that defines when the schedule runs. The following formats are supported.</p>
     /// <ul>
-    /// <li><p><code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code></p></li>
-    /// <li><p><code>rate</code> expression - <code>rate(value unit)</code></p></li>
-    /// <li><p><code>cron</code> expression - <code>cron(fields)</code></p></li>
+    /// <li>
+    /// <p><code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code></p></li>
+    /// <li>
+    /// <p><code>rate</code> expression - <code>rate(value unit)</code></p></li>
+    /// <li>
+    /// <p><code>cron</code> expression - <code>cron(fields)</code></p></li>
     /// </ul>
     /// <p>You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month.</p>
     /// <p>A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>.</p>

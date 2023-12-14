@@ -20,7 +20,7 @@ pub struct AffectedEntity {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
     pub status_code: ::std::option::Option<crate::types::EntityStatusCode>,
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -56,7 +56,7 @@ impl AffectedEntity {
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::EntityStatusCode> {
         self.status_code.as_ref()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -192,7 +192,7 @@ impl AffectedEntityBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,14 +201,14 @@ impl AffectedEntityBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

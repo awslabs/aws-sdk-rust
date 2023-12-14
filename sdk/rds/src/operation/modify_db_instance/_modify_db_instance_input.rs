@@ -7,7 +7,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
@@ -19,7 +20,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC. If your DB instance isn't in a VPC, you can also use this parameter to move your DB instance into a VPC. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -27,7 +29,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>This parameter doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB subnet group.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB subnet group.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
@@ -35,46 +38,60 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB security groups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB security groups.</p></li>
     /// </ul>
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VPC security group IDs.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VPC security group IDs.</p></li>
     /// </ul>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance. By default, this parameter is disabled.</p>
     /// <p>If this parameter is disabled, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot. Review the table of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.</p>
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>The new password for the master user.</p>
-    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
+    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p><note>
     /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The name of the DB parameter group to apply to the DB instance.</p>
@@ -83,10 +100,11 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the same DB parameter group family as the DB instance.</p></li>
+    /// <li>
+    /// <p>Must be in the same DB parameter group family as the DB instance.</p></li>
     /// </ul>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
     /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
     /// </note>
     /// <p>These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.</p>
@@ -94,19 +112,26 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35.</p></li>
-    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
-    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup window</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter causes a reboot of the DB instance. If you change this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
@@ -114,11 +139,16 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage. The change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request.</p>
@@ -131,21 +161,26 @@ pub struct ModifyDbInstanceInput {
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
+    /// <li>
+    /// <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
     /// </ul>
     pub allow_major_version_upgrade: ::std::option::Option<bool>,
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The automatic upgrade is enabled for the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>RDS has enabled automatic patching for the engine version.</p></li>
+    /// <li>
+    /// <p>The automatic upgrade is enabled for the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>RDS has enabled automatic patching for the engine version.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
@@ -154,12 +189,18 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
-    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>The new Provisioned IOPS (I/O operations per second) value for the RDS instance.</p>
@@ -167,7 +208,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub iops: ::std::option::Option<i32>,
@@ -181,9 +223,12 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub new_db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -210,15 +255,18 @@ pub struct ModifyDbInstanceInput {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub domain_fqdn: ::std::option::Option<::std::string::String>,
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the distinguished name format.</p></li>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub domain_ou: ::std::option::Option<::std::string::String>,
@@ -228,7 +276,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li>
+    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub domain_dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -248,17 +297,25 @@ pub struct ModifyDbInstanceInput {
     /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora - <code>3306</code></p></li>
-    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
-    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
-    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
+    /// <li>
+    /// <p>Amazon Aurora - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
+    /// <li>
+    /// <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub db_port_number: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB instance is publicly accessible.</p>
@@ -299,9 +356,12 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -323,17 +383,19 @@ pub struct ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub max_allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
-    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p><important>
     /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
     /// </important>
     /// <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p>
     /// <ul>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub certificate_rotation_restart: ::std::option::Option<bool>,
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
     /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -353,8 +415,10 @@ pub struct ModifyDbInstanceInput {
     /// <p>Default: <code>60</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be at least 60.</p></li>
-    /// <li><p>Must be no more than 1,440.</p></li>
+    /// <li>
+    /// <p>Must be at least 60.</p></li>
+    /// <li>
+    /// <p>Must be no more than 1,440.</p></li>
     /// </ul>
     pub resume_full_automation_mode_minutes: ::std::option::Option<i32>,
     /// <p>The network type of the DB instance.</p>
@@ -372,7 +436,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub manage_master_user_password: ::std::option::Option<bool>,
     /// <p>Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.</p>
@@ -380,14 +445,19 @@ pub struct ModifyDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub rotate_master_user_password: ::std::option::Option<bool>,
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
-    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
+    /// <li>
+    /// <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -395,21 +465,27 @@ pub struct ModifyDbInstanceInput {
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
-    /// <li><p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
-    /// <li><p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
+    /// <li>
+    /// <p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
+    /// <li>
+    /// <p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
     /// </ul>
     /// <p>Note the following limitations:</p>
     /// <ul>
-    /// <li><p>You can't convert a CDB to a non-CDB.</p></li>
-    /// <li><p>You can't convert a replica database.</p></li>
-    /// <li><p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
-    /// <li><p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
+    /// <li>
+    /// <p>You can't convert a CDB to a non-CDB.</p></li>
+    /// <li>
+    /// <p>You can't convert a replica database.</p></li>
+    /// <li>
+    /// <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
+    /// <li>
+    /// <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB instance has a dedicated log volume (DLV) enabled.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p> <important>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
     /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
     /// </important>
     pub multi_tenant: ::std::option::Option<bool>,
@@ -418,7 +494,8 @@ impl ModifyDbInstanceInput {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -434,7 +511,8 @@ impl ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn db_instance_class(&self) -> ::std::option::Option<&str> {
         self.db_instance_class.as_deref()
@@ -444,7 +522,8 @@ impl ModifyDbInstanceInput {
     /// <p>This parameter doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB subnet group.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB subnet group.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
@@ -454,7 +533,8 @@ impl ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB security groups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB security groups.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
@@ -464,12 +544,15 @@ impl ModifyDbInstanceInput {
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VPC security group IDs.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VPC security group IDs.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
@@ -482,28 +565,38 @@ impl ModifyDbInstanceInput {
         self.apply_immediately
     }
     /// <p>The new password for the master user.</p>
-    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
+    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p><note>
     /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
@@ -514,12 +607,13 @@ impl ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the same DB parameter group family as the DB instance.</p></li>
+    /// <li>
+    /// <p>Must be in the same DB parameter group family as the DB instance.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
-    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
     /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
     /// </note>
     /// <p>These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.</p>
@@ -527,9 +621,12 @@ impl ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35.</p></li>
-    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
-    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -538,10 +635,14 @@ impl ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -551,11 +652,16 @@ impl ModifyDbInstanceInput {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
@@ -572,7 +678,8 @@ impl ModifyDbInstanceInput {
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
@@ -581,16 +688,20 @@ impl ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
+    /// <li>
+    /// <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
     /// </ul>
     pub fn allow_major_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.allow_major_version_upgrade
     }
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The automatic upgrade is enabled for the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>RDS has enabled automatic patching for the engine version.</p></li>
+    /// <li>
+    /// <p>The automatic upgrade is enabled for the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>RDS has enabled automatic patching for the engine version.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
@@ -601,12 +712,18 @@ impl ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
-    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn license_model(&self) -> ::std::option::Option<&str> {
         self.license_model.as_deref()
@@ -616,7 +733,8 @@ impl ModifyDbInstanceInput {
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
@@ -634,9 +752,12 @@ impl ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn new_db_instance_identifier(&self) -> ::std::option::Option<&str> {
@@ -675,7 +796,8 @@ impl ModifyDbInstanceInput {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn domain_fqdn(&self) -> ::std::option::Option<&str> {
@@ -684,8 +806,10 @@ impl ModifyDbInstanceInput {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the distinguished name format.</p></li>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn domain_ou(&self) -> ::std::option::Option<&str> {
@@ -699,7 +823,8 @@ impl ModifyDbInstanceInput {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li>
+    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     ///
@@ -727,17 +852,25 @@ impl ModifyDbInstanceInput {
     /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora - <code>3306</code></p></li>
-    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
-    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
-    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
+    /// <li>
+    /// <p>Amazon Aurora - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
+    /// <li>
+    /// <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn db_port_number(&self) -> ::std::option::Option<i32> {
         self.db_port_number
@@ -796,9 +929,12 @@ impl ModifyDbInstanceInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -834,19 +970,21 @@ impl ModifyDbInstanceInput {
         self.max_allocated_storage
     }
     /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
-    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p><important>
     /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
     /// </important>
     /// <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p>
     /// <ul>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn certificate_rotation_restart(&self) -> ::std::option::Option<bool> {
         self.certificate_rotation_restart
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
     /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -874,8 +1012,10 @@ impl ModifyDbInstanceInput {
     /// <p>Default: <code>60</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be at least 60.</p></li>
-    /// <li><p>Must be no more than 1,440.</p></li>
+    /// <li>
+    /// <p>Must be at least 60.</p></li>
+    /// <li>
+    /// <p>Must be no more than 1,440.</p></li>
     /// </ul>
     pub fn resume_full_automation_mode_minutes(&self) -> ::std::option::Option<i32> {
         self.resume_full_automation_mode_minutes
@@ -899,7 +1039,8 @@ impl ModifyDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(&self) -> ::std::option::Option<bool> {
         self.manage_master_user_password
@@ -909,7 +1050,8 @@ impl ModifyDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn rotate_master_user_password(&self) -> ::std::option::Option<bool> {
         self.rotate_master_user_password
@@ -917,8 +1059,12 @@ impl ModifyDbInstanceInput {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
-    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
+    /// <li>
+    /// <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -928,15 +1074,21 @@ impl ModifyDbInstanceInput {
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
-    /// <li><p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
-    /// <li><p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
+    /// <li>
+    /// <p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
+    /// <li>
+    /// <p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
     /// </ul>
     /// <p>Note the following limitations:</p>
     /// <ul>
-    /// <li><p>You can't convert a CDB to a non-CDB.</p></li>
-    /// <li><p>You can't convert a replica database.</p></li>
-    /// <li><p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
-    /// <li><p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
+    /// <li>
+    /// <p>You can't convert a CDB to a non-CDB.</p></li>
+    /// <li>
+    /// <p>You can't convert a replica database.</p></li>
+    /// <li>
+    /// <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
+    /// <li>
+    /// <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -946,7 +1098,7 @@ impl ModifyDbInstanceInput {
         self.dedicated_log_volume
     }
     /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p> <important>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
     /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
     /// </important>
     pub fn multi_tenant(&self) -> ::std::option::Option<bool> {
@@ -1029,7 +1181,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1039,7 +1192,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -1048,7 +1202,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The identifier of DB instance to modify. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB instance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB instance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -1078,7 +1233,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_instance_class = ::std::option::Option::Some(input.into());
@@ -1089,7 +1245,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn set_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_class = input;
@@ -1100,7 +1257,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are modifying the DB instance class and upgrading the engine version at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn get_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_class
@@ -1110,7 +1268,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This parameter doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB subnet group.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB subnet group.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn db_subnet_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1122,7 +1281,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This parameter doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB subnet group.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB subnet group.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn set_db_subnet_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1134,7 +1294,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This parameter doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB subnet group.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB subnet group.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code></p>
     pub fn get_db_subnet_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1148,7 +1309,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB security groups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB security groups.</p></li>
     /// </ul>
     pub fn db_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
@@ -1160,7 +1322,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB security groups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB security groups.</p></li>
     /// </ul>
     pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.db_security_groups = input;
@@ -1170,7 +1333,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DB security groups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DB security groups.</p></li>
     /// </ul>
     pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.db_security_groups
@@ -1182,12 +1346,15 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VPC security group IDs.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VPC security group IDs.</p></li>
     /// </ul>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
@@ -1198,12 +1365,15 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VPC security group IDs.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VPC security group IDs.</p></li>
     /// </ul>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
@@ -1212,12 +1382,15 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>A list of Amazon EC2 VPC security groups to associate with this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VPC security group IDs.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VPC security group IDs.</p></li>
     /// </ul>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
@@ -1240,84 +1413,114 @@ impl ModifyDbInstanceInputBuilder {
         &self.apply_immediately
     }
     /// <p>The new password for the master user.</p>
-    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
+    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p><note>
     /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new password for the master user.</p>
-    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
+    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p><note>
     /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_user_password = input;
         self
     }
     /// <p>The new password for the master user.</p>
-    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p> <note>
+    /// <p>Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p><note>
     /// <p>Amazon RDS API operations never return the password, so this operation provides a way to regain access to a primary instance user if the password is lost. This includes restoring privileges that might have been accidentally revoked.</p>
     /// </note>
     /// <p>This setting doesn't apply to the following DB instances:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
-    /// <li><p>RDS Custom</p></li>
+    /// <li>
+    /// <p>Amazon Aurora (The password for the master user is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.)</p></li>
+    /// <li>
+    /// <p>RDS Custom</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
-    /// <li><p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
+    /// <li>
+    /// <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p></li>
+    /// <li>
+    /// <p>Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&amp;" (ampersand) or the "'" (single quotes) character.</p></li>
     /// </ul>
     /// <p>Length Constraints:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
-    /// <li><p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
-    /// <li><p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
-    /// <li><p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
-    /// <li><p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Db2 - Must contain from 8 to 255 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.</p></li>
+    /// <li>
+    /// <p>RDS for MySQL - Must contain from 8 to 41 characters.</p></li>
+    /// <li>
+    /// <p>RDS for Oracle - Must contain from 8 to 30 characters.</p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - Must contain from 8 to 128 characters.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_password
@@ -1328,7 +1531,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the same DB parameter group family as the DB instance.</p></li>
+    /// <li>
+    /// <p>Must be in the same DB parameter group family as the DB instance.</p></li>
     /// </ul>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
@@ -1340,7 +1544,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the same DB parameter group family as the DB instance.</p></li>
+    /// <li>
+    /// <p>Must be in the same DB parameter group family as the DB instance.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
@@ -1352,12 +1557,13 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the same DB parameter group family as the DB instance.</p></li>
+    /// <li>
+    /// <p>Must be in the same DB parameter group family as the DB instance.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
     }
-    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
     /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
     /// </note>
     /// <p>These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.</p>
@@ -1365,15 +1571,18 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35.</p></li>
-    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
-    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
     /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
     /// </note>
     /// <p>These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.</p>
@@ -1381,15 +1590,18 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35.</p></li>
-    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
-    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
     }
-    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p> <note>
+    /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p><note>
     /// <p>Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.</p>
     /// </note>
     /// <p>These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.</p>
@@ -1397,9 +1609,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be a value from 0 to 35.</p></li>
-    /// <li><p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
-    /// <li><p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
+    /// <li>
+    /// <p>Must be a value from 0 to 35.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p></li>
+    /// <li>
+    /// <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p></li>
     /// </ul>
     pub fn get_backup_retention_period(&self) -> &::std::option::Option<i32> {
         &self.backup_retention_period
@@ -1408,10 +1623,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -1421,10 +1640,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -1434,10 +1657,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
@@ -1447,11 +1674,16 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
@@ -1462,11 +1694,16 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_maintenance_window = input;
@@ -1477,11 +1714,16 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
-    /// <li><p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
-    /// <li><p>Must be in Universal Coordinated Time (UTC).</p></li>
-    /// <li><p>Must not conflict with the preferred backup window.</p></li>
-    /// <li><p>Must be at least 30 minutes.</p></li>
+    /// <li>
+    /// <p>Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p></li>
+    /// <li>
+    /// <p>The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>.</p></li>
+    /// <li>
+    /// <p>Must be in Universal Coordinated Time (UTC).</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred backup window.</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes.</p></li>
     /// </ul>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_maintenance_window
@@ -1510,7 +1752,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn engine_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_version = ::std::option::Option::Some(input.into());
@@ -1523,7 +1766,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn set_engine_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_version = input;
@@ -1536,7 +1780,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>In RDS Custom for Oracle, this parameter is supported for read replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
+    /// <li>
+    /// <p>If you are upgrading the engine version and modifying the DB instance class at the same time, the currently running engine version must be supported on the specified DB instance class. Otherwise, the operation returns an error. In this case, first run the operation to upgrade the engine version, and then run it again to modify the DB instance class.</p></li>
     /// </ul>
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
@@ -1545,7 +1790,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
+    /// <li>
+    /// <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
     /// </ul>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
         self.allow_major_version_upgrade = ::std::option::Option::Some(input);
@@ -1555,7 +1801,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
+    /// <li>
+    /// <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
     /// </ul>
     pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_upgrade = input;
@@ -1565,16 +1812,20 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
+    /// <li>
+    /// <p>Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code> parameter that's a different major version than the DB instance's current version.</p></li>
     /// </ul>
     pub fn get_allow_major_version_upgrade(&self) -> &::std::option::Option<bool> {
         &self.allow_major_version_upgrade
     }
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The automatic upgrade is enabled for the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>RDS has enabled automatic patching for the engine version.</p></li>
+    /// <li>
+    /// <p>The automatic upgrade is enabled for the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>RDS has enabled automatic patching for the engine version.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
@@ -1584,9 +1835,12 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The automatic upgrade is enabled for the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>RDS has enabled automatic patching for the engine version.</p></li>
+    /// <li>
+    /// <p>The automatic upgrade is enabled for the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>RDS has enabled automatic patching for the engine version.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
@@ -1596,9 +1850,12 @@ impl ModifyDbInstanceInputBuilder {
     }
     /// <p>Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window. An outage occurs when all the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The automatic upgrade is enabled for the maintenance window.</p></li>
-    /// <li><p>A newer minor version is available.</p></li>
-    /// <li><p>RDS has enabled automatic patching for the engine version.</p></li>
+    /// <li>
+    /// <p>The automatic upgrade is enabled for the maintenance window.</p></li>
+    /// <li>
+    /// <p>A newer minor version is available.</p></li>
+    /// <li>
+    /// <p>RDS has enabled automatic patching for the engine version.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, Amazon RDS applies the change as soon as possible and doesn't cause an outage.</p>
     /// <p>For an RDS Custom DB instance, don't enable this setting. Otherwise, the operation returns an error.</p>
@@ -1609,12 +1866,18 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
-    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn license_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.license_model = ::std::option::Option::Some(input.into());
@@ -1624,12 +1887,18 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
-    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn set_license_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.license_model = input;
@@ -1639,12 +1908,18 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
-    /// <li><p>RDS for MySQL - <code>general-public-license</code></p></li>
-    /// <li><p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>bring-your-own-license</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>general-public-license</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>bring-your-own-license | license-included</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>postgresql-license</code></p></li>
     /// </ul>
     pub fn get_license_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.license_model
@@ -1654,7 +1929,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -1666,7 +1942,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1678,7 +1955,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>If you choose to migrate your DB instance from using standard storage to using Provisioned IOPS, or from using Provisioned IOPS to using standard storage, the process can take time. The duration of the migration depends on several factors such as database load, storage size, storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if any), and the number of prior scale storage operations. Typical migration times are under 24 hours, but the process can take up to several days in some cases. During the migration, the DB instance is available for use, but might experience performance degradation. While the migration takes place, nightly backups for the instance are suspended. No other Amazon RDS operations can take place for the instance, including modifying the instance, rebooting the instance, deleting the instance, creating a read replica for the instance, and creating a DB snapshot of the instance.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
+    /// <li>
+    /// <p>For RDS for MariaDB, RDS for MySQL, RDS for Oracle, and RDS for PostgreSQL - The value supplied must be at least 10% greater than the current value. Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.</p></li>
     /// </ul>
     /// <p>Default: Uses existing setting</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
@@ -1714,9 +1992,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn new_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1727,9 +2008,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_new_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1740,9 +2024,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_new_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -1851,7 +2138,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn domain_fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1861,7 +2149,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn set_domain_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1871,7 +2160,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code></p>
     pub fn get_domain_fqdn(&self) -> &::std::option::Option<::std::string::String> {
@@ -1880,8 +2170,10 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the distinguished name format.</p></li>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn domain_ou(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1891,8 +2183,10 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the distinguished name format.</p></li>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn set_domain_ou(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1902,8 +2196,10 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Active Directory organizational unit for your DB instance to join.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the distinguished name format.</p></li>
-    /// <li><p>Can't be longer than 64 characters.</p></li>
+    /// <li>
+    /// <p>Must be in the distinguished name format.</p></li>
+    /// <li>
+    /// <p>Can't be longer than 64 characters.</p></li>
     /// </ul>
     /// <p>Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code></p>
     pub fn get_domain_ou(&self) -> &::std::option::Option<::std::string::String> {
@@ -1933,7 +2229,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li>
+    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub fn domain_dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1945,7 +2242,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li>
+    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub fn set_domain_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -1955,7 +2253,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
+    /// <li>
+    /// <p>Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.</p></li>
     /// </ul>
     /// <p>Example: <code>123.124.125.126,234.235.236.237</code></p>
     pub fn get_domain_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -2011,17 +2310,25 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora - <code>3306</code></p></li>
-    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
-    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
-    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
+    /// <li>
+    /// <p>Amazon Aurora - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
+    /// <li>
+    /// <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn db_port_number(mut self, input: i32) -> Self {
         self.db_port_number = ::std::option::Option::Some(input);
@@ -2034,17 +2341,25 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora - <code>3306</code></p></li>
-    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
-    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
-    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
+    /// <li>
+    /// <p>Amazon Aurora - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
+    /// <li>
+    /// <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn set_db_port_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_port_number = input;
@@ -2057,17 +2372,25 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Valid Values: <code>1150-65535</code></p>
     /// <p>Default:</p>
     /// <ul>
-    /// <li><p>Amazon Aurora - <code>3306</code></p></li>
-    /// <li><p>RDS for Db2 - <code>50000</code></p></li>
-    /// <li><p>RDS for MariaDB - <code>3306</code></p></li>
-    /// <li><p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
-    /// <li><p>RDS for MySQL - <code>3306</code></p></li>
-    /// <li><p>RDS for Oracle - <code>1521</code></p></li>
-    /// <li><p>RDS for PostgreSQL - <code>5432</code></p></li>
+    /// <li>
+    /// <p>Amazon Aurora - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Db2 - <code>50000</code></p></li>
+    /// <li>
+    /// <p>RDS for MariaDB - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Microsoft SQL Server - <code>1433</code></p></li>
+    /// <li>
+    /// <p>RDS for MySQL - <code>3306</code></p></li>
+    /// <li>
+    /// <p>RDS for Oracle - <code>1521</code></p></li>
+    /// <li>
+    /// <p>RDS for PostgreSQL - <code>5432</code></p></li>
     /// </ul>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
+    /// <li>
+    /// <p>For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.</p></li>
     /// </ul>
     pub fn get_db_port_number(&self) -> &::std::option::Option<i32> {
         &self.db_port_number
@@ -2242,9 +2565,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -2256,9 +2582,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -2270,9 +2599,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS returns an error.</p>
@@ -2374,13 +2706,15 @@ impl ModifyDbInstanceInputBuilder {
         &self.max_allocated_storage
     }
     /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
-    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p><important>
     /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
     /// </important>
     /// <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p>
     /// <ul>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn certificate_rotation_restart(mut self, input: bool) -> Self {
@@ -2388,13 +2722,15 @@ impl ModifyDbInstanceInputBuilder {
         self
     }
     /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
-    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p><important>
     /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
     /// </important>
     /// <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p>
     /// <ul>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn set_certificate_rotation_restart(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -2402,19 +2738,21 @@ impl ModifyDbInstanceInputBuilder {
         self
     }
     /// <p>Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
-    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p> <important>
+    /// <p>By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated until the DB instance is restarted.</p><important>
     /// <p>Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.</p>
     /// </important>
     /// <p>If you are using SSL/TLS to connect to the DB instance, follow the appropriate instructions for your DB engine to rotate your SSL/TLS certificate:</p>
     /// <ul>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
-    /// <li><p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for RDS DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate.</a> in the <i>Amazon RDS User Guide.</i></p></li>
+    /// <li>
+    /// <p>For more information about rotating your SSL/TLS certificate for Aurora DB engines, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html"> Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User Guide</i>.</p></li>
     /// </ul>
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub fn get_certificate_rotation_restart(&self) -> &::std::option::Option<bool> {
         &self.certificate_rotation_restart
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
     /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -2423,7 +2761,7 @@ impl ModifyDbInstanceInputBuilder {
         self.replica_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
     /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -2432,7 +2770,7 @@ impl ModifyDbInstanceInputBuilder {
         self.replica_mode = input;
         self
     }
-    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+    /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p><note>
     /// <p>Currently, this parameter is only supported for Oracle DB instances.</p>
     /// </note>
     /// <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -2498,8 +2836,10 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: <code>60</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be at least 60.</p></li>
-    /// <li><p>Must be no more than 1,440.</p></li>
+    /// <li>
+    /// <p>Must be at least 60.</p></li>
+    /// <li>
+    /// <p>Must be no more than 1,440.</p></li>
     /// </ul>
     pub fn resume_full_automation_mode_minutes(mut self, input: i32) -> Self {
         self.resume_full_automation_mode_minutes = ::std::option::Option::Some(input);
@@ -2509,8 +2849,10 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: <code>60</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be at least 60.</p></li>
-    /// <li><p>Must be no more than 1,440.</p></li>
+    /// <li>
+    /// <p>Must be at least 60.</p></li>
+    /// <li>
+    /// <p>Must be no more than 1,440.</p></li>
     /// </ul>
     pub fn set_resume_full_automation_mode_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.resume_full_automation_mode_minutes = input;
@@ -2520,8 +2862,10 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Default: <code>60</code></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be at least 60.</p></li>
-    /// <li><p>Must be no more than 1,440.</p></li>
+    /// <li>
+    /// <p>Must be at least 60.</p></li>
+    /// <li>
+    /// <p>Must be no more than 1,440.</p></li>
     /// </ul>
     pub fn get_resume_full_automation_mode_minutes(&self) -> &::std::option::Option<i32> {
         &self.resume_full_automation_mode_minutes
@@ -2575,7 +2919,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn manage_master_user_password(mut self, input: bool) -> Self {
         self.manage_master_user_password = ::std::option::Option::Some(input);
@@ -2587,7 +2932,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manage_master_user_password = input;
@@ -2599,7 +2945,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
+    /// <li>
+    /// <p>Can't manage the master user password with Amazon Web Services Secrets Manager if <code>MasterUserPassword</code> is specified.</p></li>
     /// </ul>
     pub fn get_manage_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.manage_master_user_password
@@ -2609,7 +2956,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn rotate_master_user_password(mut self, input: bool) -> Self {
         self.rotate_master_user_password = ::std::option::Option::Some(input);
@@ -2620,7 +2968,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn set_rotate_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rotate_master_user_password = input;
@@ -2631,7 +2980,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>You must apply the change immediately when rotating the master user password.</p></li>
+    /// <li>
+    /// <p>You must apply the change immediately when rotating the master user password.</p></li>
     /// </ul>
     pub fn get_rotate_master_user_password(&self) -> &::std::option::Option<bool> {
         &self.rotate_master_user_password
@@ -2639,8 +2989,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
-    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
+    /// <li>
+    /// <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -2651,8 +3005,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
-    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
+    /// <li>
+    /// <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -2663,8 +3021,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.</p>
     /// <p>This setting is valid only if both of the following conditions are met:</p>
     /// <ul>
-    /// <li><p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
-    /// <li><p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p> <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
+    /// <li>
+    /// <p>The DB instance doesn't manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If the DB instance already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key used to encrypt the secret.</p></li>
+    /// <li>
+    /// <p>You are turning on <code>ManageMasterUserPassword</code> to manage the master user password in Amazon Web Services Secrets Manager.</p>
+    /// <p>If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p></li>
     /// </ul>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
@@ -2674,15 +3036,21 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
-    /// <li><p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
-    /// <li><p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
+    /// <li>
+    /// <p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
+    /// <li>
+    /// <p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
     /// </ul>
     /// <p>Note the following limitations:</p>
     /// <ul>
-    /// <li><p>You can't convert a CDB to a non-CDB.</p></li>
-    /// <li><p>You can't convert a replica database.</p></li>
-    /// <li><p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
-    /// <li><p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
+    /// <li>
+    /// <p>You can't convert a CDB to a non-CDB.</p></li>
+    /// <li>
+    /// <p>You can't convert a replica database.</p></li>
+    /// <li>
+    /// <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
+    /// <li>
+    /// <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -2691,15 +3059,21 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
-    /// <li><p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
-    /// <li><p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
+    /// <li>
+    /// <p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
+    /// <li>
+    /// <p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
     /// </ul>
     /// <p>Note the following limitations:</p>
     /// <ul>
-    /// <li><p>You can't convert a CDB to a non-CDB.</p></li>
-    /// <li><p>You can't convert a replica database.</p></li>
-    /// <li><p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
-    /// <li><p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
+    /// <li>
+    /// <p>You can't convert a CDB to a non-CDB.</p></li>
+    /// <li>
+    /// <p>You can't convert a replica database.</p></li>
+    /// <li>
+    /// <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
+    /// <li>
+    /// <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -2708,15 +3082,21 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database 21c CDB.</p>
     /// <p>Note the following requirements:</p>
     /// <ul>
-    /// <li><p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
-    /// <li><p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
+    /// <li>
+    /// <p>Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.</p></li>
+    /// <li>
+    /// <p>Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later RU.</p></li>
     /// </ul>
     /// <p>Note the following limitations:</p>
     /// <ul>
-    /// <li><p>You can't convert a CDB to a non-CDB.</p></li>
-    /// <li><p>You can't convert a replica database.</p></li>
-    /// <li><p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
-    /// <li><p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
+    /// <li>
+    /// <p>You can't convert a CDB to a non-CDB.</p></li>
+    /// <li>
+    /// <p>You can't convert a replica database.</p></li>
+    /// <li>
+    /// <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.</p></li>
+    /// <li>
+    /// <p>You can't convert the existing custom parameter or option group when it has options or parameters that are permanent or persistent. In this situation, the DB instance reverts to the default option and parameter group. To avoid reverting to the default, specify a new parameter group with <code>--db-parameter-group-name</code> and a new option group with <code>--option-group-name</code>.</p></li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
@@ -2736,7 +3116,7 @@ impl ModifyDbInstanceInputBuilder {
         &self.dedicated_log_volume
     }
     /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p> <important>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
     /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
     /// </important>
     pub fn multi_tenant(mut self, input: bool) -> Self {
@@ -2744,7 +3124,7 @@ impl ModifyDbInstanceInputBuilder {
         self
     }
     /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p> <important>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
     /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
     /// </important>
     pub fn set_multi_tenant(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -2752,7 +3132,7 @@ impl ModifyDbInstanceInputBuilder {
         self
     }
     /// <p>Specifies whether the to convert your DB instance from the single-tenant conﬁguration to the multi-tenant conﬁguration. This parameter is supported only for RDS for Oracle CDB instances.</p>
-    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p> <important>
+    /// <p>During the conversion, RDS creates an initial tenant database and associates the DB name, master user name, character set, and national character set metadata with this database. The tags associated with the instance also propagate to the initial tenant database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code> operation.</p><important>
     /// <p>The conversion to the multi-tenant configuration is permanent and irreversible, so you can't later convert back to the single-tenant configuration. When you specify this parameter, you must also specify <code>ApplyImmediately</code>.</p>
     /// </important>
     pub fn get_multi_tenant(&self) -> &::std::option::Option<bool> {

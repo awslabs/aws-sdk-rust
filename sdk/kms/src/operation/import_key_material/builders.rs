@@ -28,17 +28,28 @@ impl ImportKeyMaterialInputBuilder {
 /// <p>Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>) and when (<code>ValidTo</code>) the key material expires. To change the expiration of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code> or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import features</a> of the KMS console.</p>
 /// <p>Before calling <code>ImportKeyMaterial</code>:</p>
 /// <ul>
-/// <li><p>Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code> value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported key material.</p> <p>To create an new KMS key for imported key material, call the <code>CreateKey</code> operation with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. However, you can't import key material into a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p></li>
-/// <li><p>Use the <code>DescribeKey</code> operation to verify that the <code>KeyState</code> of the KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key material.</p> <p>If you are reimporting the same key material into an existing KMS key, you might need to call the <code>DeleteImportedKeyMaterial</code> to delete its existing key material.</p></li>
-/// <li><p>Call the <code>GetParametersForImport</code> operation to get a public key and import token set for importing key material.</p></li>
-/// <li><p>Use the public key in the <code>GetParametersForImport</code> response to encrypt your key material.</p></li>
+/// <li>
+/// <p>Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code> value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported key material.</p>
+/// <p>To create an new KMS key for imported key material, call the <code>CreateKey</code> operation with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. However, you can't import key material into a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p></li>
+/// <li>
+/// <p>Use the <code>DescribeKey</code> operation to verify that the <code>KeyState</code> of the KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key material.</p>
+/// <p>If you are reimporting the same key material into an existing KMS key, you might need to call the <code>DeleteImportedKeyMaterial</code> to delete its existing key material.</p></li>
+/// <li>
+/// <p>Call the <code>GetParametersForImport</code> operation to get a public key and import token set for importing key material.</p></li>
+/// <li>
+/// <p>Use the public key in the <code>GetParametersForImport</code> response to encrypt your key material.</p></li>
 /// </ul>
 /// <p>Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key material and import token. When calling this operation, you must specify the following values:</p>
 /// <ul>
-/// <li><p>The key ID or key ARN of the KMS key to associate with the imported key material. Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. You cannot perform this operation on a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, or on a KMS key in a different Amazon Web Services account. To get the <code>Origin</code> and <code>KeyState</code> of a KMS key, call <code>DescribeKey</code>.</p></li>
-/// <li><p>The encrypted key material.</p></li>
-/// <li><p>The import token that <code>GetParametersForImport</code> returned. You must use a public key and token from the same <code>GetParametersForImport</code> response.</p></li>
-/// <li><p>Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>). For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If you set an expiration date, KMS deletes the key material from the KMS key on the specified date, making the KMS key unusable. To use the KMS key in cryptographic operations again, you must reimport the same key material. However, you can delete and reimport the key material at any time, including before the key material expires. Each time you reimport, you can eliminate or reset the expiration time.</p></li>
+/// <li>
+/// <p>The key ID or key ARN of the KMS key to associate with the imported key material. Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. You cannot perform this operation on a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, or on a KMS key in a different Amazon Web Services account. To get the <code>Origin</code> and <code>KeyState</code> of a KMS key, call <code>DescribeKey</code>.</p></li>
+/// <li>
+/// <p>The encrypted key material.</p></li>
+/// <li>
+/// <p>The import token that <code>GetParametersForImport</code> returned. You must use a public key and token from the same <code>GetParametersForImport</code> response.</p></li>
+/// <li>
+/// <p>Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>). For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.</p>
+/// <p>If you set an expiration date, KMS deletes the key material from the KMS key on the specified date, making the KMS key unusable. To use the KMS key in cryptographic operations again, you must reimport the same key material. However, you can delete and reimport the key material at any time, including before the key material expires. Each time you reimport, you can eliminate or reset the expiration time.</p></li>
 /// </ul>
 /// <p>When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code> to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.</p>
 /// <p>If this operation fails, use the exception to help determine the problem. If the error is related to the key material, the import token, or wrapping key, use <code>GetParametersForImport</code> to get a new public key and import token for the KMS key and repeat the import procedure. For help, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#importing-keys-overview">How To Import Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -47,8 +58,10 @@ impl ImportKeyMaterialInputBuilder {
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ImportKeyMaterial</a> (key policy)</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>DeleteImportedKeyMaterial</code></p></li>
-/// <li><p><code>GetParametersForImport</code></p></li>
+/// <li>
+/// <p><code>DeleteImportedKeyMaterial</code></p></li>
+/// <li>
+/// <p><code>GetParametersForImport</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportKeyMaterialFluentBuilder {
@@ -140,8 +153,10 @@ impl ImportKeyMaterialFluentBuilder {
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
-    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,8 +168,10 @@ impl ImportKeyMaterialFluentBuilder {
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
-    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -166,8 +183,10 @@ impl ImportKeyMaterialFluentBuilder {
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li><p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
-    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {

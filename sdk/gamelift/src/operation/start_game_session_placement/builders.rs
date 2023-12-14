@@ -28,10 +28,14 @@ impl StartGameSessionPlacementInputBuilder {
 /// <p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant Regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the Region. Amazon GameLift uses latency data to reorder the list of destinations to place the game session in a Region with minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each Region's average lag for all players and reorders to get the best game play across all players.</p>
 /// <p>To place a new game session request, specify the following:</p>
 /// <ul>
-/// <li><p>The queue name and a set of game session properties and settings</p></li>
-/// <li><p>A unique ID (such as a UUID) for the placement. You use this ID to track the status of the placement request</p></li>
-/// <li><p>(Optional) A set of player data and a unique player ID for each player that you are joining to the new game session (player data is optional, but if you include it, you must also provide a unique ID for each player)</p></li>
-/// <li><p>Latency data for all players (if you want to optimize game play for the players)</p></li>
+/// <li>
+/// <p>The queue name and a set of game session properties and settings</p></li>
+/// <li>
+/// <p>A unique ID (such as a UUID) for the placement. You use this ID to track the status of the placement request</p></li>
+/// <li>
+/// <p>(Optional) A set of player data and a unique player ID for each player that you are joining to the new game session (player data is optional, but if you include it, you must also provide a unique ID for each player)</p></li>
+/// <li>
+/// <p>Latency data for all players (if you want to optimize game play for the players)</p></li>
 /// </ul>
 /// <p>If successful, a new game session placement is created.</p>
 /// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue.</p>

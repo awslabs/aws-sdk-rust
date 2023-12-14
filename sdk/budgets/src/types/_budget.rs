@@ -23,11 +23,16 @@ pub struct Budget {
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
-    /// <li><p>Amazon EC2</p></li>
-    /// <li><p>Amazon Redshift</p></li>
-    /// <li><p>Amazon Relational Database Service</p></li>
-    /// <li><p>Amazon ElastiCache</p></li>
-    /// <li><p>Amazon OpenSearch Service</p></li>
+    /// <li>
+    /// <p>Amazon EC2</p></li>
+    /// <li>
+    /// <p>Amazon Redshift</p></li>
+    /// <li>
+    /// <p>Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p>Amazon ElastiCache</p></li>
+    /// <li>
+    /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
     pub cost_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The types of costs that are included in this <code>COST</code> budget.</p>
@@ -74,11 +79,16 @@ impl Budget {
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
-    /// <li><p>Amazon EC2</p></li>
-    /// <li><p>Amazon Redshift</p></li>
-    /// <li><p>Amazon Relational Database Service</p></li>
-    /// <li><p>Amazon ElastiCache</p></li>
-    /// <li><p>Amazon OpenSearch Service</p></li>
+    /// <li>
+    /// <p>Amazon EC2</p></li>
+    /// <li>
+    /// <p>Amazon Redshift</p></li>
+    /// <li>
+    /// <p>Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p>Amazon ElastiCache</p></li>
+    /// <li>
+    /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
     pub fn cost_filters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.cost_filters.as_ref()
@@ -223,11 +233,16 @@ impl BudgetBuilder {
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
-    /// <li><p>Amazon EC2</p></li>
-    /// <li><p>Amazon Redshift</p></li>
-    /// <li><p>Amazon Relational Database Service</p></li>
-    /// <li><p>Amazon ElastiCache</p></li>
-    /// <li><p>Amazon OpenSearch Service</p></li>
+    /// <li>
+    /// <p>Amazon EC2</p></li>
+    /// <li>
+    /// <p>Amazon Redshift</p></li>
+    /// <li>
+    /// <p>Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p>Amazon ElastiCache</p></li>
+    /// <li>
+    /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
     pub fn cost_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.cost_filters.unwrap_or_default();
@@ -238,11 +253,16 @@ impl BudgetBuilder {
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
-    /// <li><p>Amazon EC2</p></li>
-    /// <li><p>Amazon Redshift</p></li>
-    /// <li><p>Amazon Relational Database Service</p></li>
-    /// <li><p>Amazon ElastiCache</p></li>
-    /// <li><p>Amazon OpenSearch Service</p></li>
+    /// <li>
+    /// <p>Amazon EC2</p></li>
+    /// <li>
+    /// <p>Amazon Redshift</p></li>
+    /// <li>
+    /// <p>Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p>Amazon ElastiCache</p></li>
+    /// <li>
+    /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
     pub fn set_cost_filters(
         mut self,
@@ -254,11 +274,16 @@ impl BudgetBuilder {
     /// <p>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
     /// <p>Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:</p>
     /// <ul>
-    /// <li><p>Amazon EC2</p></li>
-    /// <li><p>Amazon Redshift</p></li>
-    /// <li><p>Amazon Relational Database Service</p></li>
-    /// <li><p>Amazon ElastiCache</p></li>
-    /// <li><p>Amazon OpenSearch Service</p></li>
+    /// <li>
+    /// <p>Amazon EC2</p></li>
+    /// <li>
+    /// <p>Amazon Redshift</p></li>
+    /// <li>
+    /// <p>Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p>Amazon ElastiCache</p></li>
+    /// <li>
+    /// <p>Amazon OpenSearch Service</p></li>
     /// </ul>
     pub fn get_cost_filters(
         &self,

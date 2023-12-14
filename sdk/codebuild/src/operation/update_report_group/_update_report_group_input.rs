@@ -7,8 +7,10 @@ pub struct UpdateReportGroupInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub export_config: ::std::option::Option<crate::types::ReportExportConfig>,
     /// <p>An updated list of tag key and value pairs associated with this report group.</p>
@@ -22,8 +24,10 @@ impl UpdateReportGroupInput {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn export_config(&self) -> ::std::option::Option<&crate::types::ReportExportConfig> {
         self.export_config.as_ref()
@@ -69,8 +73,10 @@ impl UpdateReportGroupInputBuilder {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
         self.export_config = ::std::option::Option::Some(input);
@@ -78,8 +84,10 @@ impl UpdateReportGroupInputBuilder {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn set_export_config(mut self, input: ::std::option::Option<crate::types::ReportExportConfig>) -> Self {
         self.export_config = input;
@@ -87,8 +95,10 @@ impl UpdateReportGroupInputBuilder {
     }
     /// <p>Used to specify an updated export type. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
-    /// <li><p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The report results are exported to an S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>NO_EXPORT</code>: The report results are not exported.</p></li>
     /// </ul>
     pub fn get_export_config(&self) -> &::std::option::Option<crate::types::ReportExportConfig> {
         &self.export_config

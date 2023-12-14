@@ -60,7 +60,7 @@ pub struct StartBuildBatchInput {
     pub buildspec_override: ::std::option::Option<::std::string::String>,
     /// <p>Enable this flag to override the insecure SSL setting that is specified in the batch build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</p>
     pub insecure_ssl_override: ::std::option::Option<bool>,
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p> <note>
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
     pub report_build_batch_status_override: ::std::option::Option<bool>,
@@ -82,11 +82,10 @@ pub struct StartBuildBatchInput {
     pub build_timeout_in_minutes_override: ::std::option::Option<i32>,
     /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
     pub queued_timeout_in_minutes_override: ::std::option::Option<i32>,
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub encryption_key_override: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the <code>StartBuildBatch</code> request. The token is included in the <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat the <code>StartBuildBatch</code> request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.</p>
     pub idempotency_token: ::std::option::Option<::std::string::String>,
@@ -210,7 +209,7 @@ impl StartBuildBatchInput {
     pub fn insecure_ssl_override(&self) -> ::std::option::Option<bool> {
         self.insecure_ssl_override
     }
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p> <note>
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
     pub fn report_build_batch_status_override(&self) -> ::std::option::Option<bool> {
@@ -252,11 +251,10 @@ impl StartBuildBatchInput {
     pub fn queued_timeout_in_minutes_override(&self) -> ::std::option::Option<i32> {
         self.queued_timeout_in_minutes_override
     }
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn encryption_key_override(&self) -> ::std::option::Option<&str> {
         self.encryption_key_override.as_deref()
     }
@@ -655,21 +653,21 @@ impl StartBuildBatchInputBuilder {
     pub fn get_insecure_ssl_override(&self) -> &::std::option::Option<bool> {
         &self.insecure_ssl_override
     }
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p> <note>
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
     pub fn report_build_batch_status_override(mut self, input: bool) -> Self {
         self.report_build_batch_status_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p> <note>
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
     pub fn set_report_build_batch_status_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.report_build_batch_status_override = input;
         self
     }
-    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p> <note>
+    /// <p>Set to <code>true</code> to report to your source provider the status of a batch build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown.</p><note>
     /// <p>The status of a build triggered by a webhook is always reported to your source provider.</p>
     /// </note>
     pub fn get_report_build_batch_status_override(&self) -> &::std::option::Option<bool> {
@@ -801,29 +799,26 @@ impl StartBuildBatchInputBuilder {
     pub fn get_queued_timeout_in_minutes_override(&self) -> &::std::option::Option<i32> {
         &self.queued_timeout_in_minutes_override
     }
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn encryption_key_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_override = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn set_encryption_key_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_override = input;
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build project. The CMK key encrypts the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn get_encryption_key_override(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_override
     }

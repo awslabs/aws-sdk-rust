@@ -8,9 +8,12 @@ pub struct PutResourcePolicyInput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
@@ -22,9 +25,12 @@ impl PutResourcePolicyInput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub fn resource_policy(&self) -> ::std::option::Option<&str> {
         self.resource_policy.as_deref()
@@ -63,9 +69,12 @@ impl PutResourcePolicyInputBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -75,9 +84,12 @@ impl PutResourcePolicyInputBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
@@ -86,9 +98,12 @@ impl PutResourcePolicyInputBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy

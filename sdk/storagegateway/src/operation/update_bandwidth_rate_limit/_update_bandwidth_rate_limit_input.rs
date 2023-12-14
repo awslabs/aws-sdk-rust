@@ -2,8 +2,10 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li><p><code>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</code></p></li>
-/// <li><p><code>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</code></p></li>
+/// <li>
+/// <p><code>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</code></p></li>
+/// <li>
+/// <p><code>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

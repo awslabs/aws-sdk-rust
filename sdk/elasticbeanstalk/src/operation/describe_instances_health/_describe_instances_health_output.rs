@@ -5,8 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
-    /// <cpuutilization></cpuutilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
     pub instance_health_list: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
     pub refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -16,8 +15,7 @@ pub struct DescribeInstancesHealthOutput {
 }
 impl DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
-    /// <cpuutilization></cpuutilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_health_list.is_none()`.
     pub fn instance_health_list(&self) -> &[crate::types::SingleInstanceHealth] {
@@ -59,8 +57,7 @@ impl DescribeInstancesHealthOutputBuilder {
     /// To override the contents of this collection use [`set_instance_health_list`](Self::set_instance_health_list).
     ///
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
-    /// <cpuutilization></cpuutilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
     pub fn instance_health_list(mut self, input: crate::types::SingleInstanceHealth) -> Self {
         let mut v = self.instance_health_list.unwrap_or_default();
         v.push(input);
@@ -68,15 +65,13 @@ impl DescribeInstancesHealthOutputBuilder {
         self
     }
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
-    /// <cpuutilization></cpuutilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
     pub fn set_instance_health_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>) -> Self {
         self.instance_health_list = input;
         self
     }
     /// <p>Detailed health information about each instance.</p>
-    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
-    /// <cpuutilization></cpuutilization></code> type.</p>
+    /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code><cpuutilization></cpuutilization></code> type.</p>
     pub fn get_instance_health_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>> {
         &self.instance_health_list
     }

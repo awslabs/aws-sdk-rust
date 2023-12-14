@@ -25,10 +25,14 @@ impl DescribeDatasetGroupInputBuilder {
 /// <p>Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation.</p>
 /// <p>In addition to listing the parameters provided in the <code>CreateDatasetGroup</code> request, this operation includes the following properties:</p>
 /// <ul>
-/// <li><p><code>DatasetArns</code> - The datasets belonging to the group.</p></li>
-/// <li><p><code>CreationTime</code></p></li>
-/// <li><p><code>LastModificationTime</code></p></li>
-/// <li><p><code>Status</code></p></li>
+/// <li>
+/// <p><code>DatasetArns</code> - The datasets belonging to the group.</p></li>
+/// <li>
+/// <p><code>CreationTime</code></p></li>
+/// <li>
+/// <p><code>LastModificationTime</code></p></li>
+/// <li>
+/// <p><code>Status</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDatasetGroupFluentBuilder {

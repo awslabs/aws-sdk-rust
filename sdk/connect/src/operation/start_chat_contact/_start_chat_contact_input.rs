@@ -20,19 +20,19 @@ pub struct StartChatContactInput {
     /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     pub chat_duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p> <note>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p><note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
     pub supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.</p>
     pub persistent_chat: ::std::option::Option<crate::types::PersistentChat>,
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p><note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat.</p>
     /// </note>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
     /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
     /// </note>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
@@ -69,7 +69,7 @@ impl StartChatContactInput {
         self.chat_duration_in_minutes
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p> <note>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p><note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
     ///
@@ -81,7 +81,7 @@ impl StartChatContactInput {
     pub fn persistent_chat(&self) -> ::std::option::Option<&crate::types::PersistentChat> {
         self.persistent_chat.as_ref()
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p><note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat.</p>
     /// </note>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
@@ -89,7 +89,7 @@ impl StartChatContactInput {
     }
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
     /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
     /// </note>
     pub fn segment_attributes(
@@ -240,7 +240,7 @@ impl StartChatContactInputBuilder {
     /// To override the contents of this collection use [`set_supported_messaging_content_types`](Self::set_supported_messaging_content_types).
     ///
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p> <note>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p><note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
     pub fn supported_messaging_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -250,7 +250,7 @@ impl StartChatContactInputBuilder {
         self
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p> <note>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p><note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
     pub fn set_supported_messaging_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -258,7 +258,7 @@ impl StartChatContactInputBuilder {
         self
     }
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
-    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p> <note>
+    /// <p>Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.</p><note>
     /// <p>The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.</p>
     /// </note>
     pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -278,21 +278,21 @@ impl StartChatContactInputBuilder {
     pub fn get_persistent_chat(&self) -> &::std::option::Option<crate::types::PersistentChat> {
         &self.persistent_chat
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p><note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat.</p>
     /// </note>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p><note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat.</p>
     /// </note>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
-    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p><note>
     /// <p>You cannot provide data for both RelatedContactId and PersistentChat.</p>
     /// </note>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -304,7 +304,7 @@ impl StartChatContactInputBuilder {
     ///
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
     /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
     /// </note>
     pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
@@ -315,7 +315,7 @@ impl StartChatContactInputBuilder {
     }
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
     /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
     /// </note>
     pub fn set_segment_attributes(
@@ -327,7 +327,7 @@ impl StartChatContactInputBuilder {
     }
     /// <p>A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
     /// <p>Attribute keys can include only alphanumeric, -, and _.</p>
-    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p> <note>
+    /// <p>This field can be used to show channel subtype, such as <code>connect:Guide</code>.</p><note>
     /// <p>The types <code>application/vnd.amazonaws.connect.message.interactive</code> and <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.</p>
     /// </note>
     pub fn get_segment_attributes(

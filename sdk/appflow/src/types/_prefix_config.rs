@@ -22,9 +22,12 @@ pub struct PrefixConfig {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -53,9 +56,12 @@ impl PrefixConfig {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -127,9 +133,12 @@ impl PrefixConfigBuilder {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -153,9 +162,12 @@ impl PrefixConfigBuilder {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -177,9 +189,12 @@ impl PrefixConfigBuilder {
     /// <dd>
     /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
     /// <ul>
-    /// <li><p>Source-to-destination field mappings</p></li>
-    /// <li><p>Field data types</p></li>
-    /// <li><p>Partition keys</p></li>
+    /// <li>
+    /// <p>Source-to-destination field mappings</p></li>
+    /// <li>
+    /// <p>Field data types</p></li>
+    /// <li>
+    /// <p>Partition keys</p></li>
     /// </ul>
     /// </dd>
     /// </dl>

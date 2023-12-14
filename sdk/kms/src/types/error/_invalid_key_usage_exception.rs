@@ -2,8 +2,10 @@
 
 /// <p>The request was rejected for one of the following reasons:</p>
 /// <ul>
-/// <li><p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p></li>
-/// <li><p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p></li>
+/// <li>
+/// <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p></li>
+/// <li>
+/// <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p></li>
 /// </ul>
 /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
 /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>

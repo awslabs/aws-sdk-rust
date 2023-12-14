@@ -22,7 +22,7 @@ impl ListVehiclesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListVehicles`.
 ///
-/// <p>Retrieves a list of summaries of created vehicles.</p> <note>
+/// <p>Retrieves a list of summaries of created vehicles.</p><note>
 /// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the request to return more results.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

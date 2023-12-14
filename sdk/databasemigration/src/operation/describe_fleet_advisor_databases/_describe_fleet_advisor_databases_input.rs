@@ -5,12 +5,18 @@
 pub struct DescribeFleetAdvisorDatabasesInput {
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>database-id</code> – The ID of the database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the database engine.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the database server.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the database.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the database engine.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the database server.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the database.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -22,12 +28,18 @@ pub struct DescribeFleetAdvisorDatabasesInput {
 impl DescribeFleetAdvisorDatabasesInput {
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>database-id</code> – The ID of the database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the database engine.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the database server.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the database.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the database engine.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the database server.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the database.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
     ///
@@ -66,12 +78,18 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     ///
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>database-id</code> – The ID of the database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the database engine.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the database server.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the database.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the database engine.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the database server.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the database.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -82,12 +100,18 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>database-id</code> – The ID of the database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the database engine.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the database server.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the database.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the database engine.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the database server.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the database.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -96,12 +120,18 @@ impl DescribeFleetAdvisorDatabasesInputBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those databases that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>database-id</code> – The ID of the database.</p></li>
-    /// <li><p><code>database-name</code> – The name of the database.</p></li>
-    /// <li><p><code>database-engine</code> – The name of the database engine.</p></li>
-    /// <li><p><code>server-ip-address</code> – The IP address of the database server.</p></li>
-    /// <li><p><code>database-ip-address</code> – The IP address of the database.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
+    /// <li>
+    /// <p><code>database-id</code> – The ID of the database.</p></li>
+    /// <li>
+    /// <p><code>database-name</code> – The name of the database.</p></li>
+    /// <li>
+    /// <p><code>database-engine</code> – The name of the database engine.</p></li>
+    /// <li>
+    /// <p><code>server-ip-address</code> – The IP address of the database server.</p></li>
+    /// <li>
+    /// <p><code>database-ip-address</code> – The IP address of the database.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the associated Fleet Advisor collector.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

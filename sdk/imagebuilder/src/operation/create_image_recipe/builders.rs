@@ -136,7 +136,7 @@ impl CreateImageRecipeFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -156,7 +156,7 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -176,7 +176,7 @@ impl CreateImageRecipeFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
-    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

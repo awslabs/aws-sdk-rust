@@ -8,8 +8,10 @@ pub struct FieldBasedTooltip {
     pub aggregation_visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
-    /// <li><p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
     /// </ul>
     pub tooltip_title_type: ::std::option::Option<crate::types::TooltipTitleType>,
     /// <p>The fields configuration in the tooltip.</p>
@@ -22,8 +24,10 @@ impl FieldBasedTooltip {
     }
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
-    /// <li><p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
     /// </ul>
     pub fn tooltip_title_type(&self) -> ::std::option::Option<&crate::types::TooltipTitleType> {
         self.tooltip_title_type.as_ref()
@@ -67,8 +71,10 @@ impl FieldBasedTooltipBuilder {
     }
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
-    /// <li><p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
     /// </ul>
     pub fn tooltip_title_type(mut self, input: crate::types::TooltipTitleType) -> Self {
         self.tooltip_title_type = ::std::option::Option::Some(input);
@@ -76,8 +82,10 @@ impl FieldBasedTooltipBuilder {
     }
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
-    /// <li><p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
     /// </ul>
     pub fn set_tooltip_title_type(mut self, input: ::std::option::Option<crate::types::TooltipTitleType>) -> Self {
         self.tooltip_title_type = input;
@@ -85,8 +93,10 @@ impl FieldBasedTooltipBuilder {
     }
     /// <p>The type for the &gt;tooltip title. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
-    /// <li><p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Doesn't use the primary value as the title.</p></li>
+    /// <li>
+    /// <p><code>PRIMARY_VALUE</code>: Uses primary value as the title.</p></li>
     /// </ul>
     pub fn get_tooltip_title_type(&self) -> &::std::option::Option<crate::types::TooltipTitleType> {
         &self.tooltip_title_type

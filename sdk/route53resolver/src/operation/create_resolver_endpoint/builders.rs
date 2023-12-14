@@ -24,8 +24,10 @@ impl CreateResolverEndpointInputBuilder {
 ///
 /// <p>Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:</p>
 /// <ul>
-/// <li><p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.</p></li>
-/// <li><p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.</p></li>
+/// <li>
+/// <p>An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.</p></li>
+/// <li>
+/// <p>An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResolverEndpointFluentBuilder {
@@ -160,8 +162,10 @@ impl CreateResolverEndpointFluentBuilder {
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li><p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
-    /// <li><p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
+    /// <li>
+    /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
     /// </ul>
     pub fn direction(mut self, input: crate::types::ResolverEndpointDirection) -> Self {
         self.inner = self.inner.direction(input);
@@ -169,8 +173,10 @@ impl CreateResolverEndpointFluentBuilder {
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li><p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
-    /// <li><p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
+    /// <li>
+    /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
     /// </ul>
     pub fn set_direction(mut self, input: ::std::option::Option<crate::types::ResolverEndpointDirection>) -> Self {
         self.inner = self.inner.set_direction(input);
@@ -178,8 +184,10 @@ impl CreateResolverEndpointFluentBuilder {
     }
     /// <p>Specify the applicable value:</p>
     /// <ul>
-    /// <li><p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
-    /// <li><p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
+    /// <li>
+    /// <p><code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC from your network</p></li>
+    /// <li>
+    /// <p><code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p></li>
     /// </ul>
     pub fn get_direction(&self) -> &::std::option::Option<crate::types::ResolverEndpointDirection> {
         self.inner.get_direction()

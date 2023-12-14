@@ -26,23 +26,35 @@ impl CreateSolutionVersionInputBuilder {
 /// <p><b>Status</b></p>
 /// <p>A solution version can be in one of the following states:</p>
 /// <ul>
-/// <li><p>CREATE PENDING</p></li>
-/// <li><p>CREATE IN_PROGRESS</p></li>
-/// <li><p>ACTIVE</p></li>
-/// <li><p>CREATE FAILED</p></li>
-/// <li><p>CREATE STOPPING</p></li>
-/// <li><p>CREATE STOPPED</p></li>
+/// <li>
+/// <p>CREATE PENDING</p></li>
+/// <li>
+/// <p>CREATE IN_PROGRESS</p></li>
+/// <li>
+/// <p>ACTIVE</p></li>
+/// <li>
+/// <p>CREATE FAILED</p></li>
+/// <li>
+/// <p>CREATE STOPPING</p></li>
+/// <li>
+/// <p>CREATE STOPPED</p></li>
 /// </ul>
 /// <p>To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.</p>
 /// <p>If the status shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job failed.</p>
 /// <p class="title"><b>Related APIs</b></p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutionVersions.html">ListSolutionVersions</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteSolution.html">DeleteSolution</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSolutionVersionFluentBuilder {

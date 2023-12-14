@@ -22,7 +22,7 @@ impl GetPipelineDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPipelineDefinition`.
 ///
-/// <p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <code>PutPipelineDefinition</code>.</p> <examples>
+/// <p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <code>PutPipelineDefinition</code>.</p><examples>
 /// <request>
 /// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.GetPipelineDefinition Content-Length: 40 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"pipelineId": "df-06372391ZG65EXAMPLE"}
 /// </request>

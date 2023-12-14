@@ -8,20 +8,29 @@ pub struct ChangeSetHook {
     pub invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
-    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li>
+    /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub failure_mode: ::std::option::Option<crate::types::HookFailureMode>,
-    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
+    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p><note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
     /// <ul>
-    /// <li><p><code>Alexa</code></p></li>
-    /// <li><p><code>AMZN</code></p></li>
-    /// <li><p><code>Amazon</code></p></li>
-    /// <li><p><code>ASK</code></p></li>
-    /// <li><p><code>AWS</code></p></li>
-    /// <li><p><code>Custom</code></p></li>
-    /// <li><p><code>Dev</code></p></li>
+    /// <li>
+    /// <p><code>Alexa</code></p></li>
+    /// <li>
+    /// <p><code>AMZN</code></p></li>
+    /// <li>
+    /// <p><code>Amazon</code></p></li>
+    /// <li>
+    /// <p><code>ASK</code></p></li>
+    /// <li>
+    /// <p><code>AWS</code></p></li>
+    /// <li>
+    /// <p><code>Custom</code></p></li>
+    /// <li>
+    /// <p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub type_name: ::std::option::Option<::std::string::String>,
@@ -39,22 +48,31 @@ impl ChangeSetHook {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
-    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li>
+    /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn failure_mode(&self) -> ::std::option::Option<&crate::types::HookFailureMode> {
         self.failure_mode.as_ref()
     }
-    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
+    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p><note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
     /// <ul>
-    /// <li><p><code>Alexa</code></p></li>
-    /// <li><p><code>AMZN</code></p></li>
-    /// <li><p><code>Amazon</code></p></li>
-    /// <li><p><code>ASK</code></p></li>
-    /// <li><p><code>AWS</code></p></li>
-    /// <li><p><code>Custom</code></p></li>
-    /// <li><p><code>Dev</code></p></li>
+    /// <li>
+    /// <p><code>Alexa</code></p></li>
+    /// <li>
+    /// <p><code>AMZN</code></p></li>
+    /// <li>
+    /// <p><code>Amazon</code></p></li>
+    /// <li>
+    /// <p><code>ASK</code></p></li>
+    /// <li>
+    /// <p><code>AWS</code></p></li>
+    /// <li>
+    /// <p><code>Custom</code></p></li>
+    /// <li>
+    /// <p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn type_name(&self) -> ::std::option::Option<&str> {
@@ -108,8 +126,10 @@ impl ChangeSetHookBuilder {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
-    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li>
+    /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn failure_mode(mut self, input: crate::types::HookFailureMode) -> Self {
         self.failure_mode = ::std::option::Option::Some(input);
@@ -117,8 +137,10 @@ impl ChangeSetHookBuilder {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
-    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li>
+    /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn set_failure_mode(mut self, input: ::std::option::Option<crate::types::HookFailureMode>) -> Self {
         self.failure_mode = input;
@@ -126,54 +148,77 @@ impl ChangeSetHookBuilder {
     }
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
-    /// <li><p><code>FAIL</code> Stops provisioning resources.</p></li>
-    /// <li><p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
+    /// <li>
+    /// <p><code>FAIL</code> Stops provisioning resources.</p></li>
+    /// <li>
+    /// <p><code>WARN</code> Allows provisioning to continue with a warning message.</p></li>
     /// </ul>
     pub fn get_failure_mode(&self) -> &::std::option::Option<crate::types::HookFailureMode> {
         &self.failure_mode
     }
-    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
+    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p><note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
     /// <ul>
-    /// <li><p><code>Alexa</code></p></li>
-    /// <li><p><code>AMZN</code></p></li>
-    /// <li><p><code>Amazon</code></p></li>
-    /// <li><p><code>ASK</code></p></li>
-    /// <li><p><code>AWS</code></p></li>
-    /// <li><p><code>Custom</code></p></li>
-    /// <li><p><code>Dev</code></p></li>
+    /// <li>
+    /// <p><code>Alexa</code></p></li>
+    /// <li>
+    /// <p><code>AMZN</code></p></li>
+    /// <li>
+    /// <p><code>Amazon</code></p></li>
+    /// <li>
+    /// <p><code>ASK</code></p></li>
+    /// <li>
+    /// <p><code>AWS</code></p></li>
+    /// <li>
+    /// <p><code>Custom</code></p></li>
+    /// <li>
+    /// <p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.type_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
+    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p><note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
     /// <ul>
-    /// <li><p><code>Alexa</code></p></li>
-    /// <li><p><code>AMZN</code></p></li>
-    /// <li><p><code>Amazon</code></p></li>
-    /// <li><p><code>ASK</code></p></li>
-    /// <li><p><code>AWS</code></p></li>
-    /// <li><p><code>Custom</code></p></li>
-    /// <li><p><code>Dev</code></p></li>
+    /// <li>
+    /// <p><code>Alexa</code></p></li>
+    /// <li>
+    /// <p><code>AMZN</code></p></li>
+    /// <li>
+    /// <p><code>Amazon</code></p></li>
+    /// <li>
+    /// <p><code>ASK</code></p></li>
+    /// <li>
+    /// <p><code>AWS</code></p></li>
+    /// <li>
+    /// <p><code>Custom</code></p></li>
+    /// <li>
+    /// <p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
-    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p> <note>
+    /// <p>The unique name for your hook. Specifies a three-part namespace for your hook, with a recommended pattern of <code>Organization::Service::Hook</code>.</p><note>
     /// <p>The following organization namespaces are reserved and can't be used in your hook type names:</p>
     /// <ul>
-    /// <li><p><code>Alexa</code></p></li>
-    /// <li><p><code>AMZN</code></p></li>
-    /// <li><p><code>Amazon</code></p></li>
-    /// <li><p><code>ASK</code></p></li>
-    /// <li><p><code>AWS</code></p></li>
-    /// <li><p><code>Custom</code></p></li>
-    /// <li><p><code>Dev</code></p></li>
+    /// <li>
+    /// <p><code>Alexa</code></p></li>
+    /// <li>
+    /// <p><code>AMZN</code></p></li>
+    /// <li>
+    /// <p><code>Amazon</code></p></li>
+    /// <li>
+    /// <p><code>ASK</code></p></li>
+    /// <li>
+    /// <p><code>AWS</code></p></li>
+    /// <li>
+    /// <p><code>Custom</code></p></li>
+    /// <li>
+    /// <p><code>Dev</code></p></li>
     /// </ul>
     /// </note>
     pub fn get_type_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -118,10 +118,14 @@ impl DescribeEventsFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_identifier(input.into());
@@ -131,10 +135,14 @@ impl DescribeEventsFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_identifier(input);
@@ -144,10 +152,14 @@ impl DescribeEventsFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceIdentifier</i> is supplied, <i>SourceType</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
-    /// <li><p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
-    /// <li><p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
-    /// <li><p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.</p></li>
+    /// <li>
+    /// <p>Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.</p></li>
     /// </ul>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_identifier()
@@ -156,10 +168,14 @@ impl DescribeEventsFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.inner = self.inner.source_type(input);
@@ -169,10 +185,14 @@ impl DescribeEventsFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
@@ -182,10 +202,14 @@ impl DescribeEventsFluentBuilder {
     /// <p>Constraints:</p>
     /// <p>If <i>SourceType</i> is supplied, <i>SourceIdentifier</i> must also be provided.</p>
     /// <ul>
-    /// <li><p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
-    /// <li><p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
-    /// <li><p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
-    /// <li><p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster security group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster parameter group name.</p></li>
+    /// <li>
+    /// <p>Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot identifier.</p></li>
     /// </ul>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         self.inner.get_source_type()

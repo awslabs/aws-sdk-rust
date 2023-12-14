@@ -7,7 +7,7 @@
 pub struct RuleGroupReferenceStatement {
     /// <p>The Amazon Resource Name (ARN) of the entity.</p>
     pub arn: ::std::string::String,
-    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p> <note>
+    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
     pub excluded_rules: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>,
@@ -21,7 +21,7 @@ impl RuleGroupReferenceStatement {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p> <note>
+    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
     ///
@@ -72,7 +72,7 @@ impl RuleGroupReferenceStatementBuilder {
     ///
     /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
     ///
-    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p> <note>
+    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
     pub fn excluded_rules(mut self, input: crate::types::ExcludedRule) -> Self {
@@ -81,14 +81,14 @@ impl RuleGroupReferenceStatementBuilder {
         self.excluded_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p> <note>
+    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
     pub fn set_excluded_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>>) -> Self {
         self.excluded_rules = input;
         self
     }
-    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p> <note>
+    /// <p>Rules in the referenced rule group whose actions are set to <code>Count</code>.</p><note>
     /// <p>Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including <code>Count</code>.</p>
     /// </note>
     pub fn get_excluded_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExcludedRule>> {

@@ -22,7 +22,7 @@ impl GetDevicePositionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDevicePosition`.
 ///
-/// <p>Retrieves a device's most recent position according to its sample time.</p> <note>
+/// <p>Retrieves a device's most recent position according to its sample time.</p><note>
 /// <p>Device positions are deleted after 30 days.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

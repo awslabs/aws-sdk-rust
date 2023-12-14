@@ -4,8 +4,10 @@
 /// <p>ProtectedResourceType is required, such as Amazon EBS or Amazon EC2.</p>
 /// <p>This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the following:</p>
 /// <ul>
-/// <li><p><code>ProtectedResourceArns</code></p></li>
-/// <li><p><code>ProtectedResourceConditions</code></p></li>
+/// <li>
+/// <p><code>ProtectedResourceArns</code></p></li>
+/// <li>
+/// <p><code>ProtectedResourceConditions</code></p></li>
 /// </ul>
 /// <p>Each protected resource type can have one single value.</p>
 /// <p>A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.</p>
@@ -22,16 +24,26 @@ pub struct RestoreTestingSelectionForCreate {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub protected_resource_type: ::std::string::String,
     /// <p>You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code> in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.</p>
@@ -61,16 +73,26 @@ impl RestoreTestingSelectionForCreate {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub fn protected_resource_type(&self) -> &str {
         use std::ops::Deref;
@@ -176,16 +198,26 @@ impl RestoreTestingSelectionForCreateBuilder {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     /// This field is required.
     pub fn protected_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,16 +227,26 @@ impl RestoreTestingSelectionForCreateBuilder {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub fn set_protected_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protected_resource_type = input;
@@ -213,16 +255,26 @@ impl RestoreTestingSelectionForCreateBuilder {
     /// <p>The type of Amazon Web Services resource included in a restore testing selection; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     /// <p>Supported resource types accepted include:</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
     /// </ul>
     pub fn get_protected_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.protected_resource_type

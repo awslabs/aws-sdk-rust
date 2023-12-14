@@ -9,8 +9,10 @@ pub struct LifecycleHookSpecification {
     pub lifecycle_hook_name: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li><p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li><p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
     /// </ul>
     pub lifecycle_transition: ::std::option::Option<::std::string::String>,
     /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to the notification target.</p>
@@ -33,8 +35,10 @@ impl LifecycleHookSpecification {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li><p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li><p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
     /// </ul>
     pub fn lifecycle_transition(&self) -> ::std::option::Option<&str> {
         self.lifecycle_transition.as_deref()
@@ -99,8 +103,10 @@ impl LifecycleHookSpecificationBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li><p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li><p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn lifecycle_transition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -109,8 +115,10 @@ impl LifecycleHookSpecificationBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li><p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li><p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
     /// </ul>
     pub fn set_lifecycle_transition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_transition = input;
@@ -118,8 +126,10 @@ impl LifecycleHookSpecificationBuilder {
     }
     /// <p>The lifecycle transition. For Auto Scaling groups, there are two major lifecycle transitions.</p>
     /// <ul>
-    /// <li><p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
-    /// <li><p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-out events, specify <code>autoscaling:EC2_INSTANCE_LAUNCHING</code>.</p></li>
+    /// <li>
+    /// <p>To create a lifecycle hook for scale-in events, specify <code>autoscaling:EC2_INSTANCE_TERMINATING</code>.</p></li>
     /// </ul>
     pub fn get_lifecycle_transition(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_transition

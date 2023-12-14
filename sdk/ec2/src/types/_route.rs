@@ -30,9 +30,12 @@ pub struct Route {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes how the route was created.</p>
     /// <ul>
-    /// <li><p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
-    /// <li><p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
-    /// <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
+    /// <li>
+    /// <p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
+    /// <li>
+    /// <p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
+    /// <li>
+    /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub origin: ::std::option::Option<crate::types::RouteOrigin>,
     /// <p>The state of the route. The <code>blackhole</code> state indicates that the route's target isn't available (for example, the specified gateway isn't attached to the VPC, or the specified NAT instance has been terminated).</p>
@@ -93,9 +96,12 @@ impl Route {
     }
     /// <p>Describes how the route was created.</p>
     /// <ul>
-    /// <li><p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
-    /// <li><p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
-    /// <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
+    /// <li>
+    /// <p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
+    /// <li>
+    /// <p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
+    /// <li>
+    /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn origin(&self) -> ::std::option::Option<&crate::types::RouteOrigin> {
         self.origin.as_ref()
@@ -312,9 +318,12 @@ impl RouteBuilder {
     }
     /// <p>Describes how the route was created.</p>
     /// <ul>
-    /// <li><p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
-    /// <li><p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
-    /// <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
+    /// <li>
+    /// <p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
+    /// <li>
+    /// <p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
+    /// <li>
+    /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn origin(mut self, input: crate::types::RouteOrigin) -> Self {
         self.origin = ::std::option::Option::Some(input);
@@ -322,9 +331,12 @@ impl RouteBuilder {
     }
     /// <p>Describes how the route was created.</p>
     /// <ul>
-    /// <li><p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
-    /// <li><p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
-    /// <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
+    /// <li>
+    /// <p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
+    /// <li>
+    /// <p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
+    /// <li>
+    /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::RouteOrigin>) -> Self {
         self.origin = input;
@@ -332,9 +344,12 @@ impl RouteBuilder {
     }
     /// <p>Describes how the route was created.</p>
     /// <ul>
-    /// <li><p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
-    /// <li><p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
-    /// <li><p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
+    /// <li>
+    /// <p><code>CreateRouteTable</code> - The route was automatically created when the route table was created.</p></li>
+    /// <li>
+    /// <p><code>CreateRoute</code> - The route was manually added to the route table.</p></li>
+    /// <li>
+    /// <p><code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.</p></li>
     /// </ul>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::RouteOrigin> {
         &self.origin

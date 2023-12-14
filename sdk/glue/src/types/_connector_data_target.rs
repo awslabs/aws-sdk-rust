@@ -8,13 +8,20 @@ pub struct ConnectorDataTarget {
     pub name: ::std::string::String,
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
-    /// <li><p><code>opensearch</code></p></li>
-    /// <li><p><code>azuresql</code></p></li>
-    /// <li><p><code>azurecosmos</code></p></li>
-    /// <li><p><code>bigquery</code></p></li>
-    /// <li><p><code>saphana</code></p></li>
-    /// <li><p><code>teradata</code></p></li>
-    /// <li><p><code>vertica</code></p></li>
+    /// <li>
+    /// <p><code>opensearch</code></p></li>
+    /// <li>
+    /// <p><code>azuresql</code></p></li>
+    /// <li>
+    /// <p><code>azurecosmos</code></p></li>
+    /// <li>
+    /// <p><code>bigquery</code></p></li>
+    /// <li>
+    /// <p><code>saphana</code></p></li>
+    /// <li>
+    /// <p><code>teradata</code></p></li>
+    /// <li>
+    /// <p><code>vertica</code></p></li>
     /// </ul>
     pub connection_type: ::std::string::String,
     /// <p>A map specifying connection options for the node. You can find standard connection options for the corresponding connection type in the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html"> Connection parameters</a> section of the Glue documentation.</p>
@@ -30,13 +37,20 @@ impl ConnectorDataTarget {
     }
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
-    /// <li><p><code>opensearch</code></p></li>
-    /// <li><p><code>azuresql</code></p></li>
-    /// <li><p><code>azurecosmos</code></p></li>
-    /// <li><p><code>bigquery</code></p></li>
-    /// <li><p><code>saphana</code></p></li>
-    /// <li><p><code>teradata</code></p></li>
-    /// <li><p><code>vertica</code></p></li>
+    /// <li>
+    /// <p><code>opensearch</code></p></li>
+    /// <li>
+    /// <p><code>azuresql</code></p></li>
+    /// <li>
+    /// <p><code>azurecosmos</code></p></li>
+    /// <li>
+    /// <p><code>bigquery</code></p></li>
+    /// <li>
+    /// <p><code>saphana</code></p></li>
+    /// <li>
+    /// <p><code>teradata</code></p></li>
+    /// <li>
+    /// <p><code>vertica</code></p></li>
     /// </ul>
     pub fn connection_type(&self) -> &str {
         use std::ops::Deref;
@@ -87,13 +101,20 @@ impl ConnectorDataTargetBuilder {
     }
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
-    /// <li><p><code>opensearch</code></p></li>
-    /// <li><p><code>azuresql</code></p></li>
-    /// <li><p><code>azurecosmos</code></p></li>
-    /// <li><p><code>bigquery</code></p></li>
-    /// <li><p><code>saphana</code></p></li>
-    /// <li><p><code>teradata</code></p></li>
-    /// <li><p><code>vertica</code></p></li>
+    /// <li>
+    /// <p><code>opensearch</code></p></li>
+    /// <li>
+    /// <p><code>azuresql</code></p></li>
+    /// <li>
+    /// <p><code>azurecosmos</code></p></li>
+    /// <li>
+    /// <p><code>bigquery</code></p></li>
+    /// <li>
+    /// <p><code>saphana</code></p></li>
+    /// <li>
+    /// <p><code>teradata</code></p></li>
+    /// <li>
+    /// <p><code>vertica</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn connection_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,13 +123,20 @@ impl ConnectorDataTargetBuilder {
     }
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
-    /// <li><p><code>opensearch</code></p></li>
-    /// <li><p><code>azuresql</code></p></li>
-    /// <li><p><code>azurecosmos</code></p></li>
-    /// <li><p><code>bigquery</code></p></li>
-    /// <li><p><code>saphana</code></p></li>
-    /// <li><p><code>teradata</code></p></li>
-    /// <li><p><code>vertica</code></p></li>
+    /// <li>
+    /// <p><code>opensearch</code></p></li>
+    /// <li>
+    /// <p><code>azuresql</code></p></li>
+    /// <li>
+    /// <p><code>azurecosmos</code></p></li>
+    /// <li>
+    /// <p><code>bigquery</code></p></li>
+    /// <li>
+    /// <p><code>saphana</code></p></li>
+    /// <li>
+    /// <p><code>teradata</code></p></li>
+    /// <li>
+    /// <p><code>vertica</code></p></li>
     /// </ul>
     pub fn set_connection_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.connection_type = input;
@@ -116,13 +144,20 @@ impl ConnectorDataTargetBuilder {
     }
     /// <p>The <code>connectionType</code>, as provided to the underlying Glue library. This node type supports the following connection types:</p>
     /// <ul>
-    /// <li><p><code>opensearch</code></p></li>
-    /// <li><p><code>azuresql</code></p></li>
-    /// <li><p><code>azurecosmos</code></p></li>
-    /// <li><p><code>bigquery</code></p></li>
-    /// <li><p><code>saphana</code></p></li>
-    /// <li><p><code>teradata</code></p></li>
-    /// <li><p><code>vertica</code></p></li>
+    /// <li>
+    /// <p><code>opensearch</code></p></li>
+    /// <li>
+    /// <p><code>azuresql</code></p></li>
+    /// <li>
+    /// <p><code>azurecosmos</code></p></li>
+    /// <li>
+    /// <p><code>bigquery</code></p></li>
+    /// <li>
+    /// <p><code>saphana</code></p></li>
+    /// <li>
+    /// <p><code>teradata</code></p></li>
+    /// <li>
+    /// <p><code>vertica</code></p></li>
     /// </ul>
     pub fn get_connection_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_type

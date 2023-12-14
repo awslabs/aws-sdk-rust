@@ -33,28 +33,39 @@ impl ExportKeyInputBuilder {
 /// <p>Next the KRD generates a key pair for the the purpose of encrypting the KDH key and provides the public key cerificate (also known as KRD wrapping certificate) back to KDH. The KRD will also import the root cerificate chain into Amazon Web Services Payment Cryptography by calling <code>ImportKey</code> for <code>RootCertificatePublicKey</code>. The KDH, Amazon Web Services Payment Cryptography, will use the KRD wrapping cerificate to encrypt (wrap) the key under export and signs it with signing private key to generate a TR-34 WrappedKeyBlock. For more information on TR-34 key export, see section <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-export.html">Exporting symmetric keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
 /// <p>Set the following parameters:</p>
 /// <ul>
-/// <li><p><code>ExportAttributes</code>: Specify export attributes in case of IPEK export. This parameter is optional for KEK export.</p></li>
-/// <li><p><code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in case of IPEK) under export.</p></li>
-/// <li><p><code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.</p></li>
-/// <li><p><code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of the certificate chain that signed the KRD wrapping key certificate.</p></li>
-/// <li><p><code>ExportToken</code>: Obtained from KDH by calling <code>GetParametersForImport</code>.</p></li>
-/// <li><p><code>WrappingKeyCertificate</code>: The public key certificate in PEM format (base64 encoded) of the KRD wrapping key Amazon Web Services Payment Cryptography uses for encryption of the TR-34 export payload. This certificate must be signed by the root certificate (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services Payment Cryptography.</p></li>
+/// <li>
+/// <p><code>ExportAttributes</code>: Specify export attributes in case of IPEK export. This parameter is optional for KEK export.</p></li>
+/// <li>
+/// <p><code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in case of IPEK) under export.</p></li>
+/// <li>
+/// <p><code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.</p></li>
+/// <li>
+/// <p><code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of the certificate chain that signed the KRD wrapping key certificate.</p></li>
+/// <li>
+/// <p><code>ExportToken</code>: Obtained from KDH by calling <code>GetParametersForImport</code>.</p></li>
+/// <li>
+/// <p><code>WrappingKeyCertificate</code>: The public key certificate in PEM format (base64 encoded) of the KRD wrapping key Amazon Web Services Payment Cryptography uses for encryption of the TR-34 export payload. This certificate must be signed by the root certificate (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services Payment Cryptography.</p></li>
 /// </ul>
 /// <p>When this operation is successful, Amazon Web Services Payment Cryptography returns the KEK or IPEK as a TR-34 WrappedKeyBlock.</p>
 /// <p><b>To export WK (Working Key) or IPEK using TR-31</b></p>
 /// <p>Using this operation, you can export working keys or IPEK using TR-31 symmetric key exchange. In TR-31, you must use an initial key such as KEK to encrypt or wrap the key under export. To establish a KEK, you can use <code>CreateKey</code> or <code>ImportKey</code>.</p>
 /// <p>Set the following parameters:</p>
 /// <ul>
-/// <li><p><code>ExportAttributes</code>: Specify export attributes in case of IPEK export. This parameter is optional for KEK export.</p></li>
-/// <li><p><code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in case of IPEK) under export.</p></li>
-/// <li><p><code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.</p></li>
+/// <li>
+/// <p><code>ExportAttributes</code>: Specify export attributes in case of IPEK export. This parameter is optional for KEK export.</p></li>
+/// <li>
+/// <p><code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in case of IPEK) under export.</p></li>
+/// <li>
+/// <p><code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.</p></li>
 /// </ul>
 /// <p>When this operation is successful, Amazon Web Services Payment Cryptography returns the WK or IPEK as a TR-31 WrappedKeyBlock.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>GetParametersForExport</code></p></li>
-/// <li><p><code>ImportKey</code></p></li>
+/// <li>
+/// <p><code>GetParametersForExport</code></p></li>
+/// <li>
+/// <p><code>ImportKey</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportKeyFluentBuilder {

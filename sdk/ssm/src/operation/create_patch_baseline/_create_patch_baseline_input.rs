@@ -23,8 +23,10 @@ pub struct CreatePatchBaselineInput {
     pub rejected_patches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li><p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li><p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
+    /// <li>
+    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
     /// </ul>
     pub rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     /// <p>A description of the patch baseline.</p>
@@ -35,9 +37,11 @@ pub struct CreatePatchBaselineInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=PatchSeverity,Value=Critical</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=PatchSeverity,Value=Critical</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -83,8 +87,10 @@ impl CreatePatchBaselineInput {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li><p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li><p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
+    /// <li>
+    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
     /// </ul>
     pub fn rejected_patches_action(&self) -> ::std::option::Option<&crate::types::PatchAction> {
         self.rejected_patches_action.as_ref()
@@ -105,9 +111,11 @@ impl CreatePatchBaselineInput {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=PatchSeverity,Value=Critical</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=PatchSeverity,Value=Critical</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     ///
@@ -275,8 +283,10 @@ impl CreatePatchBaselineInputBuilder {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li><p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li><p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
+    /// <li>
+    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
     /// </ul>
     pub fn rejected_patches_action(mut self, input: crate::types::PatchAction) -> Self {
         self.rejected_patches_action = ::std::option::Option::Some(input);
@@ -284,8 +294,10 @@ impl CreatePatchBaselineInputBuilder {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li><p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li><p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
+    /// <li>
+    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
     /// </ul>
     pub fn set_rejected_patches_action(mut self, input: ::std::option::Option<crate::types::PatchAction>) -> Self {
         self.rejected_patches_action = input;
@@ -293,8 +305,10 @@ impl CreatePatchBaselineInputBuilder {
     }
     /// <p>The action for Patch Manager to take on patches included in the <code>RejectedPackages</code> list.</p>
     /// <ul>
-    /// <li><p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
-    /// <li><p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>ALLOW_AS_DEPENDENCY</code> </b>: A package in the <code>Rejected</code> patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as <code>InstalledOther</code>. This is the default action if no option is specified.</p></li>
+    /// <li>
+    /// <p><b> <code>BLOCK</code> </b>: Packages in the <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as <code>InstalledRejected</code>.</p></li>
     /// </ul>
     pub fn get_rejected_patches_action(&self) -> &::std::option::Option<crate::types::PatchAction> {
         &self.rejected_patches_action
@@ -353,9 +367,11 @@ impl CreatePatchBaselineInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=PatchSeverity,Value=Critical</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=PatchSeverity,Value=Critical</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -366,9 +382,11 @@ impl CreatePatchBaselineInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=PatchSeverity,Value=Critical</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=PatchSeverity,Value=Critical</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -377,9 +395,11 @@ impl CreatePatchBaselineInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=PatchSeverity,Value=Critical</code></p></li>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=PatchSeverity,Value=Critical</code></p></li>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing patch baseline, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

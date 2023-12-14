@@ -11,8 +11,10 @@ pub struct ListInstalledComponentsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub topology_filter: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>,
@@ -32,8 +34,10 @@ impl ListInstalledComponentsInput {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn topology_filter(&self) -> ::std::option::Option<&crate::types::InstalledComponentTopologyFilter> {
@@ -102,8 +106,10 @@ impl ListInstalledComponentsInputBuilder {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn topology_filter(mut self, input: crate::types::InstalledComponentTopologyFilter) -> Self {
@@ -112,8 +118,10 @@ impl ListInstalledComponentsInputBuilder {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn set_topology_filter(mut self, input: ::std::option::Option<crate::types::InstalledComponentTopologyFilter>) -> Self {
@@ -122,8 +130,10 @@ impl ListInstalledComponentsInputBuilder {
     }
     /// <p>The filter for the list of components. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
-    /// <li><p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – The list includes all components installed on the core device.</p></li>
+    /// <li>
+    /// <p><code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p></li>
     /// </ul>
     /// <p>Default: <code>ROOT</code></p>
     pub fn get_topology_filter(&self) -> &::std::option::Option<crate::types::InstalledComponentTopologyFilter> {

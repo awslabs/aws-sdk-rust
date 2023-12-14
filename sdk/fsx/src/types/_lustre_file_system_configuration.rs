@@ -17,9 +17,12 @@ pub struct LustreFileSystemConfiguration {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
-    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
-    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
     /// </ul>
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>You use the <code>MountName</code> value when mounting the file system.</p>
@@ -36,8 +39,10 @@ pub struct LustreFileSystemConfiguration {
     pub drive_cache_type: ::std::option::Option<crate::types::DriveCacheType>,
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
-    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
+    /// <li>
+    /// <p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
@@ -66,9 +71,12 @@ impl LustreFileSystemConfiguration {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
-    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
-    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
     /// </ul>
     pub fn per_unit_storage_throughput(&self) -> ::std::option::Option<i32> {
         self.per_unit_storage_throughput
@@ -97,8 +105,10 @@ impl LustreFileSystemConfiguration {
     }
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
-    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
+    /// <li>
+    /// <p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub fn data_compression_type(&self) -> ::std::option::Option<&crate::types::DataCompressionType> {
@@ -195,9 +205,12 @@ impl LustreFileSystemConfigurationBuilder {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
-    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
-    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
     /// </ul>
     pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
         self.per_unit_storage_throughput = ::std::option::Option::Some(input);
@@ -206,9 +219,12 @@ impl LustreFileSystemConfigurationBuilder {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
-    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
-    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
     /// </ul>
     pub fn set_per_unit_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.per_unit_storage_throughput = input;
@@ -217,9 +233,12 @@ impl LustreFileSystemConfigurationBuilder {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment types.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
-    /// <li><p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
-    /// <li><p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> SSD storage: 50, 100, 200.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_1</code> HDD storage: 12, 40.</p></li>
+    /// <li>
+    /// <p>For <code>PERSISTENT_2</code> SSD storage: 125, 250, 500, 1000.</p></li>
     /// </ul>
     pub fn get_per_unit_storage_throughput(&self) -> &::std::option::Option<i32> {
         &self.per_unit_storage_throughput
@@ -302,8 +321,10 @@ impl LustreFileSystemConfigurationBuilder {
     }
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
-    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
+    /// <li>
+    /// <p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub fn data_compression_type(mut self, input: crate::types::DataCompressionType) -> Self {
@@ -312,8 +333,10 @@ impl LustreFileSystemConfigurationBuilder {
     }
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
-    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
+    /// <li>
+    /// <p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub fn set_data_compression_type(mut self, input: ::std::option::Option<crate::types::DataCompressionType>) -> Self {
@@ -322,8 +345,10 @@ impl LustreFileSystemConfigurationBuilder {
     }
     /// <p>The data compression configuration for the file system. <code>DataCompressionType</code> can have the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
-    /// <li><p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Data compression is turned off for the file system.</p></li>
+    /// <li>
+    /// <p><code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.</p>
     pub fn get_data_compression_type(&self) -> &::std::option::Option<crate::types::DataCompressionType> {

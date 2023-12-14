@@ -7,11 +7,10 @@ pub struct RegisterContainerImageInput {
     pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The label for the container image when it's registered to the container service.</p>
     /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code><imagelabel></imagelabel></code> portion of the following image name example:</p>
     /// <ul>
-    /// <li><p><code>:container-service-1.
-    /// <imagelabel>
+    /// <li>
+    /// <p><code>:container-service-1.<imagelabel>
     /// .1
     /// </imagelabel></code></p></li>
     /// </ul>
@@ -28,11 +27,10 @@ impl RegisterContainerImageInput {
     }
     /// <p>The label for the container image when it's registered to the container service.</p>
     /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code><imagelabel></imagelabel></code> portion of the following image name example:</p>
     /// <ul>
-    /// <li><p><code>:container-service-1.
-    /// <imagelabel>
+    /// <li>
+    /// <p><code>:container-service-1.<imagelabel>
     /// .1
     /// </imagelabel></code></p></li>
     /// </ul>
@@ -79,11 +77,10 @@ impl RegisterContainerImageInputBuilder {
     }
     /// <p>The label for the container image when it's registered to the container service.</p>
     /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code><imagelabel></imagelabel></code> portion of the following image name example:</p>
     /// <ul>
-    /// <li><p><code>:container-service-1.
-    /// <imagelabel>
+    /// <li>
+    /// <p><code>:container-service-1.<imagelabel>
     /// .1
     /// </imagelabel></code></p></li>
     /// </ul>
@@ -96,11 +93,10 @@ impl RegisterContainerImageInputBuilder {
     }
     /// <p>The label for the container image when it's registered to the container service.</p>
     /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code><imagelabel></imagelabel></code> portion of the following image name example:</p>
     /// <ul>
-    /// <li><p><code>:container-service-1.
-    /// <imagelabel>
+    /// <li>
+    /// <p><code>:container-service-1.<imagelabel>
     /// .1
     /// </imagelabel></code></p></li>
     /// </ul>
@@ -112,11 +108,10 @@ impl RegisterContainerImageInputBuilder {
     }
     /// <p>The label for the container image when it's registered to the container service.</p>
     /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
-    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code><imagelabel></imagelabel></code> portion of the following image name example:</p>
     /// <ul>
-    /// <li><p><code>:container-service-1.
-    /// <imagelabel>
+    /// <li>
+    /// <p><code>:container-service-1.<imagelabel>
     /// .1
     /// </imagelabel></code></p></li>
     /// </ul>

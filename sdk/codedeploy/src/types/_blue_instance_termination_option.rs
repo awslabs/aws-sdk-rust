@@ -6,8 +6,10 @@
 pub struct BlueInstanceTerminationOption {
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
-    /// <li><p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
+    /// <li>
+    /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
     pub action: ::std::option::Option<crate::types::InstanceAction>,
     /// <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p>
@@ -18,8 +20,10 @@ pub struct BlueInstanceTerminationOption {
 impl BlueInstanceTerminationOption {
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
-    /// <li><p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
+    /// <li>
+    /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
     pub fn action(&self) -> ::std::option::Option<&crate::types::InstanceAction> {
         self.action.as_ref()
@@ -48,8 +52,10 @@ pub struct BlueInstanceTerminationOptionBuilder {
 impl BlueInstanceTerminationOptionBuilder {
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
-    /// <li><p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
+    /// <li>
+    /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
     pub fn action(mut self, input: crate::types::InstanceAction) -> Self {
         self.action = ::std::option::Option::Some(input);
@@ -57,8 +63,10 @@ impl BlueInstanceTerminationOptionBuilder {
     }
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
-    /// <li><p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
+    /// <li>
+    /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::InstanceAction>) -> Self {
         self.action = input;
@@ -66,8 +74,10 @@ impl BlueInstanceTerminationOptionBuilder {
     }
     /// <p>The action to take on instances in the original environment after a successful blue/green deployment.</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
-    /// <li><p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code>: Instances are terminated after a specified wait time.</p></li>
+    /// <li>
+    /// <p><code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p></li>
     /// </ul>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::InstanceAction> {
         &self.action

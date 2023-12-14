@@ -11,13 +11,17 @@ pub struct CreateTableInput {
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li><p><code>AttributeName</code> - The name of this key attribute.</p></li>
-    /// <li><p><code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li>
+    /// <p><code>AttributeName</code> - The name of this key attribute.</p></li>
+    /// <li>
+    /// <p><code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li><p><code>HASH</code> - partition key</p></li>
-    /// <li><p><code>RANGE</code> - sort key</p></li>
+    /// <li>
+    /// <p><code>HASH</code> - partition key</p></li>
+    /// <li>
+    /// <p><code>RANGE</code> - sort key</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -28,41 +32,62 @@ pub struct CreateTableInput {
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
     /// </ul>
     pub local_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
-    /// <li><p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
     /// </ul>
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
-    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
@@ -71,13 +96,19 @@ pub struct CreateTableInput {
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li><p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
-    /// <li><p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li>
+    /// <p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
+    /// <li>
+    /// <p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
-    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
-    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
-    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul></li>
     /// </ul>
     pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
@@ -104,13 +135,17 @@ impl CreateTableInput {
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li><p><code>AttributeName</code> - The name of this key attribute.</p></li>
-    /// <li><p><code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li>
+    /// <p><code>AttributeName</code> - The name of this key attribute.</p></li>
+    /// <li>
+    /// <p><code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li><p><code>HASH</code> - partition key</p></li>
-    /// <li><p><code>RANGE</code> - sort key</p></li>
+    /// <li>
+    /// <p><code>HASH</code> - partition key</p></li>
+    /// <li>
+    /// <p><code>RANGE</code> - sort key</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -125,17 +160,26 @@ impl CreateTableInput {
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
     /// </ul>
     ///
@@ -145,19 +189,29 @@ impl CreateTableInput {
     }
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
-    /// <li><p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.global_secondary_indexes.is_none()`.
@@ -166,8 +220,10 @@ impl CreateTableInput {
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
-    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
         self.billing_mode.as_ref()
@@ -180,13 +236,19 @@ impl CreateTableInput {
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li><p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
-    /// <li><p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li>
+    /// <p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
+    /// <li>
+    /// <p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
-    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
-    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
-    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn stream_specification(&self) -> ::std::option::Option<&crate::types::StreamSpecification> {
@@ -278,13 +340,17 @@ impl CreateTableInputBuilder {
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li><p><code>AttributeName</code> - The name of this key attribute.</p></li>
-    /// <li><p><code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li>
+    /// <p><code>AttributeName</code> - The name of this key attribute.</p></li>
+    /// <li>
+    /// <p><code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li><p><code>HASH</code> - partition key</p></li>
-    /// <li><p><code>RANGE</code> - sort key</p></li>
+    /// <li>
+    /// <p><code>HASH</code> - partition key</p></li>
+    /// <li>
+    /// <p><code>RANGE</code> - sort key</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -300,13 +366,17 @@ impl CreateTableInputBuilder {
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li><p><code>AttributeName</code> - The name of this key attribute.</p></li>
-    /// <li><p><code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li>
+    /// <p><code>AttributeName</code> - The name of this key attribute.</p></li>
+    /// <li>
+    /// <p><code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li><p><code>HASH</code> - partition key</p></li>
-    /// <li><p><code>RANGE</code> - sort key</p></li>
+    /// <li>
+    /// <p><code>HASH</code> - partition key</p></li>
+    /// <li>
+    /// <p><code>RANGE</code> - sort key</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -320,13 +390,17 @@ impl CreateTableInputBuilder {
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
-    /// <li><p><code>AttributeName</code> - The name of this key attribute.</p></li>
-    /// <li><p><code>KeyType</code> - The role that the key attribute will assume:</p>
+    /// <li>
+    /// <p><code>AttributeName</code> - The name of this key attribute.</p></li>
+    /// <li>
+    /// <p><code>KeyType</code> - The role that the key attribute will assume:</p>
     /// <ul>
-    /// <li><p><code>HASH</code> - partition key</p></li>
-    /// <li><p><code>RANGE</code> - sort key</p></li>
+    /// <li>
+    /// <p><code>HASH</code> - partition key</p></li>
+    /// <li>
+    /// <p><code>RANGE</code> - sort key</p></li>
     /// </ul></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
@@ -343,17 +417,26 @@ impl CreateTableInputBuilder {
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn local_secondary_indexes(mut self, input: crate::types::LocalSecondaryIndex) -> Self {
@@ -365,17 +448,26 @@ impl CreateTableInputBuilder {
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_local_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>) -> Self {
@@ -385,17 +477,26 @@ impl CreateTableInputBuilder {
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the local secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_local_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>> {
@@ -407,19 +508,29 @@ impl CreateTableInputBuilder {
     ///
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
-    /// <li><p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
     /// </ul>
     pub fn global_secondary_indexes(mut self, input: crate::types::GlobalSecondaryIndex) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
@@ -429,19 +540,29 @@ impl CreateTableInputBuilder {
     }
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
-    /// <li><p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
     /// </ul>
     pub fn set_global_secondary_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>) -> Self {
         self.global_secondary_indexes = input;
@@ -449,27 +570,39 @@ impl CreateTableInputBuilder {
     }
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
-    /// <li><p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p></li>
-    /// <li><p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
-    /// <li><p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p>
+    /// <p></p></li>
+    /// <li>
+    /// <p><code>KeySchema</code> - Specifies the key schema for the global secondary index.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:</p>
     /// <ul>
-    /// <li><p><code>ProjectionType</code> - One of the following:</p>
+    /// <li>
+    /// <p><code>ProjectionType</code> - One of the following:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
-    /// <li><p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
-    /// <li><p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p></li>
+    /// <li>
+    /// <p><code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected attributes is in <code>NonKeyAttributes</code>.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> - All of the table attributes are projected into the index.</p></li>
     /// </ul></li>
-    /// <li><p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
+    /// <li>
+    /// <p><code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p></li>
     /// </ul></li>
-    /// <li><p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput</code> - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.</p></li>
     /// </ul>
     pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
         &self.global_secondary_indexes
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
-    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
         self.billing_mode = ::std::option::Option::Some(input);
@@ -477,8 +610,10 @@ impl CreateTableInputBuilder {
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
-    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
         self.billing_mode = input;
@@ -486,8 +621,10 @@ impl CreateTableInputBuilder {
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
-    /// <li><p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
-    /// <li><p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p></li>
+    /// <li>
+    /// <p><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>.</p></li>
     /// </ul>
     pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
         &self.billing_mode
@@ -514,13 +651,19 @@ impl CreateTableInputBuilder {
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li><p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
-    /// <li><p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li>
+    /// <p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
+    /// <li>
+    /// <p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
-    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
-    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
-    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn stream_specification(mut self, input: crate::types::StreamSpecification) -> Self {
@@ -529,13 +672,19 @@ impl CreateTableInputBuilder {
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li><p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
-    /// <li><p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li>
+    /// <p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
+    /// <li>
+    /// <p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
-    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
-    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
-    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::StreamSpecification>) -> Self {
@@ -544,13 +693,19 @@ impl CreateTableInputBuilder {
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
-    /// <li><p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
-    /// <li><p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
+    /// <li>
+    /// <p><code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p></li>
+    /// <li>
+    /// <p><code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code> determines what information is written to the table's stream. Valid values for <code>StreamViewType</code> are:</p>
     /// <ul>
-    /// <li><p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
-    /// <li><p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
-    /// <li><p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
-    /// <li><p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified, is written to the stream.</p></li>
+    /// <li>
+    /// <p><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::StreamSpecification> {

@@ -6,10 +6,14 @@ pub struct DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
-    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
-    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li>
+    /// <p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
@@ -24,10 +28,14 @@ impl DescribeReportCreationOutput {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
-    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
-    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li>
+    /// <p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -71,10 +79,14 @@ impl DescribeReportCreationOutputBuilder {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
-    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
-    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li>
+    /// <p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -83,10 +95,14 @@ impl DescribeReportCreationOutputBuilder {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
-    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
-    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li>
+    /// <p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -95,10 +111,14 @@ impl DescribeReportCreationOutputBuilder {
     /// <p>Reports the status of the operation.</p>
     /// <p>The operation status can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>RUNNING</code> - Report creation is in progress.</p></li>
-    /// <li><p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
-    /// <li><p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
-    /// <li><p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
+    /// <li>
+    /// <p><code>RUNNING</code> - Report creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - Report creation is complete. You can open the report from the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.</p></li>
+    /// <li>
+    /// <p><code>NO REPORT</code> - No report was generated in the last 90 days.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

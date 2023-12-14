@@ -24,17 +24,24 @@ impl CreateChannelMembershipInputBuilder {
 ///
 /// <p>Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the request header. A channel member can:</p>
 /// <ul>
-/// <li><p>List messages</p></li>
-/// <li><p>Send messages</p></li>
-/// <li><p>Receive messages</p></li>
-/// <li><p>Edit their own messages</p></li>
-/// <li><p>Leave the channel</p></li>
+/// <li>
+/// <p>List messages</p></li>
+/// <li>
+/// <p>Send messages</p></li>
+/// <li>
+/// <p>Receive messages</p></li>
+/// <li>
+/// <p>Edit their own messages</p></li>
+/// <li>
+/// <p>Leave the channel</p></li>
 /// </ul>
 /// <p>Privacy settings impact this action as follows:</p>
 /// <ul>
-/// <li><p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p></li>
-/// <li><p>Private Channels: You must be a member to list or send messages.</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p></li>
+/// <li>
+/// <p>Private Channels: You must be a member to list or send messages.</p></li>
+/// </ul><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -178,21 +185,21 @@ impl CreateChannelMembershipFluentBuilder {
     pub fn get_chime_bearer(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_chime_bearer()
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>The ID of the SubChannel in the request.</p><note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>The ID of the SubChannel in the request.</p><note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>The ID of the SubChannel in the request.</p><note>
     /// <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p>
     /// </note>
     pub fn get_sub_channel_id(&self) -> &::std::option::Option<::std::string::String> {

@@ -18,7 +18,7 @@ pub struct Schedule {
     pub retain_rule: ::std::option::Option<crate::types::RetainRule>,
     /// <p><b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.</p>
     pub fast_restore_rule: ::std::option::Option<crate::types::FastRestoreRule>,
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p><note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     pub cross_region_copy_rules: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyRule>>,
@@ -63,7 +63,7 @@ impl Schedule {
     pub fn fast_restore_rule(&self) -> ::std::option::Option<&crate::types::FastRestoreRule> {
         self.fast_restore_rule.as_ref()
     }
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p><note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     ///
@@ -225,7 +225,7 @@ impl ScheduleBuilder {
     ///
     /// To override the contents of this collection use [`set_cross_region_copy_rules`](Self::set_cross_region_copy_rules).
     ///
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p><note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     pub fn cross_region_copy_rules(mut self, input: crate::types::CrossRegionCopyRule) -> Self {
@@ -234,14 +234,14 @@ impl ScheduleBuilder {
         self.cross_region_copy_rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p><note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     pub fn set_cross_region_copy_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyRule>>) -> Self {
         self.cross_region_copy_rules = input;
         self
     }
-    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p> <note>
+    /// <p>Specifies a rule for copying snapshots or AMIs across regions.</p><note>
     /// <p>You can't specify cross-Region copy rules for policies that create snapshots on an Outpost. If the policy creates snapshots in a Region, then snapshots can be copied to up to three Regions or Outposts.</p>
     /// </note>
     pub fn get_cross_region_copy_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossRegionCopyRule>> {

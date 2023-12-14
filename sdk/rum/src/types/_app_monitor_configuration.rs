@@ -24,9 +24,12 @@ pub struct AppMonitorConfiguration {
     pub allow_cookies: ::std::option::Option<bool>,
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
-    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
-    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
+    /// <li>
+    /// <p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li>
+    /// <p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li>
+    /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub telemetries: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>,
     /// <p>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records an X-Ray segment for allowed HTTP requests. You can see traces and segments from these user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What is X-Ray?</a></p>
@@ -73,9 +76,12 @@ impl AppMonitorConfiguration {
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
-    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
-    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
+    /// <li>
+    /// <p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li>
+    /// <p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li>
+    /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.telemetries.is_none()`.
@@ -243,9 +249,12 @@ impl AppMonitorConfigurationBuilder {
     ///
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
-    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
-    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
+    /// <li>
+    /// <p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li>
+    /// <p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li>
+    /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub fn telemetries(mut self, input: crate::types::Telemetry) -> Self {
         let mut v = self.telemetries.unwrap_or_default();
@@ -255,9 +264,12 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
-    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
-    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
+    /// <li>
+    /// <p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li>
+    /// <p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li>
+    /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub fn set_telemetries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Telemetry>>) -> Self {
         self.telemetries = input;
@@ -265,9 +277,12 @@ impl AppMonitorConfigurationBuilder {
     }
     /// <p>An array that lists the types of telemetry data that this app monitor is to collect.</p>
     /// <ul>
-    /// <li><p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
-    /// <li><p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
-    /// <li><p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
+    /// <li>
+    /// <p><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors raised by your application.</p></li>
+    /// <li>
+    /// <p><code>performance</code> indicates that RUM collects performance data about how your application and its resources are loaded and rendered. This includes Core Web Vitals.</p></li>
+    /// <li>
+    /// <p><code>http</code> indicates that RUM collects data about HTTP errors thrown by your application.</p></li>
     /// </ul>
     pub fn get_telemetries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Telemetry>> {
         &self.telemetries

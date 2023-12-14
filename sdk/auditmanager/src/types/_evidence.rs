@@ -24,9 +24,12 @@ pub struct Evidence {
     pub iam_id: ::std::option::Option<::std::string::String>,
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
     /// <ul>
-    /// <li><p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
-    /// <li><p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
-    /// <li><p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
+    /// <li>
+    /// <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
     /// </ul>
     pub compliance_check: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that the evidence is collected from, and its organization path.</p>
@@ -81,9 +84,12 @@ impl Evidence {
     }
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
     /// <ul>
-    /// <li><p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
-    /// <li><p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
-    /// <li><p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
+    /// <li>
+    /// <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
     /// </ul>
     pub fn compliance_check(&self) -> ::std::option::Option<&str> {
         self.compliance_check.as_deref()
@@ -277,9 +283,12 @@ impl EvidenceBuilder {
     }
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
     /// <ul>
-    /// <li><p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
-    /// <li><p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
-    /// <li><p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
+    /// <li>
+    /// <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
     /// </ul>
     pub fn compliance_check(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compliance_check = ::std::option::Option::Some(input.into());
@@ -287,9 +296,12 @@ impl EvidenceBuilder {
     }
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
     /// <ul>
-    /// <li><p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
-    /// <li><p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
-    /// <li><p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
+    /// <li>
+    /// <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
     /// </ul>
     pub fn set_compliance_check(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compliance_check = input;
@@ -297,9 +309,12 @@ impl EvidenceBuilder {
     }
     /// <p>The evaluation status for automated evidence that falls under the compliance check category.</p>
     /// <ul>
-    /// <li><p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
-    /// <li><p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
-    /// <li><p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p></li>
+    /// <li>
+    /// <p>Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p></li>
+    /// <li>
+    /// <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).</p></li>
     /// </ul>
     pub fn get_compliance_check(&self) -> &::std::option::Option<::std::string::String> {
         &self.compliance_check

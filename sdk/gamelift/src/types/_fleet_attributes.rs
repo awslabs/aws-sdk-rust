@@ -7,8 +7,7 @@
 pub struct FleetAttributes {
     /// <p>A unique identifier for the fleet.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
     pub fleet_arn: ::std::option::Option<::std::string::String>,
@@ -26,12 +25,18 @@ pub struct FleetAttributes {
     pub termination_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
-    /// <li><p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-    /// <li><p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
-    /// <li><p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
-    /// <li><p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
+    /// <li>
+    /// <p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <li>
+    /// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
+    /// <li>
+    /// <p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::FleetStatus>,
     /// <p>A unique identifier for the build resource that is deployed on instances in this fleet.</p>
@@ -50,8 +55,10 @@ pub struct FleetAttributes {
     pub log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
-    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub new_game_session_protection_policy: ::std::option::Option<crate::types::ProtectionPolicy>,
     /// <p>The operating system of the fleet's computing resources. A fleet's operating system is determined by the OS of the build or script that is deployed on this fleet.</p>
@@ -79,8 +86,7 @@ impl FleetAttributes {
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
     pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
@@ -112,12 +118,18 @@ impl FleetAttributes {
     }
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
-    /// <li><p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-    /// <li><p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
-    /// <li><p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
-    /// <li><p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
+    /// <li>
+    /// <p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <li>
+    /// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
+    /// <li>
+    /// <p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
         self.status.as_ref()
@@ -154,8 +166,10 @@ impl FleetAttributes {
     }
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
-    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn new_game_session_protection_policy(&self) -> ::std::option::Option<&crate::types::ProtectionPolicy> {
         self.new_game_session_protection_policy.as_ref()
@@ -255,24 +269,21 @@ impl FleetAttributesBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
     pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
     pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
-    /// <region>
+    /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.</p>
     pub fn get_fleet_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -364,12 +375,18 @@ impl FleetAttributesBuilder {
     }
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
-    /// <li><p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-    /// <li><p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
-    /// <li><p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
-    /// <li><p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
+    /// <li>
+    /// <p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <li>
+    /// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
+    /// <li>
+    /// <p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::FleetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -377,12 +394,18 @@ impl FleetAttributesBuilder {
     }
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
-    /// <li><p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-    /// <li><p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
-    /// <li><p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
-    /// <li><p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
+    /// <li>
+    /// <p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <li>
+    /// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
+    /// <li>
+    /// <p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FleetStatus>) -> Self {
         self.status = input;
@@ -390,12 +413,18 @@ impl FleetAttributesBuilder {
     }
     /// <p>Current status of the fleet. Possible fleet statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
-    /// <li><p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
-    /// <li><p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
-    /// <li><p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
-    /// <li><p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
+    /// <li>
+    /// <p><b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.</p></li>
+    /// <li>
+    /// <p><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new instances with the game build or Realtime script and starting server processes.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- Hosts can now accept game sessions.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- Hosts are responding to a delete fleet request.</p></li>
+    /// <li>
+    /// <p><b>TERMINATED</b> -- The fleet no longer exists.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         &self.status
@@ -506,8 +535,10 @@ impl FleetAttributesBuilder {
     }
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
-    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn new_game_session_protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.new_game_session_protection_policy = ::std::option::Option::Some(input);
@@ -515,8 +546,10 @@ impl FleetAttributesBuilder {
     }
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
-    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn set_new_game_session_protection_policy(mut self, input: ::std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.new_game_session_protection_policy = input;
@@ -524,8 +557,10 @@ impl FleetAttributesBuilder {
     }
     /// <p>The type of game session protection to set on all new instances that are started in the fleet.</p>
     /// <ul>
-    /// <li><p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
-    /// <li><p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p></li>
+    /// <li>
+    /// <p><b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p></li>
     /// </ul>
     pub fn get_new_game_session_protection_policy(&self) -> &::std::option::Option<crate::types::ProtectionPolicy> {
         &self.new_game_session_protection_policy

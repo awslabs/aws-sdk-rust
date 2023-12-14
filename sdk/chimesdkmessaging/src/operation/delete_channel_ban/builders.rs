@@ -22,7 +22,7 @@ impl DeleteChannelBanInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteChannelBan`.
 ///
-/// <p>Removes a member from a channel's ban list.</p> <note>
+/// <p>Removes a member from a channel's ban list.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

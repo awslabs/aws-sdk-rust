@@ -8,9 +8,12 @@ pub struct S3ClassificationScopeExclusionUpdate {
     pub bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
-    /// <li><p>ADD - Append the specified bucket names to the current list.</p></li>
-    /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
-    /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
+    /// <li>
+    /// <p>ADD - Append the specified bucket names to the current list.</p></li>
+    /// <li>
+    /// <p>REMOVE - Remove the specified bucket names from the current list.</p></li>
+    /// <li>
+    /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     pub operation: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
 }
@@ -23,9 +26,12 @@ impl S3ClassificationScopeExclusionUpdate {
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
-    /// <li><p>ADD - Append the specified bucket names to the current list.</p></li>
-    /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
-    /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
+    /// <li>
+    /// <p>ADD - Append the specified bucket names to the current list.</p></li>
+    /// <li>
+    /// <p>REMOVE - Remove the specified bucket names from the current list.</p></li>
+    /// <li>
+    /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     pub fn operation(&self) -> ::std::option::Option<&crate::types::ClassificationScopeUpdateOperation> {
         self.operation.as_ref()
@@ -68,9 +74,12 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
-    /// <li><p>ADD - Append the specified bucket names to the current list.</p></li>
-    /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
-    /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
+    /// <li>
+    /// <p>ADD - Append the specified bucket names to the current list.</p></li>
+    /// <li>
+    /// <p>REMOVE - Remove the specified bucket names from the current list.</p></li>
+    /// <li>
+    /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     /// This field is required.
     pub fn operation(mut self, input: crate::types::ClassificationScopeUpdateOperation) -> Self {
@@ -79,9 +88,12 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
-    /// <li><p>ADD - Append the specified bucket names to the current list.</p></li>
-    /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
-    /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
+    /// <li>
+    /// <p>ADD - Append the specified bucket names to the current list.</p></li>
+    /// <li>
+    /// <p>REMOVE - Remove the specified bucket names from the current list.</p></li>
+    /// <li>
+    /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>) -> Self {
         self.operation = input;
@@ -89,9 +101,12 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
-    /// <li><p>ADD - Append the specified bucket names to the current list.</p></li>
-    /// <li><p>REMOVE - Remove the specified bucket names from the current list.</p></li>
-    /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
+    /// <li>
+    /// <p>ADD - Append the specified bucket names to the current list.</p></li>
+    /// <li>
+    /// <p>REMOVE - Remove the specified bucket names from the current list.</p></li>
+    /// <li>
+    /// <p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::ClassificationScopeUpdateOperation> {
         &self.operation

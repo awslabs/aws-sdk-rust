@@ -22,7 +22,7 @@ impl GetCommentsForPullRequestInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCommentsForPullRequest`.
 ///
-/// <p>Returns comments made on a pull request.</p> <note>
+/// <p>Returns comments made on a pull request.</p><note>
 /// <p>Reaction counts might include numbers from user identities who were deleted after the reaction was made. For a count of reactions from active identities, use GetCommentReactions.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

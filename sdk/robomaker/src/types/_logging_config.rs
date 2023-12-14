@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfig {
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -13,7 +13,7 @@ pub struct LoggingConfig {
     pub record_all_ros_topics: ::std::option::Option<bool>,
 }
 impl LoggingConfig {
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -37,7 +37,7 @@ pub struct LoggingConfigBuilder {
     pub(crate) record_all_ros_topics: ::std::option::Option<bool>,
 }
 impl LoggingConfigBuilder {
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -47,7 +47,7 @@ impl LoggingConfigBuilder {
         self.record_all_ros_topics = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(
@@ -57,7 +57,7 @@ impl LoggingConfigBuilder {
         self.record_all_ros_topics = input;
         self
     }
-    /// <p>A boolean indicating whether to record all ROS topics.</p> <important>
+    /// <p>A boolean indicating whether to record all ROS topics.</p><important>
     /// <p>This API is no longer supported and will throw an error if used.</p>
     /// </important>
     #[deprecated(

@@ -11,9 +11,12 @@ pub struct SearchPlaceIndexForPositionSummary {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
@@ -33,9 +36,12 @@ impl SearchPlaceIndexForPositionSummary {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -113,9 +119,12 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -125,9 +134,12 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -136,9 +148,12 @@ impl SearchPlaceIndexForPositionSummaryBuilder {
     }
     /// <p>The geospatial data provider attached to the place index resource specified in the request. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p>Esri</p></li>
-    /// <li><p>Grab</p></li>
-    /// <li><p>Here</p></li>
+    /// <li>
+    /// <p>Esri</p></li>
+    /// <li>
+    /// <p>Grab</p></li>
+    /// <li>
+    /// <p>Here</p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {

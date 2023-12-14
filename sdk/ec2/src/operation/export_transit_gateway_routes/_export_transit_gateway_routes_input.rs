@@ -7,15 +7,24 @@ pub struct ExportTransitGatewayRoutesInput {
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
-    /// <li><p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
-    /// <li><p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
-    /// <li><p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
-    /// <li><p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
-    /// <li><p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
-    /// <li><p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
-    /// <li><p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
-    /// <li><p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
+    /// <li>
+    /// <p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
+    /// <li>
+    /// <p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
+    /// <li>
+    /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The name of the S3 bucket.</p>
@@ -30,15 +39,24 @@ impl ExportTransitGatewayRoutesInput {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
-    /// <li><p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
-    /// <li><p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
-    /// <li><p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
-    /// <li><p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
-    /// <li><p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
-    /// <li><p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
-    /// <li><p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
-    /// <li><p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
+    /// <li>
+    /// <p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
+    /// <li>
+    /// <p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
+    /// <li>
+    /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -92,15 +110,24 @@ impl ExportTransitGatewayRoutesInputBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
-    /// <li><p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
-    /// <li><p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
-    /// <li><p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
-    /// <li><p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
-    /// <li><p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
-    /// <li><p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
-    /// <li><p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
-    /// <li><p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
+    /// <li>
+    /// <p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
+    /// <li>
+    /// <p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
+    /// <li>
+    /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -110,15 +137,24 @@ impl ExportTransitGatewayRoutesInputBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
-    /// <li><p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
-    /// <li><p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
-    /// <li><p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
-    /// <li><p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
-    /// <li><p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
-    /// <li><p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
-    /// <li><p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
-    /// <li><p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
+    /// <li>
+    /// <p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
+    /// <li>
+    /// <p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
+    /// <li>
+    /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -126,15 +162,24 @@ impl ExportTransitGatewayRoutesInputBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
-    /// <li><p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
-    /// <li><p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
-    /// <li><p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
-    /// <li><p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
-    /// <li><p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
-    /// <li><p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
-    /// <li><p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
-    /// <li><p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
+    /// <li>
+    /// <p><code>attachment.transit-gateway-attachment-id</code> - The id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>attachment.resource-id</code> - The resource id of the transit gateway attachment.</p></li>
+    /// <li>
+    /// <p><code>route-search.exact-match</code> - The exact match of the specified filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.</p></li>
+    /// <li>
+    /// <p><code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.</p></li>
+    /// <li>
+    /// <p><code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.</p></li>
+    /// <li>
+    /// <p><code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

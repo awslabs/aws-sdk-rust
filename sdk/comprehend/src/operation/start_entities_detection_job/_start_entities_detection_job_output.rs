@@ -6,8 +6,7 @@ pub struct StartEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -22,12 +21,18 @@ pub struct StartEntitiesDetectionJobOutput {
     pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
-    /// <li><p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
-    /// <li><p>STOPPED - The job was successfully stopped without completing.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p></li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The ARN of the custom entity recognition model.</p>
@@ -40,8 +45,7 @@ impl StartEntitiesDetectionJobOutput {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -58,12 +62,18 @@ impl StartEntitiesDetectionJobOutput {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
-    /// <li><p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
-    /// <li><p>STOPPED - The job was successfully stopped without completing.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p></li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
@@ -111,8 +121,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
         &self.job_id
     }
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -129,8 +138,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -147,8 +155,7 @@ impl StartEntitiesDetectionJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -165,12 +172,18 @@ impl StartEntitiesDetectionJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
-    /// <li><p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
-    /// <li><p>STOPPED - The job was successfully stopped without completing.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p></li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -178,12 +191,18 @@ impl StartEntitiesDetectionJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
-    /// <li><p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
-    /// <li><p>STOPPED - The job was successfully stopped without completing.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
@@ -191,12 +210,18 @@ impl StartEntitiesDetectionJobOutputBuilder {
     }
     /// <p>The status of the job.</p>
     /// <ul>
-    /// <li><p>SUBMITTED - The job has been received and is queued for processing.</p></li>
-    /// <li><p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
-    /// <li><p>COMPLETED - The job was successfully completed and the output is available.</p></li>
-    /// <li><p>FAILED - The job did not complete. To get details, use the operation.</p></li>
-    /// <li><p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
-    /// <li><p>STOPPED - The job was successfully stopped without completing.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The job has been received and is queued for processing.</p></li>
+    /// <li>
+    /// <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p></li>
+    /// <li>
+    /// <p>COMPLETED - The job was successfully completed and the output is available.</p></li>
+    /// <li>
+    /// <p>FAILED - The job did not complete. To get details, use the operation.</p></li>
+    /// <li>
+    /// <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p></li>
+    /// <li>
+    /// <p>STOPPED - The job was successfully stopped without completing.</p></li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status

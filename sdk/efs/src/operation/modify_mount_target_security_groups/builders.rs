@@ -26,8 +26,10 @@ impl ModifyMountTargetSecurityGroupsInputBuilder {
 /// <p>When you create a mount target, Amazon EFS also creates a new network interface. For more information, see <code>CreateMountTarget</code>. This operation replaces the security groups in effect for the network interface associated with a mount target, with the <code>SecurityGroups</code> provided in the request. This operation requires that the network interface of the mount target has been created and the lifecycle state of the mount target is not <code>deleted</code>.</p>
 /// <p>The operation requires permissions for the following actions:</p>
 /// <ul>
-/// <li><p><code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount target's file system.</p></li>
-/// <li><p><code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network interface.</p></li>
+/// <li>
+/// <p><code>elasticfilesystem:ModifyMountTargetSecurityGroups</code> action on the mount target's file system.</p></li>
+/// <li>
+/// <p><code>ec2:ModifyNetworkInterfaceAttribute</code> action on the mount target's network interface.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyMountTargetSecurityGroupsFluentBuilder {

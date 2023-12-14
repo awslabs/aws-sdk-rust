@@ -22,7 +22,7 @@ impl CreateAppVersionAppComponentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAppVersionAppComponent`.
 ///
-/// <p>Creates a new Application Component in the Resilience Hub application.</p> <note>
+/// <p>Creates a new Application Component in the Resilience Hub application.</p><note>
 /// <p>This API updates the Resilience Hub application draft version. To use this Application Component for running assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -15,11 +15,15 @@ pub struct DescribeForecastExportJobOutput {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// </ul><note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub status: ::std::option::Option<::std::string::String>,
@@ -27,11 +31,16 @@ pub struct DescribeForecastExportJobOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the exported data, CSV or PARQUET.</p>
@@ -61,11 +70,15 @@ impl DescribeForecastExportJobOutput {
     }
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// </ul><note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub fn status(&self) -> ::std::option::Option<&str> {
@@ -77,11 +90,16 @@ impl DescribeForecastExportJobOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -191,11 +209,15 @@ impl DescribeForecastExportJobOutputBuilder {
     }
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// </ul><note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -204,11 +226,15 @@ impl DescribeForecastExportJobOutputBuilder {
     }
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// </ul><note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -217,11 +243,15 @@ impl DescribeForecastExportJobOutputBuilder {
     }
     /// <p>The status of the forecast export job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// </ul><note>
     /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your S3 bucket.</p>
     /// </note>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
@@ -243,11 +273,16 @@ impl DescribeForecastExportJobOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -255,11 +290,16 @@ impl DescribeForecastExportJobOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -267,11 +307,16 @@ impl DescribeForecastExportJobOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time

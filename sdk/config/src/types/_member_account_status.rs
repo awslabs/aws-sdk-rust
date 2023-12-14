@@ -11,15 +11,24 @@ pub struct MemberAccountStatus {
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
     pub member_account_rule_status: crate::types::MemberAccountRuleStatus,
     /// <p>An error code that is returned when Config rule creation or deletion failed in the member account.</p>
@@ -43,15 +52,24 @@ impl MemberAccountStatus {
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
     pub fn member_account_rule_status(&self) -> &crate::types::MemberAccountRuleStatus {
         &self.member_account_rule_status
@@ -121,15 +139,24 @@ impl MemberAccountStatusBuilder {
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
     /// This field is required.
     pub fn member_account_rule_status(mut self, input: crate::types::MemberAccountRuleStatus) -> Self {
@@ -139,15 +166,24 @@ impl MemberAccountStatusBuilder {
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
     pub fn set_member_account_rule_status(mut self, input: ::std::option::Option<crate::types::MemberAccountRuleStatus>) -> Self {
         self.member_account_rule_status = input;
@@ -156,15 +192,24 @@ impl MemberAccountStatusBuilder {
     /// <p>Indicates deployment status for Config rule in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the first time, Config rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code> action for the second time, Config rule status is updated in the member account. Config rule status is deleted when the management account deletes <code>OrganizationConfigRule</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.</p>
     /// <p>Config sets the state of the rule to:</p>
     /// <ul>
-    /// <li><p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
-    /// <li><p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
-    /// <li><p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
-    /// <li><p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> when Config rule creation has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.</p></li>
     /// </ul>
     pub fn get_member_account_rule_status(&self) -> &::std::option::Option<crate::types::MemberAccountRuleStatus> {
         &self.member_account_rule_status

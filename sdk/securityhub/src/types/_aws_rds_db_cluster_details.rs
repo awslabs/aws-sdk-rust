@@ -24,9 +24,12 @@ pub struct AwsRdsDbClusterDetails {
     pub multi_az: ::std::option::Option<bool>,
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
     /// </ul>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the database engine to use.</p>
@@ -39,8 +42,7 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.</p>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -70,11 +72,16 @@ pub struct AwsRdsDbClusterDetails {
     pub enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>global</code></p></li>
-    /// <li><p><code>multimaster</code></p></li>
-    /// <li><p><code>parallelquery</code></p></li>
-    /// <li><p><code>provisioned</code></p></li>
-    /// <li><p><code>serverless</code></p></li>
+    /// <li>
+    /// <p><code>global</code></p></li>
+    /// <li>
+    /// <p><code>multimaster</code></p></li>
+    /// <li>
+    /// <p><code>parallelquery</code></p></li>
+    /// <li>
+    /// <p><code>provisioned</code></p></li>
+    /// <li>
+    /// <p><code>serverless</code></p></li>
     /// </ul>
     pub engine_mode: ::std::option::Option<::std::string::String>,
     /// <p>Whether the DB cluster has deletion protection enabled.</p>
@@ -83,10 +90,14 @@ pub struct AwsRdsDbClusterDetails {
     pub http_endpoint_enabled: ::std::option::Option<bool>,
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>started</code></p></li>
-    /// <li><p><code>starting</code></p></li>
-    /// <li><p><code>stopped</code></p></li>
-    /// <li><p><code>stopping</code></p></li>
+    /// <li>
+    /// <p><code>started</code></p></li>
+    /// <li>
+    /// <p><code>starting</code></p></li>
+    /// <li>
+    /// <p><code>stopped</code></p></li>
+    /// <li>
+    /// <p><code>stopping</code></p></li>
     /// </ul>
     pub activity_stream_status: ::std::option::Option<::std::string::String>,
     /// <p>Whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
@@ -153,9 +164,12 @@ impl AwsRdsDbClusterDetails {
     }
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
     /// </ul>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
@@ -178,8 +192,7 @@ impl AwsRdsDbClusterDetails {
         self.preferred_backup_window.as_deref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -237,11 +250,16 @@ impl AwsRdsDbClusterDetails {
     }
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>global</code></p></li>
-    /// <li><p><code>multimaster</code></p></li>
-    /// <li><p><code>parallelquery</code></p></li>
-    /// <li><p><code>provisioned</code></p></li>
-    /// <li><p><code>serverless</code></p></li>
+    /// <li>
+    /// <p><code>global</code></p></li>
+    /// <li>
+    /// <p><code>multimaster</code></p></li>
+    /// <li>
+    /// <p><code>parallelquery</code></p></li>
+    /// <li>
+    /// <p><code>provisioned</code></p></li>
+    /// <li>
+    /// <p><code>serverless</code></p></li>
     /// </ul>
     pub fn engine_mode(&self) -> ::std::option::Option<&str> {
         self.engine_mode.as_deref()
@@ -256,10 +274,14 @@ impl AwsRdsDbClusterDetails {
     }
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>started</code></p></li>
-    /// <li><p><code>starting</code></p></li>
-    /// <li><p><code>stopped</code></p></li>
-    /// <li><p><code>stopping</code></p></li>
+    /// <li>
+    /// <p><code>started</code></p></li>
+    /// <li>
+    /// <p><code>starting</code></p></li>
+    /// <li>
+    /// <p><code>stopped</code></p></li>
+    /// <li>
+    /// <p><code>stopping</code></p></li>
     /// </ul>
     pub fn activity_stream_status(&self) -> ::std::option::Option<&str> {
         self.activity_stream_status.as_deref()
@@ -502,9 +524,12 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
     /// </ul>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
@@ -512,9 +537,12 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
     /// </ul>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
@@ -522,9 +550,12 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The name of the database engine to use for this DB cluster. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>aurora</code></p></li>
-    /// <li><p><code>aurora-mysql</code></p></li>
-    /// <li><p><code>aurora-postgresql</code></p></li>
+    /// <li>
+    /// <p><code>aurora</code></p></li>
+    /// <li>
+    /// <p><code>aurora-mysql</code></p></li>
+    /// <li>
+    /// <p><code>aurora-postgresql</code></p></li>
     /// </ul>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
@@ -589,8 +620,7 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.preferred_backup_window
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -603,8 +633,7 @@ impl AwsRdsDbClusterDetailsBuilder {
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -617,8 +646,7 @@ impl AwsRdsDbClusterDetailsBuilder {
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -784,11 +812,16 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>global</code></p></li>
-    /// <li><p><code>multimaster</code></p></li>
-    /// <li><p><code>parallelquery</code></p></li>
-    /// <li><p><code>provisioned</code></p></li>
-    /// <li><p><code>serverless</code></p></li>
+    /// <li>
+    /// <p><code>global</code></p></li>
+    /// <li>
+    /// <p><code>multimaster</code></p></li>
+    /// <li>
+    /// <p><code>parallelquery</code></p></li>
+    /// <li>
+    /// <p><code>provisioned</code></p></li>
+    /// <li>
+    /// <p><code>serverless</code></p></li>
     /// </ul>
     pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine_mode = ::std::option::Option::Some(input.into());
@@ -796,11 +829,16 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>global</code></p></li>
-    /// <li><p><code>multimaster</code></p></li>
-    /// <li><p><code>parallelquery</code></p></li>
-    /// <li><p><code>provisioned</code></p></li>
-    /// <li><p><code>serverless</code></p></li>
+    /// <li>
+    /// <p><code>global</code></p></li>
+    /// <li>
+    /// <p><code>multimaster</code></p></li>
+    /// <li>
+    /// <p><code>parallelquery</code></p></li>
+    /// <li>
+    /// <p><code>provisioned</code></p></li>
+    /// <li>
+    /// <p><code>serverless</code></p></li>
     /// </ul>
     pub fn set_engine_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_mode = input;
@@ -808,11 +846,16 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The database engine mode of the DB cluster.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>global</code></p></li>
-    /// <li><p><code>multimaster</code></p></li>
-    /// <li><p><code>parallelquery</code></p></li>
-    /// <li><p><code>provisioned</code></p></li>
-    /// <li><p><code>serverless</code></p></li>
+    /// <li>
+    /// <p><code>global</code></p></li>
+    /// <li>
+    /// <p><code>multimaster</code></p></li>
+    /// <li>
+    /// <p><code>parallelquery</code></p></li>
+    /// <li>
+    /// <p><code>provisioned</code></p></li>
+    /// <li>
+    /// <p><code>serverless</code></p></li>
     /// </ul>
     pub fn get_engine_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_mode
@@ -847,10 +890,14 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>started</code></p></li>
-    /// <li><p><code>starting</code></p></li>
-    /// <li><p><code>stopped</code></p></li>
-    /// <li><p><code>stopping</code></p></li>
+    /// <li>
+    /// <p><code>started</code></p></li>
+    /// <li>
+    /// <p><code>starting</code></p></li>
+    /// <li>
+    /// <p><code>stopped</code></p></li>
+    /// <li>
+    /// <p><code>stopping</code></p></li>
     /// </ul>
     pub fn activity_stream_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activity_stream_status = ::std::option::Option::Some(input.into());
@@ -858,10 +905,14 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>started</code></p></li>
-    /// <li><p><code>starting</code></p></li>
-    /// <li><p><code>stopped</code></p></li>
-    /// <li><p><code>stopping</code></p></li>
+    /// <li>
+    /// <p><code>started</code></p></li>
+    /// <li>
+    /// <p><code>starting</code></p></li>
+    /// <li>
+    /// <p><code>stopped</code></p></li>
+    /// <li>
+    /// <p><code>stopping</code></p></li>
     /// </ul>
     pub fn set_activity_stream_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_stream_status = input;
@@ -869,10 +920,14 @@ impl AwsRdsDbClusterDetailsBuilder {
     }
     /// <p>The status of the database activity stream. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>started</code></p></li>
-    /// <li><p><code>starting</code></p></li>
-    /// <li><p><code>stopped</code></p></li>
-    /// <li><p><code>stopping</code></p></li>
+    /// <li>
+    /// <p><code>started</code></p></li>
+    /// <li>
+    /// <p><code>starting</code></p></li>
+    /// <li>
+    /// <p><code>stopped</code></p></li>
+    /// <li>
+    /// <p><code>stopping</code></p></li>
     /// </ul>
     pub fn get_activity_stream_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.activity_stream_status

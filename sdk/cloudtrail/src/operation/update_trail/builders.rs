@@ -110,11 +110,16 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -124,11 +129,16 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -138,11 +148,16 @@ impl UpdateTrailFluentBuilder {
     }
     /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
-    /// <li><p>Start with a letter or number, and end with a letter or number</p></li>
-    /// <li><p>Be between 3 and 128 characters</p></li>
-    /// <li><p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
-    /// <li><p>Not be in IP address format (for example, 192.168.5.4)</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p></li>
+    /// <li>
+    /// <p>Start with a letter or number, and end with a letter or number</p></li>
+    /// <li>
+    /// <p>Be between 3 and 128 characters</p></li>
+    /// <li>
+    /// <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p></li>
+    /// <li>
+    /// <p>Not be in IP address format (for example, 192.168.5.4)</p></li>
     /// </ul>
     /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p><code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code></p>
@@ -219,28 +234,28 @@ impl UpdateTrailFluentBuilder {
     pub fn get_is_multi_region_trail(&self) -> &::std::option::Option<bool> {
         self.inner.get_is_multi_region_trail()
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p><note>
     /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn enable_log_file_validation(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_log_file_validation(input);
         self
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p><note>
     /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn set_enable_log_file_validation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_log_file_validation(input);
         self
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p><note>
     /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn get_enable_log_file_validation(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_log_file_validation()
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p><note>
     /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail.</p>
     /// </note>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -248,7 +263,7 @@ impl UpdateTrailFluentBuilder {
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p><note>
     /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail.</p>
     /// </note>
     pub fn set_cloud_watch_logs_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -256,7 +271,7 @@ impl UpdateTrailFluentBuilder {
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
-    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p> <note>
+    /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p><note>
     /// <p>Only the management account can configure a CloudWatch Logs log group for an organization trail.</p>
     /// </note>
     pub fn get_cloud_watch_logs_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -280,10 +295,14 @@ impl UpdateTrailFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>alias/MyAliasName</p></li>
-    /// <li><p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
-    /// <li><p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
-    /// <li><p>12345678-1234-1234-1234-123456789012</p></li>
+    /// <li>
+    /// <p>alias/MyAliasName</p></li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
+    /// <li>
+    /// <p>12345678-1234-1234-1234-123456789012</p></li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
@@ -293,10 +312,14 @@ impl UpdateTrailFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>alias/MyAliasName</p></li>
-    /// <li><p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
-    /// <li><p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
-    /// <li><p>12345678-1234-1234-1234-123456789012</p></li>
+    /// <li>
+    /// <p>alias/MyAliasName</p></li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
+    /// <li>
+    /// <p>12345678-1234-1234-1234-123456789012</p></li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -306,29 +329,33 @@ impl UpdateTrailFluentBuilder {
     /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>Examples:</p>
     /// <ul>
-    /// <li><p>alias/MyAliasName</p></li>
-    /// <li><p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
-    /// <li><p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
-    /// <li><p>12345678-1234-1234-1234-123456789012</p></li>
+    /// <li>
+    /// <p>alias/MyAliasName</p></li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p></li>
+    /// <li>
+    /// <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p></li>
+    /// <li>
+    /// <p>12345678-1234-1234-1234-123456789012</p></li>
     /// </ul>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p><note>
     /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
     /// </note>
     pub fn is_organization_trail(mut self, input: bool) -> Self {
         self.inner = self.inner.is_organization_trail(input);
         self
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p><note>
     /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
     /// </note>
     pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_organization_trail(input);
         self
     }
-    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p> <note>
+    /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be deleted from all member accounts in the organization.</p><note>
     /// <p>Only the management account for the organization can convert an organization trail to a non-organization trail, or convert a non-organization trail to an organization trail.</p>
     /// </note>
     pub fn get_is_organization_trail(&self) -> &::std::option::Option<bool> {

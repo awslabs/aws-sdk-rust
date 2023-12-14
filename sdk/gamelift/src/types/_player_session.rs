@@ -23,25 +23,29 @@ pub struct PlayerSession {
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::PlayerSessionStatus>,
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -84,10 +88,14 @@ impl PlayerSession {
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PlayerSessionStatus> {
         self.status.as_ref()
@@ -98,15 +106,15 @@ impl PlayerSession {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -267,10 +275,14 @@ impl PlayerSessionBuilder {
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PlayerSessionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -279,10 +291,14 @@ impl PlayerSessionBuilder {
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PlayerSessionStatus>) -> Self {
         self.status = input;
@@ -291,10 +307,14 @@ impl PlayerSessionBuilder {
     /// <p>Current status of the player session.</p>
     /// <p>Possible player session statuses include the following:</p>
     /// <ul>
-    /// <li><p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
-    /// <li><p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
-    /// <li><p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
-    /// <li><p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
+    /// <li>
+    /// <p><b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p></li>
+    /// <li>
+    /// <p><b>COMPLETED</b> -- The player connection has been dropped.</p></li>
+    /// <li>
+    /// <p><b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PlayerSessionStatus> {
         &self.status
@@ -315,15 +335,15 @@ impl PlayerSessionBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -334,15 +354,15 @@ impl PlayerSessionBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>
@@ -353,15 +373,15 @@ impl PlayerSessionBuilder {
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
-    /// <li><p>TLS-enabled fleets: <code>
-    /// <unique identifier>
+    /// <li>
+    /// <p>TLS-enabled fleets: <code><unique identifier>
     /// .
     /// <region identifier>
     /// .amazongamelift.com
     /// </region>
     /// </unique></code>.</p></li>
-    /// <li><p>Non-TLS-enabled fleets: <code>ec2-
-    /// <unique identifier>
+    /// <li>
+    /// <p>Non-TLS-enabled fleets: <code>ec2-<unique identifier>
     /// .compute.amazonaws.com
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p></li>
     /// </ul>

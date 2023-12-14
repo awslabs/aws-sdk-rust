@@ -143,17 +143,27 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DatabaseInformation -</p>
+    /// <li>
+    /// <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code> - The name of the Amazon Redshift database.</p></li>
-    /// <li><p><code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code> - The name of the Amazon Redshift database.</p></li>
+    /// <li>
+    /// <p><code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p></li>
     /// </ul></li>
-    /// <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p></li>
-    /// <li><p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
-    /// <li><p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p></li>
-    /// <li><p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p></li>
+    /// <li>
+    /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
+    /// <li>
+    /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p></li>
+    /// <li>
+    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn data_spec(mut self, input: crate::types::RedshiftDataSpec) -> Self {
         self.inner = self.inner.data_spec(input);
@@ -161,17 +171,27 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DatabaseInformation -</p>
+    /// <li>
+    /// <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code> - The name of the Amazon Redshift database.</p></li>
-    /// <li><p><code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code> - The name of the Amazon Redshift database.</p></li>
+    /// <li>
+    /// <p><code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p></li>
     /// </ul></li>
-    /// <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p></li>
-    /// <li><p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
-    /// <li><p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p></li>
-    /// <li><p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p></li>
+    /// <li>
+    /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
+    /// <li>
+    /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p></li>
+    /// <li>
+    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn set_data_spec(mut self, input: ::std::option::Option<crate::types::RedshiftDataSpec>) -> Self {
         self.inner = self.inner.set_data_spec(input);
@@ -179,25 +199,37 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     }
     /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DatabaseInformation -</p>
+    /// <li>
+    /// <p>DatabaseInformation -</p>
     /// <ul>
-    /// <li><p><code>DatabaseName</code> - The name of the Amazon Redshift database.</p></li>
-    /// <li><p><code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p></li>
+    /// <li>
+    /// <p><code>DatabaseName</code> - The name of the Amazon Redshift database.</p></li>
+    /// <li>
+    /// <p><code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</p></li>
     /// </ul></li>
-    /// <li><p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p></li>
-    /// <li><p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
-    /// <li><p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p></li>
-    /// <li><p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.</p></li>
+    /// <li>
+    /// <p>SelectSqlQuery - The query that is used to retrieve the observation data for the <code>Datasource</code>.</p></li>
+    /// <li>
+    /// <p>S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the <code>SelectSqlQuery</code> query is stored in this location.</p></li>
+    /// <li>
+    /// <p>DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>DataSource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn get_data_spec(&self) -> &::std::option::Option<crate::types::RedshiftDataSpec> {
         self.inner.get_data_spec()
     }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
     /// <ul>
-    /// <li><p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p></li>
-    /// <li><p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
+    /// <li>
+    /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p></li>
+    /// <li>
+    /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
     /// </ul>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
@@ -205,8 +237,10 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
     /// <ul>
-    /// <li><p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p></li>
-    /// <li><p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
+    /// <li>
+    /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p></li>
+    /// <li>
+    /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
     /// </ul>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
@@ -214,8 +248,10 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     }
     /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
     /// <ul>
-    /// <li><p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p></li>
-    /// <li><p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
+    /// <li>
+    /// <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p></li>
+    /// <li>
+    /// <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></p></li>
     /// </ul>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()

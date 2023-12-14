@@ -25,9 +25,12 @@ impl DescribeTagsInputBuilder {
 /// <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p>
 /// <p>There are three valid tag filter names:</p>
 /// <ul>
-/// <li><p>tagKey</p></li>
-/// <li><p>tagValue</p></li>
-/// <li><p>configurationId</p></li>
+/// <li>
+/// <p>tagKey</p></li>
+/// <li>
+/// <p>tagValue</p></li>
+/// <li>
+/// <p>configurationId</p></li>
 /// </ul>
 /// <p>Also, all configuration items associated with your user that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

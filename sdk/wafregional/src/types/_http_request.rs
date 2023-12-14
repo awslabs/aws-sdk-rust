@@ -10,8 +10,10 @@
 pub struct HttpRequest {
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li><p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li><p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
     /// </ul>
     pub client_ip: ::std::option::Option<::std::string::String>,
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
@@ -28,8 +30,10 @@ pub struct HttpRequest {
 impl HttpRequest {
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li><p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li><p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
     /// </ul>
     pub fn client_ip(&self) -> ::std::option::Option<&str> {
         self.client_ip.as_deref()
@@ -78,8 +82,10 @@ pub struct HttpRequestBuilder {
 impl HttpRequestBuilder {
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li><p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li><p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
     /// </ul>
     pub fn client_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_ip = ::std::option::Option::Some(input.into());
@@ -87,8 +93,10 @@ impl HttpRequestBuilder {
     }
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li><p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li><p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
     /// </ul>
     pub fn set_client_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_ip = input;
@@ -96,8 +104,10 @@ impl HttpRequestBuilder {
     }
     /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
     /// <ul>
-    /// <li><p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
-    /// <li><p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p></li>
+    /// <li>
+    /// <p><code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p></li>
     /// </ul>
     pub fn get_client_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_ip

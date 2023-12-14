@@ -12,8 +12,10 @@ pub struct GroupSummary {
     pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub insights_configuration: ::std::option::Option<crate::types::InsightsConfiguration>,
 }
@@ -32,8 +34,10 @@ impl GroupSummary {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn insights_configuration(&self) -> ::std::option::Option<&crate::types::InsightsConfiguration> {
         self.insights_configuration.as_ref()
@@ -100,8 +104,10 @@ impl GroupSummaryBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn insights_configuration(mut self, input: crate::types::InsightsConfiguration) -> Self {
         self.insights_configuration = ::std::option::Option::Some(input);
@@ -109,8 +115,10 @@ impl GroupSummaryBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn set_insights_configuration(mut self, input: ::std::option::Option<crate::types::InsightsConfiguration>) -> Self {
         self.insights_configuration = input;
@@ -118,8 +126,10 @@ impl GroupSummaryBuilder {
     }
     /// <p>The structure containing configurations related to insights.</p>
     /// <ul>
-    /// <li><p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
-    /// <li><p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
+    /// <li>
+    /// <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p></li>
+    /// <li>
+    /// <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p></li>
     /// </ul>
     pub fn get_insights_configuration(&self) -> &::std::option::Option<crate::types::InsightsConfiguration> {
         &self.insights_configuration

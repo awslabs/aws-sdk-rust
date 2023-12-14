@@ -80,12 +80,18 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li><p><code> <i>user</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub user: ::std::option::Option<::std::string::String>,
     /// <p>Data volumes to mount from another container.</p>
@@ -277,12 +283,18 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetails {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li><p><code> <i>user</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
@@ -1027,12 +1039,18 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li><p><code> <i>user</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
@@ -1041,12 +1059,18 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li><p><code> <i>user</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
@@ -1055,12 +1079,18 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDetailsBuilder {
     /// <p>The user to use inside the container.</p>
     /// <p>The value can use one of the following formats.</p>
     /// <ul>
-    /// <li><p><code> <i>user</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
-    /// <li><p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>group</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>user</i> </code>:<code> <i>gid</i> </code></p></li>
+    /// <li>
+    /// <p><code> <i>uid</i> </code>:<code> <i>group</i> </code></p></li>
     /// </ul>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user

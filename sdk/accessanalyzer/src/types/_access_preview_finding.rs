@@ -26,9 +26,12 @@ pub struct AccessPreviewFinding {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li><p><code>New</code> - The finding is for newly-introduced access.</p></li>
-    /// <li><p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
-    /// <li><p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
+    /// <li>
+    /// <p><code>New</code> - The finding is for newly-introduced access.</p></li>
+    /// <li>
+    /// <p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
+    /// <li>
+    /// <p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub change_type: crate::types::FindingChangeType,
@@ -87,9 +90,12 @@ impl AccessPreviewFinding {
     }
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li><p><code>New</code> - The finding is for newly-introduced access.</p></li>
-    /// <li><p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
-    /// <li><p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
+    /// <li>
+    /// <p><code>New</code> - The finding is for newly-introduced access.</p></li>
+    /// <li>
+    /// <p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
+    /// <li>
+    /// <p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub fn change_type(&self) -> &crate::types::FindingChangeType {
@@ -306,9 +312,12 @@ impl AccessPreviewFindingBuilder {
     }
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li><p><code>New</code> - The finding is for newly-introduced access.</p></li>
-    /// <li><p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
-    /// <li><p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
+    /// <li>
+    /// <p><code>New</code> - The finding is for newly-introduced access.</p></li>
+    /// <li>
+    /// <p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
+    /// <li>
+    /// <p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     /// This field is required.
@@ -318,9 +327,12 @@ impl AccessPreviewFindingBuilder {
     }
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li><p><code>New</code> - The finding is for newly-introduced access.</p></li>
-    /// <li><p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
-    /// <li><p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
+    /// <li>
+    /// <p><code>New</code> - The finding is for newly-introduced access.</p></li>
+    /// <li>
+    /// <p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
+    /// <li>
+    /// <p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::FindingChangeType>) -> Self {
@@ -329,9 +341,12 @@ impl AccessPreviewFindingBuilder {
     }
     /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
     /// <ul>
-    /// <li><p><code>New</code> - The finding is for newly-introduced access.</p></li>
-    /// <li><p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
-    /// <li><p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
+    /// <li>
+    /// <p><code>New</code> - The finding is for newly-introduced access.</p></li>
+    /// <li>
+    /// <p><code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p></li>
+    /// <li>
+    /// <p><code>Changed</code> - The preview finding is an existing finding with a change in status.</p></li>
     /// </ul>
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     pub fn get_change_type(&self) -> &::std::option::Option<crate::types::FindingChangeType> {

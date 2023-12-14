@@ -22,7 +22,7 @@ impl SearchDashboardsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchDashboards`.
 ///
-/// <p>Searches for dashboards that belong to a user.</p> <note>
+/// <p>Searches for dashboards that belong to a user.</p><note>
 /// <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

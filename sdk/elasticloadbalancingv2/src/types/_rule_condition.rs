@@ -8,29 +8,44 @@
 pub struct RuleCondition {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>http-header</code></p></li>
-    /// <li><p><code>http-request-method</code></p></li>
-    /// <li><p><code>host-header</code></p></li>
-    /// <li><p><code>path-pattern</code></p></li>
-    /// <li><p><code>query-string</code></p></li>
-    /// <li><p><code>source-ip</code></p></li>
+    /// <li>
+    /// <p><code>http-header</code></p></li>
+    /// <li>
+    /// <p><code>http-request-method</code></p></li>
+    /// <li>
+    /// <p><code>host-header</code></p></li>
+    /// <li>
+    /// <p><code>path-pattern</code></p></li>
+    /// <li>
+    /// <p><code>query-string</code></p></li>
+    /// <li>
+    /// <p><code>source-ip</code></p></li>
     /// </ul>
     pub field: ::std::option::Option<::std::string::String>,
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>- .</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>- .</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>_ - . $ / ~ " ' @ : +</p></li>
-    /// <li><p>&amp; (using &amp;)</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>_ - . $ / ~ " ' @ : +</p></li>
+    /// <li>
+    /// <p>&amp; (using &amp;)</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.</p>
@@ -49,12 +64,18 @@ pub struct RuleCondition {
 impl RuleCondition {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>http-header</code></p></li>
-    /// <li><p><code>http-request-method</code></p></li>
-    /// <li><p><code>host-header</code></p></li>
-    /// <li><p><code>path-pattern</code></p></li>
-    /// <li><p><code>query-string</code></p></li>
-    /// <li><p><code>source-ip</code></p></li>
+    /// <li>
+    /// <p><code>http-header</code></p></li>
+    /// <li>
+    /// <p><code>http-request-method</code></p></li>
+    /// <li>
+    /// <p><code>host-header</code></p></li>
+    /// <li>
+    /// <p><code>path-pattern</code></p></li>
+    /// <li>
+    /// <p><code>query-string</code></p></li>
+    /// <li>
+    /// <p><code>source-ip</code></p></li>
     /// </ul>
     pub fn field(&self) -> ::std::option::Option<&str> {
         self.field.as_deref()
@@ -62,18 +83,27 @@ impl RuleCondition {
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>- .</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>- .</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>_ - . $ / ~ " ' @ : +</p></li>
-    /// <li><p>&amp; (using &amp;)</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>_ - . $ / ~ " ' @ : +</p></li>
+    /// <li>
+    /// <p>&amp; (using &amp;)</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
@@ -128,12 +158,18 @@ pub struct RuleConditionBuilder {
 impl RuleConditionBuilder {
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>http-header</code></p></li>
-    /// <li><p><code>http-request-method</code></p></li>
-    /// <li><p><code>host-header</code></p></li>
-    /// <li><p><code>path-pattern</code></p></li>
-    /// <li><p><code>query-string</code></p></li>
-    /// <li><p><code>source-ip</code></p></li>
+    /// <li>
+    /// <p><code>http-header</code></p></li>
+    /// <li>
+    /// <p><code>http-request-method</code></p></li>
+    /// <li>
+    /// <p><code>host-header</code></p></li>
+    /// <li>
+    /// <p><code>path-pattern</code></p></li>
+    /// <li>
+    /// <p><code>query-string</code></p></li>
+    /// <li>
+    /// <p><code>source-ip</code></p></li>
     /// </ul>
     pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field = ::std::option::Option::Some(input.into());
@@ -141,12 +177,18 @@ impl RuleConditionBuilder {
     }
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>http-header</code></p></li>
-    /// <li><p><code>http-request-method</code></p></li>
-    /// <li><p><code>host-header</code></p></li>
-    /// <li><p><code>path-pattern</code></p></li>
-    /// <li><p><code>query-string</code></p></li>
-    /// <li><p><code>source-ip</code></p></li>
+    /// <li>
+    /// <p><code>http-header</code></p></li>
+    /// <li>
+    /// <p><code>http-request-method</code></p></li>
+    /// <li>
+    /// <p><code>host-header</code></p></li>
+    /// <li>
+    /// <p><code>path-pattern</code></p></li>
+    /// <li>
+    /// <p><code>query-string</code></p></li>
+    /// <li>
+    /// <p><code>source-ip</code></p></li>
     /// </ul>
     pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
@@ -154,12 +196,18 @@ impl RuleConditionBuilder {
     }
     /// <p>The field in the HTTP request. The following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>http-header</code></p></li>
-    /// <li><p><code>http-request-method</code></p></li>
-    /// <li><p><code>host-header</code></p></li>
-    /// <li><p><code>path-pattern</code></p></li>
-    /// <li><p><code>query-string</code></p></li>
-    /// <li><p><code>source-ip</code></p></li>
+    /// <li>
+    /// <p><code>http-header</code></p></li>
+    /// <li>
+    /// <p><code>http-request-method</code></p></li>
+    /// <li>
+    /// <p><code>host-header</code></p></li>
+    /// <li>
+    /// <p><code>path-pattern</code></p></li>
+    /// <li>
+    /// <p><code>query-string</code></p></li>
+    /// <li>
+    /// <p><code>source-ip</code></p></li>
     /// </ul>
     pub fn get_field(&self) -> &::std::option::Option<::std::string::String> {
         &self.field
@@ -171,18 +219,27 @@ impl RuleConditionBuilder {
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>- .</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>- .</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>_ - . $ / ~ " ' @ : +</p></li>
-    /// <li><p>&amp; (using &amp;)</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>_ - . $ / ~ " ' @ : +</p></li>
+    /// <li>
+    /// <p>&amp; (using &amp;)</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
@@ -193,18 +250,27 @@ impl RuleConditionBuilder {
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>- .</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>- .</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>_ - . $ / ~ " ' @ : +</p></li>
-    /// <li><p>&amp; (using &amp;)</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>_ - . $ / ~ " ' @ : +</p></li>
+    /// <li>
+    /// <p>&amp; (using &amp;)</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
@@ -213,18 +279,27 @@ impl RuleConditionBuilder {
     /// <p>The condition value. Specify only when <code>Field</code> is <code>host-header</code> or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.</p>
     /// <p>If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>, you can specify a single host name (for example, my.example.com) in <code>Values</code>. A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>- .</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>- .</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     /// <p>If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>, you can specify a single path pattern (for example, /img/*) in <code>Values</code>. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.</p>
     /// <ul>
-    /// <li><p>A-Z, a-z, 0-9</p></li>
-    /// <li><p>_ - . $ / ~ " ' @ : +</p></li>
-    /// <li><p>&amp; (using &amp;)</p></li>
-    /// <li><p>* (matches 0 or more characters)</p></li>
-    /// <li><p>? (matches exactly 1 character)</p></li>
+    /// <li>
+    /// <p>A-Z, a-z, 0-9</p></li>
+    /// <li>
+    /// <p>_ - . $ / ~ " ' @ : +</p></li>
+    /// <li>
+    /// <p>&amp; (using &amp;)</p></li>
+    /// <li>
+    /// <p>* (matches 0 or more characters)</p></li>
+    /// <li>
+    /// <p>? (matches exactly 1 character)</p></li>
     /// </ul>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values

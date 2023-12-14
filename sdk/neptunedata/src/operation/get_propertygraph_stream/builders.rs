@@ -30,8 +30,10 @@ impl GetPropertygraphStreamInputBuilder {
 /// <p>When invoking this operation in a Neptune cluster that has IAM authentication enabled, the IAM user or role making the request must have a policy attached that enables one of the following IAM actions, depending on the query:</p>
 /// <p>Note that you can restrict property-graph queries using the following IAM context keys:</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a></p></li>
 /// </ul>
 /// <p>See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition keys available in Neptune IAM data-access policy statements</a>).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -138,10 +140,14 @@ impl GetPropertygraphStreamFluentBuilder {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn iterator_type(mut self, input: crate::types::IteratorType) -> Self {
         self.inner = self.inner.iterator_type(input);
@@ -149,10 +155,14 @@ impl GetPropertygraphStreamFluentBuilder {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn set_iterator_type(mut self, input: ::std::option::Option<crate::types::IteratorType>) -> Self {
         self.inner = self.inner.set_iterator_type(input);
@@ -160,10 +170,14 @@ impl GetPropertygraphStreamFluentBuilder {
     }
     /// <p>Can be one of:</p>
     /// <ul>
-    /// <li><p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
-    /// <li><p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
-    /// <li><p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>AT_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start from the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>AFTER_SEQUENCE_NUMBER</code> &nbsp; – &nbsp; Indicates that reading should start right after the event sequence number specified jointly by the <code>commitNum</code> and <code>opNum</code> parameters.</p></li>
+    /// <li>
+    /// <p><code>TRIM_HORIZON</code> &nbsp; – &nbsp; Indicates that reading should start at the last untrimmed record in the system, which is the oldest unexpired (not yet deleted) record in the change-log stream.</p></li>
+    /// <li>
+    /// <p><code>LATEST</code> &nbsp; – &nbsp; Indicates that reading should start at the most recent record in the system, which is the latest unexpired (not yet deleted) record in the change-log stream.</p></li>
     /// </ul>
     pub fn get_iterator_type(&self) -> &::std::option::Option<crate::types::IteratorType> {
         self.inner.get_iterator_type()

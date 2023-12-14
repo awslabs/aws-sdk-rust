@@ -6,8 +6,10 @@
 pub struct CachePolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     pub header_behavior: crate::types::CachePolicyHeaderBehavior,
     /// <p>Contains a list of HTTP header names.</p>
@@ -16,8 +18,10 @@ pub struct CachePolicyHeadersConfig {
 impl CachePolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     pub fn header_behavior(&self) -> &crate::types::CachePolicyHeaderBehavior {
         &self.header_behavior
@@ -44,8 +48,10 @@ pub struct CachePolicyHeadersConfigBuilder {
 impl CachePolicyHeadersConfigBuilder {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     /// This field is required.
     pub fn header_behavior(mut self, input: crate::types::CachePolicyHeaderBehavior) -> Self {
@@ -54,8 +60,10 @@ impl CachePolicyHeadersConfigBuilder {
     }
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     pub fn set_header_behavior(mut self, input: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>) -> Self {
         self.header_behavior = input;
@@ -63,8 +71,10 @@ impl CachePolicyHeadersConfigBuilder {
     }
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
-    /// <li><p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
+    /// <li>
+    /// <p><code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p></li>
+    /// <li>
+    /// <p><code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p></li>
     /// </ul>
     pub fn get_header_behavior(&self) -> &::std::option::Option<crate::types::CachePolicyHeaderBehavior> {
         &self.header_behavior

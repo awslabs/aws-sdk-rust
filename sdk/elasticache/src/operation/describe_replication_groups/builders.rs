@@ -22,7 +22,7 @@ impl DescribeReplicationGroupsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeReplicationGroups`.
 ///
-/// <p>Returns information about a particular replication group. If no identifier is specified, <code>DescribeReplicationGroups</code> returns information about all replication groups.</p> <note>
+/// <p>Returns information about a particular replication group. If no identifier is specified, <code>DescribeReplicationGroups</code> returns information about all replication groups.</p><note>
 /// <p>This operation is valid for Redis only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -6,20 +6,28 @@
 pub struct DataPathType {
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
-    /// <li><p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
-    /// <li><p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
-    /// <li><p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
+    /// <li>
+    /// <p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
     pub pivot_table_data_path_type: ::std::option::Option<crate::types::PivotTableDataPathType>,
 }
 impl DataPathType {
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
-    /// <li><p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
-    /// <li><p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
-    /// <li><p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
+    /// <li>
+    /// <p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
     pub fn pivot_table_data_path_type(&self) -> ::std::option::Option<&crate::types::PivotTableDataPathType> {
         self.pivot_table_data_path_type.as_ref()
@@ -41,10 +49,14 @@ pub struct DataPathTypeBuilder {
 impl DataPathTypeBuilder {
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
-    /// <li><p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
-    /// <li><p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
-    /// <li><p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
+    /// <li>
+    /// <p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
     pub fn pivot_table_data_path_type(mut self, input: crate::types::PivotTableDataPathType) -> Self {
         self.pivot_table_data_path_type = ::std::option::Option::Some(input);
@@ -52,10 +64,14 @@ impl DataPathTypeBuilder {
     }
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
-    /// <li><p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
-    /// <li><p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
-    /// <li><p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
+    /// <li>
+    /// <p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
     pub fn set_pivot_table_data_path_type(mut self, input: ::std::option::Option<crate::types::PivotTableDataPathType>) -> Self {
         self.pivot_table_data_path_type = input;
@@ -63,10 +79,14 @@ impl DataPathTypeBuilder {
     }
     /// <p>The type of data path value utilized in a pivot table. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
-    /// <li><p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
-    /// <li><p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
-    /// <li><p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
+    /// <li>
+    /// <p><code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column when the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty column header, when there is no field in <code>ColumnsFieldWell</code> and the row is set to Metric Placement.</p></li>
+    /// <li>
+    /// <p><code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code> as the metric, when there is no field in the <code>ValuesFieldWell</code>.</p></li>
     /// </ul>
     pub fn get_pivot_table_data_path_type(&self) -> &::std::option::Option<crate::types::PivotTableDataPathType> {
         &self.pivot_table_data_path_type

@@ -19,11 +19,16 @@ pub struct TrainingJob {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li><p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li><p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li><p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code> - The training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
     pub training_job_status: ::std::option::Option<crate::types::TrainingJobStatus>,
@@ -35,10 +40,14 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li><p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li><p><code>Training</code> - Training is in progress.</p></li>
-    /// <li><p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
+    /// <li>
+    /// <p><code>Training</code> - Training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -46,7 +55,8 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -54,7 +64,8 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -62,8 +73,10 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -71,17 +84,21 @@ pub struct TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
     /// </ul>
     /// </dd>
-    /// </dl> <important>
+    /// </dl><important>
     /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li><p><code>LaunchingMLInstances</code></p></li>
-    /// <li><p><code>PreparingTrainingStack</code></p></li>
-    /// <li><p><code>DownloadingTrainingImage</code></p></li>
+    /// <li>
+    /// <p><code>LaunchingMLInstances</code></p></li>
+    /// <li>
+    /// <p><code>PreparingTrainingStack</code></p></li>
+    /// <li>
+    /// <p><code>DownloadingTrainingImage</code></p></li>
     /// </ul>
     pub secondary_status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>If the training job failed, the reason it failed.</p>
@@ -132,9 +149,12 @@ pub struct TrainingJob {
     pub debug_hook_config: ::std::option::Option<crate::types::DebugHookConfig>,
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>Information about the debug rule configuration.</p>
@@ -180,11 +200,16 @@ impl TrainingJob {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li><p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li><p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li><p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code> - The training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
     pub fn training_job_status(&self) -> ::std::option::Option<&crate::types::TrainingJobStatus> {
@@ -198,10 +223,14 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li><p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li><p><code>Training</code> - Training is in progress.</p></li>
-    /// <li><p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
+    /// <li>
+    /// <p><code>Training</code> - Training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -209,7 +238,8 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -217,7 +247,8 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -225,8 +256,10 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -234,17 +267,21 @@ impl TrainingJob {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
     /// </ul>
     /// </dd>
-    /// </dl> <important>
+    /// </dl><important>
     /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li><p><code>LaunchingMLInstances</code></p></li>
-    /// <li><p><code>PreparingTrainingStack</code></p></li>
-    /// <li><p><code>DownloadingTrainingImage</code></p></li>
+    /// <li>
+    /// <p><code>LaunchingMLInstances</code></p></li>
+    /// <li>
+    /// <p><code>PreparingTrainingStack</code></p></li>
+    /// <li>
+    /// <p><code>DownloadingTrainingImage</code></p></li>
     /// </ul>
     pub fn secondary_status(&self) -> ::std::option::Option<&crate::types::SecondaryStatus> {
         self.secondary_status.as_ref()
@@ -347,9 +384,12 @@ impl TrainingJob {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub fn experiment_config(&self) -> ::std::option::Option<&crate::types::ExperimentConfig> {
         self.experiment_config.as_ref()
@@ -527,11 +567,16 @@ impl TrainingJobBuilder {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li><p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li><p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li><p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code> - The training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
@@ -541,11 +586,16 @@ impl TrainingJobBuilder {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li><p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li><p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li><p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code> - The training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
     pub fn set_training_job_status(mut self, input: ::std::option::Option<crate::types::TrainingJobStatus>) -> Self {
@@ -555,11 +605,16 @@ impl TrainingJobBuilder {
     /// <p>The status of the training job.</p>
     /// <p>Training job statuses are:</p>
     /// <ul>
-    /// <li><p><code>InProgress</code> - The training is in progress.</p></li>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
-    /// <li><p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
-    /// <li><p><code>Stopping</code> - The training job is stopping.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code> - The training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. To see the reason for the failure, see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code> call.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - The training job is stopping.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// <p>For more detailed information, see <code>SecondaryStatus</code>.</p>
     pub fn get_training_job_status(&self) -> &::std::option::Option<crate::types::TrainingJobStatus> {
@@ -573,10 +628,14 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li><p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li><p><code>Training</code> - Training is in progress.</p></li>
-    /// <li><p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
+    /// <li>
+    /// <p><code>Training</code> - Training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -584,7 +643,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -592,7 +652,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -600,8 +661,10 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -609,17 +672,21 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
     /// </ul>
     /// </dd>
-    /// </dl> <important>
+    /// </dl><important>
     /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li><p><code>LaunchingMLInstances</code></p></li>
-    /// <li><p><code>PreparingTrainingStack</code></p></li>
-    /// <li><p><code>DownloadingTrainingImage</code></p></li>
+    /// <li>
+    /// <p><code>LaunchingMLInstances</code></p></li>
+    /// <li>
+    /// <p><code>PreparingTrainingStack</code></p></li>
+    /// <li>
+    /// <p><code>DownloadingTrainingImage</code></p></li>
     /// </ul>
     pub fn secondary_status(mut self, input: crate::types::SecondaryStatus) -> Self {
         self.secondary_status = ::std::option::Option::Some(input);
@@ -633,10 +700,14 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li><p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li><p><code>Training</code> - Training is in progress.</p></li>
-    /// <li><p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
+    /// <li>
+    /// <p><code>Training</code> - Training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -644,7 +715,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -652,7 +724,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -660,8 +733,10 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -669,17 +744,21 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
     /// </ul>
     /// </dd>
-    /// </dl> <important>
+    /// </dl><important>
     /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li><p><code>LaunchingMLInstances</code></p></li>
-    /// <li><p><code>PreparingTrainingStack</code></p></li>
-    /// <li><p><code>DownloadingTrainingImage</code></p></li>
+    /// <li>
+    /// <p><code>LaunchingMLInstances</code></p></li>
+    /// <li>
+    /// <p><code>PreparingTrainingStack</code></p></li>
+    /// <li>
+    /// <p><code>DownloadingTrainingImage</code></p></li>
     /// </ul>
     pub fn set_secondary_status(mut self, input: ::std::option::Option<crate::types::SecondaryStatus>) -> Self {
         self.secondary_status = input;
@@ -693,10 +772,14 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Starting</code> - Starting the training job.</p></li>
-    /// <li><p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
-    /// <li><p><code>Training</code> - Training is in progress.</p></li>
-    /// <li><p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Starting the training job.</p></li>
+    /// <li>
+    /// <p><code>Downloading</code> - An optional stage for algorithms that support <code>File</code> training input mode. It indicates that data is being downloaded to the ML storage volumes.</p></li>
+    /// <li>
+    /// <p><code>Training</code> - Training is in progress.</p></li>
+    /// <li>
+    /// <p><code>Uploading</code> - Training is complete and the model artifacts are being uploaded to the S3 location.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -704,7 +787,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Completed</code> - The training job has completed.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - The training job has completed.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -712,7 +796,8 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The training job has failed. The reason for the failure is returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -720,8 +805,10 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
-    /// <li><p><code>Stopped</code> - The training job has stopped.</p></li>
+    /// <li>
+    /// <p><code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum allowed runtime.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code> - The training job has stopped.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -729,17 +816,21 @@ impl TrainingJobBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li><p><code>Stopping</code> - Stopping the training job.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Stopping the training job.</p></li>
     /// </ul>
     /// </dd>
-    /// </dl> <important>
+    /// </dl><important>
     /// <p>Valid values for <code>SecondaryStatus</code> are subject to change.</p>
     /// </important>
     /// <p>We no longer support the following secondary statuses:</p>
     /// <ul>
-    /// <li><p><code>LaunchingMLInstances</code></p></li>
-    /// <li><p><code>PreparingTrainingStack</code></p></li>
-    /// <li><p><code>DownloadingTrainingImage</code></p></li>
+    /// <li>
+    /// <p><code>LaunchingMLInstances</code></p></li>
+    /// <li>
+    /// <p><code>PreparingTrainingStack</code></p></li>
+    /// <li>
+    /// <p><code>DownloadingTrainingImage</code></p></li>
     /// </ul>
     pub fn get_secondary_status(&self) -> &::std::option::Option<crate::types::SecondaryStatus> {
         &self.secondary_status
@@ -1094,9 +1185,12 @@ impl TrainingJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub fn experiment_config(mut self, input: crate::types::ExperimentConfig) -> Self {
         self.experiment_config = ::std::option::Option::Some(input);
@@ -1104,9 +1198,12 @@ impl TrainingJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub fn set_experiment_config(mut self, input: ::std::option::Option<crate::types::ExperimentConfig>) -> Self {
         self.experiment_config = input;
@@ -1114,9 +1211,12 @@ impl TrainingJobBuilder {
     }
     /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a></p></li>
     /// </ul>
     pub fn get_experiment_config(&self) -> &::std::option::Option<crate::types::ExperimentConfig> {
         &self.experiment_config

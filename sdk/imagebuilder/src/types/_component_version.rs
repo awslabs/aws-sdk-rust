@@ -4,24 +4,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentVersion {
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -53,18 +56,21 @@ pub struct ComponentVersion {
     pub date_created: ::std::option::Option<::std::string::String>,
 }
 impl ComponentVersion {
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -74,7 +80,7 @@ impl ComponentVersion {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -143,54 +149,63 @@ pub struct ComponentVersionBuilder {
     pub(crate) date_created: ::std::option::Option<::std::string::String>,
 }
 impl ComponentVersionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the component.</p><note>
     /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
     /// <ol>
-    /// <li><p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
-    /// <li><p>Version ARNs have only the first three nodes: <major>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p></li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
     /// </major></p></li>
-    /// <li><p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p></li>
     /// </ol>
     /// </note>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -210,7 +225,7 @@ impl ComponentVersionBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -231,7 +246,7 @@ impl ComponentVersionBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -252,7 +267,7 @@ impl ComponentVersionBuilder {
         self.version = input;
         self
     }
-    /// <p>The semantic version of the component.</p> <note>
+    /// <p>The semantic version of the component.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

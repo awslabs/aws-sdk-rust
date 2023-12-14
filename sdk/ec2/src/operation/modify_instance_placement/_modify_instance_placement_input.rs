@@ -12,7 +12,7 @@ pub struct ModifyInstancePlacementInput {
     pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance that you are modifying.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub tenancy: ::std::option::Option<crate::types::HostTenancy>,
@@ -41,7 +41,7 @@ impl ModifyInstancePlacementInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::HostTenancy> {
@@ -141,21 +141,21 @@ impl ModifyInstancePlacementInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn tenancy(mut self, input: crate::types::HostTenancy) -> Self {
         self.tenancy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
         self.tenancy = input;
         self
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::HostTenancy> {

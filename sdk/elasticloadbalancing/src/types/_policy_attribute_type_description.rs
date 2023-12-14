@@ -15,10 +15,14 @@ pub struct PolicyAttributeTypeDescription {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>ONE(1) : Single value required</p></li>
-    /// <li><p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
-    /// <li><p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
-    /// <li><p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE(1) : Single value required</p></li>
+    /// <li>
+    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
+    /// <li>
+    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
     /// </ul>
     pub cardinality: ::std::option::Option<::std::string::String>,
 }
@@ -42,10 +46,14 @@ impl PolicyAttributeTypeDescription {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>ONE(1) : Single value required</p></li>
-    /// <li><p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
-    /// <li><p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
-    /// <li><p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE(1) : Single value required</p></li>
+    /// <li>
+    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
+    /// <li>
+    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
     /// </ul>
     pub fn cardinality(&self) -> ::std::option::Option<&str> {
         self.cardinality.as_deref()
@@ -128,10 +136,14 @@ impl PolicyAttributeTypeDescriptionBuilder {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>ONE(1) : Single value required</p></li>
-    /// <li><p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
-    /// <li><p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
-    /// <li><p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE(1) : Single value required</p></li>
+    /// <li>
+    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
+    /// <li>
+    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
     /// </ul>
     pub fn cardinality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cardinality = ::std::option::Option::Some(input.into());
@@ -140,10 +152,14 @@ impl PolicyAttributeTypeDescriptionBuilder {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>ONE(1) : Single value required</p></li>
-    /// <li><p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
-    /// <li><p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
-    /// <li><p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE(1) : Single value required</p></li>
+    /// <li>
+    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
+    /// <li>
+    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
     /// </ul>
     pub fn set_cardinality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cardinality = input;
@@ -152,10 +168,14 @@ impl PolicyAttributeTypeDescriptionBuilder {
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p>ONE(1) : Single value required</p></li>
-    /// <li><p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
-    /// <li><p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
-    /// <li><p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE(1) : Single value required</p></li>
+    /// <li>
+    /// <p>ZERO_OR_ONE(0..1) : Up to one value is allowed</p></li>
+    /// <li>
+    /// <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p></li>
+    /// <li>
+    /// <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p></li>
     /// </ul>
     pub fn get_cardinality(&self) -> &::std::option::Option<::std::string::String> {
         &self.cardinality

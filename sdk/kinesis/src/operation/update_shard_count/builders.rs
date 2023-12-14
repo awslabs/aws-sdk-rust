@@ -22,7 +22,7 @@ impl UpdateShardCountInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateShardCount`.
 ///
-/// <p>Updates the shard count of the specified stream to the specified number of shards. This API is only supported for the data streams with the provisioned capacity mode.</p> <note>
+/// <p>Updates the shard count of the specified stream to the specified number of shards. This API is only supported for the data streams with the provisioned capacity mode.</p><note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>Updating the shard count is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis Data Streams sets the status of the stream back to <code>ACTIVE</code>. Depending on the size of the stream, the scaling action could take a few minutes to complete. You can continue to read and write data to your stream while its status is <code>UPDATING</code>.</p>
@@ -30,13 +30,20 @@ impl UpdateShardCountInputBuilder {
 /// <p>When using this operation, we recommend that you specify a target shard count that is a multiple of 25% (25%, 50%, 75%, 100%). You can specify any target value within your shard limit. However, if you specify a target that isn't a multiple of 25%, the scaling action might take longer to complete.</p>
 /// <p>This operation has the following default limits. By default, you cannot do the following:</p>
 /// <ul>
-/// <li><p>Scale more than ten times per rolling 24-hour period per stream</p></li>
-/// <li><p>Scale up to more than double your current shard count for a stream</p></li>
-/// <li><p>Scale down below half your current shard count for a stream</p></li>
-/// <li><p>Scale up to more than 10000 shards in a stream</p></li>
-/// <li><p>Scale a stream with more than 10000 shards down unless the result is less than 10000 shards</p></li>
-/// <li><p>Scale up to more than the shard limit for your account</p></li>
-/// <li><p>Make over 10 TPS. TPS over 10 will trigger the LimitExceededException</p></li>
+/// <li>
+/// <p>Scale more than ten times per rolling 24-hour period per stream</p></li>
+/// <li>
+/// <p>Scale up to more than double your current shard count for a stream</p></li>
+/// <li>
+/// <p>Scale down below half your current shard count for a stream</p></li>
+/// <li>
+/// <p>Scale up to more than 10000 shards in a stream</p></li>
+/// <li>
+/// <p>Scale a stream with more than 10000 shards down unless the result is less than 10000 shards</p></li>
+/// <li>
+/// <p>Scale up to more than the shard limit for your account</p></li>
+/// <li>
+/// <p>Make over 10 TPS. TPS over 10 will trigger the LimitExceededException</p></li>
 /// </ul>
 /// <p>For the default limits for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To request an increase in the call rate limit, the shard limit for this API, or your overall shard limit, use the <a href="https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase&amp;limitType=service-code-kinesis">limits form</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -140,10 +147,14 @@ impl UpdateShardCountFluentBuilder {
     }
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
-    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
-    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
-    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
+    /// <li>
+    /// <p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li>
+    /// <p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li>
+    /// <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li>
+    /// <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn target_shard_count(mut self, input: i32) -> Self {
         self.inner = self.inner.target_shard_count(input);
@@ -151,10 +162,14 @@ impl UpdateShardCountFluentBuilder {
     }
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
-    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
-    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
-    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
+    /// <li>
+    /// <p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li>
+    /// <p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li>
+    /// <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li>
+    /// <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn set_target_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_target_shard_count(input);
@@ -162,10 +177,14 @@ impl UpdateShardCountFluentBuilder {
     }
     /// <p>The new number of shards. This value has the following default limits. By default, you cannot do the following:</p>
     /// <ul>
-    /// <li><p>Set this value to more than double your current shard count for a stream.</p></li>
-    /// <li><p>Set this value below half your current shard count for a stream.</p></li>
-    /// <li><p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
-    /// <li><p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
+    /// <li>
+    /// <p>Set this value to more than double your current shard count for a stream.</p></li>
+    /// <li>
+    /// <p>Set this value below half your current shard count for a stream.</p></li>
+    /// <li>
+    /// <p>Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.</p></li>
+    /// <li>
+    /// <p>Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.</p></li>
     /// </ul>
     pub fn get_target_shard_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_target_shard_count()

@@ -131,9 +131,12 @@ impl GetCurrentMetricDataFluentBuilder {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li><p>Queues: 100</p></li>
-    /// <li><p>Routing profiles: 100</p></li>
-    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
+    /// <li>
+    /// <p>Queues: 100</p></li>
+    /// <li>
+    /// <p>Routing profiles: 100</p></li>
+    /// <li>
+    /// <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
@@ -143,9 +146,12 @@ impl GetCurrentMetricDataFluentBuilder {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li><p>Queues: 100</p></li>
-    /// <li><p>Routing profiles: 100</p></li>
-    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
+    /// <li>
+    /// <p>Queues: 100</p></li>
+    /// <li>
+    /// <p>Routing profiles: 100</p></li>
+    /// <li>
+    /// <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
@@ -155,9 +161,12 @@ impl GetCurrentMetricDataFluentBuilder {
     }
     /// <p>The filters to apply to returned metrics. You can filter up to the following limits:</p>
     /// <ul>
-    /// <li><p>Queues: 100</p></li>
-    /// <li><p>Routing profiles: 100</p></li>
-    /// <li><p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
+    /// <li>
+    /// <p>Queues: 100</p></li>
+    /// <li>
+    /// <p>Routing profiles: 100</p></li>
+    /// <li>
+    /// <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
@@ -170,9 +179,12 @@ impl GetCurrentMetricDataFluentBuilder {
     ///
     /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
-    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
-    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
+    /// <li>
+    /// <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li>
+    /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li>
+    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub fn groupings(mut self, input: crate::types::Grouping) -> Self {
         self.inner = self.inner.groupings(input);
@@ -180,9 +192,12 @@ impl GetCurrentMetricDataFluentBuilder {
     }
     /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
-    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
-    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
+    /// <li>
+    /// <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li>
+    /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li>
+    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Grouping>>) -> Self {
         self.inner = self.inner.set_groupings(input);
@@ -190,9 +205,12 @@ impl GetCurrentMetricDataFluentBuilder {
     }
     /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
     /// <ul>
-    /// <li><p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
-    /// <li><p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
-    /// <li><p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
+    /// <li>
+    /// <p>If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.</p></li>
+    /// <li>
+    /// <p>If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p></li>
+    /// <li>
+    /// <p>If no <code>Grouping</code> is included in the request, a summary of metrics is returned.</p></li>
     /// </ul>
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Grouping>> {
         self.inner.get_groupings()
@@ -544,7 +562,8 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
+    /// <li>
+    /// <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub fn sort_criteria(mut self, input: crate::types::CurrentMetricSortCriteria) -> Self {
         self.inner = self.inner.sort_criteria(input);
@@ -553,7 +572,8 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
+    /// <li>
+    /// <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
@@ -562,7 +582,8 @@ impl GetCurrentMetricDataFluentBuilder {
     /// <p>The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection is sorted based on the input metrics.</p>
     /// <p>Note the following:</p>
     /// <ul>
-    /// <li><p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
+    /// <li>
+    /// <p>Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.</p></li>
     /// </ul>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CurrentMetricSortCriteria>> {
         self.inner.get_sort_criteria()

@@ -13,8 +13,10 @@ pub struct UpdateQuickResponseInput {
     pub content: ::std::option::Option<crate::types::QuickResponseDataProvider>,
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The updated grouping configuration of the quick response.</p>
@@ -55,8 +57,10 @@ impl UpdateQuickResponseInput {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
@@ -187,8 +191,10 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_type = ::std::option::Option::Some(input.into());
@@ -196,8 +202,10 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
@@ -205,8 +213,10 @@ impl UpdateQuickResponseInputBuilder {
     }
     /// <p>The media type of the quick response content.</p>
     /// <ul>
-    /// <li><p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
-    /// <li><p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=plain</code> for quick response written in plain text.</p></li>
+    /// <li>
+    /// <p>Use <code>application/x.quickresponse;format=markdown</code> for quick response written in richtext.</p></li>
     /// </ul>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_type

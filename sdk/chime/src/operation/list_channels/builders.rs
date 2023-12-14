@@ -25,9 +25,11 @@ impl ListChannelsInputBuilder {
 /// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p>
 /// <p class="title"><b>Functionality &amp; restrictions</b></p>
 /// <ul>
-/// <li><p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p></li>
-/// <li><p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p></li>
+/// <li>
+/// <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p></li>
+/// </ul><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note> <important>
 /// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html">ListChannels</a>, in the Amazon Chime SDK.</p>

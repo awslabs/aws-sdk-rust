@@ -26,9 +26,12 @@ impl DeregisterTargetsInputBuilder {
 /// <p>The load balancer stops sending requests to targets that are deregistering, but uses connection draining to ensure that in-flight traffic completes on the existing connections. This deregistration delay is configured by default but can be updated for each target group.</p>
 /// <p>For more information, see the following:</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Application Load Balancers User Guide</i></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Network Load Balancers User Guide</i></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Application Load Balancers User Guide</i></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Network Load Balancers User Guide</i></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay"> Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i></p></li>
 /// </ul>
 /// <p>Note: If the specified target does not exist, the action returns successfully.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

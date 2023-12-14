@@ -142,10 +142,15 @@ impl CreateDataSourceFromS3FluentBuilder {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn data_spec(mut self, input: crate::types::S3DataSpec) -> Self {
         self.inner = self.inner.data_spec(input);
@@ -153,10 +158,15 @@ impl CreateDataSourceFromS3FluentBuilder {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn set_data_spec(mut self, input: ::std::option::Option<crate::types::S3DataSpec>) -> Self {
         self.inner = self.inner.set_data_spec(input);
@@ -164,10 +174,15 @@ impl CreateDataSourceFromS3FluentBuilder {
     }
     /// <p>The data specification of a <code>DataSource</code>:</p>
     /// <ul>
-    /// <li><p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
-    /// <li><p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
-    /// <li><p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
-    /// <li><p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p> <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
+    /// <li>
+    /// <p>DataLocationS3 - The Amazon S3 location of the observation data.</p></li>
+    /// <li>
+    /// <p>DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.</p></li>
+    /// <li>
+    /// <p>DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code> is specified.</p></li>
+    /// <li>
+    /// <p>DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the <code>Datasource</code>.</p>
+    /// <p>Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code></p></li>
     /// </ul>
     pub fn get_data_spec(&self) -> &::std::option::Option<crate::types::S3DataSpec> {
         self.inner.get_data_spec()

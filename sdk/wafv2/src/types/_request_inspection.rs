@@ -11,15 +11,23 @@ pub struct RequestInspection {
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub username_field: ::std::option::Option<crate::types::UsernameField>,
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub password_field: ::std::option::Option<crate::types::PasswordField>,
 }
@@ -31,8 +39,12 @@ impl RequestInspection {
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub fn username_field(&self) -> ::std::option::Option<&crate::types::UsernameField> {
         self.username_field.as_ref()
@@ -40,8 +52,12 @@ impl RequestInspection {
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub fn password_field(&self) -> ::std::option::Option<&crate::types::PasswordField> {
         self.password_field.as_ref()
@@ -81,8 +97,12 @@ impl RequestInspectionBuilder {
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn username_field(mut self, input: crate::types::UsernameField) -> Self {
@@ -92,8 +112,12 @@ impl RequestInspectionBuilder {
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub fn set_username_field(mut self, input: ::std::option::Option<crate::types::UsernameField>) -> Self {
         self.username_field = input;
@@ -102,8 +126,12 @@ impl RequestInspectionBuilder {
     /// <p>The name of the field in the request payload that contains your customer's username.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field specification is <code>/form/username</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>username1</code>, the username field specification is <code>username1</code></p></li>
     /// </ul>
     pub fn get_username_field(&self) -> &::std::option::Option<crate::types::UsernameField> {
         &self.username_field
@@ -111,8 +139,12 @@ impl RequestInspectionBuilder {
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn password_field(mut self, input: crate::types::PasswordField) -> Self {
@@ -122,8 +154,12 @@ impl RequestInspectionBuilder {
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub fn set_password_field(mut self, input: ::std::option::Option<crate::types::PasswordField>) -> Self {
         self.password_field = input;
@@ -132,8 +168,12 @@ impl RequestInspectionBuilder {
     /// <p>The name of the field in the request payload that contains your customer's password.</p>
     /// <p>How you specify this depends on the request inspection payload type.</p>
     /// <ul>
-    /// <li><p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p> <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
-    /// <li><p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
+    /// <li>
+    /// <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.</p>
+    /// <p>For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>, the password field specification is <code>/form/password</code>.</p></li>
+    /// <li>
+    /// <p>For form encoded payload types, use the HTML form names.</p>
+    /// <p>For example, for an HTML form with the input element named <code>password1</code>, the password field specification is <code>password1</code>.</p></li>
     /// </ul>
     pub fn get_password_field(&self) -> &::std::option::Option<crate::types::PasswordField> {
         &self.password_field

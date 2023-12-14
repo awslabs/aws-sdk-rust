@@ -125,8 +125,10 @@ impl DeleteGroupFluentBuilder {
     /// <p>The identifier of the group to be deleted.</p>
     /// <p>The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
@@ -135,8 +137,10 @@ impl DeleteGroupFluentBuilder {
     /// <p>The identifier of the group to be deleted.</p>
     /// <p>The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
@@ -145,8 +149,10 @@ impl DeleteGroupFluentBuilder {
     /// <p>The identifier of the group to be deleted.</p>
     /// <p>The identifier can be the <i>GroupId</i>, or <i>Groupname</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()

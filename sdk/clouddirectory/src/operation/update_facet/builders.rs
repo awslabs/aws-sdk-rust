@@ -24,9 +24,12 @@ impl UpdateFacetInputBuilder {
 ///
 /// <p>Does the following:</p>
 /// <ol>
-/// <li><p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
-/// <li><p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
-/// <li><p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
+/// <li>
+/// <p>Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
+/// <li>
+/// <p>Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
+/// <li>
+/// <p>Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFacetFluentBuilder {

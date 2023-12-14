@@ -116,8 +116,10 @@ impl ListReportsFluentBuilder {
     }
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -125,8 +127,10 @@ impl ListReportsFluentBuilder {
     }
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
@@ -134,8 +138,10 @@ impl ListReportsFluentBuilder {
     }
     /// <p>Specifies the sort order for the list of returned reports. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
-    /// <li><p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: return reports in chronological order based on their creation date.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: return reports in the reverse chronological order based on their creation date.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()

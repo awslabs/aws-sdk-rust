@@ -10,8 +10,10 @@ pub struct PutRecordsOutput {
     pub records: ::std::vec::Vec<crate::types::PutRecordsResultEntry>,
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     _request_id: Option<String>,
@@ -28,8 +30,10 @@ impl PutRecordsOutput {
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
@@ -93,8 +97,10 @@ impl PutRecordsOutputBuilder {
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
         self.encryption_type = ::std::option::Option::Some(input);
@@ -102,8 +108,10 @@ impl PutRecordsOutputBuilder {
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn set_encryption_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.encryption_type = input;
@@ -111,8 +119,10 @@ impl PutRecordsOutputBuilder {
     }
     /// <p>The encryption type used on the records. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code>: Do not encrypt the records.</p></li>
-    /// <li><p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
+    /// <li>
+    /// <p><code>NONE</code>: Do not encrypt the records.</p></li>
+    /// <li>
+    /// <p><code>KMS</code>: Use server-side encryption on the records using a customer-managed Amazon Web Services KMS key.</p></li>
     /// </ul>
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         &self.encryption_type

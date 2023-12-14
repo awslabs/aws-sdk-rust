@@ -125,9 +125,12 @@ impl PutResourcePolicyFluentBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
@@ -136,9 +139,12 @@ impl PutResourcePolicyFluentBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
@@ -147,9 +153,12 @@ impl PutResourcePolicyFluentBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy.</p>
     /// <p>The following are requirements for the resource policy:</p>
     /// <ul>
-    /// <li><p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
-    /// <li><p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
-    /// <li><p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
+    /// <li>
+    /// <p>Contains only one action: cloudtrail-data:PutAuditEvents</p></li>
+    /// <li>
+    /// <p>Contains at least one statement. The policy can have a maximum of 20 statements.</p></li>
+    /// <li>
+    /// <p>Each statement contains at least one principal. A statement can have a maximum of 50 principals.</p></li>
     /// </ul>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_policy()

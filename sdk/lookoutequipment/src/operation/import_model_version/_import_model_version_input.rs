@@ -21,9 +21,12 @@ pub struct ImportModelVersionInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>NO_IMPORT – Don't import the data.</p></li>
-    /// <li><p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
-    /// <li><p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
+    /// <li>
+    /// <p>NO_IMPORT – Don't import the data.</p></li>
+    /// <li>
+    /// <p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
+    /// <li>
+    /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
     pub inference_data_import_strategy: ::std::option::Option<crate::types::InferenceDataImportStrategy>,
 }
@@ -64,9 +67,12 @@ impl ImportModelVersionInput {
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>NO_IMPORT – Don't import the data.</p></li>
-    /// <li><p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
-    /// <li><p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
+    /// <li>
+    /// <p>NO_IMPORT – Don't import the data.</p></li>
+    /// <li>
+    /// <p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
+    /// <li>
+    /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
     pub fn inference_data_import_strategy(&self) -> ::std::option::Option<&crate::types::InferenceDataImportStrategy> {
         self.inference_data_import_strategy.as_ref()
@@ -217,9 +223,12 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>NO_IMPORT – Don't import the data.</p></li>
-    /// <li><p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
-    /// <li><p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
+    /// <li>
+    /// <p>NO_IMPORT – Don't import the data.</p></li>
+    /// <li>
+    /// <p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
+    /// <li>
+    /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
     pub fn inference_data_import_strategy(mut self, input: crate::types::InferenceDataImportStrategy) -> Self {
         self.inference_data_import_strategy = ::std::option::Option::Some(input);
@@ -227,9 +236,12 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>NO_IMPORT – Don't import the data.</p></li>
-    /// <li><p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
-    /// <li><p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
+    /// <li>
+    /// <p>NO_IMPORT – Don't import the data.</p></li>
+    /// <li>
+    /// <p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
+    /// <li>
+    /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
     pub fn set_inference_data_import_strategy(mut self, input: ::std::option::Option<crate::types::InferenceDataImportStrategy>) -> Self {
         self.inference_data_import_strategy = input;
@@ -237,9 +249,12 @@ impl ImportModelVersionInputBuilder {
     }
     /// <p>Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:</p>
     /// <ul>
-    /// <li><p>NO_IMPORT – Don't import the data.</p></li>
-    /// <li><p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
-    /// <li><p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
+    /// <li>
+    /// <p>NO_IMPORT – Don't import the data.</p></li>
+    /// <li>
+    /// <p>ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.</p></li>
+    /// <li>
+    /// <p>OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.</p></li>
     /// </ul>
     pub fn get_inference_data_import_strategy(&self) -> &::std::option::Option<crate::types::InferenceDataImportStrategy> {
         &self.inference_data_import_strategy

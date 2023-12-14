@@ -10,12 +10,18 @@ pub struct ListDeploymentInstancesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: Include those instances with pending deployments.</p></li>
-    /// <li><p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
-    /// <li><p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
-    /// <li><p><code>Failed</code>: Include those instances with failed deployments.</p></li>
-    /// <li><p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
-    /// <li><p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: Include those instances with pending deployments.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include those instances with failed deployments.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
     /// </ul>
     pub instance_status_filter: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>,
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
@@ -32,12 +38,18 @@ impl ListDeploymentInstancesInput {
     }
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: Include those instances with pending deployments.</p></li>
-    /// <li><p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
-    /// <li><p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
-    /// <li><p><code>Failed</code>: Include those instances with failed deployments.</p></li>
-    /// <li><p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
-    /// <li><p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: Include those instances with pending deployments.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include those instances with failed deployments.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_status_filter.is_none()`.
@@ -103,12 +115,18 @@ impl ListDeploymentInstancesInputBuilder {
     ///
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: Include those instances with pending deployments.</p></li>
-    /// <li><p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
-    /// <li><p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
-    /// <li><p><code>Failed</code>: Include those instances with failed deployments.</p></li>
-    /// <li><p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
-    /// <li><p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: Include those instances with pending deployments.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include those instances with failed deployments.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
     /// </ul>
     pub fn instance_status_filter(mut self, input: crate::types::InstanceStatus) -> Self {
         let mut v = self.instance_status_filter.unwrap_or_default();
@@ -118,12 +136,18 @@ impl ListDeploymentInstancesInputBuilder {
     }
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: Include those instances with pending deployments.</p></li>
-    /// <li><p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
-    /// <li><p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
-    /// <li><p><code>Failed</code>: Include those instances with failed deployments.</p></li>
-    /// <li><p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
-    /// <li><p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: Include those instances with pending deployments.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include those instances with failed deployments.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
     /// </ul>
     pub fn set_instance_status_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>>) -> Self {
         self.instance_status_filter = input;
@@ -131,12 +155,18 @@ impl ListDeploymentInstancesInputBuilder {
     }
     /// <p>A subset of instances to list by status:</p>
     /// <ul>
-    /// <li><p><code>Pending</code>: Include those instances with pending deployments.</p></li>
-    /// <li><p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
-    /// <li><p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
-    /// <li><p><code>Failed</code>: Include those instances with failed deployments.</p></li>
-    /// <li><p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
-    /// <li><p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>Pending</code>: Include those instances with pending deployments.</p></li>
+    /// <li>
+    /// <p><code>InProgress</code>: Include those instances where deployments are still in progress.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include those instances with successful deployments.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include those instances with failed deployments.</p></li>
+    /// <li>
+    /// <p><code>Skipped</code>: Include those instances with skipped deployments.</p></li>
+    /// <li>
+    /// <p><code>Unknown</code>: Include those instances with deployments in an unknown state.</p></li>
     /// </ul>
     pub fn get_instance_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceStatus>> {
         &self.instance_status_filter

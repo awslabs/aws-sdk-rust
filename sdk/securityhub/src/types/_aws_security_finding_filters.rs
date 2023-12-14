@@ -178,22 +178,38 @@ pub struct AwsSecurityFindingFilters {
     pub workflow_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p>
+    /// <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p>
+    /// <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p>
+    /// <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul>
+    /// <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p>
+    /// <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub workflow_status: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The updated record state for the finding.</p>
@@ -739,22 +755,38 @@ impl AwsSecurityFindingFilters {
     }
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p>
+    /// <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p>
+    /// <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p>
+    /// <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul>
+    /// <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p>
+    /// <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_status.is_none()`.
@@ -2658,22 +2690,38 @@ impl AwsSecurityFindingFiltersBuilder {
     ///
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p>
+    /// <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p>
+    /// <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p>
+    /// <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul>
+    /// <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p>
+    /// <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub fn workflow_status(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.workflow_status.unwrap_or_default();
@@ -2683,22 +2731,38 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p>
+    /// <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p>
+    /// <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p>
+    /// <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul>
+    /// <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p>
+    /// <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub fn set_workflow_status(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.workflow_status = input;
@@ -2706,22 +2770,38 @@ impl AwsSecurityFindingFiltersBuilder {
     }
     /// <p>The status of the investigation into a finding. Allowed values are the following.</p>
     /// <ul>
-    /// <li><p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p> <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <li>
+    /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
+    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p> <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
+    /// <li>
+    /// <p><code>NOTIFIED</code> - Indicates that the resource owner has been notified about the security issue. Used when the initial reviewer is not the resource owner, and needs intervention from the resource owner.</p>
+    /// <p>If one of the following occurs, the workflow status is changed automatically from <code>NOTIFIED</code> to <code>NEW</code>:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
     /// </ul></li>
-    /// <li><p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p> <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
+    /// <li>
+    /// <p><code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed.</p>
+    /// <p>The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p>
+    /// <p>The finding remains <code>RESOLVED</code> unless one of the following occurs:</p>
     /// <ul>
-    /// <li><p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
-    /// <li><p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
-    /// </ul> <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p> <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
+    /// <li>
+    /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
+    /// <li>
+    /// <p><code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>, <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.</p></li>
+    /// </ul>
+    /// <p>In those cases, the workflow status is automatically reset to <code>NEW</code>.</p>
+    /// <p>For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>, then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.</p></li>
     /// </ul>
     pub fn get_workflow_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.workflow_status

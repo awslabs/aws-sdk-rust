@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBucketInput {
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
+    /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub acl: ::std::option::Option<crate::types::BucketCannedAcl>,
@@ -13,28 +13,28 @@ pub struct CreateBucketInput {
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The configuration information for the bucket.</p>
     pub create_bucket_configuration: ::std::option::Option<crate::types::CreateBucketConfiguration>,
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub grant_full_control: ::std::option::Option<::std::string::String>,
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub grant_read: ::std::option::Option<::std::string::String>,
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
+    /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub grant_read_acp: ::std::option::Option<::std::string::String>,
     /// <p>Allows grantee to create new objects in the bucket.</p>
-    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p> <note>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub grant_write: ::std::option::Option<::std::string::String>,
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub grant_write_acp: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub object_lock_enabled_for_bucket: ::std::option::Option<bool>,
@@ -42,13 +42,13 @@ pub struct CreateBucketInput {
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>BucketOwnerEnforced</code> - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or specify bucket owner full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL in XML format that grants the same permissions).</p>
-    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub object_ownership: ::std::option::Option<crate::types::ObjectOwnership>,
 }
 impl CreateBucketInput {
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
+    /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn acl(&self) -> ::std::option::Option<&crate::types::BucketCannedAcl> {
@@ -64,38 +64,38 @@ impl CreateBucketInput {
     pub fn create_bucket_configuration(&self) -> ::std::option::Option<&crate::types::CreateBucketConfiguration> {
         self.create_bucket_configuration.as_ref()
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_full_control(&self) -> ::std::option::Option<&str> {
         self.grant_full_control.as_deref()
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_read(&self) -> ::std::option::Option<&str> {
         self.grant_read.as_deref()
     }
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
+    /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_read_acp(&self) -> ::std::option::Option<&str> {
         self.grant_read_acp.as_deref()
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
-    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p> <note>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_write(&self) -> ::std::option::Option<&str> {
         self.grant_write.as_deref()
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_write_acp(&self) -> ::std::option::Option<&str> {
         self.grant_write_acp.as_deref()
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn object_lock_enabled_for_bucket(&self) -> ::std::option::Option<bool> {
@@ -105,7 +105,7 @@ impl CreateBucketInput {
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>BucketOwnerEnforced</code> - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or specify bucket owner full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL in XML format that grants the same permissions).</p>
-    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub fn object_ownership(&self) -> ::std::option::Option<&crate::types::ObjectOwnership> {
@@ -135,21 +135,21 @@ pub struct CreateBucketInputBuilder {
     pub(crate) object_ownership: ::std::option::Option<crate::types::ObjectOwnership>,
 }
 impl CreateBucketInputBuilder {
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
+    /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn acl(mut self, input: crate::types::BucketCannedAcl) -> Self {
         self.acl = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
+    /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_acl(mut self, input: ::std::option::Option<crate::types::BucketCannedAcl>) -> Self {
         self.acl = input;
         self
     }
-    /// <p>The canned ACL to apply to the bucket.</p> <note>
+    /// <p>The canned ACL to apply to the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_acl(&self) -> &::std::option::Option<crate::types::BucketCannedAcl> {
@@ -190,68 +190,68 @@ impl CreateBucketInputBuilder {
     pub fn get_create_bucket_configuration(&self) -> &::std::option::Option<crate::types::CreateBucketConfiguration> {
         &self.create_bucket_configuration
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_full_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_full_control = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_full_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_full_control = input;
         self
     }
-    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p> <note>
+    /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_grant_full_control(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_full_control
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_read(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_read = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_read(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read = input;
         self
     }
-    /// <p>Allows grantee to list the objects in the bucket.</p> <note>
+    /// <p>Allows grantee to list the objects in the bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_grant_read(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_read
     }
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
+    /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_read_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_read_acp = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
+    /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_read_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_read_acp = input;
         self
     }
-    /// <p>Allows grantee to read the bucket ACL.</p> <note>
+    /// <p>Allows grantee to read the bucket ACL.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_grant_read_acp(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_read_acp
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
-    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p> <note>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_write(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -259,7 +259,7 @@ impl CreateBucketInputBuilder {
         self
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
-    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p> <note>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_write(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -267,47 +267,47 @@ impl CreateBucketInputBuilder {
         self
     }
     /// <p>Allows grantee to create new objects in the bucket.</p>
-    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p> <note>
+    /// <p>For the bucket and object owners of existing objects, also allows deletions and overwrites of those objects.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_grant_write(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_write
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn grant_write_acp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_write_acp = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_grant_write_acp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_write_acp = input;
         self
     }
-    /// <p>Allows grantee to write the ACL for the applicable bucket.</p> <note>
+    /// <p>Allows grantee to write the ACL for the applicable bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_grant_write_acp(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_write_acp
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
         self.object_lock_enabled_for_bucket = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_object_lock_enabled_for_bucket(mut self, input: ::std::option::Option<bool>) -> Self {
         self.object_lock_enabled_for_bucket = input;
         self
     }
-    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p> <note>
+    /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_object_lock_enabled_for_bucket(&self) -> &::std::option::Option<bool> {
@@ -317,7 +317,7 @@ impl CreateBucketInputBuilder {
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>BucketOwnerEnforced</code> - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or specify bucket owner full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL in XML format that grants the same permissions).</p>
-    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub fn object_ownership(mut self, input: crate::types::ObjectOwnership) -> Self {
@@ -328,7 +328,7 @@ impl CreateBucketInputBuilder {
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>BucketOwnerEnforced</code> - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or specify bucket owner full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL in XML format that grants the same permissions).</p>
-    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub fn set_object_ownership(mut self, input: ::std::option::Option<crate::types::ObjectOwnership>) -> Self {
@@ -339,7 +339,7 @@ impl CreateBucketInputBuilder {
     /// <p><code>BucketOwnerPreferred</code> - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>ObjectWriter</code> - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.</p>
     /// <p><code>BucketOwnerEnforced</code> - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or specify bucket owner full control ACLs (such as the predefined <code>bucket-owner-full-control</code> canned ACL or a custom ACL in XML format that grants the same permissions).</p>
-    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>By default, <code>ObjectOwnership</code> is set to <code>BucketOwnerEnforced</code> and ACLs are disabled. We recommend keeping ACLs disabled, except in uncommon use cases where you must control access for each object individually. For more information about S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of objects and disabling ACLs for your bucket</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets. Directory buckets use the bucket owner enforced setting for S3 Object Ownership.</p>
     /// </note>
     pub fn get_object_ownership(&self) -> &::std::option::Option<crate::types::ObjectOwnership> {

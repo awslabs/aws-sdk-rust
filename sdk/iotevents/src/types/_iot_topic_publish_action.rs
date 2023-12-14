@@ -4,9 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotTopicPublishAction {
-    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
-    /// <variable-name></variable-name></code>) and input values (<code>$input.
-    /// <input-name>
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.<variable-name></variable-name></code>) and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
@@ -15,9 +13,7 @@ pub struct IotTopicPublishAction {
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotTopicPublishAction {
-    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
-    /// <variable-name></variable-name></code>) and input values (<code>$input.
-    /// <input-name>
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.<variable-name></variable-name></code>) and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
@@ -45,9 +41,7 @@ pub struct IotTopicPublishActionBuilder {
     pub(crate) payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotTopicPublishActionBuilder {
-    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
-    /// <variable-name></variable-name></code>) and input values (<code>$input.
-    /// <input-name>
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.<variable-name></variable-name></code>) and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
@@ -56,9 +50,7 @@ impl IotTopicPublishActionBuilder {
         self.mqtt_topic = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
-    /// <variable-name></variable-name></code>) and input values (<code>$input.
-    /// <input-name>
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.<variable-name></variable-name></code>) and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
@@ -66,9 +58,7 @@ impl IotTopicPublishActionBuilder {
         self.mqtt_topic = input;
         self
     }
-    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
-    /// <variable-name></variable-name></code>) and input values (<code>$input.
-    /// <input-name>
+    /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.<variable-name></variable-name></code>) and input values (<code>$input.<input-name>
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>

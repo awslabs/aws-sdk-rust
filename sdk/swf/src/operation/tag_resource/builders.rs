@@ -22,7 +22,7 @@ impl TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Add a tag to a Amazon SWF domain.</p> <note>
+/// <p>Add a tag to a Amazon SWF domain.</p><note>
 /// <p>Amazon SWF supports a maximum of 50 tags per resource.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

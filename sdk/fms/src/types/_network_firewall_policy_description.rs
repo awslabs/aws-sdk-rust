@@ -17,10 +17,14 @@ pub struct NetworkFirewallPolicyDescription {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     pub stateful_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
@@ -60,10 +64,14 @@ impl NetworkFirewallPolicyDescription {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.stateful_default_actions.is_none()`.
@@ -202,10 +210,14 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     pub fn stateful_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stateful_default_actions.unwrap_or_default();
@@ -216,10 +228,14 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     pub fn set_stateful_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.stateful_default_actions = input;
@@ -228,10 +244,14 @@ impl NetworkFirewallPolicyDescriptionBuilder {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     pub fn get_stateful_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.stateful_default_actions

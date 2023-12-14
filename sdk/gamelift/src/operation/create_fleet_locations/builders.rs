@@ -22,7 +22,7 @@ impl CreateFleetLocationsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleetLocations`.
 ///
-/// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p> <note>
+/// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings.</p><note>
 /// <p>This operation cannot be used with fleets that don't support remote locations. Fleets can have multiple locations only if they reside in Amazon Web Services Regions that support this feature and were created after the feature was released in March 2021.</p>
 /// </note>
 /// <p>To add fleet locations, specify the fleet to be updated and provide a list of one or more locations.</p>

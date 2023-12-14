@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupResponse {
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub rule_group_arn: ::std::string::String,
@@ -39,7 +39,7 @@ pub struct RuleGroupResponse {
     pub analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
 }
 impl RuleGroupResponse {
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn rule_group_arn(&self) -> &str {
@@ -138,7 +138,7 @@ pub struct RuleGroupResponseBuilder {
     pub(crate) analysis_results: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisResult>>,
 }
 impl RuleGroupResponseBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     /// This field is required.
@@ -146,14 +146,14 @@ impl RuleGroupResponseBuilder {
         self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn set_rule_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the rule group.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the rule group.</p><note>
     /// <p>If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid resource.</p>
     /// </note>
     pub fn get_rule_group_arn(&self) -> &::std::option::Option<::std::string::String> {

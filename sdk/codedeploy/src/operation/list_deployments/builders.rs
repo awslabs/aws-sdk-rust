@@ -114,41 +114,41 @@ impl ListDeploymentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
         crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
     /// </note>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
     /// </note>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p> <note>
+    /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p><note>
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified.</p>
     /// </note>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>The name of a deployment group for the specified application.</p><note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
     /// </note>
     pub fn deployment_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deployment_group_name(input.into());
         self
     }
-    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>The name of a deployment group for the specified application.</p><note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
     /// </note>
     pub fn set_deployment_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deployment_group_name(input);
         self
     }
-    /// <p>The name of a deployment group for the specified application.</p> <note>
+    /// <p>The name of a deployment group for the specified application.</p><note>
     /// <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified.</p>
     /// </note>
     pub fn get_deployment_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,12 +174,18 @@ impl ListDeploymentsFluentBuilder {
     ///
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li><p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li><p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li><p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li><p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li><p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li><p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
     pub fn include_only_statuses(mut self, input: crate::types::DeploymentStatus) -> Self {
         self.inner = self.inner.include_only_statuses(input);
@@ -187,12 +193,18 @@ impl ListDeploymentsFluentBuilder {
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li><p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li><p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li><p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li><p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li><p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li><p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
     pub fn set_include_only_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>>) -> Self {
         self.inner = self.inner.set_include_only_statuses(input);
@@ -200,12 +212,18 @@ impl ListDeploymentsFluentBuilder {
     }
     /// <p>A subset of deployments to list by status:</p>
     /// <ul>
-    /// <li><p><code>Created</code>: Include created deployments in the resulting list.</p></li>
-    /// <li><p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
-    /// <li><p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
-    /// <li><p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
-    /// <li><p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
-    /// <li><p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Created</code>: Include created deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Queued</code>: Include queued deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>In Progress</code>: Include in-progress deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Succeeded</code>: Include successful deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Failed</code>: Include failed deployments in the resulting list.</p></li>
+    /// <li>
+    /// <p><code>Stopped</code>: Include stopped deployments in the resulting list.</p></li>
     /// </ul>
     pub fn get_include_only_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeploymentStatus>> {
         self.inner.get_include_only_statuses()

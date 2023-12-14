@@ -24,8 +24,10 @@ impl DeleteEvaluationFormInputBuilder {
 ///
 /// <p>Deletes an evaluation form in the specified Amazon Connect instance.</p>
 /// <ul>
-/// <li><p>If the version property is provided, only the specified version of the evaluation form is deleted.</p></li>
-/// <li><p>If no version is provided, then the full form (all versions) is deleted.</p></li>
+/// <li>
+/// <p>If the version property is provided, only the specified version of the evaluation form is deleted.</p></li>
+/// <li>
+/// <p>If no version is provided, then the full form (all versions) is deleted.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteEvaluationFormFluentBuilder {

@@ -152,8 +152,10 @@ impl CreateKxDataviewFluentBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.inner = self.inner.az_mode(input);
@@ -161,8 +163,10 @@ impl CreateKxDataviewFluentBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.inner = self.inner.set_az_mode(input);
@@ -170,8 +174,10 @@ impl CreateKxDataviewFluentBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         self.inner.get_az_mode()

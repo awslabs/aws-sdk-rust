@@ -22,7 +22,7 @@ impl UpdateProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateProject`.
 ///
-/// <p>Updates a machine learning (ML) project that is created from a template that sets up an ML pipeline from training to deploying an approved model.</p> <note>
+/// <p>Updates a machine learning (ML) project that is created from a template that sets up an ML pipeline from training to deploying an approved model.</p><note>
 /// <p>You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code> of a project that is active or being created, or updated, you may lose resources already created by the project.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

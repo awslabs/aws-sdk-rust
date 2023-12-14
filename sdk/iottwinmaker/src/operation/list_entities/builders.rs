@@ -132,21 +132,21 @@ impl ListEntitiesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>A list of objects that filter the request.</p><note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub fn filters(mut self, input: crate::types::ListEntitiesFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>A list of objects that filter the request.</p><note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>A list of objects that filter the request.</p> <note>
+    /// <p>A list of objects that filter the request.</p><note>
     /// <p>Only one object is accepted as a valid input.</p>
     /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListEntitiesFilter>> {

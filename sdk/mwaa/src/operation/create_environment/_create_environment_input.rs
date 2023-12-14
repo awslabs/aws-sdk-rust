@@ -53,8 +53,10 @@ pub struct CreateEnvironmentInput {
     pub min_workers: ::std::option::Option<i32>,
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub schedulers: ::std::option::Option<i32>,
     /// <p>Defines whether the VPC endpoints configured for the environment are created, and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints for your VPC. If you choose to create an environment in a shared VPC, you must set this value to <code>CUSTOMER</code>. In a shared VPC deployment, the environment will remain in <code>PENDING</code> status until you create the VPC endpoints. If you do not take action to create the endpoints within 72 hours, the status will change to <code>CREATE_FAILED</code>. You can delete the failed environment and create a new one.</p>
@@ -152,8 +154,10 @@ impl CreateEnvironmentInput {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn schedulers(&self) -> ::std::option::Option<i32> {
         self.schedulers
@@ -565,8 +569,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.schedulers = ::std::option::Option::Some(input);
@@ -574,8 +580,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn set_schedulers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schedulers = input;
@@ -583,8 +591,10 @@ impl CreateEnvironmentInputBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
         &self.schedulers

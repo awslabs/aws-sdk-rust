@@ -22,12 +22,15 @@ impl GetPlaceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPlace`.
 ///
-/// <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.</p> <note>
+/// <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.</p><note>
 /// <p>A PlaceId is valid only if all of the following are the same in the original search request and the call to <code>GetPlace</code>.</p>
 /// <ul>
-/// <li><p>Customer Amazon Web Services account</p></li>
-/// <li><p>Amazon Web Services Region</p></li>
-/// <li><p>Data provider specified in the place index resource</p></li>
+/// <li>
+/// <p>Customer Amazon Web Services account</p></li>
+/// <li>
+/// <p>Amazon Web Services Region</p></li>
+/// <li>
+/// <p>Data provider specified in the place index resource</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -7,9 +7,12 @@
 pub struct PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
-    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
-    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
@@ -30,9 +33,12 @@ pub struct PublicAccessBlockConfiguration {
 impl PublicAccessBlockConfiguration {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
-    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
-    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
@@ -77,9 +83,12 @@ pub struct PublicAccessBlockConfigurationBuilder {
 impl PublicAccessBlockConfigurationBuilder {
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
-    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
-    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
@@ -89,9 +98,12 @@ impl PublicAccessBlockConfigurationBuilder {
     }
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
-    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
-    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>
@@ -101,9 +113,12 @@ impl PublicAccessBlockConfigurationBuilder {
     }
     /// <p>Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account. Setting this element to <code>TRUE</code> causes the following behavior:</p>
     /// <ul>
-    /// <li><p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
-    /// <li><p>PUT Object calls fail if the request includes a public ACL.</p></li>
-    /// <li><p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p><code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.</p></li>
+    /// <li>
+    /// <p>PUT Object calls fail if the request includes a public ACL.</p></li>
+    /// <li>
+    /// <p>PUT Bucket calls fail if the request includes a public ACL.</p></li>
     /// </ul>
     /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
     /// <p>This property is not supported for Amazon S3 on Outposts.</p>

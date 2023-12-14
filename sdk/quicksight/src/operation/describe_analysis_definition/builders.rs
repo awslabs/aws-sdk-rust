@@ -22,7 +22,7 @@ impl DescribeAnalysisDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAnalysisDefinition`.
 ///
-/// <p>Provides a detailed description of the definition of an analysis.</p> <note>
+/// <p>Provides a detailed description of the definition of an analysis.</p><note>
 /// <p>If you do not need to know details about the content of an Analysis, for instance if you are trying to check the status of a recently created or updated Analysis, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html"> <code>DescribeAnalysis</code> </a> instead.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -28,7 +28,7 @@ pub struct Action {
     pub cloudwatch_alarm: ::std::option::Option<crate::types::CloudwatchAlarmAction>,
     /// <p>Send data to CloudWatch Logs.</p>
     pub cloudwatch_logs: ::std::option::Option<crate::types::CloudwatchLogsAction>,
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub elasticsearch: ::std::option::Option<crate::types::ElasticsearchAction>,
@@ -102,7 +102,7 @@ impl Action {
     pub fn cloudwatch_logs(&self) -> ::std::option::Option<&crate::types::CloudwatchLogsAction> {
         self.cloudwatch_logs.as_ref()
     }
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub fn elasticsearch(&self) -> ::std::option::Option<&crate::types::ElasticsearchAction> {
@@ -353,21 +353,21 @@ impl ActionBuilder {
     pub fn get_cloudwatch_logs(&self) -> &::std::option::Option<crate::types::CloudwatchLogsAction> {
         &self.cloudwatch_logs
     }
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub fn elasticsearch(mut self, input: crate::types::ElasticsearchAction) -> Self {
         self.elasticsearch = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub fn set_elasticsearch(mut self, input: ::std::option::Option<crate::types::ElasticsearchAction>) -> Self {
         self.elasticsearch = input;
         self
     }
-    /// <p>Write data to an Amazon OpenSearch Service domain.</p> <note>
+    /// <p>Write data to an Amazon OpenSearch Service domain.</p><note>
     /// <p>The <code>Elasticsearch</code> action can only be used by existing rule actions. To create a new rule action or to update an existing rule action, use the <code>OpenSearch</code> rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.</p>
     /// </note>
     pub fn get_elasticsearch(&self) -> &::std::option::Option<crate::types::ElasticsearchAction> {

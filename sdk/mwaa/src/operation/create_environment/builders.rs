@@ -436,8 +436,10 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.inner = self.inner.schedulers(input);
@@ -445,8 +447,10 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn set_schedulers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_schedulers(input);
@@ -454,8 +458,10 @@ impl CreateEnvironmentFluentBuilder {
     }
     /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
     /// <ul>
-    /// <li><p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
-    /// <li><p>v1 - Accepts 1.</p></li>
+    /// <li>
+    /// <p>v2 - Accepts between 2 to 5. Defaults to 2.</p></li>
+    /// <li>
+    /// <p>v1 - Accepts 1.</p></li>
     /// </ul>
     pub fn get_schedulers(&self) -> &::std::option::Option<i32> {
         self.inner.get_schedulers()

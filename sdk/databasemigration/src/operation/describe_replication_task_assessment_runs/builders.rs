@@ -23,7 +23,7 @@ impl DescribeReplicationTaskAssessmentRunsInputBuilder {
 /// Fluent builder constructing a request to `DescribeReplicationTaskAssessmentRuns`.
 ///
 /// <p>Returns a paginated list of premigration assessment runs based on filter settings.</p>
-/// <p>These filter settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment run status values.</p> <note>
+/// <p>These filter settings can specify a combination of premigration assessment runs, migration tasks, replication instances, and assessment run status values.</p><note>
 /// <p>This operation doesn't return information about individual assessments. For this information, see the <code>DescribeReplicationTaskIndividualAssessments</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

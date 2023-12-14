@@ -23,8 +23,7 @@ impl CreateWhatIfForecastExportInputBuilder {
 /// Fluent builder constructing a request to `CreateWhatIfForecastExport`.
 ///
 /// <p>Exports a forecast created by the <code>CreateWhatIfForecast</code> operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>
-/// <p><code>≈
-/// <forecastexportjobname>
+/// <p><code>≈<forecastexportjobname>
 /// _
 /// <exporttimestamp>
 /// _
@@ -36,7 +35,7 @@ impl CreateWhatIfForecastExportInputBuilder {
 /// </exporttimestamp></p>
 /// <p>You must specify a <code>DataDestination</code> object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see <code>aws-forecast-iam-roles</code>.</p>
 /// <p>For more information, see <code>howitworks-forecast</code>.</p>
-/// <p>To get a list of all your what-if forecast export jobs, use the <code>ListWhatIfForecastExports</code> operation.</p> <note>
+/// <p>To get a list of all your what-if forecast export jobs, use the <code>ListWhatIfForecastExports</code> operation.</p><note>
 /// <p>The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before you can access the forecast in your Amazon S3 bucket. To get the status, use the <code>DescribeWhatIfForecastExport</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

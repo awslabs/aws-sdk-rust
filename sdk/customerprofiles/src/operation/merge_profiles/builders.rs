@@ -24,17 +24,26 @@ impl MergeProfilesInputBuilder {
 ///
 /// <p>Runs an AWS Lambda job that does the following:</p>
 /// <ol>
-/// <li><p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p></li>
-/// <li><p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p></li>
-/// <li><p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p></li>
-/// <li><p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p></li>
-/// <li><p>Standard fields are merged as follows:</p>
+/// <li>
+/// <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p></li>
+/// <li>
+/// <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p></li>
+/// <li>
+/// <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p></li>
+/// <li>
+/// <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p></li>
+/// <li>
+/// <p>Standard fields are merged as follows:</p>
 /// <ol>
-/// <li><p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p></li>
-/// <li><p>When there are conflicting fields:</p>
+/// <li>
+/// <p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p></li>
+/// <li>
+/// <p>When there are conflicting fields:</p>
 /// <ol>
-/// <li><p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken.</p></li>
-/// <li><p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p></li>
+/// <li>
+/// <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken.</p></li>
+/// <li>
+/// <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p></li>
 /// </ol></li>
 /// </ol></li>
 /// </ol>

@@ -9,10 +9,14 @@ pub struct TestConnectionOutput {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
     /// <ul>
-    /// <li><p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
-    /// <li><p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
-    /// <li><p>Verify that the secret exists and is formatted correctly.</p></li>
-    /// <li><p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
+    /// <li>
+    /// <p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
+    /// <li>
+    /// <p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
+    /// <li>
+    /// <p>Verify that the secret exists and is formatted correctly.</p></li>
+    /// <li>
+    /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -28,10 +32,14 @@ impl TestConnectionOutput {
     }
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
     /// <ul>
-    /// <li><p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
-    /// <li><p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
-    /// <li><p>Verify that the secret exists and is formatted correctly.</p></li>
-    /// <li><p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
+    /// <li>
+    /// <p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
+    /// <li>
+    /// <p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
+    /// <li>
+    /// <p>Verify that the secret exists and is formatted correctly.</p></li>
+    /// <li>
+    /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
@@ -89,10 +97,14 @@ impl TestConnectionOutputBuilder {
     }
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
     /// <ul>
-    /// <li><p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
-    /// <li><p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
-    /// <li><p>Verify that the secret exists and is formatted correctly.</p></li>
-    /// <li><p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
+    /// <li>
+    /// <p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
+    /// <li>
+    /// <p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
+    /// <li>
+    /// <p>Verify that the secret exists and is formatted correctly.</p></li>
+    /// <li>
+    /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_message = ::std::option::Option::Some(input.into());
@@ -100,10 +112,14 @@ impl TestConnectionOutputBuilder {
     }
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
     /// <ul>
-    /// <li><p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
-    /// <li><p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
-    /// <li><p>Verify that the secret exists and is formatted correctly.</p></li>
-    /// <li><p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
+    /// <li>
+    /// <p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
+    /// <li>
+    /// <p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
+    /// <li>
+    /// <p>Verify that the secret exists and is formatted correctly.</p></li>
+    /// <li>
+    /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_message = input;
@@ -111,10 +127,14 @@ impl TestConnectionOutputBuilder {
     }
     /// <p>Returns <code>Connection succeeded</code> if the test is successful. Or, returns a descriptive error message if the test fails. The following list provides troubleshooting details, depending on the error message that you receive.</p>
     /// <ul>
-    /// <li><p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
-    /// <li><p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
-    /// <li><p>Verify that the secret exists and is formatted correctly.</p></li>
-    /// <li><p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
+    /// <li>
+    /// <p>Verify that your secret name aligns with the one in Transfer Role permissions.</p></li>
+    /// <li>
+    /// <p>Verify the server URL in the connector configuration , and verify that the login credentials work successfully outside of the connector.</p></li>
+    /// <li>
+    /// <p>Verify that the secret exists and is formatted correctly.</p></li>
+    /// <li>
+    /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message

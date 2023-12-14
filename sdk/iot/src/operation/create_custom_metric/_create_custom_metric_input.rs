@@ -7,7 +7,7 @@ pub struct CreateCustomMetricInput {
     pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name in the console for the custom metric. This name doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. You can update the friendly name after you define it.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub metric_type: ::std::option::Option<crate::types::CustomMetricType>,
@@ -25,7 +25,7 @@ impl CreateCustomMetricInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub fn metric_type(&self) -> ::std::option::Option<&crate::types::CustomMetricType> {
@@ -89,7 +89,7 @@ impl CreateCustomMetricInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     /// This field is required.
@@ -97,14 +97,14 @@ impl CreateCustomMetricInputBuilder {
         self.metric_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub fn set_metric_type(mut self, input: ::std::option::Option<crate::types::CustomMetricType>) -> Self {
         self.metric_type = input;
         self
     }
-    /// <p>The type of the custom metric.</p> <important>
+    /// <p>The type of the custom metric.</p><important>
     /// <p>The type <code>number</code> only takes a single metric value as an input, but when you submit the metrics value in the DeviceMetrics report, you must pass it as an array with a single value.</p>
     /// </important>
     pub fn get_metric_type(&self) -> &::std::option::Option<crate::types::CustomMetricType> {

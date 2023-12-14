@@ -26,11 +26,15 @@ impl DeleteResourceTreeInputBuilder {
 /// <p>Child resources are resources that were created from another resource. For example, when a forecast is generated from a predictor, the forecast is the child resource and the predictor is the parent resource.</p>
 /// <p>Amazon Forecast resources possess the following parent-child resource hierarchies:</p>
 /// <ul>
-/// <li><p><b>Dataset</b>: dataset import jobs</p></li>
-/// <li><p><b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs</p></li>
-/// <li><p><b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs</p></li>
-/// <li><p><b>Forecast</b>: forecast export jobs</p></li>
-/// </ul> <note>
+/// <li>
+/// <p><b>Dataset</b>: dataset import jobs</p></li>
+/// <li>
+/// <p><b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs</p></li>
+/// <li>
+/// <p><b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs</p></li>
+/// <li>
+/// <p><b>Forecast</b>: forecast export jobs</p></li>
+/// </ul><note>
 /// <p><code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or exported files stored in Amazon S3.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -5,7 +5,7 @@
 pub struct StartDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
     pub storage_system_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub collection_duration_minutes: ::std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl StartDiscoveryJobInput {
     pub fn storage_system_arn(&self) -> ::std::option::Option<&str> {
         self.storage_system_arn.as_deref()
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn collection_duration_minutes(&self) -> ::std::option::Option<i32> {
@@ -68,7 +68,7 @@ impl StartDiscoveryJobInputBuilder {
     pub fn get_storage_system_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_system_arn
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     /// This field is required.
@@ -76,14 +76,14 @@ impl StartDiscoveryJobInputBuilder {
         self.collection_duration_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn set_collection_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.collection_duration_minutes = input;
         self
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p><note>
     /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn get_collection_duration_minutes(&self) -> &::std::option::Option<i32> {

@@ -5,7 +5,8 @@
 pub struct DescribeFleetAdvisorSchemaObjectSummaryInput {
     /// <p>If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code></p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -17,7 +18,8 @@ pub struct DescribeFleetAdvisorSchemaObjectSummaryInput {
 impl DescribeFleetAdvisorSchemaObjectSummaryInput {
     /// <p>If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code></p>
     ///
@@ -57,7 +59,8 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     ///
     /// <p>If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -68,7 +71,8 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -77,7 +81,8 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
     /// </ul>
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

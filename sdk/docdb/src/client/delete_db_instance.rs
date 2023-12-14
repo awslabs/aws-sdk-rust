@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDBInstance`](crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`db_instance_identifier(impl Into<String>)`](crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder::set_db_instance_identifier):<br>required: **true**<br><p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul>  <li><p>Must match the name of an existing instance.</p></li> </ul><br>
+    ///   - [`db_instance_identifier(impl Into<String>)`](crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder::db_instance_identifier) / [`set_db_instance_identifier(Option<String>)`](crate::operation::delete_db_instance::builders::DeleteDBInstanceFluentBuilder::set_db_instance_identifier):<br>required: **true**<br><p>The instance identifier for the instance to be deleted. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul>  <li>   <p>Must match the name of an existing instance.</p></li> </ul><br>
     /// - On success, responds with [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput) with field(s):
     ///   - [`db_instance(Option<DbInstance>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::db_instance): <p>Detailed information about an instance.</p>
     /// - On failure, responds with [`SdkError<DeleteDBInstanceError>`](crate::operation::delete_db_instance::DeleteDBInstanceError)

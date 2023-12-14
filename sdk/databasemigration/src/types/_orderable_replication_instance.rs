@@ -21,7 +21,7 @@ pub struct OrderableReplicationInstance {
     pub included_allocated_storage: i32,
     /// <p>List of Availability Zones for this replication instance.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub release_status: ::std::option::Option<crate::types::ReleaseStatusValues>,
@@ -62,7 +62,7 @@ impl OrderableReplicationInstance {
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn release_status(&self) -> ::std::option::Option<&crate::types::ReleaseStatusValues> {
@@ -212,21 +212,21 @@ impl OrderableReplicationInstanceBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn release_status(mut self, input: crate::types::ReleaseStatusValues) -> Self {
         self.release_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn set_release_status(mut self, input: ::std::option::Option<crate::types::ReleaseStatusValues>) -> Self {
         self.release_status = input;
         self
     }
-    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p> <note>
+    /// <p>The value returned when the specified <code>EngineVersion</code> of the replication instance is in Beta or test mode. This indicates some features might not work as expected.</p><note>
     /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     pub fn get_release_status(&self) -> &::std::option::Option<crate::types::ReleaseStatusValues> {

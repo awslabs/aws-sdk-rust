@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsVpcConfiguration {
-    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
     pub subnets: ::std::vec::Vec<::std::string::String>,
-    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -16,14 +16,14 @@ pub struct AwsVpcConfiguration {
     pub assign_public_ip: ::std::option::Option<crate::types::AssignPublicIp>,
 }
 impl AwsVpcConfiguration {
-    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
     pub fn subnets(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.subnets.deref()
     }
-    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
     ///
@@ -56,7 +56,7 @@ impl AwsVpcConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
-    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -65,14 +65,14 @@ impl AwsVpcConfigurationBuilder {
         self.subnets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
-    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the subnets associated with the task or service. There's a limit of 16 subnets that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified subnets must be from the same VPC.</p>
     /// </note>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -82,7 +82,7 @@ impl AwsVpcConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,14 +91,14 @@ impl AwsVpcConfigurationBuilder {
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p> <note>
+    /// <p>The IDs of the security groups associated with the task or service. If you don't specify a security group, the default security group for the VPC is used. There's a limit of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.</p><note>
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

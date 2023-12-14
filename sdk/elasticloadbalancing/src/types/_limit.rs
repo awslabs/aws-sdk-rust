@@ -6,9 +6,12 @@
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li><p>classic-listeners</p></li>
-    /// <li><p>classic-load-balancers</p></li>
-    /// <li><p>classic-registered-instances</p></li>
+    /// <li>
+    /// <p>classic-listeners</p></li>
+    /// <li>
+    /// <p>classic-load-balancers</p></li>
+    /// <li>
+    /// <p>classic-registered-instances</p></li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the limit.</p>
@@ -17,9 +20,12 @@ pub struct Limit {
 impl Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li><p>classic-listeners</p></li>
-    /// <li><p>classic-load-balancers</p></li>
-    /// <li><p>classic-registered-instances</p></li>
+    /// <li>
+    /// <p>classic-listeners</p></li>
+    /// <li>
+    /// <p>classic-load-balancers</p></li>
+    /// <li>
+    /// <p>classic-registered-instances</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -46,9 +52,12 @@ pub struct LimitBuilder {
 impl LimitBuilder {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li><p>classic-listeners</p></li>
-    /// <li><p>classic-load-balancers</p></li>
-    /// <li><p>classic-registered-instances</p></li>
+    /// <li>
+    /// <p>classic-listeners</p></li>
+    /// <li>
+    /// <p>classic-load-balancers</p></li>
+    /// <li>
+    /// <p>classic-registered-instances</p></li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -56,9 +65,12 @@ impl LimitBuilder {
     }
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li><p>classic-listeners</p></li>
-    /// <li><p>classic-load-balancers</p></li>
-    /// <li><p>classic-registered-instances</p></li>
+    /// <li>
+    /// <p>classic-listeners</p></li>
+    /// <li>
+    /// <p>classic-load-balancers</p></li>
+    /// <li>
+    /// <p>classic-registered-instances</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -66,9 +78,12 @@ impl LimitBuilder {
     }
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
-    /// <li><p>classic-listeners</p></li>
-    /// <li><p>classic-load-balancers</p></li>
-    /// <li><p>classic-registered-instances</p></li>
+    /// <li>
+    /// <p>classic-listeners</p></li>
+    /// <li>
+    /// <p>classic-load-balancers</p></li>
+    /// <li>
+    /// <p>classic-registered-instances</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

@@ -13,11 +13,11 @@ pub struct ExecuteStatementInput {
     pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the database schema.</p> <note>
+    /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub schema: ::std::option::Option<::std::string::String>,
-    /// <p>The parameters for the SQL statement.</p> <note>
+    /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
@@ -26,7 +26,7 @@ pub struct ExecuteStatementInput {
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to include metadata in the results.</p>
     pub include_result_metadata: ::std::option::Option<bool>,
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub continue_after_timeout: ::std::option::Option<bool>,
@@ -54,13 +54,13 @@ impl ExecuteStatementInput {
     pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
-    /// <p>The name of the database schema.</p> <note>
+    /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn schema(&self) -> ::std::option::Option<&str> {
         self.schema.as_deref()
     }
-    /// <p>The parameters for the SQL statement.</p> <note>
+    /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     ///
@@ -77,7 +77,7 @@ impl ExecuteStatementInput {
     pub fn include_result_metadata(&self) -> ::std::option::Option<bool> {
         self.include_result_metadata
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn continue_after_timeout(&self) -> ::std::option::Option<bool> {
@@ -179,21 +179,21 @@ impl ExecuteStatementInputBuilder {
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
         &self.database
     }
-    /// <p>The name of the database schema.</p> <note>
+    /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schema = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database schema.</p> <note>
+    /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn set_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The name of the database schema.</p> <note>
+    /// <p>The name of the database schema.</p><note>
     /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
     /// </note>
     pub fn get_schema(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,7 +203,7 @@ impl ExecuteStatementInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>The parameters for the SQL statement.</p> <note>
+    /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn parameters(mut self, input: crate::types::SqlParameter) -> Self {
@@ -212,14 +212,14 @@ impl ExecuteStatementInputBuilder {
         self.parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The parameters for the SQL statement.</p> <note>
+    /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>The parameters for the SQL statement.</p> <note>
+    /// <p>The parameters for the SQL statement.</p><note>
     /// <p>Array parameters are not supported.</p>
     /// </note>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
@@ -256,21 +256,21 @@ impl ExecuteStatementInputBuilder {
     pub fn get_include_result_metadata(&self) -> &::std::option::Option<bool> {
         &self.include_result_metadata
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn continue_after_timeout(mut self, input: bool) -> Self {
         self.continue_after_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn set_continue_after_timeout(mut self, input: ::std::option::Option<bool>) -> Self {
         self.continue_after_timeout = input;
         self
     }
-    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
+    /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p><note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
     pub fn get_continue_after_timeout(&self) -> &::std::option::Option<bool> {

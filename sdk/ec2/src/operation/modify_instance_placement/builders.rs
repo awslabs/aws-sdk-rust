@@ -24,10 +24,14 @@ impl ModifyInstancePlacementInputBuilder {
 ///
 /// <p>Modifies the placement attributes for a specified instance. You can do the following:</p>
 /// <ul>
-/// <li><p>Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next time the instance is launched, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists.</p></li>
-/// <li><p>Change the Dedicated Host with which an instance is associated.</p></li>
-/// <li><p>Change the instance tenancy of an instance.</p></li>
-/// <li><p>Move an instance to or from a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.</p></li>
+/// <li>
+/// <p>Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next time the instance is launched, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists.</p></li>
+/// <li>
+/// <p>Change the Dedicated Host with which an instance is associated.</p></li>
+/// <li>
+/// <p>Change the instance tenancy of an instance.</p></li>
+/// <li>
+/// <p>Move an instance to or from a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.</p></li>
 /// </ul>
 /// <p>At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request. Affinity and tenancy can be modified in the same request.</p>
 /// <p>To modify the host ID, tenancy, placement group, or partition for an instance, the instance must be in the <code>stopped</code> state.</p>
@@ -175,21 +179,21 @@ impl ModifyInstancePlacementFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn tenancy(mut self, input: crate::types::HostTenancy) -> Self {
         self.inner = self.inner.tenancy(input);
         self
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::HostTenancy>) -> Self {
         self.inner = self.inner.set_tenancy(input);
         self
     }
-    /// <p>The tenancy for the instance.</p> <note>
+    /// <p>The tenancy for the instance.</p><note>
     /// <p>For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code> or <code>default</code>. Attempting to make one of these unsupported tenancy changes results in an <code>InvalidRequest</code> error code.</p>
     /// </note>
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::HostTenancy> {

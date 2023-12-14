@@ -36,9 +36,12 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
-    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
-    /// <li><p>Aurora 5.6 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li>
+    /// <p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
     /// <p>Indicates when the DB instance was created.</p>
@@ -80,8 +83,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>Information about the subnet group that is associated with the DB instance.</p>
     pub db_subnet_group: ::std::option::Option<crate::types::AwsRdsDbSubnetGroup>,
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -203,9 +205,12 @@ impl AwsRdsDbInstanceDetails {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
-    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
-    /// <li><p>Aurora 5.6 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li>
+    /// <p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
@@ -289,8 +294,7 @@ impl AwsRdsDbInstanceDetails {
         self.db_subnet_group.as_ref()
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -683,9 +687,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
-    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
-    /// <li><p>Aurora 5.6 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li>
+    /// <p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
         self.iam_database_authentication_enabled = ::std::option::Option::Some(input);
@@ -694,9 +701,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
-    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
-    /// <li><p>Aurora 5.6 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li>
+    /// <p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn set_iam_database_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.iam_database_authentication_enabled = input;
@@ -705,9 +715,12 @@ impl AwsRdsDbInstanceDetailsBuilder {
     /// <p>True if mapping of IAM accounts to database accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
-    /// <li><p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
-    /// <li><p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
-    /// <li><p>Aurora 5.6 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.6, minor version 5.6.34 or higher</p></li>
+    /// <li>
+    /// <p>For MySQL 5.7, minor version 5.7.16 or higher</p></li>
+    /// <li>
+    /// <p>Aurora 5.6 or higher</p></li>
     /// </ul>
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
@@ -981,8 +994,7 @@ impl AwsRdsDbInstanceDetailsBuilder {
         &self.db_subnet_group
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -995,8 +1007,7 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM
@@ -1009,8 +1020,7 @@ impl AwsRdsDbInstanceDetailsBuilder {
         self
     }
     /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    /// <p>Uses the format <code>
-    /// <day>
+    /// <p>Uses the format <code><day>
     /// :HH:MM-
     /// <day>
     /// :HH:MM

@@ -6,8 +6,10 @@
 pub struct StopDeploymentOutput {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li><p>Pending: The stop operation is pending.</p></li>
-    /// <li><p>Succeeded: The stop operation was successful.</p></li>
+    /// <li>
+    /// <p>Pending: The stop operation is pending.</p></li>
+    /// <li>
+    /// <p>Succeeded: The stop operation was successful.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::StopStatus>,
     /// <p>An accompanying status message.</p>
@@ -17,8 +19,10 @@ pub struct StopDeploymentOutput {
 impl StopDeploymentOutput {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li><p>Pending: The stop operation is pending.</p></li>
-    /// <li><p>Succeeded: The stop operation was successful.</p></li>
+    /// <li>
+    /// <p>Pending: The stop operation is pending.</p></li>
+    /// <li>
+    /// <p>Succeeded: The stop operation was successful.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::StopStatus> {
         self.status.as_ref()
@@ -51,8 +55,10 @@ pub struct StopDeploymentOutputBuilder {
 impl StopDeploymentOutputBuilder {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li><p>Pending: The stop operation is pending.</p></li>
-    /// <li><p>Succeeded: The stop operation was successful.</p></li>
+    /// <li>
+    /// <p>Pending: The stop operation is pending.</p></li>
+    /// <li>
+    /// <p>Succeeded: The stop operation was successful.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::StopStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -60,8 +66,10 @@ impl StopDeploymentOutputBuilder {
     }
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li><p>Pending: The stop operation is pending.</p></li>
-    /// <li><p>Succeeded: The stop operation was successful.</p></li>
+    /// <li>
+    /// <p>Pending: The stop operation is pending.</p></li>
+    /// <li>
+    /// <p>Succeeded: The stop operation was successful.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StopStatus>) -> Self {
         self.status = input;
@@ -69,8 +77,10 @@ impl StopDeploymentOutputBuilder {
     }
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
-    /// <li><p>Pending: The stop operation is pending.</p></li>
-    /// <li><p>Succeeded: The stop operation was successful.</p></li>
+    /// <li>
+    /// <p>Pending: The stop operation is pending.</p></li>
+    /// <li>
+    /// <p>Succeeded: The stop operation was successful.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StopStatus> {
         &self.status

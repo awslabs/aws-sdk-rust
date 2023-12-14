@@ -12,10 +12,14 @@ pub struct GetSavingsPlansCoverageInput {
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
-    /// <li><p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li><p><code>REGION</code></p></li>
-    /// <li><p><code>SERVICE</code></p></li>
-    /// <li><p><code>INSTANCE_FAMILY</code></p></li>
+    /// <li>
+    /// <p><code>LINKED_ACCOUNT</code></p></li>
+    /// <li>
+    /// <p><code>REGION</code></p></li>
+    /// <li>
+    /// <p><code>SERVICE</code></p></li>
+    /// <li>
+    /// <p><code>INSTANCE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
@@ -29,13 +33,20 @@ pub struct GetSavingsPlansCoverageInput {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>SpendCoveredBySavingsPlan</code></p></li>
-    /// <li><p><code>OnDemandCost</code></p></li>
-    /// <li><p><code>CoveragePercentage</code></p></li>
-    /// <li><p><code>TotalCost</code></p></li>
-    /// <li><p><code>InstanceFamily</code></p></li>
-    /// <li><p><code>Region</code></p></li>
-    /// <li><p><code>Service</code></p></li>
+    /// <li>
+    /// <p><code>SpendCoveredBySavingsPlan</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCost</code></p></li>
+    /// <li>
+    /// <p><code>CoveragePercentage</code></p></li>
+    /// <li>
+    /// <p><code>TotalCost</code></p></li>
+    /// <li>
+    /// <p><code>InstanceFamily</code></p></li>
+    /// <li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Service</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::SortDefinition>,
@@ -58,10 +69,14 @@ impl GetSavingsPlansCoverageInput {
     }
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
-    /// <li><p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li><p><code>REGION</code></p></li>
-    /// <li><p><code>SERVICE</code></p></li>
-    /// <li><p><code>INSTANCE_FAMILY</code></p></li>
+    /// <li>
+    /// <p><code>LINKED_ACCOUNT</code></p></li>
+    /// <li>
+    /// <p><code>REGION</code></p></li>
+    /// <li>
+    /// <p><code>SERVICE</code></p></li>
+    /// <li>
+    /// <p><code>INSTANCE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
@@ -85,13 +100,20 @@ impl GetSavingsPlansCoverageInput {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>SpendCoveredBySavingsPlan</code></p></li>
-    /// <li><p><code>OnDemandCost</code></p></li>
-    /// <li><p><code>CoveragePercentage</code></p></li>
-    /// <li><p><code>TotalCost</code></p></li>
-    /// <li><p><code>InstanceFamily</code></p></li>
-    /// <li><p><code>Region</code></p></li>
-    /// <li><p><code>Service</code></p></li>
+    /// <li>
+    /// <p><code>SpendCoveredBySavingsPlan</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCost</code></p></li>
+    /// <li>
+    /// <p><code>CoveragePercentage</code></p></li>
+    /// <li>
+    /// <p><code>TotalCost</code></p></li>
+    /// <li>
+    /// <p><code>InstanceFamily</code></p></li>
+    /// <li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Service</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SortDefinition> {
@@ -173,10 +195,14 @@ impl GetSavingsPlansCoverageInputBuilder {
     }
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
-    /// <li><p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li><p><code>REGION</code></p></li>
-    /// <li><p><code>SERVICE</code></p></li>
-    /// <li><p><code>INSTANCE_FAMILY</code></p></li>
+    /// <li>
+    /// <p><code>LINKED_ACCOUNT</code></p></li>
+    /// <li>
+    /// <p><code>REGION</code></p></li>
+    /// <li>
+    /// <p><code>SERVICE</code></p></li>
+    /// <li>
+    /// <p><code>INSTANCE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
@@ -186,10 +212,14 @@ impl GetSavingsPlansCoverageInputBuilder {
     }
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
-    /// <li><p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li><p><code>REGION</code></p></li>
-    /// <li><p><code>SERVICE</code></p></li>
-    /// <li><p><code>INSTANCE_FAMILY</code></p></li>
+    /// <li>
+    /// <p><code>LINKED_ACCOUNT</code></p></li>
+    /// <li>
+    /// <p><code>REGION</code></p></li>
+    /// <li>
+    /// <p><code>SERVICE</code></p></li>
+    /// <li>
+    /// <p><code>INSTANCE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
@@ -199,10 +229,14 @@ impl GetSavingsPlansCoverageInputBuilder {
     }
     /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
     /// <ul>
-    /// <li><p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li><p><code>REGION</code></p></li>
-    /// <li><p><code>SERVICE</code></p></li>
-    /// <li><p><code>INSTANCE_FAMILY</code></p></li>
+    /// <li>
+    /// <p><code>LINKED_ACCOUNT</code></p></li>
+    /// <li>
+    /// <p><code>REGION</code></p></li>
+    /// <li>
+    /// <p><code>SERVICE</code></p></li>
+    /// <li>
+    /// <p><code>INSTANCE_FAMILY</code></p></li>
     /// </ul>
     /// <p><code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>Cost category is also supported.</p>
@@ -260,13 +294,20 @@ impl GetSavingsPlansCoverageInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>SpendCoveredBySavingsPlan</code></p></li>
-    /// <li><p><code>OnDemandCost</code></p></li>
-    /// <li><p><code>CoveragePercentage</code></p></li>
-    /// <li><p><code>TotalCost</code></p></li>
-    /// <li><p><code>InstanceFamily</code></p></li>
-    /// <li><p><code>Region</code></p></li>
-    /// <li><p><code>Service</code></p></li>
+    /// <li>
+    /// <p><code>SpendCoveredBySavingsPlan</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCost</code></p></li>
+    /// <li>
+    /// <p><code>CoveragePercentage</code></p></li>
+    /// <li>
+    /// <p><code>TotalCost</code></p></li>
+    /// <li>
+    /// <p><code>InstanceFamily</code></p></li>
+    /// <li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Service</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortDefinition) -> Self {
@@ -276,13 +317,20 @@ impl GetSavingsPlansCoverageInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>SpendCoveredBySavingsPlan</code></p></li>
-    /// <li><p><code>OnDemandCost</code></p></li>
-    /// <li><p><code>CoveragePercentage</code></p></li>
-    /// <li><p><code>TotalCost</code></p></li>
-    /// <li><p><code>InstanceFamily</code></p></li>
-    /// <li><p><code>Region</code></p></li>
-    /// <li><p><code>Service</code></p></li>
+    /// <li>
+    /// <p><code>SpendCoveredBySavingsPlan</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCost</code></p></li>
+    /// <li>
+    /// <p><code>CoveragePercentage</code></p></li>
+    /// <li>
+    /// <p><code>TotalCost</code></p></li>
+    /// <li>
+    /// <p><code>InstanceFamily</code></p></li>
+    /// <li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Service</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SortDefinition>) -> Self {
@@ -292,13 +340,20 @@ impl GetSavingsPlansCoverageInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
-    /// <li><p><code>SpendCoveredBySavingsPlan</code></p></li>
-    /// <li><p><code>OnDemandCost</code></p></li>
-    /// <li><p><code>CoveragePercentage</code></p></li>
-    /// <li><p><code>TotalCost</code></p></li>
-    /// <li><p><code>InstanceFamily</code></p></li>
-    /// <li><p><code>Region</code></p></li>
-    /// <li><p><code>Service</code></p></li>
+    /// <li>
+    /// <p><code>SpendCoveredBySavingsPlan</code></p></li>
+    /// <li>
+    /// <p><code>OnDemandCost</code></p></li>
+    /// <li>
+    /// <p><code>CoveragePercentage</code></p></li>
+    /// <li>
+    /// <p><code>TotalCost</code></p></li>
+    /// <li>
+    /// <p><code>InstanceFamily</code></p></li>
+    /// <li>
+    /// <p><code>Region</code></p></li>
+    /// <li>
+    /// <p><code>Service</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SortDefinition> {

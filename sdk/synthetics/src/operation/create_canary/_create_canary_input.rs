@@ -12,18 +12,25 @@ pub struct CreateCanaryInput {
     pub artifact_s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li><p><code>s3:PutObject</code></p></li>
-    /// <li><p><code>s3:GetBucketLocation</code></p></li>
-    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
-    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
-    /// <li><p><code>logs:CreateLogGroup</code></p></li>
-    /// <li><p><code>logs:CreateLogStream</code></p></li>
-    /// <li><p><code>logs:PutLogEvents</code></p></li>
+    /// <li>
+    /// <p><code>s3:PutObject</code></p></li>
+    /// <li>
+    /// <p><code>s3:GetBucketLocation</code></p></li>
+    /// <li>
+    /// <p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li>
+    /// <p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogGroup</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogStream</code></p></li>
+    /// <li>
+    /// <p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
     pub schedule: ::std::option::Option<crate::types::CanaryScheduleInput>,
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
     pub run_config: ::std::option::Option<crate::types::CanaryRunConfigInput>,
@@ -57,13 +64,20 @@ impl CreateCanaryInput {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li><p><code>s3:PutObject</code></p></li>
-    /// <li><p><code>s3:GetBucketLocation</code></p></li>
-    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
-    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
-    /// <li><p><code>logs:CreateLogGroup</code></p></li>
-    /// <li><p><code>logs:CreateLogStream</code></p></li>
-    /// <li><p><code>logs:PutLogEvents</code></p></li>
+    /// <li>
+    /// <p><code>s3:PutObject</code></p></li>
+    /// <li>
+    /// <p><code>s3:GetBucketLocation</code></p></li>
+    /// <li>
+    /// <p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li>
+    /// <p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogGroup</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogStream</code></p></li>
+    /// <li>
+    /// <p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
@@ -72,7 +86,7 @@ impl CreateCanaryInput {
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::CanaryScheduleInput> {
         self.schedule.as_ref()
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
     pub fn run_config(&self) -> ::std::option::Option<&crate::types::CanaryRunConfigInput> {
@@ -179,13 +193,20 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li><p><code>s3:PutObject</code></p></li>
-    /// <li><p><code>s3:GetBucketLocation</code></p></li>
-    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
-    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
-    /// <li><p><code>logs:CreateLogGroup</code></p></li>
-    /// <li><p><code>logs:CreateLogStream</code></p></li>
-    /// <li><p><code>logs:PutLogEvents</code></p></li>
+    /// <li>
+    /// <p><code>s3:PutObject</code></p></li>
+    /// <li>
+    /// <p><code>s3:GetBucketLocation</code></p></li>
+    /// <li>
+    /// <p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li>
+    /// <p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogGroup</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogStream</code></p></li>
+    /// <li>
+    /// <p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,13 +215,20 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li><p><code>s3:PutObject</code></p></li>
-    /// <li><p><code>s3:GetBucketLocation</code></p></li>
-    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
-    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
-    /// <li><p><code>logs:CreateLogGroup</code></p></li>
-    /// <li><p><code>logs:CreateLogStream</code></p></li>
-    /// <li><p><code>logs:PutLogEvents</code></p></li>
+    /// <li>
+    /// <p><code>s3:PutObject</code></p></li>
+    /// <li>
+    /// <p><code>s3:GetBucketLocation</code></p></li>
+    /// <li>
+    /// <p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li>
+    /// <p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogGroup</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogStream</code></p></li>
+    /// <li>
+    /// <p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
@@ -208,13 +236,20 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
     /// <ul>
-    /// <li><p><code>s3:PutObject</code></p></li>
-    /// <li><p><code>s3:GetBucketLocation</code></p></li>
-    /// <li><p><code>s3:ListAllMyBuckets</code></p></li>
-    /// <li><p><code>cloudwatch:PutMetricData</code></p></li>
-    /// <li><p><code>logs:CreateLogGroup</code></p></li>
-    /// <li><p><code>logs:CreateLogStream</code></p></li>
-    /// <li><p><code>logs:PutLogEvents</code></p></li>
+    /// <li>
+    /// <p><code>s3:PutObject</code></p></li>
+    /// <li>
+    /// <p><code>s3:GetBucketLocation</code></p></li>
+    /// <li>
+    /// <p><code>s3:ListAllMyBuckets</code></p></li>
+    /// <li>
+    /// <p><code>cloudwatch:PutMetricData</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogGroup</code></p></li>
+    /// <li>
+    /// <p><code>logs:CreateLogStream</code></p></li>
+    /// <li>
+    /// <p><code>logs:PutLogEvents</code></p></li>
     /// </ul>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
@@ -234,21 +269,21 @@ impl CreateCanaryInputBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::CanaryScheduleInput> {
         &self.schedule
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
     pub fn run_config(mut self, input: crate::types::CanaryRunConfigInput) -> Self {
         self.run_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
     pub fn set_run_config(mut self, input: ::std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
         self.run_config = input;
         self
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p><important>
     /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
     /// </important>
     pub fn get_run_config(&self) -> &::std::option::Option<crate::types::CanaryRunConfigInput> {

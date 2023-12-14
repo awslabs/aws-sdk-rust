@@ -12,11 +12,16 @@ pub struct ConfigurationItem {
     pub configuration_item_capture_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
-    /// <li><p>OK – The resource configuration has been updated</p></li>
-    /// <li><p>ResourceDiscovered – The resource was newly discovered</p></li>
-    /// <li><p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
-    /// <li><p>ResourceDeleted – The resource was deleted</p></li>
-    /// <li><p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p></li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p></li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
     /// </ul>
     pub configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
@@ -66,11 +71,16 @@ impl ConfigurationItem {
     }
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
-    /// <li><p>OK – The resource configuration has been updated</p></li>
-    /// <li><p>ResourceDiscovered – The resource was newly discovered</p></li>
-    /// <li><p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
-    /// <li><p>ResourceDeleted – The resource was deleted</p></li>
-    /// <li><p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p></li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p></li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
     /// </ul>
     pub fn configuration_item_status(&self) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
         self.configuration_item_status.as_ref()
@@ -214,11 +224,16 @@ impl ConfigurationItemBuilder {
     }
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
-    /// <li><p>OK – The resource configuration has been updated</p></li>
-    /// <li><p>ResourceDiscovered – The resource was newly discovered</p></li>
-    /// <li><p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
-    /// <li><p>ResourceDeleted – The resource was deleted</p></li>
-    /// <li><p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p></li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p></li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
     /// </ul>
     pub fn configuration_item_status(mut self, input: crate::types::ConfigurationItemStatus) -> Self {
         self.configuration_item_status = ::std::option::Option::Some(input);
@@ -226,11 +241,16 @@ impl ConfigurationItemBuilder {
     }
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
-    /// <li><p>OK – The resource configuration has been updated</p></li>
-    /// <li><p>ResourceDiscovered – The resource was newly discovered</p></li>
-    /// <li><p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
-    /// <li><p>ResourceDeleted – The resource was deleted</p></li>
-    /// <li><p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p></li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p></li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
     /// </ul>
     pub fn set_configuration_item_status(mut self, input: ::std::option::Option<crate::types::ConfigurationItemStatus>) -> Self {
         self.configuration_item_status = input;
@@ -238,11 +258,16 @@ impl ConfigurationItemBuilder {
     }
     /// <p>The configuration item status. The valid values are:</p>
     /// <ul>
-    /// <li><p>OK – The resource configuration has been updated</p></li>
-    /// <li><p>ResourceDiscovered – The resource was newly discovered</p></li>
-    /// <li><p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
-    /// <li><p>ResourceDeleted – The resource was deleted</p></li>
-    /// <li><p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>OK – The resource configuration has been updated</p></li>
+    /// <li>
+    /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
+    /// <li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <li>
+    /// <p>ResourceDeleted – The resource was deleted</p></li>
+    /// <li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
     /// </ul>
     pub fn get_configuration_item_status(&self) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
         &self.configuration_item_status

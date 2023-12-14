@@ -22,7 +22,7 @@ impl DeregisterAccountInputBuilder {
 }
 /// Fluent builder constructing a request to `DeregisterAccount`.
 ///
-/// <p>Deregisters an account in Audit Manager.</p> <note>
+/// <p>Deregisters an account in Audit Manager.</p><note>
 /// <p>Before you deregister, you can use the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_UpdateSettings.html">UpdateSettings</a> API operation to set your preferred data retention policy. By default, Audit Manager retains your data. If you want to delete your data, you can use the <code>DeregistrationPolicy</code> attribute to request the deletion of your data.</p>
 /// <p>For more information about data retention, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html">Data Protection</a> in the <i>Audit Manager User Guide</i>.</p>
 /// </note>

@@ -117,9 +117,12 @@ impl CreateImageFluentBuilder {
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
     /// <ul>
-    /// <li><p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
-    /// <li><p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
-    /// <li><p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
+    /// <li>
+    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
+    /// <li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
+    /// <li>
+    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         self.inner = self.inner.block_device_mappings(input);
@@ -128,9 +131,12 @@ impl CreateImageFluentBuilder {
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
     /// <ul>
-    /// <li><p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
-    /// <li><p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
-    /// <li><p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
+    /// <li>
+    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
+    /// <li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
+    /// <li>
+    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
     pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
@@ -139,9 +145,12 @@ impl CreateImageFluentBuilder {
     /// <p>The block device mappings.</p>
     /// <p>When using the CreateImage action:</p>
     /// <ul>
-    /// <li><p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
-    /// <li><p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
-    /// <li><p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
+    /// <li>
+    /// <p>You can't change the volume size using the VolumeSize parameter. If you want a different volume size, you must first change the volume size of the source instance.</p></li>
+    /// <li>
+    /// <p>You can't modify the encryption status of existing volumes or snapshots. To create an AMI with volumes or snapshots that have a different encryption status (for example, where the source volume and snapshots are unencrypted, and you want to create an AMI with encrypted volumes or snapshots), use the <code>CopyImage</code> action.</p></li>
+    /// <li>
+    /// <p>The only option that can be changed for existing mappings or snapshots is <code>DeleteOnTermination</code>.</p></li>
     /// </ul>
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>> {
         self.inner.get_block_device_mappings()
@@ -207,8 +216,10 @@ impl CreateImageFluentBuilder {
     }
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent snapshots that include only the data that has been written to the volumes at the time the snapshots are created. Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.</p></li>
-    /// <li><p><code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p></li>
+    /// <li>
+    /// <p><code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent snapshots that include only the data that has been written to the volumes at the time the snapshots are created. Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.</p></li>
+    /// <li>
+    /// <p><code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p></li>
     /// </ul>
     /// <p>Default: <code>false</code></p>
     pub fn no_reboot(mut self, input: bool) -> Self {
@@ -217,8 +228,10 @@ impl CreateImageFluentBuilder {
     }
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent snapshots that include only the data that has been written to the volumes at the time the snapshots are created. Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.</p></li>
-    /// <li><p><code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p></li>
+    /// <li>
+    /// <p><code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent snapshots that include only the data that has been written to the volumes at the time the snapshots are created. Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.</p></li>
+    /// <li>
+    /// <p><code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p></li>
     /// </ul>
     /// <p>Default: <code>false</code></p>
     pub fn set_no_reboot(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -227,8 +240,10 @@ impl CreateImageFluentBuilder {
     }
     /// <p>Indicates whether or not the instance should be automatically rebooted before creating the image. Specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent snapshots that include only the data that has been written to the volumes at the time the snapshots are created. Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.</p></li>
-    /// <li><p><code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p></li>
+    /// <li>
+    /// <p><code>true</code> - The instance is not rebooted before creating the image. This creates crash-consistent snapshots that include only the data that has been written to the volumes at the time the snapshots are created. Buffered data and data in memory that has not yet been written to the volumes is not included in the snapshots.</p></li>
+    /// <li>
+    /// <p><code>false</code> - The instance is rebooted before creating the image. This ensures that all buffered data and data in memory is written to the volumes before the snapshots are created.</p></li>
     /// </ul>
     /// <p>Default: <code>false</code></p>
     pub fn get_no_reboot(&self) -> &::std::option::Option<bool> {
@@ -240,8 +255,10 @@ impl CreateImageFluentBuilder {
     ///
     /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
-    /// <li><p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
+    /// <li>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
@@ -251,8 +268,10 @@ impl CreateImageFluentBuilder {
     }
     /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
-    /// <li><p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
+    /// <li>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
@@ -262,8 +281,10 @@ impl CreateImageFluentBuilder {
     }
     /// <p>The tags to apply to the AMI and snapshots on creation. You can tag the AMI, the snapshots, or both.</p>
     /// <ul>
-    /// <li><p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
-    /// <li><p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
+    /// <li>
+    /// <p>To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.</p></li>
+    /// <li>
+    /// <p>To tag the snapshots that are created of the root volume and of other Amazon EBS volumes that are attached to the instance, the value for <code>ResourceType</code> must be <code>snapshot</code>. The same tag is applied to all of the snapshots that are created.</p></li>
     /// </ul>
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>

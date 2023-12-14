@@ -11,7 +11,8 @@ pub struct RetireGrantInput {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub grant_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
@@ -31,7 +32,8 @@ impl RetireGrantInput {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn grant_id(&self) -> ::std::option::Option<&str> {
         self.grant_id.as_deref()
@@ -95,7 +97,8 @@ impl RetireGrantInputBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn grant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.grant_id = ::std::option::Option::Some(input.into());
@@ -103,7 +106,8 @@ impl RetireGrantInputBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn set_grant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grant_id = input;
@@ -111,7 +115,8 @@ impl RetireGrantInputBuilder {
     }
     /// <p>Identifies the grant to retire. To get the grant ID, use <code>CreateGrant</code>, <code>ListGrants</code>, or <code>ListRetirableGrants</code>.</p>
     /// <ul>
-    /// <li><p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
+    /// <li>
+    /// <p>Grant ID Example - 0123456789012345678901234567890123456789012345678901234567890123</p></li>
     /// </ul>
     pub fn get_grant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.grant_id

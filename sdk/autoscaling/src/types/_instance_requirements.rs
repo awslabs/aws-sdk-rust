@@ -4,9 +4,11 @@
 /// <p>When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you specify multiple values for an attribute, you get instance types that satisfy any of the specified values.</p>
 /// <p>To limit the list of instance types from which Amazon EC2 Auto Scaling can identify matching instance types, you can use one of the following parameters, but not both in the same request:</p>
 /// <ul>
-/// <li><p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
-/// <li><p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
-/// </ul> <note>
+/// <li>
+/// <p><code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored, even if they match your specified attributes.</p></li>
+/// <li>
+/// <p><code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified attributes.</p></li>
+/// </ul><note>
 /// <p>You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any unspecified optional attribute is set to its default.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. For help determining which instance types match your attributes before you apply them to your Auto Scaling group, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements">Preview instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
@@ -19,10 +21,13 @@ pub struct InstanceRequirements {
     pub memory_mib: ::std::option::Option<crate::types::MemoryMiBRequest>,
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
-    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
-    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// </ul><note>
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
@@ -31,15 +36,17 @@ pub struct InstanceRequirements {
     /// <p>Default: No minimum or maximum limits</p>
     pub memory_gib_per_v_cpu: ::std::option::Option<crate::types::MemoryGiBPerVCpuRequest>,
     /// <p>The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
     pub excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
-    /// <li><p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
-    /// <li><p>For previous generation instance types, specify <code>previous</code>.</p></li>
+    /// <li>
+    /// <p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <li>
+    /// <p>For previous generation instance types, specify <code>previous</code>.</p></li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     pub instance_generations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>>,
@@ -68,8 +75,10 @@ pub struct InstanceRequirements {
     pub local_storage: ::std::option::Option<crate::types::LocalStorage>,
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
-    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
-    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     pub local_storage_types: ::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>>,
@@ -81,9 +90,12 @@ pub struct InstanceRequirements {
     pub baseline_ebs_bandwidth_mbps: ::std::option::Option<crate::types::BaselineEbsBandwidthMbpsRequest>,
     /// <p>Lists the accelerator types that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
-    /// <li><p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
-    /// <li><p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>,
@@ -93,22 +105,33 @@ pub struct InstanceRequirements {
     pub accelerator_count: ::std::option::Option<crate::types::AcceleratorCountRequest>,
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
-    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
-    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>,
     /// <p>Lists the accelerators that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
-    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
-    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>,
@@ -120,7 +143,7 @@ pub struct InstanceRequirements {
     pub network_bandwidth_gbps: ::std::option::Option<crate::types::NetworkBandwidthGbpsRequest>,
     /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>
@@ -137,10 +160,13 @@ impl InstanceRequirements {
     }
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
-    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
-    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// </ul><note>
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
@@ -155,7 +181,7 @@ impl InstanceRequirements {
         self.memory_gib_per_v_cpu.as_ref()
     }
     /// <p>The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
@@ -166,8 +192,10 @@ impl InstanceRequirements {
     }
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
-    /// <li><p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
-    /// <li><p>For previous generation instance types, specify <code>previous</code>.</p></li>
+    /// <li>
+    /// <p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <li>
+    /// <p>For previous generation instance types, specify <code>previous</code>.</p></li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     ///
@@ -214,8 +242,10 @@ impl InstanceRequirements {
     }
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
-    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
-    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     ///
@@ -235,9 +265,12 @@ impl InstanceRequirements {
     }
     /// <p>Lists the accelerator types that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
-    /// <li><p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
-    /// <li><p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     ///
@@ -253,10 +286,14 @@ impl InstanceRequirements {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
-    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
-    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     ///
@@ -266,13 +303,20 @@ impl InstanceRequirements {
     }
     /// <p>Lists the accelerators that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
-    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
-    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     ///
@@ -292,7 +336,7 @@ impl InstanceRequirements {
     }
     /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>
@@ -374,10 +418,13 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
-    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
-    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// </ul><note>
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
@@ -389,10 +436,13 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
-    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
-    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// </ul><note>
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
@@ -402,10 +452,13 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Lists which specific CPU manufacturers to include.</p>
     /// <ul>
-    /// <li><p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
-    /// <li><p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>For instance types with Intel CPUs, specify <code>intel</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD CPUs, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.</p></li>
+    /// </ul><note>
     /// <p>Don't confuse the CPU hardware manufacturer with the CPU hardware architecture. Instances will be launched with a compatible CPU architecture based on the Amazon Machine Image (AMI) that you specify in your launch template.</p>
     /// </note>
     /// <p>Default: Any manufacturer</p>
@@ -434,7 +487,7 @@ impl InstanceRequirementsBuilder {
     /// To override the contents of this collection use [`set_excluded_instance_types`](Self::set_excluded_instance_types).
     ///
     /// <p>The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
@@ -445,7 +498,7 @@ impl InstanceRequirementsBuilder {
         self
     }
     /// <p>The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
@@ -454,7 +507,7 @@ impl InstanceRequirementsBuilder {
         self
     }
     /// <p>The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: No excluded instance types</p>
@@ -467,8 +520,10 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
-    /// <li><p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
-    /// <li><p>For previous generation instance types, specify <code>previous</code>.</p></li>
+    /// <li>
+    /// <p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <li>
+    /// <p>For previous generation instance types, specify <code>previous</code>.</p></li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     pub fn instance_generations(mut self, input: crate::types::InstanceGeneration) -> Self {
@@ -479,8 +534,10 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
-    /// <li><p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
-    /// <li><p>For previous generation instance types, specify <code>previous</code>.</p></li>
+    /// <li>
+    /// <p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <li>
+    /// <p>For previous generation instance types, specify <code>previous</code>.</p></li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     pub fn set_instance_generations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>>) -> Self {
@@ -489,8 +546,10 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Indicates whether current or previous generation instance types are included.</p>
     /// <ul>
-    /// <li><p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
-    /// <li><p>For previous generation instance types, specify <code>previous</code>.</p></li>
+    /// <li>
+    /// <p>For current generation instance types, specify <code>current</code>. The current generation includes EC2 instance types currently recommended for use. This typically includes the latest two to three generations in each instance family. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p></li>
+    /// <li>
+    /// <p>For previous generation instance types, specify <code>previous</code>.</p></li>
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     pub fn get_instance_generations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>> {
@@ -627,8 +686,10 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
-    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
-    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     pub fn local_storage_types(mut self, input: crate::types::LocalStorageType) -> Self {
@@ -639,8 +700,10 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
-    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
-    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     pub fn set_local_storage_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>>) -> Self {
@@ -649,8 +712,10 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Indicates the type of local storage that is required.</p>
     /// <ul>
-    /// <li><p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
-    /// <li><p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.</p></li>
     /// </ul>
     /// <p>Default: Any local storage type</p>
     pub fn get_local_storage_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalStorageType>> {
@@ -696,9 +761,12 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>Lists the accelerator types that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
-    /// <li><p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
-    /// <li><p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn accelerator_types(mut self, input: crate::types::AcceleratorType) -> Self {
@@ -709,9 +777,12 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Lists the accelerator types that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
-    /// <li><p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
-    /// <li><p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn set_accelerator_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>>) -> Self {
@@ -720,9 +791,12 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Lists the accelerator types that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
-    /// <li><p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
-    /// <li><p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with GPU accelerators, specify <code>gpu</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with FPGA accelerators, specify <code>fpga</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with inference accelerators, specify <code>inference</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator type</p>
     pub fn get_accelerator_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorType>> {
@@ -754,10 +828,14 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
-    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
-    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub fn accelerator_manufacturers(mut self, input: crate::types::AcceleratorManufacturer) -> Self {
@@ -768,10 +846,14 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
-    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
-    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub fn set_accelerator_manufacturers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>) -> Self {
@@ -780,10 +862,14 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Indicates whether instance types must have accelerators by specific manufacturers.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
-    /// <li><p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
-    /// <li><p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
-    /// <li><p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD devices, specify <code>amd</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p></li>
     /// </ul>
     /// <p>Default: Any manufacturer</p>
     pub fn get_accelerator_manufacturers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>> {
@@ -795,13 +881,20 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>Lists the accelerators that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
-    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
-    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn accelerator_names(mut self, input: crate::types::AcceleratorName) -> Self {
@@ -812,13 +905,20 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Lists the accelerators that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
-    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
-    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn set_accelerator_names(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>) -> Self {
@@ -827,13 +927,20 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>Lists the accelerators that must be on an instance type.</p>
     /// <ul>
-    /// <li><p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
-    /// <li><p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
-    /// <li><p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
-    /// <li><p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p></li>
+    /// <li>
+    /// <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p></li>
     /// </ul>
     /// <p>Default: Any accelerator</p>
     pub fn get_accelerator_names(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>> {
@@ -879,7 +986,7 @@ impl InstanceRequirementsBuilder {
     ///
     /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>
@@ -891,7 +998,7 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>
@@ -901,7 +1008,7 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>The instance types to apply your specified attributes against. All other instance types are ignored, even if they match your specified attributes.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
-    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p> <note>
+    /// <p>For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not the M5n instance types.</p><note>
     /// <p>If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.</p>
     /// </note>
     /// <p>Default: All instance types</p>

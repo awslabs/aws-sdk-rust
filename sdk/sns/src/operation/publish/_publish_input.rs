@@ -17,20 +17,33 @@ pub struct PublishInput {
     /// <p></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
-    /// <li><p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
+    /// <li>
+    /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
+    /// <li>
+    /// <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+    /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p>
+    /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
     /// </ul>
     /// <p>JSON-specific constraints:</p>
     /// <ul>
-    /// <li><p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
-    /// <li><p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
-    /// <li><p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
-    /// <li><p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
-    /// <li><p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
-    /// <li><p>Non-string values will cause the key to be ignored.</p></li>
-    /// <li><p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
-    /// <li><p>Duplicate keys are not allowed.</p></li>
-    /// <li><p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
+    /// <li>
+    /// <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
+    /// <li>
+    /// <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
+    /// <li>
+    /// <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
+    /// <li>
+    /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
+    /// <li>
+    /// <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
+    /// <li>
+    /// <p>Non-string values will cause the key to be ignored.</p></li>
+    /// <li>
+    /// <p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
+    /// <li>
+    /// <p>Duplicate keys are not allowed.</p></li>
+    /// <li>
+    /// <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
     /// </ul>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.</p>
@@ -38,8 +51,10 @@ pub struct PublishInput {
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
     /// <ul>
-    /// <li><p>be a syntactically valid JSON object; and</p></li>
-    /// <li><p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p></li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
     /// <p>Valid value: <code>json</code></p>
@@ -74,20 +89,33 @@ impl PublishInput {
     /// <p></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
-    /// <li><p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
+    /// <li>
+    /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
+    /// <li>
+    /// <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+    /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p>
+    /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
     /// </ul>
     /// <p>JSON-specific constraints:</p>
     /// <ul>
-    /// <li><p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
-    /// <li><p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
-    /// <li><p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
-    /// <li><p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
-    /// <li><p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
-    /// <li><p>Non-string values will cause the key to be ignored.</p></li>
-    /// <li><p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
-    /// <li><p>Duplicate keys are not allowed.</p></li>
-    /// <li><p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
+    /// <li>
+    /// <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
+    /// <li>
+    /// <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
+    /// <li>
+    /// <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
+    /// <li>
+    /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
+    /// <li>
+    /// <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
+    /// <li>
+    /// <p>Non-string values will cause the key to be ignored.</p></li>
+    /// <li>
+    /// <p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
+    /// <li>
+    /// <p>Duplicate keys are not allowed.</p></li>
+    /// <li>
+    /// <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
     /// </ul>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
@@ -99,8 +127,10 @@ impl PublishInput {
     }
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
     /// <ul>
-    /// <li><p>be a syntactically valid JSON object; and</p></li>
-    /// <li><p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p></li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
     /// <p>Valid value: <code>json</code></p>
@@ -200,20 +230,33 @@ impl PublishInputBuilder {
     /// <p></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
-    /// <li><p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
+    /// <li>
+    /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
+    /// <li>
+    /// <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+    /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p>
+    /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
     /// </ul>
     /// <p>JSON-specific constraints:</p>
     /// <ul>
-    /// <li><p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
-    /// <li><p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
-    /// <li><p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
-    /// <li><p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
-    /// <li><p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
-    /// <li><p>Non-string values will cause the key to be ignored.</p></li>
-    /// <li><p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
-    /// <li><p>Duplicate keys are not allowed.</p></li>
-    /// <li><p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
+    /// <li>
+    /// <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
+    /// <li>
+    /// <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
+    /// <li>
+    /// <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
+    /// <li>
+    /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
+    /// <li>
+    /// <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
+    /// <li>
+    /// <p>Non-string values will cause the key to be ignored.</p></li>
+    /// <li>
+    /// <p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
+    /// <li>
+    /// <p>Duplicate keys are not allowed.</p></li>
+    /// <li>
+    /// <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
     /// </ul>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -225,20 +268,33 @@ impl PublishInputBuilder {
     /// <p></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
-    /// <li><p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
+    /// <li>
+    /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
+    /// <li>
+    /// <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+    /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p>
+    /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
     /// </ul>
     /// <p>JSON-specific constraints:</p>
     /// <ul>
-    /// <li><p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
-    /// <li><p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
-    /// <li><p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
-    /// <li><p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
-    /// <li><p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
-    /// <li><p>Non-string values will cause the key to be ignored.</p></li>
-    /// <li><p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
-    /// <li><p>Duplicate keys are not allowed.</p></li>
-    /// <li><p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
+    /// <li>
+    /// <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
+    /// <li>
+    /// <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
+    /// <li>
+    /// <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
+    /// <li>
+    /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
+    /// <li>
+    /// <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
+    /// <li>
+    /// <p>Non-string values will cause the key to be ignored.</p></li>
+    /// <li>
+    /// <p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
+    /// <li>
+    /// <p>Duplicate keys are not allowed.</p></li>
+    /// <li>
+    /// <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
     /// </ul>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
@@ -249,20 +305,33 @@ impl PublishInputBuilder {
     /// <p></p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
-    /// <li><p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p> <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p> <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
+    /// <li>
+    /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262,144 bytes, not 262,144 characters).</p></li>
+    /// <li>
+    /// <p>For SMS, each message can contain up to 140 characters. This character limit depends on the encoding schema. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+    /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message as multiple messages, each fitting within the size limit. Messages aren't truncated mid-word but are cut off at whole-word boundaries.</p>
+    /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.</p></li>
     /// </ul>
     /// <p>JSON-specific constraints:</p>
     /// <ul>
-    /// <li><p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
-    /// <li><p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
-    /// <li><p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
-    /// <li><p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
-    /// <li><p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
-    /// <li><p>Non-string values will cause the key to be ignored.</p></li>
-    /// <li><p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
-    /// <li><p>Duplicate keys are not allowed.</p></li>
-    /// <li><p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
+    /// <li>
+    /// <p>Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values.</p></li>
+    /// <li>
+    /// <p>The values will be parsed (unescaped) before they are used in outgoing messages.</p></li>
+    /// <li>
+    /// <p>Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending).</p></li>
+    /// <li>
+    /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p></li>
+    /// <li>
+    /// <p>Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes).</p></li>
+    /// <li>
+    /// <p>Non-string values will cause the key to be ignored.</p></li>
+    /// <li>
+    /// <p>Keys that do not correspond to supported transport protocols are ignored.</p></li>
+    /// <li>
+    /// <p>Duplicate keys are not allowed.</p></li>
+    /// <li>
+    /// <p>Failure to parse or validate any key or value in the message will cause the <code>Publish</code> call to return an error (no partial delivery).</p></li>
     /// </ul>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
@@ -286,8 +355,10 @@ impl PublishInputBuilder {
     }
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
     /// <ul>
-    /// <li><p>be a syntactically valid JSON object; and</p></li>
-    /// <li><p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p></li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
     /// <p>Valid value: <code>json</code></p>
@@ -297,8 +368,10 @@ impl PublishInputBuilder {
     }
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
     /// <ul>
-    /// <li><p>be a syntactically valid JSON object; and</p></li>
-    /// <li><p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p></li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
     /// <p>Valid value: <code>json</code></p>
@@ -308,8 +381,10 @@ impl PublishInputBuilder {
     }
     /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code> parameter must:</p>
     /// <ul>
-    /// <li><p>be a syntactically valid JSON object; and</p></li>
-    /// <li><p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
+    /// <li>
+    /// <p>be a syntactically valid JSON object; and</p></li>
+    /// <li>
+    /// <p>contain at least a top-level JSON key of "default" with a value that is a string.</p></li>
     /// </ul>
     /// <p>You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").</p>
     /// <p>Valid value: <code>json</code></p>

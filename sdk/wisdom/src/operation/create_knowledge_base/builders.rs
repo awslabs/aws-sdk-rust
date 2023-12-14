@@ -22,14 +22,18 @@ impl CreateKnowledgeBaseInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateKnowledgeBase`.
 ///
-/// <p>Creates a knowledge base.</p> <note>
+/// <p>Creates a knowledge base.</p><note>
 /// <p>When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error.</p>
 /// <p>For example, you're programmatically managing your external knowledge base, and you want to add or remove one of the fields that is being ingested from Salesforce. Do the following:</p>
 /// <ol>
-/// <li><p>Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.</p></li>
-/// <li><p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.</p></li>
-/// <li><p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> to recreate the DataIntegration or a create different one.</p></li>
-/// <li><p>Call CreateKnowledgeBase.</p></li>
+/// <li>
+/// <p>Call <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_DeleteKnowledgeBase.html">DeleteKnowledgeBase</a>.</p></li>
+/// <li>
+/// <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_DeleteDataIntegration.html">DeleteDataIntegration</a>.</p></li>
+/// <li>
+/// <p>Call <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/API_CreateDataIntegration.html">CreateDataIntegration</a> to recreate the DataIntegration or a create different one.</p></li>
+/// <li>
+/// <p>Call CreateKnowledgeBase.</p></li>
 /// </ol>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

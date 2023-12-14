@@ -9,13 +9,13 @@ pub struct UpdateDynamicThingGroupInput {
     pub thing_group_properties: ::std::option::Option<crate::types::ThingGroupProperties>,
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub expected_version: ::std::option::Option<i64>,
-    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>The dynamic thing group index to update.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The dynamic thing group search query string to update.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
-    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>The dynamic thing group query version to update.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub query_version: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl UpdateDynamicThingGroupInput {
     pub fn expected_version(&self) -> ::std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>The dynamic thing group index to update.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn index_name(&self) -> ::std::option::Option<&str> {
@@ -43,7 +43,7 @@ impl UpdateDynamicThingGroupInput {
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>The dynamic thing group query version to update.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn query_version(&self) -> ::std::option::Option<&str> {
@@ -113,21 +113,21 @@ impl UpdateDynamicThingGroupInputBuilder {
     pub fn get_expected_version(&self) -> &::std::option::Option<i64> {
         &self.expected_version
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>The dynamic thing group index to update.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.index_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>The dynamic thing group index to update.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
+    /// <p>The dynamic thing group index to update.</p><note>
     /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
     /// </note>
     pub fn get_index_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -147,21 +147,21 @@ impl UpdateDynamicThingGroupInputBuilder {
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>The dynamic thing group query version to update.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn query_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>The dynamic thing group query version to update.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn set_query_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_version = input;
         self
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
+    /// <p>The dynamic thing group query version to update.</p><note>
     /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
     /// </note>
     pub fn get_query_version(&self) -> &::std::option::Option<::std::string::String> {

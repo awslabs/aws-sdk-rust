@@ -6,7 +6,7 @@
 pub struct User {
     /// <p>The ARN of the user.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The email address of the user.</p> <note>
+    /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -14,11 +14,16 @@ pub struct User {
     pub enabled: ::std::option::Option<bool>,
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED – The user is created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED – The user is confirmed.</p></li>
-    /// <li><p>ARCHIVED – The user is no longer active.</p></li>
-    /// <li><p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
-    /// <li><p>UNKNOWN – The user status is not known.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED – The user is created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED – The user is confirmed.</p></li>
+    /// <li>
+    /// <p>ARCHIVED – The user is no longer active.</p></li>
+    /// <li>
+    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
+    /// <li>
+    /// <p>UNKNOWN – The user status is not known.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The first name, or given name, of the user.</p>
@@ -35,7 +40,7 @@ impl User {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The email address of the user.</p> <note>
+    /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -47,11 +52,16 @@ impl User {
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED – The user is created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED – The user is confirmed.</p></li>
-    /// <li><p>ARCHIVED – The user is no longer active.</p></li>
-    /// <li><p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
-    /// <li><p>UNKNOWN – The user status is not known.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED – The user is created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED – The user is confirmed.</p></li>
+    /// <li>
+    /// <p>ARCHIVED – The user is no longer active.</p></li>
+    /// <li>
+    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
+    /// <li>
+    /// <p>UNKNOWN – The user status is not known.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -122,21 +132,21 @@ impl UserBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The email address of the user.</p> <note>
+    /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The email address of the user.</p> <note>
+    /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
-    /// <p>The email address of the user.</p> <note>
+    /// <p>The email address of the user.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -158,11 +168,16 @@ impl UserBuilder {
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED – The user is created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED – The user is confirmed.</p></li>
-    /// <li><p>ARCHIVED – The user is no longer active.</p></li>
-    /// <li><p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
-    /// <li><p>UNKNOWN – The user status is not known.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED – The user is created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED – The user is confirmed.</p></li>
+    /// <li>
+    /// <p>ARCHIVED – The user is no longer active.</p></li>
+    /// <li>
+    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
+    /// <li>
+    /// <p>UNKNOWN – The user status is not known.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -170,11 +185,16 @@ impl UserBuilder {
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED – The user is created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED – The user is confirmed.</p></li>
-    /// <li><p>ARCHIVED – The user is no longer active.</p></li>
-    /// <li><p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
-    /// <li><p>UNKNOWN – The user status is not known.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED – The user is created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED – The user is confirmed.</p></li>
+    /// <li>
+    /// <p>ARCHIVED – The user is no longer active.</p></li>
+    /// <li>
+    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
+    /// <li>
+    /// <p>UNKNOWN – The user status is not known.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -182,11 +202,16 @@ impl UserBuilder {
     }
     /// <p>The status of the user in the user pool. The status can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED – The user is created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED – The user is confirmed.</p></li>
-    /// <li><p>ARCHIVED – The user is no longer active.</p></li>
-    /// <li><p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
-    /// <li><p>UNKNOWN – The user status is not known.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED – The user is created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED – The user is confirmed.</p></li>
+    /// <li>
+    /// <p>ARCHIVED – The user is no longer active.</p></li>
+    /// <li>
+    /// <p>COMPROMISED – The user is disabled because of a potential security threat.</p></li>
+    /// <li>
+    /// <p>UNKNOWN – The user status is not known.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

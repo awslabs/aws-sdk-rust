@@ -5,7 +5,7 @@
 pub struct ListImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The list of image semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -30,7 +30,7 @@ impl ListImagesOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The list of image semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -95,7 +95,7 @@ impl ListImagesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_image_version_list`](Self::set_image_version_list).
     ///
-    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The list of image semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -116,7 +116,7 @@ impl ListImagesOutputBuilder {
         self.image_version_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The list of image semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -135,7 +135,7 @@ impl ListImagesOutputBuilder {
         self.image_version_list = input;
         self
     }
-    /// <p>The list of image semantic versions.</p> <note>
+    /// <p>The list of image semantic versions.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

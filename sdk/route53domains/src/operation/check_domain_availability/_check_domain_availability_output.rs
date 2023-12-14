@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDomainAvailabilityOutput {
-    /// <p>Whether the domain name is available for registering.</p> <note>
+    /// <p>Whether the domain name is available for registering.</p><note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -68,7 +68,7 @@ pub struct CheckDomainAvailabilityOutput {
     _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutput {
-    /// <p>Whether the domain name is available for registering.</p> <note>
+    /// <p>Whether the domain name is available for registering.</p><note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -152,7 +152,7 @@ pub struct CheckDomainAvailabilityOutputBuilder {
     _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutputBuilder {
-    /// <p>Whether the domain name is available for registering.</p> <note>
+    /// <p>Whether the domain name is available for registering.</p><note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -216,7 +216,7 @@ impl CheckDomainAvailabilityOutputBuilder {
         self.availability = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the domain name is available for registering.</p> <note>
+    /// <p>Whether the domain name is available for registering.</p><note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -280,7 +280,7 @@ impl CheckDomainAvailabilityOutputBuilder {
         self.availability = input;
         self
     }
-    /// <p>Whether the domain name is available for registering.</p> <note>
+    /// <p>Whether the domain name is available for registering.</p><note>
     /// <p>You can register only domains designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>

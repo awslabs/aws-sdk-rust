@@ -121,8 +121,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
-    /// <li><p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
+    /// <li>
+    /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
@@ -130,8 +132,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
-    /// <li><p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
+    /// <li>
+    /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
     /// </ul>
     pub fn set_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
@@ -139,8 +143,10 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
-    /// <li><p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p></li>
+    /// <li>
+    /// <p><code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p></li>
     /// </ul>
     pub fn get_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filter()

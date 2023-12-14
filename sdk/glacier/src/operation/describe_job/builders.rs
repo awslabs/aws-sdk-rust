@@ -22,7 +22,7 @@ impl DescribeJobInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeJob`.
 ///
-/// <p>This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier (Glacier) completes the job. For more information about initiating a job, see <code>InitiateJob</code>.</p> <note>
+/// <p>This operation returns information about a job you previously initiated, including the job initiation date, the user who initiated the job, the job status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier (Glacier) completes the job. For more information about initiating a job, see <code>InitiateJob</code>.</p><note>
 /// <p>This operation enables you to check the status of your job. However, it is strongly recommended that you set up an Amazon SNS topic and specify it in your initiate job request so that Glacier can notify the topic after it completes the job.</p>
 /// </note>
 /// <p>A job ID will not expire for at least 24 hours after Glacier completes the job.</p>

@@ -119,7 +119,8 @@ impl DescribeSourceRegionsFluentBuilder {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li>
+    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
     /// </ul>
     pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.region_name(input.into());
@@ -128,7 +129,8 @@ impl DescribeSourceRegionsFluentBuilder {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li>
+    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
     /// </ul>
     pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_region_name(input);
@@ -137,7 +139,8 @@ impl DescribeSourceRegionsFluentBuilder {
     /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must specify a valid Amazon Web Services Region name.</p></li>
+    /// <li>
+    /// <p>Must specify a valid Amazon Web Services Region name.</p></li>
     /// </ul>
     pub fn get_region_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_region_name()

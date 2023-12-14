@@ -5,7 +5,7 @@
 pub struct GetOperationsForResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p><note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
@@ -23,7 +23,7 @@ impl GetOperationsForResourceOutput {
     pub fn operations(&self) -> &[crate::types::Operation] {
         self.operations.as_deref().unwrap_or_default()
     }
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p><note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
@@ -79,7 +79,7 @@ impl GetOperationsForResourceOutputBuilder {
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Operation>> {
         &self.operations
     }
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p><note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
@@ -87,7 +87,7 @@ impl GetOperationsForResourceOutputBuilder {
         self.next_page_count = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p><note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]
@@ -95,7 +95,7 @@ impl GetOperationsForResourceOutputBuilder {
         self.next_page_count = input;
         self
     }
-    /// <p>(Deprecated) Returns the number of pages of results that remain.</p> <note>
+    /// <p>(Deprecated) Returns the number of pages of results that remain.</p><note>
     /// <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>next page token</code> parameter instead.</p>
     /// </note>
     #[deprecated]

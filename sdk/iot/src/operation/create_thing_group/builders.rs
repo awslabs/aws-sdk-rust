@@ -22,7 +22,7 @@ impl CreateThingGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateThingGroup`.
 ///
-/// <p>Create a thing group.</p> <note>
+/// <p>Create a thing group.</p><note>
 /// <p>This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for information about authorizing control plane actions.</p>
 /// <p>If the <code>ThingGroup</code> that you create has the exact same attributes as an existing <code>ThingGroup</code>, you will get a 200 success response.</p>
 /// </note>

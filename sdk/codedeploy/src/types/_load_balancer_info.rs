@@ -5,13 +5,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerInfo {
-    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p> <note>
+    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
     /// </note>
     pub elb_info_list: ::std::option::Option<::std::vec::Vec<crate::types::ElbInfo>>,
-    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p> <note>
+    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
@@ -21,7 +21,7 @@ pub struct LoadBalancerInfo {
     pub target_group_pair_info_list: ::std::option::Option<::std::vec::Vec<crate::types::TargetGroupPairInfo>>,
 }
 impl LoadBalancerInfo {
-    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p> <note>
+    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
@@ -31,7 +31,7 @@ impl LoadBalancerInfo {
     pub fn elb_info_list(&self) -> &[crate::types::ElbInfo] {
         self.elb_info_list.as_deref().unwrap_or_default()
     }
-    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p> <note>
+    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
@@ -68,7 +68,7 @@ impl LoadBalancerInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_elb_info_list`](Self::set_elb_info_list).
     ///
-    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p> <note>
+    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
@@ -79,7 +79,7 @@ impl LoadBalancerInfoBuilder {
         self.elb_info_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p> <note>
+    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
@@ -88,7 +88,7 @@ impl LoadBalancerInfoBuilder {
         self.elb_info_list = input;
         self
     }
-    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p> <note>
+    /// <p>An array that contains information about the load balancers to use for load balancing in a deployment. If you're using Classic Load Balancers, specify those load balancers in this array.</p><note>
     /// <p>You can add up to 10 load balancers to the array.</p>
     /// </note> <note>
     /// <p>If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code> array instead of this one.</p>
@@ -100,7 +100,7 @@ impl LoadBalancerInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_target_group_info_list`](Self::set_target_group_info_list).
     ///
-    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p> <note>
+    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
@@ -111,7 +111,7 @@ impl LoadBalancerInfoBuilder {
         self.target_group_info_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p> <note>
+    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>
@@ -120,7 +120,7 @@ impl LoadBalancerInfoBuilder {
         self.target_group_info_list = input;
         self
     }
-    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p> <note>
+    /// <p>An array that contains information about the target groups to use for load balancing in a deployment. If you're using Application Load Balancers and Network Load Balancers, specify their associated target groups in this array.</p><note>
     /// <p>You can add up to 10 target groups to the array.</p>
     /// </note> <note>
     /// <p>If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead of this one.</p>

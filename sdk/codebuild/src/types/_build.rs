@@ -18,12 +18,18 @@ pub struct Build {
     pub current_phase: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FAILED</code>: The build failed.</p></li>
-    /// <li><p><code>FAULT</code>: The build faulted.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
-    /// <li><p><code>STOPPED</code>: The build stopped.</p></li>
-    /// <li><p><code>SUCCEEDED</code>: The build succeeded.</p></li>
-    /// <li><p><code>TIMED_OUT</code>: The build timed out.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The build failed.</p></li>
+    /// <li>
+    /// <p><code>FAULT</code>: The build faulted.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code>: The build stopped.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The build succeeded.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code>: The build timed out.</p></li>
     /// </ul>
     pub build_status: ::std::option::Option<crate::types::StatusType>,
     /// <p>Any version identifier for the version of the source code to be built. If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code> (at the build level) takes precedence.</p>
@@ -31,9 +37,12 @@ pub struct Build {
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the version of this build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub resolved_source_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the CodeBuild project.</p>
@@ -46,10 +55,14 @@ pub struct Build {
     pub secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>Information about the output artifacts for the build.</p>
@@ -72,20 +85,22 @@ pub struct Build {
     pub build_complete: bool,
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub initiator: ::std::option::Option<::std::string::String>,
     /// <p>If your CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Describes a network interface.</p>
     pub network_interface: ::std::option::Option<crate::types::NetworkInterface>,
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of exported environment variables for this build.</p>
     /// <p>Exported environment variables are used in conjunction with CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
@@ -126,12 +141,18 @@ impl Build {
     }
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FAILED</code>: The build failed.</p></li>
-    /// <li><p><code>FAULT</code>: The build faulted.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
-    /// <li><p><code>STOPPED</code>: The build stopped.</p></li>
-    /// <li><p><code>SUCCEEDED</code>: The build succeeded.</p></li>
-    /// <li><p><code>TIMED_OUT</code>: The build timed out.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The build failed.</p></li>
+    /// <li>
+    /// <p><code>FAULT</code>: The build faulted.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code>: The build stopped.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The build succeeded.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code>: The build timed out.</p></li>
     /// </ul>
     pub fn build_status(&self) -> ::std::option::Option<&crate::types::StatusType> {
         self.build_status.as_ref()
@@ -143,9 +164,12 @@ impl Build {
     }
     /// <p>An identifier for the version of this build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn resolved_source_version(&self) -> ::std::option::Option<&str> {
         self.resolved_source_version.as_deref()
@@ -172,10 +196,14 @@ impl Build {
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
@@ -222,9 +250,12 @@ impl Build {
     }
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn initiator(&self) -> ::std::option::Option<&str> {
         self.initiator.as_deref()
@@ -237,11 +268,10 @@ impl Build {
     pub fn network_interface(&self) -> ::std::option::Option<&crate::types::NetworkInterface> {
         self.network_interface.as_ref()
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
@@ -404,12 +434,18 @@ impl BuildBuilder {
     }
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FAILED</code>: The build failed.</p></li>
-    /// <li><p><code>FAULT</code>: The build faulted.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
-    /// <li><p><code>STOPPED</code>: The build stopped.</p></li>
-    /// <li><p><code>SUCCEEDED</code>: The build succeeded.</p></li>
-    /// <li><p><code>TIMED_OUT</code>: The build timed out.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The build failed.</p></li>
+    /// <li>
+    /// <p><code>FAULT</code>: The build faulted.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code>: The build stopped.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The build succeeded.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code>: The build timed out.</p></li>
     /// </ul>
     pub fn build_status(mut self, input: crate::types::StatusType) -> Self {
         self.build_status = ::std::option::Option::Some(input);
@@ -417,12 +453,18 @@ impl BuildBuilder {
     }
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FAILED</code>: The build failed.</p></li>
-    /// <li><p><code>FAULT</code>: The build faulted.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
-    /// <li><p><code>STOPPED</code>: The build stopped.</p></li>
-    /// <li><p><code>SUCCEEDED</code>: The build succeeded.</p></li>
-    /// <li><p><code>TIMED_OUT</code>: The build timed out.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The build failed.</p></li>
+    /// <li>
+    /// <p><code>FAULT</code>: The build faulted.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code>: The build stopped.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The build succeeded.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code>: The build timed out.</p></li>
     /// </ul>
     pub fn set_build_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.build_status = input;
@@ -430,12 +472,18 @@ impl BuildBuilder {
     }
     /// <p>The current status of the build. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>FAILED</code>: The build failed.</p></li>
-    /// <li><p><code>FAULT</code>: The build faulted.</p></li>
-    /// <li><p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
-    /// <li><p><code>STOPPED</code>: The build stopped.</p></li>
-    /// <li><p><code>SUCCEEDED</code>: The build succeeded.</p></li>
-    /// <li><p><code>TIMED_OUT</code>: The build timed out.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code>: The build failed.</p></li>
+    /// <li>
+    /// <p><code>FAULT</code>: The build faulted.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code>: The build is still in progress.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code>: The build stopped.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code>: The build succeeded.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code>: The build timed out.</p></li>
     /// </ul>
     pub fn get_build_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.build_status
@@ -459,9 +507,12 @@ impl BuildBuilder {
     }
     /// <p>An identifier for the version of this build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn resolved_source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_source_version = ::std::option::Option::Some(input.into());
@@ -469,9 +520,12 @@ impl BuildBuilder {
     }
     /// <p>An identifier for the version of this build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn set_resolved_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_source_version = input;
@@ -479,9 +533,12 @@ impl BuildBuilder {
     }
     /// <p>An identifier for the version of this build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn get_resolved_source_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_source_version
@@ -560,10 +617,14 @@ impl BuildBuilder {
     ///
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub fn secondary_source_versions(mut self, input: crate::types::ProjectSourceVersion) -> Self {
         let mut v = self.secondary_source_versions.unwrap_or_default();
@@ -573,10 +634,14 @@ impl BuildBuilder {
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
         self.secondary_source_versions = input;
@@ -584,10 +649,14 @@ impl BuildBuilder {
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
         &self.secondary_source_versions
@@ -726,9 +795,12 @@ impl BuildBuilder {
     }
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator = ::std::option::Option::Some(input.into());
@@ -736,9 +808,12 @@ impl BuildBuilder {
     }
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn set_initiator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initiator = input;
@@ -746,9 +821,12 @@ impl BuildBuilder {
     }
     /// <p>The entity that started the build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name (for example, <code>MyUserName</code>).</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn get_initiator(&self) -> &::std::option::Option<::std::string::String> {
         &self.initiator
@@ -781,29 +859,26 @@ impl BuildBuilder {
     pub fn get_network_interface(&self) -> &::std::option::Option<crate::types::NetworkInterface> {
         &self.network_interface
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key
     }

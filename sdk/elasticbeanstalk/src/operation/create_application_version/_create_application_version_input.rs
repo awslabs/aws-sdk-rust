@@ -13,7 +13,7 @@ pub struct CreateApplicationVersionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
     pub source_build_information: ::std::option::Option<crate::types::SourceBuildInformation>,
-    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
@@ -23,7 +23,7 @@ pub struct CreateApplicationVersionInput {
     /// <p>Set to <code>true</code> to create an application with the specified name if it doesn't already exist.</p>
     pub auto_create_application: ::std::option::Option<bool>,
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
+    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub process: ::std::option::Option<bool>,
@@ -49,7 +49,7 @@ impl CreateApplicationVersionInput {
     pub fn source_build_information(&self) -> ::std::option::Option<&crate::types::SourceBuildInformation> {
         self.source_build_information.as_ref()
     }
-    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
@@ -65,7 +65,7 @@ impl CreateApplicationVersionInput {
         self.auto_create_application
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
+    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn process(&self) -> ::std::option::Option<bool> {
@@ -162,7 +162,7 @@ impl CreateApplicationVersionInputBuilder {
     pub fn get_source_build_information(&self) -> &::std::option::Option<crate::types::SourceBuildInformation> {
         &self.source_build_information
     }
-    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
@@ -170,7 +170,7 @@ impl CreateApplicationVersionInputBuilder {
         self.source_bundle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
@@ -178,7 +178,7 @@ impl CreateApplicationVersionInputBuilder {
         self.source_bundle = input;
         self
     }
-    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note>
+    /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
     /// </note>
     /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
@@ -214,7 +214,7 @@ impl CreateApplicationVersionInputBuilder {
         &self.auto_create_application
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
+    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn process(mut self, input: bool) -> Self {
@@ -222,7 +222,7 @@ impl CreateApplicationVersionInputBuilder {
         self
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
+    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn set_process(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -230,7 +230,7 @@ impl CreateApplicationVersionInputBuilder {
         self
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p> <note>
+    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn get_process(&self) -> &::std::option::Option<bool> {

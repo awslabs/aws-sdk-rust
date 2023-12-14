@@ -126,7 +126,7 @@ impl ExportCertificateFluentBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_arn()
     }
-    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p><note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
@@ -135,7 +135,7 @@ impl ExportCertificateFluentBuilder {
         self.inner = self.inner.passphrase(input);
         self
     }
-    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p><note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>
@@ -144,7 +144,7 @@ impl ExportCertificateFluentBuilder {
         self.inner = self.inner.set_passphrase(input);
         self
     }
-    /// <p>Passphrase to associate with the encrypted exported private key.</p> <note>
+    /// <p>Passphrase to associate with the encrypted exported private key.</p><note>
     /// <p>When creating your passphrase, you can use any ASCII character except #, $, or %.</p>
     /// </note>
     /// <p>If you want to later decrypt the private key, you must have the passphrase. You can use the following OpenSSL command to decrypt a private key. After entering the command, you are prompted for the passphrase.</p>

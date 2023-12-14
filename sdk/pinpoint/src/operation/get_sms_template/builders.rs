@@ -127,9 +127,12 @@ impl GetSmsTemplateFluentBuilder {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li>
+    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li>
+    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li>
+    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
@@ -140,9 +143,12 @@ impl GetSmsTemplateFluentBuilder {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li>
+    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li>
+    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li>
+    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
@@ -153,9 +159,12 @@ impl GetSmsTemplateFluentBuilder {
     /// <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p>
     /// <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p>
     /// <ul>
-    /// <li><p>For a get operation, retrieves information about the active version of the template.</p></li>
-    /// <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
-    /// <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li>
+    /// <li>
+    /// <p>For a get operation, retrieves information about the active version of the template.</p></li>
+    /// <li>
+    /// <p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li>
+    /// <li>
+    /// <p>For a delete operation, deletes the template, including all versions of the template.</p></li>
     /// </ul>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version()

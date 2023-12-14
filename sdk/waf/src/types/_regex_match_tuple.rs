@@ -6,9 +6,12 @@
 /// </note>
 /// <p>The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. Each <code>RegexMatchTuple</code> object contains:</p>
 /// <ul>
-/// <li><p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
-/// <li><p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
-/// <li><p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
+/// <li>
+/// <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header.</p></li>
+/// <li>
+/// <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p></li>
+/// <li>
+/// <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -20,32 +23,49 @@ pub struct RegexMatchTuple {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -68,32 +88,49 @@ impl RegexMatchTuple {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -147,32 +184,49 @@ impl RegexMatchTupleBuilder {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -190,32 +244,49 @@ impl RegexMatchTupleBuilder {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -232,32 +303,49 @@ impl RegexMatchTupleBuilder {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>

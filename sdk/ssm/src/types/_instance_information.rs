@@ -6,7 +6,7 @@
 pub struct InstanceInformation {
     /// <p>The managed node ID.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>Connection status of SSM Agent.</p> <note>
+    /// <p>Connection status of SSM Agent.</p><note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
     pub ping_status: ::std::option::Option<crate::types::PingStatus>,
@@ -54,7 +54,7 @@ impl InstanceInformation {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Connection status of SSM Agent.</p> <note>
+    /// <p>Connection status of SSM Agent.</p><note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
     pub fn ping_status(&self) -> ::std::option::Option<&crate::types::PingStatus> {
@@ -185,21 +185,21 @@ impl InstanceInformationBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>Connection status of SSM Agent.</p> <note>
+    /// <p>Connection status of SSM Agent.</p><note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
     pub fn ping_status(mut self, input: crate::types::PingStatus) -> Self {
         self.ping_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Connection status of SSM Agent.</p> <note>
+    /// <p>Connection status of SSM Agent.</p><note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
     pub fn set_ping_status(mut self, input: ::std::option::Option<crate::types::PingStatus>) -> Self {
         self.ping_status = input;
         self
     }
-    /// <p>Connection status of SSM Agent.</p> <note>
+    /// <p>Connection status of SSM Agent.</p><note>
     /// <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p>
     /// </note>
     pub fn get_ping_status(&self) -> &::std::option::Option<crate::types::PingStatus> {

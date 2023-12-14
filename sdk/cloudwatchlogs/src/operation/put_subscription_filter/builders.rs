@@ -25,10 +25,14 @@ impl PutSubscriptionFilterInputBuilder {
 /// <p>Creates or updates a subscription filter and associates it with the specified log group. With subscription filters, you can subscribe to a real-time stream of log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.</p>
 /// <p>The following destinations are supported for subscription filters:</p>
 /// <ul>
-/// <li><p>An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-/// <li><p>A logical destination created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a> that belongs to a different account, for cross-account delivery. We currently support Kinesis Data Streams and Kinesis Data Firehose as logical destinations.</p></li>
-/// <li><p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p></li>
-/// <li><p>An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p></li>
+/// <li>
+/// <p>An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+/// <li>
+/// <p>A logical destination created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a> that belongs to a different account, for cross-account delivery. We currently support Kinesis Data Streams and Kinesis Data Firehose as logical destinations.</p></li>
+/// <li>
+/// <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p></li>
+/// <li>
+/// <p>An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p></li>
 /// </ul>
 /// <p>Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>.</p>
 /// <p>To perform a <code>PutSubscriptionFilter</code> operation for any destination except a Lambda function, you must also have the <code>iam:PassRole</code> permission.</p>
@@ -161,10 +165,15 @@ impl PutSubscriptionFilterFluentBuilder {
     }
     /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
-    /// <li><p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-    /// <li><p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p></li>
-    /// <li><p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-    /// <li><p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p>
+    /// <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p></li>
+    /// <li>
+    /// <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
     /// </ul>
     pub fn destination_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
@@ -172,10 +181,15 @@ impl PutSubscriptionFilterFluentBuilder {
     }
     /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
-    /// <li><p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-    /// <li><p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p></li>
-    /// <li><p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-    /// <li><p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p>
+    /// <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p></li>
+    /// <li>
+    /// <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
     /// </ul>
     pub fn set_destination_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
@@ -183,10 +197,15 @@ impl PutSubscriptionFilterFluentBuilder {
     }
     /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
     /// <ul>
-    /// <li><p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-    /// <li><p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p></li>
-    /// <li><p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
-    /// <li><p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p>
+    /// <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p></li>
+    /// <li>
+    /// <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p></li>
     /// </ul>
     pub fn get_destination_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination_arn()

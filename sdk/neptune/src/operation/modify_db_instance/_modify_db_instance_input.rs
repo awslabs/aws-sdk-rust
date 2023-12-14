@@ -6,7 +6,8 @@ pub struct ModifyDbInstanceInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Not supported by Neptune.</p>
@@ -23,14 +24,16 @@ pub struct ModifyDbInstanceInput {
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DBSecurityGroups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
     pub db_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.</p>
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
@@ -50,10 +53,14 @@ pub struct ModifyDbInstanceInput {
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format hh24:mi-hh24:mi</p></li>
-    /// <li><p>Must be in Universal Time Coordinated (UTC)</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window</p></li>
-    /// <li><p>Must be at least 30 minutes</p></li>
+    /// <li>
+    /// <p>Must be in the format hh24:mi-hh24:mi</p></li>
+    /// <li>
+    /// <p>Must be in Universal Time Coordinated (UTC)</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
     pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
@@ -81,9 +88,12 @@ pub struct ModifyDbInstanceInput {
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub new_db_instance_identifier: ::std::option::Option<::std::string::String>,
@@ -138,7 +148,8 @@ impl ModifyDbInstanceInput {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
@@ -163,7 +174,8 @@ impl ModifyDbInstanceInput {
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DBSecurityGroups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_security_groups.is_none()`.
@@ -174,7 +186,8 @@ impl ModifyDbInstanceInput {
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_security_group_ids.is_none()`.
@@ -206,10 +219,14 @@ impl ModifyDbInstanceInput {
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format hh24:mi-hh24:mi</p></li>
-    /// <li><p>Must be in Universal Time Coordinated (UTC)</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window</p></li>
-    /// <li><p>Must be at least 30 minutes</p></li>
+    /// <li>
+    /// <p>Must be in the format hh24:mi-hh24:mi</p></li>
+    /// <li>
+    /// <p>Must be in Universal Time Coordinated (UTC)</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
     pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
@@ -255,9 +272,12 @@ impl ModifyDbInstanceInput {
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn new_db_instance_identifier(&self) -> ::std::option::Option<&str> {
@@ -440,7 +460,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -450,7 +471,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_instance_identifier = input;
@@ -459,7 +481,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
@@ -528,7 +551,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DBSecurityGroups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
     pub fn db_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.db_security_groups.unwrap_or_default();
@@ -539,7 +563,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DBSecurityGroups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
     pub fn set_db_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.db_security_groups = input;
@@ -548,7 +573,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing DBSecurityGroups.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing DBSecurityGroups.</p></li>
     /// </ul>
     pub fn get_db_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.db_security_groups
@@ -561,7 +587,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
@@ -573,7 +600,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_security_group_ids = input;
@@ -583,7 +611,8 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
+    /// <li>
+    /// <p>If supplied, must match existing VpcSecurityGroupIds.</p></li>
     /// </ul>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_security_group_ids
@@ -663,10 +692,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format hh24:mi-hh24:mi</p></li>
-    /// <li><p>Must be in Universal Time Coordinated (UTC)</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window</p></li>
-    /// <li><p>Must be at least 30 minutes</p></li>
+    /// <li>
+    /// <p>Must be in the format hh24:mi-hh24:mi</p></li>
+    /// <li>
+    /// <p>Must be in Universal Time Coordinated (UTC)</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
     pub fn preferred_backup_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_backup_window = ::std::option::Option::Some(input.into());
@@ -676,10 +709,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format hh24:mi-hh24:mi</p></li>
-    /// <li><p>Must be in Universal Time Coordinated (UTC)</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window</p></li>
-    /// <li><p>Must be at least 30 minutes</p></li>
+    /// <li>
+    /// <p>Must be in the format hh24:mi-hh24:mi</p></li>
+    /// <li>
+    /// <p>Must be in Universal Time Coordinated (UTC)</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
     pub fn set_preferred_backup_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_backup_window = input;
@@ -689,10 +726,14 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be in the format hh24:mi-hh24:mi</p></li>
-    /// <li><p>Must be in Universal Time Coordinated (UTC)</p></li>
-    /// <li><p>Must not conflict with the preferred maintenance window</p></li>
-    /// <li><p>Must be at least 30 minutes</p></li>
+    /// <li>
+    /// <p>Must be in the format hh24:mi-hh24:mi</p></li>
+    /// <li>
+    /// <p>Must be in Universal Time Coordinated (UTC)</p></li>
+    /// <li>
+    /// <p>Must not conflict with the preferred maintenance window</p></li>
+    /// <li>
+    /// <p>Must be at least 30 minutes</p></li>
     /// </ul>
     pub fn get_preferred_backup_window(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_backup_window
@@ -830,9 +871,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn new_db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -842,9 +886,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn set_new_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -854,9 +901,12 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set <code>Apply Immediately</code> to true, or will occur during the next maintenance window if <code>Apply Immediately</code> to false. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
-    /// <li><p>The first character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code></p>
     pub fn get_new_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {

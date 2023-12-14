@@ -8,15 +8,17 @@ pub struct CreateLocationFsxOntapInput {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
-    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
+    /// <li>
+    /// <p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li>
+    /// <p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from.</p>
     pub storage_virtual_machine_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
-    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub subdirectory: ::std::option::Option<::std::string::String>,
@@ -31,8 +33,10 @@ impl CreateLocationFsxOntapInput {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
-    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
+    /// <li>
+    /// <p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li>
+    /// <p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     ///
@@ -45,7 +49,7 @@ impl CreateLocationFsxOntapInput {
         self.storage_virtual_machine_arn.as_deref()
     }
     /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
-    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
@@ -98,8 +102,10 @@ impl CreateLocationFsxOntapInputBuilder {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
-    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
+    /// <li>
+    /// <p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li>
+    /// <p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -111,8 +117,10 @@ impl CreateLocationFsxOntapInputBuilder {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
-    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
+    /// <li>
+    /// <p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li>
+    /// <p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -122,8 +130,10 @@ impl CreateLocationFsxOntapInputBuilder {
     /// <p>Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet.</p>
     /// <p>The security groups must allow outbound traffic on the following ports (depending on the protocol you use):</p>
     /// <ul>
-    /// <li><p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
-    /// <li><p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
+    /// <li>
+    /// <p><b>Network File System (NFS)</b>: TCP ports 111, 635, and 2049</p></li>
+    /// <li>
+    /// <p><b>Server Message Block (SMB)</b>: TCP port 445</p></li>
     /// </ul>
     /// <p>Your file system's security groups must also allow inbound traffic on the same ports.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -145,7 +155,7 @@ impl CreateLocationFsxOntapInputBuilder {
         &self.storage_virtual_machine_arn
     }
     /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
-    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,7 +163,7 @@ impl CreateLocationFsxOntapInputBuilder {
         self
     }
     /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
-    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -161,7 +171,7 @@ impl CreateLocationFsxOntapInputBuilder {
         self
     }
     /// <p>Specifies a path to the file share in the SVM where you'll copy your data.</p>
-    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p> <note>
+    /// <p>You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.</p><note>
     /// <p>Don't specify a junction path in the SVM's root volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-svms.html">Managing FSx for ONTAP storage virtual machines</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     /// </note>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {

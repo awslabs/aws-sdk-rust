@@ -7,24 +7,30 @@
 pub struct CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub dimension_name: ::std::string::String,
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify <code>linkTag</code>.</p>
     pub dimension_value_source: crate::types::DimensionValueSource,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub default_dimension_value: ::std::string::String,
 }
 impl CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn dimension_name(&self) -> &str {
         use std::ops::Deref;
@@ -36,8 +42,10 @@ impl CloudWatchDimensionConfiguration {
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn default_dimension_value(&self) -> &str {
         use std::ops::Deref;
@@ -62,8 +70,10 @@ pub struct CloudWatchDimensionConfigurationBuilder {
 impl CloudWatchDimensionConfigurationBuilder {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     /// This field is required.
     pub fn dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,8 +82,10 @@ impl CloudWatchDimensionConfigurationBuilder {
     }
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn set_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension_name = input;
@@ -81,8 +93,10 @@ impl CloudWatchDimensionConfigurationBuilder {
     }
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_name
@@ -104,8 +118,10 @@ impl CloudWatchDimensionConfigurationBuilder {
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     /// This field is required.
     pub fn default_dimension_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -114,8 +130,10 @@ impl CloudWatchDimensionConfigurationBuilder {
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn set_default_dimension_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_dimension_value = input;
@@ -123,8 +141,10 @@ impl CloudWatchDimensionConfigurationBuilder {
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
-    /// <li><p>Contain 256 characters or fewer.</p></li>
+    /// <li>
+    /// <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).</p></li>
+    /// <li>
+    /// <p>Contain 256 characters or fewer.</p></li>
     /// </ul>
     pub fn get_default_dimension_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_dimension_value

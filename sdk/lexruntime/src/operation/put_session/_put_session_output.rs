@@ -22,20 +22,30 @@ pub struct PutSessionOutput {
     pub encoded_message: ::std::option::Option<::std::string::String>,
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li><p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+    /// <li>
+    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li>
+    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
+    /// <li>
+    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li>
+    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub message_format: ::std::option::Option<crate::types::MessageFormatType>,
     /// <p></p>
     /// <ul>
-    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
-    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
-    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
-    /// <li><p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
-    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
-    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
+    /// <li>
+    /// <p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
     /// </ul>
     pub dialog_state: ::std::option::Option<crate::types::DialogState>,
     /// <p>If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the slot for which Amazon Lex is eliciting a value.</p>
@@ -81,22 +91,32 @@ impl PutSessionOutput {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li><p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+    /// <li>
+    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li>
+    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
+    /// <li>
+    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li>
+    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn message_format(&self) -> ::std::option::Option<&crate::types::MessageFormatType> {
         self.message_format.as_ref()
     }
     /// <p></p>
     /// <ul>
-    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
-    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
-    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
-    /// <li><p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
-    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
-    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
+    /// <li>
+    /// <p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
     /// </ul>
     pub fn dialog_state(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.dialog_state.as_ref()
@@ -272,10 +292,14 @@ impl PutSessionOutputBuilder {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li><p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+    /// <li>
+    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li>
+    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
+    /// <li>
+    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li>
+    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn message_format(mut self, input: crate::types::MessageFormatType) -> Self {
         self.message_format = ::std::option::Option::Some(input);
@@ -283,10 +307,14 @@ impl PutSessionOutputBuilder {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li><p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+    /// <li>
+    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li>
+    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
+    /// <li>
+    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li>
+    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn set_message_format(mut self, input: ::std::option::Option<crate::types::MessageFormatType>) -> Self {
         self.message_format = input;
@@ -294,22 +322,32 @@ impl PutSessionOutputBuilder {
     }
     /// <p>The format of the response message. One of the following values:</p>
     /// <ul>
-    /// <li><p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
-    /// <li><p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
-    /// <li><p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
-    /// <li><p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
+    /// <li>
+    /// <p><code>PlainText</code> - The message contains plain UTF-8 text.</p></li>
+    /// <li>
+    /// <p><code>CustomPayload</code> - The message is a custom format for the client.</p></li>
+    /// <li>
+    /// <p><code>SSML</code> - The message contains text formatted for voice output.</p></li>
+    /// <li>
+    /// <p><code>Composite</code> - The message contains an escaped JSON object containing one or more messages from the groups that messages were assigned to when the intent was created.</p></li>
     /// </ul>
     pub fn get_message_format(&self) -> &::std::option::Option<crate::types::MessageFormatType> {
         &self.message_format
     }
     /// <p></p>
     /// <ul>
-    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
-    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
-    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
-    /// <li><p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
-    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
-    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
+    /// <li>
+    /// <p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
     /// </ul>
     pub fn dialog_state(mut self, input: crate::types::DialogState) -> Self {
         self.dialog_state = ::std::option::Option::Some(input);
@@ -317,12 +355,18 @@ impl PutSessionOutputBuilder {
     }
     /// <p></p>
     /// <ul>
-    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
-    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
-    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
-    /// <li><p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
-    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
-    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
+    /// <li>
+    /// <p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
     /// </ul>
     pub fn set_dialog_state(mut self, input: ::std::option::Option<crate::types::DialogState>) -> Self {
         self.dialog_state = input;
@@ -330,12 +374,18 @@ impl PutSessionOutputBuilder {
     }
     /// <p></p>
     /// <ul>
-    /// <li><p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
-    /// <li><p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
-    /// <li><p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
-    /// <li><p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
-    /// <li><p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
-    /// <li><p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to confirm the intent before fulfilling an intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.</p></li>
+    /// <li>
+    /// <p><code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current intent.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - Conveys that the conversation with the user has failed. This can happen for various reasons, including the user does not provide an appropriate response to prompts from the service, or if the Lambda function fails to fulfill the intent.</p></li>
+    /// <li>
+    /// <p><code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled the intent.</p></li>
+    /// <li>
+    /// <p><code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.</p></li>
     /// </ul>
     pub fn get_dialog_state(&self) -> &::std::option::Option<crate::types::DialogState> {
         &self.dialog_state

@@ -7,7 +7,8 @@ pub struct DescribePlaceIndexOutput {
     pub index_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub index_arn: ::std::string::String,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
@@ -21,9 +22,12 @@ pub struct DescribePlaceIndexOutput {
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
@@ -41,7 +45,8 @@ impl DescribePlaceIndexOutput {
     }
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn index_arn(&self) -> &str {
         use std::ops::Deref;
@@ -67,9 +72,12 @@ impl DescribePlaceIndexOutput {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -130,7 +138,8 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,7 +148,8 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
@@ -147,7 +157,8 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web Services.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code></p></li>
     /// </ul>
     pub fn get_index_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.index_arn
@@ -216,9 +227,12 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -228,9 +242,12 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -239,9 +256,12 @@ impl DescribePlaceIndexOutputBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {

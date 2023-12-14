@@ -11,13 +11,19 @@ pub enum Error {
     InsufficientDeliveryPolicyException(crate::types::error::InsufficientDeliveryPolicyException),
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
-    /// <li><p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
-    /// <li><p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
-    /// <li><p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
-    /// <li><p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions:</p>
+    /// <li>
+    /// <p>For PutConfigRule, the rule cannot be created because the IAM role assigned to Config lacks permissions to perform the config:Put* action.</p></li>
+    /// <li>
+    /// <p>For PutConfigRule, the Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.</p></li>
+    /// <li>
+    /// <p>For PutOrganizationConfigRule, organization Config rule cannot be created because you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
+    /// <li>
+    /// <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because you do not have the following permissions:</p>
     /// <ul>
-    /// <li><p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
-    /// <li><p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p></li>
+    /// <li>
+    /// <p>You do not have permission to call IAM <code>GetRole</code> action or create a service-linked role.</p></li>
+    /// <li>
+    /// <p>You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.</p></li>
     /// </ul></li>
     /// </ul>
     InsufficientPermissionsException(crate::types::error::InsufficientPermissionsException),
@@ -35,14 +41,20 @@ pub enum Error {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>Indicates one of the following errors:</p>
     /// <ul>
-    /// <li><p>You have provided a combination of parameter values that is not valid. For example:</p>
+    /// <li>
+    /// <p>You have provided a combination of parameter values that is not valid. For example:</p>
     /// <ul>
-    /// <li><p>Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.</p></li>
-    /// <li><p>Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p></li>
+    /// <li>
+    /// <p>Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.</p></li>
+    /// <li>
+    /// <p>Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a> to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a> to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.</p></li>
     /// </ul></li>
-    /// <li><p>Every parameter is either null, false, or empty.</p></li>
-    /// <li><p>You have reached the limit of the number of resource types you can provide for the recording group.</p></li>
-    /// <li><p>You have provided resource types or a recording strategy that are not valid.</p></li>
+    /// <li>
+    /// <p>Every parameter is either null, false, or empty.</p></li>
+    /// <li>
+    /// <p>You have reached the limit of the number of resource types you can provide for the recording group.</p></li>
+    /// <li>
+    /// <p>You have provided resource types or a recording strategy that are not valid.</p></li>
     /// </ul>
     InvalidRecordingGroupException(crate::types::error::InvalidRecordingGroupException),
     /// <p>The specified <code>ResultToken</code> is not valid.</p>
@@ -113,10 +125,14 @@ pub enum Error {
     NoSuchRetentionConfigurationException(crate::types::error::NoSuchRetentionConfigurationException),
     /// <p>For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:</p>
     /// <ul>
-    /// <li><p>No permission to call <code>EnableAWSServiceAccess</code> API</p></li>
-    /// <li><p>The configuration aggregator cannot be updated because your Amazon Web Services Organization management account or the delegated administrator role changed. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
-    /// <li><p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
-    /// <li><p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p></li>
+    /// <li>
+    /// <p>No permission to call <code>EnableAWSServiceAccess</code> API</p></li>
+    /// <li>
+    /// <p>The configuration aggregator cannot be updated because your Amazon Web Services Organization management account or the delegated administrator role changed. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>The configuration aggregator is associated with a previous Amazon Web Services Organization and Config cannot aggregate data with current Amazon Web Services Organization. Delete this aggregator and create a new one with the current Amazon Web Services Organization.</p></li>
+    /// <li>
+    /// <p>You are not a registered delegated administrator for Config with permissions to call <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator for Config service principle name before the delegated administrator creates an aggregator.</p></li>
     /// </ul>
     /// <p>For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an exception if APIs are called from member accounts. All APIs must be called from organization management account.</p>
     OrganizationAccessDeniedException(crate::types::error::OrganizationAccessDeniedException),
@@ -132,13 +148,20 @@ pub enum Error {
     ResourceConcurrentModificationException(crate::types::error::ResourceConcurrentModificationException),
     /// <p>You see this exception in the following cases:</p>
     /// <ul>
-    /// <li><p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p></li>
-    /// <li><p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p></li>
-    /// <li><p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p></li>
-    /// <li><p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p></li>
-    /// <li><p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p></li>
-    /// <li><p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
-    /// <li><p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
+    /// <li>
+    /// <p>For DeleteConfigRule, Config is deleting this rule. Try your request again later.</p></li>
+    /// <li>
+    /// <p>For DeleteConfigRule, the rule is deleting your evaluation results. Try your request again later.</p></li>
+    /// <li>
+    /// <p>For DeleteConfigRule, a remediation action is associated with the rule and Config cannot delete this rule. Delete the remediation action associated with the rule before deleting the rule and try your request again later.</p></li>
+    /// <li>
+    /// <p>For PutConfigOrganizationRule, organization Config rule deletion is in progress. Try your request again later.</p></li>
+    /// <li>
+    /// <p>For DeleteOrganizationConfigRule, organization Config rule creation is in progress. Try your request again later.</p></li>
+    /// <li>
+    /// <p>For PutConformancePack and PutOrganizationConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
+    /// <li>
+    /// <p>For DeleteConformancePack, a conformance pack creation, update, and deletion is in progress. Try your request again later.</p></li>
     /// </ul>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>You have specified a resource that is either unknown or has not been discovered.</p>

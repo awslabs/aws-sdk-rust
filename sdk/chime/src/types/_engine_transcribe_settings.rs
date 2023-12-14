@@ -53,7 +53,7 @@ pub struct EngineTranscribeSettings {
     pub identify_language: ::std::option::Option<bool>,
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub language_options: ::std::option::Option<::std::string::String>,
@@ -142,7 +142,7 @@ impl EngineTranscribeSettings {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn language_options(&self) -> ::std::option::Option<&str> {
@@ -431,7 +431,7 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn language_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -440,7 +440,7 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn set_language_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -449,7 +449,7 @@ impl EngineTranscribeSettingsBuilder {
     }
     /// <p>Specify two or more language codes that represent the languages you think may be present in your media; including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
-    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p> <important>
+    /// <p>If you include <code>LanguageOptions</code>, you must also include <code>IdentifyLanguage</code>.</p><important>
     /// <p>You can only include one language dialect per language. For example, you cannot include <code>en-US</code> and <code>en-AU</code>.</p>
     /// </important>
     pub fn get_language_options(&self) -> &::std::option::Option<::std::string::String> {

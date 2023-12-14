@@ -48,8 +48,7 @@ pub struct DeploymentGroupInfo {
     pub on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -153,8 +152,7 @@ impl DeploymentGroupInfo {
     pub fn compute_platform(&self) -> ::std::option::Option<&crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -533,8 +531,7 @@ impl DeploymentGroupInfoBuilder {
     ///
     /// To override the contents of this collection use [`set_ecs_services`](Self::set_ecs_services).
     ///
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -544,8 +541,7 @@ impl DeploymentGroupInfoBuilder {
         self.ecs_services = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>
@@ -553,8 +549,7 @@ impl DeploymentGroupInfoBuilder {
         self.ecs_services = input;
         self
     }
-    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>
-    /// <clustername>
+    /// <p>The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code><clustername>
     /// :
     /// <servicename></servicename>
     /// </clustername></code>.</p>

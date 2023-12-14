@@ -22,7 +22,7 @@ impl DisconnectParticipantInputBuilder {
 }
 /// Fluent builder constructing a request to `DisconnectParticipant`.
 ///
-/// <p>Disconnects a participant.</p> <note>
+/// <p>Disconnects a participant.</p><note>
 /// <p><code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
 /// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>

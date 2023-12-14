@@ -26,7 +26,7 @@ pub struct Bundle {
     pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
     pub supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
-    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
@@ -78,7 +78,7 @@ impl Bundle {
     pub fn supported_platforms(&self) -> &[crate::types::InstancePlatform] {
         self.supported_platforms.as_deref().unwrap_or_default()
     }
-    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     ///
@@ -276,7 +276,7 @@ impl BundleBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_app_categories`](Self::set_supported_app_categories).
     ///
-    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn supported_app_categories(mut self, input: crate::types::AppCategory) -> Self {
@@ -285,14 +285,14 @@ impl BundleBuilder {
         self.supported_app_categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn set_supported_app_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>) -> Self {
         self.supported_app_categories = input;
         self
     }
-    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+    /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p><important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub fn get_supported_app_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCategory>> {

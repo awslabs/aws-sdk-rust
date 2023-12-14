@@ -13,8 +13,10 @@ pub struct ModifyDataProviderInput {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     pub exact_settings: ::std::option::Option<bool>,
     /// <p>The settings in JSON format for a data provider.</p>
@@ -39,8 +41,10 @@ impl ModifyDataProviderInput {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     pub fn exact_settings(&self) -> ::std::option::Option<bool> {
         self.exact_settings
@@ -128,8 +132,10 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     pub fn exact_settings(mut self, input: bool) -> Self {
         self.exact_settings = ::std::option::Option::Some(input);
@@ -137,8 +143,10 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     pub fn set_exact_settings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exact_settings = input;
@@ -146,8 +154,10 @@ impl ModifyDataProviderInputBuilder {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyDataProvider</code> replaces all existing data provider settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyDataProvider</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any data provider settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new data provider settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     pub fn get_exact_settings(&self) -> &::std::option::Option<bool> {
         &self.exact_settings

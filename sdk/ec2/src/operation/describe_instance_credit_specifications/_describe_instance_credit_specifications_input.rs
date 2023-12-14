@@ -7,7 +7,8 @@ pub struct DescribeInstanceCreditSpecificationsInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The instance IDs.</p>
@@ -27,7 +28,8 @@ impl DescribeInstanceCreditSpecificationsInput {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -90,7 +92,8 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -100,7 +103,8 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -108,7 +112,8 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-id</code> - The ID of the instance.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

@@ -34,7 +34,7 @@ pub struct Asn1Subject {
     /// <p>Typically a qualifier appended to the name of an individual. Examples include Jr. for junior, Sr. for senior, and III for third.</p>
     pub generation_qualifier: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
     pub custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>,
@@ -98,7 +98,7 @@ impl Asn1Subject {
         self.generation_qualifier.as_deref()
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
     ///
@@ -339,7 +339,7 @@ impl Asn1SubjectBuilder {
     /// To override the contents of this collection use [`set_custom_attributes`](Self::set_custom_attributes).
     ///
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
     pub fn custom_attributes(mut self, input: crate::types::CustomAttribute) -> Self {
@@ -349,7 +349,7 @@ impl Asn1SubjectBuilder {
         self
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
     pub fn set_custom_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>>) -> Self {
@@ -357,7 +357,7 @@ impl Asn1SubjectBuilder {
         self
     }
     /// <p></p>
-    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> <note>
+    /// <p>Contains a sequence of one or more X.500 relative distinguished names (RDNs), each of which consists of an object identifier (OID) and a value. For more information, see NIST’s definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p><note>
     /// <p>Custom attributes cannot be used in combination with standard attributes.</p>
     /// </note>
     pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomAttribute>> {

@@ -109,21 +109,21 @@ impl AddThingToBillingGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the billing group.</p> <note>
+    /// <p>The name of the billing group.</p><note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn billing_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.billing_group_name(input.into());
         self
     }
-    /// <p>The name of the billing group.</p> <note>
+    /// <p>The name of the billing group.</p><note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn set_billing_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_billing_group_name(input);
         self
     }
-    /// <p>The name of the billing group.</p> <note>
+    /// <p>The name of the billing group.</p><note>
     /// <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p>
     /// </note>
     pub fn get_billing_group_name(&self) -> &::std::option::Option<::std::string::String> {

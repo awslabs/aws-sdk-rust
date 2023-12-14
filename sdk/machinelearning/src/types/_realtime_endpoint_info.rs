@@ -13,9 +13,12 @@ pub struct RealtimeEndpointInfo {
     pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
-    /// <li><p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
-    /// <li><p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
+    /// <li>
+    /// <p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
     /// </ul>
     pub endpoint_status: ::std::option::Option<crate::types::RealtimeEndpointStatus>,
 }
@@ -35,9 +38,12 @@ impl RealtimeEndpointInfo {
     }
     /// <p>The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
-    /// <li><p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
-    /// <li><p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
+    /// <li>
+    /// <p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
     /// </ul>
     pub fn endpoint_status(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointStatus> {
         self.endpoint_status.as_ref()
@@ -107,9 +113,12 @@ impl RealtimeEndpointInfoBuilder {
     }
     /// <p>The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
-    /// <li><p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
-    /// <li><p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
+    /// <li>
+    /// <p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
     /// </ul>
     pub fn endpoint_status(mut self, input: crate::types::RealtimeEndpointStatus) -> Self {
         self.endpoint_status = ::std::option::Option::Some(input);
@@ -117,9 +126,12 @@ impl RealtimeEndpointInfoBuilder {
     }
     /// <p>The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
-    /// <li><p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
-    /// <li><p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
+    /// <li>
+    /// <p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
     /// </ul>
     pub fn set_endpoint_status(mut self, input: ::std::option::Option<crate::types::RealtimeEndpointStatus>) -> Self {
         self.endpoint_status = input;
@@ -127,9 +139,12 @@ impl RealtimeEndpointInfoBuilder {
     }
     /// <p>The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
-    /// <li><p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
-    /// <li><p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> - Endpoint does not exist or was previously deleted.</p></li>
+    /// <li>
+    /// <p><code>READY</code> - Endpoint is ready to be used for real-time predictions.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Updating/creating the endpoint.</p></li>
     /// </ul>
     pub fn get_endpoint_status(&self) -> &::std::option::Option<crate::types::RealtimeEndpointStatus> {
         &self.endpoint_status

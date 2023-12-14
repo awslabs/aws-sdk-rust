@@ -25,11 +25,16 @@ impl UpdateLagInputBuilder {
 /// <p>Updates the attributes of the specified link aggregation group (LAG).</p>
 /// <p>You can update the following LAG attributes:</p>
 /// <ul>
-/// <li><p>The name of the LAG.</p></li>
-/// <li><p>The value for the minimum number of connections that must be operational for the LAG itself to be operational.</p></li>
-/// <li><p>The LAG's MACsec encryption mode.</p> <p>Amazon Web Services assigns this value to each connection which is part of the LAG.</p></li>
-/// <li><p>The tags</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>The name of the LAG.</p></li>
+/// <li>
+/// <p>The value for the minimum number of connections that must be operational for the LAG itself to be operational.</p></li>
+/// <li>
+/// <p>The LAG's MACsec encryption mode.</p>
+/// <p>Amazon Web Services assigns this value to each connection which is part of the LAG.</p></li>
+/// <li>
+/// <p>The tags</p></li>
+/// </ul><note>
 /// <p>If you adjust the threshold value for the minimum number of operational connections, ensure that the new value does not cause the LAG to fall below the threshold and become non-operational.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

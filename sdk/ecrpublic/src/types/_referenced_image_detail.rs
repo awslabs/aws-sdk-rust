@@ -7,7 +7,7 @@ pub struct ReferencedImageDetail {
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub image_size_in_bytes: ::std::option::Option<i64>,
@@ -24,7 +24,7 @@ impl ReferencedImageDetail {
         self.image_digest.as_deref()
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(&self) -> ::std::option::Option<i64> {
@@ -76,7 +76,7 @@ impl ReferencedImageDetailBuilder {
         &self.image_digest
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn image_size_in_bytes(mut self, input: i64) -> Self {
@@ -84,7 +84,7 @@ impl ReferencedImageDetailBuilder {
         self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn set_image_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
@@ -92,7 +92,7 @@ impl ReferencedImageDetailBuilder {
         self
     }
     /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p><note>
     /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
     /// </note>
     pub fn get_image_size_in_bytes(&self) -> &::std::option::Option<i64> {

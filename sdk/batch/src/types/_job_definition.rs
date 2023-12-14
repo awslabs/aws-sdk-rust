@@ -24,7 +24,7 @@ pub struct JobDefinition {
     pub container_properties: ::std::option::Option<crate::types::ContainerProperties>,
     /// <p>The timeout time for jobs that are submitted with this job definition. After the amount of time you specify passes, Batch terminates your jobs if they aren't finished.</p>
     pub timeout: ::std::option::Option<crate::types::JobTimeout>,
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub node_properties: ::std::option::Option<crate::types::NodeProperties>,
@@ -80,7 +80,7 @@ impl JobDefinition {
     pub fn timeout(&self) -> ::std::option::Option<&crate::types::JobTimeout> {
         self.timeout.as_ref()
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn node_properties(&self) -> ::std::option::Option<&crate::types::NodeProperties> {
@@ -288,21 +288,21 @@ impl JobDefinitionBuilder {
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::JobTimeout> {
         &self.timeout
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn node_properties(mut self, input: crate::types::NodeProperties) -> Self {
         self.node_properties = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn set_node_properties(mut self, input: ::std::option::Option<crate::types::NodeProperties>) -> Self {
         self.node_properties = input;
         self
     }
-    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p> <note>
+    /// <p>An object with various properties that are specific to multi-node parallel jobs. Valid values are <code>containerProperties</code>, <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be specified.</p><note>
     /// <p>If the job runs on Fargate resources, don't specify <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
     /// </note>
     pub fn get_node_properties(&self) -> &::std::option::Option<crate::types::NodeProperties> {

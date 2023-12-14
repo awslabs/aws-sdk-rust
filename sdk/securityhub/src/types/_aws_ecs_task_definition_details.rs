@@ -8,11 +8,16 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub container_definitions: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionContainerDefinitionsDetails>>,
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>256 (.25 vCPU)</code></p></li>
-    /// <li><p><code>512 (.5 vCPU)</code></p></li>
-    /// <li><p><code>1024 (1 vCPU)</code></p></li>
-    /// <li><p><code>2048 (2 vCPU)</code></p></li>
-    /// <li><p><code>4096 (4 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>256 (.25 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>512 (.5 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>1024 (1 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>2048 (2 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task execution role that grants the container agent permission to make API calls on behalf of the container user.</p>
@@ -23,9 +28,12 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::AwsEcsTaskDefinitionInferenceAcceleratorsDetails>>,
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
-    /// <li><p><code>task</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>task</code></p></li>
     /// </ul>
     pub ipc_mode: ::std::option::Option<::std::string::String>,
     /// <p>The amount (in MiB) of memory used by the task.</p>
@@ -33,10 +41,14 @@ pub struct AwsEcsTaskDefinitionDetails {
     pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>awsvpc</code></p></li>
-    /// <li><p><code>bridge</code></p></li>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>awsvpc</code></p></li>
+    /// <li>
+    /// <p><code>bridge</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
     /// </ul>
     pub network_mode: ::std::option::Option<::std::string::String>,
     /// <p>The process namespace to use for the containers in the task. Valid values are <code>host</code> or <code>task</code>.</p>
@@ -63,11 +75,16 @@ impl AwsEcsTaskDefinitionDetails {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>256 (.25 vCPU)</code></p></li>
-    /// <li><p><code>512 (.5 vCPU)</code></p></li>
-    /// <li><p><code>1024 (1 vCPU)</code></p></li>
-    /// <li><p><code>2048 (2 vCPU)</code></p></li>
-    /// <li><p><code>4096 (4 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>256 (.25 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>512 (.5 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>1024 (1 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>2048 (2 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
@@ -88,9 +105,12 @@ impl AwsEcsTaskDefinitionDetails {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
-    /// <li><p><code>task</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>task</code></p></li>
     /// </ul>
     pub fn ipc_mode(&self) -> ::std::option::Option<&str> {
         self.ipc_mode.as_deref()
@@ -102,10 +122,14 @@ impl AwsEcsTaskDefinitionDetails {
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>awsvpc</code></p></li>
-    /// <li><p><code>bridge</code></p></li>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>awsvpc</code></p></li>
+    /// <li>
+    /// <p><code>bridge</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
     /// </ul>
     pub fn network_mode(&self) -> ::std::option::Option<&str> {
         self.network_mode.as_deref()
@@ -200,11 +224,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>256 (.25 vCPU)</code></p></li>
-    /// <li><p><code>512 (.5 vCPU)</code></p></li>
-    /// <li><p><code>1024 (1 vCPU)</code></p></li>
-    /// <li><p><code>2048 (2 vCPU)</code></p></li>
-    /// <li><p><code>4096 (4 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>256 (.25 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>512 (.5 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>1024 (1 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>2048 (2 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cpu = ::std::option::Option::Some(input.into());
@@ -212,11 +241,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>256 (.25 vCPU)</code></p></li>
-    /// <li><p><code>512 (.5 vCPU)</code></p></li>
-    /// <li><p><code>1024 (1 vCPU)</code></p></li>
-    /// <li><p><code>2048 (2 vCPU)</code></p></li>
-    /// <li><p><code>4096 (4 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>256 (.25 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>512 (.5 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>1024 (1 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>2048 (2 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
@@ -224,11 +258,16 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The number of CPU units used by the task.Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>256 (.25 vCPU)</code></p></li>
-    /// <li><p><code>512 (.5 vCPU)</code></p></li>
-    /// <li><p><code>1024 (1 vCPU)</code></p></li>
-    /// <li><p><code>2048 (2 vCPU)</code></p></li>
-    /// <li><p><code>4096 (4 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>256 (.25 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>512 (.5 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>1024 (1 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>2048 (2 vCPU)</code></p></li>
+    /// <li>
+    /// <p><code>4096 (4 vCPU)</code></p></li>
     /// </ul>
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu
@@ -288,9 +327,12 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
-    /// <li><p><code>task</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>task</code></p></li>
     /// </ul>
     pub fn ipc_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipc_mode = ::std::option::Option::Some(input.into());
@@ -298,9 +340,12 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
-    /// <li><p><code>task</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>task</code></p></li>
     /// </ul>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipc_mode = input;
@@ -308,9 +353,12 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The inter-process communication (IPC) resource namespace to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
-    /// <li><p><code>task</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>task</code></p></li>
     /// </ul>
     pub fn get_ipc_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipc_mode
@@ -334,10 +382,14 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>awsvpc</code></p></li>
-    /// <li><p><code>bridge</code></p></li>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>awsvpc</code></p></li>
+    /// <li>
+    /// <p><code>bridge</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
     /// </ul>
     pub fn network_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_mode = ::std::option::Option::Some(input.into());
@@ -345,10 +397,14 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>awsvpc</code></p></li>
-    /// <li><p><code>bridge</code></p></li>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>awsvpc</code></p></li>
+    /// <li>
+    /// <p><code>bridge</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
     /// </ul>
     pub fn set_network_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_mode = input;
@@ -356,10 +412,14 @@ impl AwsEcsTaskDefinitionDetailsBuilder {
     }
     /// <p>The Docker networking mode to use for the containers in the task. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p><code>awsvpc</code></p></li>
-    /// <li><p><code>bridge</code></p></li>
-    /// <li><p><code>host</code></p></li>
-    /// <li><p><code>none</code></p></li>
+    /// <li>
+    /// <p><code>awsvpc</code></p></li>
+    /// <li>
+    /// <p><code>bridge</code></p></li>
+    /// <li>
+    /// <p><code>host</code></p></li>
+    /// <li>
+    /// <p><code>none</code></p></li>
     /// </ul>
     pub fn get_network_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_mode

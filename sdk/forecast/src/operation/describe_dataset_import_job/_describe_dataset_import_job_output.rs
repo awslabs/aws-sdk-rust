@@ -11,8 +11,12 @@ pub struct DescribeDatasetImportJobOutput {
     pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li><p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p></li>
-    /// <li><p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
     /// </ul>
     pub timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>The single time zone applied to every item in the dataset</p>
@@ -32,10 +36,14 @@ pub struct DescribeDatasetImportJobOutput {
     pub data_size: ::std::option::Option<f64>,
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If an error occurred, an informational message about the error.</p>
@@ -44,11 +52,16 @@ pub struct DescribeDatasetImportJobOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The format of the imported data, CSV or PARQUET.</p>
@@ -72,8 +85,12 @@ impl DescribeDatasetImportJobOutput {
     }
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li><p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p></li>
-    /// <li><p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
     /// </ul>
     pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
         self.timestamp_format.as_deref()
@@ -109,10 +126,14 @@ impl DescribeDatasetImportJobOutput {
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -127,11 +148,16 @@ impl DescribeDatasetImportJobOutput {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -225,8 +251,12 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li><p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p></li>
-    /// <li><p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
     /// </ul>
     pub fn timestamp_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timestamp_format = ::std::option::Option::Some(input.into());
@@ -234,8 +264,12 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li><p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p></li>
-    /// <li><p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
     /// </ul>
     pub fn set_timestamp_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp_format = input;
@@ -243,8 +277,12 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The format of timestamps in the dataset. The format that you specify depends on the <code>DataFrequency</code> specified when the dataset was created. The following formats are supported</p>
     /// <ul>
-    /// <li><p>"yyyy-MM-dd"</p> <p>For the following data frequencies: Y, M, W, and D</p></li>
-    /// <li><p>"yyyy-MM-dd HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd"</p>
+    /// <p>For the following data frequencies: Y, M, W, and D</p></li>
+    /// <li>
+    /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+    /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D</p></li>
     /// </ul>
     pub fn get_timestamp_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.timestamp_format
@@ -361,10 +399,14 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -372,10 +414,14 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -383,10 +429,14 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The status of the dataset import job. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
-    /// <li><p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -421,11 +471,16 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -433,11 +488,16 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -445,11 +505,16 @@ impl DescribeDatasetImportJobOutputBuilder {
     }
     /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
-    /// <li><p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPING</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>CREATE_STOPPED</code> - When the job stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p></li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time

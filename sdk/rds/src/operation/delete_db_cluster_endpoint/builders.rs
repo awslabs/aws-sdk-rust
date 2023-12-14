@@ -22,7 +22,7 @@ impl DeleteDbClusterEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDBClusterEndpoint`.
 ///
-/// <p>Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.</p> <note>
+/// <p>Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.</p><note>
 /// <p>This action only applies to Aurora DB clusters.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

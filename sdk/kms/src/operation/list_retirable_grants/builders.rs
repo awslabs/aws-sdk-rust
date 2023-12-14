@@ -29,10 +29,14 @@ impl ListRetirableGrantsInputBuilder {
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListRetirableGrants</a> (IAM policy) in your Amazon Web Services account.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>CreateGrant</code></p></li>
-/// <li><p><code>ListGrants</code></p></li>
-/// <li><p><code>RetireGrant</code></p></li>
-/// <li><p><code>RevokeGrant</code></p></li>
+/// <li>
+/// <p><code>CreateGrant</code></p></li>
+/// <li>
+/// <p><code>ListGrants</code></p></li>
+/// <li>
+/// <p><code>RetireGrant</code></p></li>
+/// <li>
+/// <p><code>RevokeGrant</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRetirableGrantsFluentBuilder {

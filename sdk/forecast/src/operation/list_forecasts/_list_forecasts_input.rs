@@ -10,9 +10,12 @@ pub struct ListForecastsInput {
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
-    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
-    /// <li><p><code>Value</code> - The value to match.</p></li>
+    /// <li>
+    /// <p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
+    /// <li>
+    /// <p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
+    /// <li>
+    /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p><code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code></p>
@@ -30,9 +33,12 @@ impl ListForecastsInput {
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
-    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
-    /// <li><p><code>Value</code> - The value to match.</p></li>
+    /// <li>
+    /// <p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
+    /// <li>
+    /// <p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
+    /// <li>
+    /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p><code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code></p>
@@ -93,9 +99,12 @@ impl ListForecastsInputBuilder {
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
-    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
-    /// <li><p><code>Value</code> - The value to match.</p></li>
+    /// <li>
+    /// <p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
+    /// <li>
+    /// <p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
+    /// <li>
+    /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p><code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code></p>
@@ -108,9 +117,12 @@ impl ListForecastsInputBuilder {
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
-    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
-    /// <li><p><code>Value</code> - The value to match.</p></li>
+    /// <li>
+    /// <p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
+    /// <li>
+    /// <p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
+    /// <li>
+    /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p><code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code></p>
@@ -121,9 +133,12 @@ impl ListForecastsInputBuilder {
     /// <p>An array of filters. For each filter, you provide a condition and a match statement. The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.</p>
     /// <p><b>Filter properties</b></p>
     /// <ul>
-    /// <li><p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
-    /// <li><p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
-    /// <li><p><code>Value</code> - The value to match.</p></li>
+    /// <li>
+    /// <p><code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and <code>IS_NOT</code>. To include the forecasts that match the statement, specify <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p></li>
+    /// <li>
+    /// <p><code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p></li>
+    /// <li>
+    /// <p><code>Value</code> - The value to match.</p></li>
     /// </ul>
     /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
     /// <p><code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]</code></p>

@@ -23,7 +23,7 @@ impl DisassociateLensesInputBuilder {
 /// Fluent builder constructing a request to `DisassociateLenses`.
 ///
 /// <p>Disassociate a lens from a workload.</p>
-/// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note>
+/// <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p><note>
 /// <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

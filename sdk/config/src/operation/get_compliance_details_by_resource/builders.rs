@@ -177,21 +177,21 @@ impl GetComplianceDetailsByResourceFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn resource_evaluation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_evaluation_id(input.into());
         self
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn set_resource_evaluation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_evaluation_id(input);
         self
     }
-    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p> <note>
+    /// <p>The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.</p><note>
     /// <p>You need to only provide either a <code>ResourceEvaluationID</code> or a <code>ResourceID </code>and <code>ResourceType</code>.</p>
     /// </note>
     pub fn get_resource_evaluation_id(&self) -> &::std::option::Option<::std::string::String> {

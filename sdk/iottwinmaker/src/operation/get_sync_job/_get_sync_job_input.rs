@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSyncJobInput {
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub sync_source: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct GetSyncJobInput {
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSyncJobInput {
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(&self) -> ::std::option::Option<&str> {
@@ -37,7 +37,7 @@ pub struct GetSyncJobInputBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSyncJobInputBuilder {
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     /// This field is required.
@@ -45,14 +45,14 @@ impl GetSyncJobInputBuilder {
         self.sync_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {

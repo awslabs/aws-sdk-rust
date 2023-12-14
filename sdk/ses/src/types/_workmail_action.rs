@@ -9,8 +9,7 @@ pub struct WorkmailAction {
     /// <p>For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon WorkMail organization. Amazon WorkMail ARNs use the following format:</p>
-    /// <p><code>arn:aws:workmail:
-    /// <region>
+    /// <p><code>arn:aws:workmail:<region>
     /// :
     /// <awsaccountid>
     /// :organization/
@@ -28,8 +27,7 @@ impl WorkmailAction {
         self.topic_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon WorkMail organization. Amazon WorkMail ARNs use the following format:</p>
-    /// <p><code>arn:aws:workmail:
-    /// <region>
+    /// <p><code>arn:aws:workmail:<region>
     /// :
     /// <awsaccountid>
     /// :organization/
@@ -76,8 +74,7 @@ impl WorkmailActionBuilder {
         &self.topic_arn
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon WorkMail organization. Amazon WorkMail ARNs use the following format:</p>
-    /// <p><code>arn:aws:workmail:
-    /// <region>
+    /// <p><code>arn:aws:workmail:<region>
     /// :
     /// <awsaccountid>
     /// :organization/
@@ -92,8 +89,7 @@ impl WorkmailActionBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon WorkMail organization. Amazon WorkMail ARNs use the following format:</p>
-    /// <p><code>arn:aws:workmail:
-    /// <region>
+    /// <p><code>arn:aws:workmail:<region>
     /// :
     /// <awsaccountid>
     /// :organization/
@@ -107,8 +103,7 @@ impl WorkmailActionBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon WorkMail organization. Amazon WorkMail ARNs use the following format:</p>
-    /// <p><code>arn:aws:workmail:
-    /// <region>
+    /// <p><code>arn:aws:workmail:<region>
     /// :
     /// <awsaccountid>
     /// :organization/

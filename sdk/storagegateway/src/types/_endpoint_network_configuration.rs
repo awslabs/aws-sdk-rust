@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointNetworkConfiguration {
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EndpointNetworkConfiguration {
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
     ///
@@ -37,7 +37,7 @@ impl EndpointNetworkConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
     pub fn ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -46,14 +46,14 @@ impl EndpointNetworkConfigurationBuilder {
         self.ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
     pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.ip_addresses = input;
         self
     }
-    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p> <note>
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p><note>
     /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
     /// </note>
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

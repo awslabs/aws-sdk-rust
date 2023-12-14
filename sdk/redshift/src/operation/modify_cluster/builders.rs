@@ -195,9 +195,12 @@ impl ModifyClusterFluentBuilder {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn cluster_security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_security_groups(input.into());
@@ -207,9 +210,12 @@ impl ModifyClusterFluentBuilder {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_cluster_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cluster_security_groups(input);
@@ -219,9 +225,12 @@ impl ModifyClusterFluentBuilder {
     /// <p>Security groups currently associated with the cluster, and not in the list of groups to apply, will be revoked from the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_cluster_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cluster_security_groups()
@@ -245,51 +254,66 @@ impl ModifyClusterFluentBuilder {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
-    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p><note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn master_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
-    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p><note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn set_master_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
     /// <p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response.</p>
-    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note>
+    /// <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p><note>
     /// <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p>
     /// </note>
     /// <p>Default: Uses existing setting.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be between 8 and 64 characters in length.</p></li>
-    /// <li><p>Must contain at least one uppercase letter.</p></li>
-    /// <li><p>Must contain at least one lowercase letter.</p></li>
-    /// <li><p>Must contain one number.</p></li>
-    /// <li><p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
+    /// <li>
+    /// <p>Must be between 8 and 64 characters in length.</p></li>
+    /// <li>
+    /// <p>Must contain at least one uppercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain at least one lowercase letter.</p></li>
+    /// <li>
+    /// <p>Must contain one number.</p></li>
+    /// <li>
+    /// <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.</p></li>
     /// </ul>
     pub fn get_master_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_user_password()
@@ -457,11 +481,16 @@ impl ModifyClusterFluentBuilder {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn new_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -471,11 +500,16 @@ impl ModifyClusterFluentBuilder {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn set_new_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -485,11 +519,16 @@ impl ModifyClusterFluentBuilder {
     /// <p>The new identifier for the cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>Alphabetic characters must be lowercase.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>Alphabetic characters must be lowercase.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique for all clusters within an Amazon Web Services account.</p></li>
     /// </ul>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn get_new_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {

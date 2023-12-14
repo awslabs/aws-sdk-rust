@@ -8,10 +8,14 @@ pub struct CreateCompilationJobInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
     /// <ul>
-    /// <li><p>Read input data from an S3 bucket</p></li>
-    /// <li><p>Write model artifacts to an S3 bucket</p></li>
-    /// <li><p>Write logs to Amazon CloudWatch Logs</p></li>
-    /// <li><p>Publish metrics to Amazon CloudWatch</p></li>
+    /// <li>
+    /// <p>Read input data from an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write model artifacts to an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write logs to Amazon CloudWatch Logs</p></li>
+    /// <li>
+    /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -36,10 +40,14 @@ impl CreateCompilationJobInput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
     /// <ul>
-    /// <li><p>Read input data from an S3 bucket</p></li>
-    /// <li><p>Write model artifacts to an S3 bucket</p></li>
-    /// <li><p>Write logs to Amazon CloudWatch Logs</p></li>
-    /// <li><p>Publish metrics to Amazon CloudWatch</p></li>
+    /// <li>
+    /// <p>Read input data from an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write model artifacts to an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write logs to Amazon CloudWatch Logs</p></li>
+    /// <li>
+    /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -111,10 +119,14 @@ impl CreateCompilationJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
     /// <ul>
-    /// <li><p>Read input data from an S3 bucket</p></li>
-    /// <li><p>Write model artifacts to an S3 bucket</p></li>
-    /// <li><p>Write logs to Amazon CloudWatch Logs</p></li>
-    /// <li><p>Publish metrics to Amazon CloudWatch</p></li>
+    /// <li>
+    /// <p>Read input data from an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write model artifacts to an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write logs to Amazon CloudWatch Logs</p></li>
+    /// <li>
+    /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
     /// This field is required.
@@ -125,10 +137,14 @@ impl CreateCompilationJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
     /// <ul>
-    /// <li><p>Read input data from an S3 bucket</p></li>
-    /// <li><p>Write model artifacts to an S3 bucket</p></li>
-    /// <li><p>Write logs to Amazon CloudWatch Logs</p></li>
-    /// <li><p>Publish metrics to Amazon CloudWatch</p></li>
+    /// <li>
+    /// <p>Read input data from an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write model artifacts to an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write logs to Amazon CloudWatch Logs</p></li>
+    /// <li>
+    /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -138,10 +154,14 @@ impl CreateCompilationJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     /// <p>During model compilation, Amazon SageMaker needs your permission to:</p>
     /// <ul>
-    /// <li><p>Read input data from an S3 bucket</p></li>
-    /// <li><p>Write model artifacts to an S3 bucket</p></li>
-    /// <li><p>Write logs to Amazon CloudWatch Logs</p></li>
-    /// <li><p>Publish metrics to Amazon CloudWatch</p></li>
+    /// <li>
+    /// <p>Read input data from an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write model artifacts to an S3 bucket</p></li>
+    /// <li>
+    /// <p>Write logs to Amazon CloudWatch Logs</p></li>
+    /// <li>
+    /// <p>Publish metrics to Amazon CloudWatch</p></li>
     /// </ul>
     /// <p>You grant permissions for all of these tasks to an IAM role. To pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles.</a></p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {

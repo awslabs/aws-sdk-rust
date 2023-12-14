@@ -22,16 +22,21 @@ impl UpdateNfsFileShareInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateNFSFileShare`.
 ///
-/// <p>Updates a Network File System (NFS) file share. This operation is only supported in S3 File Gateways.</p> <note>
+/// <p>Updates a Network File System (NFS) file share. This operation is only supported in S3 File Gateways.</p><note>
 /// <p>To leave a file share field unchanged, set the corresponding input field to null.</p>
 /// </note>
 /// <p>Updates the following file share settings:</p>
 /// <ul>
-/// <li><p>Default storage class for your S3 bucket</p></li>
-/// <li><p>Metadata defaults for your S3 bucket</p></li>
-/// <li><p>Allowed NFS clients for your file share</p></li>
-/// <li><p>Squash settings</p></li>
-/// <li><p>Write status of your file share</p></li>
+/// <li>
+/// <p>Default storage class for your S3 bucket</p></li>
+/// <li>
+/// <p>Metadata defaults for your S3 bucket</p></li>
+/// <li>
+/// <p>Allowed NFS clients for your file share</p></li>
+/// <li>
+/// <p>Squash settings</p></li>
+/// <li>
+/// <p>Write status of your file share</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNFSFileShareFluentBuilder {
@@ -229,9 +234,12 @@ impl UpdateNFSFileShareFluentBuilder {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn squash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.squash(input.into());
@@ -240,9 +248,12 @@ impl UpdateNFSFileShareFluentBuilder {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn set_squash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_squash(input);
@@ -251,9 +262,12 @@ impl UpdateNFSFileShareFluentBuilder {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn get_squash(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_squash()
@@ -292,7 +306,7 @@ impl UpdateNFSFileShareFluentBuilder {
     pub fn get_guess_mime_type_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_guess_mime_type_enabled()
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -300,7 +314,7 @@ impl UpdateNFSFileShareFluentBuilder {
         self.inner = self.inner.requester_pays(input);
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -308,28 +322,28 @@ impl UpdateNFSFileShareFluentBuilder {
         self.inner = self.inner.set_requester_pays(input);
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_requester_pays(&self) -> &::std::option::Option<bool> {
         self.inner.get_requester_pays()
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_share_name(input.into());
         self
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_share_name(input);
         self
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -349,7 +363,7 @@ impl UpdateNFSFileShareFluentBuilder {
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
         self.inner.get_cache_attributes()
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -360,7 +374,7 @@ impl UpdateNFSFileShareFluentBuilder {
         self.inner = self.inner.notification_policy(input.into());
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -371,7 +385,7 @@ impl UpdateNFSFileShareFluentBuilder {
         self.inner = self.inner.set_notification_policy(input);
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>

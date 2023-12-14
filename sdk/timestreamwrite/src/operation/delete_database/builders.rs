@@ -22,7 +22,7 @@ impl DeleteDatabaseInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDatabase`.
 ///
-/// <p>Deletes a given Timestream database. <i>This is an irreversible operation. After a database is deleted, the time-series data from its tables cannot be recovered.</i></p> <note>
+/// <p>Deletes a given Timestream database. <i>This is an irreversible operation. After a database is deleted, the time-series data from its tables cannot be recovered.</i></p><note>
 /// <p>All tables in the database must be deleted first, or a ValidationException error will be thrown.</p>
 /// <p>Due to the nature of distributed retries, the operation can return either success or a ResourceNotFoundException. Clients should consider them equivalent.</p>
 /// </note>

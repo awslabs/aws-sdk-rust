@@ -56,8 +56,10 @@ pub struct Service {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li><p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li><p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li>
+    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
+    /// <li>
+    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note></li>
     /// </ul>
@@ -67,13 +69,20 @@ pub struct Service {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case-sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The principal that created the service.</p>
@@ -202,8 +211,10 @@ impl Service {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li><p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li><p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li>
+    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
+    /// <li>
+    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note></li>
     /// </ul>
@@ -217,13 +228,20 @@ impl Service {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case-sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -684,8 +702,10 @@ impl ServiceBuilder {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li><p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li><p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li>
+    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
+    /// <li>
+    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note></li>
     /// </ul>
@@ -696,8 +716,10 @@ impl ServiceBuilder {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li><p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li><p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li>
+    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
+    /// <li>
+    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note></li>
     /// </ul>
@@ -708,8 +730,10 @@ impl ServiceBuilder {
     /// <p>The scheduling strategy to use for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
     /// <p>There are two service scheduler strategies available.</p>
     /// <ul>
-    /// <li><p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
-    /// <li><p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p> <note>
+    /// <li>
+    /// <p><code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</p></li>
+    /// <li>
+    /// <p><code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each active container instance. This task meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks. It stop tasks that don't meet the placement constraints.</p><note>
     /// <p>Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.</p>
     /// </note></li>
     /// </ul>
@@ -737,13 +761,20 @@ impl ServiceBuilder {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case-sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -754,13 +785,20 @@ impl ServiceBuilder {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case-sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -769,13 +807,20 @@ impl ServiceBuilder {
     /// <p>The metadata that you apply to the service to help you categorize and organize them. Each tag consists of a key and an optional value. You define bot the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case-sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case-sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags

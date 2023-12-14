@@ -22,7 +22,7 @@ impl UpdateApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Updates the specified application to have the specified properties.</p> <note>
+/// <p>Updates the specified application to have the specified properties.</p><note>
 /// <p>If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

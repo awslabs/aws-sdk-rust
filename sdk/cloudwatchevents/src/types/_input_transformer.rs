@@ -11,14 +11,14 @@ pub struct InputTransformer {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li><p>The placeholder cannot be used as an object key.</p></li>
+    /// <li>
+    /// <p>The placeholder cannot be used as an object key.</p></li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state
     /// <status>
     /// "
@@ -29,8 +29,7 @@ pub struct InputTransformer {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state \"
     /// <status>
     /// \""
@@ -41,8 +40,7 @@ pub struct InputTransformer {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance":
-    /// <instance>
+    /// <p><code>"InputTemplate": '{"myInstance": <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -64,14 +62,14 @@ impl InputTransformer {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li><p>The placeholder cannot be used as an object key.</p></li>
+    /// <li>
+    /// <p>The placeholder cannot be used as an object key.</p></li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state
     /// <status>
     /// "
@@ -82,8 +80,7 @@ impl InputTransformer {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state \"
     /// <status>
     /// \""
@@ -94,8 +91,7 @@ impl InputTransformer {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance":
-    /// <instance>
+    /// <p><code>"InputTemplate": '{"myInstance": <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -161,14 +157,14 @@ impl InputTransformerBuilder {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li><p>The placeholder cannot be used as an object key.</p></li>
+    /// <li>
+    /// <p>The placeholder cannot be used as an object key.</p></li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state
     /// <status>
     /// "
@@ -179,8 +175,7 @@ impl InputTransformerBuilder {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state \"
     /// <status>
     /// \""
@@ -191,8 +186,7 @@ impl InputTransformerBuilder {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance":
-    /// <instance>
+    /// <p><code>"InputTemplate": '{"myInstance": <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -210,14 +204,14 @@ impl InputTransformerBuilder {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li><p>The placeholder cannot be used as an object key.</p></li>
+    /// <li>
+    /// <p>The placeholder cannot be used as an object key.</p></li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state
     /// <status>
     /// "
@@ -228,8 +222,7 @@ impl InputTransformerBuilder {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state \"
     /// <status>
     /// \""
@@ -240,8 +233,7 @@ impl InputTransformerBuilder {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance":
-    /// <instance>
+    /// <p><code>"InputTemplate": '{"myInstance": <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"
@@ -258,14 +250,14 @@ impl InputTransformerBuilder {
     /// <p>Input template where you specify placeholders that will be filled with the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.</p>
     /// <p>If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:</p>
     /// <ul>
-    /// <li><p>The placeholder cannot be used as an object key.</p></li>
+    /// <li>
+    /// <p>The placeholder cannot be used as an object key.</p></li>
     /// </ul>
     /// <p>The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.</p>
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state
     /// <status>
     /// "
@@ -276,8 +268,7 @@ impl InputTransformerBuilder {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": "
-    /// <instance>
+    /// <p><code>"InputTemplate": "<instance>
     /// is in state \"
     /// <status>
     /// \""
@@ -288,8 +279,7 @@ impl InputTransformerBuilder {
     /// <p><code> "InputTransformer":</code></p>
     /// <p><code>{</code></p>
     /// <p><code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code></p>
-    /// <p><code>"InputTemplate": '{"myInstance":
-    /// <instance>
+    /// <p><code>"InputTemplate": '{"myInstance": <instance>
     /// ,"myStatus": "
     /// <instance>
     /// is in state \"

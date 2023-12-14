@@ -7,13 +7,20 @@ pub struct EntitlementAttribute {
     /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li><p>roles</p></li>
-    /// <li><p>department</p></li>
-    /// <li><p>organization</p></li>
-    /// <li><p>groups</p></li>
-    /// <li><p>title</p></li>
-    /// <li><p>costCenter</p></li>
-    /// <li><p>userType</p></li>
+    /// <li>
+    /// <p>roles</p></li>
+    /// <li>
+    /// <p>department</p></li>
+    /// <li>
+    /// <p>organization</p></li>
+    /// <li>
+    /// <p>groups</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>costCenter</p></li>
+    /// <li>
+    /// <p>userType</p></li>
     /// </ul>
     /// <p></p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -24,13 +31,20 @@ impl EntitlementAttribute {
     /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li><p>roles</p></li>
-    /// <li><p>department</p></li>
-    /// <li><p>organization</p></li>
-    /// <li><p>groups</p></li>
-    /// <li><p>title</p></li>
-    /// <li><p>costCenter</p></li>
-    /// <li><p>userType</p></li>
+    /// <li>
+    /// <p>roles</p></li>
+    /// <li>
+    /// <p>department</p></li>
+    /// <li>
+    /// <p>organization</p></li>
+    /// <li>
+    /// <p>groups</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>costCenter</p></li>
+    /// <li>
+    /// <p>userType</p></li>
     /// </ul>
     /// <p></p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -59,13 +73,20 @@ impl EntitlementAttributeBuilder {
     /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li><p>roles</p></li>
-    /// <li><p>department</p></li>
-    /// <li><p>organization</p></li>
-    /// <li><p>groups</p></li>
-    /// <li><p>title</p></li>
-    /// <li><p>costCenter</p></li>
-    /// <li><p>userType</p></li>
+    /// <li>
+    /// <p>roles</p></li>
+    /// <li>
+    /// <p>department</p></li>
+    /// <li>
+    /// <p>organization</p></li>
+    /// <li>
+    /// <p>groups</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>costCenter</p></li>
+    /// <li>
+    /// <p>userType</p></li>
     /// </ul>
     /// <p></p>
     /// This field is required.
@@ -76,13 +97,20 @@ impl EntitlementAttributeBuilder {
     /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li><p>roles</p></li>
-    /// <li><p>department</p></li>
-    /// <li><p>organization</p></li>
-    /// <li><p>groups</p></li>
-    /// <li><p>title</p></li>
-    /// <li><p>costCenter</p></li>
-    /// <li><p>userType</p></li>
+    /// <li>
+    /// <p>roles</p></li>
+    /// <li>
+    /// <p>department</p></li>
+    /// <li>
+    /// <p>organization</p></li>
+    /// <li>
+    /// <p>groups</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>costCenter</p></li>
+    /// <li>
+    /// <p>userType</p></li>
     /// </ul>
     /// <p></p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -92,13 +120,20 @@ impl EntitlementAttributeBuilder {
     /// <p>A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the associated value when a user identity federates into an Amazon AppStream 2.0 SAML application.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
-    /// <li><p>roles</p></li>
-    /// <li><p>department</p></li>
-    /// <li><p>organization</p></li>
-    /// <li><p>groups</p></li>
-    /// <li><p>title</p></li>
-    /// <li><p>costCenter</p></li>
-    /// <li><p>userType</p></li>
+    /// <li>
+    /// <p>roles</p></li>
+    /// <li>
+    /// <p>department</p></li>
+    /// <li>
+    /// <p>organization</p></li>
+    /// <li>
+    /// <p>groups</p></li>
+    /// <li>
+    /// <p>title</p></li>
+    /// <li>
+    /// <p>costCenter</p></li>
+    /// <li>
+    /// <p>userType</p></li>
     /// </ul>
     /// <p></p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {

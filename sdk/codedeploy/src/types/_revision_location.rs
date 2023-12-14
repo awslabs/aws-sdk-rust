@@ -6,10 +6,14 @@
 pub struct RevisionLocation {
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li><p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li><p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li><p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li><p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li>
+    /// <p>S3: An application revision stored in Amazon S3.</p></li>
+    /// <li>
+    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
+    /// <li>
+    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
+    /// <li>
+    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
     pub revision_type: ::std::option::Option<crate::types::RevisionLocationType>,
     /// <p>Information about the location of a revision stored in Amazon S3.</p>
@@ -24,10 +28,14 @@ pub struct RevisionLocation {
 impl RevisionLocation {
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li><p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li><p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li><p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li><p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li>
+    /// <p>S3: An application revision stored in Amazon S3.</p></li>
+    /// <li>
+    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
+    /// <li>
+    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
+    /// <li>
+    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
     pub fn revision_type(&self) -> ::std::option::Option<&crate::types::RevisionLocationType> {
         self.revision_type.as_ref()
@@ -69,10 +77,14 @@ pub struct RevisionLocationBuilder {
 impl RevisionLocationBuilder {
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li><p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li><p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li><p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li><p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li>
+    /// <p>S3: An application revision stored in Amazon S3.</p></li>
+    /// <li>
+    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
+    /// <li>
+    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
+    /// <li>
+    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
     pub fn revision_type(mut self, input: crate::types::RevisionLocationType) -> Self {
         self.revision_type = ::std::option::Option::Some(input);
@@ -80,10 +92,14 @@ impl RevisionLocationBuilder {
     }
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li><p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li><p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li><p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li><p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li>
+    /// <p>S3: An application revision stored in Amazon S3.</p></li>
+    /// <li>
+    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
+    /// <li>
+    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
+    /// <li>
+    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
     pub fn set_revision_type(mut self, input: ::std::option::Option<crate::types::RevisionLocationType>) -> Self {
         self.revision_type = input;
@@ -91,10 +107,14 @@ impl RevisionLocationBuilder {
     }
     /// <p>The type of application revision:</p>
     /// <ul>
-    /// <li><p>S3: An application revision stored in Amazon S3.</p></li>
-    /// <li><p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
-    /// <li><p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
-    /// <li><p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
+    /// <li>
+    /// <p>S3: An application revision stored in Amazon S3.</p></li>
+    /// <li>
+    /// <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p></li>
+    /// <li>
+    /// <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p></li>
+    /// <li>
+    /// <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p></li>
     /// </ul>
     pub fn get_revision_type(&self) -> &::std::option::Option<crate::types::RevisionLocationType> {
         &self.revision_type

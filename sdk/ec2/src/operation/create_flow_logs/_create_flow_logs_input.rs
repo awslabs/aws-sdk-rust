@@ -27,9 +27,17 @@ pub struct CreateFlowLogsInput {
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub log_destination: ::std::option::Option<::std::string::String>,
     /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
@@ -89,9 +97,17 @@ impl CreateFlowLogsInput {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn log_destination(&self) -> ::std::option::Option<&str> {
         self.log_destination.as_deref()
@@ -292,9 +308,17 @@ impl CreateFlowLogsInputBuilder {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn log_destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_destination = ::std::option::Option::Some(input.into());
@@ -302,9 +326,17 @@ impl CreateFlowLogsInputBuilder {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn set_log_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_destination = input;
@@ -312,9 +344,17 @@ impl CreateFlowLogsInputBuilder {
     }
     /// <p>The destination for the flow log data. The meaning of this parameter depends on the destination type.</p>
     /// <ul>
-    /// <li><p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p> <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p> <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
-    /// <li><p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p> <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p> <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
-    /// <li><p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p> <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
+    /// <li>
+    /// <p>If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch Logs log group. For example:</p>
+    /// <p>arn:aws:logs:<i>region</i>:<i>account_id</i>:log-group:<i>my_group</i></p>
+    /// <p>Alternatively, use the <code>LogGroupName</code> parameter.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:</p>
+    /// <p>arn:aws:s3:::<i>my_bucket</i>/<i>my_subfolder</i>/</p>
+    /// <p>The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder name.</p></li>
+    /// <li>
+    /// <p>If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of a Kinesis Data Firehose delivery stream. For example:</p>
+    /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub fn get_log_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_destination

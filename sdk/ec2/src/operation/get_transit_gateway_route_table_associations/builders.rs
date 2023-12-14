@@ -143,9 +143,12 @@ impl GetTransitGatewayRouteTableAssociationsFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li><p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
-    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -153,9 +156,12 @@ impl GetTransitGatewayRouteTableAssociationsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li><p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
-    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -163,9 +169,12 @@ impl GetTransitGatewayRouteTableAssociationsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>resource-id</code> - The ID of the resource.</p></li>
-    /// <li><p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
-    /// <li><p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code> - The ID of the resource.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the attachment.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

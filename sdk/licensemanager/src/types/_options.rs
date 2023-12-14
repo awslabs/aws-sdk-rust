@@ -6,9 +6,12 @@
 pub struct Options {
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
     /// <ul>
-    /// <li><p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
-    /// <li><p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
-    /// <li><p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
+    /// <li>
+    /// <p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
+    /// <li>
+    /// <p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
+    /// <li>
+    /// <p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
     /// </ul>
     /// <dl>
     /// <dt>
@@ -29,9 +32,12 @@ pub struct Options {
 impl Options {
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
     /// <ul>
-    /// <li><p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
-    /// <li><p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
-    /// <li><p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
+    /// <li>
+    /// <p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
+    /// <li>
+    /// <p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
+    /// <li>
+    /// <p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
     /// </ul>
     /// <dl>
     /// <dt>
@@ -67,9 +73,12 @@ pub struct OptionsBuilder {
 impl OptionsBuilder {
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
     /// <ul>
-    /// <li><p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
-    /// <li><p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
-    /// <li><p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
+    /// <li>
+    /// <p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
+    /// <li>
+    /// <p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
+    /// <li>
+    /// <p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
     /// </ul>
     /// <dl>
     /// <dt>
@@ -91,9 +100,12 @@ impl OptionsBuilder {
     }
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
     /// <ul>
-    /// <li><p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
-    /// <li><p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
-    /// <li><p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
+    /// <li>
+    /// <p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
+    /// <li>
+    /// <p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
+    /// <li>
+    /// <p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
     /// </ul>
     /// <dl>
     /// <dt>
@@ -115,9 +127,12 @@ impl OptionsBuilder {
     }
     /// <p>An activation option for your grant that determines the behavior of activating a grant. Activation options can only be used with granted licenses sourced from the Amazon Web Services Marketplace. Additionally, the operation must specify the value of <code>ACTIVE</code> for the <code>Status</code> parameter.</p>
     /// <ul>
-    /// <li><p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
-    /// <li><p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
-    /// <li><p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
+    /// <li>
+    /// <p>As a license administrator, you can optionally specify an <code>ActivationOverrideBehavior</code> when activating a grant.</p></li>
+    /// <li>
+    /// <p>As a grantor, you can optionally specify an <code>ActivationOverrideBehavior</code> when you activate a grant for a grantee account in your organization.</p></li>
+    /// <li>
+    /// <p>As a grantee, if the grantor creating the distributed grant doesn’t specify an <code>ActivationOverrideBehavior</code>, you can optionally specify one when you are activating the grant.</p></li>
     /// </ul>
     /// <dl>
     /// <dt>

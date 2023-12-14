@@ -22,7 +22,7 @@ impl CreateAccountAssignmentInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAccountAssignment`.
 ///
-/// <p>Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.</p> <note>
+/// <p>Assigns access to a principal for a specified Amazon Web Services account using a specified permission set.</p><note>
 /// <p>The term <i>principal</i> here refers to a user or group that is defined in IAM Identity Center.</p>
 /// </note> <note>
 /// <p>As part of a successful <code>CreateAccountAssignment</code> call, the specified permission set will automatically be provisioned to the account in the form of an IAM policy. That policy is attached to the IAM role created in IAM Identity Center. If the permission set is subsequently updated, the corresponding IAM policies attached to roles in your accounts will not be updated automatically. In this case, you must call <code> <code>ProvisionPermissionSet</code> </code> to make these updates.</p>

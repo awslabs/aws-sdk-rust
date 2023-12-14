@@ -33,13 +33,17 @@ impl UpdatePrimaryRegionInputBuilder {
 /// <p><b>Cross-account use</b>: No. You cannot use this operation in a different Amazon Web Services account.</p>
 /// <p><b>Required permissions</b>:</p>
 /// <ul>
-/// <li><p><code>kms:UpdatePrimaryRegion</code> on the current primary key (in the primary key's Region). Include this permission primary key's key policy.</p></li>
-/// <li><p><code>kms:UpdatePrimaryRegion</code> on the current replica key (in the replica key's Region). Include this permission in the replica key's key policy.</p></li>
+/// <li>
+/// <p><code>kms:UpdatePrimaryRegion</code> on the current primary key (in the primary key's Region). Include this permission primary key's key policy.</p></li>
+/// <li>
+/// <p><code>kms:UpdatePrimaryRegion</code> on the current replica key (in the replica key's Region). Include this permission in the replica key's key policy.</p></li>
 /// </ul>
 /// <p><b>Related operations</b></p>
 /// <ul>
-/// <li><p><code>CreateKey</code></p></li>
-/// <li><p><code>ReplicateKey</code></p></li>
+/// <li>
+/// <p><code>CreateKey</code></p></li>
+/// <li>
+/// <p><code>ReplicateKey</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePrimaryRegionFluentBuilder {
@@ -130,8 +134,10 @@ impl UpdatePrimaryRegionFluentBuilder {
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li><p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
-    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,8 +148,10 @@ impl UpdatePrimaryRegionFluentBuilder {
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li><p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
-    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -154,8 +162,10 @@ impl UpdatePrimaryRegionFluentBuilder {
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
     /// <ul>
-    /// <li><p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
-    /// <li><p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ID: <code>mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
+    /// <li>
+    /// <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/mrk-1234abcd12ab34cd56ef1234567890ab</code></p></li>
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {

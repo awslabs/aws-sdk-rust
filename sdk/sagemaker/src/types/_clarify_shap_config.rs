@@ -6,7 +6,7 @@
 pub struct ClarifyShapConfig {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
     pub shap_baseline_config: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p> <note>
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p><note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub number_of_samples: ::std::option::Option<i32>,
@@ -22,7 +22,7 @@ impl ClarifyShapConfig {
     pub fn shap_baseline_config(&self) -> ::std::option::Option<&crate::types::ClarifyShapBaselineConfig> {
         self.shap_baseline_config.as_ref()
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p> <note>
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p><note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn number_of_samples(&self) -> ::std::option::Option<i32> {
@@ -74,21 +74,21 @@ impl ClarifyShapConfigBuilder {
     pub fn get_shap_baseline_config(&self) -> &::std::option::Option<crate::types::ClarifyShapBaselineConfig> {
         &self.shap_baseline_config
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p> <note>
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p><note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn number_of_samples(mut self, input: i32) -> Self {
         self.number_of_samples = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p> <note>
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p><note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn set_number_of_samples(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_samples = input;
         self
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p> <note>
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm.</p><note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn get_number_of_samples(&self) -> &::std::option::Option<i32> {

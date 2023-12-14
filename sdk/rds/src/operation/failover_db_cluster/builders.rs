@@ -117,7 +117,8 @@ impl FailoverDBClusterFluentBuilder {
     /// <p>The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -126,7 +127,8 @@ impl FailoverDBClusterFluentBuilder {
     /// <p>The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -135,7 +137,8 @@ impl FailoverDBClusterFluentBuilder {
     /// <p>The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()

@@ -5,11 +5,16 @@
 pub struct ListCodeRepositoriesOutput {
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
-    /// <li><p>Name</p></li>
-    /// <li><p>Amazon Resource Name (ARN)</p></li>
-    /// <li><p>Creation time</p></li>
-    /// <li><p>Last modified time</p></li>
-    /// <li><p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
+    /// <li>
+    /// <p>Name</p></li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Creation time</p></li>
+    /// <li>
+    /// <p>Last modified time</p></li>
+    /// <li>
+    /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
     pub code_repository_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>,
     /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.</p>
@@ -19,11 +24,16 @@ pub struct ListCodeRepositoriesOutput {
 impl ListCodeRepositoriesOutput {
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
-    /// <li><p>Name</p></li>
-    /// <li><p>Amazon Resource Name (ARN)</p></li>
-    /// <li><p>Creation time</p></li>
-    /// <li><p>Last modified time</p></li>
-    /// <li><p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
+    /// <li>
+    /// <p>Name</p></li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Creation time</p></li>
+    /// <li>
+    /// <p>Last modified time</p></li>
+    /// <li>
+    /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_repository_summary_list.is_none()`.
@@ -62,11 +72,16 @@ impl ListCodeRepositoriesOutputBuilder {
     ///
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
-    /// <li><p>Name</p></li>
-    /// <li><p>Amazon Resource Name (ARN)</p></li>
-    /// <li><p>Creation time</p></li>
-    /// <li><p>Last modified time</p></li>
-    /// <li><p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
+    /// <li>
+    /// <p>Name</p></li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Creation time</p></li>
+    /// <li>
+    /// <p>Last modified time</p></li>
+    /// <li>
+    /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
     pub fn code_repository_summary_list(mut self, input: crate::types::CodeRepositorySummary) -> Self {
         let mut v = self.code_repository_summary_list.unwrap_or_default();
@@ -76,11 +91,16 @@ impl ListCodeRepositoriesOutputBuilder {
     }
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
-    /// <li><p>Name</p></li>
-    /// <li><p>Amazon Resource Name (ARN)</p></li>
-    /// <li><p>Creation time</p></li>
-    /// <li><p>Last modified time</p></li>
-    /// <li><p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
+    /// <li>
+    /// <p>Name</p></li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Creation time</p></li>
+    /// <li>
+    /// <p>Last modified time</p></li>
+    /// <li>
+    /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
     pub fn set_code_repository_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>>) -> Self {
         self.code_repository_summary_list = input;
@@ -88,11 +108,16 @@ impl ListCodeRepositoriesOutputBuilder {
     }
     /// <p>Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:</p>
     /// <ul>
-    /// <li><p>Name</p></li>
-    /// <li><p>Amazon Resource Name (ARN)</p></li>
-    /// <li><p>Creation time</p></li>
-    /// <li><p>Last modified time</p></li>
-    /// <li><p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
+    /// <li>
+    /// <p>Name</p></li>
+    /// <li>
+    /// <p>Amazon Resource Name (ARN)</p></li>
+    /// <li>
+    /// <p>Creation time</p></li>
+    /// <li>
+    /// <p>Last modified time</p></li>
+    /// <li>
+    /// <p>Configuration information, including the URL location of the repository and the ARN of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository.</p></li>
     /// </ul>
     pub fn get_code_repository_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRepositorySummary>> {
         &self.code_repository_summary_list

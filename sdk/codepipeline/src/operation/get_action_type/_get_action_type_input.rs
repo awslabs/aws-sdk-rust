@@ -5,12 +5,18 @@
 pub struct GetActionTypeInput {
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub category: ::std::option::Option<crate::types::ActionCategory>,
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
@@ -23,12 +29,18 @@ pub struct GetActionTypeInput {
 impl GetActionTypeInput {
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn category(&self) -> ::std::option::Option<&crate::types::ActionCategory> {
         self.category.as_ref()
@@ -65,12 +77,18 @@ pub struct GetActionTypeInputBuilder {
 impl GetActionTypeInputBuilder {
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
@@ -79,12 +97,18 @@ impl GetActionTypeInputBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::ActionCategory>) -> Self {
         self.category = input;
@@ -92,12 +116,18 @@ impl GetActionTypeInputBuilder {
     }
     /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
     /// <ul>
-    /// <li><p><code>Source</code></p></li>
-    /// <li><p><code>Build</code></p></li>
-    /// <li><p><code>Test</code></p></li>
-    /// <li><p><code>Deploy</code></p></li>
-    /// <li><p><code>Approval</code></p></li>
-    /// <li><p><code>Invoke</code></p></li>
+    /// <li>
+    /// <p><code>Source</code></p></li>
+    /// <li>
+    /// <p><code>Build</code></p></li>
+    /// <li>
+    /// <p><code>Test</code></p></li>
+    /// <li>
+    /// <p><code>Deploy</code></p></li>
+    /// <li>
+    /// <p><code>Approval</code></p></li>
+    /// <li>
+    /// <p><code>Invoke</code></p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::ActionCategory> {
         &self.category

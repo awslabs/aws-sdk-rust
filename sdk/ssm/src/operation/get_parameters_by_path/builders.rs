@@ -129,21 +129,21 @@ impl GetParametersByPathFluentBuilder {
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_path()
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>Retrieve all parameters within a hierarchy.</p><important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>Retrieve all parameters within a hierarchy.</p><important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>Retrieve all parameters within a hierarchy.</p><important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn get_recursive(&self) -> &::std::option::Option<bool> {
@@ -153,7 +153,7 @@ impl GetParametersByPathFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
     ///
-    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>Filters to limit the request results.</p><note>
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
@@ -161,7 +161,7 @@ impl GetParametersByPathFluentBuilder {
         self.inner = self.inner.parameter_filters(input);
         self
     }
-    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>Filters to limit the request results.</p><note>
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
@@ -169,7 +169,7 @@ impl GetParametersByPathFluentBuilder {
         self.inner = self.inner.set_parameter_filters(input);
         self
     }
-    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>Filters to limit the request results.</p><note>
     /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
     /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>

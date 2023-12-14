@@ -26,13 +26,20 @@ impl StopResourceInputBuilder {
 /// <p>The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You cannot resume a resource once it has been stopped.</p>
 /// <p>This operation can be applied to the following resources (and their corresponding child resources):</p>
 /// <ul>
-/// <li><p>Dataset Import Job</p></li>
-/// <li><p>Predictor Job</p></li>
-/// <li><p>Forecast Job</p></li>
-/// <li><p>Forecast Export Job</p></li>
-/// <li><p>Predictor Backtest Export Job</p></li>
-/// <li><p>Explainability Job</p></li>
-/// <li><p>Explainability Export Job</p></li>
+/// <li>
+/// <p>Dataset Import Job</p></li>
+/// <li>
+/// <p>Predictor Job</p></li>
+/// <li>
+/// <p>Forecast Job</p></li>
+/// <li>
+/// <p>Forecast Export Job</p></li>
+/// <li>
+/// <p>Predictor Backtest Export Job</p></li>
+/// <li>
+/// <p>Explainability Job</p></li>
+/// <li>
+/// <p>Explainability Export Job</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopResourceFluentBuilder {

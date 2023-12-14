@@ -140,8 +140,10 @@ impl UpdateBucketFluentBuilder {
     /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>Enabled</code> - Enables versioning of objects in the specified bucket.</p></li>
-    /// <li><p><code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p></li>
+    /// <li>
+    /// <p><code>Enabled</code> - Enables versioning of objects in the specified bucket.</p></li>
+    /// <li>
+    /// <p><code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p></li>
     /// </ul>
     pub fn versioning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.versioning(input.into());
@@ -150,8 +152,10 @@ impl UpdateBucketFluentBuilder {
     /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>Enabled</code> - Enables versioning of objects in the specified bucket.</p></li>
-    /// <li><p><code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p></li>
+    /// <li>
+    /// <p><code>Enabled</code> - Enables versioning of objects in the specified bucket.</p></li>
+    /// <li>
+    /// <p><code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p></li>
     /// </ul>
     pub fn set_versioning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_versioning(input);
@@ -160,8 +164,10 @@ impl UpdateBucketFluentBuilder {
     /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>Enabled</code> - Enables versioning of objects in the specified bucket.</p></li>
-    /// <li><p><code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p></li>
+    /// <li>
+    /// <p><code>Enabled</code> - Enables versioning of objects in the specified bucket.</p></li>
+    /// <li>
+    /// <p><code>Suspended</code> - Suspends versioning of objects in the specified bucket. Existing object versions are retained.</p></li>
     /// </ul>
     pub fn get_versioning(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_versioning()

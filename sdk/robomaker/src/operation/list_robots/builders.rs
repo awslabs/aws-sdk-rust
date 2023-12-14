@@ -22,7 +22,7 @@ impl ListRobotsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListRobots`.
 ///
-/// <p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p> <important>
+/// <p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p><important>
 /// <p>This API will no longer be supported as of May 2, 2022. Use it to remove resources that were created for Deployment Service.</p>
 /// </important>
 #[deprecated(

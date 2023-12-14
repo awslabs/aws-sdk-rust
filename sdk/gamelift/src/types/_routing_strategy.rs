@@ -9,8 +9,10 @@ pub struct RoutingStrategy {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li><p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li><p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
+    /// <li>
+    /// <p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
+    /// <li>
+    /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::RoutingStrategyType>,
     /// <p>A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.</p>
@@ -22,8 +24,10 @@ impl RoutingStrategy {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li><p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li><p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
+    /// <li>
+    /// <p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
+    /// <li>
+    /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RoutingStrategyType> {
         self.r#type.as_ref()
@@ -56,8 +60,10 @@ impl RoutingStrategyBuilder {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li><p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li><p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
+    /// <li>
+    /// <p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
+    /// <li>
+    /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::RoutingStrategyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -66,8 +72,10 @@ impl RoutingStrategyBuilder {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li><p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li><p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
+    /// <li>
+    /// <p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
+    /// <li>
+    /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RoutingStrategyType>) -> Self {
         self.r#type = input;
@@ -76,8 +84,10 @@ impl RoutingStrategyBuilder {
     /// <p>The type of routing strategy for the alias.</p>
     /// <p>Possible routing types include the following:</p>
     /// <ul>
-    /// <li><p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
-    /// <li><p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
+    /// <li>
+    /// <p><b>SIMPLE</b> - The alias resolves to one specific fleet. Use this type when routing to active fleets.</p></li>
+    /// <li>
+    /// <p><b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RoutingStrategyType> {
         &self.r#type

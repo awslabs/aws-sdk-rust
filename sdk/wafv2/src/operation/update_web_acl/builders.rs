@@ -22,13 +22,16 @@ impl UpdateWebAclInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateWebACL`.
 ///
-/// <p>Updates the specified <code>WebACL</code>. While updating a web ACL, WAF provides continuous coverage to the resources that you have associated with the web ACL.</p> <note>
+/// <p>Updates the specified <code>WebACL</code>. While updating a web ACL, WAF provides continuous coverage to the resources that you have associated with the web ACL.</p><note>
 /// <p>This operation completely replaces the mutable specifications that you already have for the web ACL with the ones that you provide to this call.</p>
 /// <p>To modify a web ACL, do the following:</p>
 /// <ol>
-/// <li><p>Retrieve it by calling <code>GetWebACL</code></p></li>
-/// <li><p>Update its settings as needed</p></li>
-/// <li><p>Provide the complete web ACL specification to this call</p></li>
+/// <li>
+/// <p>Retrieve it by calling <code>GetWebACL</code></p></li>
+/// <li>
+/// <p>Update its settings as needed</p></li>
+/// <li>
+/// <p>Provide the complete web ACL specification to this call</p></li>
 /// </ol>
 /// </note>
 /// <p>A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has a statement that defines what to look for in web requests and an action that WAF applies to requests that match the statement. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
@@ -36,10 +39,14 @@ impl UpdateWebAclInputBuilder {
 /// <p>When you create or change a web ACL or other WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored. The propagation time can be from a few seconds to a number of minutes.</p>
 /// <p>The following are examples of the temporary inconsistencies that you might notice during change propagation:</p>
 /// <ul>
-/// <li><p>After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating that the web ACL is unavailable.</p></li>
-/// <li><p>After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web ACL is used and not in another.</p></li>
-/// <li><p>After you change a rule action setting, you might see the old action in some places and the new action in others.</p></li>
-/// <li><p>After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in one area while still allowed in another.</p></li>
+/// <li>
+/// <p>After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating that the web ACL is unavailable.</p></li>
+/// <li>
+/// <p>After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web ACL is used and not in another.</p></li>
+/// <li>
+/// <p>After you change a rule action setting, you might see the old action in some places and the new action in others.</p></li>
+/// <li>
+/// <p>After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in one area while still allowed in another.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWebACLFluentBuilder {
@@ -143,8 +150,10 @@ impl UpdateWebACLFluentBuilder {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
-    /// <li><p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li><p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
@@ -153,8 +162,10 @@ impl UpdateWebACLFluentBuilder {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
-    /// <li><p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li><p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
@@ -163,8 +174,10 @@ impl UpdateWebACLFluentBuilder {
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
-    /// <li><p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
-    /// <li><p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1.</p></li>
     /// </ul>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
@@ -339,7 +352,7 @@ impl UpdateWebACLFluentBuilder {
         self.inner.get_token_domains()
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn association_config(mut self, input: crate::types::AssociationConfig) -> Self {
@@ -347,7 +360,7 @@ impl UpdateWebACLFluentBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn set_association_config(mut self, input: ::std::option::Option<crate::types::AssociationConfig>) -> Self {
@@ -355,7 +368,7 @@ impl UpdateWebACLFluentBuilder {
         self
     }
     /// <p>Specifies custom configurations for the associations between the web ACL and protected resources.</p>
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p> <note>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 bytes).</p><note>
     /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn get_association_config(&self) -> &::std::option::Option<crate::types::AssociationConfig> {

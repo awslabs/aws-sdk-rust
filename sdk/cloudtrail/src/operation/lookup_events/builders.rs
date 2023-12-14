@@ -22,27 +22,38 @@ impl LookupEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `LookupEvents`.
 ///
-/// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region within the last 90 days.</p> <note>
+/// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region within the last 90 days.</p><note>
 /// <p><code>LookupEvents</code> returns recent Insights events for trails that enable Insights. To view Insights events for an event data store, you can run queries on your Insights event data store, and you can also view the Lake dashboard for Insights.</p>
 /// </note>
 /// <p>Lookup supports the following attributes for management events:</p>
 /// <ul>
-/// <li><p>Amazon Web Services access key</p></li>
-/// <li><p>Event ID</p></li>
-/// <li><p>Event name</p></li>
-/// <li><p>Event source</p></li>
-/// <li><p>Read only</p></li>
-/// <li><p>Resource name</p></li>
-/// <li><p>Resource type</p></li>
-/// <li><p>User name</p></li>
+/// <li>
+/// <p>Amazon Web Services access key</p></li>
+/// <li>
+/// <p>Event ID</p></li>
+/// <li>
+/// <p>Event name</p></li>
+/// <li>
+/// <p>Event source</p></li>
+/// <li>
+/// <p>Read only</p></li>
+/// <li>
+/// <p>Resource name</p></li>
+/// <li>
+/// <p>Resource type</p></li>
+/// <li>
+/// <p>User name</p></li>
 /// </ul>
 /// <p>Lookup supports the following attributes for Insights events:</p>
 /// <ul>
-/// <li><p>Event ID</p></li>
-/// <li><p>Event name</p></li>
-/// <li><p>Event source</p></li>
+/// <li>
+/// <p>Event ID</p></li>
+/// <li>
+/// <p>Event name</p></li>
+/// <li>
+/// <p>Event source</p></li>
 /// </ul>
-/// <p>All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p> <important>
+/// <p>All attributes are optional. The default number of results returned is 50, with a maximum of 50 possible. The response includes a token that you can use to get the next page of results.</p><important>
 /// <p>The rate of lookup requests is limited to two per second, per account, per Region. If this limit is exceeded, a throttling error occurs.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

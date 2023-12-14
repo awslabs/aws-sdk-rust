@@ -6,9 +6,12 @@
 pub struct FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li><p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
-    /// <li><p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
-    /// <li><p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
     pub value: f64,
     /// <p>Frequency bandwidth units.</p>
@@ -17,9 +20,12 @@ pub struct FrequencyBandwidth {
 impl FrequencyBandwidth {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li><p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
-    /// <li><p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
-    /// <li><p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
     pub fn value(&self) -> f64 {
         self.value
@@ -46,9 +52,12 @@ pub struct FrequencyBandwidthBuilder {
 impl FrequencyBandwidthBuilder {
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li><p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
-    /// <li><p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
-    /// <li><p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
     /// This field is required.
     pub fn value(mut self, input: f64) -> Self {
@@ -57,9 +66,12 @@ impl FrequencyBandwidthBuilder {
     }
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li><p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
-    /// <li><p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
-    /// <li><p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
@@ -67,9 +79,12 @@ impl FrequencyBandwidthBuilder {
     }
     /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
     /// <ul>
-    /// <li><p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
-    /// <li><p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
-    /// <li><p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
+    /// <li>
+    /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p></li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<f64> {
         &self.value

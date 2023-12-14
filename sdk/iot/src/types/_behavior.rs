@@ -10,7 +10,7 @@ pub struct Behavior {
     pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub metric_dimension: ::std::option::Option<crate::types::MetricDimension>,
-    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p> <note>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub criteria: ::std::option::Option<crate::types::BehaviorCriteria>,
@@ -33,7 +33,7 @@ impl Behavior {
     pub fn metric_dimension(&self) -> ::std::option::Option<&crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
-    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p> <note>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub fn criteria(&self) -> ::std::option::Option<&crate::types::BehaviorCriteria> {
@@ -110,21 +110,21 @@ impl BehaviorBuilder {
     pub fn get_metric_dimension(&self) -> &::std::option::Option<crate::types::MetricDimension> {
         &self.metric_dimension
     }
-    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p> <note>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub fn criteria(mut self, input: crate::types::BehaviorCriteria) -> Self {
         self.criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p> <note>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub fn set_criteria(mut self, input: ::std::option::Option<crate::types::BehaviorCriteria>) -> Self {
         self.criteria = input;
         self
     }
-    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p> <note>
+    /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p><note>
     /// <p>In the IoT console, you can choose to be sent an alert through Amazon SNS when IoT Device Defender detects that a device is behaving anomalously.</p>
     /// </note>
     pub fn get_criteria(&self) -> &::std::option::Option<crate::types::BehaviorCriteria> {

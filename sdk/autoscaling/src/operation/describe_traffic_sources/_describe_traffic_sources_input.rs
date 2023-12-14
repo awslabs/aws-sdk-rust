@@ -8,9 +8,12 @@ pub struct DescribeTrafficSourcesInput {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
-    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
-    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
+    /// <li>
+    /// <p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub traffic_source_type: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
@@ -26,9 +29,12 @@ impl DescribeTrafficSourcesInput {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
-    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
-    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
+    /// <li>
+    /// <p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn traffic_source_type(&self) -> ::std::option::Option<&str> {
         self.traffic_source_type.as_deref()
@@ -77,9 +83,12 @@ impl DescribeTrafficSourcesInputBuilder {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
-    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
-    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
+    /// <li>
+    /// <p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn traffic_source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.traffic_source_type = ::std::option::Option::Some(input.into());
@@ -88,9 +97,12 @@ impl DescribeTrafficSourcesInputBuilder {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
-    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
-    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
+    /// <li>
+    /// <p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn set_traffic_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.traffic_source_type = input;
@@ -99,9 +111,12 @@ impl DescribeTrafficSourcesInputBuilder {
     /// <p>The traffic source type that you want to describe.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
-    /// <li><p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
-    /// <li><p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
-    /// <li><p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
+    /// <li>
+    /// <p><code>elb</code> if the traffic source is a Classic Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway Load Balancer, or Network Load Balancer.</p></li>
+    /// <li>
+    /// <p><code>vpc-lattice</code> if the traffic source is VPC Lattice.</p></li>
     /// </ul>
     pub fn get_traffic_source_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.traffic_source_type

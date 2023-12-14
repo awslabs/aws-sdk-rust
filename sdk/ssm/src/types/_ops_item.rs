@@ -9,9 +9,15 @@ pub struct OpsItem {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub ops_item_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
@@ -38,7 +44,7 @@ pub struct OpsItem {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager. The impacted resource is a subset of source.</p>
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -66,9 +72,15 @@ impl OpsItem {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn ops_item_type(&self) -> ::std::option::Option<&str> {
         self.ops_item_type.as_deref()
@@ -125,7 +137,7 @@ impl OpsItem {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -213,9 +225,15 @@ impl OpsItemBuilder {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ops_item_type = ::std::option::Option::Some(input.into());
@@ -223,9 +241,15 @@ impl OpsItemBuilder {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ops_item_type = input;
@@ -233,9 +257,15 @@ impl OpsItemBuilder {
     }
     /// <p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
     /// <ul>
-    /// <li><p><code>/aws/issue</code></p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
-    /// <li><p><code>/aws/changerequest</code></p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
-    /// <li><p><code>/aws/insight</code></p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
+    /// <li>
+    /// <p><code>/aws/issue</code></p>
+    /// <p>This type of OpsItem is used for default OpsItems created by OpsCenter.</p></li>
+    /// <li>
+    /// <p><code>/aws/changerequest</code></p>
+    /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p></li>
+    /// <li>
+    /// <p><code>/aws/insight</code></p>
+    /// <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.</p></li>
     /// </ul>
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.ops_item_type
@@ -424,7 +454,7 @@ impl OpsItemBuilder {
     ///
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
     ///
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -435,7 +465,7 @@ impl OpsItemBuilder {
         self.operational_data = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
@@ -447,7 +477,7 @@ impl OpsItemBuilder {
         self.operational_data = input;
         self
     }
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p><important>
     /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>

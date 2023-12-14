@@ -24,11 +24,16 @@ pub struct ModelPackage {
     pub validation_specification: ::std::option::Option<crate::types::ModelPackageValidationSpecification>,
     /// <p>The status of the model package. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - The model package is pending being created.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
-    /// <li><p><code>COMPLETED</code> - The model package was successfully created.</p></li>
-    /// <li><p><code>FAILED</code> - The model package failed.</p></li>
-    /// <li><p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - The model package is pending being created.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The model package was successfully created.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The model package failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
     /// </ul>
     pub model_package_status: ::std::option::Option<crate::types::ModelPackageStatus>,
     /// <p>Specifies the validation and image scan statuses of the model package.</p>
@@ -37,9 +42,12 @@ pub struct ModelPackage {
     pub certify_for_marketplace: ::std::option::Option<bool>,
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub model_approval_status: ::std::option::Option<crate::types::ModelApprovalStatus>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.</p>
@@ -110,11 +118,16 @@ impl ModelPackage {
     }
     /// <p>The status of the model package. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - The model package is pending being created.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
-    /// <li><p><code>COMPLETED</code> - The model package was successfully created.</p></li>
-    /// <li><p><code>FAILED</code> - The model package failed.</p></li>
-    /// <li><p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - The model package is pending being created.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The model package was successfully created.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The model package failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
     /// </ul>
     pub fn model_package_status(&self) -> ::std::option::Option<&crate::types::ModelPackageStatus> {
         self.model_package_status.as_ref()
@@ -129,9 +142,12 @@ impl ModelPackage {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn model_approval_status(&self) -> ::std::option::Option<&crate::types::ModelApprovalStatus> {
         self.model_approval_status.as_ref()
@@ -365,11 +381,16 @@ impl ModelPackageBuilder {
     }
     /// <p>The status of the model package. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - The model package is pending being created.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
-    /// <li><p><code>COMPLETED</code> - The model package was successfully created.</p></li>
-    /// <li><p><code>FAILED</code> - The model package failed.</p></li>
-    /// <li><p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - The model package is pending being created.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The model package was successfully created.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The model package failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
     /// </ul>
     pub fn model_package_status(mut self, input: crate::types::ModelPackageStatus) -> Self {
         self.model_package_status = ::std::option::Option::Some(input);
@@ -377,11 +398,16 @@ impl ModelPackageBuilder {
     }
     /// <p>The status of the model package. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - The model package is pending being created.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
-    /// <li><p><code>COMPLETED</code> - The model package was successfully created.</p></li>
-    /// <li><p><code>FAILED</code> - The model package failed.</p></li>
-    /// <li><p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - The model package is pending being created.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The model package was successfully created.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The model package failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
     /// </ul>
     pub fn set_model_package_status(mut self, input: ::std::option::Option<crate::types::ModelPackageStatus>) -> Self {
         self.model_package_status = input;
@@ -389,11 +415,16 @@ impl ModelPackageBuilder {
     }
     /// <p>The status of the model package. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - The model package is pending being created.</p></li>
-    /// <li><p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
-    /// <li><p><code>COMPLETED</code> - The model package was successfully created.</p></li>
-    /// <li><p><code>FAILED</code> - The model package failed.</p></li>
-    /// <li><p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - The model package is pending being created.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> - The model package is in the process of being created.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The model package was successfully created.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The model package failed.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - The model package is in the process of being deleted.</p></li>
     /// </ul>
     pub fn get_model_package_status(&self) -> &::std::option::Option<crate::types::ModelPackageStatus> {
         &self.model_package_status
@@ -428,9 +459,12 @@ impl ModelPackageBuilder {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn model_approval_status(mut self, input: crate::types::ModelApprovalStatus) -> Self {
         self.model_approval_status = ::std::option::Option::Some(input);
@@ -438,9 +472,12 @@ impl ModelPackageBuilder {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn set_model_approval_status(mut self, input: ::std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.model_approval_status = input;
@@ -448,9 +485,12 @@ impl ModelPackageBuilder {
     }
     /// <p>The approval status of the model. This can be one of the following values.</p>
     /// <ul>
-    /// <li><p><code>APPROVED</code> - The model is approved</p></li>
-    /// <li><p><code>REJECTED</code> - The model is rejected.</p></li>
-    /// <li><p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> - The model is approved</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> - The model is rejected.</p></li>
+    /// <li>
+    /// <p><code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.</p></li>
     /// </ul>
     pub fn get_model_approval_status(&self) -> &::std::option::Option<crate::types::ModelApprovalStatus> {
         &self.model_approval_status

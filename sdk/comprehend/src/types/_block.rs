@@ -9,8 +9,10 @@ pub struct Block {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li><p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li>
+    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
     /// </ul>
     pub block_type: ::std::option::Option<crate::types::BlockType>,
     /// <p>The word or line of text extracted from the block.</p>
@@ -29,8 +31,10 @@ impl Block {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li><p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li>
+    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
     /// </ul>
     pub fn block_type(&self) -> ::std::option::Option<&crate::types::BlockType> {
         self.block_type.as_ref()
@@ -89,8 +93,10 @@ impl BlockBuilder {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li><p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li>
+    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
     /// </ul>
     pub fn block_type(mut self, input: crate::types::BlockType) -> Self {
         self.block_type = ::std::option::Option::Some(input);
@@ -98,8 +104,10 @@ impl BlockBuilder {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li><p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li>
+    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
     /// </ul>
     pub fn set_block_type(mut self, input: ::std::option::Option<crate::types::BlockType>) -> Self {
         self.block_type = input;
@@ -107,8 +115,10 @@ impl BlockBuilder {
     }
     /// <p>The block represents a line of text or one word of text.</p>
     /// <ul>
-    /// <li><p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
-    /// <li><p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
+    /// <li>
+    /// <p>WORD - A word that's detected on a document page. A word is one or more ISO basic Latin script characters that aren't separated by spaces.</p></li>
+    /// <li>
+    /// <p>LINE - A string of tab-delimited, contiguous words that are detected on a document page</p></li>
     /// </ul>
     pub fn get_block_type(&self) -> &::std::option::Option<crate::types::BlockType> {
         &self.block_type

@@ -23,7 +23,7 @@ impl UploadLayerPartInputBuilder {
 /// Fluent builder constructing a request to `UploadLayerPart`.
 ///
 /// <p>Uploads an image layer part to Amazon ECR.</p>
-/// <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.</p> <note>
+/// <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.</p><note>
 /// <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

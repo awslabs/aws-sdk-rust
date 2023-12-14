@@ -26,7 +26,8 @@ impl StartKeyUsageInputBuilder {
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>StopKeyUsage</code></p></li>
+/// <li>
+/// <p><code>StopKeyUsage</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartKeyUsageFluentBuilder {

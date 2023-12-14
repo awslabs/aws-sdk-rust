@@ -15,10 +15,14 @@ pub struct ProvisioningArtifactProperties {
     pub info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li><p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li><p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li><p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li><p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li>
+    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
+    /// <li>
+    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ProvisioningArtifactType>,
     /// <p>If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.</p>
@@ -43,10 +47,14 @@ impl ProvisioningArtifactProperties {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li><p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li><p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li><p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li><p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li>
+    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
+    /// <li>
+    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProvisioningArtifactType> {
         self.r#type.as_ref()
@@ -134,10 +142,14 @@ impl ProvisioningArtifactPropertiesBuilder {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li><p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li><p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li><p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li><p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li>
+    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
+    /// <li>
+    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ProvisioningArtifactType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -145,10 +157,14 @@ impl ProvisioningArtifactPropertiesBuilder {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li><p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li><p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li><p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li><p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li>
+    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
+    /// <li>
+    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProvisioningArtifactType>) -> Self {
         self.r#type = input;
@@ -156,10 +172,14 @@ impl ProvisioningArtifactPropertiesBuilder {
     }
     /// <p>The type of provisioning artifact.</p>
     /// <ul>
-    /// <li><p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
-    /// <li><p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
-    /// <li><p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
-    /// <li><p><code>EXTERNAL</code> - External configuration file</p></li>
+    /// <li>
+    /// <p><code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file</p></li>
+    /// <li>
+    /// <p><code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file</p></li>
+    /// <li>
+    /// <p><code>EXTERNAL</code> - External configuration file</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ProvisioningArtifactType> {
         &self.r#type

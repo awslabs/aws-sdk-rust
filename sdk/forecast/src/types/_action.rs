@@ -8,10 +8,14 @@ pub struct Action {
     pub attribute_name: ::std::string::String,
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
-    /// <li><p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
-    /// <li><p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
     /// </ul>
     pub operation: crate::types::Operation,
     /// <p>The value that is applied for the chosen <code>Operation</code>.</p>
@@ -25,10 +29,14 @@ impl Action {
     }
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
-    /// <li><p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
-    /// <li><p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
     /// </ul>
     pub fn operation(&self) -> &crate::types::Operation {
         &self.operation
@@ -71,10 +79,14 @@ impl ActionBuilder {
     }
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
-    /// <li><p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
-    /// <li><p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
@@ -83,10 +95,14 @@ impl ActionBuilder {
     }
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
-    /// <li><p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
-    /// <li><p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.operation = input;
@@ -94,10 +110,14 @@ impl ActionBuilder {
     }
     /// <p>The operation that is applied to the provided attribute. Operations include:</p>
     /// <ul>
-    /// <li><p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
-    /// <li><p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
-    /// <li><p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.</p></li>
+    /// <li>
+    /// <p><code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
+    /// <li>
+    /// <p><code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.</p></li>
     /// </ul>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::Operation> {
         &self.operation

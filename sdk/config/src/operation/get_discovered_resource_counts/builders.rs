@@ -25,20 +25,28 @@ impl GetDiscoveredResourceCountsInputBuilder {
 /// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account.</p>
 /// <p class="title"><b>Example</b></p>
 /// <ol>
-/// <li><p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.</p></li>
-/// <li><p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify that you want all resource types.</p></li>
-/// <li><p>Config returns the following:</p>
+/// <li>
+/// <p>Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.</p></li>
+/// <li>
+/// <p>You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify that you want all resource types.</p></li>
+/// <li>
+/// <p>Config returns the following:</p>
 /// <ul>
-/// <li><p>The resource types (EC2 instances, IAM users, and S3 buckets).</p></li>
-/// <li><p>The number of each resource type (25, 20, and 15).</p></li>
-/// <li><p>The total number of all resources (60).</p></li>
+/// <li>
+/// <p>The resource types (EC2 instances, IAM users, and S3 buckets).</p></li>
+/// <li>
+/// <p>The number of each resource type (25, 20, and 15).</p></li>
+/// <li>
+/// <p>The total number of all resources (60).</p></li>
 /// </ul></li>
 /// </ol>
-/// <p>The response is paginated. By default, Config lists 100 <code>ResourceCount</code> objects on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p> <note>
+/// <p>The response is paginated. By default, Config lists 100 <code>ResourceCount</code> objects on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p><note>
 /// <p>If you make a call to the <code>GetDiscoveredResourceCounts</code> action, you might not immediately receive resource counts in the following situations:</p>
 /// <ul>
-/// <li><p>You are a new Config customer.</p></li>
-/// <li><p>You just enabled resource recording.</p></li>
+/// <li>
+/// <p>You are a new Config customer.</p></li>
+/// <li>
+/// <p>You just enabled resource recording.</p></li>
 /// </ul>
 /// <p>It might take a few minutes for Config to record and count your resources. Wait a few minutes and then retry the <code>GetDiscoveredResourceCounts</code> action.</p>
 /// </note>
@@ -138,7 +146,7 @@ impl GetDiscoveredResourceCountsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p><note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -146,7 +154,7 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self
     }
     /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p><note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -154,7 +162,7 @@ impl GetDiscoveredResourceCountsFluentBuilder {
         self
     }
     /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p><note>
     /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

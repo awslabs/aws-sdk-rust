@@ -6,8 +6,10 @@
 pub struct AwsBackupBackupPlanAdvancedBackupSettingsDetails {
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
-    /// <li><p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
     /// </ul>
     pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name of a resource type. The only supported resource type is Amazon EC2 instances with Windows VSS.</p>
@@ -17,8 +19,10 @@ pub struct AwsBackupBackupPlanAdvancedBackupSettingsDetails {
 impl AwsBackupBackupPlanAdvancedBackupSettingsDetails {
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
-    /// <li><p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
     /// </ul>
     pub fn backup_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.backup_options.as_ref()
@@ -50,8 +54,10 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
     ///
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
-    /// <li><p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
     /// </ul>
     pub fn backup_options(
         mut self,
@@ -65,8 +71,10 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
-    /// <li><p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
     /// </ul>
     pub fn set_backup_options(
         mut self,
@@ -77,8 +85,10 @@ impl AwsBackupBackupPlanAdvancedBackupSettingsDetailsBuilder {
     }
     /// <p>Specifies the backup option for a selected resource. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs. Valid values are as follows:</p>
     /// <ul>
-    /// <li><p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
-    /// <li><p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and create a Windows VSS backup.</p></li>
+    /// <li>
+    /// <p>Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p></li>
     /// </ul>
     pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.backup_options

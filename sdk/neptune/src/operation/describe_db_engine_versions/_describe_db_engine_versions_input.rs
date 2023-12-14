@@ -11,7 +11,8 @@ pub struct DescribeDbEngineVersionsInput {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
     /// </ul>
     pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>Not currently supported.</p>
@@ -42,7 +43,8 @@ impl DescribeDbEngineVersionsInput {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
     /// </ul>
     pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
@@ -132,7 +134,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
     /// </ul>
     pub fn db_parameter_group_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_family = ::std::option::Option::Some(input.into());
@@ -141,7 +144,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
     /// </ul>
     pub fn set_db_parameter_group_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_family = input;
@@ -150,7 +154,8 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p>The name of a specific DB parameter group family to return details for.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBParameterGroupFamily.</p></li>
     /// </ul>
     pub fn get_db_parameter_group_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_family

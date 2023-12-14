@@ -23,7 +23,7 @@ impl CreateLogicallyAirGappedBackupVaultInputBuilder {
 /// Fluent builder constructing a request to `CreateLogicallyAirGappedBackupVault`.
 ///
 /// <p>This request creates a logical container to where backups may be copied.</p>
-/// <p>This request includes a name, the Region, the maximum number of retention days, the minimum number of retention days, and optionally can include tags and a creator request ID.</p> <note>
+/// <p>This request includes a name, the Region, the maximum number of retention days, the minimum number of retention days, and optionally can include tags and a creator request ID.</p><note>
 /// <p>Do not include sensitive data, such as passport numbers, in the name of a backup vault.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

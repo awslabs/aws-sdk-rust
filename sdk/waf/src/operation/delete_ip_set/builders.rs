@@ -30,9 +30,12 @@ impl DeleteIpSetInputBuilder {
 /// <p>If you just want to remove an <code>IPSet</code> from a <code>Rule</code>, use <code>UpdateRule</code>.</p>
 /// <p>To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:</p>
 /// <ol>
-/// <li><p>Update the <code>IPSet</code> to remove IP address ranges, if any. For more information, see <code>UpdateIPSet</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteIPSet</code> request.</p></li>
-/// <li><p>Submit a <code>DeleteIPSet</code> request.</p></li>
+/// <li>
+/// <p>Update the <code>IPSet</code> to remove IP address ranges, if any. For more information, see <code>UpdateIPSet</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteIPSet</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>DeleteIPSet</code> request.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIPSetFluentBuilder {

@@ -24,7 +24,7 @@ impl StartModelInputBuilder {
 ///
 /// <p>Starts the running of the version of an Amazon Lookout for Vision model. Starting a model takes a while to complete. To check the current state of the model, use <code>DescribeModel</code>.</p>
 /// <p>A model is ready to use when its status is <code>HOSTED</code>.</p>
-/// <p>Once the model is running, you can detect custom labels in new images by calling <code>DetectAnomalies</code>.</p> <note>
+/// <p>Once the model is running, you can detect custom labels in new images by calling <code>DetectAnomalies</code>.</p><note>
 /// <p>You are charged for the amount of time that the model is running. To stop a running model, call <code>StopModel</code>.</p>
 /// </note>
 /// <p>This operation requires permissions to perform the <code>lookoutvision:StartModel</code> operation.</p>

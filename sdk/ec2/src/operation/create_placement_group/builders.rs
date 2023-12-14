@@ -189,8 +189,10 @@ impl CreatePlacementGroupFluentBuilder {
     }
     /// <p>Determines how placement groups spread instances.</p>
     /// <ul>
-    /// <li><p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li><p>Rack – No usage restrictions.</p></li>
+    /// <li>
+    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
+    /// <li>
+    /// <p>Rack – No usage restrictions.</p></li>
     /// </ul>
     pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
         self.inner = self.inner.spread_level(input);
@@ -198,8 +200,10 @@ impl CreatePlacementGroupFluentBuilder {
     }
     /// <p>Determines how placement groups spread instances.</p>
     /// <ul>
-    /// <li><p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li><p>Rack – No usage restrictions.</p></li>
+    /// <li>
+    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
+    /// <li>
+    /// <p>Rack – No usage restrictions.</p></li>
     /// </ul>
     pub fn set_spread_level(mut self, input: ::std::option::Option<crate::types::SpreadLevel>) -> Self {
         self.inner = self.inner.set_spread_level(input);
@@ -207,8 +211,10 @@ impl CreatePlacementGroupFluentBuilder {
     }
     /// <p>Determines how placement groups spread instances.</p>
     /// <ul>
-    /// <li><p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
-    /// <li><p>Rack – No usage restrictions.</p></li>
+    /// <li>
+    /// <p>Host – You can use <code>host</code> only with Outpost placement groups.</p></li>
+    /// <li>
+    /// <p>Rack – No usage restrictions.</p></li>
     /// </ul>
     pub fn get_spread_level(&self) -> &::std::option::Option<crate::types::SpreadLevel> {
         self.inner.get_spread_level()

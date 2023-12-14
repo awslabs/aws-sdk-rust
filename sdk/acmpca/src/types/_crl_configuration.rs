@@ -6,27 +6,42 @@
 /// <p>A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, Amazon Web Services Private CA makes further attempts every 15 minutes.</p>
 /// <p>CRLs contain the following fields:</p>
 /// <ul>
-/// <li><p><b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1.</p></li>
-/// <li><p><b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p></li>
-/// <li><p><b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p></li>
-/// <li><p><b>Last Update</b>: The issue date and time of this CRL.</p></li>
-/// <li><p><b>Next Update</b>: The day and time by which the next CRL will be issued.</p></li>
-/// <li><p><b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p>
+/// <li>
+/// <p><b>Version</b>: The current version number defined in RFC 5280 is V2. The integer value is 0x1.</p></li>
+/// <li>
+/// <p><b>Signature Algorithm</b>: The name of the algorithm used to sign the CRL.</p></li>
+/// <li>
+/// <p><b>Issuer</b>: The X.500 distinguished name of your private CA that issued the CRL.</p></li>
+/// <li>
+/// <p><b>Last Update</b>: The issue date and time of this CRL.</p></li>
+/// <li>
+/// <p><b>Next Update</b>: The day and time by which the next CRL will be issued.</p></li>
+/// <li>
+/// <p><b>Revoked Certificates</b>: List of revoked certificates. Each list item contains the following information.</p>
 /// <ul>
-/// <li><p><b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p></li>
-/// <li><p><b>Revocation Date</b>: Date and time the certificate was revoked.</p></li>
-/// <li><p><b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p>
+/// <li>
+/// <p><b>Serial Number</b>: The serial number, in hexadecimal format, of the revoked certificate.</p></li>
+/// <li>
+/// <p><b>Revocation Date</b>: Date and time the certificate was revoked.</p></li>
+/// <li>
+/// <p><b>CRL Entry Extensions</b>: Optional extensions for the CRL entry.</p>
 /// <ul>
-/// <li><p><b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p></li>
+/// <li>
+/// <p><b>X509v3 CRL Reason Code</b>: Reason the certificate was revoked.</p></li>
 /// </ul></li>
 /// </ul></li>
-/// <li><p><b>CRL Extensions</b>: Optional extensions for the CRL.</p>
+/// <li>
+/// <p><b>CRL Extensions</b>: Optional extensions for the CRL.</p>
 /// <ul>
-/// <li><p><b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p></li>
-/// <li><p><b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p></li>
+/// <li>
+/// <p><b>X509v3 Authority Key Identifier</b>: Identifies the public key associated with the private key used to sign the certificate.</p></li>
+/// <li>
+/// <p><b>X509v3 CRL Number:</b>: Decimal sequence number for the CRL.</p></li>
 /// </ul></li>
-/// <li><p><b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p></li>
-/// <li><p><b>Signature Value</b>: Signature computed over the CRL.</p></li>
+/// <li>
+/// <p><b>Signature Algorithm</b>: Algorithm used by your private CA to sign the CRL.</p></li>
+/// <li>
+/// <p><b>Signature Value</b>: Signature computed over the CRL.</p></li>
 /// </ul>
 /// <p>Certificate revocation lists created by Amazon Web Services Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL.</p>
 /// <p><code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code></p>
@@ -38,11 +53,11 @@ pub struct CrlConfiguration {
     pub enabled: bool,
     /// <p>Validity period of the CRL in days.</p>
     pub expiration_in_days: ::std::option::Option<i32>,
-    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p> <note>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p><note>
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     pub custom_cname: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p> <note>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p><note>
     /// <p>The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3 bucket naming rules</a>.</p>
     /// </note>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -61,13 +76,13 @@ impl CrlConfiguration {
     pub fn expiration_in_days(&self) -> ::std::option::Option<i32> {
         self.expiration_in_days
     }
-    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p> <note>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p><note>
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     pub fn custom_cname(&self) -> ::std::option::Option<&str> {
         self.custom_cname.as_deref()
     }
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p> <note>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p><note>
     /// <p>The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3 bucket naming rules</a>.</p>
     /// </note>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
@@ -128,41 +143,41 @@ impl CrlConfigurationBuilder {
     pub fn get_expiration_in_days(&self) -> &::std::option::Option<i32> {
         &self.expiration_in_days
     }
-    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p> <note>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p><note>
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     pub fn custom_cname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.custom_cname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p> <note>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p><note>
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     pub fn set_custom_cname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.custom_cname = input;
         self
     }
-    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p> <note>
+    /// <p>Name inserted into the certificate <b>CRL Distribution Points</b> extension that enables the use of an alias for the CRL distribution point. Use this value if you don't want the name of your S3 bucket to be public.</p><note>
     /// <p>The content of a Canonical Name (CNAME) record must conform to <a href="https://www.ietf.org/rfc/rfc2396.txt">RFC2396</a> restrictions on the use of special characters in URIs. Additionally, the value of the CNAME must not include a protocol prefix such as "http://" or "https://".</p>
     /// </note>
     pub fn get_custom_cname(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_cname
     }
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p> <note>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p><note>
     /// <p>The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3 bucket naming rules</a>.</p>
     /// </note>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p> <note>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p><note>
     /// <p>The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3 bucket naming rules</a>.</p>
     /// </note>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
-    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p> <note>
+    /// <p>Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate. You can change the name of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.</p><note>
     /// <p>The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3 bucket naming rules</a>.</p>
     /// </note>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -166,10 +166,14 @@ impl DescribePackageFluentBuilder {
     }
     /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -177,10 +181,14 @@ impl DescribePackageFluentBuilder {
     }
     /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -188,10 +196,14 @@ impl DescribePackageFluentBuilder {
     }
     /// <p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()

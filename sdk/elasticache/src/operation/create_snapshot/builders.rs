@@ -22,7 +22,7 @@ impl CreateSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
-/// <p>Creates a copy of an entire cluster or replication group at a specific moment in time.</p> <note>
+/// <p>Creates a copy of an entire cluster or replication group at a specific moment in time.</p><note>
 /// <p>This operation is valid for Redis only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

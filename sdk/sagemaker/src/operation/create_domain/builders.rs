@@ -29,9 +29,12 @@ impl CreateDomainInputBuilder {
 /// <p><b>VPC configuration</b></p>
 /// <p>All traffic between the domain and the EFS volume is through the specified VPC and subnets. For other traffic, you can specify the <code>AppNetworkAccessType</code> parameter. <code>AppNetworkAccessType</code> corresponds to the network access type that you choose when you onboard to the domain. The following options are available:</p>
 /// <ul>
-/// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by Amazon SageMaker, which allows internet access. This is the default value.</p></li>
-/// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet access is disabled by default. To allow internet access, you must specify a NAT gateway.</p> <p>When internet access is disabled, you won't be able to run a Amazon SageMaker Studio notebook or to train or host models unless your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups allow outbound connections.</p></li>
-/// </ul> <important>
+/// <li>
+/// <p><code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by Amazon SageMaker, which allows internet access. This is the default value.</p></li>
+/// <li>
+/// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet access is disabled by default. To allow internet access, you must specify a NAT gateway.</p>
+/// <p>When internet access is disabled, you won't be able to run a Amazon SageMaker Studio notebook or to train or host models unless your VPC has an interface endpoint to the SageMaker API and runtime or a NAT gateway and your security groups allow outbound connections.</p></li>
+/// </ul><important>
 /// <p>NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a Amazon SageMaker Studio app successfully.</p>
 /// </important>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.</p>
@@ -220,8 +223,10 @@ impl CreateDomainFluentBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
         self.inner = self.inner.app_network_access_type(input);
@@ -229,8 +234,10 @@ impl CreateDomainFluentBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn set_app_network_access_type(mut self, input: ::std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
         self.inner = self.inner.set_app_network_access_type(input);
@@ -238,8 +245,10 @@ impl CreateDomainFluentBuilder {
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
-    /// <li><p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
-    /// <li><p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
+    /// <li>
+    /// <p><code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p></li>
+    /// <li>
+    /// <p><code>VpcOnly</code> - All traffic is through the specified VPC and subnets</p></li>
     /// </ul>
     pub fn get_app_network_access_type(&self) -> &::std::option::Option<crate::types::AppNetworkAccessType> {
         self.inner.get_app_network_access_type()

@@ -7,7 +7,8 @@ pub struct UpdateRouteCalculatorOutput {
     pub calculator_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub calculator_arn: ::std::string::String,
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
@@ -22,7 +23,8 @@ impl UpdateRouteCalculatorOutput {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub fn calculator_arn(&self) -> &str {
         use std::ops::Deref;
@@ -72,7 +74,8 @@ impl UpdateRouteCalculatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
     /// </ul>
     /// This field is required.
     pub fn calculator_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,7 +84,8 @@ impl UpdateRouteCalculatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub fn set_calculator_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.calculator_arn = input;
@@ -89,7 +93,8 @@ impl UpdateRouteCalculatorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the updated route calculator resource. Used to specify a resource across AWS.</p>
     /// <ul>
-    /// <li><p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:route- calculator/ExampleCalculator</code></p></li>
     /// </ul>
     pub fn get_calculator_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.calculator_arn

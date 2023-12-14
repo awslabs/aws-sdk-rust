@@ -11,9 +11,12 @@ pub struct SetUserPoolMfaConfigInput {
     pub software_token_mfa_configuration: ::std::option::Option<crate::types::SoftwareTokenMfaConfigType>,
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
 }
@@ -32,9 +35,12 @@ impl SetUserPoolMfaConfigInput {
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
@@ -102,9 +108,12 @@ impl SetUserPoolMfaConfigInputBuilder {
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn mfa_configuration(mut self, input: crate::types::UserPoolMfaType) -> Self {
         self.mfa_configuration = ::std::option::Option::Some(input);
@@ -112,9 +121,12 @@ impl SetUserPoolMfaConfigInputBuilder {
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.mfa_configuration = input;
@@ -122,9 +134,12 @@ impl SetUserPoolMfaConfigInputBuilder {
     }
     /// <p>The MFA configuration. If you set the MfaConfiguration value to ‘ON’, only users who have set up an MFA factor can sign in. To learn more, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding Multi-Factor Authentication (MFA) to a user pool</a>. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>OFF</code> MFA won't be used for any users.</p></li>
-    /// <li><p><code>ON</code> MFA is required for all users to sign in.</p></li>
-    /// <li><p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
+    /// <li>
+    /// <p><code>OFF</code> MFA won't be used for any users.</p></li>
+    /// <li>
+    /// <p><code>ON</code> MFA is required for all users to sign in.</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> MFA will be required only for individual users who have an MFA factor activated.</p></li>
     /// </ul>
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration

@@ -114,21 +114,21 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator {
         crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::new(self.handle, self.inner)
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn backup_vault_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_vault_name(input.into());
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn set_backup_vault_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_vault_name(input);
         self
     }
-    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note>
+    /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p><note>
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p>
     /// </note>
     pub fn get_backup_vault_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -192,22 +192,38 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     }
     /// <p>Returns only recovery points that match the specified resource type(s):</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.by_resource_type(input.into());
@@ -215,22 +231,38 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     }
     /// <p>Returns only recovery points that match the specified resource type(s):</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
@@ -238,22 +270,38 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder {
     }
     /// <p>Returns only recovery points that match the specified resource type(s):</p>
     /// <ul>
-    /// <li><p><code>Aurora</code> for Amazon Aurora</p></li>
-    /// <li><p><code>CloudFormation</code> for CloudFormation</p></li>
-    /// <li><p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
-    /// <li><p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
-    /// <li><p><code>EBS</code> for Amazon Elastic Block Store</p></li>
-    /// <li><p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
-    /// <li><p><code>EFS</code> for Amazon Elastic File System</p></li>
-    /// <li><p><code>FSx</code> for Amazon FSx</p></li>
-    /// <li><p><code>Neptune</code> for Amazon Neptune</p></li>
-    /// <li><p><code>Redshift</code> for Amazon Redshift</p></li>
-    /// <li><p><code>RDS</code> for Amazon Relational Database Service</p></li>
-    /// <li><p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
-    /// <li><p><code>Storage Gateway</code> for Storage Gateway</p></li>
-    /// <li><p><code>S3</code> for Amazon S3</p></li>
-    /// <li><p><code>Timestream</code> for Amazon Timestream</p></li>
-    /// <li><p><code>VirtualMachine</code> for virtual machines</p></li>
+    /// <li>
+    /// <p><code>Aurora</code> for Amazon Aurora</p></li>
+    /// <li>
+    /// <p><code>CloudFormation</code> for CloudFormation</p></li>
+    /// <li>
+    /// <p><code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p></li>
+    /// <li>
+    /// <p><code>DynamoDB</code> for Amazon DynamoDB</p></li>
+    /// <li>
+    /// <p><code>EBS</code> for Amazon Elastic Block Store</p></li>
+    /// <li>
+    /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
+    /// <li>
+    /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>FSx</code> for Amazon FSx</p></li>
+    /// <li>
+    /// <p><code>Neptune</code> for Amazon Neptune</p></li>
+    /// <li>
+    /// <p><code>Redshift</code> for Amazon Redshift</p></li>
+    /// <li>
+    /// <p><code>RDS</code> for Amazon Relational Database Service</p></li>
+    /// <li>
+    /// <p><code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p></li>
+    /// <li>
+    /// <p><code>Storage Gateway</code> for Storage Gateway</p></li>
+    /// <li>
+    /// <p><code>S3</code> for Amazon S3</p></li>
+    /// <li>
+    /// <p><code>Timestream</code> for Amazon Timestream</p></li>
+    /// <li>
+    /// <p><code>VirtualMachine</code> for virtual machines</p></li>
     /// </ul>
     pub fn get_by_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_by_resource_type()

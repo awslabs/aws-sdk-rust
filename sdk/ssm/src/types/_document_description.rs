@@ -6,11 +6,11 @@
 pub struct DocumentDescription {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
     pub sha1: ::std::option::Option<::std::string::String>,
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub hash: ::std::option::Option<::std::string::String>,
-    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
+    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub hash_type: ::std::option::Option<crate::types::DocumentHashType>,
@@ -74,13 +74,13 @@ impl DocumentDescription {
     pub fn sha1(&self) -> ::std::option::Option<&str> {
         self.sha1.as_deref()
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn hash(&self) -> ::std::option::Option<&str> {
         self.hash.as_deref()
     }
-    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
+    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn hash_type(&self) -> ::std::option::Option<&crate::types::DocumentHashType> {
@@ -268,41 +268,41 @@ impl DocumentDescriptionBuilder {
     pub fn get_sha1(&self) -> &::std::option::Option<::std::string::String> {
         &self.sha1
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.hash = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hash = input;
         self
     }
-    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p> <note>
+    /// <p>The Sha256 or Sha1 hash created by the system when the document was created.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn get_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.hash
     }
-    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
+    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn hash_type(mut self, input: crate::types::DocumentHashType) -> Self {
         self.hash_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
+    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn set_hash_type(mut self, input: ::std::option::Option<crate::types::DocumentHashType>) -> Self {
         self.hash_type = input;
         self
     }
-    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p> <note>
+    /// <p>The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.</p><note>
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub fn get_hash_type(&self) -> &::std::option::Option<crate::types::DocumentHashType> {

@@ -111,10 +111,14 @@ impl CreateDBSnapshotFluentBuilder {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Can't be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn db_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -124,10 +128,14 @@ impl CreateDBSnapshotFluentBuilder {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Can't be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn set_db_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -137,10 +145,14 @@ impl CreateDBSnapshotFluentBuilder {
     /// <p>The identifier for the DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Can't be null, empty, or blank</p></li>
-    /// <li><p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Can't be null, empty, or blank</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,7 +161,8 @@ impl CreateDBSnapshotFluentBuilder {
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
@@ -158,7 +171,8 @@ impl CreateDBSnapshotFluentBuilder {
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
@@ -167,7 +181,8 @@ impl CreateDBSnapshotFluentBuilder {
     /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()

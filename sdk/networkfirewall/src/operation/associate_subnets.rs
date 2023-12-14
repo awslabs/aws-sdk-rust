@@ -254,9 +254,12 @@ pub enum AssociateSubnetsError {
     InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include:</p>
     /// <ul>
-    /// <li><p>You specified an unsupported parameter name or value.</p></li>
-    /// <li><p>You tried to update a property with a value that isn't among the available types.</p></li>
-    /// <li><p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p></li>
+    /// <li>
+    /// <p>You specified an unsupported parameter name or value.</p></li>
+    /// <li>
+    /// <p>You tried to update a property with a value that isn't among the available types.</p></li>
+    /// <li>
+    /// <p>Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the context of the request.</p></li>
     /// </ul>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The token you provided is stale or isn't valid for the operation.</p>

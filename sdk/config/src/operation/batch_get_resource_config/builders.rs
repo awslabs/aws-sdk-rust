@@ -22,10 +22,12 @@ impl BatchGetResourceConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchGetResourceConfig`.
 ///
-/// <p>Returns the <code>BaseConfigurationItem</code> for one or more requested resources. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys list.</p> <note>
+/// <p>Returns the <code>BaseConfigurationItem</code> for one or more requested resources. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys list.</p><note>
 /// <ul>
-/// <li><p>The API does not return results for deleted resources.</p></li>
-/// <li><p>The API does not return any tags for the requested resources. This information is filtered out of the supplementaryConfiguration section of the API response.</p></li>
+/// <li>
+/// <p>The API does not return results for deleted resources.</p></li>
+/// <li>
+/// <p>The API does not return any tags for the requested resources. This information is filtered out of the supplementaryConfiguration section of the API response.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

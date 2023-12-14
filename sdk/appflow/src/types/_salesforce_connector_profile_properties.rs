@@ -18,9 +18,12 @@ pub struct SalesforceConnectorProfileProperties {
     /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
     /// <p>These private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
-    /// <li><p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -30,12 +33,15 @@ pub struct SalesforceConnectorProfileProperties {
     /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
     /// <p>The public calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records.</p></li>
-    /// <li><p>Calls to get or refresh access tokens.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens.</p></li>
     /// </ul>
     /// <p>The private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -60,9 +66,12 @@ impl SalesforceConnectorProfileProperties {
     /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
     /// <p>These private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
-    /// <li><p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -72,12 +81,15 @@ impl SalesforceConnectorProfileProperties {
     /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
     /// <p>The public calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records.</p></li>
-    /// <li><p>Calls to get or refresh access tokens.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens.</p></li>
     /// </ul>
     /// <p>The private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -139,9 +151,12 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
     /// <p>These private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
-    /// <li><p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -151,12 +166,15 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
     /// <p>The public calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records.</p></li>
-    /// <li><p>Calls to get or refresh access tokens.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens.</p></li>
     /// </ul>
     /// <p>The private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -174,9 +192,12 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
     /// <p>These private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
-    /// <li><p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -186,12 +207,15 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
     /// <p>The public calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records.</p></li>
-    /// <li><p>Calls to get or refresh access tokens.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens.</p></li>
     /// </ul>
     /// <p>The private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -209,9 +233,12 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p>
     /// <p>These private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
-    /// <li><p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -221,12 +248,15 @@ impl SalesforceConnectorProfilePropertiesBuilder {
     /// <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p>
     /// <p>The public calls are:</p>
     /// <ul>
-    /// <li><p>Calls to get metadata about your Salesforce records.</p></li>
-    /// <li><p>Calls to get or refresh access tokens.</p></li>
+    /// <li>
+    /// <p>Calls to get metadata about your Salesforce records.</p></li>
+    /// <li>
+    /// <p>Calls to get or refresh access tokens.</p></li>
     /// </ul>
     /// <p>The private calls are:</p>
     /// <ul>
-    /// <li><p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
+    /// <li>
+    /// <p>Calls to transfer your Salesforce records as part of a flow run.</p></li>
     /// </ul>
     /// </dd>
     /// </dl>

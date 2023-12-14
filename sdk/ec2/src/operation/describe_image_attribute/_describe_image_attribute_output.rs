@@ -26,7 +26,7 @@ pub struct DescribeImageAttributeOutput {
     pub tpm_support: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceUefiData">GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub uefi_data: ::std::option::Option<crate::types::AttributeValue>,
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub last_launched_time: ::std::option::Option<crate::types::AttributeValue>,
@@ -85,7 +85,7 @@ impl DescribeImageAttributeOutput {
     pub fn uefi_data(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
         self.uefi_data.as_ref()
     }
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub fn last_launched_time(&self) -> ::std::option::Option<&crate::types::AttributeValue> {
@@ -300,21 +300,21 @@ impl DescribeImageAttributeOutputBuilder {
     pub fn get_uefi_data(&self) -> &::std::option::Option<crate::types::AttributeValue> {
         &self.uefi_data
     }
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub fn last_launched_time(mut self, input: crate::types::AttributeValue) -> Self {
         self.last_launched_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub fn set_last_launched_time(mut self, input: ::std::option::Option<crate::types::AttributeValue>) -> Self {
         self.last_launched_time = input;
         self
     }
-    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p> <note>
+    /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before that usage is reported.</p><note>
     /// <p><code>lastLaunchedTime</code> data is available starting April 2017.</p>
     /// </note>
     pub fn get_last_launched_time(&self) -> &::std::option::Option<crate::types::AttributeValue> {

@@ -10,7 +10,7 @@ pub struct ExecuteStatementOutput {
     pub column_metadata: ::std::option::Option<::std::vec::Vec<crate::types::ColumnMetadata>>,
     /// <p>The number of records updated by the request.</p>
     pub number_of_records_updated: i64,
-    /// <p>Values for fields generated during a DML request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
@@ -36,7 +36,7 @@ impl ExecuteStatementOutput {
     pub fn number_of_records_updated(&self) -> i64 {
         self.number_of_records_updated
     }
-    /// <p>Values for fields generated during a DML request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     ///
@@ -132,7 +132,7 @@ impl ExecuteStatementOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_generated_fields`](Self::set_generated_fields).
     ///
-    /// <p>Values for fields generated during a DML request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub fn generated_fields(mut self, input: crate::types::Field) -> Self {
@@ -141,14 +141,14 @@ impl ExecuteStatementOutputBuilder {
         self.generated_fields = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Values for fields generated during a DML request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub fn set_generated_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>) -> Self {
         self.generated_fields = input;
         self
     }
-    /// <p>Values for fields generated during a DML request.</p> <note>
+    /// <p>Values for fields generated during a DML request.</p><note>
     /// <p>The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get the values of generated fields, use the <code>RETURNING</code> clause. For more information, see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified Rows</a> in the PostgreSQL documentation.</p>
     /// </note>
     pub fn get_generated_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Field>> {

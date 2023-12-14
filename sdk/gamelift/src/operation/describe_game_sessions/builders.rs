@@ -25,9 +25,12 @@ impl DescribeGameSessionsInputBuilder {
 /// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status.</p>
 /// <p>This operation can be used in the following ways:</p>
 /// <ul>
-/// <li><p>To retrieve all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns all game sessions in the fleet's home Region and all remote locations.</p></li>
-/// <li><p>To retrieve all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p></li>
-/// <li><p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the Amazon Web Services Region defined in the request.</p></li>
+/// <li>
+/// <p>To retrieve all game sessions that are currently running on all locations in a fleet, provide a fleet or alias ID, with an optional status filter. This approach returns all game sessions in the fleet's home Region and all remote locations.</p></li>
+/// <li>
+/// <p>To retrieve all game sessions that are currently running on a specific fleet location, provide a fleet or alias ID and a location name, with optional status filter. The location can be the fleet's home Region or any remote location.</p></li>
+/// <li>
+/// <p>To retrieve a specific game session, provide the game session ID. This approach looks for the game session ID in all fleets that reside in the Amazon Web Services Region defined in the request.</p></li>
 /// </ul>
 /// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a <code>GameSession</code> object is returned for each game session that matches the request.</p>

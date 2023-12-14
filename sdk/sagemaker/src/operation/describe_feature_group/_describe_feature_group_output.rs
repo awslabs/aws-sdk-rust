@@ -22,11 +22,16 @@ pub struct DescribeFeatureGroupOutput {
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li><p>Amazon S3 location of the offline store.</p></li>
-    /// <li><p>Configuration of the Glue data catalog.</p></li>
-    /// <li><p>Table format of the offline store.</p></li>
-    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
-    /// <li><p>Encryption configuration.</p></li>
+    /// <li>
+    /// <p>Amazon S3 location of the offline store.</p></li>
+    /// <li>
+    /// <p>Configuration of the Glue data catalog.</p></li>
+    /// <li>
+    /// <p>Table format of the offline store.</p></li>
+    /// <li>
+    /// <p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li>
+    /// <p>Encryption configuration.</p></li>
     /// </ul>
     pub offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an OfflineStoreConfig is provided.</p>
@@ -39,8 +44,10 @@ pub struct DescribeFeatureGroupOutput {
     pub last_update_status: ::std::option::Option<crate::types::LastUpdateStatus>,
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
-    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A free form description of the feature group.</p>
@@ -89,11 +96,16 @@ impl DescribeFeatureGroupOutput {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li><p>Amazon S3 location of the offline store.</p></li>
-    /// <li><p>Configuration of the Glue data catalog.</p></li>
-    /// <li><p>Table format of the offline store.</p></li>
-    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
-    /// <li><p>Encryption configuration.</p></li>
+    /// <li>
+    /// <p>Amazon S3 location of the offline store.</p></li>
+    /// <li>
+    /// <p>Configuration of the Glue data catalog.</p></li>
+    /// <li>
+    /// <p>Table format of the offline store.</p></li>
+    /// <li>
+    /// <p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li>
+    /// <p>Encryption configuration.</p></li>
     /// </ul>
     pub fn offline_store_config(&self) -> ::std::option::Option<&crate::types::OfflineStoreConfig> {
         self.offline_store_config.as_ref()
@@ -116,8 +128,10 @@ impl DescribeFeatureGroupOutput {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
-    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
@@ -299,11 +313,16 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li><p>Amazon S3 location of the offline store.</p></li>
-    /// <li><p>Configuration of the Glue data catalog.</p></li>
-    /// <li><p>Table format of the offline store.</p></li>
-    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
-    /// <li><p>Encryption configuration.</p></li>
+    /// <li>
+    /// <p>Amazon S3 location of the offline store.</p></li>
+    /// <li>
+    /// <p>Configuration of the Glue data catalog.</p></li>
+    /// <li>
+    /// <p>Table format of the offline store.</p></li>
+    /// <li>
+    /// <p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li>
+    /// <p>Encryption configuration.</p></li>
     /// </ul>
     pub fn offline_store_config(mut self, input: crate::types::OfflineStoreConfig) -> Self {
         self.offline_store_config = ::std::option::Option::Some(input);
@@ -311,11 +330,16 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li><p>Amazon S3 location of the offline store.</p></li>
-    /// <li><p>Configuration of the Glue data catalog.</p></li>
-    /// <li><p>Table format of the offline store.</p></li>
-    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
-    /// <li><p>Encryption configuration.</p></li>
+    /// <li>
+    /// <p>Amazon S3 location of the offline store.</p></li>
+    /// <li>
+    /// <p>Configuration of the Glue data catalog.</p></li>
+    /// <li>
+    /// <p>Table format of the offline store.</p></li>
+    /// <li>
+    /// <p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li>
+    /// <p>Encryption configuration.</p></li>
     /// </ul>
     pub fn set_offline_store_config(mut self, input: ::std::option::Option<crate::types::OfflineStoreConfig>) -> Self {
         self.offline_store_config = input;
@@ -323,11 +347,16 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The configuration of the offline store. It includes the following configurations:</p>
     /// <ul>
-    /// <li><p>Amazon S3 location of the offline store.</p></li>
-    /// <li><p>Configuration of the Glue data catalog.</p></li>
-    /// <li><p>Table format of the offline store.</p></li>
-    /// <li><p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
-    /// <li><p>Encryption configuration.</p></li>
+    /// <li>
+    /// <p>Amazon S3 location of the offline store.</p></li>
+    /// <li>
+    /// <p>Configuration of the Glue data catalog.</p></li>
+    /// <li>
+    /// <p>Table format of the offline store.</p></li>
+    /// <li>
+    /// <p>Option to disable the automatic creation of a Glue table for the offline store.</p></li>
+    /// <li>
+    /// <p>Encryption configuration.</p></li>
     /// </ul>
     pub fn get_offline_store_config(&self) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
         &self.offline_store_config
@@ -390,8 +419,10 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
-    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
@@ -399,8 +430,10 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
-    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_reason = input;
@@ -408,8 +441,10 @@ impl DescribeFeatureGroupOutputBuilder {
     }
     /// <p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure can occur because:</p>
     /// <ul>
-    /// <li><p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
-    /// <li><p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be created in the <code>OfflineStore</code>.</p></li>
+    /// <li>
+    /// <p>The <code>FeatureGroup</code> could not be deleted from the <code>OfflineStore</code>.</p></li>
     /// </ul>
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason

@@ -12,11 +12,16 @@ pub struct AwsRedshiftClusterDetails {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li><p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li><p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the cluster was created.</p>
@@ -92,9 +97,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>A list of changes to the cluster that are currently pending.</p>
     pub pending_modified_values: ::std::option::Option<crate::types::AwsRedshiftClusterPendingModifiedValues>,
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i>
-    /// <day></day></i>:HH:MM-<i>
-    /// <day></day></i>:HH:MM</code></p>
+    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
@@ -131,11 +134,16 @@ impl AwsRedshiftClusterDetails {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li><p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li><p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn cluster_availability_status(&self) -> ::std::option::Option<&str> {
         self.cluster_availability_status.as_deref()
@@ -287,9 +295,7 @@ impl AwsRedshiftClusterDetails {
         self.pending_modified_values.as_ref()
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i>
-    /// <day></day></i>:HH:MM-<i>
-    /// <day></day></i>:HH:MM</code></p>
+    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
     pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
@@ -432,11 +438,16 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li><p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li><p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn cluster_availability_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_availability_status = ::std::option::Option::Some(input.into());
@@ -444,11 +455,16 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li><p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li><p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn set_cluster_availability_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_availability_status = input;
@@ -456,11 +472,16 @@ impl AwsRedshiftClusterDetailsBuilder {
     }
     /// <p>The availability status of the cluster for queries. Possible values are the following:</p>
     /// <ul>
-    /// <li><p><code>Available</code> - The cluster is available for queries.</p></li>
-    /// <li><p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
-    /// <li><p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
-    /// <li><p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
-    /// <li><p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Available</code> - The cluster is available for queries.</p></li>
+    /// <li>
+    /// <p><code>Unavailable</code> - The cluster is not available for queries.</p></li>
+    /// <li>
+    /// <p><code>Maintenance</code> - The cluster is intermittently available for queries due to maintenance activities.</p></li>
+    /// <li>
+    /// <p><code>Modifying</code> -The cluster is intermittently available for queries due to changes that modify the cluster.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> - The cluster failed and is not available for queries.</p></li>
     /// </ul>
     pub fn get_cluster_availability_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_availability_status
@@ -980,9 +1001,7 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.pending_modified_values
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i>
-    /// <day></day></i>:HH:MM-<i>
-    /// <day></day></i>:HH:MM</code></p>
+    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -990,9 +1009,7 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i>
-    /// <day></day></i>:HH:MM-<i>
-    /// <day></day></i>:HH:MM</code></p>
+    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1000,9 +1017,7 @@ impl AwsRedshiftClusterDetailsBuilder {
         self
     }
     /// <p>The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance can occur.</p>
-    /// <p>Format: <code> <i>
-    /// <day></day></i>:HH:MM-<i>
-    /// <day></day></i>:HH:MM</code></p>
+    /// <p>Format: <code> <i><day></day></i>:HH:MM-<i><day></day></i>:HH:MM</code></p>
     /// <p>For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code> | <code>fri</code> | <code>sat</code> | <code>sun</code></p>
     /// <p>For example, <code>sun:09:32-sun:10:02</code></p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {

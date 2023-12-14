@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbSubnetGroupInput {
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -12,7 +12,7 @@ pub struct DeleteDbSubnetGroupInput {
     pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -35,7 +35,7 @@ pub struct DeleteDbSubnetGroupInputBuilder {
     pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInputBuilder {
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -45,7 +45,7 @@ impl DeleteDbSubnetGroupInputBuilder {
         self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -54,7 +54,7 @@ impl DeleteDbSubnetGroupInputBuilder {
         self.db_subnet_group_name = input;
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>

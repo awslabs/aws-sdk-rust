@@ -25,7 +25,7 @@ impl ModifyCurrentDbClusterCapacityInputBuilder {
 /// <p>Set the capacity of an Aurora Serverless v1 DB cluster to a specific value.</p>
 /// <p>Aurora Serverless v1 scales seamlessly based on the workload on the DB cluster. In some cases, the capacity might not scale fast enough to meet a sudden change in workload, such as a large number of new transactions. Call <code>ModifyCurrentDBClusterCapacity</code> to set the capacity explicitly.</p>
 /// <p>After this call sets the DB cluster capacity, Aurora Serverless v1 can automatically scale the DB cluster based on the cooldown period for scaling up and the cooldown period for scaling down.</p>
-/// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p> <important>
+/// <p>For more information about Aurora Serverless v1, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p><important>
 /// <p>If you call <code>ModifyCurrentDBClusterCapacity</code> with the default <code>TimeoutAction</code>, connections that prevent Aurora Serverless v1 from finding a scaling point might be dropped. For more information about scaling points, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling"> Autoscaling for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// </important> <note>
 /// <p>This operation only applies to Aurora Serverless v1 DB clusters.</p>
@@ -118,7 +118,8 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -127,7 +128,8 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -136,7 +138,8 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DB cluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DB cluster.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
@@ -145,8 +148,10 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li><p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li>
+    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
+    /// <li>
+    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
     /// </ul>
     pub fn capacity(mut self, input: i32) -> Self {
         self.inner = self.inner.capacity(input);
@@ -156,8 +161,10 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li><p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li>
+    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
+    /// <li>
+    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
     /// </ul>
     pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_capacity(input);
@@ -167,8 +174,10 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <p>When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
-    /// <li><p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
+    /// <li>
+    /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p></li>
+    /// <li>
+    /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p></li>
     /// </ul>
     pub fn get_capacity(&self) -> &::std::option::Option<i32> {
         self.inner.get_capacity()

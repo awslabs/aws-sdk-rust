@@ -3,8 +3,10 @@
 /// <p>Use <code>Expression</code> to filter in the <code>GetFreeTierUsage</code> API operation.</p>
 /// <p>You can use the following patterns:</p>
 /// <ul>
-/// <li><p>Simple dimension values (<code>Dimensions</code> root operator)</p></li>
-/// <li><p>Complex expressions with logical operators (<code>AND</code>, <code>NOT</code>, and <code>OR</code> root operators).</p></li>
+/// <li>
+/// <p>Simple dimension values (<code>Dimensions</code> root operator)</p></li>
+/// <li>
+/// <p>Complex expressions with logical operators (<code>AND</code>, <code>NOT</code>, and <code>OR</code> root operators).</p></li>
 /// </ul>
 /// <p>For <i>simple dimension values</i>, you can set the dimension name, values, and match type for the filters that you plan to use.</p>
 /// <p><b>Example for simple dimension values</b></p>

@@ -24,8 +24,10 @@ impl DescribeUserStackAssociationsInputBuilder {
 ///
 /// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>
 /// <ul>
-/// <li><p>The stack name</p></li>
-/// <li><p>The user name (email address of the user associated with the stack) and the authentication type for the user</p></li>
+/// <li>
+/// <p>The stack name</p></li>
+/// <li>
+/// <p>The user name (email address of the user associated with the stack) and the authentication type for the user</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUserStackAssociationsFluentBuilder {
@@ -126,21 +128,21 @@ impl DescribeUserStackAssociationsFluentBuilder {
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
+    /// <p>The email address of the user who is associated with the stack.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
+    /// <p>The email address of the user who is associated with the stack.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
+    /// <p>The email address of the user who is associated with the stack.</p><note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -7,8 +7,7 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>The identifier assigned to the PII entities detection job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -51,8 +50,7 @@ impl PiiEntitiesDetectionJobProperties {
         self.job_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -154,8 +152,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         &self.job_id
     }
     /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -172,8 +169,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :
@@ -190,8 +186,7 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
-    /// <p><code>arn:
-    /// <partition>
+    /// <p><code>arn:<partition>
     /// :comprehend:
     /// <region>
     /// :

@@ -22,10 +22,14 @@ pub struct FirewallPolicy {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub stateful_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -72,10 +76,14 @@ impl FirewallPolicy {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     ///
@@ -243,10 +251,14 @@ impl FirewallPolicyBuilder {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn stateful_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -258,10 +270,14 @@ impl FirewallPolicyBuilder {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn set_stateful_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -271,10 +287,14 @@ impl FirewallPolicyBuilder {
     /// <p>The default actions to take on a packet that doesn't match any stateful rules. The stateful default action is optional, and is only valid when using the strict rule order.</p>
     /// <p>Valid values of the stateful default action:</p>
     /// <ul>
-    /// <li><p>aws:drop_strict</p></li>
-    /// <li><p>aws:drop_established</p></li>
-    /// <li><p>aws:alert_strict</p></li>
-    /// <li><p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_strict</p></li>
+    /// <li>
+    /// <p>aws:drop_established</p></li>
+    /// <li>
+    /// <p>aws:alert_strict</p></li>
+    /// <li>
+    /// <p>aws:alert_established</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn get_stateful_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

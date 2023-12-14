@@ -22,7 +22,7 @@ impl DeleteDbSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDBSnapshot`.
 ///
-/// <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note>
+/// <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.</p><note>
 /// <p>The DB snapshot must be in the <code>available</code> state to be deleted.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

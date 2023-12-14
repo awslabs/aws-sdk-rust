@@ -24,8 +24,10 @@ impl GetBotsInputBuilder {
 ///
 /// <p>Returns bot information as follows:</p>
 /// <ul>
-/// <li><p>If you provide the <code>nameContains</code> field, the response includes information for the <code>$LATEST</code> version of all bots whose name contains the specified string.</p></li>
-/// <li><p>If you don't specify the <code>nameContains</code> field, the operation returns information about the <code>$LATEST</code> version of all of your bots.</p></li>
+/// <li>
+/// <p>If you provide the <code>nameContains</code> field, the response includes information for the <code>$LATEST</code> version of all bots whose name contains the specified string.</p></li>
+/// <li>
+/// <p>If you don't specify the <code>nameContains</code> field, the operation returns information about the <code>$LATEST</code> version of all of your bots.</p></li>
 /// </ul>
 /// <p>This operation requires permission for the <code>lex:GetBots</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

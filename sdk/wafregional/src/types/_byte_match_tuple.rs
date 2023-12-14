@@ -13,13 +13,20 @@ pub struct ByteMatchTuple {
     /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
     /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
-    /// <li><p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
-    /// <li><p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
-    /// <li><p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
-    /// <li><p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
-    /// <li><p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
+    /// <li>
+    /// <p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
+    /// <li>
+    /// <p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
+    /// <li>
+    /// <p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
+    /// <li>
+    /// <p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
+    /// <li>
+    /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
     /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the AWS WAF API</b></p>
@@ -33,32 +40,49 @@ pub struct ByteMatchTuple {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -73,10 +97,14 @@ pub struct ByteMatchTuple {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
     /// <ul>
-    /// <li><p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
-    /// <li><p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
-    /// <li><p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
-    /// <li><p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
@@ -94,13 +122,20 @@ impl ByteMatchTuple {
     /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
     /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
-    /// <li><p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
-    /// <li><p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
-    /// <li><p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
-    /// <li><p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
-    /// <li><p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
+    /// <li>
+    /// <p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
+    /// <li>
+    /// <p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
+    /// <li>
+    /// <p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
+    /// <li>
+    /// <p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
+    /// <li>
+    /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
     /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the AWS WAF API</b></p>
@@ -116,32 +151,49 @@ impl ByteMatchTuple {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -158,10 +210,14 @@ impl ByteMatchTuple {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
     /// <ul>
-    /// <li><p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
-    /// <li><p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
-    /// <li><p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
-    /// <li><p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
@@ -208,13 +264,20 @@ impl ByteMatchTupleBuilder {
     /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
     /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
-    /// <li><p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
-    /// <li><p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
-    /// <li><p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
-    /// <li><p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
-    /// <li><p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
+    /// <li>
+    /// <p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
+    /// <li>
+    /// <p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
+    /// <li>
+    /// <p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
+    /// <li>
+    /// <p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
+    /// <li>
+    /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
     /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the AWS WAF API</b></p>
@@ -230,13 +293,20 @@ impl ByteMatchTupleBuilder {
     /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
     /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
-    /// <li><p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
-    /// <li><p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
-    /// <li><p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
-    /// <li><p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
-    /// <li><p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
+    /// <li>
+    /// <p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
+    /// <li>
+    /// <p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
+    /// <li>
+    /// <p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
+    /// <li>
+    /// <p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
+    /// <li>
+    /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
     /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the AWS WAF API</b></p>
@@ -251,13 +321,20 @@ impl ByteMatchTupleBuilder {
     /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
     /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
     /// <ul>
-    /// <li><p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
-    /// <li><p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
-    /// <li><p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
-    /// <li><p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
-    /// <li><p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
-    /// <li><p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
-    /// <li><p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
+    /// <li>
+    /// <p><code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p></li>
+    /// <li>
+    /// <p><code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p></li>
+    /// <li>
+    /// <p><code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p></li>
+    /// <li>
+    /// <p><code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p></li>
+    /// <li>
+    /// <p><code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p></li>
+    /// <li>
+    /// <p><code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p></li>
     /// </ul>
     /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
     /// <p><b>If you're using the AWS WAF API</b></p>
@@ -273,32 +350,49 @@ impl ByteMatchTupleBuilder {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -316,32 +410,49 @@ impl ByteMatchTupleBuilder {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -358,32 +469,49 @@ impl ByteMatchTupleBuilder {
     /// <p><b>CMD_LINE</b></p>
     /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
     /// <ul>
-    /// <li><p>Delete the following characters: \ " ' ^</p></li>
-    /// <li><p>Delete spaces before the following characters: / (</p></li>
-    /// <li><p>Replace the following characters with a space: , ;</p></li>
-    /// <li><p>Replace multiple spaces with one space</p></li>
-    /// <li><p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
+    /// <li>
+    /// <p>Delete the following characters: \ " ' ^</p></li>
+    /// <li>
+    /// <p>Delete spaces before the following characters: / (</p></li>
+    /// <li>
+    /// <p>Replace the following characters with a space: , ;</p></li>
+    /// <li>
+    /// <p>Replace multiple spaces with one space</p></li>
+    /// <li>
+    /// <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p></li>
     /// </ul>
     /// <p><b>COMPRESS_WHITE_SPACE</b></p>
     /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
     /// <ul>
-    /// <li><p>\f, formfeed, decimal 12</p></li>
-    /// <li><p>\t, tab, decimal 9</p></li>
-    /// <li><p>\n, newline, decimal 10</p></li>
-    /// <li><p>\r, carriage return, decimal 13</p></li>
-    /// <li><p>\v, vertical tab, decimal 11</p></li>
-    /// <li><p>non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>\f, formfeed, decimal 12</p></li>
+    /// <li>
+    /// <p>\t, tab, decimal 9</p></li>
+    /// <li>
+    /// <p>\n, newline, decimal 10</p></li>
+    /// <li>
+    /// <p>\r, carriage return, decimal 13</p></li>
+    /// <li>
+    /// <p>\v, vertical tab, decimal 11</p></li>
+    /// <li>
+    /// <p>non-breaking space, decimal 160</p></li>
     /// </ul>
     /// <p><code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
     /// <p><b>HTML_ENTITY_DECODE</b></p>
     /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
     /// <ul>
-    /// <li><p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
-    /// <li><p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
-    /// <li><p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
-    /// <li><p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
-    /// <li><p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
-    /// <li><p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)quot;</code> with <code>"</code></p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p></li>
+    /// <li>
+    /// <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code></p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p></li>
+    /// <li>
+    /// <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p></li>
     /// </ul>
     /// <p><b>LOWERCASE</b></p>
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
@@ -400,10 +528,14 @@ impl ByteMatchTupleBuilder {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
     /// <ul>
-    /// <li><p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
-    /// <li><p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
-    /// <li><p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
-    /// <li><p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
@@ -422,10 +554,14 @@ impl ByteMatchTupleBuilder {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
     /// <ul>
-    /// <li><p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
-    /// <li><p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
-    /// <li><p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
-    /// <li><p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
@@ -443,10 +579,14 @@ impl ByteMatchTupleBuilder {
     /// <p><b>CONTAINS_WORD</b></p>
     /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
     /// <ul>
-    /// <li><p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
-    /// <li><p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
-    /// <li><p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
-    /// <li><p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p></li>
+    /// <li>
+    /// <p><code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p></li>
     /// </ul>
     /// <p><b>EXACTLY</b></p>
     /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>

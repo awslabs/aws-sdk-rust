@@ -11,9 +11,12 @@ pub struct DescribeClientVpnAuthorizationRulesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
-    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
-    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
+    /// <li>
+    /// <p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li>
+    /// <p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li>
+    /// <p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the nextToken value.</p>
@@ -34,9 +37,12 @@ impl DescribeClientVpnAuthorizationRulesInput {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
-    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
-    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
+    /// <li>
+    /// <p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li>
+    /// <p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li>
+    /// <p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -115,9 +121,12 @@ impl DescribeClientVpnAuthorizationRulesInputBuilder {
     ///
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
-    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
-    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
+    /// <li>
+    /// <p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li>
+    /// <p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li>
+    /// <p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -127,9 +136,12 @@ impl DescribeClientVpnAuthorizationRulesInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
-    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
-    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
+    /// <li>
+    /// <p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li>
+    /// <p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li>
+    /// <p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -137,9 +149,12 @@ impl DescribeClientVpnAuthorizationRulesInputBuilder {
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
     /// <ul>
-    /// <li><p><code>description</code> - The description of the authorization rule.</p></li>
-    /// <li><p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
-    /// <li><p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
+    /// <li>
+    /// <p><code>description</code> - The description of the authorization rule.</p></li>
+    /// <li>
+    /// <p><code>destination-cidr</code> - The CIDR of the network to which the authorization rule applies.</p></li>
+    /// <li>
+    /// <p><code>group-id</code> - The ID of the Active Directory group to which the authorization rule grants access.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

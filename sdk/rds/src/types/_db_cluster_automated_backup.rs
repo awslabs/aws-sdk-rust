@@ -24,7 +24,8 @@ pub struct DbClusterAutomatedBackup {
     pub license_model: ::std::option::Option<::std::string::String>,
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
@@ -100,7 +101,8 @@ impl DbClusterAutomatedBackup {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -334,7 +336,8 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -342,7 +345,8 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -350,7 +354,8 @@ impl DbClusterAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>retained</code> - Automated backups for deleted clusters.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted clusters.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

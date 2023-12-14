@@ -22,7 +22,7 @@ impl CreateTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTags`.
 ///
-/// <p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p> <important>
+/// <p>Creates one or more tags for configuration items. Tags are metadata that help you categorize IT assets. This API accepts a list of multiple configuration items.</p><important>
 /// <p>Do not store sensitive information (like personal data) in tags.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

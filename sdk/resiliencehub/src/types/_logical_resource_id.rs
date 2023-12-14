@@ -12,7 +12,7 @@ pub struct LogicalResourceId {
     pub resource_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Terraform S3 state file this resource belongs to.</p>
     pub terraform_source_name: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub eks_source_name: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl LogicalResourceId {
     pub fn terraform_source_name(&self) -> ::std::option::Option<&str> {
         self.terraform_source_name.as_deref()
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn eks_source_name(&self) -> ::std::option::Option<&str> {
@@ -117,21 +117,21 @@ impl LogicalResourceIdBuilder {
     pub fn get_terraform_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.terraform_source_name
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn eks_source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.eks_source_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn set_eks_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.eks_source_name = input;
         self
     }
-    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+    /// <p>Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p><note>
     /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
     /// </note>
     pub fn get_eks_source_name(&self) -> &::std::option::Option<::std::string::String> {

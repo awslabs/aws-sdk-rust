@@ -6,14 +6,17 @@ pub struct DescribeDbClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -28,7 +31,8 @@ impl DescribeDbClustersInput {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
@@ -36,8 +40,10 @@ impl DescribeDbClustersInput {
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
     ///
@@ -76,7 +82,8 @@ impl DescribeDbClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -85,7 +92,8 @@ impl DescribeDbClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_cluster_identifier = input;
@@ -94,7 +102,8 @@ impl DescribeDbClustersInputBuilder {
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match an existing DBClusterIdentifier.</p></li>
+    /// <li>
+    /// <p>If supplied, must match an existing DBClusterIdentifier.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_identifier
@@ -106,8 +115,10 @@ impl DescribeDbClustersInputBuilder {
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -119,8 +130,10 @@ impl DescribeDbClustersInputBuilder {
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -130,8 +143,10 @@ impl DescribeDbClustersInputBuilder {
     /// <p>A filter that specifies one or more DB clusters to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB clusters created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

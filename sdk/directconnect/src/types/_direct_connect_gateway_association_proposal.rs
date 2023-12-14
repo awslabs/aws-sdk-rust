@@ -12,9 +12,12 @@ pub struct DirectConnectGatewayAssociationProposal {
     pub direct_connect_gateway_owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
-    /// <li><p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
-    /// <li><p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
     /// </ul>
     pub proposal_state: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>,
     /// <p>Information about the associated gateway.</p>
@@ -39,9 +42,12 @@ impl DirectConnectGatewayAssociationProposal {
     }
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
-    /// <li><p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
-    /// <li><p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
     /// </ul>
     pub fn proposal_state(&self) -> ::std::option::Option<&crate::types::DirectConnectGatewayAssociationProposalState> {
         self.proposal_state.as_ref()
@@ -127,9 +133,12 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     }
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
-    /// <li><p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
-    /// <li><p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
     /// </ul>
     pub fn proposal_state(mut self, input: crate::types::DirectConnectGatewayAssociationProposalState) -> Self {
         self.proposal_state = ::std::option::Option::Some(input);
@@ -137,9 +146,12 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     }
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
-    /// <li><p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
-    /// <li><p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
     /// </ul>
     pub fn set_proposal_state(mut self, input: ::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState>) -> Self {
         self.proposal_state = input;
@@ -147,9 +159,12 @@ impl DirectConnectGatewayAssociationProposalBuilder {
     }
     /// <p>The state of the proposal. The following are possible values:</p>
     /// <ul>
-    /// <li><p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
-    /// <li><p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
-    /// <li><p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>accepted</code>: The proposal has been accepted. The Direct Connect gateway association is available to use in this state.</p></li>
+    /// <li>
+    /// <p><code>deleted</code>: The proposal has been deleted by the owner that made the proposal. The Direct Connect gateway association cannot be used in this state.</p></li>
+    /// <li>
+    /// <p><code>requested</code>: The proposal has been requested. The Direct Connect gateway association cannot be used in this state.</p></li>
     /// </ul>
     pub fn get_proposal_state(&self) -> &::std::option::Option<crate::types::DirectConnectGatewayAssociationProposalState> {
         &self.proposal_state

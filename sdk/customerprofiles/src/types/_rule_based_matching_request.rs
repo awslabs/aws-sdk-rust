@@ -16,7 +16,7 @@ pub struct RuleBasedMatchingRequest {
     pub attribute_types_selector: ::std::option::Option<crate::types::AttributeTypesSelector>,
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     pub conflict_resolution: ::std::option::Option<crate::types::ConflictResolution>,
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p><note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub exporting_config: ::std::option::Option<crate::types::ExportingConfig>,
@@ -48,7 +48,7 @@ impl RuleBasedMatchingRequest {
     pub fn conflict_resolution(&self) -> ::std::option::Option<&crate::types::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p><note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn exporting_config(&self) -> ::std::option::Option<&crate::types::ExportingConfig> {
@@ -166,21 +166,21 @@ impl RuleBasedMatchingRequestBuilder {
     pub fn get_conflict_resolution(&self) -> &::std::option::Option<crate::types::ConflictResolution> {
         &self.conflict_resolution
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p><note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn exporting_config(mut self, input: crate::types::ExportingConfig) -> Self {
         self.exporting_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p><note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn set_exporting_config(mut self, input: ::std::option::Option<crate::types::ExportingConfig>) -> Self {
         self.exporting_config = input;
         self
     }
-    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p> <note>
+    /// <p>Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.</p><note>
     /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>.</p>
     /// </note>
     pub fn get_exporting_config(&self) -> &::std::option::Option<crate::types::ExportingConfig> {

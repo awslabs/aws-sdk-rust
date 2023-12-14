@@ -13,9 +13,12 @@ pub struct TranslateDocumentOutput {
     pub applied_terminologies: ::std::option::Option<::std::vec::Vec<crate::types::AppliedTerminology>>,
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
-    /// <li><p>Formality: sets the formality level of the translation output.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the translation output.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
     pub applied_settings: ::std::option::Option<crate::types::TranslationSettings>,
     _request_id: Option<String>,
@@ -43,9 +46,12 @@ impl TranslateDocumentOutput {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
-    /// <li><p>Formality: sets the formality level of the translation output.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the translation output.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
     pub fn applied_settings(&self) -> ::std::option::Option<&crate::types::TranslationSettings> {
         self.applied_settings.as_ref()
@@ -142,9 +148,12 @@ impl TranslateDocumentOutputBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
-    /// <li><p>Formality: sets the formality level of the translation output.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the translation output.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
     pub fn applied_settings(mut self, input: crate::types::TranslationSettings) -> Self {
         self.applied_settings = ::std::option::Option::Some(input);
@@ -152,9 +161,12 @@ impl TranslateDocumentOutputBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
-    /// <li><p>Formality: sets the formality level of the translation output.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the translation output.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
     pub fn set_applied_settings(mut self, input: ::std::option::Option<crate::types::TranslationSettings>) -> Self {
         self.applied_settings = input;
@@ -162,9 +174,12 @@ impl TranslateDocumentOutputBuilder {
     }
     /// <p>Settings to configure your translation output. You can configure the following options:</p>
     /// <ul>
-    /// <li><p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
-    /// <li><p>Formality: sets the formality level of the translation output.</p></li>
-    /// <li><p>Profanity: masks profane words and phrases in the translation output.</p></li>
+    /// <li>
+    /// <p>Brevity: reduces the length of the translation output for most translations. Available for <code>TranslateText</code> only.</p></li>
+    /// <li>
+    /// <p>Formality: sets the formality level of the translation output.</p></li>
+    /// <li>
+    /// <p>Profanity: masks profane words and phrases in the translation output.</p></li>
     /// </ul>
     pub fn get_applied_settings(&self) -> &::std::option::Option<crate::types::TranslationSettings> {
         &self.applied_settings

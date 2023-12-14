@@ -8,7 +8,7 @@ pub struct ListResolverEndpointsInput {
     /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
     /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -23,7 +23,7 @@ impl ListResolverEndpointsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
     ///
@@ -83,7 +83,7 @@ impl ListResolverEndpointsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -92,14 +92,14 @@ impl ListResolverEndpointsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p> <note>
+    /// <p>An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.</p><note>
     /// <p>If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the previous request.</p>
     /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

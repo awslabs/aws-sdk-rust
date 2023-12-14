@@ -5,27 +5,42 @@
 pub struct DescribeVpcsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
-    /// <li><p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
-    /// <li><p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The IDs of the VPCs.</p>
@@ -41,27 +56,42 @@ pub struct DescribeVpcsInput {
 impl DescribeVpcsInput {
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
-    /// <li><p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
-    /// <li><p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -112,27 +142,42 @@ impl DescribeVpcsInputBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
-    /// <li><p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
-    /// <li><p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -142,27 +187,42 @@ impl DescribeVpcsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
-    /// <li><p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
-    /// <li><p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
@@ -170,27 +230,42 @@ impl DescribeVpcsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
-    /// <li><p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
-    /// <li><p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
-    /// <li><p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
-    /// <li><p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>cidr</code> - The primary IPv4 CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block for information to be returned for the VPC. Must contain the slash followed by one or two digits (for example, <code>/28</code>).</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.cidr-block</code> - An IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.association-id</code> - The association ID for an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>cidr-block-association.state</code> - The state of an IPv4 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>dhcp-options-id</code> - The ID of a set of DHCP options.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address pool from which the IPv6 CIDR block is allocated.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.association-id</code> - The association ID for an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the VPC.</p></li>
+    /// <li>
+    /// <p><code>is-default</code> - Indicates whether the VPC is the default VPC.</p></li>
+    /// <li>
+    /// <p><code>owner-id</code> - The ID of the Amazon Web Services account that owns the VPC.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

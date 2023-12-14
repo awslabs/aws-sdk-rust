@@ -5,7 +5,7 @@
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
     pub environment_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub application_identifier: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl DeleteServiceInput {
     pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
         self.environment_identifier.as_deref()
     }
-    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn application_identifier(&self) -> ::std::option::Option<&str> {
@@ -59,7 +59,7 @@ impl DeleteServiceInputBuilder {
     pub fn get_environment_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_identifier
     }
-    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     /// This field is required.
@@ -67,14 +67,14 @@ impl DeleteServiceInputBuilder {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
-    /// <p>Deletes a Refactor Spaces service.</p> <note>
+    /// <p>Deletes a Refactor Spaces service.</p><note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {

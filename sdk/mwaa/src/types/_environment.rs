@@ -9,17 +9,28 @@ pub struct Environment {
     /// <p>The status of the Amazon MWAA environment.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
-    /// <li><p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
-    /// <li><p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
-    /// <li><p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
-    /// <li><p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
-    /// <li><p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
@@ -103,17 +114,28 @@ impl Environment {
     /// <p>The status of the Amazon MWAA environment.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
-    /// <li><p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
-    /// <li><p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
-    /// <li><p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
-    /// <li><p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
-    /// <li><p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
@@ -351,17 +373,28 @@ impl EnvironmentBuilder {
     /// <p>The status of the Amazon MWAA environment.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
-    /// <li><p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
-    /// <li><p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
-    /// <li><p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
-    /// <li><p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
-    /// <li><p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
@@ -371,17 +404,28 @@ impl EnvironmentBuilder {
     /// <p>The status of the Amazon MWAA environment.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
-    /// <li><p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
-    /// <li><p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
-    /// <li><p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
-    /// <li><p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
-    /// <li><p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
@@ -391,17 +435,28 @@ impl EnvironmentBuilder {
     /// <p>The status of the Amazon MWAA environment.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
-    /// <li><p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
-    /// <li><p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
-    /// <li><p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
-    /// <li><p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
-    /// <li><p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
-    /// <li><p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
-    /// <li><p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
-    /// <li><p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
-    /// <li><p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
-    /// <li><p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> - Indicates the request to create the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details, or upgrade the environment version, is in progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS database cluster associated with the environment. A database snapshot is a backup created at a specific point in time. Amazon MWAA uses snapshots to recover environment metadata if the process to update or upgrade an environment fails.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could not be created.</p></li>
+    /// <li>
+    /// <p><code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Indicates the request was successful, but the process to create the environment is paused until you create the required VPC endpoints in your VPC. After you create the VPC endpoints, the process resumes.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> - Indicates the request to update the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>ROLLING_BACK</code> - Indicates the request to update environment details, or upgrade the environment version, failed and Amazon MWAA is restoring the environment using the latest storage volume snapshot.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> - Indicates the request to delete the environment is in progress.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
+    /// <li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {

@@ -20,8 +20,10 @@ pub struct TestTypeInput {
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
     /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
     /// <ul>
-    /// <li><p><code>GetObject</code></p></li>
-    /// <li><p><code>PutObject</code></p></li>
+    /// <li>
+    /// <p><code>GetObject</code></p></li>
+    /// <li>
+    /// <p><code>PutObject</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub log_delivery_bucket: ::std::option::Option<::std::string::String>,
@@ -52,8 +54,10 @@ impl TestTypeInput {
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
     /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
     /// <ul>
-    /// <li><p><code>GetObject</code></p></li>
-    /// <li><p><code>PutObject</code></p></li>
+    /// <li>
+    /// <p><code>GetObject</code></p></li>
+    /// <li>
+    /// <p><code>PutObject</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn log_delivery_bucket(&self) -> ::std::option::Option<&str> {
@@ -153,8 +157,10 @@ impl TestTypeInputBuilder {
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
     /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
     /// <ul>
-    /// <li><p><code>GetObject</code></p></li>
-    /// <li><p><code>PutObject</code></p></li>
+    /// <li>
+    /// <p><code>GetObject</code></p></li>
+    /// <li>
+    /// <p><code>PutObject</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn log_delivery_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -165,8 +171,10 @@ impl TestTypeInputBuilder {
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
     /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
     /// <ul>
-    /// <li><p><code>GetObject</code></p></li>
-    /// <li><p><code>PutObject</code></p></li>
+    /// <li>
+    /// <p><code>GetObject</code></p></li>
+    /// <li>
+    /// <p><code>PutObject</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn set_log_delivery_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -177,8 +185,10 @@ impl TestTypeInputBuilder {
     /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
     /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
     /// <ul>
-    /// <li><p><code>GetObject</code></p></li>
-    /// <li><p><code>PutObject</code></p></li>
+    /// <li>
+    /// <p><code>GetObject</code></p></li>
+    /// <li>
+    /// <p><code>PutObject</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn get_log_delivery_bucket(&self) -> &::std::option::Option<::std::string::String> {

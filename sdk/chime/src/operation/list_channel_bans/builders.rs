@@ -22,7 +22,7 @@ impl ListChannelBansInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChannelBans`.
 ///
-/// <p>Lists all the users banned from a particular channel.</p> <note>
+/// <p>Lists all the users banned from a particular channel.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note> <important>
 /// <p><b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelBans.html">ListChannelBans</a>, in the Amazon Chime SDK.</p>

@@ -35,14 +35,18 @@ pub struct DescribeJobOutput {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Inventory jobs</p></li>
-    /// <li><p>Select jobs</p></li>
+    /// <li>
+    /// <p>Inventory jobs</p></li>
+    /// <li>
+    /// <p>Select jobs</p></li>
     /// </ul>
     pub sha256_tree_hash: ::std::option::Option<::std::string::String>,
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
@@ -119,14 +123,18 @@ impl DescribeJobOutput {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Inventory jobs</p></li>
-    /// <li><p>Select jobs</p></li>
+    /// <li>
+    /// <p>Inventory jobs</p></li>
+    /// <li>
+    /// <p>Select jobs</p></li>
     /// </ul>
     pub fn sha256_tree_hash(&self) -> ::std::option::Option<&str> {
         self.sha256_tree_hash.as_deref()
@@ -387,14 +395,18 @@ impl DescribeJobOutputBuilder {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Inventory jobs</p></li>
-    /// <li><p>Select jobs</p></li>
+    /// <li>
+    /// <p>Inventory jobs</p></li>
+    /// <li>
+    /// <p>Select jobs</p></li>
     /// </ul>
     pub fn sha256_tree_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sha256_tree_hash = ::std::option::Option::Some(input.into());
@@ -405,14 +417,18 @@ impl DescribeJobOutputBuilder {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Inventory jobs</p></li>
-    /// <li><p>Select jobs</p></li>
+    /// <li>
+    /// <p>Inventory jobs</p></li>
+    /// <li>
+    /// <p>Select jobs</p></li>
     /// </ul>
     pub fn set_sha256_tree_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256_tree_hash = input;
@@ -423,14 +439,18 @@ impl DescribeJobOutputBuilder {
     /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
     /// <p>This field is null for the following:</p>
     /// <ul>
-    /// <li><p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
+    /// <li>
+    /// <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
+    /// <li>
+    /// <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code></p></li>
     /// </ul>
     /// <ul>
-    /// <li><p>Inventory jobs</p></li>
-    /// <li><p>Select jobs</p></li>
+    /// <li>
+    /// <p>Inventory jobs</p></li>
+    /// <li>
+    /// <p>Select jobs</p></li>
     /// </ul>
     pub fn get_sha256_tree_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.sha256_tree_hash

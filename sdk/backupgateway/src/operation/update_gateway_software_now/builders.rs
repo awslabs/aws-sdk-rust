@@ -22,7 +22,7 @@ impl UpdateGatewaySoftwareNowInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateGatewaySoftwareNow`.
 ///
-/// <p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p> <note>
+/// <p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p><note>
 /// <p>When you make this request, you get a <code>200 OK</code> success response immediately. However, it might take some time for the update to complete.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

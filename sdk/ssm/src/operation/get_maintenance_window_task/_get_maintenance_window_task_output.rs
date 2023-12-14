@@ -15,7 +15,7 @@ pub struct GetMaintenanceWindowTaskOutput {
     pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of task to run.</p>
     pub task_type: ::std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p>The parameters to pass to the task when it runs.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub task_parameters:
@@ -24,15 +24,15 @@ pub struct GetMaintenanceWindowTaskOutput {
     pub task_invocation_parameters: ::std::option::Option<crate::types::MaintenanceWindowTaskInvocationParameters>,
     /// <p>The priority of the task when it runs. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.</p>
     pub priority: i32,
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub max_concurrency: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub max_errors: ::std::option::Option<::std::string::String>,
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
@@ -73,7 +73,7 @@ impl GetMaintenanceWindowTaskOutput {
     pub fn task_type(&self) -> ::std::option::Option<&crate::types::MaintenanceWindowTaskType> {
         self.task_type.as_ref()
     }
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p>The parameters to pass to the task when it runs.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
@@ -89,19 +89,19 @@ impl GetMaintenanceWindowTaskOutput {
     pub fn priority(&self) -> i32 {
         self.priority
     }
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn max_concurrency(&self) -> ::std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn max_errors(&self) -> ::std::option::Option<&str> {
         self.max_errors.as_deref()
     }
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(&self) -> ::std::option::Option<&crate::types::LoggingInfo> {
@@ -277,7 +277,7 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p>The parameters to pass to the task when it runs.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
@@ -290,7 +290,7 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.task_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p>The parameters to pass to the task when it runs.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_task_parameters(
@@ -300,7 +300,7 @@ impl GetMaintenanceWindowTaskOutputBuilder {
         self.task_parameters = input;
         self
     }
-    /// <p>The parameters to pass to the task when it runs.</p> <note>
+    /// <p>The parameters to pass to the task when it runs.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_task_parameters(
@@ -336,61 +336,61 @@ impl GetMaintenanceWindowTaskOutputBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn max_concurrency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_concurrency = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn set_max_concurrency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_concurrency = input;
         self
     }
-    /// <p>The maximum number of targets allowed to run this task in parallel.</p> <note>
+    /// <p>The maximum number of targets allowed to run this task in parallel.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn get_max_concurrency(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_concurrency
     }
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_errors = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_errors = input;
         self
     }
-    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+    /// <p>The maximum number of errors allowed before the task stops being scheduled.</p><note>
     /// <p>For maintenance window tasks without a target specified, you can't supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value doesn't affect the running of your task and can be ignored.</p>
     /// </note>
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_errors
     }
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.logging_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
-    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p> <note>
+    /// <p>The location in Amazon Simple Storage Service (Amazon S3) where the task results are logged.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {

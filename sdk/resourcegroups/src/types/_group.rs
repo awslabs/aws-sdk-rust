@@ -2,8 +2,10 @@
 
 /// <p>A resource group that contains Amazon Web Services resources. You can assign resources to the group by associating either of the following elements with the group:</p>
 /// <ul>
-/// <li><p><code>ResourceQuery</code> - Use a resource query to specify a set of tag keys and values. All resources in the same Amazon Web Services Region and Amazon Web Services account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <code>PutGroupConfiguration</code> operation.</p></li>
-/// <li><p><code>GroupConfiguration</code> - Use a service configuration to associate the group with an Amazon Web Services service. The configuration specifies which resource types can be included in the group.</p></li>
+/// <li>
+/// <p><code>ResourceQuery</code> - Use a resource query to specify a set of tag keys and values. All resources in the same Amazon Web Services Region and Amazon Web Services account that have those keys with the same values are included in the group. You can add a resource query when you create the group, or later by using the <code>PutGroupConfiguration</code> operation.</p></li>
+/// <li>
+/// <p><code>GroupConfiguration</code> - Use a service configuration to associate the group with an Amazon Web Services service. The configuration specifies which resource types can be included in the group.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]

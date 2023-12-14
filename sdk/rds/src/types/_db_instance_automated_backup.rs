@@ -18,9 +18,12 @@ pub struct DbInstanceAutomatedBackup {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li><p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port number that the automated backup used for connections.</p>
@@ -102,9 +105,12 @@ impl DbInstanceAutomatedBackup {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li><p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -342,9 +348,12 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li><p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -352,9 +361,12 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li><p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -362,9 +374,12 @@ impl DbInstanceAutomatedBackupBuilder {
     }
     /// <p>A list of status information for an automated backup:</p>
     /// <ul>
-    /// <li><p><code>active</code> - Automated backups for current instances.</p></li>
-    /// <li><p><code>retained</code> - Automated backups for deleted instances.</p></li>
-    /// <li><p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
+    /// <li>
+    /// <p><code>active</code> - Automated backups for current instances.</p></li>
+    /// <li>
+    /// <p><code>retained</code> - Automated backups for deleted instances.</p></li>
+    /// <li>
+    /// <p><code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

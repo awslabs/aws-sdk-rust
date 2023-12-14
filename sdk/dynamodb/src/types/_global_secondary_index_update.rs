@@ -2,9 +2,12 @@
 
 /// <p>Represents one of the following:</p>
 /// <ul>
-/// <li><p>A new global secondary index to be added to an existing table.</p></li>
-/// <li><p>New provisioned throughput parameters for an existing global secondary index.</p></li>
-/// <li><p>An existing global secondary index to be removed from an existing table.</p></li>
+/// <li>
+/// <p>A new global secondary index to be added to an existing table.</p></li>
+/// <li>
+/// <p>New provisioned throughput parameters for an existing global secondary index.</p></li>
+/// <li>
+/// <p>An existing global secondary index to be removed from an existing table.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -13,11 +16,16 @@ pub struct GlobalSecondaryIndexUpdate {
     pub update: ::std::option::Option<crate::types::UpdateGlobalSecondaryIndexAction>,
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
-    /// <li><p><code>IndexName </code></p></li>
-    /// <li><p><code>KeySchema </code></p></li>
-    /// <li><p><code>AttributeDefinitions </code></p></li>
-    /// <li><p><code>Projection </code></p></li>
-    /// <li><p><code>ProvisionedThroughput </code></p></li>
+    /// <li>
+    /// <p><code>IndexName </code></p></li>
+    /// <li>
+    /// <p><code>KeySchema </code></p></li>
+    /// <li>
+    /// <p><code>AttributeDefinitions </code></p></li>
+    /// <li>
+    /// <p><code>Projection </code></p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
     pub create: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>,
     /// <p>The name of an existing global secondary index to be removed.</p>
@@ -30,11 +38,16 @@ impl GlobalSecondaryIndexUpdate {
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
-    /// <li><p><code>IndexName </code></p></li>
-    /// <li><p><code>KeySchema </code></p></li>
-    /// <li><p><code>AttributeDefinitions </code></p></li>
-    /// <li><p><code>Projection </code></p></li>
-    /// <li><p><code>ProvisionedThroughput </code></p></li>
+    /// <li>
+    /// <p><code>IndexName </code></p></li>
+    /// <li>
+    /// <p><code>KeySchema </code></p></li>
+    /// <li>
+    /// <p><code>AttributeDefinitions </code></p></li>
+    /// <li>
+    /// <p><code>Projection </code></p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
     pub fn create(&self) -> ::std::option::Option<&crate::types::CreateGlobalSecondaryIndexAction> {
         self.create.as_ref()
@@ -76,11 +89,16 @@ impl GlobalSecondaryIndexUpdateBuilder {
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
-    /// <li><p><code>IndexName </code></p></li>
-    /// <li><p><code>KeySchema </code></p></li>
-    /// <li><p><code>AttributeDefinitions </code></p></li>
-    /// <li><p><code>Projection </code></p></li>
-    /// <li><p><code>ProvisionedThroughput </code></p></li>
+    /// <li>
+    /// <p><code>IndexName </code></p></li>
+    /// <li>
+    /// <p><code>KeySchema </code></p></li>
+    /// <li>
+    /// <p><code>AttributeDefinitions </code></p></li>
+    /// <li>
+    /// <p><code>Projection </code></p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
     pub fn create(mut self, input: crate::types::CreateGlobalSecondaryIndexAction) -> Self {
         self.create = ::std::option::Option::Some(input);
@@ -88,11 +106,16 @@ impl GlobalSecondaryIndexUpdateBuilder {
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
-    /// <li><p><code>IndexName </code></p></li>
-    /// <li><p><code>KeySchema </code></p></li>
-    /// <li><p><code>AttributeDefinitions </code></p></li>
-    /// <li><p><code>Projection </code></p></li>
-    /// <li><p><code>ProvisionedThroughput </code></p></li>
+    /// <li>
+    /// <p><code>IndexName </code></p></li>
+    /// <li>
+    /// <p><code>KeySchema </code></p></li>
+    /// <li>
+    /// <p><code>AttributeDefinitions </code></p></li>
+    /// <li>
+    /// <p><code>Projection </code></p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
     pub fn set_create(mut self, input: ::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction>) -> Self {
         self.create = input;
@@ -100,11 +123,16 @@ impl GlobalSecondaryIndexUpdateBuilder {
     }
     /// <p>The parameters required for creating a global secondary index on an existing table:</p>
     /// <ul>
-    /// <li><p><code>IndexName </code></p></li>
-    /// <li><p><code>KeySchema </code></p></li>
-    /// <li><p><code>AttributeDefinitions </code></p></li>
-    /// <li><p><code>Projection </code></p></li>
-    /// <li><p><code>ProvisionedThroughput </code></p></li>
+    /// <li>
+    /// <p><code>IndexName </code></p></li>
+    /// <li>
+    /// <p><code>KeySchema </code></p></li>
+    /// <li>
+    /// <p><code>AttributeDefinitions </code></p></li>
+    /// <li>
+    /// <p><code>Projection </code></p></li>
+    /// <li>
+    /// <p><code>ProvisionedThroughput </code></p></li>
     /// </ul>
     pub fn get_create(&self) -> &::std::option::Option<crate::types::CreateGlobalSecondaryIndexAction> {
         &self.create

@@ -22,7 +22,7 @@ impl DeleteInferenceExperimentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteInferenceExperiment`.
 ///
-/// <p>Deletes an inference experiment.</p> <note>
+/// <p>Deletes an inference experiment.</p><note>
 /// <p>This operation does not delete your endpoint, variants, or any underlying resources. This operation only deletes the metadata of your experiment.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

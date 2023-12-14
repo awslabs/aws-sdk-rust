@@ -22,7 +22,7 @@ impl StartMonitoringScheduleInputBuilder {
 }
 /// Fluent builder constructing a request to `StartMonitoringSchedule`.
 ///
-/// <p>Starts a previously stopped monitoring schedule.</p> <note>
+/// <p>Starts a previously stopped monitoring schedule.</p><note>
 /// <p>By default, when you successfully create a new schedule, the status of a monitoring schedule is <code>scheduled</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

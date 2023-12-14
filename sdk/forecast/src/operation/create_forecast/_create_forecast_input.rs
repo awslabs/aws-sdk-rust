@@ -13,21 +13,31 @@ pub struct CreateForecastInput {
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50.</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub time_series_selector: ::std::option::Option<crate::types::TimeSeriesSelector>,
 }
@@ -50,13 +60,20 @@ impl CreateForecastInput {
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50.</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -66,9 +83,12 @@ impl CreateForecastInput {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(&self) -> ::std::option::Option<&crate::types::TimeSeriesSelector> {
         self.time_series_selector.as_ref()
@@ -152,13 +172,20 @@ impl CreateForecastInputBuilder {
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50.</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
@@ -169,13 +196,20 @@ impl CreateForecastInputBuilder {
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50.</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
@@ -184,13 +218,20 @@ impl CreateForecastInputBuilder {
     /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
-    /// <li><p>Maximum number of tags per resource - 50.</p></li>
-    /// <li><p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
-    /// <li><p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
-    /// <li><p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
-    /// <li><p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
-    /// <li><p>Tag keys and values are case sensitive.</p></li>
-    /// <li><p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
+    /// <li>
+    /// <p>Maximum number of tags per resource - 50.</p></li>
+    /// <li>
+    /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p></li>
+    /// <li>
+    /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p></li>
+    /// <li>
+    /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p></li>
+    /// <li>
+    /// <p>Tag keys and values are case sensitive.</p></li>
+    /// <li>
+    /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
@@ -198,9 +239,12 @@ impl CreateForecastInputBuilder {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn time_series_selector(mut self, input: crate::types::TimeSeriesSelector) -> Self {
         self.time_series_selector = ::std::option::Option::Some(input);
@@ -209,9 +253,12 @@ impl CreateForecastInputBuilder {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn set_time_series_selector(mut self, input: ::std::option::Option<crate::types::TimeSeriesSelector>) -> Self {
         self.time_series_selector = input;
@@ -220,9 +267,12 @@ impl CreateForecastInputBuilder {
     /// <p>Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code> object.</p>
     /// <p>The <code>TimeSeriesIdentifiers</code> object needs the following information:</p>
     /// <ul>
-    /// <li><p><code>DataSource</code></p></li>
-    /// <li><p><code>Format</code></p></li>
-    /// <li><p><code>Schema</code></p></li>
+    /// <li>
+    /// <p><code>DataSource</code></p></li>
+    /// <li>
+    /// <p><code>Format</code></p></li>
+    /// <li>
+    /// <p><code>Schema</code></p></li>
     /// </ul>
     pub fn get_time_series_selector(&self) -> &::std::option::Option<crate::types::TimeSeriesSelector> {
         &self.time_series_selector

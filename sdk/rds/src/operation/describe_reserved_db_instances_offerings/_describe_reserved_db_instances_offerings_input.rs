@@ -12,7 +12,7 @@ pub struct DescribeReservedDbInstancesOfferingsInput {
     /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
     /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code></p>
     pub duration: ::std::option::Option<::std::string::String>,
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub product_description: ::std::option::Option<::std::string::String>,
@@ -45,7 +45,7 @@ impl DescribeReservedDbInstancesOfferingsInput {
     pub fn duration(&self) -> ::std::option::Option<&str> {
         self.duration.as_deref()
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn product_description(&self) -> ::std::option::Option<&str> {
@@ -147,21 +147,21 @@ impl DescribeReservedDbInstancesOfferingsInputBuilder {
     pub fn get_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.duration
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn product_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn set_product_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_description = input;
         self
     }
-    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p> <note>
+    /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p><note>
     /// <p>The results show offerings that partially match the filter value.</p>
     /// </note>
     pub fn get_product_description(&self) -> &::std::option::Option<::std::string::String> {

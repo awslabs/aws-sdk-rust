@@ -160,27 +160,27 @@ impl UpdateRuleGroupFluentBuilder {
     pub fn get_rule_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_group_name()
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn rule_group(mut self, input: crate::types::RuleGroup) -> Self {
         self.inner = self.inner.rule_group(input);
         self
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
         self.inner = self.inner.set_rule_group(input);
         self
     }
-    /// <p>An object that defines the rule group rules.</p> <note>
+    /// <p>An object that defines the rule group rules.</p><note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both.</p>
     /// </note>
     pub fn get_rule_group(&self) -> &::std::option::Option<crate::types::RuleGroup> {
         self.inner.get_rule_group()
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -188,7 +188,7 @@ impl UpdateRuleGroupFluentBuilder {
         self.inner = self.inner.rules(input.into());
         self
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
@@ -196,28 +196,28 @@ impl UpdateRuleGroupFluentBuilder {
         self.inner = self.inner.set_rules(input);
         self
     }
-    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p> <note>
+    /// <p>A string containing stateful rule group rules specifications in Suricata flat format, with one rule per line. Use this to import your existing Suricata compatible rule groups.</p><note>
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both.</p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string.</p>
     pub fn get_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rules()
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p> <note>
+    /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p><note>
     /// <p>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RuleGroupType> {

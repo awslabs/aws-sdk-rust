@@ -18,10 +18,14 @@ pub struct UpdateConfigurationTemplateOutput {
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
     /// <ul>
-    /// <li><p><code>null</code>: This configuration is not associated with a running environment.</p></li>
-    /// <li><p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
-    /// <li><p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
-    /// <li><p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
+    /// <li>
+    /// <p><code>null</code>: This configuration is not associated with a running environment.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
+    /// <li>
+    /// <p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
+    /// <li>
+    /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
     pub deployment_status: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
@@ -59,10 +63,14 @@ impl UpdateConfigurationTemplateOutput {
     }
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
     /// <ul>
-    /// <li><p><code>null</code>: This configuration is not associated with a running environment.</p></li>
-    /// <li><p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
-    /// <li><p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
-    /// <li><p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
+    /// <li>
+    /// <p><code>null</code>: This configuration is not associated with a running environment.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
+    /// <li>
+    /// <p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
+    /// <li>
+    /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
     pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::ConfigurationDeploymentStatus> {
         self.deployment_status.as_ref()
@@ -197,10 +205,14 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
     /// <ul>
-    /// <li><p><code>null</code>: This configuration is not associated with a running environment.</p></li>
-    /// <li><p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
-    /// <li><p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
-    /// <li><p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
+    /// <li>
+    /// <p><code>null</code>: This configuration is not associated with a running environment.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
+    /// <li>
+    /// <p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
+    /// <li>
+    /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
     pub fn deployment_status(mut self, input: crate::types::ConfigurationDeploymentStatus) -> Self {
         self.deployment_status = ::std::option::Option::Some(input);
@@ -208,10 +220,14 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
     /// <ul>
-    /// <li><p><code>null</code>: This configuration is not associated with a running environment.</p></li>
-    /// <li><p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
-    /// <li><p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
-    /// <li><p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
+    /// <li>
+    /// <p><code>null</code>: This configuration is not associated with a running environment.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
+    /// <li>
+    /// <p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
+    /// <li>
+    /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
     pub fn set_deployment_status(mut self, input: ::std::option::Option<crate::types::ConfigurationDeploymentStatus>) -> Self {
         self.deployment_status = input;
@@ -219,10 +235,14 @@ impl UpdateConfigurationTemplateOutputBuilder {
     }
     /// <p>If this configuration set is associated with an environment, the <code>DeploymentStatus</code> parameter indicates the deployment status of this configuration set:</p>
     /// <ul>
-    /// <li><p><code>null</code>: This configuration is not associated with a running environment.</p></li>
-    /// <li><p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
-    /// <li><p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
-    /// <li><p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
+    /// <li>
+    /// <p><code>null</code>: This configuration is not associated with a running environment.</p></li>
+    /// <li>
+    /// <p><code>pending</code>: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying.</p></li>
+    /// <li>
+    /// <p><code>deployed</code>: This is the configuration that is currently deployed to the associated running environment.</p></li>
+    /// <li>
+    /// <p><code>failed</code>: This is a draft configuration that failed to successfully deploy.</p></li>
     /// </ul>
     pub fn get_deployment_status(&self) -> &::std::option::Option<crate::types::ConfigurationDeploymentStatus> {
         &self.deployment_status

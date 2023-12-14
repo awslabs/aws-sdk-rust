@@ -5,7 +5,7 @@
 pub struct CreateWorkflowInput {
     /// <p>The name of the workflow to create.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -45,7 +45,7 @@ impl CreateWorkflowInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -136,7 +136,7 @@ impl CreateWorkflowInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -157,7 +157,7 @@ impl CreateWorkflowInputBuilder {
         self.semantic_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -177,7 +177,7 @@ impl CreateWorkflowInputBuilder {
         self.semantic_version = input;
         self
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

@@ -10,9 +10,12 @@ pub struct TestWindowSummary {
     pub test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>If the test failed, the reason why it failed.</p>
@@ -29,9 +32,12 @@ impl TestWindowSummary {
     }
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -88,9 +94,12 @@ impl TestWindowSummaryBuilder {
     }
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -98,9 +107,12 @@ impl TestWindowSummaryBuilder {
     }
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -108,9 +120,12 @@ impl TestWindowSummaryBuilder {
     }
     /// <p>The status of the test. Possible status values are:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

@@ -12,14 +12,22 @@ pub struct DataSource {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the data source.</p>
     /// <ul>
-    /// <li><p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
-    /// <li><p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
-    /// <li><p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
-    /// <li><p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
-    /// <li><p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
-    /// <li><p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
+    /// <li>
+    /// <p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
+    /// <li>
+    /// <p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
+    /// <li>
+    /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>The Identity and Access Management (IAM) service role Amazon Resource Name (ARN) for the data source. The system assumes this role when accessing the data source.</p>
@@ -54,14 +62,22 @@ impl DataSource {
     }
     /// <p>The type of the data source.</p>
     /// <ul>
-    /// <li><p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
-    /// <li><p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
-    /// <li><p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
-    /// <li><p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
-    /// <li><p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
-    /// <li><p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
+    /// <li>
+    /// <p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
+    /// <li>
+    /// <p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
+    /// <li>
+    /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
         self.r#type.as_ref()
@@ -168,14 +184,22 @@ impl DataSourceBuilder {
     }
     /// <p>The type of the data source.</p>
     /// <ul>
-    /// <li><p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
-    /// <li><p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
-    /// <li><p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
-    /// <li><p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
-    /// <li><p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
-    /// <li><p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
+    /// <li>
+    /// <p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
+    /// <li>
+    /// <p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
+    /// <li>
+    /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -183,14 +207,22 @@ impl DataSourceBuilder {
     }
     /// <p>The type of the data source.</p>
     /// <ul>
-    /// <li><p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
-    /// <li><p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
-    /// <li><p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
-    /// <li><p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
-    /// <li><p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
-    /// <li><p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
+    /// <li>
+    /// <p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
+    /// <li>
+    /// <p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
+    /// <li>
+    /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.r#type = input;
@@ -198,14 +230,22 @@ impl DataSourceBuilder {
     }
     /// <p>The type of the data source.</p>
     /// <ul>
-    /// <li><p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
-    /// <li><p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
-    /// <li><p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
-    /// <li><p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
-    /// <li><p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
-    /// <li><p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
-    /// <li><p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
+    /// <li>
+    /// <p><b>AWS_LAMBDA</b>: The data source is an Lambda function.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is an Amazon OpenSearch Service domain.</p></li>
+    /// <li>
+    /// <p><b>AMAZON_EVENTBRIDGE</b>: The data source is an Amazon EventBridge configuration.</p></li>
+    /// <li>
+    /// <p><b>NONE</b>: There is no data source. Use this type when you want to invoke a GraphQL operation without connecting to a data source, such as when you're performing data transformation with resolvers or invoking a subscription from a mutation.</p></li>
+    /// <li>
+    /// <p><b>HTTP</b>: The data source is an HTTP endpoint.</p></li>
+    /// <li>
+    /// <p><b>RELATIONAL_DATABASE</b>: The data source is a relational database.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DataSourceType> {
         &self.r#type

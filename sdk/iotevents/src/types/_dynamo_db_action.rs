@@ -4,14 +4,21 @@
 /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
 /// <p class="title"><b>Examples</b></p>
 /// <ul>
-/// <li><p>For literal values, the expressions must contain single quotes. For example, the value for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.</p></li>
-/// <li><p>For references, you must specify either variables or input values. For example, the value for the <code>hashKeyField</code> parameter can be <code>$input.GreenhouseInput.name</code>.</p></li>
-/// <li><p>For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template.</p> <p><code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code></p></li>
-/// <li><p>For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.</p> <p>In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.</p> <p><code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code></p></li>
+/// <li>
+/// <p>For literal values, the expressions must contain single quotes. For example, the value for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.</p></li>
+/// <li>
+/// <p>For references, you must specify either variables or input values. For example, the value for the <code>hashKeyField</code> parameter can be <code>$input.GreenhouseInput.name</code>.</p></li>
+/// <li>
+/// <p>For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and substitution templates.</p>
+/// <p>In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template.</p>
+/// <p><code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code></p></li>
+/// <li>
+/// <p>For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of literals, operators, functions, references, and substitution templates.</p>
+/// <p>In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.</p>
+/// <p><code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code></p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-/// <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code>
-/// <payload-field>
+/// <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code><payload-field>
 /// _raw
 /// </payload-field></code>.</p>
 #[non_exhaustive]
@@ -19,8 +26,10 @@
 pub struct DynamoDbAction {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The hash key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The hash key is a number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The hash key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The hash key is a number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     pub hash_key_type: ::std::option::Option<::std::string::String>,
@@ -30,8 +39,10 @@ pub struct DynamoDbAction {
     pub hash_key_value: ::std::string::String,
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The range key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The range key is number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The range key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The range key is number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     pub range_key_type: ::std::option::Option<::std::string::String>,
@@ -41,9 +52,12 @@ pub struct DynamoDbAction {
     pub range_key_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation to perform. You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
-    /// <li><p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
-    /// <li><p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
+    /// <li>
+    /// <p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     pub operation: ::std::option::Option<::std::string::String>,
@@ -59,8 +73,10 @@ pub struct DynamoDbAction {
 impl DynamoDbAction {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The hash key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The hash key is a number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The hash key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The hash key is a number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     pub fn hash_key_type(&self) -> ::std::option::Option<&str> {
@@ -78,8 +94,10 @@ impl DynamoDbAction {
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The range key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The range key is number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The range key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The range key is number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     pub fn range_key_type(&self) -> ::std::option::Option<&str> {
@@ -95,9 +113,12 @@ impl DynamoDbAction {
     }
     /// <p>The type of operation to perform. You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
-    /// <li><p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
-    /// <li><p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
+    /// <li>
+    /// <p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     pub fn operation(&self) -> ::std::option::Option<&str> {
@@ -144,8 +165,10 @@ pub struct DynamoDbActionBuilder {
 impl DynamoDbActionBuilder {
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The hash key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The hash key is a number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The hash key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The hash key is a number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     pub fn hash_key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,8 +177,10 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The hash key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The hash key is a number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The hash key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The hash key is a number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     pub fn set_hash_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,8 +189,10 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The data type for the hash key (also called the partition key). You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The hash key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The hash key is a number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The hash key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The hash key is a number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.</p>
     pub fn get_hash_key_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -203,8 +230,10 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The range key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The range key is number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The range key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The range key is number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     pub fn range_key_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -213,8 +242,10 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The range key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The range key is number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The range key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The range key is number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     pub fn set_range_key_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -223,8 +254,10 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The data type for the range key (also called the sort key), You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'STRING'</code> - The range key is a string.</p></li>
-    /// <li><p><code>'NUMBER'</code> - The range key is number.</p></li>
+    /// <li>
+    /// <p><code>'STRING'</code> - The range key is a string.</p></li>
+    /// <li>
+    /// <p><code>'NUMBER'</code> - The range key is number.</p></li>
     /// </ul>
     /// <p>If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.</p>
     pub fn get_range_key_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -260,9 +293,12 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The type of operation to perform. You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
-    /// <li><p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
-    /// <li><p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
+    /// <li>
+    /// <p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     pub fn operation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -271,9 +307,12 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The type of operation to perform. You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
-    /// <li><p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
-    /// <li><p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
+    /// <li>
+    /// <p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     pub fn set_operation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -282,9 +321,12 @@ impl DynamoDbActionBuilder {
     }
     /// <p>The type of operation to perform. You can specify the following values:</p>
     /// <ul>
-    /// <li><p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
-    /// <li><p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
-    /// <li><p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.</p></li>
+    /// <li>
+    /// <p><code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
+    /// <li>
+    /// <p><code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the specified hash key. If you specified a range key, the range key must match the item's sort key.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.</p>
     pub fn get_operation(&self) -> &::std::option::Option<::std::string::String> {

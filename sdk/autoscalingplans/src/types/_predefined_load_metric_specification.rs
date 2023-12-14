@@ -21,13 +21,15 @@ pub struct PredefinedLoadMetricSpecification {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -57,13 +59,15 @@ impl PredefinedLoadMetricSpecification {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -120,13 +124,15 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -153,13 +159,15 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.
@@ -186,13 +194,15 @@ impl PredefinedLoadMetricSpecificationBuilder {
     /// </load-balancer-id>
     /// </load-balancer-name></p>
     /// <ul>
-    /// <li><p>app/<load-balancer-name>
+    /// <li>
+    /// <p>app/<load-balancer-name>
     /// /
     /// <load-balancer-id>
     /// is the final portion of the load balancer ARN
     /// </load-balancer-id>
     /// </load-balancer-name></p></li>
-    /// <li><p>targetgroup/<target-group-name>
+    /// <li>
+    /// <p>targetgroup/<target-group-name>
     /// /
     /// <target-group-id>
     /// is the final portion of the target group ARN.

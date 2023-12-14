@@ -161,9 +161,12 @@ impl ListPermissionsFluentBuilder {
     }
     /// <p>Specifies that you want to list only permissions of this type:</p>
     /// <ul>
-    /// <li><p><code>AWS</code> – returns only Amazon Web Services managed permissions.</p></li>
-    /// <li><p><code>LOCAL</code> – returns only customer managed permissions</p></li>
-    /// <li><p><code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – returns only Amazon Web Services managed permissions.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – returns only customer managed permissions</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionTypeFilter) -> Self {
@@ -172,9 +175,12 @@ impl ListPermissionsFluentBuilder {
     }
     /// <p>Specifies that you want to list only permissions of this type:</p>
     /// <ul>
-    /// <li><p><code>AWS</code> – returns only Amazon Web Services managed permissions.</p></li>
-    /// <li><p><code>LOCAL</code> – returns only customer managed permissions</p></li>
-    /// <li><p><code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – returns only Amazon Web Services managed permissions.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – returns only customer managed permissions</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionTypeFilter>) -> Self {
@@ -183,9 +189,12 @@ impl ListPermissionsFluentBuilder {
     }
     /// <p>Specifies that you want to list only permissions of this type:</p>
     /// <ul>
-    /// <li><p><code>AWS</code> – returns only Amazon Web Services managed permissions.</p></li>
-    /// <li><p><code>LOCAL</code> – returns only customer managed permissions</p></li>
-    /// <li><p><code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – returns only Amazon Web Services managed permissions.</p></li>
+    /// <li>
+    /// <p><code>LOCAL</code> – returns only customer managed permissions</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.</p></li>
     /// </ul>
     /// <p>If you don't specify this parameter, the default is <code>All</code>.</p>
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionTypeFilter> {

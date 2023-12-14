@@ -168,10 +168,14 @@ impl DisposePackageVersionsFluentBuilder {
     }
     /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
@@ -179,10 +183,14 @@ impl DisposePackageVersionsFluentBuilder {
     }
     /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -190,10 +198,14 @@ impl DisposePackageVersionsFluentBuilder {
     }
     /// <p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package version is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
-    /// <li><p>The namespace of a generic package is its <code>namespace</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package version is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package version is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a generic package is its <code>namespace</code>.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()

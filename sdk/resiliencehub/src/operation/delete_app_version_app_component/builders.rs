@@ -22,10 +22,12 @@ impl DeleteAppVersionAppComponentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAppVersionAppComponent`.
 ///
-/// <p>Deletes an Application Component from the Resilience Hub application.</p> <note>
+/// <p>Deletes an Application Component from the Resilience Hub application.</p><note>
 /// <ul>
-/// <li><p>This API updates the Resilience Hub application draft version. To use this Application Component for running assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p></li>
-/// <li><p>You will not be able to delete an Application Component if it has resources associated with it.</p></li>
+/// <li>
+/// <p>This API updates the Resilience Hub application draft version. To use this Application Component for running assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p></li>
+/// <li>
+/// <p>You will not be able to delete an Application Component if it has resources associated with it.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

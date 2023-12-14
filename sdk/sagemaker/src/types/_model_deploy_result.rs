@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDeployResult {
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
+    /// <p>The name of the endpoint to which the model has been deployed.</p><note>
     /// <p>If model deployment fails, this field is omitted from the response.</p>
     /// </note>
     pub endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelDeployResult {
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
+    /// <p>The name of the endpoint to which the model has been deployed.</p><note>
     /// <p>If model deployment fails, this field is omitted from the response.</p>
     /// </note>
     pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
@@ -31,21 +31,21 @@ pub struct ModelDeployResultBuilder {
     pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
 }
 impl ModelDeployResultBuilder {
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
+    /// <p>The name of the endpoint to which the model has been deployed.</p><note>
     /// <p>If model deployment fails, this field is omitted from the response.</p>
     /// </note>
     pub fn endpoint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
+    /// <p>The name of the endpoint to which the model has been deployed.</p><note>
     /// <p>If model deployment fails, this field is omitted from the response.</p>
     /// </note>
     pub fn set_endpoint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_name = input;
         self
     }
-    /// <p>The name of the endpoint to which the model has been deployed.</p> <note>
+    /// <p>The name of the endpoint to which the model has been deployed.</p><note>
     /// <p>If model deployment fails, this field is omitted from the response.</p>
     /// </note>
     pub fn get_endpoint_name(&self) -> &::std::option::Option<::std::string::String> {

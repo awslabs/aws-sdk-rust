@@ -6,21 +6,27 @@ pub struct CreateDocumentInput {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also specify a required document for validation purposes. In this case, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the <i>AppConfig User Guide</i>.</p>
     pub requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>>,
-    /// <p>A name for the SSM document.</p> <important>
+    /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li><p><code>aws</code></p></li>
-    /// <li><p><code>amazon</code></p></li>
-    /// <li><p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>aws</code></p></li>
+    /// <li>
+    /// <p><code>amazon</code></p></li>
+    /// <li>
+    /// <p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub name: ::std::option::Option<::std::string::String>,
@@ -28,7 +34,7 @@ pub struct CreateDocumentInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are creating with the document. For example, <code>Release12.1</code>. This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of document to create.</p> <note>
+    /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
     pub document_type: ::std::option::Option<crate::types::DocumentType>,
@@ -38,9 +44,11 @@ pub struct CreateDocumentInput {
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -49,9 +57,12 @@ impl CreateDocumentInput {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
@@ -68,12 +79,15 @@ impl CreateDocumentInput {
     pub fn attachments(&self) -> &[crate::types::AttachmentsSource] {
         self.attachments.as_deref().unwrap_or_default()
     }
-    /// <p>A name for the SSM document.</p> <important>
+    /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li><p><code>aws</code></p></li>
-    /// <li><p><code>amazon</code></p></li>
-    /// <li><p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>aws</code></p></li>
+    /// <li>
+    /// <p><code>amazon</code></p></li>
+    /// <li>
+    /// <p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -87,7 +101,7 @@ impl CreateDocumentInput {
     pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
-    /// <p>The type of document to create.</p> <note>
+    /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::DocumentType> {
@@ -103,9 +117,11 @@ impl CreateDocumentInput {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     ///
@@ -140,9 +156,12 @@ impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     /// This field is required.
     pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -152,9 +171,12 @@ impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
@@ -163,9 +185,12 @@ impl CreateDocumentInputBuilder {
     /// <p>The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.</p>
     /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
-    /// <li><p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a></p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a></p></li>
     /// </ul>
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
@@ -210,12 +235,15 @@ impl CreateDocumentInputBuilder {
     pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentsSource>> {
         &self.attachments
     }
-    /// <p>A name for the SSM document.</p> <important>
+    /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li><p><code>aws</code></p></li>
-    /// <li><p><code>amazon</code></p></li>
-    /// <li><p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>aws</code></p></li>
+    /// <li>
+    /// <p><code>amazon</code></p></li>
+    /// <li>
+    /// <p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     /// This field is required.
@@ -223,24 +251,30 @@ impl CreateDocumentInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the SSM document.</p> <important>
+    /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li><p><code>aws</code></p></li>
-    /// <li><p><code>amazon</code></p></li>
-    /// <li><p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>aws</code></p></li>
+    /// <li>
+    /// <p><code>amazon</code></p></li>
+    /// <li>
+    /// <p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>A name for the SSM document.</p> <important>
+    /// <p>A name for the SSM document.</p><important>
     /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes:</p>
     /// <ul>
-    /// <li><p><code>aws</code></p></li>
-    /// <li><p><code>amazon</code></p></li>
-    /// <li><p><code>amzn</code></p></li>
+    /// <li>
+    /// <p><code>aws</code></p></li>
+    /// <li>
+    /// <p><code>amazon</code></p></li>
+    /// <li>
+    /// <p><code>amzn</code></p></li>
     /// </ul>
     /// </important>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -274,21 +308,21 @@ impl CreateDocumentInputBuilder {
     pub fn get_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_name
     }
-    /// <p>The type of document to create.</p> <note>
+    /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
     pub fn document_type(mut self, input: crate::types::DocumentType) -> Self {
         self.document_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of document to create.</p> <note>
+    /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.document_type = input;
         self
     }
-    /// <p>The type of document to create.</p> <note>
+    /// <p>The type of document to create.</p><note>
     /// <p>The <code>DeploymentStrategy</code> document type is an internal-use-only document type reserved for AppConfig.</p>
     /// </note>
     pub fn get_document_type(&self) -> &::std::option::Option<crate::types::DocumentType> {
@@ -328,9 +362,11 @@ impl CreateDocumentInputBuilder {
     ///
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -341,9 +377,11 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
@@ -352,9 +390,11 @@ impl CreateDocumentInputBuilder {
     }
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of targets or the environment where it will run. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
-    /// <li><p><code>Key=OS,Value=Windows</code></p></li>
-    /// <li><p><code>Key=Environment,Value=Production</code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>Key=OS,Value=Windows</code></p></li>
+    /// <li>
+    /// <p><code>Key=Environment,Value=Production</code></p></li>
+    /// </ul><note>
     /// <p>To add tags to an existing SSM document, use the <code>AddTagsToResource</code> operation.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

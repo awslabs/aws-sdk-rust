@@ -7,13 +7,20 @@ pub struct DescribeScalingPoliciesInput {
     pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li><p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
-    /// <li><p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
-    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
-    /// <li><p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
-    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
-    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
+    /// <li>
+    /// <p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li>
+    /// <p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li>
+    /// <p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub status_filter: ::std::option::Option<crate::types::ScalingStatusType>,
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -30,13 +37,20 @@ impl DescribeScalingPoliciesInput {
     }
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li><p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
-    /// <li><p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
-    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
-    /// <li><p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
-    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
-    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
+    /// <li>
+    /// <p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li>
+    /// <p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li>
+    /// <p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn status_filter(&self) -> ::std::option::Option<&crate::types::ScalingStatusType> {
         self.status_filter.as_ref()
@@ -89,13 +103,20 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li><p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
-    /// <li><p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
-    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
-    /// <li><p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
-    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
-    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
+    /// <li>
+    /// <p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li>
+    /// <p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li>
+    /// <p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn status_filter(mut self, input: crate::types::ScalingStatusType) -> Self {
         self.status_filter = ::std::option::Option::Some(input);
@@ -103,13 +124,20 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li><p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
-    /// <li><p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
-    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
-    /// <li><p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
-    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
-    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
+    /// <li>
+    /// <p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li>
+    /// <p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li>
+    /// <p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::ScalingStatusType>) -> Self {
         self.status_filter = input;
@@ -117,13 +145,20 @@ impl DescribeScalingPoliciesInputBuilder {
     }
     /// <p>Scaling policy status to filter results on. A scaling policy is only in force when in an <code>ACTIVE</code> status.</p>
     /// <ul>
-    /// <li><p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
-    /// <li><p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
-    /// <li><p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
-    /// <li><p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
-    /// <li><p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
-    /// <li><p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
-    /// <li><p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
+    /// <li>
+    /// <p><b>ACTIVE</b> -- The scaling policy is currently in force.</p></li>
+    /// <li>
+    /// <p><b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>UPDATING</b> -- A change is being made to the scaling policy.</p></li>
+    /// <li>
+    /// <p><b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.</p></li>
+    /// <li>
+    /// <p><b>DELETING</b> -- The scaling policy is being deleted.</p></li>
+    /// <li>
+    /// <p><b>DELETED</b> -- The scaling policy has been deleted.</p></li>
+    /// <li>
+    /// <p><b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.</p></li>
     /// </ul>
     pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::ScalingStatusType> {
         &self.status_filter

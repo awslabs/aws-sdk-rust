@@ -6,9 +6,11 @@
 pub struct ServerProcess {
     /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root:</p>
     /// <ul>
-    /// <li><p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
-    /// <li><p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
+    /// <li>
+    /// <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
+    /// </ul><note>
     /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>.</p>
     /// </note>
     pub launch_path: ::std::option::Option<::std::string::String>,
@@ -20,9 +22,11 @@ pub struct ServerProcess {
 impl ServerProcess {
     /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root:</p>
     /// <ul>
-    /// <li><p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
-    /// <li><p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
+    /// <li>
+    /// <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
+    /// </ul><note>
     /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>.</p>
     /// </note>
     pub fn launch_path(&self) -> ::std::option::Option<&str> {
@@ -55,9 +59,11 @@ pub struct ServerProcessBuilder {
 impl ServerProcessBuilder {
     /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root:</p>
     /// <ul>
-    /// <li><p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
-    /// <li><p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
+    /// <li>
+    /// <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
+    /// </ul><note>
     /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>.</p>
     /// </note>
     /// This field is required.
@@ -67,9 +73,11 @@ impl ServerProcessBuilder {
     }
     /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root:</p>
     /// <ul>
-    /// <li><p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
-    /// <li><p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
+    /// <li>
+    /// <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
+    /// </ul><note>
     /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>.</p>
     /// </note>
     pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -78,9 +86,11 @@ impl ServerProcessBuilder {
     }
     /// <p>The location of a game build executable or Realtime script. Game builds and Realtime scripts are installed on instances at the root:</p>
     /// <ul>
-    /// <li><p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
-    /// <li><p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"</p></li>
+    /// <li>
+    /// <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p></li>
+    /// </ul><note>
     /// <p>Amazon GameLift doesn't support the use of setup scripts that launch the game executable. For custom game builds, this parameter must indicate the executable that calls the server SDK operations <code>initSDK()</code> and <code>ProcessReady()</code>.</p>
     /// </note>
     pub fn get_launch_path(&self) -> &::std::option::Option<::std::string::String> {

@@ -125,7 +125,7 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
     pub fn get_reserved_cache_nodes_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reserved_cache_nodes_offering_id()
     }
-    /// <p>A customer-specified identifier to track this reservation.</p> <note>
+    /// <p>A customer-specified identifier to track this reservation.</p><note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>
@@ -133,7 +133,7 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
         self.inner = self.inner.reserved_cache_node_id(input.into());
         self
     }
-    /// <p>A customer-specified identifier to track this reservation.</p> <note>
+    /// <p>A customer-specified identifier to track this reservation.</p><note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>
@@ -141,7 +141,7 @@ impl PurchaseReservedCacheNodesOfferingFluentBuilder {
         self.inner = self.inner.set_reserved_cache_node_id(input);
         self
     }
-    /// <p>A customer-specified identifier to track this reservation.</p> <note>
+    /// <p>A customer-specified identifier to track this reservation.</p><note>
     /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.</p>
     /// </note>
     /// <p>Example: myreservationID</p>

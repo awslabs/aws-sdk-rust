@@ -12,8 +12,10 @@ pub struct Environment {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
-    /// <li><p><code>ssh</code>: Your own server connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
     pub r#type: crate::types::EnvironmentType,
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
@@ -26,16 +28,26 @@ pub struct Environment {
     pub lifecycle: ::std::option::Option<crate::types::EnvironmentLifecycle>,
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED_ON_CREATE</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
-    /// <li><p><code>DISABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
-    /// <li><p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_ON_CREATE</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
     pub managed_credentials_status: ::std::option::Option<crate::types::ManagedCredentialsStatus>,
 }
@@ -54,8 +66,10 @@ impl Environment {
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
-    /// <li><p><code>ssh</code>: Your own server connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::EnvironmentType {
         &self.r#type
@@ -80,16 +94,26 @@ impl Environment {
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED_ON_CREATE</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
-    /// <li><p><code>DISABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
-    /// <li><p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_ON_CREATE</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
     pub fn managed_credentials_status(&self) -> ::std::option::Option<&crate::types::ManagedCredentialsStatus> {
         self.managed_credentials_status.as_ref()
@@ -176,8 +200,10 @@ impl EnvironmentBuilder {
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
-    /// <li><p><code>ssh</code>: Your own server connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::EnvironmentType) -> Self {
@@ -186,8 +212,10 @@ impl EnvironmentBuilder {
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
-    /// <li><p><code>ssh</code>: Your own server connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
         self.r#type = input;
@@ -195,8 +223,10 @@ impl EnvironmentBuilder {
     }
     /// <p>The type of environment. Valid values include the following:</p>
     /// <ul>
-    /// <li><p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
-    /// <li><p><code>ssh</code>: Your own server connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p></li>
+    /// <li>
+    /// <p><code>ssh</code>: Your own server connects to the environment.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentType> {
         &self.r#type
@@ -261,16 +291,26 @@ impl EnvironmentBuilder {
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED_ON_CREATE</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
-    /// <li><p><code>DISABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
-    /// <li><p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_ON_CREATE</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
     pub fn managed_credentials_status(mut self, input: crate::types::ManagedCredentialsStatus) -> Self {
         self.managed_credentials_status = ::std::option::Option::Some(input);
@@ -278,16 +318,26 @@ impl EnvironmentBuilder {
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED_ON_CREATE</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
-    /// <li><p><code>DISABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
-    /// <li><p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_ON_CREATE</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
     pub fn set_managed_credentials_status(mut self, input: ::std::option::Option<crate::types::ManagedCredentialsStatus>) -> Self {
         self.managed_credentials_status = input;
@@ -295,16 +345,26 @@ impl EnvironmentBuilder {
     }
     /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
     /// <ul>
-    /// <li><p><code>ENABLED_ON_CREATE</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
-    /// <li><p><code>DISABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
-    /// <li><p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
-    /// <li><p><code>ENABLED_BY_OWNER</code></p></li>
-    /// <li><p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_ON_CREATE</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>PENDING_REMOVAL_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>FAILED_REMOVAL_BY_COLLABORATOR</code></p></li>
+    /// <li>
+    /// <p><code>ENABLED_BY_OWNER</code></p></li>
+    /// <li>
+    /// <p><code>DISABLED_BY_DEFAULT</code></p></li>
     /// </ul>
     pub fn get_managed_credentials_status(&self) -> &::std::option::Option<crate::types::ManagedCredentialsStatus> {
         &self.managed_credentials_status

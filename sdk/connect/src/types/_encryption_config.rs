@@ -6,7 +6,7 @@
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
     pub encryption_type: crate::types::EncryptionType,
-    /// <p>The full ARN of the encryption key.</p> <note>
+    /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
@@ -17,7 +17,7 @@ impl EncryptionConfig {
     pub fn encryption_type(&self) -> &crate::types::EncryptionType {
         &self.encryption_type
     }
-    /// <p>The full ARN of the encryption key.</p> <note>
+    /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
@@ -56,7 +56,7 @@ impl EncryptionConfigBuilder {
     pub fn get_encryption_type(&self) -> &::std::option::Option<crate::types::EncryptionType> {
         &self.encryption_type
     }
-    /// <p>The full ARN of the encryption key.</p> <note>
+    /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
@@ -65,7 +65,7 @@ impl EncryptionConfigBuilder {
         self.key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The full ARN of the encryption key.</p> <note>
+    /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>
@@ -73,7 +73,7 @@ impl EncryptionConfigBuilder {
         self.key_id = input;
         self
     }
-    /// <p>The full ARN of the encryption key.</p> <note>
+    /// <p>The full ARN of the encryption key.</p><note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>.</p>
     /// </note>

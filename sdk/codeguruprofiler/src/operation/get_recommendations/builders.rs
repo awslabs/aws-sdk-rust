@@ -152,17 +152,28 @@ impl GetRecommendationsFluentBuilder {
     }
     /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
     /// <ul>
-    /// <li><p><code>de-DE</code> - German, Germany</p></li>
-    /// <li><p><code>en-GB</code> - English, United Kingdom</p></li>
-    /// <li><p><code>en-US</code> - English, United States</p></li>
-    /// <li><p><code>es-ES</code> - Spanish, Spain</p></li>
-    /// <li><p><code>fr-FR</code> - French, France</p></li>
-    /// <li><p><code>it-IT</code> - Italian, Italy</p></li>
-    /// <li><p><code>ja-JP</code> - Japanese, Japan</p></li>
-    /// <li><p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
-    /// <li><p><code>pt-BR</code> - Portugese, Brazil</p></li>
-    /// <li><p><code>zh-CN</code> - Chinese, China</p></li>
-    /// <li><p><code>zh-TW</code> - Chinese, Taiwan</p></li>
+    /// <li>
+    /// <p><code>de-DE</code> - German, Germany</p></li>
+    /// <li>
+    /// <p><code>en-GB</code> - English, United Kingdom</p></li>
+    /// <li>
+    /// <p><code>en-US</code> - English, United States</p></li>
+    /// <li>
+    /// <p><code>es-ES</code> - Spanish, Spain</p></li>
+    /// <li>
+    /// <p><code>fr-FR</code> - French, France</p></li>
+    /// <li>
+    /// <p><code>it-IT</code> - Italian, Italy</p></li>
+    /// <li>
+    /// <p><code>ja-JP</code> - Japanese, Japan</p></li>
+    /// <li>
+    /// <p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
+    /// <li>
+    /// <p><code>pt-BR</code> - Portugese, Brazil</p></li>
+    /// <li>
+    /// <p><code>zh-CN</code> - Chinese, China</p></li>
+    /// <li>
+    /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
     /// </ul>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
@@ -170,17 +181,28 @@ impl GetRecommendationsFluentBuilder {
     }
     /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
     /// <ul>
-    /// <li><p><code>de-DE</code> - German, Germany</p></li>
-    /// <li><p><code>en-GB</code> - English, United Kingdom</p></li>
-    /// <li><p><code>en-US</code> - English, United States</p></li>
-    /// <li><p><code>es-ES</code> - Spanish, Spain</p></li>
-    /// <li><p><code>fr-FR</code> - French, France</p></li>
-    /// <li><p><code>it-IT</code> - Italian, Italy</p></li>
-    /// <li><p><code>ja-JP</code> - Japanese, Japan</p></li>
-    /// <li><p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
-    /// <li><p><code>pt-BR</code> - Portugese, Brazil</p></li>
-    /// <li><p><code>zh-CN</code> - Chinese, China</p></li>
-    /// <li><p><code>zh-TW</code> - Chinese, Taiwan</p></li>
+    /// <li>
+    /// <p><code>de-DE</code> - German, Germany</p></li>
+    /// <li>
+    /// <p><code>en-GB</code> - English, United Kingdom</p></li>
+    /// <li>
+    /// <p><code>en-US</code> - English, United States</p></li>
+    /// <li>
+    /// <p><code>es-ES</code> - Spanish, Spain</p></li>
+    /// <li>
+    /// <p><code>fr-FR</code> - French, France</p></li>
+    /// <li>
+    /// <p><code>it-IT</code> - Italian, Italy</p></li>
+    /// <li>
+    /// <p><code>ja-JP</code> - Japanese, Japan</p></li>
+    /// <li>
+    /// <p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
+    /// <li>
+    /// <p><code>pt-BR</code> - Portugese, Brazil</p></li>
+    /// <li>
+    /// <p><code>zh-CN</code> - Chinese, China</p></li>
+    /// <li>
+    /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
     /// </ul>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
@@ -188,17 +210,28 @@ impl GetRecommendationsFluentBuilder {
     }
     /// <p>The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes.</p>
     /// <ul>
-    /// <li><p><code>de-DE</code> - German, Germany</p></li>
-    /// <li><p><code>en-GB</code> - English, United Kingdom</p></li>
-    /// <li><p><code>en-US</code> - English, United States</p></li>
-    /// <li><p><code>es-ES</code> - Spanish, Spain</p></li>
-    /// <li><p><code>fr-FR</code> - French, France</p></li>
-    /// <li><p><code>it-IT</code> - Italian, Italy</p></li>
-    /// <li><p><code>ja-JP</code> - Japanese, Japan</p></li>
-    /// <li><p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
-    /// <li><p><code>pt-BR</code> - Portugese, Brazil</p></li>
-    /// <li><p><code>zh-CN</code> - Chinese, China</p></li>
-    /// <li><p><code>zh-TW</code> - Chinese, Taiwan</p></li>
+    /// <li>
+    /// <p><code>de-DE</code> - German, Germany</p></li>
+    /// <li>
+    /// <p><code>en-GB</code> - English, United Kingdom</p></li>
+    /// <li>
+    /// <p><code>en-US</code> - English, United States</p></li>
+    /// <li>
+    /// <p><code>es-ES</code> - Spanish, Spain</p></li>
+    /// <li>
+    /// <p><code>fr-FR</code> - French, France</p></li>
+    /// <li>
+    /// <p><code>it-IT</code> - Italian, Italy</p></li>
+    /// <li>
+    /// <p><code>ja-JP</code> - Japanese, Japan</p></li>
+    /// <li>
+    /// <p><code>ko-KR</code> - Korean, Republic of Korea</p></li>
+    /// <li>
+    /// <p><code>pt-BR</code> - Portugese, Brazil</p></li>
+    /// <li>
+    /// <p><code>zh-CN</code> - Chinese, China</p></li>
+    /// <li>
+    /// <p><code>zh-TW</code> - Chinese, Taiwan</p></li>
     /// </ul>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()

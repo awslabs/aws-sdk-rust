@@ -24,11 +24,16 @@ impl GetQueryStatusInputBuilder {
 ///
 /// <p>Returns the current status of a query for the Amazon CloudWatch Internet Monitor query interface, for a specified query ID and monitor. When you run a query, check the status to make sure that the query has <code>SUCCEEDED</code> before you review the results.</p>
 /// <ul>
-/// <li><p><code>QUEUED</code>: The query is scheduled to run.</p></li>
-/// <li><p><code>RUNNING</code>: The query is in progress but not complete.</p></li>
-/// <li><p><code>SUCCEEDED</code>: The query completed sucessfully.</p></li>
-/// <li><p><code>FAILED</code>: The query failed due to an error.</p></li>
-/// <li><p><code>CANCELED</code>: The query was canceled.</p></li>
+/// <li>
+/// <p><code>QUEUED</code>: The query is scheduled to run.</p></li>
+/// <li>
+/// <p><code>RUNNING</code>: The query is in progress but not complete.</p></li>
+/// <li>
+/// <p><code>SUCCEEDED</code>: The query completed sucessfully.</p></li>
+/// <li>
+/// <p><code>FAILED</code>: The query failed due to an error.</p></li>
+/// <li>
+/// <p><code>CANCELED</code>: The query was canceled.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueryStatusFluentBuilder {

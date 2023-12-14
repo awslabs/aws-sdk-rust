@@ -199,11 +199,16 @@ impl CreateAppBlockBuilderFluentBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li><p>stream.standard.small</p></li>
-    /// <li><p>stream.standard.medium</p></li>
-    /// <li><p>stream.standard.large</p></li>
-    /// <li><p>stream.standard.xlarge</p></li>
-    /// <li><p>stream.standard.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.standard.small</p></li>
+    /// <li>
+    /// <p>stream.standard.medium</p></li>
+    /// <li>
+    /// <p>stream.standard.large</p></li>
+    /// <li>
+    /// <p>stream.standard.xlarge</p></li>
+    /// <li>
+    /// <p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_type(input.into());
@@ -211,11 +216,16 @@ impl CreateAppBlockBuilderFluentBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li><p>stream.standard.small</p></li>
-    /// <li><p>stream.standard.medium</p></li>
-    /// <li><p>stream.standard.large</p></li>
-    /// <li><p>stream.standard.xlarge</p></li>
-    /// <li><p>stream.standard.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.standard.small</p></li>
+    /// <li>
+    /// <p>stream.standard.medium</p></li>
+    /// <li>
+    /// <p>stream.standard.large</p></li>
+    /// <li>
+    /// <p>stream.standard.xlarge</p></li>
+    /// <li>
+    /// <p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_type(input);
@@ -223,11 +233,16 @@ impl CreateAppBlockBuilderFluentBuilder {
     }
     /// <p>The instance type to use when launching the app block builder. The following instance types are available:</p>
     /// <ul>
-    /// <li><p>stream.standard.small</p></li>
-    /// <li><p>stream.standard.medium</p></li>
-    /// <li><p>stream.standard.large</p></li>
-    /// <li><p>stream.standard.xlarge</p></li>
-    /// <li><p>stream.standard.2xlarge</p></li>
+    /// <li>
+    /// <p>stream.standard.small</p></li>
+    /// <li>
+    /// <p>stream.standard.medium</p></li>
+    /// <li>
+    /// <p>stream.standard.large</p></li>
+    /// <li>
+    /// <p>stream.standard.xlarge</p></li>
+    /// <li>
+    /// <p>stream.standard.2xlarge</p></li>
     /// </ul>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_type()

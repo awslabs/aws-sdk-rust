@@ -138,9 +138,12 @@ impl UpdateRetrainingSchedulerFluentBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li><p>P2M – Every 2 months</p></li>
-    /// <li><p>P150D – Every 150 days</p></li>
+    /// <li>
+    /// <p>P3M15D – Every 3 months and 15 days</p></li>
+    /// <li>
+    /// <p>P2M – Every 2 months</p></li>
+    /// <li>
+    /// <p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn retraining_frequency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.retraining_frequency(input.into());
@@ -148,9 +151,12 @@ impl UpdateRetrainingSchedulerFluentBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li><p>P2M – Every 2 months</p></li>
-    /// <li><p>P150D – Every 150 days</p></li>
+    /// <li>
+    /// <p>P3M15D – Every 3 months and 15 days</p></li>
+    /// <li>
+    /// <p>P2M – Every 2 months</p></li>
+    /// <li>
+    /// <p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn set_retraining_frequency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_retraining_frequency(input);
@@ -158,9 +164,12 @@ impl UpdateRetrainingSchedulerFluentBuilder {
     }
     /// <p>This parameter uses the <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO 8601</a> standard to set the frequency at which you want retraining to occur in terms of Years, Months, and/or Days (note: other parameters like Time are not currently supported). The minimum value is 30 days (P30D) and the maximum value is 1 year (P1Y). For example, the following values are valid:</p>
     /// <ul>
-    /// <li><p>P3M15D – Every 3 months and 15 days</p></li>
-    /// <li><p>P2M – Every 2 months</p></li>
-    /// <li><p>P150D – Every 150 days</p></li>
+    /// <li>
+    /// <p>P3M15D – Every 3 months and 15 days</p></li>
+    /// <li>
+    /// <p>P2M – Every 2 months</p></li>
+    /// <li>
+    /// <p>P150D – Every 150 days</p></li>
     /// </ul>
     pub fn get_retraining_frequency(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_retraining_frequency()

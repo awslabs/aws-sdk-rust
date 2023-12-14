@@ -7,8 +7,10 @@ pub struct CreateDeliveryStreamInput {
     pub delivery_stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li>
+    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li>
+    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub delivery_stream_type: ::std::option::Option<crate::types::DeliveryStreamType>,
     /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <code>KinesisStreamSourceConfiguration</code> containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
@@ -46,8 +48,10 @@ impl CreateDeliveryStreamInput {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li>
+    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li>
+    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn delivery_stream_type(&self) -> ::std::option::Option<&crate::types::DeliveryStreamType> {
         self.delivery_stream_type.as_ref()
@@ -155,8 +159,10 @@ impl CreateDeliveryStreamInputBuilder {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li>
+    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li>
+    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
         self.delivery_stream_type = ::std::option::Option::Some(input);
@@ -164,8 +170,10 @@ impl CreateDeliveryStreamInputBuilder {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li>
+    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li>
+    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn set_delivery_stream_type(mut self, input: ::std::option::Option<crate::types::DeliveryStreamType>) -> Self {
         self.delivery_stream_type = input;
@@ -173,8 +181,10 @@ impl CreateDeliveryStreamInputBuilder {
     }
     /// <p>The delivery stream type. This parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
-    /// <li><p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
+    /// <li>
+    /// <p><code>DirectPut</code>: Provider applications access the delivery stream directly.</p></li>
+    /// <li>
+    /// <p><code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p></li>
     /// </ul>
     pub fn get_delivery_stream_type(&self) -> &::std::option::Option<crate::types::DeliveryStreamType> {
         &self.delivery_stream_type

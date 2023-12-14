@@ -22,8 +22,10 @@ pub enum Error {
     /// <p>The <code>RunTask</code> request could not be processed due to conflicts. The provided <code>clientToken</code> is already in use with a different <code>RunTask</code> request. The <code>resourceIds</code> are the existing task ARNs which are already associated with the <code>clientToken</code>.</p>
     /// <p>To fix this issue:</p>
     /// <ul>
-    /// <li><p>Run <code>RunTask</code> with a unique <code>clientToken</code>.</p></li>
-    /// <li><p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p></li>
+    /// <li>
+    /// <p>Run <code>RunTask</code> with a unique <code>clientToken</code>.</p></li>
+    /// <li>
+    /// <p>Run <code>RunTask</code> with the <code>clientToken</code> and the original set of parameters</p></li>
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
@@ -52,9 +54,12 @@ pub enum Error {
     ServiceNotFoundException(crate::types::error::ServiceNotFoundException),
     /// <p>The execute command cannot run. This error can be caused by any of the following configuration issues:</p>
     /// <ul>
-    /// <li><p>Incorrect IAM permissions</p></li>
-    /// <li><p>The SSM agent is not installed or is not running</p></li>
-    /// <li><p>There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for Systems Manager Session Manager</p></li>
+    /// <li>
+    /// <p>Incorrect IAM permissions</p></li>
+    /// <li>
+    /// <p>The SSM agent is not installed or is not running</p></li>
+    /// <li>
+    /// <p>There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for Systems Manager Session Manager</p></li>
     /// </ul>
     /// <p>For information about how to troubleshoot the issues, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Troubleshooting issues with ECS Exec</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     TargetNotConnectedException(crate::types::error::TargetNotConnectedException),

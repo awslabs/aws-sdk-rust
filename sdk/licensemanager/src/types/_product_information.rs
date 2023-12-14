@@ -10,19 +10,29 @@ pub struct ProductInformation {
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>.</p>
     /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li><p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
-    /// <li><p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
-    /// <li><p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
+    /// <li>
+    /// <p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
     /// </ul>
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li><p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
-    /// <li><p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
+    /// <li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <li>
+    /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
     pub product_information_filter_list: ::std::vec::Vec<crate::types::ProductInformationFilter>,
 }
@@ -36,19 +46,29 @@ impl ProductInformation {
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>.</p>
     /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li><p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
-    /// <li><p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
-    /// <li><p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
+    /// <li>
+    /// <p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
     /// </ul>
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li><p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
-    /// <li><p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
+    /// <li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <li>
+    /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
     pub fn product_information_filter_list(&self) -> &[crate::types::ProductInformationFilter] {
         use std::ops::Deref;
@@ -93,19 +113,29 @@ impl ProductInformationBuilder {
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>.</p>
     /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li><p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
-    /// <li><p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
-    /// <li><p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
+    /// <li>
+    /// <p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
     /// </ul>
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li><p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
-    /// <li><p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
+    /// <li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <li>
+    /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
     pub fn product_information_filter_list(mut self, input: crate::types::ProductInformationFilter) -> Self {
         let mut v = self.product_information_filter_list.unwrap_or_default();
@@ -117,19 +147,29 @@ impl ProductInformationBuilder {
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>.</p>
     /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li><p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
-    /// <li><p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
-    /// <li><p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
+    /// <li>
+    /// <p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
     /// </ul>
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li><p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
-    /// <li><p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
+    /// <li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <li>
+    /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
     pub fn set_product_information_filter_list(
         mut self,
@@ -142,19 +182,29 @@ impl ProductInformationBuilder {
     /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>.</p>
     /// <p>The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:</p>
     /// <ul>
-    /// <li><p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
-    /// <li><p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
-    /// <li><p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
-    /// <li><p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Name</code> - The name of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Publisher</code> - The publisher of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Application Version</code> - The version of the application. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>. The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.</p></li>
+    /// <li>
+    /// <p><code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.</p></li>
+    /// <li>
+    /// <p><code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.</p></li>
     /// </ul>
     /// <p>The following filters and logical operators are supported when the resource type is <code>RDS</code>:</p>
     /// <ul>
-    /// <li><p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
-    /// <li><p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
+    /// <li>
+    /// <p><code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p></li>
+    /// <li>
+    /// <p><code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.</p></li>
     /// </ul>
     pub fn get_product_information_filter_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProductInformationFilter>> {
         &self.product_information_filter_list

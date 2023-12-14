@@ -6,8 +6,10 @@
 pub struct ChangeTagsForResourceInput {
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
@@ -21,8 +23,10 @@ pub struct ChangeTagsForResourceInput {
 impl ChangeTagsForResourceInput {
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TagResourceType> {
         self.resource_type.as_ref()
@@ -64,8 +68,10 @@ pub struct ChangeTagsForResourceInputBuilder {
 impl ChangeTagsForResourceInputBuilder {
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::TagResourceType) -> Self {
@@ -74,8 +80,10 @@ impl ChangeTagsForResourceInputBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
         self.resource_type = input;
@@ -83,8 +91,10 @@ impl ChangeTagsForResourceInputBuilder {
     }
     /// <p>The type of the resource.</p>
     /// <ul>
-    /// <li><p>The resource type for health checks is <code>healthcheck</code>.</p></li>
-    /// <li><p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::TagResourceType> {
         &self.resource_type

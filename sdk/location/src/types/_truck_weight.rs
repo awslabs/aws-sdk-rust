@@ -6,7 +6,8 @@
 pub struct TruckWeight {
     /// <p>The total weight of the truck.</p>
     /// <ul>
-    /// <li><p>For example, <code>3500</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>3500</code>.</p></li>
     /// </ul>
     pub total: ::std::option::Option<f64>,
     /// <p>The unit of measurement to use for the truck weight.</p>
@@ -16,7 +17,8 @@ pub struct TruckWeight {
 impl TruckWeight {
     /// <p>The total weight of the truck.</p>
     /// <ul>
-    /// <li><p>For example, <code>3500</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>3500</code>.</p></li>
     /// </ul>
     pub fn total(&self) -> ::std::option::Option<f64> {
         self.total
@@ -44,7 +46,8 @@ pub struct TruckWeightBuilder {
 impl TruckWeightBuilder {
     /// <p>The total weight of the truck.</p>
     /// <ul>
-    /// <li><p>For example, <code>3500</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>3500</code>.</p></li>
     /// </ul>
     pub fn total(mut self, input: f64) -> Self {
         self.total = ::std::option::Option::Some(input);
@@ -52,7 +55,8 @@ impl TruckWeightBuilder {
     }
     /// <p>The total weight of the truck.</p>
     /// <ul>
-    /// <li><p>For example, <code>3500</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>3500</code>.</p></li>
     /// </ul>
     pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
@@ -60,7 +64,8 @@ impl TruckWeightBuilder {
     }
     /// <p>The total weight of the truck.</p>
     /// <ul>
-    /// <li><p>For example, <code>3500</code>.</p></li>
+    /// <li>
+    /// <p>For example, <code>3500</code>.</p></li>
     /// </ul>
     pub fn get_total(&self) -> &::std::option::Option<f64> {
         &self.total

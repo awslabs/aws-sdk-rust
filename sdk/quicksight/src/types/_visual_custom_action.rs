@@ -13,8 +13,10 @@ pub struct VisualCustomAction {
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
-    /// <li><p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
     /// </ul>
     pub trigger: crate::types::VisualCustomActionTrigger,
     /// <p>A list of <code>VisualCustomActionOperations</code>.</p>
@@ -39,8 +41,10 @@ impl VisualCustomAction {
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
-    /// <li><p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
     /// </ul>
     pub fn trigger(&self) -> &crate::types::VisualCustomActionTrigger {
         &self.trigger
@@ -117,8 +121,10 @@ impl VisualCustomActionBuilder {
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
-    /// <li><p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
     /// </ul>
     /// This field is required.
     pub fn trigger(mut self, input: crate::types::VisualCustomActionTrigger) -> Self {
@@ -128,8 +134,10 @@ impl VisualCustomActionBuilder {
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
-    /// <li><p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
     /// </ul>
     pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::VisualCustomActionTrigger>) -> Self {
         self.trigger = input;
@@ -138,8 +146,10 @@ impl VisualCustomActionBuilder {
     /// <p>The trigger of the <code>VisualCustomAction</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
-    /// <li><p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
-    /// <li><p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click on a data point.</p></li>
+    /// <li>
+    /// <p><code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from the menu.</p></li>
     /// </ul>
     pub fn get_trigger(&self) -> &::std::option::Option<crate::types::VisualCustomActionTrigger> {
         &self.trigger

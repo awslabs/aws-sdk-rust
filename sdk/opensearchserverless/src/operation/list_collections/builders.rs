@@ -22,7 +22,7 @@ impl ListCollectionsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListCollections`.
 ///
-/// <p>Lists all OpenSearch Serverless collections. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p> <note>
+/// <p>Lists all OpenSearch Serverless collections. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p><note>
 /// <p>Make sure to include an empty request body {} if you don't include any collection filters in the request.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

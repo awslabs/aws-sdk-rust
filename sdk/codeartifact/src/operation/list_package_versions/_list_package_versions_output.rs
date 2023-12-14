@@ -5,17 +5,22 @@
 pub struct ListPackageVersionsOutput {
     /// <p>The default package version to display. This depends on the package format:</p>
     /// <ul>
-    /// <li><p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
-    /// <li><p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
     /// </ul>
     pub default_display_version: ::std::option::Option<::std::string::String>,
     /// <p>A format of the package.</p>
     pub format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the package.</p>
@@ -29,8 +34,10 @@ pub struct ListPackageVersionsOutput {
 impl ListPackageVersionsOutput {
     /// <p>The default package version to display. This depends on the package format:</p>
     /// <ul>
-    /// <li><p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
-    /// <li><p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
     /// </ul>
     pub fn default_display_version(&self) -> ::std::option::Option<&str> {
         self.default_display_version.as_deref()
@@ -41,9 +48,12 @@ impl ListPackageVersionsOutput {
     }
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
@@ -90,8 +100,10 @@ pub struct ListPackageVersionsOutputBuilder {
 impl ListPackageVersionsOutputBuilder {
     /// <p>The default package version to display. This depends on the package format:</p>
     /// <ul>
-    /// <li><p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
-    /// <li><p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
     /// </ul>
     pub fn default_display_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_display_version = ::std::option::Option::Some(input.into());
@@ -99,8 +111,10 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p>The default package version to display. This depends on the package format:</p>
     /// <ul>
-    /// <li><p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
-    /// <li><p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
     /// </ul>
     pub fn set_default_display_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_display_version = input;
@@ -108,8 +122,10 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p>The default package version to display. This depends on the package format:</p>
     /// <ul>
-    /// <li><p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
-    /// <li><p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For Maven and PyPI packages, it's the most recently published package version.</p></li>
+    /// <li>
+    /// <p>For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version.</p></li>
     /// </ul>
     pub fn get_default_display_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_display_version
@@ -130,9 +146,12 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
@@ -140,9 +159,12 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
@@ -150,9 +172,12 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
-    /// <li><p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
-    /// <li><p>The namespace of an npm package is its <code>scope</code>.</p></li>
-    /// <li><p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
+    /// <li>
+    /// <p>The namespace of a Maven package is its <code>groupId</code>.</p></li>
+    /// <li>
+    /// <p>The namespace of an npm package is its <code>scope</code>.</p></li>
+    /// <li>
+    /// <p>Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace.</p></li>
     /// </ul>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace

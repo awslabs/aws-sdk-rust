@@ -11,26 +11,29 @@ pub struct CreateConfigurationProfileInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
-    /// <li><p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
-    /// <li><p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter name></parameter></code> or the ARN.</p></li>
-    /// <li><p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// <li>
+    /// <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://<parameter name></parameter></code> or the ARN.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
     /// .
     /// </pipeline></p></li>
-    /// <li><p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
+    /// <li>
+    /// <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p></li>
-    /// <li><p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
-    /// <bucket>
+    /// <li>
+    /// <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://<bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
-    /// <li><p>For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document name></document></code> or the Amazon Resource Name (ARN).</p></li>
+    /// <li>
+    /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
     pub retrieval_role_arn: ::std::option::Option<::std::string::String>,
@@ -60,28 +63,31 @@ impl CreateConfigurationProfileInput {
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
-    /// <li><p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
-    /// <li><p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter name></parameter></code> or the ARN.</p></li>
-    /// <li><p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// <li>
+    /// <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://<parameter name></parameter></code> or the ARN.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
     /// .
     /// </pipeline></p></li>
-    /// <li><p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
+    /// <li>
+    /// <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p></li>
-    /// <li><p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
-    /// <bucket>
+    /// <li>
+    /// <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://<bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
-    /// <li><p>For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document name></document></code> or the Amazon Resource Name (ARN).</p></li>
+    /// <li>
+    /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
     pub fn retrieval_role_arn(&self) -> ::std::option::Option<&str> {
@@ -176,23 +182,26 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
-    /// <li><p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
-    /// <li><p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter name></parameter></code> or the ARN.</p></li>
-    /// <li><p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// <li>
+    /// <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://<parameter name></parameter></code> or the ARN.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
     /// .
     /// </pipeline></p></li>
-    /// <li><p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
+    /// <li>
+    /// <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p></li>
-    /// <li><p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
-    /// <bucket>
+    /// <li>
+    /// <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://<bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
-    /// <li><p>For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document name></document></code> or the Amazon Resource Name (ARN).</p></li>
+    /// <li>
+    /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
     /// This field is required.
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,23 +210,26 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
-    /// <li><p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
-    /// <li><p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter name></parameter></code> or the ARN.</p></li>
-    /// <li><p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// <li>
+    /// <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://<parameter name></parameter></code> or the ARN.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
     /// .
     /// </pipeline></p></li>
-    /// <li><p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
+    /// <li>
+    /// <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p></li>
-    /// <li><p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
-    /// <bucket>
+    /// <li>
+    /// <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://<bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
-    /// <li><p>For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document name></document></code> or the Amazon Resource Name (ARN).</p></li>
+    /// <li>
+    /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
@@ -225,42 +237,45 @@ impl CreateConfigurationProfileInputBuilder {
     }
     /// <p>A URI to locate the configuration. You can specify the following:</p>
     /// <ul>
-    /// <li><p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
-    /// <li><p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://
-    /// <parameter name></parameter></code> or the ARN.</p></li>
-    /// <li><p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
+    /// <li>
+    /// <p>For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services Systems Manager Parameter Store parameter, specify either the parameter name in the format <code>ssm-parameter://<parameter name></parameter></code> or the ARN.</p></li>
+    /// <li>
+    /// <p>For an Amazon Web Services CodePipeline pipeline, specify the URI in the following format: <code>codepipeline</code>://<pipeline name>
     /// .
     /// </pipeline></p></li>
-    /// <li><p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
+    /// <li>
+    /// <p>For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://<secret name>
     /// .
     /// </secret></p></li>
-    /// <li><p>For an Amazon S3 object, specify the URI in the following format: <code>s3://
-    /// <bucket>
+    /// <li>
+    /// <p>For an Amazon S3 object, specify the URI in the following format: <code>s3://<bucket>
     /// /
     /// <objectkey>
     /// </objectkey>
     /// </bucket></code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code></p></li>
-    /// <li><p>For an SSM document, specify either the document name in the format <code>ssm-document://
-    /// <document name></document></code> or the Amazon Resource Name (ARN).</p></li>
+    /// <li>
+    /// <p>For an SSM document, specify either the document name in the format <code>ssm-document://<document name></document></code> or the Amazon Resource Name (ARN).</p></li>
     /// </ul>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
     pub fn retrieval_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.retrieval_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
     pub fn set_retrieval_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.retrieval_role_arn = input;
         self
     }
-    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p> <important>
+    /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p><important>
     /// <p>A retrieval role ARN is not required for configurations stored in the AppConfig hosted configuration store. It is required for all other sources that store your configuration.</p>
     /// </important>
     pub fn get_retrieval_role_arn(&self) -> &::std::option::Option<::std::string::String> {

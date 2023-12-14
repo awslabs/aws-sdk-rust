@@ -25,7 +25,7 @@ impl ImportImageInputBuilder {
 /// <note>
 /// <p>To import your virtual machines (VMs) with a console-based experience, you can use the <i>Import virtual machine images to Amazon Web Services</i> template in the <a href="https://console.aws.amazon.com/migrationhub/orchestrator">Migration Hub Orchestrator console</a>. For more information, see the <a href="https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/import-vm-images.html"> <i>Migration Hub Orchestrator User Guide</i> </a>.</p>
 /// </note>
-/// <p>Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).</p> <important>
+/// <p>Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).</p><important>
 /// <p>Amazon Web Services VM Import/Export strongly recommends specifying a value for either the <code>--license-type</code> or <code>--usage-operation</code> parameter when you create a new VM Import task. This ensures your operating system is licensed appropriately and your billing is optimized.</p>
 /// </important>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
@@ -239,10 +239,14 @@ impl ImportImageFluentBuilder {
     /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>
     /// <p>The KMS key identifier may be provided in any of the following formats:</p>
     /// <ul>
-    /// <li><p>Key ID</p></li>
-    /// <li><p>Key alias</p></li>
-    /// <li><p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p></li>
-    /// <li><p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Key alias</p></li>
+    /// <li>
+    /// <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p></li>
+    /// <li>
+    /// <p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p></li>
     /// </ul>
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure.</p>
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
@@ -254,10 +258,14 @@ impl ImportImageFluentBuilder {
     /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>
     /// <p>The KMS key identifier may be provided in any of the following formats:</p>
     /// <ul>
-    /// <li><p>Key ID</p></li>
-    /// <li><p>Key alias</p></li>
-    /// <li><p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p></li>
-    /// <li><p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Key alias</p></li>
+    /// <li>
+    /// <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p></li>
+    /// <li>
+    /// <p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p></li>
     /// </ul>
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure.</p>
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
@@ -269,10 +277,14 @@ impl ImportImageFluentBuilder {
     /// <p>An identifier for the symmetric KMS key to use when creating the encrypted AMI. This parameter is only required if you want to use a non-default KMS key; if this parameter is not specified, the default KMS key for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code> flag must also be set.</p>
     /// <p>The KMS key identifier may be provided in any of the following formats:</p>
     /// <ul>
-    /// <li><p>Key ID</p></li>
-    /// <li><p>Key alias</p></li>
-    /// <li><p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p></li>
-    /// <li><p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p></li>
+    /// <li>
+    /// <p>Key ID</p></li>
+    /// <li>
+    /// <p>Key alias</p></li>
+    /// <li>
+    /// <p>ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>key</code> namespace, and then the key ID. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.</p></li>
+    /// <li>
+    /// <p>ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.</p></li>
     /// </ul>
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure.</p>
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
@@ -384,21 +396,21 @@ impl ImportImageFluentBuilder {
     pub fn get_usage_operation(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_usage_operation()
     }
-    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The boot mode of the virtual machine.</p><note>
     /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
     /// </note>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
         self.inner = self.inner.boot_mode(input);
         self
     }
-    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The boot mode of the virtual machine.</p><note>
     /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
     /// </note>
     pub fn set_boot_mode(mut self, input: ::std::option::Option<crate::types::BootModeValues>) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self
     }
-    /// <p>The boot mode of the virtual machine.</p> <note>
+    /// <p>The boot mode of the virtual machine.</p><note>
     /// <p>The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot modes</a> in the <i>VM Import/Export User Guide</i>.</p>
     /// </note>
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootModeValues> {

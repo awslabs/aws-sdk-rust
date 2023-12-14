@@ -9,10 +9,14 @@ pub struct ListAvailableResourceMetricsInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
-    /// <li><p><code>os</code> (OS counter metrics) - All engines</p></li>
-    /// <li><p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>os</code> (OS counter metrics) - All engines</p></li>
+    /// <li>
+    /// <p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
     /// </ul>
     pub metric_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
@@ -31,10 +35,14 @@ impl ListAvailableResourceMetricsInput {
     }
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
-    /// <li><p><code>os</code> (OS counter metrics) - All engines</p></li>
-    /// <li><p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>os</code> (OS counter metrics) - All engines</p></li>
+    /// <li>
+    /// <p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_types.is_none()`.
@@ -104,10 +112,14 @@ impl ListAvailableResourceMetricsInputBuilder {
     ///
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
-    /// <li><p><code>os</code> (OS counter metrics) - All engines</p></li>
-    /// <li><p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>os</code> (OS counter metrics) - All engines</p></li>
+    /// <li>
+    /// <p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
     /// </ul>
     pub fn metric_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metric_types.unwrap_or_default();
@@ -117,10 +129,14 @@ impl ListAvailableResourceMetricsInputBuilder {
     }
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
-    /// <li><p><code>os</code> (OS counter metrics) - All engines</p></li>
-    /// <li><p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>os</code> (OS counter metrics) - All engines</p></li>
+    /// <li>
+    /// <p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
     /// </ul>
     pub fn set_metric_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metric_types = input;
@@ -128,10 +144,14 @@ impl ListAvailableResourceMetricsInputBuilder {
     }
     /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
     /// <ul>
-    /// <li><p><code>os</code> (OS counter metrics) - All engines</p></li>
-    /// <li><p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
-    /// <li><p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>os</code> (OS counter metrics) - All engines</p></li>
+    /// <li>
+    /// <p><code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p></li>
+    /// <li>
+    /// <p><code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p></li>
     /// </ul>
     pub fn get_metric_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metric_types

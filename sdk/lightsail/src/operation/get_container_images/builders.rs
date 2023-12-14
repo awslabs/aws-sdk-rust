@@ -22,7 +22,7 @@ impl GetContainerImagesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetContainerImages`.
 ///
-/// <p>Returns the container images that are registered to your Amazon Lightsail container service.</p> <note>
+/// <p>Returns the container images that are registered to your Amazon Lightsail container service.</p><note>
 /// <p>If you created a deployment on your Lightsail container service that uses container images from a public registry like Docker Hub, those images are not returned as part of this action. Those images are not registered to your Lightsail container service.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

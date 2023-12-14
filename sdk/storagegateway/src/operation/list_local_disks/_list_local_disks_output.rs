@@ -7,7 +7,8 @@ pub struct ListLocalDisksOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
-    /// <li><p><code>ListLocalDisksOutput$Disks</code></p></li>
+    /// <li>
+    /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     _request_id: Option<String>,
@@ -19,7 +20,8 @@ impl ListLocalDisksOutput {
     }
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
-    /// <li><p><code>ListLocalDisksOutput$Disks</code></p></li>
+    /// <li>
+    /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.disks.is_none()`.
@@ -68,7 +70,8 @@ impl ListLocalDisksOutputBuilder {
     ///
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
-    /// <li><p><code>ListLocalDisksOutput$Disks</code></p></li>
+    /// <li>
+    /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
     pub fn disks(mut self, input: crate::types::Disk) -> Self {
         let mut v = self.disks.unwrap_or_default();
@@ -78,7 +81,8 @@ impl ListLocalDisksOutputBuilder {
     }
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
-    /// <li><p><code>ListLocalDisksOutput$Disks</code></p></li>
+    /// <li>
+    /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
     pub fn set_disks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>) -> Self {
         self.disks = input;
@@ -86,7 +90,8 @@ impl ListLocalDisksOutputBuilder {
     }
     /// <p>A JSON object containing the following fields:</p>
     /// <ul>
-    /// <li><p><code>ListLocalDisksOutput$Disks</code></p></li>
+    /// <li>
+    /// <p><code>ListLocalDisksOutput$Disks</code></p></li>
     /// </ul>
     pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
         &self.disks

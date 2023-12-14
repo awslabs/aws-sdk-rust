@@ -29,31 +29,47 @@ impl RestoreObjectInputBuilder {
 /// <p>This functionality is not supported for Amazon S3 on Outposts.</p>
 /// <p>This action performs the following types of requests:</p>
 /// <ul>
-/// <li><p><code>select</code> - Perform a select query on an archived object</p></li>
-/// <li><p><code>restore an archive</code> - Restore an archived object</p></li>
+/// <li>
+/// <p><code>select</code> - Perform a select query on an archived object</p></li>
+/// <li>
+/// <p><code>restore an archive</code> - Restore an archived object</p></li>
 /// </ul>
 /// <p>For more information about the <code>S3</code> structure in the request body, see the following:</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Managing Access with ACLs</a> in the <i>Amazon S3 User Guide</i></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Managing Access with ACLs</a> in the <i>Amazon S3 User Guide</i></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i></p></li>
 /// </ul>
 /// <p>Define the SQL expression for the <code>SELECT</code> type of restoration for your query in the request body's <code>SelectParameters</code> structure. You can use expressions like the following examples.</p>
 /// <ul>
-/// <li><p>The following expression returns all records from the specified object.</p> <p><code>SELECT * FROM Object</code></p></li>
-/// <li><p>Assuming that you are not using any headers for data stored in the object, you can specify columns with positional headers.</p> <p><code>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</code></p></li>
-/// <li><p>If you have headers and you set the <code>fileHeaderInfo</code> in the <code>CSV</code> structure in the request body to <code>USE</code>, you can specify headers in the query. (If you set the <code>fileHeaderInfo</code> field to <code>IGNORE</code>, the first row is skipped for the query.) You cannot mix ordinal positions with header column names.</p> <p><code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code></p></li>
+/// <li>
+/// <p>The following expression returns all records from the specified object.</p>
+/// <p><code>SELECT * FROM Object</code></p></li>
+/// <li>
+/// <p>Assuming that you are not using any headers for data stored in the object, you can specify columns with positional headers.</p>
+/// <p><code>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</code></p></li>
+/// <li>
+/// <p>If you have headers and you set the <code>fileHeaderInfo</code> in the <code>CSV</code> structure in the request body to <code>USE</code>, you can specify headers in the query. (If you set the <code>fileHeaderInfo</code> field to <code>IGNORE</code>, the first row is skipped for the query.) You cannot mix ordinal positions with header column names.</p>
+/// <p><code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code></p></li>
 /// </ul>
 /// <p>When making a select request, you can also do the following:</p>
 /// <ul>
-/// <li><p>To expedite your queries, specify the <code>Expedited</code> tier. For more information about tiers, see "Restoring Archives," later in this topic.</p></li>
-/// <li><p>Specify details about the data serialization format of both the input object that is being queried and the serialization of the CSV-encoded query results.</p></li>
+/// <li>
+/// <p>To expedite your queries, specify the <code>Expedited</code> tier. For more information about tiers, see "Restoring Archives," later in this topic.</p></li>
+/// <li>
+/// <p>Specify details about the data serialization format of both the input object that is being queried and the serialization of the CSV-encoded query results.</p></li>
 /// </ul>
 /// <p>The following are additional important facts about the select feature:</p>
 /// <ul>
-/// <li><p>The output results are new Amazon S3 objects. Unlike archive retrievals, they are stored until explicitly deleted-manually or through a lifecycle configuration.</p></li>
-/// <li><p>You can issue more than one select request on the same Amazon S3 object. Amazon S3 doesn't duplicate requests, so avoid issuing duplicate requests.</p></li>
-/// <li><p>Amazon S3 accepts a select request even if the object has already been restored. A select request doesn’t return error response <code>409</code>.</p></li>
+/// <li>
+/// <p>The output results are new Amazon S3 objects. Unlike archive retrievals, they are stored until explicitly deleted-manually or through a lifecycle configuration.</p></li>
+/// <li>
+/// <p>You can issue more than one select request on the same Amazon S3 object. Amazon S3 doesn't duplicate requests, so avoid issuing duplicate requests.</p></li>
+/// <li>
+/// <p>Amazon S3 accepts a select request even if the object has already been restored. A select request doesn’t return error response <code>409</code>.</p></li>
 /// </ul>
 /// <dl>
 /// <dt>
@@ -70,9 +86,12 @@ impl RestoreObjectInputBuilder {
 /// <p>To restore a specific object version, you can provide a version ID. If you don't provide a version ID, Amazon S3 restores the current version.</p>
 /// <p>When restoring an archived object, you can specify one of the following data access tier options in the <code>Tier</code> element of the request body:</p>
 /// <ul>
-/// <li><p><code>Expedited</code> - Expedited retrievals allow you to quickly access your data stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier when occasional urgent requests for restoring archives are required. For all but the largest archived objects (250 MB+), data accessed using Expedited retrievals is typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available when you need it. Expedited retrievals and provisioned capacity are not available for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.</p></li>
-/// <li><p><code>Standard</code> - Standard retrievals allow you to access any of your archived objects within several hours. This is the default option for retrieval requests that do not specify the retrieval option. Standard retrievals typically finish within 3–5 hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals are free for objects stored in S3 Intelligent-Tiering.</p></li>
-/// <li><p><code>Bulk</code> - Bulk retrievals free for objects stored in the S3 Glacier Flexible Retrieval and S3 Intelligent-Tiering storage classes, enabling you to retrieve large amounts, even petabytes, of data at no cost. Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost retrieval option when restoring objects from S3 Glacier Deep Archive. They typically finish within 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.</p></li>
+/// <li>
+/// <p><code>Expedited</code> - Expedited retrievals allow you to quickly access your data stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier when occasional urgent requests for restoring archives are required. For all but the largest archived objects (250 MB+), data accessed using Expedited retrievals is typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available when you need it. Expedited retrievals and provisioned capacity are not available for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.</p></li>
+/// <li>
+/// <p><code>Standard</code> - Standard retrievals allow you to access any of your archived objects within several hours. This is the default option for retrieval requests that do not specify the retrieval option. Standard retrievals typically finish within 3–5 hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier. They typically finish within 12 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals are free for objects stored in S3 Intelligent-Tiering.</p></li>
+/// <li>
+/// <p><code>Bulk</code> - Bulk retrievals free for objects stored in the S3 Glacier Flexible Retrieval and S3 Intelligent-Tiering storage classes, enabling you to retrieve large amounts, even petabytes, of data at no cost. Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost retrieval option when restoring objects from S3 Glacier Deep Archive. They typically finish within 48 hours for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.</p></li>
 /// </ul>
 /// <p>For more information about archive retrieval options and provisioned capacity for <code>Expedited</code> data access, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>You can use Amazon S3 restore speed upgrade to change the restore speed to a faster speed while it is in progress. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html"> Upgrading the speed of an in-progress restore</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -86,31 +105,44 @@ impl RestoreObjectInputBuilder {
 /// <dd>
 /// <p>A successful action returns either the <code>200 OK</code> or <code>202 Accepted</code> status code.</p>
 /// <ul>
-/// <li><p>If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code> in the response.</p></li>
-/// <li><p>If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the response.</p></li>
+/// <li>
+/// <p>If the object is not previously restored, then Amazon S3 returns <code>202 Accepted</code> in the response.</p></li>
+/// <li>
+/// <p>If the object is previously restored, Amazon S3 returns <code>200 OK</code> in the response.</p></li>
 /// </ul>
 /// <ul>
-/// <li><p>Special errors:</p>
+/// <li>
+/// <p>Special errors:</p>
 /// <ul>
-/// <li><p><i>Code: RestoreAlreadyInProgress</i></p></li>
-/// <li><p><i>Cause: Object restore is already in progress. (This error does not apply to SELECT type requests.)</i></p></li>
-/// <li><p><i>HTTP Status Code: 409 Conflict</i></p></li>
-/// <li><p><i>SOAP Fault Code Prefix: Client</i></p></li>
+/// <li>
+/// <p><i>Code: RestoreAlreadyInProgress</i></p></li>
+/// <li>
+/// <p><i>Cause: Object restore is already in progress. (This error does not apply to SELECT type requests.)</i></p></li>
+/// <li>
+/// <p><i>HTTP Status Code: 409 Conflict</i></p></li>
+/// <li>
+/// <p><i>SOAP Fault Code Prefix: Client</i></p></li>
 /// </ul></li>
 /// <li>
 /// <ul>
-/// <li><p><i>Code: GlacierExpeditedRetrievalNotAvailable</i></p></li>
-/// <li><p><i>Cause: expedited retrievals are currently not available. Try again later. (Returned if there is insufficient capacity to process the Expedited request. This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i></p></li>
-/// <li><p><i>HTTP Status Code: 503</i></p></li>
-/// <li><p><i>SOAP Fault Code Prefix: N/A</i></p></li>
+/// <li>
+/// <p><i>Code: GlacierExpeditedRetrievalNotAvailable</i></p></li>
+/// <li>
+/// <p><i>Cause: expedited retrievals are currently not available. Try again later. (Returned if there is insufficient capacity to process the Expedited request. This error applies only to Expedited retrievals and not to S3 Standard or Bulk retrievals.)</i></p></li>
+/// <li>
+/// <p><i>HTTP Status Code: 503</i></p></li>
+/// <li>
+/// <p><i>SOAP Fault Code Prefix: N/A</i></p></li>
 /// </ul></li>
 /// </ul>
 /// </dd>
 /// </dl>
 /// <p>The following operations are related to <code>RestoreObject</code>:</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreObjectFluentBuilder {
@@ -259,21 +291,21 @@ impl RestoreObjectFluentBuilder {
     pub fn get_restore_request(&self) -> &::std::option::Option<crate::types::RestoreRequest> {
         self.inner.get_restore_request()
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
         self.inner = self.inner.request_payer(input);
         self
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn set_request_payer(mut self, input: ::std::option::Option<crate::types::RequestPayer>) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
-    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
+    /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub fn get_request_payer(&self) -> &::std::option::Option<crate::types::RequestPayer> {

@@ -22,7 +22,7 @@ impl ImportHubContentInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportHubContent`.
 ///
-/// <p>Import hub content.</p> <note>
+/// <p>Import hub content.</p><note>
 /// <p>Hub APIs are only callable through SageMaker Studio.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

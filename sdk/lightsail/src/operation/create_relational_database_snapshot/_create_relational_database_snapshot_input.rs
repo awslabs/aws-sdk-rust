@@ -8,8 +8,10 @@ pub struct CreateRelationalDatabaseSnapshotInput {
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub relational_database_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
@@ -24,8 +26,10 @@ impl CreateRelationalDatabaseSnapshotInput {
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn relational_database_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.relational_database_snapshot_name.as_deref()
@@ -72,8 +76,10 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     /// This field is required.
     pub fn relational_database_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -83,8 +89,10 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn set_relational_database_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.relational_database_snapshot_name = input;
@@ -93,8 +101,10 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name for your new database snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
-    /// <li><p>The first and last character must be a letter or number.</p></li>
+    /// <li>
+    /// <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p></li>
+    /// <li>
+    /// <p>The first and last character must be a letter or number.</p></li>
     /// </ul>
     pub fn get_relational_database_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.relational_database_snapshot_name

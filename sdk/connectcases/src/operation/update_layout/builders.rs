@@ -24,7 +24,7 @@ impl UpdateLayoutInputBuilder {
 ///
 /// <p>Updates the attributes of an existing layout.</p>
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
-/// <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p> <note>
+/// <p>A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code> to a layout.</p><note>
 /// <p>Title and Status fields cannot be part of layouts because they are not configurable.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

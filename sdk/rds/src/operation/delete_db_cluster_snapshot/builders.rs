@@ -22,7 +22,7 @@ impl DeleteDbClusterSnapshotInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDBClusterSnapshot`.
 ///
-/// <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note>
+/// <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.</p><note>
 /// <p>The DB cluster snapshot must be in the <code>available</code> state to be deleted.</p>
 /// </note>
 /// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>

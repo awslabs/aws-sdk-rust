@@ -12,88 +12,147 @@ pub struct GetDimensionValuesInput {
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
-    /// <li><p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
-    /// <li><p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
-    /// <li><p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
-    /// <li><p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
-    /// <li><p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
-    /// <li><p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
-    /// <li><p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
+    /// <li>
+    /// <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
+    /// <li>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
+    /// <li>
+    /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
+    /// <li>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
+    /// <li>
+    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
-    /// <li><p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
+    /// <li>
+    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
-    /// <li><p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
+    /// <li>
+    /// <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
     /// </ul>
     pub context: ::std::option::Option<crate::types::Context>,
     /// <p>Use <code>Expression</code> to filter in various Cost Explorer APIs.</p>
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li><p>Simple dimension values.</p>
+    /// <li>
+    /// <p>Simple dimension values.</p>
     /// <ul>
-    /// <li><p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <li>
+    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
     /// <ul>
-    /// <li><p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
-    /// <li><p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
-    /// <li><p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
     /// </ul></li>
-    /// <li><p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <li>
+    /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
-    /// <li><p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
+    /// <li>
+    /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <li>
+    /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
-    /// <li><p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <li>
+    /// <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for linked account names that start with "a".</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <li>
+    /// <p>For example, you can filter for linked account names that start with "a".</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <li>
+    /// <p>Compound <code>Expression</code> types with logical operations.</p>
     /// <ul>
-    /// <li><p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
-    /// <li><p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
+    /// <li>
+    /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// </ul><note>
     /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
@@ -101,13 +160,20 @@ pub struct GetDimensionValuesInput {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>BlendedCost</code></p></li>
-    /// <li><p><code>UnblendedCost</code></p></li>
-    /// <li><p><code>AmortizedCost</code></p></li>
-    /// <li><p><code>NetAmortizedCost</code></p></li>
-    /// <li><p><code>NetUnblendedCost</code></p></li>
-    /// <li><p><code>UsageQuantity</code></p></li>
-    /// <li><p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BlendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetAmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetUnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UsageQuantity</code></p></li>
+    /// <li>
+    /// <p><code>NormalizedUsageAmount</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -134,52 +200,95 @@ impl GetDimensionValuesInput {
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
-    /// <li><p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
-    /// <li><p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
-    /// <li><p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
-    /// <li><p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
-    /// <li><p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
-    /// <li><p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
-    /// <li><p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
+    /// <li>
+    /// <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
+    /// <li>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
+    /// <li>
+    /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
+    /// <li>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
+    /// <li>
+    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
-    /// <li><p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
+    /// <li>
+    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
-    /// <li><p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
+    /// <li>
+    /// <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
     /// </ul>
     pub fn context(&self) -> ::std::option::Option<&crate::types::Context> {
         self.context.as_ref()
@@ -188,36 +297,52 @@ impl GetDimensionValuesInput {
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li><p>Simple dimension values.</p>
+    /// <li>
+    /// <p>Simple dimension values.</p>
     /// <ul>
-    /// <li><p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <li>
+    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
     /// <ul>
-    /// <li><p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
-    /// <li><p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
-    /// <li><p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
     /// </ul></li>
-    /// <li><p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <li>
+    /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
-    /// <li><p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
+    /// <li>
+    /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <li>
+    /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
-    /// <li><p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <li>
+    /// <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for linked account names that start with "a".</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <li>
+    /// <p>For example, you can filter for linked account names that start with "a".</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <li>
+    /// <p>Compound <code>Expression</code> types with logical operations.</p>
     /// <ul>
-    /// <li><p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
-    /// <li><p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
+    /// <li>
+    /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// </ul><note>
     /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
@@ -227,13 +352,20 @@ impl GetDimensionValuesInput {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>BlendedCost</code></p></li>
-    /// <li><p><code>UnblendedCost</code></p></li>
-    /// <li><p><code>AmortizedCost</code></p></li>
-    /// <li><p><code>NetAmortizedCost</code></p></li>
-    /// <li><p><code>NetUnblendedCost</code></p></li>
-    /// <li><p><code>UsageQuantity</code></p></li>
-    /// <li><p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BlendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetAmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetUnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UsageQuantity</code></p></li>
+    /// <li>
+    /// <p><code>NormalizedUsageAmount</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -320,52 +452,95 @@ impl GetDimensionValuesInputBuilder {
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
-    /// <li><p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
-    /// <li><p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
-    /// <li><p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
-    /// <li><p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
-    /// <li><p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
-    /// <li><p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
-    /// <li><p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
+    /// <li>
+    /// <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
+    /// <li>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
+    /// <li>
+    /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
+    /// <li>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
+    /// <li>
+    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
-    /// <li><p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
+    /// <li>
+    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
-    /// <li><p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
+    /// <li>
+    /// <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
     /// </ul>
     pub fn context(mut self, input: crate::types::Context) -> Self {
         self.context = ::std::option::Option::Some(input);
@@ -374,52 +549,95 @@ impl GetDimensionValuesInputBuilder {
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
-    /// <li><p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
-    /// <li><p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
-    /// <li><p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
-    /// <li><p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
-    /// <li><p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
-    /// <li><p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
-    /// <li><p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
+    /// <li>
+    /// <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
+    /// <li>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
+    /// <li>
+    /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
+    /// <li>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
+    /// <li>
+    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
-    /// <li><p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
+    /// <li>
+    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
-    /// <li><p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
+    /// <li>
+    /// <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
     /// </ul>
     pub fn set_context(mut self, input: ::std::option::Option<crate::types::Context>) -> Self {
         self.context = input;
@@ -428,52 +646,95 @@ impl GetDimensionValuesInputBuilder {
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p> <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p> <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p> <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
-    /// <li><p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
-    /// <li><p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
-    /// <li><p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
-    /// <li><p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
-    /// <li><p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
-    /// <li><p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
-    /// <li><p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible values are the following:</p>
+    /// <p>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</p>
+    /// <p>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting reseller for Amazon Web Services in India.</p>
+    /// <p>- Amazon Web Services Marketplace: The entity that supports the sale of solutions that are built on Amazon Web Services by third-party software providers.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases. Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>, <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example, <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</p></li>
+    /// <li>
+    /// <p>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</p></li>
+    /// <li>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
+    /// <li>
+    /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p></li>
+    /// <li>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples include GB and Hrs.</p></li>
+    /// <li>
+    /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees, usage costs, tax refunds, and credits.</p></li>
+    /// <li>
+    /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
-    /// <li><p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
-    /// <li><p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
-    /// <li><p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
-    /// <li><p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
+    /// <li>
+    /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p></li>
+    /// <li>
+    /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p></li>
+    /// <li>
+    /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p></li>
+    /// <li>
+    /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p></li>
     /// </ul>
     /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
     /// <ul>
-    /// <li><p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
-    /// <li><p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
-    /// <li><p>REGION - The Amazon Web Services Region.</p></li>
-    /// <li><p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
-    /// <li><p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
-    /// <li><p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p></li>
+    /// <li>
+    /// <p>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All Upfront)</p></li>
+    /// <li>
+    /// <p>REGION - The Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p></li>
+    /// <li>
+    /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the Amazon Web Services ID of the member account.</p></li>
+    /// <li>
+    /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</p></li>
     /// </ul>
     pub fn get_context(&self) -> &::std::option::Option<crate::types::Context> {
         &self.context
@@ -482,36 +743,52 @@ impl GetDimensionValuesInputBuilder {
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li><p>Simple dimension values.</p>
+    /// <li>
+    /// <p>Simple dimension values.</p>
     /// <ul>
-    /// <li><p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <li>
+    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
     /// <ul>
-    /// <li><p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
-    /// <li><p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
-    /// <li><p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
     /// </ul></li>
-    /// <li><p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <li>
+    /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
-    /// <li><p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
+    /// <li>
+    /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <li>
+    /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
-    /// <li><p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <li>
+    /// <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for linked account names that start with "a".</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <li>
+    /// <p>For example, you can filter for linked account names that start with "a".</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <li>
+    /// <p>Compound <code>Expression</code> types with logical operations.</p>
     /// <ul>
-    /// <li><p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
-    /// <li><p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
+    /// <li>
+    /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// </ul><note>
     /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
@@ -523,36 +800,52 @@ impl GetDimensionValuesInputBuilder {
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li><p>Simple dimension values.</p>
+    /// <li>
+    /// <p>Simple dimension values.</p>
     /// <ul>
-    /// <li><p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <li>
+    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
     /// <ul>
-    /// <li><p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
-    /// <li><p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
-    /// <li><p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
     /// </ul></li>
-    /// <li><p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <li>
+    /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
-    /// <li><p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
+    /// <li>
+    /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <li>
+    /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
-    /// <li><p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <li>
+    /// <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for linked account names that start with "a".</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <li>
+    /// <p>For example, you can filter for linked account names that start with "a".</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <li>
+    /// <p>Compound <code>Expression</code> types with logical operations.</p>
     /// <ul>
-    /// <li><p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
-    /// <li><p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
+    /// <li>
+    /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// </ul><note>
     /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
@@ -564,36 +857,52 @@ impl GetDimensionValuesInputBuilder {
     /// <p>Not all <code>Expression</code> types are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p>There are two patterns:</p>
     /// <ul>
-    /// <li><p>Simple dimension values.</p>
+    /// <li>
+    /// <p>Simple dimension values.</p>
     /// <ul>
-    /// <li><p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <li>
+    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
     /// <ul>
-    /// <li><p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
-    /// <li><p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
-    /// <li><p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
+    /// <li>
+    /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
     /// </ul></li>
-    /// <li><p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
+    /// <li>
+    /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
-    /// <li><p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
+    /// <li>
+    /// <p>For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code></p></li>
+    /// <li>
+    /// <p>As shown in the previous example, lists of dimension values are combined with <code>OR</code> when applying the filter.</p></li>
     /// </ul></li>
-    /// <li><p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
+    /// <li>
+    /// <p>You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.</p>
     /// <ul>
-    /// <li><p>For example, you can filter for linked account names that start with "a".</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
+    /// <li>
+    /// <p>For example, you can filter for linked account names that start with "a".</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] } }</code></p></li>
     /// </ul></li>
     /// </ul></li>
-    /// <li><p>Compound <code>Expression</code> types with logical operations.</p>
+    /// <li>
+    /// <p>Compound <code>Expression</code> types with logical operations.</p>
     /// <ul>
-    /// <li><p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
-    /// <li><p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
-    /// <li><p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. By doing this, you can filter by more advanced options.</p></li>
+    /// <li>
+    /// <p>For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.</p></li>
+    /// <li>
+    /// <p>The corresponding <code>Expression</code> for this example is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code></p></li>
+    /// </ul><note>
     /// <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code></p>
     /// <p>The following is an example of the corresponding error message: <code>"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"</code></p>
     /// </note></li>
-    /// </ul> <note>
+    /// </ul><note>
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
@@ -607,13 +916,20 @@ impl GetDimensionValuesInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>BlendedCost</code></p></li>
-    /// <li><p><code>UnblendedCost</code></p></li>
-    /// <li><p><code>AmortizedCost</code></p></li>
-    /// <li><p><code>NetAmortizedCost</code></p></li>
-    /// <li><p><code>NetUnblendedCost</code></p></li>
-    /// <li><p><code>UsageQuantity</code></p></li>
-    /// <li><p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BlendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetAmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetUnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UsageQuantity</code></p></li>
+    /// <li>
+    /// <p><code>NormalizedUsageAmount</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -626,13 +942,20 @@ impl GetDimensionValuesInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>BlendedCost</code></p></li>
-    /// <li><p><code>UnblendedCost</code></p></li>
-    /// <li><p><code>AmortizedCost</code></p></li>
-    /// <li><p><code>NetAmortizedCost</code></p></li>
-    /// <li><p><code>NetUnblendedCost</code></p></li>
-    /// <li><p><code>UsageQuantity</code></p></li>
-    /// <li><p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BlendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetAmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetUnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UsageQuantity</code></p></li>
+    /// <li>
+    /// <p><code>NormalizedUsageAmount</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -643,13 +966,20 @@ impl GetDimensionValuesInputBuilder {
     /// <p>The value that you want to sort the data by.</p>
     /// <p>The key represents cost and usage metrics. The following values are supported:</p>
     /// <ul>
-    /// <li><p><code>BlendedCost</code></p></li>
-    /// <li><p><code>UnblendedCost</code></p></li>
-    /// <li><p><code>AmortizedCost</code></p></li>
-    /// <li><p><code>NetAmortizedCost</code></p></li>
-    /// <li><p><code>NetUnblendedCost</code></p></li>
-    /// <li><p><code>UsageQuantity</code></p></li>
-    /// <li><p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BlendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>AmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetAmortizedCost</code></p></li>
+    /// <li>
+    /// <p><code>NetUnblendedCost</code></p></li>
+    /// <li>
+    /// <p><code>UsageQuantity</code></p></li>
+    /// <li>
+    /// <p><code>NormalizedUsageAmount</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>

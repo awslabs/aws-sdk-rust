@@ -22,7 +22,7 @@ impl EnableFastLaunchInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableFastLaunch`.
 ///
-/// <p>When you enable Windows fast launch for a Windows AMI, images are pre-provisioned, using snapshots to launch instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your settings for launch frequency.</p> <note>
+/// <p>When you enable Windows fast launch for a Windows AMI, images are pre-provisioned, using snapshots to launch instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your settings for launch frequency.</p><note>
 /// <p>You can only change these settings for Windows AMIs that you own or that have been shared with you.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

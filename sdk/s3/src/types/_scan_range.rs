@@ -4,15 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanRange {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code><scanrange>
     /// <start>
     /// 50
     /// </start>
     /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
     pub start: ::std::option::Option<i64>,
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -20,8 +18,7 @@ pub struct ScanRange {
     pub end: ::std::option::Option<i64>,
 }
 impl ScanRange {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -29,8 +26,7 @@ impl ScanRange {
     pub fn start(&self) -> ::std::option::Option<i64> {
         self.start
     }
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -54,8 +50,7 @@ pub struct ScanRangeBuilder {
     pub(crate) end: ::std::option::Option<i64>,
 }
 impl ScanRangeBuilder {
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -64,8 +59,7 @@ impl ScanRangeBuilder {
         self.start = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -74,8 +68,7 @@ impl ScanRangeBuilder {
         self.start = input;
         self
     }
-    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code><scanrange>
     /// <start>
     /// 50
     /// </start>
@@ -83,8 +76,7 @@ impl ScanRangeBuilder {
     pub fn get_start(&self) -> &::std::option::Option<i64> {
         &self.start
     }
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -93,8 +85,7 @@ impl ScanRangeBuilder {
         self.end = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code><scanrange>
     /// <end>
     /// 50
     /// </end>
@@ -103,8 +94,7 @@ impl ScanRangeBuilder {
         self.end = input;
         self
     }
-    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
-    /// <scanrange>
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code><scanrange>
     /// <end>
     /// 50
     /// </end>

@@ -103,8 +103,10 @@ pub struct ResourceDetails {
     pub container: ::std::option::Option<crate::types::ContainerDetails>,
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li><p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li><p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li>
+    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
+    /// <li>
+    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
     /// </ul>
     pub other: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Details about an RDS event notification subscription.</p>
@@ -401,8 +403,10 @@ impl ResourceDetails {
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li><p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li><p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li>
+    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
+    /// <li>
+    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
     /// </ul>
     pub fn other(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.other.as_ref()
@@ -1400,8 +1404,10 @@ impl ResourceDetailsBuilder {
     ///
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li><p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li><p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li>
+    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
+    /// <li>
+    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
     /// </ul>
     pub fn other(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.other.unwrap_or_default();
@@ -1411,8 +1417,10 @@ impl ResourceDetailsBuilder {
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li><p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li><p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li>
+    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
+    /// <li>
+    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
     /// </ul>
     pub fn set_other(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.other = input;
@@ -1420,8 +1428,10 @@ impl ResourceDetailsBuilder {
     }
     /// <p>Details about a resource that are not available in a type-specific details object. Use the <code>Other</code> object in the following cases.</p>
     /// <ul>
-    /// <li><p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
-    /// <li><p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
+    /// <li>
+    /// <p>The type-specific object does not contain all of the fields that you want to populate. In this case, first use the type-specific object to populate those fields. Use the <code>Other</code> object to populate the fields that are missing from the type-specific object.</p></li>
+    /// <li>
+    /// <p>The resource type does not have a corresponding object. This includes resources for which the type is <code>Other</code>.</p></li>
     /// </ul>
     pub fn get_other(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.other

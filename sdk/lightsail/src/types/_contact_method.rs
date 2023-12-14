@@ -10,9 +10,12 @@ pub struct ContactMethod {
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
     /// <ul>
-    /// <li><p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
-    /// <li><p><code>Valid</code> - The contact method has been verified.</p></li>
-    /// <li><p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
+    /// <li>
+    /// <p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
+    /// <li>
+    /// <p><code>Valid</code> - The contact method has been verified.</p></li>
+    /// <li>
+    /// <p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ContactMethodStatus>,
     /// <p>The protocol of the contact method, such as email or SMS (text messaging).</p>
@@ -38,9 +41,12 @@ impl ContactMethod {
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
     /// <ul>
-    /// <li><p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
-    /// <li><p><code>Valid</code> - The contact method has been verified.</p></li>
-    /// <li><p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
+    /// <li>
+    /// <p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
+    /// <li>
+    /// <p><code>Valid</code> - The contact method has been verified.</p></li>
+    /// <li>
+    /// <p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContactMethodStatus> {
         self.status.as_ref()
@@ -113,9 +119,12 @@ impl ContactMethodBuilder {
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
     /// <ul>
-    /// <li><p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
-    /// <li><p><code>Valid</code> - The contact method has been verified.</p></li>
-    /// <li><p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
+    /// <li>
+    /// <p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
+    /// <li>
+    /// <p><code>Valid</code> - The contact method has been verified.</p></li>
+    /// <li>
+    /// <p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ContactMethodStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -124,9 +133,12 @@ impl ContactMethodBuilder {
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
     /// <ul>
-    /// <li><p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
-    /// <li><p><code>Valid</code> - The contact method has been verified.</p></li>
-    /// <li><p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
+    /// <li>
+    /// <p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
+    /// <li>
+    /// <p><code>Valid</code> - The contact method has been verified.</p></li>
+    /// <li>
+    /// <p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContactMethodStatus>) -> Self {
         self.status = input;
@@ -135,9 +147,12 @@ impl ContactMethodBuilder {
     /// <p>The current status of the contact method.</p>
     /// <p>A contact method has the following possible status:</p>
     /// <ul>
-    /// <li><p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
-    /// <li><p><code>Valid</code> - The contact method has been verified.</p></li>
-    /// <li><p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
+    /// <li>
+    /// <p><code>PendingVerification</code> - The contact method has not yet been verified, and the verification has not yet expired.</p></li>
+    /// <li>
+    /// <p><code>Valid</code> - The contact method has been verified.</p></li>
+    /// <li>
+    /// <p><code>InValid</code> - An attempt was made to verify the contact method, but the verification has expired.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContactMethodStatus> {
         &self.status

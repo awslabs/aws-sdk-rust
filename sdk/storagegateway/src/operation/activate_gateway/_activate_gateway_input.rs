@@ -2,13 +2,20 @@
 
 /// <p>A JSON object containing one or more of the following fields:</p>
 /// <ul>
-/// <li><p><code>ActivateGatewayInput$ActivationKey</code></p></li>
-/// <li><p><code>ActivateGatewayInput$GatewayName</code></p></li>
-/// <li><p><code>ActivateGatewayInput$GatewayRegion</code></p></li>
-/// <li><p><code>ActivateGatewayInput$GatewayTimezone</code></p></li>
-/// <li><p><code>ActivateGatewayInput$GatewayType</code></p></li>
-/// <li><p><code>ActivateGatewayInput$MediumChangerType</code></p></li>
-/// <li><p><code>ActivateGatewayInput$TapeDriveType</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$ActivationKey</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$GatewayName</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$GatewayRegion</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$GatewayTimezone</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$GatewayType</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$MediumChangerType</code></p></li>
+/// <li>
+/// <p><code>ActivateGatewayInput$TapeDriveType</code></p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -32,7 +39,7 @@ pub struct ActivateGatewayInput {
     /// <p>The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
     /// <p>Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code></p>
     pub medium_changer_type: ::std::option::Option<::std::string::String>,
-    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -71,7 +78,7 @@ impl ActivateGatewayInput {
     pub fn medium_changer_type(&self) -> ::std::option::Option<&str> {
         self.medium_changer_type.as_deref()
     }
-    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     ///
@@ -222,7 +229,7 @@ impl ActivateGatewayInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
@@ -231,14 +238,14 @@ impl ActivateGatewayInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

@@ -22,7 +22,7 @@ impl CreateReservedInstancesListingInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateReservedInstancesListing`.
 ///
-/// <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved Instance Marketplace. You can submit one Standard Reserved Instance listing at a time. To get a list of your Standard Reserved Instances, you can use the <code>DescribeReservedInstances</code> operation.</p> <note>
+/// <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved Instance Marketplace. You can submit one Standard Reserved Instance listing at a time. To get a list of your Standard Reserved Instances, you can use the <code>DescribeReservedInstances</code> operation.</p><note>
 /// <p>Only Standard Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible Reserved Instances cannot be sold.</p>
 /// </note>
 /// <p>The Reserved Instance Marketplace matches sellers who want to resell Standard Reserved Instance capacity that they no longer need with buyers who want to purchase additional capacity. Reserved Instances bought and sold through the Reserved Instance Marketplace work like any other Reserved Instances.</p>

@@ -22,7 +22,7 @@ impl CreateFleetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFleet`.
 ///
-/// <p>Creates a fleet that represents a group of vehicles.</p> <note>
+/// <p>Creates a fleet that represents a group of vehicles.</p><note>
 /// <p>You must create both a signal catalog and vehicles before you can create a fleet.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleets.html">Fleets</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>

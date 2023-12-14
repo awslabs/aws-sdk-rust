@@ -22,7 +22,7 @@ impl DescribeHubContentInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeHubContent`.
 ///
-/// <p>Describe the content of a hub.</p> <note>
+/// <p>Describe the content of a hub.</p><note>
 /// <p>Hub APIs are only callable through SageMaker Studio.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

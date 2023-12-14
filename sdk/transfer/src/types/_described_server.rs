@@ -10,10 +10,14 @@ pub struct DescribedServer {
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li><p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
-    /// <li><p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
-    /// <li><p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
-    /// <li><p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
+    /// <li>
+    /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
+    /// <li>
+    /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
+    /// <li>
+    /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub protocol_details: ::std::option::Option<crate::types::ProtocolDetails>,
     /// <p>Specifies the domain of the storage system that is used for file transfers.</p>
@@ -33,7 +37,7 @@ pub struct DescribedServer {
     pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
     pub logging_role: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub post_authentication_login_banner: ::std::option::Option<::std::string::String>,
@@ -42,17 +46,26 @@ pub struct DescribedServer {
     pub pre_authentication_login_banner: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li><p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
-    /// <li><p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
-    /// <li><p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
-    /// <li><p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
+    /// <li>
+    /// <p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
+    /// <li>
+    /// <p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
+    /// <li>
+    /// <p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
+    /// </ul><note>
     /// <ul>
-    /// <li><p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
-    /// <li><p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
-    /// <li><p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
+    /// <li>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
@@ -93,10 +106,14 @@ impl DescribedServer {
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li><p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
-    /// <li><p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
-    /// <li><p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
-    /// <li><p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
+    /// <li>
+    /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
+    /// <li>
+    /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
+    /// <li>
+    /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub fn protocol_details(&self) -> ::std::option::Option<&crate::types::ProtocolDetails> {
         self.protocol_details.as_ref()
@@ -132,7 +149,7 @@ impl DescribedServer {
     pub fn logging_role(&self) -> ::std::option::Option<&str> {
         self.logging_role.as_deref()
     }
-    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn post_authentication_login_banner(&self) -> ::std::option::Option<&str> {
@@ -145,17 +162,26 @@ impl DescribedServer {
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li><p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
-    /// <li><p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
-    /// <li><p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
-    /// <li><p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
+    /// <li>
+    /// <p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
+    /// <li>
+    /// <p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
+    /// <li>
+    /// <p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
+    /// </ul><note>
     /// <ul>
-    /// <li><p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
-    /// <li><p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
-    /// <li><p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
+    /// <li>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
     ///
@@ -273,10 +299,14 @@ impl DescribedServerBuilder {
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li><p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
-    /// <li><p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
-    /// <li><p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
-    /// <li><p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
+    /// <li>
+    /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
+    /// <li>
+    /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
+    /// <li>
+    /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub fn protocol_details(mut self, input: crate::types::ProtocolDetails) -> Self {
         self.protocol_details = ::std::option::Option::Some(input);
@@ -284,10 +314,14 @@ impl DescribedServerBuilder {
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li><p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
-    /// <li><p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
-    /// <li><p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
-    /// <li><p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
+    /// <li>
+    /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
+    /// <li>
+    /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
+    /// <li>
+    /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub fn set_protocol_details(mut self, input: ::std::option::Option<crate::types::ProtocolDetails>) -> Self {
         self.protocol_details = input;
@@ -295,10 +329,14 @@ impl DescribedServerBuilder {
     }
     /// <p>The protocol settings that are configured for your server.</p>
     /// <ul>
-    /// <li><p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
-    /// <li><p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
-    /// <li><p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
-    /// <li><p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
+    /// <li>
+    /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
+    /// <li>
+    /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
+    /// <li>
+    /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
+    /// <li>
+    /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
     /// </ul>
     pub fn get_protocol_details(&self) -> &::std::option::Option<crate::types::ProtocolDetails> {
         &self.protocol_details
@@ -410,21 +448,21 @@ impl DescribedServerBuilder {
     pub fn get_logging_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.logging_role
     }
-    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn post_authentication_login_banner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.post_authentication_login_banner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn set_post_authentication_login_banner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.post_authentication_login_banner = input;
         self
     }
-    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p> <note>
+    /// <p>Specifies a string to display when users connect to a server. This string is displayed after the user authenticates.</p><note>
     /// <p>The SFTP protocol does not support post-authentication display banners.</p>
     /// </note>
     pub fn get_post_authentication_login_banner(&self) -> &::std::option::Option<::std::string::String> {
@@ -453,17 +491,26 @@ impl DescribedServerBuilder {
     ///
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li><p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
-    /// <li><p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
-    /// <li><p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
-    /// <li><p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
+    /// <li>
+    /// <p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
+    /// <li>
+    /// <p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
+    /// <li>
+    /// <p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
+    /// </ul><note>
     /// <ul>
-    /// <li><p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
-    /// <li><p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
-    /// <li><p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
+    /// <li>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
@@ -474,17 +521,26 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li><p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
-    /// <li><p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
-    /// <li><p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
-    /// <li><p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
+    /// <li>
+    /// <p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
+    /// <li>
+    /// <p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
+    /// <li>
+    /// <p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
+    /// </ul><note>
     /// <ul>
-    /// <li><p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
-    /// <li><p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
-    /// <li><p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
+    /// <li>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
@@ -493,17 +549,26 @@ impl DescribedServerBuilder {
     }
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:</p>
     /// <ul>
-    /// <li><p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
-    /// <li><p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
-    /// <li><p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
-    /// <li><p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH</p></li>
+    /// <li>
+    /// <p><code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption</p></li>
+    /// <li>
+    /// <p><code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p></li>
+    /// <li>
+    /// <p><code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business data</p></li>
+    /// </ul><note>
     /// <ul>
-    /// <li><p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
-    /// <li><p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
-    /// <li><p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
-    /// <li><p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
+    /// <li>
+    /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Certificate Manager (ACM) which is used to identify your server when clients connect to it over FTPS.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.</p></li>
+    /// <li>
+    /// <p>If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code> must be <code>VPC</code>, and domain must be Amazon S3.</p></li>
     /// </ul>
     /// </note>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {

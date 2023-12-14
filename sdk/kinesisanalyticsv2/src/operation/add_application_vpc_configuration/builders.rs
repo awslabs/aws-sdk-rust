@@ -25,8 +25,10 @@ impl AddApplicationVpcConfigurationInputBuilder {
 /// <p>Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and access resources securely.</p>
 /// <p>Note the following about VPC configurations for Kinesis Data Analytics applications:</p>
 /// <ul>
-/// <li><p>VPC configurations are not supported for SQL applications.</p></li>
-/// <li><p>When a VPC is added to a Kinesis Data Analytics application, the application can no longer be accessed from the Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.</p></li>
+/// <li>
+/// <p>VPC configurations are not supported for SQL applications.</p></li>
+/// <li>
+/// <p>When a VPC is added to a Kinesis Data Analytics application, the application can no longer be accessed from the Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddApplicationVpcConfigurationFluentBuilder {

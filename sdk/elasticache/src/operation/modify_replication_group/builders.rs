@@ -24,9 +24,11 @@ impl ModifyReplicationGroupInputBuilder {
 ///
 /// <p>Modifies the settings for a replication group. This is limited to Redis 7 and newer.</p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache User Guide</p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a> in the ElastiCache API Reference</p></li>
-/// </ul> <note>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache User Guide</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html">ModifyReplicationGroupShardConfiguration</a> in the ElastiCache API Reference</p></li>
+/// </ul><note>
 /// <p>This operation is valid for Redis only.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -266,13 +268,20 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li><p><code>sun</code></p></li>
-    /// <li><p><code>mon</code></p></li>
-    /// <li><p><code>tue</code></p></li>
-    /// <li><p><code>wed</code></p></li>
-    /// <li><p><code>thu</code></p></li>
-    /// <li><p><code>fri</code></p></li>
-    /// <li><p><code>sat</code></p></li>
+    /// <li>
+    /// <p><code>sun</code></p></li>
+    /// <li>
+    /// <p><code>mon</code></p></li>
+    /// <li>
+    /// <p><code>tue</code></p></li>
+    /// <li>
+    /// <p><code>wed</code></p></li>
+    /// <li>
+    /// <p><code>thu</code></p></li>
+    /// <li>
+    /// <p><code>fri</code></p></li>
+    /// <li>
+    /// <p><code>sat</code></p></li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn preferred_maintenance_window(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -282,13 +291,20 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li><p><code>sun</code></p></li>
-    /// <li><p><code>mon</code></p></li>
-    /// <li><p><code>tue</code></p></li>
-    /// <li><p><code>wed</code></p></li>
-    /// <li><p><code>thu</code></p></li>
-    /// <li><p><code>fri</code></p></li>
-    /// <li><p><code>sat</code></p></li>
+    /// <li>
+    /// <p><code>sun</code></p></li>
+    /// <li>
+    /// <p><code>mon</code></p></li>
+    /// <li>
+    /// <p><code>tue</code></p></li>
+    /// <li>
+    /// <p><code>wed</code></p></li>
+    /// <li>
+    /// <p><code>thu</code></p></li>
+    /// <li>
+    /// <p><code>fri</code></p></li>
+    /// <li>
+    /// <p><code>sat</code></p></li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn set_preferred_maintenance_window(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -298,33 +314,40 @@ impl ModifyReplicationGroupFluentBuilder {
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
     /// <p>Valid values for <code>ddd</code> are:</p>
     /// <ul>
-    /// <li><p><code>sun</code></p></li>
-    /// <li><p><code>mon</code></p></li>
-    /// <li><p><code>tue</code></p></li>
-    /// <li><p><code>wed</code></p></li>
-    /// <li><p><code>thu</code></p></li>
-    /// <li><p><code>fri</code></p></li>
-    /// <li><p><code>sat</code></p></li>
+    /// <li>
+    /// <p><code>sun</code></p></li>
+    /// <li>
+    /// <p><code>mon</code></p></li>
+    /// <li>
+    /// <p><code>tue</code></p></li>
+    /// <li>
+    /// <p><code>wed</code></p></li>
+    /// <li>
+    /// <p><code>thu</code></p></li>
+    /// <li>
+    /// <p><code>fri</code></p></li>
+    /// <li>
+    /// <p><code>sat</code></p></li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code></p>
     pub fn get_preferred_maintenance_window(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_preferred_maintenance_window()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
     /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn notification_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notification_topic_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
     /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn set_notification_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notification_topic_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p><note>
     /// <p>The Amazon SNS topic owner must be same as the replication group owner.</p>
     /// </note>
     pub fn get_notification_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -468,9 +491,12 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li><p>Must be only printable ASCII characters</p></li>
-    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li>
+    /// <p>Must be only printable ASCII characters</p></li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li>
+    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
     /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn auth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -479,9 +505,12 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li><p>Must be only printable ASCII characters</p></li>
-    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li>
+    /// <p>Must be only printable ASCII characters</p></li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li>
+    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
     /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn set_auth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -490,9 +519,12 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code> parameter. Password constraints:</p>
     /// <ul>
-    /// <li><p>Must be only printable ASCII characters</p></li>
-    /// <li><p>Must be at least 16 characters and no more than 128 characters in length</p></li>
-    /// <li><p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
+    /// <li>
+    /// <p>Must be only printable ASCII characters</p></li>
+    /// <li>
+    /// <p>Must be at least 16 characters and no more than 128 characters in length</p></li>
+    /// <li>
+    /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p></li>
     /// </ul>
     /// <p>For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub fn get_auth_token(&self) -> &::std::option::Option<::std::string::String> {
@@ -500,8 +532,10 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li><p>Rotate</p></li>
-    /// <li><p>Set</p></li>
+    /// <li>
+    /// <p>Rotate</p></li>
+    /// <li>
+    /// <p>Set</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn auth_token_update_strategy(mut self, input: crate::types::AuthTokenUpdateStrategyType) -> Self {
@@ -510,8 +544,10 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li><p>Rotate</p></li>
-    /// <li><p>Set</p></li>
+    /// <li>
+    /// <p>Rotate</p></li>
+    /// <li>
+    /// <p>Set</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn set_auth_token_update_strategy(mut self, input: ::std::option::Option<crate::types::AuthTokenUpdateStrategyType>) -> Self {
@@ -520,8 +556,10 @@ impl ModifyReplicationGroupFluentBuilder {
     }
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter. Possible values:</p>
     /// <ul>
-    /// <li><p>Rotate</p></li>
-    /// <li><p>Set</p></li>
+    /// <li>
+    /// <p>Rotate</p></li>
+    /// <li>
+    /// <p>Set</p></li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a></p>
     pub fn get_auth_token_update_strategy(&self) -> &::std::option::Option<crate::types::AuthTokenUpdateStrategyType> {

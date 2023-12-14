@@ -12,12 +12,15 @@ pub struct UpdateListInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
-    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
-    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
+    /// <li>
+    /// <p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub update_mode: ::std::option::Option<crate::types::ListUpdateMode>,
-    /// <p>The variable type you want to assign to the list.</p> <note>
+    /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub variable_type: ::std::option::Option<::std::string::String>,
@@ -40,14 +43,17 @@ impl UpdateListInput {
     }
     /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
-    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
-    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
+    /// <li>
+    /// <p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn update_mode(&self) -> ::std::option::Option<&crate::types::ListUpdateMode> {
         self.update_mode.as_ref()
     }
-    /// <p>The variable type you want to assign to the list.</p> <note>
+    /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn variable_type(&self) -> ::std::option::Option<&str> {
@@ -126,9 +132,12 @@ impl UpdateListInputBuilder {
     }
     /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
-    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
-    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
+    /// <li>
+    /// <p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn update_mode(mut self, input: crate::types::ListUpdateMode) -> Self {
         self.update_mode = ::std::option::Option::Some(input);
@@ -136,9 +145,12 @@ impl UpdateListInputBuilder {
     }
     /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
-    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
-    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
+    /// <li>
+    /// <p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn set_update_mode(mut self, input: ::std::option::Option<crate::types::ListUpdateMode>) -> Self {
         self.update_mode = input;
@@ -146,28 +158,31 @@ impl UpdateListInputBuilder {
     }
     /// <p>The update mode (type).</p>
     /// <ul>
-    /// <li><p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
-    /// <li><p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
-    /// <li><p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
+    /// <li>
+    /// <p>Use <code>APPEND</code> if you are adding elements to the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p></li>
+    /// <li>
+    /// <p>Use <code>REMOVE</code> if you are removing elements from the list.</p></li>
     /// </ul>
     pub fn get_update_mode(&self) -> &::std::option::Option<crate::types::ListUpdateMode> {
         &self.update_mode
     }
-    /// <p>The variable type you want to assign to the list.</p> <note>
+    /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn variable_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.variable_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The variable type you want to assign to the list.</p> <note>
+    /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn set_variable_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variable_type = input;
         self
     }
-    /// <p>The variable type you want to assign to the list.</p> <note>
+    /// <p>The variable type you want to assign to the list.</p><note>
     /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
     /// </note>
     pub fn get_variable_type(&self) -> &::std::option::Option<::std::string::String> {

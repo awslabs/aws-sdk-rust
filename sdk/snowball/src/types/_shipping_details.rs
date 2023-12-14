@@ -6,10 +6,14 @@
 pub struct ShippingDetails {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub shipping_option: ::std::option::Option<crate::types::ShippingOption>,
     /// <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being returned to Amazon Web Services for a particular job.</p>
@@ -20,10 +24,14 @@ pub struct ShippingDetails {
 impl ShippingDetails {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn shipping_option(&self) -> ::std::option::Option<&crate::types::ShippingOption> {
         self.shipping_option.as_ref()
@@ -55,10 +63,14 @@ pub struct ShippingDetailsBuilder {
 impl ShippingDetailsBuilder {
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.shipping_option = ::std::option::Option::Some(input);
@@ -66,10 +78,14 @@ impl ShippingDetailsBuilder {
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn set_shipping_option(mut self, input: ::std::option::Option<crate::types::ShippingOption>) -> Self {
         self.shipping_option = input;
@@ -77,10 +93,14 @@ impl ShippingDetailsBuilder {
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon you'll get the Snow device from the job's creation date. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     /// <ul>
-    /// <li><p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
-    /// <li><p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
-    /// <li><p>In India, Snow devices are delivered in one to seven days.</p></li>
-    /// <li><p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
+    /// <li>
+    /// <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p></li>
+    /// <li>
+    /// <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p></li>
+    /// <li>
+    /// <p>In India, Snow devices are delivered in one to seven days.</p></li>
+    /// <li>
+    /// <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p></li>
     /// </ul>
     pub fn get_shipping_option(&self) -> &::std::option::Option<crate::types::ShippingOption> {
         &self.shipping_option

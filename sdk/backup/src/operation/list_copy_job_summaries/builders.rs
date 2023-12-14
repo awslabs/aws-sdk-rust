@@ -206,9 +206,12 @@ impl ListCopyJobSummariesFluentBuilder {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li><p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li><p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li><p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li>
+    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <li>
+    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <li>
+    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn aggregation_period(mut self, input: crate::types::AggregationPeriod) -> Self {
         self.inner = self.inner.aggregation_period(input);
@@ -216,9 +219,12 @@ impl ListCopyJobSummariesFluentBuilder {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li><p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li><p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li><p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li>
+    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <li>
+    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <li>
+    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn set_aggregation_period(mut self, input: ::std::option::Option<crate::types::AggregationPeriod>) -> Self {
         self.inner = self.inner.set_aggregation_period(input);
@@ -226,9 +232,12 @@ impl ListCopyJobSummariesFluentBuilder {
     }
     /// <p>This is the period that sets the boundaries for returned results.</p>
     /// <ul>
-    /// <li><p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
-    /// <li><p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
-    /// <li><p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
+    /// <li>
+    /// <p><code>ONE_DAY</code> for daily job count for the prior 14 days.</p></li>
+    /// <li>
+    /// <p><code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.</p></li>
+    /// <li>
+    /// <p><code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.</p></li>
     /// </ul>
     pub fn get_aggregation_period(&self) -> &::std::option::Option<crate::types::AggregationPeriod> {
         self.inner.get_aggregation_period()

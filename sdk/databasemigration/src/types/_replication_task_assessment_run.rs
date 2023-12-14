@@ -12,16 +12,26 @@ pub struct ReplicationTaskAssessmentRun {
     /// <p>Assessment run status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
-    /// <li><p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
-    /// <li><p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
-    /// <li><p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
-    /// <li><p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
-    /// <li><p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
-    /// <li><p><code>"running"</code> – Individual assessments are being run.</p></li>
-    /// <li><p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
+    /// <li>
+    /// <p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
+    /// <li>
+    /// <p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
+    /// <li>
+    /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
+    /// <li>
+    /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Date on which the assessment run was created using the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
@@ -55,16 +65,26 @@ impl ReplicationTaskAssessmentRun {
     /// <p>Assessment run status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
-    /// <li><p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
-    /// <li><p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
-    /// <li><p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
-    /// <li><p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
-    /// <li><p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
-    /// <li><p><code>"running"</code> – Individual assessments are being run.</p></li>
-    /// <li><p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
+    /// <li>
+    /// <p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
+    /// <li>
+    /// <p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
+    /// <li>
+    /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
+    /// <li>
+    /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -162,16 +182,26 @@ impl ReplicationTaskAssessmentRunBuilder {
     /// <p>Assessment run status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
-    /// <li><p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
-    /// <li><p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
-    /// <li><p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
-    /// <li><p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
-    /// <li><p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
-    /// <li><p><code>"running"</code> – Individual assessments are being run.</p></li>
-    /// <li><p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
+    /// <li>
+    /// <p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
+    /// <li>
+    /// <p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
+    /// <li>
+    /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
+    /// <li>
+    /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -180,16 +210,26 @@ impl ReplicationTaskAssessmentRunBuilder {
     /// <p>Assessment run status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
-    /// <li><p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
-    /// <li><p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
-    /// <li><p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
-    /// <li><p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
-    /// <li><p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
-    /// <li><p><code>"running"</code> – Individual assessments are being run.</p></li>
-    /// <li><p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
+    /// <li>
+    /// <p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
+    /// <li>
+    /// <p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
+    /// <li>
+    /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
+    /// <li>
+    /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -198,16 +238,26 @@ impl ReplicationTaskAssessmentRunBuilder {
     /// <p>Assessment run status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
-    /// <li><p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
-    /// <li><p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
-    /// <li><p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
-    /// <li><p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
-    /// <li><p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
-    /// <li><p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
-    /// <li><p><code>"running"</code> – Individual assessments are being run.</p></li>
-    /// <li><p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
+    /// <li>
+    /// <p><code>"cancelling"</code> – The assessment run was canceled by the <code>CancelReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"deleting"</code> – The assessment run was deleted by the <code>DeleteReplicationTaskAssessmentRun</code> operation.</p></li>
+    /// <li>
+    /// <p><code>"failed"</code> – At least one individual assessment completed with a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"error-provisioning"</code> – An internal error occurred while resources were provisioned (during <code>provisioning</code> status).</p></li>
+    /// <li>
+    /// <p><code>"error-executing"</code> – An internal error occurred while individual assessments ran (during <code>running</code> status).</p></li>
+    /// <li>
+    /// <p><code>"invalid state"</code> – The assessment run is in an unknown state.</p></li>
+    /// <li>
+    /// <p><code>"passed"</code> – All individual assessments have completed, and none has a <code>failed</code> status.</p></li>
+    /// <li>
+    /// <p><code>"provisioning"</code> – Resources required to run individual assessments are being provisioned.</p></li>
+    /// <li>
+    /// <p><code>"running"</code> – Individual assessments are being run.</p></li>
+    /// <li>
+    /// <p><code>"starting"</code> – The assessment run is starting, but resources are not yet being provisioned for individual assessments.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

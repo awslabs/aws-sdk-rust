@@ -29,8 +29,10 @@ impl PutBucketOwnershipControlsInputBuilder {
 /// <p>For information about Amazon S3 Object Ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/about-object-ownership.html">Using object ownership</a>.</p>
 /// <p>The following operations are related to <code>PutBucketOwnershipControls</code>:</p>
 /// <ul>
-/// <li><p><code>GetBucketOwnershipControls</code></p></li>
-/// <li><p><code>DeleteBucketOwnershipControls</code></p></li>
+/// <li>
+/// <p><code>GetBucketOwnershipControls</code></p></li>
+/// <li>
+/// <p><code>DeleteBucketOwnershipControls</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutBucketOwnershipControlsFluentBuilder {

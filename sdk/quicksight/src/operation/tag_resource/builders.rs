@@ -27,8 +27,10 @@ impl TagResourceInputBuilder {
 /// <p>You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data source, dashboard, template, topic, and user.</p>
 /// <p>Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except for the following:</p>
 /// <ul>
-/// <li><p>Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.</p></li>
-/// <li><p>Amazon QuickSight doesn't currently support the tag editor for Resource Groups.</p></li>
+/// <li>
+/// <p>Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources that Amazon QuickSight costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.</p></li>
+/// <li>
+/// <p>Amazon QuickSight doesn't currently support the tag editor for Resource Groups.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {

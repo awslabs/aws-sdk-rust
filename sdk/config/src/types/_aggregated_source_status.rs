@@ -12,9 +12,12 @@ pub struct AggregatedSourceStatus {
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>Filters the last updated status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub last_update_status: ::std::option::Option<crate::types::AggregatedSourceStatusType>,
     /// <p>The time of the last update.</p>
@@ -39,9 +42,12 @@ impl AggregatedSourceStatus {
     }
     /// <p>Filters the last updated status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn last_update_status(&self) -> ::std::option::Option<&crate::types::AggregatedSourceStatusType> {
         self.last_update_status.as_ref()
@@ -123,9 +129,12 @@ impl AggregatedSourceStatusBuilder {
     }
     /// <p>Filters the last updated status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn last_update_status(mut self, input: crate::types::AggregatedSourceStatusType) -> Self {
         self.last_update_status = ::std::option::Option::Some(input);
@@ -133,9 +142,12 @@ impl AggregatedSourceStatusBuilder {
     }
     /// <p>Filters the last updated status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn set_last_update_status(mut self, input: ::std::option::Option<crate::types::AggregatedSourceStatusType>) -> Self {
         self.last_update_status = input;
@@ -143,9 +155,12 @@ impl AggregatedSourceStatusBuilder {
     }
     /// <p>Filters the last updated status type.</p>
     /// <ul>
-    /// <li><p>Valid value FAILED indicates errors while moving data.</p></li>
-    /// <li><p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
-    /// <li><p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
+    /// <li>
+    /// <p>Valid value FAILED indicates errors while moving data.</p></li>
+    /// <li>
+    /// <p>Valid value SUCCEEDED indicates the data was successfully moved.</p></li>
+    /// <li>
+    /// <p>Valid value OUTDATED indicates the data is not the most recent.</p></li>
     /// </ul>
     pub fn get_last_update_status(&self) -> &::std::option::Option<crate::types::AggregatedSourceStatusType> {
         &self.last_update_status

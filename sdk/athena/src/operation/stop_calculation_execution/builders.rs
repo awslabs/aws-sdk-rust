@@ -22,7 +22,7 @@ impl StopCalculationExecutionInputBuilder {
 }
 /// Fluent builder constructing a request to `StopCalculationExecution`.
 ///
-/// <p>Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.</p> <note>
+/// <p>Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.</p><note>
 /// <p>Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider terminating the session in which the calculation is running.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

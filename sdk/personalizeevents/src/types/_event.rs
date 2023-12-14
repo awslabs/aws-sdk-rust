@@ -18,12 +18,18 @@ pub struct Event {
     /// <p>The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item interactions dataset's schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub properties: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
@@ -60,12 +66,18 @@ impl Event {
     /// <p>The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item interactions dataset's schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn properties(&self) -> ::std::option::Option<&str> {
         self.properties.as_deref()
@@ -190,12 +202,18 @@ impl EventBuilder {
     /// <p>The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item interactions dataset's schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.properties = ::std::option::Option::Some(input.into());
@@ -207,12 +225,18 @@ impl EventBuilder {
     /// <p>The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item interactions dataset's schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
@@ -224,12 +248,18 @@ impl EventBuilder {
     /// <p>The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item interactions dataset's schema.</p>
     /// <p>The following can't be included as a keyword for properties (case insensitive).</p>
     /// <ul>
-    /// <li><p>userId</p></li>
-    /// <li><p>sessionId</p></li>
-    /// <li><p>eventType</p></li>
-    /// <li><p>timestamp</p></li>
-    /// <li><p>recommendationId</p></li>
-    /// <li><p>impression</p></li>
+    /// <li>
+    /// <p>userId</p></li>
+    /// <li>
+    /// <p>sessionId</p></li>
+    /// <li>
+    /// <p>eventType</p></li>
+    /// <li>
+    /// <p>timestamp</p></li>
+    /// <li>
+    /// <p>recommendationId</p></li>
+    /// <li>
+    /// <p>impression</p></li>
     /// </ul>
     pub fn get_properties(&self) -> &::std::option::Option<::std::string::String> {
         &self.properties

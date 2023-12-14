@@ -120,8 +120,10 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
     ///
     /// <p>If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the collector agent.</p></li>
+    /// <li>
+    /// <p><code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the collector agent.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -130,8 +132,10 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the collector agent.</p></li>
+    /// <li>
+    /// <p><code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the collector agent.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code></p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -140,8 +144,10 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder {
     }
     /// <p>If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
     /// <ul>
-    /// <li><p><code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
-    /// <li><p><code>collector-name</code> – The name of the collector agent.</p></li>
+    /// <li>
+    /// <p><code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p></li>
+    /// <li>
+    /// <p><code>collector-name</code> – The name of the collector agent.</p></li>
     /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code></p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

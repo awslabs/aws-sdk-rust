@@ -24,10 +24,14 @@ impl DeleteVpcIngressConnectionInputBuilder {
 ///
 /// <p>Delete an App Runner VPC Ingress Connection resource that's associated with an App Runner service. The VPC Ingress Connection must be in one of the following states to be deleted:</p>
 /// <ul>
-/// <li><p><code>AVAILABLE</code></p></li>
-/// <li><p><code>FAILED_CREATION</code></p></li>
-/// <li><p><code>FAILED_UPDATE</code></p></li>
-/// <li><p><code>FAILED_DELETION</code></p></li>
+/// <li>
+/// <p><code>AVAILABLE</code></p></li>
+/// <li>
+/// <p><code>FAILED_CREATION</code></p></li>
+/// <li>
+/// <p><code>FAILED_UPDATE</code></p></li>
+/// <li>
+/// <p><code>FAILED_DELETION</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVpcIngressConnectionFluentBuilder {

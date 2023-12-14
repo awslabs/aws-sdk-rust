@@ -22,7 +22,7 @@ impl RemoveTagsFromStreamInputBuilder {
 }
 /// Fluent builder constructing a request to `RemoveTagsFromStream`.
 ///
-/// <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes.</p> <note>
+/// <p>Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this operation successfully completes.</p><note>
 /// <p>When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter, or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.</p>
 /// </note>
 /// <p>If you specify a tag that does not exist, it is ignored.</p>

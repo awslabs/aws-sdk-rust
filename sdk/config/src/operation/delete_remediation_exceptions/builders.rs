@@ -22,7 +22,7 @@ impl DeleteRemediationExceptionsInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRemediationExceptions`.
 ///
-/// <p>Deletes one or more remediation exceptions mentioned in the resource keys.</p> <note>
+/// <p>Deletes one or more remediation exceptions mentioned in the resource keys.</p><note>
 /// <p>Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

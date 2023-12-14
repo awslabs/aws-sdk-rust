@@ -6,16 +6,20 @@
 pub struct InferenceExecutionConfig {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
-    /// <li><p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
-    /// <li><p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
+    /// <li>
+    /// <p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
+    /// <li>
+    /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
     pub mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }
 impl InferenceExecutionConfig {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
-    /// <li><p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
-    /// <li><p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
+    /// <li>
+    /// <p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
+    /// <li>
+    /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::InferenceExecutionMode> {
         self.mode.as_ref()
@@ -37,8 +41,10 @@ pub struct InferenceExecutionConfigBuilder {
 impl InferenceExecutionConfigBuilder {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
-    /// <li><p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
-    /// <li><p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
+    /// <li>
+    /// <p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
+    /// <li>
+    /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
     /// This field is required.
     pub fn mode(mut self, input: crate::types::InferenceExecutionMode) -> Self {
@@ -47,8 +53,10 @@ impl InferenceExecutionConfigBuilder {
     }
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
-    /// <li><p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
-    /// <li><p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
+    /// <li>
+    /// <p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
+    /// <li>
+    /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::InferenceExecutionMode>) -> Self {
         self.mode = input;
@@ -56,8 +64,10 @@ impl InferenceExecutionConfigBuilder {
     }
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
-    /// <li><p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
-    /// <li><p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
+    /// <li>
+    /// <p><code>SERIAL</code> - Containers run as a serial pipeline.</p></li>
+    /// <li>
+    /// <p><code>DIRECT</code> - Only the individual container that you specify is run.</p></li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::InferenceExecutionMode> {
         &self.mode

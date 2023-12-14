@@ -159,13 +159,20 @@ impl ListStatementsFluentBuilder {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::StatusString) -> Self {
         self.inner = self.inner.status(input);
@@ -173,13 +180,20 @@ impl ListStatementsFluentBuilder {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusString>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -187,13 +201,20 @@ impl ListStatementsFluentBuilder {
     }
     /// <p>The status of the SQL statement to list. Status values are defined as follows:</p>
     /// <ul>
-    /// <li><p>ABORTED - The query run was stopped by the user.</p></li>
-    /// <li><p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
-    /// <li><p>FAILED - The query run failed.</p></li>
-    /// <li><p>FINISHED - The query has finished running.</p></li>
-    /// <li><p>PICKED - The query has been chosen to be run.</p></li>
-    /// <li><p>STARTED - The query run has started.</p></li>
-    /// <li><p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
+    /// <li>
+    /// <p>ABORTED - The query run was stopped by the user.</p></li>
+    /// <li>
+    /// <p>ALL - A status value that includes all query statuses. This value can be used to filter results.</p></li>
+    /// <li>
+    /// <p>FAILED - The query run failed.</p></li>
+    /// <li>
+    /// <p>FINISHED - The query has finished running.</p></li>
+    /// <li>
+    /// <p>PICKED - The query has been chosen to be run.</p></li>
+    /// <li>
+    /// <p>STARTED - The query run has started.</p></li>
+    /// <li>
+    /// <p>SUBMITTED - The query was submitted, but not yet processed.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusString> {
         self.inner.get_status()

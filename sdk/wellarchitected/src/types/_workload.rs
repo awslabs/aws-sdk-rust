@@ -35,33 +35,60 @@ pub struct Workload {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Agriculture</code></p></li>
-    /// <li><p><code>Automobile</code></p></li>
-    /// <li><p><code>Defense</code></p></li>
-    /// <li><p><code>Design and Engineering</code></p></li>
-    /// <li><p><code>Digital Advertising</code></p></li>
-    /// <li><p><code>Education</code></p></li>
-    /// <li><p><code>Environmental Protection</code></p></li>
-    /// <li><p><code>Financial Services</code></p></li>
-    /// <li><p><code>Gaming</code></p></li>
-    /// <li><p><code>General Public Services</code></p></li>
-    /// <li><p><code>Healthcare</code></p></li>
-    /// <li><p><code>Hospitality</code></p></li>
-    /// <li><p><code>InfoTech</code></p></li>
-    /// <li><p><code>Justice and Public Safety</code></p></li>
-    /// <li><p><code>Life Sciences</code></p></li>
-    /// <li><p><code>Manufacturing</code></p></li>
-    /// <li><p><code>Media &amp; Entertainment</code></p></li>
-    /// <li><p><code>Mining &amp; Resources</code></p></li>
-    /// <li><p><code>Oil &amp; Gas</code></p></li>
-    /// <li><p><code>Power &amp; Utilities</code></p></li>
-    /// <li><p><code>Professional Services</code></p></li>
-    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li><p><code>Social Protection</code></p></li>
-    /// <li><p><code>Telecommunications</code></p></li>
-    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li><p><code>Other</code></p></li>
+    /// <li>
+    /// <p><code>Agriculture</code></p></li>
+    /// <li>
+    /// <p><code>Automobile</code></p></li>
+    /// <li>
+    /// <p><code>Defense</code></p></li>
+    /// <li>
+    /// <p><code>Design and Engineering</code></p></li>
+    /// <li>
+    /// <p><code>Digital Advertising</code></p></li>
+    /// <li>
+    /// <p><code>Education</code></p></li>
+    /// <li>
+    /// <p><code>Environmental Protection</code></p></li>
+    /// <li>
+    /// <p><code>Financial Services</code></p></li>
+    /// <li>
+    /// <p><code>Gaming</code></p></li>
+    /// <li>
+    /// <p><code>General Public Services</code></p></li>
+    /// <li>
+    /// <p><code>Healthcare</code></p></li>
+    /// <li>
+    /// <p><code>Hospitality</code></p></li>
+    /// <li>
+    /// <p><code>InfoTech</code></p></li>
+    /// <li>
+    /// <p><code>Justice and Public Safety</code></p></li>
+    /// <li>
+    /// <p><code>Life Sciences</code></p></li>
+    /// <li>
+    /// <p><code>Manufacturing</code></p></li>
+    /// <li>
+    /// <p><code>Media &amp; Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>Mining &amp; Resources</code></p></li>
+    /// <li>
+    /// <p><code>Oil &amp; Gas</code></p></li>
+    /// <li>
+    /// <p><code>Power &amp; Utilities</code></p></li>
+    /// <li>
+    /// <p><code>Professional Services</code></p></li>
+    /// <li>
+    /// <p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li>
+    /// <p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li>
+    /// <p><code>Social Protection</code></p></li>
+    /// <li>
+    /// <p><code>Telecommunications</code></p></li>
+    /// <li>
+    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li>
+    /// <p><code>Other</code></p></li>
     /// </ul>
     pub industry_type: ::std::option::Option<::std::string::String>,
     /// <p>The industry for the workload.</p>
@@ -157,33 +184,60 @@ impl Workload {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Agriculture</code></p></li>
-    /// <li><p><code>Automobile</code></p></li>
-    /// <li><p><code>Defense</code></p></li>
-    /// <li><p><code>Design and Engineering</code></p></li>
-    /// <li><p><code>Digital Advertising</code></p></li>
-    /// <li><p><code>Education</code></p></li>
-    /// <li><p><code>Environmental Protection</code></p></li>
-    /// <li><p><code>Financial Services</code></p></li>
-    /// <li><p><code>Gaming</code></p></li>
-    /// <li><p><code>General Public Services</code></p></li>
-    /// <li><p><code>Healthcare</code></p></li>
-    /// <li><p><code>Hospitality</code></p></li>
-    /// <li><p><code>InfoTech</code></p></li>
-    /// <li><p><code>Justice and Public Safety</code></p></li>
-    /// <li><p><code>Life Sciences</code></p></li>
-    /// <li><p><code>Manufacturing</code></p></li>
-    /// <li><p><code>Media &amp; Entertainment</code></p></li>
-    /// <li><p><code>Mining &amp; Resources</code></p></li>
-    /// <li><p><code>Oil &amp; Gas</code></p></li>
-    /// <li><p><code>Power &amp; Utilities</code></p></li>
-    /// <li><p><code>Professional Services</code></p></li>
-    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li><p><code>Social Protection</code></p></li>
-    /// <li><p><code>Telecommunications</code></p></li>
-    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li><p><code>Other</code></p></li>
+    /// <li>
+    /// <p><code>Agriculture</code></p></li>
+    /// <li>
+    /// <p><code>Automobile</code></p></li>
+    /// <li>
+    /// <p><code>Defense</code></p></li>
+    /// <li>
+    /// <p><code>Design and Engineering</code></p></li>
+    /// <li>
+    /// <p><code>Digital Advertising</code></p></li>
+    /// <li>
+    /// <p><code>Education</code></p></li>
+    /// <li>
+    /// <p><code>Environmental Protection</code></p></li>
+    /// <li>
+    /// <p><code>Financial Services</code></p></li>
+    /// <li>
+    /// <p><code>Gaming</code></p></li>
+    /// <li>
+    /// <p><code>General Public Services</code></p></li>
+    /// <li>
+    /// <p><code>Healthcare</code></p></li>
+    /// <li>
+    /// <p><code>Hospitality</code></p></li>
+    /// <li>
+    /// <p><code>InfoTech</code></p></li>
+    /// <li>
+    /// <p><code>Justice and Public Safety</code></p></li>
+    /// <li>
+    /// <p><code>Life Sciences</code></p></li>
+    /// <li>
+    /// <p><code>Manufacturing</code></p></li>
+    /// <li>
+    /// <p><code>Media &amp; Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>Mining &amp; Resources</code></p></li>
+    /// <li>
+    /// <p><code>Oil &amp; Gas</code></p></li>
+    /// <li>
+    /// <p><code>Power &amp; Utilities</code></p></li>
+    /// <li>
+    /// <p><code>Professional Services</code></p></li>
+    /// <li>
+    /// <p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li>
+    /// <p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li>
+    /// <p><code>Social Protection</code></p></li>
+    /// <li>
+    /// <p><code>Telecommunications</code></p></li>
+    /// <li>
+    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li>
+    /// <p><code>Other</code></p></li>
     /// </ul>
     pub fn industry_type(&self) -> ::std::option::Option<&str> {
         self.industry_type.as_deref()
@@ -500,33 +554,60 @@ impl WorkloadBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Agriculture</code></p></li>
-    /// <li><p><code>Automobile</code></p></li>
-    /// <li><p><code>Defense</code></p></li>
-    /// <li><p><code>Design and Engineering</code></p></li>
-    /// <li><p><code>Digital Advertising</code></p></li>
-    /// <li><p><code>Education</code></p></li>
-    /// <li><p><code>Environmental Protection</code></p></li>
-    /// <li><p><code>Financial Services</code></p></li>
-    /// <li><p><code>Gaming</code></p></li>
-    /// <li><p><code>General Public Services</code></p></li>
-    /// <li><p><code>Healthcare</code></p></li>
-    /// <li><p><code>Hospitality</code></p></li>
-    /// <li><p><code>InfoTech</code></p></li>
-    /// <li><p><code>Justice and Public Safety</code></p></li>
-    /// <li><p><code>Life Sciences</code></p></li>
-    /// <li><p><code>Manufacturing</code></p></li>
-    /// <li><p><code>Media &amp; Entertainment</code></p></li>
-    /// <li><p><code>Mining &amp; Resources</code></p></li>
-    /// <li><p><code>Oil &amp; Gas</code></p></li>
-    /// <li><p><code>Power &amp; Utilities</code></p></li>
-    /// <li><p><code>Professional Services</code></p></li>
-    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li><p><code>Social Protection</code></p></li>
-    /// <li><p><code>Telecommunications</code></p></li>
-    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li><p><code>Other</code></p></li>
+    /// <li>
+    /// <p><code>Agriculture</code></p></li>
+    /// <li>
+    /// <p><code>Automobile</code></p></li>
+    /// <li>
+    /// <p><code>Defense</code></p></li>
+    /// <li>
+    /// <p><code>Design and Engineering</code></p></li>
+    /// <li>
+    /// <p><code>Digital Advertising</code></p></li>
+    /// <li>
+    /// <p><code>Education</code></p></li>
+    /// <li>
+    /// <p><code>Environmental Protection</code></p></li>
+    /// <li>
+    /// <p><code>Financial Services</code></p></li>
+    /// <li>
+    /// <p><code>Gaming</code></p></li>
+    /// <li>
+    /// <p><code>General Public Services</code></p></li>
+    /// <li>
+    /// <p><code>Healthcare</code></p></li>
+    /// <li>
+    /// <p><code>Hospitality</code></p></li>
+    /// <li>
+    /// <p><code>InfoTech</code></p></li>
+    /// <li>
+    /// <p><code>Justice and Public Safety</code></p></li>
+    /// <li>
+    /// <p><code>Life Sciences</code></p></li>
+    /// <li>
+    /// <p><code>Manufacturing</code></p></li>
+    /// <li>
+    /// <p><code>Media &amp; Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>Mining &amp; Resources</code></p></li>
+    /// <li>
+    /// <p><code>Oil &amp; Gas</code></p></li>
+    /// <li>
+    /// <p><code>Power &amp; Utilities</code></p></li>
+    /// <li>
+    /// <p><code>Professional Services</code></p></li>
+    /// <li>
+    /// <p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li>
+    /// <p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li>
+    /// <p><code>Social Protection</code></p></li>
+    /// <li>
+    /// <p><code>Telecommunications</code></p></li>
+    /// <li>
+    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li>
+    /// <p><code>Other</code></p></li>
     /// </ul>
     pub fn industry_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.industry_type = ::std::option::Option::Some(input.into());
@@ -535,33 +616,60 @@ impl WorkloadBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Agriculture</code></p></li>
-    /// <li><p><code>Automobile</code></p></li>
-    /// <li><p><code>Defense</code></p></li>
-    /// <li><p><code>Design and Engineering</code></p></li>
-    /// <li><p><code>Digital Advertising</code></p></li>
-    /// <li><p><code>Education</code></p></li>
-    /// <li><p><code>Environmental Protection</code></p></li>
-    /// <li><p><code>Financial Services</code></p></li>
-    /// <li><p><code>Gaming</code></p></li>
-    /// <li><p><code>General Public Services</code></p></li>
-    /// <li><p><code>Healthcare</code></p></li>
-    /// <li><p><code>Hospitality</code></p></li>
-    /// <li><p><code>InfoTech</code></p></li>
-    /// <li><p><code>Justice and Public Safety</code></p></li>
-    /// <li><p><code>Life Sciences</code></p></li>
-    /// <li><p><code>Manufacturing</code></p></li>
-    /// <li><p><code>Media &amp; Entertainment</code></p></li>
-    /// <li><p><code>Mining &amp; Resources</code></p></li>
-    /// <li><p><code>Oil &amp; Gas</code></p></li>
-    /// <li><p><code>Power &amp; Utilities</code></p></li>
-    /// <li><p><code>Professional Services</code></p></li>
-    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li><p><code>Social Protection</code></p></li>
-    /// <li><p><code>Telecommunications</code></p></li>
-    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li><p><code>Other</code></p></li>
+    /// <li>
+    /// <p><code>Agriculture</code></p></li>
+    /// <li>
+    /// <p><code>Automobile</code></p></li>
+    /// <li>
+    /// <p><code>Defense</code></p></li>
+    /// <li>
+    /// <p><code>Design and Engineering</code></p></li>
+    /// <li>
+    /// <p><code>Digital Advertising</code></p></li>
+    /// <li>
+    /// <p><code>Education</code></p></li>
+    /// <li>
+    /// <p><code>Environmental Protection</code></p></li>
+    /// <li>
+    /// <p><code>Financial Services</code></p></li>
+    /// <li>
+    /// <p><code>Gaming</code></p></li>
+    /// <li>
+    /// <p><code>General Public Services</code></p></li>
+    /// <li>
+    /// <p><code>Healthcare</code></p></li>
+    /// <li>
+    /// <p><code>Hospitality</code></p></li>
+    /// <li>
+    /// <p><code>InfoTech</code></p></li>
+    /// <li>
+    /// <p><code>Justice and Public Safety</code></p></li>
+    /// <li>
+    /// <p><code>Life Sciences</code></p></li>
+    /// <li>
+    /// <p><code>Manufacturing</code></p></li>
+    /// <li>
+    /// <p><code>Media &amp; Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>Mining &amp; Resources</code></p></li>
+    /// <li>
+    /// <p><code>Oil &amp; Gas</code></p></li>
+    /// <li>
+    /// <p><code>Power &amp; Utilities</code></p></li>
+    /// <li>
+    /// <p><code>Professional Services</code></p></li>
+    /// <li>
+    /// <p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li>
+    /// <p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li>
+    /// <p><code>Social Protection</code></p></li>
+    /// <li>
+    /// <p><code>Telecommunications</code></p></li>
+    /// <li>
+    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li>
+    /// <p><code>Other</code></p></li>
     /// </ul>
     pub fn set_industry_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry_type = input;
@@ -570,33 +678,60 @@ impl WorkloadBuilder {
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Agriculture</code></p></li>
-    /// <li><p><code>Automobile</code></p></li>
-    /// <li><p><code>Defense</code></p></li>
-    /// <li><p><code>Design and Engineering</code></p></li>
-    /// <li><p><code>Digital Advertising</code></p></li>
-    /// <li><p><code>Education</code></p></li>
-    /// <li><p><code>Environmental Protection</code></p></li>
-    /// <li><p><code>Financial Services</code></p></li>
-    /// <li><p><code>Gaming</code></p></li>
-    /// <li><p><code>General Public Services</code></p></li>
-    /// <li><p><code>Healthcare</code></p></li>
-    /// <li><p><code>Hospitality</code></p></li>
-    /// <li><p><code>InfoTech</code></p></li>
-    /// <li><p><code>Justice and Public Safety</code></p></li>
-    /// <li><p><code>Life Sciences</code></p></li>
-    /// <li><p><code>Manufacturing</code></p></li>
-    /// <li><p><code>Media &amp; Entertainment</code></p></li>
-    /// <li><p><code>Mining &amp; Resources</code></p></li>
-    /// <li><p><code>Oil &amp; Gas</code></p></li>
-    /// <li><p><code>Power &amp; Utilities</code></p></li>
-    /// <li><p><code>Professional Services</code></p></li>
-    /// <li><p><code>Real Estate &amp; Construction</code></p></li>
-    /// <li><p><code>Retail &amp; Wholesale</code></p></li>
-    /// <li><p><code>Social Protection</code></p></li>
-    /// <li><p><code>Telecommunications</code></p></li>
-    /// <li><p><code>Travel, Transportation &amp; Logistics</code></p></li>
-    /// <li><p><code>Other</code></p></li>
+    /// <li>
+    /// <p><code>Agriculture</code></p></li>
+    /// <li>
+    /// <p><code>Automobile</code></p></li>
+    /// <li>
+    /// <p><code>Defense</code></p></li>
+    /// <li>
+    /// <p><code>Design and Engineering</code></p></li>
+    /// <li>
+    /// <p><code>Digital Advertising</code></p></li>
+    /// <li>
+    /// <p><code>Education</code></p></li>
+    /// <li>
+    /// <p><code>Environmental Protection</code></p></li>
+    /// <li>
+    /// <p><code>Financial Services</code></p></li>
+    /// <li>
+    /// <p><code>Gaming</code></p></li>
+    /// <li>
+    /// <p><code>General Public Services</code></p></li>
+    /// <li>
+    /// <p><code>Healthcare</code></p></li>
+    /// <li>
+    /// <p><code>Hospitality</code></p></li>
+    /// <li>
+    /// <p><code>InfoTech</code></p></li>
+    /// <li>
+    /// <p><code>Justice and Public Safety</code></p></li>
+    /// <li>
+    /// <p><code>Life Sciences</code></p></li>
+    /// <li>
+    /// <p><code>Manufacturing</code></p></li>
+    /// <li>
+    /// <p><code>Media &amp; Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>Mining &amp; Resources</code></p></li>
+    /// <li>
+    /// <p><code>Oil &amp; Gas</code></p></li>
+    /// <li>
+    /// <p><code>Power &amp; Utilities</code></p></li>
+    /// <li>
+    /// <p><code>Professional Services</code></p></li>
+    /// <li>
+    /// <p><code>Real Estate &amp; Construction</code></p></li>
+    /// <li>
+    /// <p><code>Retail &amp; Wholesale</code></p></li>
+    /// <li>
+    /// <p><code>Social Protection</code></p></li>
+    /// <li>
+    /// <p><code>Telecommunications</code></p></li>
+    /// <li>
+    /// <p><code>Travel, Transportation &amp; Logistics</code></p></li>
+    /// <li>
+    /// <p><code>Other</code></p></li>
     /// </ul>
     pub fn get_industry_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.industry_type

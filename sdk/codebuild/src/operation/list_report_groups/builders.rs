@@ -130,9 +130,12 @@ impl ListReportGroupsFluentBuilder {
     }
     /// <p>The criterion to be used to list build report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>CREATED_TIME</code>: List based on when each report group was created.</p></li>
-    /// <li><p><code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p></li>
-    /// <li><p><code>NAME</code>: List based on each report group's name.</p></li>
+    /// <li>
+    /// <p><code>CREATED_TIME</code>: List based on when each report group was created.</p></li>
+    /// <li>
+    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>: List based on each report group's name.</p></li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::ReportGroupSortByType) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -140,9 +143,12 @@ impl ListReportGroupsFluentBuilder {
     }
     /// <p>The criterion to be used to list build report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>CREATED_TIME</code>: List based on when each report group was created.</p></li>
-    /// <li><p><code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p></li>
-    /// <li><p><code>NAME</code>: List based on each report group's name.</p></li>
+    /// <li>
+    /// <p><code>CREATED_TIME</code>: List based on when each report group was created.</p></li>
+    /// <li>
+    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>: List based on each report group's name.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ReportGroupSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
@@ -150,9 +156,12 @@ impl ListReportGroupsFluentBuilder {
     }
     /// <p>The criterion to be used to list build report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>CREATED_TIME</code>: List based on when each report group was created.</p></li>
-    /// <li><p><code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p></li>
-    /// <li><p><code>NAME</code>: List based on each report group's name.</p></li>
+    /// <li>
+    /// <p><code>CREATED_TIME</code>: List based on when each report group was created.</p></li>
+    /// <li>
+    /// <p><code>LAST_MODIFIED_TIME</code>: List based on when each report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>NAME</code>: List based on each report group's name.</p></li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::ReportGroupSortByType> {
         self.inner.get_sort_by()

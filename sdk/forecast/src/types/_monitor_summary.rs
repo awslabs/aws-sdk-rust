@@ -12,21 +12,30 @@ pub struct MonitorSummary {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>When the monitor resource was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>STOPPED</code> - When the resource stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> - When the resource stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
     pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -45,11 +54,16 @@ impl MonitorSummary {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -60,10 +74,14 @@ impl MonitorSummary {
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>STOPPED</code> - When the resource stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> - When the resource stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
@@ -132,11 +150,16 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -144,11 +167,16 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -156,11 +184,16 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The status of the monitor. States include:</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code></p></li>
-    /// <li><p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
-    /// <li><p><code>UPDATE_IN_PROGRESS</code></p></li>
-    /// <li><p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
-    /// <li><p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code></p></li>
+    /// <li>
+    /// <p><code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code></p></li>
+    /// <li>
+    /// <p><code>UPDATE_IN_PROGRESS</code></p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code></p></li>
+    /// <li>
+    /// <p><code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
@@ -181,10 +214,14 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>STOPPED</code> - When the resource stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> - When the resource stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
     pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = ::std::option::Option::Some(input);
@@ -192,10 +229,14 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>STOPPED</code> - When the resource stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> - When the resource stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
     pub fn set_last_modification_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modification_time = input;
@@ -203,10 +244,14 @@ impl MonitorSummaryBuilder {
     }
     /// <p>The last time the monitor resource was modified. The timestamp depends on the status of the job:</p>
     /// <ul>
-    /// <li><p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
-    /// <li><p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
-    /// <li><p><code>STOPPED</code> - When the resource stopped.</p></li>
-    /// <li><p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
+    /// <li>
+    /// <p><code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p></li>
+    /// <li>
+    /// <p><code>CREATE_IN_PROGRESS</code> - The current timestamp.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> - When the resource stopped.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished or failed.</p></li>
     /// </ul>
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time

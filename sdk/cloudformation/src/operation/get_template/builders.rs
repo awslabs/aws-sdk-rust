@@ -23,7 +23,7 @@ impl GetTemplateInputBuilder {
 /// Fluent builder constructing a request to `GetTemplate`.
 ///
 /// <p>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</p>
-/// <p>For deleted stacks, <code>GetTemplate</code> returns the template for up to 90 days after the stack has been deleted.</p> <note>
+/// <p>For deleted stacks, <code>GetTemplate</code> returns the template for up to 90 days after the stack has been deleted.</p><note>
 /// <p>If the template doesn't exist, a <code>ValidationError</code> is returned.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,8 +113,10 @@ impl GetTemplateFluentBuilder {
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,8 +125,10 @@ impl GetTemplateFluentBuilder {
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -133,8 +137,10 @@ impl GetTemplateFluentBuilder {
     }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
     /// <ul>
-    /// <li><p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
-    /// <li><p>Deleted stacks: You must specify the unique stack ID.</p></li>
+    /// <li>
+    /// <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p></li>
+    /// <li>
+    /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {

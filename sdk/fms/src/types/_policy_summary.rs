@@ -22,8 +22,10 @@ pub struct PolicySummary {
     pub delete_unused_fm_managed_resources: bool,
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
     /// </ul>
     pub policy_status: ::std::option::Option<crate::types::CustomerPolicyStatus>,
 }
@@ -60,8 +62,10 @@ impl PolicySummary {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
     /// </ul>
     pub fn policy_status(&self) -> ::std::option::Option<&crate::types::CustomerPolicyStatus> {
         self.policy_status.as_ref()
@@ -194,8 +198,10 @@ impl PolicySummaryBuilder {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
     /// </ul>
     pub fn policy_status(mut self, input: crate::types::CustomerPolicyStatus) -> Self {
         self.policy_status = ::std::option::Option::Some(input);
@@ -203,8 +209,10 @@ impl PolicySummaryBuilder {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
     /// </ul>
     pub fn set_policy_status(mut self, input: ::std::option::Option<crate::types::CustomerPolicyStatus>) -> Self {
         self.policy_status = input;
@@ -212,8 +220,10 @@ impl PolicySummaryBuilder {
     }
     /// <p>Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
     /// <ul>
-    /// <li><p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
-    /// <li><p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> - The administrator can manage and delete the policy.</p></li>
+    /// <li>
+    /// <p><code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be protected.</p></li>
     /// </ul>
     pub fn get_policy_status(&self) -> &::std::option::Option<crate::types::CustomerPolicyStatus> {
         &self.policy_status

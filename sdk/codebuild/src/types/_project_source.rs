@@ -6,27 +6,36 @@
 pub struct ProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
     pub r#type: crate::types::SourceType,
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.
-    /// <region-id>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.<region-id>
     /// .amazonaws.com/v1/repos/
     /// <repo-name></repo-name>
     /// </region-id></code>).</p></li>
-    /// <li><p>For source code in an Amazon S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code in an Amazon S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path>
     /// /
@@ -35,8 +44,8 @@ pub struct ProjectSource {
     /// </object-name>
     /// </path>
     /// </bucket-name></code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path-to-source-code>
     /// /
@@ -46,8 +55,10 @@ pub struct ProjectSource {
     /// </path-to-source-code>
     /// </bucket-name></code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
@@ -76,29 +87,38 @@ pub struct ProjectSource {
 impl ProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::SourceType {
         &self.r#type
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.
-    /// <region-id>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.<region-id>
     /// .amazonaws.com/v1/repos/
     /// <repo-name></repo-name>
     /// </region-id></code>).</p></li>
-    /// <li><p>For source code in an Amazon S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code in an Amazon S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path>
     /// /
@@ -107,8 +127,8 @@ impl ProjectSource {
     /// </object-name>
     /// </path>
     /// </bucket-name></code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path-to-source-code>
     /// /
@@ -118,8 +138,10 @@ impl ProjectSource {
     /// </path-to-source-code>
     /// </bucket-name></code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
@@ -188,13 +210,20 @@ pub struct ProjectSourceBuilder {
 impl ProjectSourceBuilder {
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::SourceType) -> Self {
@@ -203,13 +232,20 @@ impl ProjectSourceBuilder {
     }
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.r#type = input;
@@ -217,29 +253,38 @@ impl ProjectSourceBuilder {
     }
     /// <p>The type of repository that contains the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code>: The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code>: The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code>: The source code is in an Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.r#type
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.
-    /// <region-id>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.<region-id>
     /// .amazonaws.com/v1/repos/
     /// <repo-name></repo-name>
     /// </region-id></code>).</p></li>
-    /// <li><p>For source code in an Amazon S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code in an Amazon S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path>
     /// /
@@ -248,8 +293,8 @@ impl ProjectSourceBuilder {
     /// </object-name>
     /// </path>
     /// </bucket-name></code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path-to-source-code>
     /// /
@@ -259,8 +304,10 @@ impl ProjectSourceBuilder {
     /// </path-to-source-code>
     /// </bucket-name></code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -269,16 +316,18 @@ impl ProjectSourceBuilder {
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.
-    /// <region-id>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.<region-id>
     /// .amazonaws.com/v1/repos/
     /// <repo-name></repo-name>
     /// </region-id></code>).</p></li>
-    /// <li><p>For source code in an Amazon S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code in an Amazon S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path>
     /// /
@@ -287,8 +336,8 @@ impl ProjectSourceBuilder {
     /// </object-name>
     /// </path>
     /// </bucket-name></code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path-to-source-code>
     /// /
@@ -298,8 +347,10 @@ impl ProjectSourceBuilder {
     /// </path-to-source-code>
     /// </bucket-name></code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -308,16 +359,18 @@ impl ProjectSourceBuilder {
     }
     /// <p>Information about the location of the source code to be built. Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.
-    /// <region-id>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, <code>location</code> should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the buildspec file (for example, <code>https://git-codecommit.<region-id>
     /// .amazonaws.com/v1/repos/
     /// <repo-name></repo-name>
     /// </region-id></code>).</p></li>
-    /// <li><p>For source code in an Amazon S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code in an Amazon S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path>
     /// /
@@ -326,8 +379,8 @@ impl ProjectSourceBuilder {
     /// </object-name>
     /// </path>
     /// </bucket-name></code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>
-    /// <bucket-name>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code><bucket-name>
     /// /
     /// <path-to-source-code>
     /// /
@@ -337,8 +390,10 @@ impl ProjectSourceBuilder {
     /// </path-to-source-code>
     /// </bucket-name></code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitHub account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to allow CodeBuild to have access to, and then choose <b>Authorize application</b>. (After you have connected to your GitHub account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After you have connected to your Bitbucket account, you do not need to finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p></li>
     /// </ul>
     /// <p>If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this property. For all of the other types, you must specify <code>Location</code>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {

@@ -8,10 +8,14 @@ pub struct AddSourceIdentifierToSubscriptionInput {
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub source_identifier: ::std::option::Option<::std::string::String>,
 }
@@ -23,10 +27,14 @@ impl AddSourceIdentifierToSubscriptionInput {
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
@@ -65,10 +73,14 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     /// This field is required.
     pub fn source_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,10 +90,14 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub fn set_source_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_identifier = input;
@@ -90,10 +106,14 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
-    /// <li><p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB security group, a <code>DBSecurityGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must be supplied.</p></li>
+    /// <li>
+    /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub fn get_source_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identifier

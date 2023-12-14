@@ -9,8 +9,10 @@ pub struct CreateRecipeJobInput {
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
     /// <p>A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -49,8 +51,10 @@ impl CreateRecipeJobInput {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
         self.encryption_mode.as_ref()
@@ -168,8 +172,10 @@ impl CreateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.encryption_mode = ::std::option::Option::Some(input);
@@ -177,8 +183,10 @@ impl CreateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
         self.encryption_mode = input;
@@ -186,8 +194,10 @@ impl CreateRecipeJobInputBuilder {
     }
     /// <p>The encryption mode for the job, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
-    /// <li><p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
+    /// <li>
+    /// <p><code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p></li>
+    /// <li>
+    /// <p><code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p></li>
     /// </ul>
     pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
         &self.encryption_mode

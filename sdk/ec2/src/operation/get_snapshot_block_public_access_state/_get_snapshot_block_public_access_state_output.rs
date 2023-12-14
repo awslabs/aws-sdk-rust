@@ -5,9 +5,12 @@
 pub struct GetSnapshotBlockPublicAccessStateOutput {
     /// <p>The current state of block public access for snapshots. Possible values include:</p>
     /// <ul>
-    /// <li><p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
-    /// <li><p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
-    /// <li><p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
+    /// <li>
+    /// <p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
+    /// <li>
+    /// <p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
+    /// <li>
+    /// <p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>,
     _request_id: Option<String>,
@@ -15,9 +18,12 @@ pub struct GetSnapshotBlockPublicAccessStateOutput {
 impl GetSnapshotBlockPublicAccessStateOutput {
     /// <p>The current state of block public access for snapshots. Possible values include:</p>
     /// <ul>
-    /// <li><p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
-    /// <li><p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
-    /// <li><p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
+    /// <li>
+    /// <p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
+    /// <li>
+    /// <p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
+    /// <li>
+    /// <p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SnapshotBlockPublicAccessState> {
         self.state.as_ref()
@@ -45,9 +51,12 @@ pub struct GetSnapshotBlockPublicAccessStateOutputBuilder {
 impl GetSnapshotBlockPublicAccessStateOutputBuilder {
     /// <p>The current state of block public access for snapshots. Possible values include:</p>
     /// <ul>
-    /// <li><p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
-    /// <li><p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
-    /// <li><p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
+    /// <li>
+    /// <p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
+    /// <li>
+    /// <p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
+    /// <li>
+    /// <p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::SnapshotBlockPublicAccessState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -55,9 +64,12 @@ impl GetSnapshotBlockPublicAccessStateOutputBuilder {
     }
     /// <p>The current state of block public access for snapshots. Possible values include:</p>
     /// <ul>
-    /// <li><p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
-    /// <li><p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
-    /// <li><p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
+    /// <li>
+    /// <p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
+    /// <li>
+    /// <p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
+    /// <li>
+    /// <p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>) -> Self {
         self.state = input;
@@ -65,9 +77,12 @@ impl GetSnapshotBlockPublicAccessStateOutputBuilder {
     }
     /// <p>The current state of block public access for snapshots. Possible values include:</p>
     /// <ul>
-    /// <li><p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
-    /// <li><p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
-    /// <li><p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
+    /// <li>
+    /// <p><code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users in the account can't request new public sharing. Additionally, snapshots that were already publicly shared are treated as private and are not publicly available.</p></li>
+    /// <li>
+    /// <p><code>block-new-sharing</code> - Only new public sharing of snapshots is blocked. Users in the account can't request new public sharing. However, snapshots that were already publicly shared, remain publicly available.</p></li>
+    /// <li>
+    /// <p><code>unblocked</code> - Public sharing is not blocked. Users can publicly share snapshots.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotBlockPublicAccessState> {
         &self.state

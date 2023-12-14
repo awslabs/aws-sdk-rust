@@ -22,7 +22,7 @@ impl CreateCachediScsiVolumeInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCachediSCSIVolume`.
 ///
-/// <p>Creates a cached volume on a specified cached volume gateway. This operation is only supported in the cached volume gateway type.</p> <note>
+/// <p>Creates a cached volume on a specified cached volume gateway. This operation is only supported in the cached volume gateway type.</p><note>
 /// <p>Cache storage must be allocated to the gateway before you can create a cached volume. Use the <code>AddCache</code> operation to add cache storage to a gateway.</p>
 /// </note>
 /// <p>In the request, you must specify the gateway, size of the volume in bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, the gateway creates the volume and returns information about it. This information includes the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>
@@ -251,21 +251,21 @@ impl CreateCachediSCSIVolumeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
+    /// <p>A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p><note>
     /// <p>Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the maximum length for a tag's value is 256 characters.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {

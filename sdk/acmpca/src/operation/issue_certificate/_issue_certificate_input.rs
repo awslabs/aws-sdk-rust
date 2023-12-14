@@ -16,7 +16,7 @@ pub struct IssueCertificateInput {
     /// <p>Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be rejected.</p>
     pub csr: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub signing_algorithm: ::std::option::Option<crate::types::SigningAlgorithm>,
@@ -57,7 +57,7 @@ impl IssueCertificateInput {
         self.csr.as_ref()
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn signing_algorithm(&self) -> ::std::option::Option<&crate::types::SigningAlgorithm> {
@@ -172,7 +172,7 @@ impl IssueCertificateInputBuilder {
         &self.csr
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     /// This field is required.
@@ -181,7 +181,7 @@ impl IssueCertificateInputBuilder {
         self
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithm>) -> Self {
@@ -189,7 +189,7 @@ impl IssueCertificateInputBuilder {
         self
     }
     /// <p>The name of the algorithm that will be used to sign the certificate to be issued.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p> <note>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR in the <code>CreateCertificateAuthority</code> action.</p><note>
     /// <p>The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.</p>
     /// </note>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithm> {

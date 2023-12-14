@@ -3,9 +3,12 @@
 /// <p>Specifies the time window that utterance statistics are returned for. The time window is always relative to the last time that the that utterances were aggregated. For example, if the <code>ListAggregatedUtterances</code> operation is called at 1600, the time window is set to 1 hour, and the last refresh time was 1530, only utterances made between 1430 and 1530 are returned.</p>
 /// <p>You can choose the time window that statistics should be returned for.</p>
 /// <ul>
-/// <li><p><b>Hours</b> - You can request utterance statistics for 1, 3, 6, 12, or 24 hour time windows. Statistics are refreshed every half hour for 1 hour time windows, and hourly for the other time windows.</p></li>
-/// <li><p><b>Days</b> - You can request utterance statistics for 3 days. Statistics are refreshed every 6 hours.</p></li>
-/// <li><p><b>Weeks</b> - You can see statistics for one or two weeks. Statistics are refreshed every 12 hours for one week time windows, and once per day for two week time windows.</p></li>
+/// <li>
+/// <p><b>Hours</b> - You can request utterance statistics for 1, 3, 6, 12, or 24 hour time windows. Statistics are refreshed every half hour for 1 hour time windows, and hourly for the other time windows.</p></li>
+/// <li>
+/// <p><b>Days</b> - You can request utterance statistics for 3 days. Statistics are refreshed every 6 hours.</p></li>
+/// <li>
+/// <p><b>Weeks</b> - You can see statistics for one or two weeks. Statistics are refreshed every 12 hours for one week time windows, and once per day for two week time windows.</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -14,9 +17,12 @@ pub struct RelativeAggregationDuration {
     pub time_dimension: crate::types::TimeDimension,
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
-    /// <li><p><code>Hours</code> - 1/3/6/12/24</p></li>
-    /// <li><p><code>Days</code> - 3</p></li>
-    /// <li><p><code>Weeks</code> - 1/2</p></li>
+    /// <li>
+    /// <p><code>Hours</code> - 1/3/6/12/24</p></li>
+    /// <li>
+    /// <p><code>Days</code> - 3</p></li>
+    /// <li>
+    /// <p><code>Weeks</code> - 1/2</p></li>
     /// </ul>
     pub time_value: i32,
 }
@@ -27,9 +33,12 @@ impl RelativeAggregationDuration {
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
-    /// <li><p><code>Hours</code> - 1/3/6/12/24</p></li>
-    /// <li><p><code>Days</code> - 3</p></li>
-    /// <li><p><code>Weeks</code> - 1/2</p></li>
+    /// <li>
+    /// <p><code>Hours</code> - 1/3/6/12/24</p></li>
+    /// <li>
+    /// <p><code>Days</code> - 3</p></li>
+    /// <li>
+    /// <p><code>Weeks</code> - 1/2</p></li>
     /// </ul>
     pub fn time_value(&self) -> i32 {
         self.time_value
@@ -67,9 +76,12 @@ impl RelativeAggregationDurationBuilder {
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
-    /// <li><p><code>Hours</code> - 1/3/6/12/24</p></li>
-    /// <li><p><code>Days</code> - 3</p></li>
-    /// <li><p><code>Weeks</code> - 1/2</p></li>
+    /// <li>
+    /// <p><code>Hours</code> - 1/3/6/12/24</p></li>
+    /// <li>
+    /// <p><code>Days</code> - 3</p></li>
+    /// <li>
+    /// <p><code>Weeks</code> - 1/2</p></li>
     /// </ul>
     /// This field is required.
     pub fn time_value(mut self, input: i32) -> Self {
@@ -78,9 +90,12 @@ impl RelativeAggregationDurationBuilder {
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
-    /// <li><p><code>Hours</code> - 1/3/6/12/24</p></li>
-    /// <li><p><code>Days</code> - 3</p></li>
-    /// <li><p><code>Weeks</code> - 1/2</p></li>
+    /// <li>
+    /// <p><code>Hours</code> - 1/3/6/12/24</p></li>
+    /// <li>
+    /// <p><code>Days</code> - 3</p></li>
+    /// <li>
+    /// <p><code>Weeks</code> - 1/2</p></li>
     /// </ul>
     pub fn set_time_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.time_value = input;
@@ -88,9 +103,12 @@ impl RelativeAggregationDurationBuilder {
     }
     /// <p>The period of the time window to gather statistics for. The valid value depends on the setting of the <code>timeDimension</code> field.</p>
     /// <ul>
-    /// <li><p><code>Hours</code> - 1/3/6/12/24</p></li>
-    /// <li><p><code>Days</code> - 3</p></li>
-    /// <li><p><code>Weeks</code> - 1/2</p></li>
+    /// <li>
+    /// <p><code>Hours</code> - 1/3/6/12/24</p></li>
+    /// <li>
+    /// <p><code>Days</code> - 3</p></li>
+    /// <li>
+    /// <p><code>Weeks</code> - 1/2</p></li>
     /// </ul>
     pub fn get_time_value(&self) -> &::std::option::Option<i32> {
         &self.time_value

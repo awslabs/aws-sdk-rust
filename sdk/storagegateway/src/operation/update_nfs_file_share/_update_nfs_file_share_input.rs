@@ -23,9 +23,12 @@ pub struct UpdateNfsFileShareInput {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub squash: ::std::option::Option<::std::string::String>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status to read-only, otherwise set to <code>false</code>.</p>
@@ -34,18 +37,18 @@ pub struct UpdateNfsFileShareInput {
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub guess_mime_type_enabled: ::std::option::Option<bool>,
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub requester_pays: ::std::option::Option<bool>,
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub file_share_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies refresh cache information for the file share.</p>
     pub cache_attributes: ::std::option::Option<crate::types::CacheAttributes>,
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -92,9 +95,12 @@ impl UpdateNfsFileShareInput {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn squash(&self) -> ::std::option::Option<&str> {
         self.squash.as_deref()
@@ -109,14 +115,14 @@ impl UpdateNfsFileShareInput {
     pub fn guess_mime_type_enabled(&self) -> ::std::option::Option<bool> {
         self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn requester_pays(&self) -> ::std::option::Option<bool> {
         self.requester_pays
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(&self) -> ::std::option::Option<&str> {
@@ -126,7 +132,7 @@ impl UpdateNfsFileShareInput {
     pub fn cache_attributes(&self) -> ::std::option::Option<&crate::types::CacheAttributes> {
         self.cache_attributes.as_ref()
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -283,9 +289,12 @@ impl UpdateNfsFileShareInputBuilder {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn squash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.squash = ::std::option::Option::Some(input.into());
@@ -294,9 +303,12 @@ impl UpdateNfsFileShareInputBuilder {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn set_squash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.squash = input;
@@ -305,9 +317,12 @@ impl UpdateNfsFileShareInputBuilder {
     /// <p>The user mapped to anonymous user.</p>
     /// <p>Valid values are the following:</p>
     /// <ul>
-    /// <li><p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
-    /// <li><p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
-    /// <li><p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>RootSquash</code>: Only root is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>NoSquash</code>: No one is mapped to anonymous user.</p></li>
+    /// <li>
+    /// <p><code>AllSquash</code>: Everyone is mapped to anonymous user.</p></li>
     /// </ul>
     pub fn get_squash(&self) -> &::std::option::Option<::std::string::String> {
         &self.squash
@@ -346,7 +361,7 @@ impl UpdateNfsFileShareInputBuilder {
     pub fn get_guess_mime_type_enabled(&self) -> &::std::option::Option<bool> {
         &self.guess_mime_type_enabled
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -354,7 +369,7 @@ impl UpdateNfsFileShareInputBuilder {
         self.requester_pays = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
@@ -362,28 +377,28 @@ impl UpdateNfsFileShareInputBuilder {
         self.requester_pays = input;
         self
     }
-    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+    /// <p>A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always pays the cost of storing data.</p><note>
     /// <p><code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code></p>
     pub fn get_requester_pays(&self) -> &::std::option::Option<bool> {
         &self.requester_pays
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn file_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_share_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn set_file_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_share_name = input;
         self
     }
-    /// <p>The name of the file share. Optional.</p> <note>
+    /// <p>The name of the file share. Optional.</p><note>
     /// <p><code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
     pub fn get_file_share_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -403,7 +418,7 @@ impl UpdateNfsFileShareInputBuilder {
     pub fn get_cache_attributes(&self) -> &::std::option::Option<crate::types::CacheAttributes> {
         &self.cache_attributes
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -414,7 +429,7 @@ impl UpdateNfsFileShareInputBuilder {
         self.notification_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>
@@ -425,7 +440,7 @@ impl UpdateNfsFileShareInputBuilder {
         self.notification_policy = input;
         self
     }
-    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p> <note>
+    /// <p>The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best to set this parameter for as long as possible to avoid generating multiple notifications for the same file in a small time period.</p><note>
     /// <p><code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the timing of the notification.</p>
     /// </note>
     /// <p>The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.</p>

@@ -10,9 +10,12 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -21,7 +24,8 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
@@ -75,8 +79,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -84,13 +90,14 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub backtrack_window: ::std::option::Option<i64>,
@@ -117,10 +124,14 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -158,13 +169,17 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub publicly_accessible: ::std::option::Option<bool>,
@@ -174,8 +189,10 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -195,9 +212,12 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -208,7 +228,8 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
@@ -284,8 +305,10 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -297,13 +320,14 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn enable_iam_database_authentication(&self) -> ::std::option::Option<bool> {
         self.enable_iam_database_authentication
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn backtrack_window(&self) -> ::std::option::Option<i64> {
@@ -340,10 +364,14 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -397,13 +425,17 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
@@ -417,8 +449,10 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -499,9 +533,12 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -513,9 +550,12 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -526,9 +566,12 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -539,7 +582,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// This field is required.
@@ -551,7 +595,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -562,7 +607,8 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing Snapshot.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing Snapshot.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -787,8 +833,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -799,8 +847,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -811,8 +861,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
-    /// <li><p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p></li>
+    /// <li>
+    /// <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -838,39 +890,42 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_enable_iam_database_authentication(&self) -> &::std::option::Option<bool> {
         &self.enable_iam_database_authentication
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn backtrack_window(mut self, input: i64) -> Self {
         self.backtrack_window = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
         self.backtrack_window = input;
         self
     }
-    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+    /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p><note>
     /// <p>Currently, Backtrack is only supported for Aurora MySQL DB clusters.</p>
     /// </note>
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
@@ -969,10 +1024,14 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -982,10 +1041,14 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -995,10 +1058,14 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing default DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -1150,13 +1217,17 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -1169,13 +1240,17 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -1188,13 +1263,17 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -1220,8 +1299,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -1233,8 +1314,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -1246,8 +1329,10 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>

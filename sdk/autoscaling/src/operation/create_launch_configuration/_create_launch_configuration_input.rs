@@ -25,23 +25,23 @@ pub struct CreateLaunchConfigurationInput {
     /// <p>Specifies the instance type of the EC2 instance. For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available instance types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// <p>If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the kernel associated with the AMI.</p> <note>
+    /// <p>The ID of the kernel associated with the AMI.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub kernel_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the RAM disk to select.</p> <note>
+    /// <p>The ID of the RAM disk to select.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping entries that define the block devices to attach to the instances at launch. By default, the block devices specified in the block device mapping for the AMI are used. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-    /// <p>The default value is <code>true</code> (enabled).</p> <important>
+    /// <p>The default value is <code>true</code> (enabled).</p><important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
     pub instance_monitoring: ::std::option::Option<crate::types::InstanceMonitoring>,
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid Range: Minimum value of 0.001</p> <note>
+    /// <p>Valid Range: Minimum value of 0.001</p><note>
     /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
     /// </note>
     pub spot_price: ::std::option::Option<::std::string::String>,
@@ -106,13 +106,13 @@ impl CreateLaunchConfigurationInput {
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The ID of the kernel associated with the AMI.</p> <note>
+    /// <p>The ID of the kernel associated with the AMI.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn kernel_id(&self) -> ::std::option::Option<&str> {
         self.kernel_id.as_deref()
     }
-    /// <p>The ID of the RAM disk to select.</p> <note>
+    /// <p>The ID of the RAM disk to select.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
@@ -125,14 +125,14 @@ impl CreateLaunchConfigurationInput {
         self.block_device_mappings.as_deref().unwrap_or_default()
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-    /// <p>The default value is <code>true</code> (enabled).</p> <important>
+    /// <p>The default value is <code>true</code> (enabled).</p><important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
     pub fn instance_monitoring(&self) -> ::std::option::Option<&crate::types::InstanceMonitoring> {
         self.instance_monitoring.as_ref()
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid Range: Minimum value of 0.001</p> <note>
+    /// <p>Valid Range: Minimum value of 0.001</p><note>
     /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
     /// </note>
     pub fn spot_price(&self) -> ::std::option::Option<&str> {
@@ -347,41 +347,41 @@ impl CreateLaunchConfigurationInputBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The ID of the kernel associated with the AMI.</p> <note>
+    /// <p>The ID of the kernel associated with the AMI.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kernel_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the kernel associated with the AMI.</p> <note>
+    /// <p>The ID of the kernel associated with the AMI.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kernel_id = input;
         self
     }
-    /// <p>The ID of the kernel associated with the AMI.</p> <note>
+    /// <p>The ID of the kernel associated with the AMI.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kernel_id
     }
-    /// <p>The ID of the RAM disk to select.</p> <note>
+    /// <p>The ID of the RAM disk to select.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ramdisk_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the RAM disk to select.</p> <note>
+    /// <p>The ID of the RAM disk to select.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ramdisk_id = input;
         self
     }
-    /// <p>The ID of the RAM disk to select.</p> <note>
+    /// <p>The ID of the RAM disk to select.</p><note>
     /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     /// </note>
     pub fn get_ramdisk_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -408,7 +408,7 @@ impl CreateLaunchConfigurationInputBuilder {
         &self.block_device_mappings
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-    /// <p>The default value is <code>true</code> (enabled).</p> <important>
+    /// <p>The default value is <code>true</code> (enabled).</p><important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
     pub fn instance_monitoring(mut self, input: crate::types::InstanceMonitoring) -> Self {
@@ -416,7 +416,7 @@ impl CreateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-    /// <p>The default value is <code>true</code> (enabled).</p> <important>
+    /// <p>The default value is <code>true</code> (enabled).</p><important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
     pub fn set_instance_monitoring(mut self, input: ::std::option::Option<crate::types::InstanceMonitoring>) -> Self {
@@ -424,14 +424,14 @@ impl CreateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>Controls whether instances in this group are launched with detailed (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
-    /// <p>The default value is <code>true</code> (enabled).</p> <important>
+    /// <p>The default value is <code>true</code> (enabled).</p><important>
     /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and your account is charged a fee. When you disable detailed monitoring, CloudWatch generates metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// </important>
     pub fn get_instance_monitoring(&self) -> &::std::option::Option<crate::types::InstanceMonitoring> {
         &self.instance_monitoring
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid Range: Minimum value of 0.001</p> <note>
+    /// <p>Valid Range: Minimum value of 0.001</p><note>
     /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
     /// </note>
     pub fn spot_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -439,7 +439,7 @@ impl CreateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid Range: Minimum value of 0.001</p> <note>
+    /// <p>Valid Range: Minimum value of 0.001</p><note>
     /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
     /// </note>
     pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -447,7 +447,7 @@ impl CreateLaunchConfigurationInputBuilder {
         self
     }
     /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the request. Spot Instances are launched when the price you specify exceeds the current Spot price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-template-spot-instances.html">Request Spot Instances for fault-tolerant and flexible applications</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    /// <p>Valid Range: Minimum value of 0.001</p> <note>
+    /// <p>Valid Range: Minimum value of 0.001</p><note>
     /// <p>When you change your maximum price by creating a new launch configuration, running instances will continue to run as long as the maximum price for those running instances is higher than the current Spot price.</p>
     /// </note>
     pub fn get_spot_price(&self) -> &::std::option::Option<::std::string::String> {

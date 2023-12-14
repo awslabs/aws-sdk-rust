@@ -6,27 +6,41 @@
 pub struct AwsCodeBuildProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
-    /// <li><p>For source code in an S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
+    /// <li>
+    /// <p>For source code in an S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Git clone depth for the build project.</p>
@@ -37,13 +51,20 @@ pub struct AwsCodeBuildProjectSource {
 impl AwsCodeBuildProjectSource {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -51,15 +72,22 @@ impl AwsCodeBuildProjectSource {
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
-    /// <li><p>For source code in an S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
+    /// <li>
+    /// <p>For source code in an S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
@@ -92,13 +120,20 @@ pub struct AwsCodeBuildProjectSourceBuilder {
 impl AwsCodeBuildProjectSourceBuilder {
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -106,13 +141,20 @@ impl AwsCodeBuildProjectSourceBuilder {
     }
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -120,13 +162,20 @@ impl AwsCodeBuildProjectSourceBuilder {
     }
     /// <p>The type of repository that contains the source code to be built. Valid values are:</p>
     /// <ul>
-    /// <li><p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
-    /// <li><p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
-    /// <li><p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
-    /// <li><p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
-    /// <li><p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
-    /// <li><p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
-    /// <li><p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
+    /// <li>
+    /// <p><code>BITBUCKET</code> - The source code is in a Bitbucket repository.</p></li>
+    /// <li>
+    /// <p><code>CODECOMMIT</code> - The source code is in an CodeCommit repository.</p></li>
+    /// <li>
+    /// <p><code>CODEPIPELINE</code> - The source code settings are specified in the source action of a pipeline in CodePipeline.</p></li>
+    /// <li>
+    /// <p><code>GITHUB</code> - The source code is in a GitHub repository.</p></li>
+    /// <li>
+    /// <p><code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.</p></li>
+    /// <li>
+    /// <p><code>NO_SOURCE</code> - The project does not have input source code.</p></li>
+    /// <li>
+    /// <p><code>S3</code> - The source code is in an S3 input bucket.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
@@ -134,15 +183,22 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
-    /// <li><p>For source code in an S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
+    /// <li>
+    /// <p>For source code in an S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
@@ -151,15 +207,22 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
-    /// <li><p>For source code in an S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
+    /// <li>
+    /// <p>For source code in an S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
@@ -168,15 +231,22 @@ impl AwsCodeBuildProjectSourceBuilder {
     /// <p>Information about the location of the source code to be built.</p>
     /// <p>Valid values include:</p>
     /// <ul>
-    /// <li><p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
-    /// <li><p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
-    /// <li><p>For source code in an S3 input bucket, one of the following.</p>
+    /// <li>
+    /// <p>For source code settings that are specified in the source action of a pipeline in CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source action instead of this value.</p></li>
+    /// <li>
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code> ).</p></li>
+    /// <li>
+    /// <p>For source code in an S3 input bucket, one of the following.</p>
     /// <ul>
-    /// <li><p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
-    /// <li><p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
+    /// <li>
+    /// <p>The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).</p></li>
+    /// <li>
+    /// <p>The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).</p></li>
     /// </ul></li>
-    /// <li><p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
-    /// <li><p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
+    /// <li>
+    /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec file.</p></li>
     /// </ul>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location

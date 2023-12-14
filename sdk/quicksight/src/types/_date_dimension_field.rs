@@ -10,15 +10,24 @@ pub struct DateDimensionField {
     pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>YEAR</code></p></li>
-    /// <li><p><code>QUARTER</code></p></li>
-    /// <li><p><code>MONTH</code></p></li>
-    /// <li><p><code>WEEK</code></p></li>
-    /// <li><p><code>DAY</code></p></li>
-    /// <li><p><code>HOUR</code></p></li>
-    /// <li><p><code>MINUTE</code></p></li>
-    /// <li><p><code>SECOND</code></p></li>
-    /// <li><p><code>MILLISECOND</code></p></li>
+    /// <li>
+    /// <p><code>YEAR</code></p></li>
+    /// <li>
+    /// <p><code>QUARTER</code></p></li>
+    /// <li>
+    /// <p><code>MONTH</code></p></li>
+    /// <li>
+    /// <p><code>WEEK</code></p></li>
+    /// <li>
+    /// <p><code>DAY</code></p></li>
+    /// <li>
+    /// <p><code>HOUR</code></p></li>
+    /// <li>
+    /// <p><code>MINUTE</code></p></li>
+    /// <li>
+    /// <p><code>SECOND</code></p></li>
+    /// <li>
+    /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
     pub date_granularity: ::std::option::Option<crate::types::TimeGranularity>,
     /// <p>The custom hierarchy ID.</p>
@@ -38,15 +47,24 @@ impl DateDimensionField {
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>YEAR</code></p></li>
-    /// <li><p><code>QUARTER</code></p></li>
-    /// <li><p><code>MONTH</code></p></li>
-    /// <li><p><code>WEEK</code></p></li>
-    /// <li><p><code>DAY</code></p></li>
-    /// <li><p><code>HOUR</code></p></li>
-    /// <li><p><code>MINUTE</code></p></li>
-    /// <li><p><code>SECOND</code></p></li>
-    /// <li><p><code>MILLISECOND</code></p></li>
+    /// <li>
+    /// <p><code>YEAR</code></p></li>
+    /// <li>
+    /// <p><code>QUARTER</code></p></li>
+    /// <li>
+    /// <p><code>MONTH</code></p></li>
+    /// <li>
+    /// <p><code>WEEK</code></p></li>
+    /// <li>
+    /// <p><code>DAY</code></p></li>
+    /// <li>
+    /// <p><code>HOUR</code></p></li>
+    /// <li>
+    /// <p><code>MINUTE</code></p></li>
+    /// <li>
+    /// <p><code>SECOND</code></p></li>
+    /// <li>
+    /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
     pub fn date_granularity(&self) -> ::std::option::Option<&crate::types::TimeGranularity> {
         self.date_granularity.as_ref()
@@ -110,15 +128,24 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>YEAR</code></p></li>
-    /// <li><p><code>QUARTER</code></p></li>
-    /// <li><p><code>MONTH</code></p></li>
-    /// <li><p><code>WEEK</code></p></li>
-    /// <li><p><code>DAY</code></p></li>
-    /// <li><p><code>HOUR</code></p></li>
-    /// <li><p><code>MINUTE</code></p></li>
-    /// <li><p><code>SECOND</code></p></li>
-    /// <li><p><code>MILLISECOND</code></p></li>
+    /// <li>
+    /// <p><code>YEAR</code></p></li>
+    /// <li>
+    /// <p><code>QUARTER</code></p></li>
+    /// <li>
+    /// <p><code>MONTH</code></p></li>
+    /// <li>
+    /// <p><code>WEEK</code></p></li>
+    /// <li>
+    /// <p><code>DAY</code></p></li>
+    /// <li>
+    /// <p><code>HOUR</code></p></li>
+    /// <li>
+    /// <p><code>MINUTE</code></p></li>
+    /// <li>
+    /// <p><code>SECOND</code></p></li>
+    /// <li>
+    /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
     pub fn date_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.date_granularity = ::std::option::Option::Some(input);
@@ -126,15 +153,24 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>YEAR</code></p></li>
-    /// <li><p><code>QUARTER</code></p></li>
-    /// <li><p><code>MONTH</code></p></li>
-    /// <li><p><code>WEEK</code></p></li>
-    /// <li><p><code>DAY</code></p></li>
-    /// <li><p><code>HOUR</code></p></li>
-    /// <li><p><code>MINUTE</code></p></li>
-    /// <li><p><code>SECOND</code></p></li>
-    /// <li><p><code>MILLISECOND</code></p></li>
+    /// <li>
+    /// <p><code>YEAR</code></p></li>
+    /// <li>
+    /// <p><code>QUARTER</code></p></li>
+    /// <li>
+    /// <p><code>MONTH</code></p></li>
+    /// <li>
+    /// <p><code>WEEK</code></p></li>
+    /// <li>
+    /// <p><code>DAY</code></p></li>
+    /// <li>
+    /// <p><code>HOUR</code></p></li>
+    /// <li>
+    /// <p><code>MINUTE</code></p></li>
+    /// <li>
+    /// <p><code>SECOND</code></p></li>
+    /// <li>
+    /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
     pub fn set_date_granularity(mut self, input: ::std::option::Option<crate::types::TimeGranularity>) -> Self {
         self.date_granularity = input;
@@ -142,15 +178,24 @@ impl DateDimensionFieldBuilder {
     }
     /// <p>The date granularity of the <code>DateDimensionField</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>YEAR</code></p></li>
-    /// <li><p><code>QUARTER</code></p></li>
-    /// <li><p><code>MONTH</code></p></li>
-    /// <li><p><code>WEEK</code></p></li>
-    /// <li><p><code>DAY</code></p></li>
-    /// <li><p><code>HOUR</code></p></li>
-    /// <li><p><code>MINUTE</code></p></li>
-    /// <li><p><code>SECOND</code></p></li>
-    /// <li><p><code>MILLISECOND</code></p></li>
+    /// <li>
+    /// <p><code>YEAR</code></p></li>
+    /// <li>
+    /// <p><code>QUARTER</code></p></li>
+    /// <li>
+    /// <p><code>MONTH</code></p></li>
+    /// <li>
+    /// <p><code>WEEK</code></p></li>
+    /// <li>
+    /// <p><code>DAY</code></p></li>
+    /// <li>
+    /// <p><code>HOUR</code></p></li>
+    /// <li>
+    /// <p><code>MINUTE</code></p></li>
+    /// <li>
+    /// <p><code>SECOND</code></p></li>
+    /// <li>
+    /// <p><code>MILLISECOND</code></p></li>
     /// </ul>
     pub fn get_date_granularity(&self) -> &::std::option::Option<crate::types::TimeGranularity> {
         &self.date_granularity

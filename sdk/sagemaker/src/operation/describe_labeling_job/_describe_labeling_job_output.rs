@@ -29,8 +29,10 @@ pub struct DescribeLabelingJobOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
-    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
+    /// <li>
+    /// <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li>
+    /// <p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
@@ -112,8 +114,10 @@ impl DescribeLabelingJobOutput {
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
-    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
+    /// <li>
+    /// <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li>
+    /// <p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
@@ -374,8 +378,10 @@ impl DescribeLabelingJobOutputBuilder {
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
-    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
+    /// <li>
+    /// <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li>
+    /// <p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
@@ -399,8 +405,10 @@ impl DescribeLabelingJobOutputBuilder {
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
-    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
+    /// <li>
+    /// <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li>
+    /// <p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>
@@ -424,8 +432,10 @@ impl DescribeLabelingJobOutputBuilder {
     }
     /// <p>The S3 location of the JSON file that defines the categories used to label data objects. Please note the following label-category limits:</p>
     /// <ul>
-    /// <li><p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
-    /// <li><p>Box bounding labeling jobs (all): 10 labels</p></li>
+    /// <li>
+    /// <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p></li>
+    /// <li>
+    /// <p>Box bounding labeling jobs (all): 10 labels</p></li>
     /// </ul>
     /// <p>The file is a JSON structure in the following format:</p>
     /// <p><code>{</code></p>

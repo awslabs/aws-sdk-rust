@@ -117,7 +117,8 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
+    /// <li>
+    /// <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -126,7 +127,8 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
+    /// <li>
+    /// <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -135,7 +137,8 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>The ID of the cluster to retrieve the list of cluster snapshots for. This parameter can't be used with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
+    /// <li>
+    /// <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
@@ -143,8 +146,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p></li>
-    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
+    /// <li>
+    /// <p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p></li>
+    /// <li>
+    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
@@ -153,8 +158,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p></li>
-    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
+    /// <li>
+    /// <p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p></li>
+    /// <li>
+    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn set_db_cluster_snapshot_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
@@ -163,18 +170,24 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>A specific cluster snapshot identifier to describe. This parameter can't be used with the <code>DBClusterIdentifier</code> parameter. This value is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p></li>
-    /// <li><p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
+    /// <li>
+    /// <p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p></li>
+    /// <li>
+    /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p></li>
     /// </ul>
     pub fn get_db_cluster_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_snapshot_identifier()
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> - Return all cluster snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Return all cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -184,10 +197,14 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> - Return all cluster snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Return all cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
@@ -197,10 +214,14 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     }
     /// <p>The type of cluster snapshots to be returned. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
-    /// <li><p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
-    /// <li><p><code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p></li>
-    /// <li><p><code>public</code> - Return all cluster snapshots that have been marked as public.</p></li>
+    /// <li>
+    /// <p><code>automated</code> - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>manual</code> - Return all cluster snapshots that you have manually created for your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>shared</code> - Return all manual cluster snapshots that have been shared to your Amazon Web Services account.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Return all cluster snapshots that have been marked as public.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>

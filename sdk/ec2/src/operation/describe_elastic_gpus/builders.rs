@@ -146,11 +146,16 @@ impl DescribeElasticGpusFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.</p></li>
-    /// <li><p><code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p></li>
-    /// <li><p><code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).</p></li>
-    /// <li><p><code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p></li>
-    /// <li><p><code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p></li>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -158,11 +163,16 @@ impl DescribeElasticGpusFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.</p></li>
-    /// <li><p><code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p></li>
-    /// <li><p><code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).</p></li>
-    /// <li><p><code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p></li>
-    /// <li><p><code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p></li>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -170,11 +180,16 @@ impl DescribeElasticGpusFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.</p></li>
-    /// <li><p><code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p></li>
-    /// <li><p><code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).</p></li>
-    /// <li><p><code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p></li>
-    /// <li><p><code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p></li>
+    /// <li>
+    /// <p><code>availability-zone</code> - The Availability Zone in which the Elastic Graphics accelerator resides.</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).</p></li>
+    /// <li>
+    /// <p><code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p></li>
+    /// <li>
+    /// <p><code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator is associated.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

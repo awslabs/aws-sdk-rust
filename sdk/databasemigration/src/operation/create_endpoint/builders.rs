@@ -22,7 +22,7 @@ impl CreateEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateEndpoint`.
 ///
-/// <p>Creates an endpoint using the provided settings.</p> <note>
+/// <p>Creates an endpoint using the provided settings.</p><note>
 /// <p>For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -361,8 +361,10 @@ impl CreateEndpointFluentBuilder {
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint.</p>
     /// <p>Possible settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
-    /// <li><p><code>BucketName</code> - The name of the S3 bucket to use.</p></li>
+    /// <li>
+    /// <p><code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
+    /// <li>
+    /// <p><code>BucketName</code> - The name of the S3 bucket to use.</p></li>
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code></p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code></p>
@@ -373,8 +375,10 @@ impl CreateEndpointFluentBuilder {
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint.</p>
     /// <p>Possible settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
-    /// <li><p><code>BucketName</code> - The name of the S3 bucket to use.</p></li>
+    /// <li>
+    /// <p><code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
+    /// <li>
+    /// <p><code>BucketName</code> - The name of the S3 bucket to use.</p></li>
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code></p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code></p>
@@ -385,8 +389,10 @@ impl CreateEndpointFluentBuilder {
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint.</p>
     /// <p>Possible settings include the following:</p>
     /// <ul>
-    /// <li><p><code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
-    /// <li><p><code>BucketName</code> - The name of the S3 bucket to use.</p></li>
+    /// <li>
+    /// <p><code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
+    /// <li>
+    /// <p><code>BucketName</code> - The name of the S3 bucket to use.</p></li>
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code></p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string", } </code></p>

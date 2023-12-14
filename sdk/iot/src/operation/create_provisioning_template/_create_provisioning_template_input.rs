@@ -15,7 +15,7 @@ pub struct CreateProvisioningTemplateInput {
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub pre_provisioning_hook: ::std::option::Option<crate::types::ProvisioningHook>,
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -49,7 +49,7 @@ impl CreateProvisioningTemplateInput {
     pub fn pre_provisioning_hook(&self) -> ::std::option::Option<&crate::types::ProvisioningHook> {
         self.pre_provisioning_hook.as_ref()
     }
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -176,7 +176,7 @@ impl CreateProvisioningTemplateInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -187,7 +187,7 @@ impl CreateProvisioningTemplateInputBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
@@ -196,7 +196,7 @@ impl CreateProvisioningTemplateInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>Metadata which can be used to manage the provisioning template.</p><note>
     /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
     /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
     /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>

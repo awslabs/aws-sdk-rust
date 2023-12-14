@@ -25,10 +25,14 @@ impl ListTagsForResourceInputBuilder {
 /// <p>Lists tags that are attached to the specified resource.</p>
 /// <p>You can attach tags to the following resources in Organizations.</p>
 /// <ul>
-/// <li><p>Amazon Web Services account</p></li>
-/// <li><p>Organization root</p></li>
-/// <li><p>Organizational unit (OU)</p></li>
-/// <li><p>Policy (any type)</p></li>
+/// <li>
+/// <p>Amazon Web Services account</p></li>
+/// <li>
+/// <p>Organization root</p></li>
+/// <li>
+/// <p>Organizational unit (OU)</p></li>
+/// <li>
+/// <p>Policy (any type)</p></li>
 /// </ul>
 /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -125,10 +129,14 @@ impl ListTagsForResourceFluentBuilder {
     /// <p>The ID of the resource with the tags to list.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li>
+    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li>
+    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li>
+    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -137,10 +145,14 @@ impl ListTagsForResourceFluentBuilder {
     /// <p>The ID of the resource with the tags to list.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li>
+    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li>
+    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li>
+    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
@@ -149,10 +161,14 @@ impl ListTagsForResourceFluentBuilder {
     /// <p>The ID of the resource with the tags to list.</p>
     /// <p>You can specify any of the following taggable resources.</p>
     /// <ul>
-    /// <li><p>Amazon Web Services account – specify the account ID number.</p></li>
-    /// <li><p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
-    /// <li><p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
-    /// <li><p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
+    /// <li>
+    /// <p>Amazon Web Services account – specify the account ID number.</p></li>
+    /// <li>
+    /// <p>Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code></p></li>
+    /// <li>
+    /// <p>Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code></p></li>
+    /// <li>
+    /// <p>Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to: <code>p-<i>12abcdefg3</i> </code></p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()

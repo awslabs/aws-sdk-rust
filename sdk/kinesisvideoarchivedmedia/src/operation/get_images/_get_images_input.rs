@@ -13,7 +13,7 @@ pub struct GetImagesInput {
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p> <note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
     /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub sampling_interval: ::std::option::Option<i32>,
@@ -25,7 +25,7 @@ pub struct GetImagesInput {
     pub width_pixels: ::std::option::Option<i32>,
     /// <p>The height of the output image that is used in conjunction with the <code>WidthPixels</code> parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters are provided, the image will be stretched to fit the specified aspect ratio. If only the <code>HeightPixels</code> parameter is provided, its original aspect ratio will be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided, the original image size will be returned.</p>
     pub height_pixels: ::std::option::Option<i32>,
-    /// <p>The maximum number of images to be returned by the API.</p> <note>
+    /// <p>The maximum number of images to be returned by the API.</p><note>
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
     /// </note>
     pub max_results: ::std::option::Option<i64>,
@@ -53,7 +53,7 @@ impl GetImagesInput {
     pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p> <note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
     /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn sampling_interval(&self) -> ::std::option::Option<i32> {
@@ -75,7 +75,7 @@ impl GetImagesInput {
     pub fn height_pixels(&self) -> ::std::option::Option<i32> {
         self.height_pixels
     }
-    /// <p>The maximum number of images to be returned by the API.</p> <note>
+    /// <p>The maximum number of images to be returned by the API.</p><note>
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
     /// </note>
     pub fn max_results(&self) -> ::std::option::Option<i64> {
@@ -184,21 +184,21 @@ impl GetImagesInputBuilder {
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_timestamp
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p> <note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
     /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.sampling_interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p> <note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
     /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn set_sampling_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampling_interval = input;
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p> <note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
     /// <p>The minimum value of 200 ms is a hard limit.</p>
     /// </note>
     pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
@@ -270,21 +270,21 @@ impl GetImagesInputBuilder {
     pub fn get_height_pixels(&self) -> &::std::option::Option<i32> {
         &self.height_pixels
     }
-    /// <p>The maximum number of images to be returned by the API.</p> <note>
+    /// <p>The maximum number of images to be returned by the API.</p><note>
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
     /// </note>
     pub fn max_results(mut self, input: i64) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of images to be returned by the API.</p> <note>
+    /// <p>The maximum number of images to be returned by the API.</p><note>
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
     /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of images to be returned by the API.</p> <note>
+    /// <p>The maximum number of images to be returned by the API.</p><note>
     /// <p>The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will result in a page size of 25. Any additional results will be paginated.</p>
     /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i64> {

@@ -22,7 +22,7 @@ impl CheckoutLicenseInputBuilder {
 }
 /// Fluent builder constructing a request to `CheckoutLicense`.
 ///
-/// <p>Checks out the specified license.</p> <note>
+/// <p>Checks out the specified license.</p><note>
 /// <p>If the account that created the license is the same that is performing the check out, you must specify the account as the beneficiary.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

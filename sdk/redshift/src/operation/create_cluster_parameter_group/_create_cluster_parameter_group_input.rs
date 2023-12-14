@@ -7,11 +7,15 @@ pub struct CreateClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique withing your Amazon Web Services account.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
     pub parameter_group_name: ::std::option::Option<::std::string::String>,
@@ -27,11 +31,15 @@ impl CreateClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique withing your Amazon Web Services account.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
     pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
@@ -73,11 +81,15 @@ impl CreateClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique withing your Amazon Web Services account.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
     /// This field is required.
@@ -88,11 +100,15 @@ impl CreateClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique withing your Amazon Web Services account.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
     pub fn set_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -102,11 +118,15 @@ impl CreateClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
-    /// <li><p>Must be unique withing your Amazon Web Services account.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p>Must be 1 to 255 alphanumeric characters or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Must be unique withing your Amazon Web Services account.</p></li>
+    /// </ul><note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
     pub fn get_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {

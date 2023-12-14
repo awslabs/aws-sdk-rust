@@ -25,11 +25,15 @@ impl DescribeTimeSeriesInputBuilder {
 /// <p>Retrieves information about a time series (data stream).</p>
 /// <p>To identify a time series, do one of the following:</p>
 /// <ul>
-/// <li><p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p></li>
-/// <li><p>If the time series is associated with an asset property, specify one of the following:</p>
+/// <li>
+/// <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p></li>
+/// <li>
+/// <p>If the time series is associated with an asset property, specify one of the following:</p>
 /// <ul>
-/// <li><p>The <code>alias</code> of the time series.</p></li>
-/// <li><p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p></li>
+/// <li>
+/// <p>The <code>alias</code> of the time series.</p></li>
+/// <li>
+/// <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p></li>
 /// </ul></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

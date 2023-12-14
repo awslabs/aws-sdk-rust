@@ -22,7 +22,7 @@ impl DeleteHostInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteHost`.
 ///
-/// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p> <note>
+/// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p><note>
 /// <p>A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

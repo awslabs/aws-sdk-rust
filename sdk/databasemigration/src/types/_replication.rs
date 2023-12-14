@@ -20,20 +20,34 @@ pub struct Replication {
     pub provision_data: ::std::option::Option<crate::types::ProvisionData>,
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"Stop Reason NORMAL"</code></p></li>
-    /// <li><p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FATAL_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
-    /// <li><p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
-    /// <li><p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
     pub stop_reason: ::std::option::Option<::std::string::String>,
     /// <p>Error and other information about why a serverless replication failed.</p>
@@ -90,20 +104,34 @@ impl Replication {
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"Stop Reason NORMAL"</code></p></li>
-    /// <li><p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FATAL_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
-    /// <li><p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
-    /// <li><p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
     pub fn stop_reason(&self) -> ::std::option::Option<&str> {
         self.stop_reason.as_deref()
@@ -287,20 +315,34 @@ impl ReplicationBuilder {
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"Stop Reason NORMAL"</code></p></li>
-    /// <li><p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FATAL_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
-    /// <li><p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
-    /// <li><p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
     pub fn stop_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stop_reason = ::std::option::Option::Some(input.into());
@@ -308,20 +350,34 @@ impl ReplicationBuilder {
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"Stop Reason NORMAL"</code></p></li>
-    /// <li><p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FATAL_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
-    /// <li><p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
-    /// <li><p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
     pub fn set_stop_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stop_reason = input;
@@ -329,20 +385,34 @@ impl ReplicationBuilder {
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
-    /// <li><p><code>"Stop Reason NORMAL"</code></p></li>
-    /// <li><p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FATAL_ERROR"</code></p></li>
-    /// <li><p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
-    /// <li><p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
-    /// <li><p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
-    /// <li><p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason NORMAL"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECOVERABLE_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FATAL_ERROR"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason FULL_LOAD_ONLY_FINISHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_FULL_LOAD"</code> – Full load completed, with cached changes not applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_CACHED_EVENTS"</code> – Full load completed, with cached changes applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason EXPRESS_LICENSE_LIMITS_REACHED"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AFTER_DDL_APPLY"</code> – User-defined stop task after DDL applied</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_MEMORY"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_DUE_TO_LOW_DISK"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_SERVER_TIME"</code> – User-defined server time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason STOPPED_AT_COMMIT_TIME"</code> – User-defined commit time for stopping task</p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECONFIGURATION_RESTART"</code></p></li>
+    /// <li>
+    /// <p><code>"Stop Reason RECYCLE_TASK"</code></p></li>
     /// </ul>
     pub fn get_stop_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.stop_reason

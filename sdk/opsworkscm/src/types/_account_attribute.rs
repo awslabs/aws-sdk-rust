@@ -6,8 +6,10 @@
 pub struct AccountAttribute {
     /// <p>The attribute name. The following are supported attribute names.</p>
     /// <ul>
-    /// <li><p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
-    /// <li><p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
+    /// <li>
+    /// <p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
+    /// <li>
+    /// <p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed value.</p>
@@ -18,8 +20,10 @@ pub struct AccountAttribute {
 impl AccountAttribute {
     /// <p>The attribute name. The following are supported attribute names.</p>
     /// <ul>
-    /// <li><p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
-    /// <li><p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
+    /// <li>
+    /// <p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
+    /// <li>
+    /// <p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -51,8 +55,10 @@ pub struct AccountAttributeBuilder {
 impl AccountAttributeBuilder {
     /// <p>The attribute name. The following are supported attribute names.</p>
     /// <ul>
-    /// <li><p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
-    /// <li><p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
+    /// <li>
+    /// <p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
+    /// <li>
+    /// <p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -60,8 +66,10 @@ impl AccountAttributeBuilder {
     }
     /// <p>The attribute name. The following are supported attribute names.</p>
     /// <ul>
-    /// <li><p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
-    /// <li><p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
+    /// <li>
+    /// <p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
+    /// <li>
+    /// <p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -69,8 +77,10 @@ impl AccountAttributeBuilder {
     }
     /// <p>The attribute name. The following are supported attribute names.</p>
     /// <ul>
-    /// <li><p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
-    /// <li><p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
+    /// <li>
+    /// <p><i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.</p></li>
+    /// <li>
+    /// <p><i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum of 50 manual backups saved.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

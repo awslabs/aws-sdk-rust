@@ -24,7 +24,7 @@ impl CreateCollectionInputBuilder {
 ///
 /// <p>Creates a collection in an AWS Region. You can add faces to the collection using the <code>IndexFaces</code> operation.</p>
 /// <p>For example, you might create collections, one for each of your application users. A user can then index faces using the <code>IndexFaces</code> operation and persist results in a specific collection. Then, a user can search the collection for faces in the user-specific container.</p>
-/// <p>When you create a collection, it is associated with the latest version of the face model version.</p> <note>
+/// <p>When you create a collection, it is associated with the latest version of the face model version.</p><note>
 /// <p>Collection names are case-sensitive.</p>
 /// </note>
 /// <p>This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action. If you want to tag your collection, you also require permission to perform the <code>rekognition:TagResource</code> operation.</p>

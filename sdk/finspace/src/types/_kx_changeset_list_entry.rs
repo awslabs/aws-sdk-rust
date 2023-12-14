@@ -14,10 +14,14 @@ pub struct KxChangesetListEntry {
     pub last_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Status of the changeset.</p>
     /// <ul>
-    /// <li><p>Pending – Changeset creation is pending.</p></li>
-    /// <li><p>Processing – Changeset creation is running.</p></li>
-    /// <li><p>Failed – Changeset creation has failed.</p></li>
-    /// <li><p>Complete – Changeset creation has succeeded.</p></li>
+    /// <li>
+    /// <p>Pending – Changeset creation is pending.</p></li>
+    /// <li>
+    /// <p>Processing – Changeset creation is running.</p></li>
+    /// <li>
+    /// <p>Failed – Changeset creation has failed.</p></li>
+    /// <li>
+    /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ChangesetStatus>,
 }
@@ -40,10 +44,14 @@ impl KxChangesetListEntry {
     }
     /// <p>Status of the changeset.</p>
     /// <ul>
-    /// <li><p>Pending – Changeset creation is pending.</p></li>
-    /// <li><p>Processing – Changeset creation is running.</p></li>
-    /// <li><p>Failed – Changeset creation has failed.</p></li>
-    /// <li><p>Complete – Changeset creation has succeeded.</p></li>
+    /// <li>
+    /// <p>Pending – Changeset creation is pending.</p></li>
+    /// <li>
+    /// <p>Processing – Changeset creation is running.</p></li>
+    /// <li>
+    /// <p>Failed – Changeset creation has failed.</p></li>
+    /// <li>
+    /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChangesetStatus> {
         self.status.as_ref()
@@ -125,10 +133,14 @@ impl KxChangesetListEntryBuilder {
     }
     /// <p>Status of the changeset.</p>
     /// <ul>
-    /// <li><p>Pending – Changeset creation is pending.</p></li>
-    /// <li><p>Processing – Changeset creation is running.</p></li>
-    /// <li><p>Failed – Changeset creation has failed.</p></li>
-    /// <li><p>Complete – Changeset creation has succeeded.</p></li>
+    /// <li>
+    /// <p>Pending – Changeset creation is pending.</p></li>
+    /// <li>
+    /// <p>Processing – Changeset creation is running.</p></li>
+    /// <li>
+    /// <p>Failed – Changeset creation has failed.</p></li>
+    /// <li>
+    /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ChangesetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -136,10 +148,14 @@ impl KxChangesetListEntryBuilder {
     }
     /// <p>Status of the changeset.</p>
     /// <ul>
-    /// <li><p>Pending – Changeset creation is pending.</p></li>
-    /// <li><p>Processing – Changeset creation is running.</p></li>
-    /// <li><p>Failed – Changeset creation has failed.</p></li>
-    /// <li><p>Complete – Changeset creation has succeeded.</p></li>
+    /// <li>
+    /// <p>Pending – Changeset creation is pending.</p></li>
+    /// <li>
+    /// <p>Processing – Changeset creation is running.</p></li>
+    /// <li>
+    /// <p>Failed – Changeset creation has failed.</p></li>
+    /// <li>
+    /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangesetStatus>) -> Self {
         self.status = input;
@@ -147,10 +163,14 @@ impl KxChangesetListEntryBuilder {
     }
     /// <p>Status of the changeset.</p>
     /// <ul>
-    /// <li><p>Pending – Changeset creation is pending.</p></li>
-    /// <li><p>Processing – Changeset creation is running.</p></li>
-    /// <li><p>Failed – Changeset creation has failed.</p></li>
-    /// <li><p>Complete – Changeset creation has succeeded.</p></li>
+    /// <li>
+    /// <p>Pending – Changeset creation is pending.</p></li>
+    /// <li>
+    /// <p>Processing – Changeset creation is running.</p></li>
+    /// <li>
+    /// <p>Failed – Changeset creation has failed.</p></li>
+    /// <li>
+    /// <p>Complete – Changeset creation has succeeded.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangesetStatus> {
         &self.status

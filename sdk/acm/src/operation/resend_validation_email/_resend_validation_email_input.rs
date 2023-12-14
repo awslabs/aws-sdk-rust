@@ -10,11 +10,16 @@ pub struct ResendValidationEmailInput {
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li><p>admin@subdomain.example.com</p></li>
-    /// <li><p>administrator@subdomain.example.com</p></li>
-    /// <li><p>hostmaster@subdomain.example.com</p></li>
-    /// <li><p>postmaster@subdomain.example.com</p></li>
-    /// <li><p>webmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>admin@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>administrator@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>hostmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>postmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub validation_domain: ::std::option::Option<::std::string::String>,
 }
@@ -30,11 +35,16 @@ impl ResendValidationEmailInput {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li><p>admin@subdomain.example.com</p></li>
-    /// <li><p>administrator@subdomain.example.com</p></li>
-    /// <li><p>hostmaster@subdomain.example.com</p></li>
-    /// <li><p>postmaster@subdomain.example.com</p></li>
-    /// <li><p>webmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>admin@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>administrator@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>hostmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>postmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub fn validation_domain(&self) -> ::std::option::Option<&str> {
         self.validation_domain.as_deref()
@@ -91,11 +101,16 @@ impl ResendValidationEmailInputBuilder {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li><p>admin@subdomain.example.com</p></li>
-    /// <li><p>administrator@subdomain.example.com</p></li>
-    /// <li><p>hostmaster@subdomain.example.com</p></li>
-    /// <li><p>postmaster@subdomain.example.com</p></li>
-    /// <li><p>webmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>admin@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>administrator@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>hostmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>postmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     /// This field is required.
     pub fn validation_domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,11 +119,16 @@ impl ResendValidationEmailInputBuilder {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li><p>admin@subdomain.example.com</p></li>
-    /// <li><p>administrator@subdomain.example.com</p></li>
-    /// <li><p>hostmaster@subdomain.example.com</p></li>
-    /// <li><p>postmaster@subdomain.example.com</p></li>
-    /// <li><p>webmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>admin@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>administrator@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>hostmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>postmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub fn set_validation_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.validation_domain = input;
@@ -116,11 +136,16 @@ impl ResendValidationEmailInputBuilder {
     }
     /// <p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p>
     /// <ul>
-    /// <li><p>admin@subdomain.example.com</p></li>
-    /// <li><p>administrator@subdomain.example.com</p></li>
-    /// <li><p>hostmaster@subdomain.example.com</p></li>
-    /// <li><p>postmaster@subdomain.example.com</p></li>
-    /// <li><p>webmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>admin@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>administrator@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>hostmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>postmaster@subdomain.example.com</p></li>
+    /// <li>
+    /// <p>webmaster@subdomain.example.com</p></li>
     /// </ul>
     pub fn get_validation_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.validation_domain

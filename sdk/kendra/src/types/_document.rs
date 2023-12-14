@@ -22,8 +22,7 @@ pub struct Document {
     /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     pub hierarchical_access_control_list: ::std::option::Option<::std::vec::Vec<crate::types::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
-    /// <p></p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>The identifier of the access control configuration that you want to apply to the document.</p>
     pub access_control_configuration_id: ::std::option::Option<::std::string::String>,
@@ -68,8 +67,7 @@ impl Document {
         self.hierarchical_access_control_list.as_deref().unwrap_or_default()
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
-    /// <p></p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
         self.content_type.as_ref()
     }
@@ -230,22 +228,19 @@ impl DocumentBuilder {
         &self.hierarchical_access_control_list
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
-    /// <p></p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
-    /// <p></p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ContentType>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The file type of the document in the <code>Blob</code> field.</p>
-    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code></p>) around the content.
-    /// <p></p>
+    /// <p>If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>content</code>) around the content.</p>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ContentType> {
         &self.content_type
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamInput {
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub device_name: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct CreateStreamInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateStreamInput {
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(&self) -> ::std::option::Option<&str> {
@@ -79,21 +79,21 @@ pub struct CreateStreamInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateStreamInputBuilder {
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
-    /// <p>The name of the device that is writing to the stream.</p> <note>
+    /// <p>The name of the device that is writing to the stream.</p><note>
     /// <p>In the current implementation, Kinesis Video Streams does not use this name.</p>
     /// </note>
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {

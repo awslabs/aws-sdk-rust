@@ -10,8 +10,10 @@ pub struct OnDemandCapacityReservationOptions {
     pub usage_strategy: ::std::option::Option<crate::types::OnDemandCapacityReservationUsageStrategy>,
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
-    /// <li><p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
-    /// <li><p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
+    /// <li>
+    /// <p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
+    /// <li>
+    /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
     pub capacity_reservation_preference: ::std::option::Option<crate::types::OnDemandCapacityReservationPreference>,
     /// <p>The ARN of the Capacity Reservation resource group in which to run the instance.</p>
@@ -26,8 +28,10 @@ impl OnDemandCapacityReservationOptions {
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
-    /// <li><p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
-    /// <li><p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
+    /// <li>
+    /// <p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
+    /// <li>
+    /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
     pub fn capacity_reservation_preference(&self) -> ::std::option::Option<&crate::types::OnDemandCapacityReservationPreference> {
         self.capacity_reservation_preference.as_ref()
@@ -75,8 +79,10 @@ impl OnDemandCapacityReservationOptionsBuilder {
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
-    /// <li><p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
-    /// <li><p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
+    /// <li>
+    /// <p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
+    /// <li>
+    /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
     pub fn capacity_reservation_preference(mut self, input: crate::types::OnDemandCapacityReservationPreference) -> Self {
         self.capacity_reservation_preference = ::std::option::Option::Some(input);
@@ -84,8 +90,10 @@ impl OnDemandCapacityReservationOptionsBuilder {
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
-    /// <li><p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
-    /// <li><p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
+    /// <li>
+    /// <p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
+    /// <li>
+    /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
     pub fn set_capacity_reservation_preference(mut self, input: ::std::option::Option<crate::types::OnDemandCapacityReservationPreference>) -> Self {
         self.capacity_reservation_preference = input;
@@ -93,8 +101,10 @@ impl OnDemandCapacityReservationOptionsBuilder {
     }
     /// <p>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
     /// <ul>
-    /// <li><p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
-    /// <li><p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
+    /// <li>
+    /// <p><code>open</code> - The instance can run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p></li>
+    /// <li>
+    /// <p><code>none</code> - The instance avoids running in a Capacity Reservation even if one is available. The instance runs as an On-Demand Instance.</p></li>
     /// </ul>
     pub fn get_capacity_reservation_preference(&self) -> &::std::option::Option<crate::types::OnDemandCapacityReservationPreference> {
         &self.capacity_reservation_preference

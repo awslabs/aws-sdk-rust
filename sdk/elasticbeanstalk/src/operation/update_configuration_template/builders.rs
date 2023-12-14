@@ -22,12 +22,13 @@ impl UpdateConfigurationTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateConfigurationTemplate`.
 ///
-/// <p>Updates the specified configuration template to have the specified properties or configuration option values.</p> <note>
+/// <p>Updates the specified configuration template to have the specified properties or configuration option values.</p><note>
 /// <p>If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string.</p>
 /// </note>
 /// <p>Related Topics</p>
 /// <ul>
-/// <li><p><code>DescribeConfigurationOptions</code></p></li>
+/// <li>
+/// <p><code>DescribeConfigurationOptions</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationTemplateFluentBuilder {

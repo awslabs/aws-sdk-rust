@@ -22,7 +22,7 @@ impl CreateSourceRepositoryBranchInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSourceRepositoryBranch`.
 ///
-/// <p>Creates a branch in a specified source repository in Amazon CodeCatalyst.</p> <note>
+/// <p>Creates a branch in a specified source repository in Amazon CodeCatalyst.</p><note>
 /// <p>This API only creates a branch in a source repository hosted in Amazon CodeCatalyst. You cannot use this API to create a branch in a linked repository.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

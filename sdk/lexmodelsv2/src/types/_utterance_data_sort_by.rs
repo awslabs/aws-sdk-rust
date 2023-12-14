@@ -6,8 +6,10 @@
 pub struct UtteranceDataSortBy {
     /// <p>The measure by which to sort the utterance analytics data.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub name: crate::types::AnalyticsUtteranceSortByName,
     /// <p>Specifies whether to sort the results in ascending or descending order.</p>
@@ -16,8 +18,10 @@ pub struct UtteranceDataSortBy {
 impl UtteranceDataSortBy {
     /// <p>The measure by which to sort the utterance analytics data.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn name(&self) -> &crate::types::AnalyticsUtteranceSortByName {
         &self.name
@@ -44,8 +48,10 @@ pub struct UtteranceDataSortByBuilder {
 impl UtteranceDataSortByBuilder {
     /// <p>The measure by which to sort the utterance analytics data.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsUtteranceSortByName) -> Self {
@@ -54,8 +60,10 @@ impl UtteranceDataSortByBuilder {
     }
     /// <p>The measure by which to sort the utterance analytics data.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsUtteranceSortByName>) -> Self {
         self.name = input;
@@ -63,8 +71,10 @@ impl UtteranceDataSortByBuilder {
     }
     /// <p>The measure by which to sort the utterance analytics data.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of utterances.</p></li>
-    /// <li><p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of utterances.</p></li>
+    /// <li>
+    /// <p><code>UtteranceTimestamp</code> – The date and time of the utterance.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsUtteranceSortByName> {
         &self.name

@@ -9,8 +9,10 @@ pub struct ResourceCount {
     pub total_resources: ::std::option::Option<i64>,
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
-    /// <li><p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
-    /// <li><p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
+    /// <li>
+    /// <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
+    /// <li>
+    /// <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
     /// </ul>
     pub complete: ::std::option::Option<bool>,
 }
@@ -21,8 +23,10 @@ impl ResourceCount {
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
-    /// <li><p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
-    /// <li><p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
+    /// <li>
+    /// <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
+    /// <li>
+    /// <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
     /// </ul>
     pub fn complete(&self) -> ::std::option::Option<bool> {
         self.complete
@@ -59,8 +63,10 @@ impl ResourceCountBuilder {
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
-    /// <li><p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
-    /// <li><p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
+    /// <li>
+    /// <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
+    /// <li>
+    /// <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
     /// </ul>
     pub fn complete(mut self, input: bool) -> Self {
         self.complete = ::std::option::Option::Some(input);
@@ -68,8 +74,10 @@ impl ResourceCountBuilder {
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
-    /// <li><p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
-    /// <li><p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
+    /// <li>
+    /// <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
+    /// <li>
+    /// <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
     /// </ul>
     pub fn set_complete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.complete = input;
@@ -77,8 +85,10 @@ impl ResourceCountBuilder {
     }
     /// <p>Indicates whether the <code>TotalResources</code> value represents an exhaustive count of search results.</p>
     /// <ul>
-    /// <li><p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
-    /// <li><p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
+    /// <li>
+    /// <p>If <code>True</code>, it indicates that the search was exhaustive. Every resource that matches the query was counted.</p></li>
+    /// <li>
+    /// <p>If <code>False</code>, then the search reached the limit of 1,000 matching results, and stopped counting.</p></li>
     /// </ul>
     pub fn get_complete(&self) -> &::std::option::Option<bool> {
         &self.complete

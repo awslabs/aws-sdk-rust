@@ -27,8 +27,10 @@ pub struct CreateFileCacheInput {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li><p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li>
+    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
+    /// <li>
+    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub data_repository_associations: ::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>>,
@@ -84,8 +86,10 @@ impl CreateFileCacheInput {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li><p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li>
+    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
+    /// <li>
+    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     ///
@@ -289,8 +293,10 @@ impl CreateFileCacheInputBuilder {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li><p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li>
+    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
+    /// <li>
+    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn data_repository_associations(mut self, input: crate::types::FileCacheDataRepositoryAssociation) -> Self {
@@ -302,8 +308,10 @@ impl CreateFileCacheInputBuilder {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li><p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li>
+    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
+    /// <li>
+    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn set_data_repository_associations(
@@ -316,8 +324,10 @@ impl CreateFileCacheInputBuilder {
     /// <p>A list of up to 8 configurations for data repository associations (DRAs) to be created during the cache creation. The DRAs link the cache to either an Amazon S3 data repository or a Network File System (NFS) data repository that supports the NFSv3 protocol.</p>
     /// <p>The DRA configurations must meet the following requirements:</p>
     /// <ul>
-    /// <li><p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
-    /// <li><p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
+    /// <li>
+    /// <p>All configurations on the list must be of the same data repository type, either all S3 or all NFS. A cache can't link to different data repository types at the same time.</p></li>
+    /// <li>
+    /// <p>An NFS DRA must link to an NFS file system that supports the NFSv3 protocol.</p></li>
     /// </ul>
     /// <p>DRA automatic import and automatic export is not supported.</p>
     pub fn get_data_repository_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileCacheDataRepositoryAssociation>> {

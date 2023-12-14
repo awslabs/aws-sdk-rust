@@ -22,7 +22,7 @@ impl DescribeChannelModeratorInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeChannelModerator`.
 ///
-/// <p>Returns the full details of a single ChannelModerator.</p> <note>
+/// <p>Returns the full details of a single ChannelModerator.</p><note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

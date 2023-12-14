@@ -22,7 +22,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreDBClusterToPointInTime`.
 ///
-/// <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p> <note>
+/// <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p><note>
 /// <p>This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> action to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code> action has completed and the DB cluster is available.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,9 +113,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
@@ -124,9 +127,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
@@ -135,17 +141,22 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_identifier()
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
-    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     pub fn restore_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,8 +165,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
-    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     pub fn set_restore_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -164,8 +177,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
-    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     pub fn get_restore_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -174,7 +189,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_db_cluster_identifier(input.into());
@@ -183,7 +199,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_db_cluster_identifier(input);
@@ -192,7 +209,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_db_cluster_identifier()
@@ -201,10 +219,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
-    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p></li>
-    /// <li><p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p></li>
-    /// <li><p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p></li>
+    /// <li>
+    /// <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p></li>
+    /// <li>
+    /// <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     pub fn restore_to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -215,10 +237,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
-    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p></li>
-    /// <li><p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p></li>
-    /// <li><p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p></li>
+    /// <li>
+    /// <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p></li>
+    /// <li>
+    /// <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     pub fn set_restore_to_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
@@ -229,10 +255,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
-    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p></li>
-    /// <li><p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p></li>
-    /// <li><p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided</p></li>
+    /// <li>
+    /// <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true</p></li>
+    /// <li>
+    /// <p>Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     pub fn get_restore_to_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
@@ -353,8 +383,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
-    /// <li><p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -366,8 +398,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
-    /// <li><p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -379,8 +413,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
     /// <ul>
-    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
-    /// <li><p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted, then the restore request is rejected.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -424,7 +460,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
@@ -433,7 +470,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
@@ -442,7 +480,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p></li>
     /// </ul>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_cluster_parameter_group_name()

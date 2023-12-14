@@ -116,8 +116,10 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
@@ -125,8 +127,10 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
@@ -134,16 +138,20 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The order in which to list shared report groups. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ASCENDING</code>: List in ascending order.</p></li>
-    /// <li><p><code>DESCENDING</code>: List in descending order.</p></li>
+    /// <li>
+    /// <p><code>ASCENDING</code>: List in ascending order.</p></li>
+    /// <li>
+    /// <p><code>DESCENDING</code>: List in descending order.</p></li>
     /// </ul>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrderType> {
         self.inner.get_sort_order()
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::SharedResourceSortByType) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -151,8 +159,10 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
@@ -160,8 +170,10 @@ impl ListSharedReportGroupsFluentBuilder {
     }
     /// <p>The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:</p>
     /// <ul>
-    /// <li><p><code>ARN</code>: List based on the ARN.</p></li>
-    /// <li><p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
+    /// <li>
+    /// <p><code>ARN</code>: List based on the ARN.</p></li>
+    /// <li>
+    /// <p><code>MODIFIED_TIME</code>: List based on when information about the shared report group was last changed.</p></li>
     /// </ul>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SharedResourceSortByType> {
         self.inner.get_sort_by()

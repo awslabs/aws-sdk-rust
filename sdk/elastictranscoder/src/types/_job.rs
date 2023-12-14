@@ -14,7 +14,7 @@ pub struct Job {
     pub input: ::std::option::Option<crate::types::JobInput>,
     /// <p>Information about the files that you're transcoding. If you specified multiple files for this job, Elastic Transcoder stitches the files together to make one output.</p>
     pub inputs: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>,
-    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
+    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
@@ -35,10 +35,14 @@ pub struct Job {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
     /// <ul>
-    /// <li><p><code>0-9</code></p></li>
-    /// <li><p><code>A-Z</code> and <code>a-z</code></p></li>
-    /// <li><p><code>Space</code></p></li>
-    /// <li><p>The following symbols: <code>_.:/=+-%@</code></p></li>
+    /// <li>
+    /// <p><code>0-9</code></p></li>
+    /// <li>
+    /// <p><code>A-Z</code> and <code>a-z</code></p></li>
+    /// <li>
+    /// <p><code>Space</code></p></li>
+    /// <li>
+    /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
     pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Details about the timing of a job.</p>
@@ -67,7 +71,7 @@ impl Job {
     pub fn inputs(&self) -> &[crate::types::JobInput] {
         self.inputs.as_deref().unwrap_or_default()
     }
-    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
+    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
@@ -102,10 +106,14 @@ impl Job {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
     /// <ul>
-    /// <li><p><code>0-9</code></p></li>
-    /// <li><p><code>A-Z</code> and <code>a-z</code></p></li>
-    /// <li><p><code>Space</code></p></li>
-    /// <li><p>The following symbols: <code>_.:/=+-%@</code></p></li>
+    /// <li>
+    /// <p><code>0-9</code></p></li>
+    /// <li>
+    /// <p><code>A-Z</code> and <code>a-z</code></p></li>
+    /// <li>
+    /// <p><code>Space</code></p></li>
+    /// <li>
+    /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
     pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
@@ -216,7 +224,7 @@ impl JobBuilder {
     pub fn get_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobInput>> {
         &self.inputs
     }
-    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
+    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
@@ -224,7 +232,7 @@ impl JobBuilder {
         self.output = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
+    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
@@ -232,7 +240,7 @@ impl JobBuilder {
         self.output = input;
         self
     }
-    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p> <important>
+    /// <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the Output object lists information about the first output. This duplicates the information that is listed for the first output in the Outputs object.</p><important>
     /// <p>Outputs recommended instead.</p>
     /// </important>
     /// <p>A section of the request or response body that provides information about the transcoded (target) file.</p>
@@ -329,10 +337,14 @@ impl JobBuilder {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
     /// <ul>
-    /// <li><p><code>0-9</code></p></li>
-    /// <li><p><code>A-Z</code> and <code>a-z</code></p></li>
-    /// <li><p><code>Space</code></p></li>
-    /// <li><p>The following symbols: <code>_.:/=+-%@</code></p></li>
+    /// <li>
+    /// <p><code>0-9</code></p></li>
+    /// <li>
+    /// <p><code>A-Z</code> and <code>a-z</code></p></li>
+    /// <li>
+    /// <p><code>Space</code></p></li>
+    /// <li>
+    /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
     pub fn user_metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.user_metadata.unwrap_or_default();
@@ -343,10 +355,14 @@ impl JobBuilder {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
     /// <ul>
-    /// <li><p><code>0-9</code></p></li>
-    /// <li><p><code>A-Z</code> and <code>a-z</code></p></li>
-    /// <li><p><code>Space</code></p></li>
-    /// <li><p>The following symbols: <code>_.:/=+-%@</code></p></li>
+    /// <li>
+    /// <p><code>0-9</code></p></li>
+    /// <li>
+    /// <p><code>A-Z</code> and <code>a-z</code></p></li>
+    /// <li>
+    /// <p><code>Space</code></p></li>
+    /// <li>
+    /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
     pub fn set_user_metadata(
         mut self,
@@ -358,10 +374,14 @@ impl JobBuilder {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     /// <p>Metadata <code>keys</code> and <code>values</code> must use characters from the following list:</p>
     /// <ul>
-    /// <li><p><code>0-9</code></p></li>
-    /// <li><p><code>A-Z</code> and <code>a-z</code></p></li>
-    /// <li><p><code>Space</code></p></li>
-    /// <li><p>The following symbols: <code>_.:/=+-%@</code></p></li>
+    /// <li>
+    /// <p><code>0-9</code></p></li>
+    /// <li>
+    /// <p><code>A-Z</code> and <code>a-z</code></p></li>
+    /// <li>
+    /// <p><code>Space</code></p></li>
+    /// <li>
+    /// <p>The following symbols: <code>_.:/=+-%@</code></p></li>
     /// </ul>
     pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_metadata

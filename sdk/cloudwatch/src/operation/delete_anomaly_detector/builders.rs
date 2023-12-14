@@ -183,11 +183,16 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <p>A single metric anomaly detector to be deleted.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li><p><code>Dimensions</code>,</p></li>
-    /// <li><p><code>MetricName</code></p></li>
-    /// <li><p><code>Namespace</code></p></li>
-    /// <li><p><code>Stat</code></p></li>
-    /// <li><p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
+    /// <li>
+    /// <p><code>Dimensions</code>,</p></li>
+    /// <li>
+    /// <p><code>MetricName</code></p></li>
+    /// <li>
+    /// <p><code>Namespace</code></p></li>
+    /// <li>
+    /// <p><code>Stat</code></p></li>
+    /// <li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
     pub fn single_metric_anomaly_detector(mut self, input: crate::types::SingleMetricAnomalyDetector) -> Self {
@@ -197,11 +202,16 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <p>A single metric anomaly detector to be deleted.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li><p><code>Dimensions</code>,</p></li>
-    /// <li><p><code>MetricName</code></p></li>
-    /// <li><p><code>Namespace</code></p></li>
-    /// <li><p><code>Stat</code></p></li>
-    /// <li><p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
+    /// <li>
+    /// <p><code>Dimensions</code>,</p></li>
+    /// <li>
+    /// <p><code>MetricName</code></p></li>
+    /// <li>
+    /// <p><code>Namespace</code></p></li>
+    /// <li>
+    /// <p><code>Stat</code></p></li>
+    /// <li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
     pub fn set_single_metric_anomaly_detector(mut self, input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>) -> Self {
@@ -211,11 +221,16 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <p>A single metric anomaly detector to be deleted.</p>
     /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
     /// <ul>
-    /// <li><p><code>Dimensions</code>,</p></li>
-    /// <li><p><code>MetricName</code></p></li>
-    /// <li><p><code>Namespace</code></p></li>
-    /// <li><p><code>Stat</code></p></li>
-    /// <li><p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
+    /// <li>
+    /// <p><code>Dimensions</code>,</p></li>
+    /// <li>
+    /// <p><code>MetricName</code></p></li>
+    /// <li>
+    /// <p><code>Namespace</code></p></li>
+    /// <li>
+    /// <p><code>Stat</code></p></li>
+    /// <li>
+    /// <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
     pub fn get_single_metric_anomaly_detector(&self) -> &::std::option::Option<crate::types::SingleMetricAnomalyDetector> {
@@ -224,11 +239,16 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <p>The metric math anomaly detector to be deleted.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
     /// <ul>
-    /// <li><p><code>Dimensions</code>,</p></li>
-    /// <li><p><code>MetricName</code></p></li>
-    /// <li><p><code>Namespace</code></p></li>
-    /// <li><p><code>Stat</code></p></li>
-    /// <li><p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
+    /// <li>
+    /// <p><code>Dimensions</code>,</p></li>
+    /// <li>
+    /// <p><code>MetricName</code></p></li>
+    /// <li>
+    /// <p><code>Namespace</code></p></li>
+    /// <li>
+    /// <p><code>Stat</code></p></li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
     pub fn metric_math_anomaly_detector(mut self, input: crate::types::MetricMathAnomalyDetector) -> Self {
@@ -238,11 +258,16 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <p>The metric math anomaly detector to be deleted.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
     /// <ul>
-    /// <li><p><code>Dimensions</code>,</p></li>
-    /// <li><p><code>MetricName</code></p></li>
-    /// <li><p><code>Namespace</code></p></li>
-    /// <li><p><code>Stat</code></p></li>
-    /// <li><p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
+    /// <li>
+    /// <p><code>Dimensions</code>,</p></li>
+    /// <li>
+    /// <p><code>MetricName</code></p></li>
+    /// <li>
+    /// <p><code>Namespace</code></p></li>
+    /// <li>
+    /// <p><code>Stat</code></p></li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
     pub fn set_metric_math_anomaly_detector(mut self, input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>) -> Self {
@@ -252,11 +277,16 @@ impl DeleteAnomalyDetectorFluentBuilder {
     /// <p>The metric math anomaly detector to be deleted.</p>
     /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
     /// <ul>
-    /// <li><p><code>Dimensions</code>,</p></li>
-    /// <li><p><code>MetricName</code></p></li>
-    /// <li><p><code>Namespace</code></p></li>
-    /// <li><p><code>Stat</code></p></li>
-    /// <li><p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
+    /// <li>
+    /// <p><code>Dimensions</code>,</p></li>
+    /// <li>
+    /// <p><code>MetricName</code></p></li>
+    /// <li>
+    /// <p><code>Namespace</code></p></li>
+    /// <li>
+    /// <p><code>Stat</code></p></li>
+    /// <li>
+    /// <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code></p></li>
     /// </ul>
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
     pub fn get_metric_math_anomaly_detector(&self) -> &::std::option::Option<crate::types::MetricMathAnomalyDetector> {

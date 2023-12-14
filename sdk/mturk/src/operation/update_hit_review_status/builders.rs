@@ -124,8 +124,10 @@ impl UpdateHITReviewStatusFluentBuilder {
     }
     /// <p>Specifies how to update the HIT status. Default is <code>False</code>.</p>
     /// <ul>
-    /// <li><p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
-    /// <li><p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
+    /// <li>
+    /// <p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
+    /// <li>
+    /// <p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
     /// </ul>
     pub fn revert(mut self, input: bool) -> Self {
         self.inner = self.inner.revert(input);
@@ -133,8 +135,10 @@ impl UpdateHITReviewStatusFluentBuilder {
     }
     /// <p>Specifies how to update the HIT status. Default is <code>False</code>.</p>
     /// <ul>
-    /// <li><p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
-    /// <li><p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
+    /// <li>
+    /// <p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
+    /// <li>
+    /// <p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
     /// </ul>
     pub fn set_revert(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_revert(input);
@@ -142,8 +146,10 @@ impl UpdateHITReviewStatusFluentBuilder {
     }
     /// <p>Specifies how to update the HIT status. Default is <code>False</code>.</p>
     /// <ul>
-    /// <li><p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
-    /// <li><p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
+    /// <li>
+    /// <p>Setting this to false will only transition a HIT from <code>Reviewable</code> to <code>Reviewing</code></p></li>
+    /// <li>
+    /// <p>Setting this to true will only transition a HIT from <code>Reviewing</code> to <code>Reviewable</code></p></li>
     /// </ul>
     pub fn get_revert(&self) -> &::std::option::Option<bool> {
         self.inner.get_revert()

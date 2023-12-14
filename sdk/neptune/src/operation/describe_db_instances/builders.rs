@@ -22,7 +22,7 @@ impl DescribeDbInstancesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDBInstances`.
 ///
-/// <p>Returns information about provisioned instances, and supports pagination.</p> <note>
+/// <p>Returns information about provisioned instances, and supports pagination.</p><note>
 /// <p>This operation can also return information for Amazon RDS instances and Amazon DocDB instances.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -119,7 +119,8 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn db_instance_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
@@ -128,7 +129,8 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn set_db_instance_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
@@ -137,7 +139,8 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the identifier of an existing DBInstance.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the identifier of an existing DBInstance.</p></li>
     /// </ul>
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_db_instance_identifier()
@@ -149,8 +152,10 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
@@ -160,8 +165,10 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
@@ -171,8 +178,10 @@ impl DescribeDBInstancesFluentBuilder {
     /// <p>A filter that specifies one or more DB instances to describe.</p>
     /// <p>Supported filters:</p>
     /// <ul>
-    /// <li><p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
-    /// <li><p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p></li>
+    /// <li>
+    /// <p><code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.</p></li>
+    /// <li>
+    /// <p><code>engine</code> - Accepts an engine name (such as <code>neptune</code>), and restricts the results list to DB instances created by that engine.</p></li>
     /// </ul>
     /// <p>For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {

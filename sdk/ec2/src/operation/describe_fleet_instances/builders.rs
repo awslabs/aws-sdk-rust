@@ -171,7 +171,8 @@ impl DescribeFleetInstancesFluentBuilder {
     ///
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -179,7 +180,8 @@ impl DescribeFleetInstancesFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -187,7 +189,8 @@ impl DescribeFleetInstancesFluentBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
-    /// <li><p><code>instance-type</code> - The instance type.</p></li>
+    /// <li>
+    /// <p><code>instance-type</code> - The instance type.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

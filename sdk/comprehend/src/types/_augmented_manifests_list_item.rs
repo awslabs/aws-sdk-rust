@@ -20,8 +20,10 @@ pub struct AugmentedManifestsListItem {
     pub source_documents_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
     /// <ul>
-    /// <li><p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
-    /// <li><p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
+    /// <li>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
+    /// <li>
+    /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
     pub document_type: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
@@ -54,8 +56,10 @@ impl AugmentedManifestsListItem {
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
     /// <ul>
-    /// <li><p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
-    /// <li><p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
+    /// <li>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
+    /// <li>
+    /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::AugmentedManifestsDocumentTypeFormat> {
         self.document_type.as_ref()
@@ -171,8 +175,10 @@ impl AugmentedManifestsListItemBuilder {
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
     /// <ul>
-    /// <li><p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
-    /// <li><p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
+    /// <li>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
+    /// <li>
+    /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
     pub fn document_type(mut self, input: crate::types::AugmentedManifestsDocumentTypeFormat) -> Self {
         self.document_type = ::std::option::Option::Some(input);
@@ -180,8 +186,10 @@ impl AugmentedManifestsListItemBuilder {
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
     /// <ul>
-    /// <li><p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
-    /// <li><p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
+    /// <li>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
+    /// <li>
+    /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
     pub fn set_document_type(mut self, input: ::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>) -> Self {
         self.document_type = input;
@@ -189,8 +197,10 @@ impl AugmentedManifestsListItemBuilder {
     }
     /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument.</p>
     /// <ul>
-    /// <li><p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
-    /// <li><p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
+    /// <li>
+    /// <p><code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p></li>
+    /// <li>
+    /// <p><code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p></li>
     /// </ul>
     pub fn get_document_type(&self) -> &::std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat> {
         &self.document_type

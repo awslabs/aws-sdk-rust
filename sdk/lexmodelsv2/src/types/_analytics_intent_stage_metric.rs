@@ -6,18 +6,26 @@
 pub struct AnalyticsIntentStageMetric {
     /// <p>The metric for which you want to get intent stage summary statistics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
-    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
-    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
-    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
-    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li>
+    /// <p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li>
+    /// <p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li>
+    /// <p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub name: crate::types::AnalyticsIntentStageMetricName,
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub statistic: crate::types::AnalyticsMetricStatistic,
     /// <p>Specifies whether to sort the results in ascending or descending order of the summary statistic (<code>value</code> in the response).</p>
@@ -26,20 +34,28 @@ pub struct AnalyticsIntentStageMetric {
 impl AnalyticsIntentStageMetric {
     /// <p>The metric for which you want to get intent stage summary statistics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
-    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
-    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
-    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
-    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li>
+    /// <p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li>
+    /// <p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li>
+    /// <p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn name(&self) -> &crate::types::AnalyticsIntentStageMetricName {
         &self.name
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn statistic(&self) -> &crate::types::AnalyticsMetricStatistic {
         &self.statistic
@@ -67,11 +83,16 @@ pub struct AnalyticsIntentStageMetricBuilder {
 impl AnalyticsIntentStageMetricBuilder {
     /// <p>The metric for which you want to get intent stage summary statistics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
-    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
-    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
-    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
-    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li>
+    /// <p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li>
+    /// <p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li>
+    /// <p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     /// This field is required.
     pub fn name(mut self, input: crate::types::AnalyticsIntentStageMetricName) -> Self {
@@ -80,11 +101,16 @@ impl AnalyticsIntentStageMetricBuilder {
     }
     /// <p>The metric for which you want to get intent stage summary statistics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
-    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
-    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
-    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
-    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li>
+    /// <p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li>
+    /// <p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li>
+    /// <p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::AnalyticsIntentStageMetricName>) -> Self {
         self.name = input;
@@ -92,20 +118,28 @@ impl AnalyticsIntentStageMetricBuilder {
     }
     /// <p>The metric for which you want to get intent stage summary statistics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/analytics-key-definitions.html">Key definitions</a> for more details about these metrics.</p>
     /// <ul>
-    /// <li><p><code>Count</code> – The number of times the intent stage occurred.</p></li>
-    /// <li><p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
-    /// <li><p><code>Failure</code> – The number of times the intent stage failed.</p></li>
-    /// <li><p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
-    /// <li><p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
+    /// <li>
+    /// <p><code>Count</code> – The number of times the intent stage occurred.</p></li>
+    /// <li>
+    /// <p><code>Success</code> – The number of times the intent stage succeeded.</p></li>
+    /// <li>
+    /// <p><code>Failure</code> – The number of times the intent stage failed.</p></li>
+    /// <li>
+    /// <p><code>Dropped</code> – The number of times the user dropped the intent stage.</p></li>
+    /// <li>
+    /// <p><code>Retry</code> – The number of times the bot tried to elicit a response from the user at this stage.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::AnalyticsIntentStageMetricName> {
         &self.name
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn statistic(mut self, input: crate::types::AnalyticsMetricStatistic) -> Self {
@@ -114,9 +148,12 @@ impl AnalyticsIntentStageMetricBuilder {
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::AnalyticsMetricStatistic>) -> Self {
         self.statistic = input;
@@ -124,9 +161,12 @@ impl AnalyticsIntentStageMetricBuilder {
     }
     /// <p>The summary statistic to calculate.</p>
     /// <ul>
-    /// <li><p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
-    /// <li><p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Sum</code> – The total count for the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Average</code> – The total count divided by the number of intent stages in the category you provide in <code>name</code>.</p></li>
+    /// <li>
+    /// <p><code>Max</code> – The highest count in the category you provide in <code>name</code>.</p></li>
     /// </ul>
     pub fn get_statistic(&self) -> &::std::option::Option<crate::types::AnalyticsMetricStatistic> {
         &self.statistic

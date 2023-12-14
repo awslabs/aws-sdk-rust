@@ -10,9 +10,12 @@ pub struct ListPlaceIndexesResponseEntry {
     pub description: ::std::string::String,
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub data_source: ::std::string::String,
@@ -37,9 +40,12 @@ impl ListPlaceIndexesResponseEntry {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(&self) -> &str {
@@ -111,9 +117,12 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     /// This field is required.
@@ -123,9 +132,12 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -134,9 +146,12 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The data provider of geospatial data. Values can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Esri</code></p></li>
-    /// <li><p><code>Grab</code></p></li>
-    /// <li><p><code>Here</code></p></li>
+    /// <li>
+    /// <p><code>Esri</code></p></li>
+    /// <li>
+    /// <p><code>Grab</code></p></li>
+    /// <li>
+    /// <p><code>Here</code></p></li>
     /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn get_data_source(&self) -> &::std::option::Option<::std::string::String> {

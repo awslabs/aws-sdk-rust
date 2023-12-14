@@ -13,14 +13,22 @@ pub struct DescribeInferenceExperimentOutput {
     pub schedule: ::std::option::Option<crate::types::InferenceExperimentSchedule>,
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
-    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
-    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
-    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
-    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
-    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
-    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
-    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
+    /// <li>
+    /// <p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li>
+    /// <p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li>
+    /// <p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li>
+    /// <p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::InferenceExperimentStatus>,
     /// <p>The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, that explains the status of the inference experiment.</p>
@@ -66,14 +74,22 @@ impl DescribeInferenceExperimentOutput {
     }
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
-    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
-    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
-    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
-    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
-    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
-    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
-    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
+    /// <li>
+    /// <p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li>
+    /// <p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li>
+    /// <p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li>
+    /// <p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::InferenceExperimentStatus> {
         self.status.as_ref()
@@ -221,14 +237,22 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
-    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
-    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
-    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
-    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
-    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
-    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
-    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
+    /// <li>
+    /// <p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li>
+    /// <p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li>
+    /// <p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li>
+    /// <p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::InferenceExperimentStatus) -> Self {
@@ -237,14 +261,22 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
-    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
-    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
-    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
-    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
-    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
-    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
-    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
+    /// <li>
+    /// <p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li>
+    /// <p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li>
+    /// <p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li>
+    /// <p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStatus>) -> Self {
         self.status = input;
@@ -252,14 +284,22 @@ impl DescribeInferenceExperimentOutputBuilder {
     }
     /// <p>The status of the inference experiment. The following are the possible statuses for an inference experiment:</p>
     /// <ul>
-    /// <li><p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
-    /// <li><p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
-    /// <li><p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
-    /// <li><p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
-    /// <li><p><code>Running</code> - Your experiment is in progress.</p></li>
-    /// <li><p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
-    /// <li><p><code>Completed</code> - Your experiment has completed.</p></li>
-    /// <li><p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
+    /// <li>
+    /// <p><code>Creating</code> - Amazon SageMaker is creating your experiment.</p></li>
+    /// <li>
+    /// <p><code>Created</code> - Amazon SageMaker has finished the creation of your experiment and will begin the experiment at the scheduled time.</p></li>
+    /// <li>
+    /// <p><code>Updating</code> - When you make changes to your experiment, your experiment shows as updating.</p></li>
+    /// <li>
+    /// <p><code>Starting</code> - Amazon SageMaker is beginning your experiment.</p></li>
+    /// <li>
+    /// <p><code>Running</code> - Your experiment is in progress.</p></li>
+    /// <li>
+    /// <p><code>Stopping</code> - Amazon SageMaker is stopping your experiment.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> - Your experiment has completed.</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a> API, or if any operation fails with an unexpected error, it shows as cancelled.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::InferenceExperimentStatus> {
         &self.status

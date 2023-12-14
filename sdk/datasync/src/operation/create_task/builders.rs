@@ -23,7 +23,7 @@ impl CreateTaskInputBuilder {
 /// Fluent builder constructing a request to `CreateTask`.
 ///
 /// <p>Configures a transfer task, which defines where and how DataSync moves your data.</p>
-/// <p>A task includes a source location, destination location, and the options for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p> <important>
+/// <p>A task includes a source location, destination location, and the options for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p><important>
 /// <p>If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before you begin.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

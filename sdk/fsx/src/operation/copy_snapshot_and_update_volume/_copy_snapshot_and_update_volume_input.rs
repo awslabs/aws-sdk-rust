@@ -11,18 +11,23 @@ pub struct CopySnapshotAndUpdateVolumeInput {
     pub source_snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the strategy to use when copying data from a snapshot to the volume.</p>
     /// <ul>
-    /// <li><p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
-    /// <li><p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
+    /// <li>
+    /// <p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
+    /// </ul><note>
     /// <p><code>CLONE</code> isn't a valid copy strategy option for the <code>CopySnapshotAndUpdateVolume</code> operation.</p>
     /// </note>
     pub copy_strategy: ::std::option::Option<crate::types::OpenZfsCopyStrategy>,
     /// <p>Confirms that you want to delete data on the destination volume that wasn’t there during the previous snapshot replication.</p>
     /// <p>Your replication will fail if you don’t include an option for a specific type of data and that data is on your destination. For example, if you don’t include <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> and there are intermediate snapshots on the destination, you can’t copy the snapshot.</p>
     /// <ul>
-    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
-    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
-    /// <li><p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
     /// </ul>
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::UpdateOpenZfsVolumeOption>>,
 }
@@ -41,9 +46,11 @@ impl CopySnapshotAndUpdateVolumeInput {
     }
     /// <p>Specifies the strategy to use when copying data from a snapshot to the volume.</p>
     /// <ul>
-    /// <li><p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
-    /// <li><p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
+    /// <li>
+    /// <p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
+    /// </ul><note>
     /// <p><code>CLONE</code> isn't a valid copy strategy option for the <code>CopySnapshotAndUpdateVolume</code> operation.</p>
     /// </note>
     pub fn copy_strategy(&self) -> ::std::option::Option<&crate::types::OpenZfsCopyStrategy> {
@@ -52,9 +59,12 @@ impl CopySnapshotAndUpdateVolumeInput {
     /// <p>Confirms that you want to delete data on the destination volume that wasn’t there during the previous snapshot replication.</p>
     /// <p>Your replication will fail if you don’t include an option for a specific type of data and that data is on your destination. For example, if you don’t include <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> and there are intermediate snapshots on the destination, you can’t copy the snapshot.</p>
     /// <ul>
-    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
-    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
-    /// <li><p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.options.is_none()`.
@@ -126,9 +136,11 @@ impl CopySnapshotAndUpdateVolumeInputBuilder {
     }
     /// <p>Specifies the strategy to use when copying data from a snapshot to the volume.</p>
     /// <ul>
-    /// <li><p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
-    /// <li><p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
+    /// <li>
+    /// <p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
+    /// </ul><note>
     /// <p><code>CLONE</code> isn't a valid copy strategy option for the <code>CopySnapshotAndUpdateVolume</code> operation.</p>
     /// </note>
     pub fn copy_strategy(mut self, input: crate::types::OpenZfsCopyStrategy) -> Self {
@@ -137,9 +149,11 @@ impl CopySnapshotAndUpdateVolumeInputBuilder {
     }
     /// <p>Specifies the strategy to use when copying data from a snapshot to the volume.</p>
     /// <ul>
-    /// <li><p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
-    /// <li><p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
+    /// <li>
+    /// <p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
+    /// </ul><note>
     /// <p><code>CLONE</code> isn't a valid copy strategy option for the <code>CopySnapshotAndUpdateVolume</code> operation.</p>
     /// </note>
     pub fn set_copy_strategy(mut self, input: ::std::option::Option<crate::types::OpenZfsCopyStrategy>) -> Self {
@@ -148,9 +162,11 @@ impl CopySnapshotAndUpdateVolumeInputBuilder {
     }
     /// <p>Specifies the strategy to use when copying data from a snapshot to the volume.</p>
     /// <ul>
-    /// <li><p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
-    /// <li><p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
-    /// </ul> <note>
+    /// <li>
+    /// <p><code>FULL_COPY</code> - Copies all data from the snapshot to the volume.</p></li>
+    /// <li>
+    /// <p><code>INCREMENTAL_COPY</code> - Copies only the snapshot data that's changed since the previous replication.</p></li>
+    /// </ul><note>
     /// <p><code>CLONE</code> isn't a valid copy strategy option for the <code>CopySnapshotAndUpdateVolume</code> operation.</p>
     /// </note>
     pub fn get_copy_strategy(&self) -> &::std::option::Option<crate::types::OpenZfsCopyStrategy> {
@@ -163,9 +179,12 @@ impl CopySnapshotAndUpdateVolumeInputBuilder {
     /// <p>Confirms that you want to delete data on the destination volume that wasn’t there during the previous snapshot replication.</p>
     /// <p>Your replication will fail if you don’t include an option for a specific type of data and that data is on your destination. For example, if you don’t include <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> and there are intermediate snapshots on the destination, you can’t copy the snapshot.</p>
     /// <ul>
-    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
-    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
-    /// <li><p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
     /// </ul>
     pub fn options(mut self, input: crate::types::UpdateOpenZfsVolumeOption) -> Self {
         let mut v = self.options.unwrap_or_default();
@@ -176,9 +195,12 @@ impl CopySnapshotAndUpdateVolumeInputBuilder {
     /// <p>Confirms that you want to delete data on the destination volume that wasn’t there during the previous snapshot replication.</p>
     /// <p>Your replication will fail if you don’t include an option for a specific type of data and that data is on your destination. For example, if you don’t include <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> and there are intermediate snapshots on the destination, you can’t copy the snapshot.</p>
     /// <ul>
-    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
-    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
-    /// <li><p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
     /// </ul>
     pub fn set_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateOpenZfsVolumeOption>>) -> Self {
         self.options = input;
@@ -187,9 +209,12 @@ impl CopySnapshotAndUpdateVolumeInputBuilder {
     /// <p>Confirms that you want to delete data on the destination volume that wasn’t there during the previous snapshot replication.</p>
     /// <p>Your replication will fail if you don’t include an option for a specific type of data and that data is on your destination. For example, if you don’t include <code>DELETE_INTERMEDIATE_SNAPSHOTS</code> and there are intermediate snapshots on the destination, you can’t copy the snapshot.</p>
     /// <ul>
-    /// <li><p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
-    /// <li><p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
-    /// <li><p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_SNAPSHOTS</code> - Deletes snapshots on the destination volume that aren’t on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_CLONED_VOLUMES</code> - Deletes snapshot clones on the destination volume that aren't on the source volume.</p></li>
+    /// <li>
+    /// <p><code>DELETE_INTERMEDIATE_DATA</code> - Overwrites snapshots on the destination volume that don’t match the source snapshot that you’re copying.</p></li>
     /// </ul>
     pub fn get_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateOpenZfsVolumeOption>> {
         &self.options

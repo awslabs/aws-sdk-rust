@@ -16,12 +16,18 @@ pub struct WorkflowExecutionInfo {
     pub execution_status: crate::types::ExecutionStatus,
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
-    /// <li><p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
-    /// <li><p><code>TERMINATED</code> – the execution was force terminated.</p></li>
-    /// <li><p><code>FAILED</code> – the execution failed to complete.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
-    /// <li><p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code> – the execution was force terminated.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – the execution failed to complete.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
+    /// <li>
+    /// <p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
     /// </ul>
     pub close_status: ::std::option::Option<crate::types::CloseStatus>,
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
@@ -54,12 +60,18 @@ impl WorkflowExecutionInfo {
     }
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
-    /// <li><p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
-    /// <li><p><code>TERMINATED</code> – the execution was force terminated.</p></li>
-    /// <li><p><code>FAILED</code> – the execution failed to complete.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
-    /// <li><p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code> – the execution was force terminated.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – the execution failed to complete.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
+    /// <li>
+    /// <p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
     /// </ul>
     pub fn close_status(&self) -> ::std::option::Option<&crate::types::CloseStatus> {
         self.close_status.as_ref()
@@ -177,12 +189,18 @@ impl WorkflowExecutionInfoBuilder {
     }
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
-    /// <li><p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
-    /// <li><p><code>TERMINATED</code> – the execution was force terminated.</p></li>
-    /// <li><p><code>FAILED</code> – the execution failed to complete.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
-    /// <li><p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code> – the execution was force terminated.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – the execution failed to complete.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
+    /// <li>
+    /// <p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
     /// </ul>
     pub fn close_status(mut self, input: crate::types::CloseStatus) -> Self {
         self.close_status = ::std::option::Option::Some(input);
@@ -190,12 +208,18 @@ impl WorkflowExecutionInfoBuilder {
     }
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
-    /// <li><p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
-    /// <li><p><code>TERMINATED</code> – the execution was force terminated.</p></li>
-    /// <li><p><code>FAILED</code> – the execution failed to complete.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
-    /// <li><p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code> – the execution was force terminated.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – the execution failed to complete.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
+    /// <li>
+    /// <p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
     /// </ul>
     pub fn set_close_status(mut self, input: ::std::option::Option<crate::types::CloseStatus>) -> Self {
         self.close_status = input;
@@ -203,12 +227,18 @@ impl WorkflowExecutionInfoBuilder {
     }
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
     /// <ul>
-    /// <li><p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
-    /// <li><p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
-    /// <li><p><code>TERMINATED</code> – the execution was force terminated.</p></li>
-    /// <li><p><code>FAILED</code> – the execution failed to complete.</p></li>
-    /// <li><p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
-    /// <li><p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> – the execution was successfully completed.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p></li>
+    /// <li>
+    /// <p><code>TERMINATED</code> – the execution was force terminated.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – the execution failed to complete.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p></li>
+    /// <li>
+    /// <p><code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p></li>
     /// </ul>
     pub fn get_close_status(&self) -> &::std::option::Option<crate::types::CloseStatus> {
         &self.close_status

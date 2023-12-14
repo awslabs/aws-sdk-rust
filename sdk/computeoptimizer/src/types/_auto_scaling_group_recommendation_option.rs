@@ -6,7 +6,7 @@
 pub struct AutoScalingGroupRecommendationOption {
     /// <p>An array of objects that describe an Auto Scaling group configuration.</p>
     pub configuration: ::std::option::Option<crate::types::AutoScalingGroupConfiguration>,
-    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
+    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     pub projected_utilization_metrics: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
@@ -32,7 +32,7 @@ impl AutoScalingGroupRecommendationOption {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::AutoScalingGroupConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
+    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     ///
@@ -108,7 +108,7 @@ impl AutoScalingGroupRecommendationOptionBuilder {
     ///
     /// To override the contents of this collection use [`set_projected_utilization_metrics`](Self::set_projected_utilization_metrics).
     ///
-    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
+    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     pub fn projected_utilization_metrics(mut self, input: crate::types::UtilizationMetric) -> Self {
@@ -117,14 +117,14 @@ impl AutoScalingGroupRecommendationOptionBuilder {
         self.projected_utilization_metrics = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
+    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     pub fn set_projected_utilization_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>) -> Self {
         self.projected_utilization_metrics = input;
         self
     }
-    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p> <note>
+    /// <p>An array of objects that describe the projected utilization metrics of the Auto Scaling group recommendation option.</p><note>
     /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note>
     pub fn get_projected_utilization_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>> {

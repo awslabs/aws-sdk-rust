@@ -24,10 +24,14 @@ impl ModifyVpnConnectionInputBuilder {
 ///
 /// <p>Modifies the customer gateway or the target gateway of an Amazon Web Services Site-to-Site VPN connection. To modify the target gateway, the following migration options are available:</p>
 /// <ul>
-/// <li><p>An existing virtual private gateway to a new virtual private gateway</p></li>
-/// <li><p>An existing virtual private gateway to a transit gateway</p></li>
-/// <li><p>An existing transit gateway to a new transit gateway</p></li>
-/// <li><p>An existing transit gateway to a virtual private gateway</p></li>
+/// <li>
+/// <p>An existing virtual private gateway to a new virtual private gateway</p></li>
+/// <li>
+/// <p>An existing virtual private gateway to a transit gateway</p></li>
+/// <li>
+/// <p>An existing transit gateway to a new transit gateway</p></li>
+/// <li>
+/// <p>An existing transit gateway to a virtual private gateway</p></li>
 /// </ul>
 /// <p>Before you perform the migration to the new gateway, you must configure the new gateway. Use <code>CreateVpnGateway</code> to create a virtual private gateway, or <code>CreateTransitGateway</code> to create a transit gateway.</p>
 /// <p>This step is required when you migrate from a virtual private gateway with static routes to a transit gateway.</p>

@@ -162,19 +162,26 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     ///
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>instance-connect-endpoint-id</code> - The ID of the EC2 Instance Connect Endpoint.</p></li>
-    /// <li><p><code>state</code> - The state of the EC2 Instance Connect Endpoint (<code>create-in-progress</code> | <code>create-complete</code> | <code>create-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>).</p></li>
-    /// <li><p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>instance-connect-endpoint-id</code> - The ID of the EC2 Instance Connect Endpoint.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the EC2 Instance Connect Endpoint (<code>create-in-progress</code> | <code>create-complete</code> | <code>create-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>).</p></li>
+    /// <li>
+    /// <p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -182,19 +189,26 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>instance-connect-endpoint-id</code> - The ID of the EC2 Instance Connect Endpoint.</p></li>
-    /// <li><p><code>state</code> - The state of the EC2 Instance Connect Endpoint (<code>create-in-progress</code> | <code>create-complete</code> | <code>create-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>).</p></li>
-    /// <li><p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>instance-connect-endpoint-id</code> - The ID of the EC2 Instance Connect Endpoint.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the EC2 Instance Connect Endpoint (<code>create-in-progress</code> | <code>create-complete</code> | <code>create-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>).</p></li>
+    /// <li>
+    /// <p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -202,19 +216,26 @@ impl DescribeInstanceConnectEndpointsFluentBuilder {
     }
     /// <p>One or more filters.</p>
     /// <ul>
-    /// <li><p><code>instance-connect-endpoint-id</code> - The ID of the EC2 Instance Connect Endpoint.</p></li>
-    /// <li><p><code>state</code> - The state of the EC2 Instance Connect Endpoint (<code>create-in-progress</code> | <code>create-complete</code> | <code>create-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>).</p></li>
-    /// <li><p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
-    /// <li><p><code>tag</code>:<key>
+    /// <li>
+    /// <p><code>instance-connect-endpoint-id</code> - The ID of the EC2 Instance Connect Endpoint.</p></li>
+    /// <li>
+    /// <p><code>state</code> - The state of the EC2 Instance Connect Endpoint (<code>create-in-progress</code> | <code>create-complete</code> | <code>create-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>).</p></li>
+    /// <li>
+    /// <p><code>subnet-id</code> - The ID of the subnet in which the EC2 Instance Connect Endpoint was created.</p></li>
+    /// <li>
+    /// <p><code>tag</code>:<key>
     /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
     /// <code>Owner</code> and the value
     /// <code>TeamA</code>, specify
     /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
     /// </key></p></li>
-    /// <li><p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
-    /// <li><p><code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p></li>
-    /// <li><p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
+    /// <li>
+    /// <p><code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p></li>
+    /// <li>
+    /// <p><code>tag-value</code> - The value of a tag assigned to the resource. Use this filter to find all resources that have a tag with a specific value, regardless of tag key.</p></li>
+    /// <li>
+    /// <p><code>vpc-id</code> - The ID of the VPC in which the EC2 Instance Connect Endpoint was created.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

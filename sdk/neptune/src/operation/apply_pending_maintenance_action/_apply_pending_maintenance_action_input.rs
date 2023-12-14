@@ -11,9 +11,12 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li><p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li><p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li>
+    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
+    /// <li>
+    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
+    /// <li>
+    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
     pub opt_in_type: ::std::option::Option<::std::string::String>,
 }
@@ -30,9 +33,12 @@ impl ApplyPendingMaintenanceActionInput {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li><p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li><p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li>
+    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
+    /// <li>
+    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
+    /// <li>
+    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
     pub fn opt_in_type(&self) -> ::std::option::Option<&str> {
         self.opt_in_type.as_deref()
@@ -90,9 +96,12 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li><p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li><p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li>
+    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
+    /// <li>
+    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
+    /// <li>
+    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
     /// This field is required.
     pub fn opt_in_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -102,9 +111,12 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li><p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li><p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li>
+    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
+    /// <li>
+    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
+    /// <li>
+    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
     pub fn set_opt_in_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.opt_in_type = input;
@@ -113,9 +125,12 @@ impl ApplyPendingMaintenanceActionInputBuilder {
     /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
     /// <ul>
-    /// <li><p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
-    /// <li><p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
-    /// <li><p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
+    /// <li>
+    /// <p><code>immediate</code> - Apply the maintenance action immediately.</p></li>
+    /// <li>
+    /// <p><code>next-maintenance</code> - Apply the maintenance action during the next maintenance window for the resource.</p></li>
+    /// <li>
+    /// <p><code>undo-opt-in</code> - Cancel any existing <code>next-maintenance</code> opt-in requests.</p></li>
     /// </ul>
     pub fn get_opt_in_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.opt_in_type

@@ -8,8 +8,10 @@ pub struct MembershipQueryComputePaymentConfig {
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
     /// <ul>
-    /// <li><p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
-    /// <li><p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
     /// </ul>
     pub is_responsible: bool,
 }
@@ -18,8 +20,10 @@ impl MembershipQueryComputePaymentConfig {
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
     /// <ul>
-    /// <li><p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
-    /// <li><p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
     /// </ul>
     pub fn is_responsible(&self) -> bool {
         self.is_responsible
@@ -43,8 +47,10 @@ impl MembershipQueryComputePaymentConfigBuilder {
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
     /// <ul>
-    /// <li><p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
-    /// <li><p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
     /// </ul>
     /// This field is required.
     pub fn is_responsible(mut self, input: bool) -> Self {
@@ -55,8 +61,10 @@ impl MembershipQueryComputePaymentConfigBuilder {
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
     /// <ul>
-    /// <li><p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
-    /// <li><p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
     /// </ul>
     pub fn set_is_responsible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_responsible = input;
@@ -66,8 +74,10 @@ impl MembershipQueryComputePaymentConfigBuilder {
     /// <p>If the collaboration creator has not specified anyone to pay for query compute costs, then the member who can query is the default payer.</p>
     /// <p>An error message is returned for the following reasons:</p>
     /// <ul>
-    /// <li><p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
-    /// <li><p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>FALSE</code> but you are responsible to pay for query compute costs.</p></li>
+    /// <li>
+    /// <p>If you set the value to <code>TRUE</code> but you are not responsible to pay for query compute costs.</p></li>
     /// </ul>
     pub fn get_is_responsible(&self) -> &::std::option::Option<bool> {
         &self.is_responsible

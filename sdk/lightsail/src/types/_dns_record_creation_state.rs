@@ -8,9 +8,12 @@ pub struct DnsRecordCreationState {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
-    /// <li><p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li><p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
+    /// <li>
+    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
     pub code: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
@@ -20,9 +23,12 @@ impl DnsRecordCreationState {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
-    /// <li><p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li><p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
+    /// <li>
+    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
     pub fn code(&self) -> ::std::option::Option<&crate::types::DnsRecordCreationStateCode> {
         self.code.as_ref()
@@ -50,9 +56,12 @@ impl DnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
-    /// <li><p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li><p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
+    /// <li>
+    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
     pub fn code(mut self, input: crate::types::DnsRecordCreationStateCode) -> Self {
         self.code = ::std::option::Option::Some(input);
@@ -61,9 +70,12 @@ impl DnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
-    /// <li><p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li><p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
+    /// <li>
+    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
     pub fn set_code(mut self, input: ::std::option::Option<crate::types::DnsRecordCreationStateCode>) -> Self {
         self.code = input;
@@ -72,9 +84,12 @@ impl DnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
     /// <ul>
-    /// <li><p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
-    /// <li><p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
-    /// <li><p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> - The validation records were successfully added to the domain.</p></li>
+    /// <li>
+    /// <p><code>STARTED</code> - The automatic DNS record creation has started.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The validation records failed to be added to the domain.</p></li>
     /// </ul>
     pub fn get_code(&self) -> &::std::option::Option<crate::types::DnsRecordCreationStateCode> {
         &self.code

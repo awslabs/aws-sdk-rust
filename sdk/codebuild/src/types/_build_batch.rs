@@ -20,9 +20,12 @@ pub struct BuildBatch {
     pub source_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub resolved_source_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the batch build project.</p>
@@ -35,10 +38,14 @@ pub struct BuildBatch {
     pub secondary_sources: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub secondary_source_versions: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
@@ -61,18 +68,20 @@ pub struct BuildBatch {
     pub complete: bool,
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name.</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name.</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub initiator: ::std::option::Option<::std::string::String>,
     /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of the batch build. For each project, the <code>buildBatchNumber</code> of its first batch build is <code>1</code>. The <code>buildBatchNumber</code> of each subsequent batch build is incremented by <code>1</code>. If a batch build is deleted, the <code>buildBatchNumber</code> of other batch builds does not change.</p>
     pub build_batch_number: ::std::option::Option<i64>,
@@ -116,9 +125,12 @@ impl BuildBatch {
     }
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn resolved_source_version(&self) -> ::std::option::Option<&str> {
         self.resolved_source_version.as_deref()
@@ -145,10 +157,14 @@ impl BuildBatch {
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.secondary_source_versions.is_none()`.
@@ -195,9 +211,12 @@ impl BuildBatch {
     }
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name.</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name.</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn initiator(&self) -> ::std::option::Option<&str> {
         self.initiator.as_deref()
@@ -206,11 +225,10 @@ impl BuildBatch {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn encryption_key(&self) -> ::std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
@@ -382,9 +400,12 @@ impl BuildBatchBuilder {
     }
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn resolved_source_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_source_version = ::std::option::Option::Some(input.into());
@@ -392,9 +413,12 @@ impl BuildBatchBuilder {
     }
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn set_resolved_source_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_source_version = input;
@@ -402,9 +426,12 @@ impl BuildBatchBuilder {
     }
     /// <p>The identifier of the resolved version of this batch build's source code.</p>
     /// <ul>
-    /// <li><p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
-    /// <li><p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
-    /// <li><p>For Amazon S3, this does not apply.</p></li>
+    /// <li>
+    /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p></li>
+    /// <li>
+    /// <p>For CodePipeline, the source revision provided by CodePipeline.</p></li>
+    /// <li>
+    /// <p>For Amazon S3, this does not apply.</p></li>
     /// </ul>
     pub fn get_resolved_source_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_source_version
@@ -483,10 +510,14 @@ impl BuildBatchBuilder {
     ///
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub fn secondary_source_versions(mut self, input: crate::types::ProjectSourceVersion) -> Self {
         let mut v = self.secondary_source_versions.unwrap_or_default();
@@ -496,10 +527,14 @@ impl BuildBatchBuilder {
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub fn set_secondary_source_versions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
         self.secondary_source_versions = input;
@@ -507,10 +542,14 @@ impl BuildBatchBuilder {
     }
     /// <p>An array of <code>ProjectSourceVersion</code> objects. Each <code>ProjectSourceVersion</code> must be one of:</p>
     /// <ul>
-    /// <li><p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
-    /// <li><p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
-    /// <li><p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
+    /// <li>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p></li>
+    /// <li>
+    /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p></li>
+    /// <li>
+    /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p></li>
     /// </ul>
     pub fn get_secondary_source_versions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>> {
         &self.secondary_source_versions
@@ -649,9 +688,12 @@ impl BuildBatchBuilder {
     }
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name.</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name.</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn initiator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initiator = ::std::option::Option::Some(input.into());
@@ -659,9 +701,12 @@ impl BuildBatchBuilder {
     }
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name.</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name.</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn set_initiator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initiator = input;
@@ -669,9 +714,12 @@ impl BuildBatchBuilder {
     }
     /// <p>The entity that started the batch build. Valid values include:</p>
     /// <ul>
-    /// <li><p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
-    /// <li><p>If a user started the build, the user's name.</p></li>
-    /// <li><p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
+    /// <li>
+    /// <p>If CodePipeline started the build, the pipeline's name (for example, <code>codepipeline/my-demo-pipeline</code>).</p></li>
+    /// <li>
+    /// <p>If a user started the build, the user's name.</p></li>
+    /// <li>
+    /// <p>If the Jenkins plugin for CodeBuild started the build, the string <code>CodeBuild-Jenkins-Plugin</code>.</p></li>
     /// </ul>
     pub fn get_initiator(&self) -> &::std::option::Option<::std::string::String> {
         &self.initiator
@@ -690,29 +738,26 @@ impl BuildBatchBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn set_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key = input;
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p> <note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output artifacts.</p><note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.</p>
     /// </note>
-    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
-    /// <alias-name></alias-name></code>).</p>
+    /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/<alias-name></alias-name></code>).</p>
     pub fn get_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key
     }

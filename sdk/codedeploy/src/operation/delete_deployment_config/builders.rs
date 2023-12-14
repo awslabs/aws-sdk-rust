@@ -22,7 +22,7 @@ impl DeleteDeploymentConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDeploymentConfig`.
 ///
-/// <p>Deletes a deployment configuration.</p> <note>
+/// <p>Deletes a deployment configuration.</p><note>
 /// <p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations cannot be deleted.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

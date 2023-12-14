@@ -7,9 +7,12 @@ pub struct RecommendationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -18,9 +21,12 @@ pub struct RecommendationJobOutputConfig {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -39,9 +45,12 @@ impl RecommendationJobOutputConfig {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -50,9 +59,12 @@ impl RecommendationJobOutputConfig {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -89,9 +101,12 @@ impl RecommendationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -100,9 +115,12 @@ impl RecommendationJobOutputConfigBuilder {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -120,9 +138,12 @@ impl RecommendationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -131,9 +152,12 @@ impl RecommendationJobOutputConfigBuilder {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/
@@ -151,9 +175,12 @@ impl RecommendationJobOutputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code> permission.</p>
     /// <p>The <code>KmsKeyId</code> can be any of the following formats:</p>
     /// <ul>
-    /// <li><p>// KMS Key ID</p> <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key ID</p>
+    /// <p><code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :key/
@@ -162,9 +189,12 @@ impl RecommendationJobOutputConfigBuilder {
     /// </key-id-12ab-34cd-56ef-1234567890ab>
     /// </account>
     /// </region></code></p></li>
-    /// <li><p>// KMS Key Alias</p> <p><code>"alias/ExampleAlias"</code></p></li>
-    /// <li><p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p><code>"arn:aws:kms:
-    /// <region>
+    /// <li>
+    /// <p>// KMS Key Alias</p>
+    /// <p><code>"alias/ExampleAlias"</code></p></li>
+    /// <li>
+    /// <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p>
+    /// <p><code>"arn:aws:kms:<region>
     /// :
     /// <account>
     /// :alias/

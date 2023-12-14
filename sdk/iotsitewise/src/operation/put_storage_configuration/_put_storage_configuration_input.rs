@@ -5,18 +5,22 @@
 pub struct PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
-    /// <li><p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
+    /// <li>
+    /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
     /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
     pub multi_layer_storage: ::std::option::Option<crate::types::MultiLayerStorage>,
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
+    /// <li>
+    /// <p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p><important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
     /// </important></li>
-    /// <li><p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub disassociated_data_storage: ::std::option::Option<crate::types::DisassociatedDataStorageState>,
@@ -30,8 +34,10 @@ pub struct PutStorageConfigurationInput {
 impl PutStorageConfigurationInput {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
-    /// <li><p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
+    /// <li>
+    /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
@@ -42,10 +48,12 @@ impl PutStorageConfigurationInput {
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
+    /// <li>
+    /// <p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p><important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
     /// </important></li>
-    /// <li><p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn disassociated_data_storage(&self) -> ::std::option::Option<&crate::types::DisassociatedDataStorageState> {
@@ -85,8 +93,10 @@ pub struct PutStorageConfigurationInputBuilder {
 impl PutStorageConfigurationInputBuilder {
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
-    /// <li><p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
+    /// <li>
+    /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
     /// This field is required.
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
@@ -95,8 +105,10 @@ impl PutStorageConfigurationInputBuilder {
     }
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
-    /// <li><p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
+    /// <li>
+    /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
         self.storage_type = input;
@@ -104,8 +116,10 @@ impl PutStorageConfigurationInputBuilder {
     }
     /// <p>The storage tier that you specified for your data. The <code>storageType</code> parameter can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
-    /// <li><p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
+    /// <li>
+    /// <p><code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise saves your data into the hot tier. The hot tier is a service-managed database.</p></li>
+    /// <li>
+    /// <p><code>MULTI_LAYER_STORAGE</code> – IoT SiteWise saves your data in both the cold tier and the hot tier. The cold tier is a customer-managed Amazon S3 bucket.</p></li>
     /// </ul>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
@@ -126,10 +140,12 @@ impl PutStorageConfigurationInputBuilder {
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
+    /// <li>
+    /// <p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p><important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
     /// </important></li>
-    /// <li><p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn disassociated_data_storage(mut self, input: crate::types::DisassociatedDataStorageState) -> Self {
@@ -138,10 +154,12 @@ impl PutStorageConfigurationInputBuilder {
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
+    /// <li>
+    /// <p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p><important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
     /// </important></li>
-    /// <li><p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_disassociated_data_storage(mut self, input: ::std::option::Option<crate::types::DisassociatedDataStorageState>) -> Self {
@@ -150,10 +168,12 @@ impl PutStorageConfigurationInputBuilder {
     }
     /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties. The <code>disassociatedDataStorage</code> can be one of the following values:</p>
     /// <ul>
-    /// <li><p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p> <important>
+    /// <li>
+    /// <p><code>ENABLED</code> – IoT SiteWise accepts time series that aren't associated with asset properties.</p><important>
     /// <p>After the <code>disassociatedDataStorage</code> is enabled, you can't disable it.</p>
     /// </important></li>
-    /// <li><p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – IoT SiteWise doesn't accept time series (data streams) that aren't associated with asset properties.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn get_disassociated_data_storage(&self) -> &::std::option::Option<crate::types::DisassociatedDataStorageState> {

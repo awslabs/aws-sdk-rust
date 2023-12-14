@@ -9,8 +9,12 @@ pub struct AccessRules {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
-    /// <li><p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
+    /// <li>
+    /// <p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
     pub get_object: ::std::option::Option<crate::types::AccessType>,
     /// <p>A Boolean value that indicates whether the access control list (ACL) permissions that are applied to individual objects override the <code>getObject</code> option that is currently specified.</p>
@@ -21,8 +25,12 @@ impl AccessRules {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
-    /// <li><p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
+    /// <li>
+    /// <p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
     pub fn get_object(&self) -> ::std::option::Option<&crate::types::AccessType> {
         self.get_object.as_ref()
@@ -51,8 +59,12 @@ impl AccessRulesBuilder {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
-    /// <li><p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
+    /// <li>
+    /// <p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
     pub fn get_object(mut self, input: crate::types::AccessType) -> Self {
         self.get_object = ::std::option::Option::Some(input);
@@ -61,8 +73,12 @@ impl AccessRulesBuilder {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
-    /// <li><p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
+    /// <li>
+    /// <p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
     pub fn set_get_object(mut self, input: ::std::option::Option<crate::types::AccessType>) -> Self {
         self.get_object = input;
@@ -71,8 +87,12 @@ impl AccessRulesBuilder {
     /// <p>Specifies the anonymous access to all objects in a bucket.</p>
     /// <p>The following options can be specified:</p>
     /// <ul>
-    /// <li><p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p> <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
-    /// <li><p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p> <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
+    /// <li>
+    /// <p><code>public</code> - Sets all objects in the bucket to public (read-only), making them readable by anyone in the world.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>public</code>, then all objects in the bucket default to public regardless of the <code>allowPublicOverrides</code> value.</p></li>
+    /// <li>
+    /// <p><code>private</code> - Sets all objects in the bucket to private, making them readable only by you or anyone you give access to.</p>
+    /// <p>If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code> value is set to <code>true</code>, then all objects in the bucket default to private unless they are configured with a <code>public-read</code> ACL. Individual objects with a <code>public-read</code> ACL are readable by anyone in the world.</p></li>
     /// </ul>
     pub fn get_get_object(&self) -> &::std::option::Option<crate::types::AccessType> {
         &self.get_object

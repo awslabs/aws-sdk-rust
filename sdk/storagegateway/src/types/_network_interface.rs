@@ -6,7 +6,7 @@
 pub struct NetworkInterface {
     /// <p>The Internet Protocol version 4 (IPv4) address of the interface.</p>
     pub ipv4_address: ::std::option::Option<::std::string::String>,
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
+    /// <p>The Media Access Control (MAC) address of the interface.</p><note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
     pub mac_address: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl NetworkInterface {
     pub fn ipv4_address(&self) -> ::std::option::Option<&str> {
         self.ipv4_address.as_deref()
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
+    /// <p>The Media Access Control (MAC) address of the interface.</p><note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
     pub fn mac_address(&self) -> ::std::option::Option<&str> {
@@ -68,21 +68,21 @@ impl NetworkInterfaceBuilder {
     pub fn get_ipv4_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv4_address
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
+    /// <p>The Media Access Control (MAC) address of the interface.</p><note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
     pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mac_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
+    /// <p>The Media Access Control (MAC) address of the interface.</p><note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
     pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac_address = input;
         self
     }
-    /// <p>The Media Access Control (MAC) address of the interface.</p> <note>
+    /// <p>The Media Access Control (MAC) address of the interface.</p><note>
     /// <p>This is currently unsupported and will not be returned in output.</p>
     /// </note>
     pub fn get_mac_address(&self) -> &::std::option::Option<::std::string::String> {

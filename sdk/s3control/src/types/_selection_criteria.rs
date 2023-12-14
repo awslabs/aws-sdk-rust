@@ -8,7 +8,7 @@ pub struct SelectionCriteria {
     pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The max depth of the selection criteria</p>
     pub max_depth: ::std::option::Option<i32>,
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p><note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub min_storage_bytes_percentage: ::std::option::Option<f64>,
@@ -22,7 +22,7 @@ impl SelectionCriteria {
     pub fn max_depth(&self) -> ::std::option::Option<i32> {
         self.max_depth
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p><note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn min_storage_bytes_percentage(&self) -> ::std::option::Option<f64> {
@@ -73,21 +73,21 @@ impl SelectionCriteriaBuilder {
     pub fn get_max_depth(&self) -> &::std::option::Option<i32> {
         &self.max_depth
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p><note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn min_storage_bytes_percentage(mut self, input: f64) -> Self {
         self.min_storage_bytes_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p><note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn set_min_storage_bytes_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_storage_bytes_percentage = input;
         self
     }
-    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p> <note>
+    /// <p>The minimum number of storage bytes percentage whose metrics will be selected.</p><note>
     /// <p>You must choose a value greater than or equal to <code>1.0</code>.</p>
     /// </note>
     pub fn get_min_storage_bytes_percentage(&self) -> &::std::option::Option<f64> {

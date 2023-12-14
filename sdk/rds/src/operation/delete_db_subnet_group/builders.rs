@@ -22,7 +22,7 @@ impl DeleteDbSubnetGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDBSubnetGroup`.
 ///
-/// <p>Deletes a DB subnet group.</p> <note>
+/// <p>Deletes a DB subnet group.</p><note>
 /// <p>The specified database subnet group must not be associated with any DB instances.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,7 +110,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -119,7 +119,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
@@ -128,7 +128,7 @@ impl DeleteDBSubnetGroupFluentBuilder {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
-    /// <p>The name of the database subnet group to delete.</p> <note>
+    /// <p>The name of the database subnet group to delete.</p><note>
     /// <p>You can't delete the default subnet group.</p>
     /// </note>
     /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>

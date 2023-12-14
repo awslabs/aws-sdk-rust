@@ -22,7 +22,7 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreDBClusterToPointInTime`.
 ///
-/// <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p> <note>
+/// <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p><note>
 /// <p>For Aurora, this operation only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code> operation has completed and the DB cluster is available.</p>
 /// </note>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -115,9 +115,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,9 +130,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -139,9 +145,12 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
-    /// <li><p>First character must be a letter</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 63 letters, numbers, or hyphens</p></li>
+    /// <li>
+    /// <p>First character must be a letter</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -149,8 +158,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
-    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -160,8 +171,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
-    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -171,8 +184,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The type of restore to be performed. You can specify one of the following values:</p>
     /// <ul>
-    /// <li><p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
-    /// <li><p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>full-copy</code> - The new DB cluster is restored as a full copy of the source DB cluster.</p></li>
+    /// <li>
+    /// <p><code>copy-on-write</code> - The new DB cluster is restored as a clone of the source DB cluster.</p></li>
     /// </ul>
     /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the source DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -182,7 +197,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn source_db_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -192,7 +208,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_source_db_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -202,7 +219,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The identifier of the source DB cluster from which to restore.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must match the identifier of an existing DBCluster.</p></li>
+    /// <li>
+    /// <p>Must match the identifier of an existing DBCluster.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_source_db_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
@@ -212,10 +230,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
-    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
-    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
-    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li>
+    /// <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li>
+    /// <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -227,10 +249,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
-    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
-    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
-    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li>
+    /// <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li>
+    /// <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -242,10 +268,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Valid Values: Value must be a time in Universal Coordinated Time (UTC) format</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Must be before the latest restorable time for the DB instance</p></li>
-    /// <li><p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
-    /// <li><p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
-    /// <li><p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
+    /// <li>
+    /// <p>Must be before the latest restorable time for the DB instance</p></li>
+    /// <li>
+    /// <p>Must be specified if <code>UseLatestRestorableTime</code> parameter isn't provided</p></li>
+    /// <li>
+    /// <p>Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled</p></li>
+    /// <li>
+    /// <p>Can't be specified if the <code>RestoreType</code> parameter is <code>copy-on-write</code></p></li>
     /// </ul>
     /// <p>Example: <code>2015-03-07T23:45:00Z</code></p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -379,8 +409,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
-    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li>
+    /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -393,8 +425,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
-    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li>
+    /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -407,8 +441,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different from the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following occurs:</p>
     /// <ul>
-    /// <li><p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
-    /// <li><p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
+    /// <li>
+    /// <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.</p></li>
+    /// <li>
+    /// <p>If the DB cluster isn't encrypted, then the restored DB cluster isn't encrypted.</p></li>
     /// </ul>
     /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request is rejected.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -439,7 +475,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn backtrack_window(mut self, input: i64) -> Self {
@@ -450,7 +487,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
@@ -461,7 +499,8 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Default: 0</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
+    /// <li>
+    /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p></li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
     pub fn get_backtrack_window(&self) -> &::std::option::Option<i64> {
@@ -522,10 +561,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -536,10 +579,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -550,10 +597,14 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for the specified engine is used.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
-    /// <li><p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>If supplied, must match the name of an existing DB cluster parameter group.</p></li>
+    /// <li>
+    /// <p>Must be 1 to 255 letters, numbers, or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_db_cluster_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -716,13 +767,17 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
@@ -735,13 +790,17 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -754,13 +813,17 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.</p>
     /// <p>If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the default VPC in the target Region has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code> isn't specified, the following applies:</p>
     /// <ul>
-    /// <li><p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
-    /// <li><p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB cluster is private.</p></li>
+    /// <li>
+    /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB cluster is public.</p></li>
     /// </ul>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn get_publicly_accessible(&self) -> &::std::option::Option<bool> {
@@ -809,8 +872,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -822,8 +887,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
@@ -835,8 +902,10 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>IPV4</code></p></li>
-    /// <li><p><code>DUAL</code></p></li>
+    /// <li>
+    /// <p><code>IPV4</code></p></li>
+    /// <li>
+    /// <p><code>DUAL</code></p></li>
     /// </ul>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>

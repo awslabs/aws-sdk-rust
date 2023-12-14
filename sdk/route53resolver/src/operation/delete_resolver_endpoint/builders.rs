@@ -24,8 +24,10 @@ impl DeleteResolverEndpointInputBuilder {
 ///
 /// <p>Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound Resolver endpoint:</p>
 /// <ul>
-/// <li><p><b>Inbound</b>: DNS queries from your network are no longer routed to the DNS service for the specified VPC.</p></li>
-/// <li><p><b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.</p></li>
+/// <li>
+/// <p><b>Inbound</b>: DNS queries from your network are no longer routed to the DNS service for the specified VPC.</p></li>
+/// <li>
+/// <p><b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResolverEndpointFluentBuilder {

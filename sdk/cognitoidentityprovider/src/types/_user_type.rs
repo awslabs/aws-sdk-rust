@@ -16,12 +16,18 @@ pub struct UserType {
     pub enabled: bool,
     /// <p>The user status. This can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
-    /// <li><p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
-    /// <li><p>UNKNOWN - User status isn't known.</p></li>
-    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
-    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
+    /// <li>
+    /// <p>UNKNOWN - User status isn't known.</p></li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub user_status: ::std::option::Option<crate::types::UserStatusType>,
     /// <p>The MFA options for the user.</p>
@@ -52,12 +58,18 @@ impl UserType {
     }
     /// <p>The user status. This can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
-    /// <li><p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
-    /// <li><p>UNKNOWN - User status isn't known.</p></li>
-    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
-    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
+    /// <li>
+    /// <p>UNKNOWN - User status isn't known.</p></li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn user_status(&self) -> ::std::option::Option<&crate::types::UserStatusType> {
         self.user_status.as_ref()
@@ -180,12 +192,18 @@ impl UserTypeBuilder {
     }
     /// <p>The user status. This can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
-    /// <li><p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
-    /// <li><p>UNKNOWN - User status isn't known.</p></li>
-    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
-    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
+    /// <li>
+    /// <p>UNKNOWN - User status isn't known.</p></li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn user_status(mut self, input: crate::types::UserStatusType) -> Self {
         self.user_status = ::std::option::Option::Some(input);
@@ -193,12 +211,18 @@ impl UserTypeBuilder {
     }
     /// <p>The user status. This can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
-    /// <li><p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
-    /// <li><p>UNKNOWN - User status isn't known.</p></li>
-    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
-    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
+    /// <li>
+    /// <p>UNKNOWN - User status isn't known.</p></li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn set_user_status(mut self, input: ::std::option::Option<crate::types::UserStatusType>) -> Self {
         self.user_status = input;
@@ -206,12 +230,18 @@ impl UserTypeBuilder {
     }
     /// <p>The user status. This can be one of the following:</p>
     /// <ul>
-    /// <li><p>UNCONFIRMED - User has been created but not confirmed.</p></li>
-    /// <li><p>CONFIRMED - User has been confirmed.</p></li>
-    /// <li><p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
-    /// <li><p>UNKNOWN - User status isn't known.</p></li>
-    /// <li><p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
-    /// <li><p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
+    /// <li>
+    /// <p>UNCONFIRMED - User has been created but not confirmed.</p></li>
+    /// <li>
+    /// <p>CONFIRMED - User has been confirmed.</p></li>
+    /// <li>
+    /// <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p></li>
+    /// <li>
+    /// <p>UNKNOWN - User status isn't known.</p></li>
+    /// <li>
+    /// <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p></li>
+    /// <li>
+    /// <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else.</p></li>
     /// </ul>
     pub fn get_user_status(&self) -> &::std::option::Option<crate::types::UserStatusType> {
         &self.user_status

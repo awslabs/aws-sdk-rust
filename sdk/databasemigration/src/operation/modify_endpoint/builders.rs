@@ -22,7 +22,7 @@ impl ModifyEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyEndpoint`.
 ///
-/// <p>Modifies the specified endpoint.</p> <note>
+/// <p>Modifies the specified endpoint.</p><note>
 /// <p>For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -337,8 +337,10 @@ impl ModifyEndpointFluentBuilder {
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint.</p>
     /// <p>Attributes include the following:</p>
     /// <ul>
-    /// <li><p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
-    /// <li><p>BucketName - The name of the S3 bucket to use.</p></li>
+    /// <li>
+    /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
+    /// <li>
+    /// <p>BucketName - The name of the S3 bucket to use.</p></li>
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code></p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code></p>
@@ -349,8 +351,10 @@ impl ModifyEndpointFluentBuilder {
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint.</p>
     /// <p>Attributes include the following:</p>
     /// <ul>
-    /// <li><p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
-    /// <li><p>BucketName - The name of the S3 bucket to use.</p></li>
+    /// <li>
+    /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
+    /// <li>
+    /// <p>BucketName - The name of the S3 bucket to use.</p></li>
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code></p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code></p>
@@ -361,8 +365,10 @@ impl ModifyEndpointFluentBuilder {
     /// <p>The settings in JSON format for the DMS transfer type of source endpoint.</p>
     /// <p>Attributes include the following:</p>
     /// <ul>
-    /// <li><p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
-    /// <li><p>BucketName - The name of the S3 bucket to use.</p></li>
+    /// <li>
+    /// <p>serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p></li>
+    /// <li>
+    /// <p>BucketName - The name of the S3 bucket to use.</p></li>
     /// </ul>
     /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string ,BucketName=string</code></p>
     /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName": "string"} </code></p>
@@ -567,8 +573,10 @@ impl ModifyEndpointFluentBuilder {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new endpoint settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new endpoint settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>.</p>
     /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify.</p>
@@ -578,8 +586,10 @@ impl ModifyEndpointFluentBuilder {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new endpoint settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new endpoint settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>.</p>
     /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify.</p>
@@ -589,8 +599,10 @@ impl ModifyEndpointFluentBuilder {
     }
     /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all existing endpoint settings with the exact settings that you specify in this call. If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things:</p>
     /// <ul>
-    /// <li><p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p></li>
-    /// <li><p>It creates new endpoint settings that you specify in the call, for settings with different names.</p></li>
+    /// <li>
+    /// <p>It replaces any endpoint settings that already exist with new values, for settings with the same names.</p></li>
+    /// <li>
+    /// <p>It creates new endpoint settings that you specify in the call, for settings with different names.</p></li>
     /// </ul>
     /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>.</p>
     /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced with the exact settings that you specify.</p>

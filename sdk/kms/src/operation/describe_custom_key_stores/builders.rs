@@ -32,11 +32,16 @@ impl DescribeCustomKeyStoresInputBuilder {
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DescribeCustomKeyStores</a> (IAM policy)</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
-/// <li><p><code>ConnectCustomKeyStore</code></p></li>
-/// <li><p><code>CreateCustomKeyStore</code></p></li>
-/// <li><p><code>DeleteCustomKeyStore</code></p></li>
-/// <li><p><code>DisconnectCustomKeyStore</code></p></li>
-/// <li><p><code>UpdateCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>ConnectCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>CreateCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>DeleteCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>DisconnectCustomKeyStore</code></p></li>
+/// <li>
+/// <p><code>UpdateCustomKeyStore</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresFluentBuilder {

@@ -22,7 +22,7 @@ impl ListControlInsightsByControlDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `ListControlInsightsByControlDomain`.
 ///
-/// <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p> <note>
+/// <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p><note>
 /// <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -22,9 +22,12 @@ pub struct RefreshPreferences {
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations:</p>
     /// <ul>
-    /// <li><p>There is no desired configuration specified for the instance refresh.</p></li>
-    /// <li><p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
-    /// <li><p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
+    /// <li>
+    /// <p>There is no desired configuration specified for the instance refresh.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub auto_rollback: ::std::option::Option<bool>,
@@ -108,9 +111,12 @@ impl RefreshPreferences {
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations:</p>
     /// <ul>
-    /// <li><p>There is no desired configuration specified for the instance refresh.</p></li>
-    /// <li><p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
-    /// <li><p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
+    /// <li>
+    /// <p>There is no desired configuration specified for the instance refresh.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn auto_rollback(&self) -> ::std::option::Option<bool> {
@@ -287,9 +293,12 @@ impl RefreshPreferencesBuilder {
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations:</p>
     /// <ul>
-    /// <li><p>There is no desired configuration specified for the instance refresh.</p></li>
-    /// <li><p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
-    /// <li><p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
+    /// <li>
+    /// <p>There is no desired configuration specified for the instance refresh.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn auto_rollback(mut self, input: bool) -> Self {
@@ -299,9 +308,12 @@ impl RefreshPreferencesBuilder {
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations:</p>
     /// <ul>
-    /// <li><p>There is no desired configuration specified for the instance refresh.</p></li>
-    /// <li><p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
-    /// <li><p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
+    /// <li>
+    /// <p>There is no desired configuration specified for the instance refresh.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_auto_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -311,9 +323,12 @@ impl RefreshPreferencesBuilder {
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails or a CloudWatch alarm threshold is met. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations:</p>
     /// <ul>
-    /// <li><p>There is no desired configuration specified for the instance refresh.</p></li>
-    /// <li><p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
-    /// <li><p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
+    /// <li>
+    /// <p>There is no desired configuration specified for the instance refresh.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p></li>
+    /// <li>
+    /// <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/instance-refresh-rollback.html">Undo changes with a rollback</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn get_auto_rollback(&self) -> &::std::option::Option<bool> {

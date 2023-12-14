@@ -113,10 +113,14 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>The name of the event subscription to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank.</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn subscription_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscription_name(input.into());
@@ -125,10 +129,14 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>The name of the event subscription to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank.</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn set_subscription_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_name(input);
@@ -137,10 +145,14 @@ impl CreateEventSubscriptionFluentBuilder {
     /// <p>The name of the event subscription to be created.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Cannot be null, empty, or blank.</p></li>
-    /// <li><p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
-    /// <li><p>First character must be a letter.</p></li>
-    /// <li><p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
+    /// <li>
+    /// <p>Cannot be null, empty, or blank.</p></li>
+    /// <li>
+    /// <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p></li>
+    /// <li>
+    /// <p>First character must be a letter.</p></li>
+    /// <li>
+    /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p></li>
     /// </ul>
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_name()

@@ -23,7 +23,7 @@ impl CreateCampaignInputBuilder {
 /// Fluent builder constructing a request to `CreateCampaign`.
 ///
 /// <p>Creates a campaign that deploys a solution version. When a client calls the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> and <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a> APIs, a campaign is specified in the request.</p>
-/// <p><b>Minimum Provisioned TPS and Auto-Scaling</b></p> <important>
+/// <p><b>Minimum Provisioned TPS and Auto-Scaling</b></p><important>
 /// <p>A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.</p>
 /// </important>
 /// <p>A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call. Transactions per second (TPS) is the throughput and unit of billing for Amazon Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>) specifies the baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing charge.</p>
@@ -32,18 +32,24 @@ impl CreateCampaignInputBuilder {
 /// <p><b>Status</b></p>
 /// <p>A campaign can be in one of the following states:</p>
 /// <ul>
-/// <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
-/// <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
+/// <li>
+/// <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p></li>
+/// <li>
+/// <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p></li>
 /// </ul>
-/// <p>To get the campaign status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.</p> <note>
+/// <p>To get the campaign status, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>.</p><note>
 /// <p>Wait until the <code>status</code> of the campaign is <code>ACTIVE</code> before asking the campaign for recommendations.</p>
 /// </note>
 /// <p class="title"><b>Related APIs</b></p>
 /// <ul>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html">UpdateCampaign</a></p></li>
-/// <li><p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html">DeleteCampaign</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateCampaign.html">UpdateCampaign</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DeleteCampaign.html">DeleteCampaign</a></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCampaignFluentBuilder {

@@ -8,11 +8,13 @@ pub struct EcsTaskOverride {
     pub container_overrides: ::std::option::Option<::std::vec::Vec<crate::types::EcsContainerOverride>>,
     /// <p>The cpu override for the task.</p>
     pub cpu: ::std::option::Option<::std::string::String>,
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>The ephemeral storage setting override for the task.</p><note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li><p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li><p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub ephemeral_storage: ::std::option::Option<crate::types::EcsEphemeralStorage>,
@@ -36,11 +38,13 @@ impl EcsTaskOverride {
     pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>The ephemeral storage setting override for the task.</p><note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li><p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li><p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EcsEphemeralStorage> {
@@ -119,33 +123,39 @@ impl EcsTaskOverrideBuilder {
     pub fn get_cpu(&self) -> &::std::option::Option<::std::string::String> {
         &self.cpu
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>The ephemeral storage setting override for the task.</p><note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li><p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li><p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn ephemeral_storage(mut self, input: crate::types::EcsEphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>The ephemeral storage setting override for the task.</p><note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li><p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li><p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EcsEphemeralStorage>) -> Self {
         self.ephemeral_storage = input;
         self
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>The ephemeral storage setting override for the task.</p><note>
     /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
     /// <ul>
-    /// <li><p>Linux platform version <code>1.4.0</code> or later.</p></li>
-    /// <li><p>Windows platform version <code>1.0.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Linux platform version <code>1.4.0</code> or later.</p></li>
+    /// <li>
+    /// <p>Windows platform version <code>1.0.0</code> or later.</p></li>
     /// </ul>
     /// </note>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EcsEphemeralStorage> {

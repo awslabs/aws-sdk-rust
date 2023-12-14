@@ -22,7 +22,7 @@ impl DeleteRepositoryInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteRepository`.
 ///
-/// <p>Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.</p> <important>
+/// <p>Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.</p><important>
 /// <p>Deleting a repository also deletes all associated objects and metadata. After a repository is deleted, all future push calls to the deleted repository fail.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -22,7 +22,7 @@ impl UpdateSchemaInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateSchema`.
 ///
-/// <p>Updates the schema definition</p> <note>
+/// <p>Updates the schema definition</p><note>
 /// <p>Inactive schemas will be deleted after two years.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

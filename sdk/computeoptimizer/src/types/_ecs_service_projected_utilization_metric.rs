@@ -8,8 +8,10 @@ pub struct EcsServiceProjectedUtilizationMetric {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
-    /// <li><p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
     pub name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     /// <p>The statistic of the projected utilization metric.</p>
@@ -25,8 +27,10 @@ impl EcsServiceProjectedUtilizationMetric {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
-    /// <li><p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricName> {
         self.name.as_ref()
@@ -66,8 +70,10 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
-    /// <li><p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
     pub fn name(mut self, input: crate::types::EcsServiceMetricName) -> Self {
         self.name = ::std::option::Option::Some(input);
@@ -76,8 +82,10 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
-    /// <li><p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::EcsServiceMetricName>) -> Self {
         self.name = input;
@@ -86,8 +94,10 @@ impl EcsServiceProjectedUtilizationMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following utilization metrics are available:</p>
     /// <ul>
-    /// <li><p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
-    /// <li><p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p></li>
+    /// <li>
+    /// <p><code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::EcsServiceMetricName> {
         &self.name

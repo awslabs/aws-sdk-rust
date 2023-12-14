@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPublicKeysOutput {
-    /// <p>Contains an array of PublicKey objects.</p> <note>
+    /// <p>Contains an array of PublicKey objects.</p><note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     pub public_key_list: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>,
@@ -13,7 +13,7 @@ pub struct ListPublicKeysOutput {
     _request_id: Option<String>,
 }
 impl ListPublicKeysOutput {
-    /// <p>Contains an array of PublicKey objects.</p> <note>
+    /// <p>Contains an array of PublicKey objects.</p><note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     ///
@@ -51,7 +51,7 @@ impl ListPublicKeysOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_public_key_list`](Self::set_public_key_list).
     ///
-    /// <p>Contains an array of PublicKey objects.</p> <note>
+    /// <p>Contains an array of PublicKey objects.</p><note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     pub fn public_key_list(mut self, input: crate::types::PublicKey) -> Self {
@@ -60,14 +60,14 @@ impl ListPublicKeysOutputBuilder {
         self.public_key_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains an array of PublicKey objects.</p> <note>
+    /// <p>Contains an array of PublicKey objects.</p><note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     pub fn set_public_key_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PublicKey>>) -> Self {
         self.public_key_list = input;
         self
     }
-    /// <p>Contains an array of PublicKey objects.</p> <note>
+    /// <p>Contains an array of PublicKey objects.</p><note>
     /// <p>The returned public keys may have validity time ranges that overlap.</p>
     /// </note>
     pub fn get_public_key_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PublicKey>> {

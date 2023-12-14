@@ -7,7 +7,7 @@ pub struct CreateIntegrationAssociationInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of information to be ingested.</p>
     pub integration_type: ::std::option::Option<crate::types::IntegrationType>,
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
     pub integration_arn: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl CreateIntegrationAssociationInput {
     pub fn integration_type(&self) -> ::std::option::Option<&crate::types::IntegrationType> {
         self.integration_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
     pub fn integration_arn(&self) -> ::std::option::Option<&str> {
@@ -102,7 +102,7 @@ impl CreateIntegrationAssociationInputBuilder {
     pub fn get_integration_type(&self) -> &::std::option::Option<crate::types::IntegrationType> {
         &self.integration_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
     /// This field is required.
@@ -110,14 +110,14 @@ impl CreateIntegrationAssociationInputBuilder {
         self.integration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
     pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the integration.</p> <note>
+    /// <p>The Amazon Resource Name (ARN) of the integration.</p><note>
     /// <p>When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances must be in the same account.</p>
     /// </note>
     pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {

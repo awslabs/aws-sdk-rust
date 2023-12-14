@@ -5,10 +5,14 @@
 pub struct PredictOutput {
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
-    /// <li><p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
-    /// <li><p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
-    /// <li><p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
-    /// <li><p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
+    /// <li>
+    /// <p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
+    /// <li>
+    /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
     pub prediction: ::std::option::Option<crate::types::Prediction>,
     _request_id: Option<String>,
@@ -16,10 +20,14 @@ pub struct PredictOutput {
 impl PredictOutput {
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
-    /// <li><p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
-    /// <li><p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
-    /// <li><p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
-    /// <li><p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
+    /// <li>
+    /// <p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
+    /// <li>
+    /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
     pub fn prediction(&self) -> ::std::option::Option<&crate::types::Prediction> {
         self.prediction.as_ref()
@@ -47,10 +55,14 @@ pub struct PredictOutputBuilder {
 impl PredictOutputBuilder {
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
-    /// <li><p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
-    /// <li><p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
-    /// <li><p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
-    /// <li><p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
+    /// <li>
+    /// <p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
+    /// <li>
+    /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
     pub fn prediction(mut self, input: crate::types::Prediction) -> Self {
         self.prediction = ::std::option::Option::Some(input);
@@ -58,10 +70,14 @@ impl PredictOutputBuilder {
     }
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
-    /// <li><p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
-    /// <li><p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
-    /// <li><p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
-    /// <li><p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
+    /// <li>
+    /// <p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
+    /// <li>
+    /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
     pub fn set_prediction(mut self, input: ::std::option::Option<crate::types::Prediction>) -> Self {
         self.prediction = input;
@@ -69,10 +85,14 @@ impl PredictOutputBuilder {
     }
     /// <p>The output from a <code>Predict</code> operation:</p>
     /// <ul>
-    /// <li><p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
-    /// <li><p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
-    /// <li><p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
-    /// <li><p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code></p></li>
+    /// <li>
+    /// <p><code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request.</p></li>
+    /// <li>
+    /// <p><code>PredictedScores</code> - Contains the raw classification score corresponding to each label.</p></li>
+    /// <li>
+    /// <p><code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request.</p></li>
     /// </ul>
     pub fn get_prediction(&self) -> &::std::option::Option<crate::types::Prediction> {
         &self.prediction

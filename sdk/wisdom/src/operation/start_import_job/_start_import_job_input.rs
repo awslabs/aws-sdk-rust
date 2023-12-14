@@ -5,12 +5,14 @@
 pub struct StartImportJobInput {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li><p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
+    /// <li>
+    /// <p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
+    /// <li>
+    /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub import_job_type: ::std::option::Option<crate::types::ImportJobType>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
@@ -25,14 +27,16 @@ pub struct StartImportJobInput {
 impl StartImportJobInput {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li><p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
+    /// <li>
+    /// <p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
+    /// <li>
+    /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn import_job_type(&self) -> ::std::option::Option<&crate::types::ImportJobType> {
         self.import_job_type.as_ref()
@@ -75,7 +79,8 @@ pub struct StartImportJobInputBuilder {
 impl StartImportJobInputBuilder {
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li><p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
+    /// <li>
+    /// <p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     /// This field is required.
     pub fn knowledge_base_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,7 +89,8 @@ impl StartImportJobInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li><p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
+    /// <li>
+    /// <p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn set_knowledge_base_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.knowledge_base_id = input;
@@ -92,14 +98,16 @@ impl StartImportJobInputBuilder {
     }
     /// <p>The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// <ul>
-    /// <li><p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
+    /// <li>
+    /// <p>For importing Wisdom quick responses, this should be a <code>QUICK_RESPONSES</code> type knowledge base.</p></li>
     /// </ul>
     pub fn get_knowledge_base_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.knowledge_base_id
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
+    /// <li>
+    /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn import_job_type(mut self, input: crate::types::ImportJobType) -> Self {
@@ -108,7 +116,8 @@ impl StartImportJobInputBuilder {
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
+    /// <li>
+    /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn set_import_job_type(mut self, input: ::std::option::Option<crate::types::ImportJobType>) -> Self {
         self.import_job_type = input;
@@ -116,7 +125,8 @@ impl StartImportJobInputBuilder {
     }
     /// <p>The type of the import job.</p>
     /// <ul>
-    /// <li><p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
+    /// <li>
+    /// <p>For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.</p></li>
     /// </ul>
     pub fn get_import_job_type(&self) -> &::std::option::Option<crate::types::ImportJobType> {
         &self.import_job_type

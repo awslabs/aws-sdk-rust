@@ -9,8 +9,10 @@ pub struct ComponentDependencyRequirement {
     pub version_requirement: ::std::option::Option<::std::string::String>,
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
-    /// <li><p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
     /// </ul>
     /// <p>Default: <code>HARD</code></p>
     pub dependency_type: ::std::option::Option<crate::types::ComponentDependencyType>,
@@ -23,8 +25,10 @@ impl ComponentDependencyRequirement {
     }
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
-    /// <li><p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
     /// </ul>
     /// <p>Default: <code>HARD</code></p>
     pub fn dependency_type(&self) -> ::std::option::Option<&crate::types::ComponentDependencyType> {
@@ -65,8 +69,10 @@ impl ComponentDependencyRequirementBuilder {
     }
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
-    /// <li><p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
     /// </ul>
     /// <p>Default: <code>HARD</code></p>
     pub fn dependency_type(mut self, input: crate::types::ComponentDependencyType) -> Self {
@@ -75,8 +81,10 @@ impl ComponentDependencyRequirementBuilder {
     }
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
-    /// <li><p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
     /// </ul>
     /// <p>Default: <code>HARD</code></p>
     pub fn set_dependency_type(mut self, input: ::std::option::Option<crate::types::ComponentDependencyType>) -> Self {
@@ -85,8 +93,10 @@ impl ComponentDependencyRequirementBuilder {
     }
     /// <p>The type of this dependency. Choose from the following options:</p>
     /// <ul>
-    /// <li><p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
-    /// <li><p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>SOFT</code> – The component doesn't restart if the dependency changes state.</p></li>
+    /// <li>
+    /// <p><code>HARD</code> – The component restarts if the dependency changes state.</p></li>
     /// </ul>
     /// <p>Default: <code>HARD</code></p>
     pub fn get_dependency_type(&self) -> &::std::option::Option<crate::types::ComponentDependencyType> {

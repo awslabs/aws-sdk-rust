@@ -12,9 +12,12 @@ pub struct GetChangesetOutput {
     pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub change_type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
@@ -52,9 +55,12 @@ impl GetChangesetOutput {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn change_type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.change_type.as_ref()
@@ -172,9 +178,12 @@ impl GetChangesetOutputBuilder {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
         self.change_type = ::std::option::Option::Some(input);
@@ -182,9 +191,12 @@ impl GetChangesetOutputBuilder {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn set_change_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.change_type = input;
@@ -192,9 +204,12 @@ impl GetChangesetOutputBuilder {
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
-    /// <li><p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
-    /// <li><p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
-    /// <li><p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p></li>
     /// </ul>
     pub fn get_change_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         &self.change_type

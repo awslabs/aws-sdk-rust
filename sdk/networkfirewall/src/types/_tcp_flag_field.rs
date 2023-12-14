@@ -7,8 +7,10 @@ pub struct TcpFlagField {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
-    /// <li><p>The ones that are set in this flags setting must be set in the packet.</p></li>
-    /// <li><p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are set in this flags setting must be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
     pub flags: ::std::vec::Vec<crate::types::TcpFlag>,
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
@@ -18,8 +20,10 @@ impl TcpFlagField {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
-    /// <li><p>The ones that are set in this flags setting must be set in the packet.</p></li>
-    /// <li><p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are set in this flags setting must be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
     pub fn flags(&self) -> &[crate::types::TcpFlag] {
         use std::ops::Deref;
@@ -54,8 +58,10 @@ impl TcpFlagFieldBuilder {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
-    /// <li><p>The ones that are set in this flags setting must be set in the packet.</p></li>
-    /// <li><p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are set in this flags setting must be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
     pub fn flags(mut self, input: crate::types::TcpFlag) -> Self {
         let mut v = self.flags.unwrap_or_default();
@@ -66,8 +72,10 @@ impl TcpFlagFieldBuilder {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
-    /// <li><p>The ones that are set in this flags setting must be set in the packet.</p></li>
-    /// <li><p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are set in this flags setting must be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
     pub fn set_flags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>>) -> Self {
         self.flags = input;
@@ -76,8 +84,10 @@ impl TcpFlagFieldBuilder {
     /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
     /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match:</p>
     /// <ul>
-    /// <li><p>The ones that are set in this flags setting must be set in the packet.</p></li>
-    /// <li><p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are set in this flags setting must be set in the packet.</p></li>
+    /// <li>
+    /// <p>The ones that are not set in this flags setting must also not be set in the packet.</p></li>
     /// </ul>
     pub fn get_flags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TcpFlag>> {
         &self.flags

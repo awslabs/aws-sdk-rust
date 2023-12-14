@@ -22,7 +22,7 @@ impl ModifyMigrationProjectInputBuilder {
 }
 /// Fluent builder constructing a request to `ModifyMigrationProject`.
 ///
-/// <p>Modifies the specified migration project using the provided parameters.</p> <note>
+/// <p>Modifies the specified migration project using the provided parameters.</p><note>
 /// <p>The migration project must be closed before you can modify it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

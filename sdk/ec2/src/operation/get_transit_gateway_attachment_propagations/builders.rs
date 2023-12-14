@@ -143,7 +143,8 @@ impl GetTransitGatewayAttachmentPropagationsFluentBuilder {
     ///
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
@@ -151,7 +152,8 @@ impl GetTransitGatewayAttachmentPropagationsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -159,7 +161,8 @@ impl GetTransitGatewayAttachmentPropagationsFluentBuilder {
     }
     /// <p>One or more filters. The possible values are:</p>
     /// <ul>
-    /// <li><p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

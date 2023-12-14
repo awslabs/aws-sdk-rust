@@ -27,7 +27,7 @@ impl ChangeResourceRecordSetsInputBuilder {
 /// <p>To delete a resource record set, you must specify all the same values that you specified when you created it.</p>
 /// <p><b>Change Batches and Transactional Changes</b></p>
 /// <p>The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code> element. The request body contains a list of change items, known as a change batch. Change batches are considered transactional changes. Route 53 validates the changes in the request and then either makes all or none of the changes in the change batch request. This ensures that DNS routing isn't adversely affected by partial changes to the resource record sets in a hosted zone.</p>
-/// <p>For example, suppose a change batch request contains two changes: it deletes the <code>CNAME</code> resource record set for www.example.com and creates an alias resource record set for www.example.com. If validation for both records succeeds, Route 53 deletes the first resource record set and creates the second resource record set in a single operation. If validation for either the <code>DELETE</code> or the <code>CREATE</code> action fails, then the request is canceled, and the original <code>CNAME</code> record continues to exist.</p> <note>
+/// <p>For example, suppose a change batch request contains two changes: it deletes the <code>CNAME</code> resource record set for www.example.com and creates an alias resource record set for www.example.com. If validation for both records succeeds, Route 53 deletes the first resource record set and creates the second resource record set in a single operation. If validation for either the <code>DELETE</code> or the <code>CREATE</code> action fails, then the request is canceled, and the original <code>CNAME</code> record continues to exist.</p><note>
 /// <p>If you try to delete the same resource record set more than once in a single change batch, Route 53 returns an <code>InvalidChangeBatch</code> error.</p>
 /// </note>
 /// <p><b>Traffic Flow</b></p>
@@ -35,9 +35,12 @@ impl ChangeResourceRecordSetsInputBuilder {
 /// <p><b>Create, Delete, and Upsert</b></p>
 /// <p>Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:</p>
 /// <ul>
-/// <li><p><code>CREATE</code>: Creates a resource record set that has the specified values.</p></li>
-/// <li><p><code>DELETE</code>: Deletes an existing resource record set that has the specified values.</p></li>
-/// <li><p><code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource set exists Route 53 updates it with the values in the request.</p></li>
+/// <li>
+/// <p><code>CREATE</code>: Creates a resource record set that has the specified values.</p></li>
+/// <li>
+/// <p><code>DELETE</code>: Deletes an existing resource record set that has the specified values.</p></li>
+/// <li>
+/// <p><code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource set exists Route 53 updates it with the values in the request.</p></li>
 /// </ul>
 /// <p><b>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</b></p>
 /// <p>The syntax for a request depends on the type of resource record set that you want to create, delete, or update, such as weighted, alias, or failover. The XML elements in your request must appear in the order listed in the syntax.</p>

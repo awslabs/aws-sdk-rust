@@ -8,9 +8,12 @@ pub struct Record {
     pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-    /// <li><p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
-    /// <li><p><code>REMOVE</code> - the item was deleted from the table</p></li>
+    /// <li>
+    /// <p><code>INSERT</code> - a new item was added to the table.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
+    /// <li>
+    /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
     pub event_name: ::std::option::Option<crate::types::OperationType>,
     /// <p>The version number of the stream record format. This number is updated whenever the structure of <code>Record</code> is modified.</p>
@@ -24,8 +27,12 @@ pub struct Record {
     pub dynamodb: ::std::option::Option<crate::types::StreamRecord>,
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
-    /// <li><p>Records[].userIdentity.type</p> <p>"Service"</p></li>
-    /// <li><p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.type</p>
+    /// <p>"Service"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub user_identity: ::std::option::Option<crate::types::Identity>,
 }
@@ -36,9 +43,12 @@ impl Record {
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-    /// <li><p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
-    /// <li><p><code>REMOVE</code> - the item was deleted from the table</p></li>
+    /// <li>
+    /// <p><code>INSERT</code> - a new item was added to the table.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
+    /// <li>
+    /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
     pub fn event_name(&self) -> ::std::option::Option<&crate::types::OperationType> {
         self.event_name.as_ref()
@@ -62,8 +72,12 @@ impl Record {
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
-    /// <li><p>Records[].userIdentity.type</p> <p>"Service"</p></li>
-    /// <li><p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.type</p>
+    /// <p>"Service"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn user_identity(&self) -> ::std::option::Option<&crate::types::Identity> {
         self.user_identity.as_ref()
@@ -105,9 +119,12 @@ impl RecordBuilder {
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-    /// <li><p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
-    /// <li><p><code>REMOVE</code> - the item was deleted from the table</p></li>
+    /// <li>
+    /// <p><code>INSERT</code> - a new item was added to the table.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
+    /// <li>
+    /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
     pub fn event_name(mut self, input: crate::types::OperationType) -> Self {
         self.event_name = ::std::option::Option::Some(input);
@@ -115,9 +132,12 @@ impl RecordBuilder {
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-    /// <li><p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
-    /// <li><p><code>REMOVE</code> - the item was deleted from the table</p></li>
+    /// <li>
+    /// <p><code>INSERT</code> - a new item was added to the table.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
+    /// <li>
+    /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
     pub fn set_event_name(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.event_name = input;
@@ -125,9 +145,12 @@ impl RecordBuilder {
     }
     /// <p>The type of data modification that was performed on the DynamoDB table:</p>
     /// <ul>
-    /// <li><p><code>INSERT</code> - a new item was added to the table.</p></li>
-    /// <li><p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
-    /// <li><p><code>REMOVE</code> - the item was deleted from the table</p></li>
+    /// <li>
+    /// <p><code>INSERT</code> - a new item was added to the table.</p></li>
+    /// <li>
+    /// <p><code>MODIFY</code> - one or more of an existing item's attributes were modified.</p></li>
+    /// <li>
+    /// <p><code>REMOVE</code> - the item was deleted from the table</p></li>
     /// </ul>
     pub fn get_event_name(&self) -> &::std::option::Option<crate::types::OperationType> {
         &self.event_name
@@ -193,8 +216,12 @@ impl RecordBuilder {
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
-    /// <li><p>Records[].userIdentity.type</p> <p>"Service"</p></li>
-    /// <li><p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.type</p>
+    /// <p>"Service"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn user_identity(mut self, input: crate::types::Identity) -> Self {
         self.user_identity = ::std::option::Option::Some(input);
@@ -202,8 +229,12 @@ impl RecordBuilder {
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
-    /// <li><p>Records[].userIdentity.type</p> <p>"Service"</p></li>
-    /// <li><p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.type</p>
+    /// <p>"Service"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn set_user_identity(mut self, input: ::std::option::Option<crate::types::Identity>) -> Self {
         self.user_identity = input;
@@ -211,8 +242,12 @@ impl RecordBuilder {
     }
     /// <p>Items that are deleted by the Time to Live process after expiration have the following fields:</p>
     /// <ul>
-    /// <li><p>Records[].userIdentity.type</p> <p>"Service"</p></li>
-    /// <li><p>Records[].userIdentity.principalId</p> <p>"dynamodb.amazonaws.com"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.type</p>
+    /// <p>"Service"</p></li>
+    /// <li>
+    /// <p>Records[].userIdentity.principalId</p>
+    /// <p>"dynamodb.amazonaws.com"</p></li>
     /// </ul>
     pub fn get_user_identity(&self) -> &::std::option::Option<crate::types::Identity> {
         &self.user_identity

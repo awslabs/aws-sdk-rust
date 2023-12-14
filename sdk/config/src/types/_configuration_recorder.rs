@@ -7,7 +7,7 @@ pub struct ConfigurationRecorder {
     /// <p>The name of the configuration recorder. Config automatically assigns the name of "default" when creating the configuration recorder.</p>
     /// <p>You cannot change the name of the configuration recorder after it has been created. To change the configuration recorder name, you must delete it and create a new configuration recorder with a new name.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p> <note>
+    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p><note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined <code>roleARN</code> for the configuration recorder.</p>
     /// </note> <note>
     /// <p><b>Pre-existing Config role</b></p>
@@ -15,7 +15,7 @@ pub struct ConfigurationRecorder {
     /// <p>For example, if Control Tower has an IAM role that allows Config to read Amazon Simple Storage Service (Amazon S3) objects, make sure that the same permissions are granted within the IAM role you use when setting up Config. Otherwise, it may interfere with how Control Tower operates. For more information about IAM roles for Config, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/security-iam.html"> <b>Identity and Access Management for Config</b> </a> in the <i>Config Developer Guide</i>.</p>
     /// </note>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies which resource types Config records for configuration changes.</p> <note>
+    /// <p>Specifies which resource types Config records for configuration changes.</p><note>
     /// <p><b> High Number of Config Evaluations</b></p>
     /// <p>You may notice increased activity in your account during your initial month recording with Config when compared to subsequent months. During the initial bootstrapping process, Config runs evaluations on all the resources in your account that you have selected for Config to record.</p>
     /// <p>If you are running ephemeral workloads, you may see increased activity from Config as it records configuration changes associated with creating and deleting these temporary resources. An <i>ephemeral workload</i> is a temporary use of computing resources that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid the increased activity from running ephemeral workloads, you can run these types of workloads in a separate account with Config turned off to avoid increased configuration recording and rule evaluations.</p>
@@ -28,7 +28,7 @@ impl ConfigurationRecorder {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p> <note>
+    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p><note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined <code>roleARN</code> for the configuration recorder.</p>
     /// </note> <note>
     /// <p><b>Pre-existing Config role</b></p>
@@ -38,7 +38,7 @@ impl ConfigurationRecorder {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Specifies which resource types Config records for configuration changes.</p> <note>
+    /// <p>Specifies which resource types Config records for configuration changes.</p><note>
     /// <p><b> High Number of Config Evaluations</b></p>
     /// <p>You may notice increased activity in your account during your initial month recording with Config when compared to subsequent months. During the initial bootstrapping process, Config runs evaluations on all the resources in your account that you have selected for Config to record.</p>
     /// <p>If you are running ephemeral workloads, you may see increased activity from Config as it records configuration changes associated with creating and deleting these temporary resources. An <i>ephemeral workload</i> is a temporary use of computing resources that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid the increased activity from running ephemeral workloads, you can run these types of workloads in a separate account with Config turned off to avoid increased configuration recording and rule evaluations.</p>
@@ -80,7 +80,7 @@ impl ConfigurationRecorderBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p> <note>
+    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p><note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined <code>roleARN</code> for the configuration recorder.</p>
     /// </note> <note>
     /// <p><b>Pre-existing Config role</b></p>
@@ -91,7 +91,7 @@ impl ConfigurationRecorderBuilder {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p> <note>
+    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p><note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined <code>roleARN</code> for the configuration recorder.</p>
     /// </note> <note>
     /// <p><b>Pre-existing Config role</b></p>
@@ -102,7 +102,7 @@ impl ConfigurationRecorderBuilder {
         self.role_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p> <note>
+    /// <p>Amazon Resource Name (ARN) of the IAM role assumed by Config and used by the configuration recorder.</p><note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined <code>roleARN</code> for the configuration recorder.</p>
     /// </note> <note>
     /// <p><b>Pre-existing Config role</b></p>
@@ -112,7 +112,7 @@ impl ConfigurationRecorderBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>Specifies which resource types Config records for configuration changes.</p> <note>
+    /// <p>Specifies which resource types Config records for configuration changes.</p><note>
     /// <p><b> High Number of Config Evaluations</b></p>
     /// <p>You may notice increased activity in your account during your initial month recording with Config when compared to subsequent months. During the initial bootstrapping process, Config runs evaluations on all the resources in your account that you have selected for Config to record.</p>
     /// <p>If you are running ephemeral workloads, you may see increased activity from Config as it records configuration changes associated with creating and deleting these temporary resources. An <i>ephemeral workload</i> is a temporary use of computing resources that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid the increased activity from running ephemeral workloads, you can run these types of workloads in a separate account with Config turned off to avoid increased configuration recording and rule evaluations.</p>
@@ -121,7 +121,7 @@ impl ConfigurationRecorderBuilder {
         self.recording_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies which resource types Config records for configuration changes.</p> <note>
+    /// <p>Specifies which resource types Config records for configuration changes.</p><note>
     /// <p><b> High Number of Config Evaluations</b></p>
     /// <p>You may notice increased activity in your account during your initial month recording with Config when compared to subsequent months. During the initial bootstrapping process, Config runs evaluations on all the resources in your account that you have selected for Config to record.</p>
     /// <p>If you are running ephemeral workloads, you may see increased activity from Config as it records configuration changes associated with creating and deleting these temporary resources. An <i>ephemeral workload</i> is a temporary use of computing resources that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid the increased activity from running ephemeral workloads, you can run these types of workloads in a separate account with Config turned off to avoid increased configuration recording and rule evaluations.</p>
@@ -130,7 +130,7 @@ impl ConfigurationRecorderBuilder {
         self.recording_group = input;
         self
     }
-    /// <p>Specifies which resource types Config records for configuration changes.</p> <note>
+    /// <p>Specifies which resource types Config records for configuration changes.</p><note>
     /// <p><b> High Number of Config Evaluations</b></p>
     /// <p>You may notice increased activity in your account during your initial month recording with Config when compared to subsequent months. During the initial bootstrapping process, Config runs evaluations on all the resources in your account that you have selected for Config to record.</p>
     /// <p>If you are running ephemeral workloads, you may see increased activity from Config as it records configuration changes associated with creating and deleting these temporary resources. An <i>ephemeral workload</i> is a temporary use of computing resources that are loaded and run when needed. Examples include Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances, Amazon EMR jobs, and Auto Scaling. If you want to avoid the increased activity from running ephemeral workloads, you can run these types of workloads in a separate account with Config turned off to avoid increased configuration recording and rule evaluations.</p>

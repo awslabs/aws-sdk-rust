@@ -22,7 +22,7 @@ impl DescribeConfigurationRecordersInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeConfigurationRecorders`.
 ///
-/// <p>Returns the details for the specified configuration recorders. If the configuration recorder is not specified, this action returns the details for all configuration recorders associated with the account.</p> <note>
+/// <p>Returns the details for the specified configuration recorders. If the configuration recorder is not specified, this action returns the details for all configuration recorders associated with the account.</p><note>
 /// <p>You can specify only one configuration recorder for each Amazon Web Services Region for each account.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

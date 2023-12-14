@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchUsersInput {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -13,13 +13,13 @@ pub struct SearchUsersInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Filters to be applied to search results.</p>
     pub search_filter: ::std::option::Option<crate::types::UserSearchFilter>,
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub search_criteria: ::std::option::Option<crate::types::UserSearchCriteria>,
 }
 impl SearchUsersInput {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
@@ -37,7 +37,7 @@ impl SearchUsersInput {
     pub fn search_filter(&self) -> ::std::option::Option<&crate::types::UserSearchFilter> {
         self.search_filter.as_ref()
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::UserSearchCriteria> {
@@ -62,7 +62,7 @@ pub struct SearchUsersInputBuilder {
     pub(crate) search_criteria: ::std::option::Option<crate::types::UserSearchCriteria>,
 }
 impl SearchUsersInputBuilder {
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     /// This field is required.
@@ -70,14 +70,14 @@ impl SearchUsersInputBuilder {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p> <note>
+    /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p><note>
     /// <p>InstanceID is a required field. The "Required: No" below is incorrect.</p>
     /// </note>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
@@ -125,21 +125,21 @@ impl SearchUsersInputBuilder {
     pub fn get_search_filter(&self) -> &::std::option::Option<crate::types::UserSearchFilter> {
         &self.search_filter
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::UserSearchCriteria) -> Self {
         self.search_criteria = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn set_search_criteria(mut self, input: ::std::option::Option<crate::types::UserSearchCriteria>) -> Self {
         self.search_criteria = input;
         self
     }
-    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The search criteria to be used to return users.</p><note>
     /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.</p>
     /// </note>
     pub fn get_search_criteria(&self) -> &::std::option::Option<crate::types::UserSearchCriteria> {

@@ -22,7 +22,7 @@ impl DescribeImagesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeImages`.
 ///
-/// <p>Returns metadata that's related to the images in a repository in a public registry.</p> <note>
+/// <p>Returns metadata that's related to the images in a repository in a public registry.</p><note>
 /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

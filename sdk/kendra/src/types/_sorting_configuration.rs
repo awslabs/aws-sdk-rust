@@ -3,13 +3,17 @@
 /// <p>Specifies the document attribute to use to sort the response to a Amazon Kendra query. You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.</p>
 /// <p>You can sort attributes of the following types.</p>
 /// <ul>
-/// <li><p>Date value</p></li>
-/// <li><p>Long value</p></li>
-/// <li><p>String value</p></li>
+/// <li>
+/// <p>Date value</p></li>
+/// <li>
+/// <p>Long value</p></li>
+/// <li>
+/// <p>String value</p></li>
 /// </ul>
 /// <p>You can't sort attributes of the following type.</p>
 /// <ul>
-/// <li><p>String list value</p></li>
+/// <li>
+/// <p>String list value</p></li>
 /// </ul>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -17,11 +21,16 @@ pub struct SortingConfiguration {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
-    /// <li><p>_category</p></li>
-    /// <li><p>_created_at</p></li>
-    /// <li><p>_last_updated_at</p></li>
-    /// <li><p>_version</p></li>
-    /// <li><p>_view_count</p></li>
+    /// <li>
+    /// <p>_category</p></li>
+    /// <li>
+    /// <p>_created_at</p></li>
+    /// <li>
+    /// <p>_last_updated_at</p></li>
+    /// <li>
+    /// <p>_version</p></li>
+    /// <li>
+    /// <p>_view_count</p></li>
     /// </ul>
     pub document_attribute_key: ::std::string::String,
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
@@ -31,11 +40,16 @@ impl SortingConfiguration {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
-    /// <li><p>_category</p></li>
-    /// <li><p>_created_at</p></li>
-    /// <li><p>_last_updated_at</p></li>
-    /// <li><p>_version</p></li>
-    /// <li><p>_view_count</p></li>
+    /// <li>
+    /// <p>_category</p></li>
+    /// <li>
+    /// <p>_created_at</p></li>
+    /// <li>
+    /// <p>_last_updated_at</p></li>
+    /// <li>
+    /// <p>_version</p></li>
+    /// <li>
+    /// <p>_view_count</p></li>
     /// </ul>
     pub fn document_attribute_key(&self) -> &str {
         use std::ops::Deref;
@@ -64,11 +78,16 @@ impl SortingConfigurationBuilder {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
-    /// <li><p>_category</p></li>
-    /// <li><p>_created_at</p></li>
-    /// <li><p>_last_updated_at</p></li>
-    /// <li><p>_version</p></li>
-    /// <li><p>_view_count</p></li>
+    /// <li>
+    /// <p>_category</p></li>
+    /// <li>
+    /// <p>_created_at</p></li>
+    /// <li>
+    /// <p>_last_updated_at</p></li>
+    /// <li>
+    /// <p>_version</p></li>
+    /// <li>
+    /// <p>_view_count</p></li>
     /// </ul>
     /// This field is required.
     pub fn document_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -78,11 +97,16 @@ impl SortingConfigurationBuilder {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
-    /// <li><p>_category</p></li>
-    /// <li><p>_created_at</p></li>
-    /// <li><p>_last_updated_at</p></li>
-    /// <li><p>_version</p></li>
-    /// <li><p>_view_count</p></li>
+    /// <li>
+    /// <p>_category</p></li>
+    /// <li>
+    /// <p>_created_at</p></li>
+    /// <li>
+    /// <p>_last_updated_at</p></li>
+    /// <li>
+    /// <p>_version</p></li>
+    /// <li>
+    /// <p>_view_count</p></li>
     /// </ul>
     pub fn set_document_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document_attribute_key = input;
@@ -91,11 +115,16 @@ impl SortingConfigurationBuilder {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
     /// <ul>
-    /// <li><p>_category</p></li>
-    /// <li><p>_created_at</p></li>
-    /// <li><p>_last_updated_at</p></li>
-    /// <li><p>_version</p></li>
-    /// <li><p>_view_count</p></li>
+    /// <li>
+    /// <p>_category</p></li>
+    /// <li>
+    /// <p>_created_at</p></li>
+    /// <li>
+    /// <p>_last_updated_at</p></li>
+    /// <li>
+    /// <p>_version</p></li>
+    /// <li>
+    /// <p>_view_count</p></li>
     /// </ul>
     pub fn get_document_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_attribute_key

@@ -14,8 +14,10 @@ pub struct FilterDropDownControl {
     pub display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
-    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SheetControlListType>,
     /// <p>A list of selectable values that are used in a control.</p>
@@ -45,8 +47,10 @@ impl FilterDropDownControl {
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
-    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlListType> {
         self.r#type.as_ref()
@@ -141,8 +145,10 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
-    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlListType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -150,8 +156,10 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
-    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SheetControlListType>) -> Self {
         self.r#type = input;
@@ -159,8 +167,10 @@ impl FilterDropDownControlBuilder {
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
-    /// <li><p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
-    /// <li><p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SheetControlListType> {
         &self.r#type

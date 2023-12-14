@@ -22,7 +22,7 @@ impl DescribeDashboardDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeDashboardDefinition`.
 ///
-/// <p>Provides a detailed description of the definition of a dashboard.</p> <note>
+/// <p>Provides a detailed description of the definition of a dashboard.</p><note>
 /// <p>If you do not need to know details about the content of a dashboard, for instance if you are trying to check the status of a recently created or updated dashboard, use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html"> <code>DescribeDashboard</code> </a> instead.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

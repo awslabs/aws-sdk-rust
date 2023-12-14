@@ -22,7 +22,7 @@ impl RemovePermissionInputBuilder {
 }
 /// Fluent builder constructing a request to `RemovePermission`.
 ///
-/// <p>Removes a statement from a topic's access control policy.</p> <note>
+/// <p>Removes a statement from a topic's access control policy.</p><note>
 /// <p>To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

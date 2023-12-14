@@ -9,7 +9,7 @@ pub struct CreateParticipantInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
@@ -28,7 +28,7 @@ impl CreateParticipantInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
@@ -97,7 +97,7 @@ impl CreateParticipantInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
@@ -106,7 +106,7 @@ impl CreateParticipantInputBuilder {
         self.participant_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>
@@ -114,7 +114,7 @@ impl CreateParticipantInputBuilder {
         self.participant_details = input;
         self
     }
-    /// <p>Information identifying the participant.</p> <important>
+    /// <p>Information identifying the participant.</p><important>
     /// <p>The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.</p>
     /// <p><code>DisplayName</code> is <b>Required</b>.</p>
     /// </important>

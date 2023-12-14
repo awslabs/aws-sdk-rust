@@ -23,19 +23,25 @@ impl RegisterWorkflowTypeInputBuilder {
 /// Fluent builder constructing a request to `RegisterWorkflowType`.
 ///
 /// <p>Registers a new <i>workflow type</i> and its configuration settings in the specified domain.</p>
-/// <p>The retention period for the workflow history is set by the <code>RegisterDomain</code> action.</p> <important>
+/// <p>The retention period for the workflow history is set by the <code>RegisterDomain</code> action.</p><important>
 /// <p>If the type already exists, then a <code>TypeAlreadyExists</code> fault is returned. You cannot change the configuration settings of a workflow type once it is registered and it must be registered as a new version.</p>
 /// </important>
 /// <p><b>Access Control</b></p>
 /// <p>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</p>
 /// <ul>
-/// <li><p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
-/// <li><p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
-/// <li><p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
+/// <li>
+/// <p>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</p></li>
+/// <li>
+/// <p>Use an <code>Action</code> element to allow or deny permission to call this action.</p></li>
+/// <li>
+/// <p>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.</p>
 /// <ul>
-/// <li><p><code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.</p></li>
-/// <li><p><code>name</code>: String constraint. The key is <code>swf:name</code>.</p></li>
-/// <li><p><code>version</code>: String constraint. The key is <code>swf:version</code>.</p></li>
+/// <li>
+/// <p><code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.</p></li>
+/// <li>
+/// <p><code>name</code>: String constraint. The key is <code>swf:name</code>.</p></li>
+/// <li>
+/// <p><code>version</code>: String constraint. The key is <code>swf:version</code>.</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
@@ -155,7 +161,7 @@ impl RegisterWorkflowTypeFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p><note>
     /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -163,7 +169,7 @@ impl RegisterWorkflowTypeFluentBuilder {
         self.inner = self.inner.version(input.into());
         self
     }
-    /// <p>The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p><note>
     /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -171,7 +177,7 @@ impl RegisterWorkflowTypeFluentBuilder {
         self.inner = self.inner.set_version(input);
         self
     }
-    /// <p>The version of the workflow type.</p> <note>
+    /// <p>The version of the workflow type.</p><note>
     /// <p>The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the <code>ListWorkflowTypes</code> action.</p>
     /// </note>
     /// <p>The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.</p>
@@ -260,9 +266,12 @@ impl RegisterWorkflowTypeFluentBuilder {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn default_child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
         self.inner = self.inner.default_child_policy(input);
@@ -271,9 +280,12 @@ impl RegisterWorkflowTypeFluentBuilder {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn set_default_child_policy(mut self, input: ::std::option::Option<crate::types::ChildPolicy>) -> Self {
         self.inner = self.inner.set_default_child_policy(input);
@@ -282,28 +294,31 @@ impl RegisterWorkflowTypeFluentBuilder {
     /// <p>If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the <code>StartWorkflowExecution</code> action or the <code>StartChildWorkflowExecution</code> <code>Decision</code>.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
-    /// <li><p><code>TERMINATE</code> – The child executions are terminated.</p></li>
-    /// <li><p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
-    /// <li><p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
+    /// <li>
+    /// <p><code>TERMINATE</code> – The child executions are terminated.</p></li>
+    /// <li>
+    /// <p><code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p></li>
+    /// <li>
+    /// <p><code>ABANDON</code> – No action is taken. The child executions continue to run.</p></li>
     /// </ul>
     pub fn get_default_child_policy(&self) -> &::std::option::Option<crate::types::ChildPolicy> {
         self.inner.get_default_child_policy()
     }
-    /// <p>The default IAM role attached to this workflow type.</p> <note>
+    /// <p>The default IAM role attached to this workflow type.</p><note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn default_lambda_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_lambda_role(input.into());
         self
     }
-    /// <p>The default IAM role attached to this workflow type.</p> <note>
+    /// <p>The default IAM role attached to this workflow type.</p><note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn set_default_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_lambda_role(input);
         self
     }
-    /// <p>The default IAM role attached to this workflow type.</p> <note>
+    /// <p>The default IAM role attached to this workflow type.</p><note>
     /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     /// </note>
     pub fn get_default_lambda_role(&self) -> &::std::option::Option<::std::string::String> {

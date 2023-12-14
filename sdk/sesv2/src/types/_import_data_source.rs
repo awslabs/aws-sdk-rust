@@ -4,15 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDataSource {
-    /// <p>An Amazon S3 URL in the format s3://<i>
-    /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
+    /// <p></p></object></i></p>
     pub s3_url: ::std::string::String,
     /// <p>The data format of the import job's data source.</p>
     pub data_format: crate::types::DataFormat,
 }
 impl ImportDataSource {
-    /// <p>An Amazon S3 URL in the format s3://<i>
-    /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
+    /// <p></p></object></i></p>
     pub fn s3_url(&self) -> &str {
         use std::ops::Deref;
         self.s3_url.deref()
@@ -37,21 +37,21 @@ pub struct ImportDataSourceBuilder {
     pub(crate) data_format: ::std::option::Option<crate::types::DataFormat>,
 }
 impl ImportDataSourceBuilder {
-    /// <p>An Amazon S3 URL in the format s3://<i>
-    /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
+    /// <p></p></object></i></p>
     /// This field is required.
     pub fn s3_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon S3 URL in the format s3://<i>
-    /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
+    /// <p></p></object></i></p>
     pub fn set_s3_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_url = input;
         self
     }
-    /// <p>An Amazon S3 URL in the format s3://<i>
-    /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
+    /// <p>An Amazon S3 URL in the format s3://<i><bucket_name></bucket_name></i>/<i><object>.
+    /// <p></p></object></i></p>
     pub fn get_s3_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_url
     }

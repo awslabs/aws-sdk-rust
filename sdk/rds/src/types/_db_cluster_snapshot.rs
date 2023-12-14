@@ -21,9 +21,12 @@ pub struct DbClusterSnapshot {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>copying</code></p></li>
-    /// <li><p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>copying</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The port that the DB cluster was listening on at the time of the snapshot.</p>
@@ -96,9 +99,12 @@ impl DbClusterSnapshot {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>copying</code></p></li>
-    /// <li><p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>copying</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
@@ -320,9 +326,12 @@ impl DbClusterSnapshotBuilder {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>copying</code></p></li>
-    /// <li><p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>copying</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
@@ -330,9 +339,12 @@ impl DbClusterSnapshotBuilder {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>copying</code></p></li>
-    /// <li><p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>copying</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
@@ -340,9 +352,12 @@ impl DbClusterSnapshotBuilder {
     }
     /// <p>The status of this DB cluster snapshot. Valid statuses are the following:</p>
     /// <ul>
-    /// <li><p><code>available</code></p></li>
-    /// <li><p><code>copying</code></p></li>
-    /// <li><p><code>creating</code></p></li>
+    /// <li>
+    /// <p><code>available</code></p></li>
+    /// <li>
+    /// <p><code>copying</code></p></li>
+    /// <li>
+    /// <p><code>creating</code></p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status

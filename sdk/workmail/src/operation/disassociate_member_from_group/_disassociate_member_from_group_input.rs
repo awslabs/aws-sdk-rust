@@ -8,17 +8,23 @@ pub struct DisassociateMemberFromGroupInput {
     /// <p>The identifier for the group from which members are removed.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: group@domain.tld</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: group@domain.tld</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the member to be removed from the group.</p>
     /// <p>The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li><p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: member@domain.tld</p></li>
-    /// <li><p>Member name: member</p></li>
+    /// <li>
+    /// <p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: member@domain.tld</p></li>
+    /// <li>
+    /// <p>Member name: member</p></li>
     /// </ul>
     pub member_id: ::std::option::Option<::std::string::String>,
 }
@@ -30,9 +36,12 @@ impl DisassociateMemberFromGroupInput {
     /// <p>The identifier for the group from which members are removed.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: group@domain.tld</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: group@domain.tld</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
@@ -40,9 +49,12 @@ impl DisassociateMemberFromGroupInput {
     /// <p>The identifier for the member to be removed from the group.</p>
     /// <p>The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li><p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: member@domain.tld</p></li>
-    /// <li><p>Member name: member</p></li>
+    /// <li>
+    /// <p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: member@domain.tld</p></li>
+    /// <li>
+    /// <p>Member name: member</p></li>
     /// </ul>
     pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
@@ -82,9 +94,12 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the group from which members are removed.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: group@domain.tld</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: group@domain.tld</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,9 +109,12 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the group from which members are removed.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: group@domain.tld</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: group@domain.tld</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
@@ -105,9 +123,12 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the group from which members are removed.</p>
     /// <p>The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are available:</p>
     /// <ul>
-    /// <li><p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: group@domain.tld</p></li>
-    /// <li><p>Group name: group</p></li>
+    /// <li>
+    /// <p>Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: group@domain.tld</p></li>
+    /// <li>
+    /// <p>Group name: group</p></li>
     /// </ul>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
@@ -115,9 +136,12 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the member to be removed from the group.</p>
     /// <p>The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li><p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: member@domain.tld</p></li>
-    /// <li><p>Member name: member</p></li>
+    /// <li>
+    /// <p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: member@domain.tld</p></li>
+    /// <li>
+    /// <p>Member name: member</p></li>
     /// </ul>
     /// This field is required.
     pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,9 +151,12 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the member to be removed from the group.</p>
     /// <p>The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li><p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: member@domain.tld</p></li>
-    /// <li><p>Member name: member</p></li>
+    /// <li>
+    /// <p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: member@domain.tld</p></li>
+    /// <li>
+    /// <p>Member name: member</p></li>
     /// </ul>
     pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
@@ -138,9 +165,12 @@ impl DisassociateMemberFromGroupInputBuilder {
     /// <p>The identifier for the member to be removed from the group.</p>
     /// <p>The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.</p>
     /// <ul>
-    /// <li><p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
-    /// <li><p>Email address: member@domain.tld</p></li>
-    /// <li><p>Member name: member</p></li>
+    /// <li>
+    /// <p>Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234</p></li>
+    /// <li>
+    /// <p>Email address: member@domain.tld</p></li>
+    /// <li>
+    /// <p>Member name: member</p></li>
     /// </ul>
     pub fn get_member_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.member_id

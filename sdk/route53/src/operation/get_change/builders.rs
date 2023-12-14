@@ -24,8 +24,10 @@ impl GetChangeInputBuilder {
 ///
 /// <p>Returns the current status of a change batch request. The status is one of the following values:</p>
 /// <ul>
-/// <li><p><code>PENDING</code> indicates that the changes in this request have not propagated to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status of all change batch requests.</p></li>
-/// <li><p><code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS servers managing the hosted zone.</p></li>
+/// <li>
+/// <p><code>PENDING</code> indicates that the changes in this request have not propagated to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status of all change batch requests.</p></li>
+/// <li>
+/// <p><code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS servers managing the hosted zone.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChangeFluentBuilder {

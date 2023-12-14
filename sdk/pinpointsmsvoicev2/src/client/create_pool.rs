@@ -12,7 +12,7 @@ impl super::Client {
     /// - On success, responds with [`CreatePoolOutput`](crate::operation::create_pool::CreatePoolOutput) with field(s):
     ///   - [`pool_arn(Option<String>)`](crate::operation::create_pool::CreatePoolOutput::pool_arn): <p>The Amazon Resource Name (ARN) for the pool.</p>
     ///   - [`pool_id(Option<String>)`](crate::operation::create_pool::CreatePoolOutput::pool_id): <p>The unique identifier for the pool.</p>
-    ///   - [`status(Option<PoolStatus>)`](crate::operation::create_pool::CreatePoolOutput::status): <p>The current status of the pool.</p> <ul>  <li><p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>  <li><p>ACTIVE: The pool is active and available for use.</p></li>  <li><p>DELETING: The pool is being deleted.</p></li> </ul>
+    ///   - [`status(Option<PoolStatus>)`](crate::operation::create_pool::CreatePoolOutput::status): <p>The current status of the pool.</p> <ul>  <li>   <p>CREATING: The pool is currently being created and isn't yet available for use.</p></li>  <li>   <p>ACTIVE: The pool is active and available for use.</p></li>  <li>   <p>DELETING: The pool is being deleted.</p></li> </ul>
     ///   - [`message_type(Option<MessageType>)`](crate::operation::create_pool::CreatePoolOutput::message_type): <p>The type of message for the pool to use.</p>
     ///   - [`two_way_enabled(bool)`](crate::operation::create_pool::CreatePoolOutput::two_way_enabled): <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     ///   - [`two_way_channel_arn(Option<String>)`](crate::operation::create_pool::CreatePoolOutput::two_way_channel_arn): <p>The Amazon Resource Name (ARN) of the two way channel.</p>

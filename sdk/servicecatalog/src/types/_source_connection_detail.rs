@@ -10,11 +10,16 @@ pub struct SourceConnectionDetail {
     pub connection_parameters: ::std::option::Option<crate::types::SourceConnectionParameters>,
     /// <p>Provides details about the product's connection sync and contains the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>LastSyncTime</code></p></li>
-    /// <li><p><code>LastSyncStatus</code></p></li>
-    /// <li><p><code>LastSyncStatusMessage</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncTime</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatus</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatusMessage</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
     /// </ul>
     pub last_sync: ::std::option::Option<crate::types::LastSync>,
 }
@@ -29,11 +34,16 @@ impl SourceConnectionDetail {
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>LastSyncTime</code></p></li>
-    /// <li><p><code>LastSyncStatus</code></p></li>
-    /// <li><p><code>LastSyncStatusMessage</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncTime</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatus</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatusMessage</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
     /// </ul>
     pub fn last_sync(&self) -> ::std::option::Option<&crate::types::LastSync> {
         self.last_sync.as_ref()
@@ -85,11 +95,16 @@ impl SourceConnectionDetailBuilder {
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>LastSyncTime</code></p></li>
-    /// <li><p><code>LastSyncStatus</code></p></li>
-    /// <li><p><code>LastSyncStatusMessage</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncTime</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatus</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatusMessage</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
     /// </ul>
     pub fn last_sync(mut self, input: crate::types::LastSync) -> Self {
         self.last_sync = ::std::option::Option::Some(input);
@@ -97,11 +112,16 @@ impl SourceConnectionDetailBuilder {
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>LastSyncTime</code></p></li>
-    /// <li><p><code>LastSyncStatus</code></p></li>
-    /// <li><p><code>LastSyncStatusMessage</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncTime</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatus</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatusMessage</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
     /// </ul>
     pub fn set_last_sync(mut self, input: ::std::option::Option<crate::types::LastSync>) -> Self {
         self.last_sync = input;
@@ -109,11 +129,16 @@ impl SourceConnectionDetailBuilder {
     }
     /// <p>Provides details about the product's connection sync and contains the following sub-fields.</p>
     /// <ul>
-    /// <li><p><code>LastSyncTime</code></p></li>
-    /// <li><p><code>LastSyncStatus</code></p></li>
-    /// <li><p><code>LastSyncStatusMessage</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncTime</code></p></li>
-    /// <li><p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatus</code></p></li>
+    /// <li>
+    /// <p><code>LastSyncStatusMessage</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncTime</code></p></li>
+    /// <li>
+    /// <p><code>LastSuccessfulSyncProvisioningArtifactID</code></p></li>
     /// </ul>
     pub fn get_last_sync(&self) -> &::std::option::Option<crate::types::LastSync> {
         &self.last_sync

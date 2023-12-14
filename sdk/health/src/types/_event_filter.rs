@@ -26,7 +26,7 @@ pub struct EventFilter {
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
@@ -100,7 +100,7 @@ impl EventFilter {
     pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
         self.event_type_categories.as_deref().unwrap_or_default()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     ///
@@ -365,7 +365,7 @@ impl EventFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
@@ -374,7 +374,7 @@ impl EventFilterBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn set_tags(
@@ -384,7 +384,7 @@ impl EventFilterBuilder {
         self.tags = input;
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {

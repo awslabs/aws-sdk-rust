@@ -14,12 +14,18 @@ pub struct ModifyInstanceEventWindowInput {
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Only hour and day of the week values are supported.</p></li>
-    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
-    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
-    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
-    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
-    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
+    /// <li>
+    /// <p>Only hour and day of the week values are supported.</p></li>
+    /// <li>
+    /// <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li>
+    /// <p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li>
+    /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li>
+    /// <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li>
+    /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
@@ -46,12 +52,18 @@ impl ModifyInstanceEventWindowInput {
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Only hour and day of the week values are supported.</p></li>
-    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
-    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
-    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
-    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
-    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
+    /// <li>
+    /// <p>Only hour and day of the week values are supported.</p></li>
+    /// <li>
+    /// <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li>
+    /// <p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li>
+    /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li>
+    /// <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li>
+    /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn cron_expression(&self) -> ::std::option::Option<&str> {
@@ -142,12 +154,18 @@ impl ModifyInstanceEventWindowInputBuilder {
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Only hour and day of the week values are supported.</p></li>
-    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
-    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
-    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
-    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
-    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
+    /// <li>
+    /// <p>Only hour and day of the week values are supported.</p></li>
+    /// <li>
+    /// <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li>
+    /// <p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li>
+    /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li>
+    /// <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li>
+    /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -157,12 +175,18 @@ impl ModifyInstanceEventWindowInputBuilder {
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Only hour and day of the week values are supported.</p></li>
-    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
-    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
-    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
-    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
-    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
+    /// <li>
+    /// <p>Only hour and day of the week values are supported.</p></li>
+    /// <li>
+    /// <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li>
+    /// <p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li>
+    /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li>
+    /// <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li>
+    /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -172,12 +196,18 @@ impl ModifyInstanceEventWindowInputBuilder {
     /// <p>The cron expression of the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
-    /// <li><p>Only hour and day of the week values are supported.</p></li>
-    /// <li><p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
-    /// <li><p>The minute, month, and year must be specified by <code>*</code>.</p></li>
-    /// <li><p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
-    /// <li><p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
-    /// <li><p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
+    /// <li>
+    /// <p>Only hour and day of the week values are supported.</p></li>
+    /// <li>
+    /// <p>For day of the week values, you can specify either integers <code>0</code> through <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.</p></li>
+    /// <li>
+    /// <p>The minute, month, and year must be specified by <code>*</code>.</p></li>
+    /// <li>
+    /// <p>The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.</p></li>
+    /// <li>
+    /// <p>Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.</p></li>
+    /// <li>
+    /// <p>The event window must be &gt;= 4 hours. The combined total time ranges in the event window must be &gt;= 4 hours.</p></li>
     /// </ul>
     /// <p>For more information about cron expressions, see <a href="https://en.wikipedia.org/wiki/Cron">cron</a> on the <i>Wikipedia website</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {

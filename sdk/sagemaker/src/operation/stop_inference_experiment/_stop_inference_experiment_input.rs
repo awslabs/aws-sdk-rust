@@ -7,17 +7,22 @@ pub struct StopInferenceExperimentInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub model_variant_actions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>>,
     /// <p>An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant.</p>
     pub desired_model_variants: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub desired_state: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>,
     /// <p>The reason for stopping the experiment.</p>
@@ -30,9 +35,12 @@ impl StopInferenceExperimentInput {
     }
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn model_variant_actions(
         &self,
@@ -47,8 +55,10 @@ impl StopInferenceExperimentInput {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn desired_state(&self) -> ::std::option::Option<&crate::types::InferenceExperimentStopDesiredState> {
         self.desired_state.as_ref()
@@ -97,9 +107,12 @@ impl StopInferenceExperimentInputBuilder {
     ///
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn model_variant_actions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ModelVariantAction) -> Self {
         let mut hash_map = self.model_variant_actions.unwrap_or_default();
@@ -109,9 +122,12 @@ impl StopInferenceExperimentInputBuilder {
     }
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn set_model_variant_actions(
         mut self,
@@ -122,9 +138,12 @@ impl StopInferenceExperimentInputBuilder {
     }
     /// <p>Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:</p>
     /// <ul>
-    /// <li><p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
-    /// <li><p><code>Remove</code> - Delete the variant</p></li>
-    /// <li><p><code>Retain</code> - Keep the variant as it is</p></li>
+    /// <li>
+    /// <p><code>Promote</code> - Promote the shadow variant to a production variant</p></li>
+    /// <li>
+    /// <p><code>Remove</code> - Delete the variant</p></li>
+    /// <li>
+    /// <p><code>Retain</code> - Keep the variant as it is</p></li>
     /// </ul>
     pub fn get_model_variant_actions(
         &self,
@@ -153,8 +172,10 @@ impl StopInferenceExperimentInputBuilder {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn desired_state(mut self, input: crate::types::InferenceExperimentStopDesiredState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
@@ -162,8 +183,10 @@ impl StopInferenceExperimentInputBuilder {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>) -> Self {
         self.desired_state = input;
@@ -171,8 +194,10 @@ impl StopInferenceExperimentInputBuilder {
     }
     /// <p>The desired state of the experiment after stopping. The possible states are the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code>: The experiment completed successfully</p></li>
-    /// <li><p><code>Cancelled</code>: The experiment was canceled</p></li>
+    /// <li>
+    /// <p><code>Completed</code>: The experiment completed successfully</p></li>
+    /// <li>
+    /// <p><code>Cancelled</code>: The experiment was canceled</p></li>
     /// </ul>
     pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::InferenceExperimentStopDesiredState> {
         &self.desired_state

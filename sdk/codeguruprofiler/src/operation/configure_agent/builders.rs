@@ -142,15 +142,24 @@ impl ConfigureAgentFluentBuilder {
     ///
     /// <p>Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
-    /// <li><p><code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running</p></li>
-    /// <li><p><code>AGENT_ID</code> - The ID for an agent instance.</p></li>
-    /// <li><p><code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.</p></li>
-    /// <li><p><code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.</p></li>
-    /// <li><p><code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.</p></li>
-    /// <li><p><code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
+    /// <li>
+    /// <p><code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running</p></li>
+    /// <li>
+    /// <p><code>AGENT_ID</code> - The ID for an agent instance.</p></li>
+    /// <li>
+    /// <p><code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.</p></li>
+    /// <li>
+    /// <p><code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
     pub fn metadata(mut self, k: crate::types::MetadataField, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(k, v.into());
@@ -158,15 +167,24 @@ impl ConfigureAgentFluentBuilder {
     }
     /// <p>Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
-    /// <li><p><code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running</p></li>
-    /// <li><p><code>AGENT_ID</code> - The ID for an agent instance.</p></li>
-    /// <li><p><code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.</p></li>
-    /// <li><p><code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.</p></li>
-    /// <li><p><code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.</p></li>
-    /// <li><p><code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
+    /// <li>
+    /// <p><code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running</p></li>
+    /// <li>
+    /// <p><code>AGENT_ID</code> - The ID for an agent instance.</p></li>
+    /// <li>
+    /// <p><code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.</p></li>
+    /// <li>
+    /// <p><code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
     pub fn set_metadata(
         mut self,
@@ -177,15 +195,24 @@ impl ConfigureAgentFluentBuilder {
     }
     /// <p>Metadata captured about the compute platform the agent is running on. It includes information about sampling and reporting. The valid fields are:</p>
     /// <ul>
-    /// <li><p><code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running</p></li>
-    /// <li><p><code>AGENT_ID</code> - The ID for an agent instance.</p></li>
-    /// <li><p><code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.</p></li>
-    /// <li><p><code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.</p></li>
-    /// <li><p><code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.</p></li>
-    /// <li><p><code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.</p></li>
-    /// <li><p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
+    /// <li>
+    /// <p><code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running</p></li>
+    /// <li>
+    /// <p><code>AGENT_ID</code> - The ID for an agent instance.</p></li>
+    /// <li>
+    /// <p><code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.</p></li>
+    /// <li>
+    /// <p><code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.</p></li>
+    /// <li>
+    /// <p><code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.</p></li>
     /// </ul>
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::MetadataField, ::std::string::String>> {
         self.inner.get_metadata()

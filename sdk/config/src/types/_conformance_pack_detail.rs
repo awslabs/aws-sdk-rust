@@ -10,11 +10,11 @@ pub struct ConformancePackDetail {
     pub conformance_pack_arn: ::std::string::String,
     /// <p>ID of the conformance pack.</p>
     pub conformance_pack_id: ::std::string::String,
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_bucket: ::std::option::Option<::std::string::String>,
-    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub delivery_s3_key_prefix: ::std::option::Option<::std::string::String>,
@@ -43,13 +43,13 @@ impl ConformancePackDetail {
         use std::ops::Deref;
         self.conformance_pack_id.deref()
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(&self) -> ::std::option::Option<&str> {
         self.delivery_s3_bucket.as_deref()
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(&self) -> ::std::option::Option<&str> {
@@ -141,41 +141,41 @@ impl ConformancePackDetailBuilder {
     pub fn get_conformance_pack_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.conformance_pack_id
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_bucket = input;
         self
     }
-    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p> <note>
+    /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.delivery_s3_bucket
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn delivery_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn set_delivery_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delivery_s3_key_prefix = input;
         self
     }
-    /// <p>The prefix for the Amazon S3 bucket.</p> <note>
+    /// <p>The prefix for the Amazon S3 bucket.</p><note>
     /// <p>This field is optional.</p>
     /// </note>
     pub fn get_delivery_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {

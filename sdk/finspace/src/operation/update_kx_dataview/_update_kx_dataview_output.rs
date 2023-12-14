@@ -11,8 +11,10 @@ pub struct UpdateKxDataviewOutput {
     pub dataview_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub az_mode: ::std::option::Option<crate::types::KxAzMode>,
     /// <p>The identifier of the availability zones.</p>
@@ -25,9 +27,12 @@ pub struct UpdateKxDataviewOutput {
     pub active_versions: ::std::option::Option<::std::vec::Vec<crate::types::KxDataviewActiveVersion>>,
     /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
-    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
-    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::KxDataviewStatus>,
     /// <p>The option to specify whether you want to apply all the future additions and corrections automatically to the dataview when new changesets are ingested. The default value is false.</p>
@@ -55,8 +60,10 @@ impl UpdateKxDataviewOutput {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(&self) -> ::std::option::Option<&crate::types::KxAzMode> {
         self.az_mode.as_ref()
@@ -83,9 +90,12 @@ impl UpdateKxDataviewOutput {
     }
     /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
-    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
-    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::KxDataviewStatus> {
         self.status.as_ref()
@@ -183,8 +193,10 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn az_mode(mut self, input: crate::types::KxAzMode) -> Self {
         self.az_mode = ::std::option::Option::Some(input);
@@ -192,8 +204,10 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn set_az_mode(mut self, input: ::std::option::Option<crate::types::KxAzMode>) -> Self {
         self.az_mode = input;
@@ -201,8 +215,10 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The number of availability zones you want to assign per cluster. This can be one of the following</p>
     /// <ul>
-    /// <li><p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
-    /// <li><p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
+    /// <li>
+    /// <p><code>SINGLE</code> – Assigns one availability zone per cluster.</p></li>
+    /// <li>
+    /// <p><code>MULTI</code> – Assigns all the availability zones per cluster.</p></li>
     /// </ul>
     pub fn get_az_mode(&self) -> &::std::option::Option<crate::types::KxAzMode> {
         &self.az_mode
@@ -277,9 +293,12 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
-    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
-    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::KxDataviewStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -287,9 +306,12 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
-    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
-    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::KxDataviewStatus>) -> Self {
         self.status = input;
@@ -297,9 +319,12 @@ impl UpdateKxDataviewOutputBuilder {
     }
     /// <p>The status of dataview creation.</p>
     /// <ul>
-    /// <li><p><code>CREATING</code> – The dataview creation is in progress.</p></li>
-    /// <li><p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
-    /// <li><p><code>ACTIVE</code> – The dataview is active.</p></li>
+    /// <li>
+    /// <p><code>CREATING</code> – The dataview creation is in progress.</p></li>
+    /// <li>
+    /// <p><code>UPDATING</code> – The dataview is in the process of being updated.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code> – The dataview is active.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::KxDataviewStatus> {
         &self.status

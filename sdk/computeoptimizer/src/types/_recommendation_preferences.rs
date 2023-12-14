@@ -7,9 +7,12 @@ pub struct RecommendationPreferences {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
-    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
-    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li>
+    /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub cpu_vendor_architectures: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>,
 }
@@ -17,9 +20,12 @@ impl RecommendationPreferences {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
-    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
-    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li>
+    /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cpu_vendor_architectures.is_none()`.
@@ -48,9 +54,12 @@ impl RecommendationPreferencesBuilder {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
-    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
-    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li>
+    /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub fn cpu_vendor_architectures(mut self, input: crate::types::CpuVendorArchitecture) -> Self {
         let mut v = self.cpu_vendor_architectures.unwrap_or_default();
@@ -61,9 +70,12 @@ impl RecommendationPreferencesBuilder {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
-    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
-    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li>
+    /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub fn set_cpu_vendor_architectures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>>) -> Self {
         self.cpu_vendor_architectures = input;
@@ -72,9 +84,12 @@ impl RecommendationPreferencesBuilder {
     /// <p>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling group recommendations.</p>
     /// <p>For example, when you specify <code>AWS_ARM64</code> with:</p>
     /// <ul>
-    /// <li><p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
-    /// <li><p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
-    /// <li><p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2InstanceRecommendations</code> or <code>GetAutoScalingGroupRecommendations</code> request, Compute Optimizer returns recommendations that consist of Graviton2 instance types only.</p></li>
+    /// <li>
+    /// <p>A <code>GetEC2RecommendationProjectedMetrics</code> request, Compute Optimizer returns projected utilization metrics for Graviton2 instance type recommendations only.</p></li>
+    /// <li>
+    /// <p>A <code>ExportEC2InstanceRecommendations</code> or <code>ExportAutoScalingGroupRecommendations</code> request, Compute Optimizer exports recommendations that consist of Graviton2 instance types only.</p></li>
     /// </ul>
     pub fn get_cpu_vendor_architectures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CpuVendorArchitecture>> {
         &self.cpu_vendor_architectures

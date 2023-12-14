@@ -34,8 +34,10 @@ pub struct UserSettings {
     pub space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
-    /// <li><p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
-    /// <li><p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
+    /// <li>
+    /// <p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
     pub default_landing_uri: ::std::option::Option<::std::string::String>,
     /// <p>Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio, even if that is the default experience for the domain.</p>
@@ -101,8 +103,10 @@ impl UserSettings {
     }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
-    /// <li><p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
-    /// <li><p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
+    /// <li>
+    /// <p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
     pub fn default_landing_uri(&self) -> ::std::option::Option<&str> {
         self.default_landing_uri.as_deref()
@@ -336,8 +340,10 @@ impl UserSettingsBuilder {
     }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
-    /// <li><p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
-    /// <li><p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
+    /// <li>
+    /// <p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
     pub fn default_landing_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_landing_uri = ::std::option::Option::Some(input.into());
@@ -345,8 +351,10 @@ impl UserSettingsBuilder {
     }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
-    /// <li><p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
-    /// <li><p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
+    /// <li>
+    /// <p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
     pub fn set_default_landing_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_landing_uri = input;
@@ -354,8 +362,10 @@ impl UserSettingsBuilder {
     }
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
     /// <ul>
-    /// <li><p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
-    /// <li><p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
+    /// <li>
+    /// <p><code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.</p></li>
+    /// <li>
+    /// <p><code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.</p></li>
     /// </ul>
     pub fn get_default_landing_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_landing_uri

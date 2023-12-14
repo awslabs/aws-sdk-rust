@@ -169,9 +169,12 @@ pub struct DbCluster {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
@@ -517,9 +520,12 @@ impl DbCluster {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
@@ -1738,9 +1744,12 @@ impl DbClusterBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
@@ -1751,9 +1760,12 @@ impl DbClusterBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn set_performance_insights_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -1764,9 +1776,12 @@ impl DbClusterBuilder {
     /// <p>This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     /// <p>Valid Values:</p>
     /// <ul>
-    /// <li><p><code>7</code></p></li>
-    /// <li><p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
-    /// <li><p><code>731</code></p></li>
+    /// <li>
+    /// <p><code>7</code></p></li>
+    /// <li>
+    /// <p><i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples: <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code> (19 months * 31)</p></li>
+    /// <li>
+    /// <p><code>731</code></p></li>
     /// </ul>
     /// <p>Default: <code>7</code> days</p>
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {

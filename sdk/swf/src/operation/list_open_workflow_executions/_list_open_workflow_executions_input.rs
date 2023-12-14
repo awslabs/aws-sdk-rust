@@ -7,11 +7,11 @@ pub struct ListOpenWorkflowExecutionsInput {
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
     pub start_time_filter: ::std::option::Option<crate::types::ExecutionTimeFilter>,
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub type_filter: ::std::option::Option<crate::types::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p>If specified, only executions that have the matching tag are listed.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub tag_filter: ::std::option::Option<crate::types::TagFilter>,
@@ -22,7 +22,7 @@ pub struct ListOpenWorkflowExecutionsInput {
     pub maximum_page_size: ::std::option::Option<i32>,
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
     pub reverse_order: ::std::option::Option<bool>,
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub execution_filter: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
@@ -36,13 +36,13 @@ impl ListOpenWorkflowExecutionsInput {
     pub fn start_time_filter(&self) -> ::std::option::Option<&crate::types::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(&self) -> ::std::option::Option<&crate::types::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p>If specified, only executions that have the matching tag are listed.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(&self) -> ::std::option::Option<&crate::types::TagFilter> {
@@ -61,7 +61,7 @@ impl ListOpenWorkflowExecutionsInput {
     pub fn reverse_order(&self) -> ::std::option::Option<bool> {
         self.reverse_order
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionFilter> {
@@ -119,41 +119,41 @@ impl ListOpenWorkflowExecutionsInputBuilder {
     pub fn get_start_time_filter(&self) -> &::std::option::Option<crate::types::ExecutionTimeFilter> {
         &self.start_time_filter
     }
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(mut self, input: crate::types::WorkflowTypeFilter) -> Self {
         self.type_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_type_filter(mut self, input: ::std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
         self.type_filter = input;
         self
     }
-    /// <p>If specified, only executions of the type specified in the filter are returned.</p> <note>
+    /// <p>If specified, only executions of the type specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_type_filter(&self) -> &::std::option::Option<crate::types::WorkflowTypeFilter> {
         &self.type_filter
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p>If specified, only executions that have the matching tag are listed.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
         self.tag_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p>If specified, only executions that have the matching tag are listed.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.tag_filter = input;
         self
     }
-    /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
+    /// <p>If specified, only executions that have the matching tag are listed.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_tag_filter(&self) -> &::std::option::Option<crate::types::TagFilter> {
@@ -204,21 +204,21 @@ impl ListOpenWorkflowExecutionsInputBuilder {
     pub fn get_reverse_order(&self) -> &::std::option::Option<bool> {
         &self.reverse_order
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(mut self, input: crate::types::WorkflowExecutionFilter) -> Self {
         self.execution_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_execution_filter(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
         self.execution_filter = input;
         self
     }
-    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p> <note>
+    /// <p>If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p><note>
     /// <p><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn get_execution_filter(&self) -> &::std::option::Option<crate::types::WorkflowExecutionFilter> {

@@ -22,7 +22,7 @@ impl DeletePlacementInputBuilder {
 }
 /// Fluent builder constructing a request to `DeletePlacement`.
 ///
-/// <p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p> <note>
+/// <p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p><note>
 /// <p>When you delete a placement, all associated data becomes irretrievable.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

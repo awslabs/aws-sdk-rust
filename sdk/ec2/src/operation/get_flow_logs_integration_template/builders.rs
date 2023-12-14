@@ -24,11 +24,15 @@ impl GetFlowLogsIntegrationTemplateInputBuilder {
 ///
 /// <p>Generates a CloudFormation template that streamlines and automates the integration of VPC flow logs with Amazon Athena. This make it easier for you to query and gain insights from VPC flow logs data. Based on the information that you provide, we configure resources in the template to do the following:</p>
 /// <ul>
-/// <li><p>Create a table in Athena that maps fields to a custom log format</p></li>
-/// <li><p>Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis</p></li>
-/// <li><p>Create a table partitioned between two timestamps in the past</p></li>
-/// <li><p>Create a set of named queries in Athena that you can use to get started quickly</p></li>
-/// </ul> <note>
+/// <li>
+/// <p>Create a table in Athena that maps fields to a custom log format</p></li>
+/// <li>
+/// <p>Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis</p></li>
+/// <li>
+/// <p>Create a table partitioned between two timestamps in the past</p></li>
+/// <li>
+/// <p>Create a set of named queries in Athena that you can use to get started quickly</p></li>
+/// </ul><note>
 /// <p><code>GetFlowLogsIntegrationTemplate</code> does not support integration between Amazon Web Services Transit Gateway Flow Logs and Amazon Athena.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

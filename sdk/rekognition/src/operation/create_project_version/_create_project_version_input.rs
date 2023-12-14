@@ -18,10 +18,14 @@ pub struct CreateProjectVersionInput {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -58,10 +62,14 @@ impl CreateProjectVersionInput {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -194,10 +202,14 @@ impl CreateProjectVersionInputBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -207,10 +219,14 @@ impl CreateProjectVersionInputBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -220,10 +236,14 @@ impl CreateProjectVersionInputBuilder {
     /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
     /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
     /// <ul>
-    /// <li><p>kms:CreateGrant</p></li>
-    /// <li><p>kms:DescribeKey</p></li>
-    /// <li><p>kms:GenerateDataKey</p></li>
-    /// <li><p>kms:Decrypt</p></li>
+    /// <li>
+    /// <p>kms:CreateGrant</p></li>
+    /// <li>
+    /// <p>kms:DescribeKey</p></li>
+    /// <li>
+    /// <p>kms:GenerateDataKey</p></li>
+    /// <li>
+    /// <p>kms:Decrypt</p></li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {

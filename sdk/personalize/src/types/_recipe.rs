@@ -20,9 +20,12 @@ pub struct Recipe {
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>One of the following values:</p>
     /// <ul>
-    /// <li><p>PERSONALIZED_RANKING</p></li>
-    /// <li><p>RELATED_ITEMS</p></li>
-    /// <li><p>USER_PERSONALIZATION</p></li>
+    /// <li>
+    /// <p>PERSONALIZED_RANKING</p></li>
+    /// <li>
+    /// <p>RELATED_ITEMS</p></li>
+    /// <li>
+    /// <p>USER_PERSONALIZATION</p></li>
     /// </ul>
     pub recipe_type: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
@@ -59,9 +62,12 @@ impl Recipe {
     }
     /// <p>One of the following values:</p>
     /// <ul>
-    /// <li><p>PERSONALIZED_RANKING</p></li>
-    /// <li><p>RELATED_ITEMS</p></li>
-    /// <li><p>USER_PERSONALIZATION</p></li>
+    /// <li>
+    /// <p>PERSONALIZED_RANKING</p></li>
+    /// <li>
+    /// <p>RELATED_ITEMS</p></li>
+    /// <li>
+    /// <p>USER_PERSONALIZATION</p></li>
     /// </ul>
     pub fn recipe_type(&self) -> ::std::option::Option<&str> {
         self.recipe_type.as_deref()
@@ -193,9 +199,12 @@ impl RecipeBuilder {
     }
     /// <p>One of the following values:</p>
     /// <ul>
-    /// <li><p>PERSONALIZED_RANKING</p></li>
-    /// <li><p>RELATED_ITEMS</p></li>
-    /// <li><p>USER_PERSONALIZATION</p></li>
+    /// <li>
+    /// <p>PERSONALIZED_RANKING</p></li>
+    /// <li>
+    /// <p>RELATED_ITEMS</p></li>
+    /// <li>
+    /// <p>USER_PERSONALIZATION</p></li>
     /// </ul>
     pub fn recipe_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_type = ::std::option::Option::Some(input.into());
@@ -203,9 +212,12 @@ impl RecipeBuilder {
     }
     /// <p>One of the following values:</p>
     /// <ul>
-    /// <li><p>PERSONALIZED_RANKING</p></li>
-    /// <li><p>RELATED_ITEMS</p></li>
-    /// <li><p>USER_PERSONALIZATION</p></li>
+    /// <li>
+    /// <p>PERSONALIZED_RANKING</p></li>
+    /// <li>
+    /// <p>RELATED_ITEMS</p></li>
+    /// <li>
+    /// <p>USER_PERSONALIZATION</p></li>
     /// </ul>
     pub fn set_recipe_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_type = input;
@@ -213,9 +225,12 @@ impl RecipeBuilder {
     }
     /// <p>One of the following values:</p>
     /// <ul>
-    /// <li><p>PERSONALIZED_RANKING</p></li>
-    /// <li><p>RELATED_ITEMS</p></li>
-    /// <li><p>USER_PERSONALIZATION</p></li>
+    /// <li>
+    /// <p>PERSONALIZED_RANKING</p></li>
+    /// <li>
+    /// <p>RELATED_ITEMS</p></li>
+    /// <li>
+    /// <p>USER_PERSONALIZATION</p></li>
     /// </ul>
     pub fn get_recipe_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_type

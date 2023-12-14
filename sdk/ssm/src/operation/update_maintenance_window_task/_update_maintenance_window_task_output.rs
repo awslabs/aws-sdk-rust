@@ -13,7 +13,7 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The updated parameter values.</p> <note>
+    /// <p>The updated parameter values.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub task_parameters:
@@ -26,7 +26,7 @@ pub struct UpdateMaintenanceWindowTaskOutput {
     pub max_concurrency: ::std::option::Option<::std::string::String>,
     /// <p>The updated <code>MaxErrors</code> value.</p>
     pub max_errors: ::std::option::Option<::std::string::String>,
-    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p>The updated logging information in Amazon S3.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub logging_info: ::std::option::Option<crate::types::LoggingInfo>,
@@ -63,7 +63,7 @@ impl UpdateMaintenanceWindowTaskOutput {
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The updated parameter values.</p> <note>
+    /// <p>The updated parameter values.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
@@ -87,7 +87,7 @@ impl UpdateMaintenanceWindowTaskOutput {
     pub fn max_errors(&self) -> ::std::option::Option<&str> {
         self.max_errors.as_deref()
     }
-    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p>The updated logging information in Amazon S3.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(&self) -> ::std::option::Option<&crate::types::LoggingInfo> {
@@ -247,7 +247,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
-    /// <p>The updated parameter values.</p> <note>
+    /// <p>The updated parameter values.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn task_parameters(
@@ -260,7 +260,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.task_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The updated parameter values.</p> <note>
+    /// <p>The updated parameter values.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_task_parameters(
@@ -270,7 +270,7 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
         self.task_parameters = input;
         self
     }
-    /// <p>The updated parameter values.</p> <note>
+    /// <p>The updated parameter values.</p><note>
     /// <p><code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_task_parameters(
@@ -334,21 +334,21 @@ impl UpdateMaintenanceWindowTaskOutputBuilder {
     pub fn get_max_errors(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_errors
     }
-    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p>The updated logging information in Amazon S3.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
         self.logging_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p>The updated logging information in Amazon S3.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn set_logging_info(mut self, input: ::std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.logging_info = input;
         self
     }
-    /// <p>The updated logging information in Amazon S3.</p> <note>
+    /// <p>The updated logging information in Amazon S3.</p><note>
     /// <p><code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
     /// </note>
     pub fn get_logging_info(&self) -> &::std::option::Option<crate::types::LoggingInfo> {

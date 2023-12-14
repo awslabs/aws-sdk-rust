@@ -8,60 +8,95 @@ pub struct SubscribeInput {
     pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
-    /// <li><p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
-    /// <li><p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
-    /// <li><p><code>email</code> – delivery of message via SMTP</p></li>
-    /// <li><p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
-    /// <li><p><code>sms</code> – delivery of message via SMS</p></li>
-    /// <li><p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
-    /// <li><p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
-    /// <li><p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
-    /// <li><p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
+    /// <li>
+    /// <p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
+    /// <li>
+    /// <p><code>email</code> – delivery of message via SMTP</p></li>
+    /// <li>
+    /// <p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
+    /// <li>
+    /// <p><code>sms</code> – delivery of message via SMS</p></li>
+    /// <li>
+    /// <p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
+    /// <li>
+    /// <p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
+    /// <li>
+    /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
+    /// <li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
-    /// <li><p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
-    /// <li><p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
-    /// <li><p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
-    /// <li><p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
-    /// <li><p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
-    /// <li><p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
-    /// <li><p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
+    /// <li>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
+    /// <li>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
+    /// <li>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
+    /// <li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
     /// <ul>
-    /// <li><p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
-    /// <li><p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
-    /// <li><p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <li>
+    /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
     /// <ul>
-    /// <li><p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
-    /// <li><p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
+    /// <li>
+    /// <p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
+    /// <li>
+    /// <p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
     /// </ul></li>
-    /// <li><p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
-    /// <li><p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
+    /// <li>
+    /// <p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
+    /// <li>
+    /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
-    /// <li><p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <li>
+    /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
-    /// <li><p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
-    /// <li><p>Amazon SNS listed as a trusted entity</p></li>
-    /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p></li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li><p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li><p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <li>
+    /// <p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
+    /// <li>
+    /// <p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
-    /// <li><p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
-    /// <li><p><code>Failed</code> – The replay was unable to complete.</p></li>
-    /// <li><p><code>Pending</code> – The default state while the replay initiates.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
+    /// <li>
+    /// <p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> – The replay was unable to complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> – The default state while the replay initiates.</p></li>
     /// </ul></li>
     /// </ul>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -78,30 +113,48 @@ impl SubscribeInput {
     }
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
-    /// <li><p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
-    /// <li><p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
-    /// <li><p><code>email</code> – delivery of message via SMTP</p></li>
-    /// <li><p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
-    /// <li><p><code>sms</code> – delivery of message via SMS</p></li>
-    /// <li><p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
-    /// <li><p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
-    /// <li><p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
-    /// <li><p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
+    /// <li>
+    /// <p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
+    /// <li>
+    /// <p><code>email</code> – delivery of message via SMTP</p></li>
+    /// <li>
+    /// <p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
+    /// <li>
+    /// <p><code>sms</code> – delivery of message via SMS</p></li>
+    /// <li>
+    /// <p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
+    /// <li>
+    /// <p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
+    /// <li>
+    /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
+    /// <li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
-    /// <li><p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
-    /// <li><p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
-    /// <li><p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
-    /// <li><p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
-    /// <li><p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
-    /// <li><p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
-    /// <li><p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
+    /// <li>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
+    /// <li>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
+    /// <li>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
+    /// <li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
@@ -109,33 +162,50 @@ impl SubscribeInput {
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
     /// <ul>
-    /// <li><p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
-    /// <li><p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
-    /// <li><p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <li>
+    /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
     /// <ul>
-    /// <li><p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
-    /// <li><p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
+    /// <li>
+    /// <p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
+    /// <li>
+    /// <p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
     /// </ul></li>
-    /// <li><p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
-    /// <li><p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
+    /// <li>
+    /// <p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
+    /// <li>
+    /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
-    /// <li><p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <li>
+    /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
-    /// <li><p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
-    /// <li><p>Amazon SNS listed as a trusted entity</p></li>
-    /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p></li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li><p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li><p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <li>
+    /// <p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
+    /// <li>
+    /// <p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
-    /// <li><p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
-    /// <li><p><code>Failed</code> – The replay was unable to complete.</p></li>
-    /// <li><p><code>Pending</code> – The default state while the replay initiates.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
+    /// <li>
+    /// <p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> – The replay was unable to complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> – The default state while the replay initiates.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -184,15 +254,24 @@ impl SubscribeInputBuilder {
     }
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
-    /// <li><p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
-    /// <li><p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
-    /// <li><p><code>email</code> – delivery of message via SMTP</p></li>
-    /// <li><p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
-    /// <li><p><code>sms</code> – delivery of message via SMS</p></li>
-    /// <li><p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
-    /// <li><p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
-    /// <li><p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
-    /// <li><p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
+    /// <li>
+    /// <p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
+    /// <li>
+    /// <p><code>email</code> – delivery of message via SMTP</p></li>
+    /// <li>
+    /// <p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
+    /// <li>
+    /// <p><code>sms</code> – delivery of message via SMS</p></li>
+    /// <li>
+    /// <p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
+    /// <li>
+    /// <p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
+    /// <li>
+    /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
+    /// <li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     /// This field is required.
     pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -201,15 +280,24 @@ impl SubscribeInputBuilder {
     }
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
-    /// <li><p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
-    /// <li><p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
-    /// <li><p><code>email</code> – delivery of message via SMTP</p></li>
-    /// <li><p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
-    /// <li><p><code>sms</code> – delivery of message via SMS</p></li>
-    /// <li><p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
-    /// <li><p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
-    /// <li><p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
-    /// <li><p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
+    /// <li>
+    /// <p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
+    /// <li>
+    /// <p><code>email</code> – delivery of message via SMTP</p></li>
+    /// <li>
+    /// <p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
+    /// <li>
+    /// <p><code>sms</code> – delivery of message via SMS</p></li>
+    /// <li>
+    /// <p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
+    /// <li>
+    /// <p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
+    /// <li>
+    /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
+    /// <li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
@@ -217,30 +305,48 @@ impl SubscribeInputBuilder {
     }
     /// <p>The protocol that you want to use. Supported protocols include:</p>
     /// <ul>
-    /// <li><p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
-    /// <li><p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
-    /// <li><p><code>email</code> – delivery of message via SMTP</p></li>
-    /// <li><p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
-    /// <li><p><code>sms</code> – delivery of message via SMS</p></li>
-    /// <li><p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
-    /// <li><p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
-    /// <li><p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
-    /// <li><p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p><code>http</code> – delivery of JSON-encoded message via HTTP POST</p></li>
+    /// <li>
+    /// <p><code>https</code> – delivery of JSON-encoded message via HTTPS POST</p></li>
+    /// <li>
+    /// <p><code>email</code> – delivery of message via SMTP</p></li>
+    /// <li>
+    /// <p><code>email-json</code> – delivery of JSON-encoded message via SMTP</p></li>
+    /// <li>
+    /// <p><code>sms</code> – delivery of message via SMS</p></li>
+    /// <li>
+    /// <p><code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue</p></li>
+    /// <li>
+    /// <p><code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device</p></li>
+    /// <li>
+    /// <p><code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p></li>
+    /// <li>
+    /// <p><code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn get_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.protocol
     }
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
-    /// <li><p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
-    /// <li><p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
-    /// <li><p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
-    /// <li><p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
-    /// <li><p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
-    /// <li><p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
-    /// <li><p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
+    /// <li>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
+    /// <li>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
+    /// <li>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
+    /// <li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
@@ -248,15 +354,24 @@ impl SubscribeInputBuilder {
     }
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
-    /// <li><p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
-    /// <li><p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
-    /// <li><p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
-    /// <li><p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
-    /// <li><p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
-    /// <li><p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
-    /// <li><p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
+    /// <li>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
+    /// <li>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
+    /// <li>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
+    /// <li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
@@ -264,15 +379,24 @@ impl SubscribeInputBuilder {
     }
     /// <p>The endpoint that you want to receive notifications. Endpoints vary by protocol:</p>
     /// <ul>
-    /// <li><p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
-    /// <li><p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
-    /// <li><p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
-    /// <li><p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
-    /// <li><p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
-    /// <li><p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
-    /// <li><p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
-    /// <li><p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
+    /// <li>
+    /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>.</p></li>
+    /// <li>
+    /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>email-json</code> protocol, the endpoint is an email address.</p></li>
+    /// <li>
+    /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device.</p></li>
+    /// <li>
+    /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.</p></li>
+    /// <li>
+    /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device.</p></li>
+    /// <li>
+    /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p></li>
+    /// <li>
+    /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p></li>
     /// </ul>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
@@ -284,33 +408,50 @@ impl SubscribeInputBuilder {
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
     /// <ul>
-    /// <li><p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
-    /// <li><p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
-    /// <li><p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <li>
+    /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
     /// <ul>
-    /// <li><p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
-    /// <li><p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
+    /// <li>
+    /// <p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
+    /// <li>
+    /// <p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
     /// </ul></li>
-    /// <li><p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
-    /// <li><p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
+    /// <li>
+    /// <p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
+    /// <li>
+    /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
-    /// <li><p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <li>
+    /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
-    /// <li><p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
-    /// <li><p>Amazon SNS listed as a trusted entity</p></li>
-    /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p></li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li><p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li><p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <li>
+    /// <p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
+    /// <li>
+    /// <p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
-    /// <li><p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
-    /// <li><p><code>Failed</code> – The replay was unable to complete.</p></li>
-    /// <li><p><code>Pending</code> – The default state while the replay initiates.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
+    /// <li>
+    /// <p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> – The replay was unable to complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> – The default state while the replay initiates.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -322,33 +463,50 @@ impl SubscribeInputBuilder {
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
     /// <ul>
-    /// <li><p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
-    /// <li><p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
-    /// <li><p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <li>
+    /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
     /// <ul>
-    /// <li><p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
-    /// <li><p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
+    /// <li>
+    /// <p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
+    /// <li>
+    /// <p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
     /// </ul></li>
-    /// <li><p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
-    /// <li><p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
+    /// <li>
+    /// <p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
+    /// <li>
+    /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
-    /// <li><p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <li>
+    /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
-    /// <li><p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
-    /// <li><p>Amazon SNS listed as a trusted entity</p></li>
-    /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p></li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li><p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li><p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <li>
+    /// <p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
+    /// <li>
+    /// <p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
-    /// <li><p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
-    /// <li><p><code>Failed</code> – The replay was unable to complete.</p></li>
-    /// <li><p><code>Pending</code> – The default state while the replay initiates.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
+    /// <li>
+    /// <p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> – The replay was unable to complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> – The default state while the replay initiates.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
@@ -358,33 +516,50 @@ impl SubscribeInputBuilder {
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>Subscribe</code> action uses:</p>
     /// <ul>
-    /// <li><p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
-    /// <li><p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
-    /// <li><p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
+    /// <li>
+    /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic.</p></li>
+    /// <li>
+    /// <p><code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following string value types:</p>
     /// <ul>
-    /// <li><p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
-    /// <li><p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
+    /// <li>
+    /// <p><code>MessageAttributes</code> (default) – The filter is applied on the message attributes.</p></li>
+    /// <li>
+    /// <p><code>MessageBody</code> – The filter is applied on the message body.</p></li>
     /// </ul></li>
-    /// <li><p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
-    /// <li><p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
+    /// <li>
+    /// <p><code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata.</p></li>
+    /// <li>
+    /// <p><code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing.</p></li>
     /// </ul>
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
-    /// <li><p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+    /// <li>
+    /// <p><code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
     /// <ul>
-    /// <li><p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
-    /// <li><p>Amazon SNS listed as a trusted entity</p></li>
-    /// </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p></li>
+    /// <li>
+    /// <p>Amazon SNS listed as a trusted entity</p></li>
+    /// </ul>
+    /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p></li>
     /// </ul>
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
-    /// <li><p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
-    /// <li><p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
+    /// <li>
+    /// <p><code>ReplayPolicy</code> – Adds or updates an inline policy document for a subscription to replay messages stored in the specified Amazon SNS topic.</p></li>
+    /// <li>
+    /// <p><code>ReplayStatus</code> – Retrieves the status of the subscription message replay, which can be one of the following:</p>
     /// <ul>
-    /// <li><p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
-    /// <li><p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
-    /// <li><p><code>Failed</code> – The replay was unable to complete.</p></li>
-    /// <li><p><code>Pending</code> – The default state while the replay initiates.</p></li>
+    /// <li>
+    /// <p><code>Completed</code> – The replay has successfully redelivered all messages, and is now delivering newly published messages. If an ending point was specified in the <code>ReplayPolicy</code> then the subscription will no longer receive newly published messages.</p></li>
+    /// <li>
+    /// <p><code>In progress</code> – The replay is currently replaying the selected messages.</p></li>
+    /// <li>
+    /// <p><code>Failed</code> – The replay was unable to complete.</p></li>
+    /// <li>
+    /// <p><code>Pending</code> – The default state while the replay initiates.</p></li>
     /// </ul></li>
     /// </ul>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

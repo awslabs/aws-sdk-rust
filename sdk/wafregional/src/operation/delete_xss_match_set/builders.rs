@@ -30,9 +30,12 @@ impl DeleteXssMatchSetInputBuilder {
 /// <p>If you just want to remove an <code>XssMatchSet</code> from a <code>Rule</code>, use <code>UpdateRule</code>.</p>
 /// <p>To permanently delete an <code>XssMatchSet</code> from AWS WAF, perform the following steps:</p>
 /// <ol>
-/// <li><p>Update the <code>XssMatchSet</code> to remove filters, if any. For more information, see <code>UpdateXssMatchSet</code>.</p></li>
-/// <li><p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteXssMatchSet</code> request.</p></li>
-/// <li><p>Submit a <code>DeleteXssMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Update the <code>XssMatchSet</code> to remove filters, if any. For more information, see <code>UpdateXssMatchSet</code>.</p></li>
+/// <li>
+/// <p>Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteXssMatchSet</code> request.</p></li>
+/// <li>
+/// <p>Submit a <code>DeleteXssMatchSet</code> request.</p></li>
 /// </ol>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteXssMatchSetFluentBuilder {

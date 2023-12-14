@@ -26,10 +26,14 @@ impl BatchImportEvidenceToAssessmentControlInputBuilder {
 /// <p>You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question.</p>
 /// <p>The following restrictions apply to this action:</p>
 /// <ul>
-/// <li><p><code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code></p></li>
-/// <li><p>Maximum size of an individual evidence file: 100 MB</p></li>
-/// <li><p>Number of daily manual evidence uploads per control: 100</p></li>
-/// <li><p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i></p></li>
+/// <li>
+/// <p><code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code></p></li>
+/// <li>
+/// <p>Maximum size of an individual evidence file: 100 MB</p></li>
+/// <li>
+/// <p>Number of daily manual evidence uploads per control: 100</p></li>
+/// <li>
+/// <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i></p></li>
 /// </ul>
 /// <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

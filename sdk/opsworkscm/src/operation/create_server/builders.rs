@@ -145,11 +145,16 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li><p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
-    /// <li><p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
-    /// <li><p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
-    /// <li><p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
-    /// <li><p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
+    /// <li>
+    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
+    /// <li>
+    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
+    /// <li>
+    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
+    /// <li>
+    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
+    /// <li>
+    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
     /// </ul>
     pub fn custom_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_certificate(input.into());
@@ -157,11 +162,16 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li><p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
-    /// <li><p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
-    /// <li><p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
-    /// <li><p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
-    /// <li><p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
+    /// <li>
+    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
+    /// <li>
+    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
+    /// <li>
+    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
+    /// <li>
+    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
+    /// <li>
+    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
     /// </ul>
     pub fn set_custom_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_certificate(input);
@@ -169,11 +179,16 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a custom certificate, you must also specify values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The following are requirements for the <code>CustomCertificate</code> value:</p>
     /// <ul>
-    /// <li><p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
-    /// <li><p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
-    /// <li><p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
-    /// <li><p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
-    /// <li><p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
+    /// <li>
+    /// <p>You can provide either a self-signed, custom certificate, or the full certificate chain.</p></li>
+    /// <li>
+    /// <p>The certificate must be a valid X509 certificate, or a certificate chain in PEM format.</p></li>
+    /// <li>
+    /// <p>The certificate must be valid at the time of upload. A certificate can't be used before its validity period begins (the certificate's <code>NotBefore</code> date), or after it expires (the certificate's <code>NotAfter</code> date).</p></li>
+    /// <li>
+    /// <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p></li>
+    /// <li>
+    /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p></li>
     /// </ul>
     pub fn get_custom_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_custom_certificate()
@@ -255,14 +270,19 @@ impl CreateServerFluentBuilder {
     /// <p>Optional engine attributes on a specified server.</p>
     /// <p class="title"><b>Attributes accepted in a Chef createServer request:</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
-    /// <li><p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
+    /// <li>
+    /// <p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
+    /// <li>
+    /// <p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a Puppet createServer request:</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
-    /// <li><p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
-    /// <li><p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
     /// </ul>
     pub fn engine_attributes(mut self, input: crate::types::EngineAttribute) -> Self {
         self.inner = self.inner.engine_attributes(input);
@@ -271,14 +291,19 @@ impl CreateServerFluentBuilder {
     /// <p>Optional engine attributes on a specified server.</p>
     /// <p class="title"><b>Attributes accepted in a Chef createServer request:</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
-    /// <li><p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
+    /// <li>
+    /// <p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
+    /// <li>
+    /// <p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a Puppet createServer request:</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
-    /// <li><p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
-    /// <li><p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
     /// </ul>
     pub fn set_engine_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
@@ -287,14 +312,19 @@ impl CreateServerFluentBuilder {
     /// <p>Optional engine attributes on a specified server.</p>
     /// <p class="title"><b>Attributes accepted in a Chef createServer request:</b></p>
     /// <ul>
-    /// <li><p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
-    /// <li><p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
+    /// <li>
+    /// <p><code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The corresponding private key is required to access the Chef API. When no CHEF_AUTOMATE_PIVOTAL_KEY is set, a private key is generated and returned in the response.</p></li>
+    /// <li>
+    /// <p><code>CHEF_AUTOMATE_ADMIN_PASSWORD</code>: The password for the administrative user in the Chef Automate web-based dashboard. The password length is a minimum of eight characters, and a maximum of 32. The password can contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password must contain at least one lower case letter, one upper case letter, one number, and one special character. When no CHEF_AUTOMATE_ADMIN_PASSWORD is set, one is generated and returned in the response.</p></li>
     /// </ul>
     /// <p class="title"><b>Attributes accepted in a Puppet createServer request:</b></p>
     /// <ul>
-    /// <li><p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
-    /// <li><p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
-    /// <li><p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console, a password must use ASCII characters.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control repository (for example, ssh://git@your.git-repo.com:user/control-repo.git). Specifying an r10k remote opens TCP port 8170.</p></li>
+    /// <li>
+    /// <p><code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository, add PUPPET_R10K_PRIVATE_KEY to specify a PEM-encoded private SSH key.</p></li>
     /// </ul>
     pub fn get_engine_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>> {
         self.inner.get_engine_attributes()
@@ -388,8 +418,10 @@ impl CreateServerFluentBuilder {
     }
     /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
     /// <ul>
-    /// <li><p><code>HH:MM</code> for daily backups</p></li>
-    /// <li><p><code>DDD:HH:MM</code> for weekly backups</p></li>
+    /// <li>
+    /// <p><code>HH:MM</code> for daily backups</p></li>
+    /// <li>
+    /// <p><code>DDD:HH:MM</code> for weekly backups</p></li>
     /// </ul>
     /// <p><code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
     /// <p><b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
@@ -400,8 +432,10 @@ impl CreateServerFluentBuilder {
     }
     /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
     /// <ul>
-    /// <li><p><code>HH:MM</code> for daily backups</p></li>
-    /// <li><p><code>DDD:HH:MM</code> for weekly backups</p></li>
+    /// <li>
+    /// <p><code>HH:MM</code> for daily backups</p></li>
+    /// <li>
+    /// <p><code>DDD:HH:MM</code> for weekly backups</p></li>
     /// </ul>
     /// <p><code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
     /// <p><b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
@@ -412,8 +446,10 @@ impl CreateServerFluentBuilder {
     }
     /// <p>The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:</p>
     /// <ul>
-    /// <li><p><code>HH:MM</code> for daily backups</p></li>
-    /// <li><p><code>DDD:HH:MM</code> for weekly backups</p></li>
+    /// <li>
+    /// <p><code>HH:MM</code> for daily backups</p></li>
+    /// <li>
+    /// <p><code>DDD:HH:MM</code> for weekly backups</p></li>
     /// </ul>
     /// <p><code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
     /// <p><b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
@@ -489,11 +525,16 @@ impl CreateServerFluentBuilder {
     ///
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
@@ -501,11 +542,16 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
     /// </ul>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -513,11 +559,16 @@ impl CreateServerFluentBuilder {
     }
     /// <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p>
     /// <ul>
-    /// <li><p>The key cannot be empty.</p></li>
-    /// <li><p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li><p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
-    /// <li><p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
-    /// <li><p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
+    /// <li>
+    /// <p>The key cannot be empty.</p></li>
+    /// <li>
+    /// <p>The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
+    /// <li>
+    /// <p>The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : / @</code></p></li>
+    /// <li>
+    /// <p>Leading and trailing white spaces are trimmed from both the key and value.</p></li>
+    /// <li>
+    /// <p>A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.</p></li>
     /// </ul>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()

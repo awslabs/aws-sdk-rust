@@ -24,11 +24,16 @@ pub struct GetDataSourceOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>A link to the file containing logs of <code>CreateDataSourceFrom*</code> operations.</p>
@@ -93,11 +98,16 @@ impl GetDataSourceOutput {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
@@ -311,11 +321,16 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -323,11 +338,16 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
@@ -335,11 +355,16 @@ impl GetDataSourceOutputBuilder {
     }
     /// <p>The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
     /// <ul>
-    /// <li><p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
-    /// <li><p><code>INPROGRESS</code> - The creation process is underway.</p></li>
-    /// <li><p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
-    /// <li><p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
-    /// <li><p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</p></li>
+    /// <li>
+    /// <p><code>INPROGRESS</code> - The creation process is underway.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The creation process completed successfully.</p></li>
+    /// <li>
+    /// <p><code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatus> {
         &self.status

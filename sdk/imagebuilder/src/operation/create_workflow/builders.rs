@@ -122,7 +122,7 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -142,7 +142,7 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -162,7 +162,7 @@ impl CreateWorkflowFluentBuilder {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
-    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p> <note>
+    /// <p>The semantic version of this workflow resource. The semantic version syntax adheres to the following rules.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>

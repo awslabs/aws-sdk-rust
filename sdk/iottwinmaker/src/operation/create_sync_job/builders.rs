@@ -122,21 +122,21 @@ impl CreateSyncJobFluentBuilder {
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_source(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self
     }
-    /// <p>The sync source.</p> <note>
+    /// <p>The sync source.</p><note>
     /// <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p>
     /// </note>
     pub fn get_sync_source(&self) -> &::std::option::Option<::std::string::String> {

@@ -2,13 +2,22 @@
 
 /// <p>Specifies that WAF should run a <code>Challenge</code> check against the request to verify that the request is coming from a legitimate client session:</p>
 /// <ul>
-/// <li><p>If the request includes a valid, unexpired challenge token, WAF applies any custom request handling and labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.</p></li>
-/// <li><p>If the request doesn't include a valid, unexpired challenge token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p> <p>WAF then generates a challenge response that it sends back to the client, which includes the following:</p>
+/// <li>
+/// <p>If the request includes a valid, unexpired challenge token, WAF applies any custom request handling and labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.</p></li>
+/// <li>
+/// <p>If the request doesn't include a valid, unexpired challenge token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination.</p>
+/// <p>WAF then generates a challenge response that it sends back to the client, which includes the following:</p>
 /// <ul>
-/// <li><p>The header <code>x-amzn-waf-action</code> with a value of <code>challenge</code>.</p></li>
-/// <li><p>The HTTP status code <code>202 Request Accepted</code>.</p></li>
-/// <li><p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a JavaScript page interstitial with a challenge script.</p></li>
-/// </ul> <p>Challenges run silent browser interrogations in the background, and don't generally affect the end user experience.</p> <p>A challenge enforces token acquisition using an interstitial JavaScript challenge that inspects the client session for legitimate behavior. The challenge blocks bots or at least increases the cost of operating sophisticated bots.</p> <p>After the client session successfully responds to the challenge, it receives a new token from WAF, which the challenge script uses to resubmit the original request.</p></li>
+/// <li>
+/// <p>The header <code>x-amzn-waf-action</code> with a value of <code>challenge</code>.</p></li>
+/// <li>
+/// <p>The HTTP status code <code>202 Request Accepted</code>.</p></li>
+/// <li>
+/// <p>If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a JavaScript page interstitial with a challenge script.</p></li>
+/// </ul>
+/// <p>Challenges run silent browser interrogations in the background, and don't generally affect the end user experience.</p>
+/// <p>A challenge enforces token acquisition using an interstitial JavaScript challenge that inspects the client session for legitimate behavior. The challenge blocks bots or at least increases the cost of operating sophisticated bots.</p>
+/// <p>After the client session successfully responds to the challenge, it receives a new token from WAF, which the challenge script uses to resubmit the original request.</p></li>
 /// </ul>
 /// <p>You can configure the expiration time in the <code>ChallengeConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule setting overrides the web ACL setting.</p>
 /// <p>This action option is available for rules. It isn't available for web ACL default actions.</p>

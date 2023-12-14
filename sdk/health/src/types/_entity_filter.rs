@@ -12,7 +12,7 @@ pub struct EntityFilter {
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the most recent dates and times that the entity was updated.</p>
     pub last_updated_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
@@ -43,7 +43,7 @@ impl EntityFilter {
     pub fn last_updated_times(&self) -> &[crate::types::DateTimeRange] {
         self.last_updated_times.as_deref().unwrap_or_default()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     ///
@@ -161,7 +161,7 @@ impl EntityFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
@@ -170,7 +170,7 @@ impl EntityFilterBuilder {
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn set_tags(
@@ -180,7 +180,7 @@ impl EntityFilterBuilder {
         self.tags = input;
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p> <note>
+    /// <p>A map of entity tags attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {

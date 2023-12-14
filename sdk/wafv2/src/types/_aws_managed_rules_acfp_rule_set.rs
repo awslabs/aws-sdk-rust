@@ -7,14 +7,14 @@ pub struct AwsManagedRulesAcfpRuleSet {
     /// <p>The path of the account creation endpoint for your application. This is the page on your website that accepts the completed registration form for a new user. This page must accept <code>POST</code> requests.</p>
     /// <p>For example, for the URL <code>https://example.com/web/newaccount</code>, you would provide the path <code>/web/newaccount</code>. Account creation page paths that start with the path that you provide are considered a match. For example <code>/web/newaccount</code> matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>, <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>.</p>
     pub creation_path: ::std::string::String,
-    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p> <note>
+    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p><note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.</p>
     pub registration_page_path: ::std::string::String,
     /// <p>The criteria for inspecting account creation requests, used by the ACFP rule group to validate and track account creation attempts.</p>
     pub request_inspection: ::std::option::Option<crate::types::RequestInspectionAcfp>,
-    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p> <note>
+    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p><note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time.</p>
@@ -29,7 +29,7 @@ impl AwsManagedRulesAcfpRuleSet {
         use std::ops::Deref;
         self.creation_path.deref()
     }
-    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p> <note>
+    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p><note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.</p>
@@ -41,7 +41,7 @@ impl AwsManagedRulesAcfpRuleSet {
     pub fn request_inspection(&self) -> ::std::option::Option<&crate::types::RequestInspectionAcfp> {
         self.request_inspection.as_ref()
     }
-    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p> <note>
+    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p><note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time.</p>
@@ -89,7 +89,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     pub fn get_creation_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.creation_path
     }
-    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p> <note>
+    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p><note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.</p>
@@ -98,7 +98,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.registration_page_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p> <note>
+    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p><note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.</p>
@@ -106,7 +106,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.registration_page_path = input;
         self
     }
-    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p> <note>
+    /// <p>The path of the account registration endpoint for your application. This is the page on your website that presents the registration form to new users.</p><note>
     /// <p>This page must accept <code>GET</code> text/html requests.</p>
     /// </note>
     /// <p>For example, for the URL <code>https://example.com/web/registration</code>, you would provide the path <code>/web/registration</code>. Registration page paths that start with the path that you provide are considered a match. For example <code>/web/registration</code> matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>, <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.</p>
@@ -128,7 +128,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
     pub fn get_request_inspection(&self) -> &::std::option::Option<crate::types::RequestInspectionAcfp> {
         &self.request_inspection
     }
-    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p> <note>
+    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p><note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time.</p>
@@ -136,7 +136,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.response_inspection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p> <note>
+    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p><note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time.</p>
@@ -144,7 +144,7 @@ impl AwsManagedRulesAcfpRuleSetBuilder {
         self.response_inspection = input;
         self
     }
-    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p> <note>
+    /// <p>The criteria for inspecting responses to account creation requests, used by the ACFP rule group to track account creation success rates.</p><note>
     /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     /// <p>The ACFP rule group evaluates the responses that your protected resources send back to client account creation attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that have had too many successful account creation attempts in a short amount of time.</p>

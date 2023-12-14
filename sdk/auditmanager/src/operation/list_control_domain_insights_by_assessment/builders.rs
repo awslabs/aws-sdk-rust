@@ -22,7 +22,7 @@ impl ListControlDomainInsightsByAssessmentInputBuilder {
 }
 /// Fluent builder constructing a request to `ListControlDomainInsightsByAssessment`.
 ///
-/// <p>Lists analytics data for control domains within a specified active assessment.</p> <note>
+/// <p>Lists analytics data for control domains within a specified active assessment.</p><note>
 /// <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that domain.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -6,7 +6,7 @@
 pub struct BatchPutGeofenceRequestEntry {
     /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
     pub geofence_id: ::std::string::String,
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
@@ -20,7 +20,7 @@ impl BatchPutGeofenceRequestEntry {
         use std::ops::Deref;
         self.geofence_id.deref()
     }
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::GeofenceGeometry> {
@@ -72,7 +72,7 @@ impl BatchPutGeofenceRequestEntryBuilder {
     pub fn get_geofence_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.geofence_id
     }
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     /// This field is required.
@@ -80,14 +80,14 @@ impl BatchPutGeofenceRequestEntryBuilder {
         self.geometry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::GeofenceGeometry>) -> Self {
         self.geometry = input;
         self
     }
-    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
+    /// <p>Contains the details of the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p><note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::GeofenceGeometry> {

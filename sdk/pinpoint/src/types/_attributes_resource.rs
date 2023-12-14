@@ -8,9 +8,12 @@ pub struct AttributesResource {
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
-    /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
+    /// <li>
+    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     pub attribute_type: ::std::option::Option<::std::string::String>,
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
@@ -23,9 +26,12 @@ impl AttributesResource {
     }
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
-    /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
+    /// <li>
+    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     pub fn attribute_type(&self) -> ::std::option::Option<&str> {
         self.attribute_type.as_deref()
@@ -70,9 +76,12 @@ impl AttributesResourceBuilder {
     }
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
-    /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
+    /// <li>
+    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     /// This field is required.
     pub fn attribute_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,9 +90,12 @@ impl AttributesResourceBuilder {
     }
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
-    /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
+    /// <li>
+    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     pub fn set_attribute_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_type = input;
@@ -91,9 +103,12 @@ impl AttributesResourceBuilder {
     }
     /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
-    /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
+    /// <li>
+    /// <p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
+    /// <li>
+    /// <p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     pub fn get_attribute_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_type

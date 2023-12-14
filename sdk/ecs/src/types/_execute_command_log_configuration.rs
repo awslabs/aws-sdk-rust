@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCommandLogConfiguration {
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The name of the CloudWatch log group to send logs to.</p><note>
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub cloud_watch_log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to use encryption on the CloudWatch logs. If not specified, encryption will be off.</p>
     pub cloud_watch_encryption_enabled: bool,
-    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The name of the S3 bucket to send logs to.</p><note>
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct ExecuteCommandLogConfiguration {
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteCommandLogConfiguration {
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The name of the CloudWatch log group to send logs to.</p><note>
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub fn cloud_watch_log_group_name(&self) -> ::std::option::Option<&str> {
@@ -30,7 +30,7 @@ impl ExecuteCommandLogConfiguration {
     pub fn cloud_watch_encryption_enabled(&self) -> bool {
         self.cloud_watch_encryption_enabled
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The name of the S3 bucket to send logs to.</p><note>
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
@@ -63,21 +63,21 @@ pub struct ExecuteCommandLogConfigurationBuilder {
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ExecuteCommandLogConfigurationBuilder {
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The name of the CloudWatch log group to send logs to.</p><note>
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub fn cloud_watch_log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_watch_log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The name of the CloudWatch log group to send logs to.</p><note>
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub fn set_cloud_watch_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_watch_log_group_name = input;
         self
     }
-    /// <p>The name of the CloudWatch log group to send logs to.</p> <note>
+    /// <p>The name of the CloudWatch log group to send logs to.</p><note>
     /// <p>The CloudWatch log group must already be created.</p>
     /// </note>
     pub fn get_cloud_watch_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
@@ -97,21 +97,21 @@ impl ExecuteCommandLogConfigurationBuilder {
     pub fn get_cloud_watch_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.cloud_watch_encryption_enabled
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The name of the S3 bucket to send logs to.</p><note>
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The name of the S3 bucket to send logs to.</p><note>
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
-    /// <p>The name of the S3 bucket to send logs to.</p> <note>
+    /// <p>The name of the S3 bucket to send logs to.</p><note>
     /// <p>The S3 bucket must already be created.</p>
     /// </note>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {

@@ -26,16 +26,26 @@ pub struct Command {
     pub status: ::std::option::Option<crate::types::CommandStatus>,
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
-    /// <li><p>Pending: The command hasn't been sent to any managed nodes.</p></li>
-    /// <li><p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
-    /// <li><p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
-    /// <li><p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
-    /// <li><p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
-    /// <li><p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li><p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
-    /// <li><p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
+    /// <li>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p></li>
+    /// <li>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
+    /// <li>
+    /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
     pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager automatically determines the Amazon Web Services Region of the S3 bucket.</p>
@@ -116,16 +126,26 @@ impl Command {
     }
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
-    /// <li><p>Pending: The command hasn't been sent to any managed nodes.</p></li>
-    /// <li><p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
-    /// <li><p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
-    /// <li><p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
-    /// <li><p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
-    /// <li><p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li><p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
-    /// <li><p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
+    /// <li>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p></li>
+    /// <li>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
+    /// <li>
+    /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
     pub fn status_details(&self) -> ::std::option::Option<&str> {
         self.status_details.as_deref()
@@ -429,16 +449,26 @@ impl CommandBuilder {
     }
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
-    /// <li><p>Pending: The command hasn't been sent to any managed nodes.</p></li>
-    /// <li><p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
-    /// <li><p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
-    /// <li><p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
-    /// <li><p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
-    /// <li><p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li><p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
-    /// <li><p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
+    /// <li>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p></li>
+    /// <li>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
+    /// <li>
+    /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
     pub fn status_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_details = ::std::option::Option::Some(input.into());
@@ -446,16 +476,26 @@ impl CommandBuilder {
     }
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
-    /// <li><p>Pending: The command hasn't been sent to any managed nodes.</p></li>
-    /// <li><p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
-    /// <li><p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
-    /// <li><p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
-    /// <li><p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
-    /// <li><p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li><p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
-    /// <li><p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
+    /// <li>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p></li>
+    /// <li>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
+    /// <li>
+    /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
     pub fn set_status_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_details = input;
@@ -463,16 +503,26 @@ impl CommandBuilder {
     }
     /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
-    /// <li><p>Pending: The command hasn't been sent to any managed nodes.</p></li>
-    /// <li><p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
-    /// <li><p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
-    /// <li><p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
-    /// <li><p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
-    /// <li><p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
-    /// <li><p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
-    /// <li><p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
-    /// <li><p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
+    /// <li>
+    /// <p>Pending: The command hasn't been sent to any managed nodes.</p></li>
+    /// <li>
+    /// <p>In Progress: The command has been sent to at least one managed node but hasn't reached a final state on all managed nodes.</p></li>
+    /// <li>
+    /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Incomplete: The command was attempted on all managed nodes and one or more invocations doesn't have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Cancelled: The command was terminated before it was completed. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Rate Exceeded: The number of managed nodes targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before running it on any managed node. This is a terminal state.</p></li>
+    /// <li>
+    /// <p>Delayed: The system attempted to send the command to the managed node but wasn't successful. The system retries again.</p></li>
     /// </ul>
     pub fn get_status_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_details

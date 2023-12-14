@@ -25,7 +25,8 @@ impl PushDomainInputBuilder {
 /// <p>Moves a domain from Amazon Web Services to another registrar.</p>
 /// <p>Supported actions:</p>
 /// <ul>
-/// <li><p>Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be transferred to another registrar.</p></li>
+/// <li>
+/// <p>Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be transferred to another registrar.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PushDomainFluentBuilder {
