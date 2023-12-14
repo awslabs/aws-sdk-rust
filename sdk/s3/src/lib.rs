@@ -181,6 +181,8 @@ pub mod types;
 
 mod auth_plugin;
 
+mod event_receiver;
+
 ///
 pub(crate) mod http_request_checksum;
 
@@ -207,8 +209,6 @@ mod endpoint_lib;
 mod lens;
 
 mod serde_util;
-
-mod event_receiver;
 
 mod event_stream_serde;
 
