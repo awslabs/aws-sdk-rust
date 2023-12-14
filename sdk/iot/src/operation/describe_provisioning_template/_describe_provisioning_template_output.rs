@@ -18,7 +18,7 @@ pub struct DescribeProvisioningTemplateOutput {
     /// <p>The JSON formatted contents of the provisioning template.</p>
     pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>True if the provisioning template is enabled, otherwise false.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub provisioning_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Gets information about a pre-provisioned hook.</p>
@@ -57,7 +57,7 @@ impl DescribeProvisioningTemplateOutput {
         self.template_body.as_deref()
     }
     /// <p>True if the provisioning template is enabled, otherwise false.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
@@ -276,7 +276,7 @@ impl DescribeProvisioningTemplateOutputBuilder {
             last_modified_date: self.last_modified_date,
             default_version_id: self.default_version_id,
             template_body: self.template_body,
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled,
             provisioning_role_arn: self.provisioning_role_arn,
             pre_provisioning_hook: self.pre_provisioning_hook,
             r#type: self.r#type,
