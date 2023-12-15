@@ -108,6 +108,12 @@ impl ListFeatureGroupsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_feature_groups::paginator::ListFeatureGroupsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_feature_groups::paginator::ListFeatureGroupsPaginator {
+        crate::operation::list_feature_groups::paginator::ListFeatureGroupsPaginator::new(self.handle, self.inner)
+    }
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name.</p>
     pub fn name_contains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());

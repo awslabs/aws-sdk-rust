@@ -26,10 +26,10 @@ pub struct UserSettings {
     pub r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     /// <p>The Canvas app settings.</p>
     pub canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
-    /// <p>The settings for the JupyterLab application.</p>
-    pub jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
     /// <p>The Code Editor application settings.</p>
     pub code_editor_app_settings: ::std::option::Option<crate::types::CodeEditorAppSettings>,
+    /// <p>The settings for the JupyterLab application.</p>
+    pub jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
     /// <p>The storage settings for a private space.</p>
     pub space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     /// <p>The default experience that the user is directed to when accessing the domain. The supported values are:</p>
@@ -89,13 +89,13 @@ impl UserSettings {
     pub fn canvas_app_settings(&self) -> ::std::option::Option<&crate::types::CanvasAppSettings> {
         self.canvas_app_settings.as_ref()
     }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterLabAppSettings> {
-        self.jupyter_lab_app_settings.as_ref()
-    }
     /// <p>The Code Editor application settings.</p>
     pub fn code_editor_app_settings(&self) -> ::std::option::Option<&crate::types::CodeEditorAppSettings> {
         self.code_editor_app_settings.as_ref()
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::JupyterLabAppSettings> {
+        self.jupyter_lab_app_settings.as_ref()
     }
     /// <p>The storage settings for a private space.</p>
     pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceStorageSettings> {
@@ -146,8 +146,8 @@ pub struct UserSettingsBuilder {
     pub(crate) r_studio_server_pro_app_settings: ::std::option::Option<crate::types::RStudioServerProAppSettings>,
     pub(crate) r_session_app_settings: ::std::option::Option<crate::types::RSessionAppSettings>,
     pub(crate) canvas_app_settings: ::std::option::Option<crate::types::CanvasAppSettings>,
-    pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
     pub(crate) code_editor_app_settings: ::std::option::Option<crate::types::CodeEditorAppSettings>,
+    pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::JupyterLabAppSettings>,
     pub(crate) space_storage_settings: ::std::option::Option<crate::types::DefaultSpaceStorageSettings>,
     pub(crate) default_landing_uri: ::std::option::Option<::std::string::String>,
     pub(crate) studio_web_portal: ::std::option::Option<crate::types::StudioWebPortal>,
@@ -296,20 +296,6 @@ impl UserSettingsBuilder {
     pub fn get_canvas_app_settings(&self) -> &::std::option::Option<crate::types::CanvasAppSettings> {
         &self.canvas_app_settings
     }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn jupyter_lab_app_settings(mut self, input: crate::types::JupyterLabAppSettings) -> Self {
-        self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterLabAppSettings>) -> Self {
-        self.jupyter_lab_app_settings = input;
-        self
-    }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::JupyterLabAppSettings> {
-        &self.jupyter_lab_app_settings
-    }
     /// <p>The Code Editor application settings.</p>
     pub fn code_editor_app_settings(mut self, input: crate::types::CodeEditorAppSettings) -> Self {
         self.code_editor_app_settings = ::std::option::Option::Some(input);
@@ -323,6 +309,20 @@ impl UserSettingsBuilder {
     /// <p>The Code Editor application settings.</p>
     pub fn get_code_editor_app_settings(&self) -> &::std::option::Option<crate::types::CodeEditorAppSettings> {
         &self.code_editor_app_settings
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(mut self, input: crate::types::JupyterLabAppSettings) -> Self {
+        self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::JupyterLabAppSettings>) -> Self {
+        self.jupyter_lab_app_settings = input;
+        self
+    }
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::JupyterLabAppSettings> {
+        &self.jupyter_lab_app_settings
     }
     /// <p>The storage settings for a private space.</p>
     pub fn space_storage_settings(mut self, input: crate::types::DefaultSpaceStorageSettings) -> Self {
@@ -430,8 +430,8 @@ impl UserSettingsBuilder {
             r_studio_server_pro_app_settings: self.r_studio_server_pro_app_settings,
             r_session_app_settings: self.r_session_app_settings,
             canvas_app_settings: self.canvas_app_settings,
-            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
             code_editor_app_settings: self.code_editor_app_settings,
+            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
             space_storage_settings: self.space_storage_settings,
             default_landing_uri: self.default_landing_uri,
             studio_web_portal: self.studio_web_portal,

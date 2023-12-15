@@ -10,7 +10,30 @@ pub fn de_delete_algorithm_http_error(
         .map_err(crate::operation::delete_algorithm::DeleteAlgorithmError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::delete_algorithm::DeleteAlgorithmError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::delete_algorithm::DeleteAlgorithmError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => crate::operation::delete_algorithm::DeleteAlgorithmError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_algorithm::DeleteAlgorithmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        _ => crate::operation::delete_algorithm::DeleteAlgorithmError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]

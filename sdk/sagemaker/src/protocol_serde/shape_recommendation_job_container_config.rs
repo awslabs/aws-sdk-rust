@@ -33,11 +33,11 @@ pub fn ser_recommendation_job_container_config(
         }
         array_9.finish();
     }
-    if let Some(var_11) = &input.data_input_config {
-        object.key("DataInputConfig").string(var_11.as_str());
+    if let Some(var_11) = &input.supported_endpoint_type {
+        object.key("SupportedEndpointType").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.supported_endpoint_type {
-        object.key("SupportedEndpointType").string(var_12.as_str());
+    if let Some(var_12) = &input.data_input_config {
+        object.key("DataInputConfig").string(var_12.as_str());
     }
     if let Some(var_13) = &input.supported_response_mime_types {
         let mut array_14 = object.key("SupportedResponseMIMETypes").start_array();
@@ -111,13 +111,6 @@ where
                                     crate::protocol_serde::shape_recommendation_job_supported_instance_types::de_recommendation_job_supported_instance_types(tokens)?
                                 );
                         }
-                        "DataInputConfig" => {
-                            builder = builder.set_data_input_config(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "SupportedEndpointType" => {
                             builder = builder.set_supported_endpoint_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -125,6 +118,13 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::types::RecommendationJobSupportedEndpointType::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                            );
+                        }
+                        "DataInputConfig" => {
+                            builder = builder.set_data_input_config(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

@@ -13,7 +13,30 @@ pub fn de_update_model_package_http_error(
         .map_err(crate::operation::update_model_package::UpdateModelPackageError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::update_model_package::UpdateModelPackageError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::update_model_package::UpdateModelPackageError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => crate::operation::update_model_package::UpdateModelPackageError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_model_package::UpdateModelPackageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        _ => crate::operation::update_model_package::UpdateModelPackageError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]

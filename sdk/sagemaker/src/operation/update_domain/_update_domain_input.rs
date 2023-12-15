@@ -9,10 +9,10 @@ pub struct UpdateDomainInput {
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
     pub domain_settings_for_update: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -39,13 +39,13 @@ impl UpdateDomainInput {
     pub fn domain_settings_for_update(&self) -> ::std::option::Option<&crate::types::DomainSettingsForUpdate> {
         self.domain_settings_for_update.as_ref()
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
-        self.default_space_settings.as_ref()
-    }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
+        self.default_space_settings.as_ref()
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
@@ -80,8 +80,8 @@ pub struct UpdateDomainInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) default_user_settings: ::std::option::Option<crate::types::UserSettings>,
     pub(crate) domain_settings_for_update: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
-    pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
 }
@@ -129,20 +129,6 @@ impl UpdateDomainInputBuilder {
     pub fn get_domain_settings_for_update(&self) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
         &self.domain_settings_for_update
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
-        self.default_space_settings = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
-        self.default_space_settings = input;
-        self
-    }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
-        &self.default_space_settings
-    }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.app_security_group_management = ::std::option::Option::Some(input);
@@ -156,6 +142,20 @@ impl UpdateDomainInputBuilder {
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
+        self.default_space_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
+        self.default_space_settings = input;
+        self
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+        &self.default_space_settings
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -223,8 +223,8 @@ impl UpdateDomainInputBuilder {
             domain_id: self.domain_id,
             default_user_settings: self.default_user_settings,
             domain_settings_for_update: self.domain_settings_for_update,
-            default_space_settings: self.default_space_settings,
             app_security_group_management: self.app_security_group_management,
+            default_space_settings: self.default_space_settings,
             subnet_ids: self.subnet_ids,
             app_network_access_type: self.app_network_access_type,
         })

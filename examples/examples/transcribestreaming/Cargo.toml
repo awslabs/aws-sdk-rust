@@ -7,10 +7,10 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-sdk-transcribestreaming = { version = "1.7.0", path = "../../../sdk/transcribestreaming" }
 async-stream = "0.3"
 bytes = "1"
 hound = "3.4"
+aws-sdk-transcribestreaming= { version = "1.7.0", path = "../../../sdk/transcribestreaming" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 
 [dependencies.clap]

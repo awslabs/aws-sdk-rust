@@ -13,6 +13,8 @@
 /// # let recommendationjobstatus = unimplemented!();
 /// match recommendationjobstatus {
 ///     RecommendationJobStatus::Completed => { /* ... */ },
+///     RecommendationJobStatus::Deleted => { /* ... */ },
+///     RecommendationJobStatus::Deleting => { /* ... */ },
 ///     RecommendationJobStatus::Failed => { /* ... */ },
 ///     RecommendationJobStatus::InProgress => { /* ... */ },
 ///     RecommendationJobStatus::Pending => { /* ... */ },
@@ -48,6 +50,10 @@ pub enum RecommendationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
@@ -65,6 +71,8 @@ impl ::std::convert::From<&str> for RecommendationJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => RecommendationJobStatus::Completed,
+            "DELETED" => RecommendationJobStatus::Deleted,
+            "DELETING" => RecommendationJobStatus::Deleting,
             "FAILED" => RecommendationJobStatus::Failed,
             "IN_PROGRESS" => RecommendationJobStatus::InProgress,
             "PENDING" => RecommendationJobStatus::Pending,
@@ -86,6 +94,8 @@ impl RecommendationJobStatus {
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationJobStatus::Completed => "COMPLETED",
+            RecommendationJobStatus::Deleted => "DELETED",
+            RecommendationJobStatus::Deleting => "DELETING",
             RecommendationJobStatus::Failed => "FAILED",
             RecommendationJobStatus::InProgress => "IN_PROGRESS",
             RecommendationJobStatus::Pending => "PENDING",
@@ -96,7 +106,16 @@ impl RecommendationJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING", "STOPPED", "STOPPING"]
+        &[
+            "COMPLETED",
+            "DELETED",
+            "DELETING",
+            "FAILED",
+            "IN_PROGRESS",
+            "PENDING",
+            "STOPPED",
+            "STOPPING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RecommendationJobStatus {

@@ -26,6 +26,14 @@
 ///     TrainingInstanceType::MlC5N4Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlC5N9Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlC5NXlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I12Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I16Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I24Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I2Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I32Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I4Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6I8Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlC6IXlarge => { /* ... */ },
 ///     TrainingInstanceType::MlG4Dn12Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlG4Dn16Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlG4Dn2Xlarge => { /* ... */ },
@@ -51,6 +59,15 @@
 ///     TrainingInstanceType::MlM54Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlM5Large => { /* ... */ },
 ///     TrainingInstanceType::MlM5Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I12Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I16Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I24Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I2Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I32Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I4Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6I8Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlM6ILarge => { /* ... */ },
+///     TrainingInstanceType::MlM6IXlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP216Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP28Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP2Xlarge => { /* ... */ },
@@ -59,6 +76,7 @@
 ///     TrainingInstanceType::MlP38Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP3Dn24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP4D24Xlarge => { /* ... */ },
+///     TrainingInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlP548Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn12Xlarge => { /* ... */ },
 ///     TrainingInstanceType::MlTrn132Xlarge => { /* ... */ },
@@ -119,6 +137,22 @@ pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC5NXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlC6I12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6I8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC6IXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlG4Dn12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlG4Dn16Xlarge,
@@ -169,6 +203,24 @@ pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlM5Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlM6I12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6I8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6ILarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlM6IXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlP216Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP28Xlarge,
@@ -184,6 +236,8 @@ pub enum TrainingInstanceType {
     MlP3Dn24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP4D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlP4De24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP548Xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -213,6 +267,14 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.c5n.4xlarge" => TrainingInstanceType::MlC5N4Xlarge,
             "ml.c5n.9xlarge" => TrainingInstanceType::MlC5N9Xlarge,
             "ml.c5n.xlarge" => TrainingInstanceType::MlC5NXlarge,
+            "ml.c6i.12xlarge" => TrainingInstanceType::MlC6I12Xlarge,
+            "ml.c6i.16xlarge" => TrainingInstanceType::MlC6I16Xlarge,
+            "ml.c6i.24xlarge" => TrainingInstanceType::MlC6I24Xlarge,
+            "ml.c6i.2xlarge" => TrainingInstanceType::MlC6I2Xlarge,
+            "ml.c6i.32xlarge" => TrainingInstanceType::MlC6I32Xlarge,
+            "ml.c6i.4xlarge" => TrainingInstanceType::MlC6I4Xlarge,
+            "ml.c6i.8xlarge" => TrainingInstanceType::MlC6I8Xlarge,
+            "ml.c6i.xlarge" => TrainingInstanceType::MlC6IXlarge,
             "ml.g4dn.12xlarge" => TrainingInstanceType::MlG4Dn12Xlarge,
             "ml.g4dn.16xlarge" => TrainingInstanceType::MlG4Dn16Xlarge,
             "ml.g4dn.2xlarge" => TrainingInstanceType::MlG4Dn2Xlarge,
@@ -238,6 +300,15 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.m5.4xlarge" => TrainingInstanceType::MlM54Xlarge,
             "ml.m5.large" => TrainingInstanceType::MlM5Large,
             "ml.m5.xlarge" => TrainingInstanceType::MlM5Xlarge,
+            "ml.m6i.12xlarge" => TrainingInstanceType::MlM6I12Xlarge,
+            "ml.m6i.16xlarge" => TrainingInstanceType::MlM6I16Xlarge,
+            "ml.m6i.24xlarge" => TrainingInstanceType::MlM6I24Xlarge,
+            "ml.m6i.2xlarge" => TrainingInstanceType::MlM6I2Xlarge,
+            "ml.m6i.32xlarge" => TrainingInstanceType::MlM6I32Xlarge,
+            "ml.m6i.4xlarge" => TrainingInstanceType::MlM6I4Xlarge,
+            "ml.m6i.8xlarge" => TrainingInstanceType::MlM6I8Xlarge,
+            "ml.m6i.large" => TrainingInstanceType::MlM6ILarge,
+            "ml.m6i.xlarge" => TrainingInstanceType::MlM6IXlarge,
             "ml.p2.16xlarge" => TrainingInstanceType::MlP216Xlarge,
             "ml.p2.8xlarge" => TrainingInstanceType::MlP28Xlarge,
             "ml.p2.xlarge" => TrainingInstanceType::MlP2Xlarge,
@@ -246,6 +317,7 @@ impl ::std::convert::From<&str> for TrainingInstanceType {
             "ml.p3.8xlarge" => TrainingInstanceType::MlP38Xlarge,
             "ml.p3dn.24xlarge" => TrainingInstanceType::MlP3Dn24Xlarge,
             "ml.p4d.24xlarge" => TrainingInstanceType::MlP4D24Xlarge,
+            "ml.p4de.24xlarge" => TrainingInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => TrainingInstanceType::MlP548Xlarge,
             "ml.trn1.2xlarge" => TrainingInstanceType::MlTrn12Xlarge,
             "ml.trn1.32xlarge" => TrainingInstanceType::MlTrn132Xlarge,
@@ -279,6 +351,14 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlC5N4Xlarge => "ml.c5n.4xlarge",
             TrainingInstanceType::MlC5N9Xlarge => "ml.c5n.9xlarge",
             TrainingInstanceType::MlC5NXlarge => "ml.c5n.xlarge",
+            TrainingInstanceType::MlC6I12Xlarge => "ml.c6i.12xlarge",
+            TrainingInstanceType::MlC6I16Xlarge => "ml.c6i.16xlarge",
+            TrainingInstanceType::MlC6I24Xlarge => "ml.c6i.24xlarge",
+            TrainingInstanceType::MlC6I2Xlarge => "ml.c6i.2xlarge",
+            TrainingInstanceType::MlC6I32Xlarge => "ml.c6i.32xlarge",
+            TrainingInstanceType::MlC6I4Xlarge => "ml.c6i.4xlarge",
+            TrainingInstanceType::MlC6I8Xlarge => "ml.c6i.8xlarge",
+            TrainingInstanceType::MlC6IXlarge => "ml.c6i.xlarge",
             TrainingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
             TrainingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
             TrainingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
@@ -304,6 +384,15 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
             TrainingInstanceType::MlM5Large => "ml.m5.large",
             TrainingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            TrainingInstanceType::MlM6I12Xlarge => "ml.m6i.12xlarge",
+            TrainingInstanceType::MlM6I16Xlarge => "ml.m6i.16xlarge",
+            TrainingInstanceType::MlM6I24Xlarge => "ml.m6i.24xlarge",
+            TrainingInstanceType::MlM6I2Xlarge => "ml.m6i.2xlarge",
+            TrainingInstanceType::MlM6I32Xlarge => "ml.m6i.32xlarge",
+            TrainingInstanceType::MlM6I4Xlarge => "ml.m6i.4xlarge",
+            TrainingInstanceType::MlM6I8Xlarge => "ml.m6i.8xlarge",
+            TrainingInstanceType::MlM6ILarge => "ml.m6i.large",
+            TrainingInstanceType::MlM6IXlarge => "ml.m6i.xlarge",
             TrainingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
             TrainingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
             TrainingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
@@ -312,6 +401,7 @@ impl TrainingInstanceType {
             TrainingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
             TrainingInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
             TrainingInstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            TrainingInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             TrainingInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
             TrainingInstanceType::MlTrn12Xlarge => "ml.trn1.2xlarge",
             TrainingInstanceType::MlTrn132Xlarge => "ml.trn1.32xlarge",
@@ -336,6 +426,14 @@ impl TrainingInstanceType {
             "ml.c5n.4xlarge",
             "ml.c5n.9xlarge",
             "ml.c5n.xlarge",
+            "ml.c6i.12xlarge",
+            "ml.c6i.16xlarge",
+            "ml.c6i.24xlarge",
+            "ml.c6i.2xlarge",
+            "ml.c6i.32xlarge",
+            "ml.c6i.4xlarge",
+            "ml.c6i.8xlarge",
+            "ml.c6i.xlarge",
             "ml.g4dn.12xlarge",
             "ml.g4dn.16xlarge",
             "ml.g4dn.2xlarge",
@@ -361,6 +459,15 @@ impl TrainingInstanceType {
             "ml.m5.4xlarge",
             "ml.m5.large",
             "ml.m5.xlarge",
+            "ml.m6i.12xlarge",
+            "ml.m6i.16xlarge",
+            "ml.m6i.24xlarge",
+            "ml.m6i.2xlarge",
+            "ml.m6i.32xlarge",
+            "ml.m6i.4xlarge",
+            "ml.m6i.8xlarge",
+            "ml.m6i.large",
+            "ml.m6i.xlarge",
             "ml.p2.16xlarge",
             "ml.p2.8xlarge",
             "ml.p2.xlarge",
@@ -369,6 +476,7 @@ impl TrainingInstanceType {
             "ml.p3.8xlarge",
             "ml.p3dn.24xlarge",
             "ml.p4d.24xlarge",
+            "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
             "ml.trn1.2xlarge",
             "ml.trn1.32xlarge",

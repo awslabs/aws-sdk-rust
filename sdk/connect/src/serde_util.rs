@@ -987,6 +987,18 @@ pub(crate) fn action_summary_correct_errors(
     builder
 }
 
+pub(crate) fn create_case_action_definition_correct_errors(
+    mut builder: crate::types::builders::CreateCaseActionDefinitionBuilder,
+) -> crate::types::builders::CreateCaseActionDefinitionBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    if builder.template_id.is_none() {
+        builder.template_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cross_channel_behavior_correct_errors(
     mut builder: crate::types::builders::CrossChannelBehaviorBuilder,
 ) -> crate::types::builders::CrossChannelBehaviorBuilder {
@@ -1080,6 +1092,15 @@ pub(crate) fn task_action_definition_correct_errors(
     builder
 }
 
+pub(crate) fn update_case_action_definition_correct_errors(
+    mut builder: crate::types::builders::UpdateCaseActionDefinitionBuilder,
+) -> crate::types::builders::UpdateCaseActionDefinitionBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_attachment_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisAttachmentBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisAttachmentBuilder {
@@ -1127,6 +1148,19 @@ pub(crate) fn evaluation_form_single_select_question_properties_correct_errors(
 ) -> crate::types::builders::EvaluationFormSingleSelectQuestionPropertiesBuilder {
     if builder.options.is_none() {
         builder.options = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_value_correct_errors(mut builder: crate::types::builders::FieldValueBuilder) -> crate::types::builders::FieldValueBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = {
+            let builder = crate::types::builders::FieldValueUnionBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }

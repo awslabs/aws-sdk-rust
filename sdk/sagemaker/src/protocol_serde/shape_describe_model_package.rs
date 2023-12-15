@@ -161,14 +161,6 @@ pub(crate) fn de_describe_model_package(
                             .transpose()?,
                     );
                 }
-                "CustomerMetadataProperties" => {
-                    builder = builder
-                        .set_customer_metadata_properties(crate::protocol_serde::shape_customer_metadata_map::de_customer_metadata_map(tokens)?);
-                }
-                "DriftCheckBaselines" => {
-                    builder =
-                        builder.set_drift_check_baselines(crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(tokens)?);
-                }
                 "Domain" => {
                     builder = builder.set_domain(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -189,6 +181,14 @@ pub(crate) fn de_describe_model_package(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "CustomerMetadataProperties" => {
+                    builder = builder
+                        .set_customer_metadata_properties(crate::protocol_serde::shape_customer_metadata_map::de_customer_metadata_map(tokens)?);
+                }
+                "DriftCheckBaselines" => {
+                    builder =
+                        builder.set_drift_check_baselines(crate::protocol_serde::shape_drift_check_baselines::de_drift_check_baselines(tokens)?);
                 }
                 "AdditionalInferenceSpecifications" => {
                     builder = builder.set_additional_inference_specifications(

@@ -94,6 +94,32 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "LastPausedTimestamp" => {
+                            builder = builder.set_last_paused_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "LastResumedTimestamp" => {
+                            builder = builder.set_last_resumed_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "TotalPauseCount" => {
+                            builder = builder.set_total_pause_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "TotalPauseDurationInSeconds" => {
+                            builder = builder.set_total_pause_duration_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "ScheduledTimestamp" => {
                             builder = builder.set_scheduled_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JupyterLabAppImageConfig {
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
     /// <p>The configuration used to run the application image container.</p>
     pub container_config: ::std::option::Option<crate::types::ContainerConfig>,
 }
 impl JupyterLabAppImageConfig {
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub fn file_system_config(&self) -> ::std::option::Option<&crate::types::FileSystemConfig> {
+        self.file_system_config.as_ref()
+    }
     /// <p>The configuration used to run the application image container.</p>
     pub fn container_config(&self) -> ::std::option::Option<&crate::types::ContainerConfig> {
         self.container_config.as_ref()
@@ -24,9 +30,24 @@ impl JupyterLabAppImageConfig {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct JupyterLabAppImageConfigBuilder {
+    pub(crate) file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
     pub(crate) container_config: ::std::option::Option<crate::types::ContainerConfig>,
 }
 impl JupyterLabAppImageConfigBuilder {
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub fn file_system_config(mut self, input: crate::types::FileSystemConfig) -> Self {
+        self.file_system_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub fn set_file_system_config(mut self, input: ::std::option::Option<crate::types::FileSystemConfig>) -> Self {
+        self.file_system_config = input;
+        self
+    }
+    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    pub fn get_file_system_config(&self) -> &::std::option::Option<crate::types::FileSystemConfig> {
+        &self.file_system_config
+    }
     /// <p>The configuration used to run the application image container.</p>
     pub fn container_config(mut self, input: crate::types::ContainerConfig) -> Self {
         self.container_config = ::std::option::Option::Some(input);
@@ -44,6 +65,7 @@ impl JupyterLabAppImageConfigBuilder {
     /// Consumes the builder and constructs a [`JupyterLabAppImageConfig`](crate::types::JupyterLabAppImageConfig).
     pub fn build(self) -> crate::types::JupyterLabAppImageConfig {
         crate::types::JupyterLabAppImageConfig {
+            file_system_config: self.file_system_config,
             container_config: self.container_config,
         }
     }

@@ -24,6 +24,10 @@ pub struct ContainerDefinition {
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
     pub model_data_url: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the location of ML model data to deploy.</p><note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
@@ -32,10 +36,6 @@ pub struct ContainerDefinition {
     pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
-    /// <p>Specifies the location of ML model data to deploy.</p><note>
-    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
-    /// </note>
-    pub model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
 }
 impl ContainerDefinition {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
@@ -68,6 +68,12 @@ impl ContainerDefinition {
     pub fn model_data_url(&self) -> ::std::option::Option<&str> {
         self.model_data_url.as_deref()
     }
+    /// <p>Specifies the location of ML model data to deploy.</p><note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
+        self.model_data_source.as_ref()
+    }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
@@ -83,12 +89,6 @@ impl ContainerDefinition {
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub fn multi_model_config(&self) -> ::std::option::Option<&crate::types::MultiModelConfig> {
         self.multi_model_config.as_ref()
-    }
-    /// <p>Specifies the location of ML model data to deploy.</p><note>
-    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
-    /// </note>
-    pub fn model_data_source(&self) -> ::std::option::Option<&crate::types::ModelDataSource> {
-        self.model_data_source.as_ref()
     }
 }
 impl ContainerDefinition {
@@ -107,11 +107,11 @@ pub struct ContainerDefinitionBuilder {
     pub(crate) image_config: ::std::option::Option<crate::types::ImageConfig>,
     pub(crate) mode: ::std::option::Option<crate::types::ContainerMode>,
     pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
+    pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
     pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
-    pub(crate) model_data_source: ::std::option::Option<crate::types::ModelDataSource>,
 }
 impl ContainerDefinitionBuilder {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
@@ -214,6 +214,26 @@ impl ContainerDefinitionBuilder {
     pub fn get_model_data_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_data_url
     }
+    /// <p>Specifies the location of ML model data to deploy.</p><note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn model_data_source(mut self, input: crate::types::ModelDataSource) -> Self {
+        self.model_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy.</p><note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn set_model_data_source(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
+        self.model_data_source = input;
+        self
+    }
+    /// <p>Specifies the location of ML model data to deploy.</p><note>
+    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
+    /// </note>
+    pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
+        &self.model_data_source
+    }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -279,26 +299,6 @@ impl ContainerDefinitionBuilder {
     pub fn get_multi_model_config(&self) -> &::std::option::Option<crate::types::MultiModelConfig> {
         &self.multi_model_config
     }
-    /// <p>Specifies the location of ML model data to deploy.</p><note>
-    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
-    /// </note>
-    pub fn model_data_source(mut self, input: crate::types::ModelDataSource) -> Self {
-        self.model_data_source = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies the location of ML model data to deploy.</p><note>
-    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
-    /// </note>
-    pub fn set_model_data_source(mut self, input: ::std::option::Option<crate::types::ModelDataSource>) -> Self {
-        self.model_data_source = input;
-        self
-    }
-    /// <p>Specifies the location of ML model data to deploy.</p><note>
-    /// <p>Currently you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and SageMaker Marketplace.</p>
-    /// </note>
-    pub fn get_model_data_source(&self) -> &::std::option::Option<crate::types::ModelDataSource> {
-        &self.model_data_source
-    }
     /// Consumes the builder and constructs a [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn build(self) -> crate::types::ContainerDefinition {
         crate::types::ContainerDefinition {
@@ -307,11 +307,11 @@ impl ContainerDefinitionBuilder {
             image_config: self.image_config,
             mode: self.mode,
             model_data_url: self.model_data_url,
+            model_data_source: self.model_data_source,
             environment: self.environment,
             model_package_name: self.model_package_name,
             inference_specification_name: self.inference_specification_name,
             multi_model_config: self.multi_model_config,
-            model_data_source: self.model_data_source,
         }
     }
 }

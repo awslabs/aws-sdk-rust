@@ -15,16 +15,16 @@ pub fn ser_auto_ml_job_config(
         crate::protocol_serde::shape_auto_ml_security_config::ser_auto_ml_security_config(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.data_split_config {
+    if let Some(var_5) = &input.candidate_generation_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("DataSplitConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(&mut object_6, var_5)?;
+        let mut object_6 = object.key("CandidateGenerationConfig").start_object();
+        crate::protocol_serde::shape_auto_ml_candidate_generation_config::ser_auto_ml_candidate_generation_config(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.candidate_generation_config {
+    if let Some(var_7) = &input.data_split_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("CandidateGenerationConfig").start_object();
-        crate::protocol_serde::shape_auto_ml_candidate_generation_config::ser_auto_ml_candidate_generation_config(&mut object_8, var_7)?;
+        let mut object_8 = object.key("DataSplitConfig").start_object();
+        crate::protocol_serde::shape_auto_ml_data_split_config::ser_auto_ml_data_split_config(&mut object_8, var_7)?;
         object_8.finish();
     }
     if let Some(var_9) = &input.mode {
@@ -57,14 +57,14 @@ where
                             builder = builder
                                 .set_security_config(crate::protocol_serde::shape_auto_ml_security_config::de_auto_ml_security_config(tokens)?);
                         }
-                        "DataSplitConfig" => {
-                            builder = builder.set_data_split_config(
-                                crate::protocol_serde::shape_auto_ml_data_split_config::de_auto_ml_data_split_config(tokens)?,
-                            );
-                        }
                         "CandidateGenerationConfig" => {
                             builder = builder.set_candidate_generation_config(
                                 crate::protocol_serde::shape_auto_ml_candidate_generation_config::de_auto_ml_candidate_generation_config(tokens)?,
+                            );
+                        }
+                        "DataSplitConfig" => {
+                            builder = builder.set_data_split_config(
+                                crate::protocol_serde::shape_auto_ml_data_split_config::de_auto_ml_data_split_config(tokens)?,
                             );
                         }
                         "Mode" => {

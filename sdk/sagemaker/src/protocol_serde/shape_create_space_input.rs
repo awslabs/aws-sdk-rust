@@ -27,20 +27,20 @@ pub fn ser_create_space_input_input(
         crate::protocol_serde::shape_space_settings::ser_space_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.space_display_name {
-        object.key("SpaceDisplayName").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.ownership_settings {
+    if let Some(var_9) = &input.ownership_settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("OwnershipSettings").start_object();
-        crate::protocol_serde::shape_ownership_settings::ser_ownership_settings(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("OwnershipSettings").start_object();
+        crate::protocol_serde::shape_ownership_settings::ser_ownership_settings(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.space_sharing_settings {
+    if let Some(var_11) = &input.space_sharing_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("SpaceSharingSettings").start_object();
-        crate::protocol_serde::shape_space_sharing_settings::ser_space_sharing_settings(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_12 = object.key("SpaceSharingSettings").start_object();
+        crate::protocol_serde::shape_space_sharing_settings::ser_space_sharing_settings(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.space_display_name {
+        object.key("SpaceDisplayName").string(var_13.as_str());
     }
     Ok(())
 }

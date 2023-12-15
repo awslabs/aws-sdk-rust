@@ -52,6 +52,9 @@ where
                         "Lambda" => {
                             builder = builder.set_lambda(crate::protocol_serde::shape_lambda_step_metadata::de_lambda_step_metadata(tokens)?);
                         }
+                        "EMR" => {
+                            builder = builder.set_emr(crate::protocol_serde::shape_emr_step_metadata::de_emr_step_metadata(tokens)?);
+                        }
                         "QualityCheck" => {
                             builder = builder.set_quality_check(
                                 crate::protocol_serde::shape_quality_check_step_metadata::de_quality_check_step_metadata(tokens)?,
@@ -61,9 +64,6 @@ where
                             builder = builder.set_clarify_check(
                                 crate::protocol_serde::shape_clarify_check_step_metadata::de_clarify_check_step_metadata(tokens)?,
                             );
-                        }
-                        "EMR" => {
-                            builder = builder.set_emr(crate::protocol_serde::shape_emr_step_metadata::de_emr_step_metadata(tokens)?);
                         }
                         "Fail" => {
                             builder = builder.set_fail(crate::protocol_serde::shape_fail_step_metadata::de_fail_step_metadata(tokens)?);

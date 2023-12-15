@@ -13,6 +13,8 @@
 /// # let hyperparametertuningjobstatus = unimplemented!();
 /// match hyperparametertuningjobstatus {
 ///     HyperParameterTuningJobStatus::Completed => { /* ... */ },
+///     HyperParameterTuningJobStatus::DeleteFailed => { /* ... */ },
+///     HyperParameterTuningJobStatus::Deleting => { /* ... */ },
 ///     HyperParameterTuningJobStatus::Failed => { /* ... */ },
 ///     HyperParameterTuningJobStatus::InProgress => { /* ... */ },
 ///     HyperParameterTuningJobStatus::Stopped => { /* ... */ },
@@ -47,6 +49,10 @@ pub enum HyperParameterTuningJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
@@ -62,6 +68,8 @@ impl ::std::convert::From<&str> for HyperParameterTuningJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "Completed" => HyperParameterTuningJobStatus::Completed,
+            "DeleteFailed" => HyperParameterTuningJobStatus::DeleteFailed,
+            "Deleting" => HyperParameterTuningJobStatus::Deleting,
             "Failed" => HyperParameterTuningJobStatus::Failed,
             "InProgress" => HyperParameterTuningJobStatus::InProgress,
             "Stopped" => HyperParameterTuningJobStatus::Stopped,
@@ -82,6 +90,8 @@ impl HyperParameterTuningJobStatus {
     pub fn as_str(&self) -> &str {
         match self {
             HyperParameterTuningJobStatus::Completed => "Completed",
+            HyperParameterTuningJobStatus::DeleteFailed => "DeleteFailed",
+            HyperParameterTuningJobStatus::Deleting => "Deleting",
             HyperParameterTuningJobStatus::Failed => "Failed",
             HyperParameterTuningJobStatus::InProgress => "InProgress",
             HyperParameterTuningJobStatus::Stopped => "Stopped",
@@ -91,7 +101,7 @@ impl HyperParameterTuningJobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
+        &["Completed", "DeleteFailed", "Deleting", "Failed", "InProgress", "Stopped", "Stopping"]
     }
 }
 impl ::std::convert::AsRef<str> for HyperParameterTuningJobStatus {

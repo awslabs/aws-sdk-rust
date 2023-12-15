@@ -40,10 +40,10 @@ pub struct ResourceConfig {
     /// <p><code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code></p></li>
     /// </ul>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
-    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
     pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
+    /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
+    pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
 }
 impl ResourceConfig {
     /// <p>The ML compute instance type.</p><note>
@@ -90,15 +90,15 @@ impl ResourceConfig {
     pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
+    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+    pub fn keep_alive_period_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.keep_alive_period_in_seconds
+    }
     /// <p>The configuration of a heterogeneous cluster in JSON format.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups.is_none()`.
     pub fn instance_groups(&self) -> &[crate::types::InstanceGroup] {
         self.instance_groups.as_deref().unwrap_or_default()
-    }
-    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
-    pub fn keep_alive_period_in_seconds(&self) -> ::std::option::Option<i32> {
-        self.keep_alive_period_in_seconds
     }
 }
 impl ResourceConfig {
@@ -116,8 +116,8 @@ pub struct ResourceConfigBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
     pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
+    pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>>,
 }
 impl ResourceConfigBuilder {
     /// <p>The ML compute instance type.</p><note>
@@ -261,6 +261,20 @@ impl ResourceConfigBuilder {
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_kms_key_id
     }
+    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+    pub fn keep_alive_period_in_seconds(mut self, input: i32) -> Self {
+        self.keep_alive_period_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+    pub fn set_keep_alive_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.keep_alive_period_in_seconds = input;
+        self
+    }
+    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
+    pub fn get_keep_alive_period_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.keep_alive_period_in_seconds
+    }
     /// Appends an item to `instance_groups`.
     ///
     /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
@@ -281,20 +295,6 @@ impl ResourceConfigBuilder {
     pub fn get_instance_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGroup>> {
         &self.instance_groups
     }
-    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
-    pub fn keep_alive_period_in_seconds(mut self, input: i32) -> Self {
-        self.keep_alive_period_in_seconds = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
-    pub fn set_keep_alive_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.keep_alive_period_in_seconds = input;
-        self
-    }
-    /// <p>The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.</p>
-    pub fn get_keep_alive_period_in_seconds(&self) -> &::std::option::Option<i32> {
-        &self.keep_alive_period_in_seconds
-    }
     /// Consumes the builder and constructs a [`ResourceConfig`](crate::types::ResourceConfig).
     pub fn build(self) -> crate::types::ResourceConfig {
         crate::types::ResourceConfig {
@@ -302,8 +302,8 @@ impl ResourceConfigBuilder {
             instance_count: self.instance_count,
             volume_size_in_gb: self.volume_size_in_gb,
             volume_kms_key_id: self.volume_kms_key_id,
-            instance_groups: self.instance_groups,
             keep_alive_period_in_seconds: self.keep_alive_period_in_seconds,
+            instance_groups: self.instance_groups,
         }
     }
 }

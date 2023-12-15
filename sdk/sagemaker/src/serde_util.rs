@@ -650,9 +650,6 @@ pub(crate) fn describe_endpoint_output_output_correct_errors(
     if builder.endpoint_arn.is_none() {
         builder.endpoint_arn = Some(Default::default())
     }
-    if builder.endpoint_config_name.is_none() {
-        builder.endpoint_config_name = Some(Default::default())
-    }
     if builder.endpoint_status.is_none() {
         builder.endpoint_status = "no value was set".parse::<crate::types::EndpointStatus>().ok()
     }
@@ -748,12 +745,6 @@ pub(crate) fn describe_flow_definition_output_output_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.human_loop_config.is_none() {
-        builder.human_loop_config = {
-            let builder = crate::types::builders::HumanLoopConfigBuilder::default();
-            Some(crate::serde_util::human_loop_config_correct_errors(builder).build())
-        }
     }
     if builder.output_config.is_none() {
         builder.output_config = {
@@ -1637,9 +1628,6 @@ pub(crate) fn list_feature_groups_output_output_correct_errors(
     if builder.feature_group_summaries.is_none() {
         builder.feature_group_summaries = Some(Default::default())
     }
-    if builder.next_token.is_none() {
-        builder.next_token = Some(Default::default())
-    }
     builder
 }
 
@@ -2200,27 +2188,6 @@ pub(crate) fn edge_output_config_correct_errors(
     builder
 }
 
-pub(crate) fn human_loop_config_correct_errors(
-    mut builder: crate::types::builders::HumanLoopConfigBuilder,
-) -> crate::types::builders::HumanLoopConfigBuilder {
-    if builder.workteam_arn.is_none() {
-        builder.workteam_arn = Some(Default::default())
-    }
-    if builder.human_task_ui_arn.is_none() {
-        builder.human_task_ui_arn = Some(Default::default())
-    }
-    if builder.task_title.is_none() {
-        builder.task_title = Some(Default::default())
-    }
-    if builder.task_description.is_none() {
-        builder.task_description = Some(Default::default())
-    }
-    if builder.task_count.is_none() {
-        builder.task_count = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn flow_definition_output_config_correct_errors(
     mut builder: crate::types::builders::FlowDefinitionOutputConfigBuilder,
 ) -> crate::types::builders::FlowDefinitionOutputConfigBuilder {
@@ -2697,6 +2664,27 @@ pub(crate) fn human_loop_activation_config_correct_errors(
             let builder = crate::types::builders::HumanLoopActivationConditionsConfigBuilder::default();
             Some(crate::serde_util::human_loop_activation_conditions_config_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn human_loop_config_correct_errors(
+    mut builder: crate::types::builders::HumanLoopConfigBuilder,
+) -> crate::types::builders::HumanLoopConfigBuilder {
+    if builder.workteam_arn.is_none() {
+        builder.workteam_arn = Some(Default::default())
+    }
+    if builder.human_task_ui_arn.is_none() {
+        builder.human_task_ui_arn = Some(Default::default())
+    }
+    if builder.task_title.is_none() {
+        builder.task_title = Some(Default::default())
+    }
+    if builder.task_description.is_none() {
+        builder.task_description = Some(Default::default())
+    }
+    if builder.task_count.is_none() {
+        builder.task_count = Some(Default::default())
     }
     builder
 }
@@ -3194,12 +3182,6 @@ pub(crate) fn algorithm_summary_correct_errors(
 pub(crate) fn auto_ml_channel_correct_errors(
     mut builder: crate::types::builders::AutoMlChannelBuilder,
 ) -> crate::types::builders::AutoMlChannelBuilder {
-    if builder.data_source.is_none() {
-        builder.data_source = {
-            let builder = crate::types::builders::AutoMlDataSourceBuilder::default();
-            Some(crate::serde_util::auto_ml_data_source_correct_errors(builder).build())
-        }
-    }
     if builder.target_attribute_name.is_none() {
         builder.target_attribute_name = Some(Default::default())
     }
@@ -3667,7 +3649,7 @@ pub(crate) fn endpoint_performance_correct_errors(
     if builder.endpoint_info.is_none() {
         builder.endpoint_info = {
             let builder = crate::types::builders::EndpointInfoBuilder::default();
-            Some(crate::serde_util::endpoint_info_correct_errors(builder).build())
+            Some(builder.build())
         }
     }
     builder
@@ -3690,6 +3672,18 @@ pub(crate) fn endpoint_summary_correct_errors(
     }
     if builder.endpoint_status.is_none() {
         builder.endpoint_status = "no value was set".parse::<crate::types::EndpointStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn feature_definition_correct_errors(
+    mut builder: crate::types::builders::FeatureDefinitionBuilder,
+) -> crate::types::builders::FeatureDefinitionBuilder {
+    if builder.feature_name.is_none() {
+        builder.feature_name = Some(Default::default())
+    }
+    if builder.feature_type.is_none() {
+        builder.feature_type = "no value was set".parse::<crate::types::FeatureType>().ok()
     }
     builder
 }
@@ -4159,18 +4153,6 @@ pub(crate) fn model_card_version_summary_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
-pub(crate) fn model_data_source_correct_errors(
-    mut builder: crate::types::builders::ModelDataSourceBuilder,
-) -> crate::types::builders::ModelDataSourceBuilder {
-    if builder.s3_data_source.is_none() {
-        builder.s3_data_source = {
-            let builder = crate::types::builders::S3ModelDataSourceBuilder::default();
-            Some(crate::serde_util::s3_model_data_source_correct_errors(builder).build())
-        }
     }
     builder
 }
@@ -4951,13 +4933,6 @@ pub(crate) fn endpoint_correct_errors(mut builder: crate::types::builders::Endpo
     builder
 }
 
-pub(crate) fn endpoint_info_correct_errors(mut builder: crate::types::builders::EndpointInfoBuilder) -> crate::types::builders::EndpointInfoBuilder {
-    if builder.endpoint_name.is_none() {
-        builder.endpoint_name = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn endpoint_output_configuration_correct_errors(
     mut builder: crate::types::builders::EndpointOutputConfigurationBuilder,
 ) -> crate::types::builders::EndpointOutputConfigurationBuilder {
@@ -5061,6 +5036,15 @@ pub(crate) fn metrics_source_correct_errors(
     }
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn model_access_config_correct_errors(
+    mut builder: crate::types::builders::ModelAccessConfigBuilder,
+) -> crate::types::builders::ModelAccessConfigBuilder {
+    if builder.accept_eula.is_none() {
+        builder.accept_eula = Some(Default::default())
     }
     builder
 }
@@ -5541,15 +5525,6 @@ pub(crate) fn integer_parameter_range_correct_errors(
     builder
 }
 
-pub(crate) fn model_access_config_correct_errors(
-    mut builder: crate::types::builders::ModelAccessConfigBuilder,
-) -> crate::types::builders::ModelAccessConfigBuilder {
-    if builder.accept_eula.is_none() {
-        builder.accept_eula = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn model_input_correct_errors(mut builder: crate::types::builders::ModelInputBuilder) -> crate::types::builders::ModelInputBuilder {
     if builder.data_input_config.is_none() {
         builder.data_input_config = Some(Default::default())
@@ -5565,15 +5540,6 @@ pub(crate) fn monitoring_s3_output_correct_errors(
     }
     if builder.local_path.is_none() {
         builder.local_path = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn oidc_member_definition_correct_errors(
-    mut builder: crate::types::builders::OidcMemberDefinitionBuilder,
-) -> crate::types::builders::OidcMemberDefinitionBuilder {
-    if builder.groups.is_none() {
-        builder.groups = Some(Default::default())
     }
     builder
 }

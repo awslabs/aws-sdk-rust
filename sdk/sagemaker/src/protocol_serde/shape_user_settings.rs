@@ -57,16 +57,16 @@ pub fn ser_user_settings(
         crate::protocol_serde::shape_canvas_app_settings::ser_canvas_app_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.jupyter_lab_app_settings {
+    if let Some(var_19) = &input.code_editor_app_settings {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("JupyterLabAppSettings").start_object();
-        crate::protocol_serde::shape_jupyter_lab_app_settings::ser_jupyter_lab_app_settings(&mut object_20, var_19)?;
+        let mut object_20 = object.key("CodeEditorAppSettings").start_object();
+        crate::protocol_serde::shape_code_editor_app_settings::ser_code_editor_app_settings(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.code_editor_app_settings {
+    if let Some(var_21) = &input.jupyter_lab_app_settings {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("CodeEditorAppSettings").start_object();
-        crate::protocol_serde::shape_code_editor_app_settings::ser_code_editor_app_settings(&mut object_22, var_21)?;
+        let mut object_22 = object.key("JupyterLabAppSettings").start_object();
+        crate::protocol_serde::shape_jupyter_lab_app_settings::ser_jupyter_lab_app_settings(&mut object_22, var_21)?;
         object_22.finish();
     }
     if let Some(var_23) = &input.space_storage_settings {
@@ -158,14 +158,14 @@ where
                             builder =
                                 builder.set_canvas_app_settings(crate::protocol_serde::shape_canvas_app_settings::de_canvas_app_settings(tokens)?);
                         }
-                        "JupyterLabAppSettings" => {
-                            builder = builder.set_jupyter_lab_app_settings(
-                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens)?,
-                            );
-                        }
                         "CodeEditorAppSettings" => {
                             builder = builder.set_code_editor_app_settings(
                                 crate::protocol_serde::shape_code_editor_app_settings::de_code_editor_app_settings(tokens)?,
+                            );
+                        }
+                        "JupyterLabAppSettings" => {
+                            builder = builder.set_jupyter_lab_app_settings(
+                                crate::protocol_serde::shape_jupyter_lab_app_settings::de_jupyter_lab_app_settings(tokens)?,
                             );
                         }
                         "SpaceStorageSettings" => {

@@ -10,6 +10,8 @@ pub struct CreateDomainInput {
     /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call to the <code>CreateUserProfile</code> API.</p>
     /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The VPC subnets that the domain uses for communication.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
@@ -32,8 +34,6 @@ pub struct CreateDomainInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The default settings used to create a space.</p>
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
 }
@@ -50,6 +50,10 @@ impl CreateDomainInput {
     /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub fn default_user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
         self.default_user_settings.as_ref()
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(&self) -> ::std::option::Option<&crate::types::DomainSettings> {
+        self.domain_settings.as_ref()
     }
     /// <p>The VPC subnets that the domain uses for communication.</p>
     ///
@@ -91,10 +95,6 @@ impl CreateDomainInput {
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn domain_settings(&self) -> ::std::option::Option<&crate::types::DomainSettings> {
-        self.domain_settings.as_ref()
-    }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
@@ -114,6 +114,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) auth_mode: ::std::option::Option<crate::types::AuthMode>,
     pub(crate) default_user_settings: ::std::option::Option<crate::types::UserSettings>,
+    pub(crate) domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -121,7 +122,6 @@ pub struct CreateDomainInputBuilder {
     pub(crate) home_efs_file_system_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    pub(crate) domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
 }
 impl CreateDomainInputBuilder {
@@ -172,6 +172,20 @@ impl CreateDomainInputBuilder {
     /// <p><code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
         &self.default_user_settings
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
+        self.domain_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
+        self.domain_settings = input;
+        self
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
+        &self.domain_settings
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -308,20 +322,6 @@ impl CreateDomainInputBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
-        self.domain_settings = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
-        self.domain_settings = input;
-        self
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
-        &self.domain_settings
-    }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.default_space_settings = ::std::option::Option::Some(input);
@@ -344,6 +344,7 @@ impl CreateDomainInputBuilder {
             domain_name: self.domain_name,
             auth_mode: self.auth_mode,
             default_user_settings: self.default_user_settings,
+            domain_settings: self.domain_settings,
             subnet_ids: self.subnet_ids,
             vpc_id: self.vpc_id,
             tags: self.tags,
@@ -351,7 +352,6 @@ impl CreateDomainInputBuilder {
             home_efs_file_system_kms_key_id: self.home_efs_file_system_kms_key_id,
             kms_key_id: self.kms_key_id,
             app_security_group_management: self.app_security_group_management,
-            domain_settings: self.domain_settings,
             default_space_settings: self.default_space_settings,
         })
     }

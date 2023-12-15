@@ -141,6 +141,13 @@ pub(crate) fn de_describe_domain(
                             .transpose()?,
                     );
                 }
+                "SecurityGroupIdForDomainBoundary" => {
+                    builder = builder.set_security_group_id_for_domain_boundary(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "AuthMode" => {
                     builder = builder.set_auth_mode(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -150,6 +157,9 @@ pub(crate) fn de_describe_domain(
                 }
                 "DefaultUserSettings" => {
                     builder = builder.set_default_user_settings(crate::protocol_serde::shape_user_settings::de_user_settings(tokens)?);
+                }
+                "DomainSettings" => {
+                    builder = builder.set_domain_settings(crate::protocol_serde::shape_domain_settings::de_domain_settings(tokens)?);
                 }
                 "AppNetworkAccessType" => {
                     builder = builder.set_app_network_access_type(
@@ -189,20 +199,10 @@ pub(crate) fn de_describe_domain(
                             .transpose()?,
                     );
                 }
-                "DomainSettings" => {
-                    builder = builder.set_domain_settings(crate::protocol_serde::shape_domain_settings::de_domain_settings(tokens)?);
-                }
                 "AppSecurityGroupManagement" => {
                     builder = builder.set_app_security_group_management(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::AppSecurityGroupManagement::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "SecurityGroupIdForDomainBoundary" => {
-                    builder = builder.set_security_group_id_for_domain_boundary(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

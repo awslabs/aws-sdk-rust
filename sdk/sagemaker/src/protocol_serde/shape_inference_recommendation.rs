@@ -14,6 +14,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "RecommendationId" => {
+                            builder = builder.set_recommendation_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Metrics" => {
                             builder = builder.set_metrics(crate::protocol_serde::shape_recommendation_metrics::de_recommendation_metrics(tokens)?);
                         }
@@ -25,13 +32,6 @@ where
                         "ModelConfiguration" => {
                             builder =
                                 builder.set_model_configuration(crate::protocol_serde::shape_model_configuration::de_model_configuration(tokens)?);
-                        }
-                        "RecommendationId" => {
-                            builder = builder.set_recommendation_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
                         }
                         "InvocationEndTime" => {
                             builder = builder.set_invocation_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

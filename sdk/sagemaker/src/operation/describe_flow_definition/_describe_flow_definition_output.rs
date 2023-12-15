@@ -185,7 +185,6 @@ impl DescribeFlowDefinitionOutputBuilder {
         &self.human_loop_activation_config
     }
     /// <p>An object containing information about who works on the task, the workforce task price, and other task details.</p>
-    /// This field is required.
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
         self

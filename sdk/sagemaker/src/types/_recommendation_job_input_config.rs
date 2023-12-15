@@ -6,6 +6,8 @@
 pub struct RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub model_package_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the created model.</p>
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub job_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>Specifies the traffic pattern of the job.</p>
@@ -55,13 +57,15 @@ pub struct RecommendationJobInputConfig {
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInfo>>,
     /// <p>Inference Recommender provisions SageMaker endpoints with access to VPC in the inference recommendation job.</p>
     pub vpc_config: ::std::option::Option<crate::types::RecommendationJobVpcConfig>,
-    /// <p>The name of the created model.</p>
-    pub model_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationJobInputConfig {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub fn model_package_version_arn(&self) -> ::std::option::Option<&str> {
         self.model_package_version_arn.as_deref()
+    }
+    /// <p>The name of the created model.</p>
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
+        self.model_name.as_deref()
     }
     /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub fn job_duration_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -132,10 +136,6 @@ impl RecommendationJobInputConfig {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::RecommendationJobVpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>The name of the created model.</p>
-    pub fn model_name(&self) -> ::std::option::Option<&str> {
-        self.model_name.as_deref()
-    }
 }
 impl RecommendationJobInputConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobInputConfig`](crate::types::RecommendationJobInputConfig).
@@ -149,6 +149,7 @@ impl RecommendationJobInputConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobInputConfigBuilder {
     pub(crate) model_package_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) job_duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) traffic_pattern: ::std::option::Option<crate::types::TrafficPattern>,
     pub(crate) resource_limit: ::std::option::Option<crate::types::RecommendationJobResourceLimit>,
@@ -157,7 +158,6 @@ pub struct RecommendationJobInputConfigBuilder {
     pub(crate) container_config: ::std::option::Option<crate::types::RecommendationJobContainerConfig>,
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::EndpointInfo>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::RecommendationJobVpcConfig>,
-    pub(crate) model_name: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationJobInputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
@@ -173,6 +173,20 @@ impl RecommendationJobInputConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
     pub fn get_model_package_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_version_arn
+    }
+    /// <p>The name of the created model.</p>
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the created model.</p>
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_name = input;
+        self
+    }
+    /// <p>The name of the created model.</p>
+    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_name
     }
     /// <p>Specifies the maximum duration of the job, in seconds. The maximum value is 18,000 seconds.</p>
     pub fn job_duration_in_seconds(mut self, input: i32) -> Self {
@@ -397,24 +411,11 @@ impl RecommendationJobInputConfigBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::RecommendationJobVpcConfig> {
         &self.vpc_config
     }
-    /// <p>The name of the created model.</p>
-    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.model_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the created model.</p>
-    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.model_name = input;
-        self
-    }
-    /// <p>The name of the created model.</p>
-    pub fn get_model_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.model_name
-    }
     /// Consumes the builder and constructs a [`RecommendationJobInputConfig`](crate::types::RecommendationJobInputConfig).
     pub fn build(self) -> crate::types::RecommendationJobInputConfig {
         crate::types::RecommendationJobInputConfig {
             model_package_version_arn: self.model_package_version_arn,
+            model_name: self.model_name,
             job_duration_in_seconds: self.job_duration_in_seconds,
             traffic_pattern: self.traffic_pattern,
             resource_limit: self.resource_limit,
@@ -423,7 +424,6 @@ impl RecommendationJobInputConfigBuilder {
             container_config: self.container_config,
             endpoints: self.endpoints,
             vpc_config: self.vpc_config,
-            model_name: self.model_name,
         }
     }
 }

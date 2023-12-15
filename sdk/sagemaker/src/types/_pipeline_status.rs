@@ -13,6 +13,7 @@
 /// # let pipelinestatus = unimplemented!();
 /// match pipelinestatus {
 ///     PipelineStatus::Active => { /* ... */ },
+///     PipelineStatus::Deleting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum PipelineStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
+    Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for PipelineStatus {
     fn from(s: &str) -> Self {
         match s {
             "Active" => PipelineStatus::Active,
+            "Deleting" => PipelineStatus::Deleting,
             other => PipelineStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl PipelineStatus {
     pub fn as_str(&self) -> &str {
         match self {
             PipelineStatus::Active => "Active",
+            PipelineStatus::Deleting => "Deleting",
             PipelineStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active"]
+        &["Active", "Deleting"]
     }
 }
 impl ::std::convert::AsRef<str> for PipelineStatus {

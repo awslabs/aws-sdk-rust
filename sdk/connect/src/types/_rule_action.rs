@@ -17,6 +17,15 @@ pub struct RuleAction {
     /// <p>Information about the send notification action.</p>
     /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code> | <code>OnMetricDataUpdate</code></p>
     pub send_notification_action: ::std::option::Option<crate::types::SendNotificationActionDefinition>,
+    /// <p>Information about the create case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>.</p>
+    pub create_case_action: ::std::option::Option<crate::types::CreateCaseActionDefinition>,
+    /// <p>Information about the update case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.</p>
+    pub update_case_action: ::std::option::Option<crate::types::UpdateCaseActionDefinition>,
+    /// <p>Information about the end associated tasks action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
 }
 impl RuleAction {
     /// <p>The type of action that creates a rule.</p>
@@ -42,6 +51,21 @@ impl RuleAction {
     pub fn send_notification_action(&self) -> ::std::option::Option<&crate::types::SendNotificationActionDefinition> {
         self.send_notification_action.as_ref()
     }
+    /// <p>Information about the create case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>.</p>
+    pub fn create_case_action(&self) -> ::std::option::Option<&crate::types::CreateCaseActionDefinition> {
+        self.create_case_action.as_ref()
+    }
+    /// <p>Information about the update case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.</p>
+    pub fn update_case_action(&self) -> ::std::option::Option<&crate::types::UpdateCaseActionDefinition> {
+        self.update_case_action.as_ref()
+    }
+    /// <p>Information about the end associated tasks action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn end_associated_tasks_action(&self) -> ::std::option::Option<&crate::types::EndAssociatedTasksActionDefinition> {
+        self.end_associated_tasks_action.as_ref()
+    }
 }
 impl RuleAction {
     /// Creates a new builder-style object to manufacture [`RuleAction`](crate::types::RuleAction).
@@ -59,6 +83,9 @@ pub struct RuleActionBuilder {
     pub(crate) event_bridge_action: ::std::option::Option<crate::types::EventBridgeActionDefinition>,
     pub(crate) assign_contact_category_action: ::std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
     pub(crate) send_notification_action: ::std::option::Option<crate::types::SendNotificationActionDefinition>,
+    pub(crate) create_case_action: ::std::option::Option<crate::types::CreateCaseActionDefinition>,
+    pub(crate) update_case_action: ::std::option::Option<crate::types::UpdateCaseActionDefinition>,
+    pub(crate) end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
 }
 impl RuleActionBuilder {
     /// <p>The type of action that creates a rule.</p>
@@ -141,6 +168,57 @@ impl RuleActionBuilder {
     pub fn get_send_notification_action(&self) -> &::std::option::Option<crate::types::SendNotificationActionDefinition> {
         &self.send_notification_action
     }
+    /// <p>Information about the create case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>.</p>
+    pub fn create_case_action(mut self, input: crate::types::CreateCaseActionDefinition) -> Self {
+        self.create_case_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the create case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>.</p>
+    pub fn set_create_case_action(mut self, input: ::std::option::Option<crate::types::CreateCaseActionDefinition>) -> Self {
+        self.create_case_action = input;
+        self
+    }
+    /// <p>Information about the create case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code>.</p>
+    pub fn get_create_case_action(&self) -> &::std::option::Option<crate::types::CreateCaseActionDefinition> {
+        &self.create_case_action
+    }
+    /// <p>Information about the update case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.</p>
+    pub fn update_case_action(mut self, input: crate::types::UpdateCaseActionDefinition) -> Self {
+        self.update_case_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the update case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.</p>
+    pub fn set_update_case_action(mut self, input: ::std::option::Option<crate::types::UpdateCaseActionDefinition>) -> Self {
+        self.update_case_action = input;
+        self
+    }
+    /// <p>Information about the update case action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code> | <code>OnCaseUpdate</code>.</p>
+    pub fn get_update_case_action(&self) -> &::std::option::Option<crate::types::UpdateCaseActionDefinition> {
+        &self.update_case_action
+    }
+    /// <p>Information about the end associated tasks action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn end_associated_tasks_action(mut self, input: crate::types::EndAssociatedTasksActionDefinition) -> Self {
+        self.end_associated_tasks_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the end associated tasks action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn set_end_associated_tasks_action(mut self, input: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>) -> Self {
+        self.end_associated_tasks_action = input;
+        self
+    }
+    /// <p>Information about the end associated tasks action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+    pub fn get_end_associated_tasks_action(&self) -> &::std::option::Option<crate::types::EndAssociatedTasksActionDefinition> {
+        &self.end_associated_tasks_action
+    }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_type`](crate::types::builders::RuleActionBuilder::action_type)
@@ -156,6 +234,9 @@ impl RuleActionBuilder {
             event_bridge_action: self.event_bridge_action,
             assign_contact_category_action: self.assign_contact_category_action,
             send_notification_action: self.send_notification_action,
+            create_case_action: self.create_case_action,
+            update_case_action: self.update_case_action,
+            end_associated_tasks_action: self.end_associated_tasks_action,
         })
     }
 }

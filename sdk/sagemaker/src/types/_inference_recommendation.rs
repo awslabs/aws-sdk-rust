@@ -4,20 +4,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendation {
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>The metrics used to decide what recommendation to make.</p>
     pub metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     /// <p>Defines the endpoint configuration parameters.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     /// <p>Defines the model configuration.</p>
     pub model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
-    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub recommendation_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the benchmark started.</p>
     pub invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InferenceRecommendation {
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
     /// <p>The metrics used to decide what recommendation to make.</p>
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::RecommendationMetrics> {
         self.metrics.as_ref()
@@ -29,10 +33,6 @@ impl InferenceRecommendation {
     /// <p>Defines the model configuration.</p>
     pub fn model_configuration(&self) -> ::std::option::Option<&crate::types::ModelConfiguration> {
         self.model_configuration.as_ref()
-    }
-    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
-        self.recommendation_id.as_deref()
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub fn invocation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -54,14 +54,28 @@ impl InferenceRecommendation {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InferenceRecommendationBuilder {
+    pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
     pub(crate) endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
-    pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
     pub(crate) invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl InferenceRecommendationBuilder {
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommendation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_id = input;
+        self
+    }
+    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// <p>The metrics used to decide what recommendation to make.</p>
     /// This field is required.
     pub fn metrics(mut self, input: crate::types::RecommendationMetrics) -> Self {
@@ -107,20 +121,6 @@ impl InferenceRecommendationBuilder {
     pub fn get_model_configuration(&self) -> &::std::option::Option<crate::types::ModelConfiguration> {
         &self.model_configuration
     }
-    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.recommendation_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.recommendation_id = input;
-        self
-    }
-    /// <p>The recommendation ID which uniquely identifies each recommendation.</p>
-    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.recommendation_id
-    }
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub fn invocation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_end_time = ::std::option::Option::Some(input);
@@ -152,10 +152,10 @@ impl InferenceRecommendationBuilder {
     /// Consumes the builder and constructs a [`InferenceRecommendation`](crate::types::InferenceRecommendation).
     pub fn build(self) -> crate::types::InferenceRecommendation {
         crate::types::InferenceRecommendation {
+            recommendation_id: self.recommendation_id,
             metrics: self.metrics,
             endpoint_configuration: self.endpoint_configuration,
             model_configuration: self.model_configuration,
-            recommendation_id: self.recommendation_id,
             invocation_end_time: self.invocation_end_time,
             invocation_start_time: self.invocation_start_time,
         }

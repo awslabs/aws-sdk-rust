@@ -18,14 +18,14 @@ pub fn ser_update_domain_input_input(
         crate::protocol_serde::shape_domain_settings_for_update::ser_domain_settings_for_update(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.default_space_settings {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("DefaultSpaceSettings").start_object();
-        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(&mut object_7, var_6)?;
-        object_7.finish();
+    if let Some(var_6) = &input.app_security_group_management {
+        object.key("AppSecurityGroupManagement").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.app_security_group_management {
-        object.key("AppSecurityGroupManagement").string(var_8.as_str());
+    if let Some(var_7) = &input.default_space_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("DefaultSpaceSettings").start_object();
+        crate::protocol_serde::shape_default_space_settings::ser_default_space_settings(&mut object_8, var_7)?;
+        object_8.finish();
     }
     if let Some(var_9) = &input.subnet_ids {
         let mut array_10 = object.key("SubnetIds").start_array();

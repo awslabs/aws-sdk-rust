@@ -8,7 +8,7 @@ pub struct ResourceSpec {
     pub sage_maker_image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the image version created on the instance.</p>
     pub sage_maker_image_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The SageMakerImageVersionAlias.</p>
+    /// <p>The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.</p>
     pub sage_maker_image_version_alias: ::std::option::Option<::std::string::String>,
     /// <p>The instance type that the image version runs on.</p><note>
     /// <p><b>JupyterServer apps</b> only support the <code>system</code> value.</p>
@@ -27,7 +27,7 @@ impl ResourceSpec {
     pub fn sage_maker_image_version_arn(&self) -> ::std::option::Option<&str> {
         self.sage_maker_image_version_arn.as_deref()
     }
-    /// <p>The SageMakerImageVersionAlias.</p>
+    /// <p>The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.</p>
     pub fn sage_maker_image_version_alias(&self) -> ::std::option::Option<&str> {
         self.sage_maker_image_version_alias.as_deref()
     }
@@ -89,17 +89,17 @@ impl ResourceSpecBuilder {
     pub fn get_sage_maker_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sage_maker_image_version_arn
     }
-    /// <p>The SageMakerImageVersionAlias.</p>
+    /// <p>The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.</p>
     pub fn sage_maker_image_version_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sage_maker_image_version_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SageMakerImageVersionAlias.</p>
+    /// <p>The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.</p>
     pub fn set_sage_maker_image_version_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sage_maker_image_version_alias = input;
         self
     }
-    /// <p>The SageMakerImageVersionAlias.</p>
+    /// <p>The SageMakerImageVersionAlias of the image to launch with. This value is in SemVer 2.0.0 versioning format.</p>
     pub fn get_sage_maker_image_version_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.sage_maker_image_version_alias
     }

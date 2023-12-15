@@ -24,16 +24,16 @@ pub struct SearchRecord {
     pub pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     /// <p>Amazon SageMaker Feature Store stores features in a collection called Feature Group. A Feature Group can be visualized as a table which has rows, with a unique identifier for each row where each column in the table is a feature. In principle, a Feature Group is composed of features and values per features.</p>
     pub feature_group: ::std::option::Option<crate::types::FeatureGroup>,
-    /// <p>The properties of a project.</p>
-    pub project: ::std::option::Option<crate::types::Project>,
     /// <p>The feature metadata used to search through the features.</p>
     pub feature_metadata: ::std::option::Option<crate::types::FeatureMetadata>,
+    /// <p>The properties of a project.</p>
+    pub project: ::std::option::Option<crate::types::Project>,
     /// <p>The properties of a hyperparameter tuning job.</p>
     pub hyper_parameter_tuning_job: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
-    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub model: ::std::option::Option<crate::types::ModelDashboardModel>,
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
     pub model_card: ::std::option::Option<crate::types::ModelCard>,
+    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
+    pub model: ::std::option::Option<crate::types::ModelDashboardModel>,
 }
 impl SearchRecord {
     /// <p>The properties of a training job.</p>
@@ -76,25 +76,25 @@ impl SearchRecord {
     pub fn feature_group(&self) -> ::std::option::Option<&crate::types::FeatureGroup> {
         self.feature_group.as_ref()
     }
-    /// <p>The properties of a project.</p>
-    pub fn project(&self) -> ::std::option::Option<&crate::types::Project> {
-        self.project.as_ref()
-    }
     /// <p>The feature metadata used to search through the features.</p>
     pub fn feature_metadata(&self) -> ::std::option::Option<&crate::types::FeatureMetadata> {
         self.feature_metadata.as_ref()
+    }
+    /// <p>The properties of a project.</p>
+    pub fn project(&self) -> ::std::option::Option<&crate::types::Project> {
+        self.project.as_ref()
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobSearchEntity> {
         self.hyper_parameter_tuning_job.as_ref()
     }
-    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn model(&self) -> ::std::option::Option<&crate::types::ModelDashboardModel> {
-        self.model.as_ref()
-    }
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
     pub fn model_card(&self) -> ::std::option::Option<&crate::types::ModelCard> {
         self.model_card.as_ref()
+    }
+    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
+    pub fn model(&self) -> ::std::option::Option<&crate::types::ModelDashboardModel> {
+        self.model.as_ref()
     }
 }
 impl SearchRecord {
@@ -118,11 +118,11 @@ pub struct SearchRecordBuilder {
     pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
     pub(crate) pipeline_execution: ::std::option::Option<crate::types::PipelineExecution>,
     pub(crate) feature_group: ::std::option::Option<crate::types::FeatureGroup>,
-    pub(crate) project: ::std::option::Option<crate::types::Project>,
     pub(crate) feature_metadata: ::std::option::Option<crate::types::FeatureMetadata>,
+    pub(crate) project: ::std::option::Option<crate::types::Project>,
     pub(crate) hyper_parameter_tuning_job: ::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity>,
-    pub(crate) model: ::std::option::Option<crate::types::ModelDashboardModel>,
     pub(crate) model_card: ::std::option::Option<crate::types::ModelCard>,
+    pub(crate) model: ::std::option::Option<crate::types::ModelDashboardModel>,
 }
 impl SearchRecordBuilder {
     /// <p>The properties of a training job.</p>
@@ -265,20 +265,6 @@ impl SearchRecordBuilder {
     pub fn get_feature_group(&self) -> &::std::option::Option<crate::types::FeatureGroup> {
         &self.feature_group
     }
-    /// <p>The properties of a project.</p>
-    pub fn project(mut self, input: crate::types::Project) -> Self {
-        self.project = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The properties of a project.</p>
-    pub fn set_project(mut self, input: ::std::option::Option<crate::types::Project>) -> Self {
-        self.project = input;
-        self
-    }
-    /// <p>The properties of a project.</p>
-    pub fn get_project(&self) -> &::std::option::Option<crate::types::Project> {
-        &self.project
-    }
     /// <p>The feature metadata used to search through the features.</p>
     pub fn feature_metadata(mut self, input: crate::types::FeatureMetadata) -> Self {
         self.feature_metadata = ::std::option::Option::Some(input);
@@ -292,6 +278,20 @@ impl SearchRecordBuilder {
     /// <p>The feature metadata used to search through the features.</p>
     pub fn get_feature_metadata(&self) -> &::std::option::Option<crate::types::FeatureMetadata> {
         &self.feature_metadata
+    }
+    /// <p>The properties of a project.</p>
+    pub fn project(mut self, input: crate::types::Project) -> Self {
+        self.project = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of a project.</p>
+    pub fn set_project(mut self, input: ::std::option::Option<crate::types::Project>) -> Self {
+        self.project = input;
+        self
+    }
+    /// <p>The properties of a project.</p>
+    pub fn get_project(&self) -> &::std::option::Option<crate::types::Project> {
+        &self.project
     }
     /// <p>The properties of a hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job(mut self, input: crate::types::HyperParameterTuningJobSearchEntity) -> Self {
@@ -307,20 +307,6 @@ impl SearchRecordBuilder {
     pub fn get_hyper_parameter_tuning_job(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobSearchEntity> {
         &self.hyper_parameter_tuning_job
     }
-    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn model(mut self, input: crate::types::ModelDashboardModel) -> Self {
-        self.model = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn set_model(mut self, input: ::std::option::Option<crate::types::ModelDashboardModel>) -> Self {
-        self.model = input;
-        self
-    }
-    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
-    pub fn get_model(&self) -> &::std::option::Option<crate::types::ModelDashboardModel> {
-        &self.model
-    }
     /// <p>An Amazon SageMaker Model Card that documents details about a machine learning model.</p>
     pub fn model_card(mut self, input: crate::types::ModelCard) -> Self {
         self.model_card = ::std::option::Option::Some(input);
@@ -335,6 +321,20 @@ impl SearchRecordBuilder {
     pub fn get_model_card(&self) -> &::std::option::Option<crate::types::ModelCard> {
         &self.model_card
     }
+    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
+    pub fn model(mut self, input: crate::types::ModelDashboardModel) -> Self {
+        self.model = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
+    pub fn set_model(mut self, input: ::std::option::Option<crate::types::ModelDashboardModel>) -> Self {
+        self.model = input;
+        self
+    }
+    /// <p>A model displayed in the Amazon SageMaker Model Dashboard.</p>
+    pub fn get_model(&self) -> &::std::option::Option<crate::types::ModelDashboardModel> {
+        &self.model
+    }
     /// Consumes the builder and constructs a [`SearchRecord`](crate::types::SearchRecord).
     pub fn build(self) -> crate::types::SearchRecord {
         crate::types::SearchRecord {
@@ -348,11 +348,11 @@ impl SearchRecordBuilder {
             pipeline: self.pipeline,
             pipeline_execution: self.pipeline_execution,
             feature_group: self.feature_group,
-            project: self.project,
             feature_metadata: self.feature_metadata,
+            project: self.project,
             hyper_parameter_tuning_job: self.hyper_parameter_tuning_job,
-            model: self.model,
             model_card: self.model_card,
+            model: self.model,
         }
     }
 }

@@ -24,6 +24,8 @@ pub struct TextGenerationJobConfig {
     /// <p>Here is an example where all four hyperparameters are configured.</p>
     /// <p><code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps": "10" }</code></p>
     pub text_generation_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a>.</p>
+    pub model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
 impl TextGenerationJobConfig {
     /// <p>How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
@@ -52,6 +54,10 @@ impl TextGenerationJobConfig {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.text_generation_hyper_parameters.as_ref()
     }
+    /// <p>The access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a>.</p>
+    pub fn model_access_config(&self) -> ::std::option::Option<&crate::types::ModelAccessConfig> {
+        self.model_access_config.as_ref()
+    }
 }
 impl TextGenerationJobConfig {
     /// Creates a new builder-style object to manufacture [`TextGenerationJobConfig`](crate::types::TextGenerationJobConfig).
@@ -67,6 +73,7 @@ pub struct TextGenerationJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) base_model_name: ::std::option::Option<::std::string::String>,
     pub(crate) text_generation_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
 }
 impl TextGenerationJobConfigBuilder {
     /// <p>How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code> problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
@@ -162,12 +169,27 @@ impl TextGenerationJobConfigBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.text_generation_hyper_parameters
     }
+    /// <p>The access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a>.</p>
+    pub fn model_access_config(mut self, input: crate::types::ModelAccessConfig) -> Self {
+        self.model_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a>.</p>
+    pub fn set_model_access_config(mut self, input: ::std::option::Option<crate::types::ModelAccessConfig>) -> Self {
+        self.model_access_config = input;
+        self
+    }
+    /// <p>The access configuration file for the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a>.</p>
+    pub fn get_model_access_config(&self) -> &::std::option::Option<crate::types::ModelAccessConfig> {
+        &self.model_access_config
+    }
     /// Consumes the builder and constructs a [`TextGenerationJobConfig`](crate::types::TextGenerationJobConfig).
     pub fn build(self) -> crate::types::TextGenerationJobConfig {
         crate::types::TextGenerationJobConfig {
             completion_criteria: self.completion_criteria,
             base_model_name: self.base_model_name,
             text_generation_hyper_parameters: self.text_generation_hyper_parameters,
+            model_access_config: self.model_access_config,
         }
     }
 }

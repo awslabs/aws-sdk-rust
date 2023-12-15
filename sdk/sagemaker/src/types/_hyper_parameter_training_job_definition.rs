@@ -29,6 +29,8 @@ pub struct HyperParameterTrainingJobDefinition {
     /// <p>If you want to use hyperparameter optimization with instance type flexibility, use <code>HyperParameterTuningResourceConfig</code> instead.</p>
     /// </note>
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub hyper_parameter_tuning_resource_config: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If network isolation is used for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.</p>
@@ -41,8 +43,6 @@ pub struct HyperParameterTrainingJobDefinition {
     pub checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
-    pub hyper_parameter_tuning_resource_config: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
     /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
     /// </note>
@@ -96,6 +96,10 @@ impl HyperParameterTrainingJobDefinition {
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfig> {
         self.resource_config.as_ref()
     }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn hyper_parameter_tuning_resource_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningResourceConfig> {
+        self.hyper_parameter_tuning_resource_config.as_ref()
+    }
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::StoppingCondition> {
         self.stopping_condition.as_ref()
@@ -119,10 +123,6 @@ impl HyperParameterTrainingJobDefinition {
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
-    }
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
-    pub fn hyper_parameter_tuning_resource_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningResourceConfig> {
-        self.hyper_parameter_tuning_resource_config.as_ref()
     }
     /// <p>An environment variable that you can pass into the SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API. You can use an existing <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html#sagemaker-CreateTrainingJob-request-Environment">environment variable from the training container</a> or use your own. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and variables</a> for more information.</p><note>
     /// <p>The maximum number of items specified for <code>Map Entries</code> refers to the maximum number of environment variables for each <code>TrainingJobDefinition</code> and also the maximum for the hyperparameter tuning job itself. That is, the sum of the number of environment variables for all the training job definitions can't exceed the maximum number specified.</p>
@@ -152,13 +152,13 @@ pub struct HyperParameterTrainingJobDefinitionBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    pub(crate) hyper_parameter_tuning_resource_config: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
     pub(crate) enable_inter_container_traffic_encryption: ::std::option::Option<bool>,
     pub(crate) enable_managed_spot_training: ::std::option::Option<bool>,
     pub(crate) checkpoint_config: ::std::option::Option<crate::types::CheckpointConfig>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
-    pub(crate) hyper_parameter_tuning_resource_config: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl HyperParameterTrainingJobDefinitionBuilder {
@@ -339,6 +339,23 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
         &self.resource_config
     }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn hyper_parameter_tuning_resource_config(mut self, input: crate::types::HyperParameterTuningResourceConfig) -> Self {
+        self.hyper_parameter_tuning_resource_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn set_hyper_parameter_tuning_resource_config(
+        mut self,
+        input: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
+    ) -> Self {
+        self.hyper_parameter_tuning_resource_config = input;
+        self
+    }
+    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
+    pub fn get_hyper_parameter_tuning_resource_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningResourceConfig> {
+        &self.hyper_parameter_tuning_resource_config
+    }
     /// <p>Specifies a limit to how long a model hyperparameter training job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
     /// This field is required.
     pub fn stopping_condition(mut self, input: crate::types::StoppingCondition) -> Self {
@@ -424,23 +441,6 @@ impl HyperParameterTrainingJobDefinitionBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         &self.retry_strategy
     }
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
-    pub fn hyper_parameter_tuning_resource_config(mut self, input: crate::types::HyperParameterTuningResourceConfig) -> Self {
-        self.hyper_parameter_tuning_resource_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
-    pub fn set_hyper_parameter_tuning_resource_config(
-        mut self,
-        input: ::std::option::Option<crate::types::HyperParameterTuningResourceConfig>,
-    ) -> Self {
-        self.hyper_parameter_tuning_resource_config = input;
-        self
-    }
-    /// <p>The configuration for the hyperparameter tuning resources, including the compute instances and storage volumes, used for training jobs launched by the tuning job. By default, storage volumes hold model artifacts and incremental states. Choose <code>File</code> for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter to additionally store training data in the storage volume (optional).</p>
-    pub fn get_hyper_parameter_tuning_resource_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningResourceConfig> {
-        &self.hyper_parameter_tuning_resource_config
-    }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -483,13 +483,13 @@ impl HyperParameterTrainingJobDefinitionBuilder {
             vpc_config: self.vpc_config,
             output_data_config: self.output_data_config,
             resource_config: self.resource_config,
+            hyper_parameter_tuning_resource_config: self.hyper_parameter_tuning_resource_config,
             stopping_condition: self.stopping_condition,
             enable_network_isolation: self.enable_network_isolation,
             enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption,
             enable_managed_spot_training: self.enable_managed_spot_training,
             checkpoint_config: self.checkpoint_config,
             retry_strategy: self.retry_strategy,
-            hyper_parameter_tuning_resource_config: self.hyper_parameter_tuning_resource_config,
             environment: self.environment,
         }
     }

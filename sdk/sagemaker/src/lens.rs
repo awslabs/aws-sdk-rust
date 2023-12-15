@@ -209,6 +209,16 @@ pub(crate) fn reflens_list_experiments_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_feature_groups_output_output_next_token(
+    input: &crate::operation::list_feature_groups::ListFeatureGroupsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_flow_definitions_output_output_next_token(
     input: &crate::operation::list_flow_definitions::ListFlowDefinitionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -913,6 +923,16 @@ pub(crate) fn lens_list_experiments_output_output_experiment_summaries(
     input: crate::operation::list_experiments::ListExperimentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExperimentSummary>> {
     let input = match input.experiment_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_feature_groups_output_output_feature_group_summaries(
+    input: crate::operation::list_feature_groups::ListFeatureGroupsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FeatureGroupSummary>> {
+    let input = match input.feature_group_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

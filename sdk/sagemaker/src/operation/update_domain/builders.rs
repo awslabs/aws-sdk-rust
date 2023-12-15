@@ -150,20 +150,6 @@ impl UpdateDomainFluentBuilder {
     pub fn get_domain_settings_for_update(&self) -> &::std::option::Option<crate::types::DomainSettingsForUpdate> {
         self.inner.get_domain_settings_for_update()
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
-        self.inner = self.inner.default_space_settings(input);
-        self
-    }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
-        self.inner = self.inner.set_default_space_settings(input);
-        self
-    }
-    /// <p>The default settings used to create a space within the Domain.</p>
-    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
-        self.inner.get_default_space_settings()
-    }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.inner = self.inner.app_security_group_management(input);
@@ -177,6 +163,20 @@ impl UpdateDomainFluentBuilder {
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         self.inner.get_app_security_group_management()
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
+        self.inner = self.inner.default_space_settings(input);
+        self
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
+        self.inner = self.inner.set_default_space_settings(input);
+        self
+    }
+    /// <p>The default settings used to create a space within the Domain.</p>
+    pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
+        self.inner.get_default_space_settings()
     }
     /// Appends an item to `SubnetIds`.
     ///

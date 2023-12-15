@@ -61,6 +61,18 @@ pub use crate::types::_rule_publish_status::RulePublishStatus;
 
 pub use crate::types::_rule_action::RuleAction;
 
+pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinition;
+
+pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinition;
+
+pub use crate::types::_field_value::FieldValue;
+
+pub use crate::types::_field_value_union::FieldValueUnion;
+
+pub use crate::types::_empty_field_value::EmptyFieldValue;
+
+pub use crate::types::_create_case_action_definition::CreateCaseActionDefinition;
+
 pub use crate::types::_send_notification_action_definition::SendNotificationActionDefinition;
 
 pub use crate::types::_notification_recipient_type::NotificationRecipientType;
@@ -739,6 +751,8 @@ mod _contact_state;
 
 mod _control_plane_tag_filter;
 
+mod _create_case_action_definition;
+
 mod _credentials;
 
 mod _cross_channel_behavior;
@@ -767,9 +781,13 @@ mod _distribution;
 
 mod _email_reference;
 
+mod _empty_field_value;
+
 mod _encryption_config;
 
 mod _encryption_type;
+
+mod _end_associated_tasks_action_definition;
 
 mod _endpoint;
 
@@ -844,6 +862,10 @@ mod _event_source_name;
 mod _failed_request;
 
 mod _failure_reason_code;
+
+mod _field_value;
+
+mod _field_value_union;
 
 mod _filter_v2;
 
@@ -1228,6 +1250,8 @@ mod _traffic_distribution_group_user_summary;
 mod _traffic_type;
 
 mod _unit;
+
+mod _update_case_action_definition;
 
 mod _update_participant_role_config_channel_info;
 

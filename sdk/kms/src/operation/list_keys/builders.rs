@@ -36,6 +36,7 @@ impl ListKeysInputBuilder {
 /// <li>
 /// <p><code>ListResourceTags</code></p></li>
 /// </ul>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

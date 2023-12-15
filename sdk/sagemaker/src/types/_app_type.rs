@@ -12,13 +12,21 @@
 /// ```text
 /// # let apptype = unimplemented!();
 /// match apptype {
+///     AppType::Canvas => { /* ... */ },
 ///     AppType::CodeEditor => { /* ... */ },
+///     AppType::DatasetManager => { /* ... */ },
+///     AppType::DetailedProfiler => { /* ... */ },
 ///     AppType::JupyterLab => { /* ... */ },
 ///     AppType::JupyterServer => { /* ... */ },
 ///     AppType::KernelGateway => { /* ... */ },
+///     AppType::Local => { /* ... */ },
+///     AppType::RSession => { /* ... */ },
 ///     AppType::RSessionGateway => { /* ... */ },
 ///     AppType::RStudioServerPro => { /* ... */ },
+///     AppType::SageMakerLite => { /* ... */ },
+///     AppType::Savitur => { /* ... */ },
 ///     AppType::TensorBoard => { /* ... */ },
+///     AppType::VsCode => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,7 +55,13 @@
 )]
 pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
+    Canvas,
+    #[allow(missing_docs)] // documentation missing in model
     CodeEditor,
+    #[allow(missing_docs)] // documentation missing in model
+    DatasetManager,
+    #[allow(missing_docs)] // documentation missing in model
+    DetailedProfiler,
     #[allow(missing_docs)] // documentation missing in model
     JupyterLab,
     #[allow(missing_docs)] // documentation missing in model
@@ -55,11 +69,21 @@ pub enum AppType {
     #[allow(missing_docs)] // documentation missing in model
     KernelGateway,
     #[allow(missing_docs)] // documentation missing in model
+    Local,
+    #[allow(missing_docs)] // documentation missing in model
+    RSession,
+    #[allow(missing_docs)] // documentation missing in model
     RSessionGateway,
     #[allow(missing_docs)] // documentation missing in model
     RStudioServerPro,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerLite,
+    #[allow(missing_docs)] // documentation missing in model
+    Savitur,
+    #[allow(missing_docs)] // documentation missing in model
     TensorBoard,
+    #[allow(missing_docs)] // documentation missing in model
+    VsCode,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,13 +91,21 @@ pub enum AppType {
 impl ::std::convert::From<&str> for AppType {
     fn from(s: &str) -> Self {
         match s {
+            "Canvas" => AppType::Canvas,
             "CodeEditor" => AppType::CodeEditor,
+            "DatasetManager" => AppType::DatasetManager,
+            "DetailedProfiler" => AppType::DetailedProfiler,
             "JupyterLab" => AppType::JupyterLab,
             "JupyterServer" => AppType::JupyterServer,
             "KernelGateway" => AppType::KernelGateway,
+            "Local" => AppType::Local,
+            "RSession" => AppType::RSession,
             "RSessionGateway" => AppType::RSessionGateway,
             "RStudioServerPro" => AppType::RStudioServerPro,
+            "SageMakerLite" => AppType::SageMakerLite,
+            "Savitur" => AppType::Savitur,
             "TensorBoard" => AppType::TensorBoard,
+            "VSCode" => AppType::VsCode,
             other => AppType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -89,26 +121,42 @@ impl AppType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AppType::Canvas => "Canvas",
             AppType::CodeEditor => "CodeEditor",
+            AppType::DatasetManager => "DatasetManager",
+            AppType::DetailedProfiler => "DetailedProfiler",
             AppType::JupyterLab => "JupyterLab",
             AppType::JupyterServer => "JupyterServer",
             AppType::KernelGateway => "KernelGateway",
+            AppType::Local => "Local",
+            AppType::RSession => "RSession",
             AppType::RSessionGateway => "RSessionGateway",
             AppType::RStudioServerPro => "RStudioServerPro",
+            AppType::SageMakerLite => "SageMakerLite",
+            AppType::Savitur => "Savitur",
             AppType::TensorBoard => "TensorBoard",
+            AppType::VsCode => "VSCode",
             AppType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "Canvas",
             "CodeEditor",
+            "DatasetManager",
+            "DetailedProfiler",
             "JupyterLab",
             "JupyterServer",
             "KernelGateway",
+            "Local",
+            "RSession",
             "RSessionGateway",
             "RStudioServerPro",
+            "SageMakerLite",
+            "Savitur",
             "TensorBoard",
+            "VSCode",
         ]
     }
 }

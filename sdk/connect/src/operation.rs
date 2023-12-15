@@ -463,6 +463,9 @@ pub mod list_views;
 /// Types for the `MonitorContact` operation.
 pub mod monitor_contact;
 
+/// Types for the `PauseContact` operation.
+pub mod pause_contact;
+
 /// Types for the `PutUserStatus` operation.
 pub mod put_user_status;
 
@@ -471,6 +474,9 @@ pub mod release_phone_number;
 
 /// Types for the `ReplicateInstance` operation.
 pub mod replicate_instance;
+
+/// Types for the `ResumeContact` operation.
+pub mod resume_contact;
 
 /// Types for the `ResumeContactRecording` operation.
 pub mod resume_contact_recording;

@@ -24,7 +24,7 @@ impl GetParametersForImportInputBuilder {
 ///
 /// <p>Returns the public key and an import token you need to import or reimport key material for a KMS key.</p>
 /// <p>By default, KMS keys are created with key material that KMS generates. This operation supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a>, an advanced feature that lets you generate and import the cryptographic key material for a KMS key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a> in the <i>Key Management Service Developer Guide</i>.</p>
-/// <p>Before calling <code>GetParametersForImport</code>, use the <code>CreateKey</code> operation with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with no key material. You can import key material for a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. However, you can't import key material into a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. You can also use <code>GetParametersForImport</code> to get a public key and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport the original key material</a> into a KMS key whose key material expired or was deleted.</p>
+/// <p>Before calling <code>GetParametersForImport</code>, use the <code>CreateKey</code> operation with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with no key material. You can import key material for a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also import key material into a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type. However, you can't import key material into a KMS key in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. You can also use <code>GetParametersForImport</code> to get a public key and import token to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport the original key material</a> into a KMS key whose key material expired or was deleted.</p>
 /// <p><code>GetParametersForImport</code> returns the items that you need to import your key material.</p>
 /// <ul>
 /// <li>
@@ -54,6 +54,7 @@ impl GetParametersForImportInputBuilder {
 /// <li>
 /// <p><code>DeleteImportedKeyMaterial</code></p></li>
 /// </ul>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetParametersForImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -198,7 +199,7 @@ impl GetParametersForImportFluentBuilder {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn wrapping_algorithm(mut self, input: crate::types::AlgorithmSpec) -> Self {
         self.inner = self.inner.wrapping_algorithm(input);
@@ -219,7 +220,7 @@ impl GetParametersForImportFluentBuilder {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn set_wrapping_algorithm(mut self, input: ::std::option::Option<crate::types::AlgorithmSpec>) -> Self {
         self.inner = self.inner.set_wrapping_algorithm(input);
@@ -240,7 +241,7 @@ impl GetParametersForImportFluentBuilder {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn get_wrapping_algorithm(&self) -> &::std::option::Option<crate::types::AlgorithmSpec> {
         self.inner.get_wrapping_algorithm()

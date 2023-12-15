@@ -258,6 +258,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartPipeline
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartPipelineExecutionError {
+    /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created.</p>
     ResourceLimitExceeded(crate::types::error::ResourceLimitExceeded),
     /// <p>Resource being access is not found.</p>
@@ -295,10 +297,15 @@ impl StartPipelineExecutionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartPipelineExecutionError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StartPipelineExecutionError::ResourceLimitExceeded`.
     pub fn is_resource_limit_exceeded(&self) -> bool {
@@ -312,6 +319,7 @@ impl StartPipelineExecutionError {
 impl ::std::error::Error for StartPipelineExecutionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -321,6 +329,7 @@ impl ::std::error::Error for StartPipelineExecutionError {
 impl ::std::fmt::Display for StartPipelineExecutionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ResourceLimitExceeded(_inner) => _inner.fmt(f),
             Self::ResourceNotFound(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -344,6 +353,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartPipelineExecutionError
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartPipelineExecutionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -299,6 +299,8 @@ mod delete_cluster;
 
 mod delete_code_repository;
 
+mod delete_compilation_job;
+
 mod delete_context;
 
 mod delete_data_quality_job_definition;

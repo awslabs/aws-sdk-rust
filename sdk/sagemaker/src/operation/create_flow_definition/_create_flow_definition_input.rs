@@ -114,7 +114,6 @@ impl CreateFlowDefinitionInputBuilder {
         &self.human_loop_activation_config
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-    /// This field is required.
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
         self

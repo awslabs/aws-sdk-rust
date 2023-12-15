@@ -11,12 +11,12 @@ pub struct CreateSpaceInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A collection of space settings.</p>
     pub space_settings: ::std::option::Option<crate::types::SpaceSettings>,
-    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
-    pub space_display_name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of ownership settings.</p>
     pub ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
     /// <p>A collection of space sharing settings.</p>
     pub space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
+    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
+    pub space_display_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateSpaceInput {
     /// <p>The ID of the associated Domain.</p>
@@ -37,10 +37,6 @@ impl CreateSpaceInput {
     pub fn space_settings(&self) -> ::std::option::Option<&crate::types::SpaceSettings> {
         self.space_settings.as_ref()
     }
-    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
-    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
-        self.space_display_name.as_deref()
-    }
     /// <p>A collection of ownership settings.</p>
     pub fn ownership_settings(&self) -> ::std::option::Option<&crate::types::OwnershipSettings> {
         self.ownership_settings.as_ref()
@@ -48,6 +44,10 @@ impl CreateSpaceInput {
     /// <p>A collection of space sharing settings.</p>
     pub fn space_sharing_settings(&self) -> ::std::option::Option<&crate::types::SpaceSharingSettings> {
         self.space_sharing_settings.as_ref()
+    }
+    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
+    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+        self.space_display_name.as_deref()
     }
 }
 impl CreateSpaceInput {
@@ -65,9 +65,9 @@ pub struct CreateSpaceInputBuilder {
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) space_settings: ::std::option::Option<crate::types::SpaceSettings>,
-    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
     pub(crate) space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
+    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateSpaceInputBuilder {
     /// <p>The ID of the associated Domain.</p>
@@ -134,20 +134,6 @@ impl CreateSpaceInputBuilder {
     pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
         &self.space_settings
     }
-    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
-    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.space_display_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
-    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_display_name = input;
-        self
-    }
-    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
-    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.space_display_name
-    }
     /// <p>A collection of ownership settings.</p>
     pub fn ownership_settings(mut self, input: crate::types::OwnershipSettings) -> Self {
         self.ownership_settings = ::std::option::Option::Some(input);
@@ -176,6 +162,20 @@ impl CreateSpaceInputBuilder {
     pub fn get_space_sharing_settings(&self) -> &::std::option::Option<crate::types::SpaceSharingSettings> {
         &self.space_sharing_settings
     }
+    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
+    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
+    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_display_name = input;
+        self
+    }
+    /// <p>The name of the space that appears in the SageMaker Studio UI.</p>
+    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_display_name
+    }
     /// Consumes the builder and constructs a [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_space::CreateSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_space::CreateSpaceInput {
@@ -183,9 +183,9 @@ impl CreateSpaceInputBuilder {
             space_name: self.space_name,
             tags: self.tags,
             space_settings: self.space_settings,
-            space_display_name: self.space_display_name,
             ownership_settings: self.ownership_settings,
             space_sharing_settings: self.space_sharing_settings,
+            space_display_name: self.space_display_name,
         })
     }
 }

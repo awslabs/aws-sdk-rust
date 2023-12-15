@@ -41,6 +41,8 @@ pub struct TransformJob {
     pub transform_input: ::std::option::Option<crate::types::TransformInput>,
     /// <p>Describes the results of a transform job.</p>
     pub transform_output: ::std::option::Option<crate::types::TransformOutput>,
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for transform job.</p>
     pub transform_resources: ::std::option::Option<crate::types::TransformResources>,
     /// <p>A timestamp that shows when the transform Job was created.</p>
@@ -67,8 +69,6 @@ pub struct TransformJob {
     pub experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     /// <p>A list of tags associated with the transform job.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
-    pub data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
 }
 impl TransformJob {
     /// <p>The name of the transform job.</p>
@@ -132,6 +132,10 @@ impl TransformJob {
     pub fn transform_output(&self) -> ::std::option::Option<&crate::types::TransformOutput> {
         self.transform_output.as_ref()
     }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {
+        self.data_capture_config.as_ref()
+    }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for transform job.</p>
     pub fn transform_resources(&self) -> ::std::option::Option<&crate::types::TransformResources> {
         self.transform_resources.as_ref()
@@ -178,10 +182,6 @@ impl TransformJob {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
-    pub fn data_capture_config(&self) -> ::std::option::Option<&crate::types::BatchDataCaptureConfig> {
-        self.data_capture_config.as_ref()
-    }
 }
 impl TransformJob {
     /// Creates a new builder-style object to manufacture [`TransformJob`](crate::types::TransformJob).
@@ -206,6 +206,7 @@ pub struct TransformJobBuilder {
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transform_input: ::std::option::Option<crate::types::TransformInput>,
     pub(crate) transform_output: ::std::option::Option<crate::types::TransformOutput>,
+    pub(crate) data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
     pub(crate) transform_resources: ::std::option::Option<crate::types::TransformResources>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) transform_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -215,7 +216,6 @@ pub struct TransformJobBuilder {
     pub(crate) data_processing: ::std::option::Option<crate::types::DataProcessing>,
     pub(crate) experiment_config: ::std::option::Option<crate::types::ExperimentConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    pub(crate) data_capture_config: ::std::option::Option<crate::types::BatchDataCaptureConfig>,
 }
 impl TransformJobBuilder {
     /// <p>The name of the transform job.</p>
@@ -434,6 +434,20 @@ impl TransformJobBuilder {
     pub fn get_transform_output(&self) -> &::std::option::Option<crate::types::TransformOutput> {
         &self.transform_output
     }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn data_capture_config(mut self, input: crate::types::BatchDataCaptureConfig) -> Self {
+        self.data_capture_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::BatchDataCaptureConfig>) -> Self {
+        self.data_capture_config = input;
+        self
+    }
+    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
+    pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
+        &self.data_capture_config
+    }
     /// <p>Describes the resources, including ML instance types and ML instance count, to use for transform job.</p>
     pub fn transform_resources(mut self, input: crate::types::TransformResources) -> Self {
         self.transform_resources = ::std::option::Option::Some(input);
@@ -590,20 +604,6 @@ impl TransformJobBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
-    pub fn data_capture_config(mut self, input: crate::types::BatchDataCaptureConfig) -> Self {
-        self.data_capture_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
-    pub fn set_data_capture_config(mut self, input: ::std::option::Option<crate::types::BatchDataCaptureConfig>) -> Self {
-        self.data_capture_config = input;
-        self
-    }
-    /// <p>Configuration to control how SageMaker captures inference data for batch transform jobs.</p>
-    pub fn get_data_capture_config(&self) -> &::std::option::Option<crate::types::BatchDataCaptureConfig> {
-        &self.data_capture_config
-    }
     /// Consumes the builder and constructs a [`TransformJob`](crate::types::TransformJob).
     pub fn build(self) -> crate::types::TransformJob {
         crate::types::TransformJob {
@@ -619,6 +619,7 @@ impl TransformJobBuilder {
             environment: self.environment,
             transform_input: self.transform_input,
             transform_output: self.transform_output,
+            data_capture_config: self.data_capture_config,
             transform_resources: self.transform_resources,
             creation_time: self.creation_time,
             transform_start_time: self.transform_start_time,
@@ -628,7 +629,6 @@ impl TransformJobBuilder {
             data_processing: self.data_processing,
             experiment_config: self.experiment_config,
             tags: self.tags,
-            data_capture_config: self.data_capture_config,
         }
     }
 }

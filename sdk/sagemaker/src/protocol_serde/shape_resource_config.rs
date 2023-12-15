@@ -21,23 +21,23 @@ pub fn ser_resource_config(
     if let Some(var_4) = &input.volume_kms_key_id {
         object.key("VolumeKmsKeyId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.instance_groups {
-        let mut array_6 = object.key("InstanceGroups").start_array();
-        for item_7 in var_5 {
-            {
-                #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_instance_group::ser_instance_group(&mut object_8, item_7)?;
-                object_8.finish();
-            }
-        }
-        array_6.finish();
-    }
-    if let Some(var_9) = &input.keep_alive_period_in_seconds {
+    if let Some(var_5) = &input.keep_alive_period_in_seconds {
         object.key("KeepAlivePeriodInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
+    }
+    if let Some(var_6) = &input.instance_groups {
+        let mut array_7 = object.key("InstanceGroups").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_instance_group::ser_instance_group(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
     }
     Ok(())
 }
@@ -85,15 +85,15 @@ where
                                     .transpose()?,
                             );
                         }
-                        "InstanceGroups" => {
-                            builder = builder.set_instance_groups(crate::protocol_serde::shape_instance_groups::de_instance_groups(tokens)?);
-                        }
                         "KeepAlivePeriodInSeconds" => {
                             builder = builder.set_keep_alive_period_in_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "InstanceGroups" => {
+                            builder = builder.set_instance_groups(crate::protocol_serde::shape_instance_groups::de_instance_groups(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

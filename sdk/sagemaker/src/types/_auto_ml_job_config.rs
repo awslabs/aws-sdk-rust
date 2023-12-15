@@ -8,11 +8,11 @@ pub struct AutoMlJobConfig {
     pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     /// <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
     pub security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
+    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    pub candidate_generation_config: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>,
     /// <p>The configuration for splitting the input training dataset.</p>
     /// <p>Type: AutoMLDataSplitConfig</p>
     pub data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
-    pub candidate_generation_config: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>,
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
     /// <p>The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to train the best version of a model. HPO automatically selects an algorithm for the type of problem you want to solve. Then HPO finds the best hyperparameters according to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code> mode.</p>
@@ -27,14 +27,14 @@ impl AutoMlJobConfig {
     pub fn security_config(&self) -> ::std::option::Option<&crate::types::AutoMlSecurityConfig> {
         self.security_config.as_ref()
     }
+    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    pub fn candidate_generation_config(&self) -> ::std::option::Option<&crate::types::AutoMlCandidateGenerationConfig> {
+        self.candidate_generation_config.as_ref()
+    }
     /// <p>The configuration for splitting the input training dataset.</p>
     /// <p>Type: AutoMLDataSplitConfig</p>
     pub fn data_split_config(&self) -> ::std::option::Option<&crate::types::AutoMlDataSplitConfig> {
         self.data_split_config.as_ref()
-    }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
-    pub fn candidate_generation_config(&self) -> ::std::option::Option<&crate::types::AutoMlCandidateGenerationConfig> {
-        self.candidate_generation_config.as_ref()
     }
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
@@ -56,8 +56,8 @@ impl AutoMlJobConfig {
 pub struct AutoMlJobConfigBuilder {
     pub(crate) completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     pub(crate) security_config: ::std::option::Option<crate::types::AutoMlSecurityConfig>,
-    pub(crate) data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     pub(crate) candidate_generation_config: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>,
+    pub(crate) data_split_config: ::std::option::Option<crate::types::AutoMlDataSplitConfig>,
     pub(crate) mode: ::std::option::Option<crate::types::AutoMlMode>,
 }
 impl AutoMlJobConfigBuilder {
@@ -89,6 +89,20 @@ impl AutoMlJobConfigBuilder {
     pub fn get_security_config(&self) -> &::std::option::Option<crate::types::AutoMlSecurityConfig> {
         &self.security_config
     }
+    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    pub fn candidate_generation_config(mut self, input: crate::types::AutoMlCandidateGenerationConfig) -> Self {
+        self.candidate_generation_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    pub fn set_candidate_generation_config(mut self, input: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>) -> Self {
+        self.candidate_generation_config = input;
+        self
+    }
+    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
+    pub fn get_candidate_generation_config(&self) -> &::std::option::Option<crate::types::AutoMlCandidateGenerationConfig> {
+        &self.candidate_generation_config
+    }
     /// <p>The configuration for splitting the input training dataset.</p>
     /// <p>Type: AutoMLDataSplitConfig</p>
     pub fn data_split_config(mut self, input: crate::types::AutoMlDataSplitConfig) -> Self {
@@ -105,20 +119,6 @@ impl AutoMlJobConfigBuilder {
     /// <p>Type: AutoMLDataSplitConfig</p>
     pub fn get_data_split_config(&self) -> &::std::option::Option<crate::types::AutoMlDataSplitConfig> {
         &self.data_split_config
-    }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
-    pub fn candidate_generation_config(mut self, input: crate::types::AutoMlCandidateGenerationConfig) -> Self {
-        self.candidate_generation_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
-    pub fn set_candidate_generation_config(mut self, input: ::std::option::Option<crate::types::AutoMlCandidateGenerationConfig>) -> Self {
-        self.candidate_generation_config = input;
-        self
-    }
-    /// <p>The configuration for generating a candidate for an AutoML job (optional).</p>
-    pub fn get_candidate_generation_config(&self) -> &::std::option::Option<crate::types::AutoMlCandidateGenerationConfig> {
-        &self.candidate_generation_config
     }
     /// <p>The method that Autopilot uses to train the data. You can either specify the mode manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>. In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.</p>
     /// <p>The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification and regression tasks directly from your dataset. This machine learning mode combines several base models to produce an optimal predictive model. It then uses a stacking ensemble method to combine predictions from contributing members. A multi-stack ensemble model can provide better performance over a single model by combining the predictive capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code> mode.</p>
@@ -145,8 +145,8 @@ impl AutoMlJobConfigBuilder {
         crate::types::AutoMlJobConfig {
             completion_criteria: self.completion_criteria,
             security_config: self.security_config,
-            data_split_config: self.data_split_config,
             candidate_generation_config: self.candidate_generation_config,
+            data_split_config: self.data_split_config,
             mode: self.mode,
         }
     }

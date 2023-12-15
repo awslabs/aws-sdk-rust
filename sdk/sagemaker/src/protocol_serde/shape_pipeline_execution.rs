@@ -84,13 +84,13 @@ where
                                 crate::protocol_serde::shape_parallelism_configuration::de_parallelism_configuration(tokens)?,
                             );
                         }
-                        "PipelineParameters" => {
-                            builder = builder.set_pipeline_parameters(crate::protocol_serde::shape_parameter_list::de_parameter_list(tokens)?);
-                        }
                         "SelectiveExecutionConfig" => {
                             builder = builder.set_selective_execution_config(
                                 crate::protocol_serde::shape_selective_execution_config::de_selective_execution_config(tokens)?,
                             );
+                        }
+                        "PipelineParameters" => {
+                            builder = builder.set_pipeline_parameters(crate::protocol_serde::shape_parameter_list::de_parameter_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

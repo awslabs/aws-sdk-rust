@@ -20,6 +20,21 @@ pub fn de_describe_user_profile_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ResourceLimitExceeded" => crate::operation::describe_user_profile::DescribeUserProfileError::ResourceLimitExceeded({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceLimitExceededBuilder::default();
+                output = crate::protocol_serde::shape_resource_limit_exceeded::de_resource_limit_exceeded_json_err(_response_body, output)
+                    .map_err(crate::operation::describe_user_profile::DescribeUserProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFound" => crate::operation::describe_user_profile::DescribeUserProfileError::ResourceNotFound({
             #[allow(unused_mut)]
             let mut tmp = {

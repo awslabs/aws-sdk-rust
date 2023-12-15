@@ -13,7 +13,7 @@ pub struct DescribeDomainOutput {
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub single_sign_on_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::DomainStatus>,
@@ -23,10 +23,14 @@ pub struct DescribeDomainOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The failure reason.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
     /// <p>The domain's authentication mode.</p>
     pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile.</p>
     pub default_user_settings: ::std::option::Option<crate::types::UserSettings>,
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
     /// <li>
@@ -46,12 +50,8 @@ pub struct DescribeDomainOutput {
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached to the domain.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
     /// <p>The default settings used to create a space.</p>
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
@@ -77,7 +77,7 @@ impl DescribeDomainOutput {
     pub fn single_sign_on_managed_application_instance_id(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_managed_application_instance_id.as_deref()
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn single_sign_on_application_arn(&self) -> ::std::option::Option<&str> {
         self.single_sign_on_application_arn.as_deref()
     }
@@ -97,6 +97,10 @@ impl DescribeDomainOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub fn security_group_id_for_domain_boundary(&self) -> ::std::option::Option<&str> {
+        self.security_group_id_for_domain_boundary.as_deref()
+    }
     /// <p>The domain's authentication mode.</p>
     pub fn auth_mode(&self) -> ::std::option::Option<&crate::types::AuthMode> {
         self.auth_mode.as_ref()
@@ -104,6 +108,10 @@ impl DescribeDomainOutput {
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile.</p>
     pub fn default_user_settings(&self) -> ::std::option::Option<&crate::types::UserSettings> {
         self.default_user_settings.as_ref()
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(&self) -> ::std::option::Option<&crate::types::DomainSettings> {
+        self.domain_settings.as_ref()
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
@@ -138,17 +146,9 @@ impl DescribeDomainOutput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn domain_settings(&self) -> ::std::option::Option<&crate::types::DomainSettings> {
-        self.domain_settings.as_ref()
-    }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
-    }
-    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn security_group_id_for_domain_boundary(&self) -> ::std::option::Option<&str> {
-        self.security_group_id_for_domain_boundary.as_deref()
     }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
@@ -181,17 +181,17 @@ pub struct DescribeDomainOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
     pub(crate) auth_mode: ::std::option::Option<crate::types::AuthMode>,
     pub(crate) default_user_settings: ::std::option::Option<crate::types::UserSettings>,
+    pub(crate) domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     pub(crate) app_network_access_type: ::std::option::Option<crate::types::AppNetworkAccessType>,
     pub(crate) home_efs_file_system_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
-    pub(crate) domain_settings: ::std::option::Option<crate::types::DomainSettings>,
     pub(crate) app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    pub(crate) security_group_id_for_domain_boundary: ::std::option::Option<::std::string::String>,
     pub(crate) default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
 }
@@ -266,17 +266,17 @@ impl DescribeDomainOutputBuilder {
     pub fn get_single_sign_on_managed_application_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_managed_application_instance_id
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn single_sign_on_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn set_single_sign_on_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.single_sign_on_application_arn = input;
         self
     }
-    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after September 19, 2023.</p>
+    /// <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     pub fn get_single_sign_on_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.single_sign_on_application_arn
     }
@@ -336,6 +336,20 @@ impl DescribeDomainOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub fn security_group_id_for_domain_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.security_group_id_for_domain_boundary = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub fn set_security_group_id_for_domain_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.security_group_id_for_domain_boundary = input;
+        self
+    }
+    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
+    pub fn get_security_group_id_for_domain_boundary(&self) -> &::std::option::Option<::std::string::String> {
+        &self.security_group_id_for_domain_boundary
+    }
     /// <p>The domain's authentication mode.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
         self.auth_mode = ::std::option::Option::Some(input);
@@ -363,6 +377,20 @@ impl DescribeDomainOutputBuilder {
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile.</p>
     pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
         &self.default_user_settings
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
+        self.domain_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
+        self.domain_settings = input;
+        self
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
+        &self.domain_settings
     }
     /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
     /// <ul>
@@ -475,20 +503,6 @@ impl DescribeDomainOutputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
-        self.domain_settings = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
-        self.domain_settings = input;
-        self
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
-        &self.domain_settings
-    }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.app_security_group_management = ::std::option::Option::Some(input);
@@ -502,20 +516,6 @@ impl DescribeDomainOutputBuilder {
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
-    }
-    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn security_group_id_for_domain_boundary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.security_group_id_for_domain_boundary = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn set_security_group_id_for_domain_boundary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.security_group_id_for_domain_boundary = input;
-        self
-    }
-    /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn get_security_group_id_for_domain_boundary(&self) -> &::std::option::Option<::std::string::String> {
-        &self.security_group_id_for_domain_boundary
     }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
@@ -553,17 +553,17 @@ impl DescribeDomainOutputBuilder {
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
             failure_reason: self.failure_reason,
+            security_group_id_for_domain_boundary: self.security_group_id_for_domain_boundary,
             auth_mode: self.auth_mode,
             default_user_settings: self.default_user_settings,
+            domain_settings: self.domain_settings,
             app_network_access_type: self.app_network_access_type,
             home_efs_file_system_kms_key_id: self.home_efs_file_system_kms_key_id,
             subnet_ids: self.subnet_ids,
             url: self.url,
             vpc_id: self.vpc_id,
             kms_key_id: self.kms_key_id,
-            domain_settings: self.domain_settings,
             app_security_group_management: self.app_security_group_management,
-            security_group_id_for_domain_boundary: self.security_group_id_for_domain_boundary,
             default_space_settings: self.default_space_settings,
             _request_id: self._request_id,
         }

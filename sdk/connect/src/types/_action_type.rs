@@ -13,9 +13,12 @@
 /// # let actiontype = unimplemented!();
 /// match actiontype {
 ///     ActionType::AssignContactCategory => { /* ... */ },
+///     ActionType::CreateCase => { /* ... */ },
 ///     ActionType::CreateTask => { /* ... */ },
+///     ActionType::EndAssociatedTasks => { /* ... */ },
 ///     ActionType::GenerateEventbridgeEvent => { /* ... */ },
 ///     ActionType::SendNotification => { /* ... */ },
+///     ActionType::UpdateCase => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,11 +49,17 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     AssignContactCategory,
     #[allow(missing_docs)] // documentation missing in model
+    CreateCase,
+    #[allow(missing_docs)] // documentation missing in model
     CreateTask,
+    #[allow(missing_docs)] // documentation missing in model
+    EndAssociatedTasks,
     #[allow(missing_docs)] // documentation missing in model
     GenerateEventbridgeEvent,
     #[allow(missing_docs)] // documentation missing in model
     SendNotification,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateCase,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,9 +68,12 @@ impl ::std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
         match s {
             "ASSIGN_CONTACT_CATEGORY" => ActionType::AssignContactCategory,
+            "CREATE_CASE" => ActionType::CreateCase,
             "CREATE_TASK" => ActionType::CreateTask,
+            "END_ASSOCIATED_TASKS" => ActionType::EndAssociatedTasks,
             "GENERATE_EVENTBRIDGE_EVENT" => ActionType::GenerateEventbridgeEvent,
             "SEND_NOTIFICATION" => ActionType::SendNotification,
+            "UPDATE_CASE" => ActionType::UpdateCase,
             other => ActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -78,9 +90,12 @@ impl ActionType {
     pub fn as_str(&self) -> &str {
         match self {
             ActionType::AssignContactCategory => "ASSIGN_CONTACT_CATEGORY",
+            ActionType::CreateCase => "CREATE_CASE",
             ActionType::CreateTask => "CREATE_TASK",
+            ActionType::EndAssociatedTasks => "END_ASSOCIATED_TASKS",
             ActionType::GenerateEventbridgeEvent => "GENERATE_EVENTBRIDGE_EVENT",
             ActionType::SendNotification => "SEND_NOTIFICATION",
+            ActionType::UpdateCase => "UPDATE_CASE",
             ActionType::Unknown(value) => value.as_str(),
         }
     }
@@ -88,9 +103,12 @@ impl ActionType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ASSIGN_CONTACT_CATEGORY",
+            "CREATE_CASE",
             "CREATE_TASK",
+            "END_ASSOCIATED_TASKS",
             "GENERATE_EVENTBRIDGE_EVENT",
             "SEND_NOTIFICATION",
+            "UPDATE_CASE",
         ]
     }
 }

@@ -65,6 +65,7 @@ pub struct FeatureDefinitionBuilder {
 }
 impl FeatureDefinitionBuilder {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
+    /// This field is required.
     pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feature_name = ::std::option::Option::Some(input.into());
         self
@@ -79,6 +80,7 @@ impl FeatureDefinitionBuilder {
         &self.feature_name
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
+    /// This field is required.
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
         self.feature_type = ::std::option::Option::Some(input);
         self

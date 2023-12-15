@@ -31,14 +31,14 @@ pub struct DescribeHyperParameterTuningJobOutput {
     pub overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     /// <p>The configuration for starting the hyperparameter parameter tuning job using one or more previous tuning jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to search over in the new tuning job.</p>
     pub warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub autotune: ::std::option::Option<crate::types::Autotune>,
     /// <p>If the tuning job failed, the reason it failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>Tuning job completion information returned as the response from a hyperparameter tuning job. This information tells if your tuning job has or has not converged. It also includes the number of training jobs that have not improved model performance as evaluated against the objective function.</p>
     pub tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
     pub consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
-    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
-    pub autotune: ::std::option::Option<crate::types::Autotune>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutput {
@@ -100,6 +100,10 @@ impl DescribeHyperParameterTuningJobOutput {
     pub fn warm_start_config(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobWarmStartConfig> {
         self.warm_start_config.as_ref()
     }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn autotune(&self) -> ::std::option::Option<&crate::types::Autotune> {
+        self.autotune.as_ref()
+    }
     /// <p>If the tuning job failed, the reason it failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
@@ -111,10 +115,6 @@ impl DescribeHyperParameterTuningJobOutput {
     /// <p>The total resources consumed by your hyperparameter tuning job.</p>
     pub fn consumed_resources(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
         self.consumed_resources.as_ref()
-    }
-    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
-    pub fn autotune(&self) -> ::std::option::Option<&crate::types::Autotune> {
-        self.autotune.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeHyperParameterTuningJobOutput {
@@ -147,10 +147,10 @@ pub struct DescribeHyperParameterTuningJobOutputBuilder {
     pub(crate) best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     pub(crate) overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     pub(crate) warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
+    pub(crate) autotune: ::std::option::Option<crate::types::Autotune>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     pub(crate) consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
-    pub(crate) autotune: ::std::option::Option<crate::types::Autotune>,
     _request_id: Option<String>,
 }
 impl DescribeHyperParameterTuningJobOutputBuilder {
@@ -366,6 +366,20 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
     pub fn get_warm_start_config(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig> {
         &self.warm_start_config
     }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn autotune(mut self, input: crate::types::Autotune) -> Self {
+        self.autotune = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn set_autotune(mut self, input: ::std::option::Option<crate::types::Autotune>) -> Self {
+        self.autotune = input;
+        self
+    }
+    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
+    pub fn get_autotune(&self) -> &::std::option::Option<crate::types::Autotune> {
+        &self.autotune
+    }
     /// <p>If the tuning job failed, the reason it failed.</p>
     pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.failure_reason = ::std::option::Option::Some(input.into());
@@ -408,20 +422,6 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
     pub fn get_consumed_resources(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources> {
         &self.consumed_resources
     }
-    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
-    pub fn autotune(mut self, input: crate::types::Autotune) -> Self {
-        self.autotune = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
-    pub fn set_autotune(mut self, input: ::std::option::Option<crate::types::Autotune>) -> Self {
-        self.autotune = input;
-        self
-    }
-    /// <p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>
-    pub fn get_autotune(&self) -> &::std::option::Option<crate::types::Autotune> {
-        &self.autotune
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -448,10 +448,10 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
             best_training_job: self.best_training_job,
             overall_best_training_job: self.overall_best_training_job,
             warm_start_config: self.warm_start_config,
+            autotune: self.autotune,
             failure_reason: self.failure_reason,
             tuning_job_completion_details: self.tuning_job_completion_details,
             consumed_resources: self.consumed_resources,
-            autotune: self.autotune,
             _request_id: self._request_id,
         }
     }

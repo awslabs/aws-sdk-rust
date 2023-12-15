@@ -33,21 +33,21 @@ pub use crate::types::_default_space_storage_settings::DefaultSpaceStorageSettin
 
 pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettingsBuilder;
 
-pub use crate::types::_code_editor_app_settings::CodeEditorAppSettingsBuilder;
-
-pub use crate::types::_resource_spec::ResourceSpecBuilder;
-
 pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettingsBuilder;
 
 pub use crate::types::_code_repository::CodeRepositoryBuilder;
 
 pub use crate::types::_custom_image::CustomImageBuilder;
 
+pub use crate::types::_resource_spec::ResourceSpecBuilder;
+
+pub use crate::types::_code_editor_app_settings::CodeEditorAppSettingsBuilder;
+
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
-pub use crate::types::_direct_deploy_settings::DirectDeploySettingsBuilder;
-
 pub use crate::types::_kendra_settings::KendraSettingsBuilder;
+
+pub use crate::types::_direct_deploy_settings::DirectDeploySettingsBuilder;
 
 pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSettingBuilder;
 
@@ -87,9 +87,9 @@ pub use crate::types::_space_storage_settings::SpaceStorageSettingsBuilder;
 
 pub use crate::types::_ebs_storage_settings::EbsStorageSettingsBuilder;
 
-pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettingsBuilder;
-
 pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettingsBuilder;
+
+pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettingsBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
@@ -199,13 +199,13 @@ pub use crate::types::_production_variant_serverless_update_config::ProductionVa
 
 pub use crate::types::_deployment_config::DeploymentConfigBuilder;
 
-pub use crate::types::_rolling_update_policy::RollingUpdatePolicyBuilder;
-
-pub use crate::types::_capacity_size::CapacitySizeBuilder;
-
 pub use crate::types::_auto_rollback_config::AutoRollbackConfigBuilder;
 
 pub use crate::types::_alarm::AlarmBuilder;
+
+pub use crate::types::_rolling_update_policy::RollingUpdatePolicyBuilder;
+
+pub use crate::types::_capacity_size::CapacitySizeBuilder;
 
 pub use crate::types::_blue_green_update_policy::BlueGreenUpdatePolicyBuilder;
 
@@ -233,9 +233,9 @@ pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfigBui
 
 pub use crate::types::_container_config::ContainerConfigBuilder;
 
-pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfigBuilder;
-
 pub use crate::types::_file_system_config::FileSystemConfigBuilder;
+
+pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfigBuilder;
 
 pub use crate::types::_kernel_spec::KernelSpecBuilder;
 
@@ -249,17 +249,15 @@ pub use crate::types::_output_parameter::OutputParameterBuilder;
 
 pub use crate::types::_search_record::SearchRecordBuilder;
 
-pub use crate::types::_model_card::ModelCardBuilder;
+pub use crate::types::_model_dashboard_model::ModelDashboardModelBuilder;
+
+pub use crate::types::_model_dashboard_model_card::ModelDashboardModelCardBuilder;
 
 pub use crate::types::_user_context::UserContextBuilder;
 
 pub use crate::types::_iam_identity::IamIdentityBuilder;
 
 pub use crate::types::_model_card_security_config::ModelCardSecurityConfigBuilder;
-
-pub use crate::types::_model_dashboard_model::ModelDashboardModelBuilder;
-
-pub use crate::types::_model_dashboard_model_card::ModelDashboardModelCardBuilder;
 
 pub use crate::types::_model_dashboard_monitoring_schedule::ModelDashboardMonitoringScheduleBuilder;
 
@@ -273,13 +271,13 @@ pub use crate::types::_model_dashboard_indicator_action::ModelDashboardIndicator
 
 pub use crate::types::_transform_job::TransformJobBuilder;
 
-pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfigBuilder;
-
 pub use crate::types::_experiment_config::ExperimentConfigBuilder;
 
 pub use crate::types::_data_processing::DataProcessingBuilder;
 
 pub use crate::types::_transform_resources::TransformResourcesBuilder;
+
+pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfigBuilder;
 
 pub use crate::types::_transform_output::TransformOutputBuilder;
 
@@ -303,17 +301,19 @@ pub use crate::types::_inference_execution_config::InferenceExecutionConfigBuild
 
 pub use crate::types::_container_definition::ContainerDefinitionBuilder;
 
+pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
+
 pub use crate::types::_model_data_source::ModelDataSourceBuilder;
 
 pub use crate::types::_s3_model_data_source::S3ModelDataSourceBuilder;
 
 pub use crate::types::_model_access_config::ModelAccessConfigBuilder;
 
-pub use crate::types::_multi_model_config::MultiModelConfigBuilder;
-
 pub use crate::types::_image_config::ImageConfigBuilder;
 
 pub use crate::types::_repository_auth_config::RepositoryAuthConfigBuilder;
+
+pub use crate::types::_model_card::ModelCardBuilder;
 
 pub use crate::types::_hyper_parameter_tuning_job_search_entity::HyperParameterTuningJobSearchEntityBuilder;
 
@@ -335,15 +335,15 @@ pub use crate::types::_training_job_status_counters::TrainingJobStatusCountersBu
 
 pub use crate::types::_hyper_parameter_training_job_definition::HyperParameterTrainingJobDefinitionBuilder;
 
-pub use crate::types::_hyper_parameter_tuning_resource_config::HyperParameterTuningResourceConfigBuilder;
-
-pub use crate::types::_hyper_parameter_tuning_instance_config::HyperParameterTuningInstanceConfigBuilder;
-
 pub use crate::types::_retry_strategy::RetryStrategyBuilder;
 
 pub use crate::types::_checkpoint_config::CheckpointConfigBuilder;
 
 pub use crate::types::_stopping_condition::StoppingConditionBuilder;
+
+pub use crate::types::_hyper_parameter_tuning_resource_config::HyperParameterTuningResourceConfigBuilder;
+
+pub use crate::types::_hyper_parameter_tuning_instance_config::HyperParameterTuningInstanceConfigBuilder;
 
 pub use crate::types::_resource_config::ResourceConfigBuilder;
 
@@ -391,13 +391,13 @@ pub use crate::types::_hyper_parameter_tuning_job_strategy_config::HyperParamete
 
 pub use crate::types::_hyperband_strategy_config::HyperbandStrategyConfigBuilder;
 
-pub use crate::types::_feature_metadata::FeatureMetadataBuilder;
-
 pub use crate::types::_project::ProjectBuilder;
 
 pub use crate::types::_service_catalog_provisioned_product_details::ServiceCatalogProvisionedProductDetailsBuilder;
 
 pub use crate::types::_service_catalog_provisioning_details::ServiceCatalogProvisioningDetailsBuilder;
+
+pub use crate::types::_feature_metadata::FeatureMetadataBuilder;
 
 pub use crate::types::_feature_group::FeatureGroupBuilder;
 
@@ -621,11 +621,11 @@ pub use crate::types::_auto_ml_job_step_metadata::AutoMlJobStepMetadataBuilder;
 
 pub use crate::types::_fail_step_metadata::FailStepMetadataBuilder;
 
-pub use crate::types::_emr_step_metadata::EmrStepMetadataBuilder;
-
 pub use crate::types::_clarify_check_step_metadata::ClarifyCheckStepMetadataBuilder;
 
 pub use crate::types::_quality_check_step_metadata::QualityCheckStepMetadataBuilder;
+
+pub use crate::types::_emr_step_metadata::EmrStepMetadataBuilder;
 
 pub use crate::types::_lambda_step_metadata::LambdaStepMetadataBuilder;
 
@@ -703,13 +703,13 @@ pub use crate::types::_inference_recommendations_job_step::InferenceRecommendati
 
 pub use crate::types::_recommendation_job_inference_benchmark::RecommendationJobInferenceBenchmarkBuilder;
 
-pub use crate::types::_inference_metrics::InferenceMetricsBuilder;
-
 pub use crate::types::_model_configuration::ModelConfigurationBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
 pub use crate::types::_endpoint_output_configuration::EndpointOutputConfigurationBuilder;
+
+pub use crate::types::_inference_metrics::InferenceMetricsBuilder;
 
 pub use crate::types::_recommendation_metrics::RecommendationMetricsBuilder;
 
@@ -1013,6 +1013,14 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetailsBuilder;
 
+pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;
+
+pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
+
+pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
+
+pub use crate::types::_model_deploy_config::ModelDeployConfigBuilder;
+
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributesBuilder;
 
 pub use crate::types::_text_generation_resolved_attributes::TextGenerationResolvedAttributesBuilder;
@@ -1025,15 +1033,13 @@ pub use crate::types::_auto_ml_job_objective::AutoMlJobObjectiveBuilder;
 
 pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifactsBuilder;
 
-pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfigBuilder;
-
-pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfigBuilder;
-
-pub use crate::types::_model_deploy_result::ModelDeployResultBuilder;
-
-pub use crate::types::_model_deploy_config::ModelDeployConfigBuilder;
-
 pub use crate::types::_text_generation_job_config::TextGenerationJobConfigBuilder;
+
+pub use crate::types::_tabular_job_config::TabularJobConfigBuilder;
+
+pub use crate::types::_candidate_generation_config::CandidateGenerationConfigBuilder;
+
+pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
 
 pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfigBuilder;
 
@@ -1042,12 +1048,6 @@ pub use crate::types::_holiday_config_attributes::HolidayConfigAttributesBuilder
 pub use crate::types::_time_series_config::TimeSeriesConfigBuilder;
 
 pub use crate::types::_time_series_transformations::TimeSeriesTransformationsBuilder;
-
-pub use crate::types::_tabular_job_config::TabularJobConfigBuilder;
-
-pub use crate::types::_candidate_generation_config::CandidateGenerationConfigBuilder;
-
-pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
 
 pub use crate::types::_text_classification_job_config::TextClassificationJobConfigBuilder;
 

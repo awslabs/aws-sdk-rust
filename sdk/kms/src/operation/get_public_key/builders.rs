@@ -39,6 +39,7 @@ impl GetPublicKeyInputBuilder {
 /// <p><b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN in the value of the <code>KeyId</code> parameter.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetPublicKey</a> (key policy)</p>
 /// <p><b>Related operations</b>: <code>CreateKey</code></p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPublicKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

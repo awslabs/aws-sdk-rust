@@ -39,6 +39,8 @@ pub use crate::types::error::_destination_not_allowed_exception::DestinationNotA
 
 pub use crate::types::error::_maximum_result_returned_exception::MaximumResultReturnedException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyException;
 
 pub use crate::types::error::_output_type_not_found_exception::OutputTypeNotFoundException;
@@ -48,6 +50,8 @@ pub use crate::types::error::_user_not_found_exception::UserNotFoundException;
 pub use crate::types::error::_contact_flow_not_published_exception::ContactFlowNotPublishedException;
 
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _contact_flow_not_published_exception;
 

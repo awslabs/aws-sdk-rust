@@ -6,14 +6,14 @@
 pub struct RecommendationJobInferenceBenchmark {
     /// <p>The metrics of recommendations.</p>
     pub metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
+    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
+    pub endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     /// <p>Defines the model configuration. Includes the specification name and environment parameters.</p>
     pub model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     /// <p>The reason why a benchmark failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the benchmark started.</p>
@@ -23,6 +23,10 @@ impl RecommendationJobInferenceBenchmark {
     /// <p>The metrics of recommendations.</p>
     pub fn metrics(&self) -> ::std::option::Option<&crate::types::RecommendationMetrics> {
         self.metrics.as_ref()
+    }
+    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
+    pub fn endpoint_metrics(&self) -> ::std::option::Option<&crate::types::InferenceMetrics> {
+        self.endpoint_metrics.as_ref()
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointOutputConfiguration> {
@@ -35,10 +39,6 @@ impl RecommendationJobInferenceBenchmark {
     /// <p>The reason why a benchmark failed.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
-    }
-    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub fn endpoint_metrics(&self) -> ::std::option::Option<&crate::types::InferenceMetrics> {
-        self.endpoint_metrics.as_ref()
     }
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub fn invocation_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -61,10 +61,10 @@ impl RecommendationJobInferenceBenchmark {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct RecommendationJobInferenceBenchmarkBuilder {
     pub(crate) metrics: ::std::option::Option<crate::types::RecommendationMetrics>,
+    pub(crate) endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     pub(crate) endpoint_configuration: ::std::option::Option<crate::types::EndpointOutputConfiguration>,
     pub(crate) model_configuration: ::std::option::Option<crate::types::ModelConfiguration>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) endpoint_metrics: ::std::option::Option<crate::types::InferenceMetrics>,
     pub(crate) invocation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) invocation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -82,6 +82,20 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     /// <p>The metrics of recommendations.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<crate::types::RecommendationMetrics> {
         &self.metrics
+    }
+    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
+    pub fn endpoint_metrics(mut self, input: crate::types::InferenceMetrics) -> Self {
+        self.endpoint_metrics = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
+    pub fn set_endpoint_metrics(mut self, input: ::std::option::Option<crate::types::InferenceMetrics>) -> Self {
+        self.endpoint_metrics = input;
+        self
+    }
+    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
+    pub fn get_endpoint_metrics(&self) -> &::std::option::Option<crate::types::InferenceMetrics> {
+        &self.endpoint_metrics
     }
     /// <p>The endpoint configuration made by Inference Recommender during a recommendation job.</p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointOutputConfiguration) -> Self {
@@ -126,20 +140,6 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub fn endpoint_metrics(mut self, input: crate::types::InferenceMetrics) -> Self {
-        self.endpoint_metrics = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub fn set_endpoint_metrics(mut self, input: ::std::option::Option<crate::types::InferenceMetrics>) -> Self {
-        self.endpoint_metrics = input;
-        self
-    }
-    /// <p>The metrics for an existing endpoint compared in an Inference Recommender job.</p>
-    pub fn get_endpoint_metrics(&self) -> &::std::option::Option<crate::types::InferenceMetrics> {
-        &self.endpoint_metrics
-    }
     /// <p>A timestamp that shows when the benchmark completed.</p>
     pub fn invocation_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.invocation_end_time = ::std::option::Option::Some(input);
@@ -172,10 +172,10 @@ impl RecommendationJobInferenceBenchmarkBuilder {
     pub fn build(self) -> crate::types::RecommendationJobInferenceBenchmark {
         crate::types::RecommendationJobInferenceBenchmark {
             metrics: self.metrics,
+            endpoint_metrics: self.endpoint_metrics,
             endpoint_configuration: self.endpoint_configuration,
             model_configuration: self.model_configuration,
             failure_reason: self.failure_reason,
-            endpoint_metrics: self.endpoint_metrics,
             invocation_end_time: self.invocation_end_time,
             invocation_start_time: self.invocation_start_time,
         }

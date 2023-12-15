@@ -39,6 +39,8 @@ pub use crate::types::error::_destination_not_allowed_exception::DestinationNotA
 
 pub use crate::types::error::_maximum_result_returned_exception::MaximumResultReturnedExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
 
 pub use crate::types::error::_output_type_not_found_exception::OutputTypeNotFoundExceptionBuilder;

@@ -114,6 +114,69 @@ impl StartOutboundVoiceContactFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name(input.into());
+        self
+    }
+    /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p>The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
+    /// <p>A description of the voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.description(input.into());
+        self
+    }
+    /// <p>A description of the voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_description(input);
+        self
+    }
+    /// <p>A description of the voice contact that is shown to an agent in the Contact Control Panel (CCP).</p>
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_description()
+    }
+    /// Adds a key-value pair to `References`.
+    ///
+    /// To override the contents of this collection use [`set_references`](Self::set_references).
+    ///
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Contacts can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during voice contact creation.</p>
+    pub fn references(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::Reference) -> Self {
+        self.inner = self.inner.references(k.into(), v);
+        self
+    }
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Contacts can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during voice contact creation.</p>
+    pub fn set_references(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
+    ) -> Self {
+        self.inner = self.inner.set_references(input);
+        self
+    }
+    /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Contacts can have the following reference types at the time of creation: <code>URL</code> | <code>NUMBER</code> | <code>STRING</code> | <code>DATE</code> | <code>EMAIL</code>. <code>ATTACHMENT</code> is not a supported reference type during voice contact creation.</p>
+    pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
+        self.inner.get_references()
+    }
+    /// <p>The <code>contactId</code> that is related to this contact. Linking voice, task, or chat by using <code>RelatedContactID</code> copies over contact attributes from the related contact to the new contact. All updates to user-defined attributes in the new contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
+    pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.related_contact_id(input.into());
+        self
+    }
+    /// <p>The <code>contactId</code> that is related to this contact. Linking voice, task, or chat by using <code>RelatedContactID</code> copies over contact attributes from the related contact to the new contact. All updates to user-defined attributes in the new contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
+    pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_related_contact_id(input);
+        self
+    }
+    /// <p>The <code>contactId</code> that is related to this contact. Linking voice, task, or chat by using <code>RelatedContactID</code> copies over contact attributes from the related contact to the new contact. All updates to user-defined attributes in the new contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using <code>RelatedContactId</code>.</p>
+    pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_related_contact_id()
+    }
     /// <p>The phone number of the customer, in E.164 format.</p>
     pub fn destination_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination_phone_number(input.into());

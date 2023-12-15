@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Operation cannot be performed at this time as there is a conflict with another operation or contact state.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The flow has not been published.</p>
     ContactFlowNotPublishedException(crate::types::error::ContactFlowNotPublishedException),
     /// <p>The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to Chat or Task contacts.</p>
@@ -64,6 +66,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ContactFlowNotPublishedException(inner) => inner.fmt(f),
             Error::ContactNotFoundException(inner) => inner.fmt(f),
             Error::DestinationNotAllowedException(inner) => inner.fmt(f),
@@ -109,6 +112,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::ContactFlowNotPublishedException(inner) => inner.meta(),
             Self::ContactNotFoundException(inner) => inner.meta(),
             Self::DestinationNotAllowedException(inner) => inner.meta(),
@@ -5552,6 +5556,35 @@ impl From<crate::operation::monitor_contact::MonitorContactError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::pause_contact::PauseContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::pause_contact::PauseContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::pause_contact::PauseContactError> for Error {
+    fn from(err: crate::operation::pause_contact::PauseContactError) -> Self {
+        match err {
+            crate::operation::pause_contact::PauseContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::pause_contact::PauseContactError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::pause_contact::PauseContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::pause_contact::PauseContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::pause_contact::PauseContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::pause_contact::PauseContactError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::pause_contact::PauseContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::pause_contact::PauseContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::pause_contact::PauseContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_user_status::PutUserStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5641,6 +5674,34 @@ impl From<crate::operation::replicate_instance::ReplicateInstanceError> for Erro
             }
             crate::operation::replicate_instance::ReplicateInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::replicate_instance::ReplicateInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_contact::ResumeContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_contact::ResumeContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::resume_contact::ResumeContactError> for Error {
+    fn from(err: crate::operation::resume_contact::ResumeContactError) -> Self {
+        match err {
+            crate::operation::resume_contact::ResumeContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::resume_contact::ResumeContactError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::resume_contact::ResumeContactError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::resume_contact::ResumeContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::resume_contact::ResumeContactError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::resume_contact::ResumeContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::resume_contact::ResumeContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::resume_contact::ResumeContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8244,6 +8305,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::ContactFlowNotPublishedException(inner) => inner.source(),
             Error::ContactNotFoundException(inner) => inner.source(),
             Error::DestinationNotAllowedException(inner) => inner.source(),
@@ -8275,6 +8337,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::ContactFlowNotPublishedException(e) => e.request_id(),
             Self::ContactNotFoundException(e) => e.request_id(),
             Self::DestinationNotAllowedException(e) => e.request_id(),

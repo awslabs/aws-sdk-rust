@@ -19,6 +19,8 @@
 ///     ResourceType::FeatureGroup => { /* ... */ },
 ///     ResourceType::FeatureMetadata => { /* ... */ },
 ///     ResourceType::HyperParameterTuningJob => { /* ... */ },
+///     ResourceType::Image => { /* ... */ },
+///     ResourceType::ImageVersion => { /* ... */ },
 ///     ResourceType::Model => { /* ... */ },
 ///     ResourceType::ModelCard => { /* ... */ },
 ///     ResourceType::ModelPackage => { /* ... */ },
@@ -69,6 +71,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     HyperParameterTuningJob,
     #[allow(missing_docs)] // documentation missing in model
+    Image,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageVersion,
+    #[allow(missing_docs)] // documentation missing in model
     Model,
     #[allow(missing_docs)] // documentation missing in model
     ModelCard,
@@ -98,6 +104,8 @@ impl ::std::convert::From<&str> for ResourceType {
             "FeatureGroup" => ResourceType::FeatureGroup,
             "FeatureMetadata" => ResourceType::FeatureMetadata,
             "HyperParameterTuningJob" => ResourceType::HyperParameterTuningJob,
+            "Image" => ResourceType::Image,
+            "ImageVersion" => ResourceType::ImageVersion,
             "Model" => ResourceType::Model,
             "ModelCard" => ResourceType::ModelCard,
             "ModelPackage" => ResourceType::ModelPackage,
@@ -128,6 +136,8 @@ impl ResourceType {
             ResourceType::FeatureGroup => "FeatureGroup",
             ResourceType::FeatureMetadata => "FeatureMetadata",
             ResourceType::HyperParameterTuningJob => "HyperParameterTuningJob",
+            ResourceType::Image => "Image",
+            ResourceType::ImageVersion => "ImageVersion",
             ResourceType::Model => "Model",
             ResourceType::ModelCard => "ModelCard",
             ResourceType::ModelPackage => "ModelPackage",
@@ -149,6 +159,8 @@ impl ResourceType {
             "FeatureGroup",
             "FeatureMetadata",
             "HyperParameterTuningJob",
+            "Image",
+            "ImageVersion",
             "Model",
             "ModelCard",
             "ModelPackage",

@@ -164,6 +164,9 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(
                             crate::protocol_serde::shape_hyper_parameter_tuning_job_warm_start_config::de_hyper_parameter_tuning_job_warm_start_config(tokens)?
                         );
                     }
+                    "Autotune" => {
+                        builder = builder.set_autotune(crate::protocol_serde::shape_autotune::de_autotune(tokens)?);
+                    }
                     "FailureReason" => {
                         builder = builder.set_failure_reason(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -180,9 +183,6 @@ pub(crate) fn de_describe_hyper_parameter_tuning_job(
                         builder = builder.set_consumed_resources(
                             crate::protocol_serde::shape_hyper_parameter_tuning_job_consumed_resources::de_hyper_parameter_tuning_job_consumed_resources(tokens)?
                         );
-                    }
-                    "Autotune" => {
-                        builder = builder.set_autotune(crate::protocol_serde::shape_autotune::de_autotune(tokens)?);
                     }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }

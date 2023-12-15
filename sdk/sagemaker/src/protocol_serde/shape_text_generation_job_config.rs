@@ -22,6 +22,12 @@ pub fn ser_text_generation_job_config(
         }
         object_5.finish();
     }
+    if let Some(var_8) = &input.model_access_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("ModelAccessConfig").start_object();
+        crate::protocol_serde::shape_model_access_config::ser_model_access_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +62,10 @@ where
                             builder = builder.set_text_generation_hyper_parameters(
                                 crate::protocol_serde::shape_text_generation_hyper_parameters::de_text_generation_hyper_parameters(tokens)?,
                             );
+                        }
+                        "ModelAccessConfig" => {
+                            builder =
+                                builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

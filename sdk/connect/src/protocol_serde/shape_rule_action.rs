@@ -30,6 +30,24 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_send_notification_action_definition::ser_send_notification_action_definition(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.create_case_action {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("CreateCaseAction").start_object();
+        crate::protocol_serde::shape_create_case_action_definition::ser_create_case_action_definition(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.update_case_action {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("UpdateCaseAction").start_object();
+        crate::protocol_serde::shape_update_case_action_definition::ser_update_case_action_definition(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.end_associated_tasks_action {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("EndAssociatedTasksAction").start_object();
+        crate::protocol_serde::shape_end_associated_tasks_action_definition::ser_end_associated_tasks_action_definition(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -73,6 +91,23 @@ where
                             "SendNotificationAction" => {
                                 builder = builder.set_send_notification_action(
                                     crate::protocol_serde::shape_send_notification_action_definition::de_send_notification_action_definition(tokens)?,
+                                );
+                            }
+                            "CreateCaseAction" => {
+                                builder = builder.set_create_case_action(
+                                    crate::protocol_serde::shape_create_case_action_definition::de_create_case_action_definition(tokens)?,
+                                );
+                            }
+                            "UpdateCaseAction" => {
+                                builder = builder.set_update_case_action(
+                                    crate::protocol_serde::shape_update_case_action_definition::de_update_case_action_definition(tokens)?,
+                                );
+                            }
+                            "EndAssociatedTasksAction" => {
+                                builder = builder.set_end_associated_tasks_action(
+                                    crate::protocol_serde::shape_end_associated_tasks_action_definition::de_end_associated_tasks_action_definition(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

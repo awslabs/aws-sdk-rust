@@ -12,10 +12,10 @@ pub struct CanvasAppSettings {
     pub workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
     /// <p>The settings for connecting to an external data source with OAuth.</p>
     pub identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
-    /// <p>The settings for document querying.</p>
-    pub kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
     pub direct_deploy_settings: ::std::option::Option<crate::types::DirectDeploySettings>,
+    /// <p>The settings for document querying.</p>
+    pub kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
 }
 impl CanvasAppSettings {
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
@@ -36,13 +36,13 @@ impl CanvasAppSettings {
     pub fn identity_provider_o_auth_settings(&self) -> &[crate::types::IdentityProviderOAuthSetting] {
         self.identity_provider_o_auth_settings.as_deref().unwrap_or_default()
     }
-    /// <p>The settings for document querying.</p>
-    pub fn kendra_settings(&self) -> ::std::option::Option<&crate::types::KendraSettings> {
-        self.kendra_settings.as_ref()
-    }
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
     pub fn direct_deploy_settings(&self) -> ::std::option::Option<&crate::types::DirectDeploySettings> {
         self.direct_deploy_settings.as_ref()
+    }
+    /// <p>The settings for document querying.</p>
+    pub fn kendra_settings(&self) -> ::std::option::Option<&crate::types::KendraSettings> {
+        self.kendra_settings.as_ref()
     }
 }
 impl CanvasAppSettings {
@@ -60,8 +60,8 @@ pub struct CanvasAppSettingsBuilder {
     pub(crate) model_register_settings: ::std::option::Option<crate::types::ModelRegisterSettings>,
     pub(crate) workspace_settings: ::std::option::Option<crate::types::WorkspaceSettings>,
     pub(crate) identity_provider_o_auth_settings: ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>>,
-    pub(crate) kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
     pub(crate) direct_deploy_settings: ::std::option::Option<crate::types::DirectDeploySettings>,
+    pub(crate) kendra_settings: ::std::option::Option<crate::types::KendraSettings>,
 }
 impl CanvasAppSettingsBuilder {
     /// <p>Time series forecast settings for the SageMaker Canvas application.</p>
@@ -129,20 +129,6 @@ impl CanvasAppSettingsBuilder {
     pub fn get_identity_provider_o_auth_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderOAuthSetting>> {
         &self.identity_provider_o_auth_settings
     }
-    /// <p>The settings for document querying.</p>
-    pub fn kendra_settings(mut self, input: crate::types::KendraSettings) -> Self {
-        self.kendra_settings = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The settings for document querying.</p>
-    pub fn set_kendra_settings(mut self, input: ::std::option::Option<crate::types::KendraSettings>) -> Self {
-        self.kendra_settings = input;
-        self
-    }
-    /// <p>The settings for document querying.</p>
-    pub fn get_kendra_settings(&self) -> &::std::option::Option<crate::types::KendraSettings> {
-        &self.kendra_settings
-    }
     /// <p>The model deployment settings for the SageMaker Canvas application.</p>
     pub fn direct_deploy_settings(mut self, input: crate::types::DirectDeploySettings) -> Self {
         self.direct_deploy_settings = ::std::option::Option::Some(input);
@@ -157,6 +143,20 @@ impl CanvasAppSettingsBuilder {
     pub fn get_direct_deploy_settings(&self) -> &::std::option::Option<crate::types::DirectDeploySettings> {
         &self.direct_deploy_settings
     }
+    /// <p>The settings for document querying.</p>
+    pub fn kendra_settings(mut self, input: crate::types::KendraSettings) -> Self {
+        self.kendra_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for document querying.</p>
+    pub fn set_kendra_settings(mut self, input: ::std::option::Option<crate::types::KendraSettings>) -> Self {
+        self.kendra_settings = input;
+        self
+    }
+    /// <p>The settings for document querying.</p>
+    pub fn get_kendra_settings(&self) -> &::std::option::Option<crate::types::KendraSettings> {
+        &self.kendra_settings
+    }
     /// Consumes the builder and constructs a [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn build(self) -> crate::types::CanvasAppSettings {
         crate::types::CanvasAppSettings {
@@ -164,8 +164,8 @@ impl CanvasAppSettingsBuilder {
             model_register_settings: self.model_register_settings,
             workspace_settings: self.workspace_settings,
             identity_provider_o_auth_settings: self.identity_provider_o_auth_settings,
-            kendra_settings: self.kendra_settings,
             direct_deploy_settings: self.direct_deploy_settings,
+            kendra_settings: self.kendra_settings,
         }
     }
 }

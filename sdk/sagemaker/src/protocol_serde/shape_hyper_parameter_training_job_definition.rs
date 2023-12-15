@@ -67,37 +67,37 @@ pub fn ser_hyper_parameter_training_job_definition(
         crate::protocol_serde::shape_resource_config::ser_resource_config(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.stopping_condition {
+    if let Some(var_23) = &input.hyper_parameter_tuning_resource_config {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("StoppingCondition").start_object();
-        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_24, var_23)?;
+        let mut object_24 = object.key("HyperParameterTuningResourceConfig").start_object();
+        crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::ser_hyper_parameter_tuning_resource_config(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.enable_network_isolation {
-        object.key("EnableNetworkIsolation").boolean(*var_25);
-    }
-    if let Some(var_26) = &input.enable_inter_container_traffic_encryption {
-        object.key("EnableInterContainerTrafficEncryption").boolean(*var_26);
-    }
-    if let Some(var_27) = &input.enable_managed_spot_training {
-        object.key("EnableManagedSpotTraining").boolean(*var_27);
-    }
-    if let Some(var_28) = &input.checkpoint_config {
+    if let Some(var_25) = &input.stopping_condition {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("CheckpointConfig").start_object();
-        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_26 = object.key("StoppingCondition").start_object();
+        crate::protocol_serde::shape_stopping_condition::ser_stopping_condition(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_30) = &input.retry_strategy {
+    if let Some(var_27) = &input.enable_network_isolation {
+        object.key("EnableNetworkIsolation").boolean(*var_27);
+    }
+    if let Some(var_28) = &input.enable_inter_container_traffic_encryption {
+        object.key("EnableInterContainerTrafficEncryption").boolean(*var_28);
+    }
+    if let Some(var_29) = &input.enable_managed_spot_training {
+        object.key("EnableManagedSpotTraining").boolean(*var_29);
+    }
+    if let Some(var_30) = &input.checkpoint_config {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("RetryStrategy").start_object();
-        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_31, var_30)?;
+        let mut object_31 = object.key("CheckpointConfig").start_object();
+        crate::protocol_serde::shape_checkpoint_config::ser_checkpoint_config(&mut object_31, var_30)?;
         object_31.finish();
     }
-    if let Some(var_32) = &input.hyper_parameter_tuning_resource_config {
+    if let Some(var_32) = &input.retry_strategy {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("HyperParameterTuningResourceConfig").start_object();
-        crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::ser_hyper_parameter_tuning_resource_config(&mut object_33, var_32)?;
+        let mut object_33 = object.key("RetryStrategy").start_object();
+        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_33, var_32)?;
         object_33.finish();
     }
     if let Some(var_34) = &input.environment {
@@ -173,6 +173,13 @@ where
                         "ResourceConfig" => {
                             builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
                         }
+                        "HyperParameterTuningResourceConfig" => {
+                            builder = builder.set_hyper_parameter_tuning_resource_config(
+                                crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::de_hyper_parameter_tuning_resource_config(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         "StoppingCondition" => {
                             builder = builder.set_stopping_condition(crate::protocol_serde::shape_stopping_condition::de_stopping_condition(tokens)?);
                         }
@@ -194,13 +201,6 @@ where
                         }
                         "RetryStrategy" => {
                             builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens)?);
-                        }
-                        "HyperParameterTuningResourceConfig" => {
-                            builder = builder.set_hyper_parameter_tuning_resource_config(
-                                crate::protocol_serde::shape_hyper_parameter_tuning_resource_config::de_hyper_parameter_tuning_resource_config(
-                                    tokens,
-                                )?,
-                            );
                         }
                         "Environment" => {
                             builder = builder.set_environment(

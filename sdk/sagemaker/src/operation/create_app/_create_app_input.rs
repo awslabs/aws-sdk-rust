@@ -7,6 +7,8 @@ pub struct CreateAppInput {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub user_profile_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of app.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p>The name of the app.</p>
@@ -17,8 +19,6 @@ pub struct CreateAppInput {
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppInput {
     /// <p>The domain ID.</p>
@@ -28,6 +28,10 @@ impl CreateAppInput {
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
         self.user_profile_name.as_deref()
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The type of app.</p>
     pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
@@ -49,10 +53,6 @@ impl CreateAppInput {
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
-    }
 }
 impl CreateAppInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
@@ -67,11 +67,11 @@ impl CreateAppInput {
 pub struct CreateAppInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
     pub(crate) app_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) space_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateAppInputBuilder {
     /// <p>The domain ID.</p>
@@ -102,6 +102,20 @@ impl CreateAppInputBuilder {
     /// <p>The user profile name. If this value is not set, then <code>SpaceName</code> must be set.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_profile_name
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_name = input;
+        self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// <p>The type of app.</p>
     /// This field is required.
@@ -173,30 +187,16 @@ impl CreateAppInputBuilder {
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.resource_spec
     }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.space_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
-    }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.space_name
-    }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
             domain_id: self.domain_id,
             user_profile_name: self.user_profile_name,
+            space_name: self.space_name,
             app_type: self.app_type,
             app_name: self.app_name,
             tags: self.tags,
             resource_spec: self.resource_spec,
-            space_name: self.space_name,
         })
     }
 }

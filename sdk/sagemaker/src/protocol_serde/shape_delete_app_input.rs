@@ -9,14 +9,14 @@ pub fn ser_delete_app_input_input(
     if let Some(var_2) = &input.user_profile_name {
         object.key("UserProfileName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.app_type {
-        object.key("AppType").string(var_3.as_str());
+    if let Some(var_3) = &input.space_name {
+        object.key("SpaceName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.app_name {
-        object.key("AppName").string(var_4.as_str());
+    if let Some(var_4) = &input.app_type {
+        object.key("AppType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.space_name {
-        object.key("SpaceName").string(var_5.as_str());
+    if let Some(var_5) = &input.app_name {
+        object.key("AppName").string(var_5.as_str());
     }
     Ok(())
 }

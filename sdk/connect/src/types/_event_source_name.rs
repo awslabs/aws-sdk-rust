@@ -12,6 +12,8 @@
 /// ```text
 /// # let eventsourcename = unimplemented!();
 /// match eventsourcename {
+///     EventSourceName::OnCaseCreate => { /* ... */ },
+///     EventSourceName::OnCaseUpdate => { /* ... */ },
 ///     EventSourceName::OnContactEvaluationSubmit => { /* ... */ },
 ///     EventSourceName::OnMetricDataUpdate => { /* ... */ },
 ///     EventSourceName::OnPostCallAnalysisAvailable => { /* ... */ },
@@ -49,6 +51,10 @@
 )]
 pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
+    OnCaseCreate,
+    #[allow(missing_docs)] // documentation missing in model
+    OnCaseUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     OnContactEvaluationSubmit,
     #[allow(missing_docs)] // documentation missing in model
     OnMetricDataUpdate,
@@ -73,6 +79,8 @@ pub enum EventSourceName {
 impl ::std::convert::From<&str> for EventSourceName {
     fn from(s: &str) -> Self {
         match s {
+            "OnCaseCreate" => EventSourceName::OnCaseCreate,
+            "OnCaseUpdate" => EventSourceName::OnCaseUpdate,
             "OnContactEvaluationSubmit" => EventSourceName::OnContactEvaluationSubmit,
             "OnMetricDataUpdate" => EventSourceName::OnMetricDataUpdate,
             "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
@@ -97,6 +105,8 @@ impl EventSourceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventSourceName::OnCaseCreate => "OnCaseCreate",
+            EventSourceName::OnCaseUpdate => "OnCaseUpdate",
             EventSourceName::OnContactEvaluationSubmit => "OnContactEvaluationSubmit",
             EventSourceName::OnMetricDataUpdate => "OnMetricDataUpdate",
             EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
@@ -112,6 +122,8 @@ impl EventSourceName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "OnCaseCreate",
+            "OnCaseUpdate",
             "OnContactEvaluationSubmit",
             "OnMetricDataUpdate",
             "OnPostCallAnalysisAvailable",

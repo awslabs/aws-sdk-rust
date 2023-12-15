@@ -30,7 +30,7 @@ pub struct GetParametersForImportInput {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub wrapping_algorithm: ::std::option::Option<crate::types::AlgorithmSpec>,
     /// <p>The type of RSA public key to return in the response. You will use this wrapping key with the specified wrapping algorithm to protect your key material during import.</p>
@@ -68,7 +68,7 @@ impl GetParametersForImportInput {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn wrapping_algorithm(&self) -> ::std::option::Option<&crate::types::AlgorithmSpec> {
         self.wrapping_algorithm.as_ref()
@@ -156,7 +156,7 @@ impl GetParametersForImportInputBuilder {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     /// This field is required.
     pub fn wrapping_algorithm(mut self, input: crate::types::AlgorithmSpec) -> Self {
@@ -178,7 +178,7 @@ impl GetParametersForImportInputBuilder {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn set_wrapping_algorithm(mut self, input: ::std::option::Option<crate::types::AlgorithmSpec>) -> Self {
         self.wrapping_algorithm = input;
@@ -199,7 +199,7 @@ impl GetParametersForImportInputBuilder {
     /// <p><b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key material (private key).</p>
     /// <p>You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping key spec to wrap ECC_NIST_P521 key material.</p></li>
     /// <li>
-    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key material (and only in legacy mode).</p></li>
+    /// <p><b>RSAES_PKCS1_V1_5</b> (Deprecated) — As of October 10, 2023, KMS does not support the RSAES_PKCS1_V1_5 wrapping algorithm.</p></li>
     /// </ul>
     pub fn get_wrapping_algorithm(&self) -> &::std::option::Option<crate::types::AlgorithmSpec> {
         &self.wrapping_algorithm

@@ -70,7 +70,6 @@ pub struct AutoMlChannelBuilder {
 }
 impl AutoMlChannelBuilder {
     /// <p>The data source for an AutoML channel.</p>
-    /// This field is required.
     pub fn data_source(mut self, input: crate::types::AutoMlDataSource) -> Self {
         self.data_source = ::std::option::Option::Some(input);
         self

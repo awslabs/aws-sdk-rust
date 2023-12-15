@@ -15,47 +15,47 @@ pub fn ser_create_domain_input_input(
         crate::protocol_serde::shape_user_settings::ser_user_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.subnet_ids {
-        let mut array_6 = object.key("SubnetIds").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.domain_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("DomainSettings").start_object();
+        crate::protocol_serde::shape_domain_settings::ser_domain_settings(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.subnet_ids {
+        let mut array_8 = object.key("SubnetIds").start_array();
+        for item_9 in var_7 {
             {
-                array_6.value().string(item_7.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_8) = &input.vpc_id {
-        object.key("VpcId").string(var_8.as_str());
+    if let Some(var_10) = &input.vpc_id {
+        object.key("VpcId").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("Tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.app_network_access_type {
-        object.key("AppNetworkAccessType").string(var_13.as_str());
+    if let Some(var_15) = &input.app_network_access_type {
+        object.key("AppNetworkAccessType").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.home_efs_file_system_kms_key_id {
-        object.key("HomeEfsFileSystemKmsKeyId").string(var_14.as_str());
+    if let Some(var_16) = &input.home_efs_file_system_kms_key_id {
+        object.key("HomeEfsFileSystemKmsKeyId").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.kms_key_id {
-        object.key("KmsKeyId").string(var_15.as_str());
+    if let Some(var_17) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.app_security_group_management {
-        object.key("AppSecurityGroupManagement").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.domain_settings {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("DomainSettings").start_object();
-        crate::protocol_serde::shape_domain_settings::ser_domain_settings(&mut object_18, var_17)?;
-        object_18.finish();
+    if let Some(var_18) = &input.app_security_group_management {
+        object.key("AppSecurityGroupManagement").string(var_18.as_str());
     }
     if let Some(var_19) = &input.default_space_settings {
         #[allow(unused_mut)]

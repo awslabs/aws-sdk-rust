@@ -63,30 +63,30 @@ pub fn ser_create_model_package_input_input(
     if let Some(var_20) = &input.client_token {
         object.key("ClientToken").string(var_20.as_str());
     }
-    if let Some(var_21) = &input.customer_metadata_properties {
+    if let Some(var_21) = &input.domain {
+        object.key("Domain").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.task {
+        object.key("Task").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.sample_payload_url {
+        object.key("SamplePayloadUrl").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.customer_metadata_properties {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("CustomerMetadataProperties").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_25 = object.key("CustomerMetadataProperties").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_22.finish();
+        object_25.finish();
     }
-    if let Some(var_25) = &input.drift_check_baselines {
+    if let Some(var_28) = &input.drift_check_baselines {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("DriftCheckBaselines").start_object();
-        crate::protocol_serde::shape_drift_check_baselines::ser_drift_check_baselines(&mut object_26, var_25)?;
-        object_26.finish();
-    }
-    if let Some(var_27) = &input.domain {
-        object.key("Domain").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.task {
-        object.key("Task").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.sample_payload_url {
-        object.key("SamplePayloadUrl").string(var_29.as_str());
+        let mut object_29 = object.key("DriftCheckBaselines").start_object();
+        crate::protocol_serde::shape_drift_check_baselines::ser_drift_check_baselines(&mut object_29, var_28)?;
+        object_29.finish();
     }
     if let Some(var_30) = &input.additional_inference_specifications {
         let mut array_31 = object.key("AdditionalInferenceSpecifications").start_array();

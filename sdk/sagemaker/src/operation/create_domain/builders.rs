@@ -168,6 +168,20 @@ impl CreateDomainFluentBuilder {
     pub fn get_default_user_settings(&self) -> &::std::option::Option<crate::types::UserSettings> {
         self.inner.get_default_user_settings()
     }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
+        self.inner = self.inner.domain_settings(input);
+        self
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
+        self.inner = self.inner.set_domain_settings(input);
+        self
+    }
+    /// <p>A collection of <code>Domain</code> settings.</p>
+    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
+        self.inner.get_domain_settings()
+    }
     /// Appends an item to `SubnetIds`.
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
@@ -297,20 +311,6 @@ impl CreateDomainFluentBuilder {
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         self.inner.get_app_security_group_management()
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
-        self.inner = self.inner.domain_settings(input);
-        self
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn set_domain_settings(mut self, input: ::std::option::Option<crate::types::DomainSettings>) -> Self {
-        self.inner = self.inner.set_domain_settings(input);
-        self
-    }
-    /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn get_domain_settings(&self) -> &::std::option::Option<crate::types::DomainSettings> {
-        self.inner.get_domain_settings()
     }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {

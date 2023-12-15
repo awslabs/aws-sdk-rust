@@ -41,7 +41,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-rds = "1.7.0"
+//! aws-sdk-rds = "1.7.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

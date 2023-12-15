@@ -471,11 +471,15 @@ mod list_views;
 
 mod monitor_contact;
 
+mod pause_contact;
+
 mod put_user_status;
 
 mod release_phone_number;
 
 mod replicate_instance;
+
+mod resume_contact;
 
 mod resume_contact_recording;
 

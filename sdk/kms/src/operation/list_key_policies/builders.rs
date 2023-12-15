@@ -30,8 +30,9 @@ impl ListKeyPoliciesInputBuilder {
 /// <li>
 /// <p><code>GetKeyPolicy</code></p></li>
 /// <li>
-/// <p><code>PutKeyPolicy</code></p></li>
+/// <p><a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a></p></li>
 /// </ul>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListKeyPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

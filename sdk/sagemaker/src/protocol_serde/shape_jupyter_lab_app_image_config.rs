@@ -3,11 +3,17 @@ pub fn ser_jupyter_lab_app_image_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JupyterLabAppImageConfig,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.container_config {
+    if let Some(var_1) = &input.file_system_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("ContainerConfig").start_object();
-        crate::protocol_serde::shape_container_config::ser_container_config(&mut object_2, var_1)?;
+        let mut object_2 = object.key("FileSystemConfig").start_object();
+        crate::protocol_serde::shape_file_system_config::ser_file_system_config(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.container_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ContainerConfig").start_object();
+        crate::protocol_serde::shape_container_config::ser_container_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -27,6 +33,9 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "FileSystemConfig" => {
+                            builder = builder.set_file_system_config(crate::protocol_serde::shape_file_system_config::de_file_system_config(tokens)?);
+                        }
                         "ContainerConfig" => {
                             builder = builder.set_container_config(crate::protocol_serde::shape_container_config::de_container_config(tokens)?);
                         }

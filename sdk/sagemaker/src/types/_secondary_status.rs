@@ -20,6 +20,7 @@
 ///     SecondaryStatus::LaunchingMlInstances => { /* ... */ },
 ///     SecondaryStatus::MaxRuntimeExceeded => { /* ... */ },
 ///     SecondaryStatus::MaxWaitTimeExceeded => { /* ... */ },
+///     SecondaryStatus::Pending => { /* ... */ },
 ///     SecondaryStatus::PreparingTrainingStack => { /* ... */ },
 ///     SecondaryStatus::Restarting => { /* ... */ },
 ///     SecondaryStatus::Starting => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum SecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     MaxWaitTimeExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PreparingTrainingStack,
     #[allow(missing_docs)] // documentation missing in model
     Restarting,
@@ -102,6 +105,7 @@ impl ::std::convert::From<&str> for SecondaryStatus {
             "LaunchingMLInstances" => SecondaryStatus::LaunchingMlInstances,
             "MaxRuntimeExceeded" => SecondaryStatus::MaxRuntimeExceeded,
             "MaxWaitTimeExceeded" => SecondaryStatus::MaxWaitTimeExceeded,
+            "Pending" => SecondaryStatus::Pending,
             "PreparingTrainingStack" => SecondaryStatus::PreparingTrainingStack,
             "Restarting" => SecondaryStatus::Restarting,
             "Starting" => SecondaryStatus::Starting,
@@ -133,6 +137,7 @@ impl SecondaryStatus {
             SecondaryStatus::LaunchingMlInstances => "LaunchingMLInstances",
             SecondaryStatus::MaxRuntimeExceeded => "MaxRuntimeExceeded",
             SecondaryStatus::MaxWaitTimeExceeded => "MaxWaitTimeExceeded",
+            SecondaryStatus::Pending => "Pending",
             SecondaryStatus::PreparingTrainingStack => "PreparingTrainingStack",
             SecondaryStatus::Restarting => "Restarting",
             SecondaryStatus::Starting => "Starting",
@@ -155,6 +160,7 @@ impl SecondaryStatus {
             "LaunchingMLInstances",
             "MaxRuntimeExceeded",
             "MaxWaitTimeExceeded",
+            "Pending",
             "PreparingTrainingStack",
             "Restarting",
             "Starting",

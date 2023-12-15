@@ -21,6 +21,12 @@ pub struct DescribeSpaceOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A collection of space settings.</p>
     pub space_settings: ::std::option::Option<crate::types::SpaceSettings>,
+    /// <p>The collection of ownership settings for a space.</p>
+    pub ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
+    /// <p>The collection of space sharing settings for a space.</p>
+    pub space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub space_display_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
     /// <p>The following application types are supported:</p>
     /// <ul>
@@ -28,14 +34,10 @@ pub struct DescribeSpaceOutput {
     /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
     /// <li>
     /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li>
+    /// <p>Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code></p></li>
     /// </ul>
     pub url: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-    pub space_display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The collection of ownership settings for a space.</p>
-    pub ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
-    /// <p>The collection of space sharing settings for a space.</p>
-    pub space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutput {
@@ -75,21 +77,6 @@ impl DescribeSpaceOutput {
     pub fn space_settings(&self) -> ::std::option::Option<&crate::types::SpaceSettings> {
         self.space_settings.as_ref()
     }
-    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
-    /// <p>The following application types are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
-    /// </ul>
-    pub fn url(&self) -> ::std::option::Option<&str> {
-        self.url.as_deref()
-    }
-    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
-        self.space_display_name.as_deref()
-    }
     /// <p>The collection of ownership settings for a space.</p>
     pub fn ownership_settings(&self) -> ::std::option::Option<&crate::types::OwnershipSettings> {
         self.ownership_settings.as_ref()
@@ -97,6 +84,23 @@ impl DescribeSpaceOutput {
     /// <p>The collection of space sharing settings for a space.</p>
     pub fn space_sharing_settings(&self) -> ::std::option::Option<&crate::types::SpaceSharingSettings> {
         self.space_sharing_settings.as_ref()
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(&self) -> ::std::option::Option<&str> {
+        self.space_display_name.as_deref()
+    }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
+    /// <li>
+    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li>
+    /// <p>Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code></p></li>
+    /// </ul>
+    pub fn url(&self) -> ::std::option::Option<&str> {
+        self.url.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSpaceOutput {
@@ -124,10 +128,10 @@ pub struct DescribeSpaceOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) space_settings: ::std::option::Option<crate::types::SpaceSettings>,
-    pub(crate) url: ::std::option::Option<::std::string::String>,
-    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) ownership_settings: ::std::option::Option<crate::types::OwnershipSettings>,
     pub(crate) space_sharing_settings: ::std::option::Option<crate::types::SpaceSharingSettings>,
+    pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutputBuilder {
@@ -257,55 +261,6 @@ impl DescribeSpaceOutputBuilder {
     pub fn get_space_settings(&self) -> &::std::option::Option<crate::types::SpaceSettings> {
         &self.space_settings
     }
-    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
-    /// <p>The following application types are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
-    /// </ul>
-    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.url = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
-    /// <p>The following application types are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
-    /// </ul>
-    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.url = input;
-        self
-    }
-    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
-    /// <p>The following application types are supported:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
-    /// <li>
-    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
-    /// </ul>
-    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
-        &self.url
-    }
-    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.space_display_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_display_name = input;
-        self
-    }
-    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
-    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.space_display_name
-    }
     /// <p>The collection of ownership settings for a space.</p>
     pub fn ownership_settings(mut self, input: crate::types::OwnershipSettings) -> Self {
         self.ownership_settings = ::std::option::Option::Some(input);
@@ -334,6 +289,61 @@ impl DescribeSpaceOutputBuilder {
     pub fn get_space_sharing_settings(&self) -> &::std::option::Option<crate::types::SpaceSharingSettings> {
         &self.space_sharing_settings
     }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn space_display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_display_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn set_space_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_display_name = input;
+        self
+    }
+    /// <p>The name of the space that appears in the Amazon SageMaker Studio UI.</p>
+    pub fn get_space_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_display_name
+    }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
+    /// <li>
+    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li>
+    /// <p>Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code></p></li>
+    /// </ul>
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
+    /// <li>
+    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li>
+    /// <p>Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code></p></li>
+    /// </ul>
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.url = input;
+        self
+    }
+    /// <p>Returns the URL of the space. If the space is created with Amazon Web Services IAM Identity Center (Successor to Amazon Web Services Single Sign-On) authentication, users can navigate to the URL after appending the respective redirect parameter for the application type to be federated through Amazon Web Services IAM Identity Center.</p>
+    /// <p>The following application types are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Studio Classic: <code>&amp;redirect=JupyterServer</code></p></li>
+    /// <li>
+    /// <p>JupyterLab: <code>&amp;redirect=JupyterLab</code></p></li>
+    /// <li>
+    /// <p>Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code></p></li>
+    /// </ul>
+    pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -355,10 +365,10 @@ impl DescribeSpaceOutputBuilder {
             creation_time: self.creation_time,
             failure_reason: self.failure_reason,
             space_settings: self.space_settings,
-            url: self.url,
-            space_display_name: self.space_display_name,
             ownership_settings: self.ownership_settings,
             space_sharing_settings: self.space_sharing_settings,
+            space_display_name: self.space_display_name,
+            url: self.url,
             _request_id: self._request_id,
         }
     }

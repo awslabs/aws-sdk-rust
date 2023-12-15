@@ -6,65 +6,65 @@ pub fn ser_recommendation_job_input_config(
     if let Some(var_1) = &input.model_package_version_arn {
         object.key("ModelPackageVersionArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.job_duration_in_seconds {
+    if let Some(var_2) = &input.model_name {
+        object.key("ModelName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.job_duration_in_seconds {
         object.key("JobDurationInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.traffic_pattern {
+    if let Some(var_4) = &input.traffic_pattern {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("TrafficPattern").start_object();
-        crate::protocol_serde::shape_traffic_pattern::ser_traffic_pattern(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("TrafficPattern").start_object();
+        crate::protocol_serde::shape_traffic_pattern::ser_traffic_pattern(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.resource_limit {
+    if let Some(var_6) = &input.resource_limit {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ResourceLimit").start_object();
-        crate::protocol_serde::shape_recommendation_job_resource_limit::ser_recommendation_job_resource_limit(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("ResourceLimit").start_object();
+        crate::protocol_serde::shape_recommendation_job_resource_limit::ser_recommendation_job_resource_limit(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.endpoint_configurations {
-        let mut array_8 = object.key("EndpointConfigurations").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.endpoint_configurations {
+        let mut array_9 = object.key("EndpointConfigurations").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_endpoint_input_configuration::ser_endpoint_input_configuration(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_endpoint_input_configuration::ser_endpoint_input_configuration(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.volume_kms_key_id {
-        object.key("VolumeKmsKeyId").string(var_11.as_str());
+    if let Some(var_12) = &input.volume_kms_key_id {
+        object.key("VolumeKmsKeyId").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.container_config {
+    if let Some(var_13) = &input.container_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("ContainerConfig").start_object();
-        crate::protocol_serde::shape_recommendation_job_container_config::ser_recommendation_job_container_config(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("ContainerConfig").start_object();
+        crate::protocol_serde::shape_recommendation_job_container_config::ser_recommendation_job_container_config(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.endpoints {
-        let mut array_15 = object.key("Endpoints").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.endpoints {
+        let mut array_16 = object.key("Endpoints").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_endpoint_info::ser_endpoint_info(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_endpoint_info::ser_endpoint_info(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.vpc_config {
+    if let Some(var_19) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_recommendation_job_vpc_config::ser_recommendation_job_vpc_config(&mut object_19, var_18)?;
-        object_19.finish();
-    }
-    if let Some(var_20) = &input.model_name {
-        object.key("ModelName").string(var_20.as_str());
+        let mut object_20 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_recommendation_job_vpc_config::ser_recommendation_job_vpc_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }
@@ -86,6 +86,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ModelPackageVersionArn" => {
                             builder = builder.set_model_package_version_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ModelName" => {
+                            builder = builder.set_model_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -129,13 +136,6 @@ where
                         "VpcConfig" => {
                             builder = builder.set_vpc_config(
                                 crate::protocol_serde::shape_recommendation_job_vpc_config::de_recommendation_job_vpc_config(tokens)?,
-                            );
-                        }
-                        "ModelName" => {
-                            builder = builder.set_model_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

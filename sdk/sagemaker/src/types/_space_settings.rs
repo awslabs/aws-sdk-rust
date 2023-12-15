@@ -8,14 +8,14 @@ pub struct SpaceSettings {
     pub jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     /// <p>The KernelGateway app settings.</p>
     pub kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
-    /// <p>The settings for the JupyterLab application.</p>
-    pub jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     /// <p>The Code Editor application settings.</p>
     pub code_editor_app_settings: ::std::option::Option<crate::types::SpaceCodeEditorAppSettings>,
-    /// <p>The storage settings for a private space.</p>
-    pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
+    /// <p>The settings for the JupyterLab application.</p>
+    pub jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     /// <p>The type of app created within the space.</p>
     pub app_type: ::std::option::Option<crate::types::AppType>,
+    /// <p>The storage settings for a private space.</p>
+    pub space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
     pub custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
 }
@@ -28,21 +28,21 @@ impl SpaceSettings {
     pub fn kernel_gateway_app_settings(&self) -> ::std::option::Option<&crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::SpaceJupyterLabAppSettings> {
-        self.jupyter_lab_app_settings.as_ref()
-    }
     /// <p>The Code Editor application settings.</p>
     pub fn code_editor_app_settings(&self) -> ::std::option::Option<&crate::types::SpaceCodeEditorAppSettings> {
         self.code_editor_app_settings.as_ref()
     }
-    /// <p>The storage settings for a private space.</p>
-    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
-        self.space_storage_settings.as_ref()
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(&self) -> ::std::option::Option<&crate::types::SpaceJupyterLabAppSettings> {
+        self.jupyter_lab_app_settings.as_ref()
     }
     /// <p>The type of app created within the space.</p>
     pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
         self.app_type.as_ref()
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn space_storage_settings(&self) -> ::std::option::Option<&crate::types::SpaceStorageSettings> {
+        self.space_storage_settings.as_ref()
     }
     /// <p>A file system, created by you, that you assign to a space for an Amazon SageMaker Domain. Permitted users can access this file system in Amazon SageMaker Studio.</p>
     ///
@@ -64,10 +64,10 @@ impl SpaceSettings {
 pub struct SpaceSettingsBuilder {
     pub(crate) jupyter_server_app_settings: ::std::option::Option<crate::types::JupyterServerAppSettings>,
     pub(crate) kernel_gateway_app_settings: ::std::option::Option<crate::types::KernelGatewayAppSettings>,
-    pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     pub(crate) code_editor_app_settings: ::std::option::Option<crate::types::SpaceCodeEditorAppSettings>,
-    pub(crate) space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
+    pub(crate) jupyter_lab_app_settings: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>,
     pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
+    pub(crate) space_storage_settings: ::std::option::Option<crate::types::SpaceStorageSettings>,
     pub(crate) custom_file_systems: ::std::option::Option<::std::vec::Vec<crate::types::CustomFileSystem>>,
 }
 impl SpaceSettingsBuilder {
@@ -99,20 +99,6 @@ impl SpaceSettingsBuilder {
     pub fn get_kernel_gateway_app_settings(&self) -> &::std::option::Option<crate::types::KernelGatewayAppSettings> {
         &self.kernel_gateway_app_settings
     }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn jupyter_lab_app_settings(mut self, input: crate::types::SpaceJupyterLabAppSettings) -> Self {
-        self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>) -> Self {
-        self.jupyter_lab_app_settings = input;
-        self
-    }
-    /// <p>The settings for the JupyterLab application.</p>
-    pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::SpaceJupyterLabAppSettings> {
-        &self.jupyter_lab_app_settings
-    }
     /// <p>The Code Editor application settings.</p>
     pub fn code_editor_app_settings(mut self, input: crate::types::SpaceCodeEditorAppSettings) -> Self {
         self.code_editor_app_settings = ::std::option::Option::Some(input);
@@ -127,19 +113,19 @@ impl SpaceSettingsBuilder {
     pub fn get_code_editor_app_settings(&self) -> &::std::option::Option<crate::types::SpaceCodeEditorAppSettings> {
         &self.code_editor_app_settings
     }
-    /// <p>The storage settings for a private space.</p>
-    pub fn space_storage_settings(mut self, input: crate::types::SpaceStorageSettings) -> Self {
-        self.space_storage_settings = ::std::option::Option::Some(input);
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn jupyter_lab_app_settings(mut self, input: crate::types::SpaceJupyterLabAppSettings) -> Self {
+        self.jupyter_lab_app_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage settings for a private space.</p>
-    pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::SpaceStorageSettings>) -> Self {
-        self.space_storage_settings = input;
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn set_jupyter_lab_app_settings(mut self, input: ::std::option::Option<crate::types::SpaceJupyterLabAppSettings>) -> Self {
+        self.jupyter_lab_app_settings = input;
         self
     }
-    /// <p>The storage settings for a private space.</p>
-    pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
-        &self.space_storage_settings
+    /// <p>The settings for the JupyterLab application.</p>
+    pub fn get_jupyter_lab_app_settings(&self) -> &::std::option::Option<crate::types::SpaceJupyterLabAppSettings> {
+        &self.jupyter_lab_app_settings
     }
     /// <p>The type of app created within the space.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
@@ -154,6 +140,20 @@ impl SpaceSettingsBuilder {
     /// <p>The type of app created within the space.</p>
     pub fn get_app_type(&self) -> &::std::option::Option<crate::types::AppType> {
         &self.app_type
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn space_storage_settings(mut self, input: crate::types::SpaceStorageSettings) -> Self {
+        self.space_storage_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn set_space_storage_settings(mut self, input: ::std::option::Option<crate::types::SpaceStorageSettings>) -> Self {
+        self.space_storage_settings = input;
+        self
+    }
+    /// <p>The storage settings for a private space.</p>
+    pub fn get_space_storage_settings(&self) -> &::std::option::Option<crate::types::SpaceStorageSettings> {
+        &self.space_storage_settings
     }
     /// Appends an item to `custom_file_systems`.
     ///
@@ -180,10 +180,10 @@ impl SpaceSettingsBuilder {
         crate::types::SpaceSettings {
             jupyter_server_app_settings: self.jupyter_server_app_settings,
             kernel_gateway_app_settings: self.kernel_gateway_app_settings,
-            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
             code_editor_app_settings: self.code_editor_app_settings,
-            space_storage_settings: self.space_storage_settings,
+            jupyter_lab_app_settings: self.jupyter_lab_app_settings,
             app_type: self.app_type,
+            space_storage_settings: self.space_storage_settings,
             custom_file_systems: self.custom_file_systems,
         }
     }

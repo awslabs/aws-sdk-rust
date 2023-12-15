@@ -27,6 +27,13 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "AgentPauseDurationInSeconds" => {
+                            builder = builder.set_agent_pause_duration_in_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -331,47 +331,6 @@ impl CreateModelPackageFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// Adds a key-value pair to `CustomerMetadataProperties`.
-    ///
-    /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
-    ///
-    /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn customer_metadata_properties(
-        mut self,
-        k: impl ::std::convert::Into<::std::string::String>,
-        v: impl ::std::convert::Into<::std::string::String>,
-    ) -> Self {
-        self.inner = self.inner.customer_metadata_properties(k.into(), v.into());
-        self
-    }
-    /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn set_customer_metadata_properties(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    ) -> Self {
-        self.inner = self.inner.set_customer_metadata_properties(input);
-        self
-    }
-    /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn get_customer_metadata_properties(
-        &self,
-    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.inner.get_customer_metadata_properties()
-    }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn drift_check_baselines(mut self, input: crate::types::DriftCheckBaselines) -> Self {
-        self.inner = self.inner.drift_check_baselines(input);
-        self
-    }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn set_drift_check_baselines(mut self, input: ::std::option::Option<crate::types::DriftCheckBaselines>) -> Self {
-        self.inner = self.inner.set_drift_check_baselines(input);
-        self
-    }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
-        self.inner.get_drift_check_baselines()
-    }
     /// <p>The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -416,6 +375,47 @@ impl CreateModelPackageFluentBuilder {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally used in the load test. Each file in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a> call.</p>
     pub fn get_sample_payload_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sample_payload_url()
+    }
+    /// Adds a key-value pair to `CustomerMetadataProperties`.
+    ///
+    /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
+    ///
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn customer_metadata_properties(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inner = self.inner.customer_metadata_properties(k.into(), v.into());
+        self
+    }
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn set_customer_metadata_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_customer_metadata_properties(input);
+        self
+    }
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn get_customer_metadata_properties(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_customer_metadata_properties()
+    }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    pub fn drift_check_baselines(mut self, input: crate::types::DriftCheckBaselines) -> Self {
+        self.inner = self.inner.drift_check_baselines(input);
+        self
+    }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    pub fn set_drift_check_baselines(mut self, input: ::std::option::Option<crate::types::DriftCheckBaselines>) -> Self {
+        self.inner = self.inner.set_drift_check_baselines(input);
+        self
+    }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
+        self.inner.get_drift_check_baselines()
     }
     /// Appends an item to `AdditionalInferenceSpecifications`.
     ///

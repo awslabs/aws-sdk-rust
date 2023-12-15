@@ -24,6 +24,8 @@ pub struct CreatePresignedDomainUrlInput {
     /// <li>
     /// <p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
     /// <li>
+    /// <p><code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.</p></li>
+    /// <li>
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub landing_uri: ::std::option::Option<::std::string::String>,
@@ -59,6 +61,8 @@ impl CreatePresignedDomainUrlInput {
     /// <p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
     /// <li>
     /// <p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li>
+    /// <p><code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.</p></li>
     /// <li>
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
@@ -168,6 +172,8 @@ impl CreatePresignedDomainUrlInputBuilder {
     /// <li>
     /// <p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
     /// <li>
+    /// <p><code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.</p></li>
+    /// <li>
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn landing_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -185,6 +191,8 @@ impl CreatePresignedDomainUrlInputBuilder {
     /// <li>
     /// <p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
     /// <li>
+    /// <p><code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.</p></li>
+    /// <li>
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>
     pub fn set_landing_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -201,6 +209,8 @@ impl CreatePresignedDomainUrlInputBuilder {
     /// <p><code>app:JupyterLab:relative/path</code>: Directs users to the relative path in the JupyterLab application.</p></li>
     /// <li>
     /// <p><code>app:RStudioServerPro:relative/path</code>: Directs users to the relative path in the RStudio application.</p></li>
+    /// <li>
+    /// <p><code>app:CodeEditor:relative/path</code>: Directs users to the relative path in the Code Editor, based on Code-OSS, Visual Studio Code - Open Source application.</p></li>
     /// <li>
     /// <p><code>app:Canvas:relative/path</code>: Directs users to the relative path in the Canvas application.</p></li>
     /// </ul>

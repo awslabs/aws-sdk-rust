@@ -6,19 +6,19 @@ pub fn ser_endpoint_input_configuration(
     if let Some(var_1) = &input.instance_type {
         object.key("InstanceType").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.inference_specification_name {
-        object.key("InferenceSpecificationName").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.environment_parameter_ranges {
+    if let Some(var_2) = &input.serverless_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("EnvironmentParameterRanges").start_object();
-        crate::protocol_serde::shape_environment_parameter_ranges::ser_environment_parameter_ranges(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("ServerlessConfig").start_object();
+        crate::protocol_serde::shape_production_variant_serverless_config::ser_production_variant_serverless_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.serverless_config {
+    if let Some(var_4) = &input.inference_specification_name {
+        object.key("InferenceSpecificationName").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.environment_parameter_ranges {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ServerlessConfig").start_object();
-        crate::protocol_serde::shape_production_variant_serverless_config::ser_production_variant_serverless_config(&mut object_6, var_5)?;
+        let mut object_6 = object.key("EnvironmentParameterRanges").start_object();
+        crate::protocol_serde::shape_environment_parameter_ranges::ser_environment_parameter_ranges(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())
@@ -46,6 +46,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ServerlessConfig" => {
+                            builder = builder.set_serverless_config(
+                                crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?,
+                            );
+                        }
                         "InferenceSpecificationName" => {
                             builder = builder.set_inference_specification_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -56,11 +61,6 @@ where
                         "EnvironmentParameterRanges" => {
                             builder = builder.set_environment_parameter_ranges(
                                 crate::protocol_serde::shape_environment_parameter_ranges::de_environment_parameter_ranges(tokens)?,
-                            );
-                        }
-                        "ServerlessConfig" => {
-                            builder = builder.set_serverless_config(
-                                crate::protocol_serde::shape_production_variant_serverless_config::de_production_variant_serverless_config(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

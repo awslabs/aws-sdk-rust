@@ -17,6 +17,9 @@ where
                         "Metrics" => {
                             builder = builder.set_metrics(crate::protocol_serde::shape_recommendation_metrics::de_recommendation_metrics(tokens)?);
                         }
+                        "EndpointMetrics" => {
+                            builder = builder.set_endpoint_metrics(crate::protocol_serde::shape_inference_metrics::de_inference_metrics(tokens)?);
+                        }
                         "EndpointConfiguration" => {
                             builder = builder.set_endpoint_configuration(
                                 crate::protocol_serde::shape_endpoint_output_configuration::de_endpoint_output_configuration(tokens)?,
@@ -32,9 +35,6 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
-                        }
-                        "EndpointMetrics" => {
-                            builder = builder.set_endpoint_metrics(crate::protocol_serde::shape_inference_metrics::de_inference_metrics(tokens)?);
                         }
                         "InvocationEndTime" => {
                             builder = builder.set_invocation_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -57,13 +57,6 @@ where
                         "CacheHitResult" => {
                             builder = builder.set_cache_hit_result(crate::protocol_serde::shape_cache_hit_result::de_cache_hit_result(tokens)?);
                         }
-                        "AttemptCount" => {
-                            builder = builder.set_attempt_count(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
                         "FailureReason" => {
                             builder = builder.set_failure_reason(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -74,6 +67,13 @@ where
                         "Metadata" => {
                             builder = builder.set_metadata(
                                 crate::protocol_serde::shape_pipeline_execution_step_metadata::de_pipeline_execution_step_metadata(tokens)?,
+                            );
+                        }
+                        "AttemptCount" => {
+                            builder = builder.set_attempt_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "SelectiveExecutionResult" => {

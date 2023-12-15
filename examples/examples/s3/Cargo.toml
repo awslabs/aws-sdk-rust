@@ -19,7 +19,6 @@ assert_cmd = "2.0"
 predicates = "3.0.3"
 
 [dependencies]
-aws-smithy-runtime = { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime" }
 anyhow = "1.0.70"
 bytes = "1.4.0"
 http = "0.2.8"
@@ -30,6 +29,7 @@ rand = "0.8.5"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1.37"
+aws-smithy-runtime= { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-s3= { version = "1.8.0", path = "../../../sdk/s3", features = ["rt-tokio"] }
 aws-smithy-runtime-api= { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime-api", features = ["client"] }

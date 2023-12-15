@@ -45,11 +45,11 @@ where
                         "FeatureGroup" => {
                             builder = builder.set_feature_group(crate::protocol_serde::shape_feature_group::de_feature_group(tokens)?);
                         }
-                        "Project" => {
-                            builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens)?);
-                        }
                         "FeatureMetadata" => {
                             builder = builder.set_feature_metadata(crate::protocol_serde::shape_feature_metadata::de_feature_metadata(tokens)?);
+                        }
+                        "Project" => {
+                            builder = builder.set_project(crate::protocol_serde::shape_project::de_project(tokens)?);
                         }
                         "HyperParameterTuningJob" => {
                             builder = builder.set_hyper_parameter_tuning_job(
@@ -58,11 +58,11 @@ where
                                 )?,
                             );
                         }
-                        "Model" => {
-                            builder = builder.set_model(crate::protocol_serde::shape_model_dashboard_model::de_model_dashboard_model(tokens)?);
-                        }
                         "ModelCard" => {
                             builder = builder.set_model_card(crate::protocol_serde::shape_model_card::de_model_card(tokens)?);
+                        }
+                        "Model" => {
+                            builder = builder.set_model(crate::protocol_serde::shape_model_dashboard_model::de_model_dashboard_model(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

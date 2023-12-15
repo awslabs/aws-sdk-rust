@@ -39,25 +39,25 @@ pub use crate::types::_default_space_storage_settings::DefaultSpaceStorageSettin
 
 pub use crate::types::_default_ebs_storage_settings::DefaultEbsStorageSettings;
 
-pub use crate::types::_code_editor_app_settings::CodeEditorAppSettings;
-
-pub use crate::types::_resource_spec::ResourceSpec;
-
-pub use crate::types::_app_instance_type::AppInstanceType;
-
 pub use crate::types::_jupyter_lab_app_settings::JupyterLabAppSettings;
 
 pub use crate::types::_code_repository::CodeRepository;
 
 pub use crate::types::_custom_image::CustomImage;
 
+pub use crate::types::_resource_spec::ResourceSpec;
+
+pub use crate::types::_app_instance_type::AppInstanceType;
+
+pub use crate::types::_code_editor_app_settings::CodeEditorAppSettings;
+
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
-pub use crate::types::_direct_deploy_settings::DirectDeploySettings;
+pub use crate::types::_kendra_settings::KendraSettings;
 
 pub use crate::types::_feature_status::FeatureStatus;
 
-pub use crate::types::_kendra_settings::KendraSettings;
+pub use crate::types::_direct_deploy_settings::DirectDeploySettings;
 
 pub use crate::types::_identity_provider_o_auth_setting::IdentityProviderOAuthSetting;
 
@@ -109,15 +109,15 @@ pub use crate::types::_custom_file_system::CustomFileSystem;
 
 pub use crate::types::_efs_file_system::EfsFileSystem;
 
-pub use crate::types::_app_type::AppType;
-
 pub use crate::types::_space_storage_settings::SpaceStorageSettings;
 
 pub use crate::types::_ebs_storage_settings::EbsStorageSettings;
 
-pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettings;
+pub use crate::types::_app_type::AppType;
 
 pub use crate::types::_space_jupyter_lab_app_settings::SpaceJupyterLabAppSettings;
+
+pub use crate::types::_space_code_editor_app_settings::SpaceCodeEditorAppSettings;
 
 pub use crate::types::_tag::Tag;
 
@@ -269,15 +269,15 @@ pub use crate::types::_production_variant_serverless_update_config::ProductionVa
 
 pub use crate::types::_deployment_config::DeploymentConfig;
 
+pub use crate::types::_auto_rollback_config::AutoRollbackConfig;
+
+pub use crate::types::_alarm::Alarm;
+
 pub use crate::types::_rolling_update_policy::RollingUpdatePolicy;
 
 pub use crate::types::_capacity_size::CapacitySize;
 
 pub use crate::types::_capacity_size_type::CapacitySizeType;
-
-pub use crate::types::_auto_rollback_config::AutoRollbackConfig;
-
-pub use crate::types::_alarm::Alarm;
 
 pub use crate::types::_blue_green_update_policy::BlueGreenUpdatePolicy;
 
@@ -291,9 +291,9 @@ pub use crate::types::_variant_property_type::VariantPropertyType;
 
 pub use crate::types::_app_network_access_type::AppNetworkAccessType;
 
-pub use crate::types::_app_security_group_management::AppSecurityGroupManagement;
-
 pub use crate::types::_default_space_settings::DefaultSpaceSettings;
+
+pub use crate::types::_app_security_group_management::AppSecurityGroupManagement;
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdate;
 
@@ -319,9 +319,9 @@ pub use crate::types::_jupyter_lab_app_image_config::JupyterLabAppImageConfig;
 
 pub use crate::types::_container_config::ContainerConfig;
 
-pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfig;
-
 pub use crate::types::_file_system_config::FileSystemConfig;
+
+pub use crate::types::_kernel_gateway_image_config::KernelGatewayImageConfig;
 
 pub use crate::types::_kernel_spec::KernelSpec;
 
@@ -341,17 +341,15 @@ pub use crate::types::_output_parameter::OutputParameter;
 
 pub use crate::types::_search_record::SearchRecord;
 
-pub use crate::types::_model_card::ModelCard;
+pub use crate::types::_model_dashboard_model::ModelDashboardModel;
+
+pub use crate::types::_model_dashboard_model_card::ModelDashboardModelCard;
 
 pub use crate::types::_user_context::UserContext;
 
 pub use crate::types::_iam_identity::IamIdentity;
 
 pub use crate::types::_model_card_security_config::ModelCardSecurityConfig;
-
-pub use crate::types::_model_dashboard_model::ModelDashboardModel;
-
-pub use crate::types::_model_dashboard_model_card::ModelDashboardModelCard;
 
 pub use crate::types::_model_dashboard_monitoring_schedule::ModelDashboardMonitoringSchedule;
 
@@ -371,8 +369,6 @@ pub use crate::types::_schedule_status::ScheduleStatus;
 
 pub use crate::types::_transform_job::TransformJob;
 
-pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfig;
-
 pub use crate::types::_experiment_config::ExperimentConfig;
 
 pub use crate::types::_data_processing::DataProcessing;
@@ -380,6 +376,8 @@ pub use crate::types::_data_processing::DataProcessing;
 pub use crate::types::_join_source::JoinSource;
 
 pub use crate::types::_transform_resources::TransformResources;
+
+pub use crate::types::_batch_data_capture_config::BatchDataCaptureConfig;
 
 pub use crate::types::_transform_output::TransformOutput;
 
@@ -419,6 +417,10 @@ pub use crate::types::_inference_execution_mode::InferenceExecutionMode;
 
 pub use crate::types::_container_definition::ContainerDefinition;
 
+pub use crate::types::_multi_model_config::MultiModelConfig;
+
+pub use crate::types::_model_cache_setting::ModelCacheSetting;
+
 pub use crate::types::_model_data_source::ModelDataSource;
 
 pub use crate::types::_s3_model_data_source::S3ModelDataSource;
@@ -429,10 +431,6 @@ pub use crate::types::_model_compression_type::ModelCompressionType;
 
 pub use crate::types::_s3_model_data_type::S3ModelDataType;
 
-pub use crate::types::_multi_model_config::MultiModelConfig;
-
-pub use crate::types::_model_cache_setting::ModelCacheSetting;
-
 pub use crate::types::_container_mode::ContainerMode;
 
 pub use crate::types::_image_config::ImageConfig;
@@ -440,6 +438,8 @@ pub use crate::types::_image_config::ImageConfig;
 pub use crate::types::_repository_auth_config::RepositoryAuthConfig;
 
 pub use crate::types::_repository_access_mode::RepositoryAccessMode;
+
+pub use crate::types::_model_card::ModelCard;
 
 pub use crate::types::_hyper_parameter_tuning_job_search_entity::HyperParameterTuningJobSearchEntity;
 
@@ -471,6 +471,12 @@ pub use crate::types::_hyper_parameter_tuning_job_status::HyperParameterTuningJo
 
 pub use crate::types::_hyper_parameter_training_job_definition::HyperParameterTrainingJobDefinition;
 
+pub use crate::types::_retry_strategy::RetryStrategy;
+
+pub use crate::types::_checkpoint_config::CheckpointConfig;
+
+pub use crate::types::_stopping_condition::StoppingCondition;
+
 pub use crate::types::_hyper_parameter_tuning_resource_config::HyperParameterTuningResourceConfig;
 
 pub use crate::types::_hyper_parameter_tuning_instance_config::HyperParameterTuningInstanceConfig;
@@ -478,12 +484,6 @@ pub use crate::types::_hyper_parameter_tuning_instance_config::HyperParameterTun
 pub use crate::types::_training_instance_type::TrainingInstanceType;
 
 pub use crate::types::_hyper_parameter_tuning_allocation_strategy::HyperParameterTuningAllocationStrategy;
-
-pub use crate::types::_retry_strategy::RetryStrategy;
-
-pub use crate::types::_checkpoint_config::CheckpointConfig;
-
-pub use crate::types::_stopping_condition::StoppingCondition;
 
 pub use crate::types::_resource_config::ResourceConfig;
 
@@ -551,8 +551,6 @@ pub use crate::types::_hyperband_strategy_config::HyperbandStrategyConfig;
 
 pub use crate::types::_hyper_parameter_tuning_job_strategy_type::HyperParameterTuningJobStrategyType;
 
-pub use crate::types::_feature_metadata::FeatureMetadata;
-
 pub use crate::types::_project::Project;
 
 pub use crate::types::_project_status::ProjectStatus;
@@ -560,6 +558,8 @@ pub use crate::types::_project_status::ProjectStatus;
 pub use crate::types::_service_catalog_provisioned_product_details::ServiceCatalogProvisionedProductDetails;
 
 pub use crate::types::_service_catalog_provisioning_details::ServiceCatalogProvisioningDetails;
+
+pub use crate::types::_feature_metadata::FeatureMetadata;
 
 pub use crate::types::_feature_group::FeatureGroup;
 
@@ -895,11 +895,11 @@ pub use crate::types::_auto_ml_job_step_metadata::AutoMlJobStepMetadata;
 
 pub use crate::types::_fail_step_metadata::FailStepMetadata;
 
-pub use crate::types::_emr_step_metadata::EmrStepMetadata;
-
 pub use crate::types::_clarify_check_step_metadata::ClarifyCheckStepMetadata;
 
 pub use crate::types::_quality_check_step_metadata::QualityCheckStepMetadata;
+
+pub use crate::types::_emr_step_metadata::EmrStepMetadata;
 
 pub use crate::types::_lambda_step_metadata::LambdaStepMetadata;
 
@@ -1033,13 +1033,13 @@ pub use crate::types::_inference_recommendations_job_step::InferenceRecommendati
 
 pub use crate::types::_recommendation_job_inference_benchmark::RecommendationJobInferenceBenchmark;
 
-pub use crate::types::_inference_metrics::InferenceMetrics;
-
 pub use crate::types::_model_configuration::ModelConfiguration;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
 pub use crate::types::_endpoint_output_configuration::EndpointOutputConfiguration;
+
+pub use crate::types::_inference_metrics::InferenceMetrics;
 
 pub use crate::types::_recommendation_metrics::RecommendationMetrics;
 
@@ -1197,9 +1197,9 @@ pub use crate::types::_candidate_properties::CandidateProperties;
 
 pub use crate::types::_metric_datum::MetricDatum;
 
-pub use crate::types::_auto_ml_metric_extended_enum::AutoMlMetricExtendedEnum;
-
 pub use crate::types::_metric_set_source::MetricSetSource;
+
+pub use crate::types::_auto_ml_metric_extended_enum::AutoMlMetricExtendedEnum;
 
 pub use crate::types::_auto_ml_metric_enum::AutoMlMetricEnum;
 
@@ -1527,7 +1527,13 @@ pub use crate::types::_cluster_node_details::ClusterNodeDetails;
 
 pub use crate::types::_cluster_instance_group_details::ClusterInstanceGroupDetails;
 
-pub use crate::types::_auto_ml_problem_type_config_name::AutoMlProblemTypeConfigName;
+pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
+
+pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
+
+pub use crate::types::_model_deploy_result::ModelDeployResult;
+
+pub use crate::types::_model_deploy_config::ModelDeployConfig;
 
 pub use crate::types::_auto_ml_resolved_attributes::AutoMlResolvedAttributes;
 
@@ -1545,17 +1551,21 @@ pub use crate::types::_auto_ml_job_objective::AutoMlJobObjective;
 
 pub use crate::types::_auto_ml_job_artifacts::AutoMlJobArtifacts;
 
-pub use crate::types::_auto_ml_security_config::AutoMlSecurityConfig;
-
-pub use crate::types::_auto_ml_data_split_config::AutoMlDataSplitConfig;
-
-pub use crate::types::_model_deploy_result::ModelDeployResult;
-
-pub use crate::types::_model_deploy_config::ModelDeployConfig;
+pub use crate::types::_auto_ml_problem_type_config_name::AutoMlProblemTypeConfigName;
 
 pub use crate::types::_auto_ml_problem_type_config::AutoMlProblemTypeConfig;
 
 pub use crate::types::_text_generation_job_config::TextGenerationJobConfig;
+
+pub use crate::types::_tabular_job_config::TabularJobConfig;
+
+pub use crate::types::_auto_ml_mode::AutoMlMode;
+
+pub use crate::types::_candidate_generation_config::CandidateGenerationConfig;
+
+pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfig;
+
+pub use crate::types::_auto_ml_algorithm::AutoMlAlgorithm;
 
 pub use crate::types::_time_series_forecasting_job_config::TimeSeriesForecastingJobConfig;
 
@@ -1568,16 +1578,6 @@ pub use crate::types::_time_series_transformations::TimeSeriesTransformations;
 pub use crate::types::_aggregation_transformation_value::AggregationTransformationValue;
 
 pub use crate::types::_filling_type::FillingType;
-
-pub use crate::types::_tabular_job_config::TabularJobConfig;
-
-pub use crate::types::_auto_ml_mode::AutoMlMode;
-
-pub use crate::types::_candidate_generation_config::CandidateGenerationConfig;
-
-pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfig;
-
-pub use crate::types::_auto_ml_algorithm::AutoMlAlgorithm;
 
 pub use crate::types::_text_classification_job_config::TextClassificationJobConfig;
 

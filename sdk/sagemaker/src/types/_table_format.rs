@@ -12,6 +12,7 @@
 /// ```text
 /// # let tableformat = unimplemented!();
 /// match tableformat {
+///     TableFormat::Default => { /* ... */ },
 ///     TableFormat::Glue => { /* ... */ },
 ///     TableFormat::Iceberg => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum TableFormat {
     #[allow(missing_docs)] // documentation missing in model
+    Default,
+    #[allow(missing_docs)] // documentation missing in model
     Glue,
     #[allow(missing_docs)] // documentation missing in model
     Iceberg,
@@ -52,6 +55,7 @@ pub enum TableFormat {
 impl ::std::convert::From<&str> for TableFormat {
     fn from(s: &str) -> Self {
         match s {
+            "Default" => TableFormat::Default,
             "Glue" => TableFormat::Glue,
             "Iceberg" => TableFormat::Iceberg,
             other => TableFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl TableFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TableFormat::Default => "Default",
             TableFormat::Glue => "Glue",
             TableFormat::Iceberg => "Iceberg",
             TableFormat::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl TableFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Glue", "Iceberg"]
+        &["Default", "Glue", "Iceberg"]
     }
 }
 impl ::std::convert::AsRef<str> for TableFormat {

@@ -28,20 +28,42 @@ pub fn ser_start_outbound_voice_contact_input_input(
     if let Some(var_9) = &input.contact_flow_id {
         object.key("ContactFlowId").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.destination_phone_number {
-        object.key("DestinationPhoneNumber").string(var_10.as_str());
+    if let Some(var_10) = &input.description {
+        object.key("Description").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.instance_id {
-        object.key("InstanceId").string(var_11.as_str());
+    if let Some(var_11) = &input.destination_phone_number {
+        object.key("DestinationPhoneNumber").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.queue_id {
-        object.key("QueueId").string(var_12.as_str());
+    if let Some(var_12) = &input.instance_id {
+        object.key("InstanceId").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.source_phone_number {
-        object.key("SourcePhoneNumber").string(var_13.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("Name").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.traffic_type {
-        object.key("TrafficType").string(var_14.as_str());
+    if let Some(var_14) = &input.queue_id {
+        object.key("QueueId").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.references {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("References").start_object();
+        for (key_17, value_18) in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = object_16.key(key_17.as_str()).start_object();
+                crate::protocol_serde::shape_reference::ser_reference(&mut object_19, value_18)?;
+                object_19.finish();
+            }
+        }
+        object_16.finish();
+    }
+    if let Some(var_20) = &input.related_contact_id {
+        object.key("RelatedContactId").string(var_20.as_str());
+    }
+    if let Some(var_21) = &input.source_phone_number {
+        object.key("SourcePhoneNumber").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.traffic_type {
+        object.key("TrafficType").string(var_22.as_str());
     }
     Ok(())
 }

@@ -13,6 +13,8 @@ pub struct DescribeAppOutput {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name.</p>
     pub user_profile_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::AppStatus>,
     /// <p>The timestamp of the last health check.</p>
@@ -25,8 +27,6 @@ pub struct DescribeAppOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub space_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAppOutput {
@@ -49,6 +49,10 @@ impl DescribeAppOutput {
     /// <p>The user profile name.</p>
     pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
         self.user_profile_name.as_deref()
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AppStatus> {
@@ -74,10 +78,6 @@ impl DescribeAppOutput {
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn space_name(&self) -> ::std::option::Option<&str> {
-        self.space_name.as_deref()
-    }
 }
 impl ::aws_types::request_id::RequestId for DescribeAppOutput {
     fn request_id(&self) -> Option<&str> {
@@ -100,13 +100,13 @@ pub struct DescribeAppOutputBuilder {
     pub(crate) app_name: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AppStatus>,
     pub(crate) last_health_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_user_activity_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
-    pub(crate) space_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAppOutputBuilder {
@@ -179,6 +179,20 @@ impl DescribeAppOutputBuilder {
     /// <p>The user profile name.</p>
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_profile_name
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.space_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.space_name = input;
+        self
+    }
+    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.space_name
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::AppStatus) -> Self {
@@ -264,20 +278,6 @@ impl DescribeAppOutputBuilder {
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.resource_spec
     }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.space_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.space_name = input;
-        self
-    }
-    /// <p>The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.</p>
-    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.space_name
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -295,13 +295,13 @@ impl DescribeAppOutputBuilder {
             app_name: self.app_name,
             domain_id: self.domain_id,
             user_profile_name: self.user_profile_name,
+            space_name: self.space_name,
             status: self.status,
             last_health_check_timestamp: self.last_health_check_timestamp,
             last_user_activity_timestamp: self.last_user_activity_timestamp,
             creation_time: self.creation_time,
             failure_reason: self.failure_reason,
             resource_spec: self.resource_spec,
-            space_name: self.space_name,
             _request_id: self._request_id,
         }
     }

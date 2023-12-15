@@ -45,6 +45,18 @@ pub use crate::types::_application::ApplicationBuilder;
 
 pub use crate::types::_rule_action::RuleActionBuilder;
 
+pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinitionBuilder;
+
+pub use crate::types::_update_case_action_definition::UpdateCaseActionDefinitionBuilder;
+
+pub use crate::types::_field_value::FieldValueBuilder;
+
+pub use crate::types::_field_value_union::FieldValueUnionBuilder;
+
+pub use crate::types::_empty_field_value::EmptyFieldValueBuilder;
+
+pub use crate::types::_create_case_action_definition::CreateCaseActionDefinitionBuilder;
+
 pub use crate::types::_send_notification_action_definition::SendNotificationActionDefinitionBuilder;
 
 pub use crate::types::_notification_recipient_type::NotificationRecipientTypeBuilder;

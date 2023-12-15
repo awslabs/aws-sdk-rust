@@ -21,6 +21,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StandardMetricName" => {
+                            builder = builder.set_standard_metric_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AutoMlMetricExtendedEnum::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Value" => {
                             builder = builder
                                 .set_value(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
@@ -29,13 +36,6 @@ where
                             builder = builder.set_set(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::MetricSetSource::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "StandardMetricName" => {
-                            builder = builder.set_standard_metric_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::AutoMlMetricExtendedEnum::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

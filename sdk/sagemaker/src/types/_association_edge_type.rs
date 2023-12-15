@@ -16,6 +16,7 @@
 ///     AssociationEdgeType::ContributedTo => { /* ... */ },
 ///     AssociationEdgeType::DerivedFrom => { /* ... */ },
 ///     AssociationEdgeType::Produced => { /* ... */ },
+///     AssociationEdgeType::SameAs => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum AssociationEdgeType {
     DerivedFrom,
     #[allow(missing_docs)] // documentation missing in model
     Produced,
+    #[allow(missing_docs)] // documentation missing in model
+    SameAs,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for AssociationEdgeType {
             "ContributedTo" => AssociationEdgeType::ContributedTo,
             "DerivedFrom" => AssociationEdgeType::DerivedFrom,
             "Produced" => AssociationEdgeType::Produced,
+            "SameAs" => AssociationEdgeType::SameAs,
             other => AssociationEdgeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,13 @@ impl AssociationEdgeType {
             AssociationEdgeType::ContributedTo => "ContributedTo",
             AssociationEdgeType::DerivedFrom => "DerivedFrom",
             AssociationEdgeType::Produced => "Produced",
+            AssociationEdgeType::SameAs => "SameAs",
             AssociationEdgeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AssociatedWith", "ContributedTo", "DerivedFrom", "Produced"]
+        &["AssociatedWith", "ContributedTo", "DerivedFrom", "Produced", "SameAs"]
     }
 }
 impl ::std::convert::AsRef<str> for AssociationEdgeType {

@@ -8,6 +8,8 @@ pub struct AgentInfo {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Agent pause duration for a contact in seconds.</p>
+    pub agent_pause_duration_in_seconds: ::std::option::Option<i32>,
 }
 impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -17,6 +19,10 @@ impl AgentInfo {
     /// <p>The timestamp when the contact was connected to the agent.</p>
     pub fn connected_to_agent_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.connected_to_agent_timestamp.as_ref()
+    }
+    /// <p>Agent pause duration for a contact in seconds.</p>
+    pub fn agent_pause_duration_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.agent_pause_duration_in_seconds
     }
 }
 impl AgentInfo {
@@ -32,6 +38,7 @@ impl AgentInfo {
 pub struct AgentInfoBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) connected_to_agent_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) agent_pause_duration_in_seconds: ::std::option::Option<i32>,
 }
 impl AgentInfoBuilder {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -62,11 +69,26 @@ impl AgentInfoBuilder {
     pub fn get_connected_to_agent_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.connected_to_agent_timestamp
     }
+    /// <p>Agent pause duration for a contact in seconds.</p>
+    pub fn agent_pause_duration_in_seconds(mut self, input: i32) -> Self {
+        self.agent_pause_duration_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Agent pause duration for a contact in seconds.</p>
+    pub fn set_agent_pause_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.agent_pause_duration_in_seconds = input;
+        self
+    }
+    /// <p>Agent pause duration for a contact in seconds.</p>
+    pub fn get_agent_pause_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.agent_pause_duration_in_seconds
+    }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
             id: self.id,
             connected_to_agent_timestamp: self.connected_to_agent_timestamp,
+            agent_pause_duration_in_seconds: self.agent_pause_duration_in_seconds,
         }
     }
 }

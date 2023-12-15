@@ -13,6 +13,7 @@
 /// # let capturemode = unimplemented!();
 /// match capturemode {
 ///     CaptureMode::Input => { /* ... */ },
+///     CaptureMode::InputAndOutput => { /* ... */ },
 ///     CaptureMode::Output => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@ pub enum CaptureMode {
     #[allow(missing_docs)] // documentation missing in model
     Input,
     #[allow(missing_docs)] // documentation missing in model
+    InputAndOutput,
+    #[allow(missing_docs)] // documentation missing in model
     Output,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -53,6 +56,7 @@ impl ::std::convert::From<&str> for CaptureMode {
     fn from(s: &str) -> Self {
         match s {
             "Input" => CaptureMode::Input,
+            "InputAndOutput" => CaptureMode::InputAndOutput,
             "Output" => CaptureMode::Output,
             other => CaptureMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,13 +74,14 @@ impl CaptureMode {
     pub fn as_str(&self) -> &str {
         match self {
             CaptureMode::Input => "Input",
+            CaptureMode::InputAndOutput => "InputAndOutput",
             CaptureMode::Output => "Output",
             CaptureMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Input", "Output"]
+        &["Input", "InputAndOutput", "Output"]
     }
 }
 impl ::std::convert::AsRef<str> for CaptureMode {

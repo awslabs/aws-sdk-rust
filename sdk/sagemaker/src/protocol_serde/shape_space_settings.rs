@@ -15,26 +15,26 @@ pub fn ser_space_settings(
         crate::protocol_serde::shape_kernel_gateway_app_settings::ser_kernel_gateway_app_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.jupyter_lab_app_settings {
+    if let Some(var_5) = &input.code_editor_app_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("JupyterLabAppSettings").start_object();
-        crate::protocol_serde::shape_space_jupyter_lab_app_settings::ser_space_jupyter_lab_app_settings(&mut object_6, var_5)?;
+        let mut object_6 = object.key("CodeEditorAppSettings").start_object();
+        crate::protocol_serde::shape_space_code_editor_app_settings::ser_space_code_editor_app_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.code_editor_app_settings {
+    if let Some(var_7) = &input.jupyter_lab_app_settings {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("CodeEditorAppSettings").start_object();
-        crate::protocol_serde::shape_space_code_editor_app_settings::ser_space_code_editor_app_settings(&mut object_8, var_7)?;
+        let mut object_8 = object.key("JupyterLabAppSettings").start_object();
+        crate::protocol_serde::shape_space_jupyter_lab_app_settings::ser_space_jupyter_lab_app_settings(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.space_storage_settings {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("SpaceStorageSettings").start_object();
-        crate::protocol_serde::shape_space_storage_settings::ser_space_storage_settings(&mut object_10, var_9)?;
-        object_10.finish();
+    if let Some(var_9) = &input.app_type {
+        object.key("AppType").string(var_9.as_str());
     }
-    if let Some(var_11) = &input.app_type {
-        object.key("AppType").string(var_11.as_str());
+    if let Some(var_10) = &input.space_storage_settings {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("SpaceStorageSettings").start_object();
+        crate::protocol_serde::shape_space_storage_settings::ser_space_storage_settings(&mut object_11, var_10)?;
+        object_11.finish();
     }
     if let Some(var_12) = &input.custom_file_systems {
         let mut array_13 = object.key("CustomFileSystems").start_array();
@@ -76,19 +76,15 @@ where
                                 crate::protocol_serde::shape_kernel_gateway_app_settings::de_kernel_gateway_app_settings(tokens)?,
                             );
                         }
-                        "JupyterLabAppSettings" => {
-                            builder = builder.set_jupyter_lab_app_settings(
-                                crate::protocol_serde::shape_space_jupyter_lab_app_settings::de_space_jupyter_lab_app_settings(tokens)?,
-                            );
-                        }
                         "CodeEditorAppSettings" => {
                             builder = builder.set_code_editor_app_settings(
                                 crate::protocol_serde::shape_space_code_editor_app_settings::de_space_code_editor_app_settings(tokens)?,
                             );
                         }
-                        "SpaceStorageSettings" => {
-                            builder = builder
-                                .set_space_storage_settings(crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens)?);
+                        "JupyterLabAppSettings" => {
+                            builder = builder.set_jupyter_lab_app_settings(
+                                crate::protocol_serde::shape_space_jupyter_lab_app_settings::de_space_jupyter_lab_app_settings(tokens)?,
+                            );
                         }
                         "AppType" => {
                             builder = builder.set_app_type(
@@ -96,6 +92,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AppType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "SpaceStorageSettings" => {
+                            builder = builder
+                                .set_space_storage_settings(crate::protocol_serde::shape_space_storage_settings::de_space_storage_settings(tokens)?);
                         }
                         "CustomFileSystems" => {
                             builder =

@@ -63,7 +63,6 @@ impl ListFeatureGroupsOutputBuilder {
         &self.feature_group_summaries
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-    /// This field is required.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self

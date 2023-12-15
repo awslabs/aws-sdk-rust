@@ -136,6 +136,20 @@ impl DescribeAppFluentBuilder {
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_profile_name()
     }
+    /// <p>The name of the space.</p>
+    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.space_name(input.into());
+        self
+    }
+    /// <p>The name of the space.</p>
+    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_space_name(input);
+        self
+    }
+    /// <p>The name of the space.</p>
+    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_space_name()
+    }
     /// <p>The type of app.</p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
         self.inner = self.inner.app_type(input);
@@ -163,19 +177,5 @@ impl DescribeAppFluentBuilder {
     /// <p>The name of the app.</p>
     pub fn get_app_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_app_name()
-    }
-    /// <p>The name of the space.</p>
-    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.space_name(input.into());
-        self
-    }
-    /// <p>The name of the space.</p>
-    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_space_name(input);
-        self
-    }
-    /// <p>The name of the space.</p>
-    pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_space_name()
     }
 }

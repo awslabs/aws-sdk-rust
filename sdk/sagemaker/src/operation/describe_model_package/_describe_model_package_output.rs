@@ -41,16 +41,16 @@ pub struct DescribeModelPackageOutput {
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A description provided for the model approval.</p>
     pub approval_description: ::std::option::Option<::std::string::String>,
-    /// <p>The metadata properties associated with the model package versions.</p>
-    pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub sample_payload_url: ::std::option::Option<::std::string::String>,
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    pub drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     pub additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     /// <p>Indicates if you want to skip model validation.</p>
@@ -134,14 +134,6 @@ impl DescribeModelPackageOutput {
     pub fn approval_description(&self) -> ::std::option::Option<&str> {
         self.approval_description.as_deref()
     }
-    /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn customer_metadata_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
-        self.customer_metadata_properties.as_ref()
-    }
-    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
-    pub fn drift_check_baselines(&self) -> ::std::option::Option<&crate::types::DriftCheckBaselines> {
-        self.drift_check_baselines.as_ref()
-    }
     /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
@@ -153,6 +145,14 @@ impl DescribeModelPackageOutput {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
     pub fn sample_payload_url(&self) -> ::std::option::Option<&str> {
         self.sample_payload_url.as_deref()
+    }
+    /// <p>The metadata properties associated with the model package versions.</p>
+    pub fn customer_metadata_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.customer_metadata_properties.as_ref()
+    }
+    /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
+    pub fn drift_check_baselines(&self) -> ::std::option::Option<&crate::types::DriftCheckBaselines> {
+        self.drift_check_baselines.as_ref()
     }
     /// <p>An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
     ///
@@ -200,11 +200,11 @@ pub struct DescribeModelPackageOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) approval_description: ::std::option::Option<::std::string::String>,
-    pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) task: ::std::option::Option<::std::string::String>,
     pub(crate) sample_payload_url: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_metadata_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) drift_check_baselines: ::std::option::Option<crate::types::DriftCheckBaselines>,
     pub(crate) additional_inference_specifications: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>,
     pub(crate) skip_model_validation: ::std::option::Option<crate::types::SkipModelValidation>,
     _request_id: Option<String>,
@@ -481,6 +481,48 @@ impl DescribeModelPackageOutputBuilder {
     pub fn get_approval_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.approval_description
     }
+    /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain = input;
+        self
+    }
+    /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
+    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain
+    }
+    /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.task = input;
+        self
+    }
+    /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
+    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
+        &self.task
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn sample_payload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_payload_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn set_sample_payload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sample_payload_url = input;
+        self
+    }
+    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
+    pub fn get_sample_payload_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sample_payload_url
+    }
     /// Adds a key-value pair to `customer_metadata_properties`.
     ///
     /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
@@ -523,48 +565,6 @@ impl DescribeModelPackageOutputBuilder {
     /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
     pub fn get_drift_check_baselines(&self) -> &::std::option::Option<crate::types::DriftCheckBaselines> {
         &self.drift_check_baselines
-    }
-    /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
-    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.domain = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
-    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.domain = input;
-        self
-    }
-    /// <p>The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.</p>
-    pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
-        &self.domain
-    }
-    /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
-    pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.task = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
-    pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.task = input;
-        self
-    }
-    /// <p>The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.</p>
-    pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
-        &self.task
-    }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn sample_payload_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.sample_payload_url = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn set_sample_payload_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.sample_payload_url = input;
-        self
-    }
-    /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path points to a single gzip compressed tar archive (.tar.gz suffix).</p>
-    pub fn get_sample_payload_url(&self) -> &::std::option::Option<::std::string::String> {
-        &self.sample_payload_url
     }
     /// Appends an item to `additional_inference_specifications`.
     ///
@@ -636,11 +636,11 @@ impl DescribeModelPackageOutputBuilder {
             last_modified_time: self.last_modified_time,
             last_modified_by: self.last_modified_by,
             approval_description: self.approval_description,
-            customer_metadata_properties: self.customer_metadata_properties,
-            drift_check_baselines: self.drift_check_baselines,
             domain: self.domain,
             task: self.task,
             sample_payload_url: self.sample_payload_url,
+            customer_metadata_properties: self.customer_metadata_properties,
+            drift_check_baselines: self.drift_check_baselines,
             additional_inference_specifications: self.additional_inference_specifications,
             skip_model_validation: self.skip_model_validation,
             _request_id: self._request_id,

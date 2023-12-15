@@ -12,6 +12,7 @@
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
+///     SourceType::Cases => { /* ... */ },
 ///     SourceType::Salesforce => { /* ... */ },
 ///     SourceType::Zendesk => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
 )]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
+    Cases,
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
     #[allow(missing_docs)] // documentation missing in model
     Zendesk,
@@ -52,6 +55,7 @@ pub enum SourceType {
 impl ::std::convert::From<&str> for SourceType {
     fn from(s: &str) -> Self {
         match s {
+            "CASES" => SourceType::Cases,
             "SALESFORCE" => SourceType::Salesforce,
             "ZENDESK" => SourceType::Zendesk,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -69,6 +73,7 @@ impl SourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SourceType::Cases => "CASES",
             SourceType::Salesforce => "SALESFORCE",
             SourceType::Zendesk => "ZENDESK",
             SourceType::Unknown(value) => value.as_str(),
@@ -76,7 +81,7 @@ impl SourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SALESFORCE", "ZENDESK"]
+        &["CASES", "SALESFORCE", "ZENDESK"]
     }
 }
 impl ::std::convert::AsRef<str> for SourceType {

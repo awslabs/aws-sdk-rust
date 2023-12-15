@@ -159,6 +159,8 @@ pub(crate) mod shape_delete_cluster;
 
 pub(crate) mod shape_delete_code_repository;
 
+pub(crate) mod shape_delete_compilation_job;
+
 pub(crate) mod shape_delete_context;
 
 pub(crate) mod shape_delete_data_quality_job_definition;
@@ -802,6 +804,8 @@ pub(crate) mod shape_delete_association_input;
 pub(crate) mod shape_delete_cluster_input;
 
 pub(crate) mod shape_delete_code_repository_input;
+
+pub(crate) mod shape_delete_compilation_job_input;
 
 pub(crate) mod shape_delete_context_input;
 
@@ -2631,6 +2635,8 @@ pub(crate) mod shape_metric_data_list;
 
 pub(crate) mod shape_metrics_source;
 
+pub(crate) mod shape_model_access_config;
+
 pub(crate) mod shape_model_card;
 
 pub(crate) mod shape_model_configuration;
@@ -2816,8 +2822,6 @@ pub(crate) mod shape_lambda_step_metadata;
 pub(crate) mod shape_metric_datum;
 
 pub(crate) mod shape_model;
-
-pub(crate) mod shape_model_access_config;
 
 pub(crate) mod shape_model_dashboard_endpoints;
 

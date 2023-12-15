@@ -118,6 +118,8 @@ pub struct DescribeTrainingJobOutput {
     pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Resources, including ML compute instances and ML storage volumes, that are configured for model training.</p>
     pub resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.</p>
@@ -175,12 +177,10 @@ pub struct DescribeTrainingJobOutput {
     pub profiler_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleEvaluationStatus>>,
     /// <p>Profiling status of a training job.</p>
     pub profiling_status: ::std::option::Option<crate::types::ProfilingStatus>,
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>The environment variables to set in the Docker container.</p>
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The status of the warm pool associated with the training job.</p>
-    pub warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     _request_id: Option<String>,
@@ -333,6 +333,10 @@ impl DescribeTrainingJobOutput {
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfig> {
         self.resource_config.as_ref()
     }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn warm_pool_status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
+        self.warm_pool_status.as_ref()
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
@@ -448,17 +452,13 @@ impl DescribeTrainingJobOutput {
     pub fn profiling_status(&self) -> ::std::option::Option<&crate::types::ProfilingStatus> {
         self.profiling_status.as_ref()
     }
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
-        self.retry_strategy.as_ref()
-    }
     /// <p>The environment variables to set in the Docker container.</p>
     pub fn environment(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment.as_ref()
     }
-    /// <p>The status of the warm pool associated with the training job.</p>
-    pub fn warm_pool_status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
-        self.warm_pool_status.as_ref()
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
+        self.retry_strategy.as_ref()
     }
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub fn infra_check_config(&self) -> ::std::option::Option<&crate::types::InfraCheckConfig> {
@@ -496,6 +496,7 @@ pub struct DescribeTrainingJobOutputBuilder {
     pub(crate) input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfig>,
+    pub(crate) warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -519,9 +520,8 @@ pub struct DescribeTrainingJobOutputBuilder {
     pub(crate) profiler_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
     pub(crate) profiler_rule_evaluation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleEvaluationStatus>>,
     pub(crate) profiling_status: ::std::option::Option<crate::types::ProfilingStatus>,
-    pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) warm_pool_status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
     pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     _request_id: Option<String>,
 }
@@ -1017,6 +1017,20 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfig> {
         &self.resource_config
     }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn warm_pool_status(mut self, input: crate::types::WarmPoolStatus) -> Self {
+        self.warm_pool_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn set_warm_pool_status(mut self, input: ::std::option::Option<crate::types::WarmPoolStatus>) -> Self {
+        self.warm_pool_status = input;
+        self
+    }
+    /// <p>The status of the warm pool associated with the training job.</p>
+    pub fn get_warm_pool_status(&self) -> &::std::option::Option<crate::types::WarmPoolStatus> {
+        &self.warm_pool_status
+    }
     /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = ::std::option::Option::Some(input);
@@ -1422,20 +1436,6 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_profiling_status(&self) -> &::std::option::Option<crate::types::ProfilingStatus> {
         &self.profiling_status
     }
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
-        self.retry_strategy = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub fn set_retry_strategy(mut self, input: ::std::option::Option<crate::types::RetryStrategy>) -> Self {
-        self.retry_strategy = input;
-        self
-    }
-    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
-    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
-        &self.retry_strategy
-    }
     /// Adds a key-value pair to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
@@ -1459,19 +1459,19 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_environment(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment
     }
-    /// <p>The status of the warm pool associated with the training job.</p>
-    pub fn warm_pool_status(mut self, input: crate::types::WarmPoolStatus) -> Self {
-        self.warm_pool_status = ::std::option::Option::Some(input);
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn retry_strategy(mut self, input: crate::types::RetryStrategy) -> Self {
+        self.retry_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the warm pool associated with the training job.</p>
-    pub fn set_warm_pool_status(mut self, input: ::std::option::Option<crate::types::WarmPoolStatus>) -> Self {
-        self.warm_pool_status = input;
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn set_retry_strategy(mut self, input: ::std::option::Option<crate::types::RetryStrategy>) -> Self {
+        self.retry_strategy = input;
         self
     }
-    /// <p>The status of the warm pool associated with the training job.</p>
-    pub fn get_warm_pool_status(&self) -> &::std::option::Option<crate::types::WarmPoolStatus> {
-        &self.warm_pool_status
+    /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
+    pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
+        &self.retry_strategy
     }
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub fn infra_check_config(mut self, input: crate::types::InfraCheckConfig) -> Self {
@@ -1514,6 +1514,7 @@ impl DescribeTrainingJobOutputBuilder {
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,
             resource_config: self.resource_config,
+            warm_pool_status: self.warm_pool_status,
             vpc_config: self.vpc_config,
             stopping_condition: self.stopping_condition,
             creation_time: self.creation_time,
@@ -1537,9 +1538,8 @@ impl DescribeTrainingJobOutputBuilder {
             profiler_rule_configurations: self.profiler_rule_configurations,
             profiler_rule_evaluation_statuses: self.profiler_rule_evaluation_statuses,
             profiling_status: self.profiling_status,
-            retry_strategy: self.retry_strategy,
             environment: self.environment,
-            warm_pool_status: self.warm_pool_status,
+            retry_strategy: self.retry_strategy,
             infra_check_config: self.infra_check_config,
             _request_id: self._request_id,
         }

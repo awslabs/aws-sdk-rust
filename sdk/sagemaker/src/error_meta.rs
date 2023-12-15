@@ -1271,6 +1271,7 @@ where
 impl From<crate::operation::create_pipeline::CreatePipelineError> for Error {
     fn from(err: crate::operation::create_pipeline::CreatePipelineError) -> Self {
         match err {
+            crate::operation::create_pipeline::CreatePipelineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_pipeline::CreatePipelineError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::create_pipeline::CreatePipelineError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::create_pipeline::CreatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1633,6 +1634,7 @@ where
 impl From<crate::operation::delete_algorithm::DeleteAlgorithmError> for Error {
     fn from(err: crate::operation::delete_algorithm::DeleteAlgorithmError) -> Self {
         match err {
+            crate::operation::delete_algorithm::DeleteAlgorithmError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_algorithm::DeleteAlgorithmError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1769,6 +1771,28 @@ impl From<crate::operation::delete_code_repository::DeleteCodeRepositoryError> f
     fn from(err: crate::operation::delete_code_repository::DeleteCodeRepositoryError) -> Self {
         match err {
             crate::operation::delete_code_repository::DeleteCodeRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_compilation_job::DeleteCompilationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_compilation_job::DeleteCompilationJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_compilation_job::DeleteCompilationJobError> for Error {
+    fn from(err: crate::operation::delete_compilation_job::DeleteCompilationJobError) -> Self {
+        match err {
+            crate::operation::delete_compilation_job::DeleteCompilationJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_compilation_job::DeleteCompilationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2524,6 +2548,7 @@ where
 impl From<crate::operation::delete_pipeline::DeletePipelineError> for Error {
     fn from(err: crate::operation::delete_pipeline::DeletePipelineError) -> Self {
         match err {
+            crate::operation::delete_pipeline::DeletePipelineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_pipeline::DeletePipelineError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_pipeline::DeletePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -4219,6 +4244,7 @@ where
 impl From<crate::operation::describe_user_profile::DescribeUserProfileError> for Error {
     fn from(err: crate::operation::describe_user_profile::DescribeUserProfileError) -> Self {
         match err {
+            crate::operation::describe_user_profile::DescribeUserProfileError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::describe_user_profile::DescribeUserProfileError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_user_profile::DescribeUserProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -6345,6 +6371,9 @@ where
 impl From<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError> for Error {
     fn from(err: crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError) -> Self {
         match err {
+            crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -6492,6 +6521,9 @@ where
 impl From<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError> for Error {
     fn from(err: crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError) -> Self {
         match err {
+            crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
@@ -6532,6 +6564,9 @@ where
 impl From<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError> for Error {
     fn from(err: crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError) -> Self {
         match err {
+            crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
@@ -6664,6 +6699,7 @@ where
 impl From<crate::operation::start_pipeline_execution::StartPipelineExecutionError> for Error {
     fn from(err: crate::operation::start_pipeline_execution::StartPipelineExecutionError) -> Self {
         match err {
+            crate::operation::start_pipeline_execution::StartPipelineExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_pipeline_execution::StartPipelineExecutionError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
@@ -6941,6 +6977,7 @@ where
 impl From<crate::operation::stop_pipeline_execution::StopPipelineExecutionError> for Error {
     fn from(err: crate::operation::stop_pipeline_execution::StopPipelineExecutionError) -> Self {
         match err {
+            crate::operation::stop_pipeline_execution::StopPipelineExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::stop_pipeline_execution::StopPipelineExecutionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::stop_pipeline_execution::StopPipelineExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -7123,6 +7160,7 @@ where
 impl From<crate::operation::update_code_repository::UpdateCodeRepositoryError> for Error {
     fn from(err: crate::operation::update_code_repository::UpdateCodeRepositoryError) -> Self {
         match err {
+            crate::operation::update_code_repository::UpdateCodeRepositoryError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_code_repository::UpdateCodeRepositoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -7316,6 +7354,7 @@ where
 impl From<crate::operation::update_feature_group::UpdateFeatureGroupError> for Error {
     fn from(err: crate::operation::update_feature_group::UpdateFeatureGroupError) -> Self {
         match err {
+            crate::operation::update_feature_group::UpdateFeatureGroupError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::update_feature_group::UpdateFeatureGroupError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_feature_group::UpdateFeatureGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -7546,6 +7585,7 @@ where
 impl From<crate::operation::update_model_package::UpdateModelPackageError> for Error {
     fn from(err: crate::operation::update_model_package::UpdateModelPackageError) -> Self {
         match err {
+            crate::operation::update_model_package::UpdateModelPackageError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_model_package::UpdateModelPackageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -7685,6 +7725,7 @@ where
 impl From<crate::operation::update_pipeline::UpdatePipelineError> for Error {
     fn from(err: crate::operation::update_pipeline::UpdatePipelineError) -> Self {
         match err {
+            crate::operation::update_pipeline::UpdatePipelineError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_pipeline::UpdatePipelineError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_pipeline::UpdatePipelineError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -7710,6 +7751,7 @@ where
 impl From<crate::operation::update_pipeline_execution::UpdatePipelineExecutionError> for Error {
     fn from(err: crate::operation::update_pipeline_execution::UpdatePipelineExecutionError) -> Self {
         match err {
+            crate::operation::update_pipeline_execution::UpdatePipelineExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_pipeline_execution::UpdatePipelineExecutionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_pipeline_execution::UpdatePipelineExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -7732,6 +7774,7 @@ where
 impl From<crate::operation::update_project::UpdateProjectError> for Error {
     fn from(err: crate::operation::update_project::UpdateProjectError) -> Self {
         match err {
+            crate::operation::update_project::UpdateProjectError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_project::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -7777,6 +7820,7 @@ where
 impl From<crate::operation::update_training_job::UpdateTrainingJobError> for Error {
     fn from(err: crate::operation::update_training_job::UpdateTrainingJobError) -> Self {
         match err {
+            crate::operation::update_training_job::UpdateTrainingJobError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::update_training_job::UpdateTrainingJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_training_job::UpdateTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
         }

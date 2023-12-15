@@ -436,6 +436,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
+    /// AVG_ACTIVE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
     /// </dt>
     /// <dd>
@@ -454,6 +461,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_AGENT_PAUSE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
@@ -949,6 +963,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
+    /// AVG_ACTIVE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
     /// </dt>
     /// <dd>
@@ -967,6 +988,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_AGENT_PAUSE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION
@@ -1462,6 +1490,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
+    /// AVG_ACTIVE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
+    /// </dd>
+    /// <dt>
     /// AVG_AFTER_CONTACT_WORK_TIME
     /// </dt>
     /// <dd>
@@ -1480,6 +1515,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p><note>
     /// <p>The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.</p>
     /// </note>
+    /// </dd>
+    /// <dt>
+    /// AVG_AGENT_PAUSE_TIME
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Seconds</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy</p>
     /// </dd>
     /// <dt>
     /// AVG_CONTACT_DURATION

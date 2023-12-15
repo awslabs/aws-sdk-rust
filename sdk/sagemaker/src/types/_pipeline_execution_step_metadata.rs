@@ -22,6 +22,8 @@ pub struct PipelineExecutionStepMetadata {
     pub callback: ::std::option::Option<crate::types::CallbackStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
     pub lambda: ::std::option::Option<crate::types::LambdaStepMetadata>,
+    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+    pub emr: ::std::option::Option<crate::types::EmrStepMetadata>,
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
     /// <li>
@@ -62,8 +64,6 @@ pub struct PipelineExecutionStepMetadata {
     /// <p>If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.</p></li>
     /// </ul>
     pub clarify_check: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>,
-    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    pub emr: ::std::option::Option<crate::types::EmrStepMetadata>,
     /// <p>The configurations and outcomes of a Fail step execution.</p>
     pub fail: ::std::option::Option<crate::types::FailStepMetadata>,
     /// <p>The Amazon Resource Name (ARN) of the AutoML job that was run by this step.</p>
@@ -105,6 +105,10 @@ impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
     pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaStepMetadata> {
         self.lambda.as_ref()
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+    pub fn emr(&self) -> ::std::option::Option<&crate::types::EmrStepMetadata> {
+        self.emr.as_ref()
     }
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
@@ -150,10 +154,6 @@ impl PipelineExecutionStepMetadata {
     pub fn clarify_check(&self) -> ::std::option::Option<&crate::types::ClarifyCheckStepMetadata> {
         self.clarify_check.as_ref()
     }
-    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    pub fn emr(&self) -> ::std::option::Option<&crate::types::EmrStepMetadata> {
-        self.emr.as_ref()
-    }
     /// <p>The configurations and outcomes of a Fail step execution.</p>
     pub fn fail(&self) -> ::std::option::Option<&crate::types::FailStepMetadata> {
         self.fail.as_ref()
@@ -183,9 +183,9 @@ pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) condition: ::std::option::Option<crate::types::ConditionStepMetadata>,
     pub(crate) callback: ::std::option::Option<crate::types::CallbackStepMetadata>,
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaStepMetadata>,
+    pub(crate) emr: ::std::option::Option<crate::types::EmrStepMetadata>,
     pub(crate) quality_check: ::std::option::Option<crate::types::QualityCheckStepMetadata>,
     pub(crate) clarify_check: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>,
-    pub(crate) emr: ::std::option::Option<crate::types::EmrStepMetadata>,
     pub(crate) fail: ::std::option::Option<crate::types::FailStepMetadata>,
     pub(crate) auto_ml_job: ::std::option::Option<crate::types::AutoMlJobStepMetadata>,
 }
@@ -315,6 +315,20 @@ impl PipelineExecutionStepMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this step execution and a list of output parameters.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::LambdaStepMetadata> {
         &self.lambda
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+    pub fn emr(mut self, input: crate::types::EmrStepMetadata) -> Self {
+        self.emr = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+    pub fn set_emr(mut self, input: ::std::option::Option<crate::types::EmrStepMetadata>) -> Self {
+        self.emr = input;
+        self
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
+    pub fn get_emr(&self) -> &::std::option::Option<crate::types::EmrStepMetadata> {
+        &self.emr
     }
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
@@ -452,20 +466,6 @@ impl PipelineExecutionStepMetadataBuilder {
     pub fn get_clarify_check(&self) -> &::std::option::Option<crate::types::ClarifyCheckStepMetadata> {
         &self.clarify_check
     }
-    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    pub fn emr(mut self, input: crate::types::EmrStepMetadata) -> Self {
-        self.emr = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    pub fn set_emr(mut self, input: ::std::option::Option<crate::types::EmrStepMetadata>) -> Self {
-        self.emr = input;
-        self
-    }
-    /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
-    pub fn get_emr(&self) -> &::std::option::Option<crate::types::EmrStepMetadata> {
-        &self.emr
-    }
     /// <p>The configurations and outcomes of a Fail step execution.</p>
     pub fn fail(mut self, input: crate::types::FailStepMetadata) -> Self {
         self.fail = ::std::option::Option::Some(input);
@@ -506,9 +506,9 @@ impl PipelineExecutionStepMetadataBuilder {
             condition: self.condition,
             callback: self.callback,
             lambda: self.lambda,
+            emr: self.emr,
             quality_check: self.quality_check,
             clarify_check: self.clarify_check,
-            emr: self.emr,
             fail: self.fail,
             auto_ml_job: self.auto_ml_job,
         }

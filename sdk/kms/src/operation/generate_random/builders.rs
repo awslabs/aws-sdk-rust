@@ -29,6 +29,7 @@ impl GenerateRandomInputBuilder {
 /// <p>For more information about entropy and random number generation, see <a href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key Management Service Cryptographic Details</a>.</p>
 /// <p><b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use any account-specific resources, such as KMS keys.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a> (IAM policy)</p>
+/// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateRandomFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

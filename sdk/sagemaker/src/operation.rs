@@ -205,6 +205,9 @@ pub mod delete_cluster;
 /// Types for the `DeleteCodeRepository` operation.
 pub mod delete_code_repository;
 
+/// Types for the `DeleteCompilationJob` operation.
+pub mod delete_compilation_job;
+
 /// Types for the `DeleteContext` operation.
 pub mod delete_context;
 

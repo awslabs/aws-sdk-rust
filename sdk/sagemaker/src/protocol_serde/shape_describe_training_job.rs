@@ -164,6 +164,9 @@ pub(crate) fn de_describe_training_job(
                 "ResourceConfig" => {
                     builder = builder.set_resource_config(crate::protocol_serde::shape_resource_config::de_resource_config(tokens)?);
                 }
+                "WarmPoolStatus" => {
+                    builder = builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens)?);
+                }
                 "VpcConfig" => {
                     builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                 }
@@ -271,16 +274,13 @@ pub(crate) fn de_describe_training_job(
                             .transpose()?,
                     );
                 }
-                "RetryStrategy" => {
-                    builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens)?);
-                }
                 "Environment" => {
                     builder = builder.set_environment(crate::protocol_serde::shape_training_environment_map::de_training_environment_map(
                         tokens,
                     )?);
                 }
-                "WarmPoolStatus" => {
-                    builder = builder.set_warm_pool_status(crate::protocol_serde::shape_warm_pool_status::de_warm_pool_status(tokens)?);
+                "RetryStrategy" => {
+                    builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens)?);
                 }
                 "InfraCheckConfig" => {
                     builder = builder.set_infra_check_config(crate::protocol_serde::shape_infra_check_config::de_infra_check_config(tokens)?);

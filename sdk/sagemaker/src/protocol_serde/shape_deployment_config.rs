@@ -9,16 +9,16 @@ pub fn ser_deployment_config(
         crate::protocol_serde::shape_blue_green_update_policy::ser_blue_green_update_policy(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.auto_rollback_configuration {
+    if let Some(var_3) = &input.rolling_update_policy {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("AutoRollbackConfiguration").start_object();
-        crate::protocol_serde::shape_auto_rollback_config::ser_auto_rollback_config(&mut object_4, var_3)?;
+        let mut object_4 = object.key("RollingUpdatePolicy").start_object();
+        crate::protocol_serde::shape_rolling_update_policy::ser_rolling_update_policy(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.rolling_update_policy {
+    if let Some(var_5) = &input.auto_rollback_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("RollingUpdatePolicy").start_object();
-        crate::protocol_serde::shape_rolling_update_policy::ser_rolling_update_policy(&mut object_6, var_5)?;
+        let mut object_6 = object.key("AutoRollbackConfiguration").start_object();
+        crate::protocol_serde::shape_auto_rollback_config::ser_auto_rollback_config(&mut object_6, var_5)?;
         object_6.finish();
     }
     Ok(())
@@ -44,13 +44,13 @@ where
                                 crate::protocol_serde::shape_blue_green_update_policy::de_blue_green_update_policy(tokens)?,
                             );
                         }
-                        "AutoRollbackConfiguration" => {
-                            builder = builder
-                                .set_auto_rollback_configuration(crate::protocol_serde::shape_auto_rollback_config::de_auto_rollback_config(tokens)?);
-                        }
                         "RollingUpdatePolicy" => {
                             builder = builder
                                 .set_rolling_update_policy(crate::protocol_serde::shape_rolling_update_policy::de_rolling_update_policy(tokens)?);
+                        }
+                        "AutoRollbackConfiguration" => {
+                            builder = builder
+                                .set_auto_rollback_configuration(crate::protocol_serde::shape_auto_rollback_config::de_auto_rollback_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

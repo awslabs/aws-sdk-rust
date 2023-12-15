@@ -30,6 +30,14 @@ pub struct Contact {
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when contact was last updated.</p>
     pub last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the contact was last paused.</p>
+    pub last_paused_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the contact was last resumed.</p>
+    pub last_resumed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Total pause count for a contact.</p>
+    pub total_pause_count: ::std::option::Option<i32>,
+    /// <p>Total pause duration for a contact in seconds.</p>
+    pub total_pause_duration_in_seconds: ::std::option::Option<i32>,
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html#relatedcontactid">related</a> to this contact.</p>
@@ -92,6 +100,22 @@ impl Contact {
     pub fn last_update_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
+    /// <p>The timestamp when the contact was last paused.</p>
+    pub fn last_paused_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_paused_timestamp.as_ref()
+    }
+    /// <p>The timestamp when the contact was last resumed.</p>
+    pub fn last_resumed_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_resumed_timestamp.as_ref()
+    }
+    /// <p>Total pause count for a contact.</p>
+    pub fn total_pause_count(&self) -> ::std::option::Option<i32> {
+        self.total_pause_count
+    }
+    /// <p>Total pause duration for a contact in seconds.</p>
+    pub fn total_pause_duration_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.total_pause_duration_in_seconds
+    }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn scheduled_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scheduled_timestamp.as_ref()
@@ -133,6 +157,10 @@ pub struct ContactBuilder {
     pub(crate) initiation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_paused_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_resumed_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) total_pause_count: ::std::option::Option<i32>,
+    pub(crate) total_pause_duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
@@ -321,6 +349,62 @@ impl ContactBuilder {
     pub fn get_last_update_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_timestamp
     }
+    /// <p>The timestamp when the contact was last paused.</p>
+    pub fn last_paused_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_paused_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the contact was last paused.</p>
+    pub fn set_last_paused_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_paused_timestamp = input;
+        self
+    }
+    /// <p>The timestamp when the contact was last paused.</p>
+    pub fn get_last_paused_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_paused_timestamp
+    }
+    /// <p>The timestamp when the contact was last resumed.</p>
+    pub fn last_resumed_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_resumed_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the contact was last resumed.</p>
+    pub fn set_last_resumed_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_resumed_timestamp = input;
+        self
+    }
+    /// <p>The timestamp when the contact was last resumed.</p>
+    pub fn get_last_resumed_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_resumed_timestamp
+    }
+    /// <p>Total pause count for a contact.</p>
+    pub fn total_pause_count(mut self, input: i32) -> Self {
+        self.total_pause_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Total pause count for a contact.</p>
+    pub fn set_total_pause_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_pause_count = input;
+        self
+    }
+    /// <p>Total pause count for a contact.</p>
+    pub fn get_total_pause_count(&self) -> &::std::option::Option<i32> {
+        &self.total_pause_count
+    }
+    /// <p>Total pause duration for a contact in seconds.</p>
+    pub fn total_pause_duration_in_seconds(mut self, input: i32) -> Self {
+        self.total_pause_duration_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Total pause duration for a contact in seconds.</p>
+    pub fn set_total_pause_duration_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_pause_duration_in_seconds = input;
+        self
+    }
+    /// <p>Total pause duration for a contact in seconds.</p>
+    pub fn get_total_pause_duration_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.total_pause_duration_in_seconds
+    }
     /// <p>The timestamp, in Unix epoch time format, at which to start running the inbound flow.</p>
     pub fn scheduled_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.scheduled_timestamp = ::std::option::Option::Some(input);
@@ -399,6 +483,10 @@ impl ContactBuilder {
             initiation_timestamp: self.initiation_timestamp,
             disconnect_timestamp: self.disconnect_timestamp,
             last_update_timestamp: self.last_update_timestamp,
+            last_paused_timestamp: self.last_paused_timestamp,
+            last_resumed_timestamp: self.last_resumed_timestamp,
+            total_pause_count: self.total_pause_count,
+            total_pause_duration_in_seconds: self.total_pause_duration_in_seconds,
             scheduled_timestamp: self.scheduled_timestamp,
             related_contact_id: self.related_contact_id,
             wisdom_info: self.wisdom_info,

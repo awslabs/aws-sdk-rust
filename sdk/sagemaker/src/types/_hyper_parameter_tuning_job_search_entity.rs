@@ -37,12 +37,12 @@ pub struct HyperParameterTuningJobSearchEntity {
     pub warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     /// <p>The error that was created when a hyperparameter tuning job failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about either a current or completed hyperparameter tuning job.</p>
     pub tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
     pub consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HyperParameterTuningJobSearchEntity {
     /// <p>The name of a hyperparameter tuning job.</p>
@@ -110,12 +110,6 @@ impl HyperParameterTuningJobSearchEntity {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
-    }
     /// <p>Information about either a current or completed hyperparameter tuning job.</p>
     pub fn tuning_job_completion_details(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobCompletionDetails> {
         self.tuning_job_completion_details.as_ref()
@@ -123,6 +117,12 @@ impl HyperParameterTuningJobSearchEntity {
     /// <p>The total amount of resources consumed by a hyperparameter tuning job.</p>
     pub fn consumed_resources(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobConsumedResources> {
         self.consumed_resources.as_ref()
+    }
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
 }
 impl HyperParameterTuningJobSearchEntity {
@@ -151,9 +151,9 @@ pub struct HyperParameterTuningJobSearchEntityBuilder {
     pub(crate) overall_best_training_job: ::std::option::Option<crate::types::HyperParameterTrainingJobSummary>,
     pub(crate) warm_start_config: ::std::option::Option<crate::types::HyperParameterTuningJobWarmStartConfig>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) tuning_job_completion_details: ::std::option::Option<crate::types::HyperParameterTuningJobCompletionDetails>,
     pub(crate) consumed_resources: ::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HyperParameterTuningJobSearchEntityBuilder {
     /// <p>The name of a hyperparameter tuning job.</p>
@@ -384,26 +384,6 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
-    /// Appends an item to `tags`.
-    ///
-    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-    ///
-    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(mut self, input: crate::types::Tag) -> Self {
-        let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
-    }
-    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-        &self.tags
-    }
     /// <p>Information about either a current or completed hyperparameter tuning job.</p>
     pub fn tuning_job_completion_details(mut self, input: crate::types::HyperParameterTuningJobCompletionDetails) -> Self {
         self.tuning_job_completion_details = ::std::option::Option::Some(input);
@@ -432,6 +412,26 @@ impl HyperParameterTuningJobSearchEntityBuilder {
     pub fn get_consumed_resources(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobConsumedResources> {
         &self.consumed_resources
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags associated with a hyperparameter tuning job. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`HyperParameterTuningJobSearchEntity`](crate::types::HyperParameterTuningJobSearchEntity).
     pub fn build(self) -> crate::types::HyperParameterTuningJobSearchEntity {
         crate::types::HyperParameterTuningJobSearchEntity {
@@ -450,9 +450,9 @@ impl HyperParameterTuningJobSearchEntityBuilder {
             overall_best_training_job: self.overall_best_training_job,
             warm_start_config: self.warm_start_config,
             failure_reason: self.failure_reason,
-            tags: self.tags,
             tuning_job_completion_details: self.tuning_job_completion_details,
             consumed_resources: self.consumed_resources,
+            tags: self.tags,
         }
     }
 }
