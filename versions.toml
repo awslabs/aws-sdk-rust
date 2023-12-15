@@ -2402,6 +2402,10 @@ source_hash = '5089c61ac3ff7bf3e91fa88e52e79cadc2e2c5b6c0a2c13f057d310172d7215f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6056f0f81e84bb7636ba8ee9b2740b07d0d1c2aa5b4e16b2537386a5fe203236'
+
+[release]
+tag = 'release-2023-12-15'
+
 [release.crates]
 aws-sdk-cloud9 = '1.8.1'
 aws-sdk-connect = '1.10.0'
