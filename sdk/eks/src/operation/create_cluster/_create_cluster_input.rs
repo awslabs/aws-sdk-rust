@@ -19,14 +19,16 @@ pub struct CreateClusterInput {
     /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
     pub logging: ::std::option::Option<crate::types::Logging>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
     pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     pub outpost_config: ::std::option::Option<crate::types::OutpostConfigRequest>,
+    /// <p>The access configuration for the cluster.</p>
+    pub access_config: ::std::option::Option<crate::types::CreateAccessConfigRequest>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
@@ -57,11 +59,11 @@ impl CreateClusterInput {
     pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
         self.logging.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -74,6 +76,10 @@ impl CreateClusterInput {
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     pub fn outpost_config(&self) -> ::std::option::Option<&crate::types::OutpostConfigRequest> {
         self.outpost_config.as_ref()
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn access_config(&self) -> ::std::option::Option<&crate::types::CreateAccessConfigRequest> {
+        self.access_config.as_ref()
     }
 }
 impl CreateClusterInput {
@@ -97,6 +103,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
     pub(crate) outpost_config: ::std::option::Option<crate::types::OutpostConfigRequest>,
+    pub(crate) access_config: ::std::option::Option<crate::types::CreateAccessConfigRequest>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster.</p>
@@ -198,17 +205,17 @@ impl CreateClusterInputBuilder {
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
         &self.logging
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
@@ -216,19 +223,19 @@ impl CreateClusterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -266,6 +273,20 @@ impl CreateClusterInputBuilder {
     pub fn get_outpost_config(&self) -> &::std::option::Option<crate::types::OutpostConfigRequest> {
         &self.outpost_config
     }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn access_config(mut self, input: crate::types::CreateAccessConfigRequest) -> Self {
+        self.access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn set_access_config(mut self, input: ::std::option::Option<crate::types::CreateAccessConfigRequest>) -> Self {
+        self.access_config = input;
+        self
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn get_access_config(&self) -> &::std::option::Option<crate::types::CreateAccessConfigRequest> {
+        &self.access_config
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -281,6 +302,7 @@ impl CreateClusterInputBuilder {
             tags: self.tags,
             encryption_config: self.encryption_config,
             outpost_config: self.outpost_config,
+            access_config: self.access_config,
         })
     }
 }

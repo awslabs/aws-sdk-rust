@@ -33,26 +33,35 @@ pub fn ser_create_resolver_endpoint_input_input(
         }
         array_8.finish();
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("Tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.outpost_arn {
+        object.key("OutpostArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.preferred_instance_type {
+        object.key("PreferredInstanceType").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("Tags").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.resolver_endpoint_type {
-        object.key("ResolverEndpointType").string(var_15.as_str());
+    if let Some(var_17) = &input.resolver_endpoint_type {
+        object.key("ResolverEndpointType").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.outpost_arn {
-        object.key("OutpostArn").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.preferred_instance_type {
-        object.key("PreferredInstanceType").string(var_17.as_str());
+    if let Some(var_18) = &input.protocols {
+        let mut array_19 = object.key("Protocols").start_array();
+        for item_20 in var_18 {
+            {
+                array_19.value().string(item_20.as_str());
+            }
+        }
+        array_19.finish();
     }
     Ok(())
 }

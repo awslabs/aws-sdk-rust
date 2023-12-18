@@ -109,31 +109,31 @@ impl CreateAddonFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cluster to create the add-on for.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the cluster to create the add-on for.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the cluster to create the add-on for.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.addon_name(input.into());
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_addon_name(input);
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_addon_name()
     }
@@ -230,31 +230,31 @@ impl CreateAddonFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub fn configuration_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.configuration_values(input.into());
         self
     }
-    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub fn set_configuration_values(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_values(input);
         self
     }
-    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema in <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonConfiguration.html"> <code>DescribeAddonConfiguration</code> </a>.</p>
+    /// <p>The set of configuration values for the add-on that's created. The values that you provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.</p>
     pub fn get_configuration_values(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_values()
     }

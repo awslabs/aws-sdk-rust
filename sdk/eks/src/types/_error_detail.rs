@@ -13,7 +13,7 @@ pub struct ErrorDetail {
     /// <li>
     /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
     /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
+    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.</p></li>
     /// <li>
     /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
     /// <li>
@@ -37,7 +37,7 @@ impl ErrorDetail {
     /// <li>
     /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
     /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
+    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.</p></li>
     /// <li>
     /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
     /// <li>
@@ -84,7 +84,7 @@ impl ErrorDetailBuilder {
     /// <li>
     /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
     /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
+    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.</p></li>
     /// <li>
     /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
     /// <li>
@@ -105,7 +105,7 @@ impl ErrorDetailBuilder {
     /// <li>
     /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
     /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
+    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.</p></li>
     /// <li>
     /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
     /// <li>
@@ -126,7 +126,7 @@ impl ErrorDetailBuilder {
     /// <li>
     /// <p><b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p></li>
     /// <li>
-    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p></li>
+    /// <p><b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any available IP addresses.</p></li>
     /// <li>
     /// <p><b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p></li>
     /// <li>

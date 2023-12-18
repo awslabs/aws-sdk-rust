@@ -212,6 +212,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon CodeGuru Security | [aws-sdk-codegurusecurity](https://crates.io/crates/aws-sdk-codegurusecurity) ([docs](https://docs.rs/aws-sdk-codegurusecurity)) |
 | Amazon Cognito Identity | [aws-sdk-cognitoidentity](https://crates.io/crates/aws-sdk-cognitoidentity) ([docs](https://docs.rs/aws-sdk-cognitoidentity)) |
 | Amazon Cognito Identity Provider | [aws-sdk-cognitoidentityprovider](https://crates.io/crates/aws-sdk-cognitoidentityprovider) ([docs](https://docs.rs/aws-sdk-cognitoidentityprovider)) |
+| Amazon Cognito Identity Provider | [aws-sdk-cognitoidentityprovider](https://crates.io/crates/aws-sdk-cognitoidentityprovider) ([docs](https://docs.rs/aws-sdk-cognitoidentityprovider)) |
 | Amazon Cognito Sync | [aws-sdk-cognitosync](https://crates.io/crates/aws-sdk-cognitosync) ([docs](https://docs.rs/aws-sdk-cognitosync)) |
 | Amazon Comprehend | [aws-sdk-comprehend](https://crates.io/crates/aws-sdk-comprehend) ([docs](https://docs.rs/aws-sdk-comprehend)) |
 | Amazon Connect Cases | [aws-sdk-connectcases](https://crates.io/crates/aws-sdk-connectcases) ([docs](https://docs.rs/aws-sdk-connectcases)) |

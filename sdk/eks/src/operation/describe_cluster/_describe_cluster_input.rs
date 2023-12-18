@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterInput {
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterInput {
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeClusterInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeClusterInputBuilder {
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

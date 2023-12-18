@@ -22,8 +22,8 @@ impl AssociateIdentityProviderConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateIdentityProviderConfig`.
 ///
-/// <p>Associate an identity provider configuration to a cluster.</p>
-/// <p>If you want to authenticate identities using an identity provider, you can create an identity provider configuration and associate it to your cluster. After configuring authentication to your cluster you can create Kubernetes <code>roles</code> and <code>clusterroles</code> to assign permissions to the roles, and then bind the roles to the identities using Kubernetes <code>rolebindings</code> and <code>clusterrolebindings</code>. For more information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC Authorization</a> in the Kubernetes documentation.</p>
+/// <p>Associates an identity provider configuration to a cluster.</p>
+/// <p>If you want to authenticate identities using an identity provider, you can create an identity provider configuration and associate it to your cluster. After configuring authentication to your cluster you can create Kubernetes <code>Role</code> and <code>ClusterRole</code> objects, assign permissions to them, and then bind them to the identities using Kubernetes <code>RoleBinding</code> and <code>ClusterRoleBinding</code> objects. For more information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC Authorization</a> in the Kubernetes documentation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateIdentityProviderConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl AssociateIdentityProviderConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cluster to associate the configuration to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the cluster to associate the configuration to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the cluster to associate the configuration to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
@@ -141,31 +141,31 @@ impl AssociateIdentityProviderConfigFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The metadata to apply to the configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

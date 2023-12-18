@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFargateProfileInput {
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Fargate profile to describe.</p>
     pub fargate_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFargateProfileInput {
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeFargateProfileInputBuilder {
     pub(crate) fargate_profile_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFargateProfileInputBuilder {
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }

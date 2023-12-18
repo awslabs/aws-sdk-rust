@@ -3,20 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersOutput {
-    /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    /// <p>A list of all of the clusters for your account in the specified Amazon Web Services Region.</p>
     pub clusters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListClustersOutput {
-    /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    /// <p>A list of all of the clusters for your account in the specified Amazon Web Services Region.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.clusters.is_none()`.
     pub fn clusters(&self) -> &[::std::string::String] {
         self.clusters.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +50,39 @@ impl ListClustersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_clusters`](Self::set_clusters).
     ///
-    /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    /// <p>A list of all of the clusters for your account in the specified Amazon Web Services Region.</p>
     pub fn clusters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.clusters.unwrap_or_default();
         v.push(input.into());
         self.clusters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    /// <p>A list of all of the clusters for your account in the specified Amazon Web Services Region.</p>
     pub fn set_clusters(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.clusters = input;
         self
     }
-    /// <p>A list of all of the clusters for your account in the specified Region.</p>
+    /// <p>A list of all of the clusters for your account in the specified Amazon Web Services Region.</p>
     pub fn get_clusters(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.clusters
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The <code>nextToken</code> value to include in a future <code>ListClusters</code> request. When the results of a <code>ListClusters</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p><note>
+    /// <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p>
+    /// </note>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

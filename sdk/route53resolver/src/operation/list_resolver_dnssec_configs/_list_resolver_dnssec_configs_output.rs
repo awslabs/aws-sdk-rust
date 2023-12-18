@@ -6,7 +6,7 @@ pub struct ListResolverDnssecConfigsOutput {
     /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account, <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a> request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code> in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.</p>
     pub resolver_dnssec_configs: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl ListResolverDnssecConfigsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resolver_dnssec_configs.is_none()`.
     pub fn resolver_dnssec_configs(&self) -> &[crate::types::ResolverDnssecConfig] {
@@ -65,19 +65,19 @@ impl ListResolverDnssecConfigsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resolver_dnssec_configs`](Self::set_resolver_dnssec_configs).
     ///
-    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.</p>
     pub fn resolver_dnssec_configs(mut self, input: crate::types::ResolverDnssecConfig) -> Self {
         let mut v = self.resolver_dnssec_configs.unwrap_or_default();
         v.push(input);
         self.resolver_dnssec_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.</p>
     pub fn set_resolver_dnssec_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>>) -> Self {
         self.resolver_dnssec_configs = input;
         self
     }
-    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
+    /// <p>An array that contains one <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.</p>
     pub fn get_resolver_dnssec_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolverDnssecConfig>> {
         &self.resolver_dnssec_configs
     }

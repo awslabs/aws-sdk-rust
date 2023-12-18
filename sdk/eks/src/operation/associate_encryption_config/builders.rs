@@ -22,8 +22,8 @@ impl AssociateEncryptionConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `AssociateEncryptionConfig`.
 ///
-/// <p>Associate encryption configuration to an existing cluster.</p>
-/// <p>You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This allows you to implement a defense-in-depth security strategy without migrating applications to new Amazon EKS clusters.</p>
+/// <p>Associates an encryption configuration to an existing cluster.</p>
+/// <p>Use this API to enable encryption on existing clusters that don't already have encryption enabled. This allows you to implement a defense-in-depth security strategy without migrating applications to new Amazon EKS clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl AssociateEncryptionConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
@@ -141,17 +141,17 @@ impl AssociateEncryptionConfigFluentBuilder {
     pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         self.inner.get_encryption_config()
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

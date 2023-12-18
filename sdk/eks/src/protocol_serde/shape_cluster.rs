@@ -120,6 +120,10 @@ where
                             builder =
                                 builder.set_outpost_config(crate::protocol_serde::shape_outpost_config_response::de_outpost_config_response(tokens)?);
                         }
+                        "accessConfig" => {
+                            builder =
+                                builder.set_access_config(crate::protocol_serde::shape_access_config_response::de_access_config_response(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

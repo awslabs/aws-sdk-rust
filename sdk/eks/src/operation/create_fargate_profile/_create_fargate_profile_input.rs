@@ -5,17 +5,17 @@
 pub struct CreateFargateProfileInput {
     /// <p>The name of the Fargate profile.</p>
     pub fargate_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub pod_execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a <code>namespace</code>. You may specify up to five selectors in a Fargate profile.</p>
     pub selectors: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFargateProfileInput {
@@ -23,31 +23,31 @@ impl CreateFargateProfileInput {
     pub fn fargate_profile_name(&self) -> ::std::option::Option<&str> {
         self.fargate_profile_name.as_deref()
     }
-    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn pod_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.pod_execution_role_arn.as_deref()
     }
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnets.is_none()`.
     pub fn subnets(&self) -> &[::std::string::String] {
         self.subnets.as_deref().unwrap_or_default()
     }
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a <code>namespace</code>. You may specify up to five selectors in a Fargate profile.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selectors.is_none()`.
     pub fn selectors(&self) -> &[crate::types::FargateProfileSelector] {
         self.selectors.as_deref().unwrap_or_default()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -87,33 +87,33 @@ impl CreateFargateProfileInputBuilder {
     pub fn get_fargate_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.fargate_profile_name
     }
-    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the Amazon EKS cluster to apply the Fargate profile to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// This field is required.
     pub fn pod_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pod_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_pod_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pod_execution_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in the Fargate profile. The pod execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use for a <code>Pod</code> that matches the selectors in the Fargate profile. The <code>Pod</code> execution role allows Fargate infrastructure to register with your cluster as a node, and it provides read access to Amazon ECR image repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html"> <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_pod_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.pod_execution_role_arn
     }
@@ -121,19 +121,19 @@ impl CreateFargateProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input.into());
         self.subnets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     pub fn set_subnets(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnets = input;
         self
     }
-    /// <p>The IDs of subnets to launch your pods into. At this time, pods running on Fargate are not assigned public IP addresses, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
+    /// <p>The IDs of subnets to launch a <code>Pod</code> into. A <code>Pod</code> running on Fargate isn't assigned a public IP address, so only private subnets (with no direct route to an Internet Gateway) are accepted for this parameter.</p>
     pub fn get_subnets(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnets
     }
@@ -141,33 +141,33 @@ impl CreateFargateProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
     ///
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a <code>namespace</code>. You may specify up to five selectors in a Fargate profile.</p>
     pub fn selectors(mut self, input: crate::types::FargateProfileSelector) -> Self {
         let mut v = self.selectors.unwrap_or_default();
         v.push(input);
         self.selectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a <code>namespace</code>. You may specify up to five selectors in a Fargate profile.</p>
     pub fn set_selectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>>) -> Self {
         self.selectors = input;
         self
     }
-    /// <p>The selectors to match for pods to use this Fargate profile. Each selector must have an associated namespace. Optionally, you can also specify labels for a namespace. You may specify up to five selectors in a Fargate profile.</p>
+    /// <p>The selectors to match for a <code>Pod</code> to use this Fargate profile. Each selector must have an associated Kubernetes <code>namespace</code>. Optionally, you can also specify <code>labels</code> for a <code>namespace</code>. You may specify up to five selectors in a Fargate profile.</p>
     pub fn get_selectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FargateProfileSelector>> {
         &self.selectors
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
@@ -175,19 +175,19 @@ impl CreateFargateProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata to apply to the Fargate profile to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Fargate profile tags do not propagate to any other resources associated with the Fargate profile, such as the pods that are scheduled with it.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

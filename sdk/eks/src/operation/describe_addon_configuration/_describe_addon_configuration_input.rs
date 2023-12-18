@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAddonConfigurationInput {
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub addon_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAddonConfigurationInput {
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DescribeAddonConfigurationInputBuilder {
     pub(crate) addon_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAddonConfigurationInputBuilder {
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     /// This field is required.
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.addon_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.addon_name = input;
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }

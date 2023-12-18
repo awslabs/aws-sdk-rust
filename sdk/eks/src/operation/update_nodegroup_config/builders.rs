@@ -108,17 +108,17 @@ impl UpdateNodegroupConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }
@@ -136,17 +136,17 @@ impl UpdateNodegroupConfigFluentBuilder {
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_nodegroup_name()
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn labels(mut self, input: crate::types::UpdateLabelsPayload) -> Self {
         self.inner = self.inner.labels(input);
         self
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<crate::types::UpdateLabelsPayload>) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn get_labels(&self) -> &::std::option::Option<crate::types::UpdateLabelsPayload> {
         self.inner.get_labels()
     }
@@ -192,17 +192,17 @@ impl UpdateNodegroupConfigFluentBuilder {
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
         self.inner.get_update_config()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }

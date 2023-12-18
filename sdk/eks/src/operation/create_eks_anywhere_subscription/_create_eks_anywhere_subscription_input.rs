@@ -13,7 +13,7 @@ pub struct CreateEksAnywhereSubscriptionInput {
     pub license_type: ::std::option::Option<crate::types::EksAnywhereSubscriptionLicenseType>,
     /// <p>A boolean indicating whether the subscription auto renews at the end of the term.</p>
     pub auto_renew: ::std::option::Option<bool>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags don't propagate to any other resources associated with the subscription.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -39,7 +39,7 @@ impl CreateEksAnywhereSubscriptionInput {
     pub fn auto_renew(&self) -> ::std::option::Option<bool> {
         self.auto_renew
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -140,17 +140,17 @@ impl CreateEksAnywhereSubscriptionInputBuilder {
     pub fn get_auto_renew(&self) -> &::std::option::Option<bool> {
         &self.auto_renew
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

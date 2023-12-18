@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNodegroupVersionInput {
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed node group to update.</p>
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
@@ -14,13 +14,13 @@ pub struct UpdateNodegroupVersionInput {
     pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
+    /// <p>Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running on the node.</p>
     pub force: ::std::option::Option<bool>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupVersionInput {
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -41,11 +41,11 @@ impl UpdateNodegroupVersionInput {
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
+    /// <p>Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running on the node.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -70,18 +70,18 @@ pub struct UpdateNodegroupVersionInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupVersionInputBuilder {
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the Amazon EKS cluster that is associated with the managed node group to update.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -145,31 +145,31 @@ impl UpdateNodegroupVersionInputBuilder {
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         &self.launch_template
     }
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
+    /// <p>Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running on the node.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
+    /// <p>Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running on the node.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
-    /// <p>Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.</p>
+    /// <p>Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running on the node.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

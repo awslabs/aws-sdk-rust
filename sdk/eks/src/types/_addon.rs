@@ -6,7 +6,7 @@
 pub struct Addon {
     /// <p>The name of the add-on.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the add-on.</p>
     pub status: ::std::option::Option<crate::types::AddonStatus>,
@@ -16,13 +16,13 @@ pub struct Addon {
     pub health: ::std::option::Option<crate::types::AddonHealth>,
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
     pub addon_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time that the add-on was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time that the add-on was last modified.</p>
+    /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object that the add-on uses.</p>
     pub service_account_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The publisher of the add-on.</p>
     pub publisher: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl Addon {
     pub fn addon_name(&self) -> ::std::option::Option<&str> {
         self.addon_name.as_deref()
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -58,19 +58,19 @@ impl Addon {
     pub fn addon_arn(&self) -> ::std::option::Option<&str> {
         self.addon_arn.as_deref()
     }
-    /// <p>The date and time that the add-on was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time that the add-on was last modified.</p>
+    /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object that the add-on uses.</p>
     pub fn service_account_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_account_role_arn.as_deref()
     }
-    /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -132,17 +132,17 @@ impl AddonBuilder {
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_name
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the cluster.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -202,45 +202,45 @@ impl AddonBuilder {
     pub fn get_addon_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_arn
     }
-    /// <p>The date and time that the add-on was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the add-on was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time that the add-on was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time that the add-on was last modified.</p>
+    /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.modified_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time that the add-on was last modified.</p>
+    /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub fn set_modified_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.modified_at = input;
         self
     }
-    /// <p>The date and time that the add-on was last modified.</p>
+    /// <p>The Unix epoch timestamp for the last modification to the object.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object that the add-on uses.</p>
     pub fn service_account_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_account_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object that the add-on uses.</p>
     pub fn set_service_account_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_account_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on uses.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code> object that the add-on uses.</p>
     pub fn get_service_account_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_account_role_arn
     }
@@ -248,19 +248,19 @@ impl AddonBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Add-on tags do not propagate to any other resources associated with the cluster.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

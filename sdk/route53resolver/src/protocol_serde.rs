@@ -415,6 +415,8 @@ pub(crate) mod shape_firewall_rule_group_metadata;
 
 pub(crate) mod shape_ip_address_response;
 
+pub(crate) mod shape_protocol_list;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_target_list;

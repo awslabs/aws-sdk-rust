@@ -12,7 +12,7 @@ pub struct Update {
     pub r#type: ::std::option::Option<crate::types::UpdateType>,
     /// <p>A key-value map that contains the parameters associated with the update.</p>
     pub params: ::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>>,
-    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
@@ -36,7 +36,7 @@ impl Update {
     pub fn params(&self) -> &[crate::types::UpdateParam] {
         self.params.as_deref().unwrap_or_default()
     }
-    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -128,17 +128,17 @@ impl UpdateBuilder {
     pub fn get_params(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateParam>> {
         &self.params
     }
-    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+    /// <p>The Unix epoch timestamp at object creation.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

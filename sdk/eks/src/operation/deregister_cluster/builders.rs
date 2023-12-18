@@ -23,6 +23,7 @@ impl DeregisterClusterInputBuilder {
 /// Fluent builder constructing a request to `DeregisterCluster`.
 ///
 /// <p>Deregisters a connected cluster to remove it from the Amazon EKS control plane.</p>
+/// <p>A connected cluster is a Kubernetes cluster that you've connected to your control plane using the <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-connector.html">Amazon EKS Connector</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

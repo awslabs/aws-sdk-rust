@@ -5,6 +5,8 @@ pub use crate::types::_share_status::ShareStatus;
 
 pub use crate::types::_target_address::TargetAddress;
 
+pub use crate::types::_protocol::Protocol;
+
 pub use crate::types::_rule_type_option::RuleTypeOption;
 
 pub use crate::types::_resolver_rule_status::ResolverRuleStatus;
@@ -148,6 +150,8 @@ mod _mutation_protection_status;
 mod _outpost_resolver;
 
 mod _outpost_resolver_status;
+
+mod _protocol;
 
 mod _resolver_autodefined_reverse_status;
 

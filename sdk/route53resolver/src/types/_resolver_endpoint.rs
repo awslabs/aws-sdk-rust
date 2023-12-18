@@ -54,12 +54,40 @@ pub struct ResolverEndpoint {
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
-    /// <p>The Resolver endpoint IP address type.</p>
-    pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
     pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type.</p>
     pub preferred_instance_type: ::std::option::Option<::std::string::String>,
+    /// <p>The Resolver endpoint IP address type.</p>
+    pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
 }
 impl ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -138,10 +166,6 @@ impl ResolverEndpoint {
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
-    /// <p>The Resolver endpoint IP address type.</p>
-    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
-        self.resolver_endpoint_type.as_ref()
-    }
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
     pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
@@ -149,6 +173,42 @@ impl ResolverEndpoint {
     /// <p>The Amazon EC2 instance type.</p>
     pub fn preferred_instance_type(&self) -> ::std::option::Option<&str> {
         self.preferred_instance_type.as_deref()
+    }
+    /// <p>The Resolver endpoint IP address type.</p>
+    pub fn resolver_endpoint_type(&self) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
+        self.resolver_endpoint_type.as_ref()
+    }
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
+    pub fn protocols(&self) -> &[crate::types::Protocol] {
+        self.protocols.as_deref().unwrap_or_default()
     }
 }
 impl ResolverEndpoint {
@@ -174,9 +234,10 @@ pub struct ResolverEndpointBuilder {
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
-    pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
     pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
+    pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
 }
 impl ResolverEndpointBuilder {
     /// <p>The ID of the Resolver endpoint.</p>
@@ -431,20 +492,6 @@ impl ResolverEndpointBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }
-    /// <p>The Resolver endpoint IP address type.</p>
-    pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
-        self.resolver_endpoint_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The Resolver endpoint IP address type.</p>
-    pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
-        self.resolver_endpoint_type = input;
-        self
-    }
-    /// <p>The Resolver endpoint IP address type.</p>
-    pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
-        &self.resolver_endpoint_type
-    }
     /// <p>The ARN (Amazon Resource Name) for the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outpost_arn = ::std::option::Option::Some(input.into());
@@ -473,6 +520,118 @@ impl ResolverEndpointBuilder {
     pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_instance_type
     }
+    /// <p>The Resolver endpoint IP address type.</p>
+    pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
+        self.resolver_endpoint_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Resolver endpoint IP address type.</p>
+    pub fn set_resolver_endpoint_type(mut self, input: ::std::option::Option<crate::types::ResolverEndpointType>) -> Self {
+        self.resolver_endpoint_type = input;
+        self
+    }
+    /// <p>The Resolver endpoint IP address type.</p>
+    pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
+        &self.resolver_endpoint_type
+    }
+    /// Appends an item to `protocols`.
+    ///
+    /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+    ///
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
+        let mut v = self.protocols.unwrap_or_default();
+        v.push(input);
+        self.protocols = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
+        self.protocols = input;
+        self
+    }
+    /// <p>Protocols used for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        &self.protocols
+    }
     /// Consumes the builder and constructs a [`ResolverEndpoint`](crate::types::ResolverEndpoint).
     pub fn build(self) -> crate::types::ResolverEndpoint {
         crate::types::ResolverEndpoint {
@@ -488,9 +647,10 @@ impl ResolverEndpointBuilder {
             status_message: self.status_message,
             creation_time: self.creation_time,
             modification_time: self.modification_time,
-            resolver_endpoint_type: self.resolver_endpoint_type,
             outpost_arn: self.outpost_arn,
             preferred_instance_type: self.preferred_instance_type,
+            resolver_endpoint_type: self.resolver_endpoint_type,
+            protocols: self.protocols,
         }
     }
 }

@@ -22,7 +22,8 @@ impl DisassociateIdentityProviderConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `DisassociateIdentityProviderConfig`.
 ///
-/// <p>Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from your cluster, users included in the provider can no longer access the cluster. However, you can still access the cluster with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principals</a>.</p>
+/// <p>Disassociates an identity provider configuration from a cluster.</p>
+/// <p>If you disassociate an identity provider from your cluster, users included in the provider can no longer access the cluster. However, you can still access the cluster with IAM principals.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +109,17 @@ impl DisassociateIdentityProviderConfigFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }

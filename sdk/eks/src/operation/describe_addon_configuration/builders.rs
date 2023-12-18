@@ -108,17 +108,17 @@ impl DescribeAddonConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn addon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.addon_name(input.into());
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn set_addon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_addon_name(input);
         self
     }
-    /// <p>The name of the add-on. The name must match one of the names that <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a> returns.</p>
+    /// <p>The name of the add-on. The name must match one of the names returned by <code>DescribeAddonVersions</code>.</p>
     pub fn get_addon_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_addon_name()
     }

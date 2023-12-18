@@ -23,7 +23,7 @@ impl DeleteFargateProfileInputBuilder {
 /// Fluent builder constructing a request to `DeleteFargateProfile`.
 ///
 /// <p>Deletes an Fargate profile.</p>
-/// <p>When you delete a Fargate profile, any pods running on Fargate that were created with the profile are deleted. If those pods match another Fargate profile, then they are scheduled on Fargate with that profile. If they no longer match any Fargate profiles, then they are not scheduled on Fargate and they may remain in a pending state.</p>
+/// <p>When you delete a Fargate profile, any <code>Pod</code> running on Fargate that was created with the profile is deleted. If the <code>Pod</code> matches another Fargate profile, then it is scheduled on Fargate with that profile. If it no longer matches any Fargate profiles, then it's not scheduled on Fargate and may remain in a pending state.</p>
 /// <p>Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at a time. You must wait for a Fargate profile to finish deleting before you can delete any other profiles in that cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFargateProfileFluentBuilder {
@@ -110,17 +110,17 @@ impl DeleteFargateProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the Fargate profile to delete.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }

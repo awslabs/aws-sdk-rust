@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAddonInput {
-    /// <p>The name of the cluster to delete the add-on from.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</p>
     pub addon_name: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct DeleteAddonInput {
     pub preserve: ::std::option::Option<bool>,
 }
 impl DeleteAddonInput {
-    /// <p>The name of the cluster to delete the add-on from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct DeleteAddonInputBuilder {
     pub(crate) preserve: ::std::option::Option<bool>,
 }
 impl DeleteAddonInputBuilder {
-    /// <p>The name of the cluster to delete the add-on from.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster to delete the add-on from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the cluster to delete the add-on from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }

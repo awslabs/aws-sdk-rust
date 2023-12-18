@@ -13,7 +13,7 @@
 #![allow(rustdoc::bare_urls)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on Amazon Web Services without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.
+//! Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on Amazon Web Services without needing to setup or maintain your own Kubernetes control plane. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.
 //!
 //! Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification required.
 //!
@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-eks = "1.7.0"
+//! aws-sdk-eks = "1.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -146,13 +146,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateEncryptionConfig`](crate::operation::associate_encryption_config) operation has
-/// a [`Client::associate_encryption_config`], function which returns a builder for that operation.
+/// For example, the [`AssociateAccessPolicy`](crate::operation::associate_access_policy) operation has
+/// a [`Client::associate_access_policy`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_encryption_config()
+/// let result = client.associate_access_policy()
 ///     .cluster_name("example")
 ///     .send()
 ///     .await;

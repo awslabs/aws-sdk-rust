@@ -22,7 +22,7 @@ impl CreateOutpostResolverInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateOutpostResolver`.
 ///
-/// <p>Creates an Route&nbsp;53 Resolver on an Outpost.</p>
+/// <p>Creates a Route&nbsp;53 Resolver on an Outpost.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOutpostResolverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -35,7 +35,7 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The specified resource doesn't exist.</p>
     UnknownResourceException(crate::types::error::UnknownResourceException),
-    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
+    /// <p>You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request. supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -474,6 +474,9 @@ where
 impl From<crate::operation::create_resolver_endpoint::CreateResolverEndpointError> for Error {
     fn from(err: crate::operation::create_resolver_endpoint::CreateResolverEndpointError) -> Self {
         match err {
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::create_resolver_endpoint::CreateResolverEndpointError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -566,6 +569,7 @@ where
 impl From<crate::operation::create_resolver_rule::CreateResolverRuleError> for Error {
     fn from(err: crate::operation::create_resolver_rule::CreateResolverRuleError) -> Self {
         match err {
+            crate::operation::create_resolver_rule::CreateResolverRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_resolver_rule::CreateResolverRuleError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2665,6 +2669,9 @@ where
 impl From<crate::operation::update_resolver_endpoint::UpdateResolverEndpointError> for Error {
     fn from(err: crate::operation::update_resolver_endpoint::UpdateResolverEndpointError) -> Self {
         match err {
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_resolver_endpoint::UpdateResolverEndpointError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2699,6 +2706,7 @@ where
 impl From<crate::operation::update_resolver_rule::UpdateResolverRuleError> for Error {
     fn from(err: crate::operation::update_resolver_rule::UpdateResolverRuleError) -> Self {
         match err {
+            crate::operation::update_resolver_rule::UpdateResolverRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_resolver_rule::UpdateResolverRuleError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }

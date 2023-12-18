@@ -273,7 +273,7 @@ pub enum CreatePodIdentityAssociationError {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>You have encountered a service limit on the specified resource.</p>
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
-    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Amazon Web Services Region specific.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),

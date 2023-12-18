@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FargateProfileSelector {
-    /// <p>The Kubernetes namespace that the selector should match.</p>
+    /// <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the labels that are specified in the selector for it to be considered a match.</p>
     pub labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfileSelector {
-    /// <p>The Kubernetes namespace that the selector should match.</p>
+    /// <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct FargateProfileSelectorBuilder {
     pub(crate) labels: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl FargateProfileSelectorBuilder {
-    /// <p>The Kubernetes namespace that the selector should match.</p>
+    /// <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Kubernetes namespace that the selector should match.</p>
+    /// <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The Kubernetes namespace that the selector should match.</p>
+    /// <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

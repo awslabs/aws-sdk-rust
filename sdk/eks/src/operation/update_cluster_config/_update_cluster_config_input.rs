@@ -11,8 +11,10 @@ pub struct UpdateClusterConfigInput {
     /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
     /// </note>
     pub logging: ::std::option::Option<crate::types::Logging>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>The access configuration for the cluster.</p>
+    pub access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -29,9 +31,13 @@ impl UpdateClusterConfigInput {
     pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
         self.logging.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn access_config(&self) -> ::std::option::Option<&crate::types::UpdateAccessConfigRequest> {
+        self.access_config.as_ref()
     }
 }
 impl UpdateClusterConfigInput {
@@ -49,6 +55,7 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) resources_vpc_config: ::std::option::Option<crate::types::VpcConfigRequest>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) access_config: ::std::option::Option<crate::types::UpdateAccessConfigRequest>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -100,19 +107,33 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
         &self.logging
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn access_config(mut self, input: crate::types::UpdateAccessConfigRequest) -> Self {
+        self.access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn set_access_config(mut self, input: ::std::option::Option<crate::types::UpdateAccessConfigRequest>) -> Self {
+        self.access_config = input;
+        self
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn get_access_config(&self) -> &::std::option::Option<crate::types::UpdateAccessConfigRequest> {
+        &self.access_config
     }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
@@ -124,6 +145,7 @@ impl UpdateClusterConfigInputBuilder {
             resources_vpc_config: self.resources_vpc_config,
             logging: self.logging,
             client_request_token: self.client_request_token,
+            access_config: self.access_config,
         })
     }
 }

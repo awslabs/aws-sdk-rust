@@ -11,9 +11,9 @@ pub struct CreatePodIdentityAssociationInput {
     pub service_account: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the service account. The EKS Pod Identity agent manages credentials to assume this role for applications in the containers in the pods that use this service account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -50,11 +50,11 @@ impl CreatePodIdentityAssociationInput {
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -155,17 +155,17 @@ impl CreatePodIdentityAssociationInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
@@ -173,7 +173,7 @@ impl CreatePodIdentityAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -197,7 +197,7 @@ impl CreatePodIdentityAssociationInputBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -219,7 +219,7 @@ impl CreatePodIdentityAssociationInputBuilder {
         self.tags = input;
         self
     }
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>

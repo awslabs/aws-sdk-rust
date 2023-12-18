@@ -3,20 +3,26 @@ pub fn ser_update_cluster_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_cluster_config::UpdateClusterConfigInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_request_token {
-        object.key("clientRequestToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.logging {
+    if let Some(var_1) = &input.access_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("accessConfig").start_object();
+        crate::protocol_serde::shape_update_access_config_request::ser_update_access_config_request(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.resources_vpc_config {
+    if let Some(var_3) = &input.client_request_token {
+        object.key("clientRequestToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.logging {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("resourcesVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_5, var_4)?;
+        let mut object_5 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_5, var_4)?;
         object_5.finish();
+    }
+    if let Some(var_6) = &input.resources_vpc_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("resourcesVpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

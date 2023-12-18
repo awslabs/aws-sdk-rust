@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNodegroup`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_name(impl Into<String>)`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::set_cluster_name):<br>required: **true**<br><p>The name of the Amazon EKS cluster associated with the node group.</p><br>
+    ///   - [`cluster_name(impl Into<String>)`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::cluster_name) / [`set_cluster_name(Option<String>)`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::set_cluster_name):<br>required: **true**<br><p>The name of your cluster.</p><br>
     ///   - [`nodegroup_name(impl Into<String>)`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::nodegroup_name) / [`set_nodegroup_name(Option<String>)`](crate::operation::describe_nodegroup::builders::DescribeNodegroupFluentBuilder::set_nodegroup_name):<br>required: **true**<br><p>The name of the node group to describe.</p><br>
     /// - On success, responds with [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput) with field(s):
     ///   - [`nodegroup(Option<Nodegroup>)`](crate::operation::describe_nodegroup::DescribeNodegroupOutput::nodegroup): <p>The full description of your node group.</p>

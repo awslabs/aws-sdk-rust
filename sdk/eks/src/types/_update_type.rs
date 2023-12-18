@@ -12,6 +12,7 @@
 /// ```text
 /// # let updatetype = unimplemented!();
 /// match updatetype {
+///     UpdateType::AccessConfigUpdate => { /* ... */ },
 ///     UpdateType::AddonUpdate => { /* ... */ },
 ///     UpdateType::AssociateEncryptionConfig => { /* ... */ },
 ///     UpdateType::AssociateIdentityProviderConfig => { /* ... */ },
@@ -49,6 +50,8 @@
 )]
 pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
+    AccessConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     AddonUpdate,
     #[allow(missing_docs)] // documentation missing in model
     AssociateEncryptionConfig,
@@ -73,6 +76,7 @@ pub enum UpdateType {
 impl ::std::convert::From<&str> for UpdateType {
     fn from(s: &str) -> Self {
         match s {
+            "AccessConfigUpdate" => UpdateType::AccessConfigUpdate,
             "AddonUpdate" => UpdateType::AddonUpdate,
             "AssociateEncryptionConfig" => UpdateType::AssociateEncryptionConfig,
             "AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
@@ -97,6 +101,7 @@ impl UpdateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UpdateType::AccessConfigUpdate => "AccessConfigUpdate",
             UpdateType::AddonUpdate => "AddonUpdate",
             UpdateType::AssociateEncryptionConfig => "AssociateEncryptionConfig",
             UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
@@ -112,6 +117,7 @@ impl UpdateType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AccessConfigUpdate",
             "AddonUpdate",
             "AssociateEncryptionConfig",
             "AssociateIdentityProviderConfig",

@@ -196,19 +196,53 @@ impl CreateResolverEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
     ///
-    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p>
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
+    /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
+    /// </note>
     pub fn ip_addresses(mut self, input: crate::types::IpAddressRequest) -> Self {
         self.inner = self.inner.ip_addresses(input);
         self
     }
-    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p>
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
+    /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
+    /// </note>
     pub fn set_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>>) -> Self {
         self.inner = self.inner.set_ip_addresses(input);
         self
     }
-    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p>
+    /// <p>The subnets and IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints). The subnet ID uniquely identifies a VPC.</p><note>
+    /// <p>Even though the minimum is 1, Route&nbsp;53 requires that you create at least two.</p>
+    /// </note>
     pub fn get_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressRequest>> {
         self.inner.get_ip_addresses()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.outpost_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_outpost_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
+    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_outpost_arn()
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.preferred_instance_type(input.into());
+        self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_preferred_instance_type(input);
+        self
+    }
+    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
+    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_preferred_instance_type()
     }
     /// Appends an item to `Tags`.
     ///
@@ -242,32 +276,100 @@ impl CreateResolverEndpointFluentBuilder {
     pub fn get_resolver_endpoint_type(&self) -> &::std::option::Option<crate::types::ResolverEndpointType> {
         self.inner.get_resolver_endpoint_type()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
-    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.outpost_arn(input.into());
+    /// Appends an item to `Protocols`.
+    ///
+    /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+    ///
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
+        self.inner = self.inner.protocols(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
-    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_outpost_arn(input);
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
+        self.inner = self.inner.set_protocols(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the <code>PreferredInstanceType</code>.</p>
-    pub fn get_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_outpost_arn()
-    }
-    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
-    pub fn preferred_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.preferred_instance_type(input.into());
-        self
-    }
-    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
-    pub fn set_preferred_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_preferred_instance_type(input);
-        self
-    }
-    /// <p>The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.</p>
-    pub fn get_preferred_instance_type(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_preferred_instance_type()
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        self.inner.get_protocols()
     }
 }

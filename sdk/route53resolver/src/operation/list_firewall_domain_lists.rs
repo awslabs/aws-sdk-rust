@@ -260,7 +260,7 @@ pub enum ListFirewallDomainListsError {
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>The request was throttled. Try again in a few minutes.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>You have provided an invalid command. Supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
+    /// <p>You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request. supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

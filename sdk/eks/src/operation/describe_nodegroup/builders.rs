@@ -22,7 +22,7 @@ impl DescribeNodegroupInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeNodegroup`.
 ///
-/// <p>Returns descriptive information about an Amazon EKS node group.</p>
+/// <p>Describes a managed node group.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeNodegroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeNodegroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
-    /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_name()
     }

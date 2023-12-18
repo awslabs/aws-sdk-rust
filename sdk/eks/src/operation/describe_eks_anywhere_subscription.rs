@@ -258,7 +258,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEksAn
 pub enum DescribeEksAnywhereSubscriptionError {
     /// <p>These errors are usually caused by a client action. Actions can include using an action or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM principal</a> that doesn't have permissions to use the action or resource or specifying an identifier that is not valid.</p>
     ClientException(crate::types::error::ClientException),
-    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Region-specific.</p>
+    /// <p>The specified resource could not be found. You can view your available clusters with <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node groups are Amazon Web Services Region specific.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),

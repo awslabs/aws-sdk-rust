@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateEncryptionConfigInput {
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration you are using for encryption.</p>
     pub encryption_config: ::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>>,
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateEncryptionConfigInput {
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -21,7 +21,7 @@ impl AssociateEncryptionConfigInput {
     pub fn encryption_config(&self) -> &[crate::types::EncryptionConfig] {
         self.encryption_config.as_deref().unwrap_or_default()
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -42,18 +42,18 @@ pub struct AssociateEncryptionConfigInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateEncryptionConfigInputBuilder {
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the cluster that you are associating with encryption configuration.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -77,17 +77,17 @@ impl AssociateEncryptionConfigInputBuilder {
     pub fn get_encryption_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EncryptionConfig>> {
         &self.encryption_config
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>The client request token you are using with the encryption configuration.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

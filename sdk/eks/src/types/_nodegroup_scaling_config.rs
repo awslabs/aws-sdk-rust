@@ -9,10 +9,10 @@ pub struct NodegroupScalingConfig {
     /// <p>The maximum number of nodes that the managed node group can scale out to. For information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub max_size: ::std::option::Option<i32>,
     /// <p>The current number of nodes that the managed node group should maintain.</p><important>
-    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
+    /// <p>If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
-    /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
+    /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub desired_size: ::std::option::Option<i32>,
 }
 impl NodegroupScalingConfig {
@@ -25,10 +25,10 @@ impl NodegroupScalingConfig {
         self.max_size
     }
     /// <p>The current number of nodes that the managed node group should maintain.</p><important>
-    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
+    /// <p>If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
-    /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
+    /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub fn desired_size(&self) -> ::std::option::Option<i32> {
         self.desired_size
     }
@@ -78,28 +78,28 @@ impl NodegroupScalingConfigBuilder {
         &self.max_size
     }
     /// <p>The current number of nodes that the managed node group should maintain.</p><important>
-    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
+    /// <p>If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
-    /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
+    /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub fn desired_size(mut self, input: i32) -> Self {
         self.desired_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current number of nodes that the managed node group should maintain.</p><important>
-    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
+    /// <p>If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
-    /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
+    /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub fn set_desired_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_size = input;
         self
     }
     /// <p>The current number of nodes that the managed node group should maintain.</p><important>
-    /// <p>If you use Cluster Autoscaler, you shouldn't change the desiredSize value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
+    /// <p>If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly, as this can cause the Cluster Autoscaler to suddenly scale up or scale down.</p>
     /// </important>
     /// <p>Whenever this parameter changes, the number of worker nodes in the node group is updated to the specified size. If this parameter is given a value that is smaller than the current number of running worker nodes, the necessary number of worker nodes are terminated to match the given value. When using CloudFormation, no action occurs if you remove this parameter from your CFN template.</p>
-    /// <p>This parameter can be different from minSize in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let Cluster Autoscaler reduce the number if there are too many. When Cluster Autoscaler is used, the desiredSize parameter is altered by Cluster Autoscaler (but can be out-of-date for short periods of time). Cluster Autoscaler doesn't scale a managed node group lower than minSize or higher than maxSize.</p>
+    /// <p>This parameter can be different from <code>minSize</code> in some cases, such as when starting with extra hosts for testing. This parameter can also be different when you want to start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce the number if there are too many. When the Cluster Autoscaler is used, the <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed node group lower than <code>minSize</code> or higher than <code>maxSize</code>.</p>
     pub fn get_desired_size(&self) -> &::std::option::Option<i32> {
         &self.desired_size
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCluster`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::set_name):<br>required: **true**<br><p>The name of the cluster to describe.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_cluster::builders::DescribeClusterFluentBuilder::set_name):<br>required: **true**<br><p>The name of your cluster.</p><br>
     /// - On success, responds with [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput) with field(s):
     ///   - [`cluster(Option<Cluster>)`](crate::operation::describe_cluster::DescribeClusterOutput::cluster): <p>The full description of your specified cluster.</p>
     /// - On failure, responds with [`SdkError<DescribeClusterError>`](crate::operation::describe_cluster::DescribeClusterError)

@@ -24,5 +24,14 @@ pub fn ser_update_resolver_endpoint_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.protocols {
+        let mut array_9 = object.key("Protocols").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNodegroupConfigInput {
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed node group to update.</p>
     pub nodegroup_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub labels: ::std::option::Option<crate::types::UpdateLabelsPayload>,
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     pub taints: ::std::option::Option<crate::types::UpdateTaintsPayload>,
@@ -15,11 +15,11 @@ pub struct UpdateNodegroupConfigInput {
     pub scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     /// <p>The node group update configuration.</p>
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupConfigInput {
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -27,7 +27,7 @@ impl UpdateNodegroupConfigInput {
     pub fn nodegroup_name(&self) -> ::std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn labels(&self) -> ::std::option::Option<&crate::types::UpdateLabelsPayload> {
         self.labels.as_ref()
     }
@@ -43,7 +43,7 @@ impl UpdateNodegroupConfigInput {
     pub fn update_config(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateConfig> {
         self.update_config.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct UpdateNodegroupConfigInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupConfigInputBuilder {
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -98,17 +98,17 @@ impl UpdateNodegroupConfigInputBuilder {
     pub fn get_nodegroup_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.nodegroup_name
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn labels(mut self, input: crate::types::UpdateLabelsPayload) -> Self {
         self.labels = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn set_labels(mut self, input: ::std::option::Option<crate::types::UpdateLabelsPayload>) -> Self {
         self.labels = input;
         self
     }
-    /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
+    /// <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group after the update.</p>
     pub fn get_labels(&self) -> &::std::option::Option<crate::types::UpdateLabelsPayload> {
         &self.labels
     }
@@ -154,17 +154,17 @@ impl UpdateNodegroupConfigInputBuilder {
     pub fn get_update_config(&self) -> &::std::option::Option<crate::types::NodegroupUpdateConfig> {
         &self.update_config
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_request_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }

@@ -23,9 +23,13 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_access_policy;
+
 pub(crate) mod shape_associate_encryption_config;
 
 pub(crate) mod shape_associate_identity_provider_config;
+
+pub(crate) mod shape_create_access_entry;
 
 pub(crate) mod shape_create_addon;
 
@@ -38,6 +42,8 @@ pub(crate) mod shape_create_fargate_profile;
 pub(crate) mod shape_create_nodegroup;
 
 pub(crate) mod shape_create_pod_identity_association;
+
+pub(crate) mod shape_delete_access_entry;
 
 pub(crate) mod shape_delete_addon;
 
@@ -52,6 +58,8 @@ pub(crate) mod shape_delete_nodegroup;
 pub(crate) mod shape_delete_pod_identity_association;
 
 pub(crate) mod shape_deregister_cluster;
+
+pub(crate) mod shape_describe_access_entry;
 
 pub(crate) mod shape_describe_addon;
 
@@ -73,9 +81,17 @@ pub(crate) mod shape_describe_pod_identity_association;
 
 pub(crate) mod shape_describe_update;
 
+pub(crate) mod shape_disassociate_access_policy;
+
 pub(crate) mod shape_disassociate_identity_provider_config;
 
+pub(crate) mod shape_list_access_entries;
+
+pub(crate) mod shape_list_access_policies;
+
 pub(crate) mod shape_list_addons;
+
+pub(crate) mod shape_list_associated_access_policies;
 
 pub(crate) mod shape_list_clusters;
 
@@ -98,6 +114,8 @@ pub(crate) mod shape_register_cluster;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_access_entry;
 
 pub(crate) mod shape_update_addon;
 
@@ -123,6 +141,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_access_policy_input;
+
 pub(crate) mod shape_associate_encryption_config_input;
 
 pub(crate) mod shape_associate_identity_provider_config_input;
@@ -130,6 +150,8 @@ pub(crate) mod shape_associate_identity_provider_config_input;
 pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_client_exception;
+
+pub(crate) mod shape_create_access_entry_input;
 
 pub(crate) mod shape_create_addon_input;
 
@@ -171,6 +193,8 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_unsupported_availability_zone_exception;
 
+pub(crate) mod shape_update_access_entry_input;
+
 pub(crate) mod shape_update_addon_input;
 
 pub(crate) mod shape_update_cluster_config_input;
@@ -185,13 +209,25 @@ pub(crate) mod shape_update_nodegroup_version_input;
 
 pub(crate) mod shape_update_pod_identity_association_input;
 
+pub(crate) mod shape_access_entry;
+
+pub(crate) mod shape_access_policies_list;
+
+pub(crate) mod shape_access_scope;
+
 pub(crate) mod shape_addon;
 
 pub(crate) mod shape_addons;
 
+pub(crate) mod shape_associated_access_policies_list;
+
+pub(crate) mod shape_associated_access_policy;
+
 pub(crate) mod shape_cluster;
 
 pub(crate) mod shape_connector_config_request;
+
+pub(crate) mod shape_create_access_config_request;
 
 pub(crate) mod shape_eks_anywhere_subscription;
 
@@ -241,11 +277,17 @@ pub(crate) mod shape_taint;
 
 pub(crate) mod shape_update;
 
+pub(crate) mod shape_update_access_config_request;
+
 pub(crate) mod shape_update_labels_payload;
 
 pub(crate) mod shape_update_taints_payload;
 
 pub(crate) mod shape_vpc_config_request;
+
+pub(crate) mod shape_access_config_response;
+
+pub(crate) mod shape_access_policy;
 
 pub(crate) mod shape_addon_health;
 

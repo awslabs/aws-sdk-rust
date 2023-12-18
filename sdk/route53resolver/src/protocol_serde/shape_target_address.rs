@@ -15,6 +15,9 @@ pub fn ser_target_address(
     if let Some(var_3) = &input.ipv6 {
         object.key("Ipv6").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.protocol {
+        object.key("Protocol").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -51,6 +54,13 @@ where
                             builder = builder.set_ipv6(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Protocol" => {
+                            builder = builder.set_protocol(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Protocol::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

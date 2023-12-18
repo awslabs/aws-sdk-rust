@@ -23,13 +23,19 @@ pub use crate::types::_eks_anywhere_subscription::EksAnywhereSubscriptionBuilder
 
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTermBuilder;
 
+pub use crate::types::_update_access_config_request::UpdateAccessConfigRequestBuilder;
+
 pub use crate::types::_logging::LoggingBuilder;
 
 pub use crate::types::_log_setup::LogSetupBuilder;
 
 pub use crate::types::_vpc_config_request::VpcConfigRequestBuilder;
 
+pub use crate::types::_access_entry::AccessEntryBuilder;
+
 pub use crate::types::_cluster::ClusterBuilder;
+
+pub use crate::types::_access_config_response::AccessConfigResponseBuilder;
 
 pub use crate::types::_outpost_config_response::OutpostConfigResponseBuilder;
 
@@ -60,6 +66,12 @@ pub use crate::types::_connector_config_request::ConnectorConfigRequestBuilder;
 pub use crate::types::_pod_identity_association_summary::PodIdentityAssociationSummaryBuilder;
 
 pub use crate::types::_identity_provider_config::IdentityProviderConfigBuilder;
+
+pub use crate::types::_associated_access_policy::AssociatedAccessPolicyBuilder;
+
+pub use crate::types::_access_scope::AccessScopeBuilder;
+
+pub use crate::types::_access_policy::AccessPolicyBuilder;
 
 pub use crate::types::_nodegroup::NodegroupBuilder;
 
@@ -94,6 +106,8 @@ pub use crate::types::_addon::AddonBuilder;
 pub use crate::types::_addon_health::AddonHealthBuilder;
 
 pub use crate::types::_addon_issue::AddonIssueBuilder;
+
+pub use crate::types::_create_access_config_request::CreateAccessConfigRequestBuilder;
 
 pub use crate::types::_outpost_config_request::OutpostConfigRequestBuilder;
 

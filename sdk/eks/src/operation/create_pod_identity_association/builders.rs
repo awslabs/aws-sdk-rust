@@ -23,7 +23,7 @@ impl CreatePodIdentityAssociationInputBuilder {
 /// Fluent builder constructing a request to `CreatePodIdentityAssociation`.
 ///
 /// <p>Creates an EKS Pod Identity association between a service account in an Amazon EKS cluster and an IAM role with <i>EKS Pod Identity</i>. Use EKS Pod Identity to give temporary IAM credentials to pods and the credentials are rotated automatically.</p>
-/// <p>Amazon EKS Pod Identity associations provide the ability to manage credentials for your applications, similar to the way that 7EC2l instance profiles provide credentials to Amazon EC2 instances.</p>
+/// <p>Amazon EKS Pod Identity associations provide the ability to manage credentials for your applications, similar to the way that Amazon EC2 instance profiles provide credentials to Amazon EC2 instances.</p>
 /// <p>If a pod uses a service account that has an association, Amazon EKS sets environment variables in the containers of the pod. The environment variables configure the Amazon Web Services SDKs, including the Command Line Interface, to use the EKS Pod Identity credentials.</p>
 /// <p>Pod Identity is a simpler method than <i>IAM roles for service accounts</i>, as this method doesn't use OIDC identity providers. Additionally, you can configure a role for Pod Identity once, and reuse it across clusters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -167,17 +167,17 @@ impl CreatePodIdentityAssociationFluentBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role_arn()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
@@ -185,7 +185,7 @@ impl CreatePodIdentityAssociationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -207,7 +207,7 @@ impl CreatePodIdentityAssociationFluentBuilder {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>
@@ -229,7 +229,7 @@ impl CreatePodIdentityAssociationFluentBuilder {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
     /// <li>

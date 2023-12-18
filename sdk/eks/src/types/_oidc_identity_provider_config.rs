@@ -8,7 +8,7 @@ pub struct OidcIdentityProviderConfig {
     pub identity_provider_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the configuration.</p>
     pub identity_provider_config_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The cluster that the configuration is associated to.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the OIDC identity provider that allows the API server to discover public signing keys for verifying tokens.</p>
     pub issuer_url: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct OidcIdentityProviderConfig {
     pub groups_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value.</p>
     pub required_claims: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the OIDC identity provider.</p>
     pub status: ::std::option::Option<crate::types::ConfigStatus>,
@@ -38,7 +38,7 @@ impl OidcIdentityProviderConfig {
     pub fn identity_provider_config_arn(&self) -> ::std::option::Option<&str> {
         self.identity_provider_config_arn.as_deref()
     }
-    /// <p>The cluster that the configuration is associated to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -70,7 +70,7 @@ impl OidcIdentityProviderConfig {
     pub fn required_claims(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.required_claims.as_ref()
     }
-    /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -132,17 +132,17 @@ impl OidcIdentityProviderConfigBuilder {
     pub fn get_identity_provider_config_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_provider_config_arn
     }
-    /// <p>The cluster that the configuration is associated to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cluster that the configuration is associated to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The cluster that the configuration is associated to.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }
@@ -261,19 +261,19 @@ impl OidcIdentityProviderConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The metadata to apply to the provider configuration to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
+    /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

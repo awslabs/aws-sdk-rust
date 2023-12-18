@@ -22,8 +22,8 @@ impl UpdateClusterConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateClusterConfig`.
 ///
-/// <p>Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with the <code>DescribeUpdate</code> API operation.</p>
-/// <p>You can use this API operation to enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p><note>
+/// <p>Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with <code>DescribeUpdate</code>"/&gt;.</p>
+/// <p>You can use this API operation to enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p><note>
 /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
 /// </note>
 /// <p>You can also use this API operation to enable or disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is enabled, and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
@@ -162,18 +162,32 @@ impl UpdateClusterConfigFluentBuilder {
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
         self.inner.get_logging()
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
-    /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn access_config(mut self, input: crate::types::UpdateAccessConfigRequest) -> Self {
+        self.inner = self.inner.access_config(input);
+        self
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn set_access_config(mut self, input: ::std::option::Option<crate::types::UpdateAccessConfigRequest>) -> Self {
+        self.inner = self.inner.set_access_config(input);
+        self
+    }
+    /// <p>The access configuration for the cluster.</p>
+    pub fn get_access_config(&self) -> &::std::option::Option<crate::types::UpdateAccessConfigRequest> {
+        self.inner.get_access_config()
     }
 }

@@ -13,6 +13,7 @@
 /// # let updateparamtype = unimplemented!();
 /// match updateparamtype {
 ///     UpdateParamType::AddonVersion => { /* ... */ },
+///     UpdateParamType::AuthenticationMode => { /* ... */ },
 ///     UpdateParamType::ClusterLogging => { /* ... */ },
 ///     UpdateParamType::ConfigurationValues => { /* ... */ },
 ///     UpdateParamType::DesiredSize => { /* ... */ },
@@ -67,6 +68,8 @@
 pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     AddonVersion,
+    #[allow(missing_docs)] // documentation missing in model
+    AuthenticationMode,
     #[allow(missing_docs)] // documentation missing in model
     ClusterLogging,
     #[allow(missing_docs)] // documentation missing in model
@@ -125,6 +128,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
     fn from(s: &str) -> Self {
         match s {
             "AddonVersion" => UpdateParamType::AddonVersion,
+            "AuthenticationMode" => UpdateParamType::AuthenticationMode,
             "ClusterLogging" => UpdateParamType::ClusterLogging,
             "ConfigurationValues" => UpdateParamType::ConfigurationValues,
             "DesiredSize" => UpdateParamType::DesiredSize,
@@ -166,6 +170,7 @@ impl UpdateParamType {
     pub fn as_str(&self) -> &str {
         match self {
             UpdateParamType::AddonVersion => "AddonVersion",
+            UpdateParamType::AuthenticationMode => "AuthenticationMode",
             UpdateParamType::ClusterLogging => "ClusterLogging",
             UpdateParamType::ConfigurationValues => "ConfigurationValues",
             UpdateParamType::DesiredSize => "DesiredSize",
@@ -198,6 +203,7 @@ impl UpdateParamType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AddonVersion",
+            "AuthenticationMode",
             "ClusterLogging",
             "ConfigurationValues",
             "DesiredSize",

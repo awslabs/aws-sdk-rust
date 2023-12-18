@@ -10,6 +10,34 @@ pub struct TargetAddress {
     pub port: ::std::option::Option<i32>,
     /// <p>One IPv6 address that you want to forward DNS queries to.</p>
     pub ipv6: ::std::option::Option<::std::string::String>,
+    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl TargetAddress {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
@@ -23,6 +51,36 @@ impl TargetAddress {
     /// <p>One IPv6 address that you want to forward DNS queries to.</p>
     pub fn ipv6(&self) -> ::std::option::Option<&str> {
         self.ipv6.as_deref()
+    }
+    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
+        self.protocol.as_ref()
     }
 }
 impl TargetAddress {
@@ -39,6 +97,7 @@ pub struct TargetAddressBuilder {
     pub(crate) ip: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) ipv6: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl TargetAddressBuilder {
     /// <p>One IPv4 address that you want to forward DNS queries to.</p>
@@ -83,12 +142,105 @@ impl TargetAddressBuilder {
     pub fn get_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipv6
     }
+    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
+        self.protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
+        self.protocol = input;
+        self
+    }
+    /// <p>The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
+        &self.protocol
+    }
     /// Consumes the builder and constructs a [`TargetAddress`](crate::types::TargetAddress).
     pub fn build(self) -> crate::types::TargetAddress {
         crate::types::TargetAddress {
             ip: self.ip,
             port: self.port,
             ipv6: self.ipv6,
+            protocol: self.protocol,
         }
     }
 }

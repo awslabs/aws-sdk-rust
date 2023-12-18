@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodegroupUpdateConfig {
-    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes are updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     pub max_unavailable: ::std::option::Option<i32>,
-    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub max_unavailable_percentage: ::std::option::Option<i32>,
 }
 impl NodegroupUpdateConfig {
-    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes are updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     pub fn max_unavailable(&self) -> ::std::option::Option<i32> {
         self.max_unavailable
     }
-    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn max_unavailable_percentage(&self) -> ::std::option::Option<i32> {
         self.max_unavailable_percentage
     }
@@ -34,31 +34,31 @@ pub struct NodegroupUpdateConfigBuilder {
     pub(crate) max_unavailable_percentage: ::std::option::Option<i32>,
 }
 impl NodegroupUpdateConfigBuilder {
-    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes are updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     pub fn max_unavailable(mut self, input: i32) -> Self {
         self.max_unavailable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes are updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     pub fn set_max_unavailable(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_unavailable = input;
         self
     }
-    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
+    /// <p>The maximum number of nodes unavailable at once during a version update. Nodes are updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     pub fn get_max_unavailable(&self) -> &::std::option::Option<i32> {
         &self.max_unavailable
     }
-    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn max_unavailable_percentage(mut self, input: i32) -> Self {
         self.max_unavailable_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn set_max_unavailable_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_unavailable_percentage = input;
         self
     }
-    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
+    /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn get_max_unavailable_percentage(&self) -> &::std::option::Option<i32> {
         &self.max_unavailable_percentage
     }

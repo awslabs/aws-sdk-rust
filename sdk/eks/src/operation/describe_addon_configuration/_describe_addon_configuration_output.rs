@@ -7,7 +7,7 @@ pub struct DescribeAddonConfigurationOutput {
     pub addon_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the add-on. The version must match one of the versions returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html"> <code>DescribeAddonVersions</code> </a>.</p>
     pub addon_version: ::std::option::Option<::std::string::String>,
-    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub configuration_schema: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl DescribeAddonConfigurationOutput {
     pub fn addon_version(&self) -> ::std::option::Option<&str> {
         self.addon_version.as_deref()
     }
-    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub fn configuration_schema(&self) -> ::std::option::Option<&str> {
         self.configuration_schema.as_deref()
     }
@@ -75,17 +75,17 @@ impl DescribeAddonConfigurationOutputBuilder {
     pub fn get_addon_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.addon_version
     }
-    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub fn configuration_schema(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.configuration_schema = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub fn set_configuration_schema(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.configuration_schema = input;
         self
     }
-    /// <p>A JSON schema that's used to validate the configuration values that you provide when an addon is created or updated.</p>
+    /// <p>A JSON schema that's used to validate the configuration values you provide when an add-on is created or updated.</p>
     pub fn get_configuration_schema(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_schema
     }

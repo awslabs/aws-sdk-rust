@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigInput {
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>An object representing an identity provider configuration.</p>
     pub identity_provider_config: ::std::option::Option<crate::types::IdentityProviderConfig>,
@@ -11,7 +11,7 @@ pub struct DisassociateIdentityProviderConfigInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateIdentityProviderConfigInput {
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct DisassociateIdentityProviderConfigInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateIdentityProviderConfigInputBuilder {
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     /// This field is required.
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
-    /// <p>The name of the cluster to disassociate an identity provider from.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_cluster_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_name
     }

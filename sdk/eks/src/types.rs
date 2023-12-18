@@ -37,6 +37,10 @@ pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscript
 
 pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
 
+pub use crate::types::_update_access_config_request::UpdateAccessConfigRequest;
+
+pub use crate::types::_authentication_mode::AuthenticationMode;
+
 pub use crate::types::_logging::Logging;
 
 pub use crate::types::_log_setup::LogSetup;
@@ -47,7 +51,11 @@ pub use crate::types::_vpc_config_request::VpcConfigRequest;
 
 pub use crate::types::_resolve_conflicts::ResolveConflicts;
 
+pub use crate::types::_access_entry::AccessEntry;
+
 pub use crate::types::_cluster::Cluster;
+
+pub use crate::types::_access_config_response::AccessConfigResponse;
 
 pub use crate::types::_outpost_config_response::OutpostConfigResponse;
 
@@ -88,6 +96,14 @@ pub use crate::types::_pod_identity_association_summary::PodIdentityAssociationS
 pub use crate::types::_identity_provider_config::IdentityProviderConfig;
 
 pub use crate::types::_eks_anywhere_subscription_status::EksAnywhereSubscriptionStatus;
+
+pub use crate::types::_associated_access_policy::AssociatedAccessPolicy;
+
+pub use crate::types::_access_scope::AccessScope;
+
+pub use crate::types::_access_scope_type::AccessScopeType;
+
+pub use crate::types::_access_policy::AccessPolicy;
 
 pub use crate::types::_nodegroup::Nodegroup;
 
@@ -139,6 +155,8 @@ pub use crate::types::_addon_issue_code::AddonIssueCode;
 
 pub use crate::types::_addon_status::AddonStatus;
 
+pub use crate::types::_create_access_config_request::CreateAccessConfigRequest;
+
 pub use crate::types::_outpost_config_request::OutpostConfigRequest;
 
 pub use crate::types::_control_plane_placement_request::ControlPlanePlacementRequest;
@@ -146,6 +164,16 @@ pub use crate::types::_control_plane_placement_request::ControlPlanePlacementReq
 pub use crate::types::_kubernetes_network_config_request::KubernetesNetworkConfigRequest;
 
 pub use crate::types::_oidc_identity_provider_config_request::OidcIdentityProviderConfigRequest;
+
+mod _access_config_response;
+
+mod _access_entry;
+
+mod _access_policy;
+
+mod _access_scope;
+
+mod _access_scope_type;
 
 mod _addon;
 
@@ -162,6 +190,10 @@ mod _addon_status;
 mod _addon_version_info;
 
 mod _ami_types;
+
+mod _associated_access_policy;
+
+mod _authentication_mode;
 
 mod _auto_scaling_group;
 
@@ -192,6 +224,8 @@ mod _connector_config_response;
 mod _control_plane_placement_request;
 
 mod _control_plane_placement_response;
+
+mod _create_access_config_request;
 
 mod _eks_anywhere_subscription;
 
@@ -278,6 +312,8 @@ mod _taint;
 mod _taint_effect;
 
 mod _update;
+
+mod _update_access_config_request;
 
 mod _update_labels_payload;
 

@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateEncryptionConfig`](crate::operation::associate_encryption_config) operation has
-/// a [`Client::associate_encryption_config`], function which returns a builder for that operation.
+/// For example, the [`AssociateAccessPolicy`](crate::operation::associate_access_policy) operation has
+/// a [`Client::associate_access_policy`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_encryption_config()
+/// let result = client.associate_access_policy()
 ///     .cluster_name("example")
 ///     .send()
 ///     .await;
@@ -136,9 +136,13 @@ impl Client {
     }
 }
 
+mod associate_access_policy;
+
 mod associate_encryption_config;
 
 mod associate_identity_provider_config;
+
+mod create_access_entry;
 
 mod create_addon;
 
@@ -163,7 +167,7 @@ mod create_pod_identity_association;
 /// # let client: aws_sdk_eks::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_encryption_config()
+/// let result = client.associate_access_policy()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -179,6 +183,8 @@ mod create_pod_identity_association;
 /// ```
 pub mod customize;
 
+mod delete_access_entry;
+
 mod delete_addon;
 
 mod delete_cluster;
@@ -192,6 +198,8 @@ mod delete_nodegroup;
 mod delete_pod_identity_association;
 
 mod deregister_cluster;
+
+mod describe_access_entry;
 
 mod describe_addon;
 
@@ -213,9 +221,17 @@ mod describe_pod_identity_association;
 
 mod describe_update;
 
+mod disassociate_access_policy;
+
 mod disassociate_identity_provider_config;
 
+mod list_access_entries;
+
+mod list_access_policies;
+
 mod list_addons;
+
+mod list_associated_access_policies;
 
 mod list_clusters;
 
@@ -238,6 +254,8 @@ mod register_cluster;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_access_entry;
 
 mod update_addon;
 

@@ -22,8 +22,8 @@ impl DescribeClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCluster`.
 ///
-/// <p>Returns descriptive information about an Amazon EKS cluster.</p>
-/// <p>The API server endpoint and certificate authority data returned by this operation are required for <code>kubelet</code> and <code>kubectl</code> to communicate with your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a kubeconfig for Amazon EKS</a>.</p><note>
+/// <p>Describes an Amazon EKS cluster.</p>
+/// <p>The API server endpoint and certificate authority data returned by this operation are required for <code>kubelet</code> and <code>kubectl</code> to communicate with your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Creating or updating a <code>kubeconfig</code> file for an Amazon EKS cluster</a>.</p><note>
 /// <p>The API server endpoint and certificate authority data aren't available until the cluster reaches the <code>ACTIVE</code> state.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -111,17 +111,17 @@ impl DescribeClusterFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the cluster to describe.</p>
+    /// <p>The name of your cluster.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

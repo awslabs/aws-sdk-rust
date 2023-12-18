@@ -22,7 +22,7 @@ impl UpdateResolverEndpointInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
 ///
-/// <p>Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type.</p>
+/// <p>Updates the name, or endpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResolverEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -170,5 +170,107 @@ impl UpdateResolverEndpointFluentBuilder {
     /// <p>Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.</p>
     pub fn get_update_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UpdateIpAddress>> {
         self.inner.get_update_ip_addresses()
+    }
+    /// Appends an item to `Protocols`.
+    ///
+    /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+    ///
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
+    /// </important>
+    pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
+        self.inner = self.inner.protocols(input);
+        self
+    }
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
+    /// </important>
+    pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
+        self.inner = self.inner.set_protocols(input);
+        self
+    }
+    /// <p>The protocols you want to use for the endpoint. DoH-FIPS is applicable for inbound endpoints only.</p>
+    /// <p>For an inbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 and DoH-FIPS in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>DoH-FIPS alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul>
+    /// <p>For an outbound endpoint you can apply the protocols as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Do53 and DoH in combination.</p></li>
+    /// <li>
+    /// <p>Do53 alone.</p></li>
+    /// <li>
+    /// <p>DoH alone.</p></li>
+    /// <li>
+    /// <p>None, which is treated as Do53.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.</p>
+    /// </important>
+    pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {
+        self.inner.get_protocols()
     }
 }

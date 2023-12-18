@@ -9,8 +9,38 @@ pub(crate) fn reflens_describe_addon_versions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_access_entries_output_output_next_token(
+    input: &crate::operation::list_access_entries::ListAccessEntriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_access_policies_output_output_next_token(
+    input: &crate::operation::list_access_policies::ListAccessPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_addons_output_output_next_token(
     input: &crate::operation::list_addons::ListAddonsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_associated_access_policies_output_output_next_token(
+    input: &crate::operation::list_associated_access_policies::ListAssociatedAccessPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -99,10 +129,40 @@ pub(crate) fn lens_describe_addon_versions_output_output_addons(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_access_entries_output_output_access_entries(
+    input: crate::operation::list_access_entries::ListAccessEntriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.access_entries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_access_policies_output_output_access_policies(
+    input: crate::operation::list_access_policies::ListAccessPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicy>> {
+    let input = match input.access_policies {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_addons_output_output_addons(
     input: crate::operation::list_addons::ListAddonsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.addons {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_associated_access_policies_output_output_associated_access_policies(
+    input: crate::operation::list_associated_access_policies::ListAssociatedAccessPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociatedAccessPolicy>> {
+    let input = match input.associated_access_policies {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

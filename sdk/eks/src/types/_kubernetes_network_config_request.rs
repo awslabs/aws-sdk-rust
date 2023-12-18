@@ -11,9 +11,9 @@ pub struct KubernetesNetworkConfigRequest {
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
     /// <li>
-    /// <p>Between /24 and /12.</p></li>
+    /// <p>Between <code>/24</code> and <code>/12</code>.</p></li>
     /// </ul><important>
-    /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
+    /// <p>You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster is created.</p>
     /// </important>
     pub service_ipv4_cidr: ::std::option::Option<::std::string::String>,
     /// <p>Specify which IP family is used to assign Kubernetes pod and service IP addresses. If you don't specify a value, <code>ipv4</code> is used by default. You can only specify an IP family when you create a cluster and can't change this value once the cluster is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.</p>
@@ -28,9 +28,9 @@ impl KubernetesNetworkConfigRequest {
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
     /// <li>
-    /// <p>Between /24 and /12.</p></li>
+    /// <p>Between <code>/24</code> and <code>/12</code>.</p></li>
     /// </ul><important>
-    /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
+    /// <p>You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster is created.</p>
     /// </important>
     pub fn service_ipv4_cidr(&self) -> ::std::option::Option<&str> {
         self.service_ipv4_cidr.as_deref()
@@ -63,9 +63,9 @@ impl KubernetesNetworkConfigRequestBuilder {
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
     /// <li>
-    /// <p>Between /24 and /12.</p></li>
+    /// <p>Between <code>/24</code> and <code>/12</code>.</p></li>
     /// </ul><important>
-    /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
+    /// <p>You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster is created.</p>
     /// </important>
     pub fn service_ipv4_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_ipv4_cidr = ::std::option::Option::Some(input.into());
@@ -78,9 +78,9 @@ impl KubernetesNetworkConfigRequestBuilder {
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
     /// <li>
-    /// <p>Between /24 and /12.</p></li>
+    /// <p>Between <code>/24</code> and <code>/12</code>.</p></li>
     /// </ul><important>
-    /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
+    /// <p>You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster is created.</p>
     /// </important>
     pub fn set_service_ipv4_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_ipv4_cidr = input;
@@ -93,9 +93,9 @@ impl KubernetesNetworkConfigRequestBuilder {
     /// <li>
     /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for VPC.</p></li>
     /// <li>
-    /// <p>Between /24 and /12.</p></li>
+    /// <p>Between <code>/24</code> and <code>/12</code>.</p></li>
     /// </ul><important>
-    /// <p>You can only specify a custom CIDR block when you create a cluster and can't change this value once the cluster is created.</p>
+    /// <p>You can only specify a custom CIDR block when you create a cluster. You can't change this value after the cluster is created.</p>
     /// </important>
     pub fn get_service_ipv4_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_ipv4_cidr
