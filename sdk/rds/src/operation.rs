@@ -223,6 +223,9 @@ pub mod describe_db_proxy_target_groups;
 /// Types for the `DescribeDBProxyTargets` operation.
 pub mod describe_db_proxy_targets;
 
+/// Types for the `DescribeDBRecommendations` operation.
+pub mod describe_db_recommendations;
+
 /// Types for the `DescribeDBSecurityGroups` operation.
 pub mod describe_db_security_groups;
 
@@ -339,6 +342,9 @@ pub mod modify_db_proxy_endpoint;
 
 /// Types for the `ModifyDBProxyTargetGroup` operation.
 pub mod modify_db_proxy_target_group;
+
+/// Types for the `ModifyDBRecommendation` operation.
+pub mod modify_db_recommendation;
 
 /// Types for the `ModifyDBSnapshot` operation.
 pub mod modify_db_snapshot;

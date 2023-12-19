@@ -46,6 +46,11 @@ pub fn ser_provision_byoip_cidr_input_input_input(
     if let Some(var_17) = &input.multi_region {
         scope_16.boolean(*var_17);
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("NetworkBorderGroup");
+    if let Some(var_19) = &input.network_border_group {
+        scope_18.string(var_19);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

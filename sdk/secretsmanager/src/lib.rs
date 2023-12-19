@@ -43,7 +43,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-secretsmanager = "1.7.0"
+//! aws-sdk-secretsmanager = "1.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -160,14 +160,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelRotateSecret`](crate::operation::cancel_rotate_secret) operation has
-/// a [`Client::cancel_rotate_secret`], function which returns a builder for that operation.
+/// For example, the [`BatchGetSecretValue`](crate::operation::batch_get_secret_value) operation has
+/// a [`Client::batch_get_secret_value`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_rotate_secret()
-///     .secret_id("example")
+/// let result = client.batch_get_secret_value()
+///     .next_token("example")
 ///     .send()
 ///     .await;
 /// ```

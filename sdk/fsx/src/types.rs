@@ -3,6 +3,8 @@ pub use crate::types::_volume::Volume;
 
 pub use crate::types::_open_zfs_volume_configuration::OpenZfsVolumeConfiguration;
 
+pub use crate::types::_open_zfs_copy_strategy::OpenZfsCopyStrategy;
+
 pub use crate::types::_open_zfs_user_or_group_quota::OpenZfsUserOrGroupQuota;
 
 pub use crate::types::_open_zfs_quota_type::OpenZfsQuotaType;
@@ -12,8 +14,6 @@ pub use crate::types::_open_zfs_nfs_export::OpenZfsNfsExport;
 pub use crate::types::_open_zfs_client_configuration::OpenZfsClientConfiguration;
 
 pub use crate::types::_open_zfs_origin_snapshot_configuration::OpenZfsOriginSnapshotConfiguration;
-
-pub use crate::types::_open_zfs_copy_strategy::OpenZfsCopyStrategy;
 
 pub use crate::types::_open_zfs_data_compression_type::OpenZfsDataCompressionType;
 

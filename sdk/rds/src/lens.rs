@@ -189,6 +189,16 @@ pub(crate) fn reflens_describe_db_proxy_targets_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_db_recommendations_output_output_marker(
+    input: &crate::operation::describe_db_recommendations::DescribeDbRecommendationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_db_security_groups_output_output_marker(
     input: &crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -567,6 +577,16 @@ pub(crate) fn lens_describe_db_proxy_targets_output_output_targets(
     input: crate::operation::describe_db_proxy_targets::DescribeDbProxyTargetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DbProxyTarget>> {
     let input = match input.targets {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_db_recommendations_output_output_db_recommendations(
+    input: crate::operation::describe_db_recommendations::DescribeDbRecommendationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DbRecommendation>> {
+    let input = match input.db_recommendations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -41,6 +41,8 @@ pub use crate::types::_resolver_kind::ResolverKind;
 
 pub use crate::types::_graphql_api::GraphqlApi;
 
+pub use crate::types::_graph_ql_api_introspection_config::GraphQlApiIntrospectionConfig;
+
 pub use crate::types::_graph_ql_api_type::GraphQlApiType;
 
 pub use crate::types::_graph_ql_api_visibility::GraphQlApiVisibility;
@@ -214,6 +216,8 @@ mod _event_bridge_data_source_config;
 mod _field_log_level;
 
 mod _function_configuration;
+
+mod _graph_ql_api_introspection_config;
 
 mod _graph_ql_api_type;
 

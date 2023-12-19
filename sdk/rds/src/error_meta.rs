@@ -3088,6 +3088,30 @@ impl From<crate::operation::describe_db_proxy_targets::DescribeDBProxyTargetsErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_recommendations::DescribeDBRecommendationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_recommendations::DescribeDBRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_db_recommendations::DescribeDBRecommendationsError> for Error {
+    fn from(err: crate::operation::describe_db_recommendations::DescribeDBRecommendationsError) -> Self {
+        match err {
+            crate::operation::describe_db_recommendations::DescribeDBRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError, R>>
     for Error
 where
@@ -4340,6 +4364,29 @@ impl From<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGro
                 Error::InvalidDbProxyStateFault(inner)
             }
             crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_recommendation::ModifyDBRecommendationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_recommendation::ModifyDBRecommendationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_db_recommendation::ModifyDBRecommendationError> for Error {
+    fn from(err: crate::operation::modify_db_recommendation::ModifyDBRecommendationError) -> Self {
+        match err {
+            crate::operation::modify_db_recommendation::ModifyDBRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

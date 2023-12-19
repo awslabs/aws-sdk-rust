@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod batch_describe_entities;
+
 mod cancel_change_set;
 
 /// Operation customization and supporting types.
@@ -149,7 +151,7 @@ mod cancel_change_set;
 /// # let client: aws_sdk_marketplacecatalog::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_change_set()
+/// let result = client.batch_describe_entities()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

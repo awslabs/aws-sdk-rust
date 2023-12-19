@@ -143,6 +143,36 @@ pub use crate::types::_db_snapshot_attribute::DbSnapshotAttribute;
 
 pub use crate::types::_db_snapshot::DbSnapshot;
 
+pub use crate::types::_db_recommendation::DbRecommendation;
+
+pub use crate::types::_issue_details::IssueDetails;
+
+pub use crate::types::_performance_issue_details::PerformanceIssueDetails;
+
+pub use crate::types::_metric::Metric;
+
+pub use crate::types::_metric_query::MetricQuery;
+
+pub use crate::types::_performance_insights_metric_query::PerformanceInsightsMetricQuery;
+
+pub use crate::types::_performance_insights_metric_dimension_group::PerformanceInsightsMetricDimensionGroup;
+
+pub use crate::types::_metric_reference::MetricReference;
+
+pub use crate::types::_reference_details::ReferenceDetails;
+
+pub use crate::types::_scalar_reference_details::ScalarReferenceDetails;
+
+pub use crate::types::_doc_link::DocLink;
+
+pub use crate::types::_recommended_action::RecommendedAction;
+
+pub use crate::types::_context_attribute::ContextAttribute;
+
+pub use crate::types::_recommended_action_parameter::RecommendedActionParameter;
+
+pub use crate::types::_recommended_action_update::RecommendedActionUpdate;
+
 pub use crate::types::_db_proxy_target_group::DbProxyTargetGroup;
 
 pub use crate::types::_connection_pool_configuration_info::ConnectionPoolConfigurationInfo;
@@ -297,6 +327,8 @@ mod _connection_pool_configuration;
 
 mod _connection_pool_configuration_info;
 
+mod _context_attribute;
+
 mod _custom_db_engine_version_ami;
 
 mod _custom_engine_version_status;
@@ -355,6 +387,8 @@ mod _db_proxy_target;
 
 mod _db_proxy_target_group;
 
+mod _db_recommendation;
+
 mod _db_security_group;
 
 mod _db_security_group_membership;
@@ -370,6 +404,8 @@ mod _db_snapshot_tenant_database;
 mod _db_subnet_group;
 
 mod _describe_db_log_files_details;
+
+mod _doc_link;
 
 mod _domain_membership;
 
@@ -415,9 +451,17 @@ mod _integration_status;
 
 mod _ip_range;
 
+mod _issue_details;
+
 mod _local_write_forwarding_status;
 
 mod _master_user_secret;
+
+mod _metric;
+
+mod _metric_query;
+
+mod _metric_reference;
 
 mod _minimum_engine_version_per_allowed_value;
 
@@ -449,13 +493,27 @@ mod _pending_maintenance_action;
 
 mod _pending_modified_values;
 
+mod _performance_insights_metric_dimension_group;
+
+mod _performance_insights_metric_query;
+
+mod _performance_issue_details;
+
 mod _processor_feature;
 
 mod _range;
 
 mod _rds_custom_cluster_configuration;
 
+mod _recommended_action;
+
+mod _recommended_action_parameter;
+
+mod _recommended_action_update;
+
 mod _recurring_charge;
+
+mod _reference_details;
 
 mod _replica_mode;
 
@@ -466,6 +524,8 @@ mod _reserved_db_instances_offering;
 mod _resource_pending_maintenance_actions;
 
 mod _restore_window;
+
+mod _scalar_reference_details;
 
 mod _scaling_configuration;
 

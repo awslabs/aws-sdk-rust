@@ -304,4 +304,52 @@ impl CreateGraphqlApiFluentBuilder {
     pub fn get_owner_contact(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owner_contact()
     }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn introspection_config(mut self, input: crate::types::GraphQlApiIntrospectionConfig) -> Self {
+        self.inner = self.inner.introspection_config(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn set_introspection_config(mut self, input: ::std::option::Option<crate::types::GraphQlApiIntrospectionConfig>) -> Self {
+        self.inner = self.inner.set_introspection_config(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn get_introspection_config(&self) -> &::std::option::Option<crate::types::GraphQlApiIntrospectionConfig> {
+        self.inner.get_introspection_config()
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn query_depth_limit(mut self, input: i32) -> Self {
+        self.inner = self.inner.query_depth_limit(input);
+        self
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn set_query_depth_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_query_depth_limit(input);
+        self
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn get_query_depth_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_query_depth_limit()
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn resolver_count_limit(mut self, input: i32) -> Self {
+        self.inner = self.inner.resolver_count_limit(input);
+        self
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn set_resolver_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_resolver_count_limit(input);
+        self
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn get_resolver_count_limit(&self) -> &::std::option::Option<i32> {
+        self.inner.get_resolver_count_limit()
+    }
 }

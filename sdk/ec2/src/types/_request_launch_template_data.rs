@@ -59,23 +59,7 @@ pub struct RequestLaunchTemplateData {
     /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Linux instance at launch</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instancedata-add-user-data.html">Work with instance user data</a> (Windows) in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive"> MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to apply to the resources that are created during instance launch.</p>
-    /// <p>You can specify tags for the following resources only:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Instances</p></li>
-    /// <li>
-    /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
-    /// <p>Spot Instance requests</p></li>
-    /// <li>
-    /// <p>Network interfaces</p></li>
-    /// </ul>
-    /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p><note>
-    /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
-    /// </note>
+    /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
     /// <p>An elastic GPU to associate with the instance.</p>
     pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
@@ -213,23 +197,7 @@ impl RequestLaunchTemplateData {
     pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
     }
-    /// <p>The tags to apply to the resources that are created during instance launch.</p>
-    /// <p>You can specify tags for the following resources only:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Instances</p></li>
-    /// <li>
-    /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
-    /// <p>Spot Instance requests</p></li>
-    /// <li>
-    /// <p>Network interfaces</p></li>
-    /// </ul>
-    /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p><note>
-    /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
-    /// </note>
+    /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::LaunchTemplateTagSpecificationRequest] {
@@ -706,46 +674,14 @@ impl RequestLaunchTemplateDataBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
     ///
-    /// <p>The tags to apply to the resources that are created during instance launch.</p>
-    /// <p>You can specify tags for the following resources only:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Instances</p></li>
-    /// <li>
-    /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
-    /// <p>Spot Instance requests</p></li>
-    /// <li>
-    /// <p>Network interfaces</p></li>
-    /// </ul>
-    /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p><note>
-    /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
-    /// </note>
+    /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     pub fn tag_specifications(mut self, input: crate::types::LaunchTemplateTagSpecificationRequest) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
         v.push(input);
         self.tag_specifications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The tags to apply to the resources that are created during instance launch.</p>
-    /// <p>You can specify tags for the following resources only:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Instances</p></li>
-    /// <li>
-    /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
-    /// <p>Spot Instance requests</p></li>
-    /// <li>
-    /// <p>Network interfaces</p></li>
-    /// </ul>
-    /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p><note>
-    /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
-    /// </note>
+    /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     pub fn set_tag_specifications(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
@@ -753,23 +689,7 @@ impl RequestLaunchTemplateDataBuilder {
         self.tag_specifications = input;
         self
     }
-    /// <p>The tags to apply to the resources that are created during instance launch.</p>
-    /// <p>You can specify tags for the following resources only:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Instances</p></li>
-    /// <li>
-    /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
-    /// <p>Spot Instance requests</p></li>
-    /// <li>
-    /// <p>Network interfaces</p></li>
-    /// </ul>
-    /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p><note>
-    /// <p>To tag the launch template itself, you must use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplate.html">TagSpecification</a> parameter.</p>
-    /// </note>
+    /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>> {
         &self.tag_specifications
     }

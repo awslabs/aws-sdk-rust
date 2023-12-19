@@ -14,6 +14,8 @@
 /// <li>
 /// <p><code>DescribeDBInstances</code></p></li>
 /// <li>
+/// <p><code>DescribeDBRecommendations</code></p></li>
+/// <li>
 /// <p><code>DescribePendingMaintenanceActions</code></p></li>
 /// </ul>
 #[non_exhaustive]

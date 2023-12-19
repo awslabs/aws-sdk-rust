@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelRotateSecret`](crate::operation::cancel_rotate_secret) operation has
-/// a [`Client::cancel_rotate_secret`], function which returns a builder for that operation.
+/// For example, the [`BatchGetSecretValue`](crate::operation::batch_get_secret_value) operation has
+/// a [`Client::batch_get_secret_value`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_rotate_secret()
-///     .secret_id("example")
+/// let result = client.batch_get_secret_value()
+///     .next_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod batch_get_secret_value;
+
 mod cancel_rotate_secret;
 
 mod create_secret;
@@ -151,7 +153,7 @@ mod create_secret;
 /// # let client: aws_sdk_secretsmanager::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_rotate_secret()
+/// let result = client.batch_get_secret_value()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -311,6 +311,8 @@ mod describe_db_proxy_target_groups;
 
 mod describe_db_proxy_targets;
 
+mod describe_db_recommendations;
+
 mod describe_db_security_groups;
 
 mod describe_db_snapshot_attributes;
@@ -388,6 +390,8 @@ mod modify_db_proxy;
 mod modify_db_proxy_endpoint;
 
 mod modify_db_proxy_target_group;
+
+mod modify_db_recommendation;
 
 mod modify_db_snapshot;
 

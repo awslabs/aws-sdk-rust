@@ -15,6 +15,12 @@ pub use crate::types::_meeting::MeetingBuilder;
 
 pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfigurationBuilder;
 
+pub use crate::types::_attendee_features::AttendeeFeaturesBuilder;
+
+pub use crate::types::_content_features::ContentFeaturesBuilder;
+
+pub use crate::types::_video_features::VideoFeaturesBuilder;
+
 pub use crate::types::_audio_features::AudioFeaturesBuilder;
 
 pub use crate::types::_media_placement::MediaPlacementBuilder;

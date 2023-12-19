@@ -21,54 +21,69 @@ pub fn ser_create_graphql_api_input_input(
     if let Some(var_6) = &input.authentication_type {
         object.key("authenticationType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.lambda_authorizer_config {
+    if let Some(var_7) = &input.introspection_config {
+        object.key("introspectionConfig").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.lambda_authorizer_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("lambdaAuthorizerConfig").start_object();
-        crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("lambdaAuthorizerConfig").start_object();
+        crate::protocol_serde::shape_lambda_authorizer_config::ser_lambda_authorizer_config(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.log_config {
+    if let Some(var_10) = &input.log_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("logConfig").start_object();
-        crate::protocol_serde::shape_log_config::ser_log_config(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("logConfig").start_object();
+        crate::protocol_serde::shape_log_config::ser_log_config(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.merged_api_execution_role_arn {
-        object.key("mergedApiExecutionRoleArn").string(var_11.as_str());
+    if let Some(var_12) = &input.merged_api_execution_role_arn {
+        object.key("mergedApiExecutionRoleArn").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.open_id_connect_config {
+    if let Some(var_14) = &input.open_id_connect_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("openIDConnectConfig").start_object();
-        crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("openIDConnectConfig").start_object();
+        crate::protocol_serde::shape_open_id_connect_config::ser_open_id_connect_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.owner_contact {
-        object.key("ownerContact").string(var_15.as_str());
+    if let Some(var_16) = &input.owner_contact {
+        object.key("ownerContact").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_17) = &input.query_depth_limit {
+        object.key("queryDepthLimit").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+        );
+    }
+    if let Some(var_18) = &input.resolver_count_limit {
+        object.key("resolverCountLimit").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
+    }
+    if let Some(var_19) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_17.finish();
+        object_20.finish();
     }
-    if let Some(var_20) = &input.user_pool_config {
+    if let Some(var_23) = &input.user_pool_config {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("userPoolConfig").start_object();
-        crate::protocol_serde::shape_user_pool_config::ser_user_pool_config(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_24 = object.key("userPoolConfig").start_object();
+        crate::protocol_serde::shape_user_pool_config::ser_user_pool_config(&mut object_24, var_23)?;
+        object_24.finish();
     }
-    if let Some(var_22) = &input.visibility {
-        object.key("visibility").string(var_22.as_str());
+    if let Some(var_25) = &input.visibility {
+        object.key("visibility").string(var_25.as_str());
     }
-    if let Some(var_23) = &input.xray_enabled {
-        object.key("xrayEnabled").boolean(*var_23);
+    if let Some(var_26) = &input.xray_enabled {
+        object.key("xrayEnabled").boolean(*var_26);
     }
     Ok(())
 }

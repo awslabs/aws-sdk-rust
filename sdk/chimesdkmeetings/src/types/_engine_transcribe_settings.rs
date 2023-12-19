@@ -21,7 +21,7 @@ pub struct EngineTranscribeSettings {
     /// <p>If you use Amazon Transcribe multiple Regions, the vocabulary must be available in Amazon Transcribe in each Region.</p>
     /// <p>If you include <code>IdentifyLanguage</code> and want to use one or more custom vocabularies with your transcription, use the <code>VocabularyNames</code> parameter instead.</p>
     pub vocabulary_name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Region in which to use Amazon Transcribe.</p>
+    /// <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p>
     /// <p>If you don't specify a Region, then the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a> of the meeting is used. However, if Amazon Transcribe is not available in the <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is sent.</p>
     /// <p>Use <code>auto</code> to use Amazon Transcribe in a Region near the meeting’s <code>MediaRegion</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
     pub region: ::std::option::Option<crate::types::TranscribeRegion>,
@@ -96,7 +96,7 @@ impl EngineTranscribeSettings {
     pub fn vocabulary_name(&self) -> ::std::option::Option<&str> {
         self.vocabulary_name.as_deref()
     }
-    /// <p>The AWS Region in which to use Amazon Transcribe.</p>
+    /// <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p>
     /// <p>If you don't specify a Region, then the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a> of the meeting is used. However, if Amazon Transcribe is not available in the <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is sent.</p>
     /// <p>Use <code>auto</code> to use Amazon Transcribe in a Region near the meeting’s <code>MediaRegion</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
     pub fn region(&self) -> ::std::option::Option<&crate::types::TranscribeRegion> {
@@ -279,21 +279,21 @@ impl EngineTranscribeSettingsBuilder {
     pub fn get_vocabulary_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_name
     }
-    /// <p>The AWS Region in which to use Amazon Transcribe.</p>
+    /// <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p>
     /// <p>If you don't specify a Region, then the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a> of the meeting is used. However, if Amazon Transcribe is not available in the <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is sent.</p>
     /// <p>Use <code>auto</code> to use Amazon Transcribe in a Region near the meeting’s <code>MediaRegion</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
     pub fn region(mut self, input: crate::types::TranscribeRegion) -> Self {
         self.region = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS Region in which to use Amazon Transcribe.</p>
+    /// <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p>
     /// <p>If you don't specify a Region, then the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a> of the meeting is used. However, if Amazon Transcribe is not available in the <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is sent.</p>
     /// <p>Use <code>auto</code> to use Amazon Transcribe in a Region near the meeting’s <code>MediaRegion</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
     pub fn set_region(mut self, input: ::std::option::Option<crate::types::TranscribeRegion>) -> Self {
         self.region = input;
         self
     }
-    /// <p>The AWS Region in which to use Amazon Transcribe.</p>
+    /// <p>The Amazon Web Services Region in which to use Amazon Transcribe.</p>
     /// <p>If you don't specify a Region, then the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">MediaRegion</a> of the meeting is used. However, if Amazon Transcribe is not available in the <code>MediaRegion</code>, then a <code>TranscriptFailed</code> event is sent.</p>
     /// <p>Use <code>auto</code> to use Amazon Transcribe in a Region near the meeting’s <code>MediaRegion</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/transcription-options.html#choose-region">Choosing a transcription Region</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
     pub fn get_region(&self) -> &::std::option::Option<crate::types::TranscribeRegion> {

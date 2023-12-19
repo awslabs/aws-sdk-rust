@@ -33,5 +33,8 @@ pub fn ser_describe_snapshots_input_input(
     if let Some(var_9) = &input.next_token {
         object.key("NextToken").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.include_shared {
+        object.key("IncludeShared").boolean(*var_10);
+    }
     Ok(())
 }

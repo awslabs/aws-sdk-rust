@@ -148,3 +148,9 @@ pub use crate::types::_change_set_summary_list_item::ChangeSetSummaryListItemBui
 pub use crate::types::_change_summary::ChangeSummaryBuilder;
 
 pub use crate::types::_error_detail::ErrorDetailBuilder;
+
+pub use crate::types::_batch_describe_error_detail::BatchDescribeErrorDetailBuilder;
+
+pub use crate::types::_entity_detail::EntityDetailBuilder;
+
+pub use crate::types::_entity_request::EntityRequestBuilder;

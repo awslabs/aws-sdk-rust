@@ -129,7 +129,11 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_transcription_configuration;
 
+pub(crate) mod shape_attendee_features;
+
 pub(crate) mod shape_audio_features;
+
+pub(crate) mod shape_content_features;
 
 pub(crate) mod shape_create_attendee_error;
 
@@ -140,3 +144,5 @@ pub(crate) mod shape_engine_transcribe_settings;
 pub(crate) mod shape_media_placement;
 
 pub(crate) mod shape_tenant_id_list;
+
+pub(crate) mod shape_video_features;
