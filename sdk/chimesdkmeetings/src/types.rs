@@ -39,6 +39,16 @@ pub use crate::types::_meeting::Meeting;
 
 pub use crate::types::_meeting_features_configuration::MeetingFeaturesConfiguration;
 
+pub use crate::types::_attendee_features::AttendeeFeatures;
+
+pub use crate::types::_content_features::ContentFeatures;
+
+pub use crate::types::_content_resolution::ContentResolution;
+
+pub use crate::types::_video_features::VideoFeatures;
+
+pub use crate::types::_video_resolution::VideoResolution;
+
 pub use crate::types::_audio_features::AudioFeatures;
 
 pub use crate::types::_meeting_feature_status::MeetingFeatureStatus;
@@ -57,9 +67,15 @@ mod _attendee;
 
 mod _attendee_capabilities;
 
+mod _attendee_features;
+
 mod _attendee_id_item;
 
 mod _audio_features;
+
+mod _content_features;
+
+mod _content_resolution;
 
 mod _create_attendee_error;
 
@@ -106,6 +122,10 @@ mod _transcribe_region;
 mod _transcribe_vocabulary_filter_method;
 
 mod _transcription_configuration;
+
+mod _video_features;
+
+mod _video_resolution;
 
 /// Builders
 pub mod builders;

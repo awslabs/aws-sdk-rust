@@ -11,6 +11,8 @@ pub struct DescribeSnapshotsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    pub include_shared: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInput {
     /// <p>The IDs of the snapshots that you want to retrieve. This parameter value overrides any filters. If any IDs aren't found, a <code>SnapshotNotFound</code> error occurs.</p>
@@ -33,6 +35,10 @@ impl DescribeSnapshotsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    pub fn include_shared(&self) -> ::std::option::Option<bool> {
+        self.include_shared
+    }
 }
 impl DescribeSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
@@ -49,6 +55,7 @@ pub struct DescribeSnapshotsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SnapshotFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_shared: ::std::option::Option<bool>,
 }
 impl DescribeSnapshotsInputBuilder {
     /// Appends an item to `snapshot_ids`.
@@ -119,6 +126,20 @@ impl DescribeSnapshotsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    pub fn include_shared(mut self, input: bool) -> Self {
+        self.include_shared = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_shared = input;
+        self
+    }
+    /// <p>Set to <code>false</code> (default) if you want to only see the snapshots in your Amazon Web Services account. Set to <code>true</code> if you want to see the snapshots in your account and the ones shared with you from another account.</p>
+    pub fn get_include_shared(&self) -> &::std::option::Option<bool> {
+        &self.include_shared
+    }
     /// Consumes the builder and constructs a [`DescribeSnapshotsInput`](crate::operation::describe_snapshots::DescribeSnapshotsInput).
     pub fn build(
         self,
@@ -128,6 +149,7 @@ impl DescribeSnapshotsInputBuilder {
             filters: self.filters,
             max_results: self.max_results,
             next_token: self.next_token,
+            include_shared: self.include_shared,
         })
     }
 }

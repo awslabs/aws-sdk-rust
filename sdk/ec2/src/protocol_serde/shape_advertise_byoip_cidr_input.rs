@@ -20,6 +20,11 @@ pub fn ser_advertise_byoip_cidr_input_input_input(
     if let Some(var_6) = &input.dry_run {
         scope_5.boolean(*var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("NetworkBorderGroup");
+    if let Some(var_8) = &input.network_border_group {
+        scope_7.string(var_8);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

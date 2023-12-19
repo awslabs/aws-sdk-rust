@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_get_secret_value;
+
 pub(crate) mod shape_cancel_rotate_secret;
 
 pub(crate) mod shape_create_secret;
@@ -74,6 +76,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_batch_get_secret_value_input;
 
 pub(crate) mod shape_cancel_rotate_secret_input;
 
@@ -143,6 +147,8 @@ pub(crate) mod shape_update_secret_version_stage_input;
 
 pub(crate) mod shape_validate_resource_policy_input;
 
+pub(crate) mod shape_api_error_list_type;
+
 pub(crate) mod shape_filter;
 
 pub(crate) mod shape_replica_region_type;
@@ -152,6 +158,8 @@ pub(crate) mod shape_replication_status_list_type;
 pub(crate) mod shape_rotation_rules_type;
 
 pub(crate) mod shape_secret_list_type;
+
+pub(crate) mod shape_secret_values_type;
 
 pub(crate) mod shape_secret_version_stages_type;
 
@@ -165,9 +173,13 @@ pub(crate) mod shape_tag_list_type;
 
 pub(crate) mod shape_validation_errors_type;
 
+pub(crate) mod shape_api_error_type;
+
 pub(crate) mod shape_replication_status_type;
 
 pub(crate) mod shape_secret_list_entry;
+
+pub(crate) mod shape_secret_value_entry;
 
 pub(crate) mod shape_secret_versions_list_entry;
 

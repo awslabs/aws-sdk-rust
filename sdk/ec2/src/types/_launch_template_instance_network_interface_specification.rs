@@ -8,6 +8,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecification {
     /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with the network interface. For more information about Carrier IP addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer Guide</i>.</p>
     pub associate_carrier_ip_address: ::std::option::Option<bool>,
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub associate_public_ip_address: ::std::option::Option<bool>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
@@ -57,6 +58,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
         self.associate_carrier_ip_address
     }
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn associate_public_ip_address(&self) -> ::std::option::Option<bool> {
         self.associate_public_ip_address
     }
@@ -204,16 +206,19 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationBuilder {
         &self.associate_carrier_ip_address
     }
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn associate_public_ip_address(mut self, input: bool) -> Self {
         self.associate_public_ip_address = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.associate_public_ip_address = input;
         self
     }
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn get_associate_public_ip_address(&self) -> &::std::option::Option<bool> {
         &self.associate_public_ip_address
     }

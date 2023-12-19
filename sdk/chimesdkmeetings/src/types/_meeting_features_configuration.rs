@@ -6,11 +6,29 @@
 pub struct MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
     pub audio: ::std::option::Option<crate::types::AudioFeatures>,
+    /// <p>The configuration settings for the video features available to a meeting.</p>
+    pub video: ::std::option::Option<crate::types::VideoFeatures>,
+    /// <p>The configuration settings for the content features available to a meeting.</p>
+    pub content: ::std::option::Option<crate::types::ContentFeatures>,
+    /// <p>The configuration settings for the attendee features available to a meeting.</p>
+    pub attendee: ::std::option::Option<crate::types::AttendeeFeatures>,
 }
 impl MeetingFeaturesConfiguration {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
     pub fn audio(&self) -> ::std::option::Option<&crate::types::AudioFeatures> {
         self.audio.as_ref()
+    }
+    /// <p>The configuration settings for the video features available to a meeting.</p>
+    pub fn video(&self) -> ::std::option::Option<&crate::types::VideoFeatures> {
+        self.video.as_ref()
+    }
+    /// <p>The configuration settings for the content features available to a meeting.</p>
+    pub fn content(&self) -> ::std::option::Option<&crate::types::ContentFeatures> {
+        self.content.as_ref()
+    }
+    /// <p>The configuration settings for the attendee features available to a meeting.</p>
+    pub fn attendee(&self) -> ::std::option::Option<&crate::types::AttendeeFeatures> {
+        self.attendee.as_ref()
     }
 }
 impl MeetingFeaturesConfiguration {
@@ -25,6 +43,9 @@ impl MeetingFeaturesConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct MeetingFeaturesConfigurationBuilder {
     pub(crate) audio: ::std::option::Option<crate::types::AudioFeatures>,
+    pub(crate) video: ::std::option::Option<crate::types::VideoFeatures>,
+    pub(crate) content: ::std::option::Option<crate::types::ContentFeatures>,
+    pub(crate) attendee: ::std::option::Option<crate::types::AttendeeFeatures>,
 }
 impl MeetingFeaturesConfigurationBuilder {
     /// <p>The configuration settings for the audio features available to a meeting.</p>
@@ -41,8 +62,55 @@ impl MeetingFeaturesConfigurationBuilder {
     pub fn get_audio(&self) -> &::std::option::Option<crate::types::AudioFeatures> {
         &self.audio
     }
+    /// <p>The configuration settings for the video features available to a meeting.</p>
+    pub fn video(mut self, input: crate::types::VideoFeatures) -> Self {
+        self.video = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for the video features available to a meeting.</p>
+    pub fn set_video(mut self, input: ::std::option::Option<crate::types::VideoFeatures>) -> Self {
+        self.video = input;
+        self
+    }
+    /// <p>The configuration settings for the video features available to a meeting.</p>
+    pub fn get_video(&self) -> &::std::option::Option<crate::types::VideoFeatures> {
+        &self.video
+    }
+    /// <p>The configuration settings for the content features available to a meeting.</p>
+    pub fn content(mut self, input: crate::types::ContentFeatures) -> Self {
+        self.content = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for the content features available to a meeting.</p>
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::ContentFeatures>) -> Self {
+        self.content = input;
+        self
+    }
+    /// <p>The configuration settings for the content features available to a meeting.</p>
+    pub fn get_content(&self) -> &::std::option::Option<crate::types::ContentFeatures> {
+        &self.content
+    }
+    /// <p>The configuration settings for the attendee features available to a meeting.</p>
+    pub fn attendee(mut self, input: crate::types::AttendeeFeatures) -> Self {
+        self.attendee = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for the attendee features available to a meeting.</p>
+    pub fn set_attendee(mut self, input: ::std::option::Option<crate::types::AttendeeFeatures>) -> Self {
+        self.attendee = input;
+        self
+    }
+    /// <p>The configuration settings for the attendee features available to a meeting.</p>
+    pub fn get_attendee(&self) -> &::std::option::Option<crate::types::AttendeeFeatures> {
+        &self.attendee
+    }
     /// Consumes the builder and constructs a [`MeetingFeaturesConfiguration`](crate::types::MeetingFeaturesConfiguration).
     pub fn build(self) -> crate::types::MeetingFeaturesConfiguration {
-        crate::types::MeetingFeaturesConfiguration { audio: self.audio }
+        crate::types::MeetingFeaturesConfiguration {
+            audio: self.audio,
+            video: self.video,
+            content: self.content,
+            attendee: self.attendee,
+        }
     }
 }

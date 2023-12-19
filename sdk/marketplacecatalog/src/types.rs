@@ -187,6 +187,12 @@ pub use crate::types::_change_summary::ChangeSummary;
 
 pub use crate::types::_error_detail::ErrorDetail;
 
+pub use crate::types::_batch_describe_error_detail::BatchDescribeErrorDetail;
+
+pub use crate::types::_entity_detail::EntityDetail;
+
+pub use crate::types::_entity_request::EntityRequest;
+
 mod _ami_product_entity_id_filter;
 
 mod _ami_product_filters;
@@ -206,6 +212,8 @@ mod _ami_product_title_filter;
 mod _ami_product_visibility_filter;
 
 mod _ami_product_visibility_string;
+
+mod _batch_describe_error_detail;
 
 mod _change;
 
@@ -256,6 +264,10 @@ mod _data_product_visibility_filter;
 mod _data_product_visibility_string;
 
 mod _entity;
+
+mod _entity_detail;
+
+mod _entity_request;
 
 mod _entity_summary;
 

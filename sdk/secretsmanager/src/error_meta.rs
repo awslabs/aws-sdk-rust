@@ -97,6 +97,41 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_secret_value::BatchGetSecretValueError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_secret_value::BatchGetSecretValueError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_secret_value::BatchGetSecretValueError> for Error {
+    fn from(err: crate::operation::batch_get_secret_value::BatchGetSecretValueError) -> Self {
+        match err {
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::DecryptionFailure(inner) => Error::DecryptionFailure(inner),
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_get_secret_value::BatchGetSecretValueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_rotate_secret::CancelRotateSecretError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

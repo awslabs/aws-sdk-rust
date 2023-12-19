@@ -139,7 +139,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS SSO OIDC | [aws-sdk-ssooidc](https://crates.io/crates/aws-sdk-ssooidc) ([docs](https://docs.rs/aws-sdk-ssooidc)) |
 | AWS Savings Plans | [aws-sdk-savingsplans](https://crates.io/crates/aws-sdk-savingsplans) ([docs](https://docs.rs/aws-sdk-savingsplans)) |
 | AWS Secrets Manager | [aws-sdk-secretsmanager](https://crates.io/crates/aws-sdk-secretsmanager) ([docs](https://docs.rs/aws-sdk-secretsmanager)) |
-| AWS Secrets Manager | [aws-sdk-secretsmanager](https://crates.io/crates/aws-sdk-secretsmanager) ([docs](https://docs.rs/aws-sdk-secretsmanager)) |
 | AWS Security Token Service | [aws-sdk-sts](https://crates.io/crates/aws-sdk-sts) ([docs](https://docs.rs/aws-sdk-sts)) |
 | AWS SecurityHub | [aws-sdk-securityhub](https://crates.io/crates/aws-sdk-securityhub) ([docs](https://docs.rs/aws-sdk-securityhub)) |
 | AWS Server Migration Service | [aws-sdk-sms](https://crates.io/crates/aws-sdk-sms) ([docs](https://docs.rs/aws-sdk-sms)) |

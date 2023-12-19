@@ -113,6 +113,36 @@ pub use crate::types::_db_snapshot_attribute::DbSnapshotAttributeBuilder;
 
 pub use crate::types::_db_snapshot::DbSnapshotBuilder;
 
+pub use crate::types::_db_recommendation::DbRecommendationBuilder;
+
+pub use crate::types::_issue_details::IssueDetailsBuilder;
+
+pub use crate::types::_performance_issue_details::PerformanceIssueDetailsBuilder;
+
+pub use crate::types::_metric::MetricBuilder;
+
+pub use crate::types::_metric_query::MetricQueryBuilder;
+
+pub use crate::types::_performance_insights_metric_query::PerformanceInsightsMetricQueryBuilder;
+
+pub use crate::types::_performance_insights_metric_dimension_group::PerformanceInsightsMetricDimensionGroupBuilder;
+
+pub use crate::types::_metric_reference::MetricReferenceBuilder;
+
+pub use crate::types::_reference_details::ReferenceDetailsBuilder;
+
+pub use crate::types::_scalar_reference_details::ScalarReferenceDetailsBuilder;
+
+pub use crate::types::_doc_link::DocLinkBuilder;
+
+pub use crate::types::_recommended_action::RecommendedActionBuilder;
+
+pub use crate::types::_context_attribute::ContextAttributeBuilder;
+
+pub use crate::types::_recommended_action_parameter::RecommendedActionParameterBuilder;
+
+pub use crate::types::_recommended_action_update::RecommendedActionUpdateBuilder;
+
 pub use crate::types::_db_proxy_target_group::DbProxyTargetGroupBuilder;
 
 pub use crate::types::_connection_pool_configuration_info::ConnectionPoolConfigurationInfoBuilder;

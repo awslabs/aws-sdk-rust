@@ -14,3 +14,7 @@ pub use crate::types::_secret_versions_list_entry::SecretVersionsListEntryBuilde
 pub use crate::types::_secret_list_entry::SecretListEntryBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
+
+pub use crate::types::_api_error_type::ApiErrorTypeBuilder;
+
+pub use crate::types::_secret_value_entry::SecretValueEntryBuilder;

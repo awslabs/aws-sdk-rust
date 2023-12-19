@@ -64,7 +64,9 @@ pub struct CreateFileSystemOntapConfiguration {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p></li>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
+    /// <li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -155,7 +157,9 @@ impl CreateFileSystemOntapConfiguration {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p></li>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
+    /// <li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -457,7 +461,9 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p></li>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
+    /// <li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -477,7 +483,9 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p></li>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
+    /// <li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -497,7 +505,9 @@ impl CreateFileSystemOntapConfigurationBuilder {
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
-    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value</p></li>
+    /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value for file systems with one HA pair.</p></li>
+    /// <li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and 6).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>

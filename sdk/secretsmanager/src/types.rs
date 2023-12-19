@@ -21,6 +21,12 @@ pub use crate::types::_filter::Filter;
 
 pub use crate::types::_filter_name_string_type::FilterNameStringType;
 
+pub use crate::types::_api_error_type::ApiErrorType;
+
+pub use crate::types::_secret_value_entry::SecretValueEntry;
+
+mod _api_error_type;
+
 mod _filter;
 
 mod _filter_name_string_type;
@@ -32,6 +38,8 @@ mod _replication_status_type;
 mod _rotation_rules_type;
 
 mod _secret_list_entry;
+
+mod _secret_value_entry;
 
 mod _secret_versions_list_entry;
 

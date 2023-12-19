@@ -5,7 +5,7 @@
 pub struct ListEntitiesInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub entity_type: ::std::option::Option<::std::string::String>,
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
     pub filter_list: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
@@ -27,7 +27,7 @@ impl ListEntitiesInput {
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn entity_type(&self) -> ::std::option::Option<&str> {
         self.entity_type.as_deref()
     }
@@ -99,18 +99,18 @@ impl ListEntitiesInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     /// This field is required.
     pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.entity_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_type = input;
         self
     }
-    /// <p>The type of entities to retrieve. Valid values are: <code>ServerProduct</code>, <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
+    /// <p>The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.</p>
     pub fn get_entity_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.entity_type
     }

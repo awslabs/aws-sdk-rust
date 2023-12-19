@@ -9,6 +9,24 @@ pub fn ser_meeting_features_configuration(
         crate::protocol_serde::shape_audio_features::ser_audio_features(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.video {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Video").start_object();
+        crate::protocol_serde::shape_video_features::ser_video_features(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.content {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Content").start_object();
+        crate::protocol_serde::shape_content_features::ser_content_features(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.attendee {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Attendee").start_object();
+        crate::protocol_serde::shape_attendee_features::ser_attendee_features(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +47,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Audio" => {
                             builder = builder.set_audio(crate::protocol_serde::shape_audio_features::de_audio_features(tokens)?);
+                        }
+                        "Video" => {
+                            builder = builder.set_video(crate::protocol_serde::shape_video_features::de_video_features(tokens)?);
+                        }
+                        "Content" => {
+                            builder = builder.set_content(crate::protocol_serde::shape_content_features::de_content_features(tokens)?);
+                        }
+                        "Attendee" => {
+                            builder = builder.set_attendee(crate::protocol_serde::shape_attendee_features::de_attendee_features(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

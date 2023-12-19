@@ -10,13 +10,21 @@ pub struct MediaPlacement {
     pub audio_fallback_url: ::std::option::Option<::std::string::String>,
     /// <p>The signaling URL.</p>
     pub signaling_url: ::std::option::Option<::std::string::String>,
-    /// <p>The turn control URL.</p>
+    /// <p>The turn control URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub turn_control_url: ::std::option::Option<::std::string::String>,
-    /// <p>The screen data URL.</p>
+    /// <p>The screen data URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub screen_data_url: ::std::option::Option<::std::string::String>,
-    /// <p>The screen viewing URL.</p>
+    /// <p>The screen viewing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub screen_viewing_url: ::std::option::Option<::std::string::String>,
-    /// <p>The screen sharing URL.</p>
+    /// <p>The screen sharing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub screen_sharing_url: ::std::option::Option<::std::string::String>,
     /// <p>The event ingestion URL.</p>
     pub event_ingestion_url: ::std::option::Option<::std::string::String>,
@@ -34,19 +42,27 @@ impl MediaPlacement {
     pub fn signaling_url(&self) -> ::std::option::Option<&str> {
         self.signaling_url.as_deref()
     }
-    /// <p>The turn control URL.</p>
+    /// <p>The turn control URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn turn_control_url(&self) -> ::std::option::Option<&str> {
         self.turn_control_url.as_deref()
     }
-    /// <p>The screen data URL.</p>
+    /// <p>The screen data URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn screen_data_url(&self) -> ::std::option::Option<&str> {
         self.screen_data_url.as_deref()
     }
-    /// <p>The screen viewing URL.</p>
+    /// <p>The screen viewing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn screen_viewing_url(&self) -> ::std::option::Option<&str> {
         self.screen_viewing_url.as_deref()
     }
-    /// <p>The screen sharing URL.</p>
+    /// <p>The screen sharing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn screen_sharing_url(&self) -> ::std::option::Option<&str> {
         self.screen_sharing_url.as_deref()
     }
@@ -118,59 +134,83 @@ impl MediaPlacementBuilder {
     pub fn get_signaling_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.signaling_url
     }
-    /// <p>The turn control URL.</p>
+    /// <p>The turn control URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn turn_control_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.turn_control_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The turn control URL.</p>
+    /// <p>The turn control URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn set_turn_control_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.turn_control_url = input;
         self
     }
-    /// <p>The turn control URL.</p>
+    /// <p>The turn control URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn get_turn_control_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.turn_control_url
     }
-    /// <p>The screen data URL.</p>
+    /// <p>The screen data URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn screen_data_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_data_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The screen data URL.</p>
+    /// <p>The screen data URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn set_screen_data_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_data_url = input;
         self
     }
-    /// <p>The screen data URL.</p>
+    /// <p>The screen data URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn get_screen_data_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.screen_data_url
     }
-    /// <p>The screen viewing URL.</p>
+    /// <p>The screen viewing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn screen_viewing_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_viewing_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The screen viewing URL.</p>
+    /// <p>The screen viewing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn set_screen_viewing_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_viewing_url = input;
         self
     }
-    /// <p>The screen viewing URL.</p>
+    /// <p>The screen viewing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn get_screen_viewing_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.screen_viewing_url
     }
-    /// <p>The screen sharing URL.</p>
+    /// <p>The screen sharing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn screen_sharing_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.screen_sharing_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The screen sharing URL.</p>
+    /// <p>The screen sharing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn set_screen_sharing_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.screen_sharing_url = input;
         self
     }
-    /// <p>The screen sharing URL.</p>
+    /// <p>The screen sharing URL.</p><important>
+    /// <p><b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b></p>
+    /// </important>
     pub fn get_screen_sharing_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.screen_sharing_url
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotificationsConfiguration {
-    /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    /// <p>The ARN of the Amazon Web Services Lambda function in the notifications configuration.</p>
     pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the SNS topic.</p>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct NotificationsConfiguration {
     pub sqs_queue_arn: ::std::option::Option<::std::string::String>,
 }
 impl NotificationsConfiguration {
-    /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    /// <p>The ARN of the Amazon Web Services Lambda function in the notifications configuration.</p>
     pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
     }
@@ -50,17 +50,17 @@ pub struct NotificationsConfigurationBuilder {
     pub(crate) sqs_queue_arn: ::std::option::Option<::std::string::String>,
 }
 impl NotificationsConfigurationBuilder {
-    /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    /// <p>The ARN of the Amazon Web Services Lambda function in the notifications configuration.</p>
     pub fn lambda_function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    /// <p>The ARN of the Amazon Web Services Lambda function in the notifications configuration.</p>
     pub fn set_lambda_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_function_arn = input;
         self
     }
-    /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
+    /// <p>The ARN of the Amazon Web Services Lambda function in the notifications configuration.</p>
     pub fn get_lambda_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lambda_function_arn
     }

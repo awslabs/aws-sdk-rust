@@ -18,6 +18,19 @@ pub struct ProvisionByoipCidrInput {
     pub pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     /// <p>Reserved.</p>
     pub multi_region: ::std::option::Option<bool>,
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionByoipCidrInput {
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
@@ -51,6 +64,21 @@ impl ProvisionByoipCidrInput {
     pub fn multi_region(&self) -> ::std::option::Option<bool> {
         self.multi_region
     }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+        self.network_border_group.as_deref()
+    }
 }
 impl ProvisionByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
@@ -70,6 +98,7 @@ pub struct ProvisionByoipCidrInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) pool_tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) multi_region: ::std::option::Option<bool>,
+    pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionByoipCidrInputBuilder {
     /// <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can specify is /56. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
@@ -180,6 +209,53 @@ impl ProvisionByoipCidrInputBuilder {
     pub fn get_multi_region(&self) -> &::std::option::Option<bool> {
         &self.multi_region
     }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_border_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_border_group = input;
+        self
+    }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
     pub fn build(
         self,
@@ -193,6 +269,7 @@ impl ProvisionByoipCidrInputBuilder {
             dry_run: self.dry_run,
             pool_tag_specifications: self.pool_tag_specifications,
             multi_region: self.multi_region,
+            network_border_group: self.network_border_group,
         })
     }
 }

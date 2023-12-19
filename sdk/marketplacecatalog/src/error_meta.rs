@@ -77,6 +77,37 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_describe_entities::BatchDescribeEntitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_describe_entities::BatchDescribeEntitiesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_describe_entities::BatchDescribeEntitiesError> for Error {
+    fn from(err: crate::operation::batch_describe_entities::BatchDescribeEntitiesError) -> Self {
+        match err {
+            crate::operation::batch_describe_entities::BatchDescribeEntitiesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_describe_entities::BatchDescribeEntitiesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::batch_describe_entities::BatchDescribeEntitiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_describe_entities::BatchDescribeEntitiesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_describe_entities::BatchDescribeEntitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_change_set::CancelChangeSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

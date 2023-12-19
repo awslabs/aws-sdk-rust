@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_describe_entities;
+
 pub(crate) mod shape_cancel_change_set;
 
 pub(crate) mod shape_delete_resource_policy;
@@ -56,6 +58,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_batch_describe_entities_input;
 
 pub(crate) mod shape_internal_service_exception;
 
@@ -91,11 +95,17 @@ pub(crate) mod shape_change_set_description;
 
 pub(crate) mod shape_change_set_summary_list;
 
+pub(crate) mod shape_entity_details;
+
+pub(crate) mod shape_entity_request;
+
 pub(crate) mod shape_entity_summary_list;
 
 pub(crate) mod shape_entity_type_filters;
 
 pub(crate) mod shape_entity_type_sort;
+
+pub(crate) mod shape_errors;
 
 pub(crate) mod shape_filter;
 
@@ -108,6 +118,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_ami_product_filters;
 
 pub(crate) mod shape_ami_product_sort;
+
+pub(crate) mod shape_batch_describe_error_detail;
 
 pub(crate) mod shape_change_set_summary_list_item;
 
@@ -122,6 +134,8 @@ pub(crate) mod shape_data_product_filters;
 pub(crate) mod shape_data_product_sort;
 
 pub(crate) mod shape_entity;
+
+pub(crate) mod shape_entity_detail;
 
 pub(crate) mod shape_entity_summary;
 

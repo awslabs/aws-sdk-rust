@@ -319,6 +319,10 @@ pub(crate) mod shape_describe_db_proxy_targets;
 
 pub(crate) mod shape_describe_db_proxy_targets_input;
 
+pub(crate) mod shape_describe_db_recommendations;
+
+pub(crate) mod shape_describe_db_recommendations_input;
+
 pub(crate) mod shape_describe_db_security_groups;
 
 pub(crate) mod shape_describe_db_security_groups_input;
@@ -474,6 +478,10 @@ pub(crate) mod shape_modify_db_proxy_input;
 pub(crate) mod shape_modify_db_proxy_target_group;
 
 pub(crate) mod shape_modify_db_proxy_target_group_input;
+
+pub(crate) mod shape_modify_db_recommendation;
+
+pub(crate) mod shape_modify_db_recommendation_input;
 
 pub(crate) mod shape_modify_db_snapshot;
 
@@ -875,6 +883,8 @@ pub(crate) mod shape_provisioned_iops_not_available_in_az_fault;
 
 pub(crate) mod shape_rds_custom_cluster_configuration;
 
+pub(crate) mod shape_recommended_action_update;
+
 pub(crate) mod shape_reserved_db_instance_already_exists_fault;
 
 pub(crate) mod shape_reserved_db_instance_not_found_fault;
@@ -990,6 +1000,10 @@ pub(crate) mod shape_db_proxy_endpoint_list;
 pub(crate) mod shape_db_proxy_list;
 
 pub(crate) mod shape_db_proxy_target_group;
+
+pub(crate) mod shape_db_recommendation;
+
+pub(crate) mod shape_db_recommendation_list;
 
 pub(crate) mod shape_db_security_group;
 
@@ -1129,6 +1143,8 @@ pub(crate) mod shape_db_snapshot_tenant_database;
 
 pub(crate) mod shape_describe_db_log_files_details;
 
+pub(crate) mod shape_doc_link_list;
+
 pub(crate) mod shape_domain_membership_list;
 
 pub(crate) mod shape_ec2_security_group_list;
@@ -1153,6 +1169,8 @@ pub(crate) mod shape_integration_error;
 
 pub(crate) mod shape_ip_range_list;
 
+pub(crate) mod shape_issue_details;
+
 pub(crate) mod shape_master_user_secret;
 
 pub(crate) mod shape_option_group_membership_list;
@@ -1174,6 +1192,8 @@ pub(crate) mod shape_read_replica_db_cluster_identifier_list;
 pub(crate) mod shape_read_replica_db_instance_identifier_list;
 
 pub(crate) mod shape_read_replica_identifier_list;
+
+pub(crate) mod shape_recommended_action_list;
 
 pub(crate) mod shape_recurring_charge_list;
 
@@ -1235,6 +1255,8 @@ pub(crate) mod shape_db_security_group_membership;
 
 pub(crate) mod shape_db_snapshot_attribute;
 
+pub(crate) mod shape_doc_link;
+
 pub(crate) mod shape_domain_membership;
 
 pub(crate) mod shape_ec2_security_group;
@@ -1259,6 +1281,10 @@ pub(crate) mod shape_pending_cloudwatch_logs_exports;
 
 pub(crate) mod shape_pending_maintenance_action;
 
+pub(crate) mod shape_performance_issue_details;
+
+pub(crate) mod shape_recommended_action;
+
 pub(crate) mod shape_recurring_charge;
 
 pub(crate) mod shape_subnet;
@@ -1277,7 +1303,11 @@ pub(crate) mod shape_attribute_value_list;
 
 pub(crate) mod shape_availability_zone;
 
+pub(crate) mod shape_context_attribute_list;
+
 pub(crate) mod shape_double_range_list;
+
+pub(crate) mod shape_metric_list;
 
 pub(crate) mod shape_option_group_option_setting;
 
@@ -1291,10 +1321,32 @@ pub(crate) mod shape_range_list;
 
 pub(crate) mod shape_readers_arn_list;
 
+pub(crate) mod shape_recommended_action_parameter_list;
+
+pub(crate) mod shape_context_attribute;
+
 pub(crate) mod shape_double_range;
+
+pub(crate) mod shape_metric;
 
 pub(crate) mod shape_minimum_engine_version_per_allowed_value_list;
 
 pub(crate) mod shape_range;
 
+pub(crate) mod shape_recommended_action_parameter;
+
+pub(crate) mod shape_metric_query;
+
+pub(crate) mod shape_metric_reference_list;
+
 pub(crate) mod shape_minimum_engine_version_per_allowed_value;
+
+pub(crate) mod shape_metric_reference;
+
+pub(crate) mod shape_performance_insights_metric_query;
+
+pub(crate) mod shape_performance_insights_metric_dimension_group;
+
+pub(crate) mod shape_reference_details;
+
+pub(crate) mod shape_scalar_reference_details;

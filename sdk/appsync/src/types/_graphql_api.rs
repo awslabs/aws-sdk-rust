@@ -43,6 +43,14 @@ pub struct GraphqlApi {
     /// <p>The owner contact information for an API resource.</p>
     /// <p>This field accepts any string input with a length of 0 - 256 characters.</p>
     pub owner_contact: ::std::option::Option<::std::string::String>,
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub introspection_config: ::std::option::Option<crate::types::GraphQlApiIntrospectionConfig>,
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub query_depth_limit: i32,
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub resolver_count_limit: i32,
 }
 impl GraphqlApi {
     /// <p>The API name.</p>
@@ -124,6 +132,20 @@ impl GraphqlApi {
     pub fn owner_contact(&self) -> ::std::option::Option<&str> {
         self.owner_contact.as_deref()
     }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn introspection_config(&self) -> ::std::option::Option<&crate::types::GraphQlApiIntrospectionConfig> {
+        self.introspection_config.as_ref()
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn query_depth_limit(&self) -> i32 {
+        self.query_depth_limit
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn resolver_count_limit(&self) -> i32 {
+        self.resolver_count_limit
+    }
 }
 impl GraphqlApi {
     /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::types::GraphqlApi).
@@ -155,6 +177,9 @@ pub struct GraphqlApiBuilder {
     pub(crate) merged_api_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
     pub(crate) owner_contact: ::std::option::Option<::std::string::String>,
+    pub(crate) introspection_config: ::std::option::Option<crate::types::GraphQlApiIntrospectionConfig>,
+    pub(crate) query_depth_limit: ::std::option::Option<i32>,
+    pub(crate) resolver_count_limit: ::std::option::Option<i32>,
 }
 impl GraphqlApiBuilder {
     /// <p>The API name.</p>
@@ -453,6 +478,54 @@ impl GraphqlApiBuilder {
     pub fn get_owner_contact(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_contact
     }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn introspection_config(mut self, input: crate::types::GraphQlApiIntrospectionConfig) -> Self {
+        self.introspection_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn set_introspection_config(mut self, input: ::std::option::Option<crate::types::GraphQlApiIntrospectionConfig>) -> Self {
+        self.introspection_config = input;
+        self
+    }
+    /// <p>Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>) introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled.</p>
+    /// <p>For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL introspection</a>.</p>
+    pub fn get_introspection_config(&self) -> &::std::option::Option<crate::types::GraphQlApiIntrospectionConfig> {
+        &self.introspection_config
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn query_depth_limit(mut self, input: i32) -> Self {
+        self.query_depth_limit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn set_query_depth_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.query_depth_limit = input;
+        self
+    }
+    /// <p>The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a limit error if the operation falls out of bounds.</p>
+    /// <p>Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the error will be thrown upwards to the first nullable field available.</p>
+    pub fn get_query_depth_limit(&self) -> &::std::option::Option<i32> {
+        &self.query_depth_limit
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn resolver_count_limit(mut self, input: i32) -> Self {
+        self.resolver_count_limit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn set_resolver_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.resolver_count_limit = input;
+        self
+    }
+    /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
+    pub fn get_resolver_count_limit(&self) -> &::std::option::Option<i32> {
+        &self.resolver_count_limit
+    }
     /// Consumes the builder and constructs a [`GraphqlApi`](crate::types::GraphqlApi).
     pub fn build(self) -> crate::types::GraphqlApi {
         crate::types::GraphqlApi {
@@ -475,6 +548,9 @@ impl GraphqlApiBuilder {
             merged_api_execution_role_arn: self.merged_api_execution_role_arn,
             owner: self.owner,
             owner_contact: self.owner_contact,
+            introspection_config: self.introspection_config,
+            query_depth_limit: self.query_depth_limit.unwrap_or_default(),
+            resolver_count_limit: self.resolver_count_limit.unwrap_or_default(),
         }
     }
 }

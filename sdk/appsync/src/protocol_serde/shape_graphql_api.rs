@@ -116,6 +116,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "introspectionConfig" => {
+                            builder = builder.set_introspection_config(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GraphQlApiIntrospectionConfig::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "queryDepthLimit" => {
+                            builder = builder.set_query_depth_limit(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "resolverCountLimit" => {
+                            builder = builder.set_resolver_count_limit(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

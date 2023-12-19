@@ -14,6 +14,19 @@ pub struct ByoipCidr {
     pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The state of the address pool.</p>
     pub state: ::std::option::Option<crate::types::ByoipCidrState>,
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
@@ -38,6 +51,21 @@ impl ByoipCidr {
     pub fn state(&self) -> ::std::option::Option<&crate::types::ByoipCidrState> {
         self.state.as_ref()
     }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn network_border_group(&self) -> ::std::option::Option<&str> {
+        self.network_border_group.as_deref()
+    }
 }
 impl ByoipCidr {
     /// Creates a new builder-style object to manufacture [`ByoipCidr`](crate::types::ByoipCidr).
@@ -55,6 +83,7 @@ pub struct ByoipCidrBuilder {
     pub(crate) asn_associations: ::std::option::Option<::std::vec::Vec<crate::types::AsnAssociation>>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
+    pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
 }
 impl ByoipCidrBuilder {
     /// <p>The address range, in CIDR notation.</p>
@@ -133,6 +162,53 @@ impl ByoipCidrBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ByoipCidrState> {
         &self.state
     }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_border_group = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_border_group = input;
+        self
+    }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_border_group
+    }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {
         crate::types::ByoipCidr {
@@ -141,6 +217,7 @@ impl ByoipCidrBuilder {
             asn_associations: self.asn_associations,
             status_message: self.status_message,
             state: self.state,
+            network_border_group: self.network_border_group,
         }
     }
 }

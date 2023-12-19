@@ -215,4 +215,51 @@ impl ProvisionByoipCidrFluentBuilder {
     pub fn get_multi_region(&self) -> &::std::option::Option<bool> {
         self.inner.get_multi_region()
     }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn network_border_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.network_border_group(input.into());
+        self
+    }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn set_network_border_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_network_border_group(input);
+        self
+    }
+    /// <p>If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local Zones</a> enabled, you can choose a network border group for Local Zones when you provision and advertise a BYOIPv4 CIDR. Choose the network border group carefully as the EIP and the Amazon Web Services resource it is associated with must reside in the same network border group.</p>
+    /// <p>You can provision BYOIP address ranges to and advertise them in the following Local Zone network border groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>us-east-1-dfw-2</p></li>
+    /// <li>
+    /// <p>us-west-2-lax-1</p></li>
+    /// <li>
+    /// <p>us-west-2-phx-2</p></li>
+    /// </ul><note>
+    /// <p>You cannot provision or advertise BYOIPv6 address ranges in Local Zones at this time.</p>
+    /// </note>
+    pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_network_border_group()
+    }
 }
