@@ -102,8 +102,6 @@ pub struct SecondaryStatusTransition {
     /// <dd>
     /// <ul>
     /// <li>
-    /// <p>Downloading the training image.</p></li>
-    /// <li>
     /// <p>Training image download completed. Training in progress.</p></li>
     /// </ul>
     /// </dd>
@@ -224,8 +222,6 @@ impl SecondaryStatusTransition {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>Downloading the training image.</p></li>
     /// <li>
     /// <p>Training image download completed. Training in progress.</p></li>
     /// </ul>
@@ -528,8 +524,6 @@ impl SecondaryStatusTransitionBuilder {
     /// <dd>
     /// <ul>
     /// <li>
-    /// <p>Downloading the training image.</p></li>
-    /// <li>
     /// <p>Training image download completed. Training in progress.</p></li>
     /// </ul>
     /// </dd>
@@ -575,8 +569,6 @@ impl SecondaryStatusTransitionBuilder {
     /// <dd>
     /// <ul>
     /// <li>
-    /// <p>Downloading the training image.</p></li>
-    /// <li>
     /// <p>Training image download completed. Training in progress.</p></li>
     /// </ul>
     /// </dd>
@@ -621,8 +613,6 @@ impl SecondaryStatusTransitionBuilder {
     /// </dt>
     /// <dd>
     /// <ul>
-    /// <li>
-    /// <p>Downloading the training image.</p></li>
     /// <li>
     /// <p>Training image download completed. Training in progress.</p></li>
     /// </ul>

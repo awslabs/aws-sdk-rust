@@ -69,6 +69,42 @@ pub fn de_create_repository_http_error(
             }
             tmp
         }),
+        "EncryptionKeyInvalidIdException" => crate::operation::create_repository::CreateRepositoryError::EncryptionKeyInvalidIdException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EncryptionKeyInvalidIdExceptionBuilder::default();
+                output = crate::protocol_serde::shape_encryption_key_invalid_id_exception::de_encryption_key_invalid_id_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_repository::CreateRepositoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EncryptionKeyInvalidUsageException" => crate::operation::create_repository::CreateRepositoryError::EncryptionKeyInvalidUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EncryptionKeyInvalidUsageExceptionBuilder::default();
+                output = crate::protocol_serde::shape_encryption_key_invalid_usage_exception::de_encryption_key_invalid_usage_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_repository::CreateRepositoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EncryptionKeyNotFoundException" => crate::operation::create_repository::CreateRepositoryError::EncryptionKeyNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

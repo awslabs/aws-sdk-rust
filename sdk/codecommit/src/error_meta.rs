@@ -85,8 +85,14 @@ pub enum Error {
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
     EncryptionKeyDisabledException(crate::types::error::EncryptionKeyDisabledException),
+    /// <p>The Key Management Service encryption key is not valid.</p>
+    EncryptionKeyInvalidIdException(crate::types::error::EncryptionKeyInvalidIdException),
+    /// <p>A KMS encryption key was used to try and encrypt or decrypt a repository, but either the repository or the key was not in a valid state to support the operation.</p>
+    EncryptionKeyInvalidUsageException(crate::types::error::EncryptionKeyInvalidUsageException),
     /// <p>No encryption key was found.</p>
     EncryptionKeyNotFoundException(crate::types::error::EncryptionKeyNotFoundException),
+    /// <p>A KMS encryption key ID is required but was not specified.</p>
+    EncryptionKeyRequiredException(crate::types::error::EncryptionKeyRequiredException),
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The commit cannot be created because both a source file and file content have been specified for the same file. You cannot provide both. Either specify a source file or provide the file content directly.</p>
@@ -428,7 +434,10 @@ impl ::std::fmt::Display for Error {
             Error::EncryptionIntegrityChecksFailedException(inner) => inner.fmt(f),
             Error::EncryptionKeyAccessDeniedException(inner) => inner.fmt(f),
             Error::EncryptionKeyDisabledException(inner) => inner.fmt(f),
+            Error::EncryptionKeyInvalidIdException(inner) => inner.fmt(f),
+            Error::EncryptionKeyInvalidUsageException(inner) => inner.fmt(f),
             Error::EncryptionKeyNotFoundException(inner) => inner.fmt(f),
+            Error::EncryptionKeyRequiredException(inner) => inner.fmt(f),
             Error::EncryptionKeyUnavailableException(inner) => inner.fmt(f),
             Error::FileContentAndSourceFileSpecifiedException(inner) => inner.fmt(f),
             Error::FileContentRequiredException(inner) => inner.fmt(f),
@@ -634,7 +643,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::EncryptionIntegrityChecksFailedException(inner) => inner.meta(),
             Self::EncryptionKeyAccessDeniedException(inner) => inner.meta(),
             Self::EncryptionKeyDisabledException(inner) => inner.meta(),
+            Self::EncryptionKeyInvalidIdException(inner) => inner.meta(),
+            Self::EncryptionKeyInvalidUsageException(inner) => inner.meta(),
             Self::EncryptionKeyNotFoundException(inner) => inner.meta(),
+            Self::EncryptionKeyRequiredException(inner) => inner.meta(),
             Self::EncryptionKeyUnavailableException(inner) => inner.meta(),
             Self::FileContentAndSourceFileSpecifiedException(inner) => inner.meta(),
             Self::FileContentRequiredException(inner) => inner.meta(),
@@ -1476,6 +1488,12 @@ impl From<crate::operation::create_repository::CreateRepositoryError> for Error 
             }
             crate::operation::create_repository::CreateRepositoryError::EncryptionKeyDisabledException(inner) => {
                 Error::EncryptionKeyDisabledException(inner)
+            }
+            crate::operation::create_repository::CreateRepositoryError::EncryptionKeyInvalidIdException(inner) => {
+                Error::EncryptionKeyInvalidIdException(inner)
+            }
+            crate::operation::create_repository::CreateRepositoryError::EncryptionKeyInvalidUsageException(inner) => {
+                Error::EncryptionKeyInvalidUsageException(inner)
             }
             crate::operation::create_repository::CreateRepositoryError::EncryptionKeyNotFoundException(inner) => {
                 Error::EncryptionKeyNotFoundException(inner)
@@ -5161,6 +5179,68 @@ impl From<crate::operation::update_repository_description::UpdateRepositoryDescr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError> for Error {
+    fn from(err: crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError) -> Self {
+        match err {
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionIntegrityChecksFailedException(
+                inner,
+            ) => Error::EncryptionIntegrityChecksFailedException(inner),
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyAccessDeniedException(inner) => {
+                Error::EncryptionKeyAccessDeniedException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyDisabledException(inner) => {
+                Error::EncryptionKeyDisabledException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyInvalidIdException(inner) => {
+                Error::EncryptionKeyInvalidIdException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyInvalidUsageException(inner) => {
+                Error::EncryptionKeyInvalidUsageException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyNotFoundException(inner) => {
+                Error::EncryptionKeyNotFoundException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyRequiredException(inner) => {
+                Error::EncryptionKeyRequiredException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::EncryptionKeyUnavailableException(inner) => {
+                Error::EncryptionKeyUnavailableException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::InvalidRepositoryNameException(inner) => {
+                Error::InvalidRepositoryNameException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::RepositoryDoesNotExistException(inner) => {
+                Error::RepositoryDoesNotExistException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::RepositoryNameRequiredException(inner) => {
+                Error::RepositoryNameRequiredException(inner)
+            }
+            crate::operation::update_repository_encryption_key::UpdateRepositoryEncryptionKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_repository_name::UpdateRepositoryNameError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5238,7 +5318,10 @@ impl ::std::error::Error for Error {
             Error::EncryptionIntegrityChecksFailedException(inner) => inner.source(),
             Error::EncryptionKeyAccessDeniedException(inner) => inner.source(),
             Error::EncryptionKeyDisabledException(inner) => inner.source(),
+            Error::EncryptionKeyInvalidIdException(inner) => inner.source(),
+            Error::EncryptionKeyInvalidUsageException(inner) => inner.source(),
             Error::EncryptionKeyNotFoundException(inner) => inner.source(),
+            Error::EncryptionKeyRequiredException(inner) => inner.source(),
             Error::EncryptionKeyUnavailableException(inner) => inner.source(),
             Error::FileContentAndSourceFileSpecifiedException(inner) => inner.source(),
             Error::FileContentRequiredException(inner) => inner.source(),
@@ -5430,7 +5513,10 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::EncryptionIntegrityChecksFailedException(e) => e.request_id(),
             Self::EncryptionKeyAccessDeniedException(e) => e.request_id(),
             Self::EncryptionKeyDisabledException(e) => e.request_id(),
+            Self::EncryptionKeyInvalidIdException(e) => e.request_id(),
+            Self::EncryptionKeyInvalidUsageException(e) => e.request_id(),
             Self::EncryptionKeyNotFoundException(e) => e.request_id(),
+            Self::EncryptionKeyRequiredException(e) => e.request_id(),
             Self::EncryptionKeyUnavailableException(e) => e.request_id(),
             Self::FileContentAndSourceFileSpecifiedException(e) => e.request_id(),
             Self::FileContentRequiredException(e) => e.request_id(),

@@ -223,6 +223,10 @@ pub(crate) fn de_batch_get_repositories(
                         crate::protocol_serde::shape_repository_not_found_list::de_repository_not_found_list(tokens)?,
                     );
                 }
+                "errors" => {
+                    builder = builder
+                        .set_errors(crate::protocol_serde::shape_batch_get_repositories_errors_list::de_batch_get_repositories_errors_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

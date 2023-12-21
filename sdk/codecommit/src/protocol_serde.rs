@@ -177,6 +177,8 @@ pub(crate) mod shape_update_pull_request_title;
 
 pub(crate) mod shape_update_repository_description;
 
+pub(crate) mod shape_update_repository_encryption_key;
+
 pub(crate) mod shape_update_repository_name;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -313,7 +315,13 @@ pub(crate) mod shape_encryption_key_access_denied_exception;
 
 pub(crate) mod shape_encryption_key_disabled_exception;
 
+pub(crate) mod shape_encryption_key_invalid_id_exception;
+
+pub(crate) mod shape_encryption_key_invalid_usage_exception;
+
 pub(crate) mod shape_encryption_key_not_found_exception;
+
+pub(crate) mod shape_encryption_key_required_exception;
 
 pub(crate) mod shape_encryption_key_unavailable_exception;
 
@@ -711,6 +719,8 @@ pub(crate) mod shape_update_pull_request_title_input;
 
 pub(crate) mod shape_update_repository_description_input;
 
+pub(crate) mod shape_update_repository_encryption_key_input;
+
 pub(crate) mod shape_update_repository_name_input;
 
 pub(crate) mod shape_approval_list;
@@ -728,6 +738,8 @@ pub(crate) mod shape_batch_describe_merge_conflicts_errors;
 pub(crate) mod shape_batch_disassociate_approval_rule_template_from_repositories_errors_list;
 
 pub(crate) mod shape_batch_get_commits_errors_list;
+
+pub(crate) mod shape_batch_get_repositories_errors_list;
 
 pub(crate) mod shape_branch_info;
 
@@ -824,6 +836,8 @@ pub(crate) mod shape_batch_describe_merge_conflicts_error;
 pub(crate) mod shape_batch_disassociate_approval_rule_template_from_repositories_error;
 
 pub(crate) mod shape_batch_get_commits_error;
+
+pub(crate) mod shape_batch_get_repositories_error;
 
 pub(crate) mod shape_caller_reactions;
 

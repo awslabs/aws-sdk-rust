@@ -14,6 +14,8 @@ pub struct InputDeviceConfigurableSettings {
     pub codec: ::std::option::Option<crate::types::InputDeviceCodec>,
     /// To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter.
     pub mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>,
+    /// An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration.
+    pub audio_channel_pairs: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>>,
 }
 impl InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -36,6 +38,12 @@ impl InputDeviceConfigurableSettings {
     pub fn mediaconnect_settings(&self) -> ::std::option::Option<&crate::types::InputDeviceMediaConnectConfigurableSettings> {
         self.mediaconnect_settings.as_ref()
     }
+    /// An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_channel_pairs.is_none()`.
+    pub fn audio_channel_pairs(&self) -> &[crate::types::InputDeviceConfigurableAudioChannelPairConfig] {
+        self.audio_channel_pairs.as_deref().unwrap_or_default()
+    }
 }
 impl InputDeviceConfigurableSettings {
     /// Creates a new builder-style object to manufacture [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
@@ -53,6 +61,7 @@ pub struct InputDeviceConfigurableSettingsBuilder {
     pub(crate) latency_ms: ::std::option::Option<i32>,
     pub(crate) codec: ::std::option::Option<crate::types::InputDeviceCodec>,
     pub(crate) mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>,
+    pub(crate) audio_channel_pairs: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>>,
 }
 impl InputDeviceConfigurableSettingsBuilder {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -125,6 +134,29 @@ impl InputDeviceConfigurableSettingsBuilder {
     pub fn get_mediaconnect_settings(&self) -> &::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings> {
         &self.mediaconnect_settings
     }
+    /// Appends an item to `audio_channel_pairs`.
+    ///
+    /// To override the contents of this collection use [`set_audio_channel_pairs`](Self::set_audio_channel_pairs).
+    ///
+    /// An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration.
+    pub fn audio_channel_pairs(mut self, input: crate::types::InputDeviceConfigurableAudioChannelPairConfig) -> Self {
+        let mut v = self.audio_channel_pairs.unwrap_or_default();
+        v.push(input);
+        self.audio_channel_pairs = ::std::option::Option::Some(v);
+        self
+    }
+    /// An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration.
+    pub fn set_audio_channel_pairs(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>>,
+    ) -> Self {
+        self.audio_channel_pairs = input;
+        self
+    }
+    /// An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration.
+    pub fn get_audio_channel_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>> {
+        &self.audio_channel_pairs
+    }
     /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
     pub fn build(self) -> crate::types::InputDeviceConfigurableSettings {
         crate::types::InputDeviceConfigurableSettings {
@@ -133,6 +165,7 @@ impl InputDeviceConfigurableSettingsBuilder {
             latency_ms: self.latency_ms,
             codec: self.codec,
             mediaconnect_settings: self.mediaconnect_settings,
+            audio_channel_pairs: self.audio_channel_pairs,
         }
     }
 }

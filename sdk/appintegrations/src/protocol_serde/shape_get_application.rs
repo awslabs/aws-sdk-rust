@@ -175,6 +175,9 @@ pub(crate) fn de_get_application(
                             .transpose()?,
                     );
                 }
+                "Permissions" => {
+                    builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                }
                 "Publications" => {
                     builder = builder.set_publications(crate::protocol_serde::shape_publication_list::de_publication_list(tokens)?);
                 }

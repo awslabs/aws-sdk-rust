@@ -164,6 +164,8 @@ mod associate_security_key;
 
 mod associate_traffic_distribution_group_user;
 
+mod associate_user_proficiencies;
+
 mod batch_associate_analytics_data_set;
 
 mod batch_disassociate_analytics_data_set;
@@ -191,6 +193,8 @@ mod create_integration_association;
 mod create_participant;
 
 mod create_persistent_contact_association;
+
+mod create_predefined_attribute;
 
 mod create_prompt;
 
@@ -263,6 +267,8 @@ mod delete_instance;
 
 mod delete_integration_association;
 
+mod delete_predefined_attribute;
+
 mod delete_prompt;
 
 mod delete_queue;
@@ -313,6 +319,8 @@ mod describe_instance_storage_config;
 
 mod describe_phone_number;
 
+mod describe_predefined_attribute;
+
 mod describe_prompt;
 
 mod describe_queue;
@@ -360,6 +368,8 @@ mod disassociate_routing_profile_queues;
 mod disassociate_security_key;
 
 mod disassociate_traffic_distribution_group_user;
+
+mod disassociate_user_proficiencies;
 
 mod dismiss_user_contact;
 
@@ -427,6 +437,8 @@ mod list_phone_numbers;
 
 mod list_phone_numbers_v2;
 
+mod list_predefined_attributes;
+
 mod list_prompts;
 
 mod list_queue_quick_connects;
@@ -463,6 +475,8 @@ mod list_use_cases;
 
 mod list_user_hierarchy_groups;
 
+mod list_user_proficiencies;
+
 mod list_users;
 
 mod list_view_versions;
@@ -485,7 +499,11 @@ mod resume_contact_recording;
 
 mod search_available_phone_numbers;
 
+mod search_contacts;
+
 mod search_hours_of_operations;
+
+mod search_predefined_attributes;
 
 mod search_prompts;
 
@@ -557,6 +575,8 @@ mod update_contact_flow_module_metadata;
 
 mod update_contact_flow_name;
 
+mod update_contact_routing_data;
+
 mod update_contact_schedule;
 
 mod update_evaluation_form;
@@ -572,6 +592,8 @@ mod update_participant_role_config;
 mod update_phone_number;
 
 mod update_phone_number_metadata;
+
+mod update_predefined_attribute;
 
 mod update_prompt;
 
@@ -616,6 +638,8 @@ mod update_user_hierarchy_structure;
 mod update_user_identity_info;
 
 mod update_user_phone_config;
+
+mod update_user_proficiencies;
 
 mod update_user_routing_profile;
 

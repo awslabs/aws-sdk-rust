@@ -152,11 +152,17 @@ pub fn ser_create_training_job_input_input(
         crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_51, var_50)?;
         object_51.finish();
     }
-    if let Some(var_52) = &input.infra_check_config {
+    if let Some(var_52) = &input.remote_debug_config {
         #[allow(unused_mut)]
-        let mut object_53 = object.key("InfraCheckConfig").start_object();
-        crate::protocol_serde::shape_infra_check_config::ser_infra_check_config(&mut object_53, var_52)?;
+        let mut object_53 = object.key("RemoteDebugConfig").start_object();
+        crate::protocol_serde::shape_remote_debug_config::ser_remote_debug_config(&mut object_53, var_52)?;
         object_53.finish();
+    }
+    if let Some(var_54) = &input.infra_check_config {
+        #[allow(unused_mut)]
+        let mut object_55 = object.key("InfraCheckConfig").start_object();
+        crate::protocol_serde::shape_infra_check_config::ser_infra_check_config(&mut object_55, var_54)?;
+        object_55.finish();
     }
     Ok(())
 }

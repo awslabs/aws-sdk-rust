@@ -12,13 +12,17 @@ pub struct CreateApplicationInput {
     /// <p>The configuration for where the application should be loaded from.</p>
     pub application_source_config: ::std::option::Option<crate::types::ApplicationSourceConfig>,
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
@@ -40,12 +44,14 @@ impl CreateApplicationInput {
     /// <p>The events that the application subscribes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(&self) -> &[crate::types::Subscription] {
         self.subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The events that the application publishes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publications.is_none()`.
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(&self) -> &[crate::types::Publication] {
         self.publications.as_deref().unwrap_or_default()
     }
@@ -56,6 +62,12 @@ impl CreateApplicationInput {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[::std::string::String] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl CreateApplicationInput {
@@ -77,6 +89,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
@@ -143,6 +156,7 @@ impl CreateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
     ///
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
         v.push(input);
@@ -150,11 +164,13 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
@@ -163,6 +179,7 @@ impl CreateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_publications`](Self::set_publications).
     ///
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(mut self, input: crate::types::Publication) -> Self {
         let mut v = self.publications.unwrap_or_default();
         v.push(input);
@@ -170,11 +187,13 @@ impl CreateApplicationInputBuilder {
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn set_publications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>) -> Self {
         self.publications = input;
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn get_publications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Publication>> {
         &self.publications
     }
@@ -212,6 +231,26 @@ impl CreateApplicationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `permissions`.
+    ///
+    /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+    ///
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.permissions.unwrap_or_default();
+        v.push(input.into());
+        self.permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.permissions = input;
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permissions
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -225,6 +264,7 @@ impl CreateApplicationInputBuilder {
             publications: self.publications,
             client_token: self.client_token,
             tags: self.tags,
+            permissions: self.permissions,
         })
     }
 }

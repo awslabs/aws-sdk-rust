@@ -30,5 +30,17 @@ pub fn ser_input_device_configurable_settings(
         )?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.audio_channel_pairs {
+        let mut array_8 = object.key("audioChannelPairs").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_input_device_configurable_audio_channel_pair_config::ser_input_device_configurable_audio_channel_pair_config(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

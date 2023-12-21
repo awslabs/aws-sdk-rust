@@ -171,4 +171,18 @@ impl UpdateTrainingJobFluentBuilder {
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfigForUpdate> {
         self.inner.get_resource_config()
     }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn remote_debug_config(mut self, input: crate::types::RemoteDebugConfigForUpdate) -> Self {
+        self.inner = self.inner.remote_debug_config(input);
+        self
+    }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn set_remote_debug_config(mut self, input: ::std::option::Option<crate::types::RemoteDebugConfigForUpdate>) -> Self {
+        self.inner = self.inner.set_remote_debug_config(input);
+        self
+    }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn get_remote_debug_config(&self) -> &::std::option::Option<crate::types::RemoteDebugConfigForUpdate> {
+        self.inner.get_remote_debug_config()
+    }
 }

@@ -383,6 +383,8 @@ pub(crate) mod shape_global_configuration;
 
 pub(crate) mod shape_input_destination;
 
+pub(crate) mod shape_input_device_configurable_audio_channel_pair_config;
+
 pub(crate) mod shape_input_device_media_connect_configurable_settings;
 
 pub(crate) mod shape_input_device_media_connect_settings;
@@ -398,6 +400,8 @@ pub(crate) mod shape_input_whitelist_rule;
 pub(crate) mod shape_list_of_audio_description;
 
 pub(crate) mod shape_list_of_caption_description;
+
+pub(crate) mod shape_list_of_input_device_uhd_audio_channel_pair_config;
 
 pub(crate) mod shape_list_of_integer;
 
@@ -468,6 +472,8 @@ pub(crate) mod shape_color_correction;
 pub(crate) mod shape_failover_condition;
 
 pub(crate) mod shape_input_destination_vpc;
+
+pub(crate) mod shape_input_device_uhd_audio_channel_pair_config;
 
 pub(crate) mod shape_input_location;
 

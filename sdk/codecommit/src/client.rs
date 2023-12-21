@@ -317,4 +317,6 @@ mod update_pull_request_title;
 
 mod update_repository_description;
 
+mod update_repository_encryption_key;
+
 mod update_repository_name;

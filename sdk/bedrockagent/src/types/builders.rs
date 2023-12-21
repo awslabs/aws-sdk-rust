@@ -15,6 +15,10 @@ pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
 
 pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
+pub use crate::types::_rds_configuration::RdsConfigurationBuilder;
+
+pub use crate::types::_rds_field_mapping::RdsFieldMappingBuilder;
+
 pub use crate::types::_redis_enterprise_cloud_configuration::RedisEnterpriseCloudConfigurationBuilder;
 
 pub use crate::types::_redis_enterprise_cloud_field_mapping::RedisEnterpriseCloudFieldMappingBuilder;

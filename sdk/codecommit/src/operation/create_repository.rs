@@ -251,6 +251,10 @@ pub enum CreateRepositoryError {
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
     EncryptionKeyDisabledException(crate::types::error::EncryptionKeyDisabledException),
+    /// <p>The Key Management Service encryption key is not valid.</p>
+    EncryptionKeyInvalidIdException(crate::types::error::EncryptionKeyInvalidIdException),
+    /// <p>A KMS encryption key was used to try and encrypt or decrypt a repository, but either the repository or the key was not in a valid state to support the operation.</p>
+    EncryptionKeyInvalidUsageException(crate::types::error::EncryptionKeyInvalidUsageException),
     /// <p>No encryption key was found.</p>
     EncryptionKeyNotFoundException(crate::types::error::EncryptionKeyNotFoundException),
     /// <p>The encryption key is not available.</p>
@@ -311,6 +315,8 @@ impl CreateRepositoryError {
             Self::EncryptionIntegrityChecksFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EncryptionKeyAccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EncryptionKeyDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyInvalidIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EncryptionKeyInvalidUsageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EncryptionKeyNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EncryptionKeyUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRepositoryDescriptionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -336,6 +342,14 @@ impl CreateRepositoryError {
     /// Returns `true` if the error kind is `CreateRepositoryError::EncryptionKeyDisabledException`.
     pub fn is_encryption_key_disabled_exception(&self) -> bool {
         matches!(self, Self::EncryptionKeyDisabledException(_))
+    }
+    /// Returns `true` if the error kind is `CreateRepositoryError::EncryptionKeyInvalidIdException`.
+    pub fn is_encryption_key_invalid_id_exception(&self) -> bool {
+        matches!(self, Self::EncryptionKeyInvalidIdException(_))
+    }
+    /// Returns `true` if the error kind is `CreateRepositoryError::EncryptionKeyInvalidUsageException`.
+    pub fn is_encryption_key_invalid_usage_exception(&self) -> bool {
+        matches!(self, Self::EncryptionKeyInvalidUsageException(_))
     }
     /// Returns `true` if the error kind is `CreateRepositoryError::EncryptionKeyNotFoundException`.
     pub fn is_encryption_key_not_found_exception(&self) -> bool {
@@ -388,6 +402,8 @@ impl ::std::error::Error for CreateRepositoryError {
             Self::EncryptionIntegrityChecksFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyAccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyDisabledException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EncryptionKeyInvalidIdException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EncryptionKeyInvalidUsageException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::EncryptionKeyUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRepositoryDescriptionException(_inner) => ::std::option::Option::Some(_inner),
@@ -409,6 +425,8 @@ impl ::std::fmt::Display for CreateRepositoryError {
             Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
             Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
             Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyInvalidIdException(_inner) => _inner.fmt(f),
+            Self::EncryptionKeyInvalidUsageException(_inner) => _inner.fmt(f),
             Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
             Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
             Self::InvalidRepositoryDescriptionException(_inner) => _inner.fmt(f),
@@ -444,6 +462,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateReposit
             Self::EncryptionIntegrityChecksFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EncryptionKeyAccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EncryptionKeyDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyInvalidIdException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EncryptionKeyInvalidUsageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EncryptionKeyNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EncryptionKeyUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRepositoryDescriptionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

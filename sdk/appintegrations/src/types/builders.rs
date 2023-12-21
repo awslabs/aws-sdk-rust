@@ -19,6 +19,8 @@ pub use crate::types::_data_integration_association_summary::DataIntegrationAsso
 
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
+pub use crate::types::_application_association_summary::ApplicationAssociationSummaryBuilder;
+
 pub use crate::types::_file_configuration::FileConfigurationBuilder;
 
 pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;

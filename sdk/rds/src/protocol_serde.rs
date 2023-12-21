@@ -411,9 +411,17 @@ pub(crate) mod shape_describe_valid_db_instance_modifications;
 
 pub(crate) mod shape_describe_valid_db_instance_modifications_input;
 
+pub(crate) mod shape_disable_http_endpoint;
+
+pub(crate) mod shape_disable_http_endpoint_input;
+
 pub(crate) mod shape_download_db_log_file_portion;
 
 pub(crate) mod shape_download_db_log_file_portion_input;
+
+pub(crate) mod shape_enable_http_endpoint;
+
+pub(crate) mod shape_enable_http_endpoint_input;
 
 pub(crate) mod shape_failover_db_cluster;
 
@@ -852,6 +860,8 @@ pub(crate) mod shape_invalid_global_cluster_state_fault;
 pub(crate) mod shape_invalid_integration_state_fault;
 
 pub(crate) mod shape_invalid_option_group_state_fault;
+
+pub(crate) mod shape_invalid_resource_state_fault;
 
 pub(crate) mod shape_invalid_restore_fault;
 

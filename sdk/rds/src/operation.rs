@@ -292,8 +292,14 @@ pub mod describe_tenant_databases;
 /// Types for the `DescribeValidDBInstanceModifications` operation.
 pub mod describe_valid_db_instance_modifications;
 
+/// Types for the `DisableHttpEndpoint` operation.
+pub mod disable_http_endpoint;
+
 /// Types for the `DownloadDBLogFilePortion` operation.
 pub mod download_db_log_file_portion;
+
+/// Types for the `EnableHttpEndpoint` operation.
+pub mod enable_http_endpoint;
 
 /// Types for the `FailoverDBCluster` operation.
 pub mod failover_db_cluster;

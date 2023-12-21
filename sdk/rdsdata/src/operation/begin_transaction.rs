@@ -240,18 +240,40 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BeginTransact
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BeginTransactionError {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>There is an error in the call or in a SQL statement.</p>
+    /// <p>There is an error in the call or in a SQL statement. (This error only appears in calls from Aurora Serverless v1 databases.)</p>
     BadRequestException(crate::types::error::BadRequestException),
+    /// <p>There was an error in processing the SQL statement.</p>
+    DatabaseErrorException(crate::types::error::DatabaseErrorException),
+    /// <p>The DB cluster doesn't have a DB instance.</p>
+    DatabaseNotFoundException(crate::types::error::DatabaseNotFoundException),
+    /// <p>The writer instance in the DB cluster isn't available.</p>
+    DatabaseUnavailableException(crate::types::error::DatabaseUnavailableException),
     /// <p>There are insufficient privileges to make the call.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
+    /// <p>The HTTP endpoint for using RDS Data API isn't enabled for the DB cluster.</p>
+    HttpEndpointNotEnabledException(crate::types::error::HttpEndpointNotEnabledException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
+    /// <p>The Secrets Manager secret used with the request isn't valid.</p>
+    InvalidSecretException(crate::types::error::InvalidSecretException),
+    /// <p>There was a problem with the Secrets Manager secret used with the request, caused by one of the following conditions:</p>
+    /// <ul>
+    /// <li>
+    /// <p>RDS Data API timed out retrieving the secret.</p></li>
+    /// <li>
+    /// <p>The secret provided wasn't found.</p></li>
+    /// <li>
+    /// <p>The secret couldn't be decrypted.</p></li>
+    /// </ul>
+    SecretsErrorException(crate::types::error::SecretsErrorException),
+    /// <p>The service specified by the <code>resourceArn</code> parameter isn't available.</p>
     ServiceUnavailableError(crate::types::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::types::error::StatementTimeoutException),
+    /// <p>The transaction ID wasn't found.</p>
+    TransactionNotFoundException(crate::types::error::TransactionNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -287,10 +309,17 @@ impl BeginTransactionError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DatabaseErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DatabaseNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DatabaseUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::HttpEndpointNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidSecretException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SecretsErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::StatementTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TransactionNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -302,13 +331,37 @@ impl BeginTransactionError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(self, Self::BadRequestException(_))
     }
+    /// Returns `true` if the error kind is `BeginTransactionError::DatabaseErrorException`.
+    pub fn is_database_error_exception(&self) -> bool {
+        matches!(self, Self::DatabaseErrorException(_))
+    }
+    /// Returns `true` if the error kind is `BeginTransactionError::DatabaseNotFoundException`.
+    pub fn is_database_not_found_exception(&self) -> bool {
+        matches!(self, Self::DatabaseNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `BeginTransactionError::DatabaseUnavailableException`.
+    pub fn is_database_unavailable_exception(&self) -> bool {
+        matches!(self, Self::DatabaseUnavailableException(_))
+    }
     /// Returns `true` if the error kind is `BeginTransactionError::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
         matches!(self, Self::ForbiddenException(_))
     }
+    /// Returns `true` if the error kind is `BeginTransactionError::HttpEndpointNotEnabledException`.
+    pub fn is_http_endpoint_not_enabled_exception(&self) -> bool {
+        matches!(self, Self::HttpEndpointNotEnabledException(_))
+    }
     /// Returns `true` if the error kind is `BeginTransactionError::InternalServerErrorException`.
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(self, Self::InternalServerErrorException(_))
+    }
+    /// Returns `true` if the error kind is `BeginTransactionError::InvalidSecretException`.
+    pub fn is_invalid_secret_exception(&self) -> bool {
+        matches!(self, Self::InvalidSecretException(_))
+    }
+    /// Returns `true` if the error kind is `BeginTransactionError::SecretsErrorException`.
+    pub fn is_secrets_error_exception(&self) -> bool {
+        matches!(self, Self::SecretsErrorException(_))
     }
     /// Returns `true` if the error kind is `BeginTransactionError::ServiceUnavailableError`.
     pub fn is_service_unavailable_error(&self) -> bool {
@@ -318,16 +371,27 @@ impl BeginTransactionError {
     pub fn is_statement_timeout_exception(&self) -> bool {
         matches!(self, Self::StatementTimeoutException(_))
     }
+    /// Returns `true` if the error kind is `BeginTransactionError::TransactionNotFoundException`.
+    pub fn is_transaction_not_found_exception(&self) -> bool {
+        matches!(self, Self::TransactionNotFoundException(_))
+    }
 }
 impl ::std::error::Error for BeginTransactionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DatabaseErrorException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DatabaseNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DatabaseUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
+            Self::HttpEndpointNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerErrorException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidSecretException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SecretsErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableError(_inner) => ::std::option::Option::Some(_inner),
             Self::StatementTimeoutException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TransactionNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -337,10 +401,17 @@ impl ::std::fmt::Display for BeginTransactionError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::DatabaseErrorException(_inner) => _inner.fmt(f),
+            Self::DatabaseNotFoundException(_inner) => _inner.fmt(f),
+            Self::DatabaseUnavailableException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
+            Self::HttpEndpointNotEnabledException(_inner) => _inner.fmt(f),
             Self::InternalServerErrorException(_inner) => _inner.fmt(f),
+            Self::InvalidSecretException(_inner) => _inner.fmt(f),
+            Self::SecretsErrorException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableError(_inner) => _inner.fmt(f),
             Self::StatementTimeoutException(_inner) => _inner.fmt(f),
+            Self::TransactionNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -364,10 +435,17 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BeginTransact
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DatabaseErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DatabaseNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DatabaseUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::HttpEndpointNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidSecretException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SecretsErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::StatementTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TransactionNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

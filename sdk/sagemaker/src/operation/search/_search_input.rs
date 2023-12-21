@@ -17,6 +17,8 @@ pub struct SearchInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A cross account filter option. When the value is <code>"CrossAccount"</code> the search results will only include resources made discoverable to you from other accounts. When the value is <code>"SameAccount"</code> or <code>null</code> the search results will only include resources from your account. Default is <code>null</code>. For more information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html"> Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number of <code>ResourceCatalog</code>s viewable is 1000.</p>
     pub cross_account_filter_option: ::std::option::Option<crate::types::CrossAccountFilterOption>,
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub visibility_conditions: ::std::option::Option<::std::vec::Vec<crate::types::VisibilityConditions>>,
 }
 impl SearchInput {
     /// <p>The name of the SageMaker resource to search for.</p>
@@ -47,6 +49,12 @@ impl SearchInput {
     pub fn cross_account_filter_option(&self) -> ::std::option::Option<&crate::types::CrossAccountFilterOption> {
         self.cross_account_filter_option.as_ref()
     }
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.visibility_conditions.is_none()`.
+    pub fn visibility_conditions(&self) -> &[crate::types::VisibilityConditions] {
+        self.visibility_conditions.as_deref().unwrap_or_default()
+    }
 }
 impl SearchInput {
     /// Creates a new builder-style object to manufacture [`SearchInput`](crate::operation::search::SearchInput).
@@ -66,6 +74,7 @@ pub struct SearchInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) cross_account_filter_option: ::std::option::Option<crate::types::CrossAccountFilterOption>,
+    pub(crate) visibility_conditions: ::std::option::Option<::std::vec::Vec<crate::types::VisibilityConditions>>,
 }
 impl SearchInputBuilder {
     /// <p>The name of the SageMaker resource to search for.</p>
@@ -167,6 +176,26 @@ impl SearchInputBuilder {
     pub fn get_cross_account_filter_option(&self) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
         &self.cross_account_filter_option
     }
+    /// Appends an item to `visibility_conditions`.
+    ///
+    /// To override the contents of this collection use [`set_visibility_conditions`](Self::set_visibility_conditions).
+    ///
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub fn visibility_conditions(mut self, input: crate::types::VisibilityConditions) -> Self {
+        let mut v = self.visibility_conditions.unwrap_or_default();
+        v.push(input);
+        self.visibility_conditions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub fn set_visibility_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisibilityConditions>>) -> Self {
+        self.visibility_conditions = input;
+        self
+    }
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub fn get_visibility_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisibilityConditions>> {
+        &self.visibility_conditions
+    }
     /// Consumes the builder and constructs a [`SearchInput`](crate::operation::search::SearchInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::search::SearchInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search::SearchInput {
@@ -177,6 +206,7 @@ impl SearchInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             cross_account_filter_option: self.cross_account_filter_option,
+            visibility_conditions: self.visibility_conditions,
         })
     }
 }

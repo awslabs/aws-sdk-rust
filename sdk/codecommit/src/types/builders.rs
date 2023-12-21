@@ -103,6 +103,8 @@ pub use crate::types::_put_file_entry::PutFileEntryBuilder;
 
 pub use crate::types::_source_file_specifier::SourceFileSpecifierBuilder;
 
+pub use crate::types::_batch_get_repositories_error::BatchGetRepositoriesErrorBuilder;
+
 pub use crate::types::_batch_get_commits_error::BatchGetCommitsErrorBuilder;
 
 pub use crate::types::_batch_disassociate_approval_rule_template_from_repositories_error::BatchDisassociateApprovalRuleTemplateFromRepositoriesErrorBuilder;

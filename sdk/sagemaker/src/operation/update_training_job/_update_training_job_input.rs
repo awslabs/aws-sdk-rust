@@ -11,6 +11,8 @@ pub struct UpdateTrainingJobInput {
     pub profiler_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
     /// <p>The training job <code>ResourceConfig</code> to update warm pool retention length.</p>
     pub resource_config: ::std::option::Option<crate::types::ResourceConfigForUpdate>,
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfigForUpdate>,
 }
 impl UpdateTrainingJobInput {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
@@ -31,6 +33,10 @@ impl UpdateTrainingJobInput {
     pub fn resource_config(&self) -> ::std::option::Option<&crate::types::ResourceConfigForUpdate> {
         self.resource_config.as_ref()
     }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn remote_debug_config(&self) -> ::std::option::Option<&crate::types::RemoteDebugConfigForUpdate> {
+        self.remote_debug_config.as_ref()
+    }
 }
 impl UpdateTrainingJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrainingJobInput`](crate::operation::update_training_job::UpdateTrainingJobInput).
@@ -47,6 +53,7 @@ pub struct UpdateTrainingJobInputBuilder {
     pub(crate) profiler_config: ::std::option::Option<crate::types::ProfilerConfigForUpdate>,
     pub(crate) profiler_rule_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProfilerRuleConfiguration>>,
     pub(crate) resource_config: ::std::option::Option<crate::types::ResourceConfigForUpdate>,
+    pub(crate) remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfigForUpdate>,
 }
 impl UpdateTrainingJobInputBuilder {
     /// <p>The name of a training job to update the Debugger profiling configuration.</p>
@@ -115,6 +122,20 @@ impl UpdateTrainingJobInputBuilder {
     pub fn get_resource_config(&self) -> &::std::option::Option<crate::types::ResourceConfigForUpdate> {
         &self.resource_config
     }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn remote_debug_config(mut self, input: crate::types::RemoteDebugConfigForUpdate) -> Self {
+        self.remote_debug_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn set_remote_debug_config(mut self, input: ::std::option::Option<crate::types::RemoteDebugConfigForUpdate>) -> Self {
+        self.remote_debug_config = input;
+        self
+    }
+    /// <p>Configuration for remote debugging while the training job is running. You can update the remote debugging configuration when the <code>SecondaryStatus</code> of the job is <code>Downloading</code> or <code>Training</code>.To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn get_remote_debug_config(&self) -> &::std::option::Option<crate::types::RemoteDebugConfigForUpdate> {
+        &self.remote_debug_config
+    }
     /// Consumes the builder and constructs a [`UpdateTrainingJobInput`](crate::operation::update_training_job::UpdateTrainingJobInput).
     pub fn build(
         self,
@@ -124,6 +145,7 @@ impl UpdateTrainingJobInputBuilder {
             profiler_config: self.profiler_config,
             profiler_rule_configurations: self.profiler_rule_configurations,
             resource_config: self.resource_config,
+            remote_debug_config: self.remote_debug_config,
         })
     }
 }

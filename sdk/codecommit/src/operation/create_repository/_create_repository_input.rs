@@ -14,6 +14,9 @@ pub struct CreateRepositoryInput {
     pub repository_description: ::std::option::Option<::std::string::String>,
     /// <p>One or more tag key-value pairs to use when tagging this repository.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for kmsKeyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateRepositoryInput {
     /// <p>The name of the new repository to be created.</p><note>
@@ -32,6 +35,11 @@ impl CreateRepositoryInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for kmsKeyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl CreateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
@@ -47,6 +55,7 @@ pub struct CreateRepositoryInputBuilder {
     pub(crate) repository_name: ::std::option::Option<::std::string::String>,
     pub(crate) repository_description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateRepositoryInputBuilder {
     /// <p>The name of the new repository to be created.</p><note>
@@ -110,6 +119,23 @@ impl CreateRepositoryInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for kmsKeyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for kmsKeyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the encryption key. You can view the ID of an encryption key in the KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more information about acceptable values for kmsKeyID, see <a href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a> in the Decrypt API description in the <i>Key Management Service API Reference</i>.</p>
+    /// <p>If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn build(
         self,
@@ -118,6 +144,7 @@ impl CreateRepositoryInputBuilder {
             repository_name: self.repository_name,
             repository_description: self.repository_description,
             tags: self.tags,
+            kms_key_id: self.kms_key_id,
         })
     }
 }

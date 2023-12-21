@@ -23,7 +23,7 @@ impl ExecuteSqlInputBuilder {
 /// Fluent builder constructing a request to `ExecuteSql`.
 ///
 /// <p>Runs one or more SQL statements.</p><note>
-/// <p>This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
+/// <p>This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.</p>
 /// </note>
 #[deprecated(note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.", since = "2019-03-21")]
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

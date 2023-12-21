@@ -16,8 +16,10 @@ pub struct GetApplicationOutput {
     /// <p>The configuration for where the application should be loaded from.</p>
     pub application_source_config: ::std::option::Option<crate::types::ApplicationSourceConfig>,
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
     /// <p>The created time of the Application.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -25,6 +27,8 @@ pub struct GetApplicationOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
@@ -55,12 +59,14 @@ impl GetApplicationOutput {
     /// <p>The events that the application subscribes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(&self) -> &[crate::types::Subscription] {
         self.subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The events that the application publishes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publications.is_none()`.
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(&self) -> &[crate::types::Publication] {
         self.publications.as_deref().unwrap_or_default()
     }
@@ -75,6 +81,12 @@ impl GetApplicationOutput {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[::std::string::String] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
@@ -104,6 +116,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -196,6 +209,7 @@ impl GetApplicationOutputBuilder {
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
     ///
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
         v.push(input);
@@ -203,11 +217,13 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
@@ -216,6 +232,7 @@ impl GetApplicationOutputBuilder {
     /// To override the contents of this collection use [`set_publications`](Self::set_publications).
     ///
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(mut self, input: crate::types::Publication) -> Self {
         let mut v = self.publications.unwrap_or_default();
         v.push(input);
@@ -223,11 +240,13 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn set_publications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>) -> Self {
         self.publications = input;
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn get_publications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Publication>> {
         &self.publications
     }
@@ -279,6 +298,26 @@ impl GetApplicationOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `permissions`.
+    ///
+    /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+    ///
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.permissions.unwrap_or_default();
+        v.push(input.into());
+        self.permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.permissions = input;
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permissions
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -302,6 +341,7 @@ impl GetApplicationOutputBuilder {
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
             tags: self.tags,
+            permissions: self.permissions,
             _request_id: self._request_id,
         }
     }

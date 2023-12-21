@@ -133,6 +133,10 @@ pub use crate::types::_put_file_entry::PutFileEntry;
 
 pub use crate::types::_source_file_specifier::SourceFileSpecifier;
 
+pub use crate::types::_batch_get_repositories_error::BatchGetRepositoriesError;
+
+pub use crate::types::_batch_get_repositories_error_code_enum::BatchGetRepositoriesErrorCodeEnum;
+
 pub use crate::types::_batch_get_commits_error::BatchGetCommitsError;
 
 pub use crate::types::_batch_disassociate_approval_rule_template_from_repositories_error::BatchDisassociateApprovalRuleTemplateFromRepositoriesError;
@@ -164,6 +168,10 @@ mod _batch_describe_merge_conflicts_error;
 mod _batch_disassociate_approval_rule_template_from_repositories_error;
 
 mod _batch_get_commits_error;
+
+mod _batch_get_repositories_error;
+
+mod _batch_get_repositories_error_code_enum;
 
 mod _blob_metadata;
 

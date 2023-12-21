@@ -5,6 +5,8 @@ pub use crate::types::_view_content::ViewContentBuilder;
 
 pub use crate::types::_view_input_content::ViewInputContentBuilder;
 
+pub use crate::types::_user_proficiency::UserProficiencyBuilder;
+
 pub use crate::types::_user_phone_config::UserPhoneConfigBuilder;
 
 pub use crate::types::_user_identity_info::UserIdentityInfoBuilder;
@@ -223,11 +225,39 @@ pub use crate::types::_prompt_search_criteria::PromptSearchCriteriaBuilder;
 
 pub use crate::types::_prompt_search_filter::PromptSearchFilterBuilder;
 
+pub use crate::types::_predefined_attribute::PredefinedAttributeBuilder;
+
+pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteriaBuilder;
+
 pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
 
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteriaBuilder;
 
 pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilterBuilder;
+
+pub use crate::types::_contact_search_summary::ContactSearchSummaryBuilder;
+
+pub use crate::types::_contact_search_summary_agent_info::ContactSearchSummaryAgentInfoBuilder;
+
+pub use crate::types::_contact_search_summary_queue_info::ContactSearchSummaryQueueInfoBuilder;
+
+pub use crate::types::_sort::SortBuilder;
+
+pub use crate::types::_search_criteria::SearchCriteriaBuilder;
+
+pub use crate::types::_searchable_contact_attributes::SearchableContactAttributesBuilder;
+
+pub use crate::types::_searchable_contact_attributes_criteria::SearchableContactAttributesCriteriaBuilder;
+
+pub use crate::types::_contact_analysis::ContactAnalysisBuilder;
+
+pub use crate::types::_transcript::TranscriptBuilder;
+
+pub use crate::types::_transcript_criteria::TranscriptCriteriaBuilder;
+
+pub use crate::types::_agent_hierarchy_groups::AgentHierarchyGroupsBuilder;
+
+pub use crate::types::_search_contacts_time_range::SearchContactsTimeRangeBuilder;
 
 pub use crate::types::_available_number_summary::AvailableNumberSummaryBuilder;
 
@@ -290,6 +320,8 @@ pub use crate::types::_quick_connect_summary::QuickConnectSummaryBuilder;
 pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
 pub use crate::types::_prompt_summary::PromptSummaryBuilder;
+
+pub use crate::types::_predefined_attribute_summary::PredefinedAttributeSummaryBuilder;
 
 pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummaryBuilder;
 
@@ -398,6 +430,8 @@ pub use crate::types::_current_metric_data::CurrentMetricDataBuilder;
 pub use crate::types::_current_metric::CurrentMetricBuilder;
 
 pub use crate::types::_current_metric_sort_criteria::CurrentMetricSortCriteriaBuilder;
+
+pub use crate::types::_user_proficiency_disassociate::UserProficiencyDisassociateBuilder;
 
 pub use crate::types::_vocabulary::VocabularyBuilder;
 

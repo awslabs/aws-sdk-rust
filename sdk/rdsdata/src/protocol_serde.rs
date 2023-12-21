@@ -53,21 +53,37 @@ pub(crate) mod shape_begin_transaction_input;
 
 pub(crate) mod shape_commit_transaction_input;
 
+pub(crate) mod shape_database_error_exception;
+
+pub(crate) mod shape_database_not_found_exception;
+
+pub(crate) mod shape_database_unavailable_exception;
+
 pub(crate) mod shape_execute_sql_input;
 
 pub(crate) mod shape_execute_statement_input;
 
 pub(crate) mod shape_forbidden_exception;
 
+pub(crate) mod shape_http_endpoint_not_enabled_exception;
+
 pub(crate) mod shape_internal_server_error_exception;
+
+pub(crate) mod shape_invalid_secret_exception;
 
 pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_rollback_transaction_input;
 
+pub(crate) mod shape_secrets_error_exception;
+
 pub(crate) mod shape_service_unavailable_error;
 
 pub(crate) mod shape_statement_timeout_exception;
+
+pub(crate) mod shape_transaction_not_found_exception;
+
+pub(crate) mod shape_unsupported_result_exception;
 
 pub(crate) mod shape_field_list;
 

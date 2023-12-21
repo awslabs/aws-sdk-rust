@@ -15,6 +15,7 @@
 ///     Grouping::Channel => { /* ... */ },
 ///     Grouping::Queue => { /* ... */ },
 ///     Grouping::RoutingProfile => { /* ... */ },
+///     Grouping::RoutingStepExpression => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum Grouping {
     Queue,
     #[allow(missing_docs)] // documentation missing in model
     RoutingProfile,
+    #[allow(missing_docs)] // documentation missing in model
+    RoutingStepExpression,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for Grouping {
             "CHANNEL" => Grouping::Channel,
             "QUEUE" => Grouping::Queue,
             "ROUTING_PROFILE" => Grouping::RoutingProfile,
+            "ROUTING_STEP_EXPRESSION" => Grouping::RoutingStepExpression,
             other => Grouping::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl Grouping {
             Grouping::Channel => "CHANNEL",
             Grouping::Queue => "QUEUE",
             Grouping::RoutingProfile => "ROUTING_PROFILE",
+            Grouping::RoutingStepExpression => "ROUTING_STEP_EXPRESSION",
             Grouping::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHANNEL", "QUEUE", "ROUTING_PROFILE"]
+        &["CHANNEL", "QUEUE", "ROUTING_PROFILE", "ROUTING_STEP_EXPRESSION"]
     }
 }
 impl ::std::convert::AsRef<str> for Grouping {

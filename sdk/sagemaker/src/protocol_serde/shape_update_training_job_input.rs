@@ -30,5 +30,11 @@ pub fn ser_update_training_job_input_input(
         crate::protocol_serde::shape_resource_config_for_update::ser_resource_config_for_update(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.remote_debug_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("RemoteDebugConfig").start_object();
+        crate::protocol_serde::shape_remote_debug_config_for_update::ser_remote_debug_config_for_update(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

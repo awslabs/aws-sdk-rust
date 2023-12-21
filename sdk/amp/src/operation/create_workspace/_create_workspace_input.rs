@@ -10,6 +10,8 @@ pub struct CreateWorkspaceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// Optional, user-provided tags for this workspace.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceInput {
     /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
@@ -23,6 +25,10 @@ impl CreateWorkspaceInput {
     /// Optional, user-provided tags for this workspace.
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
     }
 }
 impl CreateWorkspaceInput {
@@ -39,6 +45,7 @@ pub struct CreateWorkspaceInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceInputBuilder {
     /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
@@ -89,6 +96,20 @@ impl CreateWorkspaceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
     pub fn build(
         self,
@@ -97,6 +118,7 @@ impl CreateWorkspaceInputBuilder {
             alias: self.alias,
             client_token: self.client_token,
             tags: self.tags,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

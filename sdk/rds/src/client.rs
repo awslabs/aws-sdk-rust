@@ -357,7 +357,11 @@ mod describe_tenant_databases;
 
 mod describe_valid_db_instance_modifications;
 
+mod disable_http_endpoint;
+
 mod download_db_log_file_portion;
+
+mod enable_http_endpoint;
 
 mod failover_db_cluster;
 

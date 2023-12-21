@@ -21,39 +21,48 @@ pub fn ser_create_application_input_input(
     if let Some(var_6) = &input.namespace {
         object.key("Namespace").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.publications {
-        let mut array_8 = object.key("Publications").start_array();
+    if let Some(var_7) = &input.permissions {
+        let mut array_8 = object.key("Permissions").start_array();
         for item_9 in var_7 {
             {
-                #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_publication::ser_publication(&mut object_10, item_9)?;
-                object_10.finish();
+                array_8.value().string(item_9.as_str());
             }
         }
         array_8.finish();
     }
-    if let Some(var_11) = &input.subscriptions {
-        let mut array_12 = object.key("Subscriptions").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.publications {
+        let mut array_11 = object.key("Publications").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_publication::ser_publication(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_15) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("Tags").start_object();
-        for (key_17, value_18) in var_15 {
+    if let Some(var_14) = &input.subscriptions {
+        let mut array_15 = object.key("Subscriptions").start_array();
+        for item_16 in var_14 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        object_16.finish();
+        array_15.finish();
+    }
+    if let Some(var_18) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("Tags").start_object();
+        for (key_20, value_21) in var_18 {
+            {
+                object_19.key(key_20.as_str()).string(value_21.as_str());
+            }
+        }
+        object_19.finish();
     }
     Ok(())
 }

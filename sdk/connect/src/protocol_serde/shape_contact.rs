@@ -136,6 +136,20 @@ where
                         "WisdomInfo" => {
                             builder = builder.set_wisdom_info(crate::protocol_serde::shape_wisdom_info::de_wisdom_info(tokens)?);
                         }
+                        "QueueTimeAdjustmentSeconds" => {
+                            builder = builder.set_queue_time_adjustment_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "QueuePriority" => {
+                            builder = builder.set_queue_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_contact_tag_map::de_contact_tag_map(tokens)?);
                         }

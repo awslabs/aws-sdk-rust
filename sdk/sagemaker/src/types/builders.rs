@@ -73,6 +73,8 @@ pub use crate::types::_trial_component_artifact::TrialComponentArtifactBuilder;
 
 pub use crate::types::_trial_component_status::TrialComponentStatusBuilder;
 
+pub use crate::types::_remote_debug_config_for_update::RemoteDebugConfigForUpdateBuilder;
+
 pub use crate::types::_resource_config_for_update::ResourceConfigForUpdateBuilder;
 
 pub use crate::types::_profiler_rule_configuration::ProfilerRuleConfigurationBuilder;
@@ -559,6 +561,8 @@ pub use crate::types::_experiment::ExperimentBuilder;
 
 pub use crate::types::_experiment_source::ExperimentSourceBuilder;
 
+pub use crate::types::_visibility_conditions::VisibilityConditionsBuilder;
+
 pub use crate::types::_search_expression::SearchExpressionBuilder;
 
 pub use crate::types::_nested_filters::NestedFiltersBuilder;
@@ -830,6 +834,8 @@ pub use crate::types::_agent_version::AgentVersionBuilder;
 pub use crate::types::_device_stats::DeviceStatsBuilder;
 
 pub use crate::types::_infra_check_config::InfraCheckConfigBuilder;
+
+pub use crate::types::_remote_debug_config::RemoteDebugConfigBuilder;
 
 pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationStatusBuilder;
 

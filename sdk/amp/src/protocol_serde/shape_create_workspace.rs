@@ -168,6 +168,13 @@ pub(crate) fn de_create_workspace(
                             .transpose()?,
                     );
                 }
+                "kmsKeyArn" => {
+                    builder = builder.set_kms_key_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(crate::protocol_serde::shape_workspace_status::de_workspace_status(tokens)?);
                 }

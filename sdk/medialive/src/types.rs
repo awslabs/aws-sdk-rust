@@ -69,6 +69,10 @@ pub use crate::types::_input_device_output_type::InputDeviceOutputType;
 
 pub use crate::types::_input_device_uhd_settings::InputDeviceUhdSettings;
 
+pub use crate::types::_input_device_uhd_audio_channel_pair_config::InputDeviceUhdAudioChannelPairConfig;
+
+pub use crate::types::_input_device_uhd_audio_channel_pair_profile::InputDeviceUhdAudioChannelPairProfile;
+
 pub use crate::types::_input_device_media_connect_settings::InputDeviceMediaConnectSettings;
 
 pub use crate::types::_input_device_codec::InputDeviceCodec;
@@ -96,6 +100,10 @@ pub use crate::types::_device_settings_sync_state::DeviceSettingsSyncState;
 pub use crate::types::_input_device_connection_state::InputDeviceConnectionState;
 
 pub use crate::types::_input_device_configurable_settings::InputDeviceConfigurableSettings;
+
+pub use crate::types::_input_device_configurable_audio_channel_pair_config::InputDeviceConfigurableAudioChannelPairConfig;
+
+pub use crate::types::_input_device_configurable_audio_channel_pair_profile::InputDeviceConfigurableAudioChannelPairProfile;
 
 pub use crate::types::_input_device_media_connect_configurable_settings::InputDeviceMediaConnectConfigurableSettings;
 
@@ -252,6 +260,12 @@ pub use crate::types::_input_loss_failover_settings::InputLossFailoverSettings;
 pub use crate::types::_audio_silence_failover_settings::AudioSilenceFailoverSettings;
 
 pub use crate::types::_encoder_settings::EncoderSettings;
+
+pub use crate::types::_color_correction_settings::ColorCorrectionSettings;
+
+pub use crate::types::_color_correction::ColorCorrection;
+
+pub use crate::types::_color_space::ColorSpace;
 
 pub use crate::types::_thumbnail_configuration::ThumbnailConfiguration;
 
@@ -688,12 +702,6 @@ pub use crate::types::_feature_activations::FeatureActivations;
 pub use crate::types::_feature_activations_output_static_image_overlay_schedule_actions::FeatureActivationsOutputStaticImageOverlayScheduleActions;
 
 pub use crate::types::_feature_activations_input_prepare_schedule_actions::FeatureActivationsInputPrepareScheduleActions;
-
-pub use crate::types::_color_correction_settings::ColorCorrectionSettings;
-
-pub use crate::types::_color_correction::ColorCorrection;
-
-pub use crate::types::_color_space::ColorSpace;
 
 pub use crate::types::_caption_description::CaptionDescription;
 
@@ -1563,6 +1571,10 @@ mod _input_device_active_input;
 
 mod _input_device_codec;
 
+mod _input_device_configurable_audio_channel_pair_config;
+
+mod _input_device_configurable_audio_channel_pair_profile;
+
 mod _input_device_configurable_settings;
 
 mod _input_device_configured_input;
@@ -1594,6 +1606,10 @@ mod _input_device_summary;
 mod _input_device_transfer_type;
 
 mod _input_device_type;
+
+mod _input_device_uhd_audio_channel_pair_config;
+
+mod _input_device_uhd_audio_channel_pair_profile;
 
 mod _input_device_uhd_settings;
 

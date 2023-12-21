@@ -24,6 +24,12 @@ pub fn ser_storage_configuration(
         crate::protocol_serde::shape_redis_enterprise_cloud_configuration::ser_redis_enterprise_cloud_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.rds_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("rdsConfiguration").start_object();
+        crate::protocol_serde::shape_rds_configuration::ser_rds_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -62,6 +68,9 @@ where
                             builder = builder.set_redis_enterprise_cloud_configuration(
                                 crate::protocol_serde::shape_redis_enterprise_cloud_configuration::de_redis_enterprise_cloud_configuration(tokens)?,
                             );
+                        }
+                        "rdsConfiguration" => {
+                            builder = builder.set_rds_configuration(crate::protocol_serde::shape_rds_configuration::de_rds_configuration(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

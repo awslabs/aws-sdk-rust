@@ -233,6 +233,15 @@ pub(crate) fn list_rules_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn search_contacts_output_output_correct_errors(
+    mut builder: crate::operation::search_contacts::builders::SearchContactsOutputBuilder,
+) -> crate::operation::search_contacts::builders::SearchContactsOutputBuilder {
+    if builder.contacts.is_none() {
+        builder.contacts = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_contact_evaluation_output_output_correct_errors(
     mut builder: crate::operation::start_contact_evaluation::builders::StartContactEvaluationOutputBuilder,
 ) -> crate::operation::start_contact_evaluation::builders::StartContactEvaluationOutputBuilder {
@@ -768,6 +777,21 @@ pub(crate) fn user_phone_config_correct_errors(
 ) -> crate::types::builders::UserPhoneConfigBuilder {
     if builder.phone_type.is_none() {
         builder.phone_type = "no value was set".parse::<crate::types::PhoneType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn user_proficiency_correct_errors(
+    mut builder: crate::types::builders::UserProficiencyBuilder,
+) -> crate::types::builders::UserProficiencyBuilder {
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.attribute_value.is_none() {
+        builder.attribute_value = Some(Default::default())
+    }
+    if builder.level.is_none() {
+        builder.level = Some(Default::default())
     }
     builder
 }

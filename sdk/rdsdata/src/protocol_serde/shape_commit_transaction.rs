@@ -48,6 +48,52 @@ pub fn de_commit_transaction_http_error(
             }
             tmp
         }),
+        "DatabaseErrorException" => crate::operation::commit_transaction::CommitTransactionError::DatabaseErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DatabaseErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_database_error_exception::de_database_error_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DatabaseNotFoundException" => crate::operation::commit_transaction::CommitTransactionError::DatabaseNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DatabaseNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_database_not_found_exception::de_database_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DatabaseUnavailableException" => crate::operation::commit_transaction::CommitTransactionError::DatabaseUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DatabaseUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_database_unavailable_exception::de_database_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ForbiddenException" => crate::operation::commit_transaction::CommitTransactionError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -55,6 +101,24 @@ pub fn de_commit_transaction_http_error(
                 let mut output = crate::types::error::builders::ForbiddenExceptionBuilder::default();
                 output = crate::protocol_serde::shape_forbidden_exception::de_forbidden_exception_json_err(_response_body, output)
                     .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "HttpEndpointNotEnabledException" => crate::operation::commit_transaction::CommitTransactionError::HttpEndpointNotEnabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::HttpEndpointNotEnabledExceptionBuilder::default();
+                output = crate::protocol_serde::shape_http_endpoint_not_enabled_exception::de_http_endpoint_not_enabled_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -79,12 +143,42 @@ pub fn de_commit_transaction_http_error(
             }
             tmp
         }),
+        "InvalidSecretException" => crate::operation::commit_transaction::CommitTransactionError::InvalidSecretException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidSecretExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_secret_exception::de_invalid_secret_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotFoundException" => crate::operation::commit_transaction::CommitTransactionError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::NotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_not_found_exception::de_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SecretsErrorException" => crate::operation::commit_transaction::CommitTransactionError::SecretsErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SecretsErrorExceptionBuilder::default();
+                output = crate::protocol_serde::shape_secrets_error_exception::de_secrets_error_exception_json_err(_response_body, output)
                     .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -116,6 +210,22 @@ pub fn de_commit_transaction_http_error(
                 let mut output = crate::types::error::builders::StatementTimeoutExceptionBuilder::default();
                 output = crate::protocol_serde::shape_statement_timeout_exception::de_statement_timeout_exception_json_err(_response_body, output)
                     .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TransactionNotFoundException" => crate::operation::commit_transaction::CommitTransactionError::TransactionNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TransactionNotFoundExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_transaction_not_found_exception::de_transaction_not_found_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::commit_transaction::CommitTransactionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

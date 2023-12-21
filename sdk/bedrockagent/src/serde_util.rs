@@ -901,6 +901,30 @@ pub(crate) fn pinecone_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn rds_configuration_correct_errors(
+    mut builder: crate::types::builders::RdsConfigurationBuilder,
+) -> crate::types::builders::RdsConfigurationBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.credentials_secret_arn.is_none() {
+        builder.credentials_secret_arn = Some(Default::default())
+    }
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    if builder.field_mapping.is_none() {
+        builder.field_mapping = {
+            let builder = crate::types::builders::RdsFieldMappingBuilder::default();
+            crate::serde_util::rds_field_mapping_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn redis_enterprise_cloud_configuration_correct_errors(
     mut builder: crate::types::builders::RedisEnterpriseCloudConfigurationBuilder,
 ) -> crate::types::builders::RedisEnterpriseCloudConfigurationBuilder {
@@ -972,6 +996,24 @@ pub(crate) fn open_search_serverless_field_mapping_correct_errors(
 pub(crate) fn pinecone_field_mapping_correct_errors(
     mut builder: crate::types::builders::PineconeFieldMappingBuilder,
 ) -> crate::types::builders::PineconeFieldMappingBuilder {
+    if builder.text_field.is_none() {
+        builder.text_field = Some(Default::default())
+    }
+    if builder.metadata_field.is_none() {
+        builder.metadata_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rds_field_mapping_correct_errors(
+    mut builder: crate::types::builders::RdsFieldMappingBuilder,
+) -> crate::types::builders::RdsFieldMappingBuilder {
+    if builder.primary_key_field.is_none() {
+        builder.primary_key_field = Some(Default::default())
+    }
+    if builder.vector_field.is_none() {
+        builder.vector_field = Some(Default::default())
+    }
     if builder.text_field.is_none() {
         builder.text_field = Some(Default::default())
     }

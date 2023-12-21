@@ -25,6 +25,10 @@ pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
 pub use crate::types::_storage_configuration::StorageConfiguration;
 
+pub use crate::types::_rds_configuration::RdsConfiguration;
+
+pub use crate::types::_rds_field_mapping::RdsFieldMapping;
+
 pub use crate::types::_redis_enterprise_cloud_configuration::RedisEnterpriseCloudConfiguration;
 
 pub use crate::types::_redis_enterprise_cloud_field_mapping::RedisEnterpriseCloudFieldMapping;
@@ -226,6 +230,10 @@ mod _prompt_override_configuration;
 mod _prompt_state;
 
 mod _prompt_type;
+
+mod _rds_configuration;
+
+mod _rds_field_mapping;
 
 mod _redis_enterprise_cloud_configuration;
 

@@ -111,6 +111,22 @@ pub fn de_create_application_http_error(
             }
             tmp
         }),
+        "UnsupportedOperationException" => crate::operation::create_application::CreateApplicationError::UnsupportedOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_application::CreateApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::create_application::CreateApplicationError::generic(generic),
     })
 }

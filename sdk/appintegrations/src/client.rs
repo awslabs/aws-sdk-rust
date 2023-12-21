@@ -169,6 +169,8 @@ mod create_event_integration;
 /// ```
 pub mod customize;
 
+mod delete_application;
+
 mod delete_data_integration;
 
 mod delete_event_integration;
@@ -178,6 +180,8 @@ mod get_application;
 mod get_data_integration;
 
 mod get_event_integration;
+
+mod list_application_associations;
 
 mod list_applications;
 

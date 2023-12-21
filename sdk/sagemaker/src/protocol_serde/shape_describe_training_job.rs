@@ -282,6 +282,9 @@ pub(crate) fn de_describe_training_job(
                 "RetryStrategy" => {
                     builder = builder.set_retry_strategy(crate::protocol_serde::shape_retry_strategy::de_retry_strategy(tokens)?);
                 }
+                "RemoteDebugConfig" => {
+                    builder = builder.set_remote_debug_config(crate::protocol_serde::shape_remote_debug_config::de_remote_debug_config(tokens)?);
+                }
                 "InfraCheckConfig" => {
                     builder = builder.set_infra_check_config(crate::protocol_serde::shape_infra_check_config::de_infra_check_config(tokens)?);
                 }

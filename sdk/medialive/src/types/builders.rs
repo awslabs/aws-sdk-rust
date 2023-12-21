@@ -37,6 +37,8 @@ pub use crate::types::_input_whitelist_rule_cidr::InputWhitelistRuleCidrBuilder;
 
 pub use crate::types::_input_device_uhd_settings::InputDeviceUhdSettingsBuilder;
 
+pub use crate::types::_input_device_uhd_audio_channel_pair_config::InputDeviceUhdAudioChannelPairConfigBuilder;
+
 pub use crate::types::_input_device_media_connect_settings::InputDeviceMediaConnectSettingsBuilder;
 
 pub use crate::types::_input_device_network_settings::InputDeviceNetworkSettingsBuilder;
@@ -44,6 +46,8 @@ pub use crate::types::_input_device_network_settings::InputDeviceNetworkSettings
 pub use crate::types::_input_device_hd_settings::InputDeviceHdSettingsBuilder;
 
 pub use crate::types::_input_device_configurable_settings::InputDeviceConfigurableSettingsBuilder;
+
+pub use crate::types::_input_device_configurable_audio_channel_pair_config::InputDeviceConfigurableAudioChannelPairConfigBuilder;
 
 pub use crate::types::_input_device_media_connect_configurable_settings::InputDeviceMediaConnectConfigurableSettingsBuilder;
 
@@ -146,6 +150,10 @@ pub use crate::types::_input_loss_failover_settings::InputLossFailoverSettingsBu
 pub use crate::types::_audio_silence_failover_settings::AudioSilenceFailoverSettingsBuilder;
 
 pub use crate::types::_encoder_settings::EncoderSettingsBuilder;
+
+pub use crate::types::_color_correction_settings::ColorCorrectionSettingsBuilder;
+
+pub use crate::types::_color_correction::ColorCorrectionBuilder;
 
 pub use crate::types::_thumbnail_configuration::ThumbnailConfigurationBuilder;
 
@@ -302,10 +310,6 @@ pub use crate::types::_epoch_locking_settings::EpochLockingSettingsBuilder;
 pub use crate::types::_input_loss_behavior::InputLossBehaviorBuilder;
 
 pub use crate::types::_feature_activations::FeatureActivationsBuilder;
-
-pub use crate::types::_color_correction_settings::ColorCorrectionSettingsBuilder;
-
-pub use crate::types::_color_correction::ColorCorrectionBuilder;
 
 pub use crate::types::_caption_description::CaptionDescriptionBuilder;
 

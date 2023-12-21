@@ -259,6 +259,8 @@ pub(crate) mod shape_pinecone_configuration;
 
 pub(crate) mod shape_prompt_configuration;
 
+pub(crate) mod shape_rds_configuration;
+
 pub(crate) mod shape_recommended_actions;
 
 pub(crate) mod shape_redis_enterprise_cloud_configuration;
@@ -282,6 +284,8 @@ pub(crate) mod shape_open_search_serverless_field_mapping;
 pub(crate) mod shape_pinecone_field_mapping;
 
 pub(crate) mod shape_prompt_configurations;
+
+pub(crate) mod shape_rds_field_mapping;
 
 pub(crate) mod shape_redis_enterprise_cloud_field_mapping;
 

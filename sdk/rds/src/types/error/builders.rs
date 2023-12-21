@@ -179,6 +179,8 @@ pub use crate::types::error::_custom_db_engine_version_not_found_fault::CustomDb
 
 pub use crate::types::error::_invalid_db_cluster_capacity_fault::InvalidDbClusterCapacityFaultBuilder;
 
+pub use crate::types::error::_invalid_resource_state_fault::InvalidResourceStateFaultBuilder;
+
 pub use crate::types::error::_db_log_file_not_found_fault::DbLogFileNotFoundFaultBuilder;
 
 pub use crate::types::error::_reserved_db_instance_not_found_fault::ReservedDbInstanceNotFoundFaultBuilder;

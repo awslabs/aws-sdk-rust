@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`created_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_time): <p>The created time of the Application.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_modified_time): <p>The last modified time of the Application.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_application::GetApplicationOutput::tags): <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+    ///   - [`permissions(Option<Vec::<String>>)`](crate::operation::get_application::GetApplicationOutput::permissions): <p>The configuration of events or requests that the application has access to.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

@@ -12,6 +12,8 @@ pub struct StorageConfiguration {
     pub pinecone_configuration: ::std::option::Option<crate::types::PineconeConfiguration>,
     /// Contains the configurations to use Redis Enterprise Cloud to store knowledge base data.
     pub redis_enterprise_cloud_configuration: ::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration>,
+    /// Contains the configurations to use RDS to store knowledge base data.
+    pub rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
 }
 impl StorageConfiguration {
     /// The storage type of a knowledge base.
@@ -30,6 +32,10 @@ impl StorageConfiguration {
     pub fn redis_enterprise_cloud_configuration(&self) -> ::std::option::Option<&crate::types::RedisEnterpriseCloudConfiguration> {
         self.redis_enterprise_cloud_configuration.as_ref()
     }
+    /// Contains the configurations to use RDS to store knowledge base data.
+    pub fn rds_configuration(&self) -> ::std::option::Option<&crate::types::RdsConfiguration> {
+        self.rds_configuration.as_ref()
+    }
 }
 impl StorageConfiguration {
     /// Creates a new builder-style object to manufacture [`StorageConfiguration`](crate::types::StorageConfiguration).
@@ -46,6 +52,7 @@ pub struct StorageConfigurationBuilder {
     pub(crate) opensearch_serverless_configuration: ::std::option::Option<crate::types::OpenSearchServerlessConfiguration>,
     pub(crate) pinecone_configuration: ::std::option::Option<crate::types::PineconeConfiguration>,
     pub(crate) redis_enterprise_cloud_configuration: ::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration>,
+    pub(crate) rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
 }
 impl StorageConfigurationBuilder {
     /// The storage type of a knowledge base.
@@ -105,6 +112,20 @@ impl StorageConfigurationBuilder {
     pub fn get_redis_enterprise_cloud_configuration(&self) -> &::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration> {
         &self.redis_enterprise_cloud_configuration
     }
+    /// Contains the configurations to use RDS to store knowledge base data.
+    pub fn rds_configuration(mut self, input: crate::types::RdsConfiguration) -> Self {
+        self.rds_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Contains the configurations to use RDS to store knowledge base data.
+    pub fn set_rds_configuration(mut self, input: ::std::option::Option<crate::types::RdsConfiguration>) -> Self {
+        self.rds_configuration = input;
+        self
+    }
+    /// Contains the configurations to use RDS to store knowledge base data.
+    pub fn get_rds_configuration(&self) -> &::std::option::Option<crate::types::RdsConfiguration> {
+        &self.rds_configuration
+    }
     /// Consumes the builder and constructs a [`StorageConfiguration`](crate::types::StorageConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::StorageConfigurationBuilder::r#type)
@@ -119,6 +140,7 @@ impl StorageConfigurationBuilder {
             opensearch_serverless_configuration: self.opensearch_serverless_configuration,
             pinecone_configuration: self.pinecone_configuration,
             redis_enterprise_cloud_configuration: self.redis_enterprise_cloud_configuration,
+            rds_configuration: self.rds_configuration,
         })
     }
 }

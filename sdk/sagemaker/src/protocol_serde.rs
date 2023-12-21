@@ -1805,6 +1805,10 @@ pub(crate) mod shape_recommendation_job_output_config;
 
 pub(crate) mod shape_recommendation_job_stopping_conditions;
 
+pub(crate) mod shape_remote_debug_config;
+
+pub(crate) mod shape_remote_debug_config_for_update;
+
 pub(crate) mod shape_renderable_task;
 
 pub(crate) mod shape_rendering_error_list;
@@ -1928,6 +1932,8 @@ pub(crate) mod shape_user_settings;
 pub(crate) mod shape_variant_property;
 
 pub(crate) mod shape_vertices;
+
+pub(crate) mod shape_visibility_conditions;
 
 pub(crate) mod shape_vpc_config;
 

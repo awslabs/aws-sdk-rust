@@ -239,6 +239,16 @@ pub(crate) fn reflens_list_phone_numbers_v2_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_predefined_attributes_output_output_next_token(
+    input: &crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_prompts_output_output_next_token(
     input: &crate::operation::list_prompts::ListPromptsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -409,6 +419,16 @@ pub(crate) fn reflens_list_user_hierarchy_groups_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_user_proficiencies_output_output_next_token(
+    input: &crate::operation::list_user_proficiencies::ListUserProficienciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_users_output_output_next_token(
     input: &crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -449,8 +469,28 @@ pub(crate) fn reflens_search_available_phone_numbers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_contacts_output_output_next_token(
+    input: &crate::operation::search_contacts::SearchContactsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_hours_of_operations_output_output_next_token(
     input: &crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_predefined_attributes_output_output_next_token(
+    input: &crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -727,6 +767,16 @@ pub(crate) fn lens_list_phone_numbers_v2_output_output_list_phone_numbers_summar
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_predefined_attributes_output_output_predefined_attribute_summary_list(
+    input: crate::operation::list_predefined_attributes::ListPredefinedAttributesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttributeSummary>> {
+    let input = match input.predefined_attribute_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_prompts_output_output_prompt_summary_list(
     input: crate::operation::list_prompts::ListPromptsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>> {
@@ -884,6 +934,16 @@ pub(crate) fn lens_list_user_hierarchy_groups_output_output_user_hierarchy_group
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_user_proficiencies_output_output_user_proficiency_list(
+    input: crate::operation::list_user_proficiencies::ListUserProficienciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::UserProficiency>> {
+    let input = match input.user_proficiency_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_users_output_output_user_summary_list(
     input: crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::UserSummary>> {
@@ -924,10 +984,27 @@ pub(crate) fn lens_search_available_phone_numbers_output_output_available_number
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_search_contacts_output_output_contacts(
+    input: crate::operation::search_contacts::SearchContactsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContactSearchSummary>> {
+    let input = input.contacts;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_search_hours_of_operations_output_output_hours_of_operations(
     input: crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
     let input = match input.hours_of_operations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_predefined_attributes_output_output_predefined_attributes(
+    input: crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PredefinedAttribute>> {
+    let input = match input.predefined_attributes {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

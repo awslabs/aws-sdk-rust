@@ -12,9 +12,13 @@ pub struct UpdateApplicationInput {
     /// <p>The configuration for where the application should be loaded from.</p>
     pub application_source_config: ::std::option::Option<crate::types::ApplicationSourceConfig>,
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -36,14 +40,22 @@ impl UpdateApplicationInput {
     /// <p>The events that the application subscribes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscriptions.is_none()`.
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(&self) -> &[crate::types::Subscription] {
         self.subscriptions.as_deref().unwrap_or_default()
     }
     /// <p>The events that the application publishes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publications.is_none()`.
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(&self) -> &[crate::types::Publication] {
         self.publications.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions.is_none()`.
+    pub fn permissions(&self) -> &[::std::string::String] {
+        self.permissions.as_deref().unwrap_or_default()
     }
 }
 impl UpdateApplicationInput {
@@ -63,6 +75,7 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) application_source_config: ::std::option::Option<crate::types::ApplicationSourceConfig>,
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) publications: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -127,6 +140,7 @@ impl UpdateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
     ///
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
         v.push(input);
@@ -134,11 +148,13 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.subscriptions = input;
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         &self.subscriptions
     }
@@ -147,6 +163,7 @@ impl UpdateApplicationInputBuilder {
     /// To override the contents of this collection use [`set_publications`](Self::set_publications).
     ///
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(mut self, input: crate::types::Publication) -> Self {
         let mut v = self.publications.unwrap_or_default();
         v.push(input);
@@ -154,13 +171,35 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn set_publications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>) -> Self {
         self.publications = input;
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn get_publications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Publication>> {
         &self.publications
+    }
+    /// Appends an item to `permissions`.
+    ///
+    /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+    ///
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.permissions.unwrap_or_default();
+        v.push(input.into());
+        self.permissions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.permissions = input;
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.permissions
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
@@ -173,6 +212,7 @@ impl UpdateApplicationInputBuilder {
             application_source_config: self.application_source_config,
             subscriptions: self.subscriptions,
             publications: self.publications,
+            permissions: self.permissions,
         })
     }
 }

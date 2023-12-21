@@ -202,4 +202,22 @@ impl SearchFluentBuilder {
     pub fn get_cross_account_filter_option(&self) -> &::std::option::Option<crate::types::CrossAccountFilterOption> {
         self.inner.get_cross_account_filter_option()
     }
+    /// Appends an item to `VisibilityConditions`.
+    ///
+    /// To override the contents of this collection use [`set_visibility_conditions`](Self::set_visibility_conditions).
+    ///
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub fn visibility_conditions(mut self, input: crate::types::VisibilityConditions) -> Self {
+        self.inner = self.inner.visibility_conditions(input);
+        self
+    }
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub fn set_visibility_conditions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VisibilityConditions>>) -> Self {
+        self.inner = self.inner.set_visibility_conditions(input);
+        self
+    }
+    /// <p>Limits the results of your search request to the resources that you can access.</p>
+    pub fn get_visibility_conditions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VisibilityConditions>> {
+        self.inner.get_visibility_conditions()
+    }
 }

@@ -238,15 +238,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExecuteSqlEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ExecuteSqlError {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>There is an error in the call or in a SQL statement.</p>
+    /// <p>There is an error in the call or in a SQL statement. (This error only appears in calls from Aurora Serverless v1 databases.)</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>There are insufficient privileges to make the call.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
-    /// <p>The service specified by the <code>resourceArn</code> parameter is not available.</p>
+    /// <p>The service specified by the <code>resourceArn</code> parameter isn't available.</p>
     ServiceUnavailableError(crate::types::error::ServiceUnavailableError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

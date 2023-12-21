@@ -213,6 +213,8 @@ pub enum Error {
     InvalidIntegrationStateFault(crate::types::error::InvalidIntegrationStateFault),
     /// <p>The option group isn't in the <i>available</i> state.</p>
     InvalidOptionGroupStateFault(crate::types::error::InvalidOptionGroupStateFault),
+    /// <p>The operation can't be performed because another operation is in progress.</p>
+    InvalidResourceStateFault(crate::types::error::InvalidResourceStateFault),
     /// <p>Cannot restore from VPC backup to non-VPC DB instance.</p>
     InvalidRestoreFault(crate::types::error::InvalidRestoreFault),
     /// <p>The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.</p>
@@ -397,6 +399,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidGlobalClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidIntegrationStateFault(inner) => inner.fmt(f),
             Error::InvalidOptionGroupStateFault(inner) => inner.fmt(f),
+            Error::InvalidResourceStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
             Error::InvalidS3BucketFault(inner) => inner.fmt(f),
             Error::InvalidSubnet(inner) => inner.fmt(f),
@@ -556,6 +559,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidGlobalClusterStateFault(inner) => inner.meta(),
             Self::InvalidIntegrationStateFault(inner) => inner.meta(),
             Self::InvalidOptionGroupStateFault(inner) => inner.meta(),
+            Self::InvalidResourceStateFault(inner) => inner.meta(),
             Self::InvalidRestoreFault(inner) => inner.meta(),
             Self::InvalidS3BucketFault(inner) => inner.meta(),
             Self::InvalidSubnet(inner) => inner.meta(),
@@ -3743,6 +3747,31 @@ impl From<crate::operation::describe_valid_db_instance_modifications::DescribeVa
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_http_endpoint::DisableHttpEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_http_endpoint::DisableHttpEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_http_endpoint::DisableHttpEndpointError> for Error {
+    fn from(err: crate::operation::disable_http_endpoint::DisableHttpEndpointError) -> Self {
+        match err {
+            crate::operation::disable_http_endpoint::DisableHttpEndpointError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::disable_http_endpoint::DisableHttpEndpointError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::disable_http_endpoint::DisableHttpEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError, R>>
     for Error
 where
@@ -3770,6 +3799,31 @@ impl From<crate::operation::download_db_log_file_portion::DownloadDBLogFilePorti
                 Error::DbLogFileNotFoundFault(inner)
             }
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_http_endpoint::EnableHttpEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_http_endpoint::EnableHttpEndpointError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_http_endpoint::EnableHttpEndpointError> for Error {
+    fn from(err: crate::operation::enable_http_endpoint::EnableHttpEndpointError) -> Self {
+        match err {
+            crate::operation::enable_http_endpoint::EnableHttpEndpointError::InvalidResourceStateFault(inner) => {
+                Error::InvalidResourceStateFault(inner)
+            }
+            crate::operation::enable_http_endpoint::EnableHttpEndpointError::ResourceNotFoundFault(inner) => Error::ResourceNotFoundFault(inner),
+            crate::operation::enable_http_endpoint::EnableHttpEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6116,6 +6170,7 @@ impl ::std::error::Error for Error {
             Error::InvalidGlobalClusterStateFault(inner) => inner.source(),
             Error::InvalidIntegrationStateFault(inner) => inner.source(),
             Error::InvalidOptionGroupStateFault(inner) => inner.source(),
+            Error::InvalidResourceStateFault(inner) => inner.source(),
             Error::InvalidRestoreFault(inner) => inner.source(),
             Error::InvalidS3BucketFault(inner) => inner.source(),
             Error::InvalidSubnet(inner) => inner.source(),
@@ -6261,6 +6316,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidGlobalClusterStateFault(e) => e.request_id(),
             Self::InvalidIntegrationStateFault(e) => e.request_id(),
             Self::InvalidOptionGroupStateFault(e) => e.request_id(),
+            Self::InvalidResourceStateFault(e) => e.request_id(),
             Self::InvalidRestoreFault(e) => e.request_id(),
             Self::InvalidS3BucketFault(e) => e.request_id(),
             Self::InvalidSubnet(e) => e.request_id(),

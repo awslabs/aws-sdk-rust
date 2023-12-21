@@ -10,6 +10,8 @@ pub struct Dimensions {
     pub channel: ::std::option::Option<crate::types::Channel>,
     /// <p>Information about the routing profile assigned to the user.</p>
     pub routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
+    /// <p>The expression of a step in a routing criteria.</p>
+    pub routing_step_expression: ::std::option::Option<::std::string::String>,
 }
 impl Dimensions {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -23,6 +25,10 @@ impl Dimensions {
     /// <p>Information about the routing profile assigned to the user.</p>
     pub fn routing_profile(&self) -> ::std::option::Option<&crate::types::RoutingProfileReference> {
         self.routing_profile.as_ref()
+    }
+    /// <p>The expression of a step in a routing criteria.</p>
+    pub fn routing_step_expression(&self) -> ::std::option::Option<&str> {
+        self.routing_step_expression.as_deref()
     }
 }
 impl Dimensions {
@@ -39,6 +45,7 @@ pub struct DimensionsBuilder {
     pub(crate) queue: ::std::option::Option<crate::types::QueueReference>,
     pub(crate) channel: ::std::option::Option<crate::types::Channel>,
     pub(crate) routing_profile: ::std::option::Option<crate::types::RoutingProfileReference>,
+    pub(crate) routing_step_expression: ::std::option::Option<::std::string::String>,
 }
 impl DimensionsBuilder {
     /// <p>Information about the queue for which metrics are returned.</p>
@@ -83,12 +90,27 @@ impl DimensionsBuilder {
     pub fn get_routing_profile(&self) -> &::std::option::Option<crate::types::RoutingProfileReference> {
         &self.routing_profile
     }
+    /// <p>The expression of a step in a routing criteria.</p>
+    pub fn routing_step_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.routing_step_expression = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expression of a step in a routing criteria.</p>
+    pub fn set_routing_step_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.routing_step_expression = input;
+        self
+    }
+    /// <p>The expression of a step in a routing criteria.</p>
+    pub fn get_routing_step_expression(&self) -> &::std::option::Option<::std::string::String> {
+        &self.routing_step_expression
+    }
     /// Consumes the builder and constructs a [`Dimensions`](crate::types::Dimensions).
     pub fn build(self) -> crate::types::Dimensions {
         crate::types::Dimensions {
             queue: self.queue,
             channel: self.channel,
             routing_profile: self.routing_profile,
+            routing_step_expression: self.routing_step_expression,
         }
     }
 }

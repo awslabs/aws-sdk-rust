@@ -43,6 +43,9 @@ pub mod associate_security_key;
 /// Types for the `AssociateTrafficDistributionGroupUser` operation.
 pub mod associate_traffic_distribution_group_user;
 
+/// Types for the `AssociateUserProficiencies` operation.
+pub mod associate_user_proficiencies;
+
 /// Types for the `BatchAssociateAnalyticsDataSet` operation.
 pub mod batch_associate_analytics_data_set;
 
@@ -84,6 +87,9 @@ pub mod create_participant;
 
 /// Types for the `CreatePersistentContactAssociation` operation.
 pub mod create_persistent_contact_association;
+
+/// Types for the `CreatePredefinedAttribute` operation.
+pub mod create_predefined_attribute;
 
 /// Types for the `CreatePrompt` operation.
 pub mod create_prompt;
@@ -150,6 +156,9 @@ pub mod delete_instance;
 
 /// Types for the `DeleteIntegrationAssociation` operation.
 pub mod delete_integration_association;
+
+/// Types for the `DeletePredefinedAttribute` operation.
+pub mod delete_predefined_attribute;
 
 /// Types for the `DeletePrompt` operation.
 pub mod delete_prompt;
@@ -226,6 +235,9 @@ pub mod describe_instance_storage_config;
 /// Types for the `DescribePhoneNumber` operation.
 pub mod describe_phone_number;
 
+/// Types for the `DescribePredefinedAttribute` operation.
+pub mod describe_predefined_attribute;
+
 /// Types for the `DescribePrompt` operation.
 pub mod describe_prompt;
 
@@ -297,6 +309,9 @@ pub mod disassociate_security_key;
 
 /// Types for the `DisassociateTrafficDistributionGroupUser` operation.
 pub mod disassociate_traffic_distribution_group_user;
+
+/// Types for the `DisassociateUserProficiencies` operation.
+pub mod disassociate_user_proficiencies;
 
 /// Types for the `DismissUserContact` operation.
 pub mod dismiss_user_contact;
@@ -397,6 +412,9 @@ pub mod list_phone_numbers;
 /// Types for the `ListPhoneNumbersV2` operation.
 pub mod list_phone_numbers_v2;
 
+/// Types for the `ListPredefinedAttributes` operation.
+pub mod list_predefined_attributes;
+
 /// Types for the `ListPrompts` operation.
 pub mod list_prompts;
 
@@ -451,6 +469,9 @@ pub mod list_use_cases;
 /// Types for the `ListUserHierarchyGroups` operation.
 pub mod list_user_hierarchy_groups;
 
+/// Types for the `ListUserProficiencies` operation.
+pub mod list_user_proficiencies;
+
 /// Types for the `ListUsers` operation.
 pub mod list_users;
 
@@ -484,8 +505,14 @@ pub mod resume_contact_recording;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
+/// Types for the `SearchContacts` operation.
+pub mod search_contacts;
+
 /// Types for the `SearchHoursOfOperations` operation.
 pub mod search_hours_of_operations;
+
+/// Types for the `SearchPredefinedAttributes` operation.
+pub mod search_predefined_attributes;
 
 /// Types for the `SearchPrompts` operation.
 pub mod search_prompts;
@@ -592,6 +619,9 @@ pub mod update_contact_flow_module_metadata;
 /// Types for the `UpdateContactFlowName` operation.
 pub mod update_contact_flow_name;
 
+/// Types for the `UpdateContactRoutingData` operation.
+pub mod update_contact_routing_data;
+
 /// Types for the `UpdateContactSchedule` operation.
 pub mod update_contact_schedule;
 
@@ -615,6 +645,9 @@ pub mod update_phone_number;
 
 /// Types for the `UpdatePhoneNumberMetadata` operation.
 pub mod update_phone_number_metadata;
+
+/// Types for the `UpdatePredefinedAttribute` operation.
+pub mod update_predefined_attribute;
 
 /// Types for the `UpdatePrompt` operation.
 pub mod update_prompt;
@@ -681,6 +714,9 @@ pub mod update_user_identity_info;
 
 /// Types for the `UpdateUserPhoneConfig` operation.
 pub mod update_user_phone_config;
+
+/// Types for the `UpdateUserProficiencies` operation.
+pub mod update_user_proficiencies;
 
 /// Types for the `UpdateUserRoutingProfile` operation.
 pub mod update_user_routing_profile;

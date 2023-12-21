@@ -540,6 +540,20 @@ impl CreateTrainingJobFluentBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         self.inner.get_retry_strategy()
     }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn remote_debug_config(mut self, input: crate::types::RemoteDebugConfig) -> Self {
+        self.inner = self.inner.remote_debug_config(input);
+        self
+    }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn set_remote_debug_config(mut self, input: ::std::option::Option<crate::types::RemoteDebugConfig>) -> Self {
+        self.inner = self.inner.set_remote_debug_config(input);
+        self
+    }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn get_remote_debug_config(&self) -> &::std::option::Option<crate::types::RemoteDebugConfig> {
+        self.inner.get_remote_debug_config()
+    }
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub fn infra_check_config(mut self, input: crate::types::InfraCheckConfig) -> Self {
         self.inner = self.inner.infra_check_config(input);

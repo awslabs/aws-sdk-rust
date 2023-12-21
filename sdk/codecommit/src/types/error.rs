@@ -7,17 +7,23 @@ pub use crate::types::error::_repository_does_not_exist_exception::RepositoryDoe
 
 pub use crate::types::error::_invalid_repository_name_exception::InvalidRepositoryNameException;
 
-pub use crate::types::error::_invalid_repository_description_exception::InvalidRepositoryDescriptionException;
-
 pub use crate::types::error::_encryption_key_unavailable_exception::EncryptionKeyUnavailableException;
 
+pub use crate::types::error::_encryption_key_required_exception::EncryptionKeyRequiredException;
+
 pub use crate::types::error::_encryption_key_not_found_exception::EncryptionKeyNotFoundException;
+
+pub use crate::types::error::_encryption_key_invalid_usage_exception::EncryptionKeyInvalidUsageException;
+
+pub use crate::types::error::_encryption_key_invalid_id_exception::EncryptionKeyInvalidIdException;
 
 pub use crate::types::error::_encryption_key_disabled_exception::EncryptionKeyDisabledException;
 
 pub use crate::types::error::_encryption_key_access_denied_exception::EncryptionKeyAccessDeniedException;
 
 pub use crate::types::error::_encryption_integrity_checks_failed_exception::EncryptionIntegrityChecksFailedException;
+
+pub use crate::types::error::_invalid_repository_description_exception::InvalidRepositoryDescriptionException;
 
 pub use crate::types::error::_title_required_exception::TitleRequiredException;
 
@@ -451,7 +457,13 @@ mod _encryption_key_access_denied_exception;
 
 mod _encryption_key_disabled_exception;
 
+mod _encryption_key_invalid_id_exception;
+
+mod _encryption_key_invalid_usage_exception;
+
 mod _encryption_key_not_found_exception;
+
+mod _encryption_key_required_exception;
 
 mod _encryption_key_unavailable_exception;
 

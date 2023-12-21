@@ -24,6 +24,8 @@ pub struct RepositoryMetadata {
     pub clone_url_ssh: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the repository.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadata {
     /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
@@ -66,6 +68,10 @@ impl RepositoryMetadata {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl RepositoryMetadata {
     /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::types::RepositoryMetadata).
@@ -88,6 +94,7 @@ pub struct RepositoryMetadataBuilder {
     pub(crate) clone_url_http: ::std::option::Option<::std::string::String>,
     pub(crate) clone_url_ssh: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryMetadataBuilder {
     /// <p>The ID of the Amazon Web Services account associated with the repository.</p>
@@ -230,6 +237,20 @@ impl RepositoryMetadataBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Key Management Service encryption key used to encrypt and decrypt the repository.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`RepositoryMetadata`](crate::types::RepositoryMetadata).
     pub fn build(self) -> crate::types::RepositoryMetadata {
         crate::types::RepositoryMetadata {
@@ -243,6 +264,7 @@ impl RepositoryMetadataBuilder {
             clone_url_http: self.clone_url_http,
             clone_url_ssh: self.clone_url_ssh,
             arn: self.arn,
+            kms_key_id: self.kms_key_id,
         }
     }
 }

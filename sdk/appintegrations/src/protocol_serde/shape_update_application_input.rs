@@ -15,29 +15,38 @@ pub fn ser_update_application_input_input(
     if let Some(var_4) = &input.name {
         object.key("Name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.publications {
-        let mut array_6 = object.key("Publications").start_array();
+    if let Some(var_5) = &input.permissions {
+        let mut array_6 = object.key("Permissions").start_array();
         for item_7 in var_5 {
             {
-                #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_publication::ser_publication(&mut object_8, item_7)?;
-                object_8.finish();
+                array_6.value().string(item_7.as_str());
             }
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.subscriptions {
-        let mut array_10 = object.key("Subscriptions").start_array();
-        for item_11 in var_9 {
+    if let Some(var_8) = &input.publications {
+        let mut array_9 = object.key("Publications").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_publication::ser_publication(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_10.finish();
+        array_9.finish();
+    }
+    if let Some(var_12) = &input.subscriptions {
+        let mut array_13 = object.key("Subscriptions").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_subscription::ser_subscription(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
     }
     Ok(())
 }

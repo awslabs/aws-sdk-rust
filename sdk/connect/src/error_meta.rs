@@ -708,6 +708,45 @@ impl From<crate::operation::associate_traffic_distribution_group_user::Associate
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_user_proficiencies::AssociateUserProficienciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_user_proficiencies::AssociateUserProficienciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_user_proficiencies::AssociateUserProficienciesError> for Error {
+    fn from(err: crate::operation::associate_user_proficiencies::AssociateUserProficienciesError) -> Self {
+        match err {
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_user_proficiencies::AssociateUserProficienciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1253,6 +1292,51 @@ impl From<crate::operation::create_persistent_contact_association::CreatePersist
             crate::operation::create_persistent_contact_association::CreatePersistentContactAssociationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_predefined_attribute::CreatePredefinedAttributeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_predefined_attribute::CreatePredefinedAttributeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_predefined_attribute::CreatePredefinedAttributeError> for Error {
+    fn from(err: crate::operation::create_predefined_attribute::CreatePredefinedAttributeError) -> Self {
+        match err {
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_predefined_attribute::CreatePredefinedAttributeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2027,6 +2111,48 @@ impl From<crate::operation::delete_integration_association::DeleteIntegrationAss
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_integration_association::DeleteIntegrationAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError> for Error {
+    fn from(err: crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError) -> Self {
+        match err {
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_predefined_attribute::DeletePredefinedAttributeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2862,6 +2988,45 @@ impl From<crate::operation::describe_phone_number::DescribePhoneNumberError> for
             }
             crate::operation::describe_phone_number::DescribePhoneNumberError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_phone_number::DescribePhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError> for Error {
+    fn from(err: crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError) -> Self {
+        match err {
+            crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_predefined_attribute::DescribePredefinedAttributeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3737,6 +3902,49 @@ impl From<crate::operation::disassociate_traffic_distribution_group_user::Disass
             crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_traffic_distribution_group_user::DisassociateTrafficDistributionGroupUserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError> for Error {
+    fn from(err: crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError) -> Self {
+        match err {
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_user_proficiencies::DisassociateUserProficienciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4804,6 +5012,45 @@ impl From<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_predefined_attributes::ListPredefinedAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_predefined_attributes::ListPredefinedAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_predefined_attributes::ListPredefinedAttributesError> for Error {
+    fn from(err: crate::operation::list_predefined_attributes::ListPredefinedAttributesError) -> Self {
+        match err {
+            crate::operation::list_predefined_attributes::ListPredefinedAttributesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_predefined_attributes::ListPredefinedAttributesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_predefined_attributes::ListPredefinedAttributesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_predefined_attributes::ListPredefinedAttributesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_predefined_attributes::ListPredefinedAttributesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_predefined_attributes::ListPredefinedAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_prompts::ListPromptsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5446,6 +5693,42 @@ impl From<crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_proficiencies::ListUserProficienciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_proficiencies::ListUserProficienciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_user_proficiencies::ListUserProficienciesError> for Error {
+    fn from(err: crate::operation::list_user_proficiencies::ListUserProficienciesError) -> Self {
+        match err {
+            crate::operation::list_user_proficiencies::ListUserProficienciesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_user_proficiencies::ListUserProficienciesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_user_proficiencies::ListUserProficienciesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_user_proficiencies::ListUserProficienciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_user_proficiencies::ListUserProficienciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_user_proficiencies::ListUserProficienciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_users::ListUsersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5777,6 +6060,32 @@ impl From<crate::operation::search_available_phone_numbers::SearchAvailablePhone
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contacts::SearchContactsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_contacts::SearchContactsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_contacts::SearchContactsError> for Error {
+    fn from(err: crate::operation::search_contacts::SearchContactsError) -> Self {
+        match err {
+            crate::operation::search_contacts::SearchContactsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_contacts::SearchContactsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::search_contacts::SearchContactsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_contacts::SearchContactsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_contacts::SearchContactsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_contacts::SearchContactsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_hours_of_operations::SearchHoursOfOperationsError, R>>
     for Error
 where
@@ -5813,6 +6122,45 @@ impl From<crate::operation::search_hours_of_operations::SearchHoursOfOperationsE
                 Error::ThrottlingException(inner)
             }
             crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_predefined_attributes::SearchPredefinedAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_predefined_attributes::SearchPredefinedAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_predefined_attributes::SearchPredefinedAttributesError> for Error {
+    fn from(err: crate::operation::search_predefined_attributes::SearchPredefinedAttributesError) -> Self {
+        match err {
+            crate::operation::search_predefined_attributes::SearchPredefinedAttributesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::search_predefined_attributes::SearchPredefinedAttributesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::search_predefined_attributes::SearchPredefinedAttributesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::search_predefined_attributes::SearchPredefinedAttributesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_predefined_attributes::SearchPredefinedAttributesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::search_predefined_attributes::SearchPredefinedAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6999,6 +7347,48 @@ impl From<crate::operation::update_contact_flow_name::UpdateContactFlowNameError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact_routing_data::UpdateContactRoutingDataError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact_routing_data::UpdateContactRoutingDataError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_contact_routing_data::UpdateContactRoutingDataError> for Error {
+    fn from(err: crate::operation::update_contact_routing_data::UpdateContactRoutingDataError) -> Self {
+        match err {
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_contact_routing_data::UpdateContactRoutingDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact_schedule::UpdateContactScheduleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7320,6 +7710,45 @@ impl From<crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetad
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_phone_number_metadata::UpdatePhoneNumberMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError> for Error {
+    fn from(err: crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError) -> Self {
+        match err {
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_predefined_attribute::UpdatePredefinedAttributeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8149,6 +8578,45 @@ impl From<crate::operation::update_user_phone_config::UpdateUserPhoneConfigError
             }
             crate::operation::update_user_phone_config::UpdateUserPhoneConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_user_phone_config::UpdateUserPhoneConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_proficiencies::UpdateUserProficienciesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_user_proficiencies::UpdateUserProficienciesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_user_proficiencies::UpdateUserProficienciesError> for Error {
+    fn from(err: crate::operation::update_user_proficiencies::UpdateUserProficienciesError) -> Self {
+        match err {
+            crate::operation::update_user_proficiencies::UpdateUserProficienciesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_user_proficiencies::UpdateUserProficienciesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_user_proficiencies::UpdateUserProficienciesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_user_proficiencies::UpdateUserProficienciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_user_proficiencies::UpdateUserProficienciesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_user_proficiencies::UpdateUserProficienciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

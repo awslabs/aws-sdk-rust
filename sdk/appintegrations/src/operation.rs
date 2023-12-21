@@ -10,6 +10,9 @@ pub mod create_data_integration;
 /// Types for the `CreateEventIntegration` operation.
 pub mod create_event_integration;
 
+/// Types for the `DeleteApplication` operation.
+pub mod delete_application;
+
 /// Types for the `DeleteDataIntegration` operation.
 pub mod delete_data_integration;
 
@@ -24,6 +27,9 @@ pub mod get_data_integration;
 
 /// Types for the `GetEventIntegration` operation.
 pub mod get_event_integration;
+
+/// Types for the `ListApplicationAssociations` operation.
+pub mod list_application_associations;
 
 /// Types for the `ListApplications` operation.
 pub mod list_applications;

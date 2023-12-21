@@ -87,6 +87,11 @@ where
                                 crate::protocol_serde::shape_input_device_media_connect_settings::de_input_device_media_connect_settings(tokens)?,
                             );
                         }
+                        "audioChannelPairs" => {
+                            builder = builder.set_audio_channel_pairs(
+                                    crate::protocol_serde::shape_list_of_input_device_uhd_audio_channel_pair_config::de_list_of_input_device_uhd_audio_channel_pair_config(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

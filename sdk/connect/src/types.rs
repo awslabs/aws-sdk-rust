@@ -11,6 +11,8 @@ pub use crate::types::_view_status::ViewStatus;
 
 pub use crate::types::_view_input_content::ViewInputContent;
 
+pub use crate::types::_user_proficiency::UserProficiency;
+
 pub use crate::types::_user_phone_config::UserPhoneConfig;
 
 pub use crate::types::_phone_type::PhoneType;
@@ -120,6 +122,8 @@ pub use crate::types::_quick_connect_type::QuickConnectType;
 pub use crate::types::_queue_status::QueueStatus;
 
 pub use crate::types::_outbound_caller_config::OutboundCallerConfig;
+
+pub use crate::types::_predefined_attribute_values::PredefinedAttributeValues;
 
 pub use crate::types::_update_participant_role_config_channel_info::UpdateParticipantRoleConfigChannelInfo;
 
@@ -327,11 +331,51 @@ pub use crate::types::_prompt_search_criteria::PromptSearchCriteria;
 
 pub use crate::types::_prompt_search_filter::PromptSearchFilter;
 
+pub use crate::types::_predefined_attribute::PredefinedAttribute;
+
+pub use crate::types::_predefined_attribute_search_criteria::PredefinedAttributeSearchCriteria;
+
 pub use crate::types::_hours_of_operation::HoursOfOperation;
 
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteria;
 
 pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchFilter;
+
+pub use crate::types::_contact_search_summary::ContactSearchSummary;
+
+pub use crate::types::_contact_search_summary_agent_info::ContactSearchSummaryAgentInfo;
+
+pub use crate::types::_contact_search_summary_queue_info::ContactSearchSummaryQueueInfo;
+
+pub use crate::types::_contact_initiation_method::ContactInitiationMethod;
+
+pub use crate::types::_sort::Sort;
+
+pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_sortable_field_name::SortableFieldName;
+
+pub use crate::types::_search_criteria::SearchCriteria;
+
+pub use crate::types::_searchable_contact_attributes::SearchableContactAttributes;
+
+pub use crate::types::_search_contacts_match_type::SearchContactsMatchType;
+
+pub use crate::types::_searchable_contact_attributes_criteria::SearchableContactAttributesCriteria;
+
+pub use crate::types::_contact_analysis::ContactAnalysis;
+
+pub use crate::types::_transcript::Transcript;
+
+pub use crate::types::_transcript_criteria::TranscriptCriteria;
+
+pub use crate::types::_participant_role::ParticipantRole;
+
+pub use crate::types::_agent_hierarchy_groups::AgentHierarchyGroups;
+
+pub use crate::types::_search_contacts_time_range::SearchContactsTimeRange;
+
+pub use crate::types::_search_contacts_time_range_type::SearchContactsTimeRangeType;
 
 pub use crate::types::_available_number_summary::AvailableNumberSummary;
 
@@ -385,8 +429,6 @@ pub use crate::types::_real_time_contact_analysis_attachment::RealTimeContactAna
 
 pub use crate::types::_artifact_status::ArtifactStatus;
 
-pub use crate::types::_participant_role::ParticipantRole;
-
 pub use crate::types::_real_time_contact_analysis_segment_event::RealTimeContactAnalysisSegmentEvent;
 
 pub use crate::types::_real_time_contact_analysis_segment_issues::RealTimeContactAnalysisSegmentIssues;
@@ -426,6 +468,8 @@ pub use crate::types::_queue_summary::QueueSummary;
 pub use crate::types::_queue_type::QueueType;
 
 pub use crate::types::_prompt_summary::PromptSummary;
+
+pub use crate::types::_predefined_attribute_summary::PredefinedAttributeSummary;
 
 pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummary;
 
@@ -555,8 +599,6 @@ pub use crate::types::_agent_contact_reference::AgentContactReference;
 
 pub use crate::types::_contact_state::ContactState;
 
-pub use crate::types::_contact_initiation_method::ContactInitiationMethod;
-
 pub use crate::types::_agent_status_reference::AgentStatusReference;
 
 pub use crate::types::_hierarchy_path_reference::HierarchyPathReference;
@@ -579,7 +621,7 @@ pub use crate::types::_current_metric_name::CurrentMetricName;
 
 pub use crate::types::_current_metric_sort_criteria::CurrentMetricSortCriteria;
 
-pub use crate::types::_sort_order::SortOrder;
+pub use crate::types::_user_proficiency_disassociate::UserProficiencyDisassociate;
 
 pub use crate::types::_vocabulary::Vocabulary;
 
@@ -667,6 +709,8 @@ mod _agent_config;
 
 mod _agent_contact_reference;
 
+mod _agent_hierarchy_groups;
+
 mod _agent_info;
 
 mod _agent_status;
@@ -725,6 +769,8 @@ mod _connection_data;
 
 mod _contact;
 
+mod _contact_analysis;
+
 mod _contact_data_request;
 
 mod _contact_filter;
@@ -746,6 +792,12 @@ mod _contact_flow_summary;
 mod _contact_flow_type;
 
 mod _contact_initiation_method;
+
+mod _contact_search_summary;
+
+mod _contact_search_summary_agent_info;
+
+mod _contact_search_summary_queue_info;
 
 mod _contact_state;
 
@@ -1035,6 +1087,14 @@ mod _phone_number_workflow_status;
 
 mod _phone_type;
 
+mod _predefined_attribute;
+
+mod _predefined_attribute_search_criteria;
+
+mod _predefined_attribute_summary;
+
+mod _predefined_attribute_values;
+
 mod _problem_detail;
 
 mod _prompt;
@@ -1165,6 +1225,18 @@ mod _rule_trigger_event_source;
 
 mod _s3_config;
 
+mod _search_contacts_match_type;
+
+mod _search_contacts_time_range;
+
+mod _search_contacts_time_range_type;
+
+mod _search_criteria;
+
+mod _searchable_contact_attributes;
+
+mod _searchable_contact_attributes_criteria;
+
 mod _searchable_queue_type;
 
 mod _security_key;
@@ -1191,7 +1263,11 @@ mod _single_select_question_rule_category_automation;
 
 mod _single_select_question_rule_category_automation_condition;
 
+mod _sort;
+
 mod _sort_order;
+
+mod _sortable_field_name;
 
 mod _source_type;
 
@@ -1249,6 +1325,10 @@ mod _traffic_distribution_group_user_summary;
 
 mod _traffic_type;
 
+mod _transcript;
+
+mod _transcript_criteria;
+
 mod _unit;
 
 mod _update_case_action_definition;
@@ -1272,6 +1352,10 @@ mod _user_identity_info;
 mod _user_identity_info_lite;
 
 mod _user_phone_config;
+
+mod _user_proficiency;
+
+mod _user_proficiency_disassociate;
 
 mod _user_quick_connect_config;
 

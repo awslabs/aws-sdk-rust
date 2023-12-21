@@ -7,17 +7,23 @@ pub use crate::types::error::_repository_does_not_exist_exception::RepositoryDoe
 
 pub use crate::types::error::_invalid_repository_name_exception::InvalidRepositoryNameExceptionBuilder;
 
-pub use crate::types::error::_invalid_repository_description_exception::InvalidRepositoryDescriptionExceptionBuilder;
-
 pub use crate::types::error::_encryption_key_unavailable_exception::EncryptionKeyUnavailableExceptionBuilder;
 
+pub use crate::types::error::_encryption_key_required_exception::EncryptionKeyRequiredExceptionBuilder;
+
 pub use crate::types::error::_encryption_key_not_found_exception::EncryptionKeyNotFoundExceptionBuilder;
+
+pub use crate::types::error::_encryption_key_invalid_usage_exception::EncryptionKeyInvalidUsageExceptionBuilder;
+
+pub use crate::types::error::_encryption_key_invalid_id_exception::EncryptionKeyInvalidIdExceptionBuilder;
 
 pub use crate::types::error::_encryption_key_disabled_exception::EncryptionKeyDisabledExceptionBuilder;
 
 pub use crate::types::error::_encryption_key_access_denied_exception::EncryptionKeyAccessDeniedExceptionBuilder;
 
 pub use crate::types::error::_encryption_integrity_checks_failed_exception::EncryptionIntegrityChecksFailedExceptionBuilder;
+
+pub use crate::types::error::_invalid_repository_description_exception::InvalidRepositoryDescriptionExceptionBuilder;
 
 pub use crate::types::error::_title_required_exception::TitleRequiredExceptionBuilder;
 

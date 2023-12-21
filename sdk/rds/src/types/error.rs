@@ -179,6 +179,8 @@ pub use crate::types::error::_custom_db_engine_version_not_found_fault::CustomDb
 
 pub use crate::types::error::_invalid_db_cluster_capacity_fault::InvalidDbClusterCapacityFault;
 
+pub use crate::types::error::_invalid_resource_state_fault::InvalidResourceStateFault;
+
 pub use crate::types::error::_db_log_file_not_found_fault::DbLogFileNotFoundFault;
 
 pub use crate::types::error::_reserved_db_instance_not_found_fault::ReservedDbInstanceNotFoundFault;
@@ -482,6 +484,8 @@ mod _invalid_global_cluster_state_fault;
 mod _invalid_integration_state_fault;
 
 mod _invalid_option_group_state_fault;
+
+mod _invalid_resource_state_fault;
 
 mod _invalid_restore_fault;
 

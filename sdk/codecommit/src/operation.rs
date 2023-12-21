@@ -232,5 +232,8 @@ pub mod update_pull_request_title;
 /// Types for the `UpdateRepositoryDescription` operation.
 pub mod update_repository_description;
 
+/// Types for the `UpdateRepositoryEncryptionKey` operation.
+pub mod update_repository_encryption_key;
+
 /// Types for the `UpdateRepositoryName` operation.
 pub mod update_repository_name;

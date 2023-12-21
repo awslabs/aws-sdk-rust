@@ -9,6 +9,8 @@ pub use crate::types::error::_internal_service_error::InternalServiceError;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
+
 pub use crate::types::error::_resource_quota_exceeded_exception::ResourceQuotaExceededException;
 
 pub use crate::types::error::_duplicate_resource_exception::DuplicateResourceException;
@@ -26,6 +28,8 @@ mod _resource_not_found_exception;
 mod _resource_quota_exceeded_exception;
 
 mod _throttling_exception;
+
+mod _unsupported_operation_exception;
 
 /// Builders
 pub mod builders;

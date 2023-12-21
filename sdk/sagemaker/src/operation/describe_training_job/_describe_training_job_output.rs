@@ -181,6 +181,8 @@ pub struct DescribeTrainingJobOutput {
     pub environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     _request_id: Option<String>,
@@ -460,6 +462,10 @@ impl DescribeTrainingJobOutput {
     pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn remote_debug_config(&self) -> ::std::option::Option<&crate::types::RemoteDebugConfig> {
+        self.remote_debug_config.as_ref()
+    }
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub fn infra_check_config(&self) -> ::std::option::Option<&crate::types::InfraCheckConfig> {
         self.infra_check_config.as_ref()
@@ -522,6 +528,7 @@ pub struct DescribeTrainingJobOutputBuilder {
     pub(crate) profiling_status: ::std::option::Option<crate::types::ProfilingStatus>,
     pub(crate) environment: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
+    pub(crate) remote_debug_config: ::std::option::Option<crate::types::RemoteDebugConfig>,
     pub(crate) infra_check_config: ::std::option::Option<crate::types::InfraCheckConfig>,
     _request_id: Option<String>,
 }
@@ -1473,6 +1480,20 @@ impl DescribeTrainingJobOutputBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         &self.retry_strategy
     }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn remote_debug_config(mut self, input: crate::types::RemoteDebugConfig) -> Self {
+        self.remote_debug_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn set_remote_debug_config(mut self, input: ::std::option::Option<crate::types::RemoteDebugConfig>) -> Self {
+        self.remote_debug_config = input;
+        self
+    }
+    /// <p>Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.</p>
+    pub fn get_remote_debug_config(&self) -> &::std::option::Option<crate::types::RemoteDebugConfig> {
+        &self.remote_debug_config
+    }
     /// <p>Contains information about the infrastructure health check configuration for the training job.</p>
     pub fn infra_check_config(mut self, input: crate::types::InfraCheckConfig) -> Self {
         self.infra_check_config = ::std::option::Option::Some(input);
@@ -1540,6 +1561,7 @@ impl DescribeTrainingJobOutputBuilder {
             profiling_status: self.profiling_status,
             environment: self.environment,
             retry_strategy: self.retry_strategy,
+            remote_debug_config: self.remote_debug_config,
             infra_check_config: self.infra_check_config,
             _request_id: self._request_id,
         }

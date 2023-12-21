@@ -170,16 +170,19 @@ impl UpdateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_subscriptions`](Self::set_subscriptions).
     ///
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         self.inner = self.inner.subscriptions(input);
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn set_subscriptions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.inner = self.inner.set_subscriptions(input);
         self
     }
     /// <p>The events that the application subscribes.</p>
+    #[deprecated(note = "Subscriptions has been replaced with Permissions")]
     pub fn get_subscriptions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
         self.inner.get_subscriptions()
     }
@@ -188,17 +191,38 @@ impl UpdateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_publications`](Self::set_publications).
     ///
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn publications(mut self, input: crate::types::Publication) -> Self {
         self.inner = self.inner.publications(input);
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn set_publications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Publication>>) -> Self {
         self.inner = self.inner.set_publications(input);
         self
     }
     /// <p>The events that the application publishes.</p>
+    #[deprecated(note = "Publications has been replaced with Permissions")]
     pub fn get_publications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Publication>> {
         self.inner.get_publications()
+    }
+    /// Appends an item to `Permissions`.
+    ///
+    /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+    ///
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn permissions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.permissions(input.into());
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_permissions(input);
+        self
+    }
+    /// <p>The configuration of events or requests that the application has access to.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_permissions()
     }
 }

@@ -16,6 +16,8 @@ pub struct WorkspaceSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// The tags of this workspace.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// Customer managed KMS key ARN for this workspace
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceSummary {
     /// Unique string identifying this workspace.
@@ -44,6 +46,10 @@ impl WorkspaceSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// Customer managed KMS key ARN for this workspace
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl WorkspaceSummary {
     /// Creates a new builder-style object to manufacture [`WorkspaceSummary`](crate::types::WorkspaceSummary).
@@ -62,6 +68,7 @@ pub struct WorkspaceSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceSummaryBuilder {
     /// Unique string identifying this workspace.
@@ -158,6 +165,20 @@ impl WorkspaceSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Customer managed KMS key ARN for this workspace
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Customer managed KMS key ARN for this workspace
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// Customer managed KMS key ARN for this workspace
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`WorkspaceSummary`](crate::types::WorkspaceSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_id`](crate::types::builders::WorkspaceSummaryBuilder::workspace_id)
@@ -186,6 +207,7 @@ impl WorkspaceSummaryBuilder {
                 )
             })?,
             tags: self.tags,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

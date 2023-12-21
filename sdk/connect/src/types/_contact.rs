@@ -44,6 +44,10 @@ pub struct Contact {
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about Amazon Connect Wisdom.</p>
     pub wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
+    /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
+    pub queue_time_adjustment_seconds: ::std::option::Option<i32>,
+    /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
+    pub queue_priority: ::std::option::Option<i64>,
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -128,6 +132,14 @@ impl Contact {
     pub fn wisdom_info(&self) -> ::std::option::Option<&crate::types::WisdomInfo> {
         self.wisdom_info.as_ref()
     }
+    /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
+    pub fn queue_time_adjustment_seconds(&self) -> ::std::option::Option<i32> {
+        self.queue_time_adjustment_seconds
+    }
+    /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
+    pub fn queue_priority(&self) -> ::std::option::Option<i64> {
+        self.queue_priority
+    }
     /// <p>Tags associated with the contact. This contains both Amazon Web Services generated and user-defined tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -164,6 +176,8 @@ pub struct ContactBuilder {
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) wisdom_info: ::std::option::Option<crate::types::WisdomInfo>,
+    pub(crate) queue_time_adjustment_seconds: ::std::option::Option<i32>,
+    pub(crate) queue_priority: ::std::option::Option<i64>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ContactBuilder {
@@ -447,6 +461,34 @@ impl ContactBuilder {
     pub fn get_wisdom_info(&self) -> &::std::option::Option<crate::types::WisdomInfo> {
         &self.wisdom_info
     }
+    /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
+    pub fn queue_time_adjustment_seconds(mut self, input: i32) -> Self {
+        self.queue_time_adjustment_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
+    pub fn set_queue_time_adjustment_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.queue_time_adjustment_seconds = input;
+        self
+    }
+    /// <p>An integer that represents the queue time adjust to be applied to the contact, in seconds (longer / larger queue time are routed preferentially). Cannot be specified if the QueuePriority is specified. Must be statically defined and a valid integer value.</p>
+    pub fn get_queue_time_adjustment_seconds(&self) -> &::std::option::Option<i32> {
+        &self.queue_time_adjustment_seconds
+    }
+    /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
+    pub fn queue_priority(mut self, input: i64) -> Self {
+        self.queue_priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
+    pub fn set_queue_priority(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.queue_priority = input;
+        self
+    }
+    /// <p>An integer that represents the queue priority to be applied to the contact (lower priorities are routed preferentially). Cannot be specified if the QueueTimeAdjustmentSeconds is specified. Must be statically defined, must be larger than zero, and a valid integer value. Default Value is 5.</p>
+    pub fn get_queue_priority(&self) -> &::std::option::Option<i64> {
+        &self.queue_priority
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -490,6 +532,8 @@ impl ContactBuilder {
             scheduled_timestamp: self.scheduled_timestamp,
             related_contact_id: self.related_contact_id,
             wisdom_info: self.wisdom_info,
+            queue_time_adjustment_seconds: self.queue_time_adjustment_seconds,
+            queue_priority: self.queue_priority,
             tags: self.tags,
         }
     }

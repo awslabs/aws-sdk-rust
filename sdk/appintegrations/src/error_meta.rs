@@ -17,6 +17,8 @@ pub enum Error {
     ResourceQuotaExceededException(crate::types::error::ResourceQuotaExceededException),
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The operation is not supported.</p>
+    UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::UnsupportedOperationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -64,6 +67,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ResourceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::UnsupportedOperationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -95,6 +99,9 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
                 Error::ResourceQuotaExceededException(inner)
             }
             crate::operation::create_application::CreateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_application::CreateApplicationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -172,6 +179,32 @@ impl From<crate::operation::create_event_integration::CreateEventIntegrationErro
             }
             crate::operation::create_event_integration::CreateEventIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_event_integration::CreateEventIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_application::DeleteApplicationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_application::DeleteApplicationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_application::DeleteApplicationError> for Error {
+    fn from(err: crate::operation::delete_application::DeleteApplicationError) -> Self {
+        match err {
+            crate::operation::delete_application::DeleteApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_application::DeleteApplicationError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::delete_application::DeleteApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_application::DeleteApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_application::DeleteApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_application::DeleteApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -326,6 +359,45 @@ impl From<crate::operation::get_event_integration::GetEventIntegrationError> for
             }
             crate::operation::get_event_integration::GetEventIntegrationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_event_integration::GetEventIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_application_associations::ListApplicationAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_application_associations::ListApplicationAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_application_associations::ListApplicationAssociationsError> for Error {
+    fn from(err: crate::operation::list_application_associations::ListApplicationAssociationsError) -> Self {
+        match err {
+            crate::operation::list_application_associations::ListApplicationAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_application_associations::ListApplicationAssociationsError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::list_application_associations::ListApplicationAssociationsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_application_associations::ListApplicationAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_application_associations::ListApplicationAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_application_associations::ListApplicationAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -607,6 +679,9 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
             crate::operation::update_application::UpdateApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_application::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_application::UpdateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_application::UpdateApplicationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -691,6 +766,7 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::UnsupportedOperationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -705,6 +781,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::UnsupportedOperationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

@@ -19,5 +19,8 @@ pub fn ser_create_repository_input_input(
         }
         object_4.finish();
     }
+    if let Some(var_7) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_7.as_str());
+    }
     Ok(())
 }

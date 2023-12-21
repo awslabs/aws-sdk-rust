@@ -95,6 +95,8 @@ pub use crate::types::_trial_component_status::TrialComponentStatus;
 
 pub use crate::types::_trial_component_primary_status::TrialComponentPrimaryStatus;
 
+pub use crate::types::_remote_debug_config_for_update::RemoteDebugConfigForUpdate;
+
 pub use crate::types::_resource_config_for_update::ResourceConfigForUpdate;
 
 pub use crate::types::_profiler_rule_configuration::ProfilerRuleConfiguration;
@@ -775,6 +777,8 @@ pub use crate::types::_experiment::Experiment;
 
 pub use crate::types::_experiment_source::ExperimentSource;
 
+pub use crate::types::_visibility_conditions::VisibilityConditions;
+
 pub use crate::types::_cross_account_filter_option::CrossAccountFilterOption;
 
 pub use crate::types::_search_sort_order::SearchSortOrder;
@@ -1298,6 +1302,8 @@ pub use crate::types::_agent_version::AgentVersion;
 pub use crate::types::_device_stats::DeviceStats;
 
 pub use crate::types::_infra_check_config::InfraCheckConfig;
+
+pub use crate::types::_remote_debug_config::RemoteDebugConfig;
 
 pub use crate::types::_profiling_status::ProfilingStatus;
 
@@ -2937,6 +2943,10 @@ mod _redshift_result_format;
 
 mod _register_model_step_metadata;
 
+mod _remote_debug_config;
+
+mod _remote_debug_config_for_update;
+
 mod _renderable_task;
 
 mod _rendering_error;
@@ -3272,6 +3282,8 @@ mod _vector_config;
 mod _vendor_guidance;
 
 mod _vertex;
+
+mod _visibility_conditions;
 
 mod _vpc_config;
 

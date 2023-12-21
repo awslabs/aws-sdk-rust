@@ -8,6 +8,8 @@ pub struct BatchGetRepositoriesOutput {
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
     /// <p>Returns a list of repository names for which information could not be found.</p>
     pub repositories_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Returns information about any errors returned when attempting to retrieve information about the repositories.</p>
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRepositoriesError>>,
     _request_id: Option<String>,
 }
 impl BatchGetRepositoriesOutput {
@@ -22,6 +24,12 @@ impl BatchGetRepositoriesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repositories_not_found.is_none()`.
     pub fn repositories_not_found(&self) -> &[::std::string::String] {
         self.repositories_not_found.as_deref().unwrap_or_default()
+    }
+    /// <p>Returns information about any errors returned when attempting to retrieve information about the repositories.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::BatchGetRepositoriesError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for BatchGetRepositoriesOutput {
@@ -42,6 +50,7 @@ impl BatchGetRepositoriesOutput {
 pub struct BatchGetRepositoriesOutputBuilder {
     pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryMetadata>>,
     pub(crate) repositories_not_found: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRepositoriesError>>,
     _request_id: Option<String>,
 }
 impl BatchGetRepositoriesOutputBuilder {
@@ -85,6 +94,26 @@ impl BatchGetRepositoriesOutputBuilder {
     pub fn get_repositories_not_found(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.repositories_not_found
     }
+    /// Appends an item to `errors`.
+    ///
+    /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+    ///
+    /// <p>Returns information about any errors returned when attempting to retrieve information about the repositories.</p>
+    pub fn errors(mut self, input: crate::types::BatchGetRepositoriesError) -> Self {
+        let mut v = self.errors.unwrap_or_default();
+        v.push(input);
+        self.errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Returns information about any errors returned when attempting to retrieve information about the repositories.</p>
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchGetRepositoriesError>>) -> Self {
+        self.errors = input;
+        self
+    }
+    /// <p>Returns information about any errors returned when attempting to retrieve information about the repositories.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchGetRepositoriesError>> {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -99,6 +128,7 @@ impl BatchGetRepositoriesOutputBuilder {
         crate::operation::batch_get_repositories::BatchGetRepositoriesOutput {
             repositories: self.repositories,
             repositories_not_found: self.repositories_not_found,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
