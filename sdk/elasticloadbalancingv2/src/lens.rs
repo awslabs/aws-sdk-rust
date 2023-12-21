@@ -29,6 +29,36 @@ pub(crate) fn reflens_describe_target_groups_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_trust_store_associations_output_output_next_marker(
+    input: &crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_trust_store_revocations_output_output_next_marker(
+    input: &crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_trust_stores_output_output_next_marker(
+    input: &crate::operation::describe_trust_stores::DescribeTrustStoresOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_listeners_output_output_listeners(
     input: crate::operation::describe_listeners::DescribeListenersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Listener>> {

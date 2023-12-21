@@ -6,11 +6,11 @@
 pub struct CreateReplicationConfigurationOutput {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
     pub source_file_system_id: ::std::string::String,
-    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    /// <p>The Amazon Web Services Region in which the source EFS file system is located.</p>
     pub source_file_system_region: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub source_file_system_arn: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the original source EFS file system in the replication configuration.</p>
     pub original_source_file_system_arn: ::std::string::String,
     /// <p>Describes when the replication configuration was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
@@ -24,7 +24,7 @@ impl CreateReplicationConfigurationOutput {
         use std::ops::Deref;
         self.source_file_system_id.deref()
     }
-    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    /// <p>The Amazon Web Services Region in which the source EFS file system is located.</p>
     pub fn source_file_system_region(&self) -> &str {
         use std::ops::Deref;
         self.source_file_system_region.deref()
@@ -34,7 +34,7 @@ impl CreateReplicationConfigurationOutput {
         use std::ops::Deref;
         self.source_file_system_arn.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the original source EFS file system in the replication configuration.</p>
     pub fn original_source_file_system_arn(&self) -> &str {
         use std::ops::Deref;
         self.original_source_file_system_arn.deref()
@@ -89,18 +89,18 @@ impl CreateReplicationConfigurationOutputBuilder {
     pub fn get_source_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_file_system_id
     }
-    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    /// <p>The Amazon Web Services Region in which the source EFS file system is located.</p>
     /// This field is required.
     pub fn source_file_system_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_file_system_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    /// <p>The Amazon Web Services Region in which the source EFS file system is located.</p>
     pub fn set_source_file_system_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_file_system_region = input;
         self
     }
-    /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
+    /// <p>The Amazon Web Services Region in which the source EFS file system is located.</p>
     pub fn get_source_file_system_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_file_system_region
     }
@@ -119,18 +119,18 @@ impl CreateReplicationConfigurationOutputBuilder {
     pub fn get_source_file_system_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_file_system_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the original source EFS file system in the replication configuration.</p>
     /// This field is required.
     pub fn original_source_file_system_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.original_source_file_system_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the original source EFS file system in the replication configuration.</p>
     pub fn set_original_source_file_system_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original_source_file_system_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
+    /// <p>The Amazon Resource Name (ARN) of the original source EFS file system in the replication configuration.</p>
     pub fn get_original_source_file_system_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.original_source_file_system_arn
     }

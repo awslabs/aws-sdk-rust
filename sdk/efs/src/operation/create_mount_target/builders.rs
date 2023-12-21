@@ -24,7 +24,7 @@ impl CreateMountTargetInputBuilder {
 ///
 /// <p>Creates a mount target for a file system. You can then mount the file system on EC2 instances by using the mount target.</p>
 /// <p>You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given Availability Zone share a single mount target for a given file system. If you have multiple subnets in an Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same subnet as the mount target in order to access their file system.</p>
-/// <p>You can create only one mount target for an EFS file system using One Zone storage classes. You must create that mount target in the same Availability Zone in which the file system is located. Use the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties in the <code>DescribeFileSystems</code> response object to get this information. Use the <code>subnetId</code> associated with the file system's Availability Zone when creating the mount target.</p>
+/// <p>You can create only one mount target for a One Zone file system. You must create that mount target in the same Availability Zone in which the file system is located. Use the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties in the <code>DescribeFileSystems</code> response object to get this information. Use the <code>subnetId</code> associated with the file system's Availability Zone when creating the mount target.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>.</p>
 /// <p>To create a mount target for a file system, the file system's lifecycle state must be <code>available</code>. For more information, see <code>DescribeFileSystems</code>.</p>
 /// <p>In the request, provide the following:</p>
@@ -184,17 +184,17 @@ impl CreateMountTargetFluentBuilder {
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_id()
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_id()
     }

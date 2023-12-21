@@ -590,4 +590,18 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
         self.inner.get_traffic_sources()
     }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn instance_maintenance_policy(mut self, input: crate::types::InstanceMaintenancePolicy) -> Self {
+        self.inner = self.inner.instance_maintenance_policy(input);
+        self
+    }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_instance_maintenance_policy(mut self, input: ::std::option::Option<crate::types::InstanceMaintenancePolicy>) -> Self {
+        self.inner = self.inner.set_instance_maintenance_policy(input);
+        self
+    }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_instance_maintenance_policy(&self) -> &::std::option::Option<crate::types::InstanceMaintenancePolicy> {
+        self.inner.get_instance_maintenance_policy()
+    }
 }

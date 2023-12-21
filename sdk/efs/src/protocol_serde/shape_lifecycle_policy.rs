@@ -9,6 +9,9 @@ pub fn ser_lifecycle_policy(
     if let Some(var_2) = &input.transition_to_primary_storage_class {
         object.key("TransitionToPrimaryStorageClass").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.transition_to_archive {
+        object.key("TransitionToArchive").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -41,6 +44,13 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::types::TransitionToPrimaryStorageClassRules::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                            );
+                        }
+                        "TransitionToArchive" => {
+                            builder = builder.set_transition_to_archive(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TransitionToArchiveRules::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

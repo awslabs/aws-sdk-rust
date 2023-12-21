@@ -87,6 +87,10 @@ pub use crate::types::_obfuscation_setting_type::ObfuscationSettingType;
 
 pub use crate::types::_slot_value_elicitation_setting::SlotValueElicitationSetting;
 
+pub use crate::types::_slot_resolution_setting::SlotResolutionSetting;
+
+pub use crate::types::_slot_resolution_strategy::SlotResolutionStrategy;
+
 pub use crate::types::_slot_capture_setting::SlotCaptureSetting;
 
 pub use crate::types::_elicitation_code_hook_invocation_setting::ElicitationCodeHookInvocationSetting;
@@ -177,6 +181,20 @@ pub use crate::types::_path_format::PathFormat;
 
 pub use crate::types::_bot_recommendation_status::BotRecommendationStatus;
 
+pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
+
+pub use crate::types::_buildtime_settings::BuildtimeSettings;
+
+pub use crate::types::_sample_utterance_generation_specification::SampleUtteranceGenerationSpecification;
+
+pub use crate::types::_bedrock_model_specification::BedrockModelSpecification;
+
+pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuilderSpecification;
+
+pub use crate::types::_runtime_settings::RuntimeSettings;
+
+pub use crate::types::_slot_resolution_improvement_specification::SlotResolutionImprovementSpecification;
+
 pub use crate::types::_bot_locale_status::BotLocaleStatus;
 
 pub use crate::types::_voice_settings::VoiceSettings;
@@ -248,6 +266,8 @@ pub use crate::types::_custom_vocabulary_import_specification::CustomVocabularyI
 pub use crate::types::_bot_locale_import_specification::BotLocaleImportSpecification;
 
 pub use crate::types::_bot_import_specification::BotImportSpecification;
+
+pub use crate::types::_generation_status::GenerationStatus;
 
 pub use crate::types::_associated_transcript::AssociatedTranscript;
 
@@ -575,6 +595,12 @@ pub use crate::types::_bot_sort_by::BotSortBy;
 
 pub use crate::types::_bot_sort_attribute::BotSortAttribute;
 
+pub use crate::types::_generation_summary::GenerationSummary;
+
+pub use crate::types::_generation_sort_by::GenerationSortBy;
+
+pub use crate::types::_generation_sort_by_attribute::GenerationSortByAttribute;
+
 pub use crate::types::_bot_recommendation_summary::BotRecommendationSummary;
 
 pub use crate::types::_bot_locale_summary::BotLocaleSummary;
@@ -795,6 +821,8 @@ mod _audio_recognition_strategy;
 
 mod _audio_specification;
 
+mod _bedrock_model_specification;
+
 mod _bot_alias_history_event;
 
 mod _bot_alias_locale_settings;
@@ -863,6 +891,8 @@ mod _bot_version_sort_by;
 
 mod _bot_version_summary;
 
+mod _buildtime_settings;
+
 mod _built_in_intent_sort_attribute;
 
 mod _built_in_intent_sort_by;
@@ -929,6 +959,8 @@ mod _date_range_filter;
 
 mod _default_conditional_branch;
 
+mod _descriptive_bot_builder_specification;
+
 mod _dialog_action;
 
 mod _dialog_action_type;
@@ -978,6 +1010,16 @@ mod _fulfillment_start_response_specification;
 mod _fulfillment_update_response_specification;
 
 mod _fulfillment_updates_specification;
+
+mod _generation_sort_by;
+
+mod _generation_sort_by_attribute;
+
+mod _generation_status;
+
+mod _generation_summary;
+
+mod _generative_ai_settings;
 
 mod _grammar_slot_type_setting;
 
@@ -1103,11 +1145,15 @@ mod _runtime_hint_value;
 
 mod _runtime_hints;
 
+mod _runtime_settings;
+
 mod _s3_bucket_log_destination;
 
 mod _s3_bucket_transcript_source;
 
 mod _sample_utterance;
+
+mod _sample_utterance_generation_specification;
 
 mod _sample_value;
 
@@ -1134,6 +1180,12 @@ mod _slot_filter_name;
 mod _slot_filter_operator;
 
 mod _slot_priority;
+
+mod _slot_resolution_improvement_specification;
+
+mod _slot_resolution_setting;
+
+mod _slot_resolution_strategy;
 
 mod _slot_resolution_test_result_item;
 

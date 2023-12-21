@@ -22,6 +22,9 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
 }
 /// Fluent builder constructing a request to `SubmitMultiRegionAccessPointRoutes`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code> indicates a passive status, which means that traffic won't be routed to the specified Region. A value of <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At least one Region must be active at all times.</p>
 /// <p>When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to formerly active Regions will continue to run to their final completion state (success or failure). The routing configurations of any Regions that aren’t specified remain unchanged.</p><note>
 /// <p>Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to take effect.</p>

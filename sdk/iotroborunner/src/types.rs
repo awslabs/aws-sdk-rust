@@ -3,9 +3,9 @@ pub use crate::types::_site::Site;
 
 pub use crate::types::_worker_fleet::WorkerFleet;
 
-pub use crate::types::_destination::Destination;
-
 pub use crate::types::_destination_state::DestinationState;
+
+pub use crate::types::_destination::Destination;
 
 pub use crate::types::_position_coordinates::PositionCoordinates;
 

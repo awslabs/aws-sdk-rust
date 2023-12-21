@@ -25,6 +25,10 @@ pub fn ser_account_level(
         let inner_writer = scope.start_el("DetailedStatusCodesMetrics");
         crate::protocol_serde::shape_detailed_status_codes_metrics::ser_detailed_status_codes_metrics(var_5, inner_writer)?
     }
+    if let Some(var_6) = &input.storage_lens_group_level {
+        let inner_writer = scope.start_el("StorageLensGroupLevel");
+        crate::protocol_serde::shape_storage_lens_group_level::ser_storage_lens_group_level(var_6, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -38,53 +42,63 @@ pub fn de_account_level(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ActivityMetrics") /* ActivityMetrics com.amazonaws.s3control#AccountLevel$ActivityMetrics */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_activity_metrics::de_activity_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_activity_metrics(var_6);
+                builder = builder.set_activity_metrics(var_7);
             }
             ,
             s if s.matches("BucketLevel") /* BucketLevel com.amazonaws.s3control#AccountLevel$BucketLevel */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_bucket_level::de_bucket_level(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_bucket_level(var_7);
+                builder = builder.set_bucket_level(var_8);
             }
             ,
             s if s.matches("AdvancedCostOptimizationMetrics") /* AdvancedCostOptimizationMetrics com.amazonaws.s3control#AccountLevel$AdvancedCostOptimizationMetrics */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_advanced_cost_optimization_metrics::de_advanced_cost_optimization_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_advanced_cost_optimization_metrics(var_8);
+                builder = builder.set_advanced_cost_optimization_metrics(var_9);
             }
             ,
             s if s.matches("AdvancedDataProtectionMetrics") /* AdvancedDataProtectionMetrics com.amazonaws.s3control#AccountLevel$AdvancedDataProtectionMetrics */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_advanced_data_protection_metrics::de_advanced_data_protection_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_advanced_data_protection_metrics(var_9);
+                builder = builder.set_advanced_data_protection_metrics(var_10);
             }
             ,
             s if s.matches("DetailedStatusCodesMetrics") /* DetailedStatusCodesMetrics com.amazonaws.s3control#AccountLevel$DetailedStatusCodesMetrics */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_detailed_status_codes_metrics::de_detailed_status_codes_metrics(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_detailed_status_codes_metrics(var_10);
+                builder = builder.set_detailed_status_codes_metrics(var_11);
+            }
+            ,
+            s if s.matches("StorageLensGroupLevel") /* StorageLensGroupLevel com.amazonaws.s3control#AccountLevel$StorageLensGroupLevel */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_storage_lens_group_level::de_storage_lens_group_level(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_lens_group_level(var_12);
             }
             ,
             _ => {}

@@ -7,23 +7,21 @@ pub use crate::types::_target::TargetBuilder;
 
 pub use crate::types::_target_summary::TargetSummaryBuilder;
 
-pub use crate::types::_target_group_summary::TargetGroupSummaryBuilder;
-
 pub use crate::types::_target_group_config::TargetGroupConfigBuilder;
 
 pub use crate::types::_health_check_config::HealthCheckConfigBuilder;
 
+pub use crate::types::_target_group_summary::TargetGroupSummaryBuilder;
+
 pub use crate::types::_service_network_vpc_association_summary::ServiceNetworkVpcAssociationSummaryBuilder;
 
-pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummaryBuilder;
-
 pub use crate::types::_dns_entry::DnsEntryBuilder;
+
+pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummaryBuilder;
 
 pub use crate::types::_service_network_summary::ServiceNetworkSummaryBuilder;
 
 pub use crate::types::_service_summary::ServiceSummaryBuilder;
-
-pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
 pub use crate::types::_fixed_response_action::FixedResponseActionBuilder;
 
@@ -36,6 +34,8 @@ pub use crate::types::_http_match::HttpMatchBuilder;
 pub use crate::types::_header_match::HeaderMatchBuilder;
 
 pub use crate::types::_path_match::PathMatchBuilder;
+
+pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
 pub use crate::types::_listener_summary::ListenerSummaryBuilder;
 

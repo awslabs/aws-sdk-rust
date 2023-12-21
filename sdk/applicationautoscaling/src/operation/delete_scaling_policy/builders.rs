@@ -24,7 +24,7 @@ impl DeleteScalingPolicyInputBuilder {
 ///
 /// <p>Deletes the specified scaling policy for an Application Auto Scaling scalable target.</p>
 /// <p>Deleting a step scaling policy deletes the underlying alarm action, but does not delete the CloudWatch alarm associated with the scaling policy, even if it no longer has an associated action.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-step-scaling-policy-cli.html#delete-step-scaling-policy">Delete a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/create-target-tracking-policy-cli.html#delete-target-tracking-policy">Delete a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteScalingPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -174,6 +174,8 @@ impl DeleteScalingPolicyFluentBuilder {
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
     /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <li>
+    /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -215,6 +217,8 @@ impl DeleteScalingPolicyFluentBuilder {
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
     /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <li>
+    /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
@@ -256,6 +260,8 @@ impl DeleteScalingPolicyFluentBuilder {
     /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p></li>
     /// <li>
     /// <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p></li>
+    /// <li>
+    /// <p>SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.</p></li>
     /// </ul>
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_id()
@@ -304,6 +310,8 @@ impl DeleteScalingPolicyFluentBuilder {
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
     /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <li>
+    /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
         self.inner = self.inner.scalable_dimension(input);
@@ -353,6 +361,8 @@ impl DeleteScalingPolicyFluentBuilder {
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
     /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <li>
+    /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn set_scalable_dimension(mut self, input: ::std::option::Option<crate::types::ScalableDimension>) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
@@ -402,6 +412,8 @@ impl DeleteScalingPolicyFluentBuilder {
     /// <p><code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p></li>
     /// <li>
     /// <p><code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p></li>
+    /// <li>
+    /// <p><code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a SageMaker inference component.</p></li>
     /// </ul>
     pub fn get_scalable_dimension(&self) -> &::std::option::Option<crate::types::ScalableDimension> {
         self.inner.get_scalable_dimension()

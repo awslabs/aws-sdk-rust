@@ -203,6 +203,11 @@ pub fn ser_create_auto_scaling_group_input_input_input(
         }
         list_74.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_76 = writer.prefix("InstanceMaintenancePolicy");
+    if let Some(var_77) = &input.instance_maintenance_policy {
+        crate::protocol_serde::shape_instance_maintenance_policy::ser_instance_maintenance_policy(scope_76, var_77)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

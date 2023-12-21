@@ -3,6 +3,8 @@ pub use crate::types::error::_too_many_requests::TooManyRequestsBuilder;
 
 pub use crate::types::error::_throughput_limit_exceeded::ThroughputLimitExceededBuilder;
 
+pub use crate::types::error::_replication_already_exists::ReplicationAlreadyExistsBuilder;
+
 pub use crate::types::error::_internal_server_error::InternalServerErrorBuilder;
 
 pub use crate::types::error::_insufficient_throughput_capacity::InsufficientThroughputCapacityBuilder;
@@ -38,6 +40,8 @@ pub use crate::types::error::_file_system_in_use::FileSystemInUseBuilder;
 pub use crate::types::error::_unsupported_availability_zone::UnsupportedAvailabilityZoneBuilder;
 
 pub use crate::types::error::_file_system_limit_exceeded::FileSystemLimitExceededBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_subnet_not_found::SubnetNotFoundBuilder;
 

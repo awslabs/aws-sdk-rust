@@ -231,6 +231,8 @@ mod describe_bot_locale;
 
 mod describe_bot_recommendation;
 
+mod describe_bot_resource_generation;
+
 mod describe_bot_version;
 
 mod describe_custom_vocabulary_metadata;
@@ -255,6 +257,8 @@ mod describe_test_set_discrepancy_report;
 
 mod describe_test_set_generation;
 
+mod generate_bot_element;
+
 mod get_test_execution_artifacts_url;
 
 mod list_aggregated_utterances;
@@ -264,6 +268,8 @@ mod list_bot_aliases;
 mod list_bot_locales;
 
 mod list_bot_recommendations;
+
+mod list_bot_resource_generations;
 
 mod list_bot_versions;
 
@@ -314,6 +320,8 @@ mod list_utterance_metrics;
 mod search_associated_transcripts;
 
 mod start_bot_recommendation;
+
+mod start_bot_resource_generation;
 
 mod start_import;
 

@@ -7,10 +7,6 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_access_denied_exception_reason::AccessDeniedExceptionReason;
 
-pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSummary;
-
-pub use crate::types::_privacy_budget_type::PrivacyBudgetType;
-
 pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
 pub use crate::types::_privacy_budget_template::PrivacyBudgetTemplate;
@@ -21,13 +17,17 @@ pub use crate::types::_differential_privacy_template_parameters_output::Differen
 
 pub use crate::types::_privacy_budget_template_auto_refresh::PrivacyBudgetTemplateAutoRefresh;
 
-pub use crate::types::_privacy_budget_template_parameters_input::PrivacyBudgetTemplateParametersInput;
-
-pub use crate::types::_differential_privacy_template_parameters_input::DifferentialPrivacyTemplateParametersInput;
+pub use crate::types::_privacy_budget_type::PrivacyBudgetType;
 
 pub use crate::types::_privacy_budget_template_update_parameters::PrivacyBudgetTemplateUpdateParameters;
 
 pub use crate::types::_differential_privacy_template_update_parameters::DifferentialPrivacyTemplateUpdateParameters;
+
+pub use crate::types::_privacy_budget_template_parameters_input::PrivacyBudgetTemplateParametersInput;
+
+pub use crate::types::_differential_privacy_template_parameters_input::DifferentialPrivacyTemplateParametersInput;
+
+pub use crate::types::_privacy_budget_template_summary::PrivacyBudgetTemplateSummary;
 
 pub use crate::types::_protected_query::ProtectedQuery;
 
@@ -85,23 +85,23 @@ pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyP
 
 pub use crate::types::_differential_privacy_privacy_budget_aggregation::DifferentialPrivacyPrivacyBudgetAggregation;
 
-pub use crate::types::_membership_summary::MembershipSummary;
+pub use crate::types::_membership::Membership;
 
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfiguration;
 
 pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfig;
-
-pub use crate::types::_member_ability::MemberAbility;
-
-pub use crate::types::_membership_status::MembershipStatus;
-
-pub use crate::types::_membership::Membership;
 
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfiguration;
 
 pub use crate::types::_membership_protected_query_output_configuration::MembershipProtectedQueryOutputConfiguration;
 
 pub use crate::types::_membership_query_log_status::MembershipQueryLogStatus;
+
+pub use crate::types::_member_ability::MemberAbility;
+
+pub use crate::types::_membership_status::MembershipStatus;
+
+pub use crate::types::_membership_summary::MembershipSummary;
 
 pub use crate::types::_configured_table_analysis_rule::ConfiguredTableAnalysisRule;
 
@@ -135,23 +135,23 @@ pub use crate::types::_aggregate_function_name::AggregateFunctionName;
 
 pub use crate::types::_analysis_rule_list::AnalysisRuleList;
 
-pub use crate::types::_configured_table_summary::ConfiguredTableSummary;
+pub use crate::types::_configured_table::ConfiguredTable;
 
 pub use crate::types::_analysis_method::AnalysisMethod;
-
-pub use crate::types::_configured_table::ConfiguredTable;
 
 pub use crate::types::_table_reference::TableReference;
 
 pub use crate::types::_glue_table_reference::GlueTableReference;
 
-pub use crate::types::_configured_table_association_summary::ConfiguredTableAssociationSummary;
+pub use crate::types::_configured_table_summary::ConfiguredTableSummary;
 
 pub use crate::types::_configured_table_association::ConfiguredTableAssociation;
 
-pub use crate::types::_configured_audience_model_association_summary::ConfiguredAudienceModelAssociationSummary;
+pub use crate::types::_configured_table_association_summary::ConfiguredTableAssociationSummary;
 
 pub use crate::types::_configured_audience_model_association::ConfiguredAudienceModelAssociation;
+
+pub use crate::types::_configured_audience_model_association_summary::ConfiguredAudienceModelAssociationSummary;
 
 pub use crate::types::_schema_summary::SchemaSummary;
 
@@ -205,10 +205,6 @@ pub use crate::types::_batch_get_schema_error::BatchGetSchemaError;
 
 pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGetCollaborationAnalysisTemplateError;
 
-pub use crate::types::_collaboration_summary::CollaborationSummary;
-
-pub use crate::types::_filterable_member_status::FilterableMemberStatus;
-
 pub use crate::types::_collaboration::Collaboration;
 
 pub use crate::types::_collaboration_query_log_status::CollaborationQueryLogStatus;
@@ -217,9 +213,13 @@ pub use crate::types::_data_encryption_metadata::DataEncryptionMetadata;
 
 pub use crate::types::_member_specification::MemberSpecification;
 
-pub use crate::types::_analysis_template_summary::AnalysisTemplateSummary;
+pub use crate::types::_collaboration_summary::CollaborationSummary;
+
+pub use crate::types::_filterable_member_status::FilterableMemberStatus;
 
 pub use crate::types::_analysis_template::AnalysisTemplate;
+
+pub use crate::types::_analysis_template_summary::AnalysisTemplateSummary;
 
 mod _access_denied_exception_reason;
 

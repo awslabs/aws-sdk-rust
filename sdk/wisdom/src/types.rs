@@ -69,11 +69,11 @@ pub use crate::types::_import_job_summary::ImportJobSummary;
 
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummary;
 
-pub use crate::types::_quick_response_summary::QuickResponseSummary;
-
 pub use crate::types::_quick_response_data::QuickResponseData;
 
 pub use crate::types::_quick_response_data_provider::QuickResponseDataProvider;
+
+pub use crate::types::_quick_response_summary::QuickResponseSummary;
 
 pub use crate::types::_content_data::ContentData;
 
@@ -107,7 +107,7 @@ pub use crate::types::_recommendation_type::RecommendationType;
 
 pub use crate::types::_relevance_level::RelevanceLevel;
 
-pub use crate::types::_assistant_summary::AssistantSummary;
+pub use crate::types::_assistant_data::AssistantData;
 
 pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfiguration;
 
@@ -115,13 +115,13 @@ pub use crate::types::_assistant_status::AssistantStatus;
 
 pub use crate::types::_assistant_type::AssistantType;
 
-pub use crate::types::_assistant_data::AssistantData;
+pub use crate::types::_assistant_summary::AssistantSummary;
 
 pub use crate::types::_session_data::SessionData;
 
 pub use crate::types::_session_integration_configuration::SessionIntegrationConfiguration;
 
-pub use crate::types::_assistant_association_summary::AssistantAssociationSummary;
+pub use crate::types::_assistant_association_data::AssistantAssociationData;
 
 pub use crate::types::_assistant_association_output_data::AssistantAssociationOutputData;
 
@@ -129,9 +129,9 @@ pub use crate::types::_knowledge_base_association_data::KnowledgeBaseAssociation
 
 pub use crate::types::_association_type::AssociationType;
 
-pub use crate::types::_assistant_association_data::AssistantAssociationData;
-
 pub use crate::types::_assistant_association_input_data::AssistantAssociationInputData;
+
+pub use crate::types::_assistant_association_summary::AssistantAssociationSummary;
 
 mod _app_integrations_configuration;
 

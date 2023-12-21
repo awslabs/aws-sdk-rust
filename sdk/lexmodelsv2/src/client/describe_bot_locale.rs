@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`last_build_submitted_date_time(Option<DateTime>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::last_build_submitted_date_time): <p>The date and time that the locale was last submitted for building.</p>
     ///   - [`bot_locale_history_events(Option<Vec::<BotLocaleHistoryEvent>>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::bot_locale_history_events): <p>History of changes, such as when a locale is used in an alias, that have taken place for the locale.</p>
     ///   - [`recommended_actions(Option<Vec::<String>>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::recommended_actions): <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
+    ///   - [`generative_ai_settings(Option<GenerativeAiSettings>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::generative_ai_settings): <p>Contains settings for Amazon Bedrock's generative AI features for your bot locale.</p>
     /// - On failure, responds with [`SdkError<DescribeBotLocaleError>`](crate::operation::describe_bot_locale::DescribeBotLocaleError)
     pub fn describe_bot_locale(&self) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder {
         crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder::new(self.handle.clone())

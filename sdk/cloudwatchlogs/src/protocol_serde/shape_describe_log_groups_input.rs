@@ -30,5 +30,8 @@ pub fn ser_describe_log_groups_input_input(
     if let Some(var_8) = &input.include_linked_accounts {
         object.key("includeLinkedAccounts").boolean(*var_8);
     }
+    if let Some(var_9) = &input.log_group_class {
+        object.key("logGroupClass").string(var_9.as_str());
+    }
     Ok(())
 }

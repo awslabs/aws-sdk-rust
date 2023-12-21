@@ -15,6 +15,8 @@ pub struct UpdateBotLocaleInput {
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.</p>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
+    pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
 }
 impl UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -41,6 +43,10 @@ impl UpdateBotLocaleInput {
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
+    /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
+    pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
+        self.generative_ai_settings.as_ref()
+    }
 }
 impl UpdateBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
@@ -59,6 +65,7 @@ pub struct UpdateBotLocaleInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
 }
 impl UpdateBotLocaleInputBuilder {
     /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -149,6 +156,20 @@ impl UpdateBotLocaleInputBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
     }
+    /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
+    pub fn generative_ai_settings(mut self, input: crate::types::GenerativeAiSettings) -> Self {
+        self.generative_ai_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
+    pub fn set_generative_ai_settings(mut self, input: ::std::option::Option<crate::types::GenerativeAiSettings>) -> Self {
+        self.generative_ai_settings = input;
+        self
+    }
+    /// <p>Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.</p>
+    pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
+        &self.generative_ai_settings
+    }
     /// Consumes the builder and constructs a [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
     pub fn build(
         self,
@@ -160,6 +181,7 @@ impl UpdateBotLocaleInputBuilder {
             description: self.description,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            generative_ai_settings: self.generative_ai_settings,
         })
     }
 }

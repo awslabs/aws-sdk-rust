@@ -58,6 +58,8 @@ pub struct UpdateAutoScalingGroupInput {
     /// <p>To manage various warm-up settings at the group level, we recommend that you set the default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a value of <code>0</code> or other nominal value.</p>
     /// </important>
     pub default_instance_warmup: ::std::option::Option<i32>,
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
 }
 impl UpdateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -161,6 +163,10 @@ impl UpdateAutoScalingGroupInput {
     pub fn default_instance_warmup(&self) -> ::std::option::Option<i32> {
         self.default_instance_warmup
     }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn instance_maintenance_policy(&self) -> ::std::option::Option<&crate::types::InstanceMaintenancePolicy> {
+        self.instance_maintenance_policy.as_ref()
+    }
 }
 impl UpdateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
@@ -194,6 +200,7 @@ pub struct UpdateAutoScalingGroupInputBuilder {
     pub(crate) context: ::std::option::Option<::std::string::String>,
     pub(crate) desired_capacity_type: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_warmup: ::std::option::Option<i32>,
+    pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
 }
 impl UpdateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -542,6 +549,20 @@ impl UpdateAutoScalingGroupInputBuilder {
     pub fn get_default_instance_warmup(&self) -> &::std::option::Option<i32> {
         &self.default_instance_warmup
     }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn instance_maintenance_policy(mut self, input: crate::types::InstanceMaintenancePolicy) -> Self {
+        self.instance_maintenance_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_instance_maintenance_policy(mut self, input: ::std::option::Option<crate::types::InstanceMaintenancePolicy>) -> Self {
+        self.instance_maintenance_policy = input;
+        self
+    }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_instance_maintenance_policy(&self) -> &::std::option::Option<crate::types::InstanceMaintenancePolicy> {
+        &self.instance_maintenance_policy
+    }
     /// Consumes the builder and constructs a [`UpdateAutoScalingGroupInput`](crate::operation::update_auto_scaling_group::UpdateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -571,6 +592,7 @@ impl UpdateAutoScalingGroupInputBuilder {
             context: self.context,
             desired_capacity_type: self.desired_capacity_type,
             default_instance_warmup: self.default_instance_warmup,
+            instance_maintenance_policy: self.instance_maintenance_policy,
         })
     }
 }

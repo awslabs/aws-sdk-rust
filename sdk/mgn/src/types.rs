@@ -17,6 +17,34 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_vcenter_client::VcenterClient;
 
+pub use crate::types::_job::Job;
+
+pub use crate::types::_participating_server::ParticipatingServer;
+
+pub use crate::types::_post_launch_actions_status::PostLaunchActionsStatus;
+
+pub use crate::types::_job_post_launch_actions_launch_status::JobPostLaunchActionsLaunchStatus;
+
+pub use crate::types::_post_launch_action_execution_status::PostLaunchActionExecutionStatus;
+
+pub use crate::types::_ssm_document_type::SsmDocumentType;
+
+pub use crate::types::_ssm_document::SsmDocument;
+
+pub use crate::types::_ssm_external_parameter::SsmExternalParameter;
+
+pub use crate::types::_ssm_parameter_store_parameter::SsmParameterStoreParameter;
+
+pub use crate::types::_ssm_parameter_store_parameter_type::SsmParameterStoreParameterType;
+
+pub use crate::types::_launch_status::LaunchStatus;
+
+pub use crate::types::_job_status::JobStatus;
+
+pub use crate::types::_initiated_by::InitiatedBy;
+
+pub use crate::types::_job_type::JobType;
+
 pub use crate::types::_source_server_connector_action::SourceServerConnectorAction;
 
 pub use crate::types::_replication_type::ReplicationType;
@@ -87,14 +115,6 @@ pub use crate::types::_replication_configuration_default_large_staging_disk_type
 
 pub use crate::types::_post_launch_actions::PostLaunchActions;
 
-pub use crate::types::_ssm_document::SsmDocument;
-
-pub use crate::types::_ssm_external_parameter::SsmExternalParameter;
-
-pub use crate::types::_ssm_parameter_store_parameter::SsmParameterStoreParameter;
-
-pub use crate::types::_ssm_parameter_store_parameter_type::SsmParameterStoreParameterType;
-
 pub use crate::types::_post_launch_actions_deployment_type::PostLaunchActionsDeploymentType;
 
 pub use crate::types::_boot_mode::BootMode;
@@ -115,26 +135,6 @@ pub use crate::types::_change_server_life_cycle_state_source_server_lifecycle::C
 
 pub use crate::types::_change_server_life_cycle_state_source_server_lifecycle_state::ChangeServerLifeCycleStateSourceServerLifecycleState;
 
-pub use crate::types::_job::Job;
-
-pub use crate::types::_participating_server::ParticipatingServer;
-
-pub use crate::types::_post_launch_actions_status::PostLaunchActionsStatus;
-
-pub use crate::types::_job_post_launch_actions_launch_status::JobPostLaunchActionsLaunchStatus;
-
-pub use crate::types::_post_launch_action_execution_status::PostLaunchActionExecutionStatus;
-
-pub use crate::types::_ssm_document_type::SsmDocumentType;
-
-pub use crate::types::_launch_status::LaunchStatus;
-
-pub use crate::types::_job_status::JobStatus;
-
-pub use crate::types::_initiated_by::InitiatedBy;
-
-pub use crate::types::_job_type::JobType;
-
 pub use crate::types::_source_server::SourceServer;
 
 pub use crate::types::_describe_source_servers_request_filters::DescribeSourceServersRequestFilters;
@@ -145,11 +145,11 @@ pub use crate::types::_template_action_document::TemplateActionDocument;
 
 pub use crate::types::_template_actions_request_filters::TemplateActionsRequestFilters;
 
-pub use crate::types::_launch_configuration_template::LaunchConfigurationTemplate;
-
 pub use crate::types::_launch_template_disk_conf::LaunchTemplateDiskConf;
 
 pub use crate::types::_volume_type::VolumeType;
+
+pub use crate::types::_launch_configuration_template::LaunchConfigurationTemplate;
 
 pub use crate::types::_job_log::JobLog;
 
@@ -193,9 +193,9 @@ pub use crate::types::_export_status::ExportStatus;
 
 pub use crate::types::_list_exports_request_filters::ListExportsRequestFilters;
 
-pub use crate::types::_connector::Connector;
-
 pub use crate::types::_connector_ssm_command_config::ConnectorSsmCommandConfig;
+
+pub use crate::types::_connector::Connector;
 
 pub use crate::types::_list_connectors_request_filters::ListConnectorsRequestFilters;
 

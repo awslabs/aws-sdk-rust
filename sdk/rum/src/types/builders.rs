@@ -17,13 +17,13 @@ pub use crate::types::_batch_delete_rum_metric_definitions_error::BatchDeleteRum
 
 pub use crate::types::_batch_create_rum_metric_definitions_error::BatchCreateRumMetricDefinitionsErrorBuilder;
 
-pub use crate::types::_app_monitor_summary::AppMonitorSummaryBuilder;
-
 pub use crate::types::_app_monitor::AppMonitorBuilder;
 
 pub use crate::types::_data_storage::DataStorageBuilder;
 
 pub use crate::types::_cw_log::CwLogBuilder;
+
+pub use crate::types::_app_monitor_summary::AppMonitorSummaryBuilder;
 
 pub use crate::types::_rum_event::RumEventBuilder;
 

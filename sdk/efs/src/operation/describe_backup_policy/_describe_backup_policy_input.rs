@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBackupPolicyInput {
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBackupPolicyInput {
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeBackupPolicyInputBuilder {
     pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBackupPolicyInputBuilder {
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     /// This field is required.
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_system_id = input;
         self
     }
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }

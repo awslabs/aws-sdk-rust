@@ -5,7 +5,7 @@
 pub struct AdminListUserAuthEventsInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The user pool username or an alias.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl AdminListUserAuthEventsInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The user pool username or an alias.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -72,18 +72,18 @@ impl AdminListUserAuthEventsInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The user pool username or an alias.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool username or an alias.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user pool username or an alias.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

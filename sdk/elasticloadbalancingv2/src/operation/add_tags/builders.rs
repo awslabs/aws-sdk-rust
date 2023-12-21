@@ -22,7 +22,7 @@ impl AddTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `AddTags`.
 ///
-/// <p>Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.</p>
+/// <p>Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers, target groups, trust stores, listeners, and rules.</p>
 /// <p>Each tag consists of a key and an optional value. If a resource already has a tag with the same key, <code>AddTags</code> updates its value.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddTagsFluentBuilder {

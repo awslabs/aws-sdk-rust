@@ -7,10 +7,9 @@ pub struct PutSessionOutput {
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
     pub messages: ::std::option::Option<::std::string::String>,
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    /// <p>A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use this to determine the progress of the conversation and what the next action may be.</p>
     pub session_state: ::std::option::Option<::std::string::String>,
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>A base-64-encoded gzipped field that provides request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub request_attributes: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session that received the data.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
@@ -27,12 +26,11 @@ impl PutSessionOutput {
     pub fn messages(&self) -> ::std::option::Option<&str> {
         self.messages.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    /// <p>A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(&self) -> ::std::option::Option<&str> {
         self.session_state.as_deref()
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>A base-64-encoded gzipped field that provides request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub fn request_attributes(&self) -> ::std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
@@ -98,34 +96,31 @@ impl PutSessionOutputBuilder {
     pub fn get_messages(&self) -> &::std::option::Option<::std::string::String> {
         &self.messages
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    /// <p>A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    /// <p>A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn set_session_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_state = input;
         self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p>
-    /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
+    /// <p>A base-64-encoded gzipped field that represents the current state of the dialog between the user and the bot. Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn get_session_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_state
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>A base-64-encoded gzipped field that provides request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub fn request_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_attributes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>A base-64-encoded gzipped field that provides request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub fn set_request_attributes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_attributes = input;
         self
     }
-    /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
+    /// <p>A base-64-encoded gzipped field that provides request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub fn get_request_attributes(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_attributes
     }

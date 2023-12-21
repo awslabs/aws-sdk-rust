@@ -108,17 +108,17 @@ impl DescribeBackupPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
         self
     }
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub fn set_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_file_system_id(input);
         self
     }
-    /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
+    /// <p>Specifies which EFS file system for which to retrieve the <code>BackupPolicy</code>.</p>
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_file_system_id()
     }

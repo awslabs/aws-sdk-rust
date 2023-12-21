@@ -15,7 +15,7 @@ pub struct UserPoolType {
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtectionType>,
     /// <p>The Lambda triggers associated with the user pool.</p>
     pub lambda_config: ::std::option::Option<crate::types::LambdaConfigType>,
-    /// <p>The status of a user pool.</p>
+    /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "This property is no longer available.")]
     pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format, when the item was modified.</p>
@@ -123,7 +123,7 @@ impl UserPoolType {
     pub fn lambda_config(&self) -> ::std::option::Option<&crate::types::LambdaConfigType> {
         self.lambda_config.as_ref()
     }
-    /// <p>The status of a user pool.</p>
+    /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "This property is no longer available.")]
     pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
         self.status.as_ref()
@@ -392,19 +392,19 @@ impl UserPoolTypeBuilder {
     pub fn get_lambda_config(&self) -> &::std::option::Option<crate::types::LambdaConfigType> {
         &self.lambda_config
     }
-    /// <p>The status of a user pool.</p>
+    /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "This property is no longer available.")]
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of a user pool.</p>
+    /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "This property is no longer available.")]
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of a user pool.</p>
+    /// <p>This parameter is no longer used.</p>
     #[deprecated(note = "This property is no longer available.")]
     pub fn get_status(&self) -> &::std::option::Option<crate::types::StatusType> {
         &self.status

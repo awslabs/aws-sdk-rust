@@ -23,6 +23,14 @@ pub fn parse_http_error_metadata(
     crate::rest_xml_wrapped_errors::parse_error_metadata(response_body)
 }
 
+pub(crate) mod shape_associate_access_grants_identity_center;
+
+pub(crate) mod shape_create_access_grant;
+
+pub(crate) mod shape_create_access_grants_instance;
+
+pub(crate) mod shape_create_access_grants_location;
+
 pub(crate) mod shape_create_access_point;
 
 pub(crate) mod shape_create_access_point_for_object_lambda;
@@ -38,6 +46,16 @@ pub(crate) mod shape_create_bucket_input;
 pub(crate) mod shape_create_job;
 
 pub(crate) mod shape_create_multi_region_access_point;
+
+pub(crate) mod shape_create_storage_lens_group;
+
+pub(crate) mod shape_delete_access_grant;
+
+pub(crate) mod shape_delete_access_grants_instance;
+
+pub(crate) mod shape_delete_access_grants_instance_resource_policy;
+
+pub(crate) mod shape_delete_access_grants_location;
 
 pub(crate) mod shape_delete_access_point;
 
@@ -67,9 +85,23 @@ pub(crate) mod shape_delete_storage_lens_configuration;
 
 pub(crate) mod shape_delete_storage_lens_configuration_tagging;
 
+pub(crate) mod shape_delete_storage_lens_group;
+
 pub(crate) mod shape_describe_job;
 
 pub(crate) mod shape_describe_multi_region_access_point_operation;
+
+pub(crate) mod shape_dissociate_access_grants_identity_center;
+
+pub(crate) mod shape_get_access_grant;
+
+pub(crate) mod shape_get_access_grants_instance;
+
+pub(crate) mod shape_get_access_grants_instance_for_prefix;
+
+pub(crate) mod shape_get_access_grants_instance_resource_policy;
+
+pub(crate) mod shape_get_access_grants_location;
 
 pub(crate) mod shape_get_access_point;
 
@@ -97,6 +129,8 @@ pub(crate) mod shape_get_bucket_tagging;
 
 pub(crate) mod shape_get_bucket_versioning;
 
+pub(crate) mod shape_get_data_access;
+
 pub(crate) mod shape_get_job_tagging;
 
 pub(crate) mod shape_get_multi_region_access_point;
@@ -113,6 +147,14 @@ pub(crate) mod shape_get_storage_lens_configuration;
 
 pub(crate) mod shape_get_storage_lens_configuration_tagging;
 
+pub(crate) mod shape_get_storage_lens_group;
+
+pub(crate) mod shape_list_access_grants;
+
+pub(crate) mod shape_list_access_grants_instances;
+
+pub(crate) mod shape_list_access_grants_locations;
+
 pub(crate) mod shape_list_access_points;
 
 pub(crate) mod shape_list_access_points_for_object_lambda;
@@ -124,6 +166,12 @@ pub(crate) mod shape_list_multi_region_access_points;
 pub(crate) mod shape_list_regional_buckets;
 
 pub(crate) mod shape_list_storage_lens_configurations;
+
+pub(crate) mod shape_list_storage_lens_groups;
+
+pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_access_grants_instance_resource_policy;
 
 pub(crate) mod shape_put_access_point_configuration_for_object_lambda;
 
@@ -163,15 +211,31 @@ pub(crate) mod shape_put_storage_lens_configuration_tagging;
 
 pub(crate) mod shape_submit_multi_region_access_point_routes;
 
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_access_grants_location;
+
 pub(crate) mod shape_update_job_priority;
 
 pub(crate) mod shape_update_job_status;
+
+pub(crate) mod shape_update_storage_lens_group;
+
+pub(crate) mod shape_associate_access_grants_identity_center_input;
 
 pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_bucket_already_exists;
 
 pub(crate) mod shape_bucket_already_owned_by_you;
+
+pub(crate) mod shape_create_access_grant_input;
+
+pub(crate) mod shape_create_access_grants_instance_input;
+
+pub(crate) mod shape_create_access_grants_location_input;
 
 pub(crate) mod shape_create_access_point_for_object_lambda_input;
 
@@ -183,11 +247,15 @@ pub(crate) mod shape_create_job_input;
 
 pub(crate) mod shape_create_multi_region_access_point_input;
 
+pub(crate) mod shape_create_storage_lens_group_input;
+
 pub(crate) mod shape_delete_multi_region_access_point_input;
 
 pub(crate) mod shape_get_public_access_block_output;
 
 pub(crate) mod shape_get_storage_lens_configuration_output;
+
+pub(crate) mod shape_get_storage_lens_group_output;
 
 pub(crate) mod shape_idempotency_exception;
 
@@ -202,6 +270,8 @@ pub(crate) mod shape_job_status_exception;
 pub(crate) mod shape_no_such_public_access_block_configuration;
 
 pub(crate) mod shape_not_found_exception;
+
+pub(crate) mod shape_put_access_grants_instance_resource_policy_input;
 
 pub(crate) mod shape_put_access_point_configuration_for_object_lambda_input;
 
@@ -221,9 +291,23 @@ pub(crate) mod shape_put_storage_lens_configuration_tagging_input;
 
 pub(crate) mod shape_submit_multi_region_access_point_routes_input;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_too_many_tags_exception;
+
+pub(crate) mod shape_update_access_grants_location_input;
+
+pub(crate) mod shape_update_storage_lens_group_input;
+
+pub(crate) mod shape_access_grants_instances_list;
+
+pub(crate) mod shape_access_grants_list;
+
+pub(crate) mod shape_access_grants_location_configuration;
+
+pub(crate) mod shape_access_grants_locations_list;
 
 pub(crate) mod shape_access_point_list;
 
@@ -231,7 +315,11 @@ pub(crate) mod shape_async_operation;
 
 pub(crate) mod shape_create_bucket_configuration;
 
+pub(crate) mod shape_credentials;
+
 pub(crate) mod shape_endpoints;
+
+pub(crate) mod shape_grantee;
 
 pub(crate) mod shape_job_descriptor;
 
@@ -250,6 +338,8 @@ pub(crate) mod shape_lifecycle_configuration;
 pub(crate) mod shape_lifecycle_rules;
 
 pub(crate) mod shape_list_storage_lens_configuration_entry;
+
+pub(crate) mod shape_list_storage_lens_group_entry;
 
 pub(crate) mod shape_multi_region_access_point_policy_document;
 
@@ -281,9 +371,15 @@ pub(crate) mod shape_s3_tag_set;
 
 pub(crate) mod shape_storage_lens_configuration;
 
+pub(crate) mod shape_storage_lens_group;
+
 pub(crate) mod shape_storage_lens_tag;
 
 pub(crate) mod shape_storage_lens_tags;
+
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_tagging;
 
@@ -318,6 +414,12 @@ pub(crate) mod shape_job_progress_summary;
 pub(crate) mod shape_lambda_invoke_operation;
 
 pub(crate) mod shape_lifecycle_rule;
+
+pub(crate) mod shape_list_access_grant_entry;
+
+pub(crate) mod shape_list_access_grants_instance_entry;
+
+pub(crate) mod shape_list_access_grants_locations_entry;
 
 pub(crate) mod shape_object_lambda_access_point;
 
@@ -359,6 +461,8 @@ pub(crate) mod shape_storage_lens_aws_org;
 
 pub(crate) mod shape_storage_lens_data_export;
 
+pub(crate) mod shape_storage_lens_group_filter;
+
 pub(crate) mod shape_abort_incomplete_multipart_upload;
 
 pub(crate) mod shape_activity_metrics;
@@ -390,6 +494,10 @@ pub(crate) mod shape_job_timers;
 pub(crate) mod shape_lifecycle_expiration;
 
 pub(crate) mod shape_lifecycle_rule_filter;
+
+pub(crate) mod shape_match_object_age;
+
+pub(crate) mod shape_match_object_size;
 
 pub(crate) mod shape_multi_region_access_points_async_response;
 
@@ -425,6 +533,12 @@ pub(crate) mod shape_s3_retention;
 
 pub(crate) mod shape_source_selection_criteria;
 
+pub(crate) mod shape_storage_lens_group_and_operator;
+
+pub(crate) mod shape_storage_lens_group_level;
+
+pub(crate) mod shape_storage_lens_group_or_operator;
+
 pub(crate) mod shape_transition;
 
 pub(crate) mod shape_transition_list;
@@ -441,7 +555,15 @@ pub(crate) mod shape_generated_manifest_encryption;
 
 pub(crate) mod shape_job_manifest_field_list;
 
+pub(crate) mod shape_key_name_constraint;
+
 pub(crate) mod shape_lifecycle_rule_and_operator;
+
+pub(crate) mod shape_match_any_prefix;
+
+pub(crate) mod shape_match_any_suffix;
+
+pub(crate) mod shape_match_any_tag;
 
 pub(crate) mod shape_metrics;
 
@@ -471,6 +593,10 @@ pub(crate) mod shape_sse_kms_encrypted_objects;
 
 pub(crate) mod shape_storage_lens_data_export_encryption;
 
+pub(crate) mod shape_storage_lens_group_level_selection_criteria;
+
+pub(crate) mod shape_user_arguments;
+
 pub(crate) mod shape_multi_region_access_point_regional_response;
 
 pub(crate) mod shape_prefix_level_storage_metrics;
@@ -487,8 +613,16 @@ pub(crate) mod shape_ssekms;
 
 pub(crate) mod shape_ssekms_encryption;
 
+pub(crate) mod shape_storage_class_list;
+
+pub(crate) mod shape_non_empty_max_length1024_string_list;
+
 pub(crate) mod shape_selection_criteria;
 
 pub(crate) mod shape_sses3;
 
 pub(crate) mod shape_sses3_encryption;
+
+pub(crate) mod shape_storage_lens_group_level_exclude;
+
+pub(crate) mod shape_storage_lens_group_level_include;

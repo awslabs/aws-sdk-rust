@@ -16,6 +16,8 @@ pub struct SlotValueElicitationSetting {
     pub wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
     /// <p>Specifies the settings that Amazon Lex uses when a slot value is successfully entered by a user.</p>
     pub slot_capture_setting: ::std::option::Option<crate::types::SlotCaptureSetting>,
+    /// <p>An object containing information about whether assisted slot resolution is turned on for the slot or not.</p>
+    pub slot_resolution_setting: ::std::option::Option<crate::types::SlotResolutionSetting>,
 }
 impl SlotValueElicitationSetting {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
@@ -44,6 +46,10 @@ impl SlotValueElicitationSetting {
     pub fn slot_capture_setting(&self) -> ::std::option::Option<&crate::types::SlotCaptureSetting> {
         self.slot_capture_setting.as_ref()
     }
+    /// <p>An object containing information about whether assisted slot resolution is turned on for the slot or not.</p>
+    pub fn slot_resolution_setting(&self) -> ::std::option::Option<&crate::types::SlotResolutionSetting> {
+        self.slot_resolution_setting.as_ref()
+    }
 }
 impl SlotValueElicitationSetting {
     /// Creates a new builder-style object to manufacture [`SlotValueElicitationSetting`](crate::types::SlotValueElicitationSetting).
@@ -62,6 +68,7 @@ pub struct SlotValueElicitationSettingBuilder {
     pub(crate) sample_utterances: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     pub(crate) wait_and_continue_specification: ::std::option::Option<crate::types::WaitAndContinueSpecification>,
     pub(crate) slot_capture_setting: ::std::option::Option<crate::types::SlotCaptureSetting>,
+    pub(crate) slot_resolution_setting: ::std::option::Option<crate::types::SlotResolutionSetting>,
 }
 impl SlotValueElicitationSettingBuilder {
     /// <p>A list of default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
@@ -155,6 +162,20 @@ impl SlotValueElicitationSettingBuilder {
     pub fn get_slot_capture_setting(&self) -> &::std::option::Option<crate::types::SlotCaptureSetting> {
         &self.slot_capture_setting
     }
+    /// <p>An object containing information about whether assisted slot resolution is turned on for the slot or not.</p>
+    pub fn slot_resolution_setting(mut self, input: crate::types::SlotResolutionSetting) -> Self {
+        self.slot_resolution_setting = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object containing information about whether assisted slot resolution is turned on for the slot or not.</p>
+    pub fn set_slot_resolution_setting(mut self, input: ::std::option::Option<crate::types::SlotResolutionSetting>) -> Self {
+        self.slot_resolution_setting = input;
+        self
+    }
+    /// <p>An object containing information about whether assisted slot resolution is turned on for the slot or not.</p>
+    pub fn get_slot_resolution_setting(&self) -> &::std::option::Option<crate::types::SlotResolutionSetting> {
+        &self.slot_resolution_setting
+    }
     /// Consumes the builder and constructs a [`SlotValueElicitationSetting`](crate::types::SlotValueElicitationSetting).
     /// This method will fail if any of the following fields are not set:
     /// - [`slot_constraint`](crate::types::builders::SlotValueElicitationSettingBuilder::slot_constraint)
@@ -171,6 +192,7 @@ impl SlotValueElicitationSettingBuilder {
             sample_utterances: self.sample_utterances,
             wait_and_continue_specification: self.wait_and_continue_specification,
             slot_capture_setting: self.slot_capture_setting,
+            slot_resolution_setting: self.slot_resolution_setting,
         })
     }
 }

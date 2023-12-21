@@ -109,6 +109,12 @@ impl DescribeMountTargetsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_mount_targets::paginator::DescribeMountTargetsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::describe_mount_targets::paginator::DescribeMountTargetsPaginator {
+        crate::operation::describe_mount_targets::paginator::DescribeMountTargetsPaginator::new(self.handle, self.inner)
+    }
     /// <p>(Optional) Maximum number of mount targets to return in the response. Currently, this number is automatically set to 10, and other values are ignored. The response is paginated at 100 per page if you have more than 100 mount targets.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);

@@ -229,6 +229,11 @@ pub(crate) fn de_update_file_system(
                             .transpose()?,
                     );
                 }
+                "FileSystemProtection" => {
+                    builder = builder.set_file_system_protection(
+                        crate::protocol_serde::shape_file_system_protection_description::de_file_system_protection_description(tokens)?,
+                    );
+                }
                 "KmsKeyId" => {
                     builder = builder.set_kms_key_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

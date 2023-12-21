@@ -21,7 +21,7 @@ pub struct GetMetricStreamOutput {
     pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date of the most recent update to the metric stream's configuration.</p>
     pub last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
     /// <p>Each entry in this array displays information about one or more metrics that include additional statistics in the metric stream. For more information about the additional statistics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>.</p>
     pub statistics_configurations: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsConfiguration>>,
@@ -70,7 +70,7 @@ impl GetMetricStreamOutput {
     pub fn last_update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
@@ -254,17 +254,17 @@ impl GetMetricStreamOutputBuilder {
     pub fn get_last_update_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_date
     }
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn output_format(mut self, input: crate::types::MetricStreamOutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::MetricStreamOutputFormat>) -> Self {
         self.output_format = input;
         self
     }
-    /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
+    /// <p>The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">Metric streams output formats</a>.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
         &self.output_format
     }

@@ -33,6 +33,7 @@
 ///     MetricType::NeptuneReaderAverageCpuUtilization => { /* ... */ },
 ///     MetricType::RdsReaderAverageCpuUtilization => { /* ... */ },
 ///     MetricType::RdsReaderAverageDatabaseConnections => { /* ... */ },
+///     MetricType::SageMakerInferenceComponentInvocationsPerCopy => { /* ... */ },
 ///     MetricType::SageMakerVariantInvocationsPerInstance => { /* ... */ },
 ///     MetricType::SageMakerVariantProvisionedConcurrencyUtilization => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -105,6 +106,8 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     RdsReaderAverageDatabaseConnections,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerInferenceComponentInvocationsPerCopy,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantInvocationsPerInstance,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantProvisionedConcurrencyUtilization,
@@ -136,6 +139,7 @@ impl ::std::convert::From<&str> for MetricType {
             "NeptuneReaderAverageCPUUtilization" => MetricType::NeptuneReaderAverageCpuUtilization,
             "RDSReaderAverageCPUUtilization" => MetricType::RdsReaderAverageCpuUtilization,
             "RDSReaderAverageDatabaseConnections" => MetricType::RdsReaderAverageDatabaseConnections,
+            "SageMakerInferenceComponentInvocationsPerCopy" => MetricType::SageMakerInferenceComponentInvocationsPerCopy,
             "SageMakerVariantInvocationsPerInstance" => MetricType::SageMakerVariantInvocationsPerInstance,
             "SageMakerVariantProvisionedConcurrencyUtilization" => MetricType::SageMakerVariantProvisionedConcurrencyUtilization,
             other => MetricType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -174,6 +178,7 @@ impl MetricType {
             MetricType::NeptuneReaderAverageCpuUtilization => "NeptuneReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageCpuUtilization => "RDSReaderAverageCPUUtilization",
             MetricType::RdsReaderAverageDatabaseConnections => "RDSReaderAverageDatabaseConnections",
+            MetricType::SageMakerInferenceComponentInvocationsPerCopy => "SageMakerInferenceComponentInvocationsPerCopy",
             MetricType::SageMakerVariantInvocationsPerInstance => "SageMakerVariantInvocationsPerInstance",
             MetricType::SageMakerVariantProvisionedConcurrencyUtilization => "SageMakerVariantProvisionedConcurrencyUtilization",
             MetricType::Unknown(value) => value.as_str(),
@@ -203,6 +208,7 @@ impl MetricType {
             "NeptuneReaderAverageCPUUtilization",
             "RDSReaderAverageCPUUtilization",
             "RDSReaderAverageDatabaseConnections",
+            "SageMakerInferenceComponentInvocationsPerCopy",
             "SageMakerVariantInvocationsPerInstance",
             "SageMakerVariantProvisionedConcurrencyUtilization",
         ]

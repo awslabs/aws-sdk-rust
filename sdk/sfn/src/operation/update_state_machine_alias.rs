@@ -254,6 +254,8 @@ pub enum UpdateStateMachineAliasError {
     InvalidArn(crate::types::error::InvalidArn),
     /// <p>Could not find the referenced resource.</p>
     ResourceNotFound(crate::types::error::ResourceNotFound),
+    /// <p>The specified state machine is being deleted.</p>
+    StateMachineDeleting(crate::types::error::StateMachineDeleting),
     /// <p>The input does not satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -292,6 +294,7 @@ impl UpdateStateMachineAliasError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArn(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::StateMachineDeleting(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -308,6 +311,10 @@ impl UpdateStateMachineAliasError {
     pub fn is_resource_not_found(&self) -> bool {
         matches!(self, Self::ResourceNotFound(_))
     }
+    /// Returns `true` if the error kind is `UpdateStateMachineAliasError::StateMachineDeleting`.
+    pub fn is_state_machine_deleting(&self) -> bool {
+        matches!(self, Self::StateMachineDeleting(_))
+    }
     /// Returns `true` if the error kind is `UpdateStateMachineAliasError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -319,6 +326,7 @@ impl ::std::error::Error for UpdateStateMachineAliasError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArn(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFound(_inner) => ::std::option::Option::Some(_inner),
+            Self::StateMachineDeleting(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -330,6 +338,7 @@ impl ::std::fmt::Display for UpdateStateMachineAliasError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArn(_inner) => _inner.fmt(f),
             Self::ResourceNotFound(_inner) => _inner.fmt(f),
+            Self::StateMachineDeleting(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -355,6 +364,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateStateMa
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArn(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::StateMachineDeleting(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersInGroupOutput {
-    /// <p>The users returned in the request to list users.</p>
+    /// <p>A list of users in the group, and their attributes.</p>
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserType>>,
     /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUsersInGroupOutput {
-    /// <p>The users returned in the request to list users.</p>
+    /// <p>A list of users in the group, and their attributes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.users.is_none()`.
     pub fn users(&self) -> &[crate::types::UserType] {
@@ -46,19 +46,19 @@ impl ListUsersInGroupOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
-    /// <p>The users returned in the request to list users.</p>
+    /// <p>A list of users in the group, and their attributes.</p>
     pub fn users(mut self, input: crate::types::UserType) -> Self {
         let mut v = self.users.unwrap_or_default();
         v.push(input);
         self.users = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The users returned in the request to list users.</p>
+    /// <p>A list of users in the group, and their attributes.</p>
     pub fn set_users(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserType>>) -> Self {
         self.users = input;
         self
     }
-    /// <p>The users returned in the request to list users.</p>
+    /// <p>A list of users in the group, and their attributes.</p>
     pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserType>> {
         &self.users
     }

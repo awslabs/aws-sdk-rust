@@ -3,21 +3,21 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_workspace_summary::WorkspaceSummary;
+pub use crate::types::_workspace_description::WorkspaceDescription;
 
 pub use crate::types::_workspace_status::WorkspaceStatus;
 
 pub use crate::types::_workspace_status_code::WorkspaceStatusCode;
 
-pub use crate::types::_workspace_description::WorkspaceDescription;
-
-pub use crate::types::_rule_groups_namespace_summary::RuleGroupsNamespaceSummary;
+pub use crate::types::_workspace_summary::WorkspaceSummary;
 
 pub use crate::types::_rule_groups_namespace_status::RuleGroupsNamespaceStatus;
 
 pub use crate::types::_rule_groups_namespace_status_code::RuleGroupsNamespaceStatusCode;
 
 pub use crate::types::_rule_groups_namespace_description::RuleGroupsNamespaceDescription;
+
+pub use crate::types::_rule_groups_namespace_summary::RuleGroupsNamespaceSummary;
 
 pub use crate::types::_logging_configuration_status::LoggingConfigurationStatus;
 
@@ -31,7 +31,11 @@ pub use crate::types::_alert_manager_definition_status_code::AlertManagerDefinit
 
 pub use crate::types::_alert_manager_definition_description::AlertManagerDefinitionDescription;
 
-pub use crate::types::_scraper_summary::ScraperSummary;
+pub use crate::types::_scraper_status::ScraperStatus;
+
+pub use crate::types::_scraper_status_code::ScraperStatusCode;
+
+pub use crate::types::_scraper_description::ScraperDescription;
 
 pub use crate::types::_destination::Destination;
 
@@ -41,13 +45,9 @@ pub use crate::types::_source::Source;
 
 pub use crate::types::_eks_configuration::EksConfiguration;
 
-pub use crate::types::_scraper_status::ScraperStatus;
-
-pub use crate::types::_scraper_status_code::ScraperStatusCode;
-
 pub use crate::types::_scrape_configuration::ScrapeConfiguration;
 
-pub use crate::types::_scraper_description::ScraperDescription;
+pub use crate::types::_scraper_summary::ScraperSummary;
 
 mod _alert_manager_definition_description;
 

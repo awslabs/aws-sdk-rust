@@ -267,6 +267,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateReplica
 pub enum CreateReplicationConfigurationError {
     /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
     BadRequest(crate::types::error::BadRequest),
+    /// <p>Returned if the source file system in a replication is encrypted but the destination file system is unencrypted.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Returned if the Amazon Web Services account has already created the maximum number of file systems allowed per account.</p>
     FileSystemLimitExceeded(crate::types::error::FileSystemLimitExceeded),
     /// <p>Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's Amazon Web Services account.</p>
@@ -319,6 +321,7 @@ impl CreateReplicationConfigurationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequest(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::FileSystemLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::FileSystemNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IncorrectFileSystemLifeCycleState(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -334,6 +337,10 @@ impl CreateReplicationConfigurationError {
     /// Returns `true` if the error kind is `CreateReplicationConfigurationError::BadRequest`.
     pub fn is_bad_request(&self) -> bool {
         matches!(self, Self::BadRequest(_))
+    }
+    /// Returns `true` if the error kind is `CreateReplicationConfigurationError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateReplicationConfigurationError::FileSystemLimitExceeded`.
     pub fn is_file_system_limit_exceeded(&self) -> bool {
@@ -376,6 +383,7 @@ impl ::std::error::Error for CreateReplicationConfigurationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BadRequest(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::FileSystemLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::FileSystemNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::IncorrectFileSystemLifeCycleState(_inner) => ::std::option::Option::Some(_inner),
@@ -393,6 +401,7 @@ impl ::std::fmt::Display for CreateReplicationConfigurationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BadRequest(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::FileSystemLimitExceeded(_inner) => _inner.fmt(f),
             Self::FileSystemNotFound(_inner) => _inner.fmt(f),
             Self::IncorrectFileSystemLifeCycleState(_inner) => _inner.fmt(f),
@@ -424,6 +433,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateReplica
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BadRequest(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::FileSystemLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::FileSystemNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IncorrectFileSystemLifeCycleState(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

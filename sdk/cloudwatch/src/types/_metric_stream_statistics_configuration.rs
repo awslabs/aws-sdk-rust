@@ -8,7 +8,7 @@ pub struct MetricStreamStatisticsConfiguration {
     /// <p>All metrics that match the combination of metric name and namespace will be streamed with the additional statistics, no matter their dimensions.</p>
     pub include_metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricStreamStatisticsMetric>>,
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
-    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     pub additional_statistics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -21,7 +21,7 @@ impl MetricStreamStatisticsConfiguration {
         self.include_metrics.as_deref().unwrap_or_default()
     }
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
-    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_statistics.is_none()`.
@@ -72,7 +72,7 @@ impl MetricStreamStatisticsConfigurationBuilder {
     /// To override the contents of this collection use [`set_additional_statistics`](Self::set_additional_statistics).
     ///
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
-    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     pub fn additional_statistics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_statistics.unwrap_or_default();
@@ -81,14 +81,14 @@ impl MetricStreamStatisticsConfigurationBuilder {
         self
     }
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
-    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     pub fn set_additional_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_statistics = input;
         self
     }
     /// <p>The list of additional statistics that are to be streamed for the metrics listed in the <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
-    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
+    /// <p>If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.</p>
     /// <p>If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
     pub fn get_additional_statistics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_statistics

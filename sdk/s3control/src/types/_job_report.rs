@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobReport {
-    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
+    /// </note>
     pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The format of the specified job-completion report.</p>
     pub format: ::std::option::Option<crate::types::JobReportFormat>,
@@ -21,7 +23,9 @@ pub struct JobReport {
     pub report_scope: ::std::option::Option<crate::types::JobReportScope>,
 }
 impl JobReport {
-    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
+    /// </note>
     pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
@@ -65,17 +69,23 @@ pub struct JobReportBuilder {
     pub(crate) report_scope: ::std::option::Option<crate::types::JobReportScope>,
 }
 impl JobReportBuilder {
-    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
+    /// </note>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
+    /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p>
+    /// <p>The Amazon Resource Name (ARN) for the bucket where specified job-completion report will be stored.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as a location for Batch Operations to store job completion reports.</p>
+    /// </note>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }

@@ -3,11 +3,9 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_environment_summary::EnvironmentSummary;
+pub use crate::types::_pending_maintenance::PendingMaintenance;
 
-pub use crate::types::_engine_type::EngineType;
-
-pub use crate::types::_environment_lifecycle::EnvironmentLifecycle;
+pub use crate::types::_maintenance_schedule::MaintenanceSchedule;
 
 pub use crate::types::_high_availability_config::HighAvailabilityConfig;
 
@@ -17,9 +15,11 @@ pub use crate::types::_fsx_storage_configuration::FsxStorageConfiguration;
 
 pub use crate::types::_efs_storage_configuration::EfsStorageConfiguration;
 
-pub use crate::types::_pending_maintenance::PendingMaintenance;
+pub use crate::types::_engine_type::EngineType;
 
-pub use crate::types::_maintenance_schedule::MaintenanceSchedule;
+pub use crate::types::_environment_lifecycle::EnvironmentLifecycle;
+
+pub use crate::types::_environment_summary::EnvironmentSummary;
 
 pub use crate::types::_batch_job_identifier::BatchJobIdentifier;
 
@@ -93,17 +93,17 @@ pub use crate::types::_gdg_attributes::GdgAttributes;
 
 pub use crate::types::_vsam_attributes::VsamAttributes;
 
-pub use crate::types::_application_summary::ApplicationSummary;
-
-pub use crate::types::_application_deployment_lifecycle::ApplicationDeploymentLifecycle;
-
-pub use crate::types::_application_lifecycle::ApplicationLifecycle;
-
 pub use crate::types::_definition::Definition;
 
 pub use crate::types::_log_group_summary::LogGroupSummary;
 
 pub use crate::types::_deployed_version_summary::DeployedVersionSummary;
+
+pub use crate::types::_application_lifecycle::ApplicationLifecycle;
+
+pub use crate::types::_application_summary::ApplicationSummary;
+
+pub use crate::types::_application_deployment_lifecycle::ApplicationDeploymentLifecycle;
 
 pub use crate::types::_engine_versions_summary::EngineVersionsSummary;
 

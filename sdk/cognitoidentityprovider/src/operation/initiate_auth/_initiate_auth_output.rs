@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InitiateAuthOutput {
-    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>InitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p><note>
     /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// </note>
@@ -25,7 +25,7 @@ pub struct InitiateAuthOutput {
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.</p>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
@@ -39,7 +39,7 @@ pub struct InitiateAuthOutput {
     _request_id: Option<String>,
 }
 impl InitiateAuthOutput {
-    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>InitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p><note>
     /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// </note>
@@ -60,7 +60,7 @@ impl InitiateAuthOutput {
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.</p>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
@@ -114,7 +114,7 @@ pub struct InitiateAuthOutputBuilder {
     _request_id: Option<String>,
 }
 impl InitiateAuthOutputBuilder {
-    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>InitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p><note>
     /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// </note>
@@ -135,14 +135,14 @@ impl InitiateAuthOutputBuilder {
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.</p>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
         self.challenge_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>InitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p><note>
     /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// </note>
@@ -163,14 +163,14 @@ impl InitiateAuthOutputBuilder {
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.</p>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.challenge_name = input;
         self
     }
-    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>InitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p><note>
     /// <p>All of the following challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p>
     /// </note>
@@ -191,7 +191,7 @@ impl InitiateAuthOutputBuilder {
     /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.</p>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
     /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p></li>
     /// </ul>
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {

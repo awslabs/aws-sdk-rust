@@ -225,6 +225,8 @@ mod stop_execution;
 
 mod tag_resource;
 
+mod test_state;
+
 mod untag_resource;
 
 mod update_map_run;

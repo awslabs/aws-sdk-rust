@@ -9,7 +9,7 @@ publish = false
 
 [dependencies]
 base64 = "0.13.0"
-aws-sdk-kms= { version = "1.7.1", path = "../../../sdk/kms" }
+aws-sdk-kms= { version = "1.8.0", path = "../../../sdk/kms" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 
 [dependencies.tokio]

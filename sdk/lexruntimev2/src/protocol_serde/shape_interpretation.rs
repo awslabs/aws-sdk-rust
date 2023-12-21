@@ -23,6 +23,13 @@ where
                         "intent" => {
                             builder = builder.set_intent(crate::protocol_serde::shape_intent::de_intent(tokens)?);
                         }
+                        "interpretationSource" => {
+                            builder = builder.set_interpretation_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InterpretationSource::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

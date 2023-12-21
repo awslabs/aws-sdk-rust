@@ -3,6 +3,8 @@ pub use crate::types::error::_too_many_requests::TooManyRequests;
 
 pub use crate::types::error::_throughput_limit_exceeded::ThroughputLimitExceeded;
 
+pub use crate::types::error::_replication_already_exists::ReplicationAlreadyExists;
+
 pub use crate::types::error::_internal_server_error::InternalServerError;
 
 pub use crate::types::error::_insufficient_throughput_capacity::InsufficientThroughputCapacity;
@@ -39,6 +41,8 @@ pub use crate::types::error::_unsupported_availability_zone::UnsupportedAvailabi
 
 pub use crate::types::error::_file_system_limit_exceeded::FileSystemLimitExceeded;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_subnet_not_found::SubnetNotFound;
 
 pub use crate::types::error::_no_free_addresses_in_subnet::NoFreeAddressesInSubnet;
@@ -68,6 +72,8 @@ mod _access_point_not_found;
 mod _availability_zones_mismatch;
 
 mod _bad_request;
+
+mod _conflict_exception;
 
 mod _dependency_timeout;
 
@@ -100,6 +106,8 @@ mod _network_interface_limit_exceeded;
 mod _no_free_addresses_in_subnet;
 
 mod _policy_not_found;
+
+mod _replication_already_exists;
 
 mod _replication_not_found;
 

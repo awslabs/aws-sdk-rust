@@ -14,6 +14,7 @@ With Application Auto Scaling, you can configure automatic scaling for the follo
   - Amazon Neptune clusters
   - Amazon SageMaker endpoint variants
   - Amazon SageMaker Serverless endpoint provisioned concurrency
+  - Amazon SageMaker inference components
   - Spot Fleets (Amazon EC2)
   - Custom resources provided by your own applications or services
 
@@ -38,7 +39,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-aws-sdk-applicationautoscaling = "1.8.0"
+aws-sdk-applicationautoscaling = "1.9.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

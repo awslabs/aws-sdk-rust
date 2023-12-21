@@ -83,6 +83,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_file_system;
 
+pub(crate) mod shape_update_file_system_protection;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -100,6 +102,8 @@ pub(crate) mod shape_access_point_not_found;
 pub(crate) mod shape_availability_zones_mismatch;
 
 pub(crate) mod shape_bad_request;
+
+pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_access_point_input;
 
@@ -157,6 +161,8 @@ pub(crate) mod shape_put_file_system_policy_input;
 
 pub(crate) mod shape_put_lifecycle_configuration_input;
 
+pub(crate) mod shape_replication_already_exists;
+
 pub(crate) mod shape_replication_not_found;
 
 pub(crate) mod shape_security_group_limit_exceeded;
@@ -177,6 +183,8 @@ pub(crate) mod shape_unsupported_availability_zone;
 
 pub(crate) mod shape_update_file_system_input;
 
+pub(crate) mod shape_update_file_system_protection_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_access_point_descriptions;
@@ -188,6 +196,8 @@ pub(crate) mod shape_destination_to_create;
 pub(crate) mod shape_destinations;
 
 pub(crate) mod shape_file_system_descriptions;
+
+pub(crate) mod shape_file_system_protection_description;
 
 pub(crate) mod shape_file_system_size;
 

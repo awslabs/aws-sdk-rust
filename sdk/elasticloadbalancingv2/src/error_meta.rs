@@ -9,6 +9,8 @@ pub enum Error {
     AllocationIdNotFoundException(crate::types::error::AllocationIdNotFoundException),
     /// <p>The specified Availability Zone is not supported.</p>
     AvailabilityZoneNotSupportedException(crate::types::error::AvailabilityZoneNotSupportedException),
+    /// <p>The specified ca certificate bundle does not exist.</p>
+    CaCertificatesBundleNotFoundException(crate::types::error::CaCertificatesBundleNotFoundException),
     /// <p>The specified certificate does not exist.</p>
     CertificateNotFoundException(crate::types::error::CertificateNotFoundException),
     /// <p>A listener with the specified port already exists.</p>
@@ -19,14 +21,20 @@ pub enum Error {
     DuplicateTagKeysException(crate::types::error::DuplicateTagKeysException),
     /// <p>A target group with the specified name already exists.</p>
     DuplicateTargetGroupNameException(crate::types::error::DuplicateTargetGroupNameException),
+    /// <p>A trust store with the specified name already exists.</p>
+    DuplicateTrustStoreNameException(crate::types::error::DuplicateTrustStoreNameException),
     /// <p>The health of the specified targets could not be retrieved due to an internal error.</p>
     HealthUnavailableException(crate::types::error::HealthUnavailableException),
     /// <p>The specified configuration is not valid with this protocol.</p>
     IncompatibleProtocolsException(crate::types::error::IncompatibleProtocolsException),
+    /// <p>The specified ca certificate bundle is in an invalid format, or corrupt.</p>
+    InvalidCaCertificatesBundleException(crate::types::error::InvalidCaCertificatesBundleException),
     /// <p>The requested configuration is not valid.</p>
     InvalidConfigurationRequestException(crate::types::error::InvalidConfigurationRequestException),
     /// <p>The requested action is not valid.</p>
     InvalidLoadBalancerActionException(crate::types::error::InvalidLoadBalancerActionException),
+    /// <p>The provided revocation file is an invalid format, or uses an incorrect algorithm.</p>
+    InvalidRevocationContentException(crate::types::error::InvalidRevocationContentException),
     /// <p>The requested scheme is not valid.</p>
     InvalidSchemeException(crate::types::error::InvalidSchemeException),
     /// <p>The specified security group does not exist.</p>
@@ -45,6 +53,10 @@ pub enum Error {
     PriorityInUseException(crate::types::error::PriorityInUseException),
     /// <p>A specified resource is in use.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
+    /// <p>The specified revocation file does not exist.</p>
+    RevocationContentNotFoundException(crate::types::error::RevocationContentNotFoundException),
+    /// <p>The specified revocation ID does not exist.</p>
+    RevocationIdNotFoundException(crate::types::error::RevocationIdNotFoundException),
     /// <p>The specified rule does not exist.</p>
     RuleNotFoundException(crate::types::error::RuleNotFoundException),
     /// <p>The specified SSL policy does not exist.</p>
@@ -67,14 +79,24 @@ pub enum Error {
     TooManyRegistrationsForTargetIdException(crate::types::error::TooManyRegistrationsForTargetIdException),
     /// <p>You've reached the limit on the number of rules per load balancer.</p>
     TooManyRulesException(crate::types::error::TooManyRulesException),
-    /// <p>You've reached the limit on the number of tags per load balancer.</p>
+    /// <p>You've reached the limit on the number of tags for this resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::types::error::TooManyTargetGroupsException),
     /// <p>You've reached the limit on the number of targets.</p>
     TooManyTargetsException(crate::types::error::TooManyTargetsException),
+    /// <p>The specified trust store has too many revocation entries.</p>
+    TooManyTrustStoreRevocationEntriesException(crate::types::error::TooManyTrustStoreRevocationEntriesException),
+    /// <p>You've reached the limit on the number of trust stores for your Amazon Web Services account.</p>
+    TooManyTrustStoresException(crate::types::error::TooManyTrustStoresException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(crate::types::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
+    /// <p>The specified trust store is currently in use.</p>
+    TrustStoreInUseException(crate::types::error::TrustStoreInUseException),
+    /// <p>The specified trust store does not exist.</p>
+    TrustStoreNotFoundException(crate::types::error::TrustStoreNotFoundException),
+    /// <p>The specified trust store is not active.</p>
+    TrustStoreNotReadyException(crate::types::error::TrustStoreNotReadyException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::types::error::UnsupportedProtocolException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -92,15 +114,19 @@ impl ::std::fmt::Display for Error {
             Error::AlpnPolicyNotSupportedException(inner) => inner.fmt(f),
             Error::AllocationIdNotFoundException(inner) => inner.fmt(f),
             Error::AvailabilityZoneNotSupportedException(inner) => inner.fmt(f),
+            Error::CaCertificatesBundleNotFoundException(inner) => inner.fmt(f),
             Error::CertificateNotFoundException(inner) => inner.fmt(f),
             Error::DuplicateListenerException(inner) => inner.fmt(f),
             Error::DuplicateLoadBalancerNameException(inner) => inner.fmt(f),
             Error::DuplicateTagKeysException(inner) => inner.fmt(f),
             Error::DuplicateTargetGroupNameException(inner) => inner.fmt(f),
+            Error::DuplicateTrustStoreNameException(inner) => inner.fmt(f),
             Error::HealthUnavailableException(inner) => inner.fmt(f),
             Error::IncompatibleProtocolsException(inner) => inner.fmt(f),
+            Error::InvalidCaCertificatesBundleException(inner) => inner.fmt(f),
             Error::InvalidConfigurationRequestException(inner) => inner.fmt(f),
             Error::InvalidLoadBalancerActionException(inner) => inner.fmt(f),
+            Error::InvalidRevocationContentException(inner) => inner.fmt(f),
             Error::InvalidSchemeException(inner) => inner.fmt(f),
             Error::InvalidSecurityGroupException(inner) => inner.fmt(f),
             Error::InvalidSubnetException(inner) => inner.fmt(f),
@@ -110,6 +136,8 @@ impl ::std::fmt::Display for Error {
             Error::OperationNotPermittedException(inner) => inner.fmt(f),
             Error::PriorityInUseException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
+            Error::RevocationContentNotFoundException(inner) => inner.fmt(f),
+            Error::RevocationIdNotFoundException(inner) => inner.fmt(f),
             Error::RuleNotFoundException(inner) => inner.fmt(f),
             Error::SslPolicyNotFoundException(inner) => inner.fmt(f),
             Error::SubnetNotFoundException(inner) => inner.fmt(f),
@@ -124,7 +152,12 @@ impl ::std::fmt::Display for Error {
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::TooManyTargetGroupsException(inner) => inner.fmt(f),
             Error::TooManyTargetsException(inner) => inner.fmt(f),
+            Error::TooManyTrustStoreRevocationEntriesException(inner) => inner.fmt(f),
+            Error::TooManyTrustStoresException(inner) => inner.fmt(f),
             Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.fmt(f),
+            Error::TrustStoreInUseException(inner) => inner.fmt(f),
+            Error::TrustStoreNotFoundException(inner) => inner.fmt(f),
+            Error::TrustStoreNotReadyException(inner) => inner.fmt(f),
             Error::UnsupportedProtocolException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -150,15 +183,19 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AlpnPolicyNotSupportedException(inner) => inner.meta(),
             Self::AllocationIdNotFoundException(inner) => inner.meta(),
             Self::AvailabilityZoneNotSupportedException(inner) => inner.meta(),
+            Self::CaCertificatesBundleNotFoundException(inner) => inner.meta(),
             Self::CertificateNotFoundException(inner) => inner.meta(),
             Self::DuplicateListenerException(inner) => inner.meta(),
             Self::DuplicateLoadBalancerNameException(inner) => inner.meta(),
             Self::DuplicateTagKeysException(inner) => inner.meta(),
             Self::DuplicateTargetGroupNameException(inner) => inner.meta(),
+            Self::DuplicateTrustStoreNameException(inner) => inner.meta(),
             Self::HealthUnavailableException(inner) => inner.meta(),
             Self::IncompatibleProtocolsException(inner) => inner.meta(),
+            Self::InvalidCaCertificatesBundleException(inner) => inner.meta(),
             Self::InvalidConfigurationRequestException(inner) => inner.meta(),
             Self::InvalidLoadBalancerActionException(inner) => inner.meta(),
+            Self::InvalidRevocationContentException(inner) => inner.meta(),
             Self::InvalidSchemeException(inner) => inner.meta(),
             Self::InvalidSecurityGroupException(inner) => inner.meta(),
             Self::InvalidSubnetException(inner) => inner.meta(),
@@ -168,6 +205,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::OperationNotPermittedException(inner) => inner.meta(),
             Self::PriorityInUseException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
+            Self::RevocationContentNotFoundException(inner) => inner.meta(),
+            Self::RevocationIdNotFoundException(inner) => inner.meta(),
             Self::RuleNotFoundException(inner) => inner.meta(),
             Self::SslPolicyNotFoundException(inner) => inner.meta(),
             Self::SubnetNotFoundException(inner) => inner.meta(),
@@ -182,7 +221,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::TooManyTargetGroupsException(inner) => inner.meta(),
             Self::TooManyTargetsException(inner) => inner.meta(),
+            Self::TooManyTrustStoreRevocationEntriesException(inner) => inner.meta(),
+            Self::TooManyTrustStoresException(inner) => inner.meta(),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.meta(),
+            Self::TrustStoreInUseException(inner) => inner.meta(),
+            Self::TrustStoreNotFoundException(inner) => inner.meta(),
+            Self::TrustStoreNotReadyException(inner) => inner.meta(),
             Self::UnsupportedProtocolException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -244,7 +288,44 @@ impl From<crate::operation::add_tags::AddTagsError> for Error {
             crate::operation::add_tags::AddTagsError::RuleNotFoundException(inner) => Error::RuleNotFoundException(inner),
             crate::operation::add_tags::AddTagsError::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
             crate::operation::add_tags::AddTagsError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::add_tags::AddTagsError::TrustStoreNotFoundException(inner) => Error::TrustStoreNotFoundException(inner),
             crate::operation::add_tags::AddTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError> for Error {
+    fn from(err: crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError) -> Self {
+        match err {
+            crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError::InvalidRevocationContentException(inner) => {
+                Error::InvalidRevocationContentException(inner)
+            }
+            crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError::RevocationContentNotFoundException(inner) => {
+                Error::RevocationContentNotFoundException(inner)
+            }
+            crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError::TooManyTrustStoreRevocationEntriesException(inner) => {
+                Error::TooManyTrustStoreRevocationEntriesException(inner)
+            }
+            crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::add_trust_store_revocations::AddTrustStoreRevocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -298,6 +379,8 @@ impl From<crate::operation::create_listener::CreateListenerError> for Error {
             crate::operation::create_listener::CreateListenerError::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => {
                 Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner)
             }
+            crate::operation::create_listener::CreateListenerError::TrustStoreNotFoundException(inner) => Error::TrustStoreNotFoundException(inner),
+            crate::operation::create_listener::CreateListenerError::TrustStoreNotReadyException(inner) => Error::TrustStoreNotReadyException(inner),
             crate::operation::create_listener::CreateListenerError::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
             crate::operation::create_listener::CreateListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -430,6 +513,41 @@ impl From<crate::operation::create_target_group::CreateTargetGroupError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_trust_store::CreateTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_trust_store::CreateTrustStoreError> for Error {
+    fn from(err: crate::operation::create_trust_store::CreateTrustStoreError) -> Self {
+        match err {
+            crate::operation::create_trust_store::CreateTrustStoreError::CaCertificatesBundleNotFoundException(inner) => {
+                Error::CaCertificatesBundleNotFoundException(inner)
+            }
+            crate::operation::create_trust_store::CreateTrustStoreError::DuplicateTagKeysException(inner) => Error::DuplicateTagKeysException(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::DuplicateTrustStoreNameException(inner) => {
+                Error::DuplicateTrustStoreNameException(inner)
+            }
+            crate::operation::create_trust_store::CreateTrustStoreError::InvalidCaCertificatesBundleException(inner) => {
+                Error::InvalidCaCertificatesBundleException(inner)
+            }
+            crate::operation::create_trust_store::CreateTrustStoreError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_trust_store::CreateTrustStoreError::TooManyTrustStoresException(inner) => {
+                Error::TooManyTrustStoresException(inner)
+            }
+            crate::operation::create_trust_store::CreateTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_listener::DeleteListenerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -523,6 +641,31 @@ impl From<crate::operation::delete_target_group::DeleteTargetGroupError> for Err
         match err {
             crate::operation::delete_target_group::DeleteTargetGroupError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_target_group::DeleteTargetGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_trust_store::DeleteTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_trust_store::DeleteTrustStoreError> for Error {
+    fn from(err: crate::operation::delete_trust_store::DeleteTrustStoreError) -> Self {
+        match err {
+            crate::operation::delete_trust_store::DeleteTrustStoreError::TrustStoreInUseException(inner) => Error::TrustStoreInUseException(inner),
+            crate::operation::delete_trust_store::DeleteTrustStoreError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::delete_trust_store::DeleteTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -763,6 +906,7 @@ impl From<crate::operation::describe_tags::DescribeTagsError> for Error {
             crate::operation::describe_tags::DescribeTagsError::LoadBalancerNotFoundException(inner) => Error::LoadBalancerNotFoundException(inner),
             crate::operation::describe_tags::DescribeTagsError::RuleNotFoundException(inner) => Error::RuleNotFoundException(inner),
             crate::operation::describe_tags::DescribeTagsError::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
+            crate::operation::describe_tags::DescribeTagsError::TrustStoreNotFoundException(inner) => Error::TrustStoreNotFoundException(inner),
             crate::operation::describe_tags::DescribeTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -856,6 +1000,175 @@ impl From<crate::operation::describe_target_health::DescribeTargetHealthError> f
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError> for Error {
+    fn from(err: crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::describe_trust_store_associations::DescribeTrustStoreAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError> for Error {
+    fn from(err: crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError) -> Self {
+        match err {
+            crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError::RevocationIdNotFoundException(inner) => {
+                Error::RevocationIdNotFoundException(inner)
+            }
+            crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::describe_trust_store_revocations::DescribeTrustStoreRevocationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_trust_stores::DescribeTrustStoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_trust_stores::DescribeTrustStoresError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_trust_stores::DescribeTrustStoresError> for Error {
+    fn from(err: crate::operation::describe_trust_stores::DescribeTrustStoresError) -> Self {
+        match err {
+            crate::operation::describe_trust_stores::DescribeTrustStoresError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::describe_trust_stores::DescribeTrustStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleError> for Error {
+    fn from(err: crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleError) -> Self {
+        match err {
+            crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::get_trust_store_ca_certificates_bundle::GetTrustStoreCaCertificatesBundleError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError> for Error {
+    fn from(err: crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError) -> Self {
+        match err {
+            crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError::RevocationIdNotFoundException(inner) => {
+                Error::RevocationIdNotFoundException(inner)
+            }
+            crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::get_trust_store_revocation_content::GetTrustStoreRevocationContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_listener::ModifyListenerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -903,6 +1216,8 @@ impl From<crate::operation::modify_listener::ModifyListenerError> for Error {
             crate::operation::modify_listener::ModifyListenerError::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => {
                 Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner)
             }
+            crate::operation::modify_listener::ModifyListenerError::TrustStoreNotFoundException(inner) => Error::TrustStoreNotFoundException(inner),
+            crate::operation::modify_listener::ModifyListenerError::TrustStoreNotReadyException(inner) => Error::TrustStoreNotReadyException(inner),
             crate::operation::modify_listener::ModifyListenerError::UnsupportedProtocolException(inner) => Error::UnsupportedProtocolException(inner),
             crate::operation::modify_listener::ModifyListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1043,6 +1358,36 @@ impl From<crate::operation::modify_target_group_attributes::ModifyTargetGroupAtt
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_trust_store::ModifyTrustStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_trust_store::ModifyTrustStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_trust_store::ModifyTrustStoreError> for Error {
+    fn from(err: crate::operation::modify_trust_store::ModifyTrustStoreError) -> Self {
+        match err {
+            crate::operation::modify_trust_store::ModifyTrustStoreError::CaCertificatesBundleNotFoundException(inner) => {
+                Error::CaCertificatesBundleNotFoundException(inner)
+            }
+            crate::operation::modify_trust_store::ModifyTrustStoreError::InvalidCaCertificatesBundleException(inner) => {
+                Error::InvalidCaCertificatesBundleException(inner)
+            }
+            crate::operation::modify_trust_store::ModifyTrustStoreError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::modify_trust_store::ModifyTrustStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_targets::RegisterTargetsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1124,7 +1469,42 @@ impl From<crate::operation::remove_tags::RemoveTagsError> for Error {
             crate::operation::remove_tags::RemoveTagsError::RuleNotFoundException(inner) => Error::RuleNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::TargetGroupNotFoundException(inner) => Error::TargetGroupNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::remove_tags::RemoveTagsError::TrustStoreNotFoundException(inner) => Error::TrustStoreNotFoundException(inner),
             crate::operation::remove_tags::RemoveTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError> for Error {
+    fn from(err: crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError) -> Self {
+        match err {
+            crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError::RevocationIdNotFoundException(inner) => {
+                Error::RevocationIdNotFoundException(inner)
+            }
+            crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError::TrustStoreNotFoundException(inner) => {
+                Error::TrustStoreNotFoundException(inner)
+            }
+            crate::operation::remove_trust_store_revocations::RemoveTrustStoreRevocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1249,15 +1629,19 @@ impl ::std::error::Error for Error {
             Error::AlpnPolicyNotSupportedException(inner) => inner.source(),
             Error::AllocationIdNotFoundException(inner) => inner.source(),
             Error::AvailabilityZoneNotSupportedException(inner) => inner.source(),
+            Error::CaCertificatesBundleNotFoundException(inner) => inner.source(),
             Error::CertificateNotFoundException(inner) => inner.source(),
             Error::DuplicateListenerException(inner) => inner.source(),
             Error::DuplicateLoadBalancerNameException(inner) => inner.source(),
             Error::DuplicateTagKeysException(inner) => inner.source(),
             Error::DuplicateTargetGroupNameException(inner) => inner.source(),
+            Error::DuplicateTrustStoreNameException(inner) => inner.source(),
             Error::HealthUnavailableException(inner) => inner.source(),
             Error::IncompatibleProtocolsException(inner) => inner.source(),
+            Error::InvalidCaCertificatesBundleException(inner) => inner.source(),
             Error::InvalidConfigurationRequestException(inner) => inner.source(),
             Error::InvalidLoadBalancerActionException(inner) => inner.source(),
+            Error::InvalidRevocationContentException(inner) => inner.source(),
             Error::InvalidSchemeException(inner) => inner.source(),
             Error::InvalidSecurityGroupException(inner) => inner.source(),
             Error::InvalidSubnetException(inner) => inner.source(),
@@ -1267,6 +1651,8 @@ impl ::std::error::Error for Error {
             Error::OperationNotPermittedException(inner) => inner.source(),
             Error::PriorityInUseException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
+            Error::RevocationContentNotFoundException(inner) => inner.source(),
+            Error::RevocationIdNotFoundException(inner) => inner.source(),
             Error::RuleNotFoundException(inner) => inner.source(),
             Error::SslPolicyNotFoundException(inner) => inner.source(),
             Error::SubnetNotFoundException(inner) => inner.source(),
@@ -1281,7 +1667,12 @@ impl ::std::error::Error for Error {
             Error::TooManyTagsException(inner) => inner.source(),
             Error::TooManyTargetGroupsException(inner) => inner.source(),
             Error::TooManyTargetsException(inner) => inner.source(),
+            Error::TooManyTrustStoreRevocationEntriesException(inner) => inner.source(),
+            Error::TooManyTrustStoresException(inner) => inner.source(),
             Error::TooManyUniqueTargetGroupsPerLoadBalancerException(inner) => inner.source(),
+            Error::TrustStoreInUseException(inner) => inner.source(),
+            Error::TrustStoreNotFoundException(inner) => inner.source(),
+            Error::TrustStoreNotReadyException(inner) => inner.source(),
             Error::UnsupportedProtocolException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -1293,15 +1684,19 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AlpnPolicyNotSupportedException(e) => e.request_id(),
             Self::AllocationIdNotFoundException(e) => e.request_id(),
             Self::AvailabilityZoneNotSupportedException(e) => e.request_id(),
+            Self::CaCertificatesBundleNotFoundException(e) => e.request_id(),
             Self::CertificateNotFoundException(e) => e.request_id(),
             Self::DuplicateListenerException(e) => e.request_id(),
             Self::DuplicateLoadBalancerNameException(e) => e.request_id(),
             Self::DuplicateTagKeysException(e) => e.request_id(),
             Self::DuplicateTargetGroupNameException(e) => e.request_id(),
+            Self::DuplicateTrustStoreNameException(e) => e.request_id(),
             Self::HealthUnavailableException(e) => e.request_id(),
             Self::IncompatibleProtocolsException(e) => e.request_id(),
+            Self::InvalidCaCertificatesBundleException(e) => e.request_id(),
             Self::InvalidConfigurationRequestException(e) => e.request_id(),
             Self::InvalidLoadBalancerActionException(e) => e.request_id(),
+            Self::InvalidRevocationContentException(e) => e.request_id(),
             Self::InvalidSchemeException(e) => e.request_id(),
             Self::InvalidSecurityGroupException(e) => e.request_id(),
             Self::InvalidSubnetException(e) => e.request_id(),
@@ -1311,6 +1706,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::OperationNotPermittedException(e) => e.request_id(),
             Self::PriorityInUseException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
+            Self::RevocationContentNotFoundException(e) => e.request_id(),
+            Self::RevocationIdNotFoundException(e) => e.request_id(),
             Self::RuleNotFoundException(e) => e.request_id(),
             Self::SslPolicyNotFoundException(e) => e.request_id(),
             Self::SubnetNotFoundException(e) => e.request_id(),
@@ -1325,7 +1722,12 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TooManyTagsException(e) => e.request_id(),
             Self::TooManyTargetGroupsException(e) => e.request_id(),
             Self::TooManyTargetsException(e) => e.request_id(),
+            Self::TooManyTrustStoreRevocationEntriesException(e) => e.request_id(),
+            Self::TooManyTrustStoresException(e) => e.request_id(),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(e) => e.request_id(),
+            Self::TrustStoreInUseException(e) => e.request_id(),
+            Self::TrustStoreNotFoundException(e) => e.request_id(),
+            Self::TrustStoreNotReadyException(e) => e.request_id(),
             Self::UnsupportedProtocolException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

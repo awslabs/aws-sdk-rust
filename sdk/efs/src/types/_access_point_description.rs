@@ -18,7 +18,7 @@ pub struct AccessPointDescription {
     pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by NFS clients using the access point.</p>
     pub posix_user: ::std::option::Option<crate::types::PosixUser>,
-    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    /// <p>The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub root_directory: ::std::option::Option<crate::types::RootDirectory>,
     /// <p>Identifies the Amazon Web Services account that owns the access point resource.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -56,7 +56,7 @@ impl AccessPointDescription {
     pub fn posix_user(&self) -> ::std::option::Option<&crate::types::PosixUser> {
         self.posix_user.as_ref()
     }
-    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    /// <p>The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub fn root_directory(&self) -> ::std::option::Option<&crate::types::RootDirectory> {
         self.root_directory.as_ref()
     }
@@ -196,17 +196,17 @@ impl AccessPointDescriptionBuilder {
     pub fn get_posix_user(&self) -> &::std::option::Option<crate::types::PosixUser> {
         &self.posix_user
     }
-    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    /// <p>The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub fn root_directory(mut self, input: crate::types::RootDirectory) -> Self {
         self.root_directory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    /// <p>The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub fn set_root_directory(mut self, input: ::std::option::Option<crate::types::RootDirectory>) -> Self {
         self.root_directory = input;
         self
     }
-    /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
+    /// <p>The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
     pub fn get_root_directory(&self) -> &::std::option::Option<crate::types::RootDirectory> {
         &self.root_directory
     }

@@ -7,6 +7,9 @@ pub mod add_listener_certificates;
 /// Types for the `AddTags` operation.
 pub mod add_tags;
 
+/// Types for the `AddTrustStoreRevocations` operation.
+pub mod add_trust_store_revocations;
+
 /// Types for the `CreateListener` operation.
 pub mod create_listener;
 
@@ -19,6 +22,9 @@ pub mod create_rule;
 /// Types for the `CreateTargetGroup` operation.
 pub mod create_target_group;
 
+/// Types for the `CreateTrustStore` operation.
+pub mod create_trust_store;
+
 /// Types for the `DeleteListener` operation.
 pub mod delete_listener;
 
@@ -30,6 +36,9 @@ pub mod delete_rule;
 
 /// Types for the `DeleteTargetGroup` operation.
 pub mod delete_target_group;
+
+/// Types for the `DeleteTrustStore` operation.
+pub mod delete_trust_store;
 
 /// Types for the `DeregisterTargets` operation.
 pub mod deregister_targets;
@@ -67,6 +76,21 @@ pub mod describe_target_groups;
 /// Types for the `DescribeTargetHealth` operation.
 pub mod describe_target_health;
 
+/// Types for the `DescribeTrustStoreAssociations` operation.
+pub mod describe_trust_store_associations;
+
+/// Types for the `DescribeTrustStoreRevocations` operation.
+pub mod describe_trust_store_revocations;
+
+/// Types for the `DescribeTrustStores` operation.
+pub mod describe_trust_stores;
+
+/// Types for the `GetTrustStoreCaCertificatesBundle` operation.
+pub mod get_trust_store_ca_certificates_bundle;
+
+/// Types for the `GetTrustStoreRevocationContent` operation.
+pub mod get_trust_store_revocation_content;
+
 /// Types for the `ModifyListener` operation.
 pub mod modify_listener;
 
@@ -82,6 +106,9 @@ pub mod modify_target_group;
 /// Types for the `ModifyTargetGroupAttributes` operation.
 pub mod modify_target_group_attributes;
 
+/// Types for the `ModifyTrustStore` operation.
+pub mod modify_trust_store;
+
 /// Types for the `RegisterTargets` operation.
 pub mod register_targets;
 
@@ -90,6 +117,9 @@ pub mod remove_listener_certificates;
 
 /// Types for the `RemoveTags` operation.
 pub mod remove_tags;
+
+/// Types for the `RemoveTrustStoreRevocations` operation.
+pub mod remove_trust_store_revocations;
 
 /// Types for the `SetIpAddressType` operation.
 pub mod set_ip_address_type;

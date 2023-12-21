@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 thiserror = "1.0.49"
-aws-sdk-textract= { version = "1.7.0", path = "../../../sdk/textract" }
+aws-sdk-textract= { version = "1.8.0", path = "../../../sdk/textract" }
 aws-types= { version = "1.1.1", path = "../../../sdk/aws-types" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 

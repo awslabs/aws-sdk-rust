@@ -11,7 +11,7 @@ pub struct HealthCheckPolicy {
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
     pub protocol: crate::types::PortProtocol,
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
-    pub port: i32,
+    pub port: ::std::option::Option<i32>,
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
@@ -33,7 +33,7 @@ impl HealthCheckPolicy {
         &self.protocol
     }
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
-    pub fn port(&self) -> i32 {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
@@ -177,6 +177,8 @@ impl HealthCheckPolicyBuilder {
     /// - [`timeout_millis`](crate::types::builders::HealthCheckPolicyBuilder::timeout_millis)
     /// - [`interval_millis`](crate::types::builders::HealthCheckPolicyBuilder::interval_millis)
     /// - [`protocol`](crate::types::builders::HealthCheckPolicyBuilder::protocol)
+    /// - [`healthy_threshold`](crate::types::builders::HealthCheckPolicyBuilder::healthy_threshold)
+    /// - [`unhealthy_threshold`](crate::types::builders::HealthCheckPolicyBuilder::unhealthy_threshold)
     pub fn build(self) -> ::std::result::Result<crate::types::HealthCheckPolicy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::HealthCheckPolicy {
             timeout_millis: self.timeout_millis.ok_or_else(|| {
@@ -197,10 +199,20 @@ impl HealthCheckPolicyBuilder {
                     "protocol was not specified but it is required when building HealthCheckPolicy",
                 )
             })?,
-            port: self.port.unwrap_or_default(),
+            port: self.port,
             path: self.path,
-            healthy_threshold: self.healthy_threshold.unwrap_or_default(),
-            unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
+            healthy_threshold: self.healthy_threshold.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "healthy_threshold",
+                    "healthy_threshold was not specified but it is required when building HealthCheckPolicy",
+                )
+            })?,
+            unhealthy_threshold: self.unhealthy_threshold.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "unhealthy_threshold",
+                    "unhealthy_threshold was not specified but it is required when building HealthCheckPolicy",
+                )
+            })?,
         })
     }
 }

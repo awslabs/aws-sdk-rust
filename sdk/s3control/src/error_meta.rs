@@ -88,6 +88,109 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterError> for Error {
+    fn from(err: crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterError) -> Self {
+        match err {
+            crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_grant::CreateAccessGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_grant::CreateAccessGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_access_grant::CreateAccessGrantError> for Error {
+    fn from(err: crate::operation::create_access_grant::CreateAccessGrantError) -> Self {
+        match err {
+            crate::operation::create_access_grant::CreateAccessGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceError> for Error {
+    fn from(err: crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceError) -> Self {
+        match err {
+            crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_grants_location::CreateAccessGrantsLocationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_grants_location::CreateAccessGrantsLocationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_access_grants_location::CreateAccessGrantsLocationError> for Error {
+    fn from(err: crate::operation::create_access_grants_location::CreateAccessGrantsLocationError) -> Self {
+        match err {
+            crate::operation::create_access_grants_location::CreateAccessGrantsLocationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_point::CreateAccessPointError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -216,6 +319,133 @@ impl From<crate::operation::create_multi_region_access_point::CreateMultiRegionA
     fn from(err: crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError) -> Self {
         match err {
             crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_storage_lens_group::CreateStorageLensGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_storage_lens_group::CreateStorageLensGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_storage_lens_group::CreateStorageLensGroupError> for Error {
+    fn from(err: crate::operation::create_storage_lens_group::CreateStorageLensGroupError) -> Self {
+        match err {
+            crate::operation::create_storage_lens_group::CreateStorageLensGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_grant::DeleteAccessGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_grant::DeleteAccessGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_access_grant::DeleteAccessGrantError> for Error {
+    fn from(err: crate::operation::delete_access_grant::DeleteAccessGrantError) -> Self {
+        match err {
+            crate::operation::delete_access_grant::DeleteAccessGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceError> for Error {
+    fn from(err: crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceError) -> Self {
+        match err {
+            crate::operation::delete_access_grants_instance::DeleteAccessGrantsInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_access_grants_instance_resource_policy::DeleteAccessGrantsInstanceResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_access_grants_instance_resource_policy::DeleteAccessGrantsInstanceResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_access_grants_instance_resource_policy::DeleteAccessGrantsInstanceResourcePolicyError> for Error {
+    fn from(err: crate::operation::delete_access_grants_instance_resource_policy::DeleteAccessGrantsInstanceResourcePolicyError) -> Self {
+        match err {
+            crate::operation::delete_access_grants_instance_resource_policy::DeleteAccessGrantsInstanceResourcePolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_grants_location::DeleteAccessGrantsLocationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_grants_location::DeleteAccessGrantsLocationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_access_grants_location::DeleteAccessGrantsLocationError> for Error {
+    fn from(err: crate::operation::delete_access_grants_location::DeleteAccessGrantsLocationError) -> Self {
+        match err {
+            crate::operation::delete_access_grants_location::DeleteAccessGrantsLocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -595,6 +825,30 @@ impl From<crate::operation::delete_storage_lens_configuration_tagging::DeleteSto
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_storage_lens_group::DeleteStorageLensGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_storage_lens_group::DeleteStorageLensGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_storage_lens_group::DeleteStorageLensGroupError> for Error {
+    fn from(err: crate::operation::delete_storage_lens_group::DeleteStorageLensGroupError) -> Self {
+        match err {
+            crate::operation::delete_storage_lens_group::DeleteStorageLensGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job::DescribeJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -651,6 +905,177 @@ impl From<crate::operation::describe_multi_region_access_point_operation::Descri
             crate::operation::describe_multi_region_access_point_operation::DescribeMultiRegionAccessPointOperationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError> for Error {
+    fn from(err: crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError) -> Self {
+        match err {
+            crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_grant::GetAccessGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_grant::GetAccessGrantError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_grant::GetAccessGrantError> for Error {
+    fn from(err: crate::operation::get_access_grant::GetAccessGrantError) -> Self {
+        match err {
+            crate::operation::get_access_grant::GetAccessGrantError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_grants_instance::GetAccessGrantsInstanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_grants_instance::GetAccessGrantsInstanceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_grants_instance::GetAccessGrantsInstanceError> for Error {
+    fn from(err: crate::operation::get_access_grants_instance::GetAccessGrantsInstanceError) -> Self {
+        match err {
+            crate::operation::get_access_grants_instance::GetAccessGrantsInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_access_grants_instance_for_prefix::GetAccessGrantsInstanceForPrefixError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_access_grants_instance_for_prefix::GetAccessGrantsInstanceForPrefixError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_grants_instance_for_prefix::GetAccessGrantsInstanceForPrefixError> for Error {
+    fn from(err: crate::operation::get_access_grants_instance_for_prefix::GetAccessGrantsInstanceForPrefixError) -> Self {
+        match err {
+            crate::operation::get_access_grants_instance_for_prefix::GetAccessGrantsInstanceForPrefixError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_access_grants_instance_resource_policy::GetAccessGrantsInstanceResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_access_grants_instance_resource_policy::GetAccessGrantsInstanceResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_grants_instance_resource_policy::GetAccessGrantsInstanceResourcePolicyError> for Error {
+    fn from(err: crate::operation::get_access_grants_instance_resource_policy::GetAccessGrantsInstanceResourcePolicyError) -> Self {
+        match err {
+            crate::operation::get_access_grants_instance_resource_policy::GetAccessGrantsInstanceResourcePolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_grants_location::GetAccessGrantsLocationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_grants_location::GetAccessGrantsLocationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_grants_location::GetAccessGrantsLocationError> for Error {
+    fn from(err: crate::operation::get_access_grants_location::GetAccessGrantsLocationError) -> Self {
+        match err {
+            crate::operation::get_access_grants_location::GetAccessGrantsLocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -993,6 +1418,27 @@ impl From<crate::operation::get_bucket_versioning::GetBucketVersioningError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_access::GetDataAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_access::GetDataAccessError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_access::GetDataAccessError> for Error {
+    fn from(err: crate::operation::get_data_access::GetDataAccessError) -> Self {
+        match err {
+            crate::operation::get_data_access::GetDataAccessError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_job_tagging::GetJobTaggingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1227,6 +1673,96 @@ impl From<crate::operation::get_storage_lens_configuration_tagging::GetStorageLe
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_storage_lens_group::GetStorageLensGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_storage_lens_group::GetStorageLensGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_storage_lens_group::GetStorageLensGroupError> for Error {
+    fn from(err: crate::operation::get_storage_lens_group::GetStorageLensGroupError) -> Self {
+        match err {
+            crate::operation::get_storage_lens_group::GetStorageLensGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_grants::ListAccessGrantsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_grants::ListAccessGrantsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_access_grants::ListAccessGrantsError> for Error {
+    fn from(err: crate::operation::list_access_grants::ListAccessGrantsError) -> Self {
+        match err {
+            crate::operation::list_access_grants::ListAccessGrantsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_grants_instances::ListAccessGrantsInstancesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_grants_instances::ListAccessGrantsInstancesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_access_grants_instances::ListAccessGrantsInstancesError> for Error {
+    fn from(err: crate::operation::list_access_grants_instances::ListAccessGrantsInstancesError) -> Self {
+        match err {
+            crate::operation::list_access_grants_instances::ListAccessGrantsInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_grants_locations::ListAccessGrantsLocationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_grants_locations::ListAccessGrantsLocationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_access_grants_locations::ListAccessGrantsLocationsError> for Error {
+    fn from(err: crate::operation::list_access_grants_locations::ListAccessGrantsLocationsError) -> Self {
+        match err {
+            crate::operation::list_access_grants_locations::ListAccessGrantsLocationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_access_points::ListAccessPointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1379,6 +1915,84 @@ impl From<crate::operation::list_storage_lens_configurations::ListStorageLensCon
     fn from(err: crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError) -> Self {
         match err {
             crate::operation::list_storage_lens_configurations::ListStorageLensConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_storage_lens_groups::ListStorageLensGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_storage_lens_groups::ListStorageLensGroupsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_storage_lens_groups::ListStorageLensGroupsError> for Error {
+    fn from(err: crate::operation::list_storage_lens_groups::ListStorageLensGroupsError) -> Self {
+        match err {
+            crate::operation::list_storage_lens_groups::ListStorageLensGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
+    fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
+        match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyError> for Error {
+    fn from(err: crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyError) -> Self {
+        match err {
+            crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1765,6 +2379,72 @@ impl From<crate::operation::submit_multi_region_access_point_routes::SubmitMulti
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::tag_resource::TagResourceError> for Error {
+    fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
+        match err {
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::untag_resource::UntagResourceError> for Error {
+    fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
+        match err {
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_access_grants_location::UpdateAccessGrantsLocationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_access_grants_location::UpdateAccessGrantsLocationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_access_grants_location::UpdateAccessGrantsLocationError> for Error {
+    fn from(err: crate::operation::update_access_grants_location::UpdateAccessGrantsLocationError) -> Self {
+        match err {
+            crate::operation::update_access_grants_location::UpdateAccessGrantsLocationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_job_priority::UpdateJobPriorityError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1813,6 +2493,30 @@ impl From<crate::operation::update_job_status::UpdateJobStatusError> for Error {
             crate::operation::update_job_status::UpdateJobStatusError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_job_status::UpdateJobStatusError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_job_status::UpdateJobStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_storage_lens_group::UpdateStorageLensGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_storage_lens_group::UpdateStorageLensGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_storage_lens_group::UpdateStorageLensGroupError> for Error {
+    fn from(err: crate::operation::update_storage_lens_group::UpdateStorageLensGroupError) -> Self {
+        match err {
+            crate::operation::update_storage_lens_group::UpdateStorageLensGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

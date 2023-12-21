@@ -41,7 +41,7 @@ pub struct ExecutionListItem {
     /// <p>The Amazon Resource Name (ARN) of the state machine alias used to start an execution.</p>
     /// <p>If the state machine execution was started with an unqualified ARN or a version ARN, it returns null.</p>
     pub state_machine_alias_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub redrive_count: ::std::option::Option<i32>,
     /// <p>The date the execution was last redriven.</p>
     pub redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -107,7 +107,7 @@ impl ExecutionListItem {
     pub fn state_machine_alias_arn(&self) -> ::std::option::Option<&str> {
         self.state_machine_alias_arn.as_deref()
     }
-    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub fn redrive_count(&self) -> ::std::option::Option<i32> {
         self.redrive_count
     }
@@ -337,17 +337,17 @@ impl ExecutionListItemBuilder {
     pub fn get_state_machine_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_machine_alias_arn
     }
-    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub fn redrive_count(mut self, input: i32) -> Self {
         self.redrive_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.redrive_count = input;
         self
     }
-    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven an execution. If you have not yet redriven an execution, the <code>redriveCount</code> is 0. This count is only updated when you successfully redrive an execution.</p>
     pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
         &self.redrive_count
     }

@@ -22,6 +22,9 @@ impl DeleteAccessPointForObjectLambdaInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccessPointForObjectLambda`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Deletes the specified Object Lambda Access Point.</p>
 /// <p>The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:</p>
 /// <ul>

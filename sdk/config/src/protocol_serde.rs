@@ -763,6 +763,8 @@ pub(crate) mod shape_pending_aggregation_request;
 
 pub(crate) mod shape_recording_group;
 
+pub(crate) mod shape_recording_mode;
+
 pub(crate) mod shape_related_event_list;
 
 pub(crate) mod shape_relationship_list;
@@ -821,6 +823,8 @@ pub(crate) mod shape_field_info;
 
 pub(crate) mod shape_organization_custom_policy_rule_metadata_no_policy;
 
+pub(crate) mod shape_recording_mode_override;
+
 pub(crate) mod shape_recording_strategy;
 
 pub(crate) mod shape_relationship;
@@ -851,6 +855,8 @@ pub(crate) mod shape_organization_config_rule_trigger_type_no_sns;
 
 pub(crate) mod shape_organization_config_rule_trigger_types;
 
+pub(crate) mod shape_recording_mode_overrides;
+
 pub(crate) mod shape_remediation_execution_step;
 
 pub(crate) mod shape_resource_type_list;
@@ -858,5 +864,7 @@ pub(crate) mod shape_resource_type_list;
 pub(crate) mod shape_resource_types_scope;
 
 pub(crate) mod shape_source_details;
+
+pub(crate) mod shape_recording_mode_resource_types_list;
 
 pub(crate) mod shape_static_parameter_values;

@@ -124,6 +124,19 @@ where
                                 crate::protocol_serde::shape_supplementary_configuration::de_supplementary_configuration(tokens)?,
                             );
                         }
+                        "recordingFrequency" => {
+                            builder = builder.set_recording_frequency(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::RecordingFrequency::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "configurationItemDeliveryTime" => {
+                            builder = builder.set_configuration_item_delivery_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

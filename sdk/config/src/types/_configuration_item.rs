@@ -8,20 +8,20 @@ pub struct ConfigurationItem {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The 12-digit Amazon Web Services account ID associated with the resource.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The time when the configuration recording was initiated.</p>
+    /// <p>The time when the recording of configuration changes was initiated for the resource.</p>
     pub configuration_item_capture_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The configuration item status. The valid values are:</p>
+    /// <p>The configuration item status. Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p></li>
     /// <li>
     /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
     /// <li>
-    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// <li>
     /// <p>ResourceDeleted – The resource was deleted</p></li>
     /// <li>
-    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// </ul>
     pub configuration_item_status: ::std::option::Option<crate::types::ConfigurationItemStatus>,
     /// <p>An identifier that indicates the ordering of the configuration items of a resource.</p>
@@ -55,6 +55,10 @@ pub struct ConfigurationItem {
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>Configuration attributes that Config returns for certain resource types to supplement the information returned for the <code>configuration</code> parameter.</p>
     pub supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The recording frequency that Config uses to record configuration changes for the resource.</p>
+    pub recording_frequency: ::std::option::Option<crate::types::RecordingFrequency>,
+    /// <p>The time when configuration changes for the resource were delivered.</p>
+    pub configuration_item_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationItem {
     /// <p>The version number of the resource configuration.</p>
@@ -65,22 +69,22 @@ impl ConfigurationItem {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The time when the configuration recording was initiated.</p>
+    /// <p>The time when the recording of configuration changes was initiated for the resource.</p>
     pub fn configuration_item_capture_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.configuration_item_capture_time.as_ref()
     }
-    /// <p>The configuration item status. The valid values are:</p>
+    /// <p>The configuration item status. Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p></li>
     /// <li>
     /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
     /// <li>
-    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// <li>
     /// <p>ResourceDeleted – The resource was deleted</p></li>
     /// <li>
-    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// </ul>
     pub fn configuration_item_status(&self) -> ::std::option::Option<&crate::types::ConfigurationItemStatus> {
         self.configuration_item_status.as_ref()
@@ -148,6 +152,14 @@ impl ConfigurationItem {
     pub fn supplementary_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.supplementary_configuration.as_ref()
     }
+    /// <p>The recording frequency that Config uses to record configuration changes for the resource.</p>
+    pub fn recording_frequency(&self) -> ::std::option::Option<&crate::types::RecordingFrequency> {
+        self.recording_frequency.as_ref()
+    }
+    /// <p>The time when configuration changes for the resource were delivered.</p>
+    pub fn configuration_item_delivery_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.configuration_item_delivery_time.as_ref()
+    }
 }
 impl ConfigurationItem {
     /// Creates a new builder-style object to manufacture [`ConfigurationItem`](crate::types::ConfigurationItem).
@@ -178,6 +190,8 @@ pub struct ConfigurationItemBuilder {
     pub(crate) relationships: ::std::option::Option<::std::vec::Vec<crate::types::Relationship>>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) supplementary_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) recording_frequency: ::std::option::Option<crate::types::RecordingFrequency>,
+    pub(crate) configuration_item_delivery_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConfigurationItemBuilder {
     /// <p>The version number of the resource configuration.</p>
@@ -208,66 +222,66 @@ impl ConfigurationItemBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The time when the configuration recording was initiated.</p>
+    /// <p>The time when the recording of configuration changes was initiated for the resource.</p>
     pub fn configuration_item_capture_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.configuration_item_capture_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the configuration recording was initiated.</p>
+    /// <p>The time when the recording of configuration changes was initiated for the resource.</p>
     pub fn set_configuration_item_capture_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.configuration_item_capture_time = input;
         self
     }
-    /// <p>The time when the configuration recording was initiated.</p>
+    /// <p>The time when the recording of configuration changes was initiated for the resource.</p>
     pub fn get_configuration_item_capture_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.configuration_item_capture_time
     }
-    /// <p>The configuration item status. The valid values are:</p>
+    /// <p>The configuration item status. Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p></li>
     /// <li>
     /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
     /// <li>
-    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// <li>
     /// <p>ResourceDeleted – The resource was deleted</p></li>
     /// <li>
-    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// </ul>
     pub fn configuration_item_status(mut self, input: crate::types::ConfigurationItemStatus) -> Self {
         self.configuration_item_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration item status. The valid values are:</p>
+    /// <p>The configuration item status. Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p></li>
     /// <li>
     /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
     /// <li>
-    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// <li>
     /// <p>ResourceDeleted – The resource was deleted</p></li>
     /// <li>
-    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// </ul>
     pub fn set_configuration_item_status(mut self, input: ::std::option::Option<crate::types::ConfigurationItemStatus>) -> Self {
         self.configuration_item_status = input;
         self
     }
-    /// <p>The configuration item status. The valid values are:</p>
+    /// <p>The configuration item status. Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>OK – The resource configuration has been updated</p></li>
     /// <li>
     /// <p>ResourceDiscovered – The resource was newly discovered</p></li>
     /// <li>
-    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// <li>
     /// <p>ResourceDeleted – The resource was deleted</p></li>
     /// <li>
-    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder excludes the recording of resources of this type</p></li>
+    /// <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder doesn't record resources of this type</p></li>
     /// </ul>
     pub fn get_configuration_item_status(&self) -> &::std::option::Option<crate::types::ConfigurationItemStatus> {
         &self.configuration_item_status
@@ -510,6 +524,34 @@ impl ConfigurationItemBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.supplementary_configuration
     }
+    /// <p>The recording frequency that Config uses to record configuration changes for the resource.</p>
+    pub fn recording_frequency(mut self, input: crate::types::RecordingFrequency) -> Self {
+        self.recording_frequency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The recording frequency that Config uses to record configuration changes for the resource.</p>
+    pub fn set_recording_frequency(mut self, input: ::std::option::Option<crate::types::RecordingFrequency>) -> Self {
+        self.recording_frequency = input;
+        self
+    }
+    /// <p>The recording frequency that Config uses to record configuration changes for the resource.</p>
+    pub fn get_recording_frequency(&self) -> &::std::option::Option<crate::types::RecordingFrequency> {
+        &self.recording_frequency
+    }
+    /// <p>The time when configuration changes for the resource were delivered.</p>
+    pub fn configuration_item_delivery_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.configuration_item_delivery_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time when configuration changes for the resource were delivered.</p>
+    pub fn set_configuration_item_delivery_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.configuration_item_delivery_time = input;
+        self
+    }
+    /// <p>The time when configuration changes for the resource were delivered.</p>
+    pub fn get_configuration_item_delivery_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.configuration_item_delivery_time
+    }
     /// Consumes the builder and constructs a [`ConfigurationItem`](crate::types::ConfigurationItem).
     pub fn build(self) -> crate::types::ConfigurationItem {
         crate::types::ConfigurationItem {
@@ -531,6 +573,8 @@ impl ConfigurationItemBuilder {
             relationships: self.relationships,
             configuration: self.configuration,
             supplementary_configuration: self.supplementary_configuration,
+            recording_frequency: self.recording_frequency,
+            configuration_item_delivery_time: self.configuration_item_delivery_time,
         }
     }
 }

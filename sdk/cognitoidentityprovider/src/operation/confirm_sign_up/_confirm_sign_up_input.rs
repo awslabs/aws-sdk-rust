@@ -8,7 +8,7 @@ pub struct ConfirmSignUpInput {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     pub secret_hash: ::std::option::Option<::std::string::String>,
-    /// <p>The user name of the user whose registration you want to confirm.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The confirmation code sent by a user's request to confirm registration.</p>
     pub confirmation_code: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl ConfirmSignUpInput {
     pub fn secret_hash(&self) -> ::std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
-    /// <p>The user name of the user whose registration you want to confirm.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -143,18 +143,18 @@ impl ConfirmSignUpInputBuilder {
     pub fn get_secret_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_hash
     }
-    /// <p>The user name of the user whose registration you want to confirm.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name of the user whose registration you want to confirm.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user name of the user whose registration you want to confirm.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

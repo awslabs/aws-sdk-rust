@@ -7,7 +7,7 @@ pub struct ListUsersInGroupInput {
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl ListUsersInGroupInput {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -77,17 +77,17 @@ impl ListUsersInGroupInputBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

@@ -11,7 +11,8 @@ pub struct UpdateDataRetentionInput {
     pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether you want to increase or decrease the retention period.</p>
     pub operation: ::std::option::Option<crate::types::UpdateDataRetentionOperation>,
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub data_retention_change_in_hours: ::std::option::Option<i32>,
 }
 impl UpdateDataRetentionInput {
@@ -31,7 +32,8 @@ impl UpdateDataRetentionInput {
     pub fn operation(&self) -> ::std::option::Option<&crate::types::UpdateDataRetentionOperation> {
         self.operation.as_ref()
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub fn data_retention_change_in_hours(&self) -> ::std::option::Option<i32> {
         self.data_retention_change_in_hours
     }
@@ -112,18 +114,21 @@ impl UpdateDataRetentionInputBuilder {
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
         &self.operation
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     /// This field is required.
     pub fn data_retention_change_in_hours(mut self, input: i32) -> Self {
         self.data_retention_change_in_hours = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub fn set_data_retention_change_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_retention_change_in_hours = input;
         self
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub fn get_data_retention_change_in_hours(&self) -> &::std::option::Option<i32> {
         &self.data_retention_change_in_hours
     }

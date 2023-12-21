@@ -276,7 +276,7 @@ pub enum CreateLoadBalancerError {
     SubnetNotFoundException(crate::types::error::SubnetNotFoundException),
     /// <p>You've reached the limit on the number of load balancers for your Amazon Web Services account.</p>
     TooManyLoadBalancersException(crate::types::error::TooManyLoadBalancersException),
-    /// <p>You've reached the limit on the number of tags per load balancer.</p>
+    /// <p>You've reached the limit on the number of tags for this resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

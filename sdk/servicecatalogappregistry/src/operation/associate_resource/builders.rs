@@ -34,7 +34,7 @@ impl AssociateResourceInputBuilder {
 /// <p>You must also have these additional permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.</p>
 /// <ul>
 /// <li>
-/// <p><code>resource-groups:DisassociateResource</code></p></li>
+/// <p><code>resource-groups:AssociateResource</code></p></li>
 /// <li>
 /// <p><code>cloudformation:UpdateStack</code></p></li>
 /// <li>

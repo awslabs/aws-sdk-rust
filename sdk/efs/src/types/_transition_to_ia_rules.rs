@@ -13,8 +13,11 @@
 /// # let transitiontoiarules = unimplemented!();
 /// match transitiontoiarules {
 ///     TransitionToIaRules::After14Days => { /* ... */ },
+///     TransitionToIaRules::After180Days => { /* ... */ },
 ///     TransitionToIaRules::After1Day => { /* ... */ },
+///     TransitionToIaRules::After270Days => { /* ... */ },
 ///     TransitionToIaRules::After30Days => { /* ... */ },
+///     TransitionToIaRules::After365Days => { /* ... */ },
 ///     TransitionToIaRules::After60Days => { /* ... */ },
 ///     TransitionToIaRules::After7Days => { /* ... */ },
 ///     TransitionToIaRules::After90Days => { /* ... */ },
@@ -48,9 +51,15 @@ pub enum TransitionToIaRules {
     #[allow(missing_docs)] // documentation missing in model
     After14Days,
     #[allow(missing_docs)] // documentation missing in model
+    After180Days,
+    #[allow(missing_docs)] // documentation missing in model
     After1Day,
     #[allow(missing_docs)] // documentation missing in model
+    After270Days,
+    #[allow(missing_docs)] // documentation missing in model
     After30Days,
+    #[allow(missing_docs)] // documentation missing in model
+    After365Days,
     #[allow(missing_docs)] // documentation missing in model
     After60Days,
     #[allow(missing_docs)] // documentation missing in model
@@ -65,8 +74,11 @@ impl ::std::convert::From<&str> for TransitionToIaRules {
     fn from(s: &str) -> Self {
         match s {
             "AFTER_14_DAYS" => TransitionToIaRules::After14Days,
+            "AFTER_180_DAYS" => TransitionToIaRules::After180Days,
             "AFTER_1_DAY" => TransitionToIaRules::After1Day,
+            "AFTER_270_DAYS" => TransitionToIaRules::After270Days,
             "AFTER_30_DAYS" => TransitionToIaRules::After30Days,
+            "AFTER_365_DAYS" => TransitionToIaRules::After365Days,
             "AFTER_60_DAYS" => TransitionToIaRules::After60Days,
             "AFTER_7_DAYS" => TransitionToIaRules::After7Days,
             "AFTER_90_DAYS" => TransitionToIaRules::After90Days,
@@ -86,8 +98,11 @@ impl TransitionToIaRules {
     pub fn as_str(&self) -> &str {
         match self {
             TransitionToIaRules::After14Days => "AFTER_14_DAYS",
+            TransitionToIaRules::After180Days => "AFTER_180_DAYS",
             TransitionToIaRules::After1Day => "AFTER_1_DAY",
+            TransitionToIaRules::After270Days => "AFTER_270_DAYS",
             TransitionToIaRules::After30Days => "AFTER_30_DAYS",
+            TransitionToIaRules::After365Days => "AFTER_365_DAYS",
             TransitionToIaRules::After60Days => "AFTER_60_DAYS",
             TransitionToIaRules::After7Days => "AFTER_7_DAYS",
             TransitionToIaRules::After90Days => "AFTER_90_DAYS",
@@ -98,8 +113,11 @@ impl TransitionToIaRules {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AFTER_14_DAYS",
+            "AFTER_180_DAYS",
             "AFTER_1_DAY",
+            "AFTER_270_DAYS",
             "AFTER_30_DAYS",
+            "AFTER_365_DAYS",
             "AFTER_60_DAYS",
             "AFTER_7_DAYS",
             "AFTER_90_DAYS",

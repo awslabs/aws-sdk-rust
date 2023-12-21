@@ -254,14 +254,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeDeliv
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeDeliverySourcesError {
-    /// <p>This request exceeds a service quota.</p>
-    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>The service cannot complete the request.</p>
-    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// <p>The request was throttled because of quota limits.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>One of the parameters for the request is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
+    /// <p>The service cannot complete the request.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>This request exceeds a service quota.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -295,20 +295,12 @@ impl DescribeDeliverySourcesError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
-    }
-    /// Returns `true` if the error kind is `DescribeDeliverySourcesError::ServiceQuotaExceededException`.
-    pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(self, Self::ServiceQuotaExceededException(_))
-    }
-    /// Returns `true` if the error kind is `DescribeDeliverySourcesError::ServiceUnavailableException`.
-    pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(self, Self::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeDeliverySourcesError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -318,14 +310,22 @@ impl DescribeDeliverySourcesError {
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
     }
+    /// Returns `true` if the error kind is `DescribeDeliverySourcesError::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(self, Self::ServiceUnavailableException(_))
+    }
+    /// Returns `true` if the error kind is `DescribeDeliverySourcesError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
 }
 impl ::std::error::Error for DescribeDeliverySourcesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -333,10 +333,10 @@ impl ::std::error::Error for DescribeDeliverySourcesError {
 impl ::std::fmt::Display for DescribeDeliverySourcesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
-            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -358,10 +358,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeDeliverySourcesErro
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeDeliverySourcesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

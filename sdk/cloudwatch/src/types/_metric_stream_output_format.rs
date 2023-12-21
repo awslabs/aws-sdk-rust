@@ -14,6 +14,7 @@
 /// match metricstreamoutputformat {
 ///     MetricStreamOutputFormat::Json => { /* ... */ },
 ///     MetricStreamOutputFormat::OpenTelemetry07 => { /* ... */ },
+///     MetricStreamOutputFormat::OpenTelemetry10 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum MetricStreamOutputFormat {
     Json,
     #[allow(missing_docs)] // documentation missing in model
     OpenTelemetry07,
+    #[allow(missing_docs)] // documentation missing in model
+    OpenTelemetry10,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for MetricStreamOutputFormat {
         match s {
             "json" => MetricStreamOutputFormat::Json,
             "opentelemetry0.7" => MetricStreamOutputFormat::OpenTelemetry07,
+            "opentelemetry1.0" => MetricStreamOutputFormat::OpenTelemetry10,
             other => MetricStreamOutputFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl MetricStreamOutputFormat {
         match self {
             MetricStreamOutputFormat::Json => "json",
             MetricStreamOutputFormat::OpenTelemetry07 => "opentelemetry0.7",
+            MetricStreamOutputFormat::OpenTelemetry10 => "opentelemetry1.0",
             MetricStreamOutputFormat::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["json", "opentelemetry0.7"]
+        &["json", "opentelemetry0.7", "opentelemetry1.0"]
     }
 }
 impl ::std::convert::AsRef<str> for MetricStreamOutputFormat {

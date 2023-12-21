@@ -140,4 +140,22 @@ impl DescribeTargetHealthFluentBuilder {
     pub fn get_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDescription>> {
         self.inner.get_targets()
     }
+    /// Appends an item to `Include`.
+    ///
+    /// To override the contents of this collection use [`set_include`](Self::set_include).
+    ///
+    /// <p>Used to inclue anomaly detection information.</p>
+    pub fn include(mut self, input: crate::types::DescribeTargetHealthInputIncludeEnum) -> Self {
+        self.inner = self.inner.include(input);
+        self
+    }
+    /// <p>Used to inclue anomaly detection information.</p>
+    pub fn set_include(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>>) -> Self {
+        self.inner = self.inner.set_include(input);
+        self
+    }
+    /// <p>Used to inclue anomaly detection information.</p>
+    pub fn get_include(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DescribeTargetHealthInputIncludeEnum>> {
+        self.inner.get_include()
+    }
 }

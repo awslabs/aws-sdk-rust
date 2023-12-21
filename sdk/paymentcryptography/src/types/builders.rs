@@ -5,9 +5,9 @@ pub use crate::types::_key_attributes::KeyAttributesBuilder;
 
 pub use crate::types::_key_modes_of_use::KeyModesOfUseBuilder;
 
-pub use crate::types::_key_summary::KeySummaryBuilder;
-
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_key_summary::KeySummaryBuilder;
 
 pub use crate::types::_alias::AliasBuilder;
 

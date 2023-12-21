@@ -1160,6 +1160,47 @@ impl From<crate::operation::describe_bot_recommendation::DescribeBotRecommendati
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError> for Error {
+    fn from(err: crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError) -> Self {
+        match err {
+            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_bot_resource_generation::DescribeBotResourceGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bot_version::DescribeBotVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1549,6 +1590,40 @@ impl From<crate::operation::describe_test_set_generation::DescribeTestSetGenerat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_bot_element::GenerateBotElementError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::generate_bot_element::GenerateBotElementError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::generate_bot_element::GenerateBotElementError> for Error {
+    fn from(err: crate::operation::generate_bot_element::GenerateBotElementError) -> Self {
+        match err {
+            crate::operation::generate_bot_element::GenerateBotElementError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::generate_bot_element::GenerateBotElementError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::generate_bot_element::GenerateBotElementError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::generate_bot_element::GenerateBotElementError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::generate_bot_element::GenerateBotElementError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::generate_bot_element::GenerateBotElementError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::generate_bot_element::GenerateBotElementError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::generate_bot_element::GenerateBotElementError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError, R>>
     for Error
@@ -1710,6 +1785,42 @@ impl From<crate::operation::list_bot_recommendations::ListBotRecommendationsErro
             crate::operation::list_bot_recommendations::ListBotRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_bot_recommendations::ListBotRecommendationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_bot_recommendations::ListBotRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError> for Error {
+    fn from(err: crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError) -> Self {
+        match err {
+            crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_bot_resource_generations::ListBotResourceGenerationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2484,6 +2595,48 @@ impl From<crate::operation::start_bot_recommendation::StartBotRecommendationErro
             crate::operation::start_bot_recommendation::StartBotRecommendationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_bot_recommendation::StartBotRecommendationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_bot_recommendation::StartBotRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bot_resource_generation::StartBotResourceGenerationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bot_resource_generation::StartBotResourceGenerationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_bot_resource_generation::StartBotResourceGenerationError> for Error {
+    fn from(err: crate::operation::start_bot_resource_generation::StartBotResourceGenerationError) -> Self {
+        match err {
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_bot_resource_generation::StartBotResourceGenerationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

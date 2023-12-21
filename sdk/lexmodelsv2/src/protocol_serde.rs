@@ -91,6 +91,8 @@ pub(crate) mod shape_describe_bot_locale;
 
 pub(crate) mod shape_describe_bot_recommendation;
 
+pub(crate) mod shape_describe_bot_resource_generation;
+
 pub(crate) mod shape_describe_bot_version;
 
 pub(crate) mod shape_describe_custom_vocabulary_metadata;
@@ -115,6 +117,8 @@ pub(crate) mod shape_describe_test_set_discrepancy_report;
 
 pub(crate) mod shape_describe_test_set_generation;
 
+pub(crate) mod shape_generate_bot_element;
+
 pub(crate) mod shape_get_test_execution_artifacts_url;
 
 pub(crate) mod shape_list_aggregated_utterances;
@@ -124,6 +128,8 @@ pub(crate) mod shape_list_bot_aliases;
 pub(crate) mod shape_list_bot_locales;
 
 pub(crate) mod shape_list_bot_recommendations;
+
+pub(crate) mod shape_list_bot_resource_generations;
 
 pub(crate) mod shape_list_bot_versions;
 
@@ -174,6 +180,8 @@ pub(crate) mod shape_list_utterance_metrics;
 pub(crate) mod shape_search_associated_transcripts;
 
 pub(crate) mod shape_start_bot_recommendation;
+
+pub(crate) mod shape_start_bot_resource_generation;
 
 pub(crate) mod shape_start_import;
 
@@ -245,6 +253,8 @@ pub(crate) mod shape_create_slot_type_input;
 
 pub(crate) mod shape_create_test_set_discrepancy_report_input;
 
+pub(crate) mod shape_generate_bot_element_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_aggregated_utterances_input;
@@ -254,6 +264,8 @@ pub(crate) mod shape_list_bot_aliases_input;
 pub(crate) mod shape_list_bot_locales_input;
 
 pub(crate) mod shape_list_bot_recommendations_input;
+
+pub(crate) mod shape_list_bot_resource_generations_input;
 
 pub(crate) mod shape_list_bot_versions_input;
 
@@ -308,6 +320,8 @@ pub(crate) mod shape_search_associated_transcripts_input;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_bot_recommendation_input;
+
+pub(crate) mod shape_start_bot_resource_generation_input;
 
 pub(crate) mod shape_start_import_input;
 
@@ -468,6 +482,12 @@ pub(crate) mod shape_failed_custom_vocabulary_items;
 pub(crate) mod shape_failure_reasons;
 
 pub(crate) mod shape_fulfillment_code_hook_settings;
+
+pub(crate) mod shape_generation_sort_by;
+
+pub(crate) mod shape_generation_summary_list;
+
+pub(crate) mod shape_generative_ai_settings;
 
 pub(crate) mod shape_import_filter;
 
@@ -631,6 +651,8 @@ pub(crate) mod shape_bot_summary;
 
 pub(crate) mod shape_bot_version_summary;
 
+pub(crate) mod shape_buildtime_settings;
+
 pub(crate) mod shape_built_in_intent_summary;
 
 pub(crate) mod shape_built_in_slot_type_summary;
@@ -661,6 +683,8 @@ pub(crate) mod shape_failed_custom_vocabulary_item;
 
 pub(crate) mod shape_fulfillment_updates_specification;
 
+pub(crate) mod shape_generation_summary;
+
 pub(crate) mod shape_grammar_slot_type_setting;
 
 pub(crate) mod shape_import_summary;
@@ -685,6 +709,8 @@ pub(crate) mod shape_relative_aggregation_duration;
 
 pub(crate) mod shape_response_specification;
 
+pub(crate) mod shape_runtime_settings;
+
 pub(crate) mod shape_s3_bucket_transcript_source;
 
 pub(crate) mod shape_sample_value;
@@ -694,6 +720,8 @@ pub(crate) mod shape_session_specification;
 pub(crate) mod shape_slot_capture_setting;
 
 pub(crate) mod shape_slot_default_value_specification;
+
+pub(crate) mod shape_slot_resolution_setting;
 
 pub(crate) mod shape_slot_summary;
 
@@ -767,6 +795,8 @@ pub(crate) mod shape_conversation_logs_data_source_filter_by;
 
 pub(crate) mod shape_default_conditional_branch;
 
+pub(crate) mod shape_descriptive_bot_builder_specification;
+
 pub(crate) mod shape_dialog_action;
 
 pub(crate) mod shape_fulfillment_start_response_specification;
@@ -801,9 +831,13 @@ pub(crate) mod shape_prompt_attempt_specification;
 
 pub(crate) mod shape_prompt_attempts_specification_map;
 
+pub(crate) mod shape_sample_utterance_generation_specification;
+
 pub(crate) mod shape_slot_default_value;
 
 pub(crate) mod shape_slot_default_value_list;
+
+pub(crate) mod shape_slot_resolution_improvement_specification;
 
 pub(crate) mod shape_slot_type_statistics;
 
@@ -856,6 +890,8 @@ pub(crate) mod shape_analytics_utterance_group_by_key;
 pub(crate) mod shape_analytics_utterance_metric_result;
 
 pub(crate) mod shape_audio_and_dtmf_input_specification;
+
+pub(crate) mod shape_bedrock_model_specification;
 
 pub(crate) mod shape_cloud_watch_log_group_log_destination;
 

@@ -19,6 +19,10 @@ pub use crate::types::error::_priority_in_use_exception::PriorityInUseException;
 
 pub use crate::types::error::_operation_not_permitted_exception::OperationNotPermittedException;
 
+pub use crate::types::error::_trust_store_not_found_exception::TrustStoreNotFoundException;
+
+pub use crate::types::error::_revocation_id_not_found_exception::RevocationIdNotFoundException;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 
 pub use crate::types::error::_target_group_not_found_exception::TargetGroupNotFoundException;
@@ -31,6 +35,10 @@ pub use crate::types::error::_too_many_registrations_for_target_id_exception::To
 
 pub use crate::types::error::_invalid_target_exception::InvalidTargetException;
 
+pub use crate::types::error::_invalid_ca_certificates_bundle_exception::InvalidCaCertificatesBundleException;
+
+pub use crate::types::error::_ca_certificates_bundle_not_found_exception::CaCertificatesBundleNotFoundException;
+
 pub use crate::types::error::_unsupported_protocol_exception::UnsupportedProtocolException;
 
 pub use crate::types::error::_too_many_unique_target_groups_per_load_balancer_exception::TooManyUniqueTargetGroupsPerLoadBalancerException;
@@ -42,6 +50,8 @@ pub use crate::types::error::_target_group_association_limit_exception::TargetGr
 pub use crate::types::error::_invalid_load_balancer_action_exception::InvalidLoadBalancerActionException;
 
 pub use crate::types::error::_incompatible_protocols_exception::IncompatibleProtocolsException;
+
+pub use crate::types::error::_trust_store_not_ready_exception::TrustStoreNotReadyException;
 
 pub use crate::types::error::_too_many_listeners_exception::TooManyListenersException;
 
@@ -57,7 +67,15 @@ pub use crate::types::error::_alpn_policy_not_supported_exception::AlpnPolicyNot
 
 pub use crate::types::error::_health_unavailable_exception::HealthUnavailableException;
 
+pub use crate::types::error::_trust_store_in_use_exception::TrustStoreInUseException;
+
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
+pub use crate::types::error::_too_many_trust_stores_exception::TooManyTrustStoresException;
+
+pub use crate::types::error::_duplicate_trust_store_name_exception::DuplicateTrustStoreNameException;
+
+pub use crate::types::error::_duplicate_tag_keys_exception::DuplicateTagKeysException;
 
 pub use crate::types::error::_too_many_target_groups_exception::TooManyTargetGroupsException;
 
@@ -69,15 +87,21 @@ pub use crate::types::error::_too_many_load_balancers_exception::TooManyLoadBala
 
 pub use crate::types::error::_invalid_scheme_exception::InvalidSchemeException;
 
-pub use crate::types::error::_duplicate_tag_keys_exception::DuplicateTagKeysException;
-
 pub use crate::types::error::_duplicate_load_balancer_name_exception::DuplicateLoadBalancerNameException;
+
+pub use crate::types::error::_too_many_trust_store_revocation_entries_exception::TooManyTrustStoreRevocationEntriesException;
+
+pub use crate::types::error::_revocation_content_not_found_exception::RevocationContentNotFoundException;
+
+pub use crate::types::error::_invalid_revocation_content_exception::InvalidRevocationContentException;
 
 mod _allocation_id_not_found_exception;
 
 mod _alpn_policy_not_supported_exception;
 
 mod _availability_zone_not_supported_exception;
+
+mod _ca_certificates_bundle_not_found_exception;
 
 mod _certificate_not_found_exception;
 
@@ -89,13 +113,19 @@ mod _duplicate_tag_keys_exception;
 
 mod _duplicate_target_group_name_exception;
 
+mod _duplicate_trust_store_name_exception;
+
 mod _health_unavailable_exception;
 
 mod _incompatible_protocols_exception;
 
+mod _invalid_ca_certificates_bundle_exception;
+
 mod _invalid_configuration_request_exception;
 
 mod _invalid_load_balancer_action_exception;
+
+mod _invalid_revocation_content_exception;
 
 mod _invalid_scheme_exception;
 
@@ -114,6 +144,10 @@ mod _operation_not_permitted_exception;
 mod _priority_in_use_exception;
 
 mod _resource_in_use_exception;
+
+mod _revocation_content_not_found_exception;
+
+mod _revocation_id_not_found_exception;
 
 mod _rule_not_found_exception;
 
@@ -143,7 +177,17 @@ mod _too_many_target_groups_exception;
 
 mod _too_many_targets_exception;
 
+mod _too_many_trust_store_revocation_entries_exception;
+
+mod _too_many_trust_stores_exception;
+
 mod _too_many_unique_target_groups_per_load_balancer_exception;
+
+mod _trust_store_in_use_exception;
+
+mod _trust_store_not_found_exception;
+
+mod _trust_store_not_ready_exception;
 
 mod _unsupported_protocol_exception;
 

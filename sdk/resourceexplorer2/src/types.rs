@@ -7,11 +7,11 @@ pub use crate::types::_search_filter::SearchFilter;
 
 pub use crate::types::_included_property::IncludedProperty;
 
-pub use crate::types::_index::Index;
+pub use crate::types::_index_state::IndexState;
 
 pub use crate::types::_index_type::IndexType;
 
-pub use crate::types::_index_state::IndexState;
+pub use crate::types::_index::Index;
 
 pub use crate::types::_resource_count::ResourceCount;
 

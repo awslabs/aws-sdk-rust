@@ -26,6 +26,8 @@ pub struct CreateBotLocaleInput {
     pub nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.</p>
     pub voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
 }
 impl CreateBotLocaleInput {
     /// <p>The identifier of the bot to create the locale for.</p>
@@ -63,6 +65,10 @@ impl CreateBotLocaleInput {
     pub fn voice_settings(&self) -> ::std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
+        self.generative_ai_settings.as_ref()
+    }
 }
 impl CreateBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
@@ -81,6 +87,7 @@ pub struct CreateBotLocaleInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) nlu_intent_confidence_threshold: ::std::option::Option<f64>,
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
+    pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
 }
 impl CreateBotLocaleInputBuilder {
     /// <p>The identifier of the bot to create the locale for.</p>
@@ -204,6 +211,20 @@ impl CreateBotLocaleInputBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         &self.voice_settings
     }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn generative_ai_settings(mut self, input: crate::types::GenerativeAiSettings) -> Self {
+        self.generative_ai_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn set_generative_ai_settings(mut self, input: ::std::option::Option<crate::types::GenerativeAiSettings>) -> Self {
+        self.generative_ai_settings = input;
+        self
+    }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
+        &self.generative_ai_settings
+    }
     /// Consumes the builder and constructs a [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
     pub fn build(
         self,
@@ -215,6 +236,7 @@ impl CreateBotLocaleInputBuilder {
             description: self.description,
             nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
             voice_settings: self.voice_settings,
+            generative_ai_settings: self.generative_ai_settings,
         })
     }
 }

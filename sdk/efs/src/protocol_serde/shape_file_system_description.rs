@@ -118,6 +118,11 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);
                         }
+                        "FileSystemProtection" => {
+                            builder = builder.set_file_system_protection(
+                                crate::protocol_serde::shape_file_system_protection_description::de_file_system_protection_description(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -20,7 +20,7 @@ pub struct MapRunItemCounts {
     pub total: i64,
     /// <p>Returns the count of items whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
     pub results_written: i64,
-    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, child workflows with an execution status of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code> of <code>NOT_REDRIVABLE</code>.</p>
     pub failures_not_redrivable: ::std::option::Option<i64>,
     /// <p>The number of unsuccessful items in child workflow executions currently waiting to be redriven.</p>
     pub pending_redrive: ::std::option::Option<i64>,
@@ -58,7 +58,7 @@ impl MapRunItemCounts {
     pub fn results_written(&self) -> i64 {
         self.results_written
     }
-    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, child workflows with an execution status of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code> of <code>NOT_REDRIVABLE</code>.</p>
     pub fn failures_not_redrivable(&self) -> ::std::option::Option<i64> {
         self.failures_not_redrivable
     }
@@ -210,17 +210,17 @@ impl MapRunItemCountsBuilder {
     pub fn get_results_written(&self) -> &::std::option::Option<i64> {
         &self.results_written
     }
-    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, child workflows with an execution status of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code> of <code>NOT_REDRIVABLE</code>.</p>
     pub fn failures_not_redrivable(mut self, input: i64) -> Self {
         self.failures_not_redrivable = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, child workflows with an execution status of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code> of <code>NOT_REDRIVABLE</code>.</p>
     pub fn set_failures_not_redrivable(mut self, input: ::std::option::Option<i64>) -> Self {
         self.failures_not_redrivable = input;
         self
     }
-    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, if your execution event history contains 25,000 entries, or the <code>toleratedFailureCount</code> or <code>toleratedFailurePercentage</code> for the Distributed Map has exceeded.</p>
+    /// <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> items in child workflow executions that cannot be redriven because the execution status of those child workflows is terminal. For example, child workflows with an execution status of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code> of <code>NOT_REDRIVABLE</code>.</p>
     pub fn get_failures_not_redrivable(&self) -> &::std::option::Option<i64> {
         &self.failures_not_redrivable
     }

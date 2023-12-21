@@ -10,6 +10,10 @@ pub struct TargetHealthDescription {
     pub health_check_port: ::std::option::Option<::std::string::String>,
     /// <p>The health information for the target.</p>
     pub target_health: ::std::option::Option<crate::types::TargetHealth>,
+    /// <p>The anomaly detection result for the target.</p>
+    /// <p>If no anomalies were detected, the result is <code>normal</code>.</p>
+    /// <p>If anomalies were detected, the result is <code>anomalous</code>.</p>
+    pub anomaly_detection: ::std::option::Option<crate::types::AnomalyDetection>,
 }
 impl TargetHealthDescription {
     /// <p>The description of the target.</p>
@@ -23,6 +27,12 @@ impl TargetHealthDescription {
     /// <p>The health information for the target.</p>
     pub fn target_health(&self) -> ::std::option::Option<&crate::types::TargetHealth> {
         self.target_health.as_ref()
+    }
+    /// <p>The anomaly detection result for the target.</p>
+    /// <p>If no anomalies were detected, the result is <code>normal</code>.</p>
+    /// <p>If anomalies were detected, the result is <code>anomalous</code>.</p>
+    pub fn anomaly_detection(&self) -> ::std::option::Option<&crate::types::AnomalyDetection> {
+        self.anomaly_detection.as_ref()
     }
 }
 impl TargetHealthDescription {
@@ -39,6 +49,7 @@ pub struct TargetHealthDescriptionBuilder {
     pub(crate) target: ::std::option::Option<crate::types::TargetDescription>,
     pub(crate) health_check_port: ::std::option::Option<::std::string::String>,
     pub(crate) target_health: ::std::option::Option<crate::types::TargetHealth>,
+    pub(crate) anomaly_detection: ::std::option::Option<crate::types::AnomalyDetection>,
 }
 impl TargetHealthDescriptionBuilder {
     /// <p>The description of the target.</p>
@@ -83,12 +94,33 @@ impl TargetHealthDescriptionBuilder {
     pub fn get_target_health(&self) -> &::std::option::Option<crate::types::TargetHealth> {
         &self.target_health
     }
+    /// <p>The anomaly detection result for the target.</p>
+    /// <p>If no anomalies were detected, the result is <code>normal</code>.</p>
+    /// <p>If anomalies were detected, the result is <code>anomalous</code>.</p>
+    pub fn anomaly_detection(mut self, input: crate::types::AnomalyDetection) -> Self {
+        self.anomaly_detection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The anomaly detection result for the target.</p>
+    /// <p>If no anomalies were detected, the result is <code>normal</code>.</p>
+    /// <p>If anomalies were detected, the result is <code>anomalous</code>.</p>
+    pub fn set_anomaly_detection(mut self, input: ::std::option::Option<crate::types::AnomalyDetection>) -> Self {
+        self.anomaly_detection = input;
+        self
+    }
+    /// <p>The anomaly detection result for the target.</p>
+    /// <p>If no anomalies were detected, the result is <code>normal</code>.</p>
+    /// <p>If anomalies were detected, the result is <code>anomalous</code>.</p>
+    pub fn get_anomaly_detection(&self) -> &::std::option::Option<crate::types::AnomalyDetection> {
+        &self.anomaly_detection
+    }
     /// Consumes the builder and constructs a [`TargetHealthDescription`](crate::types::TargetHealthDescription).
     pub fn build(self) -> crate::types::TargetHealthDescription {
         crate::types::TargetHealthDescription {
             target: self.target,
             health_check_port: self.health_check_port,
             target_health: self.target_health,
+            anomaly_detection: self.anomaly_detection,
         }
     }
 }

@@ -6,31 +6,57 @@
 pub struct JobManifestGeneratorFilter {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
     pub eligible_for_replication: ::std::option::Option<bool>,
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created after this time.</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created before this time.</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that have one of the specified Replication statuses.</p>
     pub object_replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
+    /// <p>If provided, the generated manifest includes only source bucket objects whose object keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>, and <code>MatchAnySubstring</code>.</p>
+    pub key_name_constraint: ::std::option::Option<crate::types::KeyNameConstraint>,
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is greater than the specified number of bytes.</p>
+    pub object_size_greater_than_bytes: ::std::option::Option<i64>,
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is less than the specified number of bytes.</p>
+    pub object_size_less_than_bytes: ::std::option::Option<i64>,
+    /// <p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>
+    pub match_any_storage_class: ::std::option::Option<::std::vec::Vec<crate::types::S3StorageClass>>,
 }
 impl JobManifestGeneratorFilter {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
     pub fn eligible_for_replication(&self) -> ::std::option::Option<bool> {
         self.eligible_for_replication
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created after this time.</p>
     pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created before this time.</p>
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that have one of the specified Replication statuses.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.object_replication_statuses.is_none()`.
     pub fn object_replication_statuses(&self) -> &[crate::types::ReplicationStatus] {
         self.object_replication_statuses.as_deref().unwrap_or_default()
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose object keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>, and <code>MatchAnySubstring</code>.</p>
+    pub fn key_name_constraint(&self) -> ::std::option::Option<&crate::types::KeyNameConstraint> {
+        self.key_name_constraint.as_ref()
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is greater than the specified number of bytes.</p>
+    pub fn object_size_greater_than_bytes(&self) -> ::std::option::Option<i64> {
+        self.object_size_greater_than_bytes
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is less than the specified number of bytes.</p>
+    pub fn object_size_less_than_bytes(&self) -> ::std::option::Option<i64> {
+        self.object_size_less_than_bytes
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.match_any_storage_class.is_none()`.
+    pub fn match_any_storage_class(&self) -> &[crate::types::S3StorageClass] {
+        self.match_any_storage_class.as_deref().unwrap_or_default()
     }
 }
 impl JobManifestGeneratorFilter {
@@ -48,6 +74,10 @@ pub struct JobManifestGeneratorFilterBuilder {
     pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) object_replication_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>,
+    pub(crate) key_name_constraint: ::std::option::Option<crate::types::KeyNameConstraint>,
+    pub(crate) object_size_greater_than_bytes: ::std::option::Option<i64>,
+    pub(crate) object_size_less_than_bytes: ::std::option::Option<i64>,
+    pub(crate) match_any_storage_class: ::std::option::Option<::std::vec::Vec<crate::types::S3StorageClass>>,
 }
 impl JobManifestGeneratorFilterBuilder {
     /// <p>Include objects in the generated manifest only if they are eligible for replication according to the Replication configuration on the source bucket.</p>
@@ -64,31 +94,31 @@ impl JobManifestGeneratorFilterBuilder {
     pub fn get_eligible_for_replication(&self) -> &::std::option::Option<bool> {
         &self.eligible_for_replication
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created after this time.</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created after this time.</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created after this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created after this time.</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_after
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created before this time.</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created before this time.</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that were created before this time.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that were created before this time.</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_before
     }
@@ -96,21 +126,83 @@ impl JobManifestGeneratorFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_object_replication_statuses`](Self::set_object_replication_statuses).
     ///
-    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that have one of the specified Replication statuses.</p>
     pub fn object_replication_statuses(mut self, input: crate::types::ReplicationStatus) -> Self {
         let mut v = self.object_replication_statuses.unwrap_or_default();
         v.push(input);
         self.object_replication_statuses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that have one of the specified Replication statuses.</p>
     pub fn set_object_replication_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>>) -> Self {
         self.object_replication_statuses = input;
         self
     }
-    /// <p>If provided, the generated manifest should include only source bucket objects that have one of the specified Replication statuses.</p>
+    /// <p>If provided, the generated manifest includes only source bucket objects that have one of the specified Replication statuses.</p>
     pub fn get_object_replication_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatus>> {
         &self.object_replication_statuses
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose object keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>, and <code>MatchAnySubstring</code>.</p>
+    pub fn key_name_constraint(mut self, input: crate::types::KeyNameConstraint) -> Self {
+        self.key_name_constraint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose object keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>, and <code>MatchAnySubstring</code>.</p>
+    pub fn set_key_name_constraint(mut self, input: ::std::option::Option<crate::types::KeyNameConstraint>) -> Self {
+        self.key_name_constraint = input;
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose object keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>, and <code>MatchAnySubstring</code>.</p>
+    pub fn get_key_name_constraint(&self) -> &::std::option::Option<crate::types::KeyNameConstraint> {
+        &self.key_name_constraint
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is greater than the specified number of bytes.</p>
+    pub fn object_size_greater_than_bytes(mut self, input: i64) -> Self {
+        self.object_size_greater_than_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is greater than the specified number of bytes.</p>
+    pub fn set_object_size_greater_than_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.object_size_greater_than_bytes = input;
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is greater than the specified number of bytes.</p>
+    pub fn get_object_size_greater_than_bytes(&self) -> &::std::option::Option<i64> {
+        &self.object_size_greater_than_bytes
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is less than the specified number of bytes.</p>
+    pub fn object_size_less_than_bytes(mut self, input: i64) -> Self {
+        self.object_size_less_than_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is less than the specified number of bytes.</p>
+    pub fn set_object_size_less_than_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.object_size_less_than_bytes = input;
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects whose file size is less than the specified number of bytes.</p>
+    pub fn get_object_size_less_than_bytes(&self) -> &::std::option::Option<i64> {
+        &self.object_size_less_than_bytes
+    }
+    /// Appends an item to `match_any_storage_class`.
+    ///
+    /// To override the contents of this collection use [`set_match_any_storage_class`](Self::set_match_any_storage_class).
+    ///
+    /// <p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>
+    pub fn match_any_storage_class(mut self, input: crate::types::S3StorageClass) -> Self {
+        let mut v = self.match_any_storage_class.unwrap_or_default();
+        v.push(input);
+        self.match_any_storage_class = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>
+    pub fn set_match_any_storage_class(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::S3StorageClass>>) -> Self {
+        self.match_any_storage_class = input;
+        self
+    }
+    /// <p>If provided, the generated manifest includes only source bucket objects that are stored with the specified storage class.</p>
+    pub fn get_match_any_storage_class(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::S3StorageClass>> {
+        &self.match_any_storage_class
     }
     /// Consumes the builder and constructs a [`JobManifestGeneratorFilter`](crate::types::JobManifestGeneratorFilter).
     pub fn build(self) -> crate::types::JobManifestGeneratorFilter {
@@ -119,6 +211,10 @@ impl JobManifestGeneratorFilterBuilder {
             created_after: self.created_after,
             created_before: self.created_before,
             object_replication_statuses: self.object_replication_statuses,
+            key_name_constraint: self.key_name_constraint,
+            object_size_greater_than_bytes: self.object_size_greater_than_bytes,
+            object_size_less_than_bytes: self.object_size_less_than_bytes,
+            match_any_storage_class: self.match_any_storage_class,
         }
     }
 }

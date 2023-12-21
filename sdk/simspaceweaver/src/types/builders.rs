@@ -9,8 +9,6 @@ pub use crate::types::_simulation_app_port_mapping::SimulationAppPortMappingBuil
 
 pub use crate::types::_s3_destination::S3DestinationBuilder;
 
-pub use crate::types::_simulation_metadata::SimulationMetadataBuilder;
-
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_live_simulation_state::LiveSimulationStateBuilder;
@@ -24,3 +22,5 @@ pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
 pub use crate::types::_log_destination::LogDestinationBuilder;
 
 pub use crate::types::_cloud_watch_logs_log_group::CloudWatchLogsLogGroupBuilder;
+
+pub use crate::types::_simulation_metadata::SimulationMetadataBuilder;

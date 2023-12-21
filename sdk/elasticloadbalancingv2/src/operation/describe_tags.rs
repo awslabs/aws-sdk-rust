@@ -257,6 +257,8 @@ pub enum DescribeTagsError {
     RuleNotFoundException(crate::types::error::RuleNotFoundException),
     /// <p>The specified target group does not exist.</p>
     TargetGroupNotFoundException(crate::types::error::TargetGroupNotFoundException),
+    /// <p>The specified trust store does not exist.</p>
+    TrustStoreNotFoundException(crate::types::error::TrustStoreNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -294,6 +296,7 @@ impl DescribeTagsError {
             Self::LoadBalancerNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RuleNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TargetGroupNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrustStoreNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -313,6 +316,10 @@ impl DescribeTagsError {
     pub fn is_target_group_not_found_exception(&self) -> bool {
         matches!(self, Self::TargetGroupNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DescribeTagsError::TrustStoreNotFoundException`.
+    pub fn is_trust_store_not_found_exception(&self) -> bool {
+        matches!(self, Self::TrustStoreNotFoundException(_))
+    }
 }
 impl ::std::error::Error for DescribeTagsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -321,6 +328,7 @@ impl ::std::error::Error for DescribeTagsError {
             Self::LoadBalancerNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::RuleNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::TargetGroupNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TrustStoreNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -332,6 +340,7 @@ impl ::std::fmt::Display for DescribeTagsError {
             Self::LoadBalancerNotFoundException(_inner) => _inner.fmt(f),
             Self::RuleNotFoundException(_inner) => _inner.fmt(f),
             Self::TargetGroupNotFoundException(_inner) => _inner.fmt(f),
+            Self::TrustStoreNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -357,6 +366,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeTagsE
             Self::LoadBalancerNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RuleNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TargetGroupNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TrustStoreNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

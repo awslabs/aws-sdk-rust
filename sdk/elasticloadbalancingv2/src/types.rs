@@ -57,6 +57,10 @@ pub use crate::types::_certificate::Certificate;
 
 pub use crate::types::_target_description::TargetDescription;
 
+pub use crate::types::_trust_store::TrustStore;
+
+pub use crate::types::_trust_store_status::TrustStoreStatus;
+
 pub use crate::types::_target_group_attribute::TargetGroupAttribute;
 
 pub use crate::types::_target_group::TargetGroup;
@@ -73,13 +77,29 @@ pub use crate::types::_load_balancer_attribute::LoadBalancerAttribute;
 
 pub use crate::types::_listener::Listener;
 
+pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributes;
+
+pub use crate::types::_describe_trust_store_revocation::DescribeTrustStoreRevocation;
+
+pub use crate::types::_revocation_type::RevocationType;
+
+pub use crate::types::_trust_store_association::TrustStoreAssociation;
+
 pub use crate::types::_target_health_description::TargetHealthDescription;
+
+pub use crate::types::_anomaly_detection::AnomalyDetection;
+
+pub use crate::types::_mitigation_in_effect_enum::MitigationInEffectEnum;
+
+pub use crate::types::_anomaly_result_enum::AnomalyResultEnum;
 
 pub use crate::types::_target_health::TargetHealth;
 
 pub use crate::types::_target_health_reason_enum::TargetHealthReasonEnum;
 
 pub use crate::types::_target_health_state_enum::TargetHealthStateEnum;
+
+pub use crate::types::_describe_target_health_input_include_enum::DescribeTargetHealthInputIncludeEnum;
 
 pub use crate::types::_tag_description::TagDescription;
 
@@ -101,9 +121,17 @@ pub use crate::types::_load_balancer_scheme_enum::LoadBalancerSchemeEnum;
 
 pub use crate::types::_limit::Limit;
 
+pub use crate::types::_trust_store_revocation::TrustStoreRevocation;
+
+pub use crate::types::_revocation_content::RevocationContent;
+
 mod _action;
 
 mod _action_type_enum;
+
+mod _anomaly_detection;
+
+mod _anomaly_result_enum;
 
 mod _authenticate_cognito_action_conditional_behavior_enum;
 
@@ -118,6 +146,10 @@ mod _availability_zone;
 mod _certificate;
 
 mod _cipher;
+
+mod _describe_target_health_input_include_enum;
+
+mod _describe_trust_store_revocation;
 
 mod _enforce_security_group_inbound_rules_on_private_link_traffic_enum;
 
@@ -153,6 +185,10 @@ mod _load_balancer_type_enum;
 
 mod _matcher;
 
+mod _mitigation_in_effect_enum;
+
+mod _mutual_authentication_attributes;
+
 mod _path_pattern_condition_config;
 
 mod _protocol_enum;
@@ -164,6 +200,10 @@ mod _query_string_key_value_pair;
 mod _redirect_action_config;
 
 mod _redirect_action_status_code_enum;
+
+mod _revocation_content;
+
+mod _revocation_type;
 
 mod _rule;
 
@@ -202,6 +242,14 @@ mod _target_health_reason_enum;
 mod _target_health_state_enum;
 
 mod _target_type_enum;
+
+mod _trust_store;
+
+mod _trust_store_association;
+
+mod _trust_store_revocation;
+
+mod _trust_store_status;
 
 /// Builders
 pub mod builders;

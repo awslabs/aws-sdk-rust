@@ -3,11 +3,11 @@ pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExcep
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
-pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
 
 pub use crate::types::error::_resource_conflict_exception::ResourceConflictExceptionBuilder;
 
-pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 

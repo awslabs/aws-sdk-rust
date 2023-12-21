@@ -39,9 +39,9 @@ pub use crate::types::_evaluation_result::EvaluationResult;
 
 pub use crate::types::_evaluation_request::EvaluationRequest;
 
-pub use crate::types::_project_summary::ProjectSummary;
-
 pub use crate::types::_project_data_delivery_config::ProjectDataDeliveryConfig;
+
+pub use crate::types::_project_summary::ProjectSummary;
 
 pub use crate::types::_launch_stop_desired_state::LaunchStopDesiredState;
 
@@ -65,31 +65,31 @@ pub use crate::types::_launch_execution::LaunchExecution;
 
 pub use crate::types::_launch_status::LaunchStatus;
 
-pub use crate::types::_launch_group_config::LaunchGroupConfig;
+pub use crate::types::_scheduled_splits_launch_config::ScheduledSplitsLaunchConfig;
+
+pub use crate::types::_scheduled_split_config::ScheduledSplitConfig;
 
 pub use crate::types::_metric_monitor_config::MetricMonitorConfig;
 
 pub use crate::types::_metric_definition_config::MetricDefinitionConfig;
 
-pub use crate::types::_scheduled_splits_launch_config::ScheduledSplitsLaunchConfig;
-
-pub use crate::types::_scheduled_split_config::ScheduledSplitConfig;
-
-pub use crate::types::_feature_summary::FeatureSummary;
-
-pub use crate::types::_evaluation_rule::EvaluationRule;
-
-pub use crate::types::_feature_evaluation_strategy::FeatureEvaluationStrategy;
-
-pub use crate::types::_feature_status::FeatureStatus;
+pub use crate::types::_launch_group_config::LaunchGroupConfig;
 
 pub use crate::types::_feature::Feature;
+
+pub use crate::types::_evaluation_rule::EvaluationRule;
 
 pub use crate::types::_variation::Variation;
 
 pub use crate::types::_variation_value_type::VariationValueType;
 
+pub use crate::types::_feature_evaluation_strategy::FeatureEvaluationStrategy;
+
+pub use crate::types::_feature_status::FeatureStatus;
+
 pub use crate::types::_variation_config::VariationConfig;
+
+pub use crate::types::_feature_summary::FeatureSummary;
 
 pub use crate::types::_experiment_stop_desired_state::ExperimentStopDesiredState;
 

@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAccessPoint`](crate::operation::create_access_point) operation has
-/// a [`Client::create_access_point`], function which returns a builder for that operation.
+/// For example, the [`AssociateAccessGrantsIdentityCenter`](crate::operation::associate_access_grants_identity_center) operation has
+/// a [`Client::associate_access_grants_identity_center`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_access_point()
+/// let result = client.associate_access_grants_identity_center()
 ///     .account_id("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,14 @@ impl Client {
     }
 }
 
+mod associate_access_grants_identity_center;
+
+mod create_access_grant;
+
+mod create_access_grants_instance;
+
+mod create_access_grants_location;
+
 mod create_access_point;
 
 mod create_access_point_for_object_lambda;
@@ -145,6 +153,8 @@ mod create_bucket;
 mod create_job;
 
 mod create_multi_region_access_point;
+
+mod create_storage_lens_group;
 
 /// Operation customization and supporting types.
 ///
@@ -157,7 +167,7 @@ mod create_multi_region_access_point;
 /// # let client: aws_sdk_s3control::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_access_point()
+/// let result = client.associate_access_grants_identity_center()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -172,6 +182,14 @@ mod create_multi_region_access_point;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_access_grant;
+
+mod delete_access_grants_instance;
+
+mod delete_access_grants_instance_resource_policy;
+
+mod delete_access_grants_location;
 
 mod delete_access_point;
 
@@ -201,9 +219,23 @@ mod delete_storage_lens_configuration;
 
 mod delete_storage_lens_configuration_tagging;
 
+mod delete_storage_lens_group;
+
 mod describe_job;
 
 mod describe_multi_region_access_point_operation;
+
+mod dissociate_access_grants_identity_center;
+
+mod get_access_grant;
+
+mod get_access_grants_instance;
+
+mod get_access_grants_instance_for_prefix;
+
+mod get_access_grants_instance_resource_policy;
+
+mod get_access_grants_location;
 
 mod get_access_point;
 
@@ -231,6 +263,8 @@ mod get_bucket_tagging;
 
 mod get_bucket_versioning;
 
+mod get_data_access;
+
 mod get_job_tagging;
 
 mod get_multi_region_access_point;
@@ -247,6 +281,14 @@ mod get_storage_lens_configuration;
 
 mod get_storage_lens_configuration_tagging;
 
+mod get_storage_lens_group;
+
+mod list_access_grants;
+
+mod list_access_grants_instances;
+
+mod list_access_grants_locations;
+
 mod list_access_points;
 
 mod list_access_points_for_object_lambda;
@@ -258,6 +300,12 @@ mod list_multi_region_access_points;
 mod list_regional_buckets;
 
 mod list_storage_lens_configurations;
+
+mod list_storage_lens_groups;
+
+mod list_tags_for_resource;
+
+mod put_access_grants_instance_resource_policy;
 
 mod put_access_point_configuration_for_object_lambda;
 
@@ -287,6 +335,14 @@ mod put_storage_lens_configuration_tagging;
 
 mod submit_multi_region_access_point_routes;
 
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_access_grants_location;
+
 mod update_job_priority;
 
 mod update_job_status;
+
+mod update_storage_lens_group;

@@ -73,6 +73,12 @@ pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetails
 
 pub use crate::types::_configuration_recorder::ConfigurationRecorder;
 
+pub use crate::types::_recording_mode::RecordingMode;
+
+pub use crate::types::_recording_mode_override::RecordingModeOverride;
+
+pub use crate::types::_recording_frequency::RecordingFrequency;
+
 pub use crate::types::_recording_group::RecordingGroup;
 
 pub use crate::types::_recording_strategy::RecordingStrategy;
@@ -469,7 +475,13 @@ mod _query_info;
 
 mod _recorder_status;
 
+mod _recording_frequency;
+
 mod _recording_group;
+
+mod _recording_mode;
+
+mod _recording_mode_override;
 
 mod _recording_strategy;
 

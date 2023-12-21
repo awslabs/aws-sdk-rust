@@ -31,6 +31,7 @@
 ///     ScalableDimension::LambdaFunctionProvisionedConcurrency => { /* ... */ },
 ///     ScalableDimension::NeptuneClusterReadReplicaCount => { /* ... */ },
 ///     ScalableDimension::RdsClusterReadReplicaCount => { /* ... */ },
+///     ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => { /* ... */ },
 ///     ScalableDimension::SageMakerVariantDesiredInstanceCount => { /* ... */ },
 ///     ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -99,6 +100,8 @@ pub enum ScalableDimension {
     #[allow(missing_docs)] // documentation missing in model
     RdsClusterReadReplicaCount,
     #[allow(missing_docs)] // documentation missing in model
+    SageMakerInferenceComponentDesiredCopyCount,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantDesiredInstanceCount,
     #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantDesiredProvisionedConcurrency,
@@ -128,6 +131,7 @@ impl ::std::convert::From<&str> for ScalableDimension {
             "lambda:function:ProvisionedConcurrency" => ScalableDimension::LambdaFunctionProvisionedConcurrency,
             "neptune:cluster:ReadReplicaCount" => ScalableDimension::NeptuneClusterReadReplicaCount,
             "rds:cluster:ReadReplicaCount" => ScalableDimension::RdsClusterReadReplicaCount,
+            "sagemaker:inference-component:DesiredCopyCount" => ScalableDimension::SageMakerInferenceComponentDesiredCopyCount,
             "sagemaker:variant:DesiredInstanceCount" => ScalableDimension::SageMakerVariantDesiredInstanceCount,
             "sagemaker:variant:DesiredProvisionedConcurrency" => ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency,
             other => ScalableDimension::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -164,6 +168,7 @@ impl ScalableDimension {
             ScalableDimension::LambdaFunctionProvisionedConcurrency => "lambda:function:ProvisionedConcurrency",
             ScalableDimension::NeptuneClusterReadReplicaCount => "neptune:cluster:ReadReplicaCount",
             ScalableDimension::RdsClusterReadReplicaCount => "rds:cluster:ReadReplicaCount",
+            ScalableDimension::SageMakerInferenceComponentDesiredCopyCount => "sagemaker:inference-component:DesiredCopyCount",
             ScalableDimension::SageMakerVariantDesiredInstanceCount => "sagemaker:variant:DesiredInstanceCount",
             ScalableDimension::SageMakerVariantDesiredProvisionedConcurrency => "sagemaker:variant:DesiredProvisionedConcurrency",
             ScalableDimension::Unknown(value) => value.as_str(),
@@ -191,6 +196,7 @@ impl ScalableDimension {
             "lambda:function:ProvisionedConcurrency",
             "neptune:cluster:ReadReplicaCount",
             "rds:cluster:ReadReplicaCount",
+            "sagemaker:inference-component:DesiredCopyCount",
             "sagemaker:variant:DesiredInstanceCount",
             "sagemaker:variant:DesiredProvisionedConcurrency",
         ]

@@ -222,4 +222,39 @@ impl DescribeLogGroupsFluentBuilder {
     pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_linked_accounts()
     }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(mut self, input: crate::types::LogGroupClass) -> Self {
+        self.inner = self.inner.log_group_class(input);
+        self
+    }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn set_log_group_class(mut self, input: ::std::option::Option<crate::types::LogGroupClass>) -> Self {
+        self.inner = self.inner.set_log_group_class(input);
+        self
+    }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {
+        self.inner.get_log_group_class()
+    }
 }

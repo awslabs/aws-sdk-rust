@@ -45,7 +45,9 @@ where
                 }
             }
             Ok(Some(
-                crate::serde_util::virtual_gateway_http2_connection_pool_correct_errors(builder).build(),
+                crate::serde_util::virtual_gateway_http2_connection_pool_correct_errors(builder)
+                    .build()
+                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
             ))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(

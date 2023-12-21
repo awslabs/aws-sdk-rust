@@ -37,9 +37,9 @@ pub use crate::types::_import_job_summary::ImportJobSummaryBuilder;
 
 pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;
 
-pub use crate::types::_quick_response_summary::QuickResponseSummaryBuilder;
-
 pub use crate::types::_quick_response_data::QuickResponseDataBuilder;
+
+pub use crate::types::_quick_response_summary::QuickResponseSummaryBuilder;
 
 pub use crate::types::_content_data::ContentDataBuilder;
 
@@ -63,18 +63,18 @@ pub use crate::types::_query_recommendation_trigger_data::QueryRecommendationTri
 
 pub use crate::types::_recommendation_data::RecommendationDataBuilder;
 
-pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
+pub use crate::types::_assistant_data::AssistantDataBuilder;
 
 pub use crate::types::_assistant_integration_configuration::AssistantIntegrationConfigurationBuilder;
 
-pub use crate::types::_assistant_data::AssistantDataBuilder;
+pub use crate::types::_assistant_summary::AssistantSummaryBuilder;
 
 pub use crate::types::_session_data::SessionDataBuilder;
 
 pub use crate::types::_session_integration_configuration::SessionIntegrationConfigurationBuilder;
 
-pub use crate::types::_assistant_association_summary::AssistantAssociationSummaryBuilder;
+pub use crate::types::_assistant_association_data::AssistantAssociationDataBuilder;
 
 pub use crate::types::_knowledge_base_association_data::KnowledgeBaseAssociationDataBuilder;
 
-pub use crate::types::_assistant_association_data::AssistantAssociationDataBuilder;
+pub use crate::types::_assistant_association_summary::AssistantAssociationSummaryBuilder;

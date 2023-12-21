@@ -9,10 +9,6 @@ pub use crate::types::_query_status::QueryStatus;
 
 pub use crate::types::_query_field::QueryField;
 
-pub use crate::types::_monitor::Monitor;
-
-pub use crate::types::_monitor_processing_status_code::MonitorProcessingStatusCode;
-
 pub use crate::types::_monitor_config_state::MonitorConfigState;
 
 pub use crate::types::_health_events_config::HealthEventsConfig;
@@ -27,7 +23,9 @@ pub use crate::types::_s3_config::S3Config;
 
 pub use crate::types::_log_delivery_status::LogDeliveryStatus;
 
-pub use crate::types::_health_event::HealthEvent;
+pub use crate::types::_monitor_processing_status_code::MonitorProcessingStatusCode;
+
+pub use crate::types::_monitor::Monitor;
 
 pub use crate::types::_health_event_impact_type::HealthEventImpactType;
 
@@ -48,6 +46,8 @@ pub use crate::types::_network_impairment::NetworkImpairment;
 pub use crate::types::_triangulation_event_type::TriangulationEventType;
 
 pub use crate::types::_network::Network;
+
+pub use crate::types::_health_event::HealthEvent;
 
 mod _availability_measurement;
 

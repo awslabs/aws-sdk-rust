@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogAction {
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The following values are possible:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <p><code>Close</code> – Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
     /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <p><code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
     /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex V2.</p></li>
+    /// <p><code>Delegate</code> – The next action is determined by Amazon Lex V2.</p></li>
     /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p></li>
+    /// <p><code>ElicitIntent</code> – The next action is to elicit an intent from the user.</p></li>
     /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <p><code>ElicitSlot</code> – The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub r#type: crate::types::DialogActionType,
     /// <p>The name of the slot that should be elicited from the user.</p>
@@ -27,24 +27,24 @@ pub struct DialogAction {
     /// <li>
     /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using spelling to enter slot values </a>.</p>
     pub slot_elicitation_style: ::std::option::Option<crate::types::StyleType>,
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
     pub sub_slot_to_elicit: ::std::option::Option<crate::types::ElicitSubSlot>,
 }
 impl DialogAction {
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The following values are possible:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <p><code>Close</code> – Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
     /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <p><code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
     /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex V2.</p></li>
+    /// <p><code>Delegate</code> – The next action is determined by Amazon Lex V2.</p></li>
     /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p></li>
+    /// <p><code>ElicitIntent</code> – The next action is to elicit an intent from the user.</p></li>
     /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <p><code>ElicitSlot</code> – The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub fn r#type(&self) -> &crate::types::DialogActionType {
         &self.r#type
@@ -60,7 +60,7 @@ impl DialogAction {
     /// <li>
     /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using spelling to enter slot values </a>.</p>
     pub fn slot_elicitation_style(&self) -> ::std::option::Option<&crate::types::StyleType> {
         self.slot_elicitation_style.as_ref()
     }
@@ -86,53 +86,53 @@ pub struct DialogActionBuilder {
     pub(crate) sub_slot_to_elicit: ::std::option::Option<crate::types::ElicitSubSlot>,
 }
 impl DialogActionBuilder {
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The following values are possible:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <p><code>Close</code> – Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
     /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <p><code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
     /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex V2.</p></li>
+    /// <p><code>Delegate</code> – The next action is determined by Amazon Lex V2.</p></li>
     /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p></li>
+    /// <p><code>ElicitIntent</code> – The next action is to elicit an intent from the user.</p></li>
     /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <p><code>ElicitSlot</code> – The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The following values are possible:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <p><code>Close</code> – Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
     /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <p><code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
     /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex V2.</p></li>
+    /// <p><code>Delegate</code> – The next action is determined by Amazon Lex V2.</p></li>
     /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p></li>
+    /// <p><code>ElicitIntent</code> – The next action is to elicit an intent from the user.</p></li>
     /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <p><code>ElicitSlot</code> – The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::DialogActionType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
+    /// <p>The next action that the bot should take in its interaction with the user. The following values are possible:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Close</code> - Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
+    /// <p><code>Close</code> – Indicates that there will not be a response from the user. For example, the statement "Your order has been placed" does not require a response.</p></li>
     /// <li>
-    /// <p><code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
+    /// <p><code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p></li>
     /// <li>
-    /// <p><code>Delegate</code> - The next action is determined by Amazon Lex V2.</p></li>
+    /// <p><code>Delegate</code> – The next action is determined by Amazon Lex V2.</p></li>
     /// <li>
-    /// <p><code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p></li>
+    /// <p><code>ElicitIntent</code> – The next action is to elicit an intent from the user.</p></li>
     /// <li>
-    /// <p><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p></li>
+    /// <p><code>ElicitSlot</code> – The next action is to elicit a slot value from the user.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::DialogActionType> {
         &self.r#type
@@ -158,7 +158,7 @@ impl DialogActionBuilder {
     /// <li>
     /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using spelling to enter slot values </a>.</p>
     pub fn slot_elicitation_style(mut self, input: crate::types::StyleType) -> Self {
         self.slot_elicitation_style = ::std::option::Option::Some(input);
         self
@@ -170,7 +170,7 @@ impl DialogActionBuilder {
     /// <li>
     /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using spelling to enter slot values </a>.</p>
     pub fn set_slot_elicitation_style(mut self, input: ::std::option::Option<crate::types::StyleType>) -> Self {
         self.slot_elicitation_style = input;
         self
@@ -182,7 +182,7 @@ impl DialogActionBuilder {
     /// <li>
     /// <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using spelling to enter slot values </a>.</p>
     pub fn get_slot_elicitation_style(&self) -> &::std::option::Option<crate::types::StyleType> {
         &self.slot_elicitation_style
     }

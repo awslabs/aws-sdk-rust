@@ -94,6 +94,9 @@ pub mod stop_execution;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TestState` operation.
+pub mod test_state;
+
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 

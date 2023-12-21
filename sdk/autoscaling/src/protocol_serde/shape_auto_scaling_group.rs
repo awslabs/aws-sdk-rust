@@ -436,6 +436,16 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_traffic_sources(var_34);
             }
             ,
+            s if s.matches("InstanceMaintenancePolicy") /* InstanceMaintenancePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceMaintenancePolicy */ =>  {
+                let var_35 =
+                    Some(
+                        crate::protocol_serde::shape_instance_maintenance_policy::de_instance_maintenance_policy(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_maintenance_policy(var_35);
+            }
+            ,
             _ => {}
         }
     }

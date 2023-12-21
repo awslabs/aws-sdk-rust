@@ -384,6 +384,15 @@ pub(crate) fn organization_managed_rule_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn recording_mode_correct_errors(
+    mut builder: crate::types::builders::RecordingModeBuilder,
+) -> crate::types::builders::RecordingModeBuilder {
+    if builder.recording_frequency.is_none() {
+        builder.recording_frequency = "no value was set".parse::<crate::types::RecordingFrequency>().ok()
+    }
+    builder
+}
+
 pub(crate) fn source_correct_errors(mut builder: crate::types::builders::SourceBuilder) -> crate::types::builders::SourceBuilder {
     if builder.owner.is_none() {
         builder.owner = "no value was set".parse::<crate::types::Owner>().ok()
@@ -420,6 +429,18 @@ pub(crate) fn custom_policy_details_correct_errors(
     }
     if builder.policy_text.is_none() {
         builder.policy_text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recording_mode_override_correct_errors(
+    mut builder: crate::types::builders::RecordingModeOverrideBuilder,
+) -> crate::types::builders::RecordingModeOverrideBuilder {
+    if builder.resource_types.is_none() {
+        builder.resource_types = Some(Default::default())
+    }
+    if builder.recording_frequency.is_none() {
+        builder.recording_frequency = "no value was set".parse::<crate::types::RecordingFrequency>().ok()
     }
     builder
 }

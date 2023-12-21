@@ -13,6 +13,16 @@ pub use crate::types::_cloud_watch_logs_log_group::CloudWatchLogsLogGroup;
 
 pub use crate::types::_log_level::LogLevel;
 
+pub use crate::types::_test_execution_status::TestExecutionStatus;
+
+pub use crate::types::_inspection_data::InspectionData;
+
+pub use crate::types::_inspection_data_response::InspectionDataResponse;
+
+pub use crate::types::_inspection_data_request::InspectionDataRequest;
+
+pub use crate::types::_inspection_level::InspectionLevel;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_billing_details::BillingDetails;
@@ -169,6 +179,14 @@ mod _history_event_execution_data_details;
 
 mod _history_event_type;
 
+mod _inspection_data;
+
+mod _inspection_data_request;
+
+mod _inspection_data_response;
+
+mod _inspection_level;
+
 mod _lambda_function_failed_event_details;
 
 mod _lambda_function_schedule_failed_event_details;
@@ -242,6 +260,8 @@ mod _task_submitted_event_details;
 mod _task_succeeded_event_details;
 
 mod _task_timed_out_event_details;
+
+mod _test_execution_status;
 
 mod _tracing_configuration;
 

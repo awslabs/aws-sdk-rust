@@ -64,10 +64,17 @@ impl VirtualGatewayHttpConnectionPoolBuilder {
         &self.max_pending_requests
     }
     /// Consumes the builder and constructs a [`VirtualGatewayHttpConnectionPool`](crate::types::VirtualGatewayHttpConnectionPool).
-    pub fn build(self) -> crate::types::VirtualGatewayHttpConnectionPool {
-        crate::types::VirtualGatewayHttpConnectionPool {
-            max_connections: self.max_connections.unwrap_or_default(),
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_connections`](crate::types::builders::VirtualGatewayHttpConnectionPoolBuilder::max_connections)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayHttpConnectionPool, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayHttpConnectionPool {
+            max_connections: self.max_connections.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_connections",
+                    "max_connections was not specified but it is required when building VirtualGatewayHttpConnectionPool",
+                )
+            })?,
             max_pending_requests: self.max_pending_requests,
-        }
+        })
     }
 }

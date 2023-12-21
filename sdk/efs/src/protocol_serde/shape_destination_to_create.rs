@@ -12,5 +12,8 @@ pub fn ser_destination_to_create(
     if let Some(var_3) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.file_system_id {
+        object.key("FileSystemId").string(var_4.as_str());
+    }
     Ok(())
 }

@@ -24,6 +24,8 @@ pub struct CreateBotLocaleOutput {
     pub bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     /// <p>A timestamp specifying the date and time that the bot locale was created.</p>
     pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     _request_id: Option<String>,
 }
 impl CreateBotLocaleOutput {
@@ -66,6 +68,10 @@ impl CreateBotLocaleOutput {
     pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn generative_ai_settings(&self) -> ::std::option::Option<&crate::types::GenerativeAiSettings> {
+        self.generative_ai_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateBotLocaleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -92,6 +98,7 @@ pub struct CreateBotLocaleOutputBuilder {
     pub(crate) voice_settings: ::std::option::Option<crate::types::VoiceSettings>,
     pub(crate) bot_locale_status: ::std::option::Option<crate::types::BotLocaleStatus>,
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     _request_id: Option<String>,
 }
 impl CreateBotLocaleOutputBuilder {
@@ -230,6 +237,20 @@ impl CreateBotLocaleOutputBuilder {
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_date_time
     }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn generative_ai_settings(mut self, input: crate::types::GenerativeAiSettings) -> Self {
+        self.generative_ai_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn set_generative_ai_settings(mut self, input: ::std::option::Option<crate::types::GenerativeAiSettings>) -> Self {
+        self.generative_ai_settings = input;
+        self
+    }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
+        &self.generative_ai_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -251,6 +272,7 @@ impl CreateBotLocaleOutputBuilder {
             voice_settings: self.voice_settings,
             bot_locale_status: self.bot_locale_status,
             creation_date_time: self.creation_date_time,
+            generative_ai_settings: self.generative_ai_settings,
             _request_id: self._request_id,
         }
     }

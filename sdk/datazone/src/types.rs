@@ -21,8 +21,6 @@ pub use crate::types::_model::Model;
 
 pub use crate::types::_environment_blueprint_configuration_item::EnvironmentBlueprintConfigurationItem;
 
-pub use crate::types::_domain_summary::DomainSummary;
-
 pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_single_sign_on::SingleSignOn;
@@ -31,7 +29,7 @@ pub use crate::types::_user_assignment::UserAssignment;
 
 pub use crate::types::_auth_type::AuthType;
 
-pub use crate::types::_data_source_run_summary::DataSourceRunSummary;
+pub use crate::types::_domain_summary::DomainSummary;
 
 pub use crate::types::_data_source_error_message::DataSourceErrorMessage;
 
@@ -39,23 +37,19 @@ pub use crate::types::_data_source_error_type::DataSourceErrorType;
 
 pub use crate::types::_run_statistics_for_assets::RunStatisticsForAssets;
 
-pub use crate::types::_data_source_run_status::DataSourceRunStatus;
-
 pub use crate::types::_data_source_run_type::DataSourceRunType;
 
-pub use crate::types::_data_source_summary::DataSourceSummary;
+pub use crate::types::_data_source_run_status::DataSourceRunStatus;
+
+pub use crate::types::_data_source_run_summary::DataSourceRunSummary;
 
 pub use crate::types::_schedule_configuration::ScheduleConfiguration;
 
 pub use crate::types::_timezone::Timezone;
 
-pub use crate::types::_enable_setting::EnableSetting;
-
-pub use crate::types::_data_source_status::DataSourceStatus;
-
 pub use crate::types::_form_output::FormOutput;
 
-pub use crate::types::_recommendation_configuration::RecommendationConfiguration;
+pub use crate::types::_enable_setting::EnableSetting;
 
 pub use crate::types::_data_source_configuration_output::DataSourceConfigurationOutput;
 
@@ -77,13 +71,19 @@ pub use crate::types::_filter_expression_type::FilterExpressionType;
 
 pub use crate::types::_glue_run_configuration_output::GlueRunConfigurationOutput;
 
-pub use crate::types::_form_input::FormInput;
+pub use crate::types::_data_source_status::DataSourceStatus;
+
+pub use crate::types::_recommendation_configuration::RecommendationConfiguration;
 
 pub use crate::types::_data_source_configuration_input::DataSourceConfigurationInput;
 
 pub use crate::types::_redshift_run_configuration_input::RedshiftRunConfigurationInput;
 
 pub use crate::types::_glue_run_configuration_input::GlueRunConfigurationInput;
+
+pub use crate::types::_form_input::FormInput;
+
+pub use crate::types::_data_source_summary::DataSourceSummary;
 
 pub use crate::types::_form_entry_output::FormEntryOutput;
 

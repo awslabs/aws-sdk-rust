@@ -19,5 +19,8 @@ pub fn ser_create_log_group_input_input(
         }
         object_4.finish();
     }
+    if let Some(var_7) = &input.log_group_class {
+        object.key("logGroupClass").string(var_7.as_str());
+    }
     Ok(())
 }

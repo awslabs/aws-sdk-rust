@@ -15,6 +15,12 @@ pub fn ser_configuration_recorder(
         crate::protocol_serde::shape_recording_group::ser_recording_group(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.recording_mode {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("recordingMode").start_object();
+        crate::protocol_serde::shape_recording_mode::ser_recording_mode(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -49,6 +55,9 @@ where
                         }
                         "recordingGroup" => {
                             builder = builder.set_recording_group(crate::protocol_serde::shape_recording_group::de_recording_group(tokens)?);
+                        }
+                        "recordingMode" => {
+                            builder = builder.set_recording_mode(crate::protocol_serde::shape_recording_mode::de_recording_mode(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

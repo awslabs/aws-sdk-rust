@@ -30,23 +30,29 @@ pub fn ser_lambda_config_type(
     if let Some(var_9) = &input.pre_token_generation {
         object.key("PreTokenGeneration").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.user_migration {
-        object.key("UserMigration").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.custom_sms_sender {
+    if let Some(var_10) = &input.pre_token_generation_config {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("CustomSMSSender").start_object();
-        crate::protocol_serde::shape_custom_sms_lambda_version_config_type::ser_custom_sms_lambda_version_config_type(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_11 = object.key("PreTokenGenerationConfig").start_object();
+        crate::protocol_serde::shape_pre_token_generation_version_config_type::ser_pre_token_generation_version_config_type(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_13) = &input.custom_email_sender {
+    if let Some(var_12) = &input.user_migration {
+        object.key("UserMigration").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.custom_sms_sender {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("CustomEmailSender").start_object();
-        crate::protocol_serde::shape_custom_email_lambda_version_config_type::ser_custom_email_lambda_version_config_type(&mut object_14, var_13)?;
+        let mut object_14 = object.key("CustomSMSSender").start_object();
+        crate::protocol_serde::shape_custom_sms_lambda_version_config_type::ser_custom_sms_lambda_version_config_type(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.kms_key_id {
-        object.key("KMSKeyID").string(var_15.as_str());
+    if let Some(var_15) = &input.custom_email_sender {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("CustomEmailSender").start_object();
+        crate::protocol_serde::shape_custom_email_lambda_version_config_type::ser_custom_email_lambda_version_config_type(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.kms_key_id {
+        object.key("KMSKeyID").string(var_17.as_str());
     }
     Ok(())
 }
@@ -127,6 +133,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "PreTokenGenerationConfig" => {
+                            builder = builder.set_pre_token_generation_config(
+                                crate::protocol_serde::shape_pre_token_generation_version_config_type::de_pre_token_generation_version_config_type(
+                                    tokens,
+                                )?,
                             );
                         }
                         "UserMigration" => {

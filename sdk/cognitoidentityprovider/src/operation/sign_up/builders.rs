@@ -131,17 +131,17 @@ impl SignUpFluentBuilder {
     pub fn get_secret_hash(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_hash()
     }
-    /// <p>The user name of the user you want to register.</p>
+    /// <p>The username of the user that you want to sign up. The value of this parameter is typically a username, but can be any alias attribute in your user pool.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
-    /// <p>The user name of the user you want to register.</p>
+    /// <p>The username of the user that you want to sign up. The value of this parameter is typically a username, but can be any alias attribute in your user pool.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
-    /// <p>The user name of the user you want to register.</p>
+    /// <p>The username of the user that you want to sign up. The value of this parameter is typically a username, but can be any alias attribute in your user pool.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
@@ -184,17 +184,23 @@ impl SignUpFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_validation_data`](Self::set_validation_data).
     ///
-    /// <p>The validation data in the request to register a user.</p>
+    /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
+    /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
+    /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
     pub fn validation_data(mut self, input: crate::types::AttributeType) -> Self {
         self.inner = self.inner.validation_data(input);
         self
     }
-    /// <p>The validation data in the request to register a user.</p>
+    /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
+    /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
+    /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
     pub fn set_validation_data(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.inner = self.inner.set_validation_data(input);
         self
     }
-    /// <p>The validation data in the request to register a user.</p>
+    /// <p>Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.</p>
+    /// <p>Your Lambda function can analyze this additional data and act on it. Your function might perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs. Validation data might also affect the response that your function returns to Amazon Cognito, like automatically confirming the user if they sign up from within your network.</p>
+    /// <p>For more information about the pre sign-up Lambda trigger, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">Pre sign-up Lambda trigger</a>.</p>
     pub fn get_validation_data(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         self.inner.get_validation_data()
     }

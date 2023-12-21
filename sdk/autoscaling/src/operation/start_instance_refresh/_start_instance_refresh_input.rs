@@ -12,7 +12,7 @@ pub struct StartInstanceRefreshInput {
     /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates.</p>
     /// </note>
     pub desired_configuration: ::std::option::Option<crate::types::DesiredConfiguration>,
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>
@@ -41,7 +41,7 @@ impl StartInstanceRefreshInput {
     pub fn desired_configuration(&self) -> ::std::option::Option<&crate::types::DesiredConfiguration> {
         self.desired_configuration.as_ref()
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>
@@ -125,7 +125,7 @@ impl StartInstanceRefreshInputBuilder {
     pub fn get_desired_configuration(&self) -> &::std::option::Option<crate::types::DesiredConfiguration> {
         &self.desired_configuration
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>
@@ -140,7 +140,7 @@ impl StartInstanceRefreshInputBuilder {
         self.preferences = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>
@@ -155,7 +155,7 @@ impl StartInstanceRefreshInputBuilder {
         self.preferences = input;
         self
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>

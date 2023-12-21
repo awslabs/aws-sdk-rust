@@ -3,17 +3,9 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_application::Application;
-
-pub use crate::types::_application_status::ApplicationStatus;
-
 pub use crate::types::_attachments_configuration::AttachmentsConfiguration;
 
 pub use crate::types::_attachments_control_mode::AttachmentsControlMode;
-
-pub use crate::types::_tag::Tag;
-
-pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_applied_attachments_configuration::AppliedAttachmentsConfiguration;
 
@@ -21,9 +13,13 @@ pub use crate::types::_error_detail::ErrorDetail;
 
 pub use crate::types::_error_code::ErrorCode;
 
-pub use crate::types::_web_experience::WebExperience;
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
-pub use crate::types::_web_experience_status::WebExperienceStatus;
+pub use crate::types::_application_status::ApplicationStatus;
+
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_application::Application;
 
 pub use crate::types::_web_experience_sample_prompts_control_mode::WebExperienceSamplePromptsControlMode;
 
@@ -31,11 +27,9 @@ pub use crate::types::_web_experience_auth_configuration::WebExperienceAuthConfi
 
 pub use crate::types::_saml_configuration::SamlConfiguration;
 
-pub use crate::types::_retriever::Retriever;
+pub use crate::types::_web_experience_status::WebExperienceStatus;
 
-pub use crate::types::_retriever_status::RetrieverStatus;
-
-pub use crate::types::_retriever_type::RetrieverType;
+pub use crate::types::_web_experience::WebExperience;
 
 pub use crate::types::_retriever_configuration::RetrieverConfiguration;
 
@@ -43,11 +37,11 @@ pub use crate::types::_kendra_index_configuration::KendraIndexConfiguration;
 
 pub use crate::types::_native_index_configuration::NativeIndexConfiguration;
 
-pub use crate::types::_plugin::Plugin;
+pub use crate::types::_retriever_status::RetrieverStatus;
 
-pub use crate::types::_plugin_state::PluginState;
+pub use crate::types::_retriever_type::RetrieverType;
 
-pub use crate::types::_plugin_type::PluginType;
+pub use crate::types::_retriever::Retriever;
 
 pub use crate::types::_plugin_auth_configuration::PluginAuthConfiguration;
 
@@ -55,11 +49,11 @@ pub use crate::types::_o_auth2_client_credential_configuration::OAuth2ClientCred
 
 pub use crate::types::_basic_auth_configuration::BasicAuthConfiguration;
 
-pub use crate::types::_index::Index;
+pub use crate::types::_plugin_state::PluginState;
 
-pub use crate::types::_index_status::IndexStatus;
+pub use crate::types::_plugin_type::PluginType;
 
-pub use crate::types::_index_capacity_configuration::IndexCapacityConfiguration;
+pub use crate::types::_plugin::Plugin;
 
 pub use crate::types::_document_attribute_configuration::DocumentAttributeConfiguration;
 
@@ -67,13 +61,15 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_attribute_type::AttributeType;
 
+pub use crate::types::_index_capacity_configuration::IndexCapacityConfiguration;
+
 pub use crate::types::_index_statistics::IndexStatistics;
 
 pub use crate::types::_text_document_statistics::TextDocumentStatistics;
 
-pub use crate::types::_data_source::DataSource;
+pub use crate::types::_index_status::IndexStatus;
 
-pub use crate::types::_data_source_status::DataSourceStatus;
+pub use crate::types::_index::Index;
 
 pub use crate::types::_document_enrichment_configuration::DocumentEnrichmentConfiguration;
 
@@ -94,6 +90,10 @@ pub use crate::types::_document_attribute_target::DocumentAttributeTarget;
 pub use crate::types::_attribute_value_operator::AttributeValueOperator;
 
 pub use crate::types::_data_source_vpc_configuration::DataSourceVpcConfiguration;
+
+pub use crate::types::_data_source_status::DataSourceStatus;
+
+pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_user_alias::UserAlias;
 

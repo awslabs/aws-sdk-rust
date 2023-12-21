@@ -31,6 +31,10 @@ pub(crate) mod shape_add_tags;
 
 pub(crate) mod shape_add_tags_input;
 
+pub(crate) mod shape_add_trust_store_revocations;
+
+pub(crate) mod shape_add_trust_store_revocations_input;
+
 pub(crate) mod shape_create_listener;
 
 pub(crate) mod shape_create_listener_input;
@@ -47,6 +51,10 @@ pub(crate) mod shape_create_target_group;
 
 pub(crate) mod shape_create_target_group_input;
 
+pub(crate) mod shape_create_trust_store;
+
+pub(crate) mod shape_create_trust_store_input;
+
 pub(crate) mod shape_delete_listener;
 
 pub(crate) mod shape_delete_listener_input;
@@ -62,6 +70,10 @@ pub(crate) mod shape_delete_rule_input;
 pub(crate) mod shape_delete_target_group;
 
 pub(crate) mod shape_delete_target_group_input;
+
+pub(crate) mod shape_delete_trust_store;
+
+pub(crate) mod shape_delete_trust_store_input;
 
 pub(crate) mod shape_deregister_targets;
 
@@ -111,6 +123,26 @@ pub(crate) mod shape_describe_target_health;
 
 pub(crate) mod shape_describe_target_health_input;
 
+pub(crate) mod shape_describe_trust_store_associations;
+
+pub(crate) mod shape_describe_trust_store_associations_input;
+
+pub(crate) mod shape_describe_trust_store_revocations;
+
+pub(crate) mod shape_describe_trust_store_revocations_input;
+
+pub(crate) mod shape_describe_trust_stores;
+
+pub(crate) mod shape_describe_trust_stores_input;
+
+pub(crate) mod shape_get_trust_store_ca_certificates_bundle;
+
+pub(crate) mod shape_get_trust_store_ca_certificates_bundle_input;
+
+pub(crate) mod shape_get_trust_store_revocation_content;
+
+pub(crate) mod shape_get_trust_store_revocation_content_input;
+
 pub(crate) mod shape_modify_listener;
 
 pub(crate) mod shape_modify_listener_input;
@@ -131,6 +163,10 @@ pub(crate) mod shape_modify_target_group_attributes_input;
 
 pub(crate) mod shape_modify_target_group_input;
 
+pub(crate) mod shape_modify_trust_store;
+
+pub(crate) mod shape_modify_trust_store_input;
+
 pub(crate) mod shape_register_targets;
 
 pub(crate) mod shape_register_targets_input;
@@ -142,6 +178,10 @@ pub(crate) mod shape_remove_listener_certificates_input;
 pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_remove_tags_input;
+
+pub(crate) mod shape_remove_trust_store_revocations;
+
+pub(crate) mod shape_remove_trust_store_revocations_input;
 
 pub(crate) mod shape_set_ip_address_type;
 
@@ -167,6 +207,8 @@ pub(crate) mod shape_alpn_policy_not_supported_exception;
 
 pub(crate) mod shape_availability_zone_not_supported_exception;
 
+pub(crate) mod shape_ca_certificates_bundle_not_found_exception;
+
 pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_certificate_not_found_exception;
@@ -179,13 +221,19 @@ pub(crate) mod shape_duplicate_tag_keys_exception;
 
 pub(crate) mod shape_duplicate_target_group_name_exception;
 
+pub(crate) mod shape_duplicate_trust_store_name_exception;
+
 pub(crate) mod shape_health_unavailable_exception;
 
 pub(crate) mod shape_incompatible_protocols_exception;
 
+pub(crate) mod shape_invalid_ca_certificates_bundle_exception;
+
 pub(crate) mod shape_invalid_configuration_request_exception;
 
 pub(crate) mod shape_invalid_load_balancer_action_exception;
+
+pub(crate) mod shape_invalid_revocation_content_exception;
 
 pub(crate) mod shape_invalid_scheme_exception;
 
@@ -203,11 +251,19 @@ pub(crate) mod shape_load_balancer_not_found_exception;
 
 pub(crate) mod shape_matcher;
 
+pub(crate) mod shape_mutual_authentication_attributes;
+
 pub(crate) mod shape_operation_not_permitted_exception;
 
 pub(crate) mod shape_priority_in_use_exception;
 
 pub(crate) mod shape_resource_in_use_exception;
+
+pub(crate) mod shape_revocation_content;
+
+pub(crate) mod shape_revocation_content_not_found_exception;
+
+pub(crate) mod shape_revocation_id_not_found_exception;
 
 pub(crate) mod shape_rule_condition;
 
@@ -249,7 +305,17 @@ pub(crate) mod shape_too_many_target_groups_exception;
 
 pub(crate) mod shape_too_many_targets_exception;
 
+pub(crate) mod shape_too_many_trust_store_revocation_entries_exception;
+
+pub(crate) mod shape_too_many_trust_stores_exception;
+
 pub(crate) mod shape_too_many_unique_target_groups_per_load_balancer_exception;
+
+pub(crate) mod shape_trust_store_in_use_exception;
+
+pub(crate) mod shape_trust_store_not_found_exception;
+
+pub(crate) mod shape_trust_store_not_ready_exception;
 
 pub(crate) mod shape_unsupported_protocol_exception;
 
@@ -260,6 +326,8 @@ pub(crate) mod shape_authenticate_oidc_action_config;
 pub(crate) mod shape_availability_zones;
 
 pub(crate) mod shape_certificate_list;
+
+pub(crate) mod shape_describe_trust_store_revocation_response;
 
 pub(crate) mod shape_fixed_response_action_config;
 
@@ -301,7 +369,15 @@ pub(crate) mod shape_target_groups;
 
 pub(crate) mod shape_target_health_descriptions;
 
+pub(crate) mod shape_trust_store_associations;
+
+pub(crate) mod shape_trust_store_revocations;
+
+pub(crate) mod shape_trust_stores;
+
 pub(crate) mod shape_availability_zone;
+
+pub(crate) mod shape_describe_trust_store_revocation;
 
 pub(crate) mod shape_limit;
 
@@ -325,9 +401,17 @@ pub(crate) mod shape_target_group_tuple;
 
 pub(crate) mod shape_target_health_description;
 
+pub(crate) mod shape_trust_store;
+
+pub(crate) mod shape_trust_store_association;
+
+pub(crate) mod shape_trust_store_revocation;
+
 pub(crate) mod shape_actions;
 
 pub(crate) mod shape_alpn_policy_name;
+
+pub(crate) mod shape_anomaly_detection;
 
 pub(crate) mod shape_ciphers;
 

@@ -22,6 +22,9 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccessPointPolicyForObjectLambda`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Removes the resource policy for an Object Lambda Access Point.</p>
 /// <p>The following actions are related to <code>DeleteAccessPointPolicyForObjectLambda</code>:</p>
 /// <ul>

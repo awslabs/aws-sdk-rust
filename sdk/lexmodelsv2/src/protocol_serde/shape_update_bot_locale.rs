@@ -196,6 +196,10 @@ pub(crate) fn de_update_bot_locale(
                 "failureReasons" => {
                     builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
                 }
+                "generativeAISettings" => {
+                    builder =
+                        builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                }
                 "lastUpdatedDateTime" => {
                     builder = builder.set_last_updated_date_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

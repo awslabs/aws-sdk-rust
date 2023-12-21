@@ -105,6 +105,16 @@ pub fn de_listener(
                 builder = builder.set_alpn_policy(var_8);
             }
             ,
+            s if s.matches("MutualAuthentication") /* MutualAuthentication com.amazonaws.elasticloadbalancingv2#Listener$MutualAuthentication */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_mutual_authentication_attributes::de_mutual_authentication_attributes(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_mutual_authentication(var_9);
+            }
+            ,
             _ => {}
         }
     }

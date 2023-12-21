@@ -31,6 +31,8 @@ pub(crate) mod shape_create_delivery;
 
 pub(crate) mod shape_create_export_task;
 
+pub(crate) mod shape_create_log_anomaly_detector;
+
 pub(crate) mod shape_create_log_group;
 
 pub(crate) mod shape_create_log_stream;
@@ -48,6 +50,8 @@ pub(crate) mod shape_delete_delivery_destination_policy;
 pub(crate) mod shape_delete_delivery_source;
 
 pub(crate) mod shape_delete_destination;
+
+pub(crate) mod shape_delete_log_anomaly_detector;
 
 pub(crate) mod shape_delete_log_group;
 
@@ -103,6 +107,8 @@ pub(crate) mod shape_get_delivery_destination_policy;
 
 pub(crate) mod shape_get_delivery_source;
 
+pub(crate) mod shape_get_log_anomaly_detector;
+
 pub(crate) mod shape_get_log_events;
 
 pub(crate) mod shape_get_log_group_fields;
@@ -110,6 +116,10 @@ pub(crate) mod shape_get_log_group_fields;
 pub(crate) mod shape_get_log_record;
 
 pub(crate) mod shape_get_query_results;
+
+pub(crate) mod shape_list_anomalies;
+
+pub(crate) mod shape_list_log_anomaly_detectors;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -155,6 +165,10 @@ pub(crate) mod shape_untag_log_group;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_anomaly;
+
+pub(crate) mod shape_update_log_anomaly_detector;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -175,6 +189,8 @@ pub(crate) mod shape_create_delivery_input;
 
 pub(crate) mod shape_create_export_task_input;
 
+pub(crate) mod shape_create_log_anomaly_detector_input;
+
 pub(crate) mod shape_create_log_group_input;
 
 pub(crate) mod shape_create_log_stream_input;
@@ -194,6 +210,8 @@ pub(crate) mod shape_delete_delivery_input;
 pub(crate) mod shape_delete_delivery_source_input;
 
 pub(crate) mod shape_delete_destination_input;
+
+pub(crate) mod shape_delete_log_anomaly_detector_input;
 
 pub(crate) mod shape_delete_log_group_input;
 
@@ -249,6 +267,8 @@ pub(crate) mod shape_get_delivery_input;
 
 pub(crate) mod shape_get_delivery_source_input;
 
+pub(crate) mod shape_get_log_anomaly_detector_input;
+
 pub(crate) mod shape_get_log_events_input;
 
 pub(crate) mod shape_get_log_group_fields_input;
@@ -264,6 +284,10 @@ pub(crate) mod shape_invalid_parameter_exception;
 pub(crate) mod shape_invalid_sequence_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_anomalies_input;
+
+pub(crate) mod shape_list_log_anomaly_detectors_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -327,11 +351,19 @@ pub(crate) mod shape_untag_log_group_input;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_anomaly_input;
+
+pub(crate) mod shape_update_log_anomaly_detector_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_policies;
 
 pub(crate) mod shape_account_policy;
+
+pub(crate) mod shape_anomalies;
+
+pub(crate) mod shape_anomaly_detectors;
 
 pub(crate) mod shape_deliveries;
 
@@ -356,6 +388,8 @@ pub(crate) mod shape_export_tasks;
 pub(crate) mod shape_filtered_log_events;
 
 pub(crate) mod shape_input_log_event;
+
+pub(crate) mod shape_log_group_arn_list;
 
 pub(crate) mod shape_log_group_field_list;
 
@@ -395,7 +429,13 @@ pub(crate) mod shape_searched_log_streams;
 
 pub(crate) mod shape_subscription_filters;
 
+pub(crate) mod shape_suppression_period;
+
 pub(crate) mod shape_tags;
+
+pub(crate) mod shape_anomaly;
+
+pub(crate) mod shape_anomaly_detector;
 
 pub(crate) mod shape_export_task;
 
@@ -433,12 +473,22 @@ pub(crate) mod shape_export_task_status;
 
 pub(crate) mod shape_extracted_values;
 
+pub(crate) mod shape_histogram;
+
 pub(crate) mod shape_inherited_properties;
 
 pub(crate) mod shape_log_group_names;
 
+pub(crate) mod shape_log_samples;
+
 pub(crate) mod shape_metric_transformations;
+
+pub(crate) mod shape_pattern_tokens;
 
 pub(crate) mod shape_result_field;
 
+pub(crate) mod shape_pattern_token;
+
 pub(crate) mod shape_dimensions;
+
+pub(crate) mod shape_enumerations;

@@ -9,13 +9,13 @@ pub use crate::types::_notification_setting::NotificationSettingBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
-pub use crate::types::_subject_summary::SubjectSummaryBuilder;
-
 pub use crate::types::_subject_detail::SubjectDetailBuilder;
 
 pub use crate::types::_instance_property::InstancePropertyBuilder;
 
 pub use crate::types::_credential_summary::CredentialSummaryBuilder;
+
+pub use crate::types::_subject_summary::SubjectSummaryBuilder;
 
 pub use crate::types::_profile_detail::ProfileDetailBuilder;
 

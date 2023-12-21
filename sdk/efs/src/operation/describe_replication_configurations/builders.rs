@@ -108,6 +108,12 @@ impl DescribeReplicationConfigurationsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_configurations::paginator::DescribeReplicationConfigurationsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::describe_replication_configurations::paginator::DescribeReplicationConfigurationsPaginator {
+        crate::operation::describe_replication_configurations::paginator::DescribeReplicationConfigurationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>You can retrieve the replication configuration for a specific file system by providing its file system ID.</p>
     pub fn file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());

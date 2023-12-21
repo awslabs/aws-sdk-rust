@@ -23,7 +23,7 @@ pub struct Destination {
     /// <p>A container that specifies replication metrics-related settings.</p>
     pub metrics: ::std::option::Option<crate::types::Metrics>,
     /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p><note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
+    /// <p>Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub storage_class: ::std::option::Option<crate::types::ReplicationStorageClass>,
 }
@@ -60,7 +60,7 @@ impl Destination {
         self.metrics.as_ref()
     }
     /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p><note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
+    /// <p>Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn storage_class(&self) -> ::std::option::Option<&crate::types::ReplicationStorageClass> {
         self.storage_class.as_ref()
@@ -190,21 +190,21 @@ impl DestinationBuilder {
         &self.metrics
     }
     /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p><note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
+    /// <p>Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn storage_class(mut self, input: crate::types::ReplicationStorageClass) -> Self {
         self.storage_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p><note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
+    /// <p>Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn set_storage_class(mut self, input: ::std::option::Option<crate::types::ReplicationStorageClass>) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The storage class to use when replicating objects. All objects stored on S3 on Outposts are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code> storage class to create the object replicas.</p><note>
-    /// <p>Values other than <code>OUTPOSTS</code> are not supported by Amazon S3 on Outposts.</p>
+    /// <p>Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub fn get_storage_class(&self) -> &::std::option::Option<crate::types::ReplicationStorageClass> {
         &self.storage_class

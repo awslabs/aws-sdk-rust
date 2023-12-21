@@ -45,6 +45,8 @@ pub use crate::types::_certificate::CertificateBuilder;
 
 pub use crate::types::_target_description::TargetDescriptionBuilder;
 
+pub use crate::types::_trust_store::TrustStoreBuilder;
+
 pub use crate::types::_target_group_attribute::TargetGroupAttributeBuilder;
 
 pub use crate::types::_target_group::TargetGroupBuilder;
@@ -55,7 +57,15 @@ pub use crate::types::_load_balancer_attribute::LoadBalancerAttributeBuilder;
 
 pub use crate::types::_listener::ListenerBuilder;
 
+pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributesBuilder;
+
+pub use crate::types::_describe_trust_store_revocation::DescribeTrustStoreRevocationBuilder;
+
+pub use crate::types::_trust_store_association::TrustStoreAssociationBuilder;
+
 pub use crate::types::_target_health_description::TargetHealthDescriptionBuilder;
+
+pub use crate::types::_anomaly_detection::AnomalyDetectionBuilder;
 
 pub use crate::types::_target_health::TargetHealthBuilder;
 
@@ -72,3 +82,7 @@ pub use crate::types::_load_balancer::LoadBalancerBuilder;
 pub use crate::types::_load_balancer_state::LoadBalancerStateBuilder;
 
 pub use crate::types::_limit::LimitBuilder;
+
+pub use crate::types::_trust_store_revocation::TrustStoreRevocationBuilder;
+
+pub use crate::types::_revocation_content::RevocationContentBuilder;

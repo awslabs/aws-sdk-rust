@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-synthetics = "1.7.0"
+//! aws-sdk-synthetics = "1.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

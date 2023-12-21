@@ -5,8 +5,6 @@ pub use crate::types::_landing_zone_operation_status::LandingZoneOperationStatus
 
 pub use crate::types::_landing_zone_operation_type::LandingZoneOperationType;
 
-pub use crate::types::_landing_zone_summary::LandingZoneSummary;
-
 pub use crate::types::_landing_zone_detail::LandingZoneDetail;
 
 pub use crate::types::_landing_zone_drift_status_summary::LandingZoneDriftStatusSummary;
@@ -14,6 +12,8 @@ pub use crate::types::_landing_zone_drift_status_summary::LandingZoneDriftStatus
 pub use crate::types::_landing_zone_drift_status::LandingZoneDriftStatus;
 
 pub use crate::types::_landing_zone_status::LandingZoneStatus;
+
+pub use crate::types::_landing_zone_summary::LandingZoneSummary;
 
 pub use crate::types::_enabled_control_parameter::EnabledControlParameter;
 

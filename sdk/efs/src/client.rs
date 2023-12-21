@@ -222,3 +222,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_file_system;
+
+mod update_file_system_protection;

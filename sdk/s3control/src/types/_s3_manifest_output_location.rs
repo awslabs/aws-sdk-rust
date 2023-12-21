@@ -6,7 +6,9 @@
 pub struct S3ManifestOutputLocation {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
     pub expected_manifest_bucket_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    /// <p>The bucket ARN the generated manifest should be written to.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
+    /// </note>
     pub bucket: ::std::string::String,
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
     pub manifest_prefix: ::std::option::Option<::std::string::String>,
@@ -20,7 +22,9 @@ impl S3ManifestOutputLocation {
     pub fn expected_manifest_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.expected_manifest_bucket_owner.as_deref()
     }
-    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    /// <p>The bucket ARN the generated manifest should be written to.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
+    /// </note>
     pub fn bucket(&self) -> &str {
         use std::ops::Deref;
         self.bucket.deref()
@@ -70,18 +74,24 @@ impl S3ManifestOutputLocationBuilder {
     pub fn get_expected_manifest_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_manifest_bucket_owner
     }
-    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    /// <p>The bucket ARN the generated manifest should be written to.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
+    /// </note>
     /// This field is required.
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    /// <p>The bucket ARN the generated manifest should be written to.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
+    /// </note>
     pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
-    /// <p>The bucket ARN the generated manifest should be written to.</p>
+    /// <p>The bucket ARN the generated manifest should be written to.</p><note>
+    /// <p><b>Directory buckets</b> - Directory buckets aren't supported as the buckets to store the generated manifest.</p>
+    /// </note>
     pub fn get_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket
     }

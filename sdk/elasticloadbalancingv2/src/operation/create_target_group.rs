@@ -253,7 +253,7 @@ pub enum CreateTargetGroupError {
     DuplicateTargetGroupNameException(crate::types::error::DuplicateTargetGroupNameException),
     /// <p>The requested configuration is not valid.</p>
     InvalidConfigurationRequestException(crate::types::error::InvalidConfigurationRequestException),
-    /// <p>You've reached the limit on the number of tags per load balancer.</p>
+    /// <p>You've reached the limit on the number of tags for this resource.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
     /// <p>You've reached the limit on the number of target groups for your Amazon Web Services account.</p>
     TooManyTargetGroupsException(crate::types::error::TooManyTargetGroupsException),

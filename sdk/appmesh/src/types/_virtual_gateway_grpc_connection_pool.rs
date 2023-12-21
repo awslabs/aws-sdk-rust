@@ -43,9 +43,16 @@ impl VirtualGatewayGrpcConnectionPoolBuilder {
         &self.max_requests
     }
     /// Consumes the builder and constructs a [`VirtualGatewayGrpcConnectionPool`](crate::types::VirtualGatewayGrpcConnectionPool).
-    pub fn build(self) -> crate::types::VirtualGatewayGrpcConnectionPool {
-        crate::types::VirtualGatewayGrpcConnectionPool {
-            max_requests: self.max_requests.unwrap_or_default(),
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_requests`](crate::types::builders::VirtualGatewayGrpcConnectionPoolBuilder::max_requests)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualGatewayGrpcConnectionPool, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualGatewayGrpcConnectionPool {
+            max_requests: self.max_requests.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_requests",
+                    "max_requests was not specified but it is required when building VirtualGatewayGrpcConnectionPool",
+                )
+            })?,
+        })
     }
 }

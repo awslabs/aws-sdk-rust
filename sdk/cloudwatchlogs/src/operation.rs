@@ -13,6 +13,9 @@ pub mod create_delivery;
 /// Types for the `CreateExportTask` operation.
 pub mod create_export_task;
 
+/// Types for the `CreateLogAnomalyDetector` operation.
+pub mod create_log_anomaly_detector;
+
 /// Types for the `CreateLogGroup` operation.
 pub mod create_log_group;
 
@@ -39,6 +42,9 @@ pub mod delete_delivery_source;
 
 /// Types for the `DeleteDestination` operation.
 pub mod delete_destination;
+
+/// Types for the `DeleteLogAnomalyDetector` operation.
+pub mod delete_log_anomaly_detector;
 
 /// Types for the `DeleteLogGroup` operation.
 pub mod delete_log_group;
@@ -121,6 +127,9 @@ pub mod get_delivery_destination_policy;
 /// Types for the `GetDeliverySource` operation.
 pub mod get_delivery_source;
 
+/// Types for the `GetLogAnomalyDetector` operation.
+pub mod get_log_anomaly_detector;
+
 /// Types for the `GetLogEvents` operation.
 pub mod get_log_events;
 
@@ -132,6 +141,12 @@ pub mod get_log_record;
 
 /// Types for the `GetQueryResults` operation.
 pub mod get_query_results;
+
+/// Types for the `ListAnomalies` operation.
+pub mod list_anomalies;
+
+/// Types for the `ListLogAnomalyDetectors` operation.
+pub mod list_log_anomaly_detectors;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -198,3 +213,9 @@ pub mod untag_log_group;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAnomaly` operation.
+pub mod update_anomaly;
+
+/// Types for the `UpdateLogAnomalyDetector` operation.
+pub mod update_log_anomaly_detector;

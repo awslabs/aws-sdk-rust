@@ -99,6 +99,26 @@ pub(crate) fn reflens_get_log_events_output_output_next_forward_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_anomalies_output_output_next_token(
+    input: &crate::operation::list_anomalies::ListAnomaliesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_log_anomaly_detectors_output_output_next_token(
+    input: &crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_deliveries_output_output_deliveries(
     input: crate::operation::describe_deliveries::DescribeDeliveriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Delivery>> {
@@ -183,6 +203,26 @@ pub(crate) fn lens_get_log_events_output_output_events(
     input: crate::operation::get_log_events::GetLogEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OutputLogEvent>> {
     let input = match input.events {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_anomalies_output_output_anomalies(
+    input: crate::operation::list_anomalies::ListAnomaliesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Anomaly>> {
+    let input = match input.anomalies {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_log_anomaly_detectors_output_output_anomaly_detectors(
+    input: crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>> {
+    let input = match input.anomaly_detectors {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

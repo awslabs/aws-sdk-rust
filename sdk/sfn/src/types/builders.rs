@@ -9,6 +9,12 @@ pub use crate::types::_log_destination::LogDestinationBuilder;
 
 pub use crate::types::_cloud_watch_logs_log_group::CloudWatchLogsLogGroupBuilder;
 
+pub use crate::types::_inspection_data::InspectionDataBuilder;
+
+pub use crate::types::_inspection_data_response::InspectionDataResponseBuilder;
+
+pub use crate::types::_inspection_data_request::InspectionDataRequestBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_billing_details::BillingDetailsBuilder;

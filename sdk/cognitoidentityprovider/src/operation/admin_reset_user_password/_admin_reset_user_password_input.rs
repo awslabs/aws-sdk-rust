@@ -6,7 +6,7 @@
 pub struct AdminResetUserPasswordInput {
     /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The user name of the user whose password you want to reset.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
@@ -28,7 +28,7 @@ impl AdminResetUserPasswordInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The user name of the user whose password you want to reset.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -89,18 +89,18 @@ impl AdminResetUserPasswordInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The user name of the user whose password you want to reset.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name of the user whose password you want to reset.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user name of the user whose password you want to reset.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

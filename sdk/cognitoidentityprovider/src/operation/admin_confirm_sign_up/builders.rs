@@ -22,7 +22,8 @@ impl AdminConfirmSignUpInputBuilder {
 }
 /// Fluent builder constructing a request to `AdminConfirmSignUp`.
 ///
-/// <p>Confirms user registration as an admin without using a confirmation code. Works on any user.</p><note>
+/// <p>This IAM-authenticated API operation provides a code that Amazon Cognito sent to your user when they signed up in your user pool. After your user enters their code, they confirm ownership of the email address or phone number that they provided, and their user account becomes active. Depending on your user pool configuration, your users will receive their confirmation code in an email or SMS message.</p>
+/// <p>Local users who signed up in your user pool are the only type of user who can confirm sign-up with a code. Users who federate through an external identity provider (IdP) have already been confirmed by their IdP. Administrator-created users confirm their accounts when they respond to their invitation email message and choose a password.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -131,17 +132,17 @@ impl AdminConfirmSignUpFluentBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The user name for which you want to confirm user registration.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
-    /// <p>The user name for which you want to confirm user registration.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
-    /// <p>The user name for which you want to confirm user registration.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }

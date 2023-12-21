@@ -43,9 +43,16 @@ impl VirtualNodeTcpConnectionPoolBuilder {
         &self.max_connections
     }
     /// Consumes the builder and constructs a [`VirtualNodeTcpConnectionPool`](crate::types::VirtualNodeTcpConnectionPool).
-    pub fn build(self) -> crate::types::VirtualNodeTcpConnectionPool {
-        crate::types::VirtualNodeTcpConnectionPool {
-            max_connections: self.max_connections.unwrap_or_default(),
-        }
+    /// This method will fail if any of the following fields are not set:
+    /// - [`max_connections`](crate::types::builders::VirtualNodeTcpConnectionPoolBuilder::max_connections)
+    pub fn build(self) -> ::std::result::Result<crate::types::VirtualNodeTcpConnectionPool, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::VirtualNodeTcpConnectionPool {
+            max_connections: self.max_connections.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_connections",
+                    "max_connections was not specified but it is required when building VirtualNodeTcpConnectionPool",
+                )
+            })?,
+        })
     }
 }

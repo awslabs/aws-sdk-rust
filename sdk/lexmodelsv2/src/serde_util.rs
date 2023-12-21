@@ -524,6 +524,15 @@ pub(crate) fn slot_priority_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn slot_resolution_setting_correct_errors(
+    mut builder: crate::types::builders::SlotResolutionSettingBuilder,
+) -> crate::types::builders::SlotResolutionSettingBuilder {
+    if builder.slot_resolution_strategy.is_none() {
+        builder.slot_resolution_strategy = "no value was set".parse::<crate::types::SlotResolutionStrategy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn slot_value_regex_filter_correct_errors(
     mut builder: crate::types::builders::SlotValueRegexFilterBuilder,
 ) -> crate::types::builders::SlotValueRegexFilterBuilder {
@@ -668,6 +677,15 @@ pub(crate) fn conversation_logs_data_source_filter_by_correct_errors(
     builder
 }
 
+pub(crate) fn descriptive_bot_builder_specification_correct_errors(
+    mut builder: crate::types::builders::DescriptiveBotBuilderSpecificationBuilder,
+) -> crate::types::builders::DescriptiveBotBuilderSpecificationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dialog_action_correct_errors(mut builder: crate::types::builders::DialogActionBuilder) -> crate::types::builders::DialogActionBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::DialogActionType>().ok()
@@ -711,9 +729,27 @@ pub(crate) fn grammar_slot_type_source_correct_errors(
     builder
 }
 
+pub(crate) fn sample_utterance_generation_specification_correct_errors(
+    mut builder: crate::types::builders::SampleUtteranceGenerationSpecificationBuilder,
+) -> crate::types::builders::SampleUtteranceGenerationSpecificationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn sample_value_correct_errors(mut builder: crate::types::builders::SampleValueBuilder) -> crate::types::builders::SampleValueBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn slot_resolution_improvement_specification_correct_errors(
+    mut builder: crate::types::builders::SlotResolutionImprovementSpecificationBuilder,
+) -> crate::types::builders::SlotResolutionImprovementSpecificationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
     }
     builder
 }
@@ -831,6 +867,15 @@ pub(crate) fn audio_log_destination_correct_errors(
             let builder = crate::types::builders::S3BucketLogDestinationBuilder::default();
             crate::serde_util::s3_bucket_log_destination_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn bedrock_model_specification_correct_errors(
+    mut builder: crate::types::builders::BedrockModelSpecificationBuilder,
+) -> crate::types::builders::BedrockModelSpecificationBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
     }
     builder
 }

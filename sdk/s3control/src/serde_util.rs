@@ -35,6 +35,21 @@ pub(crate) fn list_storage_lens_configuration_entry_correct_errors(
     builder
 }
 
+pub(crate) fn list_storage_lens_group_entry_correct_errors(
+    mut builder: crate::types::builders::ListStorageLensGroupEntryBuilder,
+) -> crate::types::builders::ListStorageLensGroupEntryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.storage_lens_group_arn.is_none() {
+        builder.storage_lens_group_arn = Some(Default::default())
+    }
+    if builder.home_region.is_none() {
+        builder.home_region = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn object_lambda_configuration_correct_errors(
     mut builder: crate::types::builders::ObjectLambdaConfigurationBuilder,
 ) -> crate::types::builders::ObjectLambdaConfigurationBuilder {
@@ -174,9 +189,34 @@ pub(crate) fn storage_lens_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn storage_lens_group_correct_errors(
+    mut builder: crate::types::builders::StorageLensGroupBuilder,
+) -> crate::types::builders::StorageLensGroupBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.filter.is_none() {
+        builder.filter = {
+            let builder = crate::types::builders::StorageLensGroupFilterBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn storage_lens_tag_correct_errors(
     mut builder: crate::types::builders::StorageLensTagBuilder,
 ) -> crate::types::builders::StorageLensTagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
     }

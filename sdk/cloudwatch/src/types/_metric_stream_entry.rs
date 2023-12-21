@@ -16,7 +16,7 @@ pub struct MetricStreamEntry {
     pub firehose_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
     pub state: ::std::option::Option<::std::string::String>,
-    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
     pub output_format: ::std::option::Option<crate::types::MetricStreamOutputFormat>,
 }
 impl MetricStreamEntry {
@@ -44,7 +44,7 @@ impl MetricStreamEntry {
     pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
-    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
@@ -153,17 +153,17 @@ impl MetricStreamEntryBuilder {
     pub fn get_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.state
     }
-    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
     pub fn output_format(mut self, input: crate::types::MetricStreamOutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::MetricStreamOutputFormat>) -> Self {
         self.output_format = input;
         self
     }
-    /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
+    /// <p>The output format of this metric stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>, and <code>opentelemetry0.7</code>.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::MetricStreamOutputFormat> {
         &self.output_format
     }

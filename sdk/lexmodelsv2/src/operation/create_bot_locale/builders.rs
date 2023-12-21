@@ -225,4 +225,18 @@ impl CreateBotLocaleFluentBuilder {
     pub fn get_voice_settings(&self) -> &::std::option::Option<crate::types::VoiceSettings> {
         self.inner.get_voice_settings()
     }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn generative_ai_settings(mut self, input: crate::types::GenerativeAiSettings) -> Self {
+        self.inner = self.inner.generative_ai_settings(input);
+        self
+    }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn set_generative_ai_settings(mut self, input: ::std::option::Option<crate::types::GenerativeAiSettings>) -> Self {
+        self.inner = self.inner.set_generative_ai_settings(input);
+        self
+    }
+    /// <p>Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.</p>
+    pub fn get_generative_ai_settings(&self) -> &::std::option::Option<crate::types::GenerativeAiSettings> {
+        self.inner.get_generative_ai_settings()
+    }
 }

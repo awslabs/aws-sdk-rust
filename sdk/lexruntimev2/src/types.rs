@@ -3,6 +3,8 @@ pub use crate::types::_recognized_bot_member::RecognizedBotMember;
 
 pub use crate::types::_interpretation::Interpretation;
 
+pub use crate::types::_interpretation_source::InterpretationSource;
+
 pub use crate::types::_intent::Intent;
 
 pub use crate::types::_confirmation_state::ConfirmationState;
@@ -74,6 +76,8 @@ mod _intent;
 mod _intent_state;
 
 mod _interpretation;
+
+mod _interpretation_source;
 
 mod _message;
 

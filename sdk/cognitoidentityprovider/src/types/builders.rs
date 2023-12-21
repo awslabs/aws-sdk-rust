@@ -33,6 +33,8 @@ pub use crate::types::_custom_email_lambda_version_config_type::CustomEmailLambd
 
 pub use crate::types::_custom_sms_lambda_version_config_type::CustomSmsLambdaVersionConfigTypeBuilder;
 
+pub use crate::types::_pre_token_generation_version_config_type::PreTokenGenerationVersionConfigTypeBuilder;
+
 pub use crate::types::_user_pool_policy_type::UserPoolPolicyTypeBuilder;
 
 pub use crate::types::_password_policy_type::PasswordPolicyTypeBuilder;

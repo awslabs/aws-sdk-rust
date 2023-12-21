@@ -249,17 +249,20 @@ impl UpdateUserPoolClientFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_read_attributes`](Self::set_read_attributes).
     ///
-    /// <p>The read-only attributes of the user pool.</p>
+    /// <p>The list of user attributes that you want your app client to have read-only access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list. An example of this kind of activity is when your user selects a link to view their profile information. Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a> API request to retrieve and display your user's profile data.</p>
+    /// <p>When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified your own custom set of read attributes.</p>
     pub fn read_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.read_attributes(input.into());
         self
     }
-    /// <p>The read-only attributes of the user pool.</p>
+    /// <p>The list of user attributes that you want your app client to have read-only access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list. An example of this kind of activity is when your user selects a link to view their profile information. Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a> API request to retrieve and display your user's profile data.</p>
+    /// <p>When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified your own custom set of read attributes.</p>
     pub fn set_read_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_read_attributes(input);
         self
     }
-    /// <p>The read-only attributes of the user pool.</p>
+    /// <p>The list of user attributes that you want your app client to have read-only access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list. An example of this kind of activity is when your user selects a link to view their profile information. Your app makes a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html">GetUser</a> API request to retrieve and display your user's profile data.</p>
+    /// <p>When you don't specify the <code>ReadAttributes</code> for your app client, your app can read the values of <code>email_verified</code>, <code>phone_number_verified</code>, and the Standard attributes of your user pool. When your user pool has read access to these default attributes, <code>ReadAttributes</code> doesn't return any information. Amazon Cognito only populates <code>ReadAttributes</code> in the API response if you have specified your own custom set of read attributes.</p>
     pub fn get_read_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_read_attributes()
     }
@@ -267,17 +270,23 @@ impl UpdateUserPoolClientFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_write_attributes`](Self::set_write_attributes).
     ///
-    /// <p>The writeable attributes of the user pool.</p>
+    /// <p>The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list. An example of this kind of activity is when you present your user with a form to update their profile information and they change their last name. Your app then makes an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.</p>
+    /// <p>When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.</p>
+    /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
     pub fn write_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.write_attributes(input.into());
         self
     }
-    /// <p>The writeable attributes of the user pool.</p>
+    /// <p>The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list. An example of this kind of activity is when you present your user with a form to update their profile information and they change their last name. Your app then makes an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.</p>
+    /// <p>When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.</p>
+    /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
     pub fn set_write_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_write_attributes(input);
         self
     }
-    /// <p>The writeable attributes of the user pool.</p>
+    /// <p>The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list. An example of this kind of activity is when you present your user with a form to update their profile information and they change their last name. Your app then makes an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html">UpdateUserAttributes</a> API request and sets <code>family_name</code> to the new value.</p>
+    /// <p>When you don't specify the <code>WriteAttributes</code> for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, <code>WriteAttributes</code> doesn't return any information. Amazon Cognito only populates <code>WriteAttributes</code> in the API response if you have specified your own custom set of write attributes.</p>
+    /// <p>If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying IdP Attribute Mappings for Your user pool</a>.</p>
     pub fn get_write_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_write_attributes()
     }

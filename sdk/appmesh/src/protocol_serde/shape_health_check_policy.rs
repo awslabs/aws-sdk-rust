@@ -18,14 +18,14 @@ pub fn ser_health_check_policy(
     {
         object.key("protocol").string(input.protocol.as_str());
     }
-    if input.port != 0 {
+    if let Some(var_1) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.port).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.path {
-        object.key("path").string(var_1.as_str());
+    if let Some(var_2) = &input.path {
+        object.key("path").string(var_2.as_str());
     }
     {
         object.key("healthyThreshold").number(

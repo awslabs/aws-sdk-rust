@@ -22,8 +22,7 @@ impl CreateBotVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBotVersion`.
 ///
-/// <p>Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it returns the last created version.</p>
-/// <p>When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.</p>
+/// <p>Creates an immutable version of the bot. When you create the first version of a bot, Amazon Lex sets the version number to 1. Subsequent bot versions increase in an increment of 1. The version number will always represent the total number of versions created of the bot, not the current number of versions. If a bot version is deleted, that bot version number will not be reused.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBotVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

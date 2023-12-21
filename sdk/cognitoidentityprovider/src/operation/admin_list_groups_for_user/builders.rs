@@ -22,7 +22,7 @@ impl AdminListGroupsForUserInputBuilder {
 }
 /// Fluent builder constructing a request to `AdminListGroupsForUser`.
 ///
-/// <p>Lists the groups that the user belongs to.</p><note>
+/// <p>Lists the groups that a user belongs to.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -123,17 +123,17 @@ impl AdminListGroupsForUserFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::admin_list_groups_for_user::paginator::AdminListGroupsForUserPaginator {
         crate::operation::admin_list_groups_for_user::paginator::AdminListGroupsForUserPaginator::new(self.handle, self.inner)
     }
-    /// <p>The username for the user.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
-    /// <p>The username for the user.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
-    /// <p>The username for the user.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }

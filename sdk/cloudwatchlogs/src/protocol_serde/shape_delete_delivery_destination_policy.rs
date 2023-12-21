@@ -35,6 +35,21 @@ pub fn de_delete_delivery_destination_policy_http_error(
             }
             tmp
         }),
+        "ValidationException" => crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => {
             crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
@@ -71,21 +86,6 @@ pub fn de_delete_delivery_destination_policy_http_error(
                 tmp
             })
         }
-        "ValidationException" => crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         _ => crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::generic(generic),
     })
 }

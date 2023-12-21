@@ -296,6 +296,38 @@ pub fn de_create_listener_http_error(
                 tmp
             })
         }
+        "TrustStoreNotFound" => crate::operation::create_listener::CreateListenerError::TrustStoreNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TrustStoreNotFoundExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_trust_store_not_found_exception::de_trust_store_not_found_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_listener::CreateListenerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TrustStoreNotReady" => crate::operation::create_listener::CreateListenerError::TrustStoreNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TrustStoreNotReadyExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_trust_store_not_ready_exception::de_trust_store_not_ready_exception_xml_err(_response_body, output)
+                        .map_err(crate::operation::create_listener::CreateListenerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "UnsupportedProtocol" => crate::operation::create_listener::CreateListenerError::UnsupportedProtocolException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -43,6 +43,11 @@ where
                             builder =
                                 builder.set_slot_capture_setting(crate::protocol_serde::shape_slot_capture_setting::de_slot_capture_setting(tokens)?);
                         }
+                        "slotResolutionSetting" => {
+                            builder = builder.set_slot_resolution_setting(
+                                crate::protocol_serde::shape_slot_resolution_setting::de_slot_resolution_setting(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -107,6 +112,12 @@ pub fn ser_slot_value_elicitation_setting(
         let mut object_12 = object.key("slotCaptureSetting").start_object();
         crate::protocol_serde::shape_slot_capture_setting::ser_slot_capture_setting(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.slot_resolution_setting {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("slotResolutionSetting").start_object();
+        crate::protocol_serde::shape_slot_resolution_setting::ser_slot_resolution_setting(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

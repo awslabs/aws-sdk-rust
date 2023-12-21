@@ -10,7 +10,7 @@ pub struct ResendConfirmationCodeInput {
     pub secret_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
-    /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code> calls.</p>
     pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
@@ -42,7 +42,7 @@ impl ResendConfirmationCodeInput {
     pub fn user_context_data(&self) -> ::std::option::Option<&crate::types::UserContextDataType> {
         self.user_context_data.as_ref()
     }
-    /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -141,18 +141,18 @@ impl ResendConfirmationCodeInputBuilder {
     pub fn get_user_context_data(&self) -> &::std::option::Option<crate::types::UserContextDataType> {
         &self.user_context_data
     }
-    /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The <code>username</code> attribute of the user to whom you want to resend a confirmation code.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }

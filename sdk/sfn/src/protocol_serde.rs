@@ -85,6 +85,8 @@ pub(crate) mod shape_stop_execution;
 
 pub(crate) mod shape_tag_resource;
 
+pub(crate) mod shape_test_state;
+
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_map_run;
@@ -215,6 +217,8 @@ pub(crate) mod shape_task_does_not_exist;
 
 pub(crate) mod shape_task_timed_out;
 
+pub(crate) mod shape_test_state_input;
+
 pub(crate) mod shape_too_many_tags;
 
 pub(crate) mod shape_untag_resource_input;
@@ -236,6 +240,8 @@ pub(crate) mod shape_cloud_watch_events_execution_data_details;
 pub(crate) mod shape_execution_list;
 
 pub(crate) mod shape_history_event_list;
+
+pub(crate) mod shape_inspection_data;
 
 pub(crate) mod shape_logging_configuration;
 
@@ -266,6 +272,10 @@ pub(crate) mod shape_activity_list_item;
 pub(crate) mod shape_execution_list_item;
 
 pub(crate) mod shape_history_event;
+
+pub(crate) mod shape_inspection_data_request;
+
+pub(crate) mod shape_inspection_data_response;
 
 pub(crate) mod shape_log_destination;
 

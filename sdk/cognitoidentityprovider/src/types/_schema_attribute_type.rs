@@ -5,9 +5,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaAttributeType {
-    /// <p>The name of your user pool attribute, for example <code>username</code> or <code>custom:costcenter</code>.</p>
+    /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The data format of the values for your attribute.</p>
+    /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub attribute_data_type: ::std::option::Option<crate::types::AttributeDataType>,
     /// <note>
     /// <p>You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a> in the user pool client to control how attributes can be mutated for new use cases instead of using <code>DeveloperOnlyAttribute</code>.</p>
@@ -25,11 +25,11 @@ pub struct SchemaAttributeType {
     pub string_attribute_constraints: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
 }
 impl SchemaAttributeType {
-    /// <p>The name of your user pool attribute, for example <code>username</code> or <code>custom:costcenter</code>.</p>
+    /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The data format of the values for your attribute.</p>
+    /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub fn attribute_data_type(&self) -> ::std::option::Option<&crate::types::AttributeDataType> {
         self.attribute_data_type.as_ref()
     }
@@ -78,31 +78,31 @@ pub struct SchemaAttributeTypeBuilder {
     pub(crate) string_attribute_constraints: ::std::option::Option<crate::types::StringAttributeConstraintsType>,
 }
 impl SchemaAttributeTypeBuilder {
-    /// <p>The name of your user pool attribute, for example <code>username</code> or <code>custom:costcenter</code>.</p>
+    /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of your user pool attribute, for example <code>username</code> or <code>custom:costcenter</code>.</p>
+    /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of your user pool attribute, for example <code>username</code> or <code>custom:costcenter</code>.</p>
+    /// <p>The name of your user pool attribute. When you create or update a user pool, adding a schema attribute creates a custom or developer-only attribute. When you add an attribute with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code> is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>. In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code> for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code> for developer-only attributes..</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The data format of the values for your attribute.</p>
+    /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub fn attribute_data_type(mut self, input: crate::types::AttributeDataType) -> Self {
         self.attribute_data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data format of the values for your attribute.</p>
+    /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub fn set_attribute_data_type(mut self, input: ::std::option::Option<crate::types::AttributeDataType>) -> Self {
         self.attribute_data_type = input;
         self
     }
-    /// <p>The data format of the values for your attribute.</p>
+    /// <p>The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>, Amazon Cognito validates the input against the data type. A custom attribute value in your user's ID token is always a string, for example <code>"custom:isMember" : "true"</code> or <code>"custom:YearsAsMember" : "12"</code>.</p>
     pub fn get_attribute_data_type(&self) -> &::std::option::Option<crate::types::AttributeDataType> {
         &self.attribute_data_type
     }

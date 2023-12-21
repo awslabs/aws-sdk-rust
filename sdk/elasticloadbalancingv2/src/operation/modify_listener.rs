@@ -281,6 +281,10 @@ pub enum ModifyListenerError {
     TooManyTargetsException(crate::types::error::TooManyTargetsException),
     /// <p>You've reached the limit on the number of unique target groups per load balancer across all listeners. If a target group is used by multiple actions for a load balancer, it is counted as only one use.</p>
     TooManyUniqueTargetGroupsPerLoadBalancerException(crate::types::error::TooManyUniqueTargetGroupsPerLoadBalancerException),
+    /// <p>The specified trust store does not exist.</p>
+    TrustStoreNotFoundException(crate::types::error::TrustStoreNotFoundException),
+    /// <p>The specified trust store is not active.</p>
+    TrustStoreNotReadyException(crate::types::error::TrustStoreNotReadyException),
     /// <p>The specified protocol is not supported.</p>
     UnsupportedProtocolException(crate::types::error::UnsupportedProtocolException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -332,6 +336,8 @@ impl ModifyListenerError {
             Self::TooManyRegistrationsForTargetIdException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyTargetsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrustStoreNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TrustStoreNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedProtocolException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -400,6 +406,14 @@ impl ModifyListenerError {
     pub fn is_too_many_unique_target_groups_per_load_balancer_exception(&self) -> bool {
         matches!(self, Self::TooManyUniqueTargetGroupsPerLoadBalancerException(_))
     }
+    /// Returns `true` if the error kind is `ModifyListenerError::TrustStoreNotFoundException`.
+    pub fn is_trust_store_not_found_exception(&self) -> bool {
+        matches!(self, Self::TrustStoreNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `ModifyListenerError::TrustStoreNotReadyException`.
+    pub fn is_trust_store_not_ready_exception(&self) -> bool {
+        matches!(self, Self::TrustStoreNotReadyException(_))
+    }
     /// Returns `true` if the error kind is `ModifyListenerError::UnsupportedProtocolException`.
     pub fn is_unsupported_protocol_exception(&self) -> bool {
         matches!(self, Self::UnsupportedProtocolException(_))
@@ -424,6 +438,8 @@ impl ::std::error::Error for ModifyListenerError {
             Self::TooManyRegistrationsForTargetIdException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyTargetsException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TrustStoreNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::TrustStoreNotReadyException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedProtocolException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -448,6 +464,8 @@ impl ::std::fmt::Display for ModifyListenerError {
             Self::TooManyRegistrationsForTargetIdException(_inner) => _inner.fmt(f),
             Self::TooManyTargetsException(_inner) => _inner.fmt(f),
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => _inner.fmt(f),
+            Self::TrustStoreNotFoundException(_inner) => _inner.fmt(f),
+            Self::TrustStoreNotReadyException(_inner) => _inner.fmt(f),
             Self::UnsupportedProtocolException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -488,6 +506,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyListene
             Self::TooManyUniqueTargetGroupsPerLoadBalancerException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::TrustStoreNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TrustStoreNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedProtocolException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

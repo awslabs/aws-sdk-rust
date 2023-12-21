@@ -3,13 +3,13 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
-pub use crate::types::_vehicle_summary::VehicleSummary;
+pub use crate::types::_update_mode::UpdateMode;
 
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_vehicle_association_behavior::VehicleAssociationBehavior;
 
-pub use crate::types::_update_mode::UpdateMode;
+pub use crate::types::_vehicle_summary::VehicleSummary;
 
 pub use crate::types::_node::Node;
 
@@ -33,13 +33,13 @@ pub use crate::types::_invalid_signal::InvalidSignal;
 
 pub use crate::types::_formatted_vss::FormattedVss;
 
-pub use crate::types::_signal_catalog_summary::SignalCatalogSummary;
-
 pub use crate::types::_node_counts::NodeCounts;
 
-pub use crate::types::_model_manifest_summary::ModelManifestSummary;
+pub use crate::types::_signal_catalog_summary::SignalCatalogSummary;
 
 pub use crate::types::_manifest_status::ManifestStatus;
+
+pub use crate::types::_model_manifest_summary::ModelManifestSummary;
 
 pub use crate::types::_fleet_summary::FleetSummary;
 
@@ -93,9 +93,9 @@ pub use crate::types::_can_dbc_definition::CanDbcDefinition;
 
 pub use crate::types::_decoder_manifest_summary::DecoderManifestSummary;
 
-pub use crate::types::_campaign_summary::CampaignSummary;
-
 pub use crate::types::_campaign_status::CampaignStatus;
+
+pub use crate::types::_update_campaign_action::UpdateCampaignAction;
 
 pub use crate::types::_data_destination_config::DataDestinationConfig;
 
@@ -123,7 +123,7 @@ pub use crate::types::_spooling_mode::SpoolingMode;
 
 pub use crate::types::_diagnostics_mode::DiagnosticsMode;
 
-pub use crate::types::_update_campaign_action::UpdateCampaignAction;
+pub use crate::types::_campaign_summary::CampaignSummary;
 
 pub use crate::types::_iam_resources::IamResources;
 

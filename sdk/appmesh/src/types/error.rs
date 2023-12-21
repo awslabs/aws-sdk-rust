@@ -3,6 +3,8 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
+pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+
 pub use crate::types::error::_not_found_exception::NotFoundException;
 
 pub use crate::types::error::_internal_server_error_exception::InternalServerErrorException;
@@ -11,11 +13,9 @@ pub use crate::types::error::_forbidden_exception::ForbiddenException;
 
 pub use crate::types::error::_bad_request_exception::BadRequestException;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
-
 pub use crate::types::error::_conflict_exception::ConflictException;
 
-pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsException;
 

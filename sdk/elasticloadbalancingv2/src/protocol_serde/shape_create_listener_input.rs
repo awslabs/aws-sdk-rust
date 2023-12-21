@@ -72,6 +72,11 @@ pub fn ser_create_listener_input_input_input(
         }
         list_27.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_29 = writer.prefix("MutualAuthentication");
+    if let Some(var_30) = &input.mutual_authentication {
+        crate::protocol_serde::shape_mutual_authentication_attributes::ser_mutual_authentication_attributes(scope_29, var_30)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

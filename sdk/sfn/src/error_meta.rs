@@ -1005,6 +1005,31 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_state::TestStateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::test_state::TestStateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::test_state::TestStateError> for Error {
+    fn from(err: crate::operation::test_state::TestStateError) -> Self {
+        match err {
+            crate::operation::test_state::TestStateError::InvalidArn(inner) => Error::InvalidArn(inner),
+            crate::operation::test_state::TestStateError::InvalidDefinition(inner) => Error::InvalidDefinition(inner),
+            crate::operation::test_state::TestStateError::InvalidExecutionInput(inner) => Error::InvalidExecutionInput(inner),
+            crate::operation::test_state::TestStateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::test_state::TestStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1116,6 +1141,9 @@ impl From<crate::operation::update_state_machine_alias::UpdateStateMachineAliasE
             crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::InvalidArn(inner) => Error::InvalidArn(inner),
             crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::StateMachineDeleting(inner) => {
+                Error::StateMachineDeleting(inner)
+            }
             crate::operation::update_state_machine_alias::UpdateStateMachineAliasError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }

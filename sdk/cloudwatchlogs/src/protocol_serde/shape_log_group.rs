@@ -74,6 +74,13 @@ where
                             builder =
                                 builder.set_inherited_properties(crate::protocol_serde::shape_inherited_properties::de_inherited_properties(tokens)?);
                         }
+                        "logGroupClass" => {
+                            builder = builder.set_log_group_class(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::LogGroupClass::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

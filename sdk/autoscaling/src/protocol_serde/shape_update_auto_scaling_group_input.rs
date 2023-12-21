@@ -143,6 +143,11 @@ pub fn ser_update_auto_scaling_group_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_49 = writer.prefix("InstanceMaintenancePolicy");
+    if let Some(var_50) = &input.instance_maintenance_policy {
+        crate::protocol_serde::shape_instance_maintenance_policy::ser_instance_maintenance_policy(scope_49, var_50)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -23,7 +23,7 @@ impl CreateDeliveryInputBuilder {
 /// Fluent builder constructing a request to `CreateDelivery`.
 ///
 /// <p>Creates a <i>delivery</i>. A delivery is a connection between a logical <i>delivery source</i> and a logical <i>delivery destination</i> that you have already created.</p>
-/// <p>Only some Amazon Web Services services support being configured as a delivery source using this operation. These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/     AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions">Enabling logging from Amazon Web Services services.</a></p>
+/// <p>Only some Amazon Web Services services support being configured as a delivery source using this operation. These services are listed as <b>Supported [V2 Permissions]</b> in the table at <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling logging from Amazon Web Services services.</a></p>
 /// <p>A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data Firehose.</p>
 /// <p>To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:</p>
 /// <ul>
@@ -32,7 +32,7 @@ impl CreateDeliveryInputBuilder {
 /// <li>
 /// <p>Create a <i>delivery destination</i>, which is a logical object that represents the actual delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.</p></li>
 /// <li>
-/// <p>If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationolicy.html">PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.</p></li>
+/// <p>If you are delivering logs cross-account, you must use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestinationPolicy.html">PutDeliveryDestinationPolicy</a> in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.</p></li>
 /// <li>
 /// <p>Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one delivery source and one delivery destination.</p></li>
 /// </ul>

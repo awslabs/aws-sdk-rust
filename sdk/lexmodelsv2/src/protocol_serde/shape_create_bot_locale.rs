@@ -193,6 +193,10 @@ pub(crate) fn de_create_bot_locale(
                             .transpose()?,
                     );
                 }
+                "generativeAISettings" => {
+                    builder =
+                        builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                }
                 "localeId" => {
                     builder = builder.set_locale_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

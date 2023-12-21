@@ -145,17 +145,17 @@ impl AdminGetDeviceFluentBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }

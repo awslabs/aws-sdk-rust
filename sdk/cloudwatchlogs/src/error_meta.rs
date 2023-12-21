@@ -130,9 +130,9 @@ where
 impl From<crate::operation::associate_kms_key::AssociateKmsKeyError> for Error {
     fn from(err: crate::operation::associate_kms_key::AssociateKmsKeyError) -> Self {
         match err {
+            crate::operation::associate_kms_key::AssociateKmsKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::associate_kms_key::AssociateKmsKeyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::associate_kms_key::AssociateKmsKeyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
-            crate::operation::associate_kms_key::AssociateKmsKeyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::associate_kms_key::AssociateKmsKeyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -158,8 +158,8 @@ impl From<crate::operation::cancel_export_task::CancelExportTaskError> for Error
     fn from(err: crate::operation::cancel_export_task::CancelExportTaskError) -> Self {
         match err {
             crate::operation::cancel_export_task::CancelExportTaskError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-            crate::operation::cancel_export_task::CancelExportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::cancel_export_task::CancelExportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_export_task::CancelExportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::cancel_export_task::CancelExportTaskError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -184,15 +184,15 @@ where
 impl From<crate::operation::create_delivery::CreateDeliveryError> for Error {
     fn from(err: crate::operation::create_delivery::CreateDeliveryError) -> Self {
         match err {
-            crate::operation::create_delivery::CreateDeliveryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_delivery::CreateDeliveryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_delivery::CreateDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_delivery::CreateDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_delivery::CreateDeliveryError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::operation::create_delivery::CreateDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::create_delivery::CreateDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::create_delivery::CreateDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_delivery::CreateDeliveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -214,17 +214,56 @@ where
 impl From<crate::operation::create_export_task::CreateExportTaskError> for Error {
     fn from(err: crate::operation::create_export_task::CreateExportTaskError) -> Self {
         match err {
+            crate::operation::create_export_task::CreateExportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_export_task::CreateExportTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_export_task::CreateExportTaskError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_export_task::CreateExportTaskError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
-            crate::operation::create_export_task::CreateExportTaskError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
-            crate::operation::create_export_task::CreateExportTaskError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_export_task::CreateExportTaskError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
+            crate::operation::create_export_task::CreateExportTaskError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
             crate::operation::create_export_task::CreateExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_log_anomaly_detector::CreateLogAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -248,10 +287,10 @@ impl From<crate::operation::create_log_group::CreateLogGroupError> for Error {
             crate::operation::create_log_group::CreateLogGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_log_group::CreateLogGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_log_group::CreateLogGroupError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::create_log_group::CreateLogGroupError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_log_group::CreateLogGroupError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
-            crate::operation::create_log_group::CreateLogGroupError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::create_log_group::CreateLogGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -273,13 +312,13 @@ where
 impl From<crate::operation::create_log_stream::CreateLogStreamError> for Error {
     fn from(err: crate::operation::create_log_stream::CreateLogStreamError) -> Self {
         match err {
-            crate::operation::create_log_stream::CreateLogStreamError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::create_log_stream::CreateLogStreamError::ResourceAlreadyExistsException(inner) => {
-                Error::ResourceAlreadyExistsException(inner)
-            }
             crate::operation::create_log_stream::CreateLogStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_log_stream::CreateLogStreamError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_log_stream::CreateLogStreamError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_log_stream::CreateLogStreamError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
             }
             crate::operation::create_log_stream::CreateLogStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -302,14 +341,14 @@ where
 impl From<crate::operation::delete_account_policy::DeleteAccountPolicyError> for Error {
     fn from(err: crate::operation::delete_account_policy::DeleteAccountPolicyError) -> Self {
         match err {
+            crate::operation::delete_account_policy::DeleteAccountPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_account_policy::DeleteAccountPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::delete_account_policy::DeleteAccountPolicyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::delete_account_policy::DeleteAccountPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_account_policy::DeleteAccountPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -338,14 +377,14 @@ where
 impl From<crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError> for Error {
     fn from(err: crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError) -> Self {
         match err {
+            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -371,14 +410,14 @@ where
 impl From<crate::operation::delete_delivery::DeleteDeliveryError> for Error {
     fn from(err: crate::operation::delete_delivery::DeleteDeliveryError) -> Self {
         match err {
+            crate::operation::delete_delivery::DeleteDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_delivery::DeleteDeliveryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_delivery::DeleteDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_delivery::DeleteDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_delivery::DeleteDeliveryError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::operation::delete_delivery::DeleteDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
-            crate::operation::delete_delivery::DeleteDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_delivery::DeleteDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_delivery::DeleteDeliveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -403,23 +442,23 @@ where
 impl From<crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError> for Error {
     fn from(err: crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError) -> Self {
         match err {
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ConflictException(inner) => {
                 Error::ConflictException(inner)
+            }
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
             }
             crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
             crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ValidationException(inner) => {
-                Error::ValidationException(inner)
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -456,14 +495,14 @@ impl From<crate::operation::delete_delivery_destination_policy::DeleteDeliveryDe
             crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
+            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
             }
             crate::operation::delete_delivery_destination_policy::DeleteDeliveryDestinationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -486,18 +525,18 @@ where
 impl From<crate::operation::delete_delivery_source::DeleteDeliverySourceError> for Error {
     fn from(err: crate::operation::delete_delivery_source::DeleteDeliverySourceError) -> Self {
         match err {
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_delivery_source::DeleteDeliverySourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_delivery_source::DeleteDeliverySourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::delete_delivery_source::DeleteDeliverySourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_delivery_source::DeleteDeliverySourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::delete_delivery_source::DeleteDeliverySourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -519,13 +558,49 @@ where
 impl From<crate::operation::delete_destination::DeleteDestinationError> for Error {
     fn from(err: crate::operation::delete_destination::DeleteDestinationError) -> Self {
         match err {
+            crate::operation::delete_destination::DeleteDestinationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_destination::DeleteDestinationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_destination::DeleteDestinationError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
-            crate::operation::delete_destination::DeleteDestinationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_destination::DeleteDestinationError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_destination::DeleteDestinationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -546,9 +621,9 @@ where
 impl From<crate::operation::delete_log_group::DeleteLogGroupError> for Error {
     fn from(err: crate::operation::delete_log_group::DeleteLogGroupError) -> Self {
         match err {
+            crate::operation::delete_log_group::DeleteLogGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_log_group::DeleteLogGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_log_group::DeleteLogGroupError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
-            crate::operation::delete_log_group::DeleteLogGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_log_group::DeleteLogGroupError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::delete_log_group::DeleteLogGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -571,9 +646,9 @@ where
 impl From<crate::operation::delete_log_stream::DeleteLogStreamError> for Error {
     fn from(err: crate::operation::delete_log_stream::DeleteLogStreamError) -> Self {
         match err {
+            crate::operation::delete_log_stream::DeleteLogStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_log_stream::DeleteLogStreamError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::delete_log_stream::DeleteLogStreamError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
-            crate::operation::delete_log_stream::DeleteLogStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_log_stream::DeleteLogStreamError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -598,14 +673,14 @@ where
 impl From<crate::operation::delete_metric_filter::DeleteMetricFilterError> for Error {
     fn from(err: crate::operation::delete_metric_filter::DeleteMetricFilterError) -> Self {
         match err {
+            crate::operation::delete_metric_filter::DeleteMetricFilterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_metric_filter::DeleteMetricFilterError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::delete_metric_filter::DeleteMetricFilterError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::delete_metric_filter::DeleteMetricFilterError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_metric_filter::DeleteMetricFilterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -633,11 +708,11 @@ where
 impl From<crate::operation::delete_query_definition::DeleteQueryDefinitionError> for Error {
     fn from(err: crate::operation::delete_query_definition::DeleteQueryDefinitionError) -> Self {
         match err {
-            crate::operation::delete_query_definition::DeleteQueryDefinitionError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
             crate::operation::delete_query_definition::DeleteQueryDefinitionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_query_definition::DeleteQueryDefinitionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::delete_query_definition::DeleteQueryDefinitionError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -663,11 +738,11 @@ where
 impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> for Error {
     fn from(err: crate::operation::delete_resource_policy::DeleteResourcePolicyError) -> Self {
         match err {
-            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -695,14 +770,14 @@ where
 impl From<crate::operation::delete_retention_policy::DeleteRetentionPolicyError> for Error {
     fn from(err: crate::operation::delete_retention_policy::DeleteRetentionPolicyError) -> Self {
         match err {
+            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_retention_policy::DeleteRetentionPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::delete_retention_policy::DeleteRetentionPolicyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::delete_retention_policy::DeleteRetentionPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_retention_policy::DeleteRetentionPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -731,14 +806,14 @@ where
 impl From<crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError> for Error {
     fn from(err: crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError) -> Self {
         match err {
+            crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_subscription_filter::DeleteSubscriptionFilterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -767,14 +842,14 @@ where
 impl From<crate::operation::describe_account_policies::DescribeAccountPoliciesError> for Error {
     fn from(err: crate::operation::describe_account_policies::DescribeAccountPoliciesError) -> Self {
         match err {
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::describe_account_policies::DescribeAccountPoliciesError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::describe_account_policies::DescribeAccountPoliciesError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::describe_account_policies::DescribeAccountPoliciesError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::describe_account_policies::DescribeAccountPoliciesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -800,14 +875,14 @@ where
 impl From<crate::operation::describe_deliveries::DescribeDeliveriesError> for Error {
     fn from(err: crate::operation::describe_deliveries::DescribeDeliveriesError) -> Self {
         match err {
-            crate::operation::describe_deliveries::DescribeDeliveriesError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_deliveries::DescribeDeliveriesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::describe_deliveries::DescribeDeliveriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_deliveries::DescribeDeliveriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_deliveries::DescribeDeliveriesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::describe_deliveries::DescribeDeliveriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -836,17 +911,17 @@ where
 impl From<crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError> for Error {
     fn from(err: crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError) -> Self {
         match err {
-            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
             crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
+            }
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -872,17 +947,17 @@ where
 impl From<crate::operation::describe_delivery_sources::DescribeDeliverySourcesError> for Error {
     fn from(err: crate::operation::describe_delivery_sources::DescribeDeliverySourcesError) -> Self {
         match err {
-            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
             crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ValidationException(inner) => {
                 Error::ValidationException(inner)
+            }
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -986,11 +1061,11 @@ where
 impl From<crate::operation::describe_log_streams::DescribeLogStreamsError> for Error {
     fn from(err: crate::operation::describe_log_streams::DescribeLogStreamsError) -> Self {
         match err {
-            crate::operation::describe_log_streams::DescribeLogStreamsError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
             crate::operation::describe_log_streams::DescribeLogStreamsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_log_streams::DescribeLogStreamsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::describe_log_streams::DescribeLogStreamsError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1018,11 +1093,11 @@ where
 impl From<crate::operation::describe_metric_filters::DescribeMetricFiltersError> for Error {
     fn from(err: crate::operation::describe_metric_filters::DescribeMetricFiltersError) -> Self {
         match err {
-            crate::operation::describe_metric_filters::DescribeMetricFiltersError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
             crate::operation::describe_metric_filters::DescribeMetricFiltersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_metric_filters::DescribeMetricFiltersError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::describe_metric_filters::DescribeMetricFiltersError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1048,8 +1123,8 @@ where
 impl From<crate::operation::describe_queries::DescribeQueriesError> for Error {
     fn from(err: crate::operation::describe_queries::DescribeQueriesError) -> Self {
         match err {
-            crate::operation::describe_queries::DescribeQueriesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::describe_queries::DescribeQueriesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_queries::DescribeQueriesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::describe_queries::DescribeQueriesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::describe_queries::DescribeQueriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1135,11 +1210,11 @@ where
 impl From<crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError> for Error {
     fn from(err: crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError) -> Self {
         match err {
-            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
             crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1165,14 +1240,14 @@ where
 impl From<crate::operation::disassociate_kms_key::DisassociateKmsKeyError> for Error {
     fn from(err: crate::operation::disassociate_kms_key::DisassociateKmsKeyError) -> Self {
         match err {
+            crate::operation::disassociate_kms_key::DisassociateKmsKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::disassociate_kms_key::DisassociateKmsKeyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::disassociate_kms_key::DisassociateKmsKeyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::disassociate_kms_key::DisassociateKmsKeyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::disassociate_kms_key::DisassociateKmsKeyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1198,8 +1273,8 @@ where
 impl From<crate::operation::filter_log_events::FilterLogEventsError> for Error {
     fn from(err: crate::operation::filter_log_events::FilterLogEventsError) -> Self {
         match err {
-            crate::operation::filter_log_events::FilterLogEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::filter_log_events::FilterLogEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::filter_log_events::FilterLogEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::filter_log_events::FilterLogEventsError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -1227,14 +1302,14 @@ where
 impl From<crate::operation::get_data_protection_policy::GetDataProtectionPolicyError> for Error {
     fn from(err: crate::operation::get_data_protection_policy::GetDataProtectionPolicyError) -> Self {
         match err {
+            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_data_protection_policy::GetDataProtectionPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1260,11 +1335,11 @@ where
 impl From<crate::operation::get_delivery::GetDeliveryError> for Error {
     fn from(err: crate::operation::get_delivery::GetDeliveryError) -> Self {
         match err {
-            crate::operation::get_delivery::GetDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_delivery::GetDeliveryError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::get_delivery::GetDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_delivery::GetDeliveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_delivery::GetDeliveryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_delivery::GetDeliveryError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_delivery::GetDeliveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1288,17 +1363,17 @@ where
 impl From<crate::operation::get_delivery_destination::GetDeliveryDestinationError> for Error {
     fn from(err: crate::operation::get_delivery_destination::GetDeliveryDestinationError) -> Self {
         match err {
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_delivery_destination::GetDeliveryDestinationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::get_delivery_destination::GetDeliveryDestinationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1327,14 +1402,14 @@ where
 impl From<crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError> for Error {
     fn from(err: crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError) -> Self {
         match err {
+            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
             }
             crate::operation::get_delivery_destination_policy::GetDeliveryDestinationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1357,18 +1432,53 @@ where
 impl From<crate::operation::get_delivery_source::GetDeliverySourceError> for Error {
     fn from(err: crate::operation::get_delivery_source::GetDeliverySourceError) -> Self {
         match err {
+            crate::operation::get_delivery_source::GetDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_delivery_source::GetDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_delivery_source::GetDeliverySourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::get_delivery_source::GetDeliverySourceError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::get_delivery_source::GetDeliverySourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::get_delivery_source::GetDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::get_delivery_source::GetDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_delivery_source::GetDeliverySourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::get_delivery_source::GetDeliverySourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::get_log_anomaly_detector::GetLogAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1389,8 +1499,8 @@ where
 impl From<crate::operation::get_log_events::GetLogEventsError> for Error {
     fn from(err: crate::operation::get_log_events::GetLogEventsError) -> Self {
         match err {
-            crate::operation::get_log_events::GetLogEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_log_events::GetLogEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_log_events::GetLogEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_log_events::GetLogEventsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_log_events::GetLogEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1413,13 +1523,13 @@ where
 impl From<crate::operation::get_log_group_fields::GetLogGroupFieldsError> for Error {
     fn from(err: crate::operation::get_log_group_fields::GetLogGroupFieldsError) -> Self {
         match err {
+            crate::operation::get_log_group_fields::GetLogGroupFieldsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::get_log_group_fields::GetLogGroupFieldsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::get_log_group_fields::GetLogGroupFieldsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::get_log_group_fields::GetLogGroupFieldsError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
             crate::operation::get_log_group_fields::GetLogGroupFieldsError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -1444,9 +1554,9 @@ where
 impl From<crate::operation::get_log_record::GetLogRecordError> for Error {
     fn from(err: crate::operation::get_log_record::GetLogRecordError) -> Self {
         match err {
+            crate::operation::get_log_record::GetLogRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_log_record::GetLogRecordError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_log_record::GetLogRecordError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::get_log_record::GetLogRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_log_record::GetLogRecordError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_log_record::GetLogRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1469,12 +1579,73 @@ where
 impl From<crate::operation::get_query_results::GetQueryResultsError> for Error {
     fn from(err: crate::operation::get_query_results::GetQueryResultsError) -> Self {
         match err {
-            crate::operation::get_query_results::GetQueryResultsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_query_results::GetQueryResultsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_query_results::GetQueryResultsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_query_results::GetQueryResultsError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::get_query_results::GetQueryResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anomalies::ListAnomaliesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_anomalies::ListAnomaliesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_anomalies::ListAnomaliesError> for Error {
+    fn from(err: crate::operation::list_anomalies::ListAnomaliesError) -> Self {
+        match err {
+            crate::operation::list_anomalies::ListAnomaliesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_anomalies::ListAnomaliesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_anomalies::ListAnomaliesError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::list_anomalies::ListAnomaliesError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_anomalies::ListAnomaliesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError> for Error {
+    fn from(err: crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError) -> Self {
+        match err {
+            crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_log_anomaly_detectors::ListLogAnomalyDetectorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1495,11 +1666,11 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
-            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1580,6 +1751,9 @@ where
 impl From<crate::operation::put_data_protection_policy::PutDataProtectionPolicyError> for Error {
     fn from(err: crate::operation::put_data_protection_policy::PutDataProtectionPolicyError) -> Self {
         match err {
+            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_data_protection_policy::PutDataProtectionPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -1588,9 +1762,6 @@ impl From<crate::operation::put_data_protection_policy::PutDataProtectionPolicyE
             }
             crate::operation::put_data_protection_policy::PutDataProtectionPolicyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_data_protection_policy::PutDataProtectionPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1618,18 +1789,18 @@ where
 impl From<crate::operation::put_delivery_destination::PutDeliveryDestinationError> for Error {
     fn from(err: crate::operation::put_delivery_destination::PutDeliveryDestinationError) -> Self {
         match err {
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_delivery_destination::PutDeliveryDestinationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_delivery_destination::PutDeliveryDestinationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::put_delivery_destination::PutDeliveryDestinationError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_delivery_destination::PutDeliveryDestinationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::put_delivery_destination::PutDeliveryDestinationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1661,14 +1832,14 @@ impl From<crate::operation::put_delivery_destination_policy::PutDeliveryDestinat
             crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
+            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
-            }
-            crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::ValidationException(inner) => {
-                Error::ValidationException(inner)
             }
             crate::operation::put_delivery_destination_policy::PutDeliveryDestinationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1691,18 +1862,18 @@ where
 impl From<crate::operation::put_delivery_source::PutDeliverySourceError> for Error {
     fn from(err: crate::operation::put_delivery_source::PutDeliverySourceError) -> Self {
         match err {
+            crate::operation::put_delivery_source::PutDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_delivery_source::PutDeliverySourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_delivery_source::PutDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_delivery_source::PutDeliverySourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::put_delivery_source::PutDeliverySourceError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::put_delivery_source::PutDeliverySourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::operation::put_delivery_source::PutDeliverySourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::put_delivery_source::PutDeliverySourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_delivery_source::PutDeliverySourceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::put_delivery_source::PutDeliverySourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1778,12 +1949,12 @@ where
 impl From<crate::operation::put_log_events::PutLogEventsError> for Error {
     fn from(err: crate::operation::put_log_events::PutLogEventsError) -> Self {
         match err {
-            crate::operation::put_log_events::PutLogEventsError::DataAlreadyAcceptedException(inner) => Error::DataAlreadyAcceptedException(inner),
-            crate::operation::put_log_events::PutLogEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::put_log_events::PutLogEventsError::InvalidSequenceTokenException(inner) => Error::InvalidSequenceTokenException(inner),
             crate::operation::put_log_events::PutLogEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_log_events::PutLogEventsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::put_log_events::PutLogEventsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::put_log_events::PutLogEventsError::UnrecognizedClientException(inner) => Error::UnrecognizedClientException(inner),
+            crate::operation::put_log_events::PutLogEventsError::InvalidSequenceTokenException(inner) => Error::InvalidSequenceTokenException(inner),
+            crate::operation::put_log_events::PutLogEventsError::DataAlreadyAcceptedException(inner) => Error::DataAlreadyAcceptedException(inner),
             crate::operation::put_log_events::PutLogEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1805,10 +1976,10 @@ where
 impl From<crate::operation::put_metric_filter::PutMetricFilterError> for Error {
     fn from(err: crate::operation::put_metric_filter::PutMetricFilterError) -> Self {
         match err {
+            crate::operation::put_metric_filter::PutMetricFilterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
-            crate::operation::put_metric_filter::PutMetricFilterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::put_metric_filter::PutMetricFilterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -1833,13 +2004,13 @@ where
 impl From<crate::operation::put_query_definition::PutQueryDefinitionError> for Error {
     fn from(err: crate::operation::put_query_definition::PutQueryDefinitionError) -> Self {
         match err {
+            crate::operation::put_query_definition::PutQueryDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_query_definition::PutQueryDefinitionError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::put_query_definition::PutQueryDefinitionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::operation::put_query_definition::PutQueryDefinitionError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
             crate::operation::put_query_definition::PutQueryDefinitionError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
@@ -1892,14 +2063,14 @@ where
 impl From<crate::operation::put_retention_policy::PutRetentionPolicyError> for Error {
     fn from(err: crate::operation::put_retention_policy::PutRetentionPolicyError) -> Self {
         match err {
+            crate::operation::put_retention_policy::PutRetentionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_retention_policy::PutRetentionPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
             crate::operation::put_retention_policy::PutRetentionPolicyError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::put_retention_policy::PutRetentionPolicyError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_retention_policy::PutRetentionPolicyError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1927,6 +2098,9 @@ where
 impl From<crate::operation::put_subscription_filter::PutSubscriptionFilterError> for Error {
     fn from(err: crate::operation::put_subscription_filter::PutSubscriptionFilterError) -> Self {
         match err {
+            crate::operation::put_subscription_filter::PutSubscriptionFilterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::put_subscription_filter::PutSubscriptionFilterError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -1935,9 +2109,6 @@ impl From<crate::operation::put_subscription_filter::PutSubscriptionFilterError>
             }
             crate::operation::put_subscription_filter::PutSubscriptionFilterError::OperationAbortedException(inner) => {
                 Error::OperationAbortedException(inner)
-            }
-            crate::operation::put_subscription_filter::PutSubscriptionFilterError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
             }
             crate::operation::put_subscription_filter::PutSubscriptionFilterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
@@ -1963,10 +2134,10 @@ where
 impl From<crate::operation::start_query::StartQueryError> for Error {
     fn from(err: crate::operation::start_query::StartQueryError) -> Self {
         match err {
-            crate::operation::start_query::StartQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::start_query::StartQueryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::start_query::StartQueryError::MalformedQueryException(inner) => Error::MalformedQueryException(inner),
             crate::operation::start_query::StartQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_query::StartQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_query::StartQueryError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::start_query::StartQueryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::start_query::StartQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1989,8 +2160,8 @@ where
 impl From<crate::operation::stop_query::StopQueryError> for Error {
     fn from(err: crate::operation::stop_query::StopQueryError) -> Self {
         match err {
-            crate::operation::stop_query::StopQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::stop_query::StopQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_query::StopQueryError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::stop_query::StopQueryError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::stop_query::StopQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2013,8 +2184,8 @@ where
 impl From<crate::operation::tag_log_group::TagLogGroupError> for Error {
     fn from(err: crate::operation::tag_log_group::TagLogGroupError) -> Self {
         match err {
-            crate::operation::tag_log_group::TagLogGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_log_group::TagLogGroupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_log_group::TagLogGroupError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_log_group::TagLogGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2036,8 +2207,8 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2108,10 +2279,71 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::untag_resource::UntagResourceError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_anomaly::UpdateAnomalyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_anomaly::UpdateAnomalyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_anomaly::UpdateAnomalyError> for Error {
+    fn from(err: crate::operation::update_anomaly::UpdateAnomalyError) -> Self {
+        match err {
+            crate::operation::update_anomaly::UpdateAnomalyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_anomaly::UpdateAnomalyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_anomaly::UpdateAnomalyError::OperationAbortedException(inner) => Error::OperationAbortedException(inner),
+            crate::operation::update_anomaly::UpdateAnomalyError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_anomaly::UpdateAnomalyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError> for Error {
+    fn from(err: crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError) -> Self {
+        match err {
+            crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError::OperationAbortedException(inner) => {
+                Error::OperationAbortedException(inner)
+            }
+            crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -3,7 +3,9 @@ pub use crate::types::_export_vector_enrichment_job_output_config::ExportVectorE
 
 pub use crate::types::_vector_enrichment_job_s3_data::VectorEnrichmentJobS3DataBuilder;
 
-pub use crate::types::_list_vector_enrichment_job_output_config::ListVectorEnrichmentJobOutputConfigBuilder;
+pub use crate::types::_vector_enrichment_job_export_error_details::VectorEnrichmentJobExportErrorDetailsBuilder;
+
+pub use crate::types::_vector_enrichment_job_error_details::VectorEnrichmentJobErrorDetailsBuilder;
 
 pub use crate::types::_map_matching_config::MapMatchingConfigBuilder;
 
@@ -11,9 +13,7 @@ pub use crate::types::_reverse_geocoding_config::ReverseGeocodingConfigBuilder;
 
 pub use crate::types::_vector_enrichment_job_input_config::VectorEnrichmentJobInputConfigBuilder;
 
-pub use crate::types::_vector_enrichment_job_export_error_details::VectorEnrichmentJobExportErrorDetailsBuilder;
-
-pub use crate::types::_vector_enrichment_job_error_details::VectorEnrichmentJobErrorDetailsBuilder;
+pub use crate::types::_list_vector_enrichment_job_output_config::ListVectorEnrichmentJobOutputConfigBuilder;
 
 pub use crate::types::_item_source::ItemSourceBuilder;
 
@@ -47,15 +47,21 @@ pub use crate::types::_polygon_geometry_input::PolygonGeometryInputBuilder;
 
 pub use crate::types::_time_range_filter_input::TimeRangeFilterInputBuilder;
 
-pub use crate::types::_raster_data_collection_metadata::RasterDataCollectionMetadataBuilder;
-
 pub use crate::types::_filter::FilterBuilder;
+
+pub use crate::types::_raster_data_collection_metadata::RasterDataCollectionMetadataBuilder;
 
 pub use crate::types::_output_config_input::OutputConfigInputBuilder;
 
 pub use crate::types::_export_s3_data_input::ExportS3DataInputBuilder;
 
-pub use crate::types::_list_earth_observation_job_output_config::ListEarthObservationJobOutputConfigBuilder;
+pub use crate::types::_export_error_details::ExportErrorDetailsBuilder;
+
+pub use crate::types::_export_error_details_output::ExportErrorDetailsOutputBuilder;
+
+pub use crate::types::_earth_observation_job_error_details::EarthObservationJobErrorDetailsBuilder;
+
+pub use crate::types::_output_band::OutputBandBuilder;
 
 pub use crate::types::_land_cover_segmentation_config_input::LandCoverSegmentationConfigInputBuilder;
 
@@ -95,10 +101,4 @@ pub use crate::types::_input_config_input::InputConfigInputBuilder;
 
 pub use crate::types::_raster_data_collection_query_input::RasterDataCollectionQueryInputBuilder;
 
-pub use crate::types::_export_error_details::ExportErrorDetailsBuilder;
-
-pub use crate::types::_export_error_details_output::ExportErrorDetailsOutputBuilder;
-
-pub use crate::types::_earth_observation_job_error_details::EarthObservationJobErrorDetailsBuilder;
-
-pub use crate::types::_output_band::OutputBandBuilder;
+pub use crate::types::_list_earth_observation_job_output_config::ListEarthObservationJobOutputConfigBuilder;

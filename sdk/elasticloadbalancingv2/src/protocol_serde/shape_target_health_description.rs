@@ -40,6 +40,16 @@ pub fn de_target_health_description(
                 builder = builder.set_target_health(var_3);
             }
             ,
+            s if s.matches("AnomalyDetection") /* AnomalyDetection com.amazonaws.elasticloadbalancingv2#TargetHealthDescription$AnomalyDetection */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_anomaly_detection::de_anomaly_detection(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_anomaly_detection(var_4);
+            }
+            ,
             _ => {}
         }
     }

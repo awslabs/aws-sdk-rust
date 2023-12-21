@@ -293,6 +293,8 @@ pub(crate) mod shape_desired_configuration;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_instance_maintenance_policy;
+
 pub(crate) mod shape_instance_metadata_options;
 
 pub(crate) mod shape_instance_monitoring;

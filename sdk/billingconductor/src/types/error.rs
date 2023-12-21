@@ -9,9 +9,9 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
-pub use crate::types::error::_service_limit_exceeded_exception::ServiceLimitExceededException;
-
 pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_service_limit_exceeded_exception::ServiceLimitExceededException;
 
 mod _access_denied_exception;
 

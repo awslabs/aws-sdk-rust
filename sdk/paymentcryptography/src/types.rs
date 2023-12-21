@@ -17,9 +17,9 @@ pub use crate::types::_key_class::KeyClass;
 
 pub use crate::types::_key_usage::KeyUsage;
 
-pub use crate::types::_key_summary::KeySummary;
-
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_key_summary::KeySummary;
 
 pub use crate::types::_alias::Alias;
 

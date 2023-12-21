@@ -59,6 +59,10 @@ pub use crate::types::_custom_sms_lambda_version_config_type::CustomSmsLambdaVer
 
 pub use crate::types::_custom_sms_sender_lambda_version_type::CustomSmsSenderLambdaVersionType;
 
+pub use crate::types::_pre_token_generation_version_config_type::PreTokenGenerationVersionConfigType;
+
+pub use crate::types::_pre_token_generation_lambda_version_type::PreTokenGenerationLambdaVersionType;
+
 pub use crate::types::_deletion_protection_type::DeletionProtectionType;
 
 pub use crate::types::_user_pool_policy_type::UserPoolPolicyType;
@@ -346,6 +350,10 @@ mod _number_attribute_constraints_type;
 mod _o_auth_flow_type;
 
 mod _password_policy_type;
+
+mod _pre_token_generation_lambda_version_type;
+
+mod _pre_token_generation_version_config_type;
 
 mod _prevent_user_existence_error_types;
 

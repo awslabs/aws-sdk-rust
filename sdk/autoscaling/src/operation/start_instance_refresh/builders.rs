@@ -22,7 +22,7 @@ impl StartInstanceRefreshInputBuilder {
 }
 /// Fluent builder constructing a request to `StartInstanceRefresh`.
 ///
-/// <p>Starts an instance refresh. During an instance refresh, Amazon EC2 Auto Scaling performs a rolling update of instances in an Auto Scaling group. Instances are terminated first and then replaced, which temporarily reduces the capacity available within your Auto Scaling group.</p>
+/// <p>Starts an instance refresh.</p>
 /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group. This feature is helpful, for example, when you have a new AMI or a new user data script. You just need to create a new launch template that specifies the new AMI or user data script. Then start an instance refresh to immediately begin the process of updating instances in the group.</p>
 /// <p>If successful, the request's response contains a unique ID that you can use to track the progress of the instance refresh. To query its status, call the <code>DescribeInstanceRefreshes</code> API. To describe the instance refreshes that have already run, call the <code>DescribeInstanceRefreshes</code> API. To cancel an instance refresh that is in progress, use the <code>CancelInstanceRefresh</code> API.</p>
 /// <p>An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured health checks, or not ignoring or allowing the termination of instances that are in <code>Standby</code> state or protected from scale in. You can monitor for failed EC2 launches using the scaling activities. To find the scaling activities, call the <code>DescribeScalingActivities</code> API.</p>
@@ -163,7 +163,7 @@ impl StartInstanceRefreshFluentBuilder {
     pub fn get_desired_configuration(&self) -> &::std::option::Option<crate::types::DesiredConfiguration> {
         self.inner.get_desired_configuration()
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>
@@ -178,7 +178,7 @@ impl StartInstanceRefreshFluentBuilder {
         self.inner = self.inner.preferences(input);
         self
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>
@@ -193,7 +193,7 @@ impl StartInstanceRefreshFluentBuilder {
         self.inner = self.inner.set_preferences(input);
         self
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum and maximum healthy percentages, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
     /// <ul>
     /// <li>
     /// <p>Auto rollback</p></li>

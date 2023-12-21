@@ -22,6 +22,9 @@ impl PutPublicAccessBlockInputBuilder {
 }
 /// Fluent builder constructing a request to `PutPublicAccessBlock`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>
 /// <p>Related actions include:</p>
 /// <ul>

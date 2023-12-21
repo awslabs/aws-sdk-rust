@@ -14,17 +14,22 @@ pub struct S3ObjectMetadata {
     pub content_language: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub user_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub content_length: ::std::option::Option<i64>,
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub content_md5: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub content_type: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub http_expires_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub requester_charged: bool,
-    /// <p></p>
+    /// <p></p><note>
+    /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
+    /// </note>
     pub sse_algorithm: ::std::option::Option<crate::types::S3SseAlgorithm>,
 }
 impl S3ObjectMetadata {
@@ -48,10 +53,12 @@ impl S3ObjectMetadata {
     pub fn user_metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_metadata.as_ref()
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn content_length(&self) -> ::std::option::Option<i64> {
         self.content_length
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn content_md5(&self) -> ::std::option::Option<&str> {
         self.content_md5.as_deref()
@@ -64,11 +71,14 @@ impl S3ObjectMetadata {
     pub fn http_expires_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.http_expires_date.as_ref()
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn requester_charged(&self) -> bool {
         self.requester_charged
     }
-    /// <p></p>
+    /// <p></p><note>
+    /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
+    /// </note>
     pub fn sse_algorithm(&self) -> ::std::option::Option<&crate::types::S3SseAlgorithm> {
         self.sse_algorithm.as_ref()
     }
@@ -176,30 +186,36 @@ impl S3ObjectMetadataBuilder {
     pub fn get_user_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.user_metadata
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn content_length(mut self, input: i64) -> Self {
         self.content_length = ::std::option::Option::Some(input);
         self
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn set_content_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.content_length = input;
         self
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn get_content_length(&self) -> &::std::option::Option<i64> {
         &self.content_length
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn content_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_md5 = ::std::option::Option::Some(input.into());
         self
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn set_content_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_md5 = input;
         self
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn get_content_md5(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_md5
@@ -232,31 +248,40 @@ impl S3ObjectMetadataBuilder {
     pub fn get_http_expires_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.http_expires_date
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn requester_charged(mut self, input: bool) -> Self {
         self.requester_charged = ::std::option::Option::Some(input);
         self
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn set_requester_charged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requester_charged = input;
         self
     }
+    /// <p><i>This member has been deprecated.</i></p>
     /// <p></p>
     pub fn get_requester_charged(&self) -> &::std::option::Option<bool> {
         &self.requester_charged
     }
-    /// <p></p>
+    /// <p></p><note>
+    /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
+    /// </note>
     pub fn sse_algorithm(mut self, input: crate::types::S3SseAlgorithm) -> Self {
         self.sse_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p></p>
+    /// <p></p><note>
+    /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
+    /// </note>
     pub fn set_sse_algorithm(mut self, input: ::std::option::Option<crate::types::S3SseAlgorithm>) -> Self {
         self.sse_algorithm = input;
         self
     }
-    /// <p></p>
+    /// <p></p><note>
+    /// <p>For directory buckets, only the server-side encryption with Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.</p>
+    /// </note>
     pub fn get_sse_algorithm(&self) -> &::std::option::Option<crate::types::S3SseAlgorithm> {
         &self.sse_algorithm
     }

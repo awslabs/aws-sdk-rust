@@ -3,8 +3,6 @@ pub use crate::types::_filter_parameter::FilterParameterBuilder;
 
 pub use crate::types::_query_field::QueryFieldBuilder;
 
-pub use crate::types::_monitor::MonitorBuilder;
-
 pub use crate::types::_health_events_config::HealthEventsConfigBuilder;
 
 pub use crate::types::_local_health_events_config::LocalHealthEventsConfigBuilder;
@@ -13,7 +11,7 @@ pub use crate::types::_internet_measurements_log_delivery::InternetMeasurementsL
 
 pub use crate::types::_s3_config::S3ConfigBuilder;
 
-pub use crate::types::_health_event::HealthEventBuilder;
+pub use crate::types::_monitor::MonitorBuilder;
 
 pub use crate::types::_impacted_location::ImpactedLocationBuilder;
 
@@ -28,3 +26,5 @@ pub use crate::types::_availability_measurement::AvailabilityMeasurementBuilder;
 pub use crate::types::_network_impairment::NetworkImpairmentBuilder;
 
 pub use crate::types::_network::NetworkBuilder;
+
+pub use crate::types::_health_event::HealthEventBuilder;

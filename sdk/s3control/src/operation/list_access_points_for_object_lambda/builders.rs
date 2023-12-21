@@ -22,6 +22,9 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAccessPointsForObjectLambda`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Returns some or all (up to 1,000) access points associated with the Object Lambda Access Point per call. If there are more access points than what can be returned in one call, the response will include a continuation token that you can use to list the additional access points.</p>
 /// <p>The following actions are related to <code>ListAccessPointsForObjectLambda</code>:</p>
 /// <ul>

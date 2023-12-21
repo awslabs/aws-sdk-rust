@@ -73,6 +73,8 @@ pub use crate::types::_obfuscation_setting::ObfuscationSettingBuilder;
 
 pub use crate::types::_slot_value_elicitation_setting::SlotValueElicitationSettingBuilder;
 
+pub use crate::types::_slot_resolution_setting::SlotResolutionSettingBuilder;
+
 pub use crate::types::_slot_capture_setting::SlotCaptureSettingBuilder;
 
 pub use crate::types::_elicitation_code_hook_invocation_setting::ElicitationCodeHookInvocationSettingBuilder;
@@ -148,6 +150,20 @@ pub use crate::types::_lex_transcript_filter::LexTranscriptFilterBuilder;
 pub use crate::types::_date_range_filter::DateRangeFilterBuilder;
 
 pub use crate::types::_path_format::PathFormatBuilder;
+
+pub use crate::types::_generative_ai_settings::GenerativeAiSettingsBuilder;
+
+pub use crate::types::_buildtime_settings::BuildtimeSettingsBuilder;
+
+pub use crate::types::_sample_utterance_generation_specification::SampleUtteranceGenerationSpecificationBuilder;
+
+pub use crate::types::_bedrock_model_specification::BedrockModelSpecificationBuilder;
+
+pub use crate::types::_descriptive_bot_builder_specification::DescriptiveBotBuilderSpecificationBuilder;
+
+pub use crate::types::_runtime_settings::RuntimeSettingsBuilder;
+
+pub use crate::types::_slot_resolution_improvement_specification::SlotResolutionImprovementSpecificationBuilder;
 
 pub use crate::types::_voice_settings::VoiceSettingsBuilder;
 
@@ -410,6 +426,10 @@ pub use crate::types::_bot_summary::BotSummaryBuilder;
 pub use crate::types::_bot_filter::BotFilterBuilder;
 
 pub use crate::types::_bot_sort_by::BotSortByBuilder;
+
+pub use crate::types::_generation_summary::GenerationSummaryBuilder;
+
+pub use crate::types::_generation_sort_by::GenerationSortByBuilder;
 
 pub use crate::types::_bot_recommendation_summary::BotRecommendationSummaryBuilder;
 

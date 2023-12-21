@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub struct RecognizeUtteranceOutput {
-    /// <p>Indicates whether the input mode to the operation was text or speech.</p>
+    /// <p>Indicates whether the input mode to the operation was text, speech, or from a touch-tone keypad.</p>
     pub input_mode: ::std::option::Option<::std::string::String>,
     /// <p>Content type as specified in the <code>responseContentType</code> in the request.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ pub struct RecognizeUtteranceOutput {
     _request_id: Option<String>,
 }
 impl RecognizeUtteranceOutput {
-    /// <p>Indicates whether the input mode to the operation was text or speech.</p>
+    /// <p>Indicates whether the input mode to the operation was text, speech, or from a touch-tone keypad.</p>
     pub fn input_mode(&self) -> ::std::option::Option<&str> {
         self.input_mode.as_deref()
     }
@@ -112,17 +112,17 @@ pub struct RecognizeUtteranceOutputBuilder {
     _request_id: Option<String>,
 }
 impl RecognizeUtteranceOutputBuilder {
-    /// <p>Indicates whether the input mode to the operation was text or speech.</p>
+    /// <p>Indicates whether the input mode to the operation was text, speech, or from a touch-tone keypad.</p>
     pub fn input_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_mode = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Indicates whether the input mode to the operation was text or speech.</p>
+    /// <p>Indicates whether the input mode to the operation was text, speech, or from a touch-tone keypad.</p>
     pub fn set_input_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_mode = input;
         self
     }
-    /// <p>Indicates whether the input mode to the operation was text or speech.</p>
+    /// <p>Indicates whether the input mode to the operation was text, speech, or from a touch-tone keypad.</p>
     pub fn get_input_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_mode
     }

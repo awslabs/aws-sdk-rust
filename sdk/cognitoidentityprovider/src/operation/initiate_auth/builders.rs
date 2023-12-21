@@ -272,8 +272,6 @@ impl InitiateAuthFluentBuilder {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
-    /// <li>
-    /// <p>Verify auth challenge</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -317,8 +315,6 @@ impl InitiateAuthFluentBuilder {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
-    /// <li>
-    /// <p>Verify auth challenge</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>
@@ -361,8 +357,6 @@ impl InitiateAuthFluentBuilder {
     /// <p>Create auth challenge</p></li>
     /// <li>
     /// <p>Define auth challenge</p></li>
-    /// <li>
-    /// <p>Verify auth challenge</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p><note>
     /// <p>When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the following:</p>

@@ -17,8 +17,6 @@ pub use crate::types::_control_condition_type::ControlConditionType;
 
 pub use crate::types::_zonal_autoshift_status::ZonalAutoshiftStatus;
 
-pub use crate::types::_managed_resource_summary::ManagedResourceSummary;
-
 pub use crate::types::_autoshift_in_resource::AutoshiftInResource;
 
 pub use crate::types::_autoshift_applied_status::AutoshiftAppliedStatus;
@@ -26,6 +24,8 @@ pub use crate::types::_autoshift_applied_status::AutoshiftAppliedStatus;
 pub use crate::types::_zonal_shift_in_resource::ZonalShiftInResource;
 
 pub use crate::types::_applied_status::AppliedStatus;
+
+pub use crate::types::_managed_resource_summary::ManagedResourceSummary;
 
 pub use crate::types::_autoshift_summary::AutoshiftSummary;
 

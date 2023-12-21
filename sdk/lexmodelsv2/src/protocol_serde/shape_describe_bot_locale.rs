@@ -178,6 +178,10 @@ pub(crate) fn de_describe_bot_locale(
                 "failureReasons" => {
                     builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
                 }
+                "generativeAISettings" => {
+                    builder =
+                        builder.set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
+                }
                 "intentsCount" => {
                     builder = builder.set_intents_count(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -80,6 +80,8 @@ pub struct CreateAutoScalingGroupInput {
     pub default_instance_warmup: ::std::option::Option<i32>,
     /// <p>The list of traffic sources to attach to this Auto Scaling group. You can use any of the following as traffic sources for an Auto Scaling group: Classic Load Balancer, Application Load Balancer, Gateway Load Balancer, Network Load Balancer, and VPC Lattice.</p>
     pub traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
 }
 impl CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -227,6 +229,10 @@ impl CreateAutoScalingGroupInput {
     pub fn traffic_sources(&self) -> &[crate::types::TrafficSourceIdentifier] {
         self.traffic_sources.as_deref().unwrap_or_default()
     }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn instance_maintenance_policy(&self) -> ::std::option::Option<&crate::types::InstanceMaintenancePolicy> {
+        self.instance_maintenance_policy.as_ref()
+    }
 }
 impl CreateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
@@ -266,6 +272,7 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) desired_capacity_type: ::std::option::Option<::std::string::String>,
     pub(crate) default_instance_warmup: ::std::option::Option<i32>,
     pub(crate) traffic_sources: ::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub(crate) instance_maintenance_policy: ::std::option::Option<crate::types::InstanceMaintenancePolicy>,
 }
 impl CreateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -763,6 +770,20 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_traffic_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrafficSourceIdentifier>> {
         &self.traffic_sources
     }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn instance_maintenance_policy(mut self, input: crate::types::InstanceMaintenancePolicy) -> Self {
+        self.instance_maintenance_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn set_instance_maintenance_policy(mut self, input: ::std::option::Option<crate::types::InstanceMaintenancePolicy>) -> Self {
+        self.instance_maintenance_policy = input;
+        self
+    }
+    /// <p>An instance maintenance policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html">Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+    pub fn get_instance_maintenance_policy(&self) -> &::std::option::Option<crate::types::InstanceMaintenancePolicy> {
+        &self.instance_maintenance_policy
+    }
     /// Consumes the builder and constructs a [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -798,6 +819,7 @@ impl CreateAutoScalingGroupInputBuilder {
             desired_capacity_type: self.desired_capacity_type,
             default_instance_warmup: self.default_instance_warmup,
             traffic_sources: self.traffic_sources,
+            instance_maintenance_policy: self.instance_maintenance_policy,
         })
     }
 }

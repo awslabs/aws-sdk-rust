@@ -18,8 +18,8 @@ thiserror = "1.0.37"
 secrecy = "0.8.0"
 futures = "0.3.25"
 tracing-bunyan-formatter = "0.3.4"
-aws-sdk-glue= { version = "1.8.0", path = "../../../sdk/glue" }
-aws-sdk-s3= { version = "1.8.0", path = "../../../sdk/s3" }
+aws-sdk-glue= { version = "1.9.0", path = "../../../sdk/glue" }
+aws-sdk-s3= { version = "1.9.0", path = "../../../sdk/s3" }
 aws-smithy-types= { version = "1.1.1", path = "../../../sdk/aws-smithy-types" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-http= { version = "0.60.1", path = "../../../sdk/aws-http" }

@@ -151,17 +151,17 @@ impl ListUsersInGroupFluentBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>The limit of the request to list users.</p>
+    /// <p>The maximum number of users that you want to retrieve before pagination.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }

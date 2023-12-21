@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
@@ -20,7 +20,7 @@ pub struct Destination {
     pub last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Destination {
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
@@ -62,7 +62,7 @@ pub struct DestinationBuilder {
     pub(crate) last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DestinationBuilder {
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
@@ -74,7 +74,7 @@ impl DestinationBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>
@@ -85,7 +85,7 @@ impl DestinationBuilder {
         self.status = input;
         self
     }
-    /// <p>Describes the status of the destination Amazon EFS file system.</p>
+    /// <p>Describes the status of the destination EFS file system.</p>
     /// <ul>
     /// <li>
     /// <p>The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the replication configuration was created. To resume replication for the file system, you need to again opt in to the Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.</p></li>

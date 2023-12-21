@@ -140,6 +140,8 @@ mod add_listener_certificates;
 
 mod add_tags;
 
+mod add_trust_store_revocations;
+
 mod create_listener;
 
 mod create_load_balancer;
@@ -147,6 +149,8 @@ mod create_load_balancer;
 mod create_rule;
 
 mod create_target_group;
+
+mod create_trust_store;
 
 /// Operation customization and supporting types.
 ///
@@ -183,6 +187,8 @@ mod delete_rule;
 
 mod delete_target_group;
 
+mod delete_trust_store;
+
 mod deregister_targets;
 
 mod describe_account_limits;
@@ -207,6 +213,16 @@ mod describe_target_groups;
 
 mod describe_target_health;
 
+mod describe_trust_store_associations;
+
+mod describe_trust_store_revocations;
+
+mod describe_trust_stores;
+
+mod get_trust_store_ca_certificates_bundle;
+
+mod get_trust_store_revocation_content;
+
 mod modify_listener;
 
 mod modify_load_balancer_attributes;
@@ -217,11 +233,15 @@ mod modify_target_group;
 
 mod modify_target_group_attributes;
 
+mod modify_trust_store;
+
 mod register_targets;
 
 mod remove_listener_certificates;
 
 mod remove_tags;
+
+mod remove_trust_store_revocations;
 
 mod set_ip_address_type;
 

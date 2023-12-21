@@ -23,15 +23,15 @@ pub use crate::types::_batch_delete_rum_metric_definitions_error::BatchDeleteRum
 
 pub use crate::types::_batch_create_rum_metric_definitions_error::BatchCreateRumMetricDefinitionsError;
 
-pub use crate::types::_app_monitor_summary::AppMonitorSummary;
-
-pub use crate::types::_state_enum::StateEnum;
-
 pub use crate::types::_app_monitor::AppMonitor;
 
 pub use crate::types::_data_storage::DataStorage;
 
 pub use crate::types::_cw_log::CwLog;
+
+pub use crate::types::_state_enum::StateEnum;
+
+pub use crate::types::_app_monitor_summary::AppMonitorSummary;
 
 pub use crate::types::_rum_event::RumEvent;
 

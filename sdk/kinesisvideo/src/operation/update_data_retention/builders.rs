@@ -22,9 +22,7 @@ impl UpdateDataRetentionInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataRetention`.
 ///
-/// <p>Increases or decreases the stream's data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p><note>
-/// <p>The retention period that you specify replaces the current value.</p>
-/// </note>
+/// <p>Increases or decreases the stream's data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
 /// <p>This operation requires permission for the <code>KinesisVideo:UpdateDataRetention</code> action.</p>
 /// <p>Changing the data retention period affects the data in the stream as follows:</p>
 /// <ul>
@@ -174,17 +172,20 @@ impl UpdateDataRetentionFluentBuilder {
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::UpdateDataRetentionOperation> {
         self.inner.get_operation()
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub fn data_retention_change_in_hours(mut self, input: i32) -> Self {
         self.inner = self.inner.data_retention_change_in_hours(input);
         self
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub fn set_data_retention_change_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_data_retention_change_in_hours(input);
         self
     }
-    /// <p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>
+    /// <p>The number of hours to adjust the current retention by. The value you specify is added to or subtracted from the current value, depending on the <code>operation</code>.</p>
+    /// <p>The minimum value for data retention is 0 and the maximum value is 87600 (ten years).</p>
     pub fn get_data_retention_change_in_hours(&self) -> &::std::option::Option<i32> {
         self.inner.get_data_retention_change_in_hours()
     }

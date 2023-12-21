@@ -103,6 +103,9 @@ pub mod describe_bot_locale;
 /// Types for the `DescribeBotRecommendation` operation.
 pub mod describe_bot_recommendation;
 
+/// Types for the `DescribeBotResourceGeneration` operation.
+pub mod describe_bot_resource_generation;
+
 /// Types for the `DescribeBotVersion` operation.
 pub mod describe_bot_version;
 
@@ -139,6 +142,9 @@ pub mod describe_test_set_discrepancy_report;
 /// Types for the `DescribeTestSetGeneration` operation.
 pub mod describe_test_set_generation;
 
+/// Types for the `GenerateBotElement` operation.
+pub mod generate_bot_element;
+
 /// Types for the `GetTestExecutionArtifactsUrl` operation.
 pub mod get_test_execution_artifacts_url;
 
@@ -153,6 +159,9 @@ pub mod list_bot_locales;
 
 /// Types for the `ListBotRecommendations` operation.
 pub mod list_bot_recommendations;
+
+/// Types for the `ListBotResourceGenerations` operation.
+pub mod list_bot_resource_generations;
 
 /// Types for the `ListBotVersions` operation.
 pub mod list_bot_versions;
@@ -228,6 +237,9 @@ pub mod search_associated_transcripts;
 
 /// Types for the `StartBotRecommendation` operation.
 pub mod start_bot_recommendation;
+
+/// Types for the `StartBotResourceGeneration` operation.
+pub mod start_bot_resource_generation;
 
 /// Types for the `StartImport` operation.
 pub mod start_import;

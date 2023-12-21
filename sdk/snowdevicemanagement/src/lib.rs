@@ -27,7 +27,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-snowdevicemanagement = "1.7.0"
+//! aws-sdk-snowdevicemanagement = "1.8.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -62,6 +62,22 @@ pub fn de_create_log_group_http_error(
             }
             tmp
         }),
+        "ServiceUnavailableException" => crate::operation::create_log_group::CreateLogGroupError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_log_group::CreateLogGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceAlreadyExistsException" => crate::operation::create_log_group::CreateLogGroupError::ResourceAlreadyExistsException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -72,22 +88,6 @@ pub fn de_create_log_group_http_error(
                     output,
                 )
                 .map_err(crate::operation::create_log_group::CreateLogGroupError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceUnavailableException" => crate::operation::create_log_group::CreateLogGroupError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::create_log_group::CreateLogGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

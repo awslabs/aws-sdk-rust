@@ -12,9 +12,9 @@ bytes = "1"
 reqwest = "0.11.4"
 serde_json = "1.0"
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config" }
-aws-sdk-polly= { version = "1.7.0", path = "../../../sdk/polly" }
-aws-sdk-s3= { version = "1.8.0", path = "../../../sdk/s3" }
-aws-sdk-transcribe= { version = "1.7.0", path = "../../../sdk/transcribe" }
+aws-sdk-polly= { version = "1.8.0", path = "../../../sdk/polly" }
+aws-sdk-s3= { version = "1.9.0", path = "../../../sdk/s3" }
+aws-sdk-transcribe= { version = "1.8.0", path = "../../../sdk/transcribe" }
 aws-smithy-types= { version = "1.1.1", path = "../../../sdk/aws-smithy-types", features = ["rt-tokio"] }
 
 [dependencies.tokio]

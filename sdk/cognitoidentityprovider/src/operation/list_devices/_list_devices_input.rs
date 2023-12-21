@@ -8,7 +8,7 @@ pub struct ListDevicesInput {
     pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The limit of the device request.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The pagination token for the list request.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicesInput {
@@ -20,7 +20,7 @@ impl ListDevicesInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The pagination token for the list request.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -79,17 +79,17 @@ impl ListDevicesInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The pagination token for the list request.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token for the list request.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
-    /// <p>The pagination token for the list request.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.pagination_token
     }

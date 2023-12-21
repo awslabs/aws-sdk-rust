@@ -6,20 +6,26 @@ pub fn ser_create_bot_locale_input_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.locale_id {
-        object.key("localeId").string(var_2.as_str());
+    if let Some(var_2) = &input.generative_ai_settings {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("generativeAISettings").start_object();
+        crate::protocol_serde::shape_generative_ai_settings::ser_generative_ai_settings(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.nlu_intent_confidence_threshold {
+    if let Some(var_4) = &input.locale_id {
+        object.key("localeId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.nlu_intent_confidence_threshold {
         object.key("nluIntentConfidenceThreshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_3).into()),
+            ::aws_smithy_types::Number::Float((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.voice_settings {
+    if let Some(var_6) = &input.voice_settings {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("voiceSettings").start_object();
-        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_7 = object.key("voiceSettings").start_object();
+        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

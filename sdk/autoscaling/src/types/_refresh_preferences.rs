@@ -4,8 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshPreferences {
-    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
-    /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.</p>
+    /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
+    /// <p>If you do not specify this property, the default is 90 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
     pub min_healthy_percentage: ::std::option::Option<i32>,
     /// <p>A time period, in seconds, during which an instance refresh waits before moving on to replacing the next instance after a new instance enters the <code>InService</code> state.</p>
     /// <p>This property is not required for normal usage. Instead, use the <code>DefaultInstanceWarmup</code> property of the Auto Scaling group. The <code>InstanceWarmup</code> and <code>DefaultInstanceWarmup</code> properties work the same way. Only specify this property if you must override the <code>DefaultInstanceWarmup</code> property.</p>
@@ -79,10 +79,14 @@ pub struct RefreshPreferences {
     pub standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
     /// <p>(Optional) The CloudWatch alarm specification. CloudWatch alarms can be used to identify any issues and fail the operation if an alarm threshold is met.</p>
     pub alarm_specification: ::std::option::Option<crate::types::AlarmSpecification>,
+    /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
+    /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    pub max_healthy_percentage: ::std::option::Option<i32>,
 }
 impl RefreshPreferences {
-    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
-    /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.</p>
+    /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
+    /// <p>If you do not specify this property, the default is 90 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
     pub fn min_healthy_percentage(&self) -> ::std::option::Option<i32> {
         self.min_healthy_percentage
     }
@@ -176,6 +180,12 @@ impl RefreshPreferences {
     pub fn alarm_specification(&self) -> ::std::option::Option<&crate::types::AlarmSpecification> {
         self.alarm_specification.as_ref()
     }
+    /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
+    /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    pub fn max_healthy_percentage(&self) -> ::std::option::Option<i32> {
+        self.max_healthy_percentage
+    }
 }
 impl RefreshPreferences {
     /// Creates a new builder-style object to manufacture [`RefreshPreferences`](crate::types::RefreshPreferences).
@@ -197,22 +207,23 @@ pub struct RefreshPreferencesBuilder {
     pub(crate) scale_in_protected_instances: ::std::option::Option<crate::types::ScaleInProtectedInstances>,
     pub(crate) standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
     pub(crate) alarm_specification: ::std::option::Option<crate::types::AlarmSpecification>,
+    pub(crate) max_healthy_percentage: ::std::option::Option<i32>,
 }
 impl RefreshPreferencesBuilder {
-    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
-    /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.</p>
+    /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
+    /// <p>If you do not specify this property, the default is 90 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
     pub fn min_healthy_percentage(mut self, input: i32) -> Self {
         self.min_healthy_percentage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
-    /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.</p>
+    /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
+    /// <p>If you do not specify this property, the default is 90 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
     pub fn set_min_healthy_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_healthy_percentage = input;
         self
     }
-    /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
-    /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time.</p>
+    /// <p>Specifies the minimum percentage of the group to keep in service, healthy, and ready to use to support your workload to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 0 to 100.</p>
+    /// <p>If you do not specify this property, the default is 90 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
     pub fn get_min_healthy_percentage(&self) -> &::std::option::Option<i32> {
         &self.min_healthy_percentage
     }
@@ -502,6 +513,26 @@ impl RefreshPreferencesBuilder {
     pub fn get_alarm_specification(&self) -> &::std::option::Option<crate::types::AlarmSpecification> {
         &self.alarm_specification
     }
+    /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
+    /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    pub fn max_healthy_percentage(mut self, input: i32) -> Self {
+        self.max_healthy_percentage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
+    /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    pub fn set_max_healthy_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_healthy_percentage = input;
+        self
+    }
+    /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
+    /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    pub fn get_max_healthy_percentage(&self) -> &::std::option::Option<i32> {
+        &self.max_healthy_percentage
+    }
     /// Consumes the builder and constructs a [`RefreshPreferences`](crate::types::RefreshPreferences).
     pub fn build(self) -> crate::types::RefreshPreferences {
         crate::types::RefreshPreferences {
@@ -514,6 +545,7 @@ impl RefreshPreferencesBuilder {
             scale_in_protected_instances: self.scale_in_protected_instances,
             standby_instances: self.standby_instances,
             alarm_specification: self.alarm_specification,
+            max_healthy_percentage: self.max_healthy_percentage,
         }
     }
 }

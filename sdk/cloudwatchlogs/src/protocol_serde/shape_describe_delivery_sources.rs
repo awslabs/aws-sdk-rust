@@ -24,42 +24,6 @@ pub fn de_describe_delivery_sources_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceQuotaExceededException" => {
-            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                        _response_body,
-                        output,
-                    )
-                    .map_err(crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                output =
-                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                        .map_err(crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
         "ThrottlingException" => crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -90,6 +54,42 @@ pub fn de_describe_delivery_sources_http_error(
             }
             tmp
         }),
+        "ServiceUnavailableException" => crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceQuotaExceededException" => {
+            crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::describe_delivery_sources::DescribeDeliverySourcesError::generic(generic),
     })
 }

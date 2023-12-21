@@ -278,6 +278,10 @@ pub enum PutConfigurationRecorderError {
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>You have reached the limit of the number of configuration recorders you can create.</p>
     MaxNumberOfConfigurationRecordersExceededException(crate::types::error::MaxNumberOfConfigurationRecordersExceededException),
+    /// <p>The requested action is not valid.</p>
+    /// <p>For PutStoredQuery, you will see this exception if there are missing required fields or if the input value fails the validation, or if you are trying to create more than 300 queries.</p>
+    /// <p>For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are missing required fields or if the input value fails the validation.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -315,6 +319,7 @@ impl PutConfigurationRecorderError {
             Self::InvalidRecordingGroupException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRoleException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MaxNumberOfConfigurationRecordersExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -334,6 +339,10 @@ impl PutConfigurationRecorderError {
     pub fn is_max_number_of_configuration_recorders_exceeded_exception(&self) -> bool {
         matches!(self, Self::MaxNumberOfConfigurationRecordersExceededException(_))
     }
+    /// Returns `true` if the error kind is `PutConfigurationRecorderError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for PutConfigurationRecorderError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -342,6 +351,7 @@ impl ::std::error::Error for PutConfigurationRecorderError {
             Self::InvalidRecordingGroupException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
             Self::MaxNumberOfConfigurationRecordersExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -353,6 +363,7 @@ impl ::std::fmt::Display for PutConfigurationRecorderError {
             Self::InvalidRecordingGroupException(_inner) => _inner.fmt(f),
             Self::InvalidRoleException(_inner) => _inner.fmt(f),
             Self::MaxNumberOfConfigurationRecordersExceededException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -380,6 +391,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutConfigurat
             Self::MaxNumberOfConfigurationRecordersExceededException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

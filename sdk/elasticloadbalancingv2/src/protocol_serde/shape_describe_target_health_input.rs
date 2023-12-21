@@ -21,6 +21,17 @@ pub fn ser_describe_target_health_input_input_input(
         }
         list_6.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("Include");
+    if let Some(var_9) = &input.include {
+        let mut list_11 = scope_8.start_list(false, None);
+        for item_10 in var_9 {
+            #[allow(unused_mut)]
+            let mut entry_12 = list_11.entry();
+            entry_12.string(item_10.as_str());
+        }
+        list_11.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

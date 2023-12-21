@@ -5,7 +5,7 @@ pub use crate::types::_pipe_state::PipeState;
 
 pub use crate::types::_requested_pipe_state::RequestedPipeState;
 
-pub use crate::types::_pipe::Pipe;
+pub use crate::types::_requested_pipe_state_describe_response::RequestedPipeStateDescribeResponse;
 
 pub use crate::types::_pipe_log_configuration_parameters::PipeLogConfigurationParameters;
 
@@ -109,25 +109,57 @@ pub use crate::types::_pipe_enrichment_parameters::PipeEnrichmentParameters;
 
 pub use crate::types::_pipe_enrichment_http_parameters::PipeEnrichmentHttpParameters;
 
-pub use crate::types::_pipe_source_parameters::PipeSourceParameters;
+pub use crate::types::_update_pipe_source_parameters::UpdatePipeSourceParameters;
 
-pub use crate::types::_pipe_source_self_managed_kafka_parameters::PipeSourceSelfManagedKafkaParameters;
+pub use crate::types::_update_pipe_source_self_managed_kafka_parameters::UpdatePipeSourceSelfManagedKafkaParameters;
 
 pub use crate::types::_self_managed_kafka_access_configuration_vpc::SelfManagedKafkaAccessConfigurationVpc;
 
 pub use crate::types::_self_managed_kafka_access_configuration_credentials::SelfManagedKafkaAccessConfigurationCredentials;
 
+pub use crate::types::_update_pipe_source_managed_streaming_kafka_parameters::UpdatePipeSourceManagedStreamingKafkaParameters;
+
+pub use crate::types::_msk_access_credentials::MskAccessCredentials;
+
+pub use crate::types::_update_pipe_source_rabbit_mq_broker_parameters::UpdatePipeSourceRabbitMqBrokerParameters;
+
+pub use crate::types::_mq_broker_access_credentials::MqBrokerAccessCredentials;
+
+pub use crate::types::_update_pipe_source_active_mq_broker_parameters::UpdatePipeSourceActiveMqBrokerParameters;
+
+pub use crate::types::_update_pipe_source_sqs_queue_parameters::UpdatePipeSourceSqsQueueParameters;
+
+pub use crate::types::_update_pipe_source_dynamo_db_stream_parameters::UpdatePipeSourceDynamoDbStreamParameters;
+
+pub use crate::types::_on_partial_batch_item_failure_streams::OnPartialBatchItemFailureStreams;
+
+pub use crate::types::_dead_letter_config::DeadLetterConfig;
+
+pub use crate::types::_update_pipe_source_kinesis_stream_parameters::UpdatePipeSourceKinesisStreamParameters;
+
+pub use crate::types::_filter_criteria::FilterCriteria;
+
+pub use crate::types::_filter::Filter;
+
+pub use crate::types::_pipe_log_configuration::PipeLogConfiguration;
+
+pub use crate::types::_cloudwatch_logs_log_destination::CloudwatchLogsLogDestination;
+
+pub use crate::types::_firehose_log_destination::FirehoseLogDestination;
+
+pub use crate::types::_s3_log_destination::S3LogDestination;
+
+pub use crate::types::_pipe_source_parameters::PipeSourceParameters;
+
+pub use crate::types::_pipe_source_self_managed_kafka_parameters::PipeSourceSelfManagedKafkaParameters;
+
 pub use crate::types::_self_managed_kafka_start_position::SelfManagedKafkaStartPosition;
 
 pub use crate::types::_pipe_source_managed_streaming_kafka_parameters::PipeSourceManagedStreamingKafkaParameters;
 
-pub use crate::types::_msk_access_credentials::MskAccessCredentials;
-
 pub use crate::types::_msk_start_position::MskStartPosition;
 
 pub use crate::types::_pipe_source_rabbit_mq_broker_parameters::PipeSourceRabbitMqBrokerParameters;
-
-pub use crate::types::_mq_broker_access_credentials::MqBrokerAccessCredentials;
 
 pub use crate::types::_pipe_source_active_mq_broker_parameters::PipeSourceActiveMqBrokerParameters;
 
@@ -137,43 +169,11 @@ pub use crate::types::_pipe_source_dynamo_db_stream_parameters::PipeSourceDynamo
 
 pub use crate::types::_dynamo_db_stream_start_position::DynamoDbStreamStartPosition;
 
-pub use crate::types::_on_partial_batch_item_failure_streams::OnPartialBatchItemFailureStreams;
-
-pub use crate::types::_dead_letter_config::DeadLetterConfig;
-
 pub use crate::types::_pipe_source_kinesis_stream_parameters::PipeSourceKinesisStreamParameters;
 
 pub use crate::types::_kinesis_stream_start_position::KinesisStreamStartPosition;
 
-pub use crate::types::_filter_criteria::FilterCriteria;
-
-pub use crate::types::_filter::Filter;
-
-pub use crate::types::_requested_pipe_state_describe_response::RequestedPipeStateDescribeResponse;
-
-pub use crate::types::_update_pipe_source_parameters::UpdatePipeSourceParameters;
-
-pub use crate::types::_update_pipe_source_self_managed_kafka_parameters::UpdatePipeSourceSelfManagedKafkaParameters;
-
-pub use crate::types::_update_pipe_source_managed_streaming_kafka_parameters::UpdatePipeSourceManagedStreamingKafkaParameters;
-
-pub use crate::types::_update_pipe_source_rabbit_mq_broker_parameters::UpdatePipeSourceRabbitMqBrokerParameters;
-
-pub use crate::types::_update_pipe_source_active_mq_broker_parameters::UpdatePipeSourceActiveMqBrokerParameters;
-
-pub use crate::types::_update_pipe_source_sqs_queue_parameters::UpdatePipeSourceSqsQueueParameters;
-
-pub use crate::types::_update_pipe_source_dynamo_db_stream_parameters::UpdatePipeSourceDynamoDbStreamParameters;
-
-pub use crate::types::_update_pipe_source_kinesis_stream_parameters::UpdatePipeSourceKinesisStreamParameters;
-
-pub use crate::types::_pipe_log_configuration::PipeLogConfiguration;
-
-pub use crate::types::_cloudwatch_logs_log_destination::CloudwatchLogsLogDestination;
-
-pub use crate::types::_firehose_log_destination::FirehoseLogDestination;
-
-pub use crate::types::_s3_log_destination::S3LogDestination;
+pub use crate::types::_pipe::Pipe;
 
 mod _assign_public_ip;
 

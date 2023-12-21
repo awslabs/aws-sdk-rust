@@ -22,6 +22,9 @@ impl GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAccessPointPolicyStatusForObjectLambda`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Returns the status of the resource policy associated with an Object Lambda Access Point.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessPointPolicyStatusForObjectLambdaFluentBuilder {

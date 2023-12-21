@@ -24,80 +24,27 @@ pub fn de_delete_delivery_destination_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConflictException" => crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ResourceNotFoundException" => crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ServiceQuotaExceededException" => {
-            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceQuotaExceededException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                        _response_body,
-                        output,
-                    )
-                    .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
-        "ServiceUnavailableException" => {
-            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceUnavailableException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
-                    output =
-                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
-                            .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            })
-        }
         "ThrottlingException" => crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ConflictException" => crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -122,6 +69,59 @@ pub fn de_delete_delivery_destination_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceQuotaExceededException" => {
+            crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::delete_delivery_destination::DeleteDeliveryDestinationError::generic(generic),
     })
 }

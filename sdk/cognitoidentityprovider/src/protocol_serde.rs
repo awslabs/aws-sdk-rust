@@ -689,6 +689,8 @@ pub(crate) mod shape_o_auth_flows_type;
 
 pub(crate) mod shape_password_policy_type;
 
+pub(crate) mod shape_pre_token_generation_version_config_type;
+
 pub(crate) mod shape_provider_description;
 
 pub(crate) mod shape_provider_details_type;

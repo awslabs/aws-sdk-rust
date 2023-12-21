@@ -55,6 +55,10 @@ pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetails
 
 pub use crate::types::_configuration_recorder::ConfigurationRecorderBuilder;
 
+pub use crate::types::_recording_mode::RecordingModeBuilder;
+
+pub use crate::types::_recording_mode_override::RecordingModeOverrideBuilder;
+
 pub use crate::types::_recording_group::RecordingGroupBuilder;
 
 pub use crate::types::_recording_strategy::RecordingStrategyBuilder;

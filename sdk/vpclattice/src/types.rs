@@ -11,19 +11,11 @@ pub use crate::types::_target_summary::TargetSummary;
 
 pub use crate::types::_target_status::TargetStatus;
 
-pub use crate::types::_target_group_summary::TargetGroupSummary;
-
-pub use crate::types::_lambda_event_structure_version::LambdaEventStructureVersion;
-
 pub use crate::types::_target_group_status::TargetGroupStatus;
 
-pub use crate::types::_ip_address_type::IpAddressType;
-
-pub use crate::types::_target_group_protocol::TargetGroupProtocol;
-
-pub use crate::types::_target_group_type::TargetGroupType;
-
 pub use crate::types::_target_group_config::TargetGroupConfig;
+
+pub use crate::types::_lambda_event_structure_version::LambdaEventStructureVersion;
 
 pub use crate::types::_health_check_config::HealthCheckConfig;
 
@@ -31,27 +23,33 @@ pub use crate::types::_matcher::Matcher;
 
 pub use crate::types::_health_check_protocol_version::HealthCheckProtocolVersion;
 
+pub use crate::types::_target_group_protocol::TargetGroupProtocol;
+
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_target_group_protocol_version::TargetGroupProtocolVersion;
 
-pub use crate::types::_service_network_vpc_association_summary::ServiceNetworkVpcAssociationSummary;
+pub use crate::types::_target_group_type::TargetGroupType;
+
+pub use crate::types::_target_group_summary::TargetGroupSummary;
 
 pub use crate::types::_service_network_vpc_association_status::ServiceNetworkVpcAssociationStatus;
 
-pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummary;
-
-pub use crate::types::_dns_entry::DnsEntry;
+pub use crate::types::_service_network_vpc_association_summary::ServiceNetworkVpcAssociationSummary;
 
 pub use crate::types::_service_network_service_association_status::ServiceNetworkServiceAssociationStatus;
 
-pub use crate::types::_service_network_summary::ServiceNetworkSummary;
+pub use crate::types::_dns_entry::DnsEntry;
+
+pub use crate::types::_service_network_service_association_summary::ServiceNetworkServiceAssociationSummary;
 
 pub use crate::types::_auth_type::AuthType;
 
-pub use crate::types::_service_summary::ServiceSummary;
+pub use crate::types::_service_network_summary::ServiceNetworkSummary;
 
 pub use crate::types::_service_status::ServiceStatus;
 
-pub use crate::types::_rule_summary::RuleSummary;
+pub use crate::types::_service_summary::ServiceSummary;
 
 pub use crate::types::_rule_action::RuleAction;
 
@@ -73,9 +71,11 @@ pub use crate::types::_path_match::PathMatch;
 
 pub use crate::types::_path_match_type::PathMatchType;
 
-pub use crate::types::_listener_summary::ListenerSummary;
+pub use crate::types::_rule_summary::RuleSummary;
 
 pub use crate::types::_listener_protocol::ListenerProtocol;
+
+pub use crate::types::_listener_summary::ListenerSummary;
 
 pub use crate::types::_access_log_subscription_summary::AccessLogSubscriptionSummary;
 

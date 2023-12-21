@@ -13,6 +13,8 @@ pub enum Error {
     AvailabilityZonesMismatch(crate::types::error::AvailabilityZonesMismatch),
     /// <p>Returned if the request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
     BadRequest(crate::types::error::BadRequest),
+    /// <p>Returned if the source file system in a replication is encrypted but the destination file system is unencrypted.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The service timed out trying to fulfill the request, and the client should try the call again.</p>
     DependencyTimeout(crate::types::error::DependencyTimeout),
     /// <p>Returned if the file system you are trying to create already exists, with the creation token you provided.</p>
@@ -45,6 +47,8 @@ pub enum Error {
     NoFreeAddressesInSubnet(crate::types::error::NoFreeAddressesInSubnet),
     /// <p>Returned if the default file system policy is in effect for the EFS file system specified.</p>
     PolicyNotFound(crate::types::error::PolicyNotFound),
+    /// <p>Returned if the file system is already included in a replication configuration.&gt;</p>
+    ReplicationAlreadyExists(crate::types::error::ReplicationAlreadyExists),
     /// <p>Returned if the specified file system does not have a replication configuration.</p>
     ReplicationNotFound(crate::types::error::ReplicationNotFound),
     /// <p>Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.</p>
@@ -80,6 +84,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessPointNotFound(inner) => inner.fmt(f),
             Error::AvailabilityZonesMismatch(inner) => inner.fmt(f),
             Error::BadRequest(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::DependencyTimeout(inner) => inner.fmt(f),
             Error::FileSystemAlreadyExists(inner) => inner.fmt(f),
             Error::FileSystemInUse(inner) => inner.fmt(f),
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for Error {
             Error::NetworkInterfaceLimitExceeded(inner) => inner.fmt(f),
             Error::NoFreeAddressesInSubnet(inner) => inner.fmt(f),
             Error::PolicyNotFound(inner) => inner.fmt(f),
+            Error::ReplicationAlreadyExists(inner) => inner.fmt(f),
             Error::ReplicationNotFound(inner) => inner.fmt(f),
             Error::SecurityGroupLimitExceeded(inner) => inner.fmt(f),
             Error::SecurityGroupNotFound(inner) => inner.fmt(f),
@@ -131,6 +137,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessPointNotFound(inner) => inner.meta(),
             Self::AvailabilityZonesMismatch(inner) => inner.meta(),
             Self::BadRequest(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::DependencyTimeout(inner) => inner.meta(),
             Self::FileSystemAlreadyExists(inner) => inner.meta(),
             Self::FileSystemInUse(inner) => inner.meta(),
@@ -147,6 +154,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::NetworkInterfaceLimitExceeded(inner) => inner.meta(),
             Self::NoFreeAddressesInSubnet(inner) => inner.meta(),
             Self::PolicyNotFound(inner) => inner.meta(),
+            Self::ReplicationAlreadyExists(inner) => inner.meta(),
             Self::ReplicationNotFound(inner) => inner.meta(),
             Self::SecurityGroupLimitExceeded(inner) => inner.meta(),
             Self::SecurityGroupNotFound(inner) => inner.meta(),
@@ -295,6 +303,9 @@ impl From<crate::operation::create_replication_configuration::CreateReplicationC
     fn from(err: crate::operation::create_replication_configuration::CreateReplicationConfigurationError) -> Self {
         match err {
             crate::operation::create_replication_configuration::CreateReplicationConfigurationError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::create_replication_configuration::CreateReplicationConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::create_replication_configuration::CreateReplicationConfigurationError::FileSystemLimitExceeded(inner) => {
                 Error::FileSystemLimitExceeded(inner)
             }
@@ -1110,6 +1121,50 @@ impl From<crate::operation::update_file_system::UpdateFileSystemError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_file_system_protection::UpdateFileSystemProtectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_file_system_protection::UpdateFileSystemProtectionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_file_system_protection::UpdateFileSystemProtectionError> for Error {
+    fn from(err: crate::operation::update_file_system_protection::UpdateFileSystemProtectionError) -> Self {
+        match err {
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::FileSystemNotFound(inner) => {
+                Error::FileSystemNotFound(inner)
+            }
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::IncorrectFileSystemLifeCycleState(inner) => {
+                Error::IncorrectFileSystemLifeCycleState(inner)
+            }
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::InsufficientThroughputCapacity(inner) => {
+                Error::InsufficientThroughputCapacity(inner)
+            }
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::ReplicationAlreadyExists(inner) => {
+                Error::ReplicationAlreadyExists(inner)
+            }
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::ThroughputLimitExceeded(inner) => {
+                Error::ThroughputLimitExceeded(inner)
+            }
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::TooManyRequests(inner) => Error::TooManyRequests(inner),
+            crate::operation::update_file_system_protection::UpdateFileSystemProtectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -1118,6 +1173,7 @@ impl ::std::error::Error for Error {
             Error::AccessPointNotFound(inner) => inner.source(),
             Error::AvailabilityZonesMismatch(inner) => inner.source(),
             Error::BadRequest(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::DependencyTimeout(inner) => inner.source(),
             Error::FileSystemAlreadyExists(inner) => inner.source(),
             Error::FileSystemInUse(inner) => inner.source(),
@@ -1134,6 +1190,7 @@ impl ::std::error::Error for Error {
             Error::NetworkInterfaceLimitExceeded(inner) => inner.source(),
             Error::NoFreeAddressesInSubnet(inner) => inner.source(),
             Error::PolicyNotFound(inner) => inner.source(),
+            Error::ReplicationAlreadyExists(inner) => inner.source(),
             Error::ReplicationNotFound(inner) => inner.source(),
             Error::SecurityGroupLimitExceeded(inner) => inner.source(),
             Error::SecurityGroupNotFound(inner) => inner.source(),
@@ -1155,6 +1212,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessPointNotFound(e) => e.request_id(),
             Self::AvailabilityZonesMismatch(e) => e.request_id(),
             Self::BadRequest(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::DependencyTimeout(e) => e.request_id(),
             Self::FileSystemAlreadyExists(e) => e.request_id(),
             Self::FileSystemInUse(e) => e.request_id(),
@@ -1171,6 +1229,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::NetworkInterfaceLimitExceeded(e) => e.request_id(),
             Self::NoFreeAddressesInSubnet(e) => e.request_id(),
             Self::PolicyNotFound(e) => e.request_id(),
+            Self::ReplicationAlreadyExists(e) => e.request_id(),
             Self::ReplicationNotFound(e) => e.request_id(),
             Self::SecurityGroupLimitExceeded(e) => e.request_id(),
             Self::SecurityGroupNotFound(e) => e.request_id(),

@@ -19,6 +19,10 @@ pub use crate::types::error::_priority_in_use_exception::PriorityInUseExceptionB
 
 pub use crate::types::error::_operation_not_permitted_exception::OperationNotPermittedExceptionBuilder;
 
+pub use crate::types::error::_trust_store_not_found_exception::TrustStoreNotFoundExceptionBuilder;
+
+pub use crate::types::error::_revocation_id_not_found_exception::RevocationIdNotFoundExceptionBuilder;
+
 pub use crate::types::error::_too_many_tags_exception::TooManyTagsExceptionBuilder;
 
 pub use crate::types::error::_target_group_not_found_exception::TargetGroupNotFoundExceptionBuilder;
@@ -31,6 +35,10 @@ pub use crate::types::error::_too_many_registrations_for_target_id_exception::To
 
 pub use crate::types::error::_invalid_target_exception::InvalidTargetExceptionBuilder;
 
+pub use crate::types::error::_invalid_ca_certificates_bundle_exception::InvalidCaCertificatesBundleExceptionBuilder;
+
+pub use crate::types::error::_ca_certificates_bundle_not_found_exception::CaCertificatesBundleNotFoundExceptionBuilder;
+
 pub use crate::types::error::_unsupported_protocol_exception::UnsupportedProtocolExceptionBuilder;
 
 pub use crate::types::error::_too_many_unique_target_groups_per_load_balancer_exception::TooManyUniqueTargetGroupsPerLoadBalancerExceptionBuilder;
@@ -42,6 +50,8 @@ pub use crate::types::error::_target_group_association_limit_exception::TargetGr
 pub use crate::types::error::_invalid_load_balancer_action_exception::InvalidLoadBalancerActionExceptionBuilder;
 
 pub use crate::types::error::_incompatible_protocols_exception::IncompatibleProtocolsExceptionBuilder;
+
+pub use crate::types::error::_trust_store_not_ready_exception::TrustStoreNotReadyExceptionBuilder;
 
 pub use crate::types::error::_too_many_listeners_exception::TooManyListenersExceptionBuilder;
 
@@ -57,7 +67,15 @@ pub use crate::types::error::_alpn_policy_not_supported_exception::AlpnPolicyNot
 
 pub use crate::types::error::_health_unavailable_exception::HealthUnavailableExceptionBuilder;
 
+pub use crate::types::error::_trust_store_in_use_exception::TrustStoreInUseExceptionBuilder;
+
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;
+
+pub use crate::types::error::_too_many_trust_stores_exception::TooManyTrustStoresExceptionBuilder;
+
+pub use crate::types::error::_duplicate_trust_store_name_exception::DuplicateTrustStoreNameExceptionBuilder;
+
+pub use crate::types::error::_duplicate_tag_keys_exception::DuplicateTagKeysExceptionBuilder;
 
 pub use crate::types::error::_too_many_target_groups_exception::TooManyTargetGroupsExceptionBuilder;
 
@@ -69,6 +87,10 @@ pub use crate::types::error::_too_many_load_balancers_exception::TooManyLoadBala
 
 pub use crate::types::error::_invalid_scheme_exception::InvalidSchemeExceptionBuilder;
 
-pub use crate::types::error::_duplicate_tag_keys_exception::DuplicateTagKeysExceptionBuilder;
-
 pub use crate::types::error::_duplicate_load_balancer_name_exception::DuplicateLoadBalancerNameExceptionBuilder;
+
+pub use crate::types::error::_too_many_trust_store_revocation_entries_exception::TooManyTrustStoreRevocationEntriesExceptionBuilder;
+
+pub use crate::types::error::_revocation_content_not_found_exception::RevocationContentNotFoundExceptionBuilder;
+
+pub use crate::types::error::_invalid_revocation_content_exception::InvalidRevocationContentExceptionBuilder;

@@ -13,12 +13,6 @@ pub use crate::types::_simulation_app_port_mapping::SimulationAppPortMapping;
 
 pub use crate::types::_s3_destination::S3Destination;
 
-pub use crate::types::_simulation_metadata::SimulationMetadata;
-
-pub use crate::types::_simulation_target_status::SimulationTargetStatus;
-
-pub use crate::types::_simulation_status::SimulationStatus;
-
 pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_live_simulation_state::LiveSimulationState;
@@ -38,6 +32,12 @@ pub use crate::types::_logging_configuration::LoggingConfiguration;
 pub use crate::types::_log_destination::LogDestination;
 
 pub use crate::types::_cloud_watch_logs_log_group::CloudWatchLogsLogGroup;
+
+pub use crate::types::_simulation_target_status::SimulationTargetStatus;
+
+pub use crate::types::_simulation_status::SimulationStatus;
+
+pub use crate::types::_simulation_metadata::SimulationMetadata;
 
 mod _clock_status;
 

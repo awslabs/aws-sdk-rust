@@ -23,7 +23,7 @@ pub struct DescribeMapRunOutput {
     pub item_counts: ::std::option::Option<crate::types::MapRunItemCounts>,
     /// <p>A JSON object that contains information about the total number of child workflow executions for the Map Run, and the count of child workflow executions for each status, such as <code>failed</code> and <code>succeeded</code>.</p>
     pub execution_counts: ::std::option::Option<crate::types::MapRunExecutionCounts>,
-    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive a Map Run.</p>
     pub redrive_count: ::std::option::Option<i32>,
     /// <p>The date a Map Run was last redriven. If you have not yet redriven a Map Run, the <code>redriveDate</code> is null.</p>
     pub redrive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -72,7 +72,7 @@ impl DescribeMapRunOutput {
     pub fn execution_counts(&self) -> ::std::option::Option<&crate::types::MapRunExecutionCounts> {
         self.execution_counts.as_ref()
     }
-    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive a Map Run.</p>
     pub fn redrive_count(&self) -> ::std::option::Option<i32> {
         self.redrive_count
     }
@@ -261,17 +261,17 @@ impl DescribeMapRunOutputBuilder {
     pub fn get_execution_counts(&self) -> &::std::option::Option<crate::types::MapRunExecutionCounts> {
         &self.execution_counts
     }
-    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive a Map Run.</p>
     pub fn redrive_count(mut self, input: i32) -> Self {
         self.redrive_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive a Map Run.</p>
     pub fn set_redrive_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.redrive_count = input;
         self
     }
-    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is not updated for redrives that failed to start or are pending to be redriven.</p>
+    /// <p>The number of times you've redriven a Map Run. If you have not yet redriven a Map Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully redrive a Map Run.</p>
     pub fn get_redrive_count(&self) -> &::std::option::Option<i32> {
         &self.redrive_count
     }

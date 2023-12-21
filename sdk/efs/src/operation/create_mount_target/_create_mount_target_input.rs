@@ -6,7 +6,7 @@
 pub struct CreateMountTargetInput {
     /// <p>The ID of the file system for which to create the mount target.</p>
     pub file_system_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Valid IPv4 address within the address range of the specified subnet.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl CreateMountTargetInput {
     pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
@@ -65,18 +65,18 @@ impl CreateMountTargetInputBuilder {
     pub fn get_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_system_id
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     /// This field is required.
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
-    /// <p>The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the subnet that is associated with the file system's Availability Zone.</p>
+    /// <p>The ID of the subnet to add the mount target in. For One Zone file systems, use the subnet that is associated with the file system's Availability Zone.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }

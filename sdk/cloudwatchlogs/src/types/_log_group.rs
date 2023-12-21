@@ -23,6 +23,15 @@ pub struct LogGroup {
     pub data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
     /// <p>Displays all the properties that this log group has inherited from account-level settings.</p>
     pub inherited_properties: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
+    /// <p>This specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
@@ -64,6 +73,17 @@ impl LogGroup {
     pub fn inherited_properties(&self) -> &[crate::types::InheritedProperty] {
         self.inherited_properties.as_deref().unwrap_or_default()
     }
+    /// <p>This specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(&self) -> ::std::option::Option<&crate::types::LogGroupClass> {
+        self.log_group_class.as_ref()
+    }
 }
 impl LogGroup {
     /// Creates a new builder-style object to manufacture [`LogGroup`](crate::types::LogGroup).
@@ -85,6 +105,7 @@ pub struct LogGroupBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_protection_status: ::std::option::Option<crate::types::DataProtectionStatus>,
     pub(crate) inherited_properties: ::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>>,
+    pub(crate) log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
 }
 impl LogGroupBuilder {
     /// <p>The name of the log group.</p>
@@ -222,6 +243,41 @@ impl LogGroupBuilder {
     pub fn get_inherited_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InheritedProperty>> {
         &self.inherited_properties
     }
+    /// <p>This specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(mut self, input: crate::types::LogGroupClass) -> Self {
+        self.log_group_class = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn set_log_group_class(mut self, input: ::std::option::Option<crate::types::LogGroupClass>) -> Self {
+        self.log_group_class = input;
+        self
+    }
+    /// <p>This specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {
+        &self.log_group_class
+    }
     /// Consumes the builder and constructs a [`LogGroup`](crate::types::LogGroup).
     pub fn build(self) -> crate::types::LogGroup {
         crate::types::LogGroup {
@@ -234,6 +290,7 @@ impl LogGroupBuilder {
             kms_key_id: self.kms_key_id,
             data_protection_status: self.data_protection_status,
             inherited_properties: self.inherited_properties,
+            log_group_class: self.log_group_class,
         }
     }
 }

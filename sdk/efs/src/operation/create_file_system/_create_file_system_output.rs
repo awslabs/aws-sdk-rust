@@ -22,7 +22,7 @@ pub struct CreateFileSystemOutput {
     pub number_of_mount_targets: i32,
     /// <p>The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was at any point in time.</p>
     pub size_in_bytes: ::std::option::Option<crate::types::FileSystemSize>,
-    /// <p>The performance mode of the file system.</p>
+    /// <p>The Performance mode of the file system.</p>
     pub performance_mode: crate::types::PerformanceMode,
     /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
@@ -32,12 +32,14 @@ pub struct CreateFileSystemOutput {
     pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     /// <p>The amount of provisioned throughput, measured in MiBps, for the file system. Valid for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
     pub provisioned_throughput_in_mibps: ::std::option::Option<f64>,
-    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for One Zone file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub availability_zone_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
     pub tags: ::std::vec::Vec<crate::types::Tag>,
+    /// <p>Describes the protection on the file system.</p>
+    pub file_system_protection: ::std::option::Option<crate::types::FileSystemProtectionDescription>,
     _request_id: Option<String>,
 }
 impl CreateFileSystemOutput {
@@ -80,7 +82,7 @@ impl CreateFileSystemOutput {
     pub fn size_in_bytes(&self) -> ::std::option::Option<&crate::types::FileSystemSize> {
         self.size_in_bytes.as_ref()
     }
-    /// <p>The performance mode of the file system.</p>
+    /// <p>The Performance mode of the file system.</p>
     pub fn performance_mode(&self) -> &crate::types::PerformanceMode {
         &self.performance_mode
     }
@@ -100,11 +102,11 @@ impl CreateFileSystemOutput {
     pub fn provisioned_throughput_in_mibps(&self) -> ::std::option::Option<f64> {
         self.provisioned_throughput_in_mibps
     }
-    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for One Zone file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn availability_zone_name(&self) -> ::std::option::Option<&str> {
         self.availability_zone_name.as_deref()
     }
-    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
@@ -112,6 +114,10 @@ impl CreateFileSystemOutput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         use std::ops::Deref;
         self.tags.deref()
+    }
+    /// <p>Describes the protection on the file system.</p>
+    pub fn file_system_protection(&self) -> ::std::option::Option<&crate::types::FileSystemProtectionDescription> {
+        self.file_system_protection.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateFileSystemOutput {
@@ -147,6 +153,7 @@ pub struct CreateFileSystemOutputBuilder {
     pub(crate) availability_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) file_system_protection: ::std::option::Option<crate::types::FileSystemProtectionDescription>,
     _request_id: Option<String>,
 }
 impl CreateFileSystemOutputBuilder {
@@ -283,18 +290,18 @@ impl CreateFileSystemOutputBuilder {
     pub fn get_size_in_bytes(&self) -> &::std::option::Option<crate::types::FileSystemSize> {
         &self.size_in_bytes
     }
-    /// <p>The performance mode of the file system.</p>
+    /// <p>The Performance mode of the file system.</p>
     /// This field is required.
     pub fn performance_mode(mut self, input: crate::types::PerformanceMode) -> Self {
         self.performance_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The performance mode of the file system.</p>
+    /// <p>The Performance mode of the file system.</p>
     pub fn set_performance_mode(mut self, input: ::std::option::Option<crate::types::PerformanceMode>) -> Self {
         self.performance_mode = input;
         self
     }
-    /// <p>The performance mode of the file system.</p>
+    /// <p>The Performance mode of the file system.</p>
     pub fn get_performance_mode(&self) -> &::std::option::Option<crate::types::PerformanceMode> {
         &self.performance_mode
     }
@@ -354,31 +361,31 @@ impl CreateFileSystemOutputBuilder {
     pub fn get_provisioned_throughput_in_mibps(&self) -> &::std::option::Option<f64> {
         &self.provisioned_throughput_in_mibps
     }
-    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for One Zone file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for One Zone file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_name = input;
         self
     }
-    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+    /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only for One Zone file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
     pub fn get_availability_zone_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_name
     }
-    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone_id = input;
         self
     }
-    /// <p>The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
+    /// <p>The unique and consistent identifier of the Availability Zone in which the file system is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
@@ -401,6 +408,20 @@ impl CreateFileSystemOutputBuilder {
     /// <p>The tags associated with the file system, presented as an array of <code>Tag</code> objects.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
+    }
+    /// <p>Describes the protection on the file system.</p>
+    pub fn file_system_protection(mut self, input: crate::types::FileSystemProtectionDescription) -> Self {
+        self.file_system_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the protection on the file system.</p>
+    pub fn set_file_system_protection(mut self, input: ::std::option::Option<crate::types::FileSystemProtectionDescription>) -> Self {
+        self.file_system_protection = input;
+        self
+    }
+    /// <p>Describes the protection on the file system.</p>
+    pub fn get_file_system_protection(&self) -> &::std::option::Option<crate::types::FileSystemProtectionDescription> {
+        &self.file_system_protection
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -476,6 +497,7 @@ impl CreateFileSystemOutputBuilder {
                     "tags was not specified but it is required when building CreateFileSystemOutput",
                 )
             })?,
+            file_system_protection: self.file_system_protection,
             _request_id: self._request_id,
         })
     }

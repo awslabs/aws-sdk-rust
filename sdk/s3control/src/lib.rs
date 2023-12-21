@@ -27,7 +27,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-s3control = "1.8.0"
+//! aws-sdk-s3control = "1.9.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -144,13 +144,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAccessPoint`](crate::operation::create_access_point) operation has
-/// a [`Client::create_access_point`], function which returns a builder for that operation.
+/// For example, the [`AssociateAccessGrantsIdentityCenter`](crate::operation::associate_access_grants_identity_center) operation has
+/// a [`Client::associate_access_grants_identity_center`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_access_point()
+/// let result = client.associate_access_grants_identity_center()
 ///     .account_id("example")
 ///     .send()
 ///     .await;

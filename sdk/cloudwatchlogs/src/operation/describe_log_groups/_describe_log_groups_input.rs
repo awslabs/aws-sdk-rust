@@ -21,6 +21,15 @@ pub struct DescribeLogGroupsInput {
     /// <p>If you are using a monitoring account, set this to <code>True</code> to have the operation return log groups in the accounts listed in <code>accountIdentifiers</code>.</p>
     /// <p>If this parameter is set to <code>true</code> and <code>accountIdentifiers</code> contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account.</p>
     pub include_linked_accounts: ::std::option::Option<bool>,
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
 }
 impl DescribeLogGroupsInput {
     /// <p>When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array.</p>
@@ -55,6 +64,17 @@ impl DescribeLogGroupsInput {
     pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
         self.include_linked_accounts
     }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(&self) -> ::std::option::Option<&crate::types::LogGroupClass> {
+        self.log_group_class.as_ref()
+    }
 }
 impl DescribeLogGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLogGroupsInput`](crate::operation::describe_log_groups::DescribeLogGroupsInput).
@@ -73,6 +93,7 @@ pub struct DescribeLogGroupsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) include_linked_accounts: ::std::option::Option<bool>,
+    pub(crate) log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
 }
 impl DescribeLogGroupsInputBuilder {
     /// Appends an item to `account_identifiers`.
@@ -183,6 +204,41 @@ impl DescribeLogGroupsInputBuilder {
     pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
         &self.include_linked_accounts
     }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(mut self, input: crate::types::LogGroupClass) -> Self {
+        self.log_group_class = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn set_log_group_class(mut self, input: ::std::option::Option<crate::types::LogGroupClass>) -> Self {
+        self.log_group_class = input;
+        self
+    }
+    /// <p>Specifies the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {
+        &self.log_group_class
+    }
     /// Consumes the builder and constructs a [`DescribeLogGroupsInput`](crate::operation::describe_log_groups::DescribeLogGroupsInput).
     pub fn build(
         self,
@@ -194,6 +250,7 @@ impl DescribeLogGroupsInputBuilder {
             next_token: self.next_token,
             limit: self.limit,
             include_linked_accounts: self.include_linked_accounts,
+            log_group_class: self.log_group_class,
         })
     }
 }

@@ -8,7 +8,7 @@ pub struct ListUserImportJobsInput {
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of import jobs you want the request to return.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserImportJobsInput {
@@ -20,7 +20,7 @@ impl ListUserImportJobsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -71,17 +71,17 @@ impl ListUserImportJobsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
-    /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.pagination_token
     }

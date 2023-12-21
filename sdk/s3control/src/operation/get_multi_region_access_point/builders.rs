@@ -22,6 +22,9 @@ impl GetMultiRegionAccessPointInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMultiRegionAccessPoint`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Returns configuration information about the specified Multi-Region Access Point.</p>
 /// <p>This action will always be routed to the US West (Oregon) Region. For more information about the restrictions around managing Multi-Region Access Points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// <p>The following actions are related to <code>GetMultiRegionAccessPoint</code>:</p>

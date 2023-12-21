@@ -3,16 +3,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLogGroupInput {
-    /// <p>The name of the log group.</p>
+    /// <p>A name for the log group.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource Names</a>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The key-value pairs to use for the tags.</p>
     /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
+    /// <p>After a log group is created, its class can't be changed.</p>
+    /// </important>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
 }
 impl CreateLogGroupInput {
-    /// <p>The name of the log group.</p>
+    /// <p>A name for the log group.</p>
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
@@ -24,6 +36,20 @@ impl CreateLogGroupInput {
     /// <p>You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
+    /// <p>After a log group is created, its class can't be changed.</p>
+    /// </important>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(&self) -> ::std::option::Option<&crate::types::LogGroupClass> {
+        self.log_group_class.as_ref()
     }
 }
 impl CreateLogGroupInput {
@@ -40,20 +66,21 @@ pub struct CreateLogGroupInputBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
 }
 impl CreateLogGroupInputBuilder {
-    /// <p>The name of the log group.</p>
+    /// <p>A name for the log group.</p>
     /// This field is required.
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the log group.</p>
+    /// <p>A name for the log group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
-    /// <p>The name of the log group.</p>
+    /// <p>A name for the log group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
@@ -94,6 +121,50 @@ impl CreateLogGroupInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
+    /// <p>After a log group is created, its class can't be changed.</p>
+    /// </important>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn log_group_class(mut self, input: crate::types::LogGroupClass) -> Self {
+        self.log_group_class = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
+    /// <p>After a log group is created, its class can't be changed.</p>
+    /// </important>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn set_log_group_class(mut self, input: ::std::option::Option<crate::types::LogGroupClass>) -> Self {
+        self.log_group_class = input;
+        self
+    }
+    /// <p>Use this parameter to specify the log group class for this log group. There are two classes:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>Standard</code> log class supports all CloudWatch Logs features.</p></li>
+    /// <li>
+    /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
+    /// <p>After a log group is created, its class can't be changed.</p>
+    /// </important>
+    /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
+    pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {
+        &self.log_group_class
+    }
     /// Consumes the builder and constructs a [`CreateLogGroupInput`](crate::operation::create_log_group::CreateLogGroupInput).
     pub fn build(
         self,
@@ -102,6 +173,7 @@ impl CreateLogGroupInputBuilder {
             log_group_name: self.log_group_name,
             kms_key_id: self.kms_key_id,
             tags: self.tags,
+            log_group_class: self.log_group_class,
         })
     }
 }

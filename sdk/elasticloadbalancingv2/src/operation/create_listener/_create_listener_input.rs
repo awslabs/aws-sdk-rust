@@ -33,6 +33,8 @@ pub struct CreateListenerInput {
     pub alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to assign to the listener.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The mutual authentication configuration information.</p>
+    pub mutual_authentication: ::std::option::Option<crate::types::MutualAuthenticationAttributes>,
 }
 impl CreateListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -89,6 +91,10 @@ impl CreateListenerInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The mutual authentication configuration information.</p>
+    pub fn mutual_authentication(&self) -> ::std::option::Option<&crate::types::MutualAuthenticationAttributes> {
+        self.mutual_authentication.as_ref()
+    }
 }
 impl CreateListenerInput {
     /// Creates a new builder-style object to manufacture [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
@@ -109,6 +115,7 @@ pub struct CreateListenerInputBuilder {
     pub(crate) default_actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     pub(crate) alpn_policy: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) mutual_authentication: ::std::option::Option<crate::types::MutualAuthenticationAttributes>,
 }
 impl CreateListenerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -290,6 +297,20 @@ impl CreateListenerInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The mutual authentication configuration information.</p>
+    pub fn mutual_authentication(mut self, input: crate::types::MutualAuthenticationAttributes) -> Self {
+        self.mutual_authentication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mutual authentication configuration information.</p>
+    pub fn set_mutual_authentication(mut self, input: ::std::option::Option<crate::types::MutualAuthenticationAttributes>) -> Self {
+        self.mutual_authentication = input;
+        self
+    }
+    /// <p>The mutual authentication configuration information.</p>
+    pub fn get_mutual_authentication(&self) -> &::std::option::Option<crate::types::MutualAuthenticationAttributes> {
+        &self.mutual_authentication
+    }
     /// Consumes the builder and constructs a [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
     pub fn build(
         self,
@@ -303,6 +324,7 @@ impl CreateListenerInputBuilder {
             default_actions: self.default_actions,
             alpn_policy: self.alpn_policy,
             tags: self.tags,
+            mutual_authentication: self.mutual_authentication,
         })
     }
 }

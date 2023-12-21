@@ -9,9 +9,9 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
-pub use crate::types::error::_conflict_exception::ConflictException;
-
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsException;
 

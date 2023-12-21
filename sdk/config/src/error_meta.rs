@@ -2824,6 +2824,9 @@ impl From<crate::operation::put_configuration_recorder::PutConfigurationRecorder
             crate::operation::put_configuration_recorder::PutConfigurationRecorderError::MaxNumberOfConfigurationRecordersExceededException(
                 inner,
             ) => Error::MaxNumberOfConfigurationRecordersExceededException(inner),
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
             crate::operation::put_configuration_recorder::PutConfigurationRecorderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

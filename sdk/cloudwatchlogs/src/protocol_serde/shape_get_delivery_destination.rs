@@ -24,12 +24,12 @@ pub fn de_get_delivery_destination_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ResourceNotFoundException({
+        "ThrottlingException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -39,16 +39,28 @@ pub fn de_get_delivery_destination_http_error(
             }
             tmp
         }),
-        "ServiceQuotaExceededException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceQuotaExceededException({
+        "ValidationException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -73,28 +85,16 @@ pub fn de_get_delivery_destination_http_error(
             }
             tmp
         }),
-        "ThrottlingException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ThrottlingException({
+        "ServiceQuotaExceededException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ServiceQuotaExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
-                let output = output.meta(generic);
-                output.build()
-            };
-            if tmp.message.is_none() {
-                tmp.message = _error_message;
-            }
-            tmp
-        }),
-        "ValidationException" => crate::operation::get_delivery_destination::GetDeliveryDestinationError::ValidationException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_delivery_destination::GetDeliveryDestinationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

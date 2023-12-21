@@ -13,9 +13,9 @@ pub struct TargetTrackingScalingPolicyConfiguration {
     pub predefined_metric_specification: ::std::option::Option<crate::types::PredefinedMetricSpecification>,
     /// <p>A customized metric. You can specify either a predefined metric or a customized metric.</p>
     pub customized_metric_specification: ::std::option::Option<crate::types::CustomizedMetricSpecification>,
-    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub scale_out_cooldown: ::std::option::Option<i32>,
-    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub scale_in_cooldown: ::std::option::Option<i32>,
     /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the value is <code>true</code>, scale in is disabled and the target tracking scaling policy won't remove capacity from the scalable target. Otherwise, scale in is enabled and the target tracking scaling policy can remove capacity from the scalable target. The default value is <code>false</code>.</p>
     pub disable_scale_in: ::std::option::Option<bool>,
@@ -35,11 +35,11 @@ impl TargetTrackingScalingPolicyConfiguration {
     pub fn customized_metric_specification(&self) -> ::std::option::Option<&crate::types::CustomizedMetricSpecification> {
         self.customized_metric_specification.as_ref()
     }
-    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn scale_out_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_out_cooldown
     }
-    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn scale_in_cooldown(&self) -> ::std::option::Option<i32> {
         self.scale_in_cooldown
     }
@@ -116,31 +116,31 @@ impl TargetTrackingScalingPolicyConfigurationBuilder {
     pub fn get_customized_metric_specification(&self) -> &::std::option::Option<crate::types::CustomizedMetricSpecification> {
         &self.customized_metric_specification
     }
-    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn scale_out_cooldown(mut self, input: i32) -> Self {
         self.scale_out_cooldown = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_scale_out_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_out_cooldown = input;
         self
     }
-    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn get_scale_out_cooldown(&self) -> &::std::option::Option<i32> {
         &self.scale_out_cooldown
     }
-    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn scale_in_cooldown(mut self, input: i32) -> Self {
         self.scale_in_cooldown = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn set_scale_in_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale_in_cooldown = input;
         self
     }
-    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+    /// <p>The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. For more information and for default values, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     pub fn get_scale_in_cooldown(&self) -> &::std::option::Option<i32> {
         &self.scale_in_cooldown
     }

@@ -17,13 +17,13 @@ pub use crate::types::_notification_setting::NotificationSetting;
 
 pub use crate::types::_tag::Tag;
 
-pub use crate::types::_subject_summary::SubjectSummary;
-
 pub use crate::types::_subject_detail::SubjectDetail;
 
 pub use crate::types::_instance_property::InstanceProperty;
 
 pub use crate::types::_credential_summary::CredentialSummary;
+
+pub use crate::types::_subject_summary::SubjectSummary;
 
 pub use crate::types::_profile_detail::ProfileDetail;
 

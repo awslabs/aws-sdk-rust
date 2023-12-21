@@ -355,6 +355,18 @@ pub(crate) fn notify_configuration_type_correct_errors(
     builder
 }
 
+pub(crate) fn pre_token_generation_version_config_type_correct_errors(
+    mut builder: crate::types::builders::PreTokenGenerationVersionConfigTypeBuilder,
+) -> crate::types::builders::PreTokenGenerationVersionConfigTypeBuilder {
+    if builder.lambda_version.is_none() {
+        builder.lambda_version = "no value was set".parse::<crate::types::PreTokenGenerationLambdaVersionType>().ok()
+    }
+    if builder.lambda_arn.is_none() {
+        builder.lambda_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_server_scope_type_correct_errors(
     mut builder: crate::types::builders::ResourceServerScopeTypeBuilder,
 ) -> crate::types::builders::ResourceServerScopeTypeBuilder {

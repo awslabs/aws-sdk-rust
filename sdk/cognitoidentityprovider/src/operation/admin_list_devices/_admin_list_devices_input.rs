@@ -6,11 +6,11 @@
 pub struct AdminListDevicesInput {
     /// <p>The user pool ID.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The limit of the devices request.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>The pagination token.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl AdminListDevicesInput {
@@ -18,7 +18,7 @@ impl AdminListDevicesInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
@@ -26,7 +26,7 @@ impl AdminListDevicesInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>The pagination token.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -73,18 +73,18 @@ impl AdminListDevicesInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user name.</p>
+    /// <p>The username of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your user pool, you can also use their <code>sub</code> in this request.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
@@ -102,17 +102,17 @@ impl AdminListDevicesInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>The pagination token.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
-    /// <p>The pagination token.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.pagination_token
     }

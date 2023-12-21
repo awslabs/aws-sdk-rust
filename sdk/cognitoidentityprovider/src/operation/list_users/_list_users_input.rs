@@ -7,10 +7,11 @@ pub struct ListUsersInput {
     /// <p>The user pool ID for the user pool on which the search should be performed.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
+    /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     pub attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum number of users to be returned.</p>
     pub limit: ::std::option::Option<i32>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     /// <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"". Quotation marks within the filter string must be escaped using the backslash (\) character. For example, "<code>family_name</code> = \"Reddy\"".</p>
     /// <ul>
@@ -58,6 +59,7 @@ impl ListUsersInput {
         self.user_pool_id.as_deref()
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
+    /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
     pub fn attributes_to_get(&self) -> &[::std::string::String] {
@@ -67,7 +69,7 @@ impl ListUsersInput {
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -151,6 +153,7 @@ impl ListUsersInputBuilder {
     /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
     ///
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
+    /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     pub fn attributes_to_get(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.attributes_to_get.unwrap_or_default();
         v.push(input.into());
@@ -158,11 +161,13 @@ impl ListUsersInputBuilder {
         self
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
+    /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.attributes_to_get = input;
         self
     }
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
+    /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attributes_to_get
     }
@@ -180,17 +185,17 @@ impl ListUsersInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.pagination_token
     }

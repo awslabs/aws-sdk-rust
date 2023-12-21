@@ -8,7 +8,7 @@ pub struct ListUsersOutput {
     /// <p>Amazon Cognito creates a profile in your user pool for each native user in your user pool, and each unique user ID from your third-party identity providers (IdPs). When you link users with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> API operation, the output of <code>ListUsers</code> displays both the IdP user and the native user that you linked. You can identify IdP users in the <code>Users</code> object of this API response by the IdP prefix that Amazon Cognito appends to <code>Username</code>.</p>
     /// </note>
     pub users: ::std::option::Option<::std::vec::Vec<crate::types::UserType>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl ListUsersOutput {
     pub fn users(&self) -> &[crate::types::UserType] {
         self.users.as_deref().unwrap_or_default()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
@@ -73,17 +73,17 @@ impl ListUsersOutputBuilder {
     pub fn get_users(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserType>> {
         &self.users
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn pagination_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_pagination_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pagination_token = input;
         self
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_pagination_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.pagination_token
     }

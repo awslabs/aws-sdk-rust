@@ -22,6 +22,9 @@ impl GetAccessPointConfigurationForObjectLambdaInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAccessPointConfigurationForObjectLambda`.
 ///
+/// <note>
+/// <p>This operation is not supported by directory buckets.</p>
+/// </note>
 /// <p>Returns configuration for an Object Lambda Access Point.</p>
 /// <p>The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:</p>
 /// <ul>
