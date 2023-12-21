@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-kinesisanalytics = "1.8.0"
+//! aws-sdk-kinesisanalytics = "1.9.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

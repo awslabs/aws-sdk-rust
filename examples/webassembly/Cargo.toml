@@ -27,7 +27,7 @@ aws-smithy-runtime-api= { version = "1.1.1", path = "../../sdk/aws-smithy-runtim
 aws-smithy-types= { version = "1.1.1", path = "../../sdk/aws-smithy-types" }
 aws-config= { version = "1.1.1", path = "../../sdk/aws-config", default-features = false }
 aws-credential-types= { version = "1.1.1", path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
-aws-sdk-lambda= { version = "1.8.0", path = "../../sdk/lambda", default-features = false }
+aws-sdk-lambda= { version = "1.9.0", path = "../../sdk/lambda", default-features = false }
 
 [dependencies.serde]
 version = "1.0.152"

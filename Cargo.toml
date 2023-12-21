@@ -2,8 +2,8 @@
 exclude = [
     "examples/cross_service",
     "examples/webassembly",
-    "examples/test-utils",
     "examples/lambda",
+    "examples/test-utils",
     "examples/examples",
     "tests/webassembly",
     "tests/no-default-features"
