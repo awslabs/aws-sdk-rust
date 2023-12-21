@@ -143,6 +143,10 @@ pub use crate::types::_usage_data_source_result::UsageDataSourceResult;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_usage_top_accounts_result::UsageTopAccountsResult;
+
+pub use crate::types::_usage_top_account_result::UsageTopAccountResult;
+
 pub use crate::types::_usage_account_result::UsageAccountResult;
 
 pub use crate::types::_usage_criteria::UsageCriteria;
@@ -166,6 +170,14 @@ pub use crate::types::_malware_protection_data_source_free_trial::MalwareProtect
 pub use crate::types::_data_source_free_trial::DataSourceFreeTrial;
 
 pub use crate::types::_kubernetes_data_source_free_trial::KubernetesDataSourceFreeTrial;
+
+pub use crate::types::_organization_details::OrganizationDetails;
+
+pub use crate::types::_organization_statistics::OrganizationStatistics;
+
+pub use crate::types::_organization_feature_statistics::OrganizationFeatureStatistics;
+
+pub use crate::types::_organization_feature_statistics_additional_configuration::OrganizationFeatureStatisticsAdditionalConfiguration;
 
 pub use crate::types::_member_data_source_configuration::MemberDataSourceConfiguration;
 
@@ -697,6 +709,8 @@ mod _organization_data_source_configurations;
 
 mod _organization_data_source_configurations_result;
 
+mod _organization_details;
+
 mod _organization_ebs_volumes;
 
 mod _organization_ebs_volumes_result;
@@ -704,6 +718,10 @@ mod _organization_ebs_volumes_result;
 mod _organization_feature_configuration;
 
 mod _organization_feature_configuration_result;
+
+mod _organization_feature_statistics;
+
+mod _organization_feature_statistics_additional_configuration;
 
 mod _organization_kubernetes_audit_logs_configuration;
 
@@ -724,6 +742,8 @@ mod _organization_s3_logs_configuration_result;
 mod _organization_scan_ec2_instance_with_findings;
 
 mod _organization_scan_ec2_instance_with_findings_result;
+
+mod _organization_statistics;
 
 mod _owner;
 
@@ -850,6 +870,10 @@ mod _usage_resource_result;
 mod _usage_statistic_type;
 
 mod _usage_statistics;
+
+mod _usage_top_account_result;
+
+mod _usage_top_accounts_result;
 
 mod _volume;
 

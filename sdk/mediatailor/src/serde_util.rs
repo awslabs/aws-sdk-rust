@@ -63,6 +63,15 @@ pub(crate) fn prefetch_retrieval_correct_errors(
     builder
 }
 
+pub(crate) fn time_shift_configuration_correct_errors(
+    mut builder: crate::types::builders::TimeShiftConfigurationBuilder,
+) -> crate::types::builders::TimeShiftConfigurationBuilder {
+    if builder.max_time_delay_seconds.is_none() {
+        builder.max_time_delay_seconds = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ad_break_opportunity_correct_errors(
     mut builder: crate::types::builders::AdBreakOpportunityBuilder,
 ) -> crate::types::builders::AdBreakOpportunityBuilder {

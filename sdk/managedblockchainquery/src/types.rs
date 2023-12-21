@@ -41,6 +41,10 @@ pub use crate::types::_contract_filter::ContractFilter;
 
 pub use crate::types::_transaction::Transaction;
 
+pub use crate::types::_execution_status::ExecutionStatus;
+
+pub use crate::types::_confirmation_status::ConfirmationStatus;
+
 pub use crate::types::_query_transaction_status::QueryTransactionStatus;
 
 pub use crate::types::_contract_metadata::ContractMetadata;
@@ -63,6 +67,8 @@ mod _batch_get_token_balance_output_item;
 
 mod _blockchain_instant;
 
+mod _confirmation_status;
+
 mod _contract_filter;
 
 mod _contract_identifier;
@@ -70,6 +76,8 @@ mod _contract_identifier;
 mod _contract_metadata;
 
 mod _error_type;
+
+mod _execution_status;
 
 mod _list_transactions_sort;
 

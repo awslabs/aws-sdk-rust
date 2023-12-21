@@ -106,6 +106,11 @@ pub(crate) fn de_create_channel(
                             .transpose()?,
                     );
                 }
+                "TimeShiftConfiguration" => {
+                    builder = builder.set_time_shift_configuration(
+                        crate::protocol_serde::shape_time_shift_configuration::de_time_shift_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

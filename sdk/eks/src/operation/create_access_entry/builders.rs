@@ -125,18 +125,21 @@ impl CreateAccessEntryFluentBuilder {
         self.inner.get_cluster_name()
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>. You can specify one ARN for each access entry. You can't specify the same ARN in more than one access entry. This value can't be changed after access entry creation.</p>
+    /// <p>The valid principals differ depending on the type of the access entry in the <code>type</code> field. The only valid ARN is IAM roles for the types of access entries for nodes: <code></code> <code></code>. You can use every IAM principal type for <code>STANDARD</code> access entries. You can't use the STS session principal type with access entries because this is a temporary principal for each session and not a permanent identity that can be assigned permissions.</p>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#bp-users-federation-idp">IAM best practices</a> recommend using IAM roles with temporary credentials, rather than IAM users with long-term credentials.</p>
     pub fn principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());
         self
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>. You can specify one ARN for each access entry. You can't specify the same ARN in more than one access entry. This value can't be changed after access entry creation.</p>
+    /// <p>The valid principals differ depending on the type of the access entry in the <code>type</code> field. The only valid ARN is IAM roles for the types of access entries for nodes: <code></code> <code></code>. You can use every IAM principal type for <code>STANDARD</code> access entries. You can't use the STS session principal type with access entries because this is a temporary principal for each session and not a permanent identity that can be assigned permissions.</p>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#bp-users-federation-idp">IAM best practices</a> recommend using IAM roles with temporary credentials, rather than IAM users with long-term credentials.</p>
     pub fn set_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal_arn(input);
         self
     }
     /// <p>The ARN of the IAM principal for the <code>AccessEntry</code>. You can specify one ARN for each access entry. You can't specify the same ARN in more than one access entry. This value can't be changed after access entry creation.</p>
+    /// <p>The valid principals differ depending on the type of the access entry in the <code>type</code> field. The only valid ARN is IAM roles for the types of access entries for nodes: <code></code> <code></code>. You can use every IAM principal type for <code>STANDARD</code> access entries. You can't use the STS session principal type with access entries because this is a temporary principal for each session and not a permanent identity that can be assigned permissions.</p>
     /// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#bp-users-federation-idp">IAM best practices</a> recommend using IAM roles with temporary credentials, rather than IAM users with long-term credentials.</p>
     pub fn get_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal_arn()
@@ -211,18 +214,21 @@ impl CreateAccessEntryFluentBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_username()
     }
+    /// <p>The type of the new access entry. Valid values are <code>Standard</code>, <code>FARGATE_LINUX</code>, <code>EC2_LINUX</code>, and <code>EC2_WINDOWS</code>.</p>
     /// <p>If the <code>principalArn</code> is for an IAM role that's used for self-managed Amazon EC2 nodes, specify <code>EC2_LINUX</code> or <code>EC2_WINDOWS</code>. Amazon EKS grants the necessary permissions to the node for you. If the <code>principalArn</code> is for any other purpose, specify <code>STANDARD</code>. If you don't specify a value, Amazon EKS sets the value to <code>STANDARD</code>. It's unnecessary to create access entries for IAM roles used with Fargate profiles or managed Amazon EC2 nodes, because Amazon EKS creates entries in the <code>aws-auth</code> <code>ConfigMap</code> for the roles. You can't change this value once you've created the access entry.</p>
     /// <p>If you set the value to <code>EC2_LINUX</code> or <code>EC2_WINDOWS</code>, you can't specify values for <code>kubernetesGroups</code>, or associate an <code>AccessPolicy</code> to the access entry.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
         self
     }
+    /// <p>The type of the new access entry. Valid values are <code>Standard</code>, <code>FARGATE_LINUX</code>, <code>EC2_LINUX</code>, and <code>EC2_WINDOWS</code>.</p>
     /// <p>If the <code>principalArn</code> is for an IAM role that's used for self-managed Amazon EC2 nodes, specify <code>EC2_LINUX</code> or <code>EC2_WINDOWS</code>. Amazon EKS grants the necessary permissions to the node for you. If the <code>principalArn</code> is for any other purpose, specify <code>STANDARD</code>. If you don't specify a value, Amazon EKS sets the value to <code>STANDARD</code>. It's unnecessary to create access entries for IAM roles used with Fargate profiles or managed Amazon EC2 nodes, because Amazon EKS creates entries in the <code>aws-auth</code> <code>ConfigMap</code> for the roles. You can't change this value once you've created the access entry.</p>
     /// <p>If you set the value to <code>EC2_LINUX</code> or <code>EC2_WINDOWS</code>, you can't specify values for <code>kubernetesGroups</code>, or associate an <code>AccessPolicy</code> to the access entry.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
+    /// <p>The type of the new access entry. Valid values are <code>Standard</code>, <code>FARGATE_LINUX</code>, <code>EC2_LINUX</code>, and <code>EC2_WINDOWS</code>.</p>
     /// <p>If the <code>principalArn</code> is for an IAM role that's used for self-managed Amazon EC2 nodes, specify <code>EC2_LINUX</code> or <code>EC2_WINDOWS</code>. Amazon EKS grants the necessary permissions to the node for you. If the <code>principalArn</code> is for any other purpose, specify <code>STANDARD</code>. If you don't specify a value, Amazon EKS sets the value to <code>STANDARD</code>. It's unnecessary to create access entries for IAM roles used with Fargate profiles or managed Amazon EC2 nodes, because Amazon EKS creates entries in the <code>aws-auth</code> <code>ConfigMap</code> for the roles. You can't change this value once you've created the access entry.</p>
     /// <p>If you set the value to <code>EC2_LINUX</code> or <code>EC2_WINDOWS</code>, you can't specify values for <code>kubernetesGroups</code>, or associate an <code>AccessPolicy</code> to the access entry.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {

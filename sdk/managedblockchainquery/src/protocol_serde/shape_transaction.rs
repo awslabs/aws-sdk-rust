@@ -146,6 +146,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "confirmationStatus" => {
+                            builder = builder.set_confirmation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConfirmationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "executionStatus" => {
+                            builder = builder.set_execution_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

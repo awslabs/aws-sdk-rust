@@ -19,7 +19,6 @@ pub struct ResourceRecordSet {
     /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
     /// </important></li>
     /// </ul>
-    /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
     pub name: ::std::string::String,
     /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code></p>
@@ -243,7 +242,6 @@ impl ResourceRecordSet {
     /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
     /// </important></li>
     /// </ul>
-    /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -524,7 +522,6 @@ impl ResourceRecordSetBuilder {
     /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
     /// </important></li>
     /// </ul>
-    /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -545,7 +542,6 @@ impl ResourceRecordSetBuilder {
     /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
     /// </important></li>
     /// </ul>
-    /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
@@ -565,7 +561,6 @@ impl ResourceRecordSetBuilder {
     /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
     /// </important></li>
     /// </ul>
-    /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

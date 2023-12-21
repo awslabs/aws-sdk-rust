@@ -24,6 +24,7 @@
 ///     VpcRegion::ApSoutheast3 => { /* ... */ },
 ///     VpcRegion::ApSoutheast4 => { /* ... */ },
 ///     VpcRegion::CaCentral1 => { /* ... */ },
+///     VpcRegion::CaWest1 => { /* ... */ },
 ///     VpcRegion::CnNorth1 => { /* ... */ },
 ///     VpcRegion::EuCentral1 => { /* ... */ },
 ///     VpcRegion::EuCentral2 => { /* ... */ },
@@ -98,6 +99,8 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
+    CaWest1,
+    #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
     #[allow(missing_docs)] // documentation missing in model
     EuCentral1,
@@ -160,6 +163,7 @@ impl ::std::convert::From<&str> for VpcRegion {
             "ap-southeast-3" => VpcRegion::ApSoutheast3,
             "ap-southeast-4" => VpcRegion::ApSoutheast4,
             "ca-central-1" => VpcRegion::CaCentral1,
+            "ca-west-1" => VpcRegion::CaWest1,
             "cn-north-1" => VpcRegion::CnNorth1,
             "eu-central-1" => VpcRegion::EuCentral1,
             "eu-central-2" => VpcRegion::EuCentral2,
@@ -209,6 +213,7 @@ impl VpcRegion {
             VpcRegion::ApSoutheast3 => "ap-southeast-3",
             VpcRegion::ApSoutheast4 => "ap-southeast-4",
             VpcRegion::CaCentral1 => "ca-central-1",
+            VpcRegion::CaWest1 => "ca-west-1",
             VpcRegion::CnNorth1 => "cn-north-1",
             VpcRegion::EuCentral1 => "eu-central-1",
             VpcRegion::EuCentral2 => "eu-central-2",
@@ -249,6 +254,7 @@ impl VpcRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ca-central-1",
+            "ca-west-1",
             "cn-north-1",
             "eu-central-1",
             "eu-central-2",

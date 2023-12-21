@@ -21,5 +21,11 @@ pub fn ser_update_channel_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.time_shift_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("TimeShiftConfiguration").start_object();
+        crate::protocol_serde::shape_time_shift_configuration::ser_time_shift_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

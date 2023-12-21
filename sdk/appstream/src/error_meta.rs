@@ -718,6 +718,7 @@ impl From<crate::operation::create_stack::CreateStackError> for Error {
             }
             crate::operation::create_stack::CreateStackError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
             crate::operation::create_stack::CreateStackError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_stack::CreateStackError::OperationNotPermittedException(inner) => Error::OperationNotPermittedException(inner),
             crate::operation::create_stack::CreateStackError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
             crate::operation::create_stack::CreateStackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_stack::CreateStackError::Unhandled(inner) => Error::Unhandled(inner),

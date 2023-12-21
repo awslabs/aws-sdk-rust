@@ -23,7 +23,7 @@ impl ListCoverageInputBuilder {
 /// Fluent builder constructing a request to `ListCoverage`.
 ///
 /// <p>Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator, you can retrieve all resources associated with the active member accounts in your organization.</p>
-/// <p>Make sure the accounts have EKS Runtime Monitoring enabled and GuardDuty agent running on their EKS nodes.</p>
+/// <p>Make sure the accounts have Runtime Monitoring enabled and GuardDuty agent running on their resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCoverageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

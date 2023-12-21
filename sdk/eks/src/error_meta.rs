@@ -966,6 +966,31 @@ impl From<crate::operation::describe_identity_provider_config::DescribeIdentityP
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_insight::DescribeInsightError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_insight::DescribeInsightError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_insight::DescribeInsightError> for Error {
+    fn from(err: crate::operation::describe_insight::DescribeInsightError) -> Self {
+        match err {
+            crate::operation::describe_insight::DescribeInsightError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_insight::DescribeInsightError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_insight::DescribeInsightError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_insight::DescribeInsightError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_insight::DescribeInsightError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_nodegroup::DescribeNodegroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1394,6 +1419,31 @@ impl From<crate::operation::list_identity_provider_configs::ListIdentityProvider
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights::ListInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights::ListInsightsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_insights::ListInsightsError> for Error {
+    fn from(err: crate::operation::list_insights::ListInsightsError) -> Self {
+        match err {
+            crate::operation::list_insights::ListInsightsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_insights::ListInsightsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_insights::ListInsightsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_insights::ListInsightsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_insights::ListInsightsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

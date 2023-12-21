@@ -101,6 +101,24 @@ pub fn de_create_stack_http_error(
             }
             tmp
         }),
+        "OperationNotPermittedException" => crate::operation::create_stack::CreateStackError::OperationNotPermittedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OperationNotPermittedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_operation_not_permitted_exception::de_operation_not_permitted_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_stack::CreateStackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceAlreadyExistsException" => crate::operation::create_stack::CreateStackError::ResourceAlreadyExistsException({
             #[allow(unused_mut)]
             let mut tmp = {

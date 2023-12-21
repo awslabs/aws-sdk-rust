@@ -79,6 +79,9 @@ pub mod describe_fargate_profile;
 /// Types for the `DescribeIdentityProviderConfig` operation.
 pub mod describe_identity_provider_config;
 
+/// Types for the `DescribeInsight` operation.
+pub mod describe_insight;
+
 /// Types for the `DescribeNodegroup` operation.
 pub mod describe_nodegroup;
 
@@ -117,6 +120,9 @@ pub mod list_fargate_profiles;
 
 /// Types for the `ListIdentityProviderConfigs` operation.
 pub mod list_identity_provider_configs;
+
+/// Types for the `ListInsights` operation.
+pub mod list_insights;
 
 /// Types for the `ListNodegroups` operation.
 pub mod list_nodegroups;

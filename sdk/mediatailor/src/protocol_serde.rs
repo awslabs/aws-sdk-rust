@@ -231,6 +231,8 @@ pub(crate) mod shape_segment_delivery_configuration;
 
 pub(crate) mod shape_slate_source;
 
+pub(crate) mod shape_time_shift_configuration;
+
 pub(crate) mod shape_update_program_schedule_configuration;
 
 pub(crate) mod shape_ad_break_opportunity;

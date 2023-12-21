@@ -65,6 +65,12 @@ pub use crate::types::_connector_config_request::ConnectorConfigRequestBuilder;
 
 pub use crate::types::_pod_identity_association_summary::PodIdentityAssociationSummaryBuilder;
 
+pub use crate::types::_insight_summary::InsightSummaryBuilder;
+
+pub use crate::types::_insight_status::InsightStatusBuilder;
+
+pub use crate::types::_insights_filter::InsightsFilterBuilder;
+
 pub use crate::types::_identity_provider_config::IdentityProviderConfigBuilder;
 
 pub use crate::types::_associated_access_policy::AssociatedAccessPolicyBuilder;
@@ -84,6 +90,16 @@ pub use crate::types::_nodegroup_resources::NodegroupResourcesBuilder;
 pub use crate::types::_auto_scaling_group::AutoScalingGroupBuilder;
 
 pub use crate::types::_remote_access_config::RemoteAccessConfigBuilder;
+
+pub use crate::types::_insight::InsightBuilder;
+
+pub use crate::types::_insight_category_specific_summary::InsightCategorySpecificSummaryBuilder;
+
+pub use crate::types::_deprecation_detail::DeprecationDetailBuilder;
+
+pub use crate::types::_client_stat::ClientStatBuilder;
+
+pub use crate::types::_insight_resource_detail::InsightResourceDetailBuilder;
 
 pub use crate::types::_identity_provider_config_response::IdentityProviderConfigResponseBuilder;
 

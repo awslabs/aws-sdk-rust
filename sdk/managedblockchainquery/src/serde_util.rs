@@ -201,9 +201,6 @@ pub(crate) fn transaction_correct_errors(mut builder: crate::types::builders::Tr
     if builder.number_of_transactions.is_none() {
         builder.number_of_transactions = Some(Default::default())
     }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::QueryTransactionStatus>().ok()
-    }
     if builder.to.is_none() {
         builder.to = Some(Default::default())
     }

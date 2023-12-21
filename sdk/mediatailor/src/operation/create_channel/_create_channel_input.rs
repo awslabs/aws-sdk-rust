@@ -17,6 +17,8 @@ pub struct CreateChannelInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tier of the channel.</p>
     pub tier: ::std::option::Option<crate::types::Tier>,
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
 }
 impl CreateChannelInput {
     /// <p>The name of the channel.</p>
@@ -47,6 +49,10 @@ impl CreateChannelInput {
     pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
     }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn time_shift_configuration(&self) -> ::std::option::Option<&crate::types::TimeShiftConfiguration> {
+        self.time_shift_configuration.as_ref()
+    }
 }
 impl CreateChannelInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
@@ -65,6 +71,7 @@ pub struct CreateChannelInputBuilder {
     pub(crate) playback_mode: ::std::option::Option<crate::types::PlaybackMode>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<crate::types::Tier>,
+    pub(crate) time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
 }
 impl CreateChannelInputBuilder {
     /// <p>The name of the channel.</p>
@@ -171,6 +178,20 @@ impl CreateChannelInputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::Tier> {
         &self.tier
     }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn time_shift_configuration(mut self, input: crate::types::TimeShiftConfiguration) -> Self {
+        self.time_shift_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn set_time_shift_configuration(mut self, input: ::std::option::Option<crate::types::TimeShiftConfiguration>) -> Self {
+        self.time_shift_configuration = input;
+        self
+    }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
+        &self.time_shift_configuration
+    }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
     pub fn build(
         self,
@@ -182,6 +203,7 @@ impl CreateChannelInputBuilder {
             playback_mode: self.playback_mode,
             tags: self.tags,
             tier: self.tier,
+            time_shift_configuration: self.time_shift_configuration,
         })
     }
 }

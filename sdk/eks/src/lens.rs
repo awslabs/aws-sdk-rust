@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_identity_provider_configs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_insights_output_output_next_token(
+    input: &crate::operation::list_insights::ListInsightsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_nodegroups_output_output_next_token(
     input: &crate::operation::list_nodegroups::ListNodegroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -203,6 +213,16 @@ pub(crate) fn lens_list_identity_provider_configs_output_output_identity_provide
     input: crate::operation::list_identity_provider_configs::ListIdentityProviderConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::IdentityProviderConfig>> {
     let input = match input.identity_provider_configs {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_insights_output_output_insights(
+    input: crate::operation::list_insights::ListInsightsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InsightSummary>> {
+    let input = match input.insights {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

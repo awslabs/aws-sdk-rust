@@ -67,6 +67,8 @@ pub use crate::types::_schedule_entry_type::ScheduleEntryType;
 
 pub use crate::types::_schedule_ad_break::ScheduleAdBreak;
 
+pub use crate::types::_time_shift_configuration::TimeShiftConfiguration;
+
 pub use crate::types::_response_output_item::ResponseOutputItem;
 
 pub use crate::types::_hls_playlist_settings::HlsPlaylistSettings;
@@ -226,6 +228,8 @@ mod _source_location;
 mod _splice_insert_message;
 
 mod _tier;
+
+mod _time_shift_configuration;
 
 mod _time_signal_message;
 

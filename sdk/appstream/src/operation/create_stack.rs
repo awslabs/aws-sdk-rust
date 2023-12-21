@@ -255,6 +255,8 @@ pub enum CreateStackError {
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The requested limit exceeds the permitted limit for an account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The attempted operation is not permitted.</p>
+    OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>The specified resource already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>The specified resource was not found.</p>
@@ -297,6 +299,7 @@ impl CreateStackError {
             Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRoleException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceAlreadyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -322,6 +325,10 @@ impl CreateStackError {
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(self, Self::LimitExceededException(_))
     }
+    /// Returns `true` if the error kind is `CreateStackError::OperationNotPermittedException`.
+    pub fn is_operation_not_permitted_exception(&self) -> bool {
+        matches!(self, Self::OperationNotPermittedException(_))
+    }
     /// Returns `true` if the error kind is `CreateStackError::ResourceAlreadyExistsException`.
     pub fn is_resource_already_exists_exception(&self) -> bool {
         matches!(self, Self::ResourceAlreadyExistsException(_))
@@ -339,6 +346,7 @@ impl ::std::error::Error for CreateStackError {
             Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceAlreadyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -353,6 +361,7 @@ impl ::std::fmt::Display for CreateStackError {
             Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             Self::InvalidRoleException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::ResourceAlreadyExistsException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -381,6 +390,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateStackEr
             Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceAlreadyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

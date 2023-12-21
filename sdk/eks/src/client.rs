@@ -215,6 +215,8 @@ mod describe_fargate_profile;
 
 mod describe_identity_provider_config;
 
+mod describe_insight;
+
 mod describe_nodegroup;
 
 mod describe_pod_identity_association;
@@ -240,6 +242,8 @@ mod list_eks_anywhere_subscriptions;
 mod list_fargate_profiles;
 
 mod list_identity_provider_configs;
+
+mod list_insights;
 
 mod list_nodegroups;
 

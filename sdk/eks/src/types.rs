@@ -93,6 +93,16 @@ pub use crate::types::_connector_config_provider::ConnectorConfigProvider;
 
 pub use crate::types::_pod_identity_association_summary::PodIdentityAssociationSummary;
 
+pub use crate::types::_insight_summary::InsightSummary;
+
+pub use crate::types::_insight_status::InsightStatus;
+
+pub use crate::types::_insight_status_value::InsightStatusValue;
+
+pub use crate::types::_category::Category;
+
+pub use crate::types::_insights_filter::InsightsFilter;
+
 pub use crate::types::_identity_provider_config::IdentityProviderConfig;
 
 pub use crate::types::_eks_anywhere_subscription_status::EksAnywhereSubscriptionStatus;
@@ -124,6 +134,16 @@ pub use crate::types::_remote_access_config::RemoteAccessConfig;
 pub use crate::types::_capacity_types::CapacityTypes;
 
 pub use crate::types::_nodegroup_status::NodegroupStatus;
+
+pub use crate::types::_insight::Insight;
+
+pub use crate::types::_insight_category_specific_summary::InsightCategorySpecificSummary;
+
+pub use crate::types::_deprecation_detail::DeprecationDetail;
+
+pub use crate::types::_client_stat::ClientStat;
+
+pub use crate::types::_insight_resource_detail::InsightResourceDetail;
 
 pub use crate::types::_identity_provider_config_response::IdentityProviderConfigResponse;
 
@@ -199,7 +219,11 @@ mod _auto_scaling_group;
 
 mod _capacity_types;
 
+mod _category;
+
 mod _certificate;
+
+mod _client_stat;
 
 mod _cluster;
 
@@ -226,6 +250,8 @@ mod _control_plane_placement_request;
 mod _control_plane_placement_response;
 
 mod _create_access_config_request;
+
+mod _deprecation_detail;
 
 mod _eks_anywhere_subscription;
 
@@ -254,6 +280,20 @@ mod _identity;
 mod _identity_provider_config;
 
 mod _identity_provider_config_response;
+
+mod _insight;
+
+mod _insight_category_specific_summary;
+
+mod _insight_resource_detail;
+
+mod _insight_status;
+
+mod _insight_status_value;
+
+mod _insight_summary;
+
+mod _insights_filter;
 
 mod _ip_family;
 

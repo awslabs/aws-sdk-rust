@@ -9,6 +9,12 @@ pub fn ser_user_setting(
     if let Some(var_2) = &input.permission {
         object.key("Permission").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.maximum_length {
+        object.key("MaximumLength").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }
 
@@ -38,6 +44,13 @@ where
                             builder = builder.set_permission(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Permission::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MaximumLength" => {
+                            builder = builder.set_maximum_length(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

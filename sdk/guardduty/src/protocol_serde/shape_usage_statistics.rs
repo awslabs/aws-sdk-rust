@@ -19,6 +19,11 @@ where
                                 crate::protocol_serde::shape_usage_account_result_list::de_usage_account_result_list(tokens)?,
                             );
                         }
+                        "topAccountsByFeature" => {
+                            builder = builder.set_top_accounts_by_feature(
+                                crate::protocol_serde::shape_usage_top_accounts_result_list::de_usage_top_accounts_result_list(tokens)?,
+                            );
+                        }
                         "sumByDataSource" => {
                             builder = builder.set_sum_by_data_source(
                                 crate::protocol_serde::shape_usage_data_source_result_list::de_usage_data_source_result_list(tokens)?,

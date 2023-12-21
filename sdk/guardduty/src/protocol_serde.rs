@@ -99,6 +99,8 @@ pub(crate) mod shape_get_member_detectors;
 
 pub(crate) mod shape_get_members;
 
+pub(crate) mod shape_get_organization_statistics;
+
 pub(crate) mod shape_get_remaining_free_trial_days;
 
 pub(crate) mod shape_get_threat_intel_set;
@@ -315,6 +317,8 @@ pub(crate) mod shape_organization_data_source_configurations;
 
 pub(crate) mod shape_organization_data_source_configurations_result;
 
+pub(crate) mod shape_organization_details;
+
 pub(crate) mod shape_organization_feature_configuration;
 
 pub(crate) mod shape_organization_features_configurations_results;
@@ -403,6 +407,8 @@ pub(crate) mod shape_organization_s3_logs_configuration;
 
 pub(crate) mod shape_organization_s3_logs_configuration_result;
 
+pub(crate) mod shape_organization_statistics;
+
 pub(crate) mod shape_s3_logs_configuration;
 
 pub(crate) mod shape_s3_logs_configuration_result;
@@ -423,6 +429,8 @@ pub(crate) mod shape_usage_feature_result_list;
 
 pub(crate) mod shape_usage_resource_result_list;
 
+pub(crate) mod shape_usage_top_accounts_result_list;
+
 pub(crate) mod shape_coverage_filter_condition;
 
 pub(crate) mod shape_coverage_resource_details;
@@ -442,6 +450,8 @@ pub(crate) mod shape_kubernetes_audit_logs_configuration_result;
 pub(crate) mod shape_member_features_configurations_results;
 
 pub(crate) mod shape_organization_additional_configuration_results;
+
+pub(crate) mod shape_organization_feature_statistics_results;
 
 pub(crate) mod shape_organization_kubernetes_audit_logs_configuration;
 
@@ -474,6 +484,8 @@ pub(crate) mod shape_usage_data_source_result;
 pub(crate) mod shape_usage_feature_result;
 
 pub(crate) mod shape_usage_resource_result;
+
+pub(crate) mod shape_usage_top_accounts_result;
 
 pub(crate) mod shape_volume_details;
 
@@ -537,6 +549,8 @@ pub(crate) mod shape_organization_ebs_volumes;
 
 pub(crate) mod shape_organization_ebs_volumes_result;
 
+pub(crate) mod shape_organization_feature_statistics;
+
 pub(crate) mod shape_rds_db_instance_details;
 
 pub(crate) mod shape_rds_db_user_details;
@@ -548,6 +562,8 @@ pub(crate) mod shape_s3_bucket_details;
 pub(crate) mod shape_service_additional_info;
 
 pub(crate) mod shape_total;
+
+pub(crate) mod shape_usage_top_accounts_by_feature_list;
 
 pub(crate) mod shape_volume_detail;
 
@@ -587,6 +603,8 @@ pub(crate) mod shape_network_connection_action;
 
 pub(crate) mod shape_network_interfaces;
 
+pub(crate) mod shape_organization_feature_statistics_additional_configurations;
+
 pub(crate) mod shape_port_probe_action;
 
 pub(crate) mod shape_process_details;
@@ -608,6 +626,8 @@ pub(crate) mod shape_sources;
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_threat_intelligence_details;
+
+pub(crate) mod shape_usage_top_account_result;
 
 pub(crate) mod shape_volume_mounts;
 
@@ -648,6 +668,8 @@ pub(crate) mod shape_member_additional_configuration_result;
 pub(crate) mod shape_memory_regions_list;
 
 pub(crate) mod shape_network_interface;
+
+pub(crate) mod shape_organization_feature_statistics_additional_configuration;
 
 pub(crate) mod shape_owner;
 

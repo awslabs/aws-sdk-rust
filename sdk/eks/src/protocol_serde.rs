@@ -75,6 +75,8 @@ pub(crate) mod shape_describe_fargate_profile;
 
 pub(crate) mod shape_describe_identity_provider_config;
 
+pub(crate) mod shape_describe_insight;
+
 pub(crate) mod shape_describe_nodegroup;
 
 pub(crate) mod shape_describe_pod_identity_association;
@@ -100,6 +102,8 @@ pub(crate) mod shape_list_eks_anywhere_subscriptions;
 pub(crate) mod shape_list_fargate_profiles;
 
 pub(crate) mod shape_list_identity_provider_configs;
+
+pub(crate) mod shape_list_insights;
 
 pub(crate) mod shape_list_nodegroups;
 
@@ -172,6 +176,8 @@ pub(crate) mod shape_disassociate_identity_provider_config_input;
 pub(crate) mod shape_invalid_parameter_exception;
 
 pub(crate) mod shape_invalid_request_exception;
+
+pub(crate) mod shape_list_insights_input;
 
 pub(crate) mod shape_not_found_exception;
 
@@ -247,6 +253,12 @@ pub(crate) mod shape_identity_provider_config_response;
 
 pub(crate) mod shape_identity_provider_configs;
 
+pub(crate) mod shape_insight;
+
+pub(crate) mod shape_insight_summaries;
+
+pub(crate) mod shape_insights_filter;
+
 pub(crate) mod shape_kubernetes_network_config_request;
 
 pub(crate) mod shape_launch_template_specification;
@@ -289,6 +301,8 @@ pub(crate) mod shape_access_config_response;
 
 pub(crate) mod shape_access_policy;
 
+pub(crate) mod shape_additional_info_map;
+
 pub(crate) mod shape_addon_health;
 
 pub(crate) mod shape_addon_info;
@@ -308,6 +322,14 @@ pub(crate) mod shape_error_details;
 pub(crate) mod shape_fargate_profile_selectors;
 
 pub(crate) mod shape_identity;
+
+pub(crate) mod shape_insight_category_specific_summary;
+
+pub(crate) mod shape_insight_resource_details;
+
+pub(crate) mod shape_insight_status;
+
+pub(crate) mod shape_insight_summary;
 
 pub(crate) mod shape_kubernetes_network_config_response;
 
@@ -345,7 +367,11 @@ pub(crate) mod shape_cluster_issue_list;
 
 pub(crate) mod shape_control_plane_placement_response;
 
+pub(crate) mod shape_deprecation_details;
+
 pub(crate) mod shape_error_detail;
+
+pub(crate) mod shape_insight_resource_detail;
 
 pub(crate) mod shape_issue_list;
 
@@ -365,12 +391,18 @@ pub(crate) mod shape_auto_scaling_group;
 
 pub(crate) mod shape_cluster_issue;
 
+pub(crate) mod shape_deprecation_detail;
+
 pub(crate) mod shape_fargate_profile_label;
 
 pub(crate) mod shape_issue;
 
+pub(crate) mod shape_client_stats;
+
 pub(crate) mod shape_compatibilities;
 
 pub(crate) mod shape_log_types;
+
+pub(crate) mod shape_client_stat;
 
 pub(crate) mod shape_compatibility;

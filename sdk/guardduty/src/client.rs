@@ -239,6 +239,8 @@ mod get_member_detectors;
 
 mod get_members;
 
+mod get_organization_statistics;
+
 mod get_remaining_free_trial_days;
 
 mod get_threat_intel_set;

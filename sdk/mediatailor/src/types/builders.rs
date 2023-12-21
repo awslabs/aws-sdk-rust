@@ -53,6 +53,8 @@ pub use crate::types::_schedule_entry::ScheduleEntryBuilder;
 
 pub use crate::types::_schedule_ad_break::ScheduleAdBreakBuilder;
 
+pub use crate::types::_time_shift_configuration::TimeShiftConfigurationBuilder;
+
 pub use crate::types::_response_output_item::ResponseOutputItemBuilder;
 
 pub use crate::types::_hls_playlist_settings::HlsPlaylistSettingsBuilder;

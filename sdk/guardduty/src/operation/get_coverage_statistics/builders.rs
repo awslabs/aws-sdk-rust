@@ -22,7 +22,7 @@ impl GetCoverageStatisticsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetCoverageStatistics`.
 ///
-/// <p>Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled EKS Runtime Monitoring and have the GuardDuty agent running on their EKS nodes.</p>
+/// <p>Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled Runtime Monitoring and have the GuardDuty security agent running on their resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCoverageStatisticsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

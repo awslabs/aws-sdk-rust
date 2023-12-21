@@ -24,8 +24,19 @@ pub struct Transaction {
     pub transaction_index: i64,
     /// <p>The number of transactions in the block.</p>
     pub number_of_transactions: i64,
-    /// <p>The status of the transaction.</p>
-    pub status: crate::types::QueryTransactionStatus,
+    /// <p>The status of the transaction.</p><important>
+    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
+    /// </ul>
+    /// </important>
+    #[deprecated(
+        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
+    )]
+    pub status: ::std::option::Option<crate::types::QueryTransactionStatus>,
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub to: ::std::string::String,
     /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
@@ -48,6 +59,10 @@ pub struct Transaction {
     pub transaction_fee: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the transaction has reached Finality.</p>
+    pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
+    /// <p>Identifies whether the transaction has succeeded or failed.</p>
+    pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
 impl Transaction {
     /// <p>The blockchain network where the transaction occurred.</p>
@@ -79,9 +94,20 @@ impl Transaction {
     pub fn number_of_transactions(&self) -> i64 {
         self.number_of_transactions
     }
-    /// <p>The status of the transaction.</p>
-    pub fn status(&self) -> &crate::types::QueryTransactionStatus {
-        &self.status
+    /// <p>The status of the transaction.</p><important>
+    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
+    /// </ul>
+    /// </important>
+    #[deprecated(
+        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
+    )]
+    pub fn status(&self) -> ::std::option::Option<&crate::types::QueryTransactionStatus> {
+        self.status.as_ref()
     }
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn to(&self) -> &str {
@@ -128,6 +154,14 @@ impl Transaction {
     pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
+    /// <p>Specifies whether the transaction has reached Finality.</p>
+    pub fn confirmation_status(&self) -> ::std::option::Option<&crate::types::ConfirmationStatus> {
+        self.confirmation_status.as_ref()
+    }
+    /// <p>Identifies whether the transaction has succeeded or failed.</p>
+    pub fn execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
+        self.execution_status.as_ref()
+    }
 }
 impl Transaction {
     /// Creates a new builder-style object to manufacture [`Transaction`](crate::types::Transaction).
@@ -159,6 +193,8 @@ pub struct TransactionBuilder {
     pub(crate) signature_s: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_fee: ::std::option::Option<::std::string::String>,
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
+    pub(crate) execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
 }
 impl TransactionBuilder {
     /// <p>The blockchain network where the transaction occurred.</p>
@@ -264,18 +300,50 @@ impl TransactionBuilder {
     pub fn get_number_of_transactions(&self) -> &::std::option::Option<i64> {
         &self.number_of_transactions
     }
-    /// <p>The status of the transaction.</p>
-    /// This field is required.
+    /// <p>The status of the transaction.</p><important>
+    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
+    /// </ul>
+    /// </important>
+    #[deprecated(
+        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
+    )]
     pub fn status(mut self, input: crate::types::QueryTransactionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the transaction.</p>
+    /// <p>The status of the transaction.</p><important>
+    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
+    /// </ul>
+    /// </important>
+    #[deprecated(
+        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
+    )]
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryTransactionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the transaction.</p>
+    /// <p>The status of the transaction.</p><important>
+    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
+    /// <li>
+    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
+    /// </ul>
+    /// </important>
+    #[deprecated(
+        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
+    )]
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryTransactionStatus> {
         &self.status
     }
@@ -434,6 +502,34 @@ impl TransactionBuilder {
     pub fn get_transaction_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transaction_id
     }
+    /// <p>Specifies whether the transaction has reached Finality.</p>
+    pub fn confirmation_status(mut self, input: crate::types::ConfirmationStatus) -> Self {
+        self.confirmation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the transaction has reached Finality.</p>
+    pub fn set_confirmation_status(mut self, input: ::std::option::Option<crate::types::ConfirmationStatus>) -> Self {
+        self.confirmation_status = input;
+        self
+    }
+    /// <p>Specifies whether the transaction has reached Finality.</p>
+    pub fn get_confirmation_status(&self) -> &::std::option::Option<crate::types::ConfirmationStatus> {
+        &self.confirmation_status
+    }
+    /// <p>Identifies whether the transaction has succeeded or failed.</p>
+    pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
+        self.execution_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies whether the transaction has succeeded or failed.</p>
+    pub fn set_execution_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
+        self.execution_status = input;
+        self
+    }
+    /// <p>Identifies whether the transaction has succeeded or failed.</p>
+    pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
+        &self.execution_status
+    }
     /// Consumes the builder and constructs a [`Transaction`](crate::types::Transaction).
     /// This method will fail if any of the following fields are not set:
     /// - [`network`](crate::types::builders::TransactionBuilder::network)
@@ -441,7 +537,6 @@ impl TransactionBuilder {
     /// - [`transaction_timestamp`](crate::types::builders::TransactionBuilder::transaction_timestamp)
     /// - [`transaction_index`](crate::types::builders::TransactionBuilder::transaction_index)
     /// - [`number_of_transactions`](crate::types::builders::TransactionBuilder::number_of_transactions)
-    /// - [`status`](crate::types::builders::TransactionBuilder::status)
     /// - [`to`](crate::types::builders::TransactionBuilder::to)
     pub fn build(self) -> ::std::result::Result<crate::types::Transaction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Transaction {
@@ -477,12 +572,7 @@ impl TransactionBuilder {
                     "number_of_transactions was not specified but it is required when building Transaction",
                 )
             })?,
-            status: self.status.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "status",
-                    "status was not specified but it is required when building Transaction",
-                )
-            })?,
+            status: self.status,
             to: self.to.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "to",
@@ -499,6 +589,8 @@ impl TransactionBuilder {
             signature_s: self.signature_s,
             transaction_fee: self.transaction_fee,
             transaction_id: self.transaction_id,
+            confirmation_status: self.confirmation_status,
+            execution_status: self.execution_status,
         })
     }
 }

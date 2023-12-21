@@ -115,6 +115,9 @@ pub mod get_member_detectors;
 /// Types for the `GetMembers` operation.
 pub mod get_members;
 
+/// Types for the `GetOrganizationStatistics` operation.
+pub mod get_organization_statistics;
+
 /// Types for the `GetRemainingFreeTrialDays` operation.
 pub mod get_remaining_free_trial_days;
 

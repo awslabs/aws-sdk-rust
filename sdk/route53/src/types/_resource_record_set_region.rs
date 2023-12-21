@@ -24,6 +24,7 @@
 ///     ResourceRecordSetRegion::ApSoutheast3 => { /* ... */ },
 ///     ResourceRecordSetRegion::ApSoutheast4 => { /* ... */ },
 ///     ResourceRecordSetRegion::CaCentral1 => { /* ... */ },
+///     ResourceRecordSetRegion::CaWest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::CnNorth1 => { /* ... */ },
 ///     ResourceRecordSetRegion::CnNorthwest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::EuCentral1 => { /* ... */ },
@@ -94,6 +95,8 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
     #[allow(missing_docs)] // documentation missing in model
+    CaWest1,
+    #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
     #[allow(missing_docs)] // documentation missing in model
     CnNorthwest1,
@@ -148,6 +151,7 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "ap-southeast-3" => ResourceRecordSetRegion::ApSoutheast3,
             "ap-southeast-4" => ResourceRecordSetRegion::ApSoutheast4,
             "ca-central-1" => ResourceRecordSetRegion::CaCentral1,
+            "ca-west-1" => ResourceRecordSetRegion::CaWest1,
             "cn-north-1" => ResourceRecordSetRegion::CnNorth1,
             "cn-northwest-1" => ResourceRecordSetRegion::CnNorthwest1,
             "eu-central-1" => ResourceRecordSetRegion::EuCentral1,
@@ -193,6 +197,7 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::ApSoutheast3 => "ap-southeast-3",
             ResourceRecordSetRegion::ApSoutheast4 => "ap-southeast-4",
             ResourceRecordSetRegion::CaCentral1 => "ca-central-1",
+            ResourceRecordSetRegion::CaWest1 => "ca-west-1",
             ResourceRecordSetRegion::CnNorth1 => "cn-north-1",
             ResourceRecordSetRegion::CnNorthwest1 => "cn-northwest-1",
             ResourceRecordSetRegion::EuCentral1 => "eu-central-1",
@@ -229,6 +234,7 @@ impl ResourceRecordSetRegion {
             "ap-southeast-3",
             "ap-southeast-4",
             "ca-central-1",
+            "ca-west-1",
             "cn-north-1",
             "cn-northwest-1",
             "eu-central-1",

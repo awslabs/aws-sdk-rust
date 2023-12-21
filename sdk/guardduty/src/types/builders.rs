@@ -97,6 +97,10 @@ pub use crate::types::_usage_resource_result::UsageResourceResultBuilder;
 
 pub use crate::types::_usage_data_source_result::UsageDataSourceResultBuilder;
 
+pub use crate::types::_usage_top_accounts_result::UsageTopAccountsResultBuilder;
+
+pub use crate::types::_usage_top_account_result::UsageTopAccountResultBuilder;
+
 pub use crate::types::_usage_account_result::UsageAccountResultBuilder;
 
 pub use crate::types::_usage_criteria::UsageCriteriaBuilder;
@@ -112,6 +116,14 @@ pub use crate::types::_malware_protection_data_source_free_trial::MalwareProtect
 pub use crate::types::_data_source_free_trial::DataSourceFreeTrialBuilder;
 
 pub use crate::types::_kubernetes_data_source_free_trial::KubernetesDataSourceFreeTrialBuilder;
+
+pub use crate::types::_organization_details::OrganizationDetailsBuilder;
+
+pub use crate::types::_organization_statistics::OrganizationStatisticsBuilder;
+
+pub use crate::types::_organization_feature_statistics::OrganizationFeatureStatisticsBuilder;
+
+pub use crate::types::_organization_feature_statistics_additional_configuration::OrganizationFeatureStatisticsAdditionalConfigurationBuilder;
 
 pub use crate::types::_member_data_source_configuration::MemberDataSourceConfigurationBuilder;
 

@@ -6,6 +6,9 @@
 pub struct UsageStatistics {
     /// <p>The usage statistic sum organized by account ID.</p>
     pub sum_by_account: ::std::option::Option<::std::vec::Vec<crate::types::UsageAccountResult>>,
+    /// <p>Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to least expensive.</p>
+    /// <p>Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.</p>
+    pub top_accounts_by_feature: ::std::option::Option<::std::vec::Vec<crate::types::UsageTopAccountsResult>>,
     /// <p>The usage statistic sum organized by on data source.</p>
     pub sum_by_data_source: ::std::option::Option<::std::vec::Vec<crate::types::UsageDataSourceResult>>,
     /// <p>The usage statistic sum organized by resource.</p>
@@ -21,6 +24,13 @@ impl UsageStatistics {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sum_by_account.is_none()`.
     pub fn sum_by_account(&self) -> &[crate::types::UsageAccountResult] {
         self.sum_by_account.as_deref().unwrap_or_default()
+    }
+    /// <p>Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to least expensive.</p>
+    /// <p>Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.top_accounts_by_feature.is_none()`.
+    pub fn top_accounts_by_feature(&self) -> &[crate::types::UsageTopAccountsResult] {
+        self.top_accounts_by_feature.as_deref().unwrap_or_default()
     }
     /// <p>The usage statistic sum organized by on data source.</p>
     ///
@@ -59,6 +69,7 @@ impl UsageStatistics {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct UsageStatisticsBuilder {
     pub(crate) sum_by_account: ::std::option::Option<::std::vec::Vec<crate::types::UsageAccountResult>>,
+    pub(crate) top_accounts_by_feature: ::std::option::Option<::std::vec::Vec<crate::types::UsageTopAccountsResult>>,
     pub(crate) sum_by_data_source: ::std::option::Option<::std::vec::Vec<crate::types::UsageDataSourceResult>>,
     pub(crate) sum_by_resource: ::std::option::Option<::std::vec::Vec<crate::types::UsageResourceResult>>,
     pub(crate) top_resources: ::std::option::Option<::std::vec::Vec<crate::types::UsageResourceResult>>,
@@ -84,6 +95,29 @@ impl UsageStatisticsBuilder {
     /// <p>The usage statistic sum organized by account ID.</p>
     pub fn get_sum_by_account(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAccountResult>> {
         &self.sum_by_account
+    }
+    /// Appends an item to `top_accounts_by_feature`.
+    ///
+    /// To override the contents of this collection use [`set_top_accounts_by_feature`](Self::set_top_accounts_by_feature).
+    ///
+    /// <p>Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to least expensive.</p>
+    /// <p>Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.</p>
+    pub fn top_accounts_by_feature(mut self, input: crate::types::UsageTopAccountsResult) -> Self {
+        let mut v = self.top_accounts_by_feature.unwrap_or_default();
+        v.push(input);
+        self.top_accounts_by_feature = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to least expensive.</p>
+    /// <p>Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.</p>
+    pub fn set_top_accounts_by_feature(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageTopAccountsResult>>) -> Self {
+        self.top_accounts_by_feature = input;
+        self
+    }
+    /// <p>Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to least expensive.</p>
+    /// <p>Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.</p>
+    pub fn get_top_accounts_by_feature(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageTopAccountsResult>> {
+        &self.top_accounts_by_feature
     }
     /// Appends an item to `sum_by_data_source`.
     ///
@@ -169,6 +203,7 @@ impl UsageStatisticsBuilder {
     pub fn build(self) -> crate::types::UsageStatistics {
         crate::types::UsageStatistics {
             sum_by_account: self.sum_by_account,
+            top_accounts_by_feature: self.top_accounts_by_feature,
             sum_by_data_source: self.sum_by_data_source,
             sum_by_resource: self.sum_by_resource,
             top_resources: self.top_resources,

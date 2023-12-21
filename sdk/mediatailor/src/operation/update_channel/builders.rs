@@ -154,4 +154,18 @@ impl UpdateChannelFluentBuilder {
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>> {
         self.inner.get_outputs()
     }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn time_shift_configuration(mut self, input: crate::types::TimeShiftConfiguration) -> Self {
+        self.inner = self.inner.time_shift_configuration(input);
+        self
+    }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn set_time_shift_configuration(mut self, input: ::std::option::Option<crate::types::TimeShiftConfiguration>) -> Self {
+        self.inner = self.inner.set_time_shift_configuration(input);
+        self
+    }
+    /// <p>The time-shifted viewing configuration you want to associate to the channel.</p>
+    pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
+        self.inner.get_time_shift_configuration()
+    }
 }

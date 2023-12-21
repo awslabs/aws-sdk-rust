@@ -23,6 +23,8 @@ pub struct CreateChannelOutput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tier of the channel.</p>
     pub tier: ::std::option::Option<::std::string::String>,
+    /// <p>The time-shifted viewing configuration assigned to the channel.</p>
+    pub time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateChannelOutput {
@@ -68,6 +70,10 @@ impl CreateChannelOutput {
     pub fn tier(&self) -> ::std::option::Option<&str> {
         self.tier.as_deref()
     }
+    /// <p>The time-shifted viewing configuration assigned to the channel.</p>
+    pub fn time_shift_configuration(&self) -> ::std::option::Option<&crate::types::TimeShiftConfiguration> {
+        self.time_shift_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +101,7 @@ pub struct CreateChannelOutputBuilder {
     pub(crate) playback_mode: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
+    pub(crate) time_shift_configuration: ::std::option::Option<crate::types::TimeShiftConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateChannelOutputBuilder {
@@ -250,6 +257,20 @@ impl CreateChannelOutputBuilder {
     pub fn get_tier(&self) -> &::std::option::Option<::std::string::String> {
         &self.tier
     }
+    /// <p>The time-shifted viewing configuration assigned to the channel.</p>
+    pub fn time_shift_configuration(mut self, input: crate::types::TimeShiftConfiguration) -> Self {
+        self.time_shift_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time-shifted viewing configuration assigned to the channel.</p>
+    pub fn set_time_shift_configuration(mut self, input: ::std::option::Option<crate::types::TimeShiftConfiguration>) -> Self {
+        self.time_shift_configuration = input;
+        self
+    }
+    /// <p>The time-shifted viewing configuration assigned to the channel.</p>
+    pub fn get_time_shift_configuration(&self) -> &::std::option::Option<crate::types::TimeShiftConfiguration> {
+        &self.time_shift_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -272,6 +293,7 @@ impl CreateChannelOutputBuilder {
             playback_mode: self.playback_mode,
             tags: self.tags,
             tier: self.tier,
+            time_shift_configuration: self.time_shift_configuration,
             _request_id: self._request_id,
         }
     }

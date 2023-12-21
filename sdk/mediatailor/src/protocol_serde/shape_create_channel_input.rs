@@ -37,5 +37,11 @@ pub fn ser_create_channel_input_input(
     if let Some(var_12) = &input.tier {
         object.key("Tier").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.time_shift_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("TimeShiftConfiguration").start_object();
+        crate::protocol_serde::shape_time_shift_configuration::ser_time_shift_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

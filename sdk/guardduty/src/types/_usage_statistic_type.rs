@@ -16,6 +16,7 @@
 ///     UsageStatisticType::SumByDataSource => { /* ... */ },
 ///     UsageStatisticType::SumByFeatures => { /* ... */ },
 ///     UsageStatisticType::SumByResource => { /* ... */ },
+///     UsageStatisticType::TopAccountsByFeature => { /* ... */ },
 ///     UsageStatisticType::TopResources => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum UsageStatisticType {
     #[allow(missing_docs)] // documentation missing in model
     SumByResource,
     #[allow(missing_docs)] // documentation missing in model
+    TopAccountsByFeature,
+    #[allow(missing_docs)] // documentation missing in model
     TopResources,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for UsageStatisticType {
             "SUM_BY_DATA_SOURCE" => UsageStatisticType::SumByDataSource,
             "SUM_BY_FEATURES" => UsageStatisticType::SumByFeatures,
             "SUM_BY_RESOURCE" => UsageStatisticType::SumByResource,
+            "TOP_ACCOUNTS_BY_FEATURE" => UsageStatisticType::TopAccountsByFeature,
             "TOP_RESOURCES" => UsageStatisticType::TopResources,
             other => UsageStatisticType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -85,6 +89,7 @@ impl UsageStatisticType {
             UsageStatisticType::SumByDataSource => "SUM_BY_DATA_SOURCE",
             UsageStatisticType::SumByFeatures => "SUM_BY_FEATURES",
             UsageStatisticType::SumByResource => "SUM_BY_RESOURCE",
+            UsageStatisticType::TopAccountsByFeature => "TOP_ACCOUNTS_BY_FEATURE",
             UsageStatisticType::TopResources => "TOP_RESOURCES",
             UsageStatisticType::Unknown(value) => value.as_str(),
         }
@@ -96,6 +101,7 @@ impl UsageStatisticType {
             "SUM_BY_DATA_SOURCE",
             "SUM_BY_FEATURES",
             "SUM_BY_RESOURCE",
+            "TOP_ACCOUNTS_BY_FEATURE",
             "TOP_RESOURCES",
         ]
     }

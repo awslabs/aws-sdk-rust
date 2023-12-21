@@ -8,6 +8,12 @@ pub struct UserSetting {
     pub action: ::std::option::Option<crate::types::Action>,
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub permission: ::std::option::Option<crate::types::Permission>,
+    /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
+    /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
+    /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
+    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
+    /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
+    pub maximum_length: ::std::option::Option<i32>,
 }
 impl UserSetting {
     /// <p>The action that is enabled or disabled.</p>
@@ -17,6 +23,14 @@ impl UserSetting {
     /// <p>Indicates whether the action is enabled or disabled.</p>
     pub fn permission(&self) -> ::std::option::Option<&crate::types::Permission> {
         self.permission.as_ref()
+    }
+    /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
+    /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
+    /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
+    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
+    /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
+    pub fn maximum_length(&self) -> ::std::option::Option<i32> {
+        self.maximum_length
     }
 }
 impl UserSetting {
@@ -32,6 +46,7 @@ impl UserSetting {
 pub struct UserSettingBuilder {
     pub(crate) action: ::std::option::Option<crate::types::Action>,
     pub(crate) permission: ::std::option::Option<crate::types::Permission>,
+    pub(crate) maximum_length: ::std::option::Option<i32>,
 }
 impl UserSettingBuilder {
     /// <p>The action that is enabled or disabled.</p>
@@ -64,11 +79,38 @@ impl UserSettingBuilder {
     pub fn get_permission(&self) -> &::std::option::Option<crate::types::Permission> {
         &self.permission
     }
+    /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
+    /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
+    /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
+    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
+    /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
+    pub fn maximum_length(mut self, input: i32) -> Self {
+        self.maximum_length = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
+    /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
+    /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
+    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
+    /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
+    pub fn set_maximum_length(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_length = input;
+        self
+    }
+    /// <p>Specifies the number of characters that can be copied by end users from the local device to the remote session, and to the local device from the remote session.</p>
+    /// <p>This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.</p>
+    /// <p>This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>. This can't be specified when the permission is <code>DISABLED</code>.</p>
+    /// <p>This can only be specified for AlwaysOn and OnDemand fleets. The attribute is not supported on Elastic fleets.</p>
+    /// <p>The value can be between 1 and 20,971,520 (20 MB).</p>
+    pub fn get_maximum_length(&self) -> &::std::option::Option<i32> {
+        &self.maximum_length
+    }
     /// Consumes the builder and constructs a [`UserSetting`](crate::types::UserSetting).
     pub fn build(self) -> crate::types::UserSetting {
         crate::types::UserSetting {
             action: self.action,
             permission: self.permission,
+            maximum_length: self.maximum_length,
         }
     }
 }
