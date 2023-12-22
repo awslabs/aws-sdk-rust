@@ -119,6 +119,14 @@ pub use crate::types::_gateway::GatewayBuilder;
 
 pub use crate::types::_gateway_network::GatewayNetworkBuilder;
 
+pub use crate::types::_transport_media_info::TransportMediaInfoBuilder;
+
+pub use crate::types::_transport_stream_program::TransportStreamProgramBuilder;
+
+pub use crate::types::_transport_stream::TransportStreamBuilder;
+
+pub use crate::types::_frame_resolution::FrameResolutionBuilder;
+
 pub use crate::types::_messages::MessagesBuilder;
 
 pub use crate::types::_add_maintenance::AddMaintenanceBuilder;

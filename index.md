@@ -198,6 +198,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon CloudWatch Evidently | [aws-sdk-evidently](https://crates.io/crates/aws-sdk-evidently) ([docs](https://docs.rs/aws-sdk-evidently)) |
 | Amazon CloudWatch Internet Monitor | [aws-sdk-internetmonitor](https://crates.io/crates/aws-sdk-internetmonitor) ([docs](https://docs.rs/aws-sdk-internetmonitor)) |
 | Amazon CloudWatch Logs | [aws-sdk-cloudwatchlogs](https://crates.io/crates/aws-sdk-cloudwatchlogs) ([docs](https://docs.rs/aws-sdk-cloudwatchlogs)) |
+| Amazon CloudWatch Network Monitor | [aws-sdk-networkmonitor](https://crates.io/crates/aws-sdk-networkmonitor) ([docs](https://docs.rs/aws-sdk-networkmonitor)) |
 | Amazon CodeCatalyst | [aws-sdk-codecatalyst](https://crates.io/crates/aws-sdk-codecatalyst) ([docs](https://docs.rs/aws-sdk-codecatalyst)) |
 | Amazon CodeGuru Profiler | [aws-sdk-codeguruprofiler](https://crates.io/crates/aws-sdk-codeguruprofiler) ([docs](https://docs.rs/aws-sdk-codeguruprofiler)) |
 | Amazon CodeGuru Reviewer | [aws-sdk-codegurureviewer](https://crates.io/crates/aws-sdk-codegurureviewer) ([docs](https://docs.rs/aws-sdk-codegurureviewer)) |

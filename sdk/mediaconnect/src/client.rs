@@ -193,6 +193,8 @@ mod describe_bridge;
 
 mod describe_flow;
 
+mod describe_flow_source_metadata;
+
 mod describe_gateway;
 
 mod describe_gateway_instance;

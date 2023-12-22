@@ -144,17 +144,17 @@ impl CreateLakeFormationIdentityCenterConfigurationFluentBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_arn()
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn external_filtering(mut self, input: crate::types::ExternalFilteringConfiguration) -> Self {
         self.inner = self.inner.external_filtering(input);
         self
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn set_external_filtering(mut self, input: ::std::option::Option<crate::types::ExternalFilteringConfiguration>) -> Self {
         self.inner = self.inner.set_external_filtering(input);
         self
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         self.inner.get_external_filtering()
     }

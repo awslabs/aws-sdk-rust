@@ -249,7 +249,7 @@ pub enum BatchGetPartitionError {
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>A federation source failed.</p>
     FederationSourceException(crate::types::error::FederationSourceException),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A federation source failed, but the operation may be retried.</p>
     FederationSourceRetryableException(crate::types::error::FederationSourceRetryableException),
     /// <p>An encryption operation failed.</p>
     GlueEncryptionException(crate::types::error::GlueEncryptionException),

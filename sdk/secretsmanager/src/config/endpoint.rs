@@ -558,11 +558,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager-fips.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://secretsmanager-fips.us-east-1.api.aws")
+                .url("https://secretsmanager-fips.us-east-1.amazonaws.com")
                 .build()
         );
     }
@@ -578,11 +578,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://secretsmanager.us-east-1.api.aws")
+                .url("https://secretsmanager.us-east-1.amazonaws.com")
                 .build()
         );
     }
@@ -678,11 +678,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager.cn-north-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager.cn-north-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://secretsmanager.cn-north-1.api.amazonwebservices.com.cn")
+                .url("https://secretsmanager.cn-north-1.amazonaws.com.cn")
                 .build()
         );
     }
@@ -778,11 +778,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager-fips.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager-fips.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://secretsmanager-fips.us-gov-east-1.api.aws")
+                .url("https://secretsmanager-fips.us-gov-east-1.amazonaws.com")
                 .build()
         );
     }
@@ -798,11 +798,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager.us-gov-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://secretsmanager.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://secretsmanager.us-gov-east-1.api.aws")
+                .url("https://secretsmanager.us-gov-east-1.amazonaws.com")
                 .build()
         );
     }

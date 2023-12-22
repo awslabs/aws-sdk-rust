@@ -210,6 +210,23 @@ pub(crate) fn de_get_unfiltered_table_metadata(
                 "CellFilters" => {
                     builder = builder.set_cell_filters(crate::protocol_serde::shape_column_row_filter_list::de_column_row_filter_list(tokens)?);
                 }
+                "QueryAuthorizationId" => {
+                    builder = builder.set_query_authorization_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ResourceArn" => {
+                    builder = builder.set_resource_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "Permissions" => {
+                    builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

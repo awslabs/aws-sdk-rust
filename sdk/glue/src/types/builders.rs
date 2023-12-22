@@ -441,6 +441,10 @@ pub use crate::types::_user_defined_function::UserDefinedFunctionBuilder;
 
 pub use crate::types::_column_row_filter::ColumnRowFilterBuilder;
 
+pub use crate::types::_query_session_context::QuerySessionContextBuilder;
+
+pub use crate::types::_supported_dialect::SupportedDialectBuilder;
+
 pub use crate::types::_audit_context::AuditContextBuilder;
 
 pub use crate::types::_unfiltered_partition::UnfilteredPartitionBuilder;

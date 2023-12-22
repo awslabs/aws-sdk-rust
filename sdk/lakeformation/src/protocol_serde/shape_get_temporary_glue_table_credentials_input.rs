@@ -24,17 +24,26 @@ pub fn ser_get_temporary_glue_table_credentials_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.supported_permission_types {
-        let mut array_8 = object.key("SupportedPermissionTypes").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.query_session_context {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("QuerySessionContext").start_object();
+        crate::protocol_serde::shape_query_session_context::ser_query_session_context(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.s3_path {
+        object.key("S3Path").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.supported_permission_types {
+        let mut array_11 = object.key("SupportedPermissionTypes").start_array();
+        for item_12 in var_10 {
             {
-                array_8.value().string(item_9.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_8.finish();
+        array_11.finish();
     }
-    if let Some(var_10) = &input.table_arn {
-        object.key("TableArn").string(var_10.as_str());
+    if let Some(var_13) = &input.table_arn {
+        object.key("TableArn").string(var_13.as_str());
     }
     Ok(())
 }

@@ -73,6 +73,8 @@ pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfoBuild
 
 pub use crate::types::_work_unit_range::WorkUnitRangeBuilder;
 
+pub use crate::types::_query_session_context::QuerySessionContextBuilder;
+
 pub use crate::types::_audit_context::AuditContextBuilder;
 
 pub use crate::types::_partition_value_list::PartitionValueListBuilder;

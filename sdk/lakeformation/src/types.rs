@@ -97,6 +97,8 @@ pub use crate::types::_lake_formation_opt_ins_info::LakeFormationOptInsInfo;
 
 pub use crate::types::_work_unit_range::WorkUnitRange;
 
+pub use crate::types::_query_session_context::QuerySessionContext;
+
 pub use crate::types::_permission_type::PermissionType;
 
 pub use crate::types::_audit_context::AuditContext;
@@ -198,6 +200,8 @@ mod _principal_permissions;
 mod _principal_resource_permissions;
 
 mod _query_planning_context;
+
+mod _query_session_context;
 
 mod _query_state_string;
 

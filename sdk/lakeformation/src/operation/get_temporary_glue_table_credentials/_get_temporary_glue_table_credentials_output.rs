@@ -11,6 +11,8 @@ pub struct GetTemporaryGlueTableCredentialsOutput {
     pub session_token: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the temporary credentials expire.</p>
     pub expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon S3 path for the temporary credentials.</p>
+    pub vended_s3_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTemporaryGlueTableCredentialsOutput {
@@ -29,6 +31,12 @@ impl GetTemporaryGlueTableCredentialsOutput {
     /// <p>The date and time when the temporary credentials expire.</p>
     pub fn expiration(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration.as_ref()
+    }
+    /// <p>The Amazon S3 path for the temporary credentials.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vended_s3_path.is_none()`.
+    pub fn vended_s3_path(&self) -> &[::std::string::String] {
+        self.vended_s3_path.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTemporaryGlueTableCredentialsOutput {
@@ -51,6 +59,7 @@ pub struct GetTemporaryGlueTableCredentialsOutputBuilder {
     pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,
     pub(crate) session_token: ::std::option::Option<::std::string::String>,
     pub(crate) expiration: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) vended_s3_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetTemporaryGlueTableCredentialsOutputBuilder {
@@ -110,6 +119,26 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
     pub fn get_expiration(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration
     }
+    /// Appends an item to `vended_s3_path`.
+    ///
+    /// To override the contents of this collection use [`set_vended_s3_path`](Self::set_vended_s3_path).
+    ///
+    /// <p>The Amazon S3 path for the temporary credentials.</p>
+    pub fn vended_s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.vended_s3_path.unwrap_or_default();
+        v.push(input.into());
+        self.vended_s3_path = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon S3 path for the temporary credentials.</p>
+    pub fn set_vended_s3_path(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.vended_s3_path = input;
+        self
+    }
+    /// <p>The Amazon S3 path for the temporary credentials.</p>
+    pub fn get_vended_s3_path(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.vended_s3_path
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +155,7 @@ impl GetTemporaryGlueTableCredentialsOutputBuilder {
             secret_access_key: self.secret_access_key,
             session_token: self.session_token,
             expiration: self.expiration,
+            vended_s3_path: self.vended_s3_path,
             _request_id: self._request_id,
         }
     }

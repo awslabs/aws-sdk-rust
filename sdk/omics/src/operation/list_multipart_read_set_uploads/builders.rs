@@ -22,7 +22,7 @@ impl ListMultipartReadSetUploadsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMultipartReadSetUploads`.
 ///
-/// <p>Lists all multipart read set uploads and their statuses.</p>
+/// <p>Lists multipart read set uploads and for in progress uploads. Once the upload is completed, a read set is created and the upload will no longer be returned in the respone.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMultipartReadSetUploadsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

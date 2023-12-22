@@ -109,6 +109,20 @@ impl GetUnfilteredTableMetadataFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.region(input.into());
+        self
+    }
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_region(input);
+        self
+    }
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_region()
+    }
     /// <p>The catalog ID where the table resides.</p>
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -182,5 +196,51 @@ impl GetUnfilteredTableMetadataFluentBuilder {
     /// <p>(Required) A list of supported permission types.</p>
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
+    }
+    /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
+    pub fn supported_dialect(mut self, input: crate::types::SupportedDialect) -> Self {
+        self.inner = self.inner.supported_dialect(input);
+        self
+    }
+    /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
+    pub fn set_supported_dialect(mut self, input: ::std::option::Option<crate::types::SupportedDialect>) -> Self {
+        self.inner = self.inner.set_supported_dialect(input);
+        self
+    }
+    /// <p>A structure specifying the dialect and dialect version used by the query engine.</p>
+    pub fn get_supported_dialect(&self) -> &::std::option::Option<crate::types::SupportedDialect> {
+        self.inner.get_supported_dialect()
+    }
+    /// Appends an item to `Permissions`.
+    ///
+    /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
+    ///
+    /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
+    pub fn permissions(mut self, input: crate::types::Permission) -> Self {
+        self.inner = self.inner.permissions(input);
+        self
+    }
+    /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
+    pub fn set_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>) -> Self {
+        self.inner = self.inner.set_permissions(input);
+        self
+    }
+    /// <p>The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.</p>
+    pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
+        self.inner.get_permissions()
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn query_session_context(mut self, input: crate::types::QuerySessionContext) -> Self {
+        self.inner = self.inner.query_session_context(input);
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn set_query_session_context(mut self, input: ::std::option::Option<crate::types::QuerySessionContext>) -> Self {
+        self.inner = self.inner.set_query_session_context(input);
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn get_query_session_context(&self) -> &::std::option::Option<crate::types::QuerySessionContext> {
+        self.inner.get_query_session_context()
     }
 }

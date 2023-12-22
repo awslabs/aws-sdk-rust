@@ -7,7 +7,7 @@ pub struct CreateLakeFormationIdentityCenterConfigurationInput {
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM Identity Center instance for which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the Amazon Web Services General Reference.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub external_filtering: ::std::option::Option<crate::types::ExternalFilteringConfiguration>,
 }
 impl CreateLakeFormationIdentityCenterConfigurationInput {
@@ -19,7 +19,7 @@ impl CreateLakeFormationIdentityCenterConfigurationInput {
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn external_filtering(&self) -> ::std::option::Option<&crate::types::ExternalFilteringConfiguration> {
         self.external_filtering.as_ref()
     }
@@ -70,17 +70,17 @@ impl CreateLakeFormationIdentityCenterConfigurationInputBuilder {
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn external_filtering(mut self, input: crate::types::ExternalFilteringConfiguration) -> Self {
         self.external_filtering = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn set_external_filtering(mut self, input: ::std::option::Option<crate::types::ExternalFilteringConfiguration>) -> Self {
         self.external_filtering = input;
         self
     }
-    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to to access data managed by Lake Formation.</p>
+    /// <p>A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.</p>
     pub fn get_external_filtering(&self) -> &::std::option::Option<crate::types::ExternalFilteringConfiguration> {
         &self.external_filtering
     }

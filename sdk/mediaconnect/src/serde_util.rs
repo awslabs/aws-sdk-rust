@@ -327,6 +327,15 @@ pub(crate) fn source_correct_errors(mut builder: crate::types::builders::SourceB
     builder
 }
 
+pub(crate) fn transport_media_info_correct_errors(
+    mut builder: crate::types::builders::TransportMediaInfoBuilder,
+) -> crate::types::builders::TransportMediaInfoBuilder {
+    if builder.programs.is_none() {
+        builder.programs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bridge_flow_output_correct_errors(
     mut builder: crate::types::builders::BridgeFlowOutputBuilder,
 ) -> crate::types::builders::BridgeFlowOutputBuilder {
@@ -531,6 +540,18 @@ pub(crate) fn media_stream_attributes_correct_errors(
     builder
 }
 
+pub(crate) fn message_detail_correct_errors(
+    mut builder: crate::types::builders::MessageDetailBuilder,
+) -> crate::types::builders::MessageDetailBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_specification_correct_errors(
     mut builder: crate::types::builders::ResourceSpecificationBuilder,
 ) -> crate::types::builders::ResourceSpecificationBuilder {
@@ -605,14 +626,20 @@ pub(crate) fn media_stream_source_configuration_correct_errors(
     builder
 }
 
-pub(crate) fn message_detail_correct_errors(
-    mut builder: crate::types::builders::MessageDetailBuilder,
-) -> crate::types::builders::MessageDetailBuilder {
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
+pub(crate) fn transport_stream_program_correct_errors(
+    mut builder: crate::types::builders::TransportStreamProgramBuilder,
+) -> crate::types::builders::TransportStreamProgramBuilder {
+    if builder.pcr_pid.is_none() {
+        builder.pcr_pid = Some(Default::default())
     }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
+    if builder.program_number.is_none() {
+        builder.program_number = Some(Default::default())
+    }
+    if builder.program_pid.is_none() {
+        builder.program_pid = Some(Default::default())
+    }
+    if builder.streams.is_none() {
+        builder.streams = Some(Default::default())
     }
     builder
 }
@@ -664,6 +691,30 @@ pub(crate) fn input_configuration_correct_errors(
             let builder = crate::types::builders::InterfaceBuilder::default();
             Some(crate::serde_util::interface_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn transport_stream_correct_errors(
+    mut builder: crate::types::builders::TransportStreamBuilder,
+) -> crate::types::builders::TransportStreamBuilder {
+    if builder.pid.is_none() {
+        builder.pid = Some(Default::default())
+    }
+    if builder.stream_type.is_none() {
+        builder.stream_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn frame_resolution_correct_errors(
+    mut builder: crate::types::builders::FrameResolutionBuilder,
+) -> crate::types::builders::FrameResolutionBuilder {
+    if builder.frame_height.is_none() {
+        builder.frame_height = Some(Default::default())
+    }
+    if builder.frame_width.is_none() {
+        builder.frame_width = Some(Default::default())
     }
     builder
 }

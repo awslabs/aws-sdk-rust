@@ -3,29 +3,53 @@ pub fn ser_get_unfiltered_table_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadataInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.catalog_id {
-        object.key("CatalogId").string(var_1.as_str());
+    if let Some(var_1) = &input.region {
+        object.key("Region").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    if let Some(var_2) = &input.catalog_id {
+        object.key("CatalogId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("Name").string(var_3.as_str());
+    if let Some(var_3) = &input.database_name {
+        object.key("DatabaseName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.audit_context {
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.audit_context {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("AuditContext").start_object();
-        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.supported_permission_types {
-        let mut array_7 = object.key("SupportedPermissionTypes").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.supported_permission_types {
+        let mut array_8 = object.key("SupportedPermissionTypes").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.supported_dialect {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("SupportedDialect").start_object();
+        crate::protocol_serde::shape_supported_dialect::ser_supported_dialect(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.permissions {
+        let mut array_13 = object.key("Permissions").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.query_session_context {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("QuerySessionContext").start_object();
+        crate::protocol_serde::shape_query_session_context::ser_query_session_context(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

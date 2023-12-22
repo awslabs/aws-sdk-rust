@@ -53,6 +53,8 @@ pub(crate) mod shape_describe_bridge;
 
 pub(crate) mod shape_describe_flow;
 
+pub(crate) mod shape_describe_flow_source_metadata;
+
 pub(crate) mod shape_describe_gateway;
 
 pub(crate) mod shape_describe_gateway_instance;
@@ -251,6 +253,8 @@ pub(crate) mod shape_list_of_listed_gateway_instance;
 
 pub(crate) mod shape_list_of_media_stream;
 
+pub(crate) mod shape_list_of_message_detail;
+
 pub(crate) mod shape_list_of_offering;
 
 pub(crate) mod shape_list_of_output;
@@ -284,6 +288,8 @@ pub(crate) mod shape_reservation;
 pub(crate) mod shape_set_source_request;
 
 pub(crate) mod shape_source;
+
+pub(crate) mod shape_transport_media_info;
 
 pub(crate) mod shape_update_bridge_flow_source_request;
 
@@ -345,7 +351,7 @@ pub(crate) mod shape_list_of_media_stream_output_configuration;
 
 pub(crate) mod shape_list_of_media_stream_source_configuration;
 
-pub(crate) mod shape_list_of_message_detail;
+pub(crate) mod shape_list_of_transport_stream_program;
 
 pub(crate) mod shape_listed_bridge;
 
@@ -360,6 +366,8 @@ pub(crate) mod shape_listed_gateway_instance;
 pub(crate) mod shape_maintenance;
 
 pub(crate) mod shape_media_stream_attributes;
+
+pub(crate) mod shape_message_detail;
 
 pub(crate) mod shape_resource_specification;
 
@@ -379,7 +387,7 @@ pub(crate) mod shape_media_stream_output_configuration;
 
 pub(crate) mod shape_media_stream_source_configuration;
 
-pub(crate) mod shape_message_detail;
+pub(crate) mod shape_transport_stream_program;
 
 pub(crate) mod shape_encoding_parameters;
 
@@ -387,8 +395,14 @@ pub(crate) mod shape_list_of_destination_configuration;
 
 pub(crate) mod shape_list_of_input_configuration;
 
+pub(crate) mod shape_list_of_transport_stream;
+
 pub(crate) mod shape_destination_configuration;
 
 pub(crate) mod shape_input_configuration;
+
+pub(crate) mod shape_transport_stream;
+
+pub(crate) mod shape_frame_resolution;
 
 pub(crate) mod shape_interface;

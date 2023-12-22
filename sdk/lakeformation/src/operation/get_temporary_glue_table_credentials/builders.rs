@@ -186,4 +186,32 @@ impl GetTemporaryGlueTableCredentialsFluentBuilder {
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         self.inner.get_supported_permission_types()
     }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_path(input.into());
+        self
+    }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_path(input);
+        self
+    }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_path()
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn query_session_context(mut self, input: crate::types::QuerySessionContext) -> Self {
+        self.inner = self.inner.query_session_context(input);
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn set_query_session_context(mut self, input: ::std::option::Option<crate::types::QuerySessionContext>) -> Self {
+        self.inner = self.inner.set_query_session_context(input);
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn get_query_session_context(&self) -> &::std::option::Option<crate::types::QuerySessionContext> {
+        self.inner.get_query_session_context()
+    }
 }

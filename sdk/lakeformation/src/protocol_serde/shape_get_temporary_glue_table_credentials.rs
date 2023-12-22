@@ -203,6 +203,9 @@ pub(crate) fn de_get_temporary_glue_table_credentials(
                             .transpose()?,
                     );
                 }
+                "VendedS3Path" => {
+                    builder = builder.set_vended_s3_path(crate::protocol_serde::shape_path_string_list::de_path_string_list(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

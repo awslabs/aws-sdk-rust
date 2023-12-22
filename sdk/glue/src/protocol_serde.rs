@@ -1181,9 +1181,13 @@ pub(crate) mod shape_partition_list;
 
 pub(crate) mod shape_partition_value_list;
 
+pub(crate) mod shape_permission_list;
+
 pub(crate) mod shape_predicate;
 
 pub(crate) mod shape_property_predicate;
+
+pub(crate) mod shape_query_session_context;
 
 pub(crate) mod shape_recrawl_policy;
 
@@ -1228,6 +1232,8 @@ pub(crate) mod shape_statement;
 pub(crate) mod shape_statement_list;
 
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_supported_dialect;
 
 pub(crate) mod shape_table;
 
@@ -1804,8 +1810,6 @@ pub(crate) mod shape_node;
 pub(crate) mod shape_option;
 
 pub(crate) mod shape_other_metadata_value_list_item;
-
-pub(crate) mod shape_permission_list;
 
 pub(crate) mod shape_additional_options;
 

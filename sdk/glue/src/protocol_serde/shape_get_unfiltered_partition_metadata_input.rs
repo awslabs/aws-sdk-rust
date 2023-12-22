@@ -3,38 +3,47 @@ pub fn ser_get_unfiltered_partition_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.catalog_id {
-        object.key("CatalogId").string(var_1.as_str());
+    if let Some(var_1) = &input.region {
+        object.key("Region").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.database_name {
-        object.key("DatabaseName").string(var_2.as_str());
+    if let Some(var_2) = &input.catalog_id {
+        object.key("CatalogId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.table_name {
-        object.key("TableName").string(var_3.as_str());
+    if let Some(var_3) = &input.database_name {
+        object.key("DatabaseName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.partition_values {
-        let mut array_5 = object.key("PartitionValues").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.table_name {
+        object.key("TableName").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.partition_values {
+        let mut array_6 = object.key("PartitionValues").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.audit_context {
+    if let Some(var_8) = &input.audit_context {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("AuditContext").start_object();
-        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_9 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.supported_permission_types {
-        let mut array_10 = object.key("SupportedPermissionTypes").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.supported_permission_types {
+        let mut array_11 = object.key("SupportedPermissionTypes").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.query_session_context {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("QuerySessionContext").start_object();
+        crate::protocol_serde::shape_query_session_context::ser_query_session_context(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

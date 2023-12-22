@@ -13,6 +13,10 @@ pub struct GetTemporaryGlueTableCredentialsInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    /// <p>The Amazon S3 path for the table.</p>
+    pub s3_path: ::std::option::Option<::std::string::String>,
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
 impl GetTemporaryGlueTableCredentialsInput {
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
@@ -39,6 +43,14 @@ impl GetTemporaryGlueTableCredentialsInput {
     pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
         self.supported_permission_types.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn s3_path(&self) -> ::std::option::Option<&str> {
+        self.s3_path.as_deref()
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn query_session_context(&self) -> ::std::option::Option<&crate::types::QuerySessionContext> {
+        self.query_session_context.as_ref()
+    }
 }
 impl GetTemporaryGlueTableCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetTemporaryGlueTableCredentialsInput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput).
@@ -56,6 +68,8 @@ pub struct GetTemporaryGlueTableCredentialsInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
     pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) s3_path: ::std::option::Option<::std::string::String>,
+    pub(crate) query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
 impl GetTemporaryGlueTableCredentialsInputBuilder {
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
@@ -141,6 +155,34 @@ impl GetTemporaryGlueTableCredentialsInputBuilder {
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn set_s3_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_path = input;
+        self
+    }
+    /// <p>The Amazon S3 path for the table.</p>
+    pub fn get_s3_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_path
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn query_session_context(mut self, input: crate::types::QuerySessionContext) -> Self {
+        self.query_session_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn set_query_session_context(mut self, input: ::std::option::Option<crate::types::QuerySessionContext>) -> Self {
+        self.query_session_context = input;
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn get_query_session_context(&self) -> &::std::option::Option<crate::types::QuerySessionContext> {
+        &self.query_session_context
+    }
     /// Consumes the builder and constructs a [`GetTemporaryGlueTableCredentialsInput`](crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput).
     pub fn build(
         self,
@@ -155,6 +197,8 @@ impl GetTemporaryGlueTableCredentialsInputBuilder {
                 duration_seconds: self.duration_seconds,
                 audit_context: self.audit_context,
                 supported_permission_types: self.supported_permission_types,
+                s3_path: self.s3_path,
+                query_session_context: self.query_session_context,
             },
         )
     }

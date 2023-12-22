@@ -583,6 +583,12 @@ pub use crate::types::_federation_source_error_code::FederationSourceErrorCode;
 
 pub use crate::types::_column_row_filter::ColumnRowFilter;
 
+pub use crate::types::_query_session_context::QuerySessionContext;
+
+pub use crate::types::_supported_dialect::SupportedDialect;
+
+pub use crate::types::_view_dialect::ViewDialect;
+
 pub use crate::types::_permission_type::PermissionType;
 
 pub use crate::types::_audit_context::AuditContext;
@@ -1307,6 +1313,8 @@ mod _principal_type;
 
 mod _property_predicate;
 
+mod _query_session_context;
+
 mod _quote_char;
 
 mod _recipe;
@@ -1473,6 +1481,8 @@ mod _streaming_data_preview_options;
 
 mod _string_column_statistics_data;
 
+mod _supported_dialect;
+
 mod _table;
 
 mod _table_error;
@@ -1560,6 +1570,8 @@ mod _upsert_redshift_target_options;
 mod _user_defined_function;
 
 mod _user_defined_function_input;
+
+mod _view_dialect;
 
 mod _worker_type;
 

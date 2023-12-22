@@ -173,6 +173,14 @@ pub use crate::types::_gateway::Gateway;
 
 pub use crate::types::_gateway_network::GatewayNetwork;
 
+pub use crate::types::_transport_media_info::TransportMediaInfo;
+
+pub use crate::types::_transport_stream_program::TransportStreamProgram;
+
+pub use crate::types::_transport_stream::TransportStream;
+
+pub use crate::types::_frame_resolution::FrameResolution;
+
 pub use crate::types::_messages::Messages;
 
 pub use crate::types::_add_maintenance::AddMaintenance;
@@ -279,6 +287,8 @@ mod _fmtp;
 
 mod _fmtp_request;
 
+mod _frame_resolution;
+
 mod _gateway;
 
 mod _gateway_bridge_source;
@@ -378,6 +388,12 @@ mod _status;
 mod _tcs;
 
 mod _transport;
+
+mod _transport_media_info;
+
+mod _transport_stream;
+
+mod _transport_stream_program;
 
 mod _update_bridge_flow_source_request;
 

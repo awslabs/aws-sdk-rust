@@ -41,6 +41,30 @@ pub(super) fn resolve_endpoint(
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
                         if (true) == (partition_result.supports_dual_stack()) {
+                            if ("aws") == (partition_result.name()) {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://secretsmanager-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region);
+                                        out.push_str(".amazonaws.com");
+                                        out
+                                    })
+                                    .build());
+                            }
+                            if ("aws-us-gov") == (partition_result.name()) {
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://secretsmanager-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region);
+                                        out.push_str(".amazonaws.com");
+                                        out
+                                    })
+                                    .build());
+                            }
                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
@@ -81,6 +105,42 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_dual_stack) == (true) {
                 if (true) == (partition_result.supports_dual_stack()) {
+                    if ("aws") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://secretsmanager.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region);
+                                out.push_str(".amazonaws.com");
+                                out
+                            })
+                            .build());
+                    }
+                    if ("aws-cn") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://secretsmanager.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region);
+                                out.push_str(".amazonaws.com.cn");
+                                out
+                            })
+                            .build());
+                    }
+                    if ("aws-us-gov") == (partition_result.name()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://secretsmanager.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region);
+                                out.push_str(".amazonaws.com");
+                                out
+                            })
+                            .build());
+                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

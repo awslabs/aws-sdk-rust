@@ -323,11 +323,15 @@ pub(crate) mod shape_partition_value_list;
 
 pub(crate) mod shape_partitioned_table_objects_list;
 
+pub(crate) mod shape_path_string_list;
+
 pub(crate) mod shape_planning_statistics;
 
 pub(crate) mod shape_principal_resource_permissions_list;
 
 pub(crate) mod shape_query_planning_context;
+
+pub(crate) mod shape_query_session_context;
 
 pub(crate) mod shape_resource;
 

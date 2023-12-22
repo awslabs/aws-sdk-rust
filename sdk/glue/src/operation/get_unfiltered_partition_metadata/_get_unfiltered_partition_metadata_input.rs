@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataInput {
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The catalog ID where the partition resides.</p>
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>(Required) Specifies the name of a database that contains the partition.</p>
@@ -15,8 +17,14 @@ pub struct GetUnfilteredPartitionMetadataInput {
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>(Required) A list of supported permission types.</p>
     pub supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
 impl GetUnfilteredPartitionMetadataInput {
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn region(&self) -> ::std::option::Option<&str> {
+        self.region.as_deref()
+    }
     /// <p>The catalog ID where the partition resides.</p>
     pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
@@ -45,6 +53,10 @@ impl GetUnfilteredPartitionMetadataInput {
     pub fn supported_permission_types(&self) -> &[crate::types::PermissionType] {
         self.supported_permission_types.as_deref().unwrap_or_default()
     }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn query_session_context(&self) -> ::std::option::Option<&crate::types::QuerySessionContext> {
+        self.query_session_context.as_ref()
+    }
 }
 impl GetUnfilteredPartitionMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
@@ -57,14 +69,30 @@ impl GetUnfilteredPartitionMetadataInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataInputBuilder {
+    pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
     pub(crate) supported_permission_types: ::std::option::Option<::std::vec::Vec<crate::types::PermissionType>>,
+    pub(crate) query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
 impl GetUnfilteredPartitionMetadataInputBuilder {
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.region = input;
+        self
+    }
+    /// <p>Specified only if the base tables belong to a different Amazon Web Services Region.</p>
+    pub fn get_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.region
+    }
     /// <p>The catalog ID where the partition resides.</p>
     /// This field is required.
     pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -164,6 +192,20 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
     pub fn get_supported_permission_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PermissionType>> {
         &self.supported_permission_types
     }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn query_session_context(mut self, input: crate::types::QuerySessionContext) -> Self {
+        self.query_session_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn set_query_session_context(mut self, input: ::std::option::Option<crate::types::QuerySessionContext>) -> Self {
+        self.query_session_context = input;
+        self
+    }
+    /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    pub fn get_query_session_context(&self) -> &::std::option::Option<crate::types::QuerySessionContext> {
+        &self.query_session_context
+    }
     /// Consumes the builder and constructs a [`GetUnfilteredPartitionMetadataInput`](crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput).
     pub fn build(
         self,
@@ -172,12 +214,14 @@ impl GetUnfilteredPartitionMetadataInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataInput {
+            region: self.region,
             catalog_id: self.catalog_id,
             database_name: self.database_name,
             table_name: self.table_name,
             partition_values: self.partition_values,
             audit_context: self.audit_context,
             supported_permission_types: self.supported_permission_types,
+            query_session_context: self.query_session_context,
         })
     }
 }

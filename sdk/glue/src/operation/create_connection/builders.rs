@@ -23,6 +23,7 @@ impl CreateConnectionInputBuilder {
 /// Fluent builder constructing a request to `CreateConnection`.
 ///
 /// <p>Creates a connection definition in the Data Catalog.</p>
+/// <p>Connections used for creating federated resources require the IAM <code>glue:PassConnection</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
