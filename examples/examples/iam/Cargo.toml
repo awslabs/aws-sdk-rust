@@ -21,7 +21,7 @@ http = "0.2.8"
 futures = "0.3.28"
 async_once = "0.2.6"
 lazy_static = "1.4.0"
-aws-sdk-iam= { version = "1.9.0", path = "../../../sdk/iam" }
+aws-sdk-iam= { version = "1.9.1", path = "../../../sdk/iam" }
 aws-sdk-s3= { version = "1.11.0", path = "../../../sdk/s3" }
 aws-sdk-sts= { version = "1.9.0", path = "../../../sdk/sts" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }

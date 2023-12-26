@@ -982,9 +982,9 @@ model_hash = '2574f912143346bf583805c22ad4ed6f2a93b08bedeb884bac73ae96c245338c'
 
 [crates.aws-sdk-iam]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7631c739f0d27ba03a6cfd3e23735ecf26707088302c86b9bfa5d5f9225cdaec'
-model_hash = '459a49159ca4c578d39c51dd628aec305ec70a28e8bc9d9572c56f9a64376ed3'
+version = '1.9.1'
+source_hash = '1d156d7d373ff630d9df8bfbf43293c9bf14f4f1cc7a284a8294c4c31608becd'
+model_hash = '57b71af9c2ea04ee0d373921bccdc6daa3965ddc072dae383a0f5c371f54a937'
 
 [crates.aws-sdk-identitystore]
 category = 'AwsSdk'
@@ -2402,16 +2402,5 @@ source_hash = '5089c61ac3ff7bf3e91fa88e52e79cadc2e2c5b6c0a2c13f057d310172d7215f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6056f0f81e84bb7636ba8ee9b2740b07d0d1c2aa5b4e16b2537386a5fe203236'
-
-[release]
-tag = 'release-2023-12-22'
-
 [release.crates]
-aws-sdk-bedrockagent = '1.7.0'
-aws-sdk-glue = '1.11.0'
-aws-sdk-lakeformation = '1.10.0'
-aws-sdk-mediaconnect = '1.10.0'
-aws-sdk-networkmonitor = '1.0.0'
-aws-sdk-omics = '1.9.1'
-aws-sdk-s3 = '1.11.0'
-aws-sdk-secretsmanager = '1.11.0'
+aws-sdk-iam = '1.9.1'
