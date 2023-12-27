@@ -257,6 +257,8 @@ mod remove_tags;
 
 mod run_job_flow;
 
+mod set_keep_job_flow_alive_when_no_steps;
+
 mod set_termination_protection;
 
 mod set_visible_to_all_users;

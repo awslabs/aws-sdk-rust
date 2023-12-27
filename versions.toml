@@ -814,9 +814,9 @@ model_hash = 'e8bbfc6dbda6756c8b10c86959b1e4c2abb3d79d65dc3fa547854ecd77fa7a62'
 
 [crates.aws-sdk-emr]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0e2fa3e97172f4c838b00a2edf1fb12023364efe9b998af95715ac3470527c0f'
-model_hash = 'aefc570b1fec34cd93f1ba5dc8c31736061b1b0c7ab4f35d1818e0226bd4e314'
+version = '1.10.0'
+source_hash = '11f95068868081afbafc39ca5fa71ca423b1e2f2b192ad52ac8e046179227534'
+model_hash = '84b5928f8d7aa3b17b299e5d43ca408ea36bff7b1e94022b1bceafed51343a67'
 
 [crates.aws-sdk-emrcontainers]
 category = 'AwsSdk'
@@ -2402,9 +2402,5 @@ source_hash = '5089c61ac3ff7bf3e91fa88e52e79cadc2e2c5b6c0a2c13f057d310172d7215f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6056f0f81e84bb7636ba8ee9b2740b07d0d1c2aa5b4e16b2537386a5fe203236'
-
-[release]
-tag = 'release-2023-12-26'
-
 [release.crates]
-aws-sdk-iam = '1.9.1'
+aws-sdk-emr = '1.10.0'

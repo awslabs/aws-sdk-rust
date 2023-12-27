@@ -117,6 +117,8 @@ pub(crate) mod shape_remove_tags;
 
 pub(crate) mod shape_run_job_flow;
 
+pub(crate) mod shape_set_keep_job_flow_alive_when_no_steps;
+
 pub(crate) mod shape_set_termination_protection;
 
 pub(crate) mod shape_set_visible_to_all_users;
@@ -236,6 +238,8 @@ pub(crate) mod shape_remove_managed_scaling_policy_input;
 pub(crate) mod shape_remove_tags_input;
 
 pub(crate) mod shape_run_job_flow_input;
+
+pub(crate) mod shape_set_keep_job_flow_alive_when_no_steps_input;
 
 pub(crate) mod shape_set_termination_protection_input;
 

@@ -142,6 +142,9 @@ pub mod remove_tags;
 /// Types for the `RunJobFlow` operation.
 pub mod run_job_flow;
 
+/// Types for the `SetKeepJobFlowAliveWhenNoSteps` operation.
+pub mod set_keep_job_flow_alive_when_no_steps;
+
 /// Types for the `SetTerminationProtection` operation.
 pub mod set_termination_protection;
 
