@@ -13,9 +13,7 @@ pub struct GetImagesInput {
     pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.</p>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
-    /// <p>The minimum value of 200 ms is a hard limit.</p>
-    /// </note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub sampling_interval: ::std::option::Option<i32>,
     /// <p>The format that will be used to encode the image.</p>
     pub format: ::std::option::Option<crate::types::Format>,
@@ -53,9 +51,7 @@ impl GetImagesInput {
     pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
-    /// <p>The minimum value of 200 ms is a hard limit.</p>
-    /// </note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub fn sampling_interval(&self) -> ::std::option::Option<i32> {
         self.sampling_interval
     }
@@ -184,23 +180,17 @@ impl GetImagesInputBuilder {
     pub fn get_end_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_timestamp
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
-    /// <p>The minimum value of 200 ms is a hard limit.</p>
-    /// </note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.sampling_interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
-    /// <p>The minimum value of 200 ms is a hard limit.</p>
-    /// </note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub fn set_sampling_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampling_interval = input;
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream, with a default of 3000 ms. The minimum value that can be provided is 200 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available.</p><note>
-    /// <p>The minimum value of 200 ms is a hard limit.</p>
-    /// </note>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.</p>
     pub fn get_sampling_interval(&self) -> &::std::option::Option<i32> {
         &self.sampling_interval
     }

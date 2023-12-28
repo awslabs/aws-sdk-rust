@@ -257,7 +257,7 @@ pub enum GetClipError {
     InvalidMediaFrameException(crate::types::error::InvalidMediaFrameException),
     /// <p>No codec private data was found in at least one of tracks of the video stream.</p>
     MissingCodecPrivateDataException(crate::types::error::MissingCodecPrivateDataException),
-    /// <p>A streaming session was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0).</p>
+    /// <p><code>GetImages</code> was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0).</p>
     NoDataRetentionException(crate::types::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),

@@ -24,5 +24,11 @@ pub fn ser_domain_settings_for_update(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.docker_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("DockerSettings").start_object();
+        crate::protocol_serde::shape_docker_settings::ser_docker_settings(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

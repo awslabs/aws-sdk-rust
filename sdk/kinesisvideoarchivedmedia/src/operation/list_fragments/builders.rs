@@ -183,17 +183,23 @@ impl ListFragmentsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn fragment_selector(mut self, input: crate::types::FragmentSelector) -> Self {
         self.inner = self.inner.fragment_selector(input);
         self
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn set_fragment_selector(mut self, input: ::std::option::Option<crate::types::FragmentSelector>) -> Self {
         self.inner = self.inner.set_fragment_selector(input);
         self
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn get_fragment_selector(&self) -> &::std::option::Option<crate::types::FragmentSelector> {
         self.inner.get_fragment_selector()
     }

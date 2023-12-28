@@ -21,6 +21,12 @@ pub fn ser_domain_settings(
     if let Some(var_6) = &input.execution_role_identity_config {
         object.key("ExecutionRoleIdentityConfig").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.docker_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("DockerSettings").start_object();
+        crate::protocol_serde::shape_docker_settings::ser_docker_settings(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -55,6 +61,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionRoleIdentityConfig::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "DockerSettings" => {
+                            builder = builder.set_docker_settings(crate::protocol_serde::shape_docker_settings::de_docker_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -16,6 +16,7 @@
 ///     ProviderType::Github => { /* ... */ },
 ///     ProviderType::GithubEnterpriseServer => { /* ... */ },
 ///     ProviderType::Gitlab => { /* ... */ },
+///     ProviderType::GitlabSelfManaged => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,6 +52,8 @@ pub enum ProviderType {
     GithubEnterpriseServer,
     #[allow(missing_docs)] // documentation missing in model
     Gitlab,
+    #[allow(missing_docs)] // documentation missing in model
+    GitlabSelfManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ProviderType {
             "GitHub" => ProviderType::Github,
             "GitHubEnterpriseServer" => ProviderType::GithubEnterpriseServer,
             "GitLab" => ProviderType::Gitlab,
+            "GitLabSelfManaged" => ProviderType::GitlabSelfManaged,
             other => ProviderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -81,12 +85,13 @@ impl ProviderType {
             ProviderType::Github => "GitHub",
             ProviderType::GithubEnterpriseServer => "GitHubEnterpriseServer",
             ProviderType::Gitlab => "GitLab",
+            ProviderType::GitlabSelfManaged => "GitLabSelfManaged",
             ProviderType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Bitbucket", "GitHub", "GitHubEnterpriseServer", "GitLab"]
+        &["Bitbucket", "GitHub", "GitHubEnterpriseServer", "GitLab", "GitLabSelfManaged"]
     }
 }
 impl ::std::convert::AsRef<str> for ProviderType {

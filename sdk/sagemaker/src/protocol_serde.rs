@@ -2091,6 +2091,8 @@ pub(crate) mod shape_device_selection_config;
 
 pub(crate) mod shape_device_summary;
 
+pub(crate) mod shape_docker_settings;
+
 pub(crate) mod shape_domain_details;
 
 pub(crate) mod shape_domain_security_group_ids;
@@ -2766,6 +2768,8 @@ pub(crate) mod shape_trial_component;
 pub(crate) mod shape_usd;
 
 pub(crate) mod shape_vector_config;
+
+pub(crate) mod shape_vpc_only_trusted_accounts;
 
 pub(crate) mod shape_workforce_security_group_ids;
 

@@ -7,9 +7,9 @@ pub use crate::types::error::_invalid_argument_exception::InvalidArgumentExcepti
 
 pub use crate::types::error::_client_limit_exceeded_exception::ClientLimitExceededExceptionBuilder;
 
-pub use crate::types::error::_unsupported_stream_media_type_exception::UnsupportedStreamMediaTypeExceptionBuilder;
-
 pub use crate::types::error::_no_data_retention_exception::NoDataRetentionExceptionBuilder;
+
+pub use crate::types::error::_unsupported_stream_media_type_exception::UnsupportedStreamMediaTypeExceptionBuilder;
 
 pub use crate::types::error::_missing_codec_private_data_exception::MissingCodecPrivateDataExceptionBuilder;
 

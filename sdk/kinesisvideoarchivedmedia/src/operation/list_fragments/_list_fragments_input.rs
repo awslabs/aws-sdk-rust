@@ -11,7 +11,9 @@ pub struct ListFragmentsInput {
     pub max_results: ::std::option::Option<i64>,
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fragment_selector: ::std::option::Option<crate::types::FragmentSelector>,
 }
 impl ListFragmentsInput {
@@ -31,7 +33,9 @@ impl ListFragmentsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn fragment_selector(&self) -> ::std::option::Option<&crate::types::FragmentSelector> {
         self.fragment_selector.as_ref()
     }
@@ -110,17 +114,23 @@ impl ListFragmentsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn fragment_selector(mut self, input: crate::types::FragmentSelector) -> Self {
         self.fragment_selector = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn set_fragment_selector(mut self, input: ::std::option::Option<crate::types::FragmentSelector>) -> Self {
         self.fragment_selector = input;
         self
     }
-    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
+    /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p><note>
+    /// <p>This is only required when the <code>NextToken</code> isn't passed in the API.</p>
+    /// </note>
     pub fn get_fragment_selector(&self) -> &::std::option::Option<crate::types::FragmentSelector> {
         &self.fragment_selector
     }

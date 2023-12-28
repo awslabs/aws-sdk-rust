@@ -496,9 +496,9 @@ model_hash = 'c9a6612597a2e48003707036f12994ec6b0eaf4e39f100153647674b67a8c084'
 
 [crates.aws-sdk-codestarconnections]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8a3bca32534d3fd457a0d7dff6bb2a33fe6c4d051f6fae66415f2c063e4c49ec'
-model_hash = '534c2f832c5678f81751166a3afa09f981fb825fad706aac621e718766173770'
+version = '1.10.0'
+source_hash = '2076dc5aa15c3507eb893ca9e8ab7bcc81cf986164af20643b6968ef3ed35c3b'
+model_hash = '894d40d382b8c31051ab0dab96720cd27b66027ffa96e0f0b5f8dcf29fea5836'
 
 [crates.aws-sdk-codestarnotifications]
 category = 'AwsSdk'
@@ -1198,9 +1198,9 @@ model_hash = '84b3c7dea5190cdbc3f8a8eeb8129b90be7b508b83676fa2c3889ee7a8b59112'
 
 [crates.aws-sdk-kinesisvideoarchivedmedia]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '27e323af9790ccf4c1b0edc7352ede6cb592337f2058d729b134478d1a530028'
-model_hash = '757817ed7459e6d157447535fd55b16592e174d22b554cfdc5620ad3f78b9ca2'
+version = '1.10.0'
+source_hash = 'd2a64b15e8d24d4b2157f7d398e8480747296a293ac2979969d3a1e1de83c1a3'
+model_hash = '02eef95d6727bbe68310100c8966aa979b37d38771ccb09f7f6dd5462e649d1e'
 
 [crates.aws-sdk-kinesisvideomedia]
 category = 'AwsSdk'
@@ -1888,9 +1888,9 @@ model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.12.0'
-source_hash = '1034bfd62c1b8192a5d4a0d449aa2fa15e9a04dfc1ac6e64833223bc325d03b5'
-model_hash = 'fd4ee837f6fd993cb844fe2af006cfb1d6c136474d4ed67168ffd1227557c45f'
+version = '1.13.0'
+source_hash = 'ac8c6014f1e70ecd6f012a92d6013292b44c91c1a5f9997f84fd01808bde2c10'
+model_hash = 'eb4521157e6eadaf0669f98f371b11abfccc3869056d71b2de5eda7af1677dbf'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2402,9 +2402,7 @@ source_hash = '5089c61ac3ff7bf3e91fa88e52e79cadc2e2c5b6c0a2c13f057d310172d7215f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6056f0f81e84bb7636ba8ee9b2740b07d0d1c2aa5b4e16b2537386a5fe203236'
-
-[release]
-tag = 'release-2023-12-27'
-
 [release.crates]
-aws-sdk-emr = '1.10.0'
+aws-sdk-codestarconnections = '1.10.0'
+aws-sdk-kinesisvideoarchivedmedia = '1.10.0'
+aws-sdk-sagemaker = '1.13.0'

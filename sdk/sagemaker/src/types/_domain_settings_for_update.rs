@@ -10,6 +10,8 @@ pub struct DomainSettingsForUpdate {
     pub execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
 }
 impl DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -26,6 +28,10 @@ impl DomainSettingsForUpdate {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn docker_settings(&self) -> ::std::option::Option<&crate::types::DockerSettings> {
+        self.docker_settings.as_ref()
+    }
 }
 impl DomainSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
@@ -41,6 +47,7 @@ pub struct DomainSettingsForUpdateBuilder {
     pub(crate) r_studio_server_pro_domain_settings_for_update: ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
 }
 impl DomainSettingsForUpdateBuilder {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -96,12 +103,27 @@ impl DomainSettingsForUpdateBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn docker_settings(mut self, input: crate::types::DockerSettings) -> Self {
+        self.docker_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn set_docker_settings(mut self, input: ::std::option::Option<crate::types::DockerSettings>) -> Self {
+        self.docker_settings = input;
+        self
+    }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn get_docker_settings(&self) -> &::std::option::Option<crate::types::DockerSettings> {
+        &self.docker_settings
+    }
     /// Consumes the builder and constructs a [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
     pub fn build(self) -> crate::types::DomainSettingsForUpdate {
         crate::types::DomainSettingsForUpdate {
             r_studio_server_pro_domain_settings_for_update: self.r_studio_server_pro_domain_settings_for_update,
             execution_role_identity_config: self.execution_role_identity_config,
             security_group_ids: self.security_group_ids,
+            docker_settings: self.docker_settings,
         }
     }
 }

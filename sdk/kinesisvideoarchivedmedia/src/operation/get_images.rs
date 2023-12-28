@@ -249,6 +249,8 @@ pub enum GetImagesError {
     ClientLimitExceededException(crate::types::error::ClientLimitExceededException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
+    /// <p><code>GetImages</code> was requested for a stream that does not retain data (that is, has a <code>DataRetentionInHours</code> of 0).</p>
+    NoDataRetentionException(crate::types::error::NoDataRetentionException),
     /// <p>Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token has expired.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p><code>GetImages</code> will throw this error when Kinesis Video Streams can't find the stream that you specified.</p>
@@ -289,6 +291,7 @@ impl GetImagesError {
         match self {
             Self::ClientLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoDataRetentionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -301,6 +304,10 @@ impl GetImagesError {
     /// Returns `true` if the error kind is `GetImagesError::InvalidArgumentException`.
     pub fn is_invalid_argument_exception(&self) -> bool {
         matches!(self, Self::InvalidArgumentException(_))
+    }
+    /// Returns `true` if the error kind is `GetImagesError::NoDataRetentionException`.
+    pub fn is_no_data_retention_exception(&self) -> bool {
+        matches!(self, Self::NoDataRetentionException(_))
     }
     /// Returns `true` if the error kind is `GetImagesError::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
@@ -316,6 +323,7 @@ impl ::std::error::Error for GetImagesError {
         match self {
             Self::ClientLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoDataRetentionException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -327,6 +335,7 @@ impl ::std::fmt::Display for GetImagesError {
         match self {
             Self::ClientLimitExceededException(_inner) => _inner.fmt(f),
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
+            Self::NoDataRetentionException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -352,6 +361,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetImagesErro
         match self {
             Self::ClientLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoDataRetentionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

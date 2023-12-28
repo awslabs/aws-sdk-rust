@@ -219,6 +219,8 @@ pub use crate::types::_default_space_settings::DefaultSpaceSettingsBuilder;
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdateBuilder;
 
+pub use crate::types::_docker_settings::DockerSettingsBuilder;
+
 pub use crate::types::_r_studio_server_pro_domain_settings_for_update::RStudioServerProDomainSettingsForUpdateBuilder;
 
 pub use crate::types::_device::DeviceBuilder;

@@ -299,6 +299,8 @@ pub use crate::types::_app_security_group_management::AppSecurityGroupManagement
 
 pub use crate::types::_domain_settings_for_update::DomainSettingsForUpdate;
 
+pub use crate::types::_docker_settings::DockerSettings;
+
 pub use crate::types::_execution_role_identity_config::ExecutionRoleIdentityConfig;
 
 pub use crate::types::_r_studio_server_pro_domain_settings_for_update::RStudioServerProDomainSettingsForUpdate;
@@ -2054,6 +2056,8 @@ mod _direct_deploy_settings;
 mod _direct_internet_access;
 
 mod _direction;
+
+mod _docker_settings;
 
 mod _domain_details;
 

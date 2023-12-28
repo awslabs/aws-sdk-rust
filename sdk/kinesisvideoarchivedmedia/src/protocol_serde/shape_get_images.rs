@@ -48,6 +48,21 @@ pub fn de_get_images_http_error(
             }
             tmp
         }),
+        "NoDataRetentionException" => crate::operation::get_images::GetImagesError::NoDataRetentionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoDataRetentionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_no_data_retention_exception::de_no_data_retention_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_images::GetImagesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NotAuthorizedException" => crate::operation::get_images::GetImagesError::NotAuthorizedException({
             #[allow(unused_mut)]
             let mut tmp = {

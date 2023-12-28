@@ -10,6 +10,8 @@ pub struct DomainSettings {
     pub r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>.</p>
     pub execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub docker_settings: ::std::option::Option<crate::types::DockerSettings>,
 }
 impl DomainSettings {
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
@@ -26,6 +28,10 @@ impl DomainSettings {
     pub fn execution_role_identity_config(&self) -> ::std::option::Option<&crate::types::ExecutionRoleIdentityConfig> {
         self.execution_role_identity_config.as_ref()
     }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn docker_settings(&self) -> ::std::option::Option<&crate::types::DockerSettings> {
+        self.docker_settings.as_ref()
+    }
 }
 impl DomainSettings {
     /// Creates a new builder-style object to manufacture [`DomainSettings`](crate::types::DomainSettings).
@@ -41,6 +47,7 @@ pub struct DomainSettingsBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) r_studio_server_pro_domain_settings: ::std::option::Option<crate::types::RStudioServerProDomainSettings>,
     pub(crate) execution_role_identity_config: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+    pub(crate) docker_settings: ::std::option::Option<crate::types::DockerSettings>,
 }
 impl DomainSettingsBuilder {
     /// Appends an item to `security_group_ids`.
@@ -91,12 +98,27 @@ impl DomainSettingsBuilder {
     pub fn get_execution_role_identity_config(&self) -> &::std::option::Option<crate::types::ExecutionRoleIdentityConfig> {
         &self.execution_role_identity_config
     }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn docker_settings(mut self, input: crate::types::DockerSettings) -> Self {
+        self.docker_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn set_docker_settings(mut self, input: ::std::option::Option<crate::types::DockerSettings>) -> Self {
+        self.docker_settings = input;
+        self
+    }
+    /// <p>A collection of settings that configure the domain's Docker interaction.</p>
+    pub fn get_docker_settings(&self) -> &::std::option::Option<crate::types::DockerSettings> {
+        &self.docker_settings
+    }
     /// Consumes the builder and constructs a [`DomainSettings`](crate::types::DomainSettings).
     pub fn build(self) -> crate::types::DomainSettings {
         crate::types::DomainSettings {
             security_group_ids: self.security_group_ids,
             r_studio_server_pro_domain_settings: self.r_studio_server_pro_domain_settings,
             execution_role_identity_config: self.execution_role_identity_config,
+            docker_settings: self.docker_settings,
         }
     }
 }
