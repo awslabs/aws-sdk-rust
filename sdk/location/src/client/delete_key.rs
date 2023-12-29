@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`key_name(impl Into<String>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::key_name) / [`set_key_name(Option<String>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::set_key_name):<br>required: **true**<br><p>The name of the API key to delete.</p><br>
+    ///   - [`force_delete(bool)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_key::builders::DeleteKeyFluentBuilder::set_force_delete):<br>required: **false**<br><p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or <code>false</code>.</p> <p>Required: No</p><note>  <p>This action is irreversible. Only use ForceDelete if you are certain the key is no longer in use.</p> </note><br>
     /// - On success, responds with [`DeleteKeyOutput`](crate::operation::delete_key::DeleteKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteKeyError>`](crate::operation::delete_key::DeleteKeyError)
     pub fn delete_key(&self) -> crate::operation::delete_key::builders::DeleteKeyFluentBuilder {

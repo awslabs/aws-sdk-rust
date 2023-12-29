@@ -8,6 +8,8 @@ pub struct TopicDetails {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the topic.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The user experience version of a topic.</p>
+    pub user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
     /// <p>The data sets that the topic is associated with.</p>
     pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
 }
@@ -19,6 +21,10 @@ impl TopicDetails {
     /// <p>The description of the topic.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The user experience version of a topic.</p>
+    pub fn user_experience_version(&self) -> ::std::option::Option<&crate::types::TopicUserExperienceVersion> {
+        self.user_experience_version.as_ref()
     }
     /// <p>The data sets that the topic is associated with.</p>
     ///
@@ -40,6 +46,7 @@ impl TopicDetails {
 pub struct TopicDetailsBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) user_experience_version: ::std::option::Option<crate::types::TopicUserExperienceVersion>,
     pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
 }
 impl TopicDetailsBuilder {
@@ -71,6 +78,20 @@ impl TopicDetailsBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The user experience version of a topic.</p>
+    pub fn user_experience_version(mut self, input: crate::types::TopicUserExperienceVersion) -> Self {
+        self.user_experience_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The user experience version of a topic.</p>
+    pub fn set_user_experience_version(mut self, input: ::std::option::Option<crate::types::TopicUserExperienceVersion>) -> Self {
+        self.user_experience_version = input;
+        self
+    }
+    /// <p>The user experience version of a topic.</p>
+    pub fn get_user_experience_version(&self) -> &::std::option::Option<crate::types::TopicUserExperienceVersion> {
+        &self.user_experience_version
+    }
     /// Appends an item to `data_sets`.
     ///
     /// To override the contents of this collection use [`set_data_sets`](Self::set_data_sets).
@@ -96,6 +117,7 @@ impl TopicDetailsBuilder {
         crate::types::TopicDetails {
             name: self.name,
             description: self.description,
+            user_experience_version: self.user_experience_version,
             data_sets: self.data_sets,
         }
     }

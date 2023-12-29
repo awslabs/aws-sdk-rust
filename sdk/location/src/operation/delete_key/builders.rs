@@ -116,4 +116,30 @@ impl DeleteKeyFluentBuilder {
     pub fn get_key_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_name()
     }
+    /// <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p>
+    /// <p>Valid values: <code>true</code>, or <code>false</code>.</p>
+    /// <p>Required: No</p><note>
+    /// <p>This action is irreversible. Only use ForceDelete if you are certain the key is no longer in use.</p>
+    /// </note>
+    pub fn force_delete(mut self, input: bool) -> Self {
+        self.inner = self.inner.force_delete(input);
+        self
+    }
+    /// <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p>
+    /// <p>Valid values: <code>true</code>, or <code>false</code>.</p>
+    /// <p>Required: No</p><note>
+    /// <p>This action is irreversible. Only use ForceDelete if you are certain the key is no longer in use.</p>
+    /// </note>
+    pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force_delete(input);
+        self
+    }
+    /// <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p>
+    /// <p>Valid values: <code>true</code>, or <code>false</code>.</p>
+    /// <p>Required: No</p><note>
+    /// <p>This action is irreversible. Only use ForceDelete if you are certain the key is no longer in use.</p>
+    /// </note>
+    pub fn get_force_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_delete()
+    }
 }

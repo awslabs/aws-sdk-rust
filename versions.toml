@@ -172,9 +172,9 @@ model_hash = 'c854c811b3717a23d61711e743e914d454dd4096713742a5e66d31ab9c463601'
 
 [crates.aws-sdk-apprunner]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'cb197b9ebaeb7153ddb1af5dfbd05441180629256b526994c2bf8fe814e712bb'
-model_hash = '84c05f804625b4365d7222ab0a5c3014bffad0fe4b11ce2cf14394de5622d7a5'
+version = '1.10.0'
+source_hash = '00ac38b3fe14ab7af75e17c98aa60b1f00aea6ac040d6e0561a2260143b549b8'
+model_hash = 'f9eb666b5c1339269de9f9693e7519c35933d020a9afa77720d087ce5799938b'
 
 [crates.aws-sdk-appstream]
 category = 'AwsSdk'
@@ -1294,9 +1294,9 @@ model_hash = '51dea88d120b383d758e4234f219020fbffa40d1e23f4e2b69f8c3fd1efc7382'
 
 [crates.aws-sdk-location]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6084334e1c9bf46a9abdbd57206d111d10d2094ff5207ee9ca91ad7319c97563'
-model_hash = '6e64452c0bb77d49e80b806a35f65673a1dea28bbee4f5a1f9a76b5e1724d7c4'
+version = '1.10.0'
+source_hash = '3469d94942a4cad593d06a463190bb4fdeaa3d89c158187fada822e7ff7f87be'
+model_hash = '81df5e2955ca7233ccde72684ef845b6420dce34db5891cd9f956ddc4950fcfc'
 
 [crates.aws-sdk-lookoutequipment]
 category = 'AwsSdk'
@@ -1732,9 +1732,9 @@ model_hash = '27c9e9e5a0761cc6e79648630e51a0d6faf2ea5dea8826c722bcc5005fa36786'
 
 [crates.aws-sdk-quicksight]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '68e78bfbe37c0e91c02594098cde97f66de51f361293c6771750f545b5f9f6a9'
-model_hash = 'fc56cdef43337337cdd8980e24cd602d3d05c5c15a4a7e51d9e7b0d56f37e268'
+version = '1.10.0'
+source_hash = 'c5d5efcee270b8deeca2b1957cf4ca5a348336b05c398aa7526efa4125747685'
+model_hash = '418c392102b0b9cde57831f9f0af19bf298709a18f639dce07928b11cdcb9fb5'
 
 [crates.aws-sdk-ram]
 category = 'AwsSdk'
@@ -2402,11 +2402,7 @@ source_hash = '5089c61ac3ff7bf3e91fa88e52e79cadc2e2c5b6c0a2c13f057d310172d7215f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6056f0f81e84bb7636ba8ee9b2740b07d0d1c2aa5b4e16b2537386a5fe203236'
-
-[release]
-tag = 'release-2023-12-28'
-
 [release.crates]
-aws-sdk-codestarconnections = '1.10.0'
-aws-sdk-kinesisvideoarchivedmedia = '1.10.0'
-aws-sdk-sagemaker = '1.13.0'
+aws-sdk-apprunner = '1.10.0'
+aws-sdk-location = '1.10.0'
+aws-sdk-quicksight = '1.10.0'

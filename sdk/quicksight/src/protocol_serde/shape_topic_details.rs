@@ -9,17 +9,20 @@ pub fn ser_topic_details(
     if let Some(var_2) = &input.description {
         object.key("Description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.data_sets {
-        let mut array_4 = object.key("DataSets").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.user_experience_version {
+        object.key("UserExperienceVersion").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.data_sets {
+        let mut array_5 = object.key("DataSets").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_dataset_metadata::ser_dataset_metadata(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_dataset_metadata::ser_dataset_metadata(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     Ok(())
 }
@@ -50,6 +53,13 @@ where
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "UserExperienceVersion" => {
+                            builder = builder.set_user_experience_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TopicUserExperienceVersion::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

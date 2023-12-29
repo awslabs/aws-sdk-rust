@@ -107,6 +107,8 @@ pub use crate::types::_filter_class::FilterClass;
 
 pub use crate::types::_data_aggregation::DataAggregation;
 
+pub use crate::types::_topic_user_experience_version::TopicUserExperienceVersion;
+
 pub use crate::types::_theme_alias::ThemeAlias;
 
 pub use crate::types::_resource_status::ResourceStatus;
@@ -3722,6 +3724,8 @@ mod _topic_singular_filter_constant;
 mod _topic_summary;
 
 mod _topic_time_granularity;
+
+mod _topic_user_experience_version;
 
 mod _total_aggregation_computation;
 

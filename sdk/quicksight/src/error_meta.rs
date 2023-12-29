@@ -5522,6 +5522,9 @@ impl From<crate::operation::update_dashboard_links::UpdateDashboardLinksError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_dashboard_links::UpdateDashboardLinksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_dashboard_links::UpdateDashboardLinksError::UnsupportedUserEditionException(inner) => {
+                Error::UnsupportedUserEditionException(inner)
+            }
             crate::operation::update_dashboard_links::UpdateDashboardLinksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

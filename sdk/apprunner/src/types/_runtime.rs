@@ -19,8 +19,10 @@
 ///     Runtime::Nodejs12 => { /* ... */ },
 ///     Runtime::Nodejs14 => { /* ... */ },
 ///     Runtime::Nodejs16 => { /* ... */ },
+///     Runtime::Nodejs18 => { /* ... */ },
 ///     Runtime::Php81 => { /* ... */ },
 ///     Runtime::Python3 => { /* ... */ },
+///     Runtime::Python311 => { /* ... */ },
 ///     Runtime::Ruby31 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -64,9 +66,13 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs16,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs18,
+    #[allow(missing_docs)] // documentation missing in model
     Php81,
     #[allow(missing_docs)] // documentation missing in model
     Python3,
+    #[allow(missing_docs)] // documentation missing in model
+    Python311,
     #[allow(missing_docs)] // documentation missing in model
     Ruby31,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -83,8 +89,10 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_12" => Runtime::Nodejs12,
             "NODEJS_14" => Runtime::Nodejs14,
             "NODEJS_16" => Runtime::Nodejs16,
+            "NODEJS_18" => Runtime::Nodejs18,
             "PHP_81" => Runtime::Php81,
             "PYTHON_3" => Runtime::Python3,
+            "PYTHON_311" => Runtime::Python311,
             "RUBY_31" => Runtime::Ruby31,
             other => Runtime::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -108,8 +116,10 @@ impl Runtime {
             Runtime::Nodejs12 => "NODEJS_12",
             Runtime::Nodejs14 => "NODEJS_14",
             Runtime::Nodejs16 => "NODEJS_16",
+            Runtime::Nodejs18 => "NODEJS_18",
             Runtime::Php81 => "PHP_81",
             Runtime::Python3 => "PYTHON_3",
+            Runtime::Python311 => "PYTHON_311",
             Runtime::Ruby31 => "RUBY_31",
             Runtime::Unknown(value) => value.as_str(),
         }
@@ -124,8 +134,10 @@ impl Runtime {
             "NODEJS_12",
             "NODEJS_14",
             "NODEJS_16",
+            "NODEJS_18",
             "PHP_81",
             "PYTHON_3",
+            "PYTHON_311",
             "RUBY_31",
         ]
     }

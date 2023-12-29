@@ -113,6 +113,24 @@ pub fn de_update_dashboard_links_http_error(
             }
             tmp
         }),
+        "UnsupportedUserEditionException" => crate::operation::update_dashboard_links::UpdateDashboardLinksError::UnsupportedUserEditionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedUserEditionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_user_edition_exception::de_unsupported_user_edition_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_dashboard_links::UpdateDashboardLinksError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::update_dashboard_links::UpdateDashboardLinksError::generic(generic),
     })
 }
