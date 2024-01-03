@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactSearchSummary {
-    /// <p>The Amazon Resource Name (ARN) of the contact</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the contact summary.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct ContactSearchSummary {
     pub queue_info: ::std::option::Option<crate::types::ContactSearchSummaryQueueInfo>,
     /// <p>Information about the agent who accepted the contact.</p>
     pub agent_info: ::std::option::Option<crate::types::ContactSearchSummaryAgentInfo>,
-    /// <p>The date and time this contact was initiated, in UTC time. For INBOUND, this is when the contact arrived. For OUTBOUND, this is when the agent began dialing. For CALLBACK, this is when the callback contact was created. For TRANSFER and QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started dialing the external participant. For MONITOR, this is when the supervisor started listening to a contact.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub initiation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the customer endpoint disconnected from Amazon Connect.</p>
     pub disconnect_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -28,7 +28,7 @@ pub struct ContactSearchSummary {
     pub scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContactSearchSummary {
-    /// <p>The Amazon Resource Name (ARN) of the contact</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -60,7 +60,7 @@ impl ContactSearchSummary {
     pub fn agent_info(&self) -> ::std::option::Option<&crate::types::ContactSearchSummaryAgentInfo> {
         self.agent_info.as_ref()
     }
-    /// <p>The date and time this contact was initiated, in UTC time. For INBOUND, this is when the contact arrived. For OUTBOUND, this is when the agent began dialing. For CALLBACK, this is when the callback contact was created. For TRANSFER and QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started dialing the external participant. For MONITOR, this is when the supervisor started listening to a contact.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn initiation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.initiation_timestamp.as_ref()
     }
@@ -97,17 +97,17 @@ pub struct ContactSearchSummaryBuilder {
     pub(crate) scheduled_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ContactSearchSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the contact</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the contact</p>
+    /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -209,17 +209,17 @@ impl ContactSearchSummaryBuilder {
     pub fn get_agent_info(&self) -> &::std::option::Option<crate::types::ContactSearchSummaryAgentInfo> {
         &self.agent_info
     }
-    /// <p>The date and time this contact was initiated, in UTC time. For INBOUND, this is when the contact arrived. For OUTBOUND, this is when the agent began dialing. For CALLBACK, this is when the callback contact was created. For TRANSFER and QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started dialing the external participant. For MONITOR, this is when the supervisor started listening to a contact.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn initiation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.initiation_timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time this contact was initiated, in UTC time. For INBOUND, this is when the contact arrived. For OUTBOUND, this is when the agent began dialing. For CALLBACK, this is when the callback contact was created. For TRANSFER and QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started dialing the external participant. For MONITOR, this is when the supervisor started listening to a contact.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn set_initiation_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.initiation_timestamp = input;
         self
     }
-    /// <p>The date and time this contact was initiated, in UTC time. For INBOUND, this is when the contact arrived. For OUTBOUND, this is when the agent began dialing. For CALLBACK, this is when the callback contact was created. For TRANSFER and QUEUE_TRANSFER, this is when the transfer was initiated. For API, this is when the request arrived. For EXTERNAL_OUTBOUND, this is when the agent started dialing the external participant. For MONITOR, this is when the supervisor started listening to a contact.</p>
+    /// <p>The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>, this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent began dialing. For <code>CALLBACK</code>, this is when the callback contact was created. For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer was initiated. For API, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>, this is when the agent started dialing the external participant. For <code>MONITOR</code>, this is when the supervisor started listening to a contact.</p>
     pub fn get_initiation_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.initiation_timestamp
     }

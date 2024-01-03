@@ -191,6 +191,22 @@ pub use crate::types::_vc3_framerate_conversion_algorithm::Vc3FramerateConversio
 
 pub use crate::types::_vc3_framerate_control::Vc3FramerateControl;
 
+pub use crate::types::_uncompressed_settings::UncompressedSettings;
+
+pub use crate::types::_uncompressed_telecine::UncompressedTelecine;
+
+pub use crate::types::_uncompressed_slow_pal::UncompressedSlowPal;
+
+pub use crate::types::_uncompressed_scan_type_conversion_mode::UncompressedScanTypeConversionMode;
+
+pub use crate::types::_uncompressed_interlace_mode::UncompressedInterlaceMode;
+
+pub use crate::types::_uncompressed_framerate_conversion_algorithm::UncompressedFramerateConversionAlgorithm;
+
+pub use crate::types::_uncompressed_framerate_control::UncompressedFramerateControl;
+
+pub use crate::types::_uncompressed_fourcc::UncompressedFourcc;
+
 pub use crate::types::_prores_settings::ProresSettings;
 
 pub use crate::types::_prores_telecine::ProresTelecine;
@@ -1121,6 +1137,8 @@ pub use crate::types::_esam_signal_processing_notification::EsamSignalProcessing
 
 pub use crate::types::_esam_manifest_confirm_condition_notification::EsamManifestConfirmConditionNotification;
 
+pub use crate::types::_color_conversion3_dlut_setting::ColorConversion3DlutSetting;
+
 pub use crate::types::_avail_blanking::AvailBlanking;
 
 pub use crate::types::_hop_destination::HopDestination;
@@ -1444,6 +1462,8 @@ mod _cmfc_settings;
 mod _cmfc_timed_metadata;
 
 mod _cmfc_timed_metadata_box_version;
+
+mod _color_conversion3_dlut_setting;
 
 mod _color_corrector;
 
@@ -2234,6 +2254,22 @@ mod _ttml_destination_settings;
 mod _ttml_style_passthrough;
 
 mod _type_;
+
+mod _uncompressed_fourcc;
+
+mod _uncompressed_framerate_control;
+
+mod _uncompressed_framerate_conversion_algorithm;
+
+mod _uncompressed_interlace_mode;
+
+mod _uncompressed_scan_type_conversion_mode;
+
+mod _uncompressed_settings;
+
+mod _uncompressed_slow_pal;
+
+mod _uncompressed_telecine;
 
 mod _vc3_class;
 

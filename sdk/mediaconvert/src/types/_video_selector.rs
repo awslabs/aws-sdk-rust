@@ -14,6 +14,8 @@ pub struct VideoSelector {
     pub embedded_timecode_override: ::std::option::Option<crate::types::EmbeddedTimecodeOverride>,
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space to HDR 10. To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage. To specify whether color metadata is included in an output, set Color metadata. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub hdr10_metadata: ::std::option::Option<crate::types::Hdr10Metadata>,
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub max_luminance: ::std::option::Option<i32>,
     /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video to Black, MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled or leave blank.
     pub pad_video: ::std::option::Option<crate::types::PadVideo>,
     /// Use PID to select specific video data from an input file. Specify this value as an integer; the system automatically converts it to the hexidecimal value. For example, 257 selects PID 0x101. A PID, or packet identifier, is an identifier for a set of data in an MPEG-2 transport stream container.
@@ -45,6 +47,10 @@ impl VideoSelector {
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space to HDR 10. To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage. To specify whether color metadata is included in an output, set Color metadata. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub fn hdr10_metadata(&self) -> ::std::option::Option<&crate::types::Hdr10Metadata> {
         self.hdr10_metadata.as_ref()
+    }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn max_luminance(&self) -> ::std::option::Option<i32> {
+        self.max_luminance
     }
     /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video to Black, MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled or leave blank.
     pub fn pad_video(&self) -> ::std::option::Option<&crate::types::PadVideo> {
@@ -83,6 +89,7 @@ pub struct VideoSelectorBuilder {
     pub(crate) color_space_usage: ::std::option::Option<crate::types::ColorSpaceUsage>,
     pub(crate) embedded_timecode_override: ::std::option::Option<crate::types::EmbeddedTimecodeOverride>,
     pub(crate) hdr10_metadata: ::std::option::Option<crate::types::Hdr10Metadata>,
+    pub(crate) max_luminance: ::std::option::Option<i32>,
     pub(crate) pad_video: ::std::option::Option<crate::types::PadVideo>,
     pub(crate) pid: ::std::option::Option<i32>,
     pub(crate) program_number: ::std::option::Option<i32>,
@@ -159,6 +166,20 @@ impl VideoSelectorBuilder {
     /// Use these settings to provide HDR 10 metadata that is missing or inaccurate in your input video. Appropriate values vary depending on the input video and must be provided by a color grader. The color grader generates these values during the HDR 10 mastering process. The valid range for each of these settings is 0 to 50,000. Each increment represents 0.00002 in CIE1931 color coordinate. Related settings - When you specify these values, you must also set Color space to HDR 10. To specify whether the the values you specify here take precedence over the values in the metadata of your input file, set Color space usage. To specify whether color metadata is included in an output, set Color metadata. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
     pub fn get_hdr10_metadata(&self) -> &::std::option::Option<crate::types::Hdr10Metadata> {
         &self.hdr10_metadata
+    }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn max_luminance(mut self, input: i32) -> Self {
+        self.max_luminance = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn set_max_luminance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_luminance = input;
+        self
+    }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn get_max_luminance(&self) -> &::std::option::Option<i32> {
+        &self.max_luminance
     }
     /// Use this setting if your input has video and audio durations that don't align, and your output or player has strict alignment requirements. Examples: Input audio track has a delayed start. Input video track ends before audio ends. When you set Pad video to Black, MediaConvert generates black video frames so that output video and audio durations match. Black video frames are added at the beginning or end, depending on your input. To keep the default behavior and not generate black video, set Pad video to Disabled or leave blank.
     pub fn pad_video(mut self, input: crate::types::PadVideo) -> Self {
@@ -238,6 +259,7 @@ impl VideoSelectorBuilder {
             color_space_usage: self.color_space_usage,
             embedded_timecode_override: self.embedded_timecode_override,
             hdr10_metadata: self.hdr10_metadata,
+            max_luminance: self.max_luminance,
             pad_video: self.pad_video,
             pid: self.pid,
             program_number: self.program_number,

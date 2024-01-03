@@ -163,6 +163,8 @@ pub(crate) mod shape_avail_blanking;
 
 pub(crate) mod shape_caption_description_preset;
 
+pub(crate) mod shape_color_conversion3_dlut_setting;
+
 pub(crate) mod shape_container_settings;
 
 pub(crate) mod shape_endpoint;
@@ -226,6 +228,8 @@ pub(crate) mod shape_caption_destination_settings;
 pub(crate) mod shape_caption_selector;
 
 pub(crate) mod shape_cmfc_settings;
+
+pub(crate) mod shape_color_conversion3_dlut_settings;
 
 pub(crate) mod shape_esam_manifest_confirm_condition_notification;
 
@@ -394,6 +398,8 @@ pub(crate) mod shape_teletext_destination_settings;
 pub(crate) mod shape_timecode_burnin;
 
 pub(crate) mod shape_ttml_destination_settings;
+
+pub(crate) mod shape_uncompressed_settings;
 
 pub(crate) mod shape_vc3_settings;
 

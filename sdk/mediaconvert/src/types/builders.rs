@@ -67,6 +67,8 @@ pub use crate::types::_vp8_settings::Vp8SettingsBuilder;
 
 pub use crate::types::_vc3_settings::Vc3SettingsBuilder;
 
+pub use crate::types::_uncompressed_settings::UncompressedSettingsBuilder;
+
 pub use crate::types::_prores_settings::ProresSettingsBuilder;
 
 pub use crate::types::_mpeg2_settings::Mpeg2SettingsBuilder;
@@ -320,6 +322,8 @@ pub use crate::types::_esam_settings::EsamSettingsBuilder;
 pub use crate::types::_esam_signal_processing_notification::EsamSignalProcessingNotificationBuilder;
 
 pub use crate::types::_esam_manifest_confirm_condition_notification::EsamManifestConfirmConditionNotificationBuilder;
+
+pub use crate::types::_color_conversion3_dlut_setting::ColorConversion3DlutSettingBuilder;
 
 pub use crate::types::_avail_blanking::AvailBlankingBuilder;
 

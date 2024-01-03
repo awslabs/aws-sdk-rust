@@ -48,29 +48,35 @@ pub fn ser_video_codec_settings(
         crate::protocol_serde::shape_prores_settings::ser_prores_settings(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.vc3_settings {
+    if let Some(var_16) = &input.uncompressed_settings {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("vc3Settings").start_object();
-        crate::protocol_serde::shape_vc3_settings::ser_vc3_settings(&mut object_17, var_16)?;
+        let mut object_17 = object.key("uncompressedSettings").start_object();
+        crate::protocol_serde::shape_uncompressed_settings::ser_uncompressed_settings(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.vp8_settings {
+    if let Some(var_18) = &input.vc3_settings {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("vp8Settings").start_object();
-        crate::protocol_serde::shape_vp8_settings::ser_vp8_settings(&mut object_19, var_18)?;
+        let mut object_19 = object.key("vc3Settings").start_object();
+        crate::protocol_serde::shape_vc3_settings::ser_vc3_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.vp9_settings {
+    if let Some(var_20) = &input.vp8_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("vp9Settings").start_object();
-        crate::protocol_serde::shape_vp9_settings::ser_vp9_settings(&mut object_21, var_20)?;
+        let mut object_21 = object.key("vp8Settings").start_object();
+        crate::protocol_serde::shape_vp8_settings::ser_vp8_settings(&mut object_21, var_20)?;
         object_21.finish();
     }
-    if let Some(var_22) = &input.xavc_settings {
+    if let Some(var_22) = &input.vp9_settings {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("xavcSettings").start_object();
-        crate::protocol_serde::shape_xavc_settings::ser_xavc_settings(&mut object_23, var_22)?;
+        let mut object_23 = object.key("vp9Settings").start_object();
+        crate::protocol_serde::shape_vp9_settings::ser_vp9_settings(&mut object_23, var_22)?;
         object_23.finish();
+    }
+    if let Some(var_24) = &input.xavc_settings {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("xavcSettings").start_object();
+        crate::protocol_serde::shape_xavc_settings::ser_xavc_settings(&mut object_25, var_24)?;
+        object_25.finish();
     }
     Ok(())
 }
@@ -118,6 +124,10 @@ where
                         }
                         "proresSettings" => {
                             builder = builder.set_prores_settings(crate::protocol_serde::shape_prores_settings::de_prores_settings(tokens)?);
+                        }
+                        "uncompressedSettings" => {
+                            builder = builder
+                                .set_uncompressed_settings(crate::protocol_serde::shape_uncompressed_settings::de_uncompressed_settings(tokens)?);
                         }
                         "vc3Settings" => {
                             builder = builder.set_vc3_settings(crate::protocol_serde::shape_vc3_settings::de_vc3_settings(tokens)?);

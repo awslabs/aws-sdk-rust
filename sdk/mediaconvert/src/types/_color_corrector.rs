@@ -18,6 +18,8 @@ pub struct ColorCorrector {
     pub hdr_to_sdr_tone_mapper: ::std::option::Option<crate::types::HdrToSdrToneMapper>,
     /// Hue in degrees.
     pub hue: ::std::option::Option<i32>,
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub max_luminance: ::std::option::Option<i32>,
     /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
     pub sample_range_conversion: ::std::option::Option<crate::types::SampleRangeConversion>,
     /// Saturation level.
@@ -54,6 +56,10 @@ impl ColorCorrector {
     pub fn hue(&self) -> ::std::option::Option<i32> {
         self.hue
     }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn max_luminance(&self) -> ::std::option::Option<i32> {
+        self.max_luminance
+    }
     /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
     pub fn sample_range_conversion(&self) -> ::std::option::Option<&crate::types::SampleRangeConversion> {
         self.sample_range_conversion.as_ref()
@@ -85,6 +91,7 @@ pub struct ColorCorrectorBuilder {
     pub(crate) hdr10_metadata: ::std::option::Option<crate::types::Hdr10Metadata>,
     pub(crate) hdr_to_sdr_tone_mapper: ::std::option::Option<crate::types::HdrToSdrToneMapper>,
     pub(crate) hue: ::std::option::Option<i32>,
+    pub(crate) max_luminance: ::std::option::Option<i32>,
     pub(crate) sample_range_conversion: ::std::option::Option<crate::types::SampleRangeConversion>,
     pub(crate) saturation: ::std::option::Option<i32>,
     pub(crate) sdr_reference_white_level: ::std::option::Option<i32>,
@@ -188,6 +195,20 @@ impl ColorCorrectorBuilder {
     pub fn get_hue(&self) -> &::std::option::Option<i32> {
         &self.hue
     }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn max_luminance(mut self, input: i32) -> Self {
+        self.max_luminance = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn set_max_luminance(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_luminance = input;
+        self
+    }
+    /// Specify the maximum mastering display luminance. Enter an integer from 0 to 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+    pub fn get_max_luminance(&self) -> &::std::option::Option<i32> {
+        &self.max_luminance
+    }
     /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
     pub fn sample_range_conversion(mut self, input: crate::types::SampleRangeConversion) -> Self {
         self.sample_range_conversion = ::std::option::Option::Some(input);
@@ -240,6 +261,7 @@ impl ColorCorrectorBuilder {
             hdr10_metadata: self.hdr10_metadata,
             hdr_to_sdr_tone_mapper: self.hdr_to_sdr_tone_mapper,
             hue: self.hue,
+            max_luminance: self.max_luminance,
             sample_range_conversion: self.sample_range_conversion,
             saturation: self.saturation,
             sdr_reference_white_level: self.sdr_reference_white_level,

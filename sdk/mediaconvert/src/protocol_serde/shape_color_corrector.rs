@@ -39,19 +39,25 @@ pub fn ser_color_corrector(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_10) = &input.sample_range_conversion {
-        object.key("sampleRangeConversion").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.saturation {
-        object.key("saturation").number(
+    if let Some(var_10) = &input.max_luminance {
+        object.key("maxLuminance").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_12) = &input.sdr_reference_white_level {
-        object.key("sdrReferenceWhiteLevel").number(
+    if let Some(var_11) = &input.sample_range_conversion {
+        object.key("sampleRangeConversion").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.saturation {
+        object.key("saturation").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
+    }
+    if let Some(var_13) = &input.sdr_reference_white_level {
+        object.key("sdrReferenceWhiteLevel").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
     Ok(())
@@ -108,6 +114,13 @@ where
                         }
                         "hue" => {
                             builder = builder.set_hue(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "maxLuminance" => {
+                            builder = builder.set_max_luminance(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

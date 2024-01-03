@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchContactsInput {
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub time_range: ::std::option::Option<crate::types::SearchContactsTimeRange>,
     /// <p>The search criteria to be used to return contacts.</p>
     pub search_criteria: ::std::option::Option<crate::types::SearchCriteria>,
@@ -13,15 +13,15 @@ pub struct SearchContactsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SearchContactsInput {
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::SearchContactsTimeRange> {
         self.time_range.as_ref()
     }
@@ -37,7 +37,7 @@ impl SearchContactsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
         self.sort.as_ref()
     }
@@ -61,33 +61,33 @@ pub struct SearchContactsInputBuilder {
     pub(crate) sort: ::std::option::Option<crate::types::Sort>,
 }
 impl SearchContactsInputBuilder {
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     /// This field is required.
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     /// This field is required.
     pub fn time_range(mut self, input: crate::types::SearchContactsTimeRange) -> Self {
         self.time_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::SearchContactsTimeRange>) -> Self {
         self.time_range = input;
         self
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub fn get_time_range(&self) -> &::std::option::Option<crate::types::SearchContactsTimeRange> {
         &self.time_range
     }
@@ -133,17 +133,17 @@ impl SearchContactsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.sort = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.sort = input;
         self
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
         &self.sort
     }

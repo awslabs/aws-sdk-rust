@@ -23,6 +23,7 @@
 ///     ContainerType::Mxf => { /* ... */ },
 ///     ContainerType::Raw => { /* ... */ },
 ///     ContainerType::Webm => { /* ... */ },
+///     ContainerType::Y4M => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -72,6 +73,8 @@ pub enum ContainerType {
     Raw,
     #[allow(missing_docs)] // documentation missing in model
     Webm,
+    #[allow(missing_docs)] // documentation missing in model
+    Y4M,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -90,6 +93,7 @@ impl ::std::convert::From<&str> for ContainerType {
             "MXF" => ContainerType::Mxf,
             "RAW" => ContainerType::Raw,
             "WEBM" => ContainerType::Webm,
+            "Y4M" => ContainerType::Y4M,
             other => ContainerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -116,12 +120,13 @@ impl ContainerType {
             ContainerType::Mxf => "MXF",
             ContainerType::Raw => "RAW",
             ContainerType::Webm => "WEBM",
+            ContainerType::Y4M => "Y4M",
             ContainerType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "RAW", "WEBM"]
+        &["CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "RAW", "WEBM", "Y4M"]
     }
 }
 impl ::std::convert::AsRef<str> for ContainerType {

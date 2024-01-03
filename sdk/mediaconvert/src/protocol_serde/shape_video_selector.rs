@@ -21,26 +21,32 @@ pub fn ser_video_selector(
         crate::protocol_serde::shape_hdr10_metadata::ser_hdr10_metadata(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.pad_video {
-        object.key("padVideo").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.pid {
-        object.key("pid").number(
+    if let Some(var_7) = &input.max_luminance {
+        object.key("maxLuminance").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_9) = &input.program_number {
-        object.key("programNumber").number(
+    if let Some(var_8) = &input.pad_video {
+        object.key("padVideo").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.pid {
+        object.key("pid").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_10) = &input.rotate {
-        object.key("rotate").string(var_10.as_str());
+    if let Some(var_10) = &input.program_number {
+        object.key("programNumber").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+        );
     }
-    if let Some(var_11) = &input.sample_range {
-        object.key("sampleRange").string(var_11.as_str());
+    if let Some(var_11) = &input.rotate {
+        object.key("rotate").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.sample_range {
+        object.key("sampleRange").string(var_12.as_str());
     }
     Ok(())
 }
@@ -90,6 +96,13 @@ where
                         }
                         "hdr10Metadata" => {
                             builder = builder.set_hdr10_metadata(crate::protocol_serde::shape_hdr10_metadata::de_hdr10_metadata(tokens)?);
+                        }
+                        "maxLuminance" => {
+                            builder = builder.set_max_luminance(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
                         }
                         "padVideo" => {
                             builder = builder.set_pad_video(

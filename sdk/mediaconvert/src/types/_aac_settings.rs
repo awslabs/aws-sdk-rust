@@ -8,19 +8,19 @@ pub struct AacSettings {
     pub audio_description_broadcaster_mix: ::std::option::Option<crate::types::AacAudioDescriptionBroadcasterMix>,
     /// Specify the average bitrate in bits per second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set is also constrained by the values that you choose for Profile, Bitrate control mode, and Sample rate. Default values depend on Bitrate control mode and Profile.
     pub bitrate: ::std::option::Option<i32>,
-    /// AAC Profile.
+    /// Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates.
     pub codec_profile: ::std::option::Option<crate::types::AacCodecProfile>,
     /// The Coding mode that you specify determines the number of audio channels and the audio channel layout metadata in your AAC output. Valid coding modes depend on the Rate control mode and Profile that you select. The following list shows the number of audio channels and channel layout for each coding mode. * 1.0 Audio Description (Receiver Mix): One channel, C. Includes audio description data from your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono: One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels, C, L, R, Ls, Rs, LFE.
     pub coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
-    /// Rate Control Mode.
+    /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub rate_control_mode: ::std::option::Option<crate::types::AacRateControlMode>,
     /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
     pub raw_format: ::std::option::Option<crate::types::AacRawFormat>,
-    /// Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000.
+    /// Specify the AAC sample rate in samples per second (Hz). Valid sample rates depend on the AAC profile and Coding mode that you select. For a list of supported sample rates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
     pub sample_rate: ::std::option::Option<i32>,
     /// Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.
     pub specification: ::std::option::Option<crate::types::AacSpecification>,
-    /// VBR Quality Level - Only used if rate_control_mode is VBR.
+    /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub vbr_quality: ::std::option::Option<crate::types::AacVbrQuality>,
 }
 impl AacSettings {
@@ -32,7 +32,7 @@ impl AacSettings {
     pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
     }
-    /// AAC Profile.
+    /// Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates.
     pub fn codec_profile(&self) -> ::std::option::Option<&crate::types::AacCodecProfile> {
         self.codec_profile.as_ref()
     }
@@ -40,7 +40,7 @@ impl AacSettings {
     pub fn coding_mode(&self) -> ::std::option::Option<&crate::types::AacCodingMode> {
         self.coding_mode.as_ref()
     }
-    /// Rate Control Mode.
+    /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::AacRateControlMode> {
         self.rate_control_mode.as_ref()
     }
@@ -48,7 +48,7 @@ impl AacSettings {
     pub fn raw_format(&self) -> ::std::option::Option<&crate::types::AacRawFormat> {
         self.raw_format.as_ref()
     }
-    /// Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000.
+    /// Specify the AAC sample rate in samples per second (Hz). Valid sample rates depend on the AAC profile and Coding mode that you select. For a list of supported sample rates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
     pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
@@ -56,7 +56,7 @@ impl AacSettings {
     pub fn specification(&self) -> ::std::option::Option<&crate::types::AacSpecification> {
         self.specification.as_ref()
     }
-    /// VBR Quality Level - Only used if rate_control_mode is VBR.
+    /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub fn vbr_quality(&self) -> ::std::option::Option<&crate::types::AacVbrQuality> {
         self.vbr_quality.as_ref()
     }
@@ -111,17 +111,17 @@ impl AacSettingsBuilder {
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
         &self.bitrate
     }
-    /// AAC Profile.
+    /// Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates.
     pub fn codec_profile(mut self, input: crate::types::AacCodecProfile) -> Self {
         self.codec_profile = ::std::option::Option::Some(input);
         self
     }
-    /// AAC Profile.
+    /// Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates.
     pub fn set_codec_profile(mut self, input: ::std::option::Option<crate::types::AacCodecProfile>) -> Self {
         self.codec_profile = input;
         self
     }
-    /// AAC Profile.
+    /// Specify the AAC profile. For the widest player compatibility and where higher bitrates are acceptable: Keep the default profile, LC (AAC-LC) For improved audio performance at lower bitrates: Choose HEV1 or HEV2. HEV1 (AAC-HE v1) adds spectral band replication to improve speech audio at low bitrates. HEV2 (AAC-HE v2) adds parametric stereo, which optimizes for encoding stereo audio at very low bitrates.
     pub fn get_codec_profile(&self) -> &::std::option::Option<crate::types::AacCodecProfile> {
         &self.codec_profile
     }
@@ -139,17 +139,17 @@ impl AacSettingsBuilder {
     pub fn get_coding_mode(&self) -> &::std::option::Option<crate::types::AacCodingMode> {
         &self.coding_mode
     }
-    /// Rate Control Mode.
+    /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub fn rate_control_mode(mut self, input: crate::types::AacRateControlMode) -> Self {
         self.rate_control_mode = ::std::option::Option::Some(input);
         self
     }
-    /// Rate Control Mode.
+    /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::AacRateControlMode>) -> Self {
         self.rate_control_mode = input;
         self
     }
-    /// Rate Control Mode.
+    /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::AacRateControlMode> {
         &self.rate_control_mode
     }
@@ -167,17 +167,17 @@ impl AacSettingsBuilder {
     pub fn get_raw_format(&self) -> &::std::option::Option<crate::types::AacRawFormat> {
         &self.raw_format
     }
-    /// Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000.
+    /// Specify the AAC sample rate in samples per second (Hz). Valid sample rates depend on the AAC profile and Coding mode that you select. For a list of supported sample rates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
     pub fn sample_rate(mut self, input: i32) -> Self {
         self.sample_rate = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000.
+    /// Specify the AAC sample rate in samples per second (Hz). Valid sample rates depend on the AAC profile and Coding mode that you select. For a list of supported sample rates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
     pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }
-    /// Specify the Sample rate in Hz. Valid sample rates depend on the Profile and Coding mode that you select. The following list shows valid sample rates for each Profile and Coding mode. * LC Profile, Coding mode 1.0, 2.0, and Receiver Mix: 8000, 12000, 16000, 22050, 24000, 32000, 44100, 48000, 88200, 96000. * LC Profile, Coding mode 5.1: 32000, 44100, 48000, 96000. * HEV1 Profile, Coding mode 1.0 and Receiver Mix: 22050, 24000, 32000, 44100, 48000. * HEV1 Profile, Coding mode 2.0 and 5.1: 32000, 44100, 48000, 96000. * HEV2 Profile, Coding mode 2.0: 22050, 24000, 32000, 44100, 48000.
+    /// Specify the AAC sample rate in samples per second (Hz). Valid sample rates depend on the AAC profile and Coding mode that you select. For a list of supported sample rates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html
     pub fn get_sample_rate(&self) -> &::std::option::Option<i32> {
         &self.sample_rate
     }
@@ -195,17 +195,17 @@ impl AacSettingsBuilder {
     pub fn get_specification(&self) -> &::std::option::Option<crate::types::AacSpecification> {
         &self.specification
     }
-    /// VBR Quality Level - Only used if rate_control_mode is VBR.
+    /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub fn vbr_quality(mut self, input: crate::types::AacVbrQuality) -> Self {
         self.vbr_quality = ::std::option::Option::Some(input);
         self
     }
-    /// VBR Quality Level - Only used if rate_control_mode is VBR.
+    /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub fn set_vbr_quality(mut self, input: ::std::option::Option<crate::types::AacVbrQuality>) -> Self {
         self.vbr_quality = input;
         self
     }
-    /// VBR Quality Level - Only used if rate_control_mode is VBR.
+    /// Specify the quality of your variable bitrate (VBR) AAC audio. For a list of approximate VBR bitrates, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/aac-support.html#aac_vbr
     pub fn get_vbr_quality(&self) -> &::std::option::Option<crate::types::AacVbrQuality> {
         &self.vbr_quality
     }

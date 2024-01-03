@@ -20,6 +20,7 @@
 ///     VideoCodec::Mpeg2 => { /* ... */ },
 ///     VideoCodec::Passthrough => { /* ... */ },
 ///     VideoCodec::Prores => { /* ... */ },
+///     VideoCodec::Uncompressed => { /* ... */ },
 ///     VideoCodec::Vc3 => { /* ... */ },
 ///     VideoCodec::Vp8 => { /* ... */ },
 ///     VideoCodec::Vp9 => { /* ... */ },
@@ -68,6 +69,8 @@ pub enum VideoCodec {
     #[allow(missing_docs)] // documentation missing in model
     Prores,
     #[allow(missing_docs)] // documentation missing in model
+    Uncompressed,
+    #[allow(missing_docs)] // documentation missing in model
     Vc3,
     #[allow(missing_docs)] // documentation missing in model
     Vp8,
@@ -90,6 +93,7 @@ impl ::std::convert::From<&str> for VideoCodec {
             "MPEG2" => VideoCodec::Mpeg2,
             "PASSTHROUGH" => VideoCodec::Passthrough,
             "PRORES" => VideoCodec::Prores,
+            "UNCOMPRESSED" => VideoCodec::Uncompressed,
             "VC3" => VideoCodec::Vc3,
             "VP8" => VideoCodec::Vp8,
             "VP9" => VideoCodec::Vp9,
@@ -117,6 +121,7 @@ impl VideoCodec {
             VideoCodec::Mpeg2 => "MPEG2",
             VideoCodec::Passthrough => "PASSTHROUGH",
             VideoCodec::Prores => "PRORES",
+            VideoCodec::Uncompressed => "UNCOMPRESSED",
             VideoCodec::Vc3 => "VC3",
             VideoCodec::Vp8 => "VP8",
             VideoCodec::Vp9 => "VP9",
@@ -135,6 +140,7 @@ impl VideoCodec {
             "MPEG2",
             "PASSTHROUGH",
             "PRORES",
+            "UNCOMPRESSED",
             "VC3",
             "VP8",
             "VP9",

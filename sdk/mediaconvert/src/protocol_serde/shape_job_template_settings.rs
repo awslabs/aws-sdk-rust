@@ -15,83 +15,95 @@ pub fn ser_job_template_settings(
         crate::protocol_serde::shape_avail_blanking::ser_avail_blanking(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.esam {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("esam").start_object();
-        crate::protocol_serde::shape_esam_settings::ser_esam_settings(&mut object_5, var_4)?;
-        object_5.finish();
+    if let Some(var_4) = &input.color_conversion3_dlut_settings {
+        let mut array_5 = object.key("colorConversion3DLUTSettings").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_color_conversion3_dlut_setting::ser_color_conversion3_dlut_setting(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_6) = &input.extended_data_services {
+    if let Some(var_8) = &input.esam {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("extendedDataServices").start_object();
-        crate::protocol_serde::shape_extended_data_services::ser_extended_data_services(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_9 = object.key("esam").start_object();
+        crate::protocol_serde::shape_esam_settings::ser_esam_settings(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_8) = &input.follow_source {
+    if let Some(var_10) = &input.extended_data_services {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("extendedDataServices").start_object();
+        crate::protocol_serde::shape_extended_data_services::ser_extended_data_services(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.follow_source {
         object.key("followSource").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_9) = &input.inputs {
-        let mut array_10 = object.key("inputs").start_array();
-        for item_11 in var_9 {
+    if let Some(var_13) = &input.inputs {
+        let mut array_14 = object.key("inputs").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_input_template::ser_input_template(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_input_template::ser_input_template(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_10.finish();
+        array_14.finish();
     }
-    if let Some(var_13) = &input.kantar_watermark {
+    if let Some(var_17) = &input.kantar_watermark {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("kantarWatermark").start_object();
-        crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(&mut object_14, var_13)?;
-        object_14.finish();
-    }
-    if let Some(var_15) = &input.motion_image_inserter {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("motionImageInserter").start_object();
-        crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_16, var_15)?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.nielsen_configuration {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("nielsenConfiguration").start_object();
-        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_18, var_17)?;
+        let mut object_18 = object.key("kantarWatermark").start_object();
+        crate::protocol_serde::shape_kantar_watermark_settings::ser_kantar_watermark_settings(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.nielsen_non_linear_watermark {
+    if let Some(var_19) = &input.motion_image_inserter {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("nielsenNonLinearWatermark").start_object();
-        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_20, var_19)?;
+        let mut object_20 = object.key("motionImageInserter").start_object();
+        crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.output_groups {
-        let mut array_22 = object.key("outputGroups").start_array();
-        for item_23 in var_21 {
+    if let Some(var_21) = &input.nielsen_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("nielsenConfiguration").start_object();
+        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.nielsen_non_linear_watermark {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("nielsenNonLinearWatermark").start_object();
+        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.output_groups {
+        let mut array_26 = object.key("outputGroups").start_array();
+        for item_27 in var_25 {
             {
                 #[allow(unused_mut)]
-                let mut object_24 = array_22.value().start_object();
-                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_24, item_23)?;
-                object_24.finish();
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_28, item_27)?;
+                object_28.finish();
             }
         }
-        array_22.finish();
+        array_26.finish();
     }
-    if let Some(var_25) = &input.timecode_config {
+    if let Some(var_29) = &input.timecode_config {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("timecodeConfig").start_object();
-        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_30 = object.key("timecodeConfig").start_object();
+        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_30, var_29)?;
+        object_30.finish();
     }
-    if let Some(var_27) = &input.timed_metadata_insertion {
+    if let Some(var_31) = &input.timed_metadata_insertion {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("timedMetadataInsertion").start_object();
-        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_28, var_27)?;
-        object_28.finish();
+        let mut object_32 = object.key("timedMetadataInsertion").start_object();
+        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_32, var_31)?;
+        object_32.finish();
     }
     Ok(())
 }
@@ -120,6 +132,11 @@ where
                         }
                         "availBlanking" => {
                             builder = builder.set_avail_blanking(crate::protocol_serde::shape_avail_blanking::de_avail_blanking(tokens)?);
+                        }
+                        "colorConversion3DLUTSettings" => {
+                            builder = builder.set_color_conversion3_dlut_settings(
+                                crate::protocol_serde::shape_color_conversion3_dlut_settings::de_color_conversion3_dlut_settings(tokens)?,
+                            );
                         }
                         "esam" => {
                             builder = builder.set_esam(crate::protocol_serde::shape_esam_settings::de_esam_settings(tokens)?);

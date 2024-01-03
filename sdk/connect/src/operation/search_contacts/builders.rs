@@ -114,31 +114,31 @@ impl SearchContactsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_contacts::paginator::SearchContactsPaginator {
         crate::operation::search_contacts::paginator::SearchContactsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
-    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance</p>
+    /// <p>The identifier of Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub fn time_range(mut self, input: crate::types::SearchContactsTimeRange) -> Self {
         self.inner = self.inner.time_range(input);
         self
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub fn set_time_range(mut self, input: ::std::option::Option<crate::types::SearchContactsTimeRange>) -> Self {
         self.inner = self.inner.set_time_range(input);
         self
     }
-    /// <p>Time range that you want to search results</p>
+    /// <p>Time range that you want to search results.</p>
     pub fn get_time_range(&self) -> &::std::option::Option<crate::types::SearchContactsTimeRange> {
         self.inner.get_time_range()
     }
@@ -184,17 +184,17 @@ impl SearchContactsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.inner = self.inner.sort(input);
         self
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
-    /// <p>Specifies a field to sort by and a sort order</p>
+    /// <p>Specifies a field to sort by and a sort order.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
         self.inner.get_sort()
     }

@@ -8,6 +8,8 @@ pub struct JobSettings {
     pub ad_avail_offset: ::std::option::Option<i32>,
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
+    /// Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs.
+    pub color_conversion3_dlut_settings: ::std::option::Option<::std::vec::Vec<crate::types::ColorConversion3DlutSetting>>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: ::std::option::Option<crate::types::EsamSettings>,
     /// If your source content has EIA-608 Line 21 Data Services, enable this feature to specify what MediaConvert does with the Extended Data Services (XDS) packets. You can choose to pass through XDS packets, or remove them from the output. For more information about XDS, see EIA-608 Line Data Services, section 9.5.1.5 05h Content Advisory.
@@ -39,6 +41,12 @@ impl JobSettings {
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub fn avail_blanking(&self) -> ::std::option::Option<&crate::types::AvailBlanking> {
         self.avail_blanking.as_ref()
+    }
+    /// Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.color_conversion3_dlut_settings.is_none()`.
+    pub fn color_conversion3_dlut_settings(&self) -> &[crate::types::ColorConversion3DlutSetting] {
+        self.color_conversion3_dlut_settings.as_deref().unwrap_or_default()
     }
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub fn esam(&self) -> ::std::option::Option<&crate::types::EsamSettings> {
@@ -102,6 +110,7 @@ impl JobSettings {
 pub struct JobSettingsBuilder {
     pub(crate) ad_avail_offset: ::std::option::Option<i32>,
     pub(crate) avail_blanking: ::std::option::Option<crate::types::AvailBlanking>,
+    pub(crate) color_conversion3_dlut_settings: ::std::option::Option<::std::vec::Vec<crate::types::ColorConversion3DlutSetting>>,
     pub(crate) esam: ::std::option::Option<crate::types::EsamSettings>,
     pub(crate) extended_data_services: ::std::option::Option<crate::types::ExtendedDataServices>,
     pub(crate) follow_source: ::std::option::Option<i32>,
@@ -142,6 +151,29 @@ impl JobSettingsBuilder {
     /// Settings for ad avail blanking. Video can be blanked or overlaid with an image, and audio muted during SCTE-35 triggered ad avails.
     pub fn get_avail_blanking(&self) -> &::std::option::Option<crate::types::AvailBlanking> {
         &self.avail_blanking
+    }
+    /// Appends an item to `color_conversion3_dlut_settings`.
+    ///
+    /// To override the contents of this collection use [`set_color_conversion3_dlut_settings`](Self::set_color_conversion3_dlut_settings).
+    ///
+    /// Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs.
+    pub fn color_conversion3_dlut_settings(mut self, input: crate::types::ColorConversion3DlutSetting) -> Self {
+        let mut v = self.color_conversion3_dlut_settings.unwrap_or_default();
+        v.push(input);
+        self.color_conversion3_dlut_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs.
+    pub fn set_color_conversion3_dlut_settings(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColorConversion3DlutSetting>>,
+    ) -> Self {
+        self.color_conversion3_dlut_settings = input;
+        self
+    }
+    /// Use 3D LUTs to specify custom color mapping behavior when you convert from one color space into another. You can include up to 8 different 3D LUTs.
+    pub fn get_color_conversion3_dlut_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ColorConversion3DlutSetting>> {
+        &self.color_conversion3_dlut_settings
     }
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub fn esam(mut self, input: crate::types::EsamSettings) -> Self {
@@ -314,6 +346,7 @@ impl JobSettingsBuilder {
         crate::types::JobSettings {
             ad_avail_offset: self.ad_avail_offset,
             avail_blanking: self.avail_blanking,
+            color_conversion3_dlut_settings: self.color_conversion3_dlut_settings,
             esam: self.esam,
             extended_data_services: self.extended_data_services,
             follow_source: self.follow_source,
