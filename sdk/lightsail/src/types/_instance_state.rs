@@ -6,7 +6,7 @@
 pub struct InstanceState {
     /// <p>The status code for the instance.</p>
     pub code: ::std::option::Option<i32>,
-    /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
+    /// <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceState {
@@ -14,7 +14,7 @@ impl InstanceState {
     pub fn code(&self) -> ::std::option::Option<i32> {
         self.code
     }
-    /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
+    /// <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -48,17 +48,17 @@ impl InstanceStateBuilder {
     pub fn get_code(&self) -> &::std::option::Option<i32> {
         &self.code
     }
-    /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
+    /// <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
+    /// <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The state of the instance (e.g., <code>running</code> or <code>pending</code>).</p>
+    /// <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

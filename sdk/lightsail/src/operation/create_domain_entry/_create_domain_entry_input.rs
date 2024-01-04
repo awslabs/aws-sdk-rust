@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainEntryInput {
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of key-value pairs containing information about the domain entry request.</p>
     pub domain_entry: ::std::option::Option<crate::types::DomainEntry>,
 }
 impl CreateDomainEntryInput {
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct CreateDomainEntryInputBuilder {
     pub(crate) domain_entry: ::std::option::Option<crate::types::DomainEntry>,
 }
 impl CreateDomainEntryInputBuilder {
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }

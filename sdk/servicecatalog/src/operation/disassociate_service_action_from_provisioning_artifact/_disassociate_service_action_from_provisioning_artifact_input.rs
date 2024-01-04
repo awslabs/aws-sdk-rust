@@ -17,6 +17,8 @@ pub struct DisassociateServiceActionFromProvisioningArtifactInput {
     /// <p><code>zh</code> - Chinese</p></li>
     /// </ul>
     pub accept_language: ::std::option::Option<::std::string::String>,
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
+    pub idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateServiceActionFromProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -41,6 +43,10 @@ impl DisassociateServiceActionFromProvisioningArtifactInput {
     pub fn accept_language(&self) -> ::std::option::Option<&str> {
         self.accept_language.as_deref()
     }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(&self) -> ::std::option::Option<&str> {
+        self.idempotency_token.as_deref()
+    }
 }
 impl DisassociateServiceActionFromProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`DisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactInput).
@@ -57,6 +63,7 @@ pub struct DisassociateServiceActionFromProvisioningArtifactInputBuilder {
     pub(crate) provisioning_artifact_id: ::std::option::Option<::std::string::String>,
     pub(crate) service_action_id: ::std::option::Option<::std::string::String>,
     pub(crate) accept_language: ::std::option::Option<::std::string::String>,
+    pub(crate) idempotency_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
@@ -136,6 +143,20 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
     pub fn get_accept_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.accept_language
     }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
+    pub fn idempotency_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.idempotency_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
+    pub fn set_idempotency_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idempotency_token = input;
+        self
+    }
+    /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web Services account use the same idempotency token, the same response is returned for each repeated request.</p>
+    pub fn get_idempotency_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idempotency_token
+    }
     /// Consumes the builder and constructs a [`DisassociateServiceActionFromProvisioningArtifactInput`](crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactInput).
     pub fn build(
         self,
@@ -149,6 +170,7 @@ impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
                 provisioning_artifact_id: self.provisioning_artifact_id,
                 service_action_id: self.service_action_id,
                 accept_language: self.accept_language,
+                idempotency_token: self.idempotency_token,
             },
         )
     }

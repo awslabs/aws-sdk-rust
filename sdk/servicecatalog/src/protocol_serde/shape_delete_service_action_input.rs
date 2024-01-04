@@ -9,5 +9,8 @@ pub fn ser_delete_service_action_input_input(
     if let Some(var_2) = &input.accept_language {
         object.key("AcceptLanguage").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.idempotency_token {
+        object.key("IdempotencyToken").string(var_3.as_str());
+    }
     Ok(())
 }

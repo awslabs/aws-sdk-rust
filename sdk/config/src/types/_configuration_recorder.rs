@@ -27,7 +27,7 @@ pub struct ConfigurationRecorder {
     /// <li>
     /// <p>Continuous recording allows you to record configuration changes continuously whenever a change occurs.</p></li>
     /// <li>
-    /// <p>Daily recording allows you record configuration data once every 24 hours, only if a change has occurred.</p></li>
+    /// <p>Daily recording allows you to receive a configuration item (CI) representing the most recent state of your resources over the last 24-hour period, only if it’s different from the previous CI recorded.</p></li>
     /// </ul><note>
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>
@@ -64,7 +64,7 @@ impl ConfigurationRecorder {
     /// <li>
     /// <p>Continuous recording allows you to record configuration changes continuously whenever a change occurs.</p></li>
     /// <li>
-    /// <p>Daily recording allows you record configuration data once every 24 hours, only if a change has occurred.</p></li>
+    /// <p>Daily recording allows you to receive a configuration item (CI) representing the most recent state of your resources over the last 24-hour period, only if it’s different from the previous CI recorded.</p></li>
     /// </ul><note>
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>
@@ -173,7 +173,7 @@ impl ConfigurationRecorderBuilder {
     /// <li>
     /// <p>Continuous recording allows you to record configuration changes continuously whenever a change occurs.</p></li>
     /// <li>
-    /// <p>Daily recording allows you record configuration data once every 24 hours, only if a change has occurred.</p></li>
+    /// <p>Daily recording allows you to receive a configuration item (CI) representing the most recent state of your resources over the last 24-hour period, only if it’s different from the previous CI recorded.</p></li>
     /// </ul><note>
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>
@@ -187,7 +187,7 @@ impl ConfigurationRecorderBuilder {
     /// <li>
     /// <p>Continuous recording allows you to record configuration changes continuously whenever a change occurs.</p></li>
     /// <li>
-    /// <p>Daily recording allows you record configuration data once every 24 hours, only if a change has occurred.</p></li>
+    /// <p>Daily recording allows you to receive a configuration item (CI) representing the most recent state of your resources over the last 24-hour period, only if it’s different from the previous CI recorded.</p></li>
     /// </ul><note>
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>
@@ -201,7 +201,7 @@ impl ConfigurationRecorderBuilder {
     /// <li>
     /// <p>Continuous recording allows you to record configuration changes continuously whenever a change occurs.</p></li>
     /// <li>
-    /// <p>Daily recording allows you record configuration data once every 24 hours, only if a change has occurred.</p></li>
+    /// <p>Daily recording allows you to receive a configuration item (CI) representing the most recent state of your resources over the last 24-hour period, only if it’s different from the previous CI recorded.</p></li>
     /// </ul><note>
     /// <p>Firewall Manager depends on continuous recording to monitor your resources. If you are using Firewall Manager, it is recommended that you set the recording frequency to Continuous.</p>
     /// </note>

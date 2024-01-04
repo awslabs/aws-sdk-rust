@@ -16,9 +16,9 @@ pub struct DomainStatus {
     pub deleted: ::std::option::Option<bool>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to the domain.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    /// <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.</p>
     pub endpoint_v2: ::std::option::Option<::std::string::String>,
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub endpoints: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if the configuration is active.</p>
     pub processing: ::std::option::Option<bool>,
@@ -91,11 +91,11 @@ impl DomainStatus {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    /// <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.</p>
     pub fn endpoint_v2(&self) -> ::std::option::Option<&str> {
         self.endpoint_v2.as_deref()
     }
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn endpoints(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.endpoints.as_ref()
     }
@@ -315,17 +315,17 @@ impl DomainStatusBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
-    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    /// <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.</p>
     pub fn endpoint_v2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_v2 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    /// <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.</p>
     pub fn set_endpoint_v2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_v2 = input;
         self
     }
-    /// <p>The domain endpoint to which index and search requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugo.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6u.eu-west-1.es.amazonaws.com</code>.</p>
+    /// <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.</p>
     pub fn get_endpoint_v2(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_v2
     }
@@ -333,19 +333,19 @@ impl DomainStatusBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
     ///
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn endpoints(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.endpoints.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.endpoints = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn set_endpoints(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.endpoints = input;
         self
     }
-    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
+    /// <p>The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
     pub fn get_endpoints(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.endpoints
     }

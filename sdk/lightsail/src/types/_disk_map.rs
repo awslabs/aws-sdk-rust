@@ -6,7 +6,7 @@
 pub struct DiskMap {
     /// <p>The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).</p>
     pub original_disk_path: ::std::option::Option<::std::string::String>,
-    /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+    /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub new_disk_name: ::std::option::Option<::std::string::String>,
 }
 impl DiskMap {
@@ -14,7 +14,7 @@ impl DiskMap {
     pub fn original_disk_path(&self) -> ::std::option::Option<&str> {
         self.original_disk_path.as_deref()
     }
-    /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+    /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub fn new_disk_name(&self) -> ::std::option::Option<&str> {
         self.new_disk_name.as_deref()
     }
@@ -48,17 +48,17 @@ impl DiskMapBuilder {
     pub fn get_original_disk_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.original_disk_path
     }
-    /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+    /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub fn new_disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_disk_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+    /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub fn set_new_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_disk_name = input;
         self
     }
-    /// <p>The new disk name (e.g., <code>my-new-disk</code>).</p>
+    /// <p>The new disk name (<code>my-new-disk</code>).</p>
     pub fn get_new_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_disk_name
     }

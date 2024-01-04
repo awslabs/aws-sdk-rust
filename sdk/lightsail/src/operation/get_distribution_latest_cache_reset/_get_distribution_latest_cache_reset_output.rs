@@ -5,7 +5,7 @@
 pub struct GetDistributionLatestCacheResetOutput {
     /// <p>The status of the last cache reset.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix time format.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetDistributionLatestCacheResetOutput {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
@@ -54,17 +54,17 @@ impl GetDistributionLatestCacheResetOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.create_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.create_time = input;
         self
     }
-    /// <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_time
     }

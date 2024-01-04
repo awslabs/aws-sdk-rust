@@ -15,6 +15,9 @@ pub fn ser_auto_scaling_group_provider(
     if let Some(var_3) = &input.managed_termination_protection {
         object.key("managedTerminationProtection").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.managed_draining {
+        object.key("managedDraining").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -47,6 +50,13 @@ where
                             builder = builder.set_managed_termination_protection(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ManagedTerminationProtection::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "managedDraining" => {
+                            builder = builder.set_managed_draining(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ManagedDraining::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

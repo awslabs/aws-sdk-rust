@@ -9,6 +9,8 @@ pub struct UpdateFeatureGroupInput {
     pub feature_additions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     /// <p>Updates the feature group online store configuration.</p>
     pub online_store_config: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub throughput_config: ::std::option::Option<crate::types::ThroughputConfigUpdate>,
 }
 impl UpdateFeatureGroupInput {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
@@ -25,6 +27,10 @@ impl UpdateFeatureGroupInput {
     pub fn online_store_config(&self) -> ::std::option::Option<&crate::types::OnlineStoreConfigUpdate> {
         self.online_store_config.as_ref()
     }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn throughput_config(&self) -> ::std::option::Option<&crate::types::ThroughputConfigUpdate> {
+        self.throughput_config.as_ref()
+    }
 }
 impl UpdateFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
@@ -40,6 +46,7 @@ pub struct UpdateFeatureGroupInputBuilder {
     pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) feature_additions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     pub(crate) online_store_config: ::std::option::Option<crate::types::OnlineStoreConfigUpdate>,
+    pub(crate) throughput_config: ::std::option::Option<crate::types::ThroughputConfigUpdate>,
 }
 impl UpdateFeatureGroupInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the feature group that you're updating.</p>
@@ -91,6 +98,20 @@ impl UpdateFeatureGroupInputBuilder {
     pub fn get_online_store_config(&self) -> &::std::option::Option<crate::types::OnlineStoreConfigUpdate> {
         &self.online_store_config
     }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn throughput_config(mut self, input: crate::types::ThroughputConfigUpdate) -> Self {
+        self.throughput_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn set_throughput_config(mut self, input: ::std::option::Option<crate::types::ThroughputConfigUpdate>) -> Self {
+        self.throughput_config = input;
+        self
+    }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn get_throughput_config(&self) -> &::std::option::Option<crate::types::ThroughputConfigUpdate> {
+        &self.throughput_config
+    }
     /// Consumes the builder and constructs a [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
     pub fn build(
         self,
@@ -100,6 +121,7 @@ impl UpdateFeatureGroupInputBuilder {
             feature_group_name: self.feature_group_name,
             feature_additions: self.feature_additions,
             online_store_config: self.online_store_config,
+            throughput_config: self.throughput_config,
         })
     }
 }

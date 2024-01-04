@@ -16,7 +16,7 @@ pub struct LightsailDistribution {
     /// <p>Lightsail distributions are global resources that can reference an origin in any Amazon Web Services Region, and distribute its content globally. However, all distributions are located in the <code>us-east-1</code> Region.</p>
     /// </note>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
+    /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The alternate domain names of the distribution.</p>
     pub alternative_domain_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -73,7 +73,7 @@ impl LightsailDistribution {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
+    /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -252,17 +252,17 @@ impl LightsailDistributionBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
+    /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
+    /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>Distribution</code>).</p>
+    /// <p>The Lightsail resource type (<code>Distribution</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

@@ -4523,6 +4523,32 @@ impl From<crate::operation::get_relational_database_snapshots::GetRelationalData
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_setup_history::GetSetupHistoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_setup_history::GetSetupHistoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_setup_history::GetSetupHistoryError> for Error {
+    fn from(err: crate::operation::get_setup_history::GetSetupHistoryError) -> Self {
+        match err {
+            crate::operation::get_setup_history::GetSetupHistoryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_setup_history::GetSetupHistoryError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_setup_history::GetSetupHistoryError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_setup_history::GetSetupHistoryError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_setup_history::GetSetupHistoryError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_setup_history::GetSetupHistoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_static_ip::GetStaticIpError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5065,6 +5091,34 @@ impl From<crate::operation::set_resource_access_for_bucket::SetResourceAccessFor
                 Error::UnauthenticatedException(inner)
             }
             crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::setup_instance_https::SetupInstanceHttpsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::setup_instance_https::SetupInstanceHttpsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::setup_instance_https::SetupInstanceHttpsError> for Error {
+    fn from(err: crate::operation::setup_instance_https::SetupInstanceHttpsError) -> Self {
+        match err {
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::UnauthenticatedException(inner) => {
+                Error::UnauthenticatedException(inner)
+            }
+            crate::operation::setup_instance_https::SetupInstanceHttpsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

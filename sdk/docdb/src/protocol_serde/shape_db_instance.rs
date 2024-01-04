@@ -364,6 +364,34 @@ pub fn de_db_instance(
                 builder = builder.set_certificate_details(var_28);
             }
             ,
+            s if s.matches("PerformanceInsightsEnabled") /* PerformanceInsightsEnabled com.amazonaws.docdb#DBInstance$PerformanceInsightsEnabled */ =>  {
+                let var_29 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.docdb#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_performance_insights_enabled(var_29);
+            }
+            ,
+            s if s.matches("PerformanceInsightsKMSKeyId") /* PerformanceInsightsKMSKeyId com.amazonaws.docdb#DBInstance$PerformanceInsightsKMSKeyId */ =>  {
+                let var_30 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_performance_insights_kms_key_id(var_30);
+            }
+            ,
             _ => {}
         }
     }

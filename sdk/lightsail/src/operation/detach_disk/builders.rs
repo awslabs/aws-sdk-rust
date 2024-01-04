@@ -109,17 +109,17 @@ impl DetachDiskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to detach from your instance (<code>my-disk</code>).</p>
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_name(input.into());
         self
     }
-    /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to detach from your instance (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_name(input);
         self
     }
-    /// <p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to detach from your instance (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_name()
     }

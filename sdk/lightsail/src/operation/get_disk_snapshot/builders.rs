@@ -108,17 +108,17 @@ impl GetDiskSnapshotFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_snapshot_name(input.into());
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_snapshot_name(input);
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_snapshot_name()
     }

@@ -13,7 +13,7 @@ pub struct CloudFormationStackRecord {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of objects describing the Availability Zone and Amazon Web Services Region of the CloudFormation stack record.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The current state of the CloudFormation stack record.</p>
     pub state: ::std::option::Option<crate::types::RecordState>,
@@ -39,7 +39,7 @@ impl CloudFormationStackRecord {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -135,17 +135,17 @@ impl CloudFormationStackRecordBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>CloudFormationStackRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>CloudFormationStackRecord</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainInput {
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDomainInput {
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
@@ -37,18 +37,18 @@ pub struct CreateDomainInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDomainInputBuilder {
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     /// This field is required.
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }

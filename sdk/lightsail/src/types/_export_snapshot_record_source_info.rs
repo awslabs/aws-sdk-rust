@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSnapshotRecordSourceInfo {
-    /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ExportSnapshotRecordSourceType>,
     /// <p>The date when the source instance or disk snapshot was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,7 +22,7 @@ pub struct ExportSnapshotRecordSourceInfo {
     pub disk_snapshot_info: ::std::option::Option<crate::types::DiskSnapshotInfo>,
 }
 impl ExportSnapshotRecordSourceInfo {
-    /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ExportSnapshotRecordSourceType> {
         self.resource_type.as_ref()
     }
@@ -76,17 +76,17 @@ pub struct ExportSnapshotRecordSourceInfoBuilder {
     pub(crate) disk_snapshot_info: ::std::option::Option<crate::types::DiskSnapshotInfo>,
 }
 impl ExportSnapshotRecordSourceInfoBuilder {
-    /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ExportSnapshotRecordSourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ExportSnapshotRecordSourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ExportSnapshotRecordSourceType> {
         &self.resource_type
     }

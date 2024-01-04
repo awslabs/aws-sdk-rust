@@ -36,23 +36,29 @@ pub fn ser_create_feature_group_input_input(
         crate::protocol_serde::shape_offline_store_config::ser_offline_store_config(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.role_arn {
-        object.key("RoleArn").string(var_12.as_str());
+    if let Some(var_12) = &input.throughput_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("ThroughputConfig").start_object();
+        crate::protocol_serde::shape_throughput_config::ser_throughput_config(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.description {
-        object.key("Description").string(var_13.as_str());
+    if let Some(var_14) = &input.role_arn {
+        object.key("RoleArn").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.tags {
-        let mut array_15 = object.key("Tags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.description {
+        object.key("Description").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("Tags").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }

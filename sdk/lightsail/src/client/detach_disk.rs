@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DetachDisk`](crate::operation::detach_disk::builders::DetachDiskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`disk_name(impl Into<String>)`](crate::operation::detach_disk::builders::DetachDiskFluentBuilder::disk_name) / [`set_disk_name(Option<String>)`](crate::operation::detach_disk::builders::DetachDiskFluentBuilder::set_disk_name):<br>required: **true**<br><p>The unique name of the disk you want to detach from your instance (e.g., <code>my-disk</code>).</p><br>
+    ///   - [`disk_name(impl Into<String>)`](crate::operation::detach_disk::builders::DetachDiskFluentBuilder::disk_name) / [`set_disk_name(Option<String>)`](crate::operation::detach_disk::builders::DetachDiskFluentBuilder::set_disk_name):<br>required: **true**<br><p>The unique name of the disk you want to detach from your instance (<code>my-disk</code>).</p><br>
     /// - On success, responds with [`DetachDiskOutput`](crate::operation::detach_disk::DetachDiskOutput) with field(s):
     ///   - [`operations(Option<Vec::<Operation>>)`](crate::operation::detach_disk::DetachDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DetachDiskError>`](crate::operation::detach_disk::DetachDiskError)

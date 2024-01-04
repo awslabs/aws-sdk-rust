@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAccessDetails {
-    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
+    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub cert_key: ::std::option::Option<::std::string::String>,
     /// <p>For SSH access, the date on which the temporary keys expire.</p>
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -17,7 +17,7 @@ pub struct InstanceAccessDetails {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if <code>password</code> is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
     pub password_data: ::std::option::Option<crate::types::PasswordData>,
-    /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
+    /// <p>For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to <code>tempkey</code>).</p>
     pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>The protocol for these Amazon Lightsail instance access details.</p>
     pub protocol: ::std::option::Option<crate::types::InstanceAccessProtocol>,
@@ -29,7 +29,7 @@ pub struct InstanceAccessDetails {
     pub host_keys: ::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>>,
 }
 impl InstanceAccessDetails {
-    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
+    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub fn cert_key(&self) -> ::std::option::Option<&str> {
         self.cert_key.as_deref()
     }
@@ -52,7 +52,7 @@ impl InstanceAccessDetails {
     pub fn password_data(&self) -> ::std::option::Option<&crate::types::PasswordData> {
         self.password_data.as_ref()
     }
-    /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
+    /// <p>For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to <code>tempkey</code>).</p>
     pub fn private_key(&self) -> ::std::option::Option<&str> {
         self.private_key.as_deref()
     }
@@ -98,17 +98,17 @@ pub struct InstanceAccessDetailsBuilder {
     pub(crate) host_keys: ::std::option::Option<::std::vec::Vec<crate::types::HostKeyAttributes>>,
 }
 impl InstanceAccessDetailsBuilder {
-    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
+    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub fn cert_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cert_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
+    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub fn set_cert_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cert_key = input;
         self
     }
-    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
+    /// <p>For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.</p>
     pub fn get_cert_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.cert_key
     }
@@ -177,17 +177,17 @@ impl InstanceAccessDetailsBuilder {
     pub fn get_password_data(&self) -> &::std::option::Option<crate::types::PasswordData> {
         &self.password_data
     }
-    /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
+    /// <p>For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to <code>tempkey</code>).</p>
     pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
+    /// <p>For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to <code>tempkey</code>).</p>
     pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
     }
-    /// <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <code>tempkey</code>).</p>
+    /// <p>For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to <code>tempkey</code>).</p>
     pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_key
     }

@@ -60,6 +60,10 @@ pub struct DbInstance {
     pub enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The details of the DB instance's server certificate.</p>
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
+    /// <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise <code>false</code>.</p>
+    pub performance_insights_enabled: ::std::option::Option<bool>,
+    /// <p>The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    pub performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DbInstance {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
@@ -180,6 +184,14 @@ impl DbInstance {
     pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
         self.certificate_details.as_ref()
     }
+    /// <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise <code>false</code>.</p>
+    pub fn performance_insights_enabled(&self) -> ::std::option::Option<bool> {
+        self.performance_insights_enabled
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    pub fn performance_insights_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.performance_insights_kms_key_id.as_deref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -220,6 +232,8 @@ pub struct DbInstanceBuilder {
     pub(crate) db_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
+    pub(crate) performance_insights_enabled: ::std::option::Option<bool>,
+    pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceBuilder {
     /// <p>Contains a user-provided database identifier. This identifier is the unique key that identifies an instance.</p>
@@ -632,6 +646,34 @@ impl DbInstanceBuilder {
     pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
         &self.certificate_details
     }
+    /// <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise <code>false</code>.</p>
+    pub fn performance_insights_enabled(mut self, input: bool) -> Self {
+        self.performance_insights_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise <code>false</code>.</p>
+    pub fn set_performance_insights_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.performance_insights_enabled = input;
+        self
+    }
+    /// <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB instance, and otherwise <code>false</code>.</p>
+    pub fn get_performance_insights_enabled(&self) -> &::std::option::Option<bool> {
+        &self.performance_insights_enabled
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    pub fn performance_insights_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.performance_insights_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    pub fn set_performance_insights_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.performance_insights_kms_key_id = input;
+        self
+    }
+    /// <p>The KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+    pub fn get_performance_insights_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.performance_insights_kms_key_id
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -663,6 +705,8 @@ impl DbInstanceBuilder {
             db_instance_arn: self.db_instance_arn,
             enabled_cloudwatch_logs_exports: self.enabled_cloudwatch_logs_exports,
             certificate_details: self.certificate_details,
+            performance_insights_enabled: self.performance_insights_enabled,
+            performance_insights_kms_key_id: self.performance_insights_kms_key_id,
         }
     }
 }

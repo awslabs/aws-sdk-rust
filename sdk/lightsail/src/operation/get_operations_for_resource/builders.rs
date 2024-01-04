@@ -22,7 +22,7 @@ impl GetOperationsForResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `GetOperationsForResource`.
 ///
-/// <p>Gets operations for a specific resource (e.g., an instance or a static IP).</p>
+/// <p>Gets operations for a specific resource (an instance or a static IP).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOperationsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

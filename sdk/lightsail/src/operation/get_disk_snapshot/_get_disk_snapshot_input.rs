@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiskSnapshotInput {
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDiskSnapshotInput {
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn disk_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.disk_snapshot_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetDiskSnapshotInputBuilder {
     pub(crate) disk_snapshot_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDiskSnapshotInputBuilder {
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     /// This field is required.
     pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_snapshot_name = input;
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_snapshot_name
     }

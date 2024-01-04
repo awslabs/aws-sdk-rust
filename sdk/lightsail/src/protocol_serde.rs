@@ -269,6 +269,8 @@ pub(crate) mod shape_get_relational_database_snapshots;
 
 pub(crate) mod shape_get_relational_databases;
 
+pub(crate) mod shape_get_setup_history;
+
 pub(crate) mod shape_get_static_ip;
 
 pub(crate) mod shape_get_static_ips;
@@ -300,6 +302,8 @@ pub(crate) mod shape_send_contact_method_verification;
 pub(crate) mod shape_set_ip_address_type;
 
 pub(crate) mod shape_set_resource_access_for_bucket;
+
+pub(crate) mod shape_setup_instance_https;
 
 pub(crate) mod shape_start_gui_session;
 
@@ -589,6 +593,8 @@ pub(crate) mod shape_get_relational_database_snapshots_input;
 
 pub(crate) mod shape_get_relational_databases_input;
 
+pub(crate) mod shape_get_setup_history_input;
+
 pub(crate) mod shape_get_static_ip_input;
 
 pub(crate) mod shape_get_static_ips_input;
@@ -624,6 +630,8 @@ pub(crate) mod shape_service_exception;
 pub(crate) mod shape_set_ip_address_type_input;
 
 pub(crate) mod shape_set_resource_access_for_bucket_input;
+
+pub(crate) mod shape_setup_instance_https_input;
 
 pub(crate) mod shape_start_gui_session_input;
 
@@ -819,6 +827,8 @@ pub(crate) mod shape_resources_budget_estimate;
 
 pub(crate) mod shape_sessions;
 
+pub(crate) mod shape_setup_history_list;
+
 pub(crate) mod shape_static_ip;
 
 pub(crate) mod shape_static_ip_list;
@@ -943,6 +953,8 @@ pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_session;
 
+pub(crate) mod shape_setup_history;
+
 pub(crate) mod shape_stop_instance_on_idle_request;
 
 pub(crate) mod shape_tag_list;
@@ -1005,6 +1017,12 @@ pub(crate) mod shape_renewal_summary;
 
 pub(crate) mod shape_resource_receiving_access;
 
+pub(crate) mod shape_setup_execution_details_list;
+
+pub(crate) mod shape_setup_history_resource;
+
+pub(crate) mod shape_setup_request;
+
 pub(crate) mod shape_subject_alternative_name_list;
 
 pub(crate) mod shape_attached_disk;
@@ -1030,6 +1048,10 @@ pub(crate) mod shape_instance_snapshot_info;
 pub(crate) mod shape_load_balancer_tls_certificate_domain_validation_option_list;
 
 pub(crate) mod shape_load_balancer_tls_certificate_domain_validation_record;
+
+pub(crate) mod shape_setup_domain_name_list;
+
+pub(crate) mod shape_setup_execution_details;
 
 pub(crate) mod shape_disk_info_list;
 

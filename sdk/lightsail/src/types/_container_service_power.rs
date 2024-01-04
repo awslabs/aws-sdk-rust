@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerServicePower {
-    /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+    /// <p>The ID of the power (<code>nano-1</code>).</p>
     pub power_id: ::std::option::Option<::std::string::String>,
     /// <p>The monthly price of the power in USD.</p>
     pub price: ::std::option::Option<f32>,
@@ -13,13 +13,13 @@ pub struct ContainerServicePower {
     pub cpu_count: ::std::option::Option<f32>,
     /// <p>The amount of RAM (in GB) of the power.</p>
     pub ram_size_in_gb: ::std::option::Option<f32>,
-    /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+    /// <p>The friendly name of the power (<code>nano</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the power is active and can be specified for container services.</p>
     pub is_active: ::std::option::Option<bool>,
 }
 impl ContainerServicePower {
-    /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+    /// <p>The ID of the power (<code>nano-1</code>).</p>
     pub fn power_id(&self) -> ::std::option::Option<&str> {
         self.power_id.as_deref()
     }
@@ -35,7 +35,7 @@ impl ContainerServicePower {
     pub fn ram_size_in_gb(&self) -> ::std::option::Option<f32> {
         self.ram_size_in_gb
     }
-    /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+    /// <p>The friendly name of the power (<code>nano</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -63,17 +63,17 @@ pub struct ContainerServicePowerBuilder {
     pub(crate) is_active: ::std::option::Option<bool>,
 }
 impl ContainerServicePowerBuilder {
-    /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+    /// <p>The ID of the power (<code>nano-1</code>).</p>
     pub fn power_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.power_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+    /// <p>The ID of the power (<code>nano-1</code>).</p>
     pub fn set_power_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.power_id = input;
         self
     }
-    /// <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+    /// <p>The ID of the power (<code>nano-1</code>).</p>
     pub fn get_power_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.power_id
     }
@@ -119,17 +119,17 @@ impl ContainerServicePowerBuilder {
     pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
         &self.ram_size_in_gb
     }
-    /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+    /// <p>The friendly name of the power (<code>nano</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+    /// <p>The friendly name of the power (<code>nano</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+    /// <p>The friendly name of the power (<code>nano</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

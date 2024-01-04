@@ -22,7 +22,7 @@ impl CreateDomainInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDomain`.
 ///
-/// <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+/// <p>Creates a domain resource for the specified domain (example.com).</p>
 /// <p>The <code>create domain</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDomainFluentBuilder {
@@ -109,17 +109,17 @@ impl CreateDomainFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name to manage (<code>example.com</code>).</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }

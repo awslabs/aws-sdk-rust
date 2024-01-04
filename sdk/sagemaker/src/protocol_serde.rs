@@ -1879,6 +1879,12 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_tensor_board_output_config;
 
+pub(crate) mod shape_throughput_config;
+
+pub(crate) mod shape_throughput_config_description;
+
+pub(crate) mod shape_throughput_config_update;
+
 pub(crate) mod shape_training_environment_map;
 
 pub(crate) mod shape_training_job_status_counters;

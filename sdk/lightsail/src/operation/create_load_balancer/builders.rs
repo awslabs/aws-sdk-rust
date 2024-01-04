@@ -138,19 +138,19 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_instance_port()
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_health_check_path()
@@ -172,19 +172,19 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_name()
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_domain_name(input.into());
         self
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_domain_name(input);
         self
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn get_certificate_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_domain_name()
@@ -193,17 +193,17 @@ impl CreateLoadBalancerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_alternative_names(input.into());
         self
     }
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_alternative_names(input);
         self
     }
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_alternative_names()
     }

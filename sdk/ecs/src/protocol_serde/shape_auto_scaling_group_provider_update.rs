@@ -12,5 +12,8 @@ pub fn ser_auto_scaling_group_provider_update(
     if let Some(var_3) = &input.managed_termination_protection {
         object.key("managedTerminationProtection").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.managed_draining {
+        object.key("managedDraining").string(var_4.as_str());
+    }
     Ok(())
 }

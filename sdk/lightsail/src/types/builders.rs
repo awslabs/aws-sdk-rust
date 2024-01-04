@@ -59,6 +59,14 @@ pub use crate::types::_port_info::PortInfoBuilder;
 
 pub use crate::types::_static_ip::StaticIpBuilder;
 
+pub use crate::types::_setup_history::SetupHistoryBuilder;
+
+pub use crate::types::_setup_execution_details::SetupExecutionDetailsBuilder;
+
+pub use crate::types::_setup_history_resource::SetupHistoryResourceBuilder;
+
+pub use crate::types::_setup_request::SetupRequestBuilder;
+
 pub use crate::types::_relational_database_snapshot::RelationalDatabaseSnapshotBuilder;
 
 pub use crate::types::_relational_database::RelationalDatabaseBuilder;

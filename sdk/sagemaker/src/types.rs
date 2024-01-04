@@ -249,6 +249,10 @@ pub use crate::types::_vendor_guidance::VendorGuidance;
 
 pub use crate::types::_feature_parameter::FeatureParameter;
 
+pub use crate::types::_throughput_config_update::ThroughputConfigUpdate;
+
+pub use crate::types::_throughput_mode::ThroughputMode;
+
 pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdate;
 
 pub use crate::types::_ttl_duration::TtlDuration;
@@ -1439,6 +1443,8 @@ pub use crate::types::_human_loop_request_source::HumanLoopRequestSource;
 
 pub use crate::types::_aws_managed_human_loop_request_source::AwsManagedHumanLoopRequestSource;
 
+pub use crate::types::_throughput_config_description::ThroughputConfigDescription;
+
 pub use crate::types::_production_variant::ProductionVariant;
 
 pub use crate::types::_production_variant_core_dump_config::ProductionVariantCoreDumpConfig;
@@ -1646,6 +1652,8 @@ pub use crate::types::_retention_type::RetentionType;
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfig;
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfig;
+
+pub use crate::types::_throughput_config::ThroughputConfig;
 
 pub use crate::types::_deployment_stage::DeploymentStage;
 
@@ -3156,6 +3164,14 @@ mod _text_classification_job_config;
 mod _text_generation_job_config;
 
 mod _text_generation_resolved_attributes;
+
+mod _throughput_config;
+
+mod _throughput_config_description;
+
+mod _throughput_config_update;
+
+mod _throughput_mode;
 
 mod _time_series_config;
 

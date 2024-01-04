@@ -14,7 +14,7 @@ pub struct Disk {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk is located.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
+    /// <p>The Lightsail resource type (<code>Disk</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -34,13 +34,13 @@ pub struct Disk {
     pub attached_to: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the disk is attached.</p>
     pub is_attached: ::std::option::Option<bool>,
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
+    /// <p>(Discontinued) The attachment state of the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now discontinued, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub attachment_state: ::std::option::Option<::std::string::String>,
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The number of GB in use by the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub gb_in_use: ::std::option::Option<i32>,
@@ -70,7 +70,7 @@ impl Disk {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
+    /// <p>The Lightsail resource type (<code>Disk</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -114,15 +114,15 @@ impl Disk {
     pub fn is_attached(&self) -> ::std::option::Option<bool> {
         self.is_attached
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
+    /// <p>(Discontinued) The attachment state of the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now discontinued, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub fn attachment_state(&self) -> ::std::option::Option<&str> {
         self.attachment_state.as_deref()
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The number of GB in use by the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn gb_in_use(&self) -> ::std::option::Option<i32> {
@@ -236,17 +236,17 @@ impl DiskBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
+    /// <p>The Lightsail resource type (<code>Disk</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
+    /// <p>The Lightsail resource type (<code>Disk</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>Disk</code>).</p>
+    /// <p>The Lightsail resource type (<code>Disk</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
@@ -388,47 +388,47 @@ impl DiskBuilder {
     pub fn get_is_attached(&self) -> &::std::option::Option<bool> {
         &self.is_attached
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
+    /// <p>(Discontinued) The attachment state of the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now discontinued, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub fn attachment_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_state = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
+    /// <p>(Discontinued) The attachment state of the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now discontinued, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub fn set_attachment_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_state = input;
         self
     }
-    /// <p>(Deprecated) The attachment state of the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now deprecated, but still included in the response. Use <code>isAttached</code> instead.</p>
+    /// <p>(Discontinued) The attachment state of the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter returned <code>attached</code> for system disks in the API response. It is now discontinued, but still included in the response. Use <code>isAttached</code> instead.</p>
     /// </note>
     #[deprecated]
     pub fn get_attachment_state(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_state
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The number of GB in use by the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn gb_in_use(mut self, input: i32) -> Self {
         self.gb_in_use = ::std::option::Option::Some(input);
         self
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The number of GB in use by the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn set_gb_in_use(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gb_in_use = input;
         self
     }
-    /// <p>(Deprecated) The number of GB in use by the disk.</p><note>
-    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The number of GB in use by the disk.</p><note>
+    /// <p>In releases prior to November 14, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn get_gb_in_use(&self) -> &::std::option::Option<i32> {

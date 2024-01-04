@@ -91,6 +91,8 @@ pub use crate::types::_access_type::AccessType;
 
 pub use crate::types::_alarm_state::AlarmState;
 
+pub use crate::types::_certificate_provider::CertificateProvider;
+
 pub use crate::types::_resource_bucket_access::ResourceBucketAccess;
 
 pub use crate::types::_ip_address_type::IpAddressType;
@@ -112,6 +114,16 @@ pub use crate::types::_comparison_operator::ComparisonOperator;
 pub use crate::types::_metric_name::MetricName;
 
 pub use crate::types::_static_ip::StaticIp;
+
+pub use crate::types::_setup_history::SetupHistory;
+
+pub use crate::types::_setup_status::SetupStatus;
+
+pub use crate::types::_setup_execution_details::SetupExecutionDetails;
+
+pub use crate::types::_setup_history_resource::SetupHistoryResource;
+
+pub use crate::types::_setup_request::SetupRequest;
 
 pub use crate::types::_relational_database_snapshot::RelationalDatabaseSnapshot;
 
@@ -453,6 +465,8 @@ mod _certificate;
 
 mod _certificate_domain_validation_status;
 
+mod _certificate_provider;
+
 mod _certificate_status;
 
 mod _certificate_summary;
@@ -756,6 +770,16 @@ mod _resource_record;
 mod _resource_type;
 
 mod _session;
+
+mod _setup_execution_details;
+
+mod _setup_history;
+
+mod _setup_history_resource;
+
+mod _setup_request;
+
+mod _setup_status;
 
 mod _static_ip;
 

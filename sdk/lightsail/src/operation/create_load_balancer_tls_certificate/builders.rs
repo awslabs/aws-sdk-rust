@@ -141,17 +141,17 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_name()
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
+    /// <p>The domain name (<code>example.com</code>) for your SSL/TLS certificate.</p>
     pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_domain_name(input.into());
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
+    /// <p>The domain name (<code>example.com</code>) for your SSL/TLS certificate.</p>
     pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate_domain_name(input);
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.</p>
+    /// <p>The domain name (<code>example.com</code>) for your SSL/TLS certificate.</p>
     pub fn get_certificate_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_domain_name()
     }
@@ -159,17 +159,17 @@ impl CreateLoadBalancerTlsCertificateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
-    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
+    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).</p>
     pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate_alternative_names(input.into());
         self
     }
-    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
+    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).</p>
     pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_certificate_alternative_names(input);
         self
     }
-    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).</p>
+    /// <p>An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).</p>
     pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_certificate_alternative_names()
     }

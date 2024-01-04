@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 thiserror = "1.0"
-aws-sdk-sagemaker= { version = "1.13.0", path = "../../../sdk/sagemaker" }
+aws-sdk-sagemaker= { version = "1.14.0", path = "../../../sdk/sagemaker" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-smithy-types-convert= { version = "0.60.1", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 

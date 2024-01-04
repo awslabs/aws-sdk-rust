@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDiskInput {
-    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     pub force_delete_add_ons: ::std::option::Option<bool>,
 }
 impl DeleteDiskInput {
-    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
     pub fn disk_name(&self) -> ::std::option::Option<&str> {
         self.disk_name.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteDiskInputBuilder {
     pub(crate) force_delete_add_ons: ::std::option::Option<bool>,
 }
 impl DeleteDiskInputBuilder {
-    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
     /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_name = input;
         self
     }
-    /// <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique name of the disk you want to delete (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_name
     }

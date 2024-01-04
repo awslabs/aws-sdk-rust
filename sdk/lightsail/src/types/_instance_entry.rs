@@ -7,7 +7,7 @@ pub struct InstanceEntry {
     /// <p>The name of the export snapshot record, which contains the exported Lightsail instance snapshot that will be used as the source of the new Amazon EC2 instance.</p>
     /// <p>Use the <code>get export snapshot records</code> operation to get a list of export snapshot records that you can use to create a CloudFormation stack.</p>
     pub source_name: ::std::string::String,
-    /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    /// <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     pub instance_type: ::std::string::String,
     /// <p>The port configuration to use for the new Amazon EC2 instance.</p>
     /// <p>The following configuration options are available:</p>
@@ -38,7 +38,7 @@ impl InstanceEntry {
         use std::ops::Deref;
         self.source_name.deref()
     }
-    /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    /// <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     pub fn instance_type(&self) -> &str {
         use std::ops::Deref;
         self.instance_type.deref()
@@ -108,18 +108,18 @@ impl InstanceEntryBuilder {
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_name
     }
-    /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    /// <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     /// This field is required.
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    /// <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The instance type (e.g., <code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
+    /// <p>The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }

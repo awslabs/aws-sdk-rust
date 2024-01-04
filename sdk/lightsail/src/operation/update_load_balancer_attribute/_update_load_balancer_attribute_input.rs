@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLoadBalancerAttributeInput {
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute you want to update.</p>
     pub attribute_name: ::std::option::Option<crate::types::LoadBalancerAttributeName>,
@@ -25,7 +25,7 @@ pub struct UpdateLoadBalancerAttributeInput {
     pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLoadBalancerAttributeInput {
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct UpdateLoadBalancerAttributeInputBuilder {
     pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLoadBalancerAttributeInputBuilder {
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     /// This field is required.
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.load_balancer_name = input;
         self
     }
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.load_balancer_name
     }

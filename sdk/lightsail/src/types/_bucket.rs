@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bucket {
-    /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+    /// <p>The Lightsail resource type of the bucket.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the access rules of the bucket.</p>
     pub access_rules: ::std::option::Option<crate::types::AccessRules>,
@@ -52,7 +52,7 @@ pub struct Bucket {
     pub access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl Bucket {
-    /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+    /// <p>The Lightsail resource type of the bucket.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -166,17 +166,17 @@ pub struct BucketBuilder {
     pub(crate) access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl BucketBuilder {
-    /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+    /// <p>The Lightsail resource type of the bucket.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+    /// <p>The Lightsail resource type of the bucket.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
+    /// <p>The Lightsail resource type of the bucket.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

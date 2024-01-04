@@ -8,7 +8,7 @@ pub struct InstanceHardware {
     pub cpu_count: ::std::option::Option<i32>,
     /// <p>The disks attached to the instance.</p>
     pub disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
-    /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+    /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub ram_size_in_gb: ::std::option::Option<f32>,
 }
 impl InstanceHardware {
@@ -22,7 +22,7 @@ impl InstanceHardware {
     pub fn disks(&self) -> &[crate::types::Disk] {
         self.disks.as_deref().unwrap_or_default()
     }
-    /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+    /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn ram_size_in_gb(&self) -> ::std::option::Option<f32> {
         self.ram_size_in_gb
     }
@@ -77,17 +77,17 @@ impl InstanceHardwareBuilder {
     pub fn get_disks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Disk>> {
         &self.disks
     }
-    /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+    /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
         self.ram_size_in_gb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+    /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
         self.ram_size_in_gb = input;
         self
     }
-    /// <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+    /// <p>The amount of RAM in GB on the instance (<code>1.0</code>).</p>
     pub fn get_ram_size_in_gb(&self) -> &::std::option::Option<f32> {
         &self.ram_size_in_gb
     }

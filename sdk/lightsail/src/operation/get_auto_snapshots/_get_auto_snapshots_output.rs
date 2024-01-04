@@ -5,7 +5,7 @@
 pub struct GetAutoSnapshotsOutput {
     /// <p>The name of the source instance or disk for the automatic snapshots.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    /// <p>The resource type of the automatic snapshot. The possible values are <code>Instance</code>, and <code>Disk</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
     pub auto_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::AutoSnapshotDetails>>,
@@ -16,7 +16,7 @@ impl GetAutoSnapshotsOutput {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    /// <p>The resource type of the automatic snapshot. The possible values are <code>Instance</code>, and <code>Disk</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -63,17 +63,17 @@ impl GetAutoSnapshotsOutputBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    /// <p>The resource type of the automatic snapshot. The possible values are <code>Instance</code>, and <code>Disk</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    /// <p>The resource type of the automatic snapshot. The possible values are <code>Instance</code>, and <code>Disk</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    /// <p>The resource type of the automatic snapshot. The possible values are <code>Instance</code>, and <code>Disk</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

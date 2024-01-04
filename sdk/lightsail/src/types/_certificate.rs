@@ -8,7 +8,7 @@
 pub struct Certificate {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the certificate.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct Certificate {
     pub status: ::std::option::Option<crate::types::CertificateStatus>,
     /// <p>The serial number of the certificate.</p>
     pub serial_number: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
     pub domain_validation_records: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationRecord>>,
@@ -71,7 +71,7 @@ impl Certificate {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -87,7 +87,7 @@ impl Certificate {
     pub fn serial_number(&self) -> ::std::option::Option<&str> {
         self.serial_number.as_deref()
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
     pub fn subject_alternative_names(&self) -> &[::std::string::String] {
@@ -223,17 +223,17 @@ impl CertificateBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the certificate (<code>my-certificate</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -283,19 +283,19 @@ impl CertificateBuilder {
     ///
     /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
     ///
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
     pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
         v.push(input.into());
         self.subject_alternative_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
     pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subject_alternative_names = input;
         self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) of the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of the certificate.</p>
     pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_names
     }

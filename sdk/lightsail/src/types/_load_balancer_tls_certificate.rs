@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerTlsCertificate {
-    /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct LoadBalancerTlsCertificate {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region and Availability Zone where you created your certificate.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+    /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
@@ -92,11 +92,11 @@ pub struct LoadBalancerTlsCertificate {
     pub signature_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity that is associated with the public key contained in the certificate.</p>
     pub subject: ::std::option::Option<::std::string::String>,
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     pub subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LoadBalancerTlsCertificate {
-    /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -116,7 +116,7 @@ impl LoadBalancerTlsCertificate {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+    /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
@@ -235,7 +235,7 @@ impl LoadBalancerTlsCertificate {
     pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subject_alternative_names.is_none()`.
     pub fn subject_alternative_names(&self) -> &[::std::string::String] {
@@ -280,17 +280,17 @@ pub struct LoadBalancerTlsCertificateBuilder {
     pub(crate) subject_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LoadBalancerTlsCertificateBuilder {
-    /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
+    /// <p>The name of the SSL/TLS certificate (<code>my-certificate</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -350,7 +350,7 @@ impl LoadBalancerTlsCertificateBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+    /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
@@ -377,7 +377,7 @@ impl LoadBalancerTlsCertificateBuilder {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+    /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
@@ -404,7 +404,7 @@ impl LoadBalancerTlsCertificateBuilder {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+    /// <p>The resource type (<code>LoadBalancerTlsCertificate</code>).</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)</p></li>
@@ -754,19 +754,19 @@ impl LoadBalancerTlsCertificateBuilder {
     ///
     /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
     ///
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
         v.push(input.into());
         self.subject_alternative_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subject_alternative_names = input;
         self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subject_alternative_names
     }

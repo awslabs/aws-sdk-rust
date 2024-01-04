@@ -7,16 +7,16 @@ pub struct CreateLoadBalancerInput {
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance port where you're creating your load balancer.</p>
     pub instance_port: ::std::option::Option<i32>,
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub health_check_path: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SSL/TLS certificate.</p>
     /// <p>If you specify <code>certificateName</code>, then <code>certificateDomainName</code> is required (and vice-versa).</p>
     pub certificate_name: ::std::option::Option<::std::string::String>,
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub certificate_domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub certificate_alternative_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
@@ -39,7 +39,7 @@ impl CreateLoadBalancerInput {
     pub fn instance_port(&self) -> ::std::option::Option<i32> {
         self.instance_port
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn health_check_path(&self) -> ::std::option::Option<&str> {
         self.health_check_path.as_deref()
@@ -49,12 +49,12 @@ impl CreateLoadBalancerInput {
     pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn certificate_domain_name(&self) -> ::std::option::Option<&str> {
         self.certificate_domain_name.as_deref()
     }
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_alternative_names.is_none()`.
     pub fn certificate_alternative_names(&self) -> &[::std::string::String] {
@@ -132,19 +132,19 @@ impl CreateLoadBalancerInputBuilder {
     pub fn get_instance_port(&self) -> &::std::option::Option<i32> {
         &self.instance_port
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn health_check_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.health_check_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn set_health_check_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_check_path = input;
         self
     }
-    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (e.g., <code>"/"</code>).</p>
+    /// <p>The path you provided to perform the load balancer health check. If you didn't specify a health check path, Lightsail uses the root path of your website (<code>"/"</code>).</p>
     /// <p>You may want to specify a custom health check path other than the root of your application if your home page loads slowly or has a lot of media or scripting on it.</p>
     pub fn get_health_check_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.health_check_path
@@ -166,19 +166,19 @@ impl CreateLoadBalancerInputBuilder {
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_name
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn certificate_domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate_domain_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn set_certificate_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate_domain_name = input;
         self
     }
-    /// <p>The domain name with which your certificate is associated (e.g., <code>example.com</code>).</p>
+    /// <p>The domain name with which your certificate is associated (<code>example.com</code>).</p>
     /// <p>If you specify <code>certificateDomainName</code>, then <code>certificateName</code> is required (and vice-versa).</p>
     pub fn get_certificate_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_domain_name
@@ -187,19 +187,19 @@ impl CreateLoadBalancerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_certificate_alternative_names`](Self::set_certificate_alternative_names).
     ///
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub fn certificate_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.certificate_alternative_names.unwrap_or_default();
         v.push(input.into());
         self.certificate_alternative_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub fn set_certificate_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.certificate_alternative_names = input;
         self
     }
-    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (e.g., <code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
+    /// <p>The optional alternative domains and subdomains to use with your SSL/TLS certificate (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>, <code>blog.example.com</code>).</p>
     pub fn get_certificate_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.certificate_alternative_names
     }

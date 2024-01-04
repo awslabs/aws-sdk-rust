@@ -409,6 +409,8 @@ mod get_relational_database_snapshots;
 
 mod get_relational_databases;
 
+mod get_setup_history;
+
 mod get_static_ip;
 
 mod get_static_ips;
@@ -440,6 +442,8 @@ mod send_contact_method_verification;
 mod set_ip_address_type;
 
 mod set_resource_access_for_bucket;
+
+mod setup_instance_https;
 
 mod start_gui_session;
 

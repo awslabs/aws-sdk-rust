@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationStackRecordSourceInfo {
-    /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>,
     /// <p>The name of the record.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct CloudFormationStackRecordSourceInfo {
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudFormationStackRecordSourceInfo {
-    /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::CloudFormationStackRecordSourceType> {
         self.resource_type.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct CloudFormationStackRecordSourceInfoBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudFormationStackRecordSourceInfoBuilder {
-    /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
     pub fn resource_type(mut self, input: crate::types::CloudFormationStackRecordSourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::CloudFormationStackRecordSourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>ExportSnapshotRecord</code>).</p>
+    /// <p>The Lightsail resource type (<code>ExportSnapshotRecord</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::CloudFormationStackRecordSourceType> {
         &self.resource_type
     }

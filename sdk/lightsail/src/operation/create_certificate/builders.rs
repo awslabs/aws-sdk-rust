@@ -125,17 +125,17 @@ impl CreateCertificateFluentBuilder {
     pub fn get_certificate_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_name()
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    /// <p>The domain name (<code>example.com</code>) for the certificate.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    /// <p>The domain name (<code>example.com</code>) for the certificate.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for the certificate.</p>
+    /// <p>The domain name (<code>example.com</code>) for the certificate.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }
@@ -143,23 +143,23 @@ impl CreateCertificateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
     ///
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
-    /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
+    /// <p>Wildcard domain entries (<code>*.example.com</code>) are not supported.</p>
     pub fn subject_alternative_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subject_alternative_names(input.into());
         self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
-    /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
+    /// <p>Wildcard domain entries (<code>*.example.com</code>) are not supported.</p>
     pub fn set_subject_alternative_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subject_alternative_names(input);
         self
     }
-    /// <p>An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>) for the certificate.</p>
+    /// <p>An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) for the certificate.</p>
     /// <p>You can specify a maximum of nine alternate domains (in addition to the primary domain name).</p>
-    /// <p>Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.</p>
+    /// <p>Wildcard domain entries (<code>*.example.com</code>) are not supported.</p>
     pub fn get_subject_alternative_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subject_alternative_names()
     }

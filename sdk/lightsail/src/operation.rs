@@ -370,6 +370,9 @@ pub mod get_relational_database_snapshots;
 /// Types for the `GetRelationalDatabases` operation.
 pub mod get_relational_databases;
 
+/// Types for the `GetSetupHistory` operation.
+pub mod get_setup_history;
+
 /// Types for the `GetStaticIp` operation.
 pub mod get_static_ip;
 
@@ -417,6 +420,9 @@ pub mod set_ip_address_type;
 
 /// Types for the `SetResourceAccessForBucket` operation.
 pub mod set_resource_access_for_bucket;
+
+/// Types for the `SetupInstanceHttps` operation.
+pub mod setup_instance_https;
 
 /// Types for the `StartGUISession` operation.
 pub mod start_gui_session;

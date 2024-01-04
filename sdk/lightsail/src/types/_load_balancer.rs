@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancer {
-    /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+    /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -12,9 +12,9 @@ pub struct LoadBalancer {
     pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The date when your load balancer was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
+    /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+    /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -46,7 +46,7 @@ pub struct LoadBalancer {
     pub tls_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancer {
-    /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+    /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -62,11 +62,11 @@ impl LoadBalancer {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
+    /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+    /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -168,17 +168,17 @@ pub struct LoadBalancerBuilder {
     pub(crate) tls_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerBuilder {
-    /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+    /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+    /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+    /// <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -224,31 +224,31 @@ impl LoadBalancerBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
+    /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
         self.location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
+    /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub fn set_location(mut self, input: ::std::option::Option<crate::types::ResourceLocation>) -> Self {
         self.location = input;
         self
     }
-    /// <p>The AWS Region where your load balancer was created (e.g., <code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
+    /// <p>The AWS Region where your load balancer was created (<code>us-east-2a</code>). Lightsail automatically creates your load balancer across Availability Zones.</p>
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+    /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+    /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+    /// <p>The resource type (<code>LoadBalancer</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

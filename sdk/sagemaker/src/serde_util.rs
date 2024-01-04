@@ -3023,6 +3023,15 @@ pub(crate) fn tensor_board_output_config_correct_errors(
     builder
 }
 
+pub(crate) fn throughput_config_description_correct_errors(
+    mut builder: crate::types::builders::ThroughputConfigDescriptionBuilder,
+) -> crate::types::builders::ThroughputConfigDescriptionBuilder {
+    if builder.throughput_mode.is_none() {
+        builder.throughput_mode = "no value was set".parse::<crate::types::ThroughputMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn transform_output_correct_errors(
     mut builder: crate::types::builders::TransformOutputBuilder,
 ) -> crate::types::builders::TransformOutputBuilder {

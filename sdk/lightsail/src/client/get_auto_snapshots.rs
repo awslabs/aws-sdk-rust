@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`resource_name(impl Into<String>)`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::resource_name) / [`set_resource_name(Option<String>)`](crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder::set_resource_name):<br>required: **true**<br><p>The name of the source instance or disk from which to get automatic snapshot information.</p><br>
     /// - On success, responds with [`GetAutoSnapshotsOutput`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput) with field(s):
     ///   - [`resource_name(Option<String>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::resource_name): <p>The name of the source instance or disk for the automatic snapshots.</p>
-    ///   - [`resource_type(Option<ResourceType>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::resource_type): <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+    ///   - [`resource_type(Option<ResourceType>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::resource_type): <p>The resource type of the automatic snapshot. The possible values are <code>Instance</code>, and <code>Disk</code>.</p>
     ///   - [`auto_snapshots(Option<Vec::<AutoSnapshotDetails>>)`](crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput::auto_snapshots): <p>An array of objects that describe the automatic snapshots that are available for the specified source instance or disk.</p>
     /// - On failure, responds with [`SdkError<GetAutoSnapshotsError>`](crate::operation::get_auto_snapshots::GetAutoSnapshotsError)
     pub fn get_auto_snapshots(&self) -> crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsFluentBuilder {

@@ -24,5 +24,11 @@ pub fn ser_update_feature_group_input_input(
         crate::protocol_serde::shape_online_store_config_update::ser_online_store_config_update(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.throughput_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("ThroughputConfig").start_object();
+        crate::protocol_serde::shape_throughput_config_update::ser_throughput_config_update(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

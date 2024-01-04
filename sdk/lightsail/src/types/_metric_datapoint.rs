@@ -14,7 +14,7 @@ pub struct MetricDatapoint {
     pub sample_count: ::std::option::Option<f64>,
     /// <p>The sum.</p>
     pub sum: ::std::option::Option<f64>,
-    /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp (<code>1479816991.349</code>).</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unit.</p>
     pub unit: ::std::option::Option<crate::types::MetricUnit>,
@@ -40,7 +40,7 @@ impl MetricDatapoint {
     pub fn sum(&self) -> ::std::option::Option<f64> {
         self.sum
     }
-    /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp (<code>1479816991.349</code>).</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
@@ -139,17 +139,17 @@ impl MetricDatapointBuilder {
     pub fn get_sum(&self) -> &::std::option::Option<f64> {
         &self.sum
     }
-    /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp (<code>1479816991.349</code>).</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp (<code>1479816991.349</code>).</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp (<code>1479816991.349</code>).</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }

@@ -121,6 +121,8 @@ pub use crate::types::_capacity_provider_update_status::CapacityProviderUpdateSt
 
 pub use crate::types::_auto_scaling_group_provider::AutoScalingGroupProvider;
 
+pub use crate::types::_managed_draining::ManagedDraining;
+
 pub use crate::types::_managed_termination_protection::ManagedTerminationProtection;
 
 pub use crate::types::_managed_scaling::ManagedScaling;
@@ -452,6 +454,8 @@ mod _managed_agent;
 mod _managed_agent_name;
 
 mod _managed_agent_state_change;
+
+mod _managed_draining;
 
 mod _managed_scaling;
 

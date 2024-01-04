@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
-    /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where the instance is located.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
@@ -18,11 +18,11 @@ pub struct Instance {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub blueprint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub blueprint_name: ::std::option::Option<::std::string::String>,
-    /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects representing the add-ons enabled on the instance.</p>
     pub add_ons: ::std::option::Option<::std::vec::Vec<crate::types::AddOn>>,
@@ -41,21 +41,21 @@ pub struct Instance {
     pub hardware: ::std::option::Option<crate::types::InstanceHardware>,
     /// <p>Information about the public ports and monthly data transfer rates for the instance.</p>
     pub networking: ::std::option::Option<crate::types::InstanceNetworking>,
-    /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
+    /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub state: ::std::option::Option<crate::types::InstanceState>,
-    /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
+    /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub username: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
+    /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub ssh_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The metadata options for the Amazon Lightsail instance.</p>
     pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
 impl Instance {
-    /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -63,7 +63,7 @@ impl Instance {
     pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
-    /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -81,15 +81,15 @@ impl Instance {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
         self.blueprint_id.as_deref()
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
         self.blueprint_name.as_deref()
     }
-    /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
@@ -130,15 +130,15 @@ impl Instance {
     pub fn networking(&self) -> ::std::option::Option<&crate::types::InstanceNetworking> {
         self.networking.as_ref()
     }
-    /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
+    /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.state.as_ref()
     }
-    /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
+    /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
+    /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub fn ssh_key_name(&self) -> ::std::option::Option<&str> {
         self.ssh_key_name.as_deref()
     }
@@ -182,31 +182,31 @@ pub struct InstanceBuilder {
     pub(crate) metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
 }
 impl InstanceBuilder {
-    /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name the user gave the instance (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The name the user gave the instance (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -224,17 +224,17 @@ impl InstanceBuilder {
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.support_code
     }
-    /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.</p>
+    /// <p>The timestamp when the instance was created (<code>1479734909.17</code>) in Unix time format.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -286,45 +286,45 @@ impl InstanceBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub fn blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_id = input;
         self
     }
-    /// <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+    /// <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.blueprint_id
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn blueprint_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn set_blueprint_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_name = input;
         self
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn get_blueprint_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.blueprint_name
     }
-    /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
-    /// <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle for the instance (<code>micro_1_0</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.bundle_id
     }
@@ -455,45 +455,45 @@ impl InstanceBuilder {
     pub fn get_networking(&self) -> &::std::option::Option<crate::types::InstanceNetworking> {
         &self.networking
     }
-    /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
+    /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub fn state(mut self, input: crate::types::InstanceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
+    /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The status code and the state (e.g., <code>running</code>) for the instance.</p>
+    /// <p>The status code and the state (<code>running</code>) for the instance.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
         &self.state
     }
-    /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
+    /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
+    /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The user name for connecting to the instance (e.g., <code>ec2-user</code>).</p>
+    /// <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
+    /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub fn ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ssh_key_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
+    /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_key_name = input;
         self
     }
-    /// <p>The name of the SSH key being used to connect to the instance (e.g., <code>LightsailDefaultKeyPair</code>).</p>
+    /// <p>The name of the SSH key being used to connect to the instance (<code>LightsailDefaultKeyPair</code>).</p>
     pub fn get_ssh_key_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.ssh_key_name
     }

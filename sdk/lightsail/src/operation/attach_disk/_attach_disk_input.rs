@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachDiskInput {
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Lightsail instance where you want to utilize the storage disk.</p>
     pub instance_name: ::std::option::Option<::std::string::String>,
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub disk_path: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default value is <code>False</code>.</p><important>
     /// <p>This value only applies to Lightsail for Research resources.</p>
@@ -15,7 +15,7 @@ pub struct AttachDiskInput {
     pub auto_mounting: ::std::option::Option<bool>,
 }
 impl AttachDiskInput {
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn disk_name(&self) -> ::std::option::Option<&str> {
         self.disk_name.as_deref()
     }
@@ -23,7 +23,7 @@ impl AttachDiskInput {
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub fn disk_path(&self) -> ::std::option::Option<&str> {
         self.disk_path.as_deref()
     }
@@ -51,18 +51,18 @@ pub struct AttachDiskInputBuilder {
     pub(crate) auto_mounting: ::std::option::Option<bool>,
 }
 impl AttachDiskInputBuilder {
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_name = input;
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_name
     }
@@ -81,18 +81,18 @@ impl AttachDiskInputBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_name
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     /// This field is required.
     pub fn disk_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub fn set_disk_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_path = input;
         self
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub fn get_disk_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_path
     }

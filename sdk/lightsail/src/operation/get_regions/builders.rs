@@ -108,31 +108,31 @@ impl GetRegionsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: <code>us-east-2a</code>.</p>
     pub fn include_availability_zones(mut self, input: bool) -> Self {
         self.inner = self.inner.include_availability_zones(input);
         self
     }
-    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: <code>us-east-2a</code>.</p>
     pub fn set_include_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_availability_zones(input);
         self
     }
-    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: e.g., <code>us-east-2a</code>.</p>
+    /// <p>A Boolean value indicating whether to also include Availability Zones in your get regions request. Availability Zones are indicated with a letter: <code>us-east-2a</code>.</p>
     pub fn get_include_availability_zones(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_availability_zones()
     }
-    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
+    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (<code>us-east-2a</code>).</p>
     pub fn include_relational_database_availability_zones(mut self, input: bool) -> Self {
         self.inner = self.inner.include_relational_database_availability_zones(input);
         self
     }
-    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
+    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (<code>us-east-2a</code>).</p>
     pub fn set_include_relational_database_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_relational_database_availability_zones(input);
         self
     }
-    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (e.g., <code>us-east-2a</code>).</p>
+    /// <p>A Boolean value indicating whether to also include Availability Zones for databases in your get regions request. Availability Zones are indicated with a letter (<code>us-east-2a</code>).</p>
     pub fn get_include_relational_database_availability_zones(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_relational_database_availability_zones()
     }

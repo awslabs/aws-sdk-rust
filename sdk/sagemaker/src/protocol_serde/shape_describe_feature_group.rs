@@ -131,6 +131,10 @@ pub(crate) fn de_describe_feature_group(
                 "OfflineStoreConfig" => {
                     builder = builder.set_offline_store_config(crate::protocol_serde::shape_offline_store_config::de_offline_store_config(tokens)?);
                 }
+                "ThroughputConfig" => {
+                    builder = builder
+                        .set_throughput_config(crate::protocol_serde::shape_throughput_config_description::de_throughput_config_description(tokens)?);
+                }
                 "RoleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

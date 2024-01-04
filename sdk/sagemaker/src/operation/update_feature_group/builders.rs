@@ -156,4 +156,18 @@ impl UpdateFeatureGroupFluentBuilder {
     pub fn get_online_store_config(&self) -> &::std::option::Option<crate::types::OnlineStoreConfigUpdate> {
         self.inner.get_online_store_config()
     }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn throughput_config(mut self, input: crate::types::ThroughputConfigUpdate) -> Self {
+        self.inner = self.inner.throughput_config(input);
+        self
+    }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn set_throughput_config(mut self, input: ::std::option::Option<crate::types::ThroughputConfigUpdate>) -> Self {
+        self.inner = self.inner.set_throughput_config(input);
+        self
+    }
+    /// <p>The new throughput configuration for the feature group. You can switch between on-demand and provisioned modes or update the read / write capacity of provisioned feature groups. You can switch a feature group to on-demand only once in a 24 hour period.</p>
+    pub fn get_throughput_config(&self) -> &::std::option::Option<crate::types::ThroughputConfigUpdate> {
+        self.inner.get_throughput_config()
+    }
 }

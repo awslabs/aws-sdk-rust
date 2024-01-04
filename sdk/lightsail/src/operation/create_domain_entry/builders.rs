@@ -109,17 +109,17 @@ impl CreateDomainEntryFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
-    /// <p>The domain name (e.g., <code>example.com</code>) for which you want to create the domain entry.</p>
+    /// <p>The domain name (<code>example.com</code>) for which you want to create the domain entry.</p>
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_name()
     }

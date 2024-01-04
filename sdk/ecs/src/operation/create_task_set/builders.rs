@@ -23,6 +23,7 @@ impl CreateTaskSetInputBuilder {
 /// Fluent builder constructing a request to `CreateTaskSet`.
 ///
 /// <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>You can create a maximum of 5 tasks sets for a deployment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTaskSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

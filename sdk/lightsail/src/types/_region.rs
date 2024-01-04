@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
-    /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+    /// <p>The continent code (<code>NA</code>, meaning North America).</p>
     pub continent_code: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (<code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The display name (e.g., <code>Ohio</code>).</p>
+    /// <p>The display name (<code>Ohio</code>).</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The region name (e.g., <code>us-east-2</code>).</p>
+    /// <p>The region name (<code>us-east-2</code>).</p>
     pub name: ::std::option::Option<crate::types::RegionName>,
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
@@ -18,19 +18,19 @@ pub struct Region {
     pub relational_database_availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl Region {
-    /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+    /// <p>The continent code (<code>NA</code>, meaning North America).</p>
     pub fn continent_code(&self) -> ::std::option::Option<&str> {
         self.continent_code.as_deref()
     }
-    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (<code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The display name (e.g., <code>Ohio</code>).</p>
+    /// <p>The display name (<code>Ohio</code>).</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The region name (e.g., <code>us-east-2</code>).</p>
+    /// <p>The region name (<code>us-east-2</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::RegionName> {
         self.name.as_ref()
     }
@@ -66,59 +66,59 @@ pub struct RegionBuilder {
     pub(crate) relational_database_availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl RegionBuilder {
-    /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+    /// <p>The continent code (<code>NA</code>, meaning North America).</p>
     pub fn continent_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continent_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+    /// <p>The continent code (<code>NA</code>, meaning North America).</p>
     pub fn set_continent_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continent_code = input;
         self
     }
-    /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+    /// <p>The continent code (<code>NA</code>, meaning North America).</p>
     pub fn get_continent_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.continent_code
     }
-    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (<code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (<code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
+    /// <p>The description of the Amazon Web Services Region (<code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The display name (e.g., <code>Ohio</code>).</p>
+    /// <p>The display name (<code>Ohio</code>).</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name (e.g., <code>Ohio</code>).</p>
+    /// <p>The display name (<code>Ohio</code>).</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>The display name (e.g., <code>Ohio</code>).</p>
+    /// <p>The display name (<code>Ohio</code>).</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The region name (e.g., <code>us-east-2</code>).</p>
+    /// <p>The region name (<code>us-east-2</code>).</p>
     pub fn name(mut self, input: crate::types::RegionName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The region name (e.g., <code>us-east-2</code>).</p>
+    /// <p>The region name (<code>us-east-2</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The region name (e.g., <code>us-east-2</code>).</p>
+    /// <p>The region name (<code>us-east-2</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::RegionName> {
         &self.name
     }

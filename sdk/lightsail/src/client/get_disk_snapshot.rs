@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDiskSnapshot`](crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder::set_disk_snapshot_name):<br>required: **true**<br><p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p><br>
+    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::operation::get_disk_snapshot::builders::GetDiskSnapshotFluentBuilder::set_disk_snapshot_name):<br>required: **true**<br><p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p><br>
     /// - On success, responds with [`GetDiskSnapshotOutput`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput) with field(s):
     ///   - [`disk_snapshot(Option<DiskSnapshot>)`](crate::operation::get_disk_snapshot::GetDiskSnapshotOutput::disk_snapshot): <p>An object containing information about the disk snapshot.</p>
     /// - On failure, responds with [`SdkError<GetDiskSnapshotError>`](crate::operation::get_disk_snapshot::GetDiskSnapshotError)

@@ -10,19 +10,19 @@ pub struct Operation {
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
     pub is_terminal: ::std::option::Option<bool>,
-    /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+    /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub operation_details: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation.</p>
     pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The status of the operation.</p>
     pub status: ::std::option::Option<crate::types::OperationStatus>,
-    /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub status_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -42,7 +42,7 @@ impl Operation {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -54,7 +54,7 @@ impl Operation {
     pub fn is_terminal(&self) -> ::std::option::Option<bool> {
         self.is_terminal
     }
-    /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+    /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub fn operation_details(&self) -> ::std::option::Option<&str> {
         self.operation_details.as_deref()
     }
@@ -66,7 +66,7 @@ impl Operation {
     pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
     }
-    /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub fn status_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_changed_at.as_ref()
     }
@@ -146,17 +146,17 @@ impl OperationBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the operation was initialized (<code>1479816991.349</code>).</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -188,17 +188,17 @@ impl OperationBuilder {
     pub fn get_is_terminal(&self) -> &::std::option::Option<bool> {
         &self.is_terminal
     }
-    /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+    /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub fn operation_details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operation_details = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+    /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub fn set_operation_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_details = input;
         self
     }
-    /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
+    /// <p>Details about the operation (<code>Debian-1GB-Ohio-1</code>).</p>
     pub fn get_operation_details(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_details
     }
@@ -230,17 +230,17 @@ impl OperationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OperationStatus> {
         &self.status
     }
-    /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub fn status_changed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.status_changed_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub fn set_status_changed_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.status_changed_at = input;
         self
     }
-    /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the status was changed (<code>1479816991.349</code>).</p>
     pub fn get_status_changed_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.status_changed_at
     }

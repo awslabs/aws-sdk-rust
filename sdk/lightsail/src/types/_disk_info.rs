@@ -8,7 +8,7 @@ pub struct DiskInfo {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The disk path.</p>
     pub path: ::std::option::Option<::std::string::String>,
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
     pub is_system_disk: ::std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl DiskInfo {
     pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn size_in_gb(&self) -> ::std::option::Option<i32> {
         self.size_in_gb
     }
@@ -76,17 +76,17 @@ impl DiskInfoBuilder {
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.path
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.size_in_gb
     }

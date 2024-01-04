@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDiskFromSnapshotInput {
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub disk_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
+    /// <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>source disk name</code> parameter. The <code>disk snapshot name</code> and <code>source disk name</code> parameters are mutually exclusive.</p></li>
     /// </ul>
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub size_in_gb: ::std::option::Option<i32>,
     /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
@@ -53,11 +53,11 @@ pub struct CreateDiskFromSnapshotInput {
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
 }
 impl CreateDiskFromSnapshotInput {
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn disk_name(&self) -> ::std::option::Option<&str> {
         self.disk_name.as_deref()
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
+    /// <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li>
@@ -66,12 +66,12 @@ impl CreateDiskFromSnapshotInput {
     pub fn disk_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.disk_snapshot_name.as_deref()
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn size_in_gb(&self) -> ::std::option::Option<i32> {
         self.size_in_gb
     }
@@ -146,22 +146,22 @@ pub struct CreateDiskFromSnapshotInputBuilder {
     pub(crate) use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
 }
 impl CreateDiskFromSnapshotInputBuilder {
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_name = input;
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_name
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
+    /// <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li>
@@ -171,7 +171,7 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
+    /// <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li>
@@ -181,7 +181,7 @@ impl CreateDiskFromSnapshotInputBuilder {
         self.disk_snapshot_name = input;
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to create the new storage disk.</p>
+    /// <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create the new storage disk.</p>
     /// <p>Constraint:</p>
     /// <ul>
     /// <li>
@@ -190,36 +190,36 @@ impl CreateDiskFromSnapshotInputBuilder {
     pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_snapshot_name
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
     /// This field is required.
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail instance where you want to create the disk.</p>
     /// <p>Use the GetRegions operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     /// This field is required.
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.size_in_gb
     }

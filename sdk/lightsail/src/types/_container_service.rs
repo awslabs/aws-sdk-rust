@@ -12,7 +12,7 @@ pub struct ContainerService {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the location of the container service, such as the Amazon Web Services Region and Availability Zone.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
+    /// <p>The Lightsail resource type of the container service.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -91,7 +91,7 @@ impl ContainerService {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
+    /// <p>The Lightsail resource type of the container service.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -275,17 +275,17 @@ impl ContainerServiceBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
+    /// <p>The Lightsail resource type of the container service.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
+    /// <p>The Lightsail resource type of the container service.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type of the container service (i.e., <code>ContainerService</code>).</p>
+    /// <p>The Lightsail resource type of the container service.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

@@ -6,11 +6,11 @@
 pub struct InstanceSnapshot {
     /// <p>The name of the snapshot.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+    /// <p>The timestamp when the snapshot was created (<code>1479907467.024</code>).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where you created the snapshot.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
@@ -28,11 +28,11 @@ pub struct InstanceSnapshot {
     pub from_attached_disks: ::std::option::Option<::std::vec::Vec<crate::types::Disk>>,
     /// <p>The instance from which the snapshot was created.</p>
     pub from_instance_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub from_instance_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub from_blueprint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
     pub from_bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
     pub is_from_auto_snapshot: ::std::option::Option<bool>,
@@ -44,7 +44,7 @@ impl InstanceSnapshot {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -52,7 +52,7 @@ impl InstanceSnapshot {
     pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
-    /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+    /// <p>The timestamp when the snapshot was created (<code>1479907467.024</code>).</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -90,15 +90,15 @@ impl InstanceSnapshot {
     pub fn from_instance_name(&self) -> ::std::option::Option<&str> {
         self.from_instance_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub fn from_instance_arn(&self) -> ::std::option::Option<&str> {
         self.from_instance_arn.as_deref()
     }
-    /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn from_blueprint_id(&self) -> ::std::option::Option<&str> {
         self.from_blueprint_id.as_deref()
     }
-    /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
     pub fn from_bundle_id(&self) -> ::std::option::Option<&str> {
         self.from_bundle_id.as_deref()
     }
@@ -154,17 +154,17 @@ impl InstanceSnapshotBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the snapshot (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -182,17 +182,17 @@ impl InstanceSnapshotBuilder {
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.support_code
     }
-    /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+    /// <p>The timestamp when the snapshot was created (<code>1479907467.024</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+    /// <p>The timestamp when the snapshot was created (<code>1479907467.024</code>).</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the snapshot was created (e.g., <code>1479907467.024</code>).</p>
+    /// <p>The timestamp when the snapshot was created (<code>1479907467.024</code>).</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -312,45 +312,45 @@ impl InstanceSnapshotBuilder {
     pub fn get_from_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_instance_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub fn from_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub fn set_from_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_instance_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance from which the snapshot was created (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).</p>
     pub fn get_from_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_instance_arn
     }
-    /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn from_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn set_from_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_blueprint_id = input;
         self
     }
-    /// <p>The blueprint ID from which you created the snapshot (e.g., <code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
+    /// <p>The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>). A blueprint is a virtual private server (or <i>instance</i>) image used to create instances quickly.</p>
     pub fn get_from_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_blueprint_id
     }
-    /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
     pub fn from_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
     pub fn set_from_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_bundle_id = input;
         self
     }
-    /// <p>The bundle ID from which you created the snapshot (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which you created the snapshot (<code>micro_1_0</code>).</p>
     pub fn get_from_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_bundle_id
     }

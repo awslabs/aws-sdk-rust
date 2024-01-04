@@ -193,17 +193,17 @@ impl CreateInstancesFromSnapshotFluentBuilder {
     pub fn get_instance_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_snapshot_name()
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
     pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
-    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
     pub fn get_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bundle_id()
     }

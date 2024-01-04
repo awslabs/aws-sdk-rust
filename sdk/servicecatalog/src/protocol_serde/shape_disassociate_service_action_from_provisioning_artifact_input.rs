@@ -15,5 +15,8 @@ pub fn ser_disassociate_service_action_from_provisioning_artifact_input_input(
     if let Some(var_4) = &input.accept_language {
         object.key("AcceptLanguage").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.idempotency_token {
+        object.key("IdempotencyToken").string(var_5.as_str());
+    }
     Ok(())
 }

@@ -8,7 +8,7 @@ pub struct DomainEntry {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+    /// <p>The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, specifies whether the domain entry is an alias used by the Lightsail load balancer, Lightsail container service, Lightsail content delivery network (CDN) distribution, or another Amazon Web Services resource. You can include an alias (A type) record in your request, which points to the DNS name of a load balancer, container service, CDN distribution, or other Amazon Web Services resource and routes traffic to that resource.</p>
@@ -34,8 +34,8 @@ pub struct DomainEntry {
     /// <p><code>TXT</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>(Deprecated) The options for the domain entry.</p><note>
-    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The options for the domain entry.</p><note>
+    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -49,7 +49,7 @@ impl DomainEntry {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+    /// <p>The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
@@ -81,8 +81,8 @@ impl DomainEntry {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>(Deprecated) The options for the domain entry.</p><note>
-    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The options for the domain entry.</p><note>
+    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -136,19 +136,19 @@ impl DomainEntryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+    /// <p>The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+    /// <p>The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
-    /// <p>The target IP address (e.g., <code>192.0.2.0</code>), or AWS name server (e.g., <code>ns-111.awsdns-22.com.</code>).</p>
+    /// <p>The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).</p>
     /// <p>For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>. For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>. For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>. Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A record for a Lightsail load balancer, distribution, or container service.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
@@ -242,8 +242,8 @@ impl DomainEntryBuilder {
     ///
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
-    /// <p>(Deprecated) The options for the domain entry.</p><note>
-    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The options for the domain entry.</p><note>
+    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn options(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -252,16 +252,16 @@ impl DomainEntryBuilder {
         self.options = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>(Deprecated) The options for the domain entry.</p><note>
-    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The options for the domain entry.</p><note>
+    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn set_options(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.options = input;
         self
     }
-    /// <p>(Deprecated) The options for the domain entry.</p><note>
-    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+    /// <p>(Discontinued) The options for the domain entry.</p><note>
+    /// <p>In releases prior to November 29, 2017, this parameter was not included in the API response. It is now discontinued.</p>
     /// </note>
     #[deprecated]
     pub fn get_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

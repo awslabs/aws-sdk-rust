@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachedDisk {
-    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB.</p>
     pub size_in_gb: ::std::option::Option<i32>,
 }
 impl AttachedDisk {
-    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct AttachedDiskBuilder {
     pub(crate) size_in_gb: ::std::option::Option<i32>,
 }
 impl AttachedDiskBuilder {
-    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.path = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
-    /// <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The path of the disk (<code>/dev/xvdf</code>).</p>
     pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.path
     }

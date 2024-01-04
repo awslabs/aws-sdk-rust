@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDiskInput {
-    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    /// <p>The name of the disk (<code>my-disk</code>).</p>
     pub disk_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDiskInput {
-    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    /// <p>The name of the disk (<code>my-disk</code>).</p>
     pub fn disk_name(&self) -> ::std::option::Option<&str> {
         self.disk_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetDiskInputBuilder {
     pub(crate) disk_name: ::std::option::Option<::std::string::String>,
 }
 impl GetDiskInputBuilder {
-    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    /// <p>The name of the disk (<code>my-disk</code>).</p>
     /// This field is required.
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    /// <p>The name of the disk (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_name = input;
         self
     }
-    /// <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+    /// <p>The name of the disk (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_name
     }

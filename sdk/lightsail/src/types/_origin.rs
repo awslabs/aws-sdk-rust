@@ -7,7 +7,7 @@
 pub struct Origin {
     /// <p>The name of the origin resource.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+    /// <p>The resource type of the origin resource (<i>Instance</i>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The AWS Region name of the origin resource.</p>
     pub region_name: ::std::option::Option<crate::types::RegionName>,
@@ -19,7 +19,7 @@ impl Origin {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+    /// <p>The resource type of the origin resource (<i>Instance</i>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -63,17 +63,17 @@ impl OriginBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+    /// <p>The resource type of the origin resource (<i>Instance</i>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+    /// <p>The resource type of the origin resource (<i>Instance</i>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+    /// <p>The resource type of the origin resource (<i>Instance</i>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

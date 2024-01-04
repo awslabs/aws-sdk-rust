@@ -13,7 +13,7 @@ pub struct Alarm {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that lists information about the location of the alarm.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+    /// <p>The Lightsail resource type of the alarm.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail alarm. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
@@ -96,7 +96,7 @@ impl Alarm {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+    /// <p>The Lightsail resource type of the alarm.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -287,17 +287,17 @@ impl AlarmBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+    /// <p>The Lightsail resource type of the alarm.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+    /// <p>The Lightsail resource type of the alarm.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>Alarm</code>).</p>
+    /// <p>The Lightsail resource type of the alarm.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

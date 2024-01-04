@@ -42,6 +42,7 @@
 ///     ResourceType::AppRunnerVpcConnector => { /* ... */ },
 ///     ResourceType::AppStreamApplication => { /* ... */ },
 ///     ResourceType::AppStreamDirectoryConfig => { /* ... */ },
+///     ResourceType::AppStreamFleet => { /* ... */ },
 ///     ResourceType::AppStreamStack => { /* ... */ },
 ///     ResourceType::AppSyncGraphQlApi => { /* ... */ },
 ///     ResourceType::AthenaDataCatalog => { /* ... */ },
@@ -79,6 +80,9 @@
 ///     ResourceType::CodeGuruProfilerProfilingGroup => { /* ... */ },
 ///     ResourceType::CodeGuruReviewerRepositoryAssociation => { /* ... */ },
 ///     ResourceType::Pipeline => { /* ... */ },
+///     ResourceType::CognitoUserPool => { /* ... */ },
+///     ResourceType::CognitoUserPoolClient => { /* ... */ },
+///     ResourceType::CognitoUserPoolGroup => { /* ... */ },
 ///     ResourceType::ConformancePackCompliance => { /* ... */ },
 ///     ResourceType::ResourceCompliance => { /* ... */ },
 ///     ResourceType::ConnectInstance => { /* ... */ },
@@ -122,7 +126,9 @@
 ///     ResourceType::LaunchTemplate => { /* ... */ },
 ///     ResourceType::NatGateway => { /* ... */ },
 ///     ResourceType::NetworkAcl => { /* ... */ },
+///     ResourceType::Ec2NetworkInsightsAccessScope => { /* ... */ },
 ///     ResourceType::NetworkInsightsAccessScopeAnalysis => { /* ... */ },
+///     ResourceType::Ec2NetworkInsightsAnalysis => { /* ... */ },
 ///     ResourceType::Ec2NetworkInsightsPath => { /* ... */ },
 ///     ResourceType::NetworkInterface => { /* ... */ },
 ///     ResourceType::Ec2PrefixList => { /* ... */ },
@@ -195,8 +201,10 @@
 ///     ResourceType::GlueClassifier => { /* ... */ },
 ///     ResourceType::GlueJob => { /* ... */ },
 ///     ResourceType::GlueMlTransform => { /* ... */ },
+///     ResourceType::GrafanaWorkspace => { /* ... */ },
 ///     ResourceType::GreengrassV2ComponentVersion => { /* ... */ },
 ///     ResourceType::GroundStationConfig => { /* ... */ },
+///     ResourceType::GroundStationDataflowEndpointGroup => { /* ... */ },
 ///     ResourceType::GroundStationMissionProfile => { /* ... */ },
 ///     ResourceType::GuardDutyDetector => { /* ... */ },
 ///     ResourceType::GuardDutyFilter => { /* ... */ },
@@ -216,6 +224,7 @@
 ///     ResourceType::ImageBuilderContainerRecipe => { /* ... */ },
 ///     ResourceType::ImageBuilderDistributionConfiguration => { /* ... */ },
 ///     ResourceType::ImageBuilderImagePipeline => { /* ... */ },
+///     ResourceType::ImageBuilderImageRecipe => { /* ... */ },
 ///     ResourceType::ImageBuilderInfrastructureConfiguration => { /* ... */ },
 ///     ResourceType::InspectorV2Filter => { /* ... */ },
 ///     ResourceType::IoTAccountAuditConfiguration => { /* ... */ },
@@ -251,6 +260,7 @@
 ///     ResourceType::IoTWirelessFuotaTask => { /* ... */ },
 ///     ResourceType::IoTWirelessMulticastGroup => { /* ... */ },
 ///     ResourceType::IoTWirelessServiceProfile => { /* ... */ },
+///     ResourceType::KmsAlias => { /* ... */ },
 ///     ResourceType::Key => { /* ... */ },
 ///     ResourceType::KafkaConnectConnector => { /* ... */ },
 ///     ResourceType::KendraIndex => { /* ... */ },
@@ -271,6 +281,7 @@
 ///     ResourceType::LogsDestination => { /* ... */ },
 ///     ResourceType::LookoutMetricsAlert => { /* ... */ },
 ///     ResourceType::LookoutVisionProject => { /* ... */ },
+///     ResourceType::M2Environment => { /* ... */ },
 ///     ResourceType::MskBatchScramSecret => { /* ... */ },
 ///     ResourceType::MskCluster => { /* ... */ },
 ///     ResourceType::MskConfiguration => { /* ... */ },
@@ -306,6 +317,9 @@
 ///     ResourceType::PinpointInAppTemplate => { /* ... */ },
 ///     ResourceType::PinpointSegment => { /* ... */ },
 ///     ResourceType::QldbLedger => { /* ... */ },
+///     ResourceType::QuickSightDataSource => { /* ... */ },
+///     ResourceType::QuickSightTemplate => { /* ... */ },
+///     ResourceType::QuickSightTheme => { /* ... */ },
 ///     ResourceType::DbCluster => { /* ... */ },
 ///     ResourceType::DbClusterSnapshot => { /* ... */ },
 ///     ResourceType::DbInstance => { /* ... */ },
@@ -314,12 +328,14 @@
 ///     ResourceType::DbSubnetGroup => { /* ... */ },
 ///     ResourceType::EventSubscription => { /* ... */ },
 ///     ResourceType::RdsGlobalCluster => { /* ... */ },
+///     ResourceType::RdsOptionGroup => { /* ... */ },
 ///     ResourceType::RumAppMonitor => { /* ... */ },
 ///     ResourceType::Cluster => { /* ... */ },
 ///     ResourceType::ClusterParameterGroup => { /* ... */ },
 ///     ResourceType::ClusterSecurityGroup => { /* ... */ },
 ///     ResourceType::ClusterSnapshot => { /* ... */ },
 ///     ResourceType::ClusterSubnetGroup => { /* ... */ },
+///     ResourceType::RedshiftEndpointAccess => { /* ... */ },
 ///     ResourceType::RedshiftEventSubscription => { /* ... */ },
 ///     ResourceType::RedshiftScheduledAction => { /* ... */ },
 ///     ResourceType::ResilienceHubApp => { /* ... */ },
@@ -338,6 +354,7 @@
 ///     ResourceType::Route53RecoveryReadinessRecoveryGroup => { /* ... */ },
 ///     ResourceType::Route53RecoveryReadinessResourceSet => { /* ... */ },
 ///     ResourceType::Route53ResolverFirewallDomainList => { /* ... */ },
+///     ResourceType::Route53ResolverFirewallRuleGroup => { /* ... */ },
 ///     ResourceType::Route53ResolverFirewallRuleGroupAssociation => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverEndpoint => { /* ... */ },
 ///     ResourceType::Route53ResolverResolverQueryLoggingConfig => { /* ... */ },
@@ -357,6 +374,7 @@
 ///     ResourceType::Topic => { /* ... */ },
 ///     ResourceType::Queue => { /* ... */ },
 ///     ResourceType::AssociationCompliance => { /* ... */ },
+///     ResourceType::SsmDocument => { /* ... */ },
 ///     ResourceType::FileData => { /* ... */ },
 ///     ResourceType::ManagedInstanceInventory => { /* ... */ },
 ///     ResourceType::PatchCompliance => { /* ... */ },
@@ -489,6 +507,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AppStreamDirectoryConfig,
     #[allow(missing_docs)] // documentation missing in model
+    AppStreamFleet,
+    #[allow(missing_docs)] // documentation missing in model
     AppStreamStack,
     #[allow(missing_docs)] // documentation missing in model
     AppSyncGraphQlApi,
@@ -562,6 +582,12 @@ pub enum ResourceType {
     CodeGuruReviewerRepositoryAssociation,
     #[allow(missing_docs)] // documentation missing in model
     Pipeline,
+    #[allow(missing_docs)] // documentation missing in model
+    CognitoUserPool,
+    #[allow(missing_docs)] // documentation missing in model
+    CognitoUserPoolClient,
+    #[allow(missing_docs)] // documentation missing in model
+    CognitoUserPoolGroup,
     #[allow(missing_docs)] // documentation missing in model
     ConformancePackCompliance,
     #[allow(missing_docs)] // documentation missing in model
@@ -649,7 +675,11 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     NetworkAcl,
     #[allow(missing_docs)] // documentation missing in model
+    Ec2NetworkInsightsAccessScope,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInsightsAccessScopeAnalysis,
+    #[allow(missing_docs)] // documentation missing in model
+    Ec2NetworkInsightsAnalysis,
     #[allow(missing_docs)] // documentation missing in model
     Ec2NetworkInsightsPath,
     #[allow(missing_docs)] // documentation missing in model
@@ -795,9 +825,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     GlueMlTransform,
     #[allow(missing_docs)] // documentation missing in model
+    GrafanaWorkspace,
+    #[allow(missing_docs)] // documentation missing in model
     GreengrassV2ComponentVersion,
     #[allow(missing_docs)] // documentation missing in model
     GroundStationConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    GroundStationDataflowEndpointGroup,
     #[allow(missing_docs)] // documentation missing in model
     GroundStationMissionProfile,
     #[allow(missing_docs)] // documentation missing in model
@@ -836,6 +870,8 @@ pub enum ResourceType {
     ImageBuilderDistributionConfiguration,
     #[allow(missing_docs)] // documentation missing in model
     ImageBuilderImagePipeline,
+    #[allow(missing_docs)] // documentation missing in model
+    ImageBuilderImageRecipe,
     #[allow(missing_docs)] // documentation missing in model
     ImageBuilderInfrastructureConfiguration,
     #[allow(missing_docs)] // documentation missing in model
@@ -907,6 +943,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     IoTWirelessServiceProfile,
     #[allow(missing_docs)] // documentation missing in model
+    KmsAlias,
+    #[allow(missing_docs)] // documentation missing in model
     Key,
     #[allow(missing_docs)] // documentation missing in model
     KafkaConnectConnector,
@@ -946,6 +984,8 @@ pub enum ResourceType {
     LookoutMetricsAlert,
     #[allow(missing_docs)] // documentation missing in model
     LookoutVisionProject,
+    #[allow(missing_docs)] // documentation missing in model
+    M2Environment,
     #[allow(missing_docs)] // documentation missing in model
     MskBatchScramSecret,
     #[allow(missing_docs)] // documentation missing in model
@@ -1017,6 +1057,12 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     QldbLedger,
     #[allow(missing_docs)] // documentation missing in model
+    QuickSightDataSource,
+    #[allow(missing_docs)] // documentation missing in model
+    QuickSightTemplate,
+    #[allow(missing_docs)] // documentation missing in model
+    QuickSightTheme,
+    #[allow(missing_docs)] // documentation missing in model
     DbCluster,
     #[allow(missing_docs)] // documentation missing in model
     DbClusterSnapshot,
@@ -1033,6 +1079,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RdsGlobalCluster,
     #[allow(missing_docs)] // documentation missing in model
+    RdsOptionGroup,
+    #[allow(missing_docs)] // documentation missing in model
     RumAppMonitor,
     #[allow(missing_docs)] // documentation missing in model
     Cluster,
@@ -1044,6 +1092,8 @@ pub enum ResourceType {
     ClusterSnapshot,
     #[allow(missing_docs)] // documentation missing in model
     ClusterSubnetGroup,
+    #[allow(missing_docs)] // documentation missing in model
+    RedshiftEndpointAccess,
     #[allow(missing_docs)] // documentation missing in model
     RedshiftEventSubscription,
     #[allow(missing_docs)] // documentation missing in model
@@ -1080,6 +1130,8 @@ pub enum ResourceType {
     Route53RecoveryReadinessResourceSet,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverFirewallDomainList,
+    #[allow(missing_docs)] // documentation missing in model
+    Route53ResolverFirewallRuleGroup,
     #[allow(missing_docs)] // documentation missing in model
     Route53ResolverFirewallRuleGroupAssociation,
     #[allow(missing_docs)] // documentation missing in model
@@ -1118,6 +1170,8 @@ pub enum ResourceType {
     Queue,
     #[allow(missing_docs)] // documentation missing in model
     AssociationCompliance,
+    #[allow(missing_docs)] // documentation missing in model
+    SsmDocument,
     #[allow(missing_docs)] // documentation missing in model
     FileData,
     #[allow(missing_docs)] // documentation missing in model
@@ -1243,6 +1297,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::AppRunner::VpcConnector" => ResourceType::AppRunnerVpcConnector,
             "AWS::AppStream::Application" => ResourceType::AppStreamApplication,
             "AWS::AppStream::DirectoryConfig" => ResourceType::AppStreamDirectoryConfig,
+            "AWS::AppStream::Fleet" => ResourceType::AppStreamFleet,
             "AWS::AppStream::Stack" => ResourceType::AppStreamStack,
             "AWS::AppSync::GraphQLApi" => ResourceType::AppSyncGraphQlApi,
             "AWS::Athena::DataCatalog" => ResourceType::AthenaDataCatalog,
@@ -1280,6 +1335,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::CodeGuruProfiler::ProfilingGroup" => ResourceType::CodeGuruProfilerProfilingGroup,
             "AWS::CodeGuruReviewer::RepositoryAssociation" => ResourceType::CodeGuruReviewerRepositoryAssociation,
             "AWS::CodePipeline::Pipeline" => ResourceType::Pipeline,
+            "AWS::Cognito::UserPool" => ResourceType::CognitoUserPool,
+            "AWS::Cognito::UserPoolClient" => ResourceType::CognitoUserPoolClient,
+            "AWS::Cognito::UserPoolGroup" => ResourceType::CognitoUserPoolGroup,
             "AWS::Config::ConformancePackCompliance" => ResourceType::ConformancePackCompliance,
             "AWS::Config::ResourceCompliance" => ResourceType::ResourceCompliance,
             "AWS::Connect::Instance" => ResourceType::ConnectInstance,
@@ -1323,7 +1381,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::EC2::LaunchTemplate" => ResourceType::LaunchTemplate,
             "AWS::EC2::NatGateway" => ResourceType::NatGateway,
             "AWS::EC2::NetworkAcl" => ResourceType::NetworkAcl,
+            "AWS::EC2::NetworkInsightsAccessScope" => ResourceType::Ec2NetworkInsightsAccessScope,
             "AWS::EC2::NetworkInsightsAccessScopeAnalysis" => ResourceType::NetworkInsightsAccessScopeAnalysis,
+            "AWS::EC2::NetworkInsightsAnalysis" => ResourceType::Ec2NetworkInsightsAnalysis,
             "AWS::EC2::NetworkInsightsPath" => ResourceType::Ec2NetworkInsightsPath,
             "AWS::EC2::NetworkInterface" => ResourceType::NetworkInterface,
             "AWS::EC2::PrefixList" => ResourceType::Ec2PrefixList,
@@ -1396,8 +1456,10 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Glue::Classifier" => ResourceType::GlueClassifier,
             "AWS::Glue::Job" => ResourceType::GlueJob,
             "AWS::Glue::MLTransform" => ResourceType::GlueMlTransform,
+            "AWS::Grafana::Workspace" => ResourceType::GrafanaWorkspace,
             "AWS::GreengrassV2::ComponentVersion" => ResourceType::GreengrassV2ComponentVersion,
             "AWS::GroundStation::Config" => ResourceType::GroundStationConfig,
+            "AWS::GroundStation::DataflowEndpointGroup" => ResourceType::GroundStationDataflowEndpointGroup,
             "AWS::GroundStation::MissionProfile" => ResourceType::GroundStationMissionProfile,
             "AWS::GuardDuty::Detector" => ResourceType::GuardDutyDetector,
             "AWS::GuardDuty::Filter" => ResourceType::GuardDutyFilter,
@@ -1417,6 +1479,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ImageBuilder::ContainerRecipe" => ResourceType::ImageBuilderContainerRecipe,
             "AWS::ImageBuilder::DistributionConfiguration" => ResourceType::ImageBuilderDistributionConfiguration,
             "AWS::ImageBuilder::ImagePipeline" => ResourceType::ImageBuilderImagePipeline,
+            "AWS::ImageBuilder::ImageRecipe" => ResourceType::ImageBuilderImageRecipe,
             "AWS::ImageBuilder::InfrastructureConfiguration" => ResourceType::ImageBuilderInfrastructureConfiguration,
             "AWS::InspectorV2::Filter" => ResourceType::InspectorV2Filter,
             "AWS::IoT::AccountAuditConfiguration" => ResourceType::IoTAccountAuditConfiguration,
@@ -1452,6 +1515,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::IoTWireless::FuotaTask" => ResourceType::IoTWirelessFuotaTask,
             "AWS::IoTWireless::MulticastGroup" => ResourceType::IoTWirelessMulticastGroup,
             "AWS::IoTWireless::ServiceProfile" => ResourceType::IoTWirelessServiceProfile,
+            "AWS::KMS::Alias" => ResourceType::KmsAlias,
             "AWS::KMS::Key" => ResourceType::Key,
             "AWS::KafkaConnect::Connector" => ResourceType::KafkaConnectConnector,
             "AWS::Kendra::Index" => ResourceType::KendraIndex,
@@ -1472,6 +1536,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Logs::Destination" => ResourceType::LogsDestination,
             "AWS::LookoutMetrics::Alert" => ResourceType::LookoutMetricsAlert,
             "AWS::LookoutVision::Project" => ResourceType::LookoutVisionProject,
+            "AWS::M2::Environment" => ResourceType::M2Environment,
             "AWS::MSK::BatchScramSecret" => ResourceType::MskBatchScramSecret,
             "AWS::MSK::Cluster" => ResourceType::MskCluster,
             "AWS::MSK::Configuration" => ResourceType::MskConfiguration,
@@ -1507,6 +1572,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Pinpoint::InAppTemplate" => ResourceType::PinpointInAppTemplate,
             "AWS::Pinpoint::Segment" => ResourceType::PinpointSegment,
             "AWS::QLDB::Ledger" => ResourceType::QldbLedger,
+            "AWS::QuickSight::DataSource" => ResourceType::QuickSightDataSource,
+            "AWS::QuickSight::Template" => ResourceType::QuickSightTemplate,
+            "AWS::QuickSight::Theme" => ResourceType::QuickSightTheme,
             "AWS::RDS::DBCluster" => ResourceType::DbCluster,
             "AWS::RDS::DBClusterSnapshot" => ResourceType::DbClusterSnapshot,
             "AWS::RDS::DBInstance" => ResourceType::DbInstance,
@@ -1515,12 +1583,14 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::RDS::DBSubnetGroup" => ResourceType::DbSubnetGroup,
             "AWS::RDS::EventSubscription" => ResourceType::EventSubscription,
             "AWS::RDS::GlobalCluster" => ResourceType::RdsGlobalCluster,
+            "AWS::RDS::OptionGroup" => ResourceType::RdsOptionGroup,
             "AWS::RUM::AppMonitor" => ResourceType::RumAppMonitor,
             "AWS::Redshift::Cluster" => ResourceType::Cluster,
             "AWS::Redshift::ClusterParameterGroup" => ResourceType::ClusterParameterGroup,
             "AWS::Redshift::ClusterSecurityGroup" => ResourceType::ClusterSecurityGroup,
             "AWS::Redshift::ClusterSnapshot" => ResourceType::ClusterSnapshot,
             "AWS::Redshift::ClusterSubnetGroup" => ResourceType::ClusterSubnetGroup,
+            "AWS::Redshift::EndpointAccess" => ResourceType::RedshiftEndpointAccess,
             "AWS::Redshift::EventSubscription" => ResourceType::RedshiftEventSubscription,
             "AWS::Redshift::ScheduledAction" => ResourceType::RedshiftScheduledAction,
             "AWS::ResilienceHub::App" => ResourceType::ResilienceHubApp,
@@ -1539,6 +1609,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::Route53RecoveryReadiness::RecoveryGroup" => ResourceType::Route53RecoveryReadinessRecoveryGroup,
             "AWS::Route53RecoveryReadiness::ResourceSet" => ResourceType::Route53RecoveryReadinessResourceSet,
             "AWS::Route53Resolver::FirewallDomainList" => ResourceType::Route53ResolverFirewallDomainList,
+            "AWS::Route53Resolver::FirewallRuleGroup" => ResourceType::Route53ResolverFirewallRuleGroup,
             "AWS::Route53Resolver::FirewallRuleGroupAssociation" => ResourceType::Route53ResolverFirewallRuleGroupAssociation,
             "AWS::Route53Resolver::ResolverEndpoint" => ResourceType::Route53ResolverResolverEndpoint,
             "AWS::Route53Resolver::ResolverQueryLoggingConfig" => ResourceType::Route53ResolverResolverQueryLoggingConfig,
@@ -1558,6 +1629,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::SNS::Topic" => ResourceType::Topic,
             "AWS::SQS::Queue" => ResourceType::Queue,
             "AWS::SSM::AssociationCompliance" => ResourceType::AssociationCompliance,
+            "AWS::SSM::Document" => ResourceType::SsmDocument,
             "AWS::SSM::FileData" => ResourceType::FileData,
             "AWS::SSM::ManagedInstanceInventory" => ResourceType::ManagedInstanceInventory,
             "AWS::SSM::PatchCompliance" => ResourceType::PatchCompliance,
@@ -1647,6 +1719,7 @@ impl ResourceType {
             ResourceType::AppRunnerVpcConnector => "AWS::AppRunner::VpcConnector",
             ResourceType::AppStreamApplication => "AWS::AppStream::Application",
             ResourceType::AppStreamDirectoryConfig => "AWS::AppStream::DirectoryConfig",
+            ResourceType::AppStreamFleet => "AWS::AppStream::Fleet",
             ResourceType::AppStreamStack => "AWS::AppStream::Stack",
             ResourceType::AppSyncGraphQlApi => "AWS::AppSync::GraphQLApi",
             ResourceType::AthenaDataCatalog => "AWS::Athena::DataCatalog",
@@ -1684,6 +1757,9 @@ impl ResourceType {
             ResourceType::CodeGuruProfilerProfilingGroup => "AWS::CodeGuruProfiler::ProfilingGroup",
             ResourceType::CodeGuruReviewerRepositoryAssociation => "AWS::CodeGuruReviewer::RepositoryAssociation",
             ResourceType::Pipeline => "AWS::CodePipeline::Pipeline",
+            ResourceType::CognitoUserPool => "AWS::Cognito::UserPool",
+            ResourceType::CognitoUserPoolClient => "AWS::Cognito::UserPoolClient",
+            ResourceType::CognitoUserPoolGroup => "AWS::Cognito::UserPoolGroup",
             ResourceType::ConformancePackCompliance => "AWS::Config::ConformancePackCompliance",
             ResourceType::ResourceCompliance => "AWS::Config::ResourceCompliance",
             ResourceType::ConnectInstance => "AWS::Connect::Instance",
@@ -1727,7 +1803,9 @@ impl ResourceType {
             ResourceType::LaunchTemplate => "AWS::EC2::LaunchTemplate",
             ResourceType::NatGateway => "AWS::EC2::NatGateway",
             ResourceType::NetworkAcl => "AWS::EC2::NetworkAcl",
+            ResourceType::Ec2NetworkInsightsAccessScope => "AWS::EC2::NetworkInsightsAccessScope",
             ResourceType::NetworkInsightsAccessScopeAnalysis => "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
+            ResourceType::Ec2NetworkInsightsAnalysis => "AWS::EC2::NetworkInsightsAnalysis",
             ResourceType::Ec2NetworkInsightsPath => "AWS::EC2::NetworkInsightsPath",
             ResourceType::NetworkInterface => "AWS::EC2::NetworkInterface",
             ResourceType::Ec2PrefixList => "AWS::EC2::PrefixList",
@@ -1800,8 +1878,10 @@ impl ResourceType {
             ResourceType::GlueClassifier => "AWS::Glue::Classifier",
             ResourceType::GlueJob => "AWS::Glue::Job",
             ResourceType::GlueMlTransform => "AWS::Glue::MLTransform",
+            ResourceType::GrafanaWorkspace => "AWS::Grafana::Workspace",
             ResourceType::GreengrassV2ComponentVersion => "AWS::GreengrassV2::ComponentVersion",
             ResourceType::GroundStationConfig => "AWS::GroundStation::Config",
+            ResourceType::GroundStationDataflowEndpointGroup => "AWS::GroundStation::DataflowEndpointGroup",
             ResourceType::GroundStationMissionProfile => "AWS::GroundStation::MissionProfile",
             ResourceType::GuardDutyDetector => "AWS::GuardDuty::Detector",
             ResourceType::GuardDutyFilter => "AWS::GuardDuty::Filter",
@@ -1821,6 +1901,7 @@ impl ResourceType {
             ResourceType::ImageBuilderContainerRecipe => "AWS::ImageBuilder::ContainerRecipe",
             ResourceType::ImageBuilderDistributionConfiguration => "AWS::ImageBuilder::DistributionConfiguration",
             ResourceType::ImageBuilderImagePipeline => "AWS::ImageBuilder::ImagePipeline",
+            ResourceType::ImageBuilderImageRecipe => "AWS::ImageBuilder::ImageRecipe",
             ResourceType::ImageBuilderInfrastructureConfiguration => "AWS::ImageBuilder::InfrastructureConfiguration",
             ResourceType::InspectorV2Filter => "AWS::InspectorV2::Filter",
             ResourceType::IoTAccountAuditConfiguration => "AWS::IoT::AccountAuditConfiguration",
@@ -1856,6 +1937,7 @@ impl ResourceType {
             ResourceType::IoTWirelessFuotaTask => "AWS::IoTWireless::FuotaTask",
             ResourceType::IoTWirelessMulticastGroup => "AWS::IoTWireless::MulticastGroup",
             ResourceType::IoTWirelessServiceProfile => "AWS::IoTWireless::ServiceProfile",
+            ResourceType::KmsAlias => "AWS::KMS::Alias",
             ResourceType::Key => "AWS::KMS::Key",
             ResourceType::KafkaConnectConnector => "AWS::KafkaConnect::Connector",
             ResourceType::KendraIndex => "AWS::Kendra::Index",
@@ -1876,6 +1958,7 @@ impl ResourceType {
             ResourceType::LogsDestination => "AWS::Logs::Destination",
             ResourceType::LookoutMetricsAlert => "AWS::LookoutMetrics::Alert",
             ResourceType::LookoutVisionProject => "AWS::LookoutVision::Project",
+            ResourceType::M2Environment => "AWS::M2::Environment",
             ResourceType::MskBatchScramSecret => "AWS::MSK::BatchScramSecret",
             ResourceType::MskCluster => "AWS::MSK::Cluster",
             ResourceType::MskConfiguration => "AWS::MSK::Configuration",
@@ -1911,6 +1994,9 @@ impl ResourceType {
             ResourceType::PinpointInAppTemplate => "AWS::Pinpoint::InAppTemplate",
             ResourceType::PinpointSegment => "AWS::Pinpoint::Segment",
             ResourceType::QldbLedger => "AWS::QLDB::Ledger",
+            ResourceType::QuickSightDataSource => "AWS::QuickSight::DataSource",
+            ResourceType::QuickSightTemplate => "AWS::QuickSight::Template",
+            ResourceType::QuickSightTheme => "AWS::QuickSight::Theme",
             ResourceType::DbCluster => "AWS::RDS::DBCluster",
             ResourceType::DbClusterSnapshot => "AWS::RDS::DBClusterSnapshot",
             ResourceType::DbInstance => "AWS::RDS::DBInstance",
@@ -1919,12 +2005,14 @@ impl ResourceType {
             ResourceType::DbSubnetGroup => "AWS::RDS::DBSubnetGroup",
             ResourceType::EventSubscription => "AWS::RDS::EventSubscription",
             ResourceType::RdsGlobalCluster => "AWS::RDS::GlobalCluster",
+            ResourceType::RdsOptionGroup => "AWS::RDS::OptionGroup",
             ResourceType::RumAppMonitor => "AWS::RUM::AppMonitor",
             ResourceType::Cluster => "AWS::Redshift::Cluster",
             ResourceType::ClusterParameterGroup => "AWS::Redshift::ClusterParameterGroup",
             ResourceType::ClusterSecurityGroup => "AWS::Redshift::ClusterSecurityGroup",
             ResourceType::ClusterSnapshot => "AWS::Redshift::ClusterSnapshot",
             ResourceType::ClusterSubnetGroup => "AWS::Redshift::ClusterSubnetGroup",
+            ResourceType::RedshiftEndpointAccess => "AWS::Redshift::EndpointAccess",
             ResourceType::RedshiftEventSubscription => "AWS::Redshift::EventSubscription",
             ResourceType::RedshiftScheduledAction => "AWS::Redshift::ScheduledAction",
             ResourceType::ResilienceHubApp => "AWS::ResilienceHub::App",
@@ -1943,6 +2031,7 @@ impl ResourceType {
             ResourceType::Route53RecoveryReadinessRecoveryGroup => "AWS::Route53RecoveryReadiness::RecoveryGroup",
             ResourceType::Route53RecoveryReadinessResourceSet => "AWS::Route53RecoveryReadiness::ResourceSet",
             ResourceType::Route53ResolverFirewallDomainList => "AWS::Route53Resolver::FirewallDomainList",
+            ResourceType::Route53ResolverFirewallRuleGroup => "AWS::Route53Resolver::FirewallRuleGroup",
             ResourceType::Route53ResolverFirewallRuleGroupAssociation => "AWS::Route53Resolver::FirewallRuleGroupAssociation",
             ResourceType::Route53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
             ResourceType::Route53ResolverResolverQueryLoggingConfig => "AWS::Route53Resolver::ResolverQueryLoggingConfig",
@@ -1962,6 +2051,7 @@ impl ResourceType {
             ResourceType::Topic => "AWS::SNS::Topic",
             ResourceType::Queue => "AWS::SQS::Queue",
             ResourceType::AssociationCompliance => "AWS::SSM::AssociationCompliance",
+            ResourceType::SsmDocument => "AWS::SSM::Document",
             ResourceType::FileData => "AWS::SSM::FileData",
             ResourceType::ManagedInstanceInventory => "AWS::SSM::ManagedInstanceInventory",
             ResourceType::PatchCompliance => "AWS::SSM::PatchCompliance",
@@ -2042,6 +2132,7 @@ impl ResourceType {
             "AWS::AppRunner::VpcConnector",
             "AWS::AppStream::Application",
             "AWS::AppStream::DirectoryConfig",
+            "AWS::AppStream::Fleet",
             "AWS::AppStream::Stack",
             "AWS::AppSync::GraphQLApi",
             "AWS::Athena::DataCatalog",
@@ -2079,6 +2170,9 @@ impl ResourceType {
             "AWS::CodeGuruProfiler::ProfilingGroup",
             "AWS::CodeGuruReviewer::RepositoryAssociation",
             "AWS::CodePipeline::Pipeline",
+            "AWS::Cognito::UserPool",
+            "AWS::Cognito::UserPoolClient",
+            "AWS::Cognito::UserPoolGroup",
             "AWS::Config::ConformancePackCompliance",
             "AWS::Config::ResourceCompliance",
             "AWS::Connect::Instance",
@@ -2122,7 +2216,9 @@ impl ResourceType {
             "AWS::EC2::LaunchTemplate",
             "AWS::EC2::NatGateway",
             "AWS::EC2::NetworkAcl",
+            "AWS::EC2::NetworkInsightsAccessScope",
             "AWS::EC2::NetworkInsightsAccessScopeAnalysis",
+            "AWS::EC2::NetworkInsightsAnalysis",
             "AWS::EC2::NetworkInsightsPath",
             "AWS::EC2::NetworkInterface",
             "AWS::EC2::PrefixList",
@@ -2195,8 +2291,10 @@ impl ResourceType {
             "AWS::Glue::Classifier",
             "AWS::Glue::Job",
             "AWS::Glue::MLTransform",
+            "AWS::Grafana::Workspace",
             "AWS::GreengrassV2::ComponentVersion",
             "AWS::GroundStation::Config",
+            "AWS::GroundStation::DataflowEndpointGroup",
             "AWS::GroundStation::MissionProfile",
             "AWS::GuardDuty::Detector",
             "AWS::GuardDuty::Filter",
@@ -2216,6 +2314,7 @@ impl ResourceType {
             "AWS::ImageBuilder::ContainerRecipe",
             "AWS::ImageBuilder::DistributionConfiguration",
             "AWS::ImageBuilder::ImagePipeline",
+            "AWS::ImageBuilder::ImageRecipe",
             "AWS::ImageBuilder::InfrastructureConfiguration",
             "AWS::InspectorV2::Filter",
             "AWS::IoT::AccountAuditConfiguration",
@@ -2251,6 +2350,7 @@ impl ResourceType {
             "AWS::IoTWireless::FuotaTask",
             "AWS::IoTWireless::MulticastGroup",
             "AWS::IoTWireless::ServiceProfile",
+            "AWS::KMS::Alias",
             "AWS::KMS::Key",
             "AWS::KafkaConnect::Connector",
             "AWS::Kendra::Index",
@@ -2271,6 +2371,7 @@ impl ResourceType {
             "AWS::Logs::Destination",
             "AWS::LookoutMetrics::Alert",
             "AWS::LookoutVision::Project",
+            "AWS::M2::Environment",
             "AWS::MSK::BatchScramSecret",
             "AWS::MSK::Cluster",
             "AWS::MSK::Configuration",
@@ -2306,6 +2407,9 @@ impl ResourceType {
             "AWS::Pinpoint::InAppTemplate",
             "AWS::Pinpoint::Segment",
             "AWS::QLDB::Ledger",
+            "AWS::QuickSight::DataSource",
+            "AWS::QuickSight::Template",
+            "AWS::QuickSight::Theme",
             "AWS::RDS::DBCluster",
             "AWS::RDS::DBClusterSnapshot",
             "AWS::RDS::DBInstance",
@@ -2314,12 +2418,14 @@ impl ResourceType {
             "AWS::RDS::DBSubnetGroup",
             "AWS::RDS::EventSubscription",
             "AWS::RDS::GlobalCluster",
+            "AWS::RDS::OptionGroup",
             "AWS::RUM::AppMonitor",
             "AWS::Redshift::Cluster",
             "AWS::Redshift::ClusterParameterGroup",
             "AWS::Redshift::ClusterSecurityGroup",
             "AWS::Redshift::ClusterSnapshot",
             "AWS::Redshift::ClusterSubnetGroup",
+            "AWS::Redshift::EndpointAccess",
             "AWS::Redshift::EventSubscription",
             "AWS::Redshift::ScheduledAction",
             "AWS::ResilienceHub::App",
@@ -2338,6 +2444,7 @@ impl ResourceType {
             "AWS::Route53RecoveryReadiness::RecoveryGroup",
             "AWS::Route53RecoveryReadiness::ResourceSet",
             "AWS::Route53Resolver::FirewallDomainList",
+            "AWS::Route53Resolver::FirewallRuleGroup",
             "AWS::Route53Resolver::FirewallRuleGroupAssociation",
             "AWS::Route53Resolver::ResolverEndpoint",
             "AWS::Route53Resolver::ResolverQueryLoggingConfig",
@@ -2357,6 +2464,7 @@ impl ResourceType {
             "AWS::SNS::Topic",
             "AWS::SQS::Queue",
             "AWS::SSM::AssociationCompliance",
+            "AWS::SSM::Document",
             "AWS::SSM::FileData",
             "AWS::SSM::ManagedInstanceInventory",
             "AWS::SSM::PatchCompliance",

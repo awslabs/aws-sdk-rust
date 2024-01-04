@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticIp {
-    /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+    /// <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the static IP (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+    /// <p>The timestamp when the static IP was created (<code>1479735304.222</code>).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region and Availability Zone where the static IP was created.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
@@ -18,17 +18,17 @@ pub struct StaticIp {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The static IP address.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub attached_to: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the static IP is attached.</p>
     pub is_attached: ::std::option::Option<bool>,
 }
 impl StaticIp {
-    /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+    /// <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the static IP (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -36,7 +36,7 @@ impl StaticIp {
     pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
-    /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+    /// <p>The timestamp when the static IP was created (<code>1479735304.222</code>).</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -52,7 +52,7 @@ impl StaticIp {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn attached_to(&self) -> ::std::option::Option<&str> {
         self.attached_to.as_deref()
     }
@@ -83,31 +83,31 @@ pub struct StaticIpBuilder {
     pub(crate) is_attached: ::std::option::Option<bool>,
 }
 impl StaticIpBuilder {
-    /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+    /// <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+    /// <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+    /// <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the static IP (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the static IP (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the static IP (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the static IP (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -125,17 +125,17 @@ impl StaticIpBuilder {
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.support_code
     }
-    /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+    /// <p>The timestamp when the static IP was created (<code>1479735304.222</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+    /// <p>The timestamp when the static IP was created (<code>1479735304.222</code>).</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the static IP was created (e.g., <code>1479735304.222</code>).</p>
+    /// <p>The timestamp when the static IP was created (<code>1479735304.222</code>).</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
@@ -181,17 +181,17 @@ impl StaticIpBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn attached_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attached_to = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn set_attached_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attached_to = input;
         self
     }
-    /// <p>The instance where the static IP is attached (e.g., <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+    /// <p>The instance where the static IP is attached (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
     pub fn get_attached_to(&self) -> &::std::option::Option<::std::string::String> {
         &self.attached_to
     }

@@ -109,17 +109,17 @@ impl AttachDiskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_name(input.into());
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_name(input);
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_name()
     }
@@ -137,17 +137,17 @@ impl AttachDiskFluentBuilder {
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_name()
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub fn disk_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_path(input.into());
         self
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub fn set_disk_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_path(input);
         self
     }
-    /// <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+    /// <p>The disk path to expose to the instance (<code>/dev/xvdf</code>).</p>
     pub fn get_disk_path(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_path()
     }

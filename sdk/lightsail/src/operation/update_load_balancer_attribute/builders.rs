@@ -109,17 +109,17 @@ impl UpdateLoadBalancerAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn load_balancer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_name(input.into());
         self
     }
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn set_load_balancer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_load_balancer_name(input);
         self
     }
-    /// <p>The name of the load balancer that you want to modify (e.g., <code>my-load-balancer</code>.</p>
+    /// <p>The name of the load balancer that you want to modify (<code>my-load-balancer</code>.</p>
     pub fn get_load_balancer_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_load_balancer_name()
     }

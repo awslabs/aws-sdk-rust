@@ -12,7 +12,7 @@ pub struct DomainConfig {
     pub ebs_options: ::std::option::Option<crate::types::EbsOptionsStatus>,
     /// <p>Specifies the access policies for the domain.</p>
     pub access_policies: ::std::option::Option<crate::types::AccessPoliciesStatus>,
-    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    /// <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressTypeStatus>,
     /// <p>DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.</p>
     pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptionsStatus>,
@@ -58,7 +58,7 @@ impl DomainConfig {
     pub fn access_policies(&self) -> ::std::option::Option<&crate::types::AccessPoliciesStatus> {
         self.access_policies.as_ref()
     }
-    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    /// <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressTypeStatus> {
         self.ip_address_type.as_ref()
     }
@@ -202,17 +202,17 @@ impl DomainConfigBuilder {
     pub fn get_access_policies(&self) -> &::std::option::Option<crate::types::AccessPoliciesStatus> {
         &self.access_policies
     }
-    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    /// <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressTypeStatus) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    /// <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressTypeStatus>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The type of IP addresses supported by the endpoint for the domain.</p>
+    /// <p>Choose either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressTypeStatus> {
         &self.ip_address_type
     }

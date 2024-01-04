@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Blueprint {
-    /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
     pub blueprint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+    /// <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
     pub group: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+    /// <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
     pub r#type: ::std::option::Option<crate::types::BlueprintType>,
     /// <p>The description of the blueprint.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct Blueprint {
     pub is_active: ::std::option::Option<bool>,
     /// <p>The minimum bundle power required to run this blueprint. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500. <code>0</code> indicates that the blueprint runs on all instance sizes.</p>
     pub min_power: ::std::option::Option<i32>,
-    /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
+    /// <p>The version number of the operating system, application, or stack ( <code>2016.03.0</code>).</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The version code.</p>
     pub version_code: ::std::option::Option<::std::string::String>,
@@ -34,19 +34,19 @@ pub struct Blueprint {
     pub app_category: ::std::option::Option<crate::types::AppCategory>,
 }
 impl Blueprint {
-    /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
     pub fn blueprint_id(&self) -> ::std::option::Option<&str> {
         self.blueprint_id.as_deref()
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+    /// <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
     pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
-    /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+    /// <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::BlueprintType> {
         self.r#type.as_ref()
     }
@@ -62,7 +62,7 @@ impl Blueprint {
     pub fn min_power(&self) -> ::std::option::Option<i32> {
         self.min_power
     }
-    /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
+    /// <p>The version number of the operating system, application, or stack ( <code>2016.03.0</code>).</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
@@ -115,59 +115,59 @@ pub struct BlueprintBuilder {
     pub(crate) app_category: ::std::option::Option<crate::types::AppCategory>,
 }
 impl BlueprintBuilder {
-    /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
     pub fn blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
     pub fn set_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.blueprint_id = input;
         self
     }
-    /// <p>The ID for the virtual private server image (e.g., <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
+    /// <p>The ID for the virtual private server image (<code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>).</p>
     pub fn get_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.blueprint_id
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+    /// <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+    /// <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
     pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+    /// <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
     pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
-    /// <p>The group name of the blueprint (e.g., <code>amazon-linux</code>).</p>
+    /// <p>The group name of the blueprint (<code>amazon-linux</code>).</p>
     pub fn get_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.group
     }
-    /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+    /// <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
     pub fn r#type(mut self, input: crate::types::BlueprintType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+    /// <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::BlueprintType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of the blueprint (e.g., <code>os</code> or <code>app</code>).</p>
+    /// <p>The type of the blueprint (<code>os</code> or <code>app</code>).</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::BlueprintType> {
         &self.r#type
     }
@@ -213,17 +213,17 @@ impl BlueprintBuilder {
     pub fn get_min_power(&self) -> &::std::option::Option<i32> {
         &self.min_power
     }
-    /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
+    /// <p>The version number of the operating system, application, or stack ( <code>2016.03.0</code>).</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
+    /// <p>The version number of the operating system, application, or stack ( <code>2016.03.0</code>).</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version number of the operating system, application, or stack (e.g., <code>2016.03.0</code>).</p>
+    /// <p>The version number of the operating system, application, or stack ( <code>2016.03.0</code>).</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }

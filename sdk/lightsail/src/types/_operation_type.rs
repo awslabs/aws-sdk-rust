@@ -77,6 +77,7 @@
 ///     OperationType::SendContactMethodVerification => { /* ... */ },
 ///     OperationType::SetIpAddressType => { /* ... */ },
 ///     OperationType::SetResourceAccessForBucket => { /* ... */ },
+///     OperationType::SetupInstanceHttps => { /* ... */ },
 ///     OperationType::StartGuiSession => { /* ... */ },
 ///     OperationType::StartInstance => { /* ... */ },
 ///     OperationType::StartRelationalDatabase => { /* ... */ },
@@ -252,6 +253,8 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     SetResourceAccessForBucket,
     #[allow(missing_docs)] // documentation missing in model
+    SetupInstanceHttps,
+    #[allow(missing_docs)] // documentation missing in model
     StartGuiSession,
     #[allow(missing_docs)] // documentation missing in model
     StartInstance,
@@ -357,6 +360,7 @@ impl ::std::convert::From<&str> for OperationType {
             "SendContactMethodVerification" => OperationType::SendContactMethodVerification,
             "SetIpAddressType" => OperationType::SetIpAddressType,
             "SetResourceAccessForBucket" => OperationType::SetResourceAccessForBucket,
+            "SetupInstanceHttps" => OperationType::SetupInstanceHttps,
             "StartGUISession" => OperationType::StartGuiSession,
             "StartInstance" => OperationType::StartInstance,
             "StartRelationalDatabase" => OperationType::StartRelationalDatabase,
@@ -454,6 +458,7 @@ impl OperationType {
             OperationType::SendContactMethodVerification => "SendContactMethodVerification",
             OperationType::SetIpAddressType => "SetIpAddressType",
             OperationType::SetResourceAccessForBucket => "SetResourceAccessForBucket",
+            OperationType::SetupInstanceHttps => "SetupInstanceHttps",
             OperationType::StartGuiSession => "StartGUISession",
             OperationType::StartInstance => "StartInstance",
             OperationType::StartRelationalDatabase => "StartRelationalDatabase",
@@ -542,6 +547,7 @@ impl OperationType {
             "SendContactMethodVerification",
             "SetIpAddressType",
             "SetResourceAccessForBucket",
+            "SetupInstanceHttps",
             "StartGUISession",
             "StartInstance",
             "StartRelationalDatabase",

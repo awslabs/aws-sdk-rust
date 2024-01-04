@@ -187,6 +187,8 @@ pub use crate::types::_inference_component_container_specification::InferenceCom
 
 pub use crate::types::_feature_parameter::FeatureParameterBuilder;
 
+pub use crate::types::_throughput_config_update::ThroughputConfigUpdateBuilder;
+
 pub use crate::types::_online_store_config_update::OnlineStoreConfigUpdateBuilder;
 
 pub use crate::types::_ttl_duration::TtlDurationBuilder;
@@ -949,6 +951,8 @@ pub use crate::types::_human_loop_activation_conditions_config::HumanLoopActivat
 
 pub use crate::types::_human_loop_request_source::HumanLoopRequestSourceBuilder;
 
+pub use crate::types::_throughput_config_description::ThroughputConfigDescriptionBuilder;
+
 pub use crate::types::_production_variant::ProductionVariantBuilder;
 
 pub use crate::types::_production_variant_core_dump_config::ProductionVariantCoreDumpConfigBuilder;
@@ -1106,6 +1110,8 @@ pub use crate::types::_retention_policy::RetentionPolicyBuilder;
 pub use crate::types::_recommendation_job_output_config::RecommendationJobOutputConfigBuilder;
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfigBuilder;
+
+pub use crate::types::_throughput_config::ThroughputConfigBuilder;
 
 pub use crate::types::_deployment_stage::DeploymentStageBuilder;
 

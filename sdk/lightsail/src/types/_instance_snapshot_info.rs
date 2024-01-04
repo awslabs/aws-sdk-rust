@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceSnapshotInfo {
-    /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which the source instance was created (<code>micro_1_0</code>).</p>
     pub from_bundle_id: ::std::option::Option<::std::string::String>,
-    /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
+    /// <p>The blueprint ID from which the source instance (<code>os_debian_8_3</code>).</p>
     pub from_blueprint_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects describing the disks that were attached to the source instance.</p>
     pub from_disk_info: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
 }
 impl InstanceSnapshotInfo {
-    /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which the source instance was created (<code>micro_1_0</code>).</p>
     pub fn from_bundle_id(&self) -> ::std::option::Option<&str> {
         self.from_bundle_id.as_deref()
     }
-    /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
+    /// <p>The blueprint ID from which the source instance (<code>os_debian_8_3</code>).</p>
     pub fn from_blueprint_id(&self) -> ::std::option::Option<&str> {
         self.from_blueprint_id.as_deref()
     }
@@ -43,31 +43,31 @@ pub struct InstanceSnapshotInfoBuilder {
     pub(crate) from_disk_info: ::std::option::Option<::std::vec::Vec<crate::types::DiskInfo>>,
 }
 impl InstanceSnapshotInfoBuilder {
-    /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which the source instance was created (<code>micro_1_0</code>).</p>
     pub fn from_bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_bundle_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which the source instance was created (<code>micro_1_0</code>).</p>
     pub fn set_from_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_bundle_id = input;
         self
     }
-    /// <p>The bundle ID from which the source instance was created (e.g., <code>micro_1_0</code>).</p>
+    /// <p>The bundle ID from which the source instance was created (<code>micro_1_0</code>).</p>
     pub fn get_from_bundle_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_bundle_id
     }
-    /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
+    /// <p>The blueprint ID from which the source instance (<code>os_debian_8_3</code>).</p>
     pub fn from_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.from_blueprint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
+    /// <p>The blueprint ID from which the source instance (<code>os_debian_8_3</code>).</p>
     pub fn set_from_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_blueprint_id = input;
         self
     }
-    /// <p>The blueprint ID from which the source instance (e.g., <code>os_debian_8_3</code>).</p>
+    /// <p>The blueprint ID from which the source instance (<code>os_debian_8_3</code>).</p>
     pub fn get_from_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.from_blueprint_id
     }

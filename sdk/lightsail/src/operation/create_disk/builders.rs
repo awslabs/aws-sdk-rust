@@ -22,7 +22,7 @@ impl CreateDiskInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDisk`.
 ///
-/// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p>
+/// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (<code>us-east-2a</code>).</p>
 /// <p>The <code>create disk</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDiskFluentBuilder {
@@ -109,48 +109,48 @@ impl CreateDiskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.disk_name(input.into());
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_disk_name(input);
         self
     }
-    /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+    /// <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_disk_name()
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
+    /// <p>The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.inner = self.inner.size_in_gb(input);
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_size_in_gb(input);
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
         self.inner.get_size_in_gb()
     }

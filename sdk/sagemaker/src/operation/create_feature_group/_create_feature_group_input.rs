@@ -53,6 +53,9 @@ pub struct CreateFeatureGroupInput {
     /// </ul>
     /// <p>To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
     pub offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
+    /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
+    /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
+    pub throughput_config: ::std::option::Option<crate::types::ThroughputConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
@@ -125,6 +128,11 @@ impl CreateFeatureGroupInput {
     pub fn offline_store_config(&self) -> ::std::option::Option<&crate::types::OfflineStoreConfig> {
         self.offline_store_config.as_ref()
     }
+    /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
+    /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
+    pub fn throughput_config(&self) -> ::std::option::Option<&crate::types::ThroughputConfig> {
+        self.throughput_config.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
@@ -157,6 +165,7 @@ pub struct CreateFeatureGroupInputBuilder {
     pub(crate) feature_definitions: ::std::option::Option<::std::vec::Vec<crate::types::FeatureDefinition>>,
     pub(crate) online_store_config: ::std::option::Option<crate::types::OnlineStoreConfig>,
     pub(crate) offline_store_config: ::std::option::Option<crate::types::OfflineStoreConfig>,
+    pub(crate) throughput_config: ::std::option::Option<crate::types::ThroughputConfig>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -369,6 +378,23 @@ impl CreateFeatureGroupInputBuilder {
     pub fn get_offline_store_config(&self) -> &::std::option::Option<crate::types::OfflineStoreConfig> {
         &self.offline_store_config
     }
+    /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
+    /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
+    pub fn throughput_config(mut self, input: crate::types::ThroughputConfig) -> Self {
+        self.throughput_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
+    /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
+    pub fn set_throughput_config(mut self, input: ::std::option::Option<crate::types::ThroughputConfig>) -> Self {
+        self.throughput_config = input;
+        self
+    }
+    /// <p>Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code> and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.</p>
+    /// <p>Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType"> <code>Standard</code> </a> tier online store.</p>
+    pub fn get_throughput_config(&self) -> &::std::option::Option<crate::types::ThroughputConfig> {
+        &self.throughput_config
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
@@ -429,6 +455,7 @@ impl CreateFeatureGroupInputBuilder {
             feature_definitions: self.feature_definitions,
             online_store_config: self.online_store_config,
             offline_store_config: self.offline_store_config,
+            throughput_config: self.throughput_config,
             role_arn: self.role_arn,
             description: self.description,
             tags: self.tags,

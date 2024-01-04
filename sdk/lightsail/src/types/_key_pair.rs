@@ -6,11 +6,11 @@
 pub struct KeyPair {
     /// <p>The friendly name of the SSH key pair.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The region name and Availability Zone where the key pair was created.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
@@ -26,7 +26,7 @@ impl KeyPair {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -34,7 +34,7 @@ impl KeyPair {
     pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
-    /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -92,17 +92,17 @@ impl KeyPairBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the key pair (e.g., <code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
+    /// <p>The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -120,17 +120,17 @@ impl KeyPairBuilder {
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.support_code
     }
-    /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The timestamp when the key pair was created (e.g., <code>1479816991.349</code>).</p>
+    /// <p>The timestamp when the key pair was created (<code>1479816991.349</code>).</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

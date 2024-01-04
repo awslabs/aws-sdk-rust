@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskSnapshotInfo {
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub size_in_gb: ::std::option::Option<i32>,
 }
 impl DiskSnapshotInfo {
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn size_in_gb(&self) -> ::std::option::Option<i32> {
         self.size_in_gb
     }
@@ -27,17 +27,17 @@ pub struct DiskSnapshotInfoBuilder {
     pub(crate) size_in_gb: ::std::option::Option<i32>,
 }
 impl DiskSnapshotInfoBuilder {
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
         self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
     }
-    /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+    /// <p>The size of the disk in GB (<code>32</code>).</p>
     pub fn get_size_in_gb(&self) -> &::std::option::Option<i32> {
         &self.size_in_gb
     }

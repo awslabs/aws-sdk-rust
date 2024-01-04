@@ -25,8 +25,8 @@ pub struct RemediationConfiguration {
     /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub maximum_automatic_attempts: ::std::option::Option<i32>,
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds.</p>
-    /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
+    /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
     pub retry_attempt_seconds: ::std::option::Option<i64>,
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -75,8 +75,8 @@ impl RemediationConfiguration {
     pub fn maximum_automatic_attempts(&self) -> ::std::option::Option<i32> {
         self.maximum_automatic_attempts
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds.</p>
-    /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
+    /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
     pub fn retry_attempt_seconds(&self) -> ::std::option::Option<i64> {
         self.retry_attempt_seconds
     }
@@ -263,20 +263,20 @@ impl RemediationConfigurationBuilder {
     pub fn get_maximum_automatic_attempts(&self) -> &::std::option::Option<i32> {
         &self.maximum_automatic_attempts
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds.</p>
-    /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
+    /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
     pub fn retry_attempt_seconds(mut self, input: i64) -> Self {
         self.retry_attempt_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds.</p>
-    /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
+    /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
     pub fn set_retry_attempt_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.retry_attempt_seconds = input;
         self
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds.</p>
-    /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
+    /// <p>Time window to determine whether or not to add a remediation exception to prevent infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception will be added to the resource. If you do not select a number, the default is 60 seconds.</p>
+    /// <p>For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code> as 5, Config will run auto-remediations 5 times within 50 seconds before adding a remediation exception to the resource.</p>
     pub fn get_retry_attempt_seconds(&self) -> &::std::option::Option<i64> {
         &self.retry_attempt_seconds
     }

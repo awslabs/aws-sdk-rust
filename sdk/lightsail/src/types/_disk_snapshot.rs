@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskSnapshot {
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct DiskSnapshot {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
     pub location: ::std::option::Option<crate::types::ResourceLocation>,
-    /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -36,7 +36,7 @@ pub struct DiskSnapshot {
     pub is_from_auto_snapshot: ::std::option::Option<bool>,
 }
 impl DiskSnapshot {
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -56,7 +56,7 @@ impl DiskSnapshot {
     pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
-    /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
@@ -127,17 +127,17 @@ pub struct DiskSnapshotBuilder {
     pub(crate) is_from_auto_snapshot: ::std::option::Option<bool>,
 }
 impl DiskSnapshotBuilder {
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+    /// <p>The name of the disk snapshot (<code>my-disk-snapshot</code>).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -197,17 +197,17 @@ impl DiskSnapshotBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::ResourceLocation> {
         &self.location
     }
-    /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+    /// <p>The Lightsail resource type (<code>DiskSnapshot</code>).</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }

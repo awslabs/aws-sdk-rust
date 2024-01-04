@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDiskSnapshotInput {
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (<code>Disk-Virginia-1</code>).</p><note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub disk_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    /// <p>The name of the destination disk snapshot (<code>my-disk-snapshot</code>) based on the source disk.</p>
     pub disk_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (<code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub instance_name: ::std::option::Option<::std::string::String>,
@@ -18,17 +18,17 @@ pub struct CreateDiskSnapshotInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDiskSnapshotInput {
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (<code>Disk-Virginia-1</code>).</p><note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn disk_name(&self) -> ::std::option::Option<&str> {
         self.disk_name.as_deref()
     }
-    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    /// <p>The name of the destination disk snapshot (<code>my-disk-snapshot</code>) based on the source disk.</p>
     pub fn disk_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.disk_snapshot_name.as_deref()
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (<code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn instance_name(&self) -> ::std::option::Option<&str> {
@@ -59,56 +59,56 @@ pub struct CreateDiskSnapshotInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDiskSnapshotInputBuilder {
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (<code>Disk-Virginia-1</code>).</p><note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (<code>Disk-Virginia-1</code>).</p><note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn set_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_name = input;
         self
     }
-    /// <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p><note>
+    /// <p>The unique name of the source disk (<code>Disk-Virginia-1</code>).</p><note>
     /// <p>This parameter cannot be defined together with the <code>instance name</code> parameter. The <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn get_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_name
     }
-    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    /// <p>The name of the destination disk snapshot (<code>my-disk-snapshot</code>) based on the source disk.</p>
     /// This field is required.
     pub fn disk_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.disk_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    /// <p>The name of the destination disk snapshot (<code>my-disk-snapshot</code>) based on the source disk.</p>
     pub fn set_disk_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk_snapshot_name = input;
         self
     }
-    /// <p>The name of the destination disk snapshot (e.g., <code>my-disk-snapshot</code>) based on the source disk.</p>
+    /// <p>The name of the destination disk snapshot (<code>my-disk-snapshot</code>) based on the source disk.</p>
     pub fn get_disk_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.disk_snapshot_name
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (<code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (<code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn set_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_name = input;
         self
     }
-    /// <p>The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
+    /// <p>The unique name of the source instance (<code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of the instance's system volume is created.</p><note>
     /// <p>This parameter cannot be defined together with the <code>disk name</code> parameter. The <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
     /// </note>
     pub fn get_instance_name(&self) -> &::std::option::Option<::std::string::String> {

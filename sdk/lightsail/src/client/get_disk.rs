@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDisk`](crate::operation::get_disk::builders::GetDiskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`disk_name(impl Into<String>)`](crate::operation::get_disk::builders::GetDiskFluentBuilder::disk_name) / [`set_disk_name(Option<String>)`](crate::operation::get_disk::builders::GetDiskFluentBuilder::set_disk_name):<br>required: **true**<br><p>The name of the disk (e.g., <code>my-disk</code>).</p><br>
+    ///   - [`disk_name(impl Into<String>)`](crate::operation::get_disk::builders::GetDiskFluentBuilder::disk_name) / [`set_disk_name(Option<String>)`](crate::operation::get_disk::builders::GetDiskFluentBuilder::set_disk_name):<br>required: **true**<br><p>The name of the disk (<code>my-disk</code>).</p><br>
     /// - On success, responds with [`GetDiskOutput`](crate::operation::get_disk::GetDiskOutput) with field(s):
     ///   - [`disk(Option<Disk>)`](crate::operation::get_disk::GetDiskOutput::disk): <p>An object containing information about the disk.</p>
     /// - On failure, responds with [`SdkError<GetDiskError>`](crate::operation::get_disk::GetDiskError)
