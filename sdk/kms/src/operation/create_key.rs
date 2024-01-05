@@ -286,7 +286,7 @@ pub enum CreateKeyError {
     TagException(crate::types::error::TagException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
-    /// <p>The request was rejected because the (<code>XksKeyId</code>) is already associated with a KMS key in this external key store. Each KMS key in an external key store must be associated with a different external key.</p>
+    /// <p>The request was rejected because the (<code>XksKeyId</code>) is already associated with another KMS key in this external key store. Each KMS key in an external key store must be associated with a different external key.</p>
     XksKeyAlreadyInUseException(crate::types::error::XksKeyAlreadyInUseException),
     /// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p>
     /// <p>The external key must be an AES-256 symmetric key that is enabled and performs encryption and decryption.</p>

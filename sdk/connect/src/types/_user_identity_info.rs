@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the identity of a user.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
@@ -39,6 +39,17 @@ impl UserIdentityInfo {
         self.mobile.as_deref()
     }
 }
+impl ::std::fmt::Debug for UserIdentityInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserIdentityInfo");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("secondary_email", &"*** Sensitive Data Redacted ***");
+        formatter.field("mobile", &self.mobile);
+        formatter.finish()
+    }
+}
 impl UserIdentityInfo {
     /// Creates a new builder-style object to manufacture [`UserIdentityInfo`](crate::types::UserIdentityInfo).
     pub fn builder() -> crate::types::builders::UserIdentityInfoBuilder {
@@ -48,7 +59,7 @@ impl UserIdentityInfo {
 
 /// A builder for [`UserIdentityInfo`](crate::types::UserIdentityInfo).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserIdentityInfoBuilder {
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
@@ -139,5 +150,16 @@ impl UserIdentityInfoBuilder {
             secondary_email: self.secondary_email,
             mobile: self.mobile,
         }
+    }
+}
+impl ::std::fmt::Debug for UserIdentityInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserIdentityInfoBuilder");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("email", &"*** Sensitive Data Redacted ***");
+        formatter.field("secondary_email", &"*** Sensitive Data Redacted ***");
+        formatter.field("mobile", &self.mobile);
+        formatter.finish()
     }
 }

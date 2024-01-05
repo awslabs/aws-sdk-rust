@@ -35,9 +35,9 @@ impl ::std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Credentials");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("access_token_expiration", &self.access_token_expiration);
+        formatter.field("access_token_expiration", &"*** Sensitive Data Redacted ***");
         formatter.field("refresh_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("refresh_token_expiration", &self.refresh_token_expiration);
+        formatter.field("refresh_token_expiration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -128,9 +128,9 @@ impl ::std::fmt::Debug for CredentialsBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CredentialsBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("access_token_expiration", &self.access_token_expiration);
+        formatter.field("access_token_expiration", &"*** Sensitive Data Redacted ***");
         formatter.field("refresh_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("refresh_token_expiration", &self.refresh_token_expiration);
+        formatter.field("refresh_token_expiration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

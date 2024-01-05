@@ -18,7 +18,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-aws-sdk-redshiftserverless = "1.10.0"
+aws-sdk-redshiftserverless = "1.10.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

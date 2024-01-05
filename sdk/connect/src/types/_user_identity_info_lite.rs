@@ -2,7 +2,7 @@
 
 /// <p>The user's first name and last name.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserIdentityInfoLite {
     /// <p>The user's first name.</p>
     pub first_name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl UserIdentityInfoLite {
         self.last_name.as_deref()
     }
 }
+impl ::std::fmt::Debug for UserIdentityInfoLite {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserIdentityInfoLite");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl UserIdentityInfoLite {
     /// Creates a new builder-style object to manufacture [`UserIdentityInfoLite`](crate::types::UserIdentityInfoLite).
     pub fn builder() -> crate::types::builders::UserIdentityInfoLiteBuilder {
@@ -28,7 +36,7 @@ impl UserIdentityInfoLite {
 
 /// A builder for [`UserIdentityInfoLite`](crate::types::UserIdentityInfoLite).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserIdentityInfoLiteBuilder {
     pub(crate) first_name: ::std::option::Option<::std::string::String>,
     pub(crate) last_name: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl UserIdentityInfoLiteBuilder {
             first_name: self.first_name,
             last_name: self.last_name,
         }
+    }
+}
+impl ::std::fmt::Debug for UserIdentityInfoLiteBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UserIdentityInfoLiteBuilder");
+        formatter.field("first_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("last_name", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Contains information about a contact.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -145,6 +145,35 @@ impl Contact {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for Contact {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Contact");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("initial_contact_id", &self.initial_contact_id);
+        formatter.field("previous_contact_id", &self.previous_contact_id);
+        formatter.field("initiation_method", &self.initiation_method);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel", &self.channel);
+        formatter.field("queue_info", &self.queue_info);
+        formatter.field("agent_info", &self.agent_info);
+        formatter.field("initiation_timestamp", &self.initiation_timestamp);
+        formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
+        formatter.field("last_update_timestamp", &self.last_update_timestamp);
+        formatter.field("last_paused_timestamp", &self.last_paused_timestamp);
+        formatter.field("last_resumed_timestamp", &self.last_resumed_timestamp);
+        formatter.field("total_pause_count", &self.total_pause_count);
+        formatter.field("total_pause_duration_in_seconds", &self.total_pause_duration_in_seconds);
+        formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
+        formatter.field("related_contact_id", &self.related_contact_id);
+        formatter.field("wisdom_info", &self.wisdom_info);
+        formatter.field("queue_time_adjustment_seconds", &self.queue_time_adjustment_seconds);
+        formatter.field("queue_priority", &self.queue_priority);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl Contact {
     /// Creates a new builder-style object to manufacture [`Contact`](crate::types::Contact).
     pub fn builder() -> crate::types::builders::ContactBuilder {
@@ -154,7 +183,7 @@ impl Contact {
 
 /// A builder for [`Contact`](crate::types::Contact).
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ContactBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -536,5 +565,34 @@ impl ContactBuilder {
             queue_priority: self.queue_priority,
             tags: self.tags,
         }
+    }
+}
+impl ::std::fmt::Debug for ContactBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContactBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("id", &self.id);
+        formatter.field("initial_contact_id", &self.initial_contact_id);
+        formatter.field("previous_contact_id", &self.previous_contact_id);
+        formatter.field("initiation_method", &self.initiation_method);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("channel", &self.channel);
+        formatter.field("queue_info", &self.queue_info);
+        formatter.field("agent_info", &self.agent_info);
+        formatter.field("initiation_timestamp", &self.initiation_timestamp);
+        formatter.field("disconnect_timestamp", &self.disconnect_timestamp);
+        formatter.field("last_update_timestamp", &self.last_update_timestamp);
+        formatter.field("last_paused_timestamp", &self.last_paused_timestamp);
+        formatter.field("last_resumed_timestamp", &self.last_resumed_timestamp);
+        formatter.field("total_pause_count", &self.total_pause_count);
+        formatter.field("total_pause_duration_in_seconds", &self.total_pause_duration_in_seconds);
+        formatter.field("scheduled_timestamp", &self.scheduled_timestamp);
+        formatter.field("related_contact_id", &self.related_contact_id);
+        formatter.field("wisdom_info", &self.wisdom_info);
+        formatter.field("queue_time_adjustment_seconds", &self.queue_time_adjustment_seconds);
+        formatter.field("queue_priority", &self.queue_priority);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }
