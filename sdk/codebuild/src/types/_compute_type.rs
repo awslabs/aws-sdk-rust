@@ -16,6 +16,7 @@
 ///     ComputeType::BuildGeneral1Large => { /* ... */ },
 ///     ComputeType::BuildGeneral1Medium => { /* ... */ },
 ///     ComputeType::BuildGeneral1Small => { /* ... */ },
+///     ComputeType::BuildGeneral1Xlarge => { /* ... */ },
 ///     ComputeType::BuildLambda10Gb => { /* ... */ },
 ///     ComputeType::BuildLambda1Gb => { /* ... */ },
 ///     ComputeType::BuildLambda2Gb => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum ComputeType {
     #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Small,
     #[allow(missing_docs)] // documentation missing in model
+    BuildGeneral1Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     BuildLambda10Gb,
     #[allow(missing_docs)] // documentation missing in model
     BuildLambda1Gb,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for ComputeType {
             "BUILD_GENERAL1_LARGE" => ComputeType::BuildGeneral1Large,
             "BUILD_GENERAL1_MEDIUM" => ComputeType::BuildGeneral1Medium,
             "BUILD_GENERAL1_SMALL" => ComputeType::BuildGeneral1Small,
+            "BUILD_GENERAL1_XLARGE" => ComputeType::BuildGeneral1Xlarge,
             "BUILD_LAMBDA_10GB" => ComputeType::BuildLambda10Gb,
             "BUILD_LAMBDA_1GB" => ComputeType::BuildLambda1Gb,
             "BUILD_LAMBDA_2GB" => ComputeType::BuildLambda2Gb,
@@ -101,6 +105,7 @@ impl ComputeType {
             ComputeType::BuildGeneral1Large => "BUILD_GENERAL1_LARGE",
             ComputeType::BuildGeneral1Medium => "BUILD_GENERAL1_MEDIUM",
             ComputeType::BuildGeneral1Small => "BUILD_GENERAL1_SMALL",
+            ComputeType::BuildGeneral1Xlarge => "BUILD_GENERAL1_XLARGE",
             ComputeType::BuildLambda10Gb => "BUILD_LAMBDA_10GB",
             ComputeType::BuildLambda1Gb => "BUILD_LAMBDA_1GB",
             ComputeType::BuildLambda2Gb => "BUILD_LAMBDA_2GB",
@@ -116,6 +121,7 @@ impl ComputeType {
             "BUILD_GENERAL1_LARGE",
             "BUILD_GENERAL1_MEDIUM",
             "BUILD_GENERAL1_SMALL",
+            "BUILD_GENERAL1_XLARGE",
             "BUILD_LAMBDA_10GB",
             "BUILD_LAMBDA_1GB",
             "BUILD_LAMBDA_2GB",

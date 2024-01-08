@@ -38,6 +38,36 @@ pub struct UpdateFirewallRuleInput {
     pub block_override_ttl: ::std::option::Option<i32>,
     /// <p>The name of the rule.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub qtype: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group for the rule.</p>
@@ -93,6 +123,38 @@ impl UpdateFirewallRuleInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(&self) -> ::std::option::Option<&str> {
+        self.qtype.as_deref()
+    }
 }
 impl UpdateFirewallRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallRuleInput`](crate::operation::update_firewall_rule::UpdateFirewallRuleInput).
@@ -114,6 +176,7 @@ pub struct UpdateFirewallRuleInputBuilder {
     pub(crate) block_override_dns_type: ::std::option::Option<crate::types::BlockOverrideDnsType>,
     pub(crate) block_override_ttl: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) qtype: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFirewallRuleInputBuilder {
     /// <p>The unique identifier of the firewall rule group for the rule.</p>
@@ -295,6 +358,104 @@ impl UpdateFirewallRuleInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.qtype = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.qtype = input;
+        self
+    }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qtype
+    }
     /// Consumes the builder and constructs a [`UpdateFirewallRuleInput`](crate::operation::update_firewall_rule::UpdateFirewallRuleInput).
     pub fn build(
         self,
@@ -310,6 +471,7 @@ impl UpdateFirewallRuleInputBuilder {
             block_override_dns_type: self.block_override_dns_type,
             block_override_ttl: self.block_override_ttl,
             name: self.name,
+            qtype: self.qtype,
         })
     }
 }

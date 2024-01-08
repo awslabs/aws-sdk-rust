@@ -9,5 +9,8 @@ pub fn ser_delete_firewall_rule_input_input(
     if let Some(var_2) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.qtype {
+        object.key("Qtype").string(var_3.as_str());
+    }
     Ok(())
 }

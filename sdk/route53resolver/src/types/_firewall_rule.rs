@@ -44,6 +44,36 @@ pub struct FirewallRule {
     pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the rule was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub modification_time: ::std::option::Option<::std::string::String>,
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub qtype: ::std::option::Option<::std::string::String>,
 }
 impl FirewallRule {
     /// <p>The unique identifier of the firewall rule group of the rule.</p>
@@ -110,6 +140,38 @@ impl FirewallRule {
     pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(&self) -> ::std::option::Option<&str> {
+        self.qtype.as_deref()
+    }
 }
 impl FirewallRule {
     /// Creates a new builder-style object to manufacture [`FirewallRule`](crate::types::FirewallRule).
@@ -134,6 +196,7 @@ pub struct FirewallRuleBuilder {
     pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::std::string::String>,
     pub(crate) modification_time: ::std::option::Option<::std::string::String>,
+    pub(crate) qtype: ::std::option::Option<::std::string::String>,
 }
 impl FirewallRuleBuilder {
     /// <p>The unique identifier of the firewall rule group of the rule.</p>
@@ -352,6 +415,104 @@ impl FirewallRuleBuilder {
     pub fn get_modification_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.modification_time
     }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.qtype = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.qtype = input;
+        self
+    }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qtype
+    }
     /// Consumes the builder and constructs a [`FirewallRule`](crate::types::FirewallRule).
     pub fn build(self) -> crate::types::FirewallRule {
         crate::types::FirewallRule {
@@ -367,6 +528,7 @@ impl FirewallRuleBuilder {
             creator_request_id: self.creator_request_id,
             creation_time: self.creation_time,
             modification_time: self.modification_time,
+            qtype: self.qtype,
         }
     }
 }

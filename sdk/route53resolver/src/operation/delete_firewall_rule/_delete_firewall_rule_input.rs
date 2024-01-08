@@ -7,6 +7,36 @@ pub struct DeleteFirewallRuleInput {
     pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub firewall_domain_list_id: ::std::option::Option<::std::string::String>,
+    /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub qtype: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
@@ -16,6 +46,38 @@ impl DeleteFirewallRuleInput {
     /// <p>The ID of the domain list that's used in the rule.</p>
     pub fn firewall_domain_list_id(&self) -> ::std::option::Option<&str> {
         self.firewall_domain_list_id.as_deref()
+    }
+    /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(&self) -> ::std::option::Option<&str> {
+        self.qtype.as_deref()
     }
 }
 impl DeleteFirewallRuleInput {
@@ -31,6 +93,7 @@ impl DeleteFirewallRuleInput {
 pub struct DeleteFirewallRuleInputBuilder {
     pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_domain_list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) qtype: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFirewallRuleInputBuilder {
     /// <p>The unique identifier of the firewall rule group that you want to delete the rule from.</p>
@@ -63,6 +126,104 @@ impl DeleteFirewallRuleInputBuilder {
     pub fn get_firewall_domain_list_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_domain_list_id
     }
+    /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.qtype = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.qtype = input;
+        self
+    }
+    /// <p>The DNS query type that the rule you are deleting evaluates. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
+        &self.qtype
+    }
     /// Consumes the builder and constructs a [`DeleteFirewallRuleInput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleInput).
     pub fn build(
         self,
@@ -71,6 +232,7 @@ impl DeleteFirewallRuleInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_firewall_rule::DeleteFirewallRuleInput {
             firewall_rule_group_id: self.firewall_rule_group_id,
             firewall_domain_list_id: self.firewall_domain_list_id,
+            qtype: self.qtype,
         })
     }
 }

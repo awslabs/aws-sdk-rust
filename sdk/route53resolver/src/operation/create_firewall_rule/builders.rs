@@ -311,4 +311,102 @@ impl CreateFirewallRuleFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.qtype(input.into());
+        self
+    }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_qtype(input);
+        self
+    }
+    /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
+    /// <ul>
+    /// <li>
+    /// <p>A: Returns an IPv4 address.</p></li>
+    /// <li>
+    /// <p>AAAA: Returns an Ipv6 address.</p></li>
+    /// <li>
+    /// <p>CAA: Restricts CAs that can create SSL/TLS certifications for the domain.</p></li>
+    /// <li>
+    /// <p>CNAME: Returns another domain name.</p></li>
+    /// <li>
+    /// <p>DS: Record that identifies the DNSSEC signing key of a delegated zone.</p></li>
+    /// <li>
+    /// <p>MX: Specifies mail servers.</p></li>
+    /// <li>
+    /// <p>NAPTR: Regular-expression-based rewriting of domain names.</p></li>
+    /// <li>
+    /// <p>NS: Authoritative name servers.</p></li>
+    /// <li>
+    /// <p>PTR: Maps an IP address to a domain name.</p></li>
+    /// <li>
+    /// <p>SOA: Start of authority record for the zone.</p></li>
+    /// <li>
+    /// <p>SPF: Lists the servers authorized to send emails from a domain.</p></li>
+    /// <li>
+    /// <p>SRV: Application specific values that identify servers.</p></li>
+    /// <li>
+    /// <p>TXT: Verifies email senders and application-specific values.</p></li>
+    /// </ul>
+    pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_qtype()
+    }
 }

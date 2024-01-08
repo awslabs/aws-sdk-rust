@@ -703,6 +703,8 @@
 ///     InstanceType::R7iz4xlarge => { /* ... */ },
 ///     InstanceType::R7iz8xlarge => { /* ... */ },
 ///     InstanceType::R7izLarge => { /* ... */ },
+///     InstanceType::R7izMetal16xl => { /* ... */ },
+///     InstanceType::R7izMetal32xl => { /* ... */ },
 ///     InstanceType::R7izXlarge => { /* ... */ },
 ///     InstanceType::T1Micro => { /* ... */ },
 ///     InstanceType::T22xlarge => { /* ... */ },
@@ -2203,6 +2205,10 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     R7izLarge,
     #[allow(missing_docs)] // documentation missing in model
+    R7izMetal16xl,
+    #[allow(missing_docs)] // documentation missing in model
+    R7izMetal32xl,
+    #[allow(missing_docs)] // documentation missing in model
     R7izXlarge,
     #[allow(missing_docs)] // documentation missing in model
     T1Micro,
@@ -3080,6 +3086,8 @@ impl ::std::convert::From<&str> for InstanceType {
             "r7iz.4xlarge" => InstanceType::R7iz4xlarge,
             "r7iz.8xlarge" => InstanceType::R7iz8xlarge,
             "r7iz.large" => InstanceType::R7izLarge,
+            "r7iz.metal-16xl" => InstanceType::R7izMetal16xl,
+            "r7iz.metal-32xl" => InstanceType::R7izMetal32xl,
             "r7iz.xlarge" => InstanceType::R7izXlarge,
             "t1.micro" => InstanceType::T1Micro,
             "t2.2xlarge" => InstanceType::T22xlarge,
@@ -3876,6 +3884,8 @@ impl InstanceType {
             InstanceType::R7iz4xlarge => "r7iz.4xlarge",
             InstanceType::R7iz8xlarge => "r7iz.8xlarge",
             InstanceType::R7izLarge => "r7iz.large",
+            InstanceType::R7izMetal16xl => "r7iz.metal-16xl",
+            InstanceType::R7izMetal32xl => "r7iz.metal-32xl",
             InstanceType::R7izXlarge => "r7iz.xlarge",
             InstanceType::T1Micro => "t1.micro",
             InstanceType::T22xlarge => "t2.2xlarge",
@@ -4663,6 +4673,8 @@ impl InstanceType {
             "r7iz.4xlarge",
             "r7iz.8xlarge",
             "r7iz.large",
+            "r7iz.metal-16xl",
+            "r7iz.metal-32xl",
             "r7iz.xlarge",
             "t1.micro",
             "t2.2xlarge",
