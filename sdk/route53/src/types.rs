@@ -51,6 +51,10 @@ pub use crate::types::_delegation_set::DelegationSet;
 
 pub use crate::types::_resource_record_set::ResourceRecordSet;
 
+pub use crate::types::_geo_proximity_location::GeoProximityLocation;
+
+pub use crate::types::_coordinates::Coordinates;
+
 pub use crate::types::_cidr_routing_config::CidrRoutingConfig;
 
 pub use crate::types::_alias_target::AliasTarget;
@@ -151,6 +155,8 @@ mod _collection_summary;
 
 mod _comparison_operator;
 
+mod _coordinates;
+
 mod _delegation_set;
 
 mod _dimension;
@@ -160,6 +166,8 @@ mod _dnssec_status;
 mod _geo_location;
 
 mod _geo_location_details;
+
+mod _geo_proximity_location;
 
 mod _health_check;
 

@@ -41,7 +41,7 @@ pub struct AliasTarget {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </dd>
     /// <dt>
     /// ELB load balancer
@@ -280,7 +280,7 @@ impl AliasTarget {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </dd>
     /// <dt>
     /// ELB load balancer
@@ -542,7 +542,7 @@ impl AliasTargetBuilder {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </dd>
     /// <dt>
     /// ELB load balancer
@@ -628,7 +628,7 @@ impl AliasTargetBuilder {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </dd>
     /// <dt>
     /// ELB load balancer
@@ -713,7 +713,7 @@ impl AliasTargetBuilder {
     /// Elastic Beanstalk environment
     /// </dt>
     /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     /// </dd>
     /// <dt>
     /// ELB load balancer

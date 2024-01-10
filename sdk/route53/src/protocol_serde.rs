@@ -479,6 +479,8 @@ pub(crate) mod shape_dimension_list;
 
 pub(crate) mod shape_geo_location;
 
+pub(crate) mod shape_geo_proximity_location;
+
 pub(crate) mod shape_health_check_region_list;
 
 pub(crate) mod shape_hosted_zone_owner;
@@ -486,6 +488,8 @@ pub(crate) mod shape_hosted_zone_owner;
 pub(crate) mod shape_resource_records;
 
 pub(crate) mod shape_status_report;
+
+pub(crate) mod shape_coordinates;
 
 pub(crate) mod shape_dimension;
 

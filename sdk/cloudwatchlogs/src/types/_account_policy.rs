@@ -15,6 +15,8 @@ pub struct AccountPolicy {
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>The scope of the account policy.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
+    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    pub selection_criteria: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
@@ -40,6 +42,10 @@ impl AccountPolicy {
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
+    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
+        self.selection_criteria.as_deref()
+    }
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
@@ -61,6 +67,7 @@ pub struct AccountPolicyBuilder {
     pub(crate) last_updated_time: ::std::option::Option<i64>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
+    pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AccountPolicyBuilder {
@@ -137,6 +144,20 @@ impl AccountPolicyBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
+    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    pub fn selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.selection_criteria = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.selection_criteria = input;
+        self
+    }
+    /// <p>The log group selection criteria for this subscription filter policy.</p>
+    pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_criteria
+    }
     /// <p>The Amazon Web Services account ID that the policy applies to.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -159,6 +180,7 @@ impl AccountPolicyBuilder {
             last_updated_time: self.last_updated_time,
             policy_type: self.policy_type,
             scope: self.scope,
+            selection_criteria: self.selection_criteria,
             account_id: self.account_id,
         }
     }

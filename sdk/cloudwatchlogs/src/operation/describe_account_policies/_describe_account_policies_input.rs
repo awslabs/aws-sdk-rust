@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountPoliciesInput {
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Use this parameter to limit the returned policies to only the policy with the name that you specify.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeAccountPoliciesInput {
     pub account_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAccountPoliciesInput {
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
@@ -44,18 +44,18 @@ pub struct DescribeAccountPoliciesInputBuilder {
     pub(crate) account_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeAccountPoliciesInputBuilder {
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         &self.policy_type
     }

@@ -11,6 +11,9 @@ impl super::Client {
     ///   - [`recommendations(Vec::<RecommendationData>)`](crate::operation::get_recommendations::GetRecommendationsOutput::recommendations): <p>The recommendations.</p>
     ///   - [`triggers(Option<Vec::<RecommendationTrigger>>)`](crate::operation::get_recommendations::GetRecommendationsOutput::triggers): <p>The triggers corresponding to recommendations.</p>
     /// - On failure, responds with [`SdkError<GetRecommendationsError>`](crate::operation::get_recommendations::GetRecommendationsError)
+    #[deprecated(
+        note = "GetRecommendations API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications."
+    )]
     pub fn get_recommendations(&self) -> crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsFluentBuilder::new(self.handle.clone())
     }

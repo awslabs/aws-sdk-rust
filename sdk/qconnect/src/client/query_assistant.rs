@@ -14,6 +14,9 @@ impl super::Client {
     ///   - [`results(Vec::<ResultData>)`](crate::operation::query_assistant::QueryAssistantOutput::results): <p>The results of the query.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::query_assistant::QueryAssistantOutput::next_token): <p>If there are additional results, this is the token for the next set of results.</p>
     /// - On failure, responds with [`SdkError<QueryAssistantError>`](crate::operation::query_assistant::QueryAssistantError)
+    #[deprecated(
+        note = "QueryAssistant API will be discontinued starting June 1, 2024. To receive generative responses after March 1, 2024 you will need to create a new Assistant in the Connect console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs) into your applications."
+    )]
     pub fn query_assistant(&self) -> crate::operation::query_assistant::builders::QueryAssistantFluentBuilder {
         crate::operation::query_assistant::builders::QueryAssistantFluentBuilder::new(self.handle.clone())
     }

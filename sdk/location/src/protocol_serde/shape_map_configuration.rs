@@ -9,6 +9,15 @@ pub fn ser_map_configuration(
     if let Some(var_1) = &input.political_view {
         object.key("PoliticalView").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.custom_layers {
+        let mut array_3 = object.key("CustomLayers").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +49,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "CustomLayers" => {
+                            builder = builder.set_custom_layers(crate::protocol_serde::shape_custom_layer_list::de_custom_layer_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

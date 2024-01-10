@@ -23,7 +23,7 @@ pub struct GetGeoLocationInput {
     /// </ul>
     pub continent_code: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
+    /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
     pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
     pub subdivision_code: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl GetGeoLocationInput {
         self.continent_code.as_deref()
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
+    /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
     pub fn country_code(&self) -> ::std::option::Option<&str> {
         self.country_code.as_deref()
     }
@@ -138,19 +138,19 @@ impl GetGeoLocationInputBuilder {
         &self.continent_code
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
+    /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
     pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
+    /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
     pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    /// <p>Route 53 also supports the contry code <b>UA</b> forr Ukraine.</p>
+    /// <p>Route 53 also supports the country code <b>UA</b> for Ukraine.</p>
     pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.country_code
     }

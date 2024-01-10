@@ -6,5 +6,14 @@ pub fn ser_map_configuration_update(
     if let Some(var_1) = &input.political_view {
         object.key("PoliticalView").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.custom_layers {
+        let mut array_3 = object.key("CustomLayers").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }

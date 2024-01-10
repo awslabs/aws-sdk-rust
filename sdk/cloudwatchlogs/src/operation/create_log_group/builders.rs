@@ -179,7 +179,7 @@ impl CreateLogGroupFluentBuilder {
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
-    /// <p>After a log group is created, its class can't be changed.</p>
+    /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
     /// </important>
     /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
     pub fn log_group_class(mut self, input: crate::types::LogGroupClass) -> Self {
@@ -194,7 +194,7 @@ impl CreateLogGroupFluentBuilder {
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
-    /// <p>After a log group is created, its class can't be changed.</p>
+    /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
     /// </important>
     /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
     pub fn set_log_group_class(mut self, input: ::std::option::Option<crate::types::LogGroupClass>) -> Self {
@@ -209,7 +209,7 @@ impl CreateLogGroupFluentBuilder {
     /// <p>The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower costs.</p></li>
     /// </ul>
     /// <p>If you omit this parameter, the default of <code>STANDARD</code> is used.</p><important>
-    /// <p>After a log group is created, its class can't be changed.</p>
+    /// <p>The value of <code>logGroupClass</code> can't be changed after a log group is created.</p>
     /// </important>
     /// <p>For details about the features supported by each class, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a></p>
     pub fn get_log_group_class(&self) -> &::std::option::Option<crate::types::LogGroupClass> {

@@ -5,8 +5,9 @@
 pub struct PutAccountPolicyInput {
     /// <p>A name for the policy. This must be unique within the account.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the data protection policy, in JSON.</p>
-    /// <p>This policy must include two JSON blocks:</p>
+    /// <p>Specify the policy, in JSON.</p>
+    /// <p><b>Data protection policy</b></p>
+    /// <p>A data protection policy must include two JSON blocks:</p>
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
@@ -19,20 +20,47 @@ pub struct PutAccountPolicyInput {
     /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
-    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters long.</p>
+    /// <p><b>Subscription filter policy</b></p>
+    /// <p>A subscription filter policy can include the following attributes in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>DestinationArn</b> The ARN of the destination to deliver log events to. Supported destinations are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
+    /// <li>
+    /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
+    /// <li>
+    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// </ul>
     pub policy_document: ::std::option::Option<::std::string::String>,
-    /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy that you're creating or updating.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub scope: ::std::option::Option<crate::types::Scope>,
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    pub selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountPolicyInput {
     /// <p>A name for the policy. This must be unique within the account.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>Specify the data protection policy, in JSON.</p>
-    /// <p>This policy must include two JSON blocks:</p>
+    /// <p>Specify the policy, in JSON.</p>
+    /// <p><b>Data protection policy</b></p>
+    /// <p>A data protection policy must include two JSON blocks:</p>
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
@@ -45,17 +73,45 @@ impl PutAccountPolicyInput {
     /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
-    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters long.</p>
+    /// <p><b>Subscription filter policy</b></p>
+    /// <p>A subscription filter policy can include the following attributes in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>DestinationArn</b> The ARN of the destination to deliver log events to. Supported destinations are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
+    /// <li>
+    /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
+    /// <li>
+    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// </ul>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy that you're creating or updating.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is used.</p>
     pub fn scope(&self) -> ::std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
+    }
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
+        self.selection_criteria.as_deref()
     }
 }
 impl PutAccountPolicyInput {
@@ -73,6 +129,7 @@ pub struct PutAccountPolicyInputBuilder {
     pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) policy_type: ::std::option::Option<crate::types::PolicyType>,
     pub(crate) scope: ::std::option::Option<crate::types::Scope>,
+    pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountPolicyInputBuilder {
     /// <p>A name for the policy. This must be unique within the account.</p>
@@ -90,8 +147,9 @@ impl PutAccountPolicyInputBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// <p>Specify the data protection policy, in JSON.</p>
-    /// <p>This policy must include two JSON blocks:</p>
+    /// <p>Specify the policy, in JSON.</p>
+    /// <p><b>Data protection policy</b></p>
+    /// <p>A data protection policy must include two JSON blocks:</p>
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
@@ -104,14 +162,37 @@ impl PutAccountPolicyInputBuilder {
     /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
-    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters long.</p>
+    /// <p><b>Subscription filter policy</b></p>
+    /// <p>A subscription filter policy can include the following attributes in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>DestinationArn</b> The ARN of the destination to deliver log events to. Supported destinations are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
+    /// <li>
+    /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
+    /// <li>
+    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specify the data protection policy, in JSON.</p>
-    /// <p>This policy must include two JSON blocks:</p>
+    /// <p>Specify the policy, in JSON.</p>
+    /// <p><b>Data protection policy</b></p>
+    /// <p>A data protection policy must include two JSON blocks:</p>
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
@@ -124,13 +205,36 @@ impl PutAccountPolicyInputBuilder {
     /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
-    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters long.</p>
+    /// <p><b>Subscription filter policy</b></p>
+    /// <p>A subscription filter policy can include the following attributes in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>DestinationArn</b> The ARN of the destination to deliver log events to. Supported destinations are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
+    /// <li>
+    /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
+    /// <li>
+    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// </ul>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
-    /// <p>Specify the data protection policy, in JSON.</p>
-    /// <p>This policy must include two JSON blocks:</p>
+    /// <p>Specify the policy, in JSON.</p>
+    /// <p><b>Data protection policy</b></p>
+    /// <p>A data protection policy must include two JSON blocks:</p>
     /// <ul>
     /// <li>
     /// <p>The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code> property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists the types of sensitive data that you want to mask. For more information about the available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types of data that you can mask</a>.</p>
@@ -143,22 +247,44 @@ impl PutAccountPolicyInputBuilder {
     /// <p>The contents of the two <code>DataIdentifer</code> arrays must match exactly.</p>
     /// </important>
     /// <p>In addition to the two JSON blocks, the <code>policyDocument</code> can also include <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The <code>Name</code> is different than the operation's <code>policyName</code> parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.</p>
-    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.</p>
+    /// <p>The JSON specified in <code>policyDocument</code> can be up to 30,720 characters long.</p>
+    /// <p><b>Subscription filter policy</b></p>
+    /// <p>A subscription filter policy can include the following attributes in a JSON block:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>DestinationArn</b> The ARN of the destination to deliver log events to. Supported destinations are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>An Kinesis Data Firehose data stream in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A Lambda function in the same account as the subscription policy, for same-account delivery.</p></li>
+    /// <li>
+    /// <p>A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>, for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported as logical destinations.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p><b>RoleArn</b> The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.</p></li>
+    /// <li>
+    /// <p><b>FilterPattern</b> A filter pattern for subscribing to a filtered stream of log events.</p></li>
+    /// <li>
+    /// <p><b>Distribution</b>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to <code>Random</code> for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.</p></li>
+    /// </ul>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
-    /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy that you're creating or updating.</p>
     /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy that you're creating or updating.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
-    /// <p>Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy that you're creating or updating.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         &self.policy_type
     }
@@ -176,6 +302,26 @@ impl PutAccountPolicyInputBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         &self.scope
     }
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    pub fn selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.selection_criteria = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    pub fn set_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.selection_criteria = input;
+        self
+    }
+    /// <p>Use this parameter to apply the subscription filter policy to a subset of log groups in the account. Currently, the only supported filter is <code>LogGroupName NOT IN []</code>. The <code>selectionCriteria</code> string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.</p>
+    /// <p>Using the <code>selectionCriteria</code> parameter is useful to help prevent infinite loops. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log recursion prevention</a>.</p>
+    /// <p>Specifing <code>selectionCriteria</code> is valid only when you specify <code> SUBSCRIPTION_FILTER_POLICY</code> for <code>policyType</code>.</p>
+    pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        &self.selection_criteria
+    }
     /// Consumes the builder and constructs a [`PutAccountPolicyInput`](crate::operation::put_account_policy::PutAccountPolicyInput).
     pub fn build(
         self,
@@ -185,6 +331,7 @@ impl PutAccountPolicyInputBuilder {
             policy_document: self.policy_document,
             policy_type: self.policy_type,
             scope: self.scope,
+            selection_criteria: self.selection_criteria,
         })
     }
 }

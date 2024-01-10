@@ -22,8 +22,14 @@ impl DeleteAccountPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAccountPolicy`.
 ///
-/// <p>Deletes a CloudWatch Logs account policy.</p>
-/// <p>To use this operation, you must be signed on with the <code>logs:DeleteDataProtectionPolicy</code> and <code>logs:DeleteAccountPolicy</code> permissions.</p>
+/// <p>Deletes a CloudWatch Logs account policy. This stops the policy from applying to all log groups or a subset of log groups in the account. Log-group level policies will still be in effect.</p>
+/// <p>To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are deleting.</p>
+/// <ul>
+/// <li>
+/// <p>To delete a data protection policy, you must have the <code>logs:DeleteDataProtectionPolicy</code> and <code>logs:DeleteAccountPolicy</code> permissions.</p></li>
+/// <li>
+/// <p>To delete a subscription filter policy, you must have the <code>logs:DeleteSubscriptionFilter</code> and <code>logs:DeleteAccountPolicy</code> permissions.</p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAccountPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,17 +129,17 @@ impl DeleteAccountPolicyFluentBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.inner = self.inner.policy_type(input);
         self
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         self.inner.get_policy_type()
     }

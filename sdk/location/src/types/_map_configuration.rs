@@ -63,6 +63,10 @@ pub struct MapConfiguration {
     /// <p>Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political views</a> for more information.</p>
     /// </note>
     pub political_view: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
+    /// </note>
+    pub custom_layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MapConfiguration {
     /// <p>Specifies the map style selected from an available data provider.</p>
@@ -129,6 +133,14 @@ impl MapConfiguration {
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
+    /// </note>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_layers.is_none()`.
+    pub fn custom_layers(&self) -> &[::std::string::String] {
+        self.custom_layers.as_deref().unwrap_or_default()
+    }
 }
 impl MapConfiguration {
     /// Creates a new builder-style object to manufacture [`MapConfiguration`](crate::types::MapConfiguration).
@@ -143,6 +155,7 @@ impl MapConfiguration {
 pub struct MapConfigurationBuilder {
     pub(crate) style: ::std::option::Option<::std::string::String>,
     pub(crate) political_view: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MapConfigurationBuilder {
     /// <p>Specifies the map style selected from an available data provider.</p>
@@ -339,6 +352,32 @@ impl MapConfigurationBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
     }
+    /// Appends an item to `custom_layers`.
+    ///
+    /// To override the contents of this collection use [`set_custom_layers`](Self::set_custom_layers).
+    ///
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
+    /// </note>
+    pub fn custom_layers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.custom_layers.unwrap_or_default();
+        v.push(input.into());
+        self.custom_layers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
+    /// </note>
+    pub fn set_custom_layers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.custom_layers = input;
+        self
+    }
+    /// <p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as POI layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p><note>
+    /// <p>Not all map resources or styles support custom layers. See Custom Layers for more information.</p>
+    /// </note>
+    pub fn get_custom_layers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_layers
+    }
     /// Consumes the builder and constructs a [`MapConfiguration`](crate::types::MapConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`style`](crate::types::builders::MapConfigurationBuilder::style)
@@ -351,6 +390,7 @@ impl MapConfigurationBuilder {
                 )
             })?,
             political_view: self.political_view,
+            custom_layers: self.custom_layers,
         })
     }
 }

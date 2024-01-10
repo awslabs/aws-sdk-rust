@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`policy_name(impl Into<String>)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::policy_name) / [`set_policy_name(Option<String>)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::set_policy_name):<br>required: **true**<br><p>The name of the policy to delete.</p><br>
-    ///   - [`policy_type(PolicyType)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::policy_type) / [`set_policy_type(Option<PolicyType>)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::set_policy_type):<br>required: **true**<br><p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p><br>
+    ///   - [`policy_type(PolicyType)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::policy_type) / [`set_policy_type(Option<PolicyType>)`](crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder::set_policy_type):<br>required: **true**<br><p>The type of policy to delete.</p><br>
     /// - On success, responds with [`DeleteAccountPolicyOutput`](crate::operation::delete_account_policy::DeleteAccountPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountPolicyError>`](crate::operation::delete_account_policy::DeleteAccountPolicyError)
     pub fn delete_account_policy(&self) -> crate::operation::delete_account_policy::builders::DeleteAccountPolicyFluentBuilder {

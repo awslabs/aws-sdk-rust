@@ -79,9 +79,7 @@ pub struct ResourceRecordSet {
     /// <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p></li>
     /// </ul>
     pub region: ::std::option::Option<crate::types::ResourceRecordSetRegion>,
-    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p><note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
     /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
     /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
     /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p><important>
@@ -225,6 +223,8 @@ pub struct ResourceRecordSet {
     /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
     pub cidr_routing_config: ::std::option::Option<crate::types::CidrRoutingConfig>,
+    /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
+    pub geo_proximity_location: ::std::option::Option<crate::types::GeoProximityLocation>,
 }
 impl ResourceRecordSet {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
@@ -313,9 +313,7 @@ impl ResourceRecordSet {
     pub fn region(&self) -> ::std::option::Option<&crate::types::ResourceRecordSetRegion> {
         self.region.as_ref()
     }
-    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p><note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
     /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
     /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
     /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p><important>
@@ -479,6 +477,10 @@ impl ResourceRecordSet {
     pub fn cidr_routing_config(&self) -> ::std::option::Option<&crate::types::CidrRoutingConfig> {
         self.cidr_routing_config.as_ref()
     }
+    /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
+    pub fn geo_proximity_location(&self) -> ::std::option::Option<&crate::types::GeoProximityLocation> {
+        self.geo_proximity_location.as_ref()
+    }
 }
 impl ResourceRecordSet {
     /// Creates a new builder-style object to manufacture [`ResourceRecordSet`](crate::types::ResourceRecordSet).
@@ -505,6 +507,7 @@ pub struct ResourceRecordSetBuilder {
     pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_routing_config: ::std::option::Option<crate::types::CidrRoutingConfig>,
+    pub(crate) geo_proximity_location: ::std::option::Option<crate::types::GeoProximityLocation>,
 }
 impl ResourceRecordSetBuilder {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
@@ -774,9 +777,7 @@ impl ResourceRecordSetBuilder {
     pub fn get_region(&self) -> &::std::option::Option<crate::types::ResourceRecordSetRegion> {
         &self.region
     }
-    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p><note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
     /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
     /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
     /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p><important>
@@ -787,9 +788,7 @@ impl ResourceRecordSetBuilder {
         self.geo_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p><note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
     /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
     /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
     /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p><important>
@@ -800,9 +799,7 @@ impl ResourceRecordSetBuilder {
         self.geo_location = input;
         self
     }
-    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p><note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
+    /// <p><i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p>
     /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
     /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
     /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p><important>
@@ -1290,6 +1287,20 @@ impl ResourceRecordSetBuilder {
     pub fn get_cidr_routing_config(&self) -> &::std::option::Option<crate::types::CidrRoutingConfig> {
         &self.cidr_routing_config
     }
+    /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
+    pub fn geo_proximity_location(mut self, input: crate::types::GeoProximityLocation) -> Self {
+        self.geo_proximity_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
+    pub fn set_geo_proximity_location(mut self, input: ::std::option::Option<crate::types::GeoProximityLocation>) -> Self {
+        self.geo_proximity_location = input;
+        self
+    }
+    /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
+    pub fn get_geo_proximity_location(&self) -> &::std::option::Option<crate::types::GeoProximityLocation> {
+        &self.geo_proximity_location
+    }
     /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::types::ResourceRecordSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ResourceRecordSetBuilder::name)
@@ -1320,6 +1331,7 @@ impl ResourceRecordSetBuilder {
             health_check_id: self.health_check_id,
             traffic_policy_instance_id: self.traffic_policy_instance_id,
             cidr_routing_config: self.cidr_routing_config,
+            geo_proximity_location: self.geo_proximity_location,
         })
     }
 }

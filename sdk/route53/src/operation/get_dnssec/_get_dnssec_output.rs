@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDnssecOutput {
-    /// <p>A string repesenting the status of DNSSEC.</p>
+    /// <p>A string representing the status of DNSSEC.</p>
     pub status: ::std::option::Option<crate::types::DnssecStatus>,
     /// <p>The key-signing keys (KSKs) in your account.</p>
     pub key_signing_keys: ::std::vec::Vec<crate::types::KeySigningKey>,
     _request_id: Option<String>,
 }
 impl GetDnssecOutput {
-    /// <p>A string repesenting the status of DNSSEC.</p>
+    /// <p>A string representing the status of DNSSEC.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DnssecStatus> {
         self.status.as_ref()
     }
@@ -41,18 +41,18 @@ pub struct GetDnssecOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetDnssecOutputBuilder {
-    /// <p>A string repesenting the status of DNSSEC.</p>
+    /// <p>A string representing the status of DNSSEC.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::DnssecStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A string repesenting the status of DNSSEC.</p>
+    /// <p>A string representing the status of DNSSEC.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::DnssecStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>A string repesenting the status of DNSSEC.</p>
+    /// <p>A string representing the status of DNSSEC.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DnssecStatus> {
         &self.status
     }

@@ -353,6 +353,8 @@ pub(crate) mod shape_circle;
 
 pub(crate) mod shape_country_code_list;
 
+pub(crate) mod shape_custom_layer_list;
+
 pub(crate) mod shape_device_position;
 
 pub(crate) mod shape_filter_place_category_list;

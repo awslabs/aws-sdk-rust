@@ -186,6 +186,16 @@ pub fn de_resource_record_set(
                 builder = builder.set_cidr_routing_config(var_14);
             }
             ,
+            s if s.matches("GeoProximityLocation") /* GeoProximityLocation com.amazonaws.route53#ResourceRecordSet$GeoProximityLocation */ =>  {
+                let var_15 =
+                    Some(
+                        crate::protocol_serde::shape_geo_proximity_location::de_geo_proximity_location(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_geo_proximity_location(var_15);
+            }
+            ,
             _ => {}
         }
     }
@@ -208,58 +218,62 @@ pub fn ser_resource_record_set(
         let mut inner_writer = scope.start_el("Type").finish();
         inner_writer.data(input.r#type.as_str());
     }
-    if let Some(var_15) = &input.set_identifier {
+    if let Some(var_16) = &input.set_identifier {
         let mut inner_writer = scope.start_el("SetIdentifier").finish();
-        inner_writer.data(var_15.as_str());
+        inner_writer.data(var_16.as_str());
     }
-    if let Some(var_16) = &input.weight {
+    if let Some(var_17) = &input.weight {
         let mut inner_writer = scope.start_el("Weight").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_16).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_17).encode());
     }
-    if let Some(var_17) = &input.region {
+    if let Some(var_18) = &input.region {
         let mut inner_writer = scope.start_el("Region").finish();
-        inner_writer.data(var_17.as_str());
+        inner_writer.data(var_18.as_str());
     }
-    if let Some(var_18) = &input.geo_location {
+    if let Some(var_19) = &input.geo_location {
         let inner_writer = scope.start_el("GeoLocation");
-        crate::protocol_serde::shape_geo_location::ser_geo_location(var_18, inner_writer)?
+        crate::protocol_serde::shape_geo_location::ser_geo_location(var_19, inner_writer)?
     }
-    if let Some(var_19) = &input.failover {
+    if let Some(var_20) = &input.failover {
         let mut inner_writer = scope.start_el("Failover").finish();
-        inner_writer.data(var_19.as_str());
+        inner_writer.data(var_20.as_str());
     }
-    if let Some(var_20) = &input.multi_value_answer {
+    if let Some(var_21) = &input.multi_value_answer {
         let mut inner_writer = scope.start_el("MultiValueAnswer").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_20).encode());
-    }
-    if let Some(var_21) = &input.ttl {
-        let mut inner_writer = scope.start_el("TTL").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_21).encode());
     }
-    if let Some(var_22) = &input.resource_records {
+    if let Some(var_22) = &input.ttl {
+        let mut inner_writer = scope.start_el("TTL").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_22).encode());
+    }
+    if let Some(var_23) = &input.resource_records {
         let mut inner_writer = scope.start_el("ResourceRecords").finish();
-        for list_item_23 in var_22 {
+        for list_item_24 in var_23 {
             {
                 let inner_writer = inner_writer.start_el("ResourceRecord");
-                crate::protocol_serde::shape_resource_record::ser_resource_record(list_item_23, inner_writer)?
+                crate::protocol_serde::shape_resource_record::ser_resource_record(list_item_24, inner_writer)?
             }
         }
     }
-    if let Some(var_24) = &input.alias_target {
+    if let Some(var_25) = &input.alias_target {
         let inner_writer = scope.start_el("AliasTarget");
-        crate::protocol_serde::shape_alias_target::ser_alias_target(var_24, inner_writer)?
+        crate::protocol_serde::shape_alias_target::ser_alias_target(var_25, inner_writer)?
     }
-    if let Some(var_25) = &input.health_check_id {
+    if let Some(var_26) = &input.health_check_id {
         let mut inner_writer = scope.start_el("HealthCheckId").finish();
-        inner_writer.data(var_25.as_str());
-    }
-    if let Some(var_26) = &input.traffic_policy_instance_id {
-        let mut inner_writer = scope.start_el("TrafficPolicyInstanceId").finish();
         inner_writer.data(var_26.as_str());
     }
-    if let Some(var_27) = &input.cidr_routing_config {
+    if let Some(var_27) = &input.traffic_policy_instance_id {
+        let mut inner_writer = scope.start_el("TrafficPolicyInstanceId").finish();
+        inner_writer.data(var_27.as_str());
+    }
+    if let Some(var_28) = &input.cidr_routing_config {
         let inner_writer = scope.start_el("CidrRoutingConfig");
-        crate::protocol_serde::shape_cidr_routing_config::ser_cidr_routing_config(var_27, inner_writer)?
+        crate::protocol_serde::shape_cidr_routing_config::ser_cidr_routing_config(var_28, inner_writer)?
+    }
+    if let Some(var_29) = &input.geo_proximity_location {
+        let inner_writer = scope.start_el("GeoProximityLocation");
+        crate::protocol_serde::shape_geo_proximity_location::ser_geo_proximity_location(var_29, inner_writer)?
     }
     scope.finish();
     Ok(())

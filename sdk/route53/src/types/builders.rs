@@ -31,6 +31,10 @@ pub use crate::types::_delegation_set::DelegationSetBuilder;
 
 pub use crate::types::_resource_record_set::ResourceRecordSetBuilder;
 
+pub use crate::types::_geo_proximity_location::GeoProximityLocationBuilder;
+
+pub use crate::types::_coordinates::CoordinatesBuilder;
+
 pub use crate::types::_cidr_routing_config::CidrRoutingConfigBuilder;
 
 pub use crate::types::_alias_target::AliasTargetBuilder;

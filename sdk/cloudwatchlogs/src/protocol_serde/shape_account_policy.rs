@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "selectionCriteria" => {
+                            builder = builder.set_selection_criteria(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "accountId" => {
                             builder = builder.set_account_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

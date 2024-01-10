@@ -1066,6 +1066,16 @@ pub(crate) fn cidr_routing_config_correct_errors(
     builder
 }
 
+pub(crate) fn coordinates_correct_errors(mut builder: crate::types::builders::CoordinatesBuilder) -> crate::types::builders::CoordinatesBuilder {
+    if builder.latitude.is_none() {
+        builder.latitude = Some(Default::default())
+    }
+    if builder.longitude.is_none() {
+        builder.longitude = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dimension_correct_errors(mut builder: crate::types::builders::DimensionBuilder) -> crate::types::builders::DimensionBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())

@@ -108,17 +108,17 @@ impl DescribeAccountPoliciesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.inner = self.inner.policy_type(input);
         self
     }
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
-    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         self.inner.get_policy_type()
     }

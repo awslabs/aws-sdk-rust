@@ -5,7 +5,7 @@
 pub struct DeleteAccountPolicyInput {
     /// <p>The name of the policy to delete.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub policy_type: ::std::option::Option<crate::types::PolicyType>,
 }
 impl DeleteAccountPolicyInput {
@@ -13,7 +13,7 @@ impl DeleteAccountPolicyInput {
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub fn policy_type(&self) -> ::std::option::Option<&crate::types::PolicyType> {
         self.policy_type.as_ref()
     }
@@ -48,18 +48,18 @@ impl DeleteAccountPolicyInputBuilder {
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     /// This field is required.
     pub fn policy_type(mut self, input: crate::types::PolicyType) -> Self {
         self.policy_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub fn set_policy_type(mut self, input: ::std::option::Option<crate::types::PolicyType>) -> Self {
         self.policy_type = input;
         self
     }
-    /// <p>The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.</p>
+    /// <p>The type of policy to delete.</p>
     pub fn get_policy_type(&self) -> &::std::option::Option<crate::types::PolicyType> {
         &self.policy_type
     }

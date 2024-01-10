@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
-//! aws-sdk-redshiftserverless = "1.10.1"
+//! aws-sdk-redshiftserverless = "1.10.2"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
