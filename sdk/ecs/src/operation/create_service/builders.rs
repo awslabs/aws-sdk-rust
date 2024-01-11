@@ -26,6 +26,7 @@ impl CreateServiceInputBuilder {
 /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
 /// </note>
 /// <p>In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind one or more load balancers. The load balancers distribute traffic across the tasks that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service load balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when creating or updating a service. <code>volumeConfigurations</code> is only supported for REPLICA service and not DAEMON service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 /// <p>Tasks for services that don't use a load balancer are considered healthy if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer are considered healthy if they're in the <code>RUNNING</code> state and are reported as healthy by the load balancer.</p>
 /// <p>There are two service scheduler strategies available:</p>
 /// <ul>
@@ -632,5 +633,23 @@ impl CreateServiceFluentBuilder {
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_service_connect_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
         self.inner.get_service_connect_configuration()
+    }
+    /// Appends an item to `volumeConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+    ///
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub fn volume_configurations(mut self, input: crate::types::ServiceVolumeConfiguration) -> Self {
+        self.inner = self.inner.volume_configurations(input);
+        self
+    }
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>) -> Self {
+        self.inner = self.inner.set_volume_configurations(input);
+        self
+    }
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>> {
+        self.inner.get_volume_configurations()
     }
 }

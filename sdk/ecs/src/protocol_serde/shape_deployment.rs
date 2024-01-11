@@ -129,6 +129,11 @@ where
                                 crate::protocol_serde::shape_service_connect_service_resource_list::de_service_connect_service_resource_list(tokens)?,
                             );
                         }
+                        "volumeConfigurations" => {
+                            builder = builder.set_volume_configurations(
+                                crate::protocol_serde::shape_service_volume_configurations::de_service_volume_configurations(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

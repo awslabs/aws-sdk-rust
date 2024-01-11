@@ -49,6 +49,16 @@ pub use crate::types::_service_event::ServiceEvent;
 
 pub use crate::types::_deployment::Deployment;
 
+pub use crate::types::_service_volume_configuration::ServiceVolumeConfiguration;
+
+pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfiguration;
+
+pub use crate::types::_task_filesystem_type::TaskFilesystemType;
+
+pub use crate::types::_ebs_tag_specification::EbsTagSpecification;
+
+pub use crate::types::_ebs_resource_type::EbsResourceType;
+
 pub use crate::types::_service_connect_service_resource::ServiceConnectServiceResource;
 
 pub use crate::types::_service_connect_configuration::ServiceConnectConfiguration;
@@ -176,6 +186,12 @@ pub use crate::types::_managed_agent::ManagedAgent;
 pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_connectivity::Connectivity;
+
+pub use crate::types::_task_volume_configuration::TaskVolumeConfiguration;
+
+pub use crate::types::_task_managed_ebs_volume_configuration::TaskManagedEbsVolumeConfiguration;
+
+pub use crate::types::_task_managed_ebs_volume_termination_policy::TaskManagedEbsVolumeTerminationPolicy;
 
 pub use crate::types::_task_definition::TaskDefinition;
 
@@ -385,6 +401,10 @@ mod _device_cgroup_permission;
 
 mod _docker_volume_configuration;
 
+mod _ebs_resource_type;
+
+mod _ebs_tag_specification;
+
 mod _efs_authorization_config;
 
 mod _efs_authorization_config_iam;
@@ -533,7 +553,11 @@ mod _service_event;
 
 mod _service_field;
 
+mod _service_managed_ebs_volume_configuration;
+
 mod _service_registry;
+
+mod _service_volume_configuration;
 
 mod _session;
 
@@ -569,6 +593,12 @@ mod _task_definition_status;
 
 mod _task_field;
 
+mod _task_filesystem_type;
+
+mod _task_managed_ebs_volume_configuration;
+
+mod _task_managed_ebs_volume_termination_policy;
+
 mod _task_override;
 
 mod _task_set;
@@ -576,6 +606,8 @@ mod _task_set;
 mod _task_set_field;
 
 mod _task_stop_code;
+
+mod _task_volume_configuration;
 
 mod _tmpfs;
 

@@ -39,6 +39,8 @@ pub use crate::types::_put_targets_result_entry::PutTargetsResultEntryBuilder;
 
 pub use crate::types::_target::TargetBuilder;
 
+pub use crate::types::_app_sync_parameters::AppSyncParametersBuilder;
+
 pub use crate::types::_retry_policy::RetryPolicyBuilder;
 
 pub use crate::types::_dead_letter_config::DeadLetterConfigBuilder;

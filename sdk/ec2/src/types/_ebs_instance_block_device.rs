@@ -12,6 +12,11 @@ pub struct EbsInstanceBlockDevice {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The ID of the EBS volume.</p>
     pub volume_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub associated_resource: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub volume_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsInstanceBlockDevice {
     /// <p>The time stamp when the attachment initiated.</p>
@@ -30,6 +35,15 @@ impl EbsInstanceBlockDevice {
     pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn associated_resource(&self) -> ::std::option::Option<&str> {
+        self.associated_resource.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn volume_owner_id(&self) -> ::std::option::Option<&str> {
+        self.volume_owner_id.as_deref()
+    }
 }
 impl EbsInstanceBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
@@ -46,6 +60,8 @@ pub struct EbsInstanceBlockDeviceBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_resource: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_owner_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsInstanceBlockDeviceBuilder {
     /// <p>The time stamp when the attachment initiated.</p>
@@ -104,6 +120,37 @@ impl EbsInstanceBlockDeviceBuilder {
     pub fn get_volume_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_id
     }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn associated_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.associated_resource = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn set_associated_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.associated_resource = input;
+        self
+    }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn get_associated_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_resource
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn volume_owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_owner_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn set_volume_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.volume_owner_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the volume.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn get_volume_owner_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.volume_owner_id
+    }
     /// Consumes the builder and constructs a [`EbsInstanceBlockDevice`](crate::types::EbsInstanceBlockDevice).
     pub fn build(self) -> crate::types::EbsInstanceBlockDevice {
         crate::types::EbsInstanceBlockDevice {
@@ -111,6 +158,8 @@ impl EbsInstanceBlockDeviceBuilder {
             delete_on_termination: self.delete_on_termination,
             status: self.status,
             volume_id: self.volume_id,
+            associated_resource: self.associated_resource,
+            volume_owner_id: self.volume_owner_id,
         }
     }
 }

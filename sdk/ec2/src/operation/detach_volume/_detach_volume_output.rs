@@ -7,8 +7,10 @@ pub struct DetachVolumeOutput {
     /// <p>The time stamp when the attachment initiated.</p>
     pub attach_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The device name.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub device: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The attachment state of the volume.</p>
     pub state: ::std::option::Option<crate::types::VolumeAttachmentState>,
@@ -16,6 +18,11 @@ pub struct DetachVolumeOutput {
     pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub associated_resource: ::std::option::Option<::std::string::String>,
+    /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub instance_owning_service: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DetachVolumeOutput {
@@ -24,10 +31,12 @@ impl DetachVolumeOutput {
         self.attach_time.as_ref()
     }
     /// <p>The device name.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn device(&self) -> ::std::option::Option<&str> {
         self.device.as_deref()
     }
     /// <p>The ID of the instance.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
@@ -42,6 +51,15 @@ impl DetachVolumeOutput {
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
+    }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn associated_resource(&self) -> ::std::option::Option<&str> {
+        self.associated_resource.as_deref()
+    }
+    /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn instance_owning_service(&self) -> ::std::option::Option<&str> {
+        self.instance_owning_service.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DetachVolumeOutput {
@@ -66,6 +84,8 @@ pub struct DetachVolumeOutputBuilder {
     pub(crate) state: ::std::option::Option<crate::types::VolumeAttachmentState>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) associated_resource: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_owning_service: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DetachVolumeOutputBuilder {
@@ -84,30 +104,36 @@ impl DetachVolumeOutputBuilder {
         &self.attach_time
     }
     /// <p>The device name.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device = input;
         self
     }
     /// <p>The device name.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn get_device(&self) -> &::std::option::Option<::std::string::String> {
         &self.device
     }
     /// <p>The ID of the instance.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The ID of the instance.</p>
+    /// <p>If the volume is attached to a Fargate task, this parameter returns <code>null</code>.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
@@ -153,6 +179,37 @@ impl DetachVolumeOutputBuilder {
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
         &self.delete_on_termination
     }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn associated_resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.associated_resource = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn set_associated_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.associated_resource = input;
+        self
+    }
+    /// <p>The ARN of the Amazon ECS or Fargate task to which the volume is attached.</p>
+    pub fn get_associated_resource(&self) -> &::std::option::Option<::std::string::String> {
+        &self.associated_resource
+    }
+    /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn instance_owning_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_owning_service = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn set_instance_owning_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_owning_service = input;
+        self
+    }
+    /// <p>The service principal of Amazon Web Services service that owns the underlying instance to which the volume is attached.</p>
+    /// <p>This parameter is returned only for volumes that are attached to Fargate tasks.</p>
+    pub fn get_instance_owning_service(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_owning_service
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -171,6 +228,8 @@ impl DetachVolumeOutputBuilder {
             state: self.state,
             volume_id: self.volume_id,
             delete_on_termination: self.delete_on_termination,
+            associated_resource: self.associated_resource,
+            instance_owning_service: self.instance_owning_service,
             _request_id: self._request_id,
         }
     }

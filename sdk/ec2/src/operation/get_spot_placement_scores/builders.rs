@@ -152,19 +152,16 @@ impl GetSpotPlacementScoresFluentBuilder {
         self.inner.get_target_capacity()
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.inner = self.inner.target_capacity_unit_type(input);
         self
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.inner = self.inner.set_target_capacity_unit_type(input);
         self
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         self.inner.get_target_capacity_unit_type()
     }

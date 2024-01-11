@@ -84,6 +84,12 @@ pub fn ser_target(
         crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_25, var_24)?;
         object_25.finish();
     }
+    if let Some(var_26) = &input.app_sync_parameters {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("AppSyncParameters").start_object();
+        crate::protocol_serde::shape_app_sync_parameters::ser_app_sync_parameters(&mut object_27, var_26)?;
+        object_27.finish();
+    }
     Ok(())
 }
 
@@ -174,6 +180,10 @@ where
                         }
                         "RetryPolicy" => {
                             builder = builder.set_retry_policy(crate::protocol_serde::shape_retry_policy::de_retry_policy(tokens)?);
+                        }
+                        "AppSyncParameters" => {
+                            builder =
+                                builder.set_app_sync_parameters(crate::protocol_serde::shape_app_sync_parameters::de_app_sync_parameters(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

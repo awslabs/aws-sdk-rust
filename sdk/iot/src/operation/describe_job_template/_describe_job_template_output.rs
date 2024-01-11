@@ -27,7 +27,7 @@ pub struct DescribeJobTemplateOutput {
     pub job_executions_retry_config: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
     pub maintenance_windows: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. The package version must be in either the Published or Deprecated state when the job deploys. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub destination_package_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -83,7 +83,7 @@ impl DescribeJobTemplateOutput {
     pub fn maintenance_windows(&self) -> &[crate::types::MaintenanceWindow] {
         self.maintenance_windows.as_deref().unwrap_or_default()
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. The package version must be in either the Published or Deprecated state when the job deploys. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_package_versions.is_none()`.
@@ -301,7 +301,7 @@ impl DescribeJobTemplateOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_package_versions`](Self::set_destination_package_versions).
     ///
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. The package version must be in either the Published or Deprecated state when the job deploys. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn destination_package_versions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.destination_package_versions.unwrap_or_default();
@@ -309,13 +309,13 @@ impl DescribeJobTemplateOutputBuilder {
         self.destination_package_versions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. The package version must be in either the Published or Deprecated state when the job deploys. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn set_destination_package_versions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.destination_package_versions = input;
         self
     }
-    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes.</p>
+    /// <p>The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully completes. The package version must be in either the Published or Deprecated state when the job deploys. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</p>
     /// <p><b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
     pub fn get_destination_package_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.destination_package_versions

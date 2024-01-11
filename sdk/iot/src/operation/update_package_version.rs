@@ -292,6 +292,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdatePackage
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdatePackageVersionError {
+    /// <p>A resource with the same name already exists.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Internal error from the service that indicates an unexpected error or that the service is unavailable.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -333,12 +335,17 @@ impl UpdatePackageVersionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdatePackageVersionError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdatePackageVersionError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -360,6 +367,7 @@ impl UpdatePackageVersionError {
 impl ::std::error::Error for UpdatePackageVersionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -371,6 +379,7 @@ impl ::std::error::Error for UpdatePackageVersionError {
 impl ::std::fmt::Display for UpdatePackageVersionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -396,6 +405,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdatePackageVersionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdatePackageVersionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

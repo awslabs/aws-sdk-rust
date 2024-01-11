@@ -21,6 +21,8 @@ pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_internal_server_exception::InternalServerExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_invalid_query_exception::InvalidQueryExceptionBuilder;
 
 pub use crate::types::error::_invalid_aggregation_exception::InvalidAggregationExceptionBuilder;
@@ -62,5 +64,3 @@ pub use crate::types::error::_versions_limit_exceeded_exception::VersionsLimitEx
 pub use crate::types::error::_malformed_policy_exception::MalformedPolicyExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
-
-pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

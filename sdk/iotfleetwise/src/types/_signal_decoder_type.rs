@@ -13,7 +13,6 @@
 /// # let signaldecodertype = unimplemented!();
 /// match signaldecodertype {
 ///     SignalDecoderType::CanSignal => { /* ... */ },
-///     SignalDecoderType::CustomerDecodedSignal => { /* ... */ },
 ///     SignalDecoderType::MessageSignal => { /* ... */ },
 ///     SignalDecoderType::ObdSignal => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,8 +45,6 @@ pub enum SignalDecoderType {
     #[allow(missing_docs)] // documentation missing in model
     CanSignal,
     #[allow(missing_docs)] // documentation missing in model
-    CustomerDecodedSignal,
-    #[allow(missing_docs)] // documentation missing in model
     MessageSignal,
     #[allow(missing_docs)] // documentation missing in model
     ObdSignal,
@@ -59,7 +56,6 @@ impl ::std::convert::From<&str> for SignalDecoderType {
     fn from(s: &str) -> Self {
         match s {
             "CAN_SIGNAL" => SignalDecoderType::CanSignal,
-            "CUSTOMER_DECODED_SIGNAL" => SignalDecoderType::CustomerDecodedSignal,
             "MESSAGE_SIGNAL" => SignalDecoderType::MessageSignal,
             "OBD_SIGNAL" => SignalDecoderType::ObdSignal,
             other => SignalDecoderType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -78,7 +74,6 @@ impl SignalDecoderType {
     pub fn as_str(&self) -> &str {
         match self {
             SignalDecoderType::CanSignal => "CAN_SIGNAL",
-            SignalDecoderType::CustomerDecodedSignal => "CUSTOMER_DECODED_SIGNAL",
             SignalDecoderType::MessageSignal => "MESSAGE_SIGNAL",
             SignalDecoderType::ObdSignal => "OBD_SIGNAL",
             SignalDecoderType::Unknown(value) => value.as_str(),
@@ -86,7 +81,7 @@ impl SignalDecoderType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_SIGNAL", "CUSTOMER_DECODED_SIGNAL", "MESSAGE_SIGNAL", "OBD_SIGNAL"]
+        &["CAN_SIGNAL", "MESSAGE_SIGNAL", "OBD_SIGNAL"]
     }
 }
 impl ::std::convert::AsRef<str> for SignalDecoderType {

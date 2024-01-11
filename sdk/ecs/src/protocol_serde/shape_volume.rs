@@ -33,6 +33,9 @@ pub fn ser_volume(
         )?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.configured_at_launch {
+        object.key("configuredAtLaunch").boolean(*var_10);
+    }
     Ok(())
 }
 
@@ -75,6 +78,9 @@ where
                             builder = builder.set_fsx_windows_file_server_volume_configuration(
                                     crate::protocol_serde::shape_f_sx_windows_file_server_volume_configuration::de_f_sx_windows_file_server_volume_configuration(tokens)?
                                 );
+                        }
+                        "configuredAtLaunch" => {
+                            builder = builder.set_configured_at_launch(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

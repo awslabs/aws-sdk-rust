@@ -102,6 +102,8 @@ pub struct CreateServiceInput {
     /// <p>The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.</p>
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
 }
 impl CreateServiceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -261,6 +263,12 @@ impl CreateServiceInput {
     pub fn service_connect_configuration(&self) -> ::std::option::Option<&crate::types::ServiceConnectConfiguration> {
         self.service_connect_configuration.as_ref()
     }
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_configurations.is_none()`.
+    pub fn volume_configurations(&self) -> &[crate::types::ServiceVolumeConfiguration] {
+        self.volume_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateServiceInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
@@ -296,6 +304,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
     pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
+    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
 }
 impl CreateServiceInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that you run your service on. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -819,6 +828,26 @@ impl CreateServiceInputBuilder {
     pub fn get_service_connect_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectConfiguration> {
         &self.service_connect_configuration
     }
+    /// Appends an item to `volume_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+    ///
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub fn volume_configurations(mut self, input: crate::types::ServiceVolumeConfiguration) -> Self {
+        let mut v = self.volume_configurations.unwrap_or_default();
+        v.push(input);
+        self.volume_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>) -> Self {
+        self.volume_configurations = input;
+        self
+    }
+    /// <p>The configuration for a volume specified in the task definition as a volume that is configured at launch time. Currently, the only supported volume type is an Amazon EBS volume.</p>
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>> {
+        &self.volume_configurations
+    }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
     pub fn build(
         self,
@@ -847,6 +876,7 @@ impl CreateServiceInputBuilder {
             propagate_tags: self.propagate_tags,
             enable_execute_command: self.enable_execute_command,
             service_connect_configuration: self.service_connect_configuration,
+            volume_configurations: self.volume_configurations,
         })
     }
 }

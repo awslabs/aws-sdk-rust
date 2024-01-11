@@ -14,7 +14,6 @@
 /// match networkinterfacefailurereason {
 ///     NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     NetworkInterfaceFailureReason::ConflictingNetworkInterface => { /* ... */ },
-///     NetworkInterfaceFailureReason::CustomerDecodedSignalNetworkInterfaceInfoIsNull => { /* ... */ },
 ///     NetworkInterfaceFailureReason::DuplicateInterface => { /* ... */ },
 ///     NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => { /* ... */ },
 ///     NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => { /* ... */ },
@@ -52,8 +51,6 @@ pub enum NetworkInterfaceFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingNetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
-    CustomerDecodedSignalNetworkInterfaceInfoIsNull,
-    #[allow(missing_docs)] // documentation missing in model
     DuplicateInterface,
     #[allow(missing_docs)] // documentation missing in model
     NetworkInterfaceToAddAlreadyExists,
@@ -72,9 +69,6 @@ impl ::std::convert::From<&str> for NetworkInterfaceFailureReason {
         match s {
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL" => NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull,
             "CONFLICTING_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::ConflictingNetworkInterface,
-            "CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL" => {
-                NetworkInterfaceFailureReason::CustomerDecodedSignalNetworkInterfaceInfoIsNull
-            }
             "DUPLICATE_NETWORK_INTERFACE" => NetworkInterfaceFailureReason::DuplicateInterface,
             "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS" => NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists,
             "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS" => NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals,
@@ -97,9 +91,6 @@ impl NetworkInterfaceFailureReason {
         match self {
             NetworkInterfaceFailureReason::CanNetworkInterfaceInfoIsNull => "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             NetworkInterfaceFailureReason::ConflictingNetworkInterface => "CONFLICTING_NETWORK_INTERFACE",
-            NetworkInterfaceFailureReason::CustomerDecodedSignalNetworkInterfaceInfoIsNull => {
-                "CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL"
-            }
             NetworkInterfaceFailureReason::DuplicateInterface => "DUPLICATE_NETWORK_INTERFACE",
             NetworkInterfaceFailureReason::NetworkInterfaceToAddAlreadyExists => "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
             NetworkInterfaceFailureReason::NetworkInterfaceToRemoveAssociatedWithSignals => "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",
@@ -113,7 +104,6 @@ impl NetworkInterfaceFailureReason {
         &[
             "CAN_NETWORK_INTERFACE_INFO_IS_NULL",
             "CONFLICTING_NETWORK_INTERFACE",
-            "CUSTOMER_DECODED_SIGNAL_NETWORK_INTERFACE_INFO_IS_NULL",
             "DUPLICATE_NETWORK_INTERFACE",
             "NETWORK_INTERFACE_TO_ADD_ALREADY_EXISTS",
             "NETWORK_INTERFACE_TO_REMOVE_ASSOCIATED_WITH_SIGNALS",

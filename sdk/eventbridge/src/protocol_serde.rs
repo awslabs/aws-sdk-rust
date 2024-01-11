@@ -339,6 +339,8 @@ pub(crate) mod shape_update_connection_auth_request_parameters;
 
 pub(crate) mod shape_api_destination;
 
+pub(crate) mod shape_app_sync_parameters;
+
 pub(crate) mod shape_archive;
 
 pub(crate) mod shape_batch_parameters;

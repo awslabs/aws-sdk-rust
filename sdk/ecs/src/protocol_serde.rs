@@ -383,6 +383,8 @@ pub(crate) mod shape_service_connect_configuration;
 
 pub(crate) mod shape_service_registry;
 
+pub(crate) mod shape_service_volume_configuration;
+
 pub(crate) mod shape_services;
 
 pub(crate) mod shape_session;
@@ -410,6 +412,8 @@ pub(crate) mod shape_task_override;
 pub(crate) mod shape_task_set;
 
 pub(crate) mod shape_task_sets;
+
+pub(crate) mod shape_task_volume_configuration;
 
 pub(crate) mod shape_tasks;
 
@@ -503,6 +507,8 @@ pub(crate) mod shape_service_connect_service;
 
 pub(crate) mod shape_service_events;
 
+pub(crate) mod shape_service_managed_ebs_volume_configuration;
+
 pub(crate) mod shape_service_registries;
 
 pub(crate) mod shape_statistics;
@@ -510,6 +516,8 @@ pub(crate) mod shape_statistics;
 pub(crate) mod shape_system_control;
 
 pub(crate) mod shape_task_definition_placement_constraints;
+
+pub(crate) mod shape_task_managed_ebs_volume_configuration;
 
 pub(crate) mod shape_ulimit;
 
@@ -526,6 +534,8 @@ pub(crate) mod shape_container_overrides;
 pub(crate) mod shape_deployment;
 
 pub(crate) mod shape_device;
+
+pub(crate) mod shape_ebs_tag_specification;
 
 pub(crate) mod shape_efs_authorization_config;
 
@@ -544,6 +554,8 @@ pub(crate) mod shape_proxy_configuration_properties;
 pub(crate) mod shape_service_connect_client_alias;
 
 pub(crate) mod shape_service_event;
+
+pub(crate) mod shape_task_managed_ebs_volume_termination_policy;
 
 pub(crate) mod shape_tmpfs;
 
@@ -579,6 +591,8 @@ pub(crate) mod shape_secret_list;
 
 pub(crate) mod shape_service_connect_service_resource_list;
 
+pub(crate) mod shape_service_volume_configurations;
+
 pub(crate) mod shape_system_controls;
 
 pub(crate) mod shape_ulimit_list;
@@ -604,5 +618,7 @@ pub(crate) mod shape_string_map;
 pub(crate) mod shape_tmpfs_list;
 
 pub(crate) mod shape_device_cgroup_permissions;
+
+pub(crate) mod shape_ebs_tag_specifications;
 
 pub(crate) mod shape_service_connect_client_alias_list;

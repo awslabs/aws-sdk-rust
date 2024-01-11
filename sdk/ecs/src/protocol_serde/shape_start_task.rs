@@ -77,6 +77,22 @@ pub fn de_start_task_http_error(
             }
             tmp
         }),
+        "UnsupportedFeatureException" => crate::operation::start_task::StartTaskError::UnsupportedFeatureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedFeatureExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::start_task::StartTaskError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::start_task::StartTaskError::generic(generic),
     })
 }

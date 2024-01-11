@@ -239,6 +239,15 @@ pub(crate) fn secret_correct_errors(mut builder: crate::types::builders::SecretB
     builder
 }
 
+pub(crate) fn service_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceVolumeConfigurationBuilder,
+) -> crate::types::builders::ServiceVolumeConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ulimit_correct_errors(mut builder: crate::types::builders::UlimitBuilder) -> crate::types::builders::UlimitBuilder {
     if builder.name.is_none() {
         builder.name = "no value was set".parse::<crate::types::UlimitName>().ok()
@@ -268,12 +277,30 @@ pub(crate) fn service_connect_service_correct_errors(
     builder
 }
 
+pub(crate) fn service_managed_ebs_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder,
+) -> crate::types::builders::ServiceManagedEbsVolumeConfigurationBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBuilder) -> crate::types::builders::TmpfsBuilder {
     if builder.container_path.is_none() {
         builder.container_path = Some(Default::default())
     }
     if builder.size.is_none() {
         builder.size = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ebs_tag_specification_correct_errors(
+    mut builder: crate::types::builders::EbsTagSpecificationBuilder,
+) -> crate::types::builders::EbsTagSpecificationBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::EbsResourceType>().ok()
     }
     builder
 }

@@ -63,6 +63,32 @@ pub fn de_ebs_instance_block_device(
                 builder = builder.set_volume_id(var_4);
             }
             ,
+            s if s.matches("associatedResource") /* AssociatedResource com.amazonaws.ec2#EbsInstanceBlockDevice$AssociatedResource */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_associated_resource(var_5);
+            }
+            ,
+            s if s.matches("volumeOwnerId") /* VolumeOwnerId com.amazonaws.ec2#EbsInstanceBlockDevice$VolumeOwnerId */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_volume_owner_id(var_6);
+            }
+            ,
             _ => {}
         }
     }

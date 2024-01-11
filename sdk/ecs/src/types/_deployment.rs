@@ -68,6 +68,8 @@ pub struct Deployment {
     pub service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     /// <p>The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery name to a Cloud Map service name.</p>
     pub service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure different settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
 }
 impl Deployment {
     /// <p>The ID of the deployment.</p>
@@ -174,6 +176,12 @@ impl Deployment {
     pub fn service_connect_resources(&self) -> &[crate::types::ServiceConnectServiceResource] {
         self.service_connect_resources.as_deref().unwrap_or_default()
     }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure different settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_configurations.is_none()`.
+    pub fn volume_configurations(&self) -> &[crate::types::ServiceVolumeConfiguration] {
+        self.volume_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl Deployment {
     /// Creates a new builder-style object to manufacture [`Deployment`](crate::types::Deployment).
@@ -204,6 +212,7 @@ pub struct DeploymentBuilder {
     pub(crate) rollout_state_reason: ::std::option::Option<::std::string::String>,
     pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     pub(crate) service_connect_resources: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>>,
+    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
 }
 impl DeploymentBuilder {
     /// <p>The ID of the deployment.</p>
@@ -560,6 +569,26 @@ impl DeploymentBuilder {
     pub fn get_service_connect_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectServiceResource>> {
         &self.service_connect_resources
     }
+    /// Appends an item to `volume_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+    ///
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure different settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn volume_configurations(mut self, input: crate::types::ServiceVolumeConfiguration) -> Self {
+        let mut v = self.volume_configurations.unwrap_or_default();
+        v.push(input);
+        self.volume_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure different settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>) -> Self {
+        self.volume_configurations = input;
+        self
+    }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure different settings like the size, throughput, volumeType, and ecryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html">ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>> {
+        &self.volume_configurations
+    }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
@@ -581,6 +610,7 @@ impl DeploymentBuilder {
             rollout_state_reason: self.rollout_state_reason,
             service_connect_configuration: self.service_connect_configuration,
             service_connect_resources: self.service_connect_resources,
+            volume_configurations: self.volume_configurations,
         }
     }
 }

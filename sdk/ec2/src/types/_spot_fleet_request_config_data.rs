@@ -88,8 +88,8 @@ pub struct SpotFleetRequestConfigData {
     pub instance_pools_to_use_count: ::std::option::Option<i32>,
     /// <p>Reserved.</p>
     pub context: ::std::option::Option<::std::string::String>,
-    /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
+    /// <p>Default: <code>units</code> (the number of instances)</p>
     pub target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
     /// <p>The key-value pair for tagging the Spot Fleet request on creation. The value for <code>ResourceType</code> must be <code>spot-fleet-request</code>, otherwise the Spot Fleet request fails. To tag instances at launch, specify the tags in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in the <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a> </code> (valid only if you use <code>LaunchSpecifications</code>). For information about tagging after launch, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
@@ -231,8 +231,8 @@ impl SpotFleetRequestConfigData {
     pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
-    /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
+    /// <p>Default: <code>units</code> (the number of instances)</p>
     pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
@@ -740,20 +740,20 @@ impl SpotFleetRequestConfigDataBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.context
     }
-    /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
+    /// <p>Default: <code>units</code> (the number of instances)</p>
     pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.target_capacity_unit_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
+    /// <p>Default: <code>units</code> (the number of instances)</p>
     pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.target_capacity_unit_type = input;
         self
     }
-    /// <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can only be specified when <code>InstanceRequirements</code> is specified.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
+    /// <p>The unit for the target capacity. You can specify this parameter only when using attribute-based instance type selection.</p>
+    /// <p>Default: <code>units</code> (the number of instances)</p>
     pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         &self.target_capacity_unit_type
     }

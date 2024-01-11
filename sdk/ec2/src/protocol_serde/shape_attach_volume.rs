@@ -130,6 +130,32 @@ pub fn de_attach_volume(
                 builder = builder.set_delete_on_termination(var_6);
             }
             ,
+            s if s.matches("associatedResource") /* AssociatedResource com.amazonaws.ec2.synthetic#AttachVolumeOutput$AssociatedResource */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_associated_resource(var_7);
+            }
+            ,
+            s if s.matches("instanceOwningService") /* InstanceOwningService com.amazonaws.ec2.synthetic#AttachVolumeOutput$InstanceOwningService */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_instance_owning_service(var_8);
+            }
+            ,
             _ => {}
         }
     }

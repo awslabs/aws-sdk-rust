@@ -119,6 +119,7 @@ impl EnableSnapshotBlockPublicAccessFluentBuilder {
     /// <li>
     /// <p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
+    /// <p><code>unblocked</code> is not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
     pub fn state(mut self, input: crate::types::SnapshotBlockPublicAccessState) -> Self {
         self.inner = self.inner.state(input);
         self
@@ -132,6 +133,7 @@ impl EnableSnapshotBlockPublicAccessFluentBuilder {
     /// <li>
     /// <p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
+    /// <p><code>unblocked</code> is not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SnapshotBlockPublicAccessState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
@@ -145,6 +147,7 @@ impl EnableSnapshotBlockPublicAccessFluentBuilder {
     /// <li>
     /// <p><code>block-new-sharing</code> - Prevents only new public sharing of snapshots in the Region. Users in the account will no longer be able to request new public sharing. However, snapshots that are already publicly shared, remain publicly available.</p></li>
     /// </ul>
+    /// <p><code>unblocked</code> is not a valid value for <b>EnableSnapshotBlockPublicAccess</b>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SnapshotBlockPublicAccessState> {
         self.inner.get_state()
     }

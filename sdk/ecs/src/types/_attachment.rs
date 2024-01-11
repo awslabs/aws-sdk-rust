@@ -6,11 +6,14 @@
 pub struct Attachment {
     /// <p>The unique identifier for the attachment.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>, <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>, <code>DELETED</code>, and <code>FAILED</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>Details of the attachment.</p>
+    /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
+    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
     pub details: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
 }
 impl Attachment {
@@ -18,7 +21,7 @@ impl Attachment {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -26,7 +29,10 @@ impl Attachment {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>Details of the attachment.</p>
+    /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
+    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.details.is_none()`.
     pub fn details(&self) -> &[crate::types::KeyValuePair] {
@@ -64,17 +70,17 @@ impl AttachmentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
+    /// <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>, <code>Service Connect</code>, and <code>AmazonElasticBlockStorage</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
@@ -96,19 +102,28 @@ impl AttachmentBuilder {
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
-    /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>Details of the attachment.</p>
+    /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
+    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
     pub fn details(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input);
         self.details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>Details of the attachment.</p>
+    /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
+    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
     pub fn set_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
         self.details = input;
         self
     }
-    /// <p>Details of the attachment. For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>Details of the attachment.</p>
+    /// <p>For elastic network interfaces, this includes the network interface ID, the MAC address, the subnet ID, and the private IPv4 address.</p>
+    /// <p>For Service Connect services, this includes <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>, and <code>ingressPortOverride</code>.</p>
+    /// <p>For elastic block storage, this includes <code>roleArn</code>, <code>encrypted</code>, <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>, <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>, <code>throughput</code>, and <code>volumeType</code>.</p>
     pub fn get_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>> {
         &self.details
     }

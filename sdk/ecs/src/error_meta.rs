@@ -1336,6 +1336,7 @@ impl From<crate::operation::start_task::StartTaskError> for Error {
             crate::operation::start_task::StartTaskError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::start_task::StartTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::start_task::StartTaskError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::start_task::StartTaskError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
             crate::operation::start_task::StartTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1710,6 +1711,7 @@ impl From<crate::operation::update_service::UpdateServiceError> for Error {
             crate::operation::update_service::UpdateServiceError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_service::UpdateServiceError::ServiceNotActiveException(inner) => Error::ServiceNotActiveException(inner),
             crate::operation::update_service::UpdateServiceError::ServiceNotFoundException(inner) => Error::ServiceNotFoundException(inner),
+            crate::operation::update_service::UpdateServiceError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
             crate::operation::update_service::UpdateServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

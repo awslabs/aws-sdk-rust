@@ -102,5 +102,17 @@ pub fn ser_run_task_input_input(
     if let Some(var_32) = &input.client_token {
         object.key("clientToken").string(var_32.as_str());
     }
+    if let Some(var_33) = &input.volume_configurations {
+        let mut array_34 = object.key("volumeConfigurations").start_array();
+        for item_35 in var_33 {
+            {
+                #[allow(unused_mut)]
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_task_volume_configuration::ser_task_volume_configuration(&mut object_36, item_35)?;
+                object_36.finish();
+            }
+        }
+        array_34.finish();
+    }
     Ok(())
 }

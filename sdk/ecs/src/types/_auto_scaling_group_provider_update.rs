@@ -13,7 +13,6 @@ pub struct AutoScalingGroupProviderUpdate {
     /// <p>When managed termination protection is off, your Amazon EC2 instances aren't protected from termination when the Auto Scaling group scales in.</p>
     pub managed_termination_protection: ::std::option::Option<crate::types::ManagedTerminationProtection>,
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
-    /// <p>The default is <code>ENABLED</code>.</p>
     pub managed_draining: ::std::option::Option<crate::types::ManagedDraining>,
 }
 impl AutoScalingGroupProviderUpdate {
@@ -30,7 +29,6 @@ impl AutoScalingGroupProviderUpdate {
         self.managed_termination_protection.as_ref()
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
-    /// <p>The default is <code>ENABLED</code>.</p>
     pub fn managed_draining(&self) -> ::std::option::Option<&crate::types::ManagedDraining> {
         self.managed_draining.as_ref()
     }
@@ -92,19 +90,16 @@ impl AutoScalingGroupProviderUpdateBuilder {
         &self.managed_termination_protection
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
-    /// <p>The default is <code>ENABLED</code>.</p>
     pub fn managed_draining(mut self, input: crate::types::ManagedDraining) -> Self {
         self.managed_draining = ::std::option::Option::Some(input);
         self
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
-    /// <p>The default is <code>ENABLED</code>.</p>
     pub fn set_managed_draining(mut self, input: ::std::option::Option<crate::types::ManagedDraining>) -> Self {
         self.managed_draining = input;
         self
     }
     /// <p>The managed draining option for the Auto Scaling group capacity provider. When you enable this, Amazon ECS manages and gracefully drains the EC2 container instances that are in the Auto Scaling group capacity provider.</p>
-    /// <p>The default is <code>ENABLED</code>.</p>
     pub fn get_managed_draining(&self) -> &::std::option::Option<crate::types::ManagedDraining> {
         &self.managed_draining
     }

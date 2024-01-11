@@ -41,6 +41,8 @@ pub struct Target {
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter queue.</p>
     pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
+    pub app_sync_parameters: ::std::option::Option<crate::types::AppSyncParameters>,
 }
 impl Target {
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
@@ -113,6 +115,10 @@ impl Target {
     pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
+    /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
+    pub fn app_sync_parameters(&self) -> ::std::option::Option<&crate::types::AppSyncParameters> {
+        self.app_sync_parameters.as_ref()
+    }
 }
 impl Target {
     /// Creates a new builder-style object to manufacture [`Target`](crate::types::Target).
@@ -141,6 +147,7 @@ pub struct TargetBuilder {
     pub(crate) sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     pub(crate) retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    pub(crate) app_sync_parameters: ::std::option::Option<crate::types::AppSyncParameters>,
 }
 impl TargetBuilder {
     /// <p>The ID of the target within the specified rule. Use this ID to reference the target when updating the rule. We recommend using a memorable and unique string.</p>
@@ -381,6 +388,20 @@ impl TargetBuilder {
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
         &self.retry_policy
     }
+    /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
+    pub fn app_sync_parameters(mut self, input: crate::types::AppSyncParameters) -> Self {
+        self.app_sync_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
+    pub fn set_app_sync_parameters(mut self, input: ::std::option::Option<crate::types::AppSyncParameters>) -> Self {
+        self.app_sync_parameters = input;
+        self
+    }
+    /// <p>Contains the GraphQL operation to be parsed and executed, if the event target is an AppSync API.</p>
+    pub fn get_app_sync_parameters(&self) -> &::std::option::Option<crate::types::AppSyncParameters> {
+        &self.app_sync_parameters
+    }
     /// Consumes the builder and constructs a [`Target`](crate::types::Target).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::TargetBuilder::id)
@@ -410,6 +431,7 @@ impl TargetBuilder {
             sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
             dead_letter_config: self.dead_letter_config,
             retry_policy: self.retry_policy,
+            app_sync_parameters: self.app_sync_parameters,
         })
     }
 }

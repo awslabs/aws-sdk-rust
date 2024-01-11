@@ -144,5 +144,17 @@ pub fn ser_create_service_input_input(
         crate::protocol_serde::shape_service_connect_configuration::ser_service_connect_configuration(&mut object_45, var_44)?;
         object_45.finish();
     }
+    if let Some(var_46) = &input.volume_configurations {
+        let mut array_47 = object.key("volumeConfigurations").start_array();
+        for item_48 in var_46 {
+            {
+                #[allow(unused_mut)]
+                let mut object_49 = array_47.value().start_object();
+                crate::protocol_serde::shape_service_volume_configuration::ser_service_volume_configuration(&mut object_49, item_48)?;
+                object_49.finish();
+            }
+        }
+        array_47.finish();
+    }
     Ok(())
 }

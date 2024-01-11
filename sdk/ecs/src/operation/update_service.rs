@@ -265,6 +265,8 @@ pub enum UpdateServiceError {
     ServiceNotActiveException(crate::types::error::ServiceNotActiveException),
     /// <p>The specified service wasn't found. You can view your available services with <code>ListServices</code>. Amazon ECS services are cluster specific and Region specific.</p>
     ServiceNotFoundException(crate::types::error::ServiceNotFoundException),
+    /// <p>The specified task isn't supported in this Region.</p>
+    UnsupportedFeatureException(crate::types::error::UnsupportedFeatureException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -308,6 +310,7 @@ impl UpdateServiceError {
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceNotActiveException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedFeatureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -351,6 +354,10 @@ impl UpdateServiceError {
     pub fn is_service_not_found_exception(&self) -> bool {
         matches!(self, Self::ServiceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `UpdateServiceError::UnsupportedFeatureException`.
+    pub fn is_unsupported_feature_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedFeatureException(_))
+    }
 }
 impl ::std::error::Error for UpdateServiceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -365,6 +372,7 @@ impl ::std::error::Error for UpdateServiceError {
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceNotActiveException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedFeatureException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -382,6 +390,7 @@ impl ::std::fmt::Display for UpdateServiceError {
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::ServiceNotActiveException(_inner) => _inner.fmt(f),
             Self::ServiceNotFoundException(_inner) => _inner.fmt(f),
+            Self::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -413,6 +422,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateService
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceNotActiveException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedFeatureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

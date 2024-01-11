@@ -57,6 +57,8 @@ pub use crate::types::_put_targets_result_entry::PutTargetsResultEntry;
 
 pub use crate::types::_target::Target;
 
+pub use crate::types::_app_sync_parameters::AppSyncParameters;
+
 pub use crate::types::_retry_policy::RetryPolicy;
 
 pub use crate::types::_dead_letter_config::DeadLetterConfig;
@@ -166,6 +168,8 @@ mod _api_destination;
 mod _api_destination_http_method;
 
 mod _api_destination_state;
+
+mod _app_sync_parameters;
 
 mod _archive;
 

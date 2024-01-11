@@ -26,6 +26,7 @@ impl StartTaskInputBuilder {
 /// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service.</p>
 /// </note>
 /// <p>Alternatively, you can use <code>RunTask</code> to place tasks for you. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+/// <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when creating or updating a service. For more infomation, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -340,5 +341,23 @@ impl StartTaskFluentBuilder {
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn get_task_definition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_definition()
+    }
+    /// Appends an item to `volumeConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+    ///
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn volume_configurations(mut self, input: crate::types::TaskVolumeConfiguration) -> Self {
+        self.inner = self.inner.volume_configurations(input);
+        self
+    }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>) -> Self {
+        self.inner = self.inner.set_volume_configurations(input);
+        self
+    }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>> {
+        self.inner.get_volume_configurations()
     }
 }

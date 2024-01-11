@@ -14,7 +14,6 @@
 /// match signaldecoderfailurereason {
 ///     SignalDecoderFailureReason::CanSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::ConflictingSignal => { /* ... */ },
-///     SignalDecoderFailureReason::CustomerDecodedSignalInfoIsNull => { /* ... */ },
 ///     SignalDecoderFailureReason::DuplicateSignal => { /* ... */ },
 ///     SignalDecoderFailureReason::EmptyMessageSignal => { /* ... */ },
 ///     SignalDecoderFailureReason::MessageSignalInfoIsNull => { /* ... */ },
@@ -60,8 +59,6 @@ pub enum SignalDecoderFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     ConflictingSignal,
     #[allow(missing_docs)] // documentation missing in model
-    CustomerDecodedSignalInfoIsNull,
-    #[allow(missing_docs)] // documentation missing in model
     DuplicateSignal,
     #[allow(missing_docs)] // documentation missing in model
     EmptyMessageSignal,
@@ -96,7 +93,6 @@ impl ::std::convert::From<&str> for SignalDecoderFailureReason {
         match s {
             "CAN_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CanSignalInfoIsNull,
             "CONFLICTING_SIGNAL" => SignalDecoderFailureReason::ConflictingSignal,
-            "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::CustomerDecodedSignalInfoIsNull,
             "DUPLICATE_SIGNAL" => SignalDecoderFailureReason::DuplicateSignal,
             "EMPTY_MESSAGE_SIGNAL" => SignalDecoderFailureReason::EmptyMessageSignal,
             "MESSAGE_SIGNAL_INFO_IS_NULL" => SignalDecoderFailureReason::MessageSignalInfoIsNull,
@@ -131,7 +127,6 @@ impl SignalDecoderFailureReason {
         match self {
             SignalDecoderFailureReason::CanSignalInfoIsNull => "CAN_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::ConflictingSignal => "CONFLICTING_SIGNAL",
-            SignalDecoderFailureReason::CustomerDecodedSignalInfoIsNull => "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL",
             SignalDecoderFailureReason::DuplicateSignal => "DUPLICATE_SIGNAL",
             SignalDecoderFailureReason::EmptyMessageSignal => "EMPTY_MESSAGE_SIGNAL",
             SignalDecoderFailureReason::MessageSignalInfoIsNull => "MESSAGE_SIGNAL_INFO_IS_NULL",
@@ -157,7 +152,6 @@ impl SignalDecoderFailureReason {
         &[
             "CAN_SIGNAL_INFO_IS_NULL",
             "CONFLICTING_SIGNAL",
-            "CUSTOMER_DECODED_SIGNAL_INFO_IS_NULL",
             "DUPLICATE_SIGNAL",
             "EMPTY_MESSAGE_SIGNAL",
             "MESSAGE_SIGNAL_INFO_IS_NULL",

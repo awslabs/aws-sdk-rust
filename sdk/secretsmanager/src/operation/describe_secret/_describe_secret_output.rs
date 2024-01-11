@@ -18,7 +18,7 @@ pub struct DescribeSecretOutput {
     pub rotation_lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rotation schedule and Lambda function for this secret. If the secret previously had rotation turned on, but it is now turned off, this field shows the previous rotation schedule and rotation function. If the secret never had rotation turned on, this field is omitted.</p>
     pub rotation_rules: ::std::option::Option<crate::types::RotationRulesType>,
-    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub last_rotated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last date and time that this secret was modified in any way.</p>
     pub last_changed_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,7 +27,7 @@ pub struct DescribeSecretOutput {
     /// <p>The date the secret is scheduled for deletion. If it is not scheduled for deletion, this field is omitted. When you delete a secret, Secrets Manager requires a recovery window of at least 7 days before deleting the secret. Some time after the deleted date, Secrets Manager deletes the secret, including all of its versions.</p>
     /// <p>If a secret is scheduled for deletion, then its details, including the encrypted secret value, is not accessible. To cancel a scheduled deletion and restore access to the secret, use <code>RestoreSecret</code>.</p>
     pub deleted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub next_rotation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of tags attached to the secret. To add tags to a secret, use <code>TagResource</code>. To remove tags, use <code>UntagResource</code>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -92,7 +92,7 @@ impl DescribeSecretOutput {
     pub fn rotation_rules(&self) -> ::std::option::Option<&crate::types::RotationRulesType> {
         self.rotation_rules.as_ref()
     }
-    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn last_rotated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_rotated_date.as_ref()
     }
@@ -109,7 +109,7 @@ impl DescribeSecretOutput {
     pub fn deleted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deleted_date.as_ref()
     }
-    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn next_rotation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.next_rotation_date.as_ref()
     }
@@ -302,17 +302,17 @@ impl DescribeSecretOutputBuilder {
     pub fn get_rotation_rules(&self) -> &::std::option::Option<crate::types::RotationRulesType> {
         &self.rotation_rules
     }
-    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn last_rotated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_rotated_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn set_last_rotated_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_rotated_date = input;
         self
     }
-    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn get_last_rotated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_rotated_date
     }
@@ -361,17 +361,17 @@ impl DescribeSecretOutputBuilder {
     pub fn get_deleted_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deleted_date
     }
-    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn next_rotation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.next_rotation_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn set_next_rotation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.next_rotation_date = input;
         self
     }
-    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation, Secrets Manager returns null.</p>
+    /// <p>The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or rotation has been disabled, Secrets Manager returns null.</p>
     pub fn get_next_rotation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.next_rotation_date
     }

@@ -9,7 +9,6 @@ pub struct GetSpotPlacementScoresInput {
     /// <p>The target capacity.</p>
     pub target_capacity: ::std::option::Option<i32>,
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub target_capacity_unit_type: ::std::option::Option<crate::types::TargetCapacityUnitType>,
     /// <p>Specify <code>true</code> so that the response returns a list of scored Availability Zones. Otherwise, the response returns a list of scored Regions.</p>
     /// <p>A list of scored Availability Zones is useful if you want to launch all of your Spot capacity into a single Availability Zone.</p>
@@ -39,7 +38,6 @@ impl GetSpotPlacementScoresInput {
         self.target_capacity
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn target_capacity_unit_type(&self) -> ::std::option::Option<&crate::types::TargetCapacityUnitType> {
         self.target_capacity_unit_type.as_ref()
     }
@@ -133,19 +131,16 @@ impl GetSpotPlacementScoresInputBuilder {
         &self.target_capacity
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn target_capacity_unit_type(mut self, input: crate::types::TargetCapacityUnitType) -> Self {
         self.target_capacity_unit_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn set_target_capacity_unit_type(mut self, input: ::std::option::Option<crate::types::TargetCapacityUnitType>) -> Self {
         self.target_capacity_unit_type = input;
         self
     }
     /// <p>The unit for the target capacity.</p>
-    /// <p>Default: <code>units</code> (translates to number of instances)</p>
     pub fn get_target_capacity_unit_type(&self) -> &::std::option::Option<crate::types::TargetCapacityUnitType> {
         &self.target_capacity_unit_type
     }

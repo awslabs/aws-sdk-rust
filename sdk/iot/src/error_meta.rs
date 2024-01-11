@@ -8405,6 +8405,7 @@ where
 impl From<crate::operation::update_package::UpdatePackageError> for Error {
     fn from(err: crate::operation::update_package::UpdatePackageError) -> Self {
         match err {
+            crate::operation::update_package::UpdatePackageError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_package::UpdatePackageError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_package::UpdatePackageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_package::UpdatePackageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -8433,6 +8434,9 @@ where
 impl From<crate::operation::update_package_configuration::UpdatePackageConfigurationError> for Error {
     fn from(err: crate::operation::update_package_configuration::UpdatePackageConfigurationError) -> Self {
         match err {
+            crate::operation::update_package_configuration::UpdatePackageConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::update_package_configuration::UpdatePackageConfigurationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -8463,6 +8467,7 @@ where
 impl From<crate::operation::update_package_version::UpdatePackageVersionError> for Error {
     fn from(err: crate::operation::update_package_version::UpdatePackageVersionError) -> Self {
         match err {
+            crate::operation::update_package_version::UpdatePackageVersionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_package_version::UpdatePackageVersionError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

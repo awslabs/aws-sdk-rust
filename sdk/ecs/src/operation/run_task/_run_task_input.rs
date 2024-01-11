@@ -76,6 +76,8 @@ pub struct RunTaskInput {
     pub task_definition: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>,
 }
 impl RunTaskInput {
     /// <p>The capacity provider strategy to use for the task.</p>
@@ -195,6 +197,12 @@ impl RunTaskInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volume_configurations.is_none()`.
+    pub fn volume_configurations(&self) -> &[crate::types::TaskVolumeConfiguration] {
+        self.volume_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl RunTaskInput {
     /// Creates a new builder-style object to manufacture [`RunTaskInput`](crate::operation::run_task::RunTaskInput).
@@ -225,6 +233,7 @@ pub struct RunTaskInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) task_definition: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>,
 }
 impl RunTaskInputBuilder {
     /// Appends an item to `capacity_provider_strategy`.
@@ -618,6 +627,26 @@ impl RunTaskInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Appends an item to `volume_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_volume_configurations`](Self::set_volume_configurations).
+    ///
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn volume_configurations(mut self, input: crate::types::TaskVolumeConfiguration) -> Self {
+        let mut v = self.volume_configurations.unwrap_or_default();
+        v.push(input);
+        self.volume_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn set_volume_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>>) -> Self {
+        self.volume_configurations = input;
+        self
+    }
+    /// <p>The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code> from the task definition.</p>
+    pub fn get_volume_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskVolumeConfiguration>> {
+        &self.volume_configurations
+    }
     /// Consumes the builder and constructs a [`RunTaskInput`](crate::operation::run_task::RunTaskInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::run_task::RunTaskInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::run_task::RunTaskInput {
@@ -639,6 +668,7 @@ impl RunTaskInputBuilder {
             tags: self.tags,
             task_definition: self.task_definition,
             client_token: self.client_token,
+            volume_configurations: self.volume_configurations,
         })
     }
 }

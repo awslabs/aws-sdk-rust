@@ -31,6 +31,12 @@ pub use crate::types::_service_event::ServiceEventBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;
 
+pub use crate::types::_service_volume_configuration::ServiceVolumeConfigurationBuilder;
+
+pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfigurationBuilder;
+
+pub use crate::types::_ebs_tag_specification::EbsTagSpecificationBuilder;
+
 pub use crate::types::_service_connect_service_resource::ServiceConnectServiceResourceBuilder;
 
 pub use crate::types::_service_connect_configuration::ServiceConnectConfigurationBuilder;
@@ -116,6 +122,12 @@ pub use crate::types::_container::ContainerBuilder;
 pub use crate::types::_managed_agent::ManagedAgentBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
+
+pub use crate::types::_task_volume_configuration::TaskVolumeConfigurationBuilder;
+
+pub use crate::types::_task_managed_ebs_volume_configuration::TaskManagedEbsVolumeConfigurationBuilder;
+
+pub use crate::types::_task_managed_ebs_volume_termination_policy::TaskManagedEbsVolumeTerminationPolicyBuilder;
 
 pub use crate::types::_task_definition::TaskDefinitionBuilder;
 

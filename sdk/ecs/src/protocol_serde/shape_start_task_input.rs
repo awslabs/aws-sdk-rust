@@ -60,5 +60,17 @@ pub fn ser_start_task_input_input(
     if let Some(var_19) = &input.task_definition {
         object.key("taskDefinition").string(var_19.as_str());
     }
+    if let Some(var_20) = &input.volume_configurations {
+        let mut array_21 = object.key("volumeConfigurations").start_array();
+        for item_22 in var_20 {
+            {
+                #[allow(unused_mut)]
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_task_volume_configuration::ser_task_volume_configuration(&mut object_23, item_22)?;
+                object_23.finish();
+            }
+        }
+        array_21.finish();
+    }
     Ok(())
 }
