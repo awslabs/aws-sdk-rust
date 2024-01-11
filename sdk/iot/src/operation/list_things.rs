@@ -186,7 +186,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListThingsRe
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
@@ -206,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListThingsRe
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.use_prefix_attribute_value {
-                    if *inner_6 {
+                    {
                         query.push_kv("usePrefixAttributeValue", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }

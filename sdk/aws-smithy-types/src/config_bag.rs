@@ -589,7 +589,11 @@ impl ConfigBag {
         // this code looks weird to satisfy the borrow checker—we can't keep the result of `get_mut`
         // alive (even in a returned branch) and then call `store_put`. So: drop the borrow immediately
         // store, the value, then pull it right back
-        if matches!(self.interceptor_state.get_mut::<StoreReplace<T>>(), None) {
+        if self
+            .interceptor_state
+            .get_mut::<StoreReplace<T>>()
+            .is_none()
+        {
             let new_item = match self.tail.iter().find_map(|b| b.load::<T>()) {
                 Some(item) => item.clone(),
                 None => return None,
@@ -710,7 +714,7 @@ impl ConfigBag {
     pub fn sourced_get<T: Store>(&self) -> T::ReturnedType<'_> {
         let stored_type_iter = ItemIter {
             inner: self.layers(),
-            t: PhantomData::default(),
+            t: PhantomData,
         };
         T::merge_iter(stored_type_iter)
     }

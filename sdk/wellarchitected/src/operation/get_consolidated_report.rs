@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConsolida
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
                 query.push_kv("Format", &::aws_smithy_http::query::fmt_string(&inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.include_shared_resources {
-                    if *inner_2 {
+                    {
                         query.push_kv("IncludeSharedResources", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
@@ -205,7 +205,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetConsolida
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

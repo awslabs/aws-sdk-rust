@@ -60,7 +60,7 @@ impl GetApplicationAssignmentConfigurationOutputBuilder {
     /// Consumes the builder and constructs a [`GetApplicationAssignmentConfigurationOutput`](crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput).
     pub fn build(self) -> crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput {
         crate::operation::get_application_assignment_configuration::GetApplicationAssignmentConfigurationOutput {
-            assignment_required: self.assignment_required.unwrap_or_else(|| true),
+            assignment_required: self.assignment_required.unwrap_or(true),
             _request_id: self._request_id,
         }
     }

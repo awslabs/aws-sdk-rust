@@ -201,7 +201,7 @@ mod test_util {
     impl NoInvocationIdGenerator {
         /// Create a new [`NoInvocationIdGenerator`].
         pub fn new() -> Self {
-            Self::default()
+            Self
         }
     }
 

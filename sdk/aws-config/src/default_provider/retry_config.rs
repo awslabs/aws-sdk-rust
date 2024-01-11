@@ -81,7 +81,7 @@ impl Builder {
         self
     }
 
-    /// Attempt to create a [RetryConfig](aws_smithy_types::retry::RetryConfig) from following sources in order:
+    /// Attempt to create a [`RetryConfig`] from following sources in order:
     /// 1. Environment variables: `AWS_MAX_ATTEMPTS` & `AWS_RETRY_MODE`
     /// 2. Profile file: `max_attempts` and `retry_mode`
     /// 3. [RetryConfig::standard()](aws_smithy_types::retry::RetryConfig::standard)

@@ -12,3 +12,6 @@ cargo tree -d --edges normal --all-features
 
 echo "### Checking whether the features are properly feature-gated"
 ! cargo tree -e no-dev | grep serde
+
+echo "### Checking feature powerset"
+cargo hack check --feature-powerset --exclude-all-features

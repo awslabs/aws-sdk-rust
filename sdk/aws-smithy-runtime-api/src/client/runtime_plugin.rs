@@ -86,7 +86,7 @@ pub trait RuntimePlugin: Debug + Send + Sync {
         None
     }
 
-    /// Returns a [`RuntimeComponentsBuilder`](RuntimeComponentsBuilder) to incorporate into the final runtime components.
+    /// Returns a [`RuntimeComponentsBuilder`] to incorporate into the final runtime components.
     ///
     /// The order of runtime plugins determines which runtime components "win". Components set by later runtime plugins will
     /// override those set by earlier runtime plugins.

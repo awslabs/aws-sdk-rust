@@ -201,7 +201,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeDryR
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.load_dry_run_config {
-                    if *inner_3 {
+                    {
                         query.push_kv("loadDryRunConfig", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

@@ -47,7 +47,7 @@ impl PathBody {
             state: State::Loaded(ReaderStream::with_capacity(file.take(length), buffer_size)),
             length,
             buffer_size,
-            /// The file used to create this `PathBody` should have already had an offset applied
+            // The file used to create this `PathBody` should have already had an offset applied
             offset: None,
         }
     }
@@ -163,7 +163,7 @@ impl FsBuilder {
         self
     }
 
-    /// Returns a [`ByteStream`](ByteStream) from this builder.
+    /// Returns a [`ByteStream`] from this builder.
     pub async fn build(self) -> Result<ByteStream, Error> {
         if self.path.is_some() && self.file.is_some() {
             panic!("The 'file' and 'path' options on an FsBuilder are mutually exclusive but both were set. Please set only one")
@@ -193,7 +193,7 @@ impl FsBuilder {
             let body_loader = move || {
                 // If an offset was provided, seeking will be handled in `PathBody::poll_data` each
                 // time the file is loaded.
-                SdkBody::from_body_0_4(PathBody::from_path(
+                SdkBody::from_body_0_4_internal(PathBody::from_path(
                     path.clone(),
                     length,
                     buffer_size,
@@ -208,7 +208,8 @@ impl FsBuilder {
                 let _s = file.seek(io::SeekFrom::Start(offset)).await?;
             }
 
-            let body = SdkBody::from_body_0_4(PathBody::from_file(file, length, buffer_size));
+            let body =
+                SdkBody::from_body_0_4_internal(PathBody::from_file(file, length, buffer_size));
 
             Ok(ByteStream::new(body))
         } else {

@@ -227,12 +227,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFindings
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
-                    if *inner_5 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.daily_reports_only {
-                    if *inner_6 {
+                    {
                         query.push_kv("dailyReportsOnly", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }

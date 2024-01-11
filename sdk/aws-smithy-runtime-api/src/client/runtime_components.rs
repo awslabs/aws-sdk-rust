@@ -8,8 +8,7 @@
 //! Runtime components are trait implementations that are _always_ used by the orchestrator.
 //! There are other trait implementations that can be configured for a client, but if they
 //! aren't directly and always used by the orchestrator, then they are placed in the
-//! [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag) instead of in
-//! [`RuntimeComponents`](RuntimeComponents).
+//! [`ConfigBag`] instead of in [`RuntimeComponents`].
 
 use crate::box_error::BoxError;
 use crate::client::auth::{

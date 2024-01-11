@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVirtualC
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.max_results {
-                    if *inner_7 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }

@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExtensio
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.extension_version_number {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv(
                             "extension_version_number",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListExtensio
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("max_results", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

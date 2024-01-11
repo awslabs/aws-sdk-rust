@@ -199,7 +199,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ReimportApiR
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.fail_on_warnings {
-                    if *inner_3 {
+                    {
                         query.push_kv("failOnWarnings", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

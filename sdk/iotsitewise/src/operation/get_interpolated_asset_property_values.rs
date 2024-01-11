@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 })?;
                 query.push_kv("startTimeInSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                 if let ::std::option::Option::Some(inner_5) = &_input.start_time_offset_in_nanos {
-                    if *inner_5 != 0 {
+                    {
                         query.push_kv("startTimeOffsetInNanos", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
@@ -227,7 +227,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 })?;
                 query.push_kv("endTimeInSeconds", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                 if let ::std::option::Option::Some(inner_7) = &_input.end_time_offset_in_nanos {
-                    if *inner_7 != 0 {
+                    {
                         query.push_kv("endTimeOffsetInNanos", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }
@@ -247,7 +247,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                     }
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.max_results {
-                    if *inner_11 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_11).encode());
                     }
                 }
@@ -263,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpola
                 }
                 query.push_kv("type", &::aws_smithy_http::query::fmt_string(&inner_12));
                 if let ::std::option::Option::Some(inner_13) = &_input.interval_window_in_seconds {
-                    if *inner_13 != 0 {
+                    {
                         query.push_kv(
                             "intervalWindowInSeconds",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),

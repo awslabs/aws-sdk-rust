@@ -7,7 +7,7 @@
 
 //! Credentials Provider for external process
 
-use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials, RefreshableCredentials};
+use crate::json_credentials::{json_parse_loop, InvalidJsonCredentials};
 use crate::sensitive_command::CommandWithSensitiveArgs;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
 use aws_credential_types::Credentials;
@@ -120,25 +120,12 @@ impl CredentialProcessProvider {
             ))
         })?;
 
-        match parse_credential_process_json_credentials(output) {
-            Ok(RefreshableCredentials {
-                access_key_id,
-                secret_access_key,
-                session_token,
-                expiration,
-                ..
-            }) => Ok(Credentials::new(
-                access_key_id,
-                secret_access_key,
-                Some(session_token.to_string()),
-                expiration.into(),
-                "CredentialProcess",
-            )),
-            Err(invalid) => Err(CredentialsError::provider_error(format!(
+        parse_credential_process_json_credentials(output).map_err(|invalid| {
+            CredentialsError::provider_error(format!(
                 "Error retrieving credentials from external process, could not parse response: {}",
                 invalid
-            ))),
-        }
+            ))
+        })
     }
 }
 
@@ -149,7 +136,7 @@ impl CredentialProcessProvider {
 /// Keys are case insensitive.
 pub(crate) fn parse_credential_process_json_credentials(
     credentials_response: &str,
-) -> Result<RefreshableCredentials<'_>, InvalidJsonCredentials> {
+) -> Result<Credentials, InvalidJsonCredentials> {
     let mut version = None;
     let mut access_key_id = None;
     let mut secret_access_key = None;
@@ -206,25 +193,32 @@ pub(crate) fn parse_credential_process_json_credentials(
     let access_key_id = access_key_id.ok_or(InvalidJsonCredentials::MissingField("AccessKeyId"))?;
     let secret_access_key =
         secret_access_key.ok_or(InvalidJsonCredentials::MissingField("SecretAccessKey"))?;
-    let session_token = session_token.ok_or(InvalidJsonCredentials::MissingField("Token"))?;
-    let expiration = expiration.ok_or(InvalidJsonCredentials::MissingField("Expiration"))?;
-    let expiration =
-        SystemTime::try_from(OffsetDateTime::parse(&expiration, &Rfc3339).map_err(|err| {
+    let expiration = expiration.map(parse_expiration).transpose()?;
+    if expiration.is_none() {
+        tracing::debug!("no expiration provided for credentials provider credentials. these credentials will never be refreshed.")
+    }
+    Ok(Credentials::new(
+        access_key_id,
+        secret_access_key,
+        session_token.map(|tok| tok.to_string()),
+        expiration,
+        "CredentialProcess",
+    ))
+}
+
+fn parse_expiration(expiration: impl AsRef<str>) -> Result<SystemTime, InvalidJsonCredentials> {
+    SystemTime::try_from(
+        OffsetDateTime::parse(expiration.as_ref(), &Rfc3339).map_err(|err| {
             InvalidJsonCredentials::InvalidField {
                 field: "Expiration",
                 err: err.into(),
             }
-        })?)
-        .map_err(|_| {
-            InvalidJsonCredentials::Other(
-                "credential expiration time cannot be represented by a DateTime".into(),
-            )
-        })?;
-    Ok(RefreshableCredentials {
-        access_key_id,
-        secret_access_key,
-        session_token,
-        expiration,
+        })?,
+    )
+    .map_err(|_| {
+        InvalidJsonCredentials::Other(
+            "credential expiration time cannot be represented by a DateTime".into(),
+        )
     })
 }
 
@@ -256,6 +250,18 @@ mod test {
                 .expect("static datetime")
             )
         );
+    }
+
+    #[tokio::test]
+    async fn test_credential_process_no_expiry() {
+        let provider = CredentialProcessProvider::new(String::from(
+            r#"echo '{ "Version": 1, "AccessKeyId": "ASIARTESTID", "SecretAccessKey": "TESTSECRETKEY" }'"#,
+        ));
+        let creds = provider.provide_credentials().await.expect("valid creds");
+        assert_eq!(creds.access_key_id(), "ASIARTESTID");
+        assert_eq!(creds.secret_access_key(), "TESTSECRETKEY");
+        assert_eq!(creds.session_token(), None);
+        assert_eq!(creds.expiry(), None);
     }
 
     #[tokio::test]

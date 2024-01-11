@@ -49,7 +49,7 @@ impl HttpClient for CaptureRequestHandler {
     }
 }
 
-/// Receiver for [`CaptureRequestHandler`](CaptureRequestHandler)
+/// Receiver for [`CaptureRequestHandler`].
 #[derive(Debug)]
 pub struct CaptureRequestReceiver {
     receiver: oneshot::Receiver<HttpRequest>,

@@ -235,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSubscrip
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.max_results {
-                    if *inner_9 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                     }
                 }

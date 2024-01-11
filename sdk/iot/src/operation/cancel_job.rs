@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelJobReq
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.force {
-                    if *inner_2 {
+                    {
                         query.push_kv("force", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

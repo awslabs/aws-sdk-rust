@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectVe
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_keys {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("max-keys", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

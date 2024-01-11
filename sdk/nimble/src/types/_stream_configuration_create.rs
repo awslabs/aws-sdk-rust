@@ -319,7 +319,7 @@ impl StreamConfigurationCreateBuilder {
                     "ec2_instance_types was not specified but it is required when building StreamConfigurationCreate",
                 )
             })?,
-            max_session_length_in_minutes: self.max_session_length_in_minutes.unwrap_or_else(|| 690),
+            max_session_length_in_minutes: self.max_session_length_in_minutes.unwrap_or(690),
             streaming_image_ids: self.streaming_image_ids.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "streaming_image_ids",

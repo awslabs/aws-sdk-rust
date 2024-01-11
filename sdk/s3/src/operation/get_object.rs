@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetObjectReq
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.part_number {
-                    if *inner_9 != 0 {
+                    {
                         query.push_kv("partNumber", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                     }
                 }

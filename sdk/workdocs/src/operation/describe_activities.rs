@@ -220,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeActi
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.include_indirect_activities {
-                    if *inner_7 {
+                    {
                         query.push_kv(
                             "includeIndirectActivities",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
@@ -228,7 +228,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeActi
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.limit {
-                    if *inner_8 != 0 {
+                    {
                         query.push_kv("limit", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
                     }
                 }

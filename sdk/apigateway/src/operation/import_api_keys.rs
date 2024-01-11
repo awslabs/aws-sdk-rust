@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ImportApiKey
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("format", "cannot be empty or unset"))?;
                 query.push_kv("format", &::aws_smithy_http::query::fmt_string(&inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.fail_on_warnings {
-                    if *inner_2 {
+                    {
                         query.push_kv("failonwarnings", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

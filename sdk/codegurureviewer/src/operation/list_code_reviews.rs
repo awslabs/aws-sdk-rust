@@ -210,7 +210,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCodeRevi
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
                 query.push_kv("Type", &::aws_smithy_http::query::fmt_string(&inner_7));
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
-                    if *inner_8 != 0 {
+                    {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
                     }
                 }

@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListHostedZo
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("vpc_region", "cannot be empty or unset"))?;
                 query.push_kv("vpcregion", &::aws_smithy_http::query::fmt_string(&inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.max_items {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv("maxitems", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

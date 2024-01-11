@@ -92,9 +92,9 @@ async fn operation_input_test_get_object_3() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided [Invalid access point ARN: invalid no ap name]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided"),
-                                    "expected error to contain `Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided"),
+                                            "expected error to contain `Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -945,9 +945,9 @@ async fn operation_input_test_get_object_28() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [vanilla access point arn with region mismatch and UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4015,9 +4015,9 @@ async fn operation_input_test_get_object_120() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [outposts arn with region mismatch and UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4051,9 +4051,9 @@ async fn operation_input_test_get_object_121() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [outposts arn with region mismatch, custom region and UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4153,9 +4153,9 @@ async fn operation_input_test_get_object_124() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn` [outposts arn with partition mismatch and UseArnRegion=true]");
     assert!(
-                                    format!("{:?}", error).contains("Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`"),
-                                    "expected error to contain `Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`"),
+                                            "expected error to contain `Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4362,9 +4362,9 @@ async fn operation_input_test_get_object_130() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false` [object lambda @us-east-1, client region s3-external-1, useArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4431,9 +4431,9 @@ async fn operation_input_test_get_object_132() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false` [object lambda @us-east-1, client region aws-global, useArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4465,9 +4465,9 @@ async fn operation_input_test_get_object_133() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn` [object lambda @cn-north-1, client region us-west-2 (cross partition), useArnRegion=true]");
     assert!(
-                                    format!("{:?}", error).contains("Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`"),
-                                    "expected error to contain `Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`"),
+                                            "expected error to contain `Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4571,9 +4571,9 @@ async fn operation_input_test_get_object_136() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource) [object lambda with invalid arn - bad service and someresource]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)"),
-                                    "expected error to contain `Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)"),
+                                            "expected error to contain `Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -4677,9 +4677,9 @@ async fn operation_input_test_get_object_139() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [object lambda arn with region mismatch and UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]

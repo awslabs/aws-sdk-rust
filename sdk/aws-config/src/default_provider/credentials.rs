@@ -25,7 +25,7 @@ pub async fn default_provider() -> impl ProvideCredentials {
 /// Default AWS Credential Provider Chain
 ///
 /// Resolution order:
-/// 1. Environment variables: [`EnvironmentVariableCredentialsProvider`](crate::environment::EnvironmentVariableCredentialsProvider)
+/// 1. Environment variables: [`EnvironmentVariableCredentialsProvider`]
 /// 2. Shared config (`~/.aws/config`, `~/.aws/credentials`): [`SharedConfigCredentialsProvider`](crate::profile::ProfileFileCredentialsProvider)
 /// 3. [Web Identity Tokens](crate::web_identity_token)
 /// 4. ECS (IAM Roles for Tasks) & General HTTP credentials: [`ecs`](crate::ecs)
@@ -90,7 +90,7 @@ impl ProvideCredentials for DefaultCredentialsChain {
     }
 }
 
-/// Builder for [`DefaultCredentialsChain`](DefaultCredentialsChain)
+/// Builder for [`DefaultCredentialsChain`].
 #[derive(Debug, Default)]
 pub struct Builder {
     profile_file_builder: crate::profile::credentials::Builder,

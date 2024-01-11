@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutRestApiRe
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.fail_on_warnings {
-                    if *inner_4 {
+                    {
                         query.push_kv("failonwarnings", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

@@ -59,7 +59,7 @@ pub fn de_batch_associate_resources_to_custom_line_item_http_error(
                     output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output).map_err(crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                    .map_err(|_|crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     crate::serde_util::internal_server_exception_correct_errors(output).build().map_err(crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled)?
@@ -102,7 +102,7 @@ pub fn de_batch_associate_resources_to_custom_line_item_http_error(
                     output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output).map_err(crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled)?;
                     output = output.set_retry_after_seconds(
                         crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers)
-                                                .map_err(|_|crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
+                                                    .map_err(|_|crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled("Failed to parse RetryAfterSeconds from header `Retry-After"))?
                     );
                     let output = output.meta(generic);
                     crate::serde_util::throttling_exception_correct_errors(output).build().map_err(crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError::unhandled)?

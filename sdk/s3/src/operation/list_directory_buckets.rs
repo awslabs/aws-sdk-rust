@@ -198,7 +198,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDirector
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_directory_buckets {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("max-directory-buckets", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

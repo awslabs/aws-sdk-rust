@@ -106,7 +106,7 @@ impl UserProficiencyBuilder {
                     "attribute_value was not specified but it is required when building UserProficiency",
                 )
             })?,
-            level: self.level.unwrap_or_else(|| 1_f32),
+            level: self.level.unwrap_or(1_f32),
         })
     }
 }

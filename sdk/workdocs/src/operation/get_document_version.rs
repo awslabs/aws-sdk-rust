@@ -217,7 +217,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDocumentV
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.include_custom_metadata {
-                    if *inner_4 {
+                    {
                         query.push_kv("includeCustomMetadata", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

@@ -1217,21 +1217,21 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
     }
 
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
-                    // defaults
-                    .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
-                        ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
-                            .with_retry_partition_name("eksauth")
-                            .with_behavior_version(behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
-                    ))
-                    // user config
-                    .with_client_plugin(
-                        ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
-                            .with_config(config.config.clone())
-                            .with_runtime_components(config.runtime_components.clone())
-                    )
-                    // codegen config
-                    .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
-                    .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
+                        // defaults
+                        .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
+                            ::aws_smithy_runtime::client::defaults::DefaultPluginParams::new()
+                                .with_retry_partition_name("eksauth")
+                                .with_behavior_version(behavior_version.expect("Invalid client configuration: A behavior major version must be set when sending a request or constructing a client. You must set it during client construction or by enabling the `behavior-version-latest` cargo feature."))
+                        ))
+                        // user config
+                        .with_client_plugin(
+                            ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
+                                .with_config(config.config.clone())
+                                .with_runtime_components(config.runtime_components.clone())
+                        )
+                        // codegen config
+                        .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
+                        .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
 
     for plugin in configured_plugins {
         plugins = plugins.with_client_plugin(plugin);

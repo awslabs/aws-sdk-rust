@@ -69,7 +69,7 @@ mod test {
         }
 
         #[test]
-        fn substring_correct_length(s in r#"[\x00-\xFF]*"#, start in 0..10usize, stop in 0..10usize, reverse in proptest::bool::ANY) {
+        fn substring_correct_length(s in r"[\x00-\xFF]*", start in 0..10usize, stop in 0..10usize, reverse in proptest::bool::ANY) {
             prop_assume!(start < s.len());
             prop_assume!(stop < s.len());
             prop_assume!(start < stop);

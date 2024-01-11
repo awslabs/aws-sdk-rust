@@ -225,10 +225,10 @@ mod test {
         assert_eq!("foo", escape_string("foo").as_ref());
         assert_eq!("foo\\r\\n", escape_string("foo\r\n").as_ref());
         assert_eq!("foo\\r\\nbar", escape_string("foo\r\nbar").as_ref());
-        assert_eq!(r#"foo\\bar"#, escape_string(r#"foo\bar"#).as_ref());
-        assert_eq!(r#"\\foobar"#, escape_string(r#"\foobar"#).as_ref());
+        assert_eq!(r"foo\\bar", escape_string(r"foo\bar").as_ref());
+        assert_eq!(r"\\foobar", escape_string(r"\foobar").as_ref());
         assert_eq!(
-            r#"\bf\fo\to\r\n"#,
+            r"\bf\fo\to\r\n",
             escape_string("\u{08}f\u{0C}o\to\r\n").as_ref()
         );
         assert_eq!("\\\"test\\\"", escape_string("\"test\"").as_ref());
@@ -247,7 +247,7 @@ mod test {
     fn unescape() {
         assert_eq!(
             "\x08f\x0Co\to\r\n",
-            unescape_string(r#"\bf\fo\to\r\n"#).unwrap()
+            unescape_string(r"\bf\fo\to\r\n").unwrap()
         );
         assert_eq!("\"test\"", unescape_string(r#"\"test\""#).unwrap());
         assert_eq!("\x00", unescape_string("\\u0000").unwrap());

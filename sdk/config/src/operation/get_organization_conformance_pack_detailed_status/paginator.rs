@@ -71,10 +71,10 @@ impl GetOrganizationConformancePackDetailedStatusPaginator {
         let builder = self.builder;
         let handle = self.handle;
         let runtime_plugins = crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatus::operation_runtime_plugins(
-                        handle.runtime_plugins.clone(),
-                        &handle.conf,
-                        ::std::option::Option::None,
-                    );
+                                handle.runtime_plugins.clone(),
+                                &handle.conf,
+                                ::std::option::Option::None,
+                            );
         ::aws_smithy_async::future::pagination_stream::PaginationStream::new(::aws_smithy_async::future::pagination_stream::fn_stream::FnStream::new(
             move |tx| {
                 ::std::boxed::Box::pin(async move {

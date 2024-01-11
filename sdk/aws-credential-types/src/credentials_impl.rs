@@ -95,7 +95,7 @@ impl Credentials {
     ///
     /// This function requires the `hardcoded-credentials` feature to be enabled.
     ///
-    /// [`Credentials`](crate::Credentials) implement
+    /// [`Credentials`] implement
     /// [`ProvideCredentials`](crate::provider::ProvideCredentials) directly, so no custom provider
     /// implementation is required when wiring these up to a client:
     /// ```rust

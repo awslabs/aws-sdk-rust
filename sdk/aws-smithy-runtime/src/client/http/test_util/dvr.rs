@@ -25,7 +25,7 @@ pub use replay::ReplayingClient;
 
 /// A complete traffic recording
 ///
-/// A traffic recording can be replayed with [`RecordingClient`](RecordingClient)
+/// A traffic recording can be replayed with [`RecordingClient`].
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NetworkTraffic {
     events: Vec<Event>,
@@ -232,7 +232,7 @@ pub enum BodyData {
 }
 
 impl BodyData {
-    /// Convert [`BodyData`](BodyData) into Bytes
+    /// Convert [`BodyData`] into Bytes.
     pub fn into_bytes(self) -> Vec<u8> {
         match self {
             BodyData::Utf8(string) => string.into_bytes(),
@@ -240,7 +240,7 @@ impl BodyData {
         }
     }
 
-    /// Copy [`BodyData`](BodyData) into a `Vec<u8>`
+    /// Copy [`BodyData`] into a `Vec<u8>`.
     pub fn copy_to_vec(&self) -> Vec<u8> {
         match self {
             BodyData::Utf8(string) => string.as_bytes().into(),

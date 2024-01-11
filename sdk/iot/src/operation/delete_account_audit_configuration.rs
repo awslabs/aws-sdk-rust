@@ -192,7 +192,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAccoun
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.delete_scheduled_audits {
-                    if *inner_1 {
+                    {
                         query.push_kv("deleteScheduledAudits", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                     }
                 }

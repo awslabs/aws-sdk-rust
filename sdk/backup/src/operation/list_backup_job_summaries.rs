@@ -209,7 +209,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBackupJo
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {
-                    if *inner_6 != 0 {
+                    {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }

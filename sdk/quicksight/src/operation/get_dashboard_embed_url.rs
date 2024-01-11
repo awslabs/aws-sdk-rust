@@ -218,22 +218,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDashboard
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("identity_type", "cannot be empty or unset"))?;
                 query.push_kv("creds-type", &::aws_smithy_http::query::fmt_string(&inner_3));
                 if let ::std::option::Option::Some(inner_4) = &_input.session_lifetime_in_minutes {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("session-lifetime", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.undo_redo_disabled {
-                    if *inner_5 {
+                    {
                         query.push_kv("undo-redo-disabled", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.reset_disabled {
-                    if *inner_6 {
+                    {
                         query.push_kv("reset-disabled", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.state_persistence_enabled {
-                    if *inner_7 {
+                    {
                         query.push_kv(
                             "state-persistence-enabled",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),

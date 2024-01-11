@@ -83,9 +83,9 @@ where
                                 ))
                             }
                             _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::VirtualGatewayListenerTlsCertificate::Unknown)
-                                                                    }
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::VirtualGatewayListenerTlsCertificate::Unknown)
+                                                                            }
                         };
                 }
                 other => {

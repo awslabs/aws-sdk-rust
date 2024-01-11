@@ -838,7 +838,7 @@ where
 /// Disable an interceptor with a given cause
 pub fn disable_interceptor<T: Intercept>(cause: &'static str) -> DisableInterceptor<T> {
     DisableInterceptor {
-        _t: PhantomData::default(),
+        _t: PhantomData,
         cause,
     }
 }

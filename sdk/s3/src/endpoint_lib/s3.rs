@@ -13,7 +13,7 @@ static VIRTUAL_HOSTABLE_SEGMENT: Lazy<Regex> = Lazy::new(|| Regex::new("^[a-z\\d
 
 static IPV4: Lazy<Regex> = Lazy::new(|| Regex::new("^(\\d+\\.){3}\\d+$").unwrap());
 
-static DOTS_AND_DASHES: Lazy<Regex> = Lazy::new(|| Regex::new(r#"^.*((\.-)|(-\.)).*$"#).unwrap());
+static DOTS_AND_DASHES: Lazy<Regex> = Lazy::new(|| Regex::new(r"^.*((\.-)|(-\.)).*$").unwrap());
 
 /// Evaluates whether a string is a DNS-compatible bucket name that can be used with virtual hosted-style addressing.
 pub(crate) fn is_virtual_hostable_s3_bucket(host_label: &str, allow_subdomains: bool, e: &mut DiagnosticCollector) -> bool {

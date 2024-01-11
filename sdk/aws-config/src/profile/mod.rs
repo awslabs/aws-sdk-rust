@@ -6,7 +6,7 @@
 //! Load configuration from AWS Profiles
 //!
 //! AWS profiles are typically stored in `~/.aws/config` and `~/.aws/credentials`. For more details
-//! see the [`load`](parser::load) function.
+//! see the [`load`] function.
 
 mod parser;
 

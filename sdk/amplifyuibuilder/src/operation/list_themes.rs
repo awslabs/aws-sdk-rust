@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListThemesRe
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.max_results {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

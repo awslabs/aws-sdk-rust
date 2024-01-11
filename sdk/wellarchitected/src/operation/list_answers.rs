@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnswersR
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.milestone_number {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("MilestoneNumber", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
@@ -226,7 +226,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAnswersR
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.max_results {
-                    if *inner_6 != 0 {
+                    {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }

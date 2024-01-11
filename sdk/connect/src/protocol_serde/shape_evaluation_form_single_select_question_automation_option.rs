@@ -53,9 +53,9 @@ where
                                 ))
                             }
                             _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::EvaluationFormSingleSelectQuestionAutomationOption::Unknown)
-                                                                    }
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::EvaluationFormSingleSelectQuestionAutomationOption::Unknown)
+                                                                            }
                         };
                 }
                 other => {

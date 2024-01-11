@@ -34,7 +34,6 @@ impl AsRef<[u8]> for Blob {
 #[cfg(all(aws_sdk_unstable, feature = "serde-serialize"))]
 mod serde_serialize {
     use super::*;
-    use crate::base64;
     use serde::Serialize;
 
     impl Serialize for Blob {
@@ -54,7 +53,6 @@ mod serde_serialize {
 #[cfg(all(aws_sdk_unstable, feature = "serde-deserialize"))]
 mod serde_deserialize {
     use super::*;
-    use crate::base64;
     use serde::{de::Visitor, Deserialize};
 
     struct HumanReadableBlobVisitor;
@@ -68,7 +66,7 @@ mod serde_deserialize {
         where
             E: serde::de::Error,
         {
-            match base64::decode(v) {
+            match crate::base64::decode(v) {
                 Ok(inner) => Ok(Blob { inner }),
                 Err(e) => Err(E::custom(e)),
             }

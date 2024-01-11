@@ -211,12 +211,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAnalys
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_3) = &_input.recovery_window_in_days {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv("recovery-window-in-days", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.force_delete_without_recovery {
-                    if *inner_4 {
+                    {
                         query.push_kv(
                             "force-delete-without-recovery",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode(),

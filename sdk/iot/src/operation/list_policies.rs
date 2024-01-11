@@ -188,12 +188,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPolicies
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.page_size {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("pageSize", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.ascending_order {
-                    if *inner_3 {
+                    {
                         query.push_kv("isAscendingOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

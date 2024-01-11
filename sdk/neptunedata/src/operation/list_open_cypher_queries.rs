@@ -184,7 +184,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListOpenCyph
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.include_waiting {
-                    if *inner_1 {
+                    {
                         query.push_kv("includeWaiting", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                     }
                 }

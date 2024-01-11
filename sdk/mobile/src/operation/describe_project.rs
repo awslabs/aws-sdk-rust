@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeProj
                 }
                 query.push_kv("projectId", &::aws_smithy_http::query::fmt_string(&inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.sync_from_resources {
-                    if *inner_2 {
+                    {
                         query.push_kv("syncFromResources", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

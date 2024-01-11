@@ -38,7 +38,7 @@ pub(super) struct File {
     pub(super) contents: String,
 }
 
-/// Load a [Source](Source) from a given environment and filesystem.
+/// Load a [`Source`] from a given environment and filesystem.
 pub(super) async fn load(
     proc_env: &os_shim_internal::Env,
     fs: &os_shim_internal::Fs,
@@ -77,7 +77,7 @@ fn file_contents_to_string(path: &Path, contents: Vec<u8>) -> String {
 /// Loads an AWS Config file
 ///
 /// Both the default & the overriding patterns may contain `~/` which MUST be expanded to the users
-/// home directory in a platform-aware way (see [`expand_home`](expand_home))
+/// home directory in a platform-aware way (see [`expand_home`]).
 ///
 /// Arguments:
 /// * `kind`: The type of config file to load

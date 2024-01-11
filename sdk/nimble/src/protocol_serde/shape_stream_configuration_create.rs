@@ -15,7 +15,7 @@ pub fn ser_stream_configuration_create(
         }
         array_1.finish();
     }
-    if input.max_session_length_in_minutes != 0 {
+    if input.max_session_length_in_minutes != 690 {
         object.key("maxSessionLengthInMinutes").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.max_session_length_in_minutes).into()),

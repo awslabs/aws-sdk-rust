@@ -154,7 +154,7 @@ impl SignMessage for NoOpSigner {
     }
 }
 
-/// Converts a Smithy modeled Event Stream type into a [`Message`](Message).
+/// Converts a Smithy modeled Event Stream type into a [`Message`].
 pub trait MarshallMessage: fmt::Debug {
     /// Smithy modeled input type to convert from.
     type Input;
@@ -169,7 +169,7 @@ pub enum UnmarshalledMessage<T, E> {
     Error(E),
 }
 
-/// Converts an Event Stream [`Message`](Message) into a Smithy modeled type.
+/// Converts an Event Stream [`Message`] into a Smithy modeled type.
 pub trait UnmarshallMessage: fmt::Debug {
     /// Smithy modeled type to convert into.
     type Output;

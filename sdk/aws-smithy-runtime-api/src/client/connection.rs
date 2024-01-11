@@ -218,12 +218,12 @@ mod tests {
             })
             .build();
 
-        assert_eq!(connection_metadata.is_proxied, true);
+        assert!(connection_metadata.is_proxied);
         assert_eq!(connection_metadata.remote_addr(), Some(TEST_SOCKET_ADDR));
         assert_eq!(connection_metadata.local_addr(), Some(TEST_SOCKET_ADDR));
-        assert_eq!(*mutable_flag.lock().unwrap(), false);
+        assert!(!(*mutable_flag.lock().unwrap()));
         connection_metadata.poison();
-        assert_eq!(*mutable_flag.lock().unwrap(), true);
+        assert!(*mutable_flag.lock().unwrap());
     }
 
     #[test]

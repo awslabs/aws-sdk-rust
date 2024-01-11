@@ -205,7 +205,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelLegalH
                 }
                 query.push_kv("cancelDescription", &::aws_smithy_http::query::fmt_string(&inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.retain_record_in_days {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv("retainRecordInDays", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

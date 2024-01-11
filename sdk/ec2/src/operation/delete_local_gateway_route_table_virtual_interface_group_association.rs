@@ -315,10 +315,10 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for DeleteLo
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
                             }
-                        }
 
 pub use crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::_delete_local_gateway_route_table_virtual_interface_group_association_output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput;
 

@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetGenerated
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.include_resource_placeholders {
-                    if *inner_2 {
+                    {
                         query.push_kv(
                             "includeResourcePlaceholders",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetGenerated
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.include_service_level_template {
-                    if *inner_3 {
+                    {
                         query.push_kv(
                             "includeServiceLevelTemplate",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),

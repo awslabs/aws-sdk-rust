@@ -6,11 +6,11 @@
 //! Various fake/mock clients for testing.
 //!
 //! Each test client is useful for different test use cases:
-//! - [`capture_request`](capture_request::capture_request): If you don't care what the
-//! response is, but just want to check that the serialized request is what you expect,
-//! then use `capture_request`. Or, alternatively, if you don't care what the request
-//! is, but want to always respond with a given response, then capture request can also
-//! be useful since you can optionally give it a response to return.
+//! - [`capture_request()`]: If you don't care what the response is, but just want to
+//! check that the serialized request is what you expect, then use `capture_request`.
+//! Or, alternatively, if you don't care what the request is, but want to always
+//! respond with a given response, then capture request can also be useful since
+//! you can optionally give it a response to return.
 #![cfg_attr(
     feature = "connector-hyper-0-14-x",
     doc = "- [`dvr`]: If you want to record real-world traffic and then replay it later, then DVR's"

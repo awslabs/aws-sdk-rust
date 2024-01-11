@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMLEndp
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.clean {
-                    if *inner_3 {
+                    {
                         query.push_kv("clean", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

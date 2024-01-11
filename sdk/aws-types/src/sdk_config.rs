@@ -554,7 +554,7 @@ impl Builder {
         self
     }
 
-    /// Build a [`SdkConfig`](SdkConfig) from this builder
+    /// Build a [`SdkConfig`] from this builder.
     pub fn build(self) -> SdkConfig {
         SdkConfig {
             app_name: self.app_name,

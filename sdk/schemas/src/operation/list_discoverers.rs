@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDiscover
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.limit {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("limit", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

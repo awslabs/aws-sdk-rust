@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAssetProp
                     }
                 }
                 if let ::std::option::Option::Some(inner_13) = &_input.max_results {
-                    if *inner_13 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_13).encode());
                     }
                 }

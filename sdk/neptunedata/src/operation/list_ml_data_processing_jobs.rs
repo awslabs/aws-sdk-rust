@@ -190,7 +190,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMLDataPr
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.max_items {
-                    if *inner_1 != 0 {
+                    {
                         query.push_kv("maxItems", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                     }
                 }

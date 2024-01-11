@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDelivera
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.page_size {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("PageSize", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

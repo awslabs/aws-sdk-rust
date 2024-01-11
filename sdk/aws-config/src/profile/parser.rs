@@ -149,7 +149,7 @@ impl ProfileSet {
 
 /// An individual configuration profile
 ///
-/// An AWS config may be composed of a multiple named profiles within a [`ProfileSet`](ProfileSet)
+/// An AWS config may be composed of a multiple named profiles within a [`ProfileSet`].
 #[derive(Debug, Clone, Eq, PartialEq)]
 pub struct Profile {
     name: String,

@@ -207,7 +207,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteCustom
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.delete_all {
-                    if *inner_5 {
+                    {
                         query.push_kv("deleteAll", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }

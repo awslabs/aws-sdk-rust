@@ -87,9 +87,9 @@ impl VolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`VolumeConfiguration`](crate::types::VolumeConfiguration).
     pub fn build(self) -> crate::types::VolumeConfiguration {
         crate::types::VolumeConfiguration {
-            size: self.size.unwrap_or_else(|| 500),
-            throughput: self.throughput.unwrap_or_else(|| 125),
-            iops: self.iops.unwrap_or_else(|| 3000),
+            size: self.size.unwrap_or(500),
+            throughput: self.throughput.unwrap_or(125),
+            iops: self.iops.unwrap_or(3000),
         }
     }
 }

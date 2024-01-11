@@ -953,7 +953,7 @@ mod timeout_middleware {
 
         #[tokio::test]
         async fn http_read_timeout_works() {
-            let tcp_connector = NeverReplies::default();
+            let tcp_connector = NeverReplies;
             let connector_settings = HttpConnectorSettings::builder()
                 .connect_timeout(Duration::from_secs(1))
                 .read_timeout(Duration::from_secs(2))

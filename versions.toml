@@ -1,4 +1,4 @@
-smithy_rs_revision = 'e0d525820763c046ce6f1477a93bd87f52f007c2'
+smithy_rs_revision = 'dda6b81dec15c9dd8a0564462544a2a3917c04a7'
 aws_doc_sdk_examples_revision = '0d963b56eb7eb270dee23dc8c8db5cedee7a2d97'
 
 [manual_interventions]
@@ -6,2317 +6,2317 @@ crates_to_remove = []
 [crates.aws-config]
 category = 'AwsRuntime'
 version = '1.1.1'
-source_hash = 'af4f9d2b518dedfcbb4ee55b639eed3b499958445c635271d1ddb4c794a889b9'
+source_hash = 'eb0572ef1d1af44168f748165d019d7e62c7f537ca1f5d17160f3ce0cbaa2c6c'
 
 [crates.aws-credential-types]
 category = 'AwsRuntime'
 version = '1.1.1'
-source_hash = '69d0ea88b6ac24f798845373013623c34c50f435722ec18af6d7e09d8b847c89'
+source_hash = 'c9c3d77ba48d02edfc3c40e9c6195cbfe505b4ca191cb0fef3fe51f46d3cfccc'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'
 version = '0.60.1'
-source_hash = '925541a34c1a9d87ebc6ff41d814d9cebdf936b4ade630f346ba2ccfb29d8dfb'
+source_hash = '624b6f4bc9601f06e90975db3a57095ab549c1d429e81b8aa60b8af3623a603d'
 
 [crates.aws-http]
 category = 'AwsRuntime'
 version = '0.60.1'
-source_hash = '80074d56683b813763dc556f890c148cf6aacd212ed4b0d389f31460bb03ecf5'
+source_hash = '2de7d95782a158068959feb7851e5594fec2c18909af4da5cf862a72002a249b'
 
 [crates.aws-hyper]
 category = 'AwsRuntime'
 version = '0.60.1'
-source_hash = '245117a3ed2494b2319997b769cfcbf64c142b4cc19811ec1f9c574cf0d57aa7'
+source_hash = '2949d17ed7d8b1ebbecc9be8637b4d8863d820c1bb204f5e32257823c8651e7a'
 
 [crates.aws-runtime]
 category = 'AwsRuntime'
 version = '1.1.1'
-source_hash = 'df519ee6fe3672608be0f80c5717271b67061a944a9771cade2810eb6a565fab'
+source_hash = 'c04270372279f5c51905a06640e4ecfa2aca992baa95616968859ab96e7558e5'
 
 [crates.aws-runtime-api]
 category = 'AwsRuntime'
 version = '1.1.1'
-source_hash = '2df0d0cec20325f52676af22e77561ba33768bb914d6d28ec1f56692fb1d3c3b'
+source_hash = 'ec91afef031aa848d92445582018b87495973a941ff6f80f479c434e63cff596'
 
 [crates.aws-sdk-accessanalyzer]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '82747c042ffe0b19f9122edb8be951732671a04b4079cf86a05955949cd50c13'
+version = '1.11.0'
+source_hash = '29236f5ba1ef9f667cd2f65db81f0c9c4662fddbfa934e07a3fe185c3c794d0e'
 model_hash = 'ff369f678b6906b68e2b12f0d628a63ad1142ad9379e5258c976543052543e04'
 
 [crates.aws-sdk-account]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ac6dabbc41e94a06623f928f1b239d6c04cb763dafd8b6ddd8bc3e358072fe0b'
+version = '1.10.0'
+source_hash = '24ca8520b384dec11e854023f6d9430c0c0d6866a07f63b548cb50cd39f83b1d'
 model_hash = '00cf828a77b72627775d41967bbf70303075c0daca8ff2321f98649d6df6d0a4'
 
 [crates.aws-sdk-acm]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8a7ef3049ecd725ac4b10afd644e9d66be0c8f46438045b8895f39b5cd61b86b'
+version = '1.10.0'
+source_hash = '8212a16a89aa0a303e6f1ac237417972f0374c7abda064333ab5e8312ad0e418'
 model_hash = '8f48debe88301a0cf3061729bf596074d301ce724a27b5b38b2b56da5ae231ce'
 
 [crates.aws-sdk-acmpca]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '813d3526cbdff1bbe8e5324ec7b63a8ba5ca59ec5b0046ed6a9d16044e2f2ec6'
+version = '1.10.0'
+source_hash = '4d394d1143a033a4425133d5b68fe2f8130f1228132940df96cb997e8e829629'
 model_hash = 'e58062fc9dcc835060e9a1501dfca2ce3ff626013c69bcdccd94d0cbc9603087'
 
 [crates.aws-sdk-alexaforbusiness]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c6b535f0843aeb0da66f28951aa3091f9ea972fa3ce6f9ba446a698973003bf1'
+version = '1.10.0'
+source_hash = '3bd721301fb3fb6e0a603d8008d04e04efc61c90afe496484f5bf423dfbd47ff'
 model_hash = 'e641e6c69722adc63666041d7efc36cf0dc9decce7fb1caf46de39b7860b7197'
 
 [crates.aws-sdk-amp]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c6e6c026b0ac0693ac72e5ed30320015cf561563c7f25b881db4a2e970b4be1c'
+version = '1.10.0'
+source_hash = '5714c232ed17a0599c70d29a72a0cdc9c733a70ef1107be2b6d79d438cb4bd82'
 model_hash = 'f37c455c6794a783b7d9581cb1b9a68d7e2030058caca3f61830e63363e9ea1c'
 
 [crates.aws-sdk-amplify]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '41dd89644c8a0ca1e0fa06bf73aa051e1399d2efb71f63db7127387aff78d996'
+version = '1.10.0'
+source_hash = '7aa693563b08d8214b4c73fce488b56d206000b09cd3c508d0ee58a0298c6b20'
 model_hash = '408f6d0099a44a5fdc10689e64ca8ec441d9daae30915cd1aed90fd9aac882bd'
 
 [crates.aws-sdk-amplifybackend]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7e4a893aa9e0a3c74958681bc1565ed4d65d2ab5021846a92a5bb105f387fe1b'
+version = '1.10.0'
+source_hash = '7d1ac4df4e213cebe82ae059ffb325ae9b556ecd7e4ffc8b91da13cc3b226547'
 model_hash = '55ebcb28813fcd6e41309a5113a3ea35ffec5306a194a215a22bc796cd6d4729'
 
 [crates.aws-sdk-amplifyuibuilder]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b7686ec207679ce2a80e24bb4ad68e61e9a434655cf23c2e2fcaa2645435fa06'
+version = '1.10.0'
+source_hash = '6c8bac027ee20d5a25c627f8a6ab338db86dca56a4cd44b2259b0ee306d2c57e'
 model_hash = '8135f704673dbcc6d8493c8e80ee1934ddabaf7ceff9a96fb37bd9c6230901f9'
 
 [crates.aws-sdk-apigateway]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ee6b8b02b0cd98aa2d6b71a88b34b6436b086c423776accb417198e9d9231689'
+version = '1.10.0'
+source_hash = 'f3bc0ad30afc1946d01478e35e686c435b4137bd67e85632f2b299e53d50faf4'
 model_hash = '921f9c7a6ab96ea8baef934e51e6865c6ad092c5c3b1bb0969dde2427bc1d77c'
 
 [crates.aws-sdk-apigatewaymanagement]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'bc7c736a528aec9f407918d01929d6f382d3168ff2ebb1f32c0abd7dd953a215'
+version = '1.10.0'
+source_hash = 'b9fc94a875c8505b2ceeb1f35538df5f28c4b331824504dd6b7bb4a0e17dac2b'
 model_hash = 'da3fc1b71d982864cd77e0187eb3078f4443e8d9da188cbb5db04cef126e46b6'
 
 [crates.aws-sdk-apigatewayv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8459155c099b105a8fcd3f7f8b744492e298d808a561945afd28552289753d41'
+version = '1.10.0'
+source_hash = 'bbe679248032ee71927436edec800fac469c840b1af88f08e5f5bcf61cd9fdd5'
 model_hash = 'd78aa2f44c0462bc70277b72ba410145023564b98a69babce0b6aa1afa1dedd2'
 
 [crates.aws-sdk-appconfig]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7f5e2c3f916262eee90945556ca6e236101294387573c1004d704913f566f8dc'
+version = '1.10.0'
+source_hash = '842cb80d3284e27647528754531ca8a8590ea126d413bf97d37036840edc6f7f'
 model_hash = '5cf3d095c7d08a93dfaa8a39e821028e64cb37bdf0a6ef314e81920748da1ce5'
 
 [crates.aws-sdk-appconfigdata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'fed7e14e06d94257213b3e14d7822174f4f9253f1b7a993c4026292ee6b65ce8'
+version = '1.10.0'
+source_hash = '126011501b89f250c5768aa7cbd5c029143a41607b55dbdd7179bd2688b35ecf'
 model_hash = '60cc68e5a760a41ce02268e551d29f8ab30e9bef5f1330cc2d006183010156d2'
 
 [crates.aws-sdk-appfabric]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '77cfe27f842e39e58f5935e41cce78e9ae476062aa6bc2595f6fedb28adcafbf'
+version = '1.10.0'
+source_hash = '2242b294e7ec1d9fa31df170194701b89ecb38cbfa124684fee2ee33df6b3b2b'
 model_hash = '2045e5882967d5ddc7289898cab3875087d7e26abd9522fbabf3f6642e17cd8d'
 
 [crates.aws-sdk-appflow]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd5aa5992683f068a03adf4b09a04ed4027438b7b56069a945d8f8029b5b95d17'
+version = '1.10.0'
+source_hash = '58c3b68f20944ad428b690b0d5150f0b517f0ceabeb74107013b933ae03fd0ed'
 model_hash = '2e052cb3e79396e21e941fefb2445742cf5a666a1b9e0890414357db37678017'
 
 [crates.aws-sdk-appintegrations]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4928c44a80b97f45ddb5dc82d877adcb6d7ad625ec8aa7a2ceca7512b1db5e4d'
+version = '1.10.0'
+source_hash = 'ad8a8ddd9ce8cba84e738cdfb54c08acb21d093dbdc1196a4faf44a43f3afe8d'
 model_hash = 'e86533c68d1635e34ce52298ffefda576ae401f98578175168d26db7542fb1e2'
 
 [crates.aws-sdk-applicationautoscaling]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'cb526ac749746ad7b6321ec5e7c35143013e3f8dde3564438961043263b3b0df'
+version = '1.11.0'
+source_hash = 'c2d0132cb4ec42ef2032505cc0a8f62dbc5aaecf6b713be7e28588a679ab52ef'
 model_hash = '3c206f2eaaa693a4bd4aef1717f108dc5ea72d9c944d8048ada3d9410fac9064'
 
 [crates.aws-sdk-applicationcostprofiler]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b9834068d5b18649821893e2cb903ecf23de64b0c5e00cfd87f6321eaf675326'
+version = '1.10.0'
+source_hash = '5bfa4a8c47cebd68e275845f12dd4aa4aa507f3547f5b0864dd07b4ba985a963'
 model_hash = '87f8b863a2d1b4902b1e5c1f822a2c3c31821a2885534c3080b7cdd70383fb6a'
 
 [crates.aws-sdk-applicationdiscovery]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '82844e8370f5b7516b7c63dbeba8c31a7c2838268c1a46a31779b6ebac598d35'
+version = '1.10.0'
+source_hash = 'c26c0928acd3350abec79b73f6db69566cc5222fe526bea3f8351ee29a5f9597'
 model_hash = '4aaa6f2a81b29b10a4fdefa4f5b40aa73581330a36badb5b0e11b5193c1a5a68'
 
 [crates.aws-sdk-applicationinsights]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7288a4f03e6ec1d5322b07adf01d47e98cdb4dd75b4ca54203f63470cb000cc2'
+version = '1.10.0'
+source_hash = 'df6111bec14737a6e74ee876ab9723ad9de09a55168e1e1ad0f425f85518c71c'
 model_hash = '6eeff6c43c2016b1bce909d771fbbe4af9309d22443c32ee68c1684d8ab4f261'
 
 [crates.aws-sdk-appmesh]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3ff493c1fefc6828c14199dd972cedd7fd83cc9586c95e3cf60cf22ed34fd3e8'
+version = '1.10.0'
+source_hash = 'bae7c0bc494512e7ca30d050bcb7b2d77a94a0f0f6a5e360cfba666106fc0793'
 model_hash = 'c854c811b3717a23d61711e743e914d454dd4096713742a5e66d31ab9c463601'
 
 [crates.aws-sdk-apprunner]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '00ac38b3fe14ab7af75e17c98aa60b1f00aea6ac040d6e0561a2260143b549b8'
+version = '1.11.0'
+source_hash = 'cc0a63a7d07568f2f1a0d71a7c80fc6b559f963f740b6ab6f51d55afce64d7fe'
 model_hash = 'f9eb666b5c1339269de9f9693e7519c35933d020a9afa77720d087ce5799938b'
 
 [crates.aws-sdk-appstream]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b550ecbb6d2672ef8b36d07984b7fe3431fcdca4a72f10b2fa3417e9e3fcd255'
+version = '1.10.0'
+source_hash = 'ceb491c559aacdef438520727a0dc109b7138fae3ff7435ca6379f9271788524'
 model_hash = '3006e79daf1741f4f68666f88bf146845e3ee473bffaf4de695075870e0c39f1'
 
 [crates.aws-sdk-appsync]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'ee6950c43ba3093d09c71356e7dba58a32b212120171d42d1dd061ab3540caaf'
+version = '1.11.0'
+source_hash = '8784cb204cddafeaae2c0cd0a05b9bd76c7aa05a7aca34b6047bc23f46d241f1'
 model_hash = '783ede75c20b5fd3ce1018b248502f169860b8f1ad7f926e13d195fd89b81d48'
 
 [crates.aws-sdk-arczonalshift]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'c0627a7b8fa986cc0b1c990d297ffd5c44a5c2f3155b370952eab72bc5852556'
+version = '1.11.0'
+source_hash = '9281027b525f6f23f4283d53b9a0842997143772aff128124d728976dbf06795'
 model_hash = '0a2b2dc5a0e53412f53f6ad90b53d033e4b4d85861c187b338ed49912a704210'
 
 [crates.aws-sdk-athena]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'fefd8fb0e637b99d3e010e7ceb9b330b4a3fb1a11037cac95f42890f1dec9dbf'
+version = '1.10.0'
+source_hash = '77f0c344dded7b3d83b3ba86eb040ca795e2f5bf82af4c0c76e3f0780ebbd7c8'
 model_hash = '1a7bcd90139714c9a438db050d7016c1448a2a443db8129af4f7a92dbd2ae319'
 
 [crates.aws-sdk-auditmanager]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f31b75c5cb1cc80ecc1975194eb0ab1ff8b56ffd2af466fbe36fdc79e1e99fc6'
+version = '1.10.0'
+source_hash = '894c6a184f98403be6356ede546fe56e856c3c2ee808d97904f1fda756a68034'
 model_hash = 'c07729a82666e5bfe3145b0c373b9942681081e39354f69083a1755adc502f76'
 
 [crates.aws-sdk-autoscaling]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b03ec33509529dec209d47174865201b3a6be739f05a8243c65aead9edd58fb8'
+version = '1.10.0'
+source_hash = '77b4d27776a81b436fc891adbe54d67396884c34a4f0564620eba8c36a2d52ec'
 model_hash = '34888e34baa35b6e5c0b9d5e4197fc8b757413c0341ec66f68f7432409c5947b'
 
 [crates.aws-sdk-autoscalingplans]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '31eddcad959ff7453165d3edd9855c1a0f49695f3bb75da2ecc5e9266c65dcc3'
+version = '1.10.0'
+source_hash = '928adea9b5ec2622ce40d2690ac18045369afc92e98f691400c323767fcbbcdf'
 model_hash = '228b888792ce40aa06e158c9b654f5d46820d2d2a947936808ff6412c1b61b0f'
 
 [crates.aws-sdk-b2bi]
 category = 'AwsSdk'
-version = '1.6.0'
-source_hash = '468b519d999a6aea93aafe88c5f2afdadbfb885696a353aaf04a1959aa67ff0c'
+version = '1.7.0'
+source_hash = '9d8b7914a34ad2ce92fd5f9dc2309c020c1ff8b11b1889852545f1476b060e07'
 model_hash = '51ca494db6235fda06384251bae5aa754225acc4c0599257aabb3fa8ef814b75'
 
 [crates.aws-sdk-backup]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '144f2a69e207dc446209213f5ae45ba9669cb007b8a92001613e991e4d9908c6'
+version = '1.11.0'
+source_hash = '2a79f82f2a97fe17dad3cc1054b28c34f4506065b58adf1ca2d49832ee552f1d'
 model_hash = '31be1d826161039c879dc3ff383b5018c4659ecc8a307a1c9ba5f0d130cebb08'
 
 [crates.aws-sdk-backupgateway]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'bc210a7ec9399e35d79f78b322b585bd028db403fff6c816b26b4e2fc4c8505a'
+version = '1.10.0'
+source_hash = 'a40aec395ef7d49ecbba3a87a5e681fbf70703ae29dc2b7ecfa0d481123f802a'
 model_hash = 'f14d6bf655e9a701fb322eef4a961b41aefb3c2686c5f9c48d8203bcda8df0e2'
 
 [crates.aws-sdk-backupstorage]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'bd2c0b344cb0fc580811aac8279295423de6a01e1b4eb200a3f97c9a827b75bd'
+version = '1.10.0'
+source_hash = 'ea9294a9d32b01a51aa1839dcc09f467e51aeb1278b151d7aad163eae1547a6c'
 model_hash = '5deeed67469310f49246f94be4da914563959d5d88e75198e61deb441274d7df'
 
 [crates.aws-sdk-batch]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9148391dfd40c6540ffe2de2d35ce40554aca4a47a646ff93397229b7e7be0e0'
+version = '1.10.0'
+source_hash = 'ae4045497a893833780508622a97f14309ce22608bae4f1ed9a3411c2e7e8379'
 model_hash = '3765aa4ba983e46c1dfcc19283fdfdbd61a15b214531dd0a8607a85a2c2eb5ac'
 
 [crates.aws-sdk-bcmdataexports]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = '0d8a21a6ff8bdca28b7985c4beeb26477a5ea60c3cdaa4c0af7fafb95deac426'
+version = '1.8.0'
+source_hash = 'ccab479dc240f17cfb0a2bc8f208efb3c89943cd05b294c55c8d5d167f863107'
 model_hash = '141b03c18f7edfe8cccdc3fb7ed6de6aedda05b38a430e7077b86af3e7141660'
 
 [crates.aws-sdk-bedrock]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'e9f8761f8bf724923f42cfe4a5e3c34a38079b3a99445fe08bd285a3fceea4a1'
+version = '1.11.0'
+source_hash = 'd9eebb087cf9b5ab2dddb2c850e47e58e860bab1caedf72f7bb8214a9153a641'
 model_hash = '248c797886ffec26ca0ccbf2c050012114fee961c9ac31b2050d2533c79ba55a'
 
 [crates.aws-sdk-bedrockagent]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = '7c9c380811fe3e4f4e303b2e1c936726de9277be71cd1bf65d0bca9a61a47299'
+version = '1.8.0'
+source_hash = '8b61cc9a499bd63c4b69b05e144f0a85dee55f10f1cf1bec5d9ae9005bde632f'
 model_hash = 'afb4e9ac532e7e08874607dd27ac1dccf943a1d45aa644b78333d88dc1ab6f20'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
-version = '1.6.0'
-source_hash = '4126ed767e3eb1fcf218f5f727da4c152eb7585648fac9b4d18c4dd5f37ef8d0'
+version = '1.7.0'
+source_hash = '92813fa414940ee51fb997b85f8935482473a572aeac647018c6f74caa9abfc7'
 model_hash = 'c27b6bd65e9066405374698e1e2dd584221ee38e92e93ad1ee345c721eadc014'
 
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '5f46a02e6def0add2c5b35495af10710f834c4f5d78ad87c9a9f7f135b867845'
+version = '1.11.0'
+source_hash = 'b026161640603cb07f86ca3e9cb2df4287a423aecf44b3f5d4d3509f7cdd111e'
 model_hash = '25d346147e5e197741d2f2d369904f9872420b1c433383196f7060f5a376c59d'
 
 [crates.aws-sdk-billingconductor]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'ff57a8a02b68a0c5851f91b3724a2b0c8afd8bfde5849c3a89f0121e9135f0b7'
+version = '1.11.0'
+source_hash = '88ff9220a55986b1e2beeaca7df195d1d03eb3778c57108266cea96239cec004'
 model_hash = 'cb22cd66668c35501637fe345dbb705752eccd4d91d6b4b8f35eaedaea0ba73c'
 
 [crates.aws-sdk-braket]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'f6e8ee5b07da5d5239236f43f9e4379b592aaee443384056241508b43d68aa96'
+version = '1.11.0'
+source_hash = '8e3f8cfdde15526adf86c65425b1d081309da977900db1986ab62c43482ac304'
 model_hash = '15d1f6198b8c17946729fa36cf8fb8984f466ac1acd3f6c4a2797836b6c70779'
 
 [crates.aws-sdk-budgets]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b2dd1c7d699a1e75b619be4195ccfada336e7823dd6cd8f296b92dcb64b2553c'
+version = '1.10.0'
+source_hash = '344ba759a9c632949d635fe7443d1863716f6c5a9f9fe38e575c1de192f12608'
 model_hash = '03312a8563ba6d615995f0490f1d169fee1f5a508c6844da34372a3dcbea8c07'
 
 [crates.aws-sdk-chime]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '892b54000e0c10ffa47e2d395b3e0f6b8f390375c4dbf60a0e0cbbd03eeaf8d8'
+version = '1.10.0'
+source_hash = '2114a1eb938ebac43b75c525c36b9ff9b9a7ee1864f303c89399e6ea771532d5'
 model_hash = '26c01cbaa804d2bfd474705d4726a7ea82693d0ed5ca5117d11958e9a7feac3c'
 
 [crates.aws-sdk-chimesdkidentity]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '29b85173e34c3e087dc7089168aed2a271aef3d176b8f9f7c52bf42a1bd438b0'
+version = '1.10.0'
+source_hash = 'd7e8f217278ef11c43bcb17274d024b10f4d573b5445be1fd20b7ddc7b4b0aab'
 model_hash = 'bc1618d82f6503a626c4e9f1ddd5a1f2accda511152b4529964a8ea400ca9b2b'
 
 [crates.aws-sdk-chimesdkmediapipelines]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f918b4b8789597fd0b4545e8b8f26f6093132c30bdd35a96681db5093afc1ce5'
+version = '1.10.0'
+source_hash = '5ed873f4b8421470e9211a9137db525732f93797139cd6bf3d6112fa9930f3e7'
 model_hash = 'e340066bc58817310be45eb74044bc96f69e5d0903ee4e780bc7103649ab0ef8'
 
 [crates.aws-sdk-chimesdkmeetings]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '58427572ebbda0291c622d579c28e5cbcc27436b9f937f948d9a4563c79f7fd6'
+version = '1.11.0'
+source_hash = '108126ed1d687b73f7dbc6ad6aff5e231c044c903d10c9b20ea7ef5a8c988a11'
 model_hash = 'ba118c0a684183ba582b0fe25863c68a73a873bf21354738546b7a2eb3ec7205'
 
 [crates.aws-sdk-chimesdkmessaging]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f3304bcc98cfe69736f377ab0d6a77bd6098669fc628fc1aad2a745732ffd363'
+version = '1.10.0'
+source_hash = '6cdd9e6e6fec7bc2339e253844ebd0180f7d12bae970484c51de0940428466c9'
 model_hash = '7df60525433ab8706f92d474d4dad4c5dc972c6c853175a5678045482ef7a25f'
 
 [crates.aws-sdk-chimesdkvoice]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '28f1ca76d8227b292144b00c5e4112d2ebdf12746e2fffbfd6cce3aa8c7a2a9a'
+version = '1.10.0'
+source_hash = 'aef2b3c0b40443e2b0b95a342d802d51aa0bb974a7bdb75f57392044c1b11aad'
 model_hash = '9745917dd01a57acd3677be5f9b8b4bd87e991d988dc28e6cc018ad35d85ecd2'
 
 [crates.aws-sdk-cleanrooms]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'bb75d89dc8528eb3c040301e175dc3ed3354e50436a9e820e19c7f9e2582db65'
+version = '1.11.0'
+source_hash = '2ab098e6f0b3a49ddb3a4e55f73121b831349e3a53cd8becfe303e58a69439f2'
 model_hash = '3ae748db4585ccb150b7f7527e41346c78e08db1cf42a42a2f53f1be13d81326'
 
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
-version = '1.6.0'
-source_hash = '13b02e7588256f93f3e3ff203ddd7cf4411d22284506c21dc785806a7ce90322'
+version = '1.7.0'
+source_hash = 'f4bd619525ec1ec141d769a9336c7710ab1a652de5695c3d61de7b01a23fc310'
 model_hash = 'ba8ad82f436b17287ba2b750337967048cedd50861fe8ac15325d8ab75cfb445'
 
 [crates.aws-sdk-cloud9]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'd325316507a229ff68dd8046af7798090fe1a6e8a9a2c3337648d8b8be1b347b'
+version = '1.11.0'
+source_hash = '87855374a4bef3990dc702f03ec8a7fe81903643d30cceef35f4910e46a1f08b'
 model_hash = 'a73ab7e78f50c59b0cfc9d0e6792213e67151d272670aec18fdcea076443e3ee'
 
 [crates.aws-sdk-cloudcontrol]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '119c3e4ab629a417a1f73b54f8463ce7b7b8b9bf7def39b3662bcff81b54d1d2'
+version = '1.10.0'
+source_hash = 'cc6219db97c645147f522c6cc1a2039fa973f61abaa2489bb4ba476bdf4b6270'
 model_hash = 'ec1e6b9e5b04e006be8d7222cb3269fd17ee775440fe919c6f89f77cb48b6f5d'
 
 [crates.aws-sdk-clouddirectory]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6a70d741f3ca0b6eab0bc894f91b937f18f880c6dcfa4886d954af81fb5afa7d'
+version = '1.10.0'
+source_hash = '51ceb79c294caa6c0079abb74fcf6199499a088d55b8e5db6fd76122c1a9a9a7'
 model_hash = '3efd089f35a2a1b2bb697823c0e3438b63bb82f419d7aa21c622d872d14eef8f'
 
 [crates.aws-sdk-cloudformation]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'ebea6a63ce7a5c65ae9e4554a5b6309405e66fec79479eae6a52a8cd75ed717c'
+version = '1.11.0'
+source_hash = 'b85bef2f7f4ec3328feb8361c7c171fa91b06a0dafe62cbabc1faa9f2913034e'
 model_hash = '7503c7e768812351d5d04830f4cf975aefcd91ecf7947d295f48880622ce71b9'
 
 [crates.aws-sdk-cloudfront]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'afc8102d91d38bb74fac0939b6e1849fd854e1612eacb8a0d37d92b21f44179b'
+version = '1.10.0'
+source_hash = '6c49d803db2d653ddb3f1153d4a120316d6dc29c85d4e45f93095ac6420ef576'
 model_hash = '7435c268825d0ef007c68c5014652cf2a2a084a5af7d7357a696e33cf5af64dd'
 
 [crates.aws-sdk-cloudfrontkeyvaluestore]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c215ad9b606a8097990c9319319cd84c0cd55a597913de56e4a7b6ca2f504e6c'
+version = '1.10.0'
+source_hash = 'e2c6b367a63ace065223a83129828e487a135e0a17ff71de5629a31202c4c6fd'
 model_hash = 'ecc72d58e6e18cdcba9d3512396d028803a20b768ec6e8652cf08d2acc41fe40'
 
 [crates.aws-sdk-cloudhsm]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '396c68aef5fe2237e287a96b13cfc038ec1f4714b753f5048fb5b60621033928'
+version = '1.10.0'
+source_hash = '36c905dff46d8279145b9e8d8f49e949c393611be27fbc0d2e0cffd5bc4e4d94'
 model_hash = 'b65bf64ffb06d0d3e137a01014909833b0b4bc6ea9be28676d96e189387419ad'
 
 [crates.aws-sdk-cloudhsmv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6e554d90f329bc1fec82846367cadf4be7aab788662850adbc9fde66a94cdc64'
+version = '1.10.0'
+source_hash = 'cbd96ad4b5abb0e10356d19aa8fead2fdce2da86ece6ec218b281f8de584c36e'
 model_hash = 'cedd8afea0aba0fb8b8b87fc7410c0f7515805ea2cad8920905ab9ce7c41f6d3'
 
 [crates.aws-sdk-cloudsearch]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c903950f2554253a74d62d6002d894c9cc985fff6e483c81a2ccc4e73df0d4a3'
+version = '1.10.0'
+source_hash = 'feee15efad7e38b79668a29d0d4f49d44c2bbbe9e9f34d99c53b093b60b17a60'
 model_hash = '1e81ce3fe0a460ec2087b1501bc19b837e1c829db6f155434cf7c677762b6b1a'
 
 [crates.aws-sdk-cloudsearchdomain]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9fc4f2a2c7c86f2bd98912deb71327638723c352cb88fa01a5c0d30d091cdc8f'
+version = '1.10.0'
+source_hash = '7449b6e287d2f4119a9b676e98b3f2d0258e305af780b7fccc1b10e746faa435'
 model_hash = 'd47b34a47470d77273ac364c1ce141ff9ff69dde0b023433fd97645c7e5f4fbc'
 
 [crates.aws-sdk-cloudtrail]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '52a1be6ce44aef5a8661c27e10cd47224d5e7b0c083fa48d2504df70e39bb730'
+version = '1.10.0'
+source_hash = '08f17d0532ad889621ef32ae7720d669a3585ab999e1678e345796ee4666ab89'
 model_hash = 'd3a61b1185c04090dc802ee854f8fd012c3b4d2973242f4a55600f2b5e30fb23'
 
 [crates.aws-sdk-cloudtraildata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '73758336a6f7c8b9f9ab336901908cc1a3fbf38f2d158b90d1ebbbdaf29e1265'
+version = '1.10.0'
+source_hash = '51f4c8f51961647d9d898e5f0dff44b07fec71459ae7c1f815454a332d4e2c6e'
 model_hash = 'b0fca8401448081d86469d214adf368b56a8a534032015ff2c80fe0bd86f2c7a'
 
 [crates.aws-sdk-cloudwatch]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'f1fcdeb34292482c718b9a4cc557a12af9761fd1ab81011ea31ce3e20bce4c60'
+version = '1.11.0'
+source_hash = '9786b3ea36f3266e2e83404ec308625c97c40c3d9f2d46e53e0e26e770533819'
 model_hash = '9ba6fd0d7fafe1ef203d22970fcd53feaf867ae56e0ca18bd1861667f6df7f9c'
 
 [crates.aws-sdk-cloudwatchevents]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ef4928f5bb38431927dd4c8edbffce7d04e0c88d6f91a64f1d433c20f1c6f1ca'
+version = '1.10.0'
+source_hash = 'a04c20e5b15cda7d17dbae3c0d89be61a0ae86fddc9854ddd23f4e35099a964b'
 model_hash = '5497d1b84409af6543689f08c00475dd0942c86b4e575186d7c587da07ec97a0'
 
 [crates.aws-sdk-cloudwatchlogs]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'c8c4b6132a13f747b9450fc66affa5e98d964987a4f5ab1428e5f52b8e9f458f'
+version = '1.11.0'
+source_hash = '99749e6780530223604e890242e3c7386677e551b29fa9afd1846503dec53344'
 model_hash = 'c6eba7c92472d934ef185df654c5b2839b3dcf258d4999985c6f692328395771'
 
 [crates.aws-sdk-codeartifact]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4c95b65dced12fb9d13db45e8cbaa3f58bcb13e395a43f8704ba7b2de1546842'
+version = '1.10.0'
+source_hash = 'd55444a0d34e64ef83796d1845bee9dc8abcfa4ae641da385823f814bdce4831'
 model_hash = 'e2e9823e7ed4cdef9ed93b1ee9f740bc9b4d6778f053e8daa8cffa084d86e018'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '4bf8bb12b4ff32dea78af22d7a54fa93077eeedf6e8e447ece4f2fff9d7f6564'
+version = '1.11.0'
+source_hash = 'd6159652155980e186252049f07273ec0ad3340305a52363e4417ae36299e5fe'
 model_hash = 'dc853234d9cc387f0a1e31864b234c59dd78b2250b47d579c8aadce43c3b99bc'
 
 [crates.aws-sdk-codecatalyst]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '029cb4c1eadc6164483b1f81cee724a994cfcc80e028f1e82c136bb8b1df41b0'
+version = '1.10.0'
+source_hash = 'a1153c46a57d82a8088c4d28c6ae499a4cd8a30402c61beb39059a2ebe5e1808'
 model_hash = '571183b4711cf2225a1f1d4f31b7e4205c58b3b3936566b71621e66ead49111c'
 
 [crates.aws-sdk-codecommit]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd38636ae6e8559c2f6239227728bb2186981e81e1658b98c6339848f3e1b971b'
+version = '1.10.0'
+source_hash = '6254a527226056f243470438d3d86b09e0a883db0dfb0d4f4b97ba3762f86fef'
 model_hash = 'afd44ce85667edbe5eebddd5c6369333752ef65592e4da2cff6461c842c6821a'
 
 [crates.aws-sdk-codedeploy]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '50b219c0e71e991f9c20ade62a8c611dfc7866a1d35938705415e4780985b184'
+version = '1.11.0'
+source_hash = '18d72889aff02e93298cd77d91a7f1570e3081606bc17b988835a47bd78fcbbf'
 model_hash = 'fddd68daaf661f3cda7d261afeafe97b0bd8aa43f2b9e4b8a5f7c6e7cbabb60f'
 
 [crates.aws-sdk-codeguruprofiler]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1b74d1a5157a18f3e17fd23ac35289dce4a6707e9ec4006bee6aa3bd21828ffa'
+version = '1.10.0'
+source_hash = '1d61f0e065dc7cf0e144562d9238f97b784f682699046836b915b5b0681b7f35'
 model_hash = 'f84648080798b37a359c18027550ebe7cf8dd9451542c6681724fef9799f8efa'
 
 [crates.aws-sdk-codegurureviewer]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd12545cf3c4ddefae265d8ea47fd48586cdd2f3157f88ee128beaa2310320034'
+version = '1.10.0'
+source_hash = '1ed41eed15e96591d6d083353ea0aecdf320ff8f4c93dde64577d96fddadb403'
 model_hash = 'fac22fabaf522bd84c34df1072d443821576dc651eade9cc63a740cc396fe7f2'
 
 [crates.aws-sdk-codegurusecurity]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6e8c94b5ffa77b931a39ea34220cfd97f95db1a863257716e1c855a0f6674a4b'
+version = '1.10.0'
+source_hash = '07668837d8a18f82b37be313bc24bd09326edd118b1ee846728d38fc81aafc50'
 model_hash = 'e6dbdd5c1edc8e5ee9a04aa581531801648abebcaf4e0f221dfbb3d942c25764'
 
 [crates.aws-sdk-codepipeline]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ce74790a48ba64a4720a1539fcb2b33c011756abf64331aa2c873e30dc30e05c'
+version = '1.10.0'
+source_hash = '39db48a029f47b6e6b9907a13b3b7374dc26bc6b639aba5320463f6b265af22e'
 model_hash = '8591f9d8ef0552ed1a07144a8674aae5747a400186a7e888425ee58dbf91b013'
 
 [crates.aws-sdk-codestar]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1a2b81d02375e25b0d31fb595e3ca8be35e57ac80493de1af59c22664281d2c0'
+version = '1.10.0'
+source_hash = 'b957e78d59904918e52f6c11a7c574d0bb293ffdf07676271e42ccf4ca451618'
 model_hash = 'c9a6612597a2e48003707036f12994ec6b0eaf4e39f100153647674b67a8c084'
 
 [crates.aws-sdk-codestarconnections]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '2076dc5aa15c3507eb893ca9e8ab7bcc81cf986164af20643b6968ef3ed35c3b'
+version = '1.11.0'
+source_hash = 'eadb486d9a0d901b530bc806a8ed114422dca5532897231a198600cc34bb3762'
 model_hash = '894d40d382b8c31051ab0dab96720cd27b66027ffa96e0f0b5f8dcf29fea5836'
 
 [crates.aws-sdk-codestarnotifications]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '400918bba19816c89cacadf793d377325dd0951fcea0a621bc2a1e44ae906985'
+version = '1.10.0'
+source_hash = '71e213e9179d7707bcbf38d3f263a31a9c43409c8fb04fa11e02e0ba43113483'
 model_hash = '41e883a4dfd884874dd4c1039124b10cb9632c1bd91ce70a6ff6d7207720168e'
 
 [crates.aws-sdk-cognitoidentity]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '90fdda4af430398288f4ba97445490a26b4e502115042649d9bcd1497dc18b81'
+version = '1.10.0'
+source_hash = '4ef8f76330657100733d7cdf6f230ae0d97f346ac88abd7d6f6144f60178b0cb'
 model_hash = '689dec3313ee2f31e1538895bd81f5dbcdf242ee3b8977c753e7fafa5036a940'
 
 [crates.aws-sdk-cognitoidentityprovider]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '0ea5d9ada02f56bdb818f326e8502d2df3133d396f9337e78a8110641f7b34ff'
+version = '1.11.0'
+source_hash = 'c5743f20ac71ac56c69ee919ce748c950618030a4c21941b715b0baa42a63c2d'
 model_hash = '7c7777d07f9545e3fdf1c253916bd6bc88e5d1ac34d8f86ac96dd062714a600d'
 
 [crates.aws-sdk-cognitosync]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '54e15f73f39a7d2acb0e219f6b1ea33ec7b5a26274b12d4b897079c519a176f9'
+version = '1.10.0'
+source_hash = '7382604fda5e2b2e77b9ab92ab494605d602c60e6609ba71f2c82e39fb2edc5e'
 model_hash = 'af13ffa672d43db8d997a90a103b2b55b98f64cc5c8537e635c94194c37cfea7'
 
 [crates.aws-sdk-comprehend]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a581ba7ebfabfb2aabe2b242ede8252bf30766b354855cdf91b679c5f7eebe34'
+version = '1.10.0'
+source_hash = 'de32fa500a9482300f6135321f23b6319cf6c46f62f95a2b8f619ffa20621d0e'
 model_hash = '9fa4a1cde5883988bb62f4644480c7def86fb361c8270897835b52dc0e29a67f'
 
 [crates.aws-sdk-comprehendmedical]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f39752f0ff846df3bed797cc6d32c6e9d4224419a03abe2a734507856d3f4057'
+version = '1.10.0'
+source_hash = 'd613872e2ce09e0f55f8c7a7b89d5d04144451bbc6e4877e8c081e52965708c6'
 model_hash = 'b81682cd531559dab9989fe4a677f37e04eb416285824284c0514a03fa20f06f'
 
 [crates.aws-sdk-computeoptimizer]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '60b685ea7f016dadbf8279b0ad543d8deb9d8a27c9863b6a1bc7c9951afc78a0'
+version = '1.10.0'
+source_hash = '3d7318e50ed7b230b9146106e10d373090c38ea0d774371b66ef1928e69644ae'
 model_hash = '8dfe3169f18f8e3deb11e677740e9275b2fc0e28bc6f7dd8bc36bfae6f05f51a'
 
 [crates.aws-sdk-config]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '5224d71bad447164558714aaf6ff4bb6f3273af4bbb258bed1ec5e066de9a9e8'
+version = '1.11.0'
+source_hash = 'ac6051288ea9a4a96f45d2bf96b29711b215caa3a0ba8168ddfec430955a0f17'
 model_hash = 'a8720254dcc971dbabc0271db1ca2248cd2d60095420516187ca8e42a86c983f'
 
 [crates.aws-sdk-connect]
 category = 'AwsSdk'
-version = '1.14.0'
-source_hash = '897d52dc953412d2b1d0d7ca3d1c3f40d8ef7b858e557fd5d294ffd11688dff9'
+version = '1.15.0'
+source_hash = '5535610a234884b7bf1a16a329da4866aefa079231cae4c5c64040899391837a'
 model_hash = '4194bd092b5ef7d1d5e010a9f2eaa782efc3c108da477f63f260b04dbf4502b8'
 
 [crates.aws-sdk-connectcampaigns]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'cc863885cb4b6583a92651142b2ff4c3e746315fe95621d499cc157beb918a67'
+version = '1.11.0'
+source_hash = '7f7b423b2fef9081b840f2e913bf12147b982a7f0a3934a592ed8734dc68b737'
 model_hash = 'b1c1996e678acf99f9b7e34ca3a25d7e22024758241d3fec2dbc5e4b1bedc0a9'
 
 [crates.aws-sdk-connectcases]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '789aaab4819e668e3b8630d463f906aaed86c24b69c423c4d6bce42b7a3b5d0a'
+version = '1.11.0'
+source_hash = '330f296f055cb280d572d8fac6cca54fd76f663f1e79897406a8c10765e323dc'
 model_hash = '9a88ae68fb0dbec078b124cf67c374241893c5b3b4824ac8f9bcbfb983abe2cf'
 
 [crates.aws-sdk-connectcontactlens]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0ca2a1893c0962f3592c39907ac2d83f3c6b1236aa5e2912dc7acb878d9568c4'
+version = '1.10.0'
+source_hash = '453c64c3b081e552c1ed7c2b1bca432f8dd9be22a0c24a83abdf77d2221ac1bd'
 model_hash = '7d7ccd829ba6b9900a61d00f04dfd15c10dc1fe6e5fef38e3f247cd995201089'
 
 [crates.aws-sdk-connectparticipant]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c0d8d00c9ee07595f888beae627318505fe7aa5667aed0fd3b019cb7c234bd8a'
+version = '1.10.0'
+source_hash = 'a6b8bc7d4d01a998ab45d03694a263867f88d9c41c2abf0afc4ca48e3e14f37e'
 model_hash = 'e53b1d854c90bb933ab1bd28eec7b69a3ff9a5f50875bc59be3e84cbd3725eca'
 
 [crates.aws-sdk-controltower]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '46255af0f5be3be46a62e14505b57ca8771fc44c8abfd2fd1dd0f4d30802746c'
+version = '1.10.0'
+source_hash = '140caa6b55980bda656bd036706c4268e5b98029308ea4cb1ae4adc7e54de987'
 model_hash = '74950739de8c4acb1db522eb1d908de1b4f3a04b46718a43774ee0159ba19e59'
 
 [crates.aws-sdk-costandusagereport]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3bfabb9e2e0b90f8b2a0b7b68fb3bf963486eb78963e75e9e494ad03556b87a3'
+version = '1.10.0'
+source_hash = 'c967e2452a1c10a43d5be903917079c43431ee429373223b52af4a22c413d138'
 model_hash = 'fc7cf9a69eaa41088baa30d1b425b3f343bd4a35afbe7529ddb4a329e3faa88c'
 
 [crates.aws-sdk-costexplorer]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e3773b4e189c4f1336d0f6393578b55627b5ae279597459cc7bc0b58c26114ec'
+version = '1.10.0'
+source_hash = 'e74c674cf2fcbe16a21d9fa1c86c4272b2f9faa9819cdad9aa29185a932197de'
 model_hash = '67fe97adab787b8717941d0cb5330f470073a091e293a5cccd1f033a8107d1e2'
 
 [crates.aws-sdk-costoptimizationhub]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = 'dd9280e051e46ca7b84dbc01db52afebdfff88687243a3d29e0ce7c8f9fd8a74'
+version = '1.8.0'
+source_hash = 'd714c4e2ffcb37af82eae041624f0e802eee21a6b22f346d546f6348fbae537c'
 model_hash = '918180bf85f4302f6a305bf1f4bf3224abaadca3f7689ceb46c32c35e2ac9155'
 
 [crates.aws-sdk-customerprofiles]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '2cfdf9ad4402bfca7fdae01d981263f40ba2ca2fbc6a285a9186528db25212ea'
+version = '1.11.0'
+source_hash = '51d1e5d363a6dcae76f52b4d10d9ec635a867b192104f54381ff79434439b88b'
 model_hash = '2276160dfc41921f438944cd0e320cf5df972e6c4417e2b2d750e5cda038b8f4'
 
 [crates.aws-sdk-databasemigration]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd3d9983c4d04c1f9e682386a53211e3a0eb8738f3abc43b906728508262e1a28'
+version = '1.10.0'
+source_hash = '43382140a934b0277b945841f6534400b549c64c9937aeddee2b7b37fdf8f00f'
 model_hash = '2711ea97c435ed71149972c38a2b18a64ba4b64dc9ac5212fc3700e397a6a6ad'
 
 [crates.aws-sdk-databrew]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0eea02ac0f88a2a39a85eddee120ad44f6a4b987ba0e074269009194f8049149'
+version = '1.10.0'
+source_hash = '512e878403d14bce3aaaa13412edb6edeae0b254e40ec59bd179e6b90e9400f2'
 model_hash = 'be1b2b6b61f567d2234f7f1d8af10e0828f59498bad2f47c3a2a7c0f7f045256'
 
 [crates.aws-sdk-dataexchange]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3e85f6be09db7f10b3c365086072113cf1cfb87176a3a5f559594e569711c5f0'
+version = '1.10.0'
+source_hash = 'a5ffe063bf720475152bfe7da9cd2ffbe00f58d7734bcade148001b247634e36'
 model_hash = '62420d5308207dc07b633cee4a765e4c096063b6305d6f18f8768129e0f49803'
 
 [crates.aws-sdk-datapipeline]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '136778d55704b18479f2098887fdd7050a9ee8495f530b99bd01b6eb1f1c59d1'
+version = '1.10.0'
+source_hash = 'cb7ebf8e6e48b942fed421aec0348414a520e850f8f0bfe6631835c21d5b1838'
 model_hash = '481a634abb604c1cff5824bd15503ce726661dec63a755e44575bb41e20190d6'
 
 [crates.aws-sdk-datasync]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c472ad0b40a05d2b26c07a8f8e3d59fd182357c040a310a5864e9cda6086ea39'
+version = '1.10.0'
+source_hash = '586cd40992e8238b6171274b5190e3d7700260d9c82d851523065817b1875849'
 model_hash = '4b7ace7dc4ebdbe68ac31325d1c98e732852a491e1c12a4992158a0d759f9771'
 
 [crates.aws-sdk-datazone]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '79bb143a2555a0ce3362542d440cfa47b910728b0f5a80235597b99e9a8b7b73'
+version = '1.10.0'
+source_hash = 'a383ef06b4cd9f0c05a3a72503dc67c7af25956289da2b780e2c35dbe81711ec'
 model_hash = 'ca18efe373d7dec9cf86314a1e2abb6614802e1d0f6b1ac47e16c173aee7da45'
 
 [crates.aws-sdk-dax]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a2c5849a6ab7d38ea74ca814ed1f544b46fb6f9a89d25f4b7ebf5d450ca685ce'
+version = '1.10.0'
+source_hash = '6ed34991c3293d86426adf3a8a4b67ecc708fff3214d6f8f48f8a62b7a335e99'
 model_hash = 'd7e14b3d73a945fd26374cb4679d329da7495f9664f9add2a2b129d431b1ea6c'
 
 [crates.aws-sdk-detective]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9f67edd716ad7c1f730dccf519355c39d3c95f0ed153707c315bbe7df420e2ed'
+version = '1.10.0'
+source_hash = '28fef3fa8540569df9b52206aa0f178f735b589fd859f92dcb4fade514bc9735'
 model_hash = '4cb2047d9204d96787e76b7f3e85fec5ef453dd72ca90b9cc7b61156cb7c735a'
 
 [crates.aws-sdk-devicefarm]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b74792f584be190630f19300a23a504bb9a4fc94f32835058f81627714f26894'
+version = '1.10.0'
+source_hash = 'e48d05609f7ad317804b76b36e6ce4e39d057b9a49c55ab2bb9cd135bdcebb99'
 model_hash = 'ec1c909f25359a48f8978f26ec7ede52356bbae980a52ccb03022cb9a202f1c0'
 
 [crates.aws-sdk-devopsguru]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7a58a7f27d4f591273b61092fb2e258c42ca3c3439eb89c4b116253b423ff746'
+version = '1.10.0'
+source_hash = '3d7183c658b24d1b0dac990335a4958d800b2a6f179a90b0a03079a7c7309592'
 model_hash = 'b3acf0a59884b7504ce6f196736993338aa9ea89ac46237d1ed8beaf31cc50aa'
 
 [crates.aws-sdk-directconnect]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7d44de04e9b0fa950eb199efeea405b25b5a5591ddb3595f1d9054ccd695479b'
+version = '1.10.0'
+source_hash = 'a8c94718759e6f5142a09ba8208a634d79e7c5a30d87fc0d6778ac9d47867823'
 model_hash = 'ee09ff752dd802c761854b097d6ad968cfdccdced89f765bc2cfe1714bc7c2d2'
 
 [crates.aws-sdk-directory]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '2e40744cbf0403d4da1bb24bc76f0ba3bf15ab9bc80932fa5cf60e49b00702ce'
+version = '1.10.0'
+source_hash = '5759193763f7f71d6bc16e7fbe72a6b002ee4cc469c2c2701d5c01b07cd8b19d'
 model_hash = 'a997468080b0ca7ca2da1c7b16d6368cd90b40ac880cef2ef2e3b683bc3cf6fe'
 
 [crates.aws-sdk-dlm]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a05f9fde6a762a8aa301bc2427f2b142ca76efe2ba1f5b617af807313e04836a'
+version = '1.10.0'
+source_hash = 'b28418528d92e21f778e1f141784008f6f71d4b169a5eeb9e52f2fed90c9e9c0'
 model_hash = '160031ba89cb5682380ca6afcd0ce9974e6b2d70fa0bd69c792ddc231a0624c6'
 
 [crates.aws-sdk-docdb]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '242614fe2d9018a0b82ec0b26f3aa7f7675346e90ca3d54179d8da456653418e'
+version = '1.11.0'
+source_hash = 'fa58d73cbb4b1c447dfec061c259d966a5c91df6acb5d3631231c64695c1d68e'
 model_hash = '1ab658bdce2f8989a7ad1ff5775b0f7d3579d5e77037249e78319a9120cf9607'
 
 [crates.aws-sdk-docdbelastic]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '36fff3e0127ba253ada887e0cfcf05470b48228a8c09273bc644c174b20394f2'
+version = '1.10.0'
+source_hash = '7d66a88a82939564dce0ef37d20005e60be4387ee0e384fd3ab34e087b70d252'
 model_hash = '2778fb1d2bd6f1db5c1dfb97599dec4c3e5cff69b1d28041fce78bca740cae14'
 
 [crates.aws-sdk-drs]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f0634d6a02aeb56b6a9818bf47dc949a85497db694d0a9cfaed50b10d3ee5206'
+version = '1.10.0'
+source_hash = '6ab365540166c3da9b727222b4c29cfe414fd51b1ccbc04a1998e438a9fca2e8'
 model_hash = '000505e799f4af313931c8163e24fc356010cc454de5a5c8aceed118f7adb6ae'
 
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b84f0e4273f2874ab0600ffc55f3d4539131032eec105fa609dc12e05d14c386'
+version = '1.10.0'
+source_hash = '0dcc68c957b4914cb044fcefb4144569308a4c27e6fa4731681915ef5173e974'
 model_hash = '0564720efaf901c5c7285633ff493a26d0851f49864f7bda56404b8deb32a517'
 
 [crates.aws-sdk-dynamodbstreams]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '59e52882e881f5c2df389a326f7eba626e3fcbe2872c18d02552ddf365e0e627'
+version = '1.10.0'
+source_hash = 'a3011d140db466045a58205b82e0b5c18ddf29241e789be8abdcfba954d7e80b'
 model_hash = '508c489fe7138b1db4f13650f3dd7dcad2fe2a24e9ec7c6fd4dc56ec7b2a6afe'
 
 [crates.aws-sdk-ebs]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c775365fad52d7e9b5d06702e283a710f7b8bc0059646acd356689c7594aba04'
+version = '1.10.0'
+source_hash = '6a77daff907c39a4ad23de2eab14cd5373dd310bcc9a6309e2a6bfaead4e16ee'
 model_hash = '5ec7004d46e2bb30c8d974da3846e960c6d52a00307ee4cc8a62b95566a1fc84'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = '27073e821e769f62879404f39ec198dcc91fc02a8f973253708b3d374853c719'
+version = '1.14.0'
+source_hash = '52af09ec67a0edef3283ab9c1d0b867c319ce663a68dc468e6737db6ce83f425'
 model_hash = '67facb84076e9b5ca7503ae3a78aafd7729afd3c25218de923b233314d406295'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ac6271020067ca4c01e47a11116c419926e9e747b99da2a74a7696cd4d034052'
+version = '1.10.0'
+source_hash = '49c1e7c6d4d934fc1003eccc69babe86ad2506e89c3513b09cc6896cee86be17'
 model_hash = 'e31677598e0dd635baf517c7a2ed9ab9b321d08cdf30e2b3dbeae52d1b16dbb2'
 
 [crates.aws-sdk-ecr]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0b62a9cc738c8f3c41a7579e1b30f374c9f0aa23443f4f947e91cd4eb19fe16e'
+version = '1.10.0'
+source_hash = '08433b75d4a5cdc0ce10070a8982242fd60f7e820fefb53fb875903ee699a977'
 model_hash = '66fe140b02ca81bb9a6fb67248c64ed0bcf734ddc1f28e4fa718c06d9cf9e1f5'
 
 [crates.aws-sdk-ecrpublic]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e06454c8f1c148ae0b3bbe82f97b5491a64c63212e9cca6f47d16730d4be0063'
+version = '1.10.0'
+source_hash = 'ed6d7ebb4bfaef9f2914aecf8604875a76ee6b475764f32075b334446e734425'
 model_hash = 'b6e23be351cb44f9f2b57d80f227604694a8bac84ed1467add8d019c824ac349'
 
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'e0a3fcba27dbad7e5a91cbd29d2a4ebea95906c2d7df590816e8c7062b53927e'
+version = '1.11.0'
+source_hash = '1330cefb102f50cfc6a3d4ee36e0b2cda50b2e0c409227e0d237106a10ccc3d7'
 model_hash = '376a17bb88a4481ca71c48bce29c31edb9547dd13af6156010a7b8200decc0a7'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '704a0797add0070856d87efcd50c8f0d91fd533daa7eb87b2575bba2087a1e37'
+version = '1.10.0'
+source_hash = 'bd6d93e97cdd7bb30f2ded2bf188b2e38c8e84728c7f76ecb84795180c26b4a9'
 model_hash = 'a3ff29f5cabd9f1ed7450a466688e598f58f792814996b7301c3bb806f9d4c00'
 
 [crates.aws-sdk-eks]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '9776969c5ca68c8fe71234585facbb15e17bea37ce4ff8cf9029bfc5b23fe03e'
+version = '1.11.0'
+source_hash = 'a85cc9ebd9befcf886b477ed15380f4ea13733aa8f523244ca507cbd8e41ca33'
 model_hash = '9f1435fd7618095b485a30a50a5c0beb68e973dc68ac71dcef83ea47f65adaeb'
 
 [crates.aws-sdk-eksauth]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = '8b7282a4407974007fc0e1a1f366c5c5d75975c2fc5acde90694a6e3eb18defb'
+version = '1.8.0'
+source_hash = '78315db5789f522db809ce7015236df91b4d406745897f8d6e27e6ef5791c217'
 model_hash = '5625a9633fc7b484b461f531792a1dcfa447e92f65815e55ef86e028221dd038'
 
 [crates.aws-sdk-elasticache]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '77f7f5d9fcc2c375e8d212aad733044aee31d9bb0c731428fa4981de50438fbc'
+version = '1.11.0'
+source_hash = 'f01e19cfd100fde5e4c003281e30ffdd8ff0d7075c359ec7eb2dfed6c97ec92d'
 model_hash = 'a81cf95de918a279af50b0f5e619dab26afe9b15f87a11faf787f7b0b563470c'
 
 [crates.aws-sdk-elasticbeanstalk]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '25f4876065834be33d8ff8bb97e3c9120745c1fe63e2a96e4b7d2891260262ec'
+version = '1.10.0'
+source_hash = '7551bccbcd12240235cc6aaa71826491b2844d2929f92c2e256aed2179a6e4f7'
 model_hash = 'c2a1a97d61151c9e55e064e5be174f1331ef93916f1eeee081561ad794095cbb'
 
 [crates.aws-sdk-elasticinference]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '44efdb4a6fccdc617a077ccd3a1b143d30255738c61b439e4bbcc8aa6ac36357'
+version = '1.10.0'
+source_hash = 'f4c8d5a61497fec7f094666b4ce7a89a08b651dd120166d199fc7f77dea8dd98'
 model_hash = '237abbdf572e7a7a4fc9891f05db5f8c0664c1c757dda0d6ac4707b88ba5e120'
 
 [crates.aws-sdk-elasticloadbalancing]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7084af63e66573f2ebf46e1551ca1bb77d23640f257980bacc92f5f0623d6763'
+version = '1.10.0'
+source_hash = '470aa95b7dbbc158d0ee962e6fca2ea2e1a286839178d8ba7f8355ca74494db7'
 model_hash = '1a7d5d6ed38bee6ff2a4358ef2d4c7fc4702054beb96a2b03d8b5353fa3a508c'
 
 [crates.aws-sdk-elasticloadbalancingv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '542f2e761db8c9be9c9e39a4048a8c409fa14e7295d4f705698daa601f5b0f35'
+version = '1.10.0'
+source_hash = '851a79adccea9e23384830bb57e850fa1984ce5928006ac07b79649d04f3094e'
 model_hash = '9a8d20b7ce19adffbc88ed2e2ee89852eceb014b75944518306ca1c10d65c56e'
 
 [crates.aws-sdk-elasticsearch]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '615281c1633c8b4dfac91c29933940c02e84ffcf791db50fb3f4e18c18f79805'
+version = '1.11.0'
+source_hash = '4fd019144fe332ce07d030cb5aba959d62bc9895824445ecfcc0559827de9731'
 model_hash = 'ce5e38e83a549bddeb3d5c4e9555344559e715f889f3b1c579e07114f0ff1e49'
 
 [crates.aws-sdk-elastictranscoder]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e19d84b8ffc88bb802632e08852bdfaff5e3a9fcb2478e07dbe2e7b86d682760'
+version = '1.10.0'
+source_hash = 'ade92347ff07bf0582e2971b88ed4534f58f8aff63cdc28d2fb8095823c04789'
 model_hash = 'e8bbfc6dbda6756c8b10c86959b1e4c2abb3d79d65dc3fa547854ecd77fa7a62'
 
 [crates.aws-sdk-emr]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '11f95068868081afbafc39ca5fa71ca423b1e2f2b192ad52ac8e046179227534'
+version = '1.11.0'
+source_hash = '78810a20ac6ca441dc32a7711630eb1fd99292369dc0ea8ea33552a6b2282301'
 model_hash = '84b5928f8d7aa3b17b299e5d43ca408ea36bff7b1e94022b1bceafed51343a67'
 
 [crates.aws-sdk-emrcontainers]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3675e32bf7680cc587ea717a9150b5928168af330d263bffd6ed357165e4fa35'
+version = '1.10.0'
+source_hash = '96e31b89367cb1f63e4702678ff1d7546dbae9962d3deb09bc5230724f830fe8'
 model_hash = '0eddd3dab59667c5866f7404605d386ecff1e7080ba1fe0a444c8cd2abf50f39'
 
 [crates.aws-sdk-emrserverless]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '26fa0d8e82bac1a0463c37b62588dd4a34a769458c27aec611cdd6ac51722786'
+version = '1.10.0'
+source_hash = 'a5c8eac7037a5a954e32b60d5c4d207a4617ae16a1000f653632e3f8ba2271a9'
 model_hash = '6fdd5a8b3343b75f62ff3fcf8b8f3babadcbbd768d85394408bb33c569b556dc'
 
 [crates.aws-sdk-entityresolution]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a07ba396946b0150b27b46ea5d17059ee63305e2fd9544c23ba24073b80f4439'
+version = '1.10.0'
+source_hash = 'e622d2f0a13bed9136da36f44eae3825a138ef289f7b85adf2887da85605fc49'
 model_hash = '0888138213bf6be80dcfcf6368e503fc8374356f99b26499a6047f429ab2a3ee'
 
 [crates.aws-sdk-eventbridge]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a460c74e86abd86e75a0c2c5c43f34a5e1069282b88762d55157e61f033a978e'
+version = '1.10.0'
+source_hash = '80fa5578481cb56df66df71efb458f1217663928a9c58c345ecdff9b02f45218'
 model_hash = '9aabc4d80ff209db2c00ec4364ed009ddddaefe04be7a94f5f6beed700f93c0a'
 
 [crates.aws-sdk-evidently]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f8ece5c187b19ebb13bba7c40a0429e7d2a77f1adb3d1859aa30ce4a1893d3a5'
+version = '1.10.0'
+source_hash = 'e931e517570d707472fe45dc0b0166bd9c1c5267401b935b376088120283d2cd'
 model_hash = '46ccb563d968d97801d539b55901e369c43eb44ec86ad0c6aea95ae44317eb44'
 
 [crates.aws-sdk-finspace]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = 'e8f4bd5333b8eaccffdd9cf17e0deaf721873b4b93ebf9f42af66e5383147762'
+version = '1.12.0'
+source_hash = '88f0a1ff6031f087cf9eca591cd6da98a83b76786d97f8bc7752b816a384e63c'
 model_hash = '9d0187024e0a7307c9f3a6ab8e781898b6a166c07f967e5b2f18e9b06de01daf'
 
 [crates.aws-sdk-finspacedata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '84b2369f6c128252c0d0831afa1d5371ba816d66b3c7dd8c0e842bcce4894cc1'
+version = '1.10.0'
+source_hash = 'bedb1862b9924416ee87fe95fa8ea9fe839dab1d2369424c4193f9dcf72a582c'
 model_hash = '7f6485b3b7f33a01ea75793400c905e7e18daa4a2d67f26456bc700c119455ed'
 
 [crates.aws-sdk-firehose]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e4b00f64914fbfb528fcbe03e816e25aab7badd5694c9334491e6d3d04f0d1d0'
+version = '1.10.0'
+source_hash = 'f27b9bbbc9535da696e8a4bd1b24f643951d4473c5c73f4562cebcd56d21d81e'
 model_hash = 'd47a4ccbb299896541a73f0f34636277eb7ef2d95e26b40d7a0d7965b9e3cb4c'
 
 [crates.aws-sdk-fis]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1fd91fc94575e3551f7dc90ae15daa2f54c0f22dbe1173959c9d1d9ebf35b30d'
+version = '1.10.0'
+source_hash = '604744575cbb1f61cb921bb39b6c3b7df7876c9803db0c4602e56368f1a346c7'
 model_hash = 'db1ef8a1f72fad13db4223c6f99bd5dde24d716ebce37647d6ec2939cd32699e'
 
 [crates.aws-sdk-fms]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b225736c48ac6fec23d33beaec3664ebd7013320f47159a8a66c9d30f8d8dade'
+version = '1.10.0'
+source_hash = '4374783f87740327a46c002a9f0612e723e5ce3090763bd0d3c7c1566c3f8b2d'
 model_hash = 'f14a3af1bda2443bbda9375ed792d06dfd5a1d8a6d61c631c0dc3f02c94ca5e7'
 
 [crates.aws-sdk-forecast]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9fb702c4a935a3081d9bb795a7509f08c5ff13e0ac86c9c378398d5e39a54a60'
+version = '1.10.0'
+source_hash = '16a3fbd77096c2f0f1495c7f372ff35f1d2e25222b40db847134d51642a33c08'
 model_hash = '3c92c6c2c8844f08d25fd063a1ccbb94f0ab0ea0f1c1c3469adcf7c870d8bfa2'
 
 [crates.aws-sdk-forecastquery]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '44133748f52abf47611ebcdca6a555247250084417d21eeb63812933d53ce806'
+version = '1.10.0'
+source_hash = '9ea1f7b5daf4e944e67761518482c8979f3daf61ea3f605ba7254e70c7797724'
 model_hash = 'cd74ffeea730f02e0805832659d2d88713e61d588faae22786d41261205841a8'
 
 [crates.aws-sdk-frauddetector]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '971b7960186cc2046d51b2e4277989f9ccbf5684f8d20417e52705c4bdf4e0ff'
+version = '1.10.0'
+source_hash = '309a29651b22df471663c37996f17e2f9cfc162c79526d9b1eb6752b878bfd07'
 model_hash = '4a429ec61afe2d8f7f9acea01da3c7a57bc65443c0f93325600ae2cc58109084'
 
 [crates.aws-sdk-freetier]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = '724d922e330b3d0f6ff99ee616a819d49bd7e3bd669fb14f1ec9c13e3547e5de'
+version = '1.8.0'
+source_hash = 'e45e13eca5bba5ca2366506467555bd31b3a455645de220e55f6ef4bf897316a'
 model_hash = '4a7fa6312753c4f167f61399f428b49f35283a29bf54f8c0c128ff96dac00471'
 
 [crates.aws-sdk-fsx]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'bc549fdb7427126d5a091a374525acab8723b939ea23b5216871ac2a707bfa2c'
+version = '1.11.0'
+source_hash = 'e06807814f93df3afdac58437d02b25ccf445b74ab41feb6d3c292376ba8b9e8'
 model_hash = '03faf731122ec0c5c77ba5fea01ec5a3fd56c4746f0a51069b21cf2c6786d7ba'
 
 [crates.aws-sdk-gamelift]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6fb4c81e4a6a2a2a87a26ec63031835c5594cbd45579008a0590e1c8d1c72fbc'
+version = '1.10.0'
+source_hash = '6e6a6c47f99f61e2ad47b771bdaf778ffe7bfda5a974c7d7d6a3dbad9b44497e'
 model_hash = 'cff88d2c035d0cfba0449095412b1a08f221b530ecb50d9a65b0782b255fc80c'
 
 [crates.aws-sdk-glacier]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7f2afeeaf1aa023083fbda29025976c19a8e1c72906080fcf88eaac7280aabeb'
+version = '1.10.0'
+source_hash = 'b7197b52545a6a55ffab3611000f0d736d1d6656ce11b9bdc65ed692cf0e7639'
 model_hash = 'dca44bc00b97fbb20fbb7412538d6aa5f7ff23a66ea8ff12693cdd6c869ce299'
 
 [crates.aws-sdk-globalaccelerator]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '441c9a314dd40a842048eb9becca87ed0b9126d2b954972ba331104d376d8107'
+version = '1.10.0'
+source_hash = '694caf7e0d59ab72ff6894c3681b8be44645022dddd9e845fb07e0aec99b84b0'
 model_hash = '9b0cc2aaef022bb5d81b21663b13bf971d10c3d3ec0b09ffb034cb6f57391dbe'
 
 [crates.aws-sdk-glue]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = '3203578c0a703b24e1305ba6fde722193bd1c2f9e43b96d1db0f8c88060358ec'
+version = '1.12.0'
+source_hash = 'bc81fadc4ab8bb0702cdca9b8088b19f8c9ac7c86186cdb59c8d426b5d51d080'
 model_hash = 'd73c4b6be19f65c2d83020eca22a324e624de725a630bccdb5715c970c0d8442'
 
 [crates.aws-sdk-grafana]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '71d7f516bc422e603aaf9c2916b4f1104680a84d773ab2396aabbae925da5dd0'
+version = '1.10.0'
+source_hash = 'edfd5e8d641a89a303a3324d2fd62ce31590eea1ac5354be44f44cbbbed7e22e'
 model_hash = 'dc70e3bb26307408e3d08099d821451db15863a6323b35bd634172eb06223296'
 
 [crates.aws-sdk-greengrass]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c5e170bc835892532ed6994933105f17f4b1cf24e7d2f077cae8114ba7f69cab'
+version = '1.10.0'
+source_hash = 'ff9a95af26d279eb91ed05f0c79fcca53adfda04886ccfb486c65a15c9261ca5'
 model_hash = '8f3a10c55aa9df63e30165c77677ef2e9648dd03d3cfe4105750a626c83a22df'
 
 [crates.aws-sdk-greengrassv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '247e9ed876aa3bb44db32f6898bde1850f69465f700a489aa6e8473e97874fce'
+version = '1.10.0'
+source_hash = 'e674a870d22ca4977c819c968b402e488447e67b8381e0836e2facc9290565a1'
 model_hash = '518ffdf7f9b2a5d2e1e1489fe40697b01f26fbcd5b19c3492dece6afa1eca6ad'
 
 [crates.aws-sdk-groundstation]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ea7f3a98728d249ae620f74c4d0d9d9d6c4e513e892164f0f2a22d4e2790946a'
+version = '1.10.0'
+source_hash = '66e53fb514d203f05564f3ac07b5a9372fb9420a1ce03013523638440b383b90'
 model_hash = 'e4806ef293b21cd0082366ed25a3cfc1ba9764f2b425646826c723327fec0431'
 
 [crates.aws-sdk-guardduty]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b51841ed6ca5fc945722d1061e4297e09295568f0c573bd94c6ea22d6f19acc8'
+version = '1.10.0'
+source_hash = 'dedf538c162a792addace8301f459949bef8119cc904c1af395179284c93f377'
 model_hash = 'a3863dafd868d5542f5b14e0e1180593053189224b603d58e4ffaa1105a95a71'
 
 [crates.aws-sdk-health]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '66ba71ee86666b032ec08f075cafe8b960c3559386d305af80319deaf7d63648'
+version = '1.10.0'
+source_hash = 'abcde0130ddb09fa1be6c970b966b7c3f088ca9fae3a228c52d71f6e7c409708'
 model_hash = '007f1728e05ba8197e7a685d6c4b9708ff63a40ec20a2ad256d12a2d4b022664'
 
 [crates.aws-sdk-healthlake]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '28611b4ef1ae10214582c5e72a81220a5f2b76cdecc5230ae0cdf3e9686b3102'
+version = '1.10.0'
+source_hash = '958edb4293894f5ce181e78347d2e5fcfd93ba69f5ab8c42168665fe9c0784ad'
 model_hash = 'c017eac7446db64802bb8867d8e7e0198b98151252bdaaa7bb9677f89360bcbf'
 
 [crates.aws-sdk-honeycode]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '004fcd8014ff387f31c87a81eb2be1da902dbf7736b9f33f20a7b9c074afa72e'
+version = '1.10.0'
+source_hash = 'c553b8f14cb45281b8b73b84afbbca31c034e8f5753d080d2cc28ca87c171efd'
 model_hash = '2574f912143346bf583805c22ad4ed6f2a93b08bedeb884bac73ae96c245338c'
 
 [crates.aws-sdk-iam]
 category = 'AwsSdk'
-version = '1.9.1'
-source_hash = '1d156d7d373ff630d9df8bfbf43293c9bf14f4f1cc7a284a8294c4c31608becd'
+version = '1.10.0'
+source_hash = '9dc6464ed9bf737adacc6b11565e180768112ef575f571ba0ed0ee86deee7dae'
 model_hash = '57b71af9c2ea04ee0d373921bccdc6daa3965ddc072dae383a0f5c371f54a937'
 
 [crates.aws-sdk-identitystore]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e955abf77808984a5652a6dd77c2ffa56ec9f224cb832d324aeaaf024799be1e'
+version = '1.10.0'
+source_hash = 'a9cf90a513a868d3063ab35ae183d68aaba4f2bae5d99f2da75b5581c66a0d9b'
 model_hash = 'abd0728cd0c7060cf5e676f42e09b2a177eea6729e727c62b19b84e35304f7b2'
 
 [crates.aws-sdk-imagebuilder]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'af39a067c0cb7eb7d8c72250188df646fa9aa8855f5c530dd93a62cc89a38db5'
+version = '1.10.0'
+source_hash = '2f575008add3653259137757e0769dcfb9f20155862874963acbd554b423f688'
 model_hash = 'b563e4ab4d687ffe1a72de34f769b2d9a5bffdf61487b0117580397679fddf7f'
 
 [crates.aws-sdk-inspector]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd844b7ee318f876486c37be6c0c7692c66d7849ca253acff0a850a1e49b83c61'
+version = '1.10.0'
+source_hash = 'e53f6fae796e8f52ed6c55edea8bb6156a32b94a872f135aaca6ec870a9c3217'
 model_hash = '70886218ed0115b5c85b366be76a361d4b27fa844847e5a2f902cce0b8f7ba5d'
 
 [crates.aws-sdk-inspector2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '54fbfe38ae61c5b225d612989ff658b00d8558b4955e0406c956482ea5b92b01'
+version = '1.10.0'
+source_hash = '00510c016929eefad4b8be4550520dd2db3b2847dff4f73bc3a1575e668977df'
 model_hash = '640728f635deca63875e474a1517dad59d1b30ca20fd44f753c2adef4ee61a05'
 
 [crates.aws-sdk-inspectorscan]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c4fe505b81cf7964c892edf599c9e4cfa2bdc0f115a5a94eabb3d9835674cab9'
+version = '1.10.0'
+source_hash = '9c6fb2534f2c3dbb900f2abff0261e56e535f776e6c1ac9d2bec8d30d541a9a5'
 model_hash = '2caa013a9be3248e6f9d486f9c939588dbd041fb54938465981cded9a212bb24'
 
 [crates.aws-sdk-internetmonitor]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ff3a69eac6c7206ed579d920c15d5330b3b1657f4e9894a8cd3da771b5e9c2b6'
+version = '1.10.0'
+source_hash = '5cca8b531bab31c6d839c6ae7ca132c39d59c1b31b1440df44017b26efd49e36'
 model_hash = '1fdeb9e6721b966fac19c54348ee65ebd25b303d5f1ee498a3e5241c653f9fdf'
 
 [crates.aws-sdk-iot]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '53ba1f9e9e5d9ff2e401a87e0bdf63fcbbd644a15d5bf13d2a175e9ad12b0ae7'
+version = '1.10.0'
+source_hash = '97fb7de8790c4a284e8d88bae476e448bddae80438f9f934f3d763f86902e686'
 model_hash = 'a54928cdf33179a1bf3fa5f0b4cdc22b7c16abf419221d951257105ab4b21fce'
 
 [crates.aws-sdk-iot1clickdevices]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f5bf0714965b05ed4955b806e0162f2a848da33ac5d73bd93dc4e1e59f94c6f6'
+version = '1.10.0'
+source_hash = '7545d48fc197acfa9932a9631e1f45a7a2b33ae9f98f9d5a0f1f4b6c2e43583f'
 model_hash = 'e93cd40d38ef410280773561dd132f8444af0624521002cac3d75add302e2628'
 
 [crates.aws-sdk-iot1clickprojects]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '29a52f7b9eafb9824fc2142fb3dc7f0a1e90e3cdc1e11d1789570f87fd5fb055'
+version = '1.10.0'
+source_hash = 'a9731a7c252cfbad1619a99998df0ea7f10533bfe40ee49ca661ca92bb06795a'
 model_hash = '405130e1bbe04f96d330ba7b447a87a23cfdcc8e8a7eef724327e3c2567e12bf'
 
 [crates.aws-sdk-iotanalytics]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ff6387ff567759d30186d18d4bbd3a88fe99ac5033bee7c6dabbb18af00e7b62'
+version = '1.10.0'
+source_hash = '591ecbd3ea1fb798972229b0e3d2dcab224d2a58e223b9f0bc344b8eee21024d'
 model_hash = '8b7402d76f582f5fa80d28816367eb766bf53a7d78502626ed14defd1943e0fb'
 
 [crates.aws-sdk-iotdataplane]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '28892cac41fa1a44e6c5df36ca67b28c5baf1df5ab0d1cf3b2098acc80cf6df7'
+version = '1.10.0'
+source_hash = 'c9d231dea30833b02c614412f0b4c4590073d094ad285eb0f542e197da2e43e8'
 model_hash = '3b983cfeaff668f43c046ba541674ed11c5466da9ccf7044b85f01486ce73abe'
 
 [crates.aws-sdk-iotdeviceadvisor]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '575e4a8da039f8653c33f7f776653b693868fb97c2b8f9c847d4d8532d0c2bd7'
+version = '1.10.0'
+source_hash = '2c85955d12d2dadacba888bda970a3c51a14181c2d4fe7f5ea3e7e3bcdb4c0ba'
 model_hash = '7be5dd5e9fd40e46b9ab4fdf2655963da6729535f754531ce5a9b85770eae65f'
 
 [crates.aws-sdk-iotevents]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8467470dc9ca331c451dab348d571db84454ba4eed3ee5377dc3ed71f4b702dd'
+version = '1.10.0'
+source_hash = '7d0472f8649e43f83b4f3ea35f38aff1f3fe37419b74470ec8d9ac10290d7961'
 model_hash = 'adc4dd4b934e56087fb5d3b74f5c21c0819f6f93c2630ecb8c6dbea7f3eb4c72'
 
 [crates.aws-sdk-ioteventsdata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5a058560c35886759ce776beb070e3197c048624607e67ec18276cb6db92be8d'
+version = '1.10.0'
+source_hash = 'd9a8a95d223121366d9c60368d7a3c83eab7f927832f609c52377959d7e458d5'
 model_hash = 'a492223e4a57806608f4d604075e4b24a6704eea1f1cad70cb9fc77c9f04c9a8'
 
 [crates.aws-sdk-iotfleethub]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '93b3cb1b8cde5a2fc0ed2849bab0bb3d5f7fbba9af2c48a76f584298a35bab3f'
+version = '1.10.0'
+source_hash = '25701ecef18cd552ce57d0d31e2f3288c243c43a3afd28a22f2acf76a5c5cba9'
 model_hash = '9281144ea084bf846594a5f1a936ebfe558fffe20644894561c427dc11db30a1'
 
 [crates.aws-sdk-iotfleetwise]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '875e49d0536a0a4aa2477fdad16c946e83c03e1caf7f8a971cdd17676da34916'
+version = '1.10.0'
+source_hash = '04f3ad067f6090de796d6366a26ad5a5a56a7556dbed3bab6e3542985c795aa7'
 model_hash = 'f2731bf83014d452a47e830088e102898079eab9a197bfc0480f3fdfb95ae15b'
 
 [crates.aws-sdk-iotjobsdataplane]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6c04e13ed933570e27a5a1abf72dc2a45041b0c05df07cd55c2d1025e8413633'
+version = '1.10.0'
+source_hash = '496c40d43b88d81a7be0c9e93fb97182fd6a72da9df177eec798ae9d7f71b481'
 model_hash = '3d077de4462602736c84fad7a2296c47b72b438bb462f5fed750378ad992059e'
 
 [crates.aws-sdk-iotroborunner]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '158471b9e7cb0e8c013db094fd2b4bed1d4ef1e7d98f0c494032e59d66f37fe5'
+version = '1.10.0'
+source_hash = 'ab64e7956cfa2254d285ed6b3fa907d2601c66aa67191ee9aaa16c7508af9cb9'
 model_hash = '513e793b66ba6389799134f998489dd2c3fbe723550b5de7e0127121c971a071'
 
 [crates.aws-sdk-iotsecuretunneling]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9027fffab2e0136d69268e5ef00be449d6565be242200fc4c646193ff025eae6'
+version = '1.10.0'
+source_hash = 'c67c41f84570eaa6ac7df6618c11caa43d2177a860f160fa813daeceb5bfcca1'
 model_hash = '260b1b95d87fb1ced3c57c054ea243ea803537b1e73b98f1db9f47a913dc185e'
 
 [crates.aws-sdk-iotsitewise]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e825ab9818942f659e1531d6febf7441e5419b82f1abdde4e71eb9fa8ef479dd'
+version = '1.10.0'
+source_hash = 'e5dbfe5115d5377949a89338575df6730713f6e078a1e407a9faa34c7abdc1a0'
 model_hash = '336225679503f3803f82942bb925155c9d7affc4caf9bb9d72b25622a3029445'
 
 [crates.aws-sdk-iotthingsgraph]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '08b3a78777316cd2372798ed164f01e9f18c13dee835326147317f90d588a4d2'
+version = '1.10.0'
+source_hash = 'c15d49726e5d3633f1ccff383ca925f9b3ebecce3697ca4fc192c8ebaf239bdd'
 model_hash = 'd6c9b8a53d9eef739f2a7aa03c80b5bf7d572b551172dabbd429d06975d9855b'
 
 [crates.aws-sdk-iottwinmaker]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f7e1a8dbbf8308fc27911e60f0aee8c58d26744a652fa9725982910a3b41a2b4'
+version = '1.10.0'
+source_hash = 'd65e47d91e4e62bce452ee9320d3505749170339561b2bd05fe5ae0126e3cf21'
 model_hash = '6bfa0636935d7d200325e2f1cc7b16a11e5085d98b61b78b7a6bae4c0cbb3d48'
 
 [crates.aws-sdk-iotwireless]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0cc857f1e6a04eae8cb817ddc4c5e986984c661e387fd28a7c9b44ce8e5d1860'
+version = '1.10.0'
+source_hash = '41620b80143ffb7d173331aa2d4d7e6b678f0008c6cbcda92d6f5dabb6b58b31'
 model_hash = '32d30328c480d441952c400177695c52f6c2b95a4fea26892819412ec78b21fd'
 
 [crates.aws-sdk-ivs]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'dd255fcd0a9416b4972368d6b292a5c9ee5cc674d4b01483f6dcddedab71fdf3'
+version = '1.10.0'
+source_hash = '49d9f3d7c9fca950092a2b95ca44a8c19a164487f51c4c35035cf70b41374d71'
 model_hash = '4920d0da4465581a7f46247f6caf50cdbd7de828472ea1613b707937208516f7'
 
 [crates.aws-sdk-ivschat]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b540fc80cfaacd5156b61101edd74b45c7ca8c5bb6e1479c6c1b37dbb2be59fa'
+version = '1.10.0'
+source_hash = '382a6bba3d5b7e9ba1209281f65253a558a3036d64ad0323e44851106f8c7f53'
 model_hash = '7be95aa63f2ac6bf306ef1182ecd226364269cf94d4328467338ad8c07146a0d'
 
 [crates.aws-sdk-ivsrealtime]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '789cb6afcf7126cc19521cf7b276833c12e0dc4ce890d2cb093110dea716be49'
+version = '1.10.0'
+source_hash = '91d4195742e6b1aa260779db55fe8d3d5b59c339a5b4f4c95991558d95368f98'
 model_hash = '4a54dbf4bc51ec067c1d9e53fdd7a46dc2c488e6f68deb75fa13f2c7106ec4c6'
 
 [crates.aws-sdk-kafka]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f9ac07ef5ae9e60b53e6f19abcee533d9d0644cf8f49ca93fa58cb7c32e76ba0'
+version = '1.10.0'
+source_hash = '69e2a93784c5cd2b398f9c86f0142d6206b5c204b35151ed71b76dd0c22e04d4'
 model_hash = '4c80120a3044c859038f0e03c9f9ef2fc67af4808d35c01dccb63148b7b08bc5'
 
 [crates.aws-sdk-kafkaconnect]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4d54056349b4365b1e756abebf1bf65bd2d23f5877230102583d1897cc7d4157'
+version = '1.10.0'
+source_hash = 'deab5a933ccf58410088a5bba5044ac45175ab0734d900731dc63463c7b7565d'
 model_hash = '7494a1d2eff837117e2eb6982f0922c2372b0f092a1a28c4ec892788ce768289'
 
 [crates.aws-sdk-kendra]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3f81221451eda0a29d86adc19412072c0e6cbaade00ce970d00a9a201b58d016'
+version = '1.10.0'
+source_hash = 'a4cec126e11cb963505b262cdcb54324f0d7d6d87decf8d04ddfd35e69e12df8'
 model_hash = 'fca62a1bc0901823f895b0fca061c4be6375be4e1025b9255bd9f837b01b74ae'
 
 [crates.aws-sdk-kendraranking]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f7f2b199938a78f73b031ca332c692f7423eadb022ed9f43d1ebe466addd4cbb'
+version = '1.10.0'
+source_hash = '7699f83ed2a7751b169f40d5d4bd88755efbd831c948200b0f22c0c87e3904f6'
 model_hash = '1dc43d3164c0d60b6fff3ea824b56a6e5213bb665812174fa1754dc554bf727f'
 
 [crates.aws-sdk-keyspaces]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f36e92890c12300da5b4262349c67c068f41ca3587792d5183f309dcb66252eb'
+version = '1.10.0'
+source_hash = '373caf6824cb52a6b95c431c4efd2f8d394c879d2276b15c4f48120efa987153'
 model_hash = '88d95b541acf3c316f9a288941ba231041c2a348264dd853f7987bc47342f4f4'
 
 [crates.aws-sdk-kinesis]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9940ddeed3d937e125c01c3074413b7075a71cc23a14efc6fa07c4d42228707d'
+version = '1.10.0'
+source_hash = '0c6e1b543110cfc49594688bb82d5299a4f2ae03d0d3e2668dea0a2a22bfea6d'
 model_hash = 'c92a8fa615f4230b22bbe0feebeef7415fc23824288eeff14440a31c42f53447'
 
 [crates.aws-sdk-kinesisanalytics]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4b37fbc5b0cd800b2cd077823d15afbfa72e00f782bad4e38491efbc8b521609'
+version = '1.10.0'
+source_hash = 'e29ba23009934bd38b5906bf3f13b6ac5d2c619e05a331cb47e730a59ae3409c'
 model_hash = '494c858c1a3082e73ca9efefa8188ae4f43abafc2d3efccf9bc7bea48f289c38'
 
 [crates.aws-sdk-kinesisanalyticsv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '58c4b7409669c987a8eedc94dad2cac5cdc0ad120b653c48094625aa59f54e48'
+version = '1.10.0'
+source_hash = '79e6bc9272d8966103ae7bbc65b026a93a55479410134953efc98de15a923719'
 model_hash = '3d1480832a515174e1180e1f7c6a270f72bce093b3327d77bb980ba8cfa34813'
 
 [crates.aws-sdk-kinesisvideo]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a6f33d265d35ac82d19ffe53b0b201f59d2e7b6f322c29e0e5acd2240133e556'
+version = '1.10.0'
+source_hash = 'b451a8f4cee4124a95975878362d5d34bcfc8ed77eb66f41b7b4152773efee76'
 model_hash = '84b3c7dea5190cdbc3f8a8eeb8129b90be7b508b83676fa2c3889ee7a8b59112'
 
 [crates.aws-sdk-kinesisvideoarchivedmedia]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'd2a64b15e8d24d4b2157f7d398e8480747296a293ac2979969d3a1e1de83c1a3'
+version = '1.11.0'
+source_hash = 'd6302a46928c0ae1088d6df897323e01cf28f3b4bb88efe0917940e6ee6fa43b'
 model_hash = '02eef95d6727bbe68310100c8966aa979b37d38771ccb09f7f6dd5462e649d1e'
 
 [crates.aws-sdk-kinesisvideomedia]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '25d2fafa2bfc8cdb9d5c8ee2023c8fec7554924742a95360a2751402b09471a1'
+version = '1.10.0'
+source_hash = '4a56d8e554a2286b5686473e445ddec51aa293e671d89d0ff7c92e695e14abea'
 model_hash = '671f36d68e0e0b0c15bc9fd98f50cdcf5578d20da693d49d6d590279ec6fee36'
 
 [crates.aws-sdk-kinesisvideosignaling]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '45b3ad381a8f4285c2090ab546d1c98b740d929006ae17aacc3af61f71d29290'
+version = '1.10.0'
+source_hash = '15c2046cda3b6cfa9b29281529300c245b00ae2b7608207aeea05ca535c804f1'
 model_hash = '7c4b92ed6a5934c6461b55720aeb89ee62a506f030532e26cb2ddf8d84b37aff'
 
 [crates.aws-sdk-kinesisvideowebrtcstorage]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b40221d5056dcaa8fed5b00ac66a6b5c413b1585f168dbeb0488b54ac2d83c67'
+version = '1.10.0'
+source_hash = 'aefed9b18b26b10a4abdf1030832df238f167d44a42aa96468be1181ee4f9d6e'
 model_hash = 'e0280cb2e8d6dc367391712cb856c061a0c6189fe3dd84bb23ed3bd1c090dac0'
 
 [crates.aws-sdk-kms]
 category = 'AwsSdk'
-version = '1.9.1'
-source_hash = '124e92c22cb6b7a1df771a9eadf2ebc2906963b1978152b85961dc9ba77f27e7'
+version = '1.10.0'
+source_hash = 'e7620663f210acefe0340e060bae860ca9fdef7636daf8da09e0e1cbc341b61e'
 model_hash = 'd6a0eceff5392e6d93eb7925b070725c0933c1b1b0cdae0cc70f59889d0343a8'
 
 [crates.aws-sdk-lakeformation]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '2915f600602b3a92740c094093860652eea2810834c2e7b887dc4654ab2ff061'
+version = '1.11.0'
+source_hash = 'b2fef3bc435d347146c22011d0c3097947730df848f655fc3d4416c78bf3e6d4'
 model_hash = 'c369605e133bfed7dcbd77a341abf08bd5a8b86573d2b7dacf6bc27cb475a9bb'
 
 [crates.aws-sdk-lambda]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3928739ac849dfce37c507e3dc4625cee72cbd105289379efa4788a124465f50'
+version = '1.10.0'
+source_hash = 'fc5f89cbc8cba2afd61e7d2fc40832e1f3a3237f53e15f0b068512360a3921a4'
 model_hash = '4ced2d103f9e194ff696d2757b99623712d839e15c7d1671213fe67cca55c1dd'
 
 [crates.aws-sdk-launchwizard]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '57edc7f0d9420ba8bcd76318caa9a691d4b902f82f95c0bbddd9e855d0026054'
+version = '1.10.0'
+source_hash = '5fe22bf5472fe3c2ceb093b8f3d882d481364876b976f210d9f87cdb465ae135'
 model_hash = 'f4b58fd758aa73536f1e3db5c4070eb923cfbc4b8b1a2fc291eb6782218f8f01'
 
 [crates.aws-sdk-lexmodelbuilding]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '2de6b87f3ebbd2e5a1e84b38a09401b30c9c828f2fd6c6e62f9dd8accfbf3fec'
+version = '1.10.0'
+source_hash = '0a0f4288256f4e91d9cea482f86dacb84baa9582667e89d8db092c0cd3190c5b'
 model_hash = '35c3a19d228343d030ddd9373b5bed448dc3d27fd807c3f716c95e6f30bffaec'
 
 [crates.aws-sdk-lexmodelsv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f0d626f950f185b2d7433d990bdac5ce520f32ccd8950fd82ab3755e778f5e4d'
+version = '1.10.0'
+source_hash = '8f175de2e1587308bfc61c64387fd177ef196b364e403f549915e8cdce75d7de'
 model_hash = 'd0b90d606035d33fe29b51f9023a51059bc7bf3c0e0cacaf5a874b230149510c'
 
 [crates.aws-sdk-lexruntime]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'dbdf1a5410b1d318f305d21e320f65c2bf9ff85bb5814e0d1b5ab750c667468e'
+version = '1.10.0'
+source_hash = '8b84b4e1f268039e24d488ad843c28f47b4841430aa7a4a37f8ff19d3ecdfb9a'
 model_hash = '596a20ac4ea87fa620ce112c5335a475c8dce6ebd097c824fc284a59d8d9e664'
 
 [crates.aws-sdk-lexruntimev2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ddb70e5ce08eda4f5bc10bb9e17650d60b3cab1622954057119dbd93db5ce9a7'
+version = '1.10.0'
+source_hash = '2da160d0ed86ababbbf9ffee3c6e0b69c8952f7f5087890c7f0a738c99fba0dd'
 model_hash = 'd652b1bc3e185d17736cd4ee27d84dcd5ef073fb77edb09d8722872b64c097fd'
 
 [crates.aws-sdk-licensemanager]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b706da5da4c00956b393d0675836a1c7143277df4d72ecf2f88ed01289685c0e'
+version = '1.10.0'
+source_hash = '7128d9b384b269c0e6a0c4b44892e0deb9d9b997d21654b4fcb16f3ea2fbe1b8'
 model_hash = '24fbeae2a2d682fff95e6a5b8ffaea36d02db2d983a60a420d8172596e15b2c4'
 
 [crates.aws-sdk-licensemanagerlinuxsubscriptions]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '68153d5fddcb12024946a4aee747e60a87c81c3c3c799c785ba0897981f22738'
+version = '1.10.0'
+source_hash = '3887b26ec9acb9db5cd1eded680dc11540e9d9d31f45219cab76f618efc96ed3'
 model_hash = 'd602d069c9d51a7f277f065e84255646eadc1bfdbb344f48eba0eb7b74ca9b1a'
 
 [crates.aws-sdk-licensemanagerusersubscriptions]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'bf23cca1453d653dd7626a19e9f4ef0fe2d507bbfc48ca65d23d896b2fecb4de'
+version = '1.10.0'
+source_hash = 'b49b339b103d83140420d4a562b361f62b37debfd4b2c6ceab058319c65e2a44'
 model_hash = '16446970b85eea4a8a7ba6488541f28cdad132ecd2fd0de394d3db9a3ed1b89f'
 
 [crates.aws-sdk-lightsail]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '4c4320c1ac253e062bcf6e3ec52d06fbb5b9361984d9f485f7c93e7d3f3ee984'
+version = '1.11.0'
+source_hash = '83bd2ca5c3eb787aac7813f1e04c7b2ec2c76a46bbeeb4378eab1467710c7ce8'
 model_hash = 'b8a53506f5355dfe379e0f4988e6ada97b2206fa61079a485b4eee093473b02b'
 
 [crates.aws-sdk-location]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = 'd040355da1e85ff6d672c7d5193f091056f17a2a6ea88f9260ae2f4611caeecc'
+version = '1.12.0'
+source_hash = '601c4484a72e21037681b5eeff3bc45564b9c0af19bd1ca541df15c2b6a376e6'
 model_hash = '74ad8a49344305bc7f17389965e48774dc00b9187893d03e2ac5b730be8b1d6b'
 
 [crates.aws-sdk-lookoutequipment]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5519b3c9f1f70efa302d640fdecaf89f50341be892d0904c877f3a79d598beac'
+version = '1.10.0'
+source_hash = 'fefc6e7aaac419fae2a8a13b3792c35eca7e4d7f56b3afefc735cc142f329ed6'
 model_hash = 'a2104352d253154c72c1e83a6556e84c1e886fb336fe9c039bfc140a42f492fc'
 
 [crates.aws-sdk-lookoutmetrics]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b529b553bccbe2c6c233f164f4751fdaae1845cc51737d3fb058a8c081a17905'
+version = '1.10.0'
+source_hash = 'b2fb9f4cfcc8af54115fcf4ebe999cc0faf2afb2e7b564e3f606a7a3eae5d24d'
 model_hash = '6049c3732af55ae19aaca27dd9e669f7d3b99e3c1fddc43a3a4f1541a933e83a'
 
 [crates.aws-sdk-lookoutvision]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b01c61f490f3829e8c112642356b614e0eeb69747071289fef2882b44143593c'
+version = '1.10.0'
+source_hash = 'e51d6a1f5879ab0b5c6934bef51d5d8c4f120a50e0e75c4d43b7dedb62bd67a9'
 model_hash = 'ad9b57505093a165cbe3fe1e84c3252c99cca170ba2de812a5c5ddad055219d4'
 
 [crates.aws-sdk-m2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9b68549841d36585700589fa32eb5e0acd3d3023698d2801307f162d878f4212'
+version = '1.10.0'
+source_hash = '75b1b4a48c7fe2218345b43d19621b0c035ad562686e436daa45c7bb2ecf1f4e'
 model_hash = '8ca8210c9121bea5cb4ce7930a32e354472af8b920a19b8ca2701f2b1c37e9b5'
 
 [crates.aws-sdk-machinelearning]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0b563662840d6480eb2117630304c7168f2707710bd99701f4e70fa725315212'
+version = '1.10.0'
+source_hash = '3d65f4daa7a5376307da36dcbc4335b5a769b4b514e6861377a7d04bd50874d5'
 model_hash = 'd4699b73b87a37092a5c012f626266886aea7e13302c6279f82c4c81f7106744'
 
 [crates.aws-sdk-macie2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e45ba6b057c70e71526529ef685aa65f3c24d7c48562e2aa987590e59a47e5fa'
+version = '1.10.0'
+source_hash = '5dd30818d3bdcb7c900c5064cd2a1ec6a5ae4eb4e3b61cde35c0911590ed783e'
 model_hash = '2c5c693d03066de68644defa75d25170366c07c884fdfcd7e99f9bd97e00bd18'
 
 [crates.aws-sdk-managedblockchain]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5c76aa6c13b39987ea2ebd59facde418c0e04c5505aba779606a0be6b4d46faa'
+version = '1.10.0'
+source_hash = '54c349ca358b3f5b365c16fd24e52311761ad9d19005027709963c0e3737aae5'
 model_hash = '732edc18f1e2be8c0a2b7067659d1c7ffe4025d14b93bbef886979f9809a9a7b'
 
 [crates.aws-sdk-managedblockchainquery]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c685ad01de2b8f8f4c6f3be5ed65707d2c75ecc0200432a745e92e0000fe6784'
+version = '1.10.0'
+source_hash = '20060cbab432c024b029c7de797bfee79a7b037d34f0b6d2f2deda38b309199d'
 model_hash = 'd654960961e188b93dc7ba2a07addc4c8e698b7af3aa34fd4350aa00ba46c727'
 
 [crates.aws-sdk-marketplaceagreement]
 category = 'AwsSdk'
-version = '1.6.0'
-source_hash = 'a11088f296cd1b0f5bd1cc04aa7b4b44152d4c1cfe265ddcbb2df4637c677af8'
+version = '1.7.0'
+source_hash = '71469bf0b6dfd8e35903d4dfd40347ee4090ed14564c5f5cd9217ebba0dfa826'
 model_hash = '7628550e920b50e1c9e3e9a0318647c0a33fb2c0d8d7bf6baa29e4a7d711b860'
 
 [crates.aws-sdk-marketplacecatalog]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = 'd6103e995b5c5c995ea360ce75672b9fb155828f66fc06fb4b1fe8429a90f757'
+version = '1.12.0'
+source_hash = '415773f783eb84c8364d25a5b543b9213ddd489f15fdc9299c6c34fc2d1cf86b'
 model_hash = '1eb3b039ea43d4ccb6e66529f5233e11036ca04ea005103157ce42d75570b9f3'
 
 [crates.aws-sdk-marketplacecommerceanalytics]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '030507b9f13f6d2188ca181b11646902f78ac6b1d3492ea37f88758f4df75e00'
+version = '1.10.0'
+source_hash = 'd9d443f4b246487a3a262a4a17849367db82b4831fd2c0ef6c2f48674c91a76b'
 model_hash = '169990f7ee1b7e3faefaccacaf3063153e33541d0d5522567d9902b3332fd29e'
 
 [crates.aws-sdk-marketplacedeployment]
 category = 'AwsSdk'
-version = '1.6.0'
-source_hash = '61d137a0460b73a8800d82de42d0d2bcabc061491894794af2b87d341d087795'
+version = '1.7.0'
+source_hash = '17b308f76ca7ffcb111a52d024966daf417e1cc58f62506b6231ab5b03c98276'
 model_hash = '137500e567737e786370a4438e395d8a57cc902cd4b29cccbea258e7fa4e077f'
 
 [crates.aws-sdk-marketplaceentitlement]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '42302a6edf3319a3ebd70f5558dec758811a6b8e62ae2c85b2da3392f2e9d8eb'
+version = '1.10.0'
+source_hash = '26ab3e22d9a99db2d2c7d793acf9b77123f63ff54df0c5fb08ea76eec53703fd'
 model_hash = '884f6665b9cdb449a7097a32a7394b461415728f65b8f0c05ca50110e865ff63'
 
 [crates.aws-sdk-marketplacemetering]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1c00c051d76589e26f41db7a7795ba1fe7f6347c081f19da532691b97fad72b0'
+version = '1.10.0'
+source_hash = 'f98600b6c58eba3f16718a8a7029315c46ddc3e215c58fbbad2bc1ea803aa091'
 model_hash = 'fe75e39451e44295d1ad9f365568e20f949776b676536aec5d13f5f5db0663d4'
 
 [crates.aws-sdk-mediaconnect]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '6bbe3a27084d48bc7944cf9c4665065020bf8146adb084689fd0a796cb618dd3'
+version = '1.11.0'
+source_hash = 'f14eda6ce3d80f7f940c0ec4dde2e96c9bc486e543cf1cd1310fcaadfe7da878'
 model_hash = '22322f080c448fff49fdbab2a5bf5292e3130a272b69752331b2b19ea93d9344'
 
 [crates.aws-sdk-mediaconvert]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'df0a7f5566e454784fc2bb9fd912ae667edfb32cb7929d3a91a0e3f4979803e4'
+version = '1.11.0'
+source_hash = '4c6af0516f11642060b57da38f145e451023797b16c569386ea8c98aa96e690f'
 model_hash = '00e35fc681fd41f71fb2b45fed6921d611b5a1794750df4c0190e71716885ed4'
 
 [crates.aws-sdk-medialive]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'd469837a9f2cb499258cefd4434f3b68247871f1cd8d160b92620627722083ae'
+version = '1.11.0'
+source_hash = '5c8b240ed4d4bc410642a76c6566a6d98153749e7c86d60360b740e0fbc4d52d'
 model_hash = 'b14c61ad9f06a52e326c8dd350712525c8e406a72b734b19a94648e637e62ed6'
 
 [crates.aws-sdk-mediapackage]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '28aedfe0c4fa719e64a52fb9980530f0a940446fc2789538a40b63cdb7772edb'
+version = '1.10.0'
+source_hash = '58f4a1122ff0d254215d1e3316506f242e9377a5a92d6f7f66f7bc38664a1097'
 model_hash = '6b1f33b67ca3b4d994b5180e1e84382e43a2e48852907d8628429009f5be0d00'
 
 [crates.aws-sdk-mediapackagev2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f0d46f5eb1c1b684faad0e5340c81f5ccf3329189569643bd9f242a845b5e1e2'
+version = '1.10.0'
+source_hash = 'd2523d53f68edf827738986c7dbba1aa47d79c237799ea3502c02033ea50ed4c'
 model_hash = 'b32272b05d6399def606b48da03cf2bbcbd57a343805cde5343effb056f89600'
 
 [crates.aws-sdk-mediapackagevod]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5412d0d2c873be661403af550b78b37227b0f72cb074a3d25d36babdbaf00e71'
+version = '1.10.0'
+source_hash = '0ea151ff93f2f37be1e792cca649cc647c2fb664047869e0e2f9334ffc0c8d93'
 model_hash = '26ac5422bc7566d50c746c8990a9fdd77ae3aa6a4a1da500d251222be4d9b731'
 
 [crates.aws-sdk-mediastore]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7941e700d22a7c66d04082a187e1e527cf14e3c0d981e2fe302d76047841617d'
+version = '1.10.0'
+source_hash = '910dbbb63da00f5236a96aa521962093f6ccdb4c39427a1f3a277175922b90c1'
 model_hash = '4c2a839b494422238ecfe7aed4b9ef4af99728044a9c9c74d3f67dd30698b16a'
 
 [crates.aws-sdk-mediastoredata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1ce3e54f13176ca55d39e77e603d1c8ccbd49c3d651baba447fb28bc9262c3ed'
+version = '1.10.0'
+source_hash = '6bd340f34ced7bcdc78d577f5140944e26c0a7cae18f98c409243268edcee4dc'
 model_hash = '5f37ca20e94fbb48d218b6a952a3b36c008b645c17f4eb2aee562342137b4d51'
 
 [crates.aws-sdk-mediatailor]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e094859620f4f1d4acba51290bf4b25943444abe03f308ef16f7f45b91a74eda'
+version = '1.10.0'
+source_hash = 'e3b29955ea144213fa0b9de069836b7a77736fc4e7b8071a5bb1cfb9bfda9476'
 model_hash = 'a7e967c607951b164a574d5bc13ae0ac133c7d1ad4b1a0a681c0b2fa0c010bb5'
 
 [crates.aws-sdk-medicalimaging]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '087537b89e88ae2d1624ac31e6111f96eb573bc63a80dc36e2f10bf70dd693ce'
+version = '1.10.0'
+source_hash = 'ecb3975659a6c7f62e346b2bd8a85781014a5b30aeba7fe19ccdd2c6ef1f0629'
 model_hash = 'c1d9f4e1c3feeb7322bc562407ed15c321800702311a03394eea90f1d77d6596'
 
 [crates.aws-sdk-memorydb]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4f88905f8089faee4e6e7da7aa2b284815595af269cfd68020a14811bb3c9f98'
+version = '1.10.0'
+source_hash = '844094aebb99a440e5a04c815ae041a0224e46e922d076da16987d20d1a04dbc'
 model_hash = '66ee16cbac6d2728aa9ce4e336338114c6f6924bb280ebd47eb649b5efb5909a'
 
 [crates.aws-sdk-mgn]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '12dad6bc5f81ac855f1baad8371f00fca9bd16ccce52aa96a59e4481e4e9bf94'
+version = '1.10.0'
+source_hash = '1ba2d89da53934039b7329fc1f78b706c19540d0404a294609c3509c3d9b7ba2'
 model_hash = '145b2b74199de62e3d180a150e21851aacca86b461710676ad8e8c11c79c4a93'
 
 [crates.aws-sdk-migrationhub]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '967433b490fff1dabe67a64954a2d2750e4fb2bcd23273ebd8b862612a454354'
+version = '1.10.0'
+source_hash = '5b49d18776e00d93a232df670f491645bb6d1359fb6653da835fc503ee0309cb'
 model_hash = '7e0bddfc3eade68674fdf4c34f28de74c330606c83b9ff807f53597f15ba80da'
 
 [crates.aws-sdk-migrationhubconfig]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e29a9bc221c82daaf1dad09504f7702c8e021da05e52a2a204ce3f2cbcfe502d'
+version = '1.10.0'
+source_hash = 'c4cdab89e7fbf15d0ed07f4dac1a29b3e78bf760349ce61eb9bd15b53c16b4d2'
 model_hash = '703bdad748102aaa909f7ca665e0bdfe9b9f56a12bbf0c355241a129a0352223'
 
 [crates.aws-sdk-migrationhuborchestrator]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '231db4bc50fcb5a34cbf6947ecee7f08b0e8b81f5d0ca4f0785134475b62b60f'
+version = '1.10.0'
+source_hash = '3420dd8264a5f8a4408af7fe7f5aa964dee7d2c2b5be0e2050a071a614d758c7'
 model_hash = 'e19154923da5c87ba17ef4b2d44b3ccf93950fb50889b1b589901bf7fbef4c49'
 
 [crates.aws-sdk-migrationhubrefactorspaces]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6b8b07db87c64bca40babfb85f6f102b489843e3ede2bef780b3257ac0e7a914'
+version = '1.10.0'
+source_hash = 'f8059e4386d556d185f8db2f6e0d3586df1f509fe6c5e083ec5fe800c04d9230'
 model_hash = '7ac3f9a38041a038768928b8100787a2e8fb8909f742c501a68e561f8ae5489c'
 
 [crates.aws-sdk-migrationhubstrategy]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f8ed2b6693a1d34dde8993ede581870c9e212cce7da1143d629c638b677e6fa1'
+version = '1.10.0'
+source_hash = 'c47bc717e74327ff4d8c4cc24e68fb8785f0c7f3db0fb16049c85bd769d74074'
 model_hash = '0b2b9ed320222b207b03eea464800c2ec5d7fb929a6348978e837e88144ed886'
 
 [crates.aws-sdk-mobile]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '85c699e221c6ea7aa954e06a262ab64c43206999a4ae69820f5d31ab3cb3b230'
+version = '1.10.0'
+source_hash = 'e6b5d74c6e6f204a6f870c71f4622f0b06fd533d7492cf5fa7be7eea21fd54d4'
 model_hash = '92e9a89c4b2d472d264a408d95553fa2610639a5fee8dd87d65e88806630dc15'
 
 [crates.aws-sdk-mq]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8b415ef03b0595062a96e00e3040e52d83436bdf1086e61c058211936adc1e01'
+version = '1.10.0'
+source_hash = 'da5c7561c24b41cb42afff8aabac3e5d4f47a3e5bb9d815e563d656d585234bf'
 model_hash = '8d6476717751b50770784f58a5bab647d5b9a1774a024cff977bbcbaafe691e8'
 
 [crates.aws-sdk-mturk]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5b87f2194436c4e75dcc03484422b4acd461fdade11f6f51ace571e08ca67a43'
+version = '1.10.0'
+source_hash = '6dbafb6416ae4abe8bed09bc61268c544601ae28b9f45d86ecceebad81b18f05'
 model_hash = '1cd1e08bdab2e0bd55d6d6ea1e5d4e7ca54f6855513da0051007316cb9e923db'
 
 [crates.aws-sdk-mwaa]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c40f812bde04f0238adc0d1a3ec872cd4212ab798bdfd05e729fff618b2ba58f'
+version = '1.10.0'
+source_hash = 'ea8b2a5180319c227ee27021c219bbd6197ec38328604e24992be3ad87d2378b'
 model_hash = '1cf3da4b3e44f88bad276b24156369c937ef32424822120c33e1fd7f918489f9'
 
 [crates.aws-sdk-neptune]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'bdefb7e01632716e1be1e44a612615962f7e981baf814968bae0e79564013ed1'
+version = '1.11.0'
+source_hash = '16c4a73857d244150ae97f54c65c5b6e57b8fe098d8b78e015dbef343ec9640d'
 model_hash = 'cd6b770da273bf7111eb89b20a90fa46c8505bb23b1207280b83246e9f612f57'
 
 [crates.aws-sdk-neptunedata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '167bccd8163e9d96dc3e7d3b9f8ffcef4579ebd4b8551153bd0ba12096d9f445'
+version = '1.10.0'
+source_hash = '7ce06392f4e2aed7c98e3245ffbf52610c65938f35e3dd7a80c044992c9b29a3'
 model_hash = '3b83cd13db92df4ca24a11f8978d16f9aaebaaaf6144a282feba7c369d65c248'
 
 [crates.aws-sdk-neptunegraph]
 category = 'AwsSdk'
-version = '1.2.0'
-source_hash = '6b120f79d478361526f28fc4ad6c81ce8e3f6dd1f97957a1fbebdf28d6ca3ddd'
+version = '1.3.0'
+source_hash = '76edd0f3e90813e2fceebf45959a65d2496dd3ce1f47e37c174146713206b76d'
 model_hash = '0c57335e70f44e5b1cc9412bd2a87fab048f2c2d82b347249314a5ab673cb8b3'
 
 [crates.aws-sdk-networkfirewall]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '34cb3854b400aa830374bab782f03f8515472a52df602a428dde1829b8d68ce3'
+version = '1.10.0'
+source_hash = 'e6b7514fc2914ae1063a0e52e38a54331f982b76afe1fa6a92802b50a00b0359'
 model_hash = '77b8db6ed55b0c21837261354b1b2f45c5089d076d0f617f89bb33bd2368da38'
 
 [crates.aws-sdk-networkmanager]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'af19a15d1fa85c4349a68dfdbafc6387c18a3010988577ca98d56db4e1abd76c'
+version = '1.10.0'
+source_hash = 'faf4a6cdb08482772aadebf50ef8b88468fcd39cf2fbfcc723ec775fa83e3fd1'
 model_hash = '8d93804db37dbbc782a28e21b2b5a5b25131db06333040999ae4fd4af277e50f'
 
 [crates.aws-sdk-networkmonitor]
 category = 'AwsSdk'
-version = '1.0.0'
-source_hash = '65596a6bd5ce284fb550d2097289c37235d5783f8233edb256ccc26af3cb5bd3'
+version = '1.1.0'
+source_hash = '1c1ad8805345a0908aa56056aa523c3ffcc236cd73d1f83d9299f90d5c472036'
 model_hash = '469b0f3dd5a6d1ab7962abd71c793aa88d8e46b1fef806fe02c42fbf45a3b607'
 
 [crates.aws-sdk-nimble]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '226ed238251009a3047ce6ecc5de8b3eb048e0f4fa0754266958b9536995c2bd'
+version = '1.10.0'
+source_hash = 'a3044709ad5c73a00caded98c34de1c2230335d2d0b76a385525e767f637c2b8'
 model_hash = '85dec651b166eebea43bfaf1b96db842ad1c930667f6959601501b29b37072b4'
 
 [crates.aws-sdk-oam]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b0fb716cc75cb39761a9ecc31add6dff375b806c3e2b6b6f05b20595bf11db71'
+version = '1.10.0'
+source_hash = 'ffbd5a9c1c882e7fdd18e4ed1f5f0d90cd978c213226314ab5922fbf3a64aa72'
 model_hash = '3a9f2a2b025e26890c09b90da386dcf55d74b5a512ed333c23a45bbe415c1350'
 
 [crates.aws-sdk-omics]
 category = 'AwsSdk'
-version = '1.9.1'
-source_hash = '9b2dd0ce2a50e6152c3600106f05c692d61830367e19658840481aa36b497b0b'
+version = '1.10.0'
+source_hash = 'f3244af9c00a85e2c45abecda16604c5e85a8842ce4c633787e143738fc57b2d'
 model_hash = 'b8cff10ffd480b57d8d8dd64418a6113e523e4bd8d6b14ed6a11976170636b6c'
 
 [crates.aws-sdk-opensearch]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = '059229bed58b3e488970e7a3e9f87d69bf0328e04272d33f071178b8fe0ec5b2'
+version = '1.12.0'
+source_hash = '9ea7103fb23a636618abf3daa83414c39c6d7b8fbfe30c2495614859a2cfe7db'
 model_hash = 'a33a0091a5faf62b47b462a083afb34578807b06be2cae8044b6a0cbcd51dcde'
 
 [crates.aws-sdk-opensearchserverless]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'fcee0d0740981fc654c0dd0553e2294f78a071c61132503c649949286033b336'
+version = '1.11.0'
+source_hash = 'a60ccea1554d510153d7d24201e7c1fc33f061a4472e71039c05b6dfeb32393c'
 model_hash = '6afa5cfbc93ccab8de4777d8e772df6678423d5e3e70a2451baff416991eabcb'
 
 [crates.aws-sdk-opsworks]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '24106ddcf87feef6adb5c0d5ea91f05fd9bb80ac382dd255563e0ba6124b9cf8'
+version = '1.10.0'
+source_hash = 'dc6f0be60f3bdcc29644da899044e3e93fdb4d8dd6d119a0af21c772609e0b2f'
 model_hash = 'bdc48d7454d51410766d13fd54b469d6c613128dfa83b389bfad20913a9805b2'
 
 [crates.aws-sdk-opsworkscm]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'dd4e91e093b074d045017297831616e71b33ba8d13ae30ef919e70cd63cfed0e'
+version = '1.10.0'
+source_hash = 'aee409bedbfd11990e18181e1d9b22effdfde6222116f4156801598fce0cd587'
 model_hash = '94fae3de41f095f1626b2624ea61356b9e50a130845f08ed021b777cd63a0063'
 
 [crates.aws-sdk-organizations]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'dede187b261db3b1fe7a9b49592d37fb72b8e4680a33c8d960dc3bab66136cb9'
+version = '1.10.0'
+source_hash = '25d703a0ec3fa1025730d6558beb6662a5729ab9977c2e8ca66dec9df294949c'
 model_hash = '92c7b6c1103589fb1ab8989d4b62f1ca23d8e499a0c9e4d8e99defeb847b7645'
 
 [crates.aws-sdk-osis]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '285f8aaca1eade3a23d93bcea02dd76233179a05dbbc0a6a5fd7fcf50119d735'
+version = '1.10.0'
+source_hash = 'd0456cf9a8bc94a330bef06f378c5454fc4b2e25a4da2b65dba74d007d8f76d3'
 model_hash = '759ebcae003c15353e016624452922017bcfb59d45782c1a032720e662d51ed2'
 
 [crates.aws-sdk-outposts]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '2ad2f4f94eecb55b3c5ea89ce21fb1dce9d2d2acc8a4247d7dc7c10a204616f2'
+version = '1.10.0'
+source_hash = '724917fa8fd49768c7850d0670ed51f4b9adbf20db9dc7821cff72de441c8bc2'
 model_hash = '2c38221952a0eb44a5216888abb8d2492348690596876278659481fd4ffc3454'
 
 [crates.aws-sdk-panorama]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f1ec8cb6d829273f964d9a379019c2e755b65523aab20c17b6e70e48ad37a32d'
+version = '1.10.0'
+source_hash = 'ec6773ba47bfa3e95fac2e0d40bfe70e0e7bfdd08e87c03601c8f076fbacfb36'
 model_hash = 'febaa3d19e9d98c7c7888395b77777d20b9914187a054b1443a86e9a0a5ab35f'
 
 [crates.aws-sdk-paymentcryptography]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '581586027af94ed8940d1651f0f38884232989fd4043f4f407d9a607965c9ecc'
+version = '1.11.0'
+source_hash = 'eefee13c230992798f93d5c1cd506fbd775a39a51b9a9dfdd701b7e4401e5357'
 model_hash = '6a93a622b9548962ae9145e77d6462138d149ce70051f0392570b67ba4f8fe09'
 
 [crates.aws-sdk-paymentcryptographydata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4f68e0644eb9fce112ece0775b150d60646997d352578a56ea67a61ab6036407'
+version = '1.10.0'
+source_hash = '4a8d8aa66718fac7624f289cec5f318c92186d3fd85bbf3cd2a4fd13e3fa3b0b'
 model_hash = '911123771bee7b7343e09cd2726f547a2a56290b0385ba61e2566f827bae3152'
 
 [crates.aws-sdk-pcaconnectorad]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9dcf6086d0ef45710d38bf0a276a18c21d75e623a0b4fbeb7a9e0211426e17cb'
+version = '1.10.0'
+source_hash = 'c1d417bbf326992e52844750512f447e186c163d180e9ddc81101c0bccead398'
 model_hash = 'dcd33f1b50d80dc3d4502f1f156b4d6d74444f011da309c399ea95b0e99f6e47'
 
 [crates.aws-sdk-personalize]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b1817ddbed6f69cba712335994bbab235c2b2d2f668b663efafa7f50176271d7'
+version = '1.10.0'
+source_hash = '79deb48a53d25bdd14d95fd1e6e4c557ebd1437bef6861f910ccb73205c78bfc'
 model_hash = 'f7ad98a0e09ead796bbaad6c6971db32e2de67499b5d97068cad44c405b2d60f'
 
 [crates.aws-sdk-personalizeevents]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9c31bee320e99f3dbc49f78140a9abb056433deeadfb0000924805feca19c1cf'
+version = '1.10.0'
+source_hash = 'eedb43ea0fdb82a6e109a1ce44c9820e14c3313c7bdfcf649fa1bdc8d9ab9b47'
 model_hash = '8e2153df706ce4b9296ecf1d978beb680242f0c3ab63ecd7fa7b1eaf37a59b81'
 
 [crates.aws-sdk-personalizeruntime]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '524a4f57a606ba4b92ab1ccd2201f56a1910d6574c9a09f5df0571a09845f2c3'
+version = '1.10.0'
+source_hash = 'b26b2c8bf8f2b9257cb57ed3011925c0feb4c461224b68c0f1cf8b3cea26e342'
 model_hash = '93d8336a9d0cc66971911a5478fd2a76565c86d8cf276a27f88d5242b2ea94bb'
 
 [crates.aws-sdk-pi]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4a7f84f17222ae30e30111f4bbd78352cbf211a015b46bbf736aaeb276342ba8'
+version = '1.10.0'
+source_hash = '6eef5de89b73a1cabbb1fd23f40943d4d1ef9a790f6f5a42afc7b188bc4eeeb7'
 model_hash = 'f5f79e4e53bb45d6ea1f8eecdf31450aa0c631df87b7ee2e699630f709d36c44'
 
 [crates.aws-sdk-pinpoint]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '99f4ab859d6a0990bb0012e8def8d827247ac89d400ec43b820995680da5b39a'
+version = '1.10.0'
+source_hash = '9e24175bfba10be02de8b36ae5dbb8675fa3632073a7ad37f21b084091497356'
 model_hash = '3bef0b6504bbe78b48fbb5a117ffa55c6df26310593379d699f87456aecac609'
 
 [crates.aws-sdk-pinpointemail]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ab3c81af6ab2c43d87511e2febde2fba1759b243fbf4aea36b2140410ed2e6ce'
+version = '1.10.0'
+source_hash = 'c68be1d71c7dfc5ed3f55566add88e94a4f621624d41d0398f0128c8902ad2f5'
 model_hash = '2e3995f2bf969329f1afec93f33bce0cd529a890b5f86d84ee5f538d138e5b56'
 
 [crates.aws-sdk-pinpointsmsvoice]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '11451d37380aed468ffd231adfbb05485dba92a9950f4137b074cb659262c62a'
+version = '1.10.0'
+source_hash = 'ddc015f58ab5fcd6c3105b41926b2a50c9fdad930d261455cbb79bd3c3337454'
 model_hash = '1c88a67d16451b4c40c3e7f51f3020b6961f62187c4503fc4788187849855a80'
 
 [crates.aws-sdk-pinpointsmsvoicev2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6b35a9b66463d74d07a111ba40ab6b641547b4a0289c1c74e843a8482d6be725'
+version = '1.10.0'
+source_hash = '82cfb4652fccf7f4a4b8a029f146a97103a007ce4686ad89a8d9290204b28c09'
 model_hash = '2b6b267aa2537a5980fbaafc3c7572143f72c1f5a98214ce01d5e39635354599'
 
 [crates.aws-sdk-pipes]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '707d5fc5c951d774990cdc1e9b9dc614f8598a94c7af54421df211987bb4b5fd'
+version = '1.10.0'
+source_hash = 'c6615d0c6687fc5dd31890f4a8dee055324089df048b3d8a2f8dc90049760d82'
 model_hash = '0a15bf01f985d351bd38893ac4bc2e49bcf5d71a7d80c17ea54086cd6961bbf3'
 
 [crates.aws-sdk-polly]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5ac2ce9aff44339b0b5db5b0039246eff9993d87a7c919dbda553addcc5fd982'
+version = '1.10.0'
+source_hash = '33f4f066e46a5b03aae1978829032589a0f6b8392ec6d7413a387ade238aacdc'
 model_hash = 'ebd0ffee7879b904c17eef1542294a086bcd4600631c2b2b9d34654072a0c569'
 
 [crates.aws-sdk-pricing]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1e2be9e620c728c5f2e11a158eba1bb6a2829362281cb68c601b72e80ce7171f'
+version = '1.10.0'
+source_hash = 'f3b35496d4bb15a8647513bd59108767d1bbb4ec275ab467ec64b23a9478998c'
 model_hash = '78728f0224ed1ded8cc8e4fabb56ec07935dcbc3b1d562b237c9a3c6607779a0'
 
 [crates.aws-sdk-privatenetworks]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd1a652f9d45aa61d60eae65bc650b1526a1dfe534ed3c00337e200257846b674'
+version = '1.10.0'
+source_hash = 'bbf8a8740d9234f513f88ea35279b029857831e8933212c8d6b91b2e7bb8cce7'
 model_hash = 'c9861594f0c5119053f730a377bec52cb857608804185ab3a19d5a5027765a69'
 
 [crates.aws-sdk-proton]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4b337807b3958481acac73046a96e9228e8b96cf388600d511285adc9834b65a'
+version = '1.10.0'
+source_hash = '96bc5bb55ded4692a15e5475b2f8e39c425df9bb750c9f866ba2f0afa0b7f8cf'
 model_hash = '70d8c095cad5fe369c404229900eba9fbc267d4db2cfd7fb925fe0bc65181dcb'
 
 [crates.aws-sdk-qbusiness]
 category = 'AwsSdk'
-version = '1.6.0'
-source_hash = '220e54e887d263536abc60eee7548d71d0100d629d221e4a8ddbc7ee552fcc46'
+version = '1.7.0'
+source_hash = '21ed38fe432d3549a915ca161df5be8127892b2eec17689682dae31678417f7f'
 model_hash = 'f13f835b7ec8715131f5900a4499bdf71b9b80446f7e5281f78d368f56c7e248'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1165cb5252236694fa34a96690b47d30ee73629bcee6ca1ac48f880f007f6e81'
+version = '1.10.0'
+source_hash = '7635be7116b4addba8207c718809fdfe05f4ef016c7237d69addc1ed3dd57118'
 model_hash = '15a4bba75a135b23fbdca14299ad2f5cd8fd5178db53f629da27746934a3977c'
 
 [crates.aws-sdk-qldb]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '908699affff227e47ae916875f7b6c080c8f581fd1554a87b0b460226e2ac639'
+version = '1.10.0'
+source_hash = '43ad2addf4a3c97e898a626aea88c03b11828d64e94f55dfdb4f350859056fa7'
 model_hash = '566f48b8784a7b21b58c93e06d59903ba31174c8a718babc8b4f38e9be3786ad'
 
 [crates.aws-sdk-qldbsession]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd2afab831090ab1782afbbe31c4544cb8c98bec2d8d27de626c8ff6b6c9ad5fa'
+version = '1.10.0'
+source_hash = 'd72cd468c7a3a4cbc47798ae3dca7e5f12ab0f4887fb72d80ed2b500aa798418'
 model_hash = '27c9e9e5a0761cc6e79648630e51a0d6faf2ea5dea8826c722bcc5005fa36786'
 
 [crates.aws-sdk-quicksight]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'c5d5efcee270b8deeca2b1957cf4ca5a348336b05c398aa7526efa4125747685'
+version = '1.11.0'
+source_hash = '29b65cce915d6675a97838f7f80e402ece66061ea81e83ecad8071d4188bcde4'
 model_hash = '418c392102b0b9cde57831f9f0af19bf298709a18f639dce07928b11cdcb9fb5'
 
 [crates.aws-sdk-ram]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '280d0d041df04c523815cf65fe37e29348adf3bc0abf43d611b04e8d2a3c41f2'
+version = '1.10.0'
+source_hash = 'c99af3a0f6f7c3865378faa197d2fa7ef9b5eb4cf27afacc472bba435863b6ea'
 model_hash = '089a8b12162eb3a3ad06adcef9c96f68661e8a54206da0150dd56557476513ef'
 
 [crates.aws-sdk-rbin]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '27f65a742d367b0f780ef395a77ebf5880498457fd01d06726689baa58349865'
+version = '1.11.0'
+source_hash = 'b598313bb97fd8be52ef4f248ed7a84d94afc1e609ea1e2c25ce4c80a48e0445'
 model_hash = '33137a772550764a4312631b5ad37b61e0232d622a5d0bca86b20efd5bb76105'
 
 [crates.aws-sdk-rds]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'c7e41f8e55956d267d99eeaada7c07f7d1654343e7335e8b05496133d7026225'
+version = '1.11.0'
+source_hash = '6dd615ef4e1485a13ea871e0e3f6ed9176f803be34dfbbaeb05a0066d2deda1d'
 model_hash = 'be8ce5a150386ba1d7f1b728bed7e0b43dc5964b347885702c2f5a8e1d6cdfe6'
 
 [crates.aws-sdk-rdsdata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '5f06e8731cff509f304f71d2999876f33921baaf529e3669e9dfe3829dcce21b'
+version = '1.10.0'
+source_hash = '88f4d1a3ec22d864710d9cae2c22eca53e7bd3afb982e9be63226db9ec05442d'
 model_hash = 'e142ccf8cbcef73d30ac9d2c9cd00dfbe0e023baad5cf540b3ef2f950344184a'
 
 [crates.aws-sdk-redshift]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4505ac4497c39f055ea26db77a3c01df0864cfb51afb62328142b42a16c8627c'
+version = '1.10.0'
+source_hash = '8237d5aaf2a05d6cc5a8cac1c08c1277c4dddd8d69ed88117ab389995bc128d5'
 model_hash = '12bedab9667fe03fe51eb9e57ed4fc284578b65daa0819516d5052b9422894c5'
 
 [crates.aws-sdk-redshiftdata]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4d25fb1aa7865f1ca8bca2484f68d3a674e9ae900b2ed937aeada5a2f0214e86'
+version = '1.10.0'
+source_hash = '5a38464c9daae3d9ea613ed5909a4fa1a87b292d4a38eccde15abd386aef8eeb'
 model_hash = '1645d194dc34314c0275a1f38bb0fd1e3e85047cc9924258cfe663c0b12504d8'
 
 [crates.aws-sdk-redshiftserverless]
 category = 'AwsSdk'
-version = '1.10.2'
-source_hash = 'a806bcc7f190f2fab1995bf5c4b764b0c4ec49e4e0a28d33877f6f3d0a56c737'
+version = '1.11.0'
+source_hash = 'bc16b638963bae8ca496e39db89892283b5abf066d4bdc611261151abc69be14'
 model_hash = 'd33fc0b5a409253ebd7574b66431d059b8a0807d38865e8df65ecba85e8b9524'
 
 [crates.aws-sdk-rekognition]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '68df2e7d63b59651b3cff80eee0ed48f8370a390d757d39af3254254d26d9b55'
+version = '1.10.0'
+source_hash = '0fb3957c79ae4730d5c56b423131b34252c0cef48108886a253b51c85594fd16'
 model_hash = 'a5bc81ffa14d0ad7fd3a3a1cbe7f7fa16ab35b322b932c115a4416966e896513'
 
 [crates.aws-sdk-repostspace]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = 'ae0414fc6fdf105c0d9b2d72da20a47485bb612dd6df14a576db0bdb8965fe39'
+version = '1.8.0'
+source_hash = '709c191af72835e3e05865d54c55a759857e4deedab13252b134218ff331cf4d'
 model_hash = '1740a029d9327517f19ade84759349b7d729ad38260dd0f96afcfea396d670ba'
 
 [crates.aws-sdk-resiliencehub]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '80f4722aceac495d591a6816ed76e27a53a8be8e5f16efd3c50201049cc3151f'
+version = '1.10.0'
+source_hash = 'ee2a48d3b7d85109d9154ab110c999101991f691024cbefd6f3933b8726f54ae'
 model_hash = '3b7c4073b58550739ced02a559e747f674b70a91a8799ffe7fc4a644257d6161'
 
 [crates.aws-sdk-resourceexplorer2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '0bba65a460149456504d810e55272d2331976bb57453a9a2b020ada3c8f9231c'
+version = '1.10.0'
+source_hash = '8f8fa2232a3fa0b73fa5e6a96455c6a263ca9dd5f88208c1bb5f3d00c5d1b26b'
 model_hash = 'b867449074ce6410f4def667d1ca35635788638e5fb5e4784b450709d0eb482d'
 
 [crates.aws-sdk-resourcegroups]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '33be9c5105b7f2f04c55aecf10cadb46dafcba14c55598ec741e65355cabbe00'
+version = '1.10.0'
+source_hash = 'f9e5438c9b287b5e7869d9ede72d4b499e18876d8a7b78743a2f70e87c25a679'
 model_hash = '2c0b3773c0c6b9154fcbdefe5299d4b8f0738812ba8457c1d1f10ef8a423c16a'
 
 [crates.aws-sdk-resourcegroupstagging]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '44e91ead98410e2a4661b69246f570350a713f680c355856cd22b92f06117dae'
+version = '1.10.0'
+source_hash = 'fe6433bfad3ac3d91aa059aa548cb534fbb6d54f7feca3a1644a37693a20637e'
 model_hash = '773005ed64bcc3a4f67673721a30cfb108d00260fcbb83bfa2a79afc4898eb85'
 
 [crates.aws-sdk-robomaker]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '92602c3d79b9628f7196df805f91a88313081f77b470e2ac099fe960581e8af5'
+version = '1.10.0'
+source_hash = '15c2e9fb70bc187e55ea78814be483c9df522ba1ac1b30f147c46e419c78c3db'
 model_hash = '7359c8d832a65dbb4b1fdc7692fb5179067e18cf531d92b5cc5e2c70fb1de4c6'
 
 [crates.aws-sdk-rolesanywhere]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c0b290a6a54c0e581bea8386cab24c705f12937990348515e90aad714c07e045'
+version = '1.10.0'
+source_hash = 'd7f73e90dc58a0e0470ad9f81117e4fd9c45857616dfe60cdffedd9331085bea'
 model_hash = '09d5fd3c17a1ef45f28c12181c2ac3c4c1b9312f00d30790945846494a804730'
 
 [crates.aws-sdk-route53]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'e7d8387cebe721c30c7956001d8ba34aadbf5a41edb29e4cacb3b625119ae7a5'
+version = '1.11.0'
+source_hash = 'ddc4e706904f048d3a610cc919ba011fdee0e9f0cc341f7eb0797012da12ce63'
 model_hash = 'f73b6099e9d764a58dae406fd928fcc54f66fe9e2fda8ed487501ecbaa158520'
 
 [crates.aws-sdk-route53domains]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd71679cd6340537ca6ec0d67d03aa153b986046cbdc1eb63f8eaed1a557ccf34'
+version = '1.10.0'
+source_hash = '28b9796c73503c0cf21fe8dbcec9c52afbab9952a7f9e5f2efb4cf29df622408'
 model_hash = 'ce1458e71a879ffae3f59253bdf6e49cdc1160b72928e666400555e388792a5e'
 
 [crates.aws-sdk-route53recoverycluster]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '49bf3e81e0243cfec91f3c7259103f36742564ae99b95ba6d97047d08f8634a3'
+version = '1.10.0'
+source_hash = 'b29fbd273869fd40c55c41815555ec8ddeb43ab90e8076d18cc50c763004af97'
 model_hash = '59a6c922197a539b1e1a8aea103f29d753556151a64c5ca951273df2cb2e1dc0'
 
 [crates.aws-sdk-route53recoverycontrolconfig]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '104c6f207dc0eef377478c1ce39b0afc8c9119b90b767ac688fdf2f0af7e3c16'
+version = '1.10.0'
+source_hash = '5fe52800d85da2926ce63f7de2da18921961dc0a77ac885d5766a1baea84235e'
 model_hash = 'e7a24052acc9c9375be129e14884058334a3fe0be09ca9c509f92c77f1c67388'
 
 [crates.aws-sdk-route53recoveryreadiness]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'fd9fdcb3d4ba6a4412794ce26c3869b2fcb8a592b44f37d752ab6b7f62456da3'
+version = '1.10.0'
+source_hash = 'b7e6a808d5bdc2f101315262aa6b616ed8a0cb25717e16259b113e4526246f9e'
 model_hash = '4174e800015b430563a53761759735a4db5bc924a4107ae11d034af8e9c6625d'
 
 [crates.aws-sdk-route53resolver]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = '328a6f29958fe3254f7241075afa3698db47c236d37814c7f03f008abbed22c8'
+version = '1.12.0'
+source_hash = '42f03ee1605b5103f4c259191a5b3f11b072879151703aa30d62fd2dff2f8a5e'
 model_hash = '238a516b52d32b8450da7b76ceff4acc3858b77bcb659c8860f1db3a80214a54'
 
 [crates.aws-sdk-rum]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd4df0c2aac210fba39d1293b184784f22731aaaa3bb5cf908e1281fd6c46ac19'
+version = '1.10.0'
+source_hash = 'bc9847cde1468a7df44e558b24ffe08cf4da3d2c0ac02682264e7c3b7967d4e3'
 model_hash = 'c62ce302df590edbecf1e8410825959bd53389d7aabe1ca4b1c014e9f8f3463f'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = 'c5b78a2205bc8b7e9d1ce392b2bcaf239d4b7e1d3cf2e9f2b277b784ef1ac074'
+version = '1.12.0'
+source_hash = '21aeb07c13aeff0cb9b1c7700db937855abd6ec601e6e1609eeeb3cfde9e39e2'
 model_hash = '7f4cea2b56714ff25e655340510a5c9cd99de8dc90ce154344f42dec2b622f9a'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'eade195c1484bf2a02942450b22bb56d0c287043cca32eedfac547208f844501'
+version = '1.11.0'
+source_hash = 'b50ea8001f4999420e428637e9a980b7f165f56b01feffa9dfa70a8199105512'
 model_hash = 'b9e45cb984d33c5d41a86186cdb095b319bd9cb9128028511173bd08ea03ec05'
 
 [crates.aws-sdk-s3outposts]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'cd38f11aaee9823bba33e5eb583f466c04891799cc46735f597b23a22e67a403'
+version = '1.10.0'
+source_hash = '69767f2e2041aa58d1d27d8f7076f767b8e6c805bb725d51ca249f1058fe447b'
 model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.14.0'
-source_hash = '36b935afa4d7e1899b217adf811890349ba796a8dc8dcd7e8535815fe4cda9ef'
+version = '1.15.0'
+source_hash = 'a786385e60c4868b82f6169c6eb351826e2b9d0cdc190f975e7a20c6c802f764'
 model_hash = '7a7dc91bb76e9fd0050e54af61827adbffd5b04392c266afa6dc64f358760d92'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f08ec607eb0ac7ac2a05e49a60c35c1ea6fdd0230a83f0715351e508178d6bf2'
+version = '1.10.0'
+source_hash = 'eb6aaa115d86fba172fb437f9108be69b130fecc8ff961158332fcef8395f1fc'
 model_hash = '1ea1bea294abe5fddbef9ea896f194d8ede696c31556e3da9906e7b103a58469'
 
 [crates.aws-sdk-sagemakeredge]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd60e3a7acb4a1834253ae94572babc488f4fc4b1ea23907bf3ac32441de91d4f'
+version = '1.10.0'
+source_hash = 'f0e7c053d815ccef89c45d3c3225526e0ca43a82140c2b9ac54cfe1a8f500683'
 model_hash = '656f873c16479eab5c6c210edffb7cb0584d9c3958b0ad5b07215375a8d843f4'
 
 [crates.aws-sdk-sagemakerfeaturestoreruntime]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e948530fe8dfcb8b0e210855dbe20b21fc054207104d8aac64712454ea6e4153'
+version = '1.10.0'
+source_hash = '529543d542f972588b30cb606406767e775002ef6a456d9da7b7d880f7880adf'
 model_hash = '3217155f6ba025bbbdeb3e00e99ebbdc93cc177c8b747f5dc20b73ffe96057b3'
 
 [crates.aws-sdk-sagemakergeospatial]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '7babeaf99eaf4724f732b650bd5ec09d5b17d7a170dcc2b5cc3fdb4ee3e84c40'
+version = '1.10.0'
+source_hash = 'f14f2d30e0f1e6ab85a993bac86363d25c95667a20e6375eb5842365af301598'
 model_hash = '1374a50b7b671cf6aa6d404bc228204bbf8bf663ed8781a90c31f10b1d9891bc'
 
 [crates.aws-sdk-sagemakermetrics]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f272d017003fe57944180b8a8b314b86977ca5fab29083ac134ce5771e0432f8'
+version = '1.10.0'
+source_hash = 'fe7ccaf691076476e0174fc78fba960632494422eb374f73c3bab0319e1f73c1'
 model_hash = 'e03e606161d20458b3bfe1ee995e0c9ccc614458c6f4dcaaffbf778bdeab8f86'
 
 [crates.aws-sdk-sagemakerruntime]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '12dc6476c0139e7764ffad5a2f9db6d1b02652a4b89ddd26cb67a940dea3b538'
+version = '1.11.0'
+source_hash = 'c5d0b80c06b8a2ba5e0cdadd980dc3fdd6f6d5721fa2ba1c524a9a8885b7ee4b'
 model_hash = '9cd9122d04c5618a143f895485313c45977e1b4cf415c43ff971b8f5246a19ec'
 
 [crates.aws-sdk-savingsplans]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '88499330a4d30ed2c71741751c4f2d5f0997cc6a0de9835dbf04497b1dcf28a7'
+version = '1.10.0'
+source_hash = '768c2698d504c2955dc96ba967a65ac965eb19f0e1de7c629c4e42b43bfdf36b'
 model_hash = '73740c3536780079c11f1b917c81eed2600d1ae565ce64eedbd3ecf616aa4af4'
 
 [crates.aws-sdk-scheduler]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '864917da7d6e17121e58df1bd77ee9aa46d3aada65dcdb4cf7d62c555861b326'
+version = '1.10.0'
+source_hash = '170a7ec14fa0bdf8f3b0b32f32bc6c361b498eeefb91544870d537e3e826e7ae'
 model_hash = 'a2cc9a2ba86218f1943a36c8c0a0d7fc5d6877a1b7993f3b1487412d2cf9d1ed'
 
 [crates.aws-sdk-schemas]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '239be0c9e89fb6573f85ebe11b5216e11ed4a4022a147adb73184f28c5a173cb'
+version = '1.10.0'
+source_hash = 'ae77b91c319ac4f971d3bab56f8c12161ff6715cd292dfc518d38e345bf851a8'
 model_hash = 'f1ac740bbf221d07009cb31840d1d0cc731e30ff3d153b018b1706258e5619f2'
 
 [crates.aws-sdk-secretsmanager]
 category = 'AwsSdk'
-version = '1.11.0'
-source_hash = 'a6ae4f124b0ef3fef40d4e1de8c679830ca2462b775b7d1e75da9ae6b7782b67'
+version = '1.12.0'
+source_hash = '429bceeb8feefacba613052cd4ed26c14249615c00b9a4b2321b140e649ac534'
 model_hash = 'fe8681e9989c53ebb787cd8686a1aa5909b8bb39576df063ed2a5bcf26891c31'
 
 [crates.aws-sdk-securityhub]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '908b64b82fc5a6b89934a4681ec7720b8ce9d068b8c3ca0f5d5d1258b7767acf'
+version = '1.11.0'
+source_hash = '06fb1c991008552c0fecb7696661c9e8f049d688c98b87ae1a9166b820f576a2'
 model_hash = 'c5da1fd1643497cf99ac9028ec0ae2d9c7c923df92d21ec3078173c3f5a71b62'
 
 [crates.aws-sdk-securitylake]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1a4038345f4a0f41eaa019d348d0406cd3cd80958b3545f6134c4006efb9b15f'
+version = '1.10.0'
+source_hash = '6fd82f126c632f4a675ac01cefeacfad16f8b84ac972ca40b446b96dba341734'
 model_hash = '6d17d6fa1a40ae6cffebbf1dfc321ade20c241e0d4fb1af24fdce669ff76ac0e'
 
 [crates.aws-sdk-serverlessapplicationrepository]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a327d0c02bd36f451af78521f89b087ed47e9eb31ab52ce0bcd57148960cd3ed'
+version = '1.10.0'
+source_hash = '9de16485d2ef31ca16b45f41d411e028a711c236b5e92cd4c8ad837eab9ade52'
 model_hash = '822f44c97fdfaa85c3ee6febd57426ef08199ee9e623b5aeaee154705bea5e9c'
 
 [crates.aws-sdk-servicecatalog]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'ca9a5a73d6ba2f6d16f213482dff11e714f2792ba99d3635fc3957c3aadbf11a'
+version = '1.11.0'
+source_hash = 'f454cbdae1e3e991799c8ea3382fddedeb3fea9ffea5cc628275e157ad96e7fa'
 model_hash = '1ef3aa9780c079a91c7bbeadf6fff1f6779bb3821f9ffe10f87cf70feb9f1f21'
 
 [crates.aws-sdk-servicecatalogappregistry]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '44d565fbbc4b866d6d17d2cb77be52ae2948bf86d64f185b356deee65d816281'
+version = '1.10.0'
+source_hash = 'e585e2411f9d1ea1f4c45da9ab7cf5a5403a2580f1157f4347b0762db3285b39'
 model_hash = 'c63e3916a6662a06c0529acd65673fd2d96100fa137c40154ccd23807661c012'
 
 [crates.aws-sdk-servicediscovery]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f2166ec5149d1dbfc170ec820a4c1454664ebd5ab1bd6f57b20a6b4cc41bdf41'
+version = '1.10.0'
+source_hash = 'e3ce811eb58df7a388ba9f87ec142edfa922e05480ebd6ed81cc01247b635f58'
 model_hash = '30acf25612d9e2274c18fe37524efb8ddd2d2681d5dc95db3d8707c4230dfc63'
 
 [crates.aws-sdk-servicequotas]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8a0ce76315da32782cbac3291b8f61df3c8e79d007d2709d7bd117afef6658ae'
+version = '1.10.0'
+source_hash = '3ba7bb38b723157ac2948d8f16e149f2090f3dea16013c68930e542ee3c13e45'
 model_hash = '13b9bfd192ebff6750f9102a2a9dbae7ef3727afff2326c2b21a547e96d91285'
 
 [crates.aws-sdk-ses]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ec494564d645ff77a058f6d48afad12825a13a3ab05b3f7a17932a765d66ed9f'
+version = '1.10.0'
+source_hash = '1beb60b75dd9392db0ad5de1637bdf34644e2e3ad1f1368b892e9f7eccd43480'
 model_hash = '22978d391f3d0cfec8d0df7a9eccd555313bb45e3f5473b7a65e00053828852b'
 
 [crates.aws-sdk-sesv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4bae3e15f818f029bb6055a6d0b142d79f3813a8b04a638716e2d3e3414ef20a'
+version = '1.10.0'
+source_hash = 'ce647970163c587719c966a50589f31852152853ebdf9072581ea1593be53233'
 model_hash = '8624b480bd9c4475f3b1c1c304545f775ee8bd59ade45f1cfcde4008c53df390'
 
 [crates.aws-sdk-sfn]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4f2d449aba79a492e88f1d566e48478b753e51f6ee31936dce0ba7c836ddff2f'
+version = '1.10.0'
+source_hash = 'eb2a06ceff7ee5dd99e26790b3cfab0931c86b9132b043452b433ab754e73a11'
 model_hash = 'f4c8c811b2be469ae970d400b311a658c18c12da6a4c26cb88991241d836de0e'
 
 [crates.aws-sdk-shield]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd3b442edce09c4fa032fda0a98915d7368f097bfcc05e821dfb35ffc12023a93'
+version = '1.10.0'
+source_hash = '678c95fbd40caf0a7e7f34323fea481cbf3e005c8e9354024f473ddd7e6c30a4'
 model_hash = 'a5fb86ec012001f4b5213f806f10e170354a0921207a8e173d7c8f1f4bb9c8b5'
 
 [crates.aws-sdk-signer]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a83cede887170c8788ddd5be4718d8a1462d8d730cfb5fb27a8ac32e952d5864'
+version = '1.10.0'
+source_hash = '095381f6162c0230ee23036504f4734902bfd49496e836f842faab593e14df78'
 model_hash = '9e9f0c58692bb0010b6e83ed5a2d871ac9667578ba200fcdd1c373a03c3b7db5'
 
 [crates.aws-sdk-simspaceweaver]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '655d7e1f548122e2443c104ecd0bf267b490d75b32cac0a223e5bbca5f83069f'
+version = '1.10.0'
+source_hash = '98db687e7935a6ac428fabef1a3a2a97d5ae75eda00700fd4318b701247257ec'
 model_hash = '533e82156505729b8d145bb443d469e37968adce23515d1a90ee2a597bd5447d'
 
 [crates.aws-sdk-sms]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4313100799e79b64c0a5a8f181c3ace8bc43df2c9f08f7cb1d0d45e23a71a228'
+version = '1.10.0'
+source_hash = '03b3924d305c0eaa9b81ac7c33347d26fb7df11691ec95e42e3a6a2538da021b'
 model_hash = 'ca2de1f7c9f67ac9aa065738dc673137ca4b2e8e86373c413da2a41c7f42f232'
 
 [crates.aws-sdk-snowball]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6f93c43b2d693f9d7ef05a22777e5588dfce3adf48fcf548e6f7bc02ce5568e1'
+version = '1.10.0'
+source_hash = '02cae6053ca840cf5e16e00168455319b1f3a9ee02b27a7365472cab907fc0f8'
 model_hash = '7c2e520512e03ab2db256fe574c2c08d4aa299403359f2e71f9f43f6b73b93b2'
 
 [crates.aws-sdk-snowdevicemanagement]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a6d616b3c8d49a0d21df351999b79963108805c1325e2ee2adfa2ac8b6ce606b'
+version = '1.10.0'
+source_hash = '62b0fb5aa50cfa6451c764bfb772b5aecd4ef0d40aaa3e633e570570d9fe6598'
 model_hash = '171cb2c324ef8098f094220d7fe04469ccaadb534fa5658d8b9d7a816252815a'
 
 [crates.aws-sdk-sns]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '18be0ccddbadf32e13d9a1f3d1c4e9574df51e2abec4601fd3c22f34232467e6'
+version = '1.10.0'
+source_hash = '1a21838b1a1a71a8e76204e887ffd6fd2c76979914e17c09c40715e5f72defe7'
 model_hash = 'aeeb86b63b2aa88c10f0516945c5ec2a1c736a434e8c88eba876a11b2f0f900d'
 
 [crates.aws-sdk-sqs]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '101eeaa257799cace0ff8c8c3e9a27b374b8245ff441b76e2098c61ba59b37fe'
+version = '1.10.0'
+source_hash = '84e3cd0a138066eb1007bc5aff1a6f892eccb0b1664bec2082c280a7ba1128f8'
 model_hash = 'f40d7c92d5abe756aae63a1b2d825a2177ec11cf0d574d51545a2271e22f7c57'
 
 [crates.aws-sdk-ssm]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'a8c11ca9ebbc085a1ebdbaccf862cbb6e95371c3608245872487e3edf4c5305b'
+version = '1.10.0'
+source_hash = 'a93d253bfb250af919f6c2563e7f33a3cce1a7caa1940fd3ed95fac52c53f3ba'
 model_hash = 'e74318143a931d4f9d3b029f6d99a39bb62531a0aa7668c45ef4b4ce0c2d442a'
 
 [crates.aws-sdk-ssmcontacts]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f71e126bc2b450d658e5637acd42bbfc720552d0d9331da05897b3e0eb655a62'
+version = '1.10.0'
+source_hash = '4db3cdb254e4c80ccfaa0dd16a963f3e22ecd935e96ffdfc91f96a57ab70fd4a'
 model_hash = '7917a0daad67c7ac35a49446f890181b3f303a4c536b7b141a03060795eb101f'
 
 [crates.aws-sdk-ssmincidents]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6198a1b792cb18c6f285e4e30a0c555a04d812450228cc65021d3a13fe5e9fbf'
+version = '1.10.0'
+source_hash = '8e78a8744e297c86cde10a8188fee38dbadecef56b59eb656f8e8b4a668c620e'
 model_hash = '1a3b6d948b2383d38212f7fb9a27d8b81f548a2f0a612687f1a376c21a705e2a'
 
 [crates.aws-sdk-ssmsap]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9ca42af10f82f4cddd22165495b00ea0f90169cec958c903612b6570384803bf'
+version = '1.10.0'
+source_hash = '770e1ae5e0e72b7a67800116c72b884fcdb2174cd48aae8df44f0025b4b91d6d'
 model_hash = 'bac5f461869f895c9a2571449d632b5799de9fdd6a31ed85fb93d1799fc4ad60'
 
 [crates.aws-sdk-sso]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9340428bea09d3c1d577f41fa575002896cd2bc8868f8b46e37429994887e282'
+version = '1.10.0'
+source_hash = '97960e5d7c9e67013a0744a176c508406f6ccf015f6444470cc5ab38a036463c'
 model_hash = '9e59beae18125c2c7ec98cb3e1c1d88a68f2dd71b43249a780704b4ae0fab357'
 
 [crates.aws-sdk-ssoadmin]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1c53c6db0b31d85c0f45baaac54246ac6eac54a355dc37b0022c516e063084b2'
+version = '1.10.0'
+source_hash = '24669a5603c14ac3c79b3e5456f73c17c9f82ec1a6279a25fbf4d85691a08e62'
 model_hash = '4f703cdad534196e863a1b9ab0090dfc93fab2e33eb662db8da716c95811a72b'
 
 [crates.aws-sdk-ssooidc]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'e5690947a59a2ac09b1be38b142c91a9efbaefcef962001c5e07a33ec34b199b'
+version = '1.10.0'
+source_hash = '1939f4934a77084166352d9e41e7cc002cb7bbc36b5779b98c295cda49e3c50d'
 model_hash = '8a455b00da46bc04aba3297f76fc3720712ba5bd5f8f9df0da60c249838454d6'
 
 [crates.aws-sdk-storagegateway]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'f585d30f1d861141550332c066cc1a39784afecc6affde36dd7c110e5877f774'
+version = '1.10.0'
+source_hash = '3725343fed9e95cffd83f0d50a0fabd92d7922f0ef611dc302a4a4e5391cdc1b'
 model_hash = '66d656b1d8028312c81f1d55a9a7943f1c596efd36196c38932bfc9566d5f6d0'
 
 [crates.aws-sdk-sts]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '97b39690df377ff936ada5961581cf71787cfdf9de593bd17a8f8f4dbfc4cd37'
+version = '1.10.0'
+source_hash = '1679931b0e34e10be9900bc1e962618ed946f2738760a2ef564e584b0d373db4'
 model_hash = 'ab8d3824f81b0cb119625a47f0eaa5474ff2b8d551f26c63dc0a3d68343519e3'
 
 [crates.aws-sdk-support]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '36a60626e8360e48899460b329273403808b859fadc678164c5130aadc3e4dd7'
+version = '1.10.0'
+source_hash = '6d4f2eb78d0e573032331650c9189fe9a85782ea86cc1d364c794a9c16a9261d'
 model_hash = '17332e0d9b8cc1d20e3e816c18621ab70fbaa7f3629f66be5fe76e9966a41421'
 
 [crates.aws-sdk-supportapp]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '2da1093a21d823e01b44100f2fdb4f0a7e2eb1585068d6101520d445e540ceec'
+version = '1.10.0'
+source_hash = '1dc1447fe367a3fbfc309876963d0a9d36419c1763cf4694c163294827c58bc3'
 model_hash = '9c99c40c7f7afedcc9d6351198ddbe8ff1193e6b6abe1d6582612e046d4ae8da'
 
 [crates.aws-sdk-swf]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '92d2bc912a68bd7e408c199f1602b3c11fa84c890f98b084332161bda098a3b8'
+version = '1.10.0'
+source_hash = '624b18175a25d6fc9262d356436dee9ff239fe98dac44989580b73884115c3a7'
 model_hash = '400f9ff11622646a623660e5e1cfa33aece171da53fd27fe2d8202b2d3ae531b'
 
 [crates.aws-sdk-synthetics]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '639c617792647141320ad5af1170bd0c32313fafc12480f8d57fbd4c1cc2eb81'
+version = '1.10.0'
+source_hash = '9ff4b37af7f65102b14fa449b737fa50d2e0d197d6fd24f8a8895c86e0ea0ea2'
 model_hash = '0d73091f6ab96111985988e6f726ebfe5861c37d443db368f8f16ffbadc402cd'
 
 [crates.aws-sdk-textract]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8b2728491ca11a6de3c56dab5d3957aa5c2bf041f92f0f6904e3c7c739da1fd1'
+version = '1.10.0'
+source_hash = '41498a9b2169ef735c5ce80fd98a9d83d6f9e8f95d1a2f026d707b0137559ec9'
 model_hash = 'a53d78aba76a9e4ea3ea54db9720f8c1bf9a20b349516a5afce390bb40f55a9f'
 
 [crates.aws-sdk-timestreamquery]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4ae21e1496220feb268d6c9d009c8d0fd7238fef2b2c068bb0f29b8e86640390'
+version = '1.10.0'
+source_hash = '3548eced179037df2c214a97ae97148ff7d35777a1f4792cdab0af0f967ec013'
 model_hash = '5da0125b16b35356c55344243bf75a6210e1e923a979f6a60312f74dc9106e03'
 
 [crates.aws-sdk-timestreamwrite]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'fcddd98498b673cc4bb43ba174565d98662f2419df8085665316f3e08cc2ed02'
+version = '1.10.0'
+source_hash = '3f8b92fae62fd27d20e87da7d5461526b63898ed18f2b4d363f05fef496ee175'
 model_hash = 'a1f3262010b114c954ec3ebca471c6aff8b2957af4969be36e5ac081683a3c7e'
 
 [crates.aws-sdk-tnb]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1b0e8c5983f68c9d1745f2d80a5aa9ca28fb9e2c5d64d9e3f7befc86401ad972'
+version = '1.10.0'
+source_hash = '136363781123d1b1159903d792c3ea14335b5174c49675db2d43509fb5eafbca'
 model_hash = '153626e8fb6b3863afd4b91cd157c8ca6d27db4513982a66221826d7c4417405'
 
 [crates.aws-sdk-transcribe]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '6ee7ecd751cf0376f4972d0826df41dc5b38ef8b8c70a01516af15294a8ad05e'
+version = '1.10.0'
+source_hash = 'd649811d88db4b31dcef65ddf85acb4c3ca1b03e95e470aa79674396eb71ba39'
 model_hash = '342bbfe3e53520a26decc4fc18770801a2d6746561ec33700591dd13b93813ab'
 
 [crates.aws-sdk-transcribestreaming]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '4103b31a32051275142395274eb9c7af7be5278dbc617e91646b6ec9e6113802'
+version = '1.10.0'
+source_hash = 'bbdb164d885e07f8c93a95cfd75cde979f22a473cfcdf49eda5e0a25c1bb3f14'
 model_hash = 'b6e54b8b7c1dfefaa67fbc4f5c237a2bbaad7916305a9b588ce31a4134abbce1'
 
 [crates.aws-sdk-transfer]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '1014700c83809ca6881b4dfe57c7c1c13c349b27571f735c2e70972e5f38f76f'
+version = '1.10.0'
+source_hash = '014850c41988143ff4f0ac72fe554e1812337ae35249ba754b75c0650345b76e'
 model_hash = '7675a06dcb3ca055c0511d1bdf6d74436feee35cf4f5226e82c156fbe584b5c3'
 
 [crates.aws-sdk-translate]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '70d5097799528d637cde9ce6857870b4260cf7469d950a1ab9d9c36d14f914ea'
+version = '1.10.0'
+source_hash = '0b6e95ea32c07bbe4c248bd5d74b12b86d2fa936bdeff246a16486e369764149'
 model_hash = '07e1d4a125bceac820fa7ba3ba4314903c47c463bd1c600a953038ab8dd1975f'
 
 [crates.aws-sdk-trustedadvisor]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'de1644293d5efe40a811ac85367530cc6e6ad90c0fe326a48eb494e5e4f4ed27'
+version = '1.10.0'
+source_hash = '57c555ce1fb433ab798268d5643cb6fe177f240c2a4c5e7bac808713c575411b'
 model_hash = 'ce72702d8baaff26bc29ba694fab60de0a76b50e1221c9df5a7b2d3645a2a431'
 
 [crates.aws-sdk-verifiedpermissions]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '44c64be4821f714d483e09c51e4fcd7165c8e46603895bd18c7f53900979f9d5'
+version = '1.11.0'
+source_hash = 'eb00f3632235216cf2c97c3574957a8684782f4c5b5c80994b271f4c4561dd24'
 model_hash = '2b73caf571b9cfa2b3ddd0ff8744d133fba1e111b61cd5980e705b94191824b6'
 
 [crates.aws-sdk-voiceid]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '467c426f6127bdc1b318bc7e36d13d8e6e47e07b704840c5647462f014fa8f4d'
+version = '1.10.0'
+source_hash = '2b1cb31581e9514f2dda25e8f1d17a9ac63401da2aa746afd189b56a58fea385'
 model_hash = 'babc302a2d66181ccf27747be08198131836d1c11d345693aaf744dc8963f667'
 
 [crates.aws-sdk-vpclattice]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b6d4301309abc3f5b3b6605197d4725d99811c9e4403fcba9b7586325dc251ce'
+version = '1.10.0'
+source_hash = '39730e09fd5c48c1762e72893a9d39a515b39d6b4f6e067d8dc41c9080a6a3e0'
 model_hash = 'f5221c586cb7aa327f5a8c5942e5cb0d302ad672b4138a3fd08efca8bb5dd3de'
 
 [crates.aws-sdk-waf]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '53eb5314c18bb2d6723eadc02cc541b4baf94a5f9b165faa7cf9e5130a8d7e79'
+version = '1.10.0'
+source_hash = '8d74fc5a2d9ae165403f9254cac00a013dea1cdd74de2ee6c61a3bebad06c813'
 model_hash = 'fe9760a59b9f625d02d2da525d76dd9f1203e0ead84e38e317aa6ddda8687648'
 
 [crates.aws-sdk-wafregional]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '3e0f86f7b2a751fa151f004fcd34b112f1cd298f35b162ecae420a243e33ba44'
+version = '1.10.0'
+source_hash = '44cde5d4e4b93d4735b6995611fe748f98c69312edbbf63cf50cb43f6b6ca9cb'
 model_hash = '56869f15eb4277a7d7b350709d0fcee7899789b9f751f95c5e7e94fb94087038'
 
 [crates.aws-sdk-wafv2]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '050ab37b08d200d63c0b455f4f996e42a362450bd9f1a424688a262d916b630b'
+version = '1.10.0'
+source_hash = 'c540cb489b630944e21ed9161426bdc50515e1c4b0516c2b8d0982aeea9099b3'
 model_hash = '239273e4f93d44aa2a365811d5e400a8cb32c61af4bcf7c979689d7b5207c263'
 
 [crates.aws-sdk-wellarchitected]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'b92527b8453e493e336c2b8450ebfdb4b8355211a92d9bf76d5f4a33e065513d'
+version = '1.10.0'
+source_hash = '9985f2f517029e2e84776d82e9864309886ebd9469c024b7e7210a6931a05f20'
 model_hash = '5d0724494f4e421d1e381d50e448937c01bfa9fbd36b7f43d8110532be7c624d'
 
 [crates.aws-sdk-wisdom]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'cd0290a22f2e32a976597458721cfeafed46d7c9c7a7deca1435372bb0cf095e'
+version = '1.11.0'
+source_hash = '624912e0e15bd7544f6e1c65036b213887dcaeecfcb19e33e8f87e48e115e036'
 model_hash = 'e3e524636b5719b1512c04d81a9fddbfd04b305febf1b3f83562af6d240bb657'
 
 [crates.aws-sdk-workdocs]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '9a58e098535d9f7956a8c6e499a0fbecc4c03d9a7ece47cf415f1be12ba2209c'
+version = '1.10.0'
+source_hash = '0102dcd62deafaf88062583f354b6fa7442db0882c00a0217e071bef20c16077'
 model_hash = '3089c7f60a3c27474e6d041d518345ba73f9cf14a14e0c48cc1d54e720cc4ac5'
 
 [crates.aws-sdk-worklink]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ceae4091db86a969d6c07d24344d503dd72094912cd4bc4342e256fc554e290f'
+version = '1.10.0'
+source_hash = 'c4e676a88eed0c4a90d7dce2019b4a52b5d63f7dc4e9a0e9ce0942f87fe547f4'
 model_hash = '564ce85651697fd253e7cd4570e94141faaad0ade1a55f88d39d9b87b1f4df54'
 
 [crates.aws-sdk-workmail]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'd799a879f9689942f75b59b92d947b112e144a4caf55571f6639c4ae14041c62'
+version = '1.10.0'
+source_hash = 'a1672666d7cc7e0221929440e7a4d87ebbf7ea4ea486d4bc1b6379f588f25b2f'
 model_hash = '269012e20ea0de0e65f3b0e1b33bb1ec8ee344571e723132480608d6e0d04b5e'
 
 [crates.aws-sdk-workmailmessageflow]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '8645dee849b187159b751c1f7ed0919015286bf89a3b25bb22fc7ac74ce70b0e'
+version = '1.10.0'
+source_hash = '58ac5ca879f97618a263074be95f82a1c304dc17eeeff1e93f84043b4dc287e4'
 model_hash = 'eab0659c4890363f26af020432f7d7c661fd228f3baeef3a52d77f80a1c13287'
 
 [crates.aws-sdk-workspaces]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'c76c82714e478e9b4f3aa51a5696f18d975f562928b349fa3e5dcd566f5e8ee2'
+version = '1.10.0'
+source_hash = '603d64d0734e53d4b67f1b73056ed08d4e731d313567410a8ded614bdc3f6ba7'
 model_hash = '754a3c5b327c013f21a02e7e42d1d464fd6d253fcd66d7029d3ea9fde6bcaf94'
 
 [crates.aws-sdk-workspacesthinclient]
 category = 'AwsSdk'
-version = '1.7.0'
-source_hash = '9abac3dd3128135f7c0e76b62c07c6254c5d361a9bdb1123eb17f2a74474735a'
+version = '1.8.0'
+source_hash = 'd16beeffa275ca033130d99dd52579f2497150e441015a8bf2190a0763a2091a'
 model_hash = 'd4d712e1e0f2b9c75ec36ffd69d6d3f00003296a8c2653aa2ccdf9be889923fd'
 
 [crates.aws-sdk-workspacesweb]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = 'ddfe0c9f74d4532982e7a713208b9d8459bf4c19540a98790b213c484790d97c'
+version = '1.10.0'
+source_hash = 'b1685b46b20ee2f93959e7926a5b9e575e44d71f7d37612153bdd863e7f68774'
 model_hash = '24989ad30e9105cc0b4e5ae4e5762fca86ff638e114b5bf7f260278a54a1050b'
 
 [crates.aws-sdk-xray]
 category = 'AwsSdk'
-version = '1.9.0'
-source_hash = '51de0104ec5d7995acc085d0be9687da2b5332945fc84921b027eeb536530fcd'
+version = '1.10.0'
+source_hash = '952c537ff97e7173cd46aeb240798af090c4b7f0685b585ff531e4cc2a5b2f82'
 model_hash = '25c4c2af8e9c134e34445bd47d23fc5f8a03662b3d89e4dc40d1762486069be3'
 
 [crates.aws-sig-auth]
 category = 'AwsRuntime'
 version = '0.60.1'
-source_hash = 'ab35c4f5c3a99dd1a2eb7eb5b16ed3bf0bbf518bc01bd7c30c58c3220652951b'
+source_hash = 'b5aa06d069bb8c2a5c041465ef5ee228b917d3d763336872939556217015aad5'
 
 [crates.aws-sigv4]
 category = 'AwsRuntime'
 version = '1.1.1'
-source_hash = '7b783aac844b356a779d5ab745941824f5c238ee40ce7c897da3b5511ebe70df'
+source_hash = '6a846255811d1deb7b9648bdc8620fa238b6d7045480da4b94fd3a50c384dcdc'
 
 [crates.aws-smithy-async]
 category = 'SmithyRuntime'
 version = '1.1.1'
-source_hash = '840984ddc5ddc8d5e37786944f0dbe4146bcc4947b49ffb71c1d5088cf8a7ac5'
+source_hash = '13977851c35095a7615fa51a767e3f62d9f45f90002245e6d52580308d495342'
 
 [crates.aws-smithy-checksums]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '8b7a34f32a6782acd2bccb6958f6e81e61094ecfe4b278fa227f7de0133aa14b'
+source_hash = 'ffef28b76fc5d57d581c83ab99ed60e95011d172309b0f3a37656da4bb91fd99'
 
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = 'c6ab9d6f1b935516c5dfef7708d0f217ff1ec10ffa3194f672f8c5a365a2f912'
+source_hash = 'ea3216ad8a1206ebbf3e09b3e17a777ea2495149fd3a16b6c241a1f156c56052'
 
 [crates.aws-smithy-eventstream]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '2008c1f78edf36dbc48a5338e70b131d411272535d9847130546aadb125019c5'
+source_hash = 'a01bc0cebc4bf81634558ef897c910904634de14844b99a08df89b08366b72e7'
 
 [crates.aws-smithy-eventstream-fuzz]
 category = 'SmithyRuntime'
@@ -2326,12 +2326,12 @@ source_hash = '43fc9fe97e0c707db336e12e0dfbb1c75efeb0fa946aaa6377a71505b1b9f777'
 [crates.aws-smithy-http]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '5302cddd48fdbaa2dd2cfbf4163199121101a9ef87d2c878f8842ab53dc8b100'
+source_hash = '031db2e8413151d8dd57c9d422cfdc9f2502c5e846541861f8fef6478021fa4e'
 
 [crates.aws-smithy-http-auth]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '0f716805ca47038e3036499e18b3c668d256be71e44b6aeab0a7ebc3b492f338'
+source_hash = '07b87f7112a278f8919a0c7a028766cca30c2d329f97850ea0aa9518d512a0aa'
 
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
@@ -2341,12 +2341,12 @@ source_hash = '87fd2e50e31ff6cc4851147d9b6e37fdcbc183f9f4a07cc081e727b59f867c37'
 [crates.aws-smithy-http-tower]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '2fba95adbc177067f0d0f3064ef215352c4da0cf55057f3ff665f1b26ae40992'
+source_hash = '529bf384c8de6ac8db7576214da352ee8ab143216d5180551d53cfd09a6cc1c0'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '45d5ce65aedf6380084fdcbca4f5fdbe46fd2cc0c15086ac34bbcaf24da15b95'
+source_hash = 'cd9e246374b37a4132f2a5e48b36e3f0c336cd2c237dc35b33883aa8fd22c538'
 
 [crates.aws-smithy-json-fuzz]
 category = 'SmithyRuntime'
@@ -2356,32 +2356,32 @@ source_hash = 'e87fe2441d9773b1e1de4c499cf7bea28148cdf463539dcac560c5a6d1029166'
 [crates.aws-smithy-protocol-test]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '74e4b2ab9e248a5992a967ef98421d5780e2d822823bf8fcecc33091f40a6ba9'
+source_hash = 'e7dcc2e5c7bb4d8a629899b0207dd5217794700f222077970817046fe8120a31'
 
 [crates.aws-smithy-query]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = 'a832e9f6dfe81c4e39fea4b4c22bd9cb608472cadb8e2a9813566a6732937c64'
+source_hash = '603697d37d16c1d90d0df0a04cf46141329b696b0301f745c2b527a759ab704a'
 
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '1.1.1'
-source_hash = '8818f5b398ae118c4a612083d4763c8fd3b1e837030769c6fb3a66301cc2de3e'
+source_hash = '06712d9b0f1807fc09392114814513f5bd3a4a04841ab55eacd7d6ef3db2b2a8'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
 version = '1.1.1'
-source_hash = '35689198890cb5bf1446a27a675624b5993703face7bbb36079fb5b18adf3e32'
+source_hash = '4fd21a9aa998b2d21f6633052ffb968c94d898f8e0ec5637a89fc8bd904bd1f7'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
 version = '1.1.1'
-source_hash = '43742d892f4e08f8d63361446381be2cfd8999545ee0fdb2b5750624feac353e'
+source_hash = 'f16c5d0ad1ec6e78f37630cdbbb040d624915f25578f28673c6fabf0de5be556'
 
 [crates.aws-smithy-types-convert]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '5bc06a4d8b48a6ef0e12112a9faa298f464f80d94ec6da9696f68126109897ab'
+source_hash = '0dca4be71667acf11096639e751950507b6cc9cdfe8eb0dfbd838735555d8251'
 
 [crates.aws-smithy-types-fuzz]
 category = 'SmithyRuntime'
@@ -2391,26 +2391,390 @@ source_hash = '87a8ba49ed294b1cf4af74a879c38c759117ec497a4191f0c989251ecbe2d25d'
 [crates.aws-smithy-xml]
 category = 'SmithyRuntime'
 version = '0.60.1'
-source_hash = '4acfc6493f62d16c8afffdda958de74c5eeb84a58bdaa87e03ce227d55ab84c8'
+source_hash = 'fad8a2358db78274820e2621b3b7c3e7189a1372ccfec8710516cf9437349782'
 
 [crates.aws-types]
 category = 'AwsRuntime'
 version = '1.1.1'
-source_hash = '5089c61ac3ff7bf3e91fa88e52e79cadc2e2c5b6c0a2c13f057d310172d7215f'
+source_hash = 'b990216358767f01482642a49e655ae6d0158c6866b02b0770e709f35e45cb9f'
 
 [crates.aws-types-fuzz]
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6056f0f81e84bb7636ba8ee9b2740b07d0d1c2aa5b4e16b2537386a5fe203236'
-
-[release]
-tag = 'release-2024-01-10'
-
 [release.crates]
-aws-sdk-cloudwatchlogs = '1.10.0'
-aws-sdk-connectcampaigns = '1.10.0'
-aws-sdk-location = '1.11.0'
-aws-sdk-qconnect = '1.9.0'
-aws-sdk-redshiftserverless = '1.10.2'
-aws-sdk-route53 = '1.10.0'
-aws-sdk-wisdom = '1.10.0'
+aws-sdk-accessanalyzer = '1.11.0'
+aws-sdk-account = '1.10.0'
+aws-sdk-acm = '1.10.0'
+aws-sdk-acmpca = '1.10.0'
+aws-sdk-alexaforbusiness = '1.10.0'
+aws-sdk-amp = '1.10.0'
+aws-sdk-amplify = '1.10.0'
+aws-sdk-amplifybackend = '1.10.0'
+aws-sdk-amplifyuibuilder = '1.10.0'
+aws-sdk-apigateway = '1.10.0'
+aws-sdk-apigatewaymanagement = '1.10.0'
+aws-sdk-apigatewayv2 = '1.10.0'
+aws-sdk-appconfig = '1.10.0'
+aws-sdk-appconfigdata = '1.10.0'
+aws-sdk-appfabric = '1.10.0'
+aws-sdk-appflow = '1.10.0'
+aws-sdk-appintegrations = '1.10.0'
+aws-sdk-applicationautoscaling = '1.11.0'
+aws-sdk-applicationcostprofiler = '1.10.0'
+aws-sdk-applicationdiscovery = '1.10.0'
+aws-sdk-applicationinsights = '1.10.0'
+aws-sdk-appmesh = '1.10.0'
+aws-sdk-apprunner = '1.11.0'
+aws-sdk-appstream = '1.10.0'
+aws-sdk-appsync = '1.11.0'
+aws-sdk-arczonalshift = '1.11.0'
+aws-sdk-athena = '1.10.0'
+aws-sdk-auditmanager = '1.10.0'
+aws-sdk-autoscaling = '1.10.0'
+aws-sdk-autoscalingplans = '1.10.0'
+aws-sdk-b2bi = '1.7.0'
+aws-sdk-backup = '1.11.0'
+aws-sdk-backupgateway = '1.10.0'
+aws-sdk-backupstorage = '1.10.0'
+aws-sdk-batch = '1.10.0'
+aws-sdk-bcmdataexports = '1.8.0'
+aws-sdk-bedrock = '1.11.0'
+aws-sdk-bedrockagent = '1.8.0'
+aws-sdk-bedrockagentruntime = '1.7.0'
+aws-sdk-bedrockruntime = '1.11.0'
+aws-sdk-billingconductor = '1.11.0'
+aws-sdk-braket = '1.11.0'
+aws-sdk-budgets = '1.10.0'
+aws-sdk-chime = '1.10.0'
+aws-sdk-chimesdkidentity = '1.10.0'
+aws-sdk-chimesdkmediapipelines = '1.10.0'
+aws-sdk-chimesdkmeetings = '1.11.0'
+aws-sdk-chimesdkmessaging = '1.10.0'
+aws-sdk-chimesdkvoice = '1.10.0'
+aws-sdk-cleanrooms = '1.11.0'
+aws-sdk-cleanroomsml = '1.7.0'
+aws-sdk-cloud9 = '1.11.0'
+aws-sdk-cloudcontrol = '1.10.0'
+aws-sdk-clouddirectory = '1.10.0'
+aws-sdk-cloudformation = '1.11.0'
+aws-sdk-cloudfront = '1.10.0'
+aws-sdk-cloudfrontkeyvaluestore = '1.10.0'
+aws-sdk-cloudhsm = '1.10.0'
+aws-sdk-cloudhsmv2 = '1.10.0'
+aws-sdk-cloudsearch = '1.10.0'
+aws-sdk-cloudsearchdomain = '1.10.0'
+aws-sdk-cloudtrail = '1.10.0'
+aws-sdk-cloudtraildata = '1.10.0'
+aws-sdk-cloudwatch = '1.11.0'
+aws-sdk-cloudwatchevents = '1.10.0'
+aws-sdk-cloudwatchlogs = '1.11.0'
+aws-sdk-codeartifact = '1.10.0'
+aws-sdk-codebuild = '1.11.0'
+aws-sdk-codecatalyst = '1.10.0'
+aws-sdk-codecommit = '1.10.0'
+aws-sdk-codedeploy = '1.11.0'
+aws-sdk-codeguruprofiler = '1.10.0'
+aws-sdk-codegurureviewer = '1.10.0'
+aws-sdk-codegurusecurity = '1.10.0'
+aws-sdk-codepipeline = '1.10.0'
+aws-sdk-codestar = '1.10.0'
+aws-sdk-codestarconnections = '1.11.0'
+aws-sdk-codestarnotifications = '1.10.0'
+aws-sdk-cognitoidentity = '1.10.0'
+aws-sdk-cognitoidentityprovider = '1.11.0'
+aws-sdk-cognitosync = '1.10.0'
+aws-sdk-comprehend = '1.10.0'
+aws-sdk-comprehendmedical = '1.10.0'
+aws-sdk-computeoptimizer = '1.10.0'
+aws-sdk-config = '1.11.0'
+aws-sdk-connect = '1.15.0'
+aws-sdk-connectcampaigns = '1.11.0'
+aws-sdk-connectcases = '1.11.0'
+aws-sdk-connectcontactlens = '1.10.0'
+aws-sdk-connectparticipant = '1.10.0'
+aws-sdk-controltower = '1.10.0'
+aws-sdk-costandusagereport = '1.10.0'
+aws-sdk-costexplorer = '1.10.0'
+aws-sdk-costoptimizationhub = '1.8.0'
+aws-sdk-customerprofiles = '1.11.0'
+aws-sdk-databasemigration = '1.10.0'
+aws-sdk-databrew = '1.10.0'
+aws-sdk-dataexchange = '1.10.0'
+aws-sdk-datapipeline = '1.10.0'
+aws-sdk-datasync = '1.10.0'
+aws-sdk-datazone = '1.10.0'
+aws-sdk-dax = '1.10.0'
+aws-sdk-detective = '1.10.0'
+aws-sdk-devicefarm = '1.10.0'
+aws-sdk-devopsguru = '1.10.0'
+aws-sdk-directconnect = '1.10.0'
+aws-sdk-directory = '1.10.0'
+aws-sdk-dlm = '1.10.0'
+aws-sdk-docdb = '1.11.0'
+aws-sdk-docdbelastic = '1.10.0'
+aws-sdk-drs = '1.10.0'
+aws-sdk-dynamodb = '1.10.0'
+aws-sdk-dynamodbstreams = '1.10.0'
+aws-sdk-ebs = '1.10.0'
+aws-sdk-ec2 = '1.14.0'
+aws-sdk-ec2instanceconnect = '1.10.0'
+aws-sdk-ecr = '1.10.0'
+aws-sdk-ecrpublic = '1.10.0'
+aws-sdk-ecs = '1.11.0'
+aws-sdk-efs = '1.10.0'
+aws-sdk-eks = '1.11.0'
+aws-sdk-eksauth = '1.8.0'
+aws-sdk-elasticache = '1.11.0'
+aws-sdk-elasticbeanstalk = '1.10.0'
+aws-sdk-elasticinference = '1.10.0'
+aws-sdk-elasticloadbalancing = '1.10.0'
+aws-sdk-elasticloadbalancingv2 = '1.10.0'
+aws-sdk-elasticsearch = '1.11.0'
+aws-sdk-elastictranscoder = '1.10.0'
+aws-sdk-emr = '1.11.0'
+aws-sdk-emrcontainers = '1.10.0'
+aws-sdk-emrserverless = '1.10.0'
+aws-sdk-entityresolution = '1.10.0'
+aws-sdk-eventbridge = '1.10.0'
+aws-sdk-evidently = '1.10.0'
+aws-sdk-finspace = '1.12.0'
+aws-sdk-finspacedata = '1.10.0'
+aws-sdk-firehose = '1.10.0'
+aws-sdk-fis = '1.10.0'
+aws-sdk-fms = '1.10.0'
+aws-sdk-forecast = '1.10.0'
+aws-sdk-forecastquery = '1.10.0'
+aws-sdk-frauddetector = '1.10.0'
+aws-sdk-freetier = '1.8.0'
+aws-sdk-fsx = '1.11.0'
+aws-sdk-gamelift = '1.10.0'
+aws-sdk-glacier = '1.10.0'
+aws-sdk-globalaccelerator = '1.10.0'
+aws-sdk-glue = '1.12.0'
+aws-sdk-grafana = '1.10.0'
+aws-sdk-greengrass = '1.10.0'
+aws-sdk-greengrassv2 = '1.10.0'
+aws-sdk-groundstation = '1.10.0'
+aws-sdk-guardduty = '1.10.0'
+aws-sdk-health = '1.10.0'
+aws-sdk-healthlake = '1.10.0'
+aws-sdk-honeycode = '1.10.0'
+aws-sdk-iam = '1.10.0'
+aws-sdk-identitystore = '1.10.0'
+aws-sdk-imagebuilder = '1.10.0'
+aws-sdk-inspector = '1.10.0'
+aws-sdk-inspector2 = '1.10.0'
+aws-sdk-inspectorscan = '1.10.0'
+aws-sdk-internetmonitor = '1.10.0'
+aws-sdk-iot = '1.10.0'
+aws-sdk-iot1clickdevices = '1.10.0'
+aws-sdk-iot1clickprojects = '1.10.0'
+aws-sdk-iotanalytics = '1.10.0'
+aws-sdk-iotdataplane = '1.10.0'
+aws-sdk-iotdeviceadvisor = '1.10.0'
+aws-sdk-iotevents = '1.10.0'
+aws-sdk-ioteventsdata = '1.10.0'
+aws-sdk-iotfleethub = '1.10.0'
+aws-sdk-iotfleetwise = '1.10.0'
+aws-sdk-iotjobsdataplane = '1.10.0'
+aws-sdk-iotroborunner = '1.10.0'
+aws-sdk-iotsecuretunneling = '1.10.0'
+aws-sdk-iotsitewise = '1.10.0'
+aws-sdk-iotthingsgraph = '1.10.0'
+aws-sdk-iottwinmaker = '1.10.0'
+aws-sdk-iotwireless = '1.10.0'
+aws-sdk-ivs = '1.10.0'
+aws-sdk-ivschat = '1.10.0'
+aws-sdk-ivsrealtime = '1.10.0'
+aws-sdk-kafka = '1.10.0'
+aws-sdk-kafkaconnect = '1.10.0'
+aws-sdk-kendra = '1.10.0'
+aws-sdk-kendraranking = '1.10.0'
+aws-sdk-keyspaces = '1.10.0'
+aws-sdk-kinesis = '1.10.0'
+aws-sdk-kinesisanalytics = '1.10.0'
+aws-sdk-kinesisanalyticsv2 = '1.10.0'
+aws-sdk-kinesisvideo = '1.10.0'
+aws-sdk-kinesisvideoarchivedmedia = '1.11.0'
+aws-sdk-kinesisvideomedia = '1.10.0'
+aws-sdk-kinesisvideosignaling = '1.10.0'
+aws-sdk-kinesisvideowebrtcstorage = '1.10.0'
+aws-sdk-kms = '1.10.0'
+aws-sdk-lakeformation = '1.11.0'
+aws-sdk-lambda = '1.10.0'
+aws-sdk-launchwizard = '1.10.0'
+aws-sdk-lexmodelbuilding = '1.10.0'
+aws-sdk-lexmodelsv2 = '1.10.0'
+aws-sdk-lexruntime = '1.10.0'
+aws-sdk-lexruntimev2 = '1.10.0'
+aws-sdk-licensemanager = '1.10.0'
+aws-sdk-licensemanagerlinuxsubscriptions = '1.10.0'
+aws-sdk-licensemanagerusersubscriptions = '1.10.0'
+aws-sdk-lightsail = '1.11.0'
+aws-sdk-location = '1.12.0'
+aws-sdk-lookoutequipment = '1.10.0'
+aws-sdk-lookoutmetrics = '1.10.0'
+aws-sdk-lookoutvision = '1.10.0'
+aws-sdk-m2 = '1.10.0'
+aws-sdk-machinelearning = '1.10.0'
+aws-sdk-macie2 = '1.10.0'
+aws-sdk-managedblockchain = '1.10.0'
+aws-sdk-managedblockchainquery = '1.10.0'
+aws-sdk-marketplaceagreement = '1.7.0'
+aws-sdk-marketplacecatalog = '1.12.0'
+aws-sdk-marketplacecommerceanalytics = '1.10.0'
+aws-sdk-marketplacedeployment = '1.7.0'
+aws-sdk-marketplaceentitlement = '1.10.0'
+aws-sdk-marketplacemetering = '1.10.0'
+aws-sdk-mediaconnect = '1.11.0'
+aws-sdk-mediaconvert = '1.11.0'
+aws-sdk-medialive = '1.11.0'
+aws-sdk-mediapackage = '1.10.0'
+aws-sdk-mediapackagev2 = '1.10.0'
+aws-sdk-mediapackagevod = '1.10.0'
+aws-sdk-mediastore = '1.10.0'
+aws-sdk-mediastoredata = '1.10.0'
+aws-sdk-mediatailor = '1.10.0'
+aws-sdk-medicalimaging = '1.10.0'
+aws-sdk-memorydb = '1.10.0'
+aws-sdk-mgn = '1.10.0'
+aws-sdk-migrationhub = '1.10.0'
+aws-sdk-migrationhubconfig = '1.10.0'
+aws-sdk-migrationhuborchestrator = '1.10.0'
+aws-sdk-migrationhubrefactorspaces = '1.10.0'
+aws-sdk-migrationhubstrategy = '1.10.0'
+aws-sdk-mobile = '1.10.0'
+aws-sdk-mq = '1.10.0'
+aws-sdk-mturk = '1.10.0'
+aws-sdk-mwaa = '1.10.0'
+aws-sdk-neptune = '1.11.0'
+aws-sdk-neptunedata = '1.10.0'
+aws-sdk-neptunegraph = '1.3.0'
+aws-sdk-networkfirewall = '1.10.0'
+aws-sdk-networkmanager = '1.10.0'
+aws-sdk-networkmonitor = '1.1.0'
+aws-sdk-nimble = '1.10.0'
+aws-sdk-oam = '1.10.0'
+aws-sdk-omics = '1.10.0'
+aws-sdk-opensearch = '1.12.0'
+aws-sdk-opensearchserverless = '1.11.0'
+aws-sdk-opsworks = '1.10.0'
+aws-sdk-opsworkscm = '1.10.0'
+aws-sdk-organizations = '1.10.0'
+aws-sdk-osis = '1.10.0'
+aws-sdk-outposts = '1.10.0'
+aws-sdk-panorama = '1.10.0'
+aws-sdk-paymentcryptography = '1.11.0'
+aws-sdk-paymentcryptographydata = '1.10.0'
+aws-sdk-pcaconnectorad = '1.10.0'
+aws-sdk-personalize = '1.10.0'
+aws-sdk-personalizeevents = '1.10.0'
+aws-sdk-personalizeruntime = '1.10.0'
+aws-sdk-pi = '1.10.0'
+aws-sdk-pinpoint = '1.10.0'
+aws-sdk-pinpointemail = '1.10.0'
+aws-sdk-pinpointsmsvoice = '1.10.0'
+aws-sdk-pinpointsmsvoicev2 = '1.10.0'
+aws-sdk-pipes = '1.10.0'
+aws-sdk-polly = '1.10.0'
+aws-sdk-pricing = '1.10.0'
+aws-sdk-privatenetworks = '1.10.0'
+aws-sdk-proton = '1.10.0'
+aws-sdk-qbusiness = '1.7.0'
+aws-sdk-qconnect = '1.10.0'
+aws-sdk-qldb = '1.10.0'
+aws-sdk-qldbsession = '1.10.0'
+aws-sdk-quicksight = '1.11.0'
+aws-sdk-ram = '1.10.0'
+aws-sdk-rbin = '1.11.0'
+aws-sdk-rds = '1.11.0'
+aws-sdk-rdsdata = '1.10.0'
+aws-sdk-redshift = '1.10.0'
+aws-sdk-redshiftdata = '1.10.0'
+aws-sdk-redshiftserverless = '1.11.0'
+aws-sdk-rekognition = '1.10.0'
+aws-sdk-repostspace = '1.8.0'
+aws-sdk-resiliencehub = '1.10.0'
+aws-sdk-resourceexplorer2 = '1.10.0'
+aws-sdk-resourcegroups = '1.10.0'
+aws-sdk-resourcegroupstagging = '1.10.0'
+aws-sdk-robomaker = '1.10.0'
+aws-sdk-rolesanywhere = '1.10.0'
+aws-sdk-route53 = '1.11.0'
+aws-sdk-route53domains = '1.10.0'
+aws-sdk-route53recoverycluster = '1.10.0'
+aws-sdk-route53recoverycontrolconfig = '1.10.0'
+aws-sdk-route53recoveryreadiness = '1.10.0'
+aws-sdk-route53resolver = '1.12.0'
+aws-sdk-rum = '1.10.0'
+aws-sdk-s3 = '1.12.0'
+aws-sdk-s3control = '1.11.0'
+aws-sdk-s3outposts = '1.10.0'
+aws-sdk-sagemaker = '1.15.0'
+aws-sdk-sagemakera2iruntime = '1.10.0'
+aws-sdk-sagemakeredge = '1.10.0'
+aws-sdk-sagemakerfeaturestoreruntime = '1.10.0'
+aws-sdk-sagemakergeospatial = '1.10.0'
+aws-sdk-sagemakermetrics = '1.10.0'
+aws-sdk-sagemakerruntime = '1.11.0'
+aws-sdk-savingsplans = '1.10.0'
+aws-sdk-scheduler = '1.10.0'
+aws-sdk-schemas = '1.10.0'
+aws-sdk-secretsmanager = '1.12.0'
+aws-sdk-securityhub = '1.11.0'
+aws-sdk-securitylake = '1.10.0'
+aws-sdk-serverlessapplicationrepository = '1.10.0'
+aws-sdk-servicecatalog = '1.11.0'
+aws-sdk-servicecatalogappregistry = '1.10.0'
+aws-sdk-servicediscovery = '1.10.0'
+aws-sdk-servicequotas = '1.10.0'
+aws-sdk-ses = '1.10.0'
+aws-sdk-sesv2 = '1.10.0'
+aws-sdk-sfn = '1.10.0'
+aws-sdk-shield = '1.10.0'
+aws-sdk-signer = '1.10.0'
+aws-sdk-simspaceweaver = '1.10.0'
+aws-sdk-sms = '1.10.0'
+aws-sdk-snowball = '1.10.0'
+aws-sdk-snowdevicemanagement = '1.10.0'
+aws-sdk-sns = '1.10.0'
+aws-sdk-sqs = '1.10.0'
+aws-sdk-ssm = '1.10.0'
+aws-sdk-ssmcontacts = '1.10.0'
+aws-sdk-ssmincidents = '1.10.0'
+aws-sdk-ssmsap = '1.10.0'
+aws-sdk-sso = '1.10.0'
+aws-sdk-ssoadmin = '1.10.0'
+aws-sdk-ssooidc = '1.10.0'
+aws-sdk-storagegateway = '1.10.0'
+aws-sdk-sts = '1.10.0'
+aws-sdk-support = '1.10.0'
+aws-sdk-supportapp = '1.10.0'
+aws-sdk-swf = '1.10.0'
+aws-sdk-synthetics = '1.10.0'
+aws-sdk-textract = '1.10.0'
+aws-sdk-timestreamquery = '1.10.0'
+aws-sdk-timestreamwrite = '1.10.0'
+aws-sdk-tnb = '1.10.0'
+aws-sdk-transcribe = '1.10.0'
+aws-sdk-transcribestreaming = '1.10.0'
+aws-sdk-transfer = '1.10.0'
+aws-sdk-translate = '1.10.0'
+aws-sdk-trustedadvisor = '1.10.0'
+aws-sdk-verifiedpermissions = '1.11.0'
+aws-sdk-voiceid = '1.10.0'
+aws-sdk-vpclattice = '1.10.0'
+aws-sdk-waf = '1.10.0'
+aws-sdk-wafregional = '1.10.0'
+aws-sdk-wafv2 = '1.10.0'
+aws-sdk-wellarchitected = '1.10.0'
+aws-sdk-wisdom = '1.11.0'
+aws-sdk-workdocs = '1.10.0'
+aws-sdk-worklink = '1.10.0'
+aws-sdk-workmail = '1.10.0'
+aws-sdk-workmailmessageflow = '1.10.0'
+aws-sdk-workspaces = '1.10.0'
+aws-sdk-workspacesthinclient = '1.8.0'
+aws-sdk-workspacesweb = '1.10.0'
+aws-sdk-xray = '1.10.0'

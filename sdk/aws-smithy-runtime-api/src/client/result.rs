@@ -56,7 +56,7 @@ pub mod builders {
     source_only_error_builder!(TimeoutError, TimeoutErrorBuilder, BoxError);
     source_only_error_builder!(DispatchFailure, DispatchFailureBuilder, ConnectorError);
 
-    /// Builder for [`ResponseError`](super::ResponseError).
+    /// Builder for [`ResponseError`].
     #[derive(Debug)]
     pub struct ResponseErrorBuilder<R> {
         source: Option<BoxError>,
@@ -111,7 +111,7 @@ pub mod builders {
         }
     }
 
-    /// Builder for [`ServiceError`](super::ServiceError).
+    /// Builder for [`ServiceError`].
     #[derive(Debug)]
     pub struct ServiceErrorBuilder<E, R> {
         source: Option<E>,
@@ -314,7 +314,7 @@ pub trait CreateUnhandledError {
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](aws_smithy_types::error::display::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
-/// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
+/// [`Error::source`] for more details about the underlying cause.
 #[non_exhaustive]
 #[derive(Debug)]
 pub enum SdkError<E, R> {

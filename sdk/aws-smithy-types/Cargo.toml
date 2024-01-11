@@ -13,6 +13,7 @@ repository = "https://github.com/smithy-lang/smithy-rs"
 [features]
 byte-stream-poll-next = []
 http-body-0-4-x = ["dep:http-body-0-4"]
+http-body-1-x = ["dep:http-body-1-0", "dep:http-body-util", "dep:http-body-0-4", "dep:http-1x"]
 hyper-0-14-x = ["dep:hyper-0-14"]
 rt-tokio = [
     "dep:http-body-0-4",
@@ -32,7 +33,10 @@ base64-simd = "0.8"
 bytes = "1"
 bytes-utils = "0.1"
 http = "0.2.3"
+http-1x = { package = "http", version = "1", optional = true }
 http-body-0-4 = { package = "http-body", version = "0.4.4", optional = true }
+http-body-1-0 = { package = "http-body", version = "1", optional = true }
+http-body-util = { version = "0.1.0", optional = true }
 hyper-0-14 = { package = "hyper", version = "0.14.26", optional = true }
 itoa = "1.0.0"
 num-integer = "0.1.44"
@@ -42,7 +46,7 @@ ryu = "1.0.5"
 time = { version = "0.3.4", features = ["parsing"] }
 
 # ByteStream internals
-futures-core = "0.3.14"
+futures-core = "0.3.29"
 tokio = { version = "1.23.1", optional = true }
 tokio-util = { version = "0.7", optional = true }
 
@@ -68,6 +72,7 @@ tempfile = "3.2.0"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
+cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
 rustdoc-args = ["--cfg", "docsrs"]
 # End of docs.rs metadata
 

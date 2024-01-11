@@ -195,7 +195,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEventCon
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("resource_type", "cannot be empty or unset"))?;
                 query.push_kv("resourceType", &::aws_smithy_http::query::fmt_string(&inner_1));
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

@@ -66,11 +66,11 @@ impl PortalOptionsBuilder {
     pub fn build(self) -> crate::types::PortalOptions {
         crate::types::PortalOptions {
             sign_in_options: self.sign_in_options,
-            visibility: self.visibility.unwrap_or_else(|| {
+            visibility: self.visibility.unwrap_or(
                 "ENABLED"
                     .parse::<crate::types::ApplicationVisibility>()
-                    .expect("static value validated to member")
-            }),
+                    .expect("static value validated to member"),
+            ),
         }
     }
 }

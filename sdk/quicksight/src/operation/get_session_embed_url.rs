@@ -202,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSessionEm
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.session_lifetime_in_minutes {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv("session-lifetime", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

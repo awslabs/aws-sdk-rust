@@ -193,7 +193,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeVoic
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.include_additional_language_codes {
-                    if *inner_3 {
+                    {
                         query.push_kv(
                             "IncludeAdditionalLanguageCodes",
                             ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode(),

@@ -24,7 +24,7 @@
 //! generated clients, then please file an issue on [smithy-rs](https://github.com/smithy-lang/smithy-rs)
 //! as we likely missed re-exporting one of the APIs.
 //!
-//! All client-specific code is in the [`client`](crate::client) root level module
+//! All client-specific code is in the [`client`] root level module
 //! to leave room for smithy-rs server APIs in the future.
 
 /// A boxed error that is `Send` and `Sync`.

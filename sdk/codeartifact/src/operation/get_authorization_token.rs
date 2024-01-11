@@ -206,7 +206,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAuthoriza
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.duration_seconds {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv("duration", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

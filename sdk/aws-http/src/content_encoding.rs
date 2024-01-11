@@ -21,7 +21,7 @@ pub mod header_value {
     pub const AWS_CHUNKED: &str = "aws-chunked";
 }
 
-/// Options used when constructing an [`AwsChunkedBody`][AwsChunkedBody].
+/// Options used when constructing an [`AwsChunkedBody`].
 #[derive(Debug, Default)]
 #[non_exhaustive]
 pub struct AwsChunkedBodyOptions {
@@ -35,7 +35,7 @@ pub struct AwsChunkedBodyOptions {
 }
 
 impl AwsChunkedBodyOptions {
-    /// Create a new [`AwsChunkedBodyOptions`][AwsChunkedBodyOptions]
+    /// Create a new [`AwsChunkedBodyOptions`].
     pub fn new(stream_length: u64, trailer_lengths: Vec<u64>) -> Self {
         Self {
             stream_length,

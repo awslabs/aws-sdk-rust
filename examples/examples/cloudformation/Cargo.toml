@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-sdk-cloudformation= { version = "1.10.0", path = "../../../sdk/cloudformation" }
+aws-sdk-cloudformation= { version = "1.11.0", path = "../../../sdk/cloudformation" }
 aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 
 [dependencies.tokio]

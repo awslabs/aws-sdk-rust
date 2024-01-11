@@ -194,7 +194,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAttached
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.recursive {
-                    if *inner_2 {
+                    {
                         query.push_kv("recursive", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
@@ -204,7 +204,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAttached
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.page_size {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("pageSize", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

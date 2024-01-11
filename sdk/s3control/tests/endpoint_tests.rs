@@ -1134,9 +1134,9 @@ async fn operation_input_test_get_access_point_34() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`) [Account ID set inline and in ARN and they do not match@us-west-2]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)"),
-                                    "expected error to contain `Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)"),
+                                            "expected error to contain `Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -2312,9 +2312,9 @@ async fn operation_input_test_get_access_point_69() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -2346,9 +2346,9 @@ async fn operation_input_test_delete_access_point_70() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]
@@ -2382,9 +2382,9 @@ async fn operation_input_test_get_bucket_71() {
     rcvr.expect_no_request();
     let error = _result.expect_err("expected error: Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false` [Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false]");
     assert!(
-                                    format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
-                                    "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
-                                );
+                                            format!("{:?}", error).contains("Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`"),
+                                            "expected error to contain `Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`` but it was {:?}", error
+                                        );
 }
 
 #[::tokio::test]

@@ -216,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChannelM
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
-                    if *inner_5 != 0 {
+                    {
                         query.push_kv("max-results", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }

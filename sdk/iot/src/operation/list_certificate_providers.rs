@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListCertific
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.ascending_order {
-                    if *inner_2 {
+                    {
                         query.push_kv("isAscendingOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

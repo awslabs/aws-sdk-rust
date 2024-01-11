@@ -195,12 +195,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProfilin
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.include_description {
-                    if *inner_3 {
+                    {
                         query.push_kv("includeDescription", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }

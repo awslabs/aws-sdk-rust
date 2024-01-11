@@ -183,12 +183,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMembersR
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_1) = &_input.only_associated {
-                    if *inner_1 {
+                    {
                         query.push_kv("OnlyAssociated", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }

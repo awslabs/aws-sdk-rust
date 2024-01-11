@@ -3,10 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::body::{BoxBody, Error, Inner, SdkBody};
-use bytes::Bytes;
 use std::pin::Pin;
 use std::task::{Context, Poll};
+
+use bytes::Bytes;
+
+use crate::body::{Error, SdkBody};
 
 impl SdkBody {
     /// Construct an `SdkBody` from a type that implements [`http_body_0_4::Body<Data = Bytes>`](http_body_0_4::Body).
@@ -17,15 +19,7 @@ impl SdkBody {
         T: http_body_0_4::Body<Data = Bytes, Error = E> + Send + Sync + 'static,
         E: Into<Error> + 'static,
     {
-        Self {
-            inner: Inner::Dyn {
-                inner: BoxBody::HttpBody04(http_body_0_4::combinators::BoxBody::new(
-                    body.map_err(Into::into),
-                )),
-            },
-            rebuild: None,
-            bytes_contents: None,
-        }
+        SdkBody::from_body_0_4_internal(body)
     }
 }
 

@@ -260,7 +260,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PublishPacka
                 }
                 query.push_kv("asset", &::aws_smithy_http::query::fmt_string(&inner_8));
                 if let ::std::option::Option::Some(inner_9) = &_input.unfinished {
-                    if *inner_9 {
+                    {
                         query.push_kv("unfinished", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                     }
                 }

@@ -212,7 +212,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPipesReq
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.limit {
-                    if *inner_7 != 0 {
+                    {
                         query.push_kv("Limit", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }

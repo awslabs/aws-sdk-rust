@@ -237,7 +237,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedE
                     }
                 }
                 if let ::std::option::Option::Some(inner_8) = &_input.max_results {
-                    if *inner_8 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
                     }
                 }

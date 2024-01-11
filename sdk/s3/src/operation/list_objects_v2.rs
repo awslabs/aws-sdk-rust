@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsV
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.max_keys {
-                    if *inner_3 != 0 {
+                    {
                         query.push_kv("max-keys", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
@@ -218,7 +218,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListObjectsV
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.fetch_owner {
-                    if *inner_6 {
+                    {
                         query.push_kv("fetch-owner", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }

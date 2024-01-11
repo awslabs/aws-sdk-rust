@@ -205,12 +205,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMembersR
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.is_owned {
-                    if *inner_4 {
+                    {
                         query.push_kv("isOwned", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.max_results {
-                    if *inner_5 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }

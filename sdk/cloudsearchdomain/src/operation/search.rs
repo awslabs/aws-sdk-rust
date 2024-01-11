@@ -200,7 +200,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchReques
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.partial {
-                    if *inner_6 {
+                    {
                         query.push_kv("partial", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }
@@ -231,7 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchReques
                     }
                 }
                 if let ::std::option::Option::Some(inner_11) = &_input.size {
-                    if *inner_11 != 0 {
+                    {
                         query.push_kv("size", ::aws_smithy_types::primitive::Encoder::from(*inner_11).encode());
                     }
                 }
@@ -241,7 +241,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchReques
                     }
                 }
                 if let ::std::option::Option::Some(inner_13) = &_input.start {
-                    if *inner_13 != 0 {
+                    {
                         query.push_kv("start", ::aws_smithy_types::primitive::Encoder::from(*inner_13).encode());
                     }
                 }

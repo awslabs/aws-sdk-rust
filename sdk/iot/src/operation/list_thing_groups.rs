@@ -188,7 +188,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListThingGro
                     }
                 }
                 if let ::std::option::Option::Some(inner_2) = &_input.max_results {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
@@ -203,7 +203,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListThingGro
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.recursive {
-                    if *inner_5 {
+                    {
                         query.push_kv("recursive", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }

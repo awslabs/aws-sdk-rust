@@ -248,7 +248,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTileReque
                 }
                 query.push_kv("Arn", &::aws_smithy_http::query::fmt_string(&inner_7));
                 if let ::std::option::Option::Some(inner_8) = &_input.image_mask {
-                    if *inner_8 {
+                    {
                         query.push_kv("ImageMask", ::aws_smithy_types::primitive::Encoder::from(*inner_8).encode());
                     }
                 }

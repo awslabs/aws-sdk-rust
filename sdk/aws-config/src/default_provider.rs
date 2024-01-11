@@ -5,7 +5,7 @@
 
 //! Providers that implement the default AWS provider chain
 //!
-//! Default Provider chains for [`region`](crate::default_provider::region), [`credentials`](crate::default_provider::credentials),
+//! Default Provider chains for [`region`], [`credentials`],
 //! [retries](crate::default_provider::retry_config), [timeouts](crate::default_provider::timeout_config) and
 //! [app name](crate::default_provider::app_name).
 //!

@@ -214,7 +214,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.inline_chunk_length {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("length", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
@@ -239,7 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutObjectReq
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.throw_on_duplicate {
-                    if *inner_9 {
+                    {
                         query.push_kv("throwOnDuplicate", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                     }
                 }

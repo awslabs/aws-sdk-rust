@@ -230,7 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAgentA
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_4) = &_input.skip_resource_in_use_check {
-                    if *inner_4 {
+                    {
                         query.push_kv("skipResourceInUseCheck", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }

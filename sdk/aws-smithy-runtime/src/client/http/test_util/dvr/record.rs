@@ -31,7 +31,7 @@ pub struct RecordingClient {
     pub(crate) inner: SharedHttpConnector,
 }
 
-#[cfg(all(feature = "tls-rustls"))]
+#[cfg(feature = "tls-rustls")]
 impl RecordingClient {
     /// Construct a recording connection wrapping a default HTTPS implementation without any timeouts.
     pub fn https() -> Self {

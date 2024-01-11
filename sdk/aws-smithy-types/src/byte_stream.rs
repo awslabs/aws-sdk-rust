@@ -5,8 +5,9 @@
 
 //! ByteStream Abstractions
 //!
-//! When the SDK returns streaming binary data, the inner Http Body is wrapped in [ByteStream](crate::byte_stream::ByteStream). ByteStream provides misuse-resistant
-//! primitives to make it easier to handle common patterns with streaming data.
+//! When the SDK returns streaming binary data, the inner Http Body is
+//! wrapped in [`ByteStream`]. ByteStream provides misuse-resistant primitives
+//! to make it easier to handle common patterns with streaming data.
 //!
 //! # Examples
 //!
@@ -148,6 +149,8 @@ pub use self::bytestream_util::FsBuilder;
 /// The name has a suffix `_x` to avoid name collision with a third-party `http-body-0-4`.
 #[cfg(feature = "http-body-0-4-x")]
 pub mod http_body_0_4_x;
+#[cfg(feature = "http-body-1-x")]
+pub mod http_body_1_x;
 
 pin_project! {
     /// Stream of binary data
@@ -343,8 +346,10 @@ impl ByteStream {
         self.inner.collect().await.map_err(Error::streaming)
     }
 
-    /// Returns a [`FsBuilder`](crate::byte_stream::FsBuilder), allowing you to build a `ByteStream` with
-    /// full control over how the file is read (eg. specifying the length of the file or the size of the buffer used to read the file).
+    /// Returns a [`FsBuilder`], allowing you to build a `ByteStream` with
+    /// full control over how the file is read (eg. specifying the length of
+    /// the file or the size of the buffer used to read the file).
+    ///
     /// ```no_run
     /// # #[cfg(feature = "rt-tokio")]
     /// # {
@@ -382,8 +387,7 @@ impl ByteStream {
     /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
     ///
     /// Note: If you want more control, such as specifying the size of the buffer used to read the file
-    /// or the length of the file, use a [`FsBuilder`](crate::byte_stream::FsBuilder) as returned
-    /// from `ByteStream::read_from`
+    /// or the length of the file, use a [`FsBuilder`] as returned from `ByteStream::read_from`.
     ///
     /// # Examples
     /// ```no_run
@@ -462,7 +466,7 @@ impl From<SdkBody> for ByteStream {
     }
 }
 
-/// Construct a retryable ByteStream from [`bytes::Bytes`](bytes::Bytes)
+/// Construct a retryable ByteStream from [`bytes::Bytes`].
 impl From<Bytes> for ByteStream {
     fn from(input: Bytes) -> Self {
         ByteStream::new(SdkBody::from(input))
@@ -471,8 +475,7 @@ impl From<Bytes> for ByteStream {
 
 /// Construct a retryable ByteStream from a `Vec<u8>`.
 ///
-/// This will convert the `Vec<u8>` into [`bytes::Bytes`](bytes::Bytes) to enable efficient
-/// retries.
+/// This will convert the `Vec<u8>` into [`bytes::Bytes`] to enable efficient retries.
 impl From<Vec<u8>> for ByteStream {
     fn from(input: Vec<u8>) -> Self {
         Self::from(Bytes::from(input))
@@ -481,15 +484,15 @@ impl From<Vec<u8>> for ByteStream {
 
 /// Non-contiguous Binary Data Storage
 ///
-/// When data is read from the network, it is read in a sequence of chunks that are not in
-/// contiguous memory. [`AggregatedBytes`](crate::byte_stream::AggregatedBytes) provides a view of
-/// this data via [`impl Buf`](bytes::Buf) or it can be copied into contiguous storage with
+/// When data is read from the network, it is read in a sequence of chunks that are
+/// not in contiguous memory. [`AggregatedBytes`] provides a view of this data via
+/// [`impl Buf`](bytes::Buf) or it can be copied into contiguous storage with
 /// [`.into_bytes()`](crate::byte_stream::AggregatedBytes::into_bytes).
 #[derive(Debug, Clone)]
 pub struct AggregatedBytes(SegmentedBuf<Bytes>);
 
 impl AggregatedBytes {
-    /// Convert this buffer into [`Bytes`](bytes::Bytes)
+    /// Convert this buffer into [`Bytes`].
     ///
     /// # Why does this consume `self`?
     /// Technically, [`copy_to_bytes`](bytes::Buf::copy_to_bytes) can be called without ownership of self. However, since this

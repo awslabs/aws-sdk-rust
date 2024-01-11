@@ -66,7 +66,7 @@ impl GrantItemBuilder {
     pub fn build(self) -> crate::types::GrantItem {
         crate::types::GrantItem {
             dimension_key: self.dimension_key,
-            max_quantity: self.max_quantity.unwrap_or_else(|| 1),
+            max_quantity: self.max_quantity.unwrap_or(1),
         }
     }
 }

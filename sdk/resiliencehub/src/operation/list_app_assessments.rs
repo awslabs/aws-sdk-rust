@@ -211,7 +211,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppAsses
                     }
                 }
                 if let ::std::option::Option::Some(inner_7) = &_input.reverse_order {
-                    if *inner_7 {
+                    {
                         query.push_kv("reverseOrder", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }
@@ -221,7 +221,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAppAsses
                     }
                 }
                 if let ::std::option::Option::Some(inner_9) = &_input.max_results {
-                    if *inner_9 != 0 {
+                    {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
                     }
                 }

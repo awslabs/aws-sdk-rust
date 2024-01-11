@@ -229,7 +229,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPartsReq
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.limit {
-                    if *inner_5 != 0 {
+                    {
                         query.push_kv("limit", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }

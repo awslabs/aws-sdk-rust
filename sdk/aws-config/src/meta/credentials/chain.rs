@@ -14,11 +14,9 @@ use tracing::Instrument;
 /// Credentials provider that checks a series of inner providers
 ///
 /// Each provider will be evaluated in order:
-/// * If a provider returns valid [`Credentials`](aws_credential_types::Credentials) they will be returned immediately.
+/// * If a provider returns valid [`Credentials`] they will be returned immediately.
 ///   No other credential providers will be used.
-/// * Otherwise, if a provider returns
-///   [`CredentialsError::CredentialsNotLoaded`](aws_credential_types::provider::error::CredentialsError::CredentialsNotLoaded),
-///   the next provider will be checked.
+/// * Otherwise, if a provider returns [`CredentialsError::CredentialsNotLoaded`], the next provider will be checked.
 /// * Finally, if a provider returns any other error condition, an error will be returned immediately.
 ///
 /// # Examples

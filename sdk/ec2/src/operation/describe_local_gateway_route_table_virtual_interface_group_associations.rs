@@ -315,10 +315,10 @@ impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for Describe
     }
 }
 impl ::aws_types::request_id::RequestId for crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
+                                fn request_id(&self) -> Option<&str> {
+                                    self.meta().request_id()
+                                }
                             }
-                        }
 
 pub use crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::_describe_local_gateway_route_table_virtual_interface_group_associations_output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput;
 

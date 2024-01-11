@@ -158,7 +158,7 @@ impl WebIdentityTokenCredentialsProvider {
     }
 }
 
-/// Builder for [`WebIdentityTokenCredentialsProvider`](WebIdentityTokenCredentialsProvider)
+/// Builder for [`WebIdentityTokenCredentialsProvider`].
 #[derive(Debug, Default)]
 pub struct Builder {
     source: Option<Source>,
@@ -183,7 +183,7 @@ impl Builder {
         self
     }
 
-    /// Configure this builder to use  [`StaticConfiguration`](StaticConfiguration)
+    /// Configure this builder to use  [`StaticConfiguration`].
     ///
     /// WebIdentityToken providers load credentials from the file system. The file system path used
     /// may either determine be loaded from environment variables (default), or via a statically

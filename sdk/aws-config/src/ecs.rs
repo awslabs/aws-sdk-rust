@@ -272,7 +272,7 @@ impl Builder {
 
     /// Override the DNS resolver used to validate URIs
     ///
-    /// URIs must refer to loopback addresses. The [`ResolveDns`](aws_smithy_runtime_api::client::dns::ResolveDns)
+    /// URIs must refer to loopback addresses. The [`ResolveDns`]
     /// implementation is used to retrieve IP addresses for a given domain.
     pub fn dns(mut self, dns: impl ResolveDns + 'static) -> Self {
         self.dns = Some(dns.into_shared());

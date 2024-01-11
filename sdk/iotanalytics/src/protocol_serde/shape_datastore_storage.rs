@@ -78,9 +78,9 @@ where
                                 ))
                             }
                             _ => {
-                                                                      ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
-                                                                      Some(crate::types::DatastoreStorage::Unknown)
-                                                                    }
+                                                                              ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
+                                                                              Some(crate::types::DatastoreStorage::Unknown)
+                                                                            }
                         };
                     }
                     other => {

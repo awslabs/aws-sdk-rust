@@ -116,7 +116,9 @@ impl Intercept for GlacierApiVersionInterceptor {
 
 /// Adds a glacier tree hash checksum to the HTTP Request
 #[derive(Debug, Default)]
-pub(crate) struct GlacierTreeHashHeaderInterceptor;
+pub(crate) struct GlacierTreeHashHeaderInterceptor {
+    _priv: (),
+}
 
 impl Intercept for GlacierTreeHashHeaderInterceptor {
     fn name(&self) -> &'static str {

@@ -195,22 +195,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLoaderJob
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.details {
-                    if *inner_2 {
+                    {
                         query.push_kv("details", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.errors {
-                    if *inner_3 {
+                    {
                         query.push_kv("errors", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.page {
-                    if *inner_4 != 0 {
+                    {
                         query.push_kv("page", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.errors_per_page {
-                    if *inner_5 != 0 {
+                    {
                         query.push_kv("errorsPerPage", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }

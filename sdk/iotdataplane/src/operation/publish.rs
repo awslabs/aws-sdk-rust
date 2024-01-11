@@ -188,12 +188,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PublishReque
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 if let ::std::option::Option::Some(inner_2) = &_input.qos {
-                    if *inner_2 != 0 {
+                    {
                         query.push_kv("qos", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_3) = &_input.retain {
-                    if *inner_3 {
+                    {
                         query.push_kv("retain", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
@@ -208,7 +208,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PublishReque
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.message_expiry {
-                    if *inner_6 != 0 {
+                    {
                         query.push_kv("messageExpiry", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
                     }
                 }
