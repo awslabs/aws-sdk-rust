@@ -16,8 +16,14 @@ rustdoc-args = ["--cfg", "docsrs"]
 [features]
 convert-chrono = ["aws-smithy-types", "chrono"]
 convert-time = ["aws-smithy-types", "time"]
+convert-streams = ["aws-smithy-async", "futures-core"]
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
+optional = true
+version = "1.1.1"
+
+[dependencies.aws-smithy-async]
+path = "../aws-smithy-async"
 optional = true
 version = "1.1.1"
 
@@ -29,4 +35,8 @@ features = ["std"]
 
 [dependencies.time]
 version = "0.3.4"
+optional = true
+
+[dependencies.futures-core]
+version = "0.3.0"
 optional = true

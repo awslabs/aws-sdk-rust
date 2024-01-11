@@ -8,6 +8,8 @@
 use crate::future::pagination_stream::collect::sealed::Collectable;
 use std::future::Future;
 use std::pin::Pin;
+use std::task::{Context, Poll};
+
 pub mod collect;
 pub mod fn_stream;
 use fn_stream::FnStream;
@@ -58,6 +60,11 @@ impl<Item> PaginationStream<Item> {
     /// Consumes and returns the next `Item` from this stream.
     pub async fn next(&mut self) -> Option<Item> {
         self.0.next().await
+    }
+
+    /// Poll an item from the stream
+    pub fn poll_next(&mut self, cx: &mut Context<'_>) -> Poll<Option<Item>> {
+        Pin::new(&mut self.0).poll_next(cx)
     }
 
     /// Consumes this stream and gathers elements into a collection.
