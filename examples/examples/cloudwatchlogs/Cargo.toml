@@ -7,8 +7,8 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-sdk-cloudwatchlogs= { version = "1.11.0", path = "../../../sdk/cloudwatchlogs" }
 aws-config= { version = "1.1.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-sdk-cloudwatchlogs= { version = "1.11.0", path = "../../../sdk/cloudwatchlogs" }
 aws-types= { version = "1.1.2", path = "../../../sdk/aws-types" }
 
 [dependencies.tokio]
