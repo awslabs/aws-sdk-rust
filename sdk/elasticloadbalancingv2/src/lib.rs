@@ -37,7 +37,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.1", features = ["behavior-version-latest"] }
+//! aws-config = { version = "1.1.2", features = ["behavior-version-latest"] }
 //! aws-sdk-elasticloadbalancingv2 = "1.10.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

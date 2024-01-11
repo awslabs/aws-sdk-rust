@@ -17,10 +17,10 @@ thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1"
 aws-sdk-dynamodb= { version = "1.10.0", path = "../../../sdk/dynamodb" }
-aws-smithy-types= { version = "1.1.1", path = "../../../sdk/aws-smithy-types" }
-aws-config= { version = "1.1.1", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-http= { version = "0.60.1", path = "../../../sdk/aws-http" }
-aws-smithy-runtime= { version = "1.1.1", path = "../../../sdk/aws-smithy-runtime", features = ["test-util"] }
+aws-smithy-types= { version = "1.1.2", path = "../../../sdk/aws-smithy-types" }
+aws-config= { version = "1.1.2", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-http= { version = "0.60.2", path = "../../../sdk/aws-http" }
+aws-smithy-runtime= { version = "1.1.2", path = "../../../sdk/aws-smithy-runtime", features = ["test-util"] }
 
 [dependencies.clap]
 version = "~4.4"
