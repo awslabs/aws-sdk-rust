@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::profile::parser::parse::parse_profile_file;
+use crate::profile::parser::parse::{parse_profile_file, to_ascii_lowercase};
 use crate::profile::parser::source::Source;
 use crate::profile::profile_file::ProfileFiles;
 use aws_types::os_shim_internal::{Env, Fs};
@@ -169,7 +169,9 @@ impl Profile {
 
     /// Returns a reference to the property named `name`
     pub fn get(&self, name: &str) -> Option<&str> {
-        self.properties.get(name).map(|prop| prop.value())
+        self.properties
+            .get(to_ascii_lowercase(name).as_ref())
+            .map(|prop| prop.value())
     }
 }
 

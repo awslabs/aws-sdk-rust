@@ -1,0 +1,10 @@
+{
+  "name": "profile_static_keys",
+  "docs": "load static keys from a profile",
+  "result": {
+    "Ok": {
+      "access_key_id": "correct_key",
+      "secret_access_key": "correct_secret"
+    }
+  }
+}

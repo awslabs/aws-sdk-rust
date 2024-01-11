@@ -268,6 +268,7 @@ mod test {
 
     make_test!(prefer_environment);
     make_test!(profile_static_keys);
+    make_test!(profile_static_keys_case_insensitive);
     make_test!(web_identity_token_env);
     make_test!(web_identity_source_profile_no_env);
     make_test!(web_identity_token_invalid_jwt);

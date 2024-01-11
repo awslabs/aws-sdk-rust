@@ -453,6 +453,19 @@
       }
     },
     {
+      "name": "Duplicate properties in duplicate profiles use the last one defined (case insensitive).",
+      "input": {
+        "configFile": "[profile foo]\nName = value\n[profile foo]\nname = value2"
+      },
+      "output": {
+        "profiles": {
+          "foo": {
+            "name": "value2"
+          }
+        }
+      }
+    },
+    {
       "name": "Default profile with profile prefix overrides default profile without prefix when profile prefix is first.",
       "input": {
         "configFile": "[profile default]\nname = value\n[default]\nname2 = value2"
@@ -518,7 +531,7 @@
       "output": {
         "profiles": {
           "foo": {
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_": "value"
+            "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789-_": "value"
           }
         }
       }

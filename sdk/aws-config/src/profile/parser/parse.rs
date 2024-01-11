@@ -19,7 +19,7 @@ use std::error::Error;
 use std::fmt::{self, Display, Formatter};
 
 /// A set of profiles that still carries a reference to the underlying data
-pub(super) type RawProfileSet<'a> = HashMap<&'a str, HashMap<&'a str, Cow<'a, str>>>;
+pub(super) type RawProfileSet<'a> = HashMap<&'a str, HashMap<Cow<'a, str>, Cow<'a, str>>>;
 
 /// Characters considered to be whitespace by the spec
 ///
@@ -98,7 +98,7 @@ enum State<'a> {
     Starting,
     ReadingProfile {
         profile: &'a str,
-        property: Option<&'a str>,
+        property: Option<Cow<'a, str>>,
         is_subproperty: bool,
     },
 }
@@ -152,7 +152,7 @@ impl<'a> Parser<'a> {
             .map_err(|err| err.into_error("property", location.clone()))?;
         self.state = State::ReadingProfile {
             profile: name,
-            property: Some(k),
+            property: Some(k.clone()),
             is_subproperty: v.is_empty(),
         };
         current_profile.insert(k, v.into());
@@ -184,7 +184,7 @@ impl<'a> Parser<'a> {
                 self.data
                     .get_mut(*profile)
                     .expect("profile must exist")
-                    .get_mut(*property)
+                    .get_mut(property.as_ref())
                     .expect("property must exist")
             }
             State::ReadingProfile {
@@ -246,7 +246,7 @@ impl PropertyError {
 }
 
 /// Parse a property line into a key-value pair
-fn parse_property_line(line: &str) -> Result<(&str, &str), PropertyError> {
+fn parse_property_line(line: &str) -> Result<(Cow<'_, str>, &str), PropertyError> {
     let line = prepare_line(line, true);
     let (k, v) = line.split_once('=').ok_or(PropertyError::NoEquals)?;
     let k = k.trim_matches(WHITESPACE);
@@ -254,7 +254,15 @@ fn parse_property_line(line: &str) -> Result<(&str, &str), PropertyError> {
     if k.is_empty() {
         return Err(PropertyError::NoName);
     }
-    Ok((k, v))
+    Ok((to_ascii_lowercase(k), v))
+}
+
+pub(crate) fn to_ascii_lowercase(s: &str) -> Cow<'_, str> {
+    if s.bytes().any(|b| b.is_ascii_uppercase()) {
+        Cow::Owned(s.to_ascii_lowercase())
+    } else {
+        Cow::Borrowed(s)
+    }
 }
 
 /// Prepare a line for parsing
@@ -291,23 +299,30 @@ mod test {
     use crate::profile::parser::parse::{parse_property_line, PropertyError};
     use crate::profile::parser::source::File;
     use crate::profile::profile_file::ProfileFileKind;
+    use std::borrow::Cow;
 
     // most test cases covered by the JSON test suite
 
     #[test]
     fn property_parsing() {
-        assert_eq!(parse_property_line("a = b"), Ok(("a", "b")));
-        assert_eq!(parse_property_line("a=b"), Ok(("a", "b")));
-        assert_eq!(parse_property_line("a = b "), Ok(("a", "b")));
-        assert_eq!(parse_property_line(" a = b "), Ok(("a", "b")));
-        assert_eq!(parse_property_line(" a = b 🐱 "), Ok(("a", "b 🐱")));
+        fn ok<'a>(key: &'a str, value: &'a str) -> Result<(Cow<'a, str>, &'a str), PropertyError> {
+            Ok((Cow::Borrowed(key), value))
+        }
+
+        assert_eq!(parse_property_line("a = b"), ok("a", "b"));
+        assert_eq!(parse_property_line("a=b"), ok("a", "b"));
+        assert_eq!(parse_property_line("a = b "), ok("a", "b"));
+        assert_eq!(parse_property_line(" a = b "), ok("a", "b"));
+        assert_eq!(parse_property_line(" a = b 🐱 "), ok("a", "b 🐱"));
         assert_eq!(parse_property_line("a b"), Err(PropertyError::NoEquals));
         assert_eq!(parse_property_line("= b"), Err(PropertyError::NoName));
-        assert_eq!(parse_property_line("a =    "), Ok(("a", "")));
+        assert_eq!(parse_property_line("a =    "), ok("a", ""));
         assert_eq!(
             parse_property_line("something_base64=aGVsbG8gZW50aHVzaWFzdGljIHJlYWRlcg=="),
-            Ok(("something_base64", "aGVsbG8gZW50aHVzaWFzdGljIHJlYWRlcg=="))
+            ok("something_base64", "aGVsbG8gZW50aHVzaWFzdGljIHJlYWRlcg==")
         );
+
+        assert_eq!(parse_property_line("ABc = DEF"), ok("abc", "DEF"));
     }
 
     #[test]

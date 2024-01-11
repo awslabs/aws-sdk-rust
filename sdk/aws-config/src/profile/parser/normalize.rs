@@ -113,9 +113,9 @@ pub(super) fn merge_in(
     }
 }
 
-fn merge_into_base(target: &mut Profile, profile: HashMap<&str, Cow<'_, str>>) {
+fn merge_into_base(target: &mut Profile, profile: HashMap<Cow<'_, str>, Cow<'_, str>>) {
     for (k, v) in profile {
-        match validate_identifier(k) {
+        match validate_identifier(k.as_ref()) {
             Ok(k) => {
                 target
                     .properties
@@ -146,6 +146,7 @@ fn validate_identifier(input: &str) -> Result<&str, ()> {
 
 #[cfg(test)]
 mod tests {
+    use std::borrow::Cow;
     use std::collections::HashMap;
 
     use tracing_test::traced_test;
@@ -218,7 +219,7 @@ mod tests {
         let mut profile: RawProfileSet<'_> = HashMap::new();
         profile.insert("default", {
             let mut out = HashMap::new();
-            out.insert("invalid key", "value".into());
+            out.insert(Cow::Borrowed("invalid key"), "value".into());
             out
         });
         let mut base = ProfileSet::empty();
