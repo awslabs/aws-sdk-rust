@@ -412,6 +412,36 @@ impl<E, R> SdkError<E, R> {
         }
     }
 
+    /// Returns a reference underlying service error `E` if there is one
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # use aws_smithy_runtime_api::client::result::SdkError;
+    /// # #[derive(Debug)] enum GetObjectError { NoSuchKey(()), Other(()) }
+    /// # impl std::fmt::Display for GetObjectError {
+    /// #     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result { unimplemented!() }
+    /// # }
+    /// # impl std::error::Error for GetObjectError {}
+    /// # impl GetObjectError {
+    /// #   fn is_not_found(&self) -> bool { true }
+    /// # }
+    /// # fn example() -> Result<(), GetObjectError> {
+    /// # let sdk_err = SdkError::service_error(GetObjectError::NoSuchKey(()), ());
+    /// if sdk_err.as_service_error().map(|e|e.is_not_found()) == Some(true) {
+    ///     println!("the object doesn't exist");
+    ///     // return None, or handle this error specifically
+    /// }
+    /// // ... handle other error cases, happy path, etc.
+    /// # Ok(())
+    /// # }
+    /// ```
+    pub fn as_service_error(&self) -> Option<&E> {
+        match self {
+            Self::ServiceError(err) => Some(&err.source),
+            _ => None,
+        }
+    }
+
     /// Converts this error into its error source.
     ///
     /// If there is no error source, then `Err(Self)` is returned.

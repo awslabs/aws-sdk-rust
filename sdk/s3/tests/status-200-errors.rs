@@ -6,6 +6,7 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_sdk_s3::Client;
+use aws_smithy_runtime::assert_str_contains;
 use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::metadata::ProvideErrorMetadata;
@@ -37,5 +38,6 @@ async fn status_200_errors() {
         .send()
         .await
         .expect_err("should fail");
-    assert_eq!(error.into_service_error().code(), Some("SlowDown"));
+    assert_eq!(error.as_service_error().unwrap().code(), Some("SlowDown"));
+    assert_str_contains!(format!("{:?}", error), "Please reduce your request rate");
 }
