@@ -1074,6 +1074,220 @@ async fn operation_input_test_list_regional_buckets_32() {
 async fn operation_input_test_get_access_point_33() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.us-west-2.api.aws"),
+        "expected URI to start with `https://s3-outposts.us-west-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_34() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.us-west-2.api.aws"),
+        "expected URI to start with `https://s3-outposts.us-west-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_35() {
+    /* builtIns: {
+        "AWS::Region": "af-south-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.af-south-1.api.aws"),
+        "expected URI to start with `https://s3-outposts.af-south-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_36() {
+    /* builtIns: {
+        "AWS::Region": "af-south-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.af-south-1.api.aws"),
+        "expected URI to start with `https://s3-outposts.af-south-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_37() {
+    /* builtIns: {
+        "AWS::Region": "af-south-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.af-south-1.api.aws"),
+        "expected URI to start with `https://s3-outposts-fips.af-south-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_38() {
+    /* builtIns: {
+        "AWS::Region": "af-south-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("af-south-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some(
+                "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.af-south-1.api.aws"),
+        "expected URI to start with `https://s3-outposts-fips.af-south-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_39() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
     } */
     /* clientParams: {} */
@@ -1106,7 +1320,7 @@ async fn operation_input_test_get_access_point_33() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_34() {
+async fn operation_input_test_get_access_point_40() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -1140,7 +1354,7 @@ async fn operation_input_test_get_access_point_34() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_35() {
+async fn operation_input_test_get_access_point_41() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
@@ -1173,7 +1387,7 @@ async fn operation_input_test_get_access_point_35() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_36() {
+async fn operation_input_test_get_access_point_42() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -1208,7 +1422,7 @@ async fn operation_input_test_get_access_point_36() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_37() {
+async fn operation_input_test_get_bucket_43() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -1243,7 +1457,7 @@ async fn operation_input_test_get_bucket_37() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_38() {
+async fn operation_input_test_list_regional_buckets_44() {
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -1276,7 +1490,7 @@ async fn operation_input_test_list_regional_buckets_38() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_39() {
+async fn operation_input_test_list_regional_buckets_45() {
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true,
@@ -1311,7 +1525,42 @@ async fn operation_input_test_list_regional_buckets_39() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_bucket_40() {
+async fn operation_input_test_list_regional_buckets_46() {
+    /* builtIns: {
+        "AWS::Region": "us-east-2",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_regional_buckets()
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .set_outpost_id(::std::option::Option::Some("op-123".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.api.aws"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_47() {
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true,
@@ -1346,7 +1595,7 @@ async fn operation_input_test_create_bucket_40() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_41() {
+async fn operation_input_test_create_access_point_48() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1380,7 +1629,7 @@ async fn operation_input_test_create_access_point_41() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_42() {
+async fn operation_input_test_get_bucket_49() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1413,7 +1662,7 @@ async fn operation_input_test_get_bucket_42() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_43() {
+async fn operation_input_test_get_bucket_50() {
     /* builtIns: {
         "AWS::Region": "us-gov-east-1"
     } */
@@ -1446,7 +1695,7 @@ async fn operation_input_test_get_bucket_43() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_44() {
+async fn operation_input_test_get_bucket_51() {
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -1481,7 +1730,7 @@ async fn operation_input_test_get_bucket_44() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_45() {
+async fn operation_input_test_get_bucket_52() {
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -1516,7 +1765,44 @@ async fn operation_input_test_get_bucket_45() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_46() {
+async fn operation_input_test_get_bucket_53() {
+    /* builtIns: {
+        "AWS::Region": "us-east-2",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-2"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts-fips.us-east-2.api.aws"),
+        "expected URI to start with `https://s3-outposts-fips.us-east-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_54() {
     /* builtIns: {
         "AWS::Region": "cn-north-1"
     } */
@@ -1550,7 +1836,7 @@ async fn operation_input_test_create_access_point_46() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_47() {
+async fn operation_input_test_get_bucket_55() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1583,7 +1869,7 @@ async fn operation_input_test_get_bucket_47() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_48() {
+async fn operation_input_test_get_bucket_56() {
     /* builtIns: {
         "AWS::Region": "us-gov-east-1"
     } */
@@ -1616,7 +1902,7 @@ async fn operation_input_test_get_bucket_48() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_49() {
+async fn operation_input_test_get_bucket_57() {
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -1651,7 +1937,7 @@ async fn operation_input_test_get_bucket_49() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_50() {
+async fn operation_input_test_get_bucket_58() {
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -1686,7 +1972,42 @@ async fn operation_input_test_get_bucket_50() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_access_point_51() {
+async fn operation_input_test_get_bucket_59() {
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_bucket()
+            .set_bucket(::std::option::Option::Some(
+                "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_owned()
+            ))
+            .set_account_id(::std::option::Option::Some("123456789012".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3-outposts.us-west-2.api.aws"),
+        "expected URI to start with `https://s3-outposts.us-west-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_60() {
     /* builtIns: {
         "AWS::Region": "af-south-1"
     } */
@@ -1720,7 +2041,7 @@ async fn operation_input_test_create_access_point_51() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_52() {
+async fn operation_input_test_get_bucket_61() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -1753,7 +2074,7 @@ async fn operation_input_test_get_bucket_52() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_53() {
+async fn operation_input_test_get_bucket_62() {
     /* builtIns: {
         "AWS::Region": "us-gov-east-1"
     } */
@@ -1786,7 +2107,7 @@ async fn operation_input_test_get_bucket_53() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_54() {
+async fn operation_input_test_get_bucket_63() {
     /* builtIns: {
         "AWS::Region": "us-gov-west-1",
         "AWS::UseFIPS": true
@@ -1821,7 +2142,7 @@ async fn operation_input_test_get_bucket_54() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_55() {
+async fn operation_input_test_get_bucket_64() {
     /* builtIns: {
         "AWS::Region": "us-east-2",
         "AWS::UseFIPS": true
@@ -1856,7 +2177,7 @@ async fn operation_input_test_get_bucket_55() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_56() {
+async fn operation_input_test_list_regional_buckets_65() {
     /* builtIns: {
         "AWS::Region": "us-east-1"
     } */
@@ -1886,7 +2207,7 @@ async fn operation_input_test_list_regional_buckets_56() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_57() {
+async fn operation_input_test_list_regional_buckets_66() {
     /* builtIns: {
         "AWS::Region": "us-east-1"
     } */
@@ -1916,7 +2237,7 @@ async fn operation_input_test_list_regional_buckets_57() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_58() {
+async fn operation_input_test_list_regional_buckets_67() {
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::UseFIPS": true
@@ -1948,7 +2269,7 @@ async fn operation_input_test_list_regional_buckets_58() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_59() {
+async fn operation_input_test_list_regional_buckets_68() {
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::UseFIPS": true,
@@ -1982,7 +2303,7 @@ async fn operation_input_test_list_regional_buckets_59() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_60() {
+async fn operation_input_test_list_regional_buckets_69() {
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "SDK::Endpoint": "https://example.com"
@@ -2014,7 +2335,7 @@ async fn operation_input_test_list_regional_buckets_60() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_61() {
+async fn operation_input_test_list_regional_buckets_70() {
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "SDK::Endpoint": "https://beta.example.com"
@@ -2048,7 +2369,7 @@ async fn operation_input_test_list_regional_buckets_61() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_62() {
+async fn operation_input_test_list_regional_buckets_71() {
     /* builtIns: {
         "AWS::Region": "us-east-1",
         "AWS::UseFIPS": true,
@@ -2082,7 +2403,7 @@ async fn operation_input_test_list_regional_buckets_62() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_63() {
+async fn operation_input_test_list_regional_buckets_72() {
     /* builtIns: {
         "AWS::Region": "us-east-2"
     } */
@@ -2115,7 +2436,7 @@ async fn operation_input_test_list_regional_buckets_63() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_64() {
+async fn operation_input_test_get_access_point_73() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com"
@@ -2148,7 +2469,7 @@ async fn operation_input_test_get_access_point_64() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_65() {
+async fn operation_input_test_get_access_point_74() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
@@ -2183,11 +2504,11 @@ async fn operation_input_test_get_access_point_65() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_66() {
+async fn operation_input_test_get_bucket_75() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::UseDualStack": true,
-        "SDK::Endpoint": "https://beta.example.com"
+        "SDK::Endpoint": "https://s3-outposts.us-west-2.api.aws"
     } */
     /* clientParams: {} */
     let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
@@ -2196,7 +2517,7 @@ async fn operation_input_test_get_bucket_66() {
         let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
         let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
         let builder = builder.use_dual_stack(true);
-        let builder = builder.endpoint_url("https://beta.example.com");
+        let builder = builder.endpoint_url("https://s3-outposts.us-west-2.api.aws");
         builder.build()
     };
     let client = aws_sdk_s3control::Client::from_conf(conf);
@@ -2211,16 +2532,16 @@ async fn operation_input_test_get_bucket_66() {
             .await
     );
     rcvr.expect_no_request();
-    let error = _result.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [get bucket with endpoint_url and dualstack is not supported@us-west-2]");
+    let error = _result.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [get bucket with custom endpoint and dualstack is not supported@us-west-2]");
     assert!(
-        format!("{:?}", error).contains("Invalid configuration: Outpost buckets do not support dual-stack"),
-        "expected error to contain `Invalid configuration: Outpost buckets do not support dual-stack` but it was {:?}",
+        format!("{:?}", error).contains("Invalid Configuration: DualStack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: DualStack and custom endpoint are not supported` but it was {:?}",
         error
     );
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_67() {
+async fn operation_input_test_list_regional_buckets_76() {
     /* builtIns: {
         "AWS::Region": "cn-north-1",
         "AWS::UseFIPS": true
@@ -2253,7 +2574,7 @@ async fn operation_input_test_list_regional_buckets_67() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_regional_buckets_68() {
+async fn operation_input_test_list_regional_buckets_77() {
     /* builtIns: {
         "AWS::Region": "us-west-1"
     } */
@@ -2284,7 +2605,7 @@ async fn operation_input_test_list_regional_buckets_68() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_69() {
+async fn operation_input_test_get_access_point_78() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -2318,7 +2639,7 @@ async fn operation_input_test_get_access_point_69() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_70() {
+async fn operation_input_test_delete_access_point_79() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": false
@@ -2352,7 +2673,7 @@ async fn operation_input_test_delete_access_point_70() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_71() {
+async fn operation_input_test_get_bucket_80() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "SDK::Endpoint": "https://beta.example.com",
@@ -2388,7 +2709,7 @@ async fn operation_input_test_get_bucket_71() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_72() {
+async fn operation_input_test_get_access_point_81() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2421,7 +2742,7 @@ async fn operation_input_test_get_access_point_72() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_73() {
+async fn operation_input_test_delete_access_point_82() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2454,7 +2775,7 @@ async fn operation_input_test_delete_access_point_73() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_74() {
+async fn operation_input_test_get_bucket_83() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2487,7 +2808,7 @@ async fn operation_input_test_get_bucket_74() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_75() {
+async fn operation_input_test_get_bucket_84() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": true
@@ -2522,7 +2843,7 @@ async fn operation_input_test_get_bucket_75() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_access_point_76() {
+async fn operation_input_test_get_access_point_85() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": true
@@ -2557,7 +2878,7 @@ async fn operation_input_test_get_access_point_76() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_delete_access_point_77() {
+async fn operation_input_test_delete_access_point_86() {
     /* builtIns: {
         "AWS::Region": "us-west-2",
         "AWS::S3Control::UseArnRegion": true
@@ -2592,7 +2913,7 @@ async fn operation_input_test_delete_access_point_77() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_bucket_versioning_78() {
+async fn operation_input_test_get_bucket_versioning_87() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */
@@ -2625,7 +2946,7 @@ async fn operation_input_test_get_bucket_versioning_78() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_put_bucket_versioning_79() {
+async fn operation_input_test_put_bucket_versioning_88() {
     /* builtIns: {
         "AWS::Region": "us-west-2"
     } */

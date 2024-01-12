@@ -267,6 +267,7 @@ impl From<crate::operation::send_event::SendEventError> for Error {
     fn from(err: crate::operation::send_event::SendEventError) -> Self {
         match err {
             crate::operation::send_event::SendEventError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_event::SendEventError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::send_event::SendEventError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::send_event::SendEventError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::send_event::SendEventError::ValidationException(inner) => Error::ValidationException(inner),

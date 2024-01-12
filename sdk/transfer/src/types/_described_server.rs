@@ -93,6 +93,9 @@ pub struct DescribedServer {
     /// <p>Specifies whether or not performance for your Amazon S3 directories is optimized. This is disabled by default.</p>
     /// <p>By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.</p>
     pub s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
+    /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+    /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
+    pub as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedServer {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -233,6 +236,13 @@ impl DescribedServer {
     pub fn s3_storage_options(&self) -> ::std::option::Option<&crate::types::S3StorageOptions> {
         self.s3_storage_options.as_ref()
     }
+    /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+    /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.as2_service_managed_egress_ip_addresses.is_none()`.
+    pub fn as2_service_managed_egress_ip_addresses(&self) -> &[::std::string::String] {
+        self.as2_service_managed_egress_ip_addresses.as_deref().unwrap_or_default()
+    }
 }
 impl DescribedServer {
     /// Creates a new builder-style object to manufacture [`DescribedServer`](crate::types::DescribedServer).
@@ -266,6 +276,7 @@ pub struct DescribedServerBuilder {
     pub(crate) workflow_details: ::std::option::Option<crate::types::WorkflowDetails>,
     pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
+    pub(crate) as2_service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedServerBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) of the server.</p>
@@ -722,6 +733,29 @@ impl DescribedServerBuilder {
     pub fn get_s3_storage_options(&self) -> &::std::option::Option<crate::types::S3StorageOptions> {
         &self.s3_storage_options
     }
+    /// Appends an item to `as2_service_managed_egress_ip_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_as2_service_managed_egress_ip_addresses`](Self::set_as2_service_managed_egress_ip_addresses).
+    ///
+    /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+    /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
+    pub fn as2_service_managed_egress_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.as2_service_managed_egress_ip_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.as2_service_managed_egress_ip_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+    /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
+    pub fn set_as2_service_managed_egress_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.as2_service_managed_egress_ip_addresses = input;
+        self
+    }
+    /// <p>The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs.</p>
+    /// <p>These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.</p>
+    pub fn get_as2_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.as2_service_managed_egress_ip_addresses
+    }
     /// Consumes the builder and constructs a [`DescribedServer`](crate::types::DescribedServer).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedServerBuilder::arn)
@@ -753,6 +787,7 @@ impl DescribedServerBuilder {
             workflow_details: self.workflow_details,
             structured_log_destinations: self.structured_log_destinations,
             s3_storage_options: self.s3_storage_options,
+            as2_service_managed_egress_ip_addresses: self.as2_service_managed_egress_ip_addresses,
         })
     }
 }

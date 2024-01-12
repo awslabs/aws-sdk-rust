@@ -9,7 +9,7 @@ pub struct MonitorContactInput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user account.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub allowed_monitor_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl MonitorContactInput {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_monitor_capabilities.is_none()`.
     pub fn allowed_monitor_capabilities(&self) -> &[crate::types::MonitorCapability] {
@@ -105,19 +105,19 @@ impl MonitorContactInputBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_monitor_capabilities`](Self::set_allowed_monitor_capabilities).
     ///
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn allowed_monitor_capabilities(mut self, input: crate::types::MonitorCapability) -> Self {
         let mut v = self.allowed_monitor_capabilities.unwrap_or_default();
         v.push(input);
         self.allowed_monitor_capabilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>) -> Self {
         self.allowed_monitor_capabilities = input;
         self
     }
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
         &self.allowed_monitor_capabilities
     }

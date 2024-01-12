@@ -115,12 +115,15 @@ pub(super) fn resolve_endpoint(
                         "OutpostId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                     ));
                 }
-                if crate::endpoint_lib::host::is_valid_host_label(region, true, _diagnostic_collector) {
+                #[allow(unused_variables)]
+                if let Some(endpoint) = endpoint {
                     if (*use_dual_stack) == (true) {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "Invalid configuration: Outposts do not support dual-stack".to_string(),
+                            "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
                         ));
                     }
+                }
+                if crate::endpoint_lib::host::is_valid_host_label(region, true, _diagnostic_collector) {
                     #[allow(unused_variables)]
                     if let Some(endpoint) = endpoint {
                         #[allow(unused_variables)]
@@ -152,6 +155,33 @@ pub(super) fn resolve_endpoint(
                         }
                     }
                     if (*use_fips) == (true) {
+                        if (*use_dual_stack) == (true) {
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url({
+                                    let mut out = String::new();
+                                    out.push_str("https://s3-outposts-fips.");
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&region);
+                                    out.push('.');
+                                    #[allow(clippy::needless_borrow)]
+                                    out.push_str(&partition_result.dual_stack_dns_suffix());
+                                    out
+                                })
+                                .property(
+                                    "authSchemes",
+                                    vec![::aws_smithy_types::Document::from({
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                                        out.insert("signingRegion".to_string(), region.to_owned().into());
+                                        out
+                                    })],
+                                )
+                                .build());
+                        }
+                    }
+                    if (*use_fips) == (true) {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
@@ -161,6 +191,31 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
+                                out
+                            })
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                    if (*use_dual_stack) == (true) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://s3-outposts.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region);
+                                out.push('.');
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.dual_stack_dns_suffix());
                                 out
                             })
                             .property(
@@ -218,14 +273,17 @@ pub(super) fn resolve_endpoint(
                 if let Some(arn_type) = access_point_arn.resource_id().first().cloned() {
                     if !((arn_type) == ("")) {
                         if (access_point_arn.service()) == ("s3-outposts") {
-                            if (*use_dual_stack) == (true) {
-                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                    "Invalid configuration: Outpost Access Points do not support dual-stack".to_string(),
-                                ));
-                            }
                             #[allow(unused_variables)]
                             if let Some(outpost_id) = access_point_arn.resource_id().get(1).cloned() {
                                 if crate::endpoint_lib::host::is_valid_host_label(outpost_id, false, _diagnostic_collector) {
+                                    #[allow(unused_variables)]
+                                    if let Some(endpoint) = endpoint {
+                                        if (*use_dual_stack) == (true) {
+                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
+                                            ));
+                                        }
+                                    }
                                     #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
@@ -284,6 +342,54 @@ pub(super) fn resolve_endpoint(
                                                                 if let Some(access_point_name) = access_point_arn.resource_id().get(3).cloned() {
                                                                     if (outpost_type) == ("accesspoint") {
                                                                         if (*use_fips) == (true) {
+                                                                            if (*use_dual_stack) == (true) {
+                                                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                    .url({
+                                                                                        let mut out = String::new();
+                                                                                        out.push_str("https://s3-outposts-fips.");
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&access_point_arn.region());
+                                                                                        out.push('.');
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&arn_partition.dual_stack_dns_suffix());
+                                                                                        out
+                                                                                    })
+                                                                                    .header(
+                                                                                        "x-amz-account-id",
+                                                                                        access_point_arn.account_id().to_owned(),
+                                                                                    )
+                                                                                    .header("x-amz-outpost-id", outpost_id.to_owned())
+                                                                                    .property(
+                                                                                        "authSchemes",
+                                                                                        vec![::aws_smithy_types::Document::from({
+                                                                                            let mut out = ::std::collections::HashMap::<
+                                                                                                String,
+                                                                                                ::aws_smithy_types::Document,
+                                                                                            >::new(
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "disableDoubleEncoding".to_string(),
+                                                                                                true.into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "name".to_string(),
+                                                                                                "sigv4".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingName".to_string(),
+                                                                                                "s3-outposts".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingRegion".to_string(),
+                                                                                                access_point_arn.region().to_owned().into(),
+                                                                                            );
+                                                                                            out
+                                                                                        })],
+                                                                                    )
+                                                                                    .build());
+                                                                            }
+                                                                        }
+                                                                        if (*use_fips) == (true) {
                                                                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                                                                 .url({
                                                                                     let mut out = String::new();
@@ -293,6 +399,43 @@ pub(super) fn resolve_endpoint(
                                                                                     out.push('.');
                                                                                     #[allow(clippy::needless_borrow)]
                                                                                     out.push_str(&arn_partition.dns_suffix());
+                                                                                    out
+                                                                                })
+                                                                                .header("x-amz-account-id", access_point_arn.account_id().to_owned())
+                                                                                .header("x-amz-outpost-id", outpost_id.to_owned())
+                                                                                .property(
+                                                                                    "authSchemes",
+                                                                                    vec![::aws_smithy_types::Document::from({
+                                                                                        let mut out = ::std::collections::HashMap::<
+                                                                                            String,
+                                                                                            ::aws_smithy_types::Document,
+                                                                                        >::new(
+                                                                                        );
+                                                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                                                                        out.insert(
+                                                                                            "signingName".to_string(),
+                                                                                            "s3-outposts".to_string().into(),
+                                                                                        );
+                                                                                        out.insert(
+                                                                                            "signingRegion".to_string(),
+                                                                                            access_point_arn.region().to_owned().into(),
+                                                                                        );
+                                                                                        out
+                                                                                    })],
+                                                                                )
+                                                                                .build());
+                                                                        }
+                                                                        if (*use_dual_stack) == (true) {
+                                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                .url({
+                                                                                    let mut out = String::new();
+                                                                                    out.push_str("https://s3-outposts.");
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&access_point_arn.region());
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&arn_partition.dual_stack_dns_suffix());
                                                                                     out
                                                                                 })
                                                                                 .header("x-amz-account-id", access_point_arn.account_id().to_owned())
@@ -508,14 +651,17 @@ pub(super) fn resolve_endpoint(
                 if let Some(arn_type) = bucket_arn.resource_id().first().cloned() {
                     if !((arn_type) == ("")) {
                         if (bucket_arn.service()) == ("s3-outposts") {
-                            if (*use_dual_stack) == (true) {
-                                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                    "Invalid configuration: Outpost buckets do not support dual-stack".to_string(),
-                                ));
-                            }
                             #[allow(unused_variables)]
                             if let Some(outpost_id) = bucket_arn.resource_id().get(1).cloned() {
                                 if crate::endpoint_lib::host::is_valid_host_label(outpost_id, false, _diagnostic_collector) {
+                                    #[allow(unused_variables)]
+                                    if let Some(endpoint) = endpoint {
+                                        if (*use_dual_stack) == (true) {
+                                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                                "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
+                                            ));
+                                        }
+                                    }
                                     #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
@@ -568,6 +714,51 @@ pub(super) fn resolve_endpoint(
                                                                 if let Some(bucket_name) = bucket_arn.resource_id().get(3).cloned() {
                                                                     if (outpost_type) == ("bucket") {
                                                                         if (*use_fips) == (true) {
+                                                                            if (*use_dual_stack) == (true) {
+                                                                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                    .url({
+                                                                                        let mut out = String::new();
+                                                                                        out.push_str("https://s3-outposts-fips.");
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&bucket_arn.region());
+                                                                                        out.push('.');
+                                                                                        #[allow(clippy::needless_borrow)]
+                                                                                        out.push_str(&arn_partition.dual_stack_dns_suffix());
+                                                                                        out
+                                                                                    })
+                                                                                    .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                                                                    .header("x-amz-outpost-id", outpost_id.to_owned())
+                                                                                    .property(
+                                                                                        "authSchemes",
+                                                                                        vec![::aws_smithy_types::Document::from({
+                                                                                            let mut out = ::std::collections::HashMap::<
+                                                                                                String,
+                                                                                                ::aws_smithy_types::Document,
+                                                                                            >::new(
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "disableDoubleEncoding".to_string(),
+                                                                                                true.into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "name".to_string(),
+                                                                                                "sigv4".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingName".to_string(),
+                                                                                                "s3-outposts".to_string().into(),
+                                                                                            );
+                                                                                            out.insert(
+                                                                                                "signingRegion".to_string(),
+                                                                                                bucket_arn.region().to_owned().into(),
+                                                                                            );
+                                                                                            out
+                                                                                        })],
+                                                                                    )
+                                                                                    .build());
+                                                                            }
+                                                                        }
+                                                                        if (*use_fips) == (true) {
                                                                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                                                                 .url({
                                                                                     let mut out = String::new();
@@ -577,6 +768,43 @@ pub(super) fn resolve_endpoint(
                                                                                     out.push('.');
                                                                                     #[allow(clippy::needless_borrow)]
                                                                                     out.push_str(&arn_partition.dns_suffix());
+                                                                                    out
+                                                                                })
+                                                                                .header("x-amz-account-id", bucket_arn.account_id().to_owned())
+                                                                                .header("x-amz-outpost-id", outpost_id.to_owned())
+                                                                                .property(
+                                                                                    "authSchemes",
+                                                                                    vec![::aws_smithy_types::Document::from({
+                                                                                        let mut out = ::std::collections::HashMap::<
+                                                                                            String,
+                                                                                            ::aws_smithy_types::Document,
+                                                                                        >::new(
+                                                                                        );
+                                                                                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                                                                        out.insert(
+                                                                                            "signingName".to_string(),
+                                                                                            "s3-outposts".to_string().into(),
+                                                                                        );
+                                                                                        out.insert(
+                                                                                            "signingRegion".to_string(),
+                                                                                            bucket_arn.region().to_owned().into(),
+                                                                                        );
+                                                                                        out
+                                                                                    })],
+                                                                                )
+                                                                                .build());
+                                                                        }
+                                                                        if (*use_dual_stack) == (true) {
+                                                                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                                                                .url({
+                                                                                    let mut out = String::new();
+                                                                                    out.push_str("https://s3-outposts.");
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&bucket_arn.region());
+                                                                                    out.push('.');
+                                                                                    #[allow(clippy::needless_borrow)]
+                                                                                    out.push_str(&arn_partition.dual_stack_dns_suffix());
                                                                                     out
                                                                                 })
                                                                                 .header("x-amz-account-id", bucket_arn.account_id().to_owned())

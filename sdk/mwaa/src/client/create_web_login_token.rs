@@ -7,6 +7,8 @@ impl super::Client {
     /// - On success, responds with [`CreateWebLoginTokenOutput`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput) with field(s):
     ///   - [`web_token(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::web_token): <p>An Airflow web server login token.</p>
     ///   - [`web_server_hostname(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::web_server_hostname): <p>The Airflow web server hostname for the environment.</p>
+    ///   - [`iam_identity(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::iam_identity): <p>The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated identity. For example, <code>assumed-role/Admin/your-name</code>.</p>
+    ///   - [`airflow_identity(Option<String>)`](crate::operation::create_web_login_token::CreateWebLoginTokenOutput::airflow_identity): <p>The user name of the Apache Airflow identity creating the web login token.</p>
     /// - On failure, responds with [`SdkError<CreateWebLoginTokenError>`](crate::operation::create_web_login_token::CreateWebLoginTokenError)
     pub fn create_web_login_token(&self) -> crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder {
         crate::operation::create_web_login_token::builders::CreateWebLoginTokenFluentBuilder::new(self.handle.clone())

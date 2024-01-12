@@ -58,6 +58,11 @@ where
                         "SftpConfig" => {
                             builder = builder.set_sftp_config(crate::protocol_serde::shape_sftp_connector_config::de_sftp_connector_config(tokens)?);
                         }
+                        "ServiceManagedEgressIpAddresses" => {
+                            builder = builder.set_service_managed_egress_ip_addresses(
+                                crate::protocol_serde::shape_service_managed_egress_ip_addresses::de_service_managed_egress_ip_addresses(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

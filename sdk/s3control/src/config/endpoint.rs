@@ -683,7 +683,7 @@ mod test {
         );
     }
 
-    /// outpost access points do not support dualstack@us-west-2
+    /// outpost access points support dualstack@us-west-2
     #[test]
     fn test_20() {
         let params = crate::config::endpoint::Params::builder()
@@ -697,39 +697,33 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [outpost access points do not support dualstack@us-west-2]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost Access Points do not support dual-stack"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts.us-west-2.api.aws")
+                .header("x-amz-account-id", "123456789012")
+                .header("x-amz-outpost-id", "op-01234567890123456")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
-    /// outpost access points do not support dualstack@cn-north-1
+    /// outpost access points support dualstack@af-south-1
     #[test]
     fn test_21() {
         let params = crate::config::endpoint::Params::builder()
-            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-            .account_id("123456789012".to_string())
-            .region("cn-north-1".to_string())
-            .requires_account_id(true)
-            .use_dual_stack(true)
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [outpost access points do not support dualstack@cn-north-1]");
-        assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost Access Points do not support dual-stack"
-        )
-    }
-
-    /// outpost access points do not support dualstack@af-south-1
-    #[test]
-    fn test_22() {
-        let params = crate::config::endpoint::Params::builder()
-            .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .access_point_name("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
             .account_id("123456789012".to_string())
             .region("af-south-1".to_string())
             .requires_account_id(true)
@@ -739,11 +733,62 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [outpost access points do not support dualstack@af-south-1]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.af-south-1.api.aws");
         assert_eq!(
-            format!("{}", error),
-            "Invalid configuration: Outpost Access Points do not support dual-stack"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts.af-south-1.api.aws")
+                .header("x-amz-account-id", "123456789012")
+                .header("x-amz-outpost-id", "op-01234567890123456")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// outpost access points support fips + dualstack@af-south-1
+    #[test]
+    fn test_22() {
+        let params = crate::config::endpoint::Params::builder()
+            .access_point_name("arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
+            .account_id("123456789012".to_string())
+            .region("af-south-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.af-south-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts-fips.af-south-1.api.aws")
+                .header("x-amz-account-id", "123456789012")
+                .header("x-amz-outpost-id", "op-01234567890123456")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
+        );
     }
 
     /// invalid ARN: must be include outpost ID@us-west-2
@@ -1148,9 +1193,43 @@ mod test {
         );
     }
 
-    /// CreateBucket + OutpostId endpoint url@us-east-2
+    /// ListRegionalBucket + OutpostId + fips + dualstack@us-east-2
     #[test]
     fn test_37() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("123456789012".to_string())
+            .outpost_id("op-123".to_string())
+            .region("us-east-2".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(true)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts-fips.us-east-2.api.aws")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// CreateBucket + OutpostId endpoint url@us-east-2
+    #[test]
+    fn test_38() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("blah".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -1185,10 +1264,10 @@ mod test {
 
     /// dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.
     #[test]
-    fn test_38() {
+    fn test_39() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
-            .endpoint("https://beta.example.com".to_string())
+            .endpoint("https://s3-outposts.us-west-2.api.aws".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(true)
@@ -1197,32 +1276,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost Access Points do not support dual-stack [dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.]");
+        let error = endpoint.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.]");
         assert_eq!(
             format!("{}", error),
-            "Invalid configuration: Outpost Access Points do not support dual-stack"
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
         )
-    }
-
-    /// Dual-stack cannot be used with outposts@us-west-2
-    #[test]
-    fn test_39() {
-        let params = crate::config::endpoint::Params::builder()
-            .bucket("bucketname".to_string())
-            .endpoint("https://beta.example.com".to_string())
-            .outpost_id("op-123".to_string())
-            .region("us-west-2".to_string())
-            .requires_account_id(false)
-            .use_dual_stack(true)
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid configuration: Outposts do not support dual-stack [Dual-stack cannot be used with outposts@us-west-2]",
-        );
-        assert_eq!(format!("{}", error), "Invalid configuration: Outposts do not support dual-stack")
     }
 
     /// vanilla bucket arn requires account id@us-west-2
@@ -1400,23 +1458,39 @@ mod test {
         );
     }
 
-    /// Outposts do not support dualstack@us-west-2
+    /// bucket ARN in aws partition with fips + dualstack@us-east-2
     #[test]
     fn test_45() {
         let params = crate::config::endpoint::Params::builder()
-            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-            .region("us-west-2".to_string())
+            .bucket("arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
+            .region("us-east-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(true)
-            .use_fips(false)
+            .use_fips(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]",
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.us-east-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts-fips.us-east-2.api.aws")
+                .header("x-amz-account-id", "123456789012")
+                .header("x-amz-outpost-id", "op-01234567890123456")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
         );
-        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
     }
 
     /// vanilla bucket arn requires account id@cn-north-1
@@ -1594,7 +1668,7 @@ mod test {
         );
     }
 
-    /// Outposts do not support dualstack@us-west-2
+    /// Outposts support dualstack @us-west-2
     #[test]
     fn test_51() {
         let params = crate::config::endpoint::Params::builder()
@@ -1607,10 +1681,26 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]",
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3-outposts.us-west-2.api.aws")
+                .header("x-amz-account-id", "123456789012")
+                .header("x-amz-outpost-id", "op-01234567890123456")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
         );
-        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
     }
 
     /// vanilla bucket arn requires account id@af-south-1
@@ -1788,28 +1878,9 @@ mod test {
         );
     }
 
-    /// Outposts do not support dualstack@us-west-2
-    #[test]
-    fn test_57() {
-        let params = crate::config::endpoint::Params::builder()
-            .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-            .region("us-west-2".to_string())
-            .requires_account_id(true)
-            .use_dual_stack(true)
-            .use_fips(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err(
-            "expected error: Invalid configuration: Outpost buckets do not support dual-stack [Outposts do not support dualstack@us-west-2]",
-        );
-        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
-    }
-
     /// Invalid ARN: missing outpost id and bucket@us-west-2
     #[test]
-    fn test_58() {
+    fn test_57() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost".to_string())
             .region("us-west-2".to_string())
@@ -1827,7 +1898,7 @@ mod test {
 
     /// Invalid ARN: missing bucket@us-west-2
     #[test]
-    fn test_59() {
+    fn test_58() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456".to_string())
             .region("us-west-2".to_string())
@@ -1844,7 +1915,7 @@ mod test {
 
     /// Invalid ARN: missing outpost and bucket ids@us-west-2
     #[test]
-    fn test_60() {
+    fn test_59() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:bucket".to_string())
             .region("us-west-2".to_string())
@@ -1862,7 +1933,7 @@ mod test {
 
     /// Invalid ARN: missing bucket id@us-west-2
     #[test]
-    fn test_61() {
+    fn test_60() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket".to_string())
             .region("us-west-2".to_string())
@@ -1879,7 +1950,7 @@ mod test {
 
     /// account id inserted into hostname@us-west-2
     #[test]
-    fn test_62() {
+    fn test_61() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("1234567890".to_string())
             .region("us-west-2".to_string())
@@ -1912,7 +1983,7 @@ mod test {
 
     /// account id prefix with dualstack@us-east-1
     #[test]
-    fn test_63() {
+    fn test_62() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("1234567890".to_string())
             .region("us-east-1".to_string())
@@ -1945,7 +2016,7 @@ mod test {
 
     /// account id prefix with fips@us-east-1
     #[test]
-    fn test_64() {
+    fn test_63() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("1234567890".to_string())
             .region("us-east-1".to_string())
@@ -1978,7 +2049,7 @@ mod test {
 
     /// custom account id prefix with fips@us-east-1
     #[test]
-    fn test_65() {
+    fn test_64() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
@@ -2011,7 +2082,7 @@ mod test {
 
     /// standard url @ us-east-1
     #[test]
-    fn test_66() {
+    fn test_65() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .build()
@@ -2040,7 +2111,7 @@ mod test {
 
     /// fips url @ us-east-1
     #[test]
-    fn test_67() {
+    fn test_66() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -2070,7 +2141,7 @@ mod test {
 
     /// dualstack url @ us-east-1
     #[test]
-    fn test_68() {
+    fn test_67() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_dual_stack(true)
@@ -2100,7 +2171,7 @@ mod test {
 
     /// fips,dualstack url @ us-east-1
     #[test]
-    fn test_69() {
+    fn test_68() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_dual_stack(true)
@@ -2131,7 +2202,7 @@ mod test {
 
     /// standard url @ cn-north-1
     #[test]
-    fn test_70() {
+    fn test_69() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .build()
@@ -2160,7 +2231,7 @@ mod test {
 
     /// fips @ cn-north-1
     #[test]
-    fn test_71() {
+    fn test_70() {
         let params = crate::config::endpoint::Params::builder()
             .region("cn-north-1".to_string())
             .use_dual_stack(true)
@@ -2175,7 +2246,7 @@ mod test {
 
     /// custom account id prefix @us-east-1
     #[test]
-    fn test_72() {
+    fn test_71() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
@@ -2208,7 +2279,7 @@ mod test {
 
     /// invalid account id prefix @us-east-1
     #[test]
-    fn test_73() {
+    fn test_72() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("/?invalid&not-host*label".to_string())
             .region("us-east-1".to_string())
@@ -2225,7 +2296,7 @@ mod test {
 
     /// custom account id prefix with fips@us-east-1
     #[test]
-    fn test_74() {
+    fn test_73() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
@@ -2258,7 +2329,7 @@ mod test {
 
     /// custom account id prefix with dualstack,fips@us-east-1
     #[test]
-    fn test_75() {
+    fn test_74() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
@@ -2291,7 +2362,7 @@ mod test {
 
     /// custom account id with custom endpoint
     #[test]
-    fn test_76() {
+    fn test_75() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
@@ -2323,7 +2394,7 @@ mod test {
 
     /// RequiresAccountId with AccountId unset
     #[test]
-    fn test_77() {
+    fn test_76() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .requires_account_id(true)
@@ -2337,7 +2408,7 @@ mod test {
 
     /// RequiresAccountId with AccountId unset and custom endpoint
     #[test]
-    fn test_78() {
+    fn test_77() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -2353,7 +2424,7 @@ mod test {
 
     /// RequiresAccountId with invalid AccountId and custom endpoint
     #[test]
-    fn test_79() {
+    fn test_78() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -2371,7 +2442,7 @@ mod test {
 
     /// account id with custom endpoint, fips
     #[test]
-    fn test_80() {
+    fn test_79() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("123456789012".to_string())
             .region("us-east-1".to_string())
@@ -2387,6 +2458,37 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://123456789012.example.com")
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    })]
+                )
+                .build()
+        );
+    }
+
+    /// custom endpoint, fips
+    #[test]
+    fn test_80() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .endpoint("https://example.com".to_string())
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://example.com")
                 .property(
                     "authSchemes",
                     vec![::aws_smithy_types::Document::from({
@@ -2433,40 +2535,9 @@ mod test {
         );
     }
 
-    /// custom endpoint, fips
-    #[test]
-    fn test_82() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .endpoint("https://example.com".to_string())
-            .use_fips(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://example.com")
-                .property(
-                    "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3".to_string().into());
-                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    })]
-                )
-                .build()
-        );
-    }
-
     /// custom endpoint, DualStack
     #[test]
-    fn test_83() {
+    fn test_82() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .endpoint("https://example.com".to_string())
@@ -2486,7 +2557,7 @@ mod test {
 
     /// region not set
     #[test]
-    fn test_84() {
+    fn test_83() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -2496,7 +2567,7 @@ mod test {
 
     /// invalid partition
     #[test]
-    fn test_85() {
+    fn test_84() {
         let params = crate::config::endpoint::Params::builder()
             .region("invalid-region 42".to_string())
             .build()
@@ -2509,7 +2580,7 @@ mod test {
 
     /// ListRegionalBuckets + OutpostId without accountId set.
     #[test]
-    fn test_86() {
+    fn test_85() {
         let params = crate::config::endpoint::Params::builder()
             .outpost_id("op-123".to_string())
             .region("us-east-2".to_string())
@@ -2526,7 +2597,7 @@ mod test {
 
     /// ListRegionalBuckets + OutpostId with invalid accountId set.
     #[test]
-    fn test_87() {
+    fn test_86() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("/?invalid&not-host*label".to_string())
             .outpost_id("op-123".to_string())
@@ -2546,7 +2617,7 @@ mod test {
 
     /// accesspoint set but missing accountId
     #[test]
-    fn test_88() {
+    fn test_87() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("myaccesspoint".to_string())
             .region("us-west-2".to_string())
@@ -2563,7 +2634,7 @@ mod test {
 
     /// outpost accesspoint ARN with missing accountId
     #[test]
-    fn test_89() {
+    fn test_88() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:outpost:op1".to_string())
             .region("us-west-2".to_string())
@@ -2580,7 +2651,7 @@ mod test {
 
     /// bucket ARN with missing accountId
     #[test]
-    fn test_90() {
+    fn test_89() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-west-2::outpost:op-01234567890123456:bucket:mybucket".to_string())
             .region("us-west-2".to_string())
@@ -2597,7 +2668,7 @@ mod test {
 
     /// endpoint url with accesspoint (non-arn)
     #[test]
-    fn test_91() {
+    fn test_90() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("apname".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -2632,7 +2703,7 @@ mod test {
 
     /// access point name with an accesspoint arn@us-west-2
     #[test]
-    fn test_92() {
+    fn test_91() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -2668,7 +2739,7 @@ mod test {
 
     /// DualStack + Custom endpoint is not supported(non-arn)
     #[test]
-    fn test_93() {
+    fn test_92() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("apname".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -2688,12 +2759,12 @@ mod test {
         )
     }
 
-    /// get bucket with endpoint_url and dualstack is not supported@us-west-2
+    /// get bucket with custom endpoint and dualstack is not supported@us-west-2
     #[test]
-    fn test_94() {
+    fn test_93() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
-            .endpoint("https://beta.example.com".to_string())
+            .endpoint("https://s3-outposts.us-west-2.api.aws".to_string())
             .region("us-west-2".to_string())
             .requires_account_id(true)
             .use_dual_stack(true)
@@ -2702,13 +2773,16 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid configuration: Outpost buckets do not support dual-stack [get bucket with endpoint_url and dualstack is not supported@us-west-2]");
-        assert_eq!(format!("{}", error), "Invalid configuration: Outpost buckets do not support dual-stack")
+        let error = endpoint.expect_err("expected error: Invalid Configuration: DualStack and custom endpoint are not supported [get bucket with custom endpoint and dualstack is not supported@us-west-2]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: DualStack and custom endpoint are not supported"
+        )
     }
 
     /// ListRegionalBuckets + OutpostId with fips in CN.
     #[test]
-    fn test_95() {
+    fn test_94() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("0123456789012".to_string())
             .outpost_id("op-123".to_string())
@@ -2726,7 +2800,7 @@ mod test {
 
     /// ListRegionalBuckets + invalid OutpostId.
     #[test]
-    fn test_96() {
+    fn test_95() {
         let params = crate::config::endpoint::Params::builder()
             .account_id("0123456789012".to_string())
             .outpost_id("?outpost/invalid+".to_string())
@@ -2745,7 +2819,7 @@ mod test {
 
     /// bucket ARN with mismatched accountId
     #[test]
-    fn test_97() {
+    fn test_96() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:999999:outpost:op-01234567890123456:bucket:mybucket".to_string())
             .account_id("0123456789012".to_string())
@@ -2766,7 +2840,7 @@ mod test {
 
     /// OutpostId with invalid region
     #[test]
-    fn test_98() {
+    fn test_97() {
         let params = crate::config::endpoint::Params::builder()
             .outpost_id("op-123".to_string())
             .region("invalid-region 42".to_string())
@@ -2784,7 +2858,7 @@ mod test {
 
     /// OutpostId with RequireAccountId unset
     #[test]
-    fn test_99() {
+    fn test_98() {
         let params = crate::config::endpoint::Params::builder()
             .outpost_id("op-123".to_string())
             .region("us-west-2".to_string())
@@ -2816,7 +2890,7 @@ mod test {
 
     /// Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false
     #[test]
-    fn test_100() {
+    fn test_99() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
             .account_id("123456789012".to_string())
@@ -2838,7 +2912,7 @@ mod test {
 
     /// Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false
     #[test]
-    fn test_101() {
+    fn test_100() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
             .endpoint("https://beta.example.com".to_string())
@@ -2860,7 +2934,7 @@ mod test {
 
     /// Accesspoint ARN with region mismatch and UseArnRegion unset
     #[test]
-    fn test_102() {
+    fn test_101() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
             .account_id("123456789012".to_string())
@@ -2896,7 +2970,7 @@ mod test {
 
     /// Bucket ARN with region mismatch and UseArnRegion unset
     #[test]
-    fn test_103() {
+    fn test_102() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
             .region("us-west-2".to_string())
@@ -2931,7 +3005,7 @@ mod test {
 
     /// Outpost Bucket ARN with partition mismatch with UseArnRegion=true
     #[test]
-    fn test_104() {
+    fn test_103() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
             .region("us-west-2".to_string())
@@ -2949,7 +3023,7 @@ mod test {
 
     /// Accesspoint ARN with partition mismatch and UseArnRegion=true
     #[test]
-    fn test_105() {
+    fn test_104() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
             .account_id("123456789012".to_string())
@@ -2968,7 +3042,7 @@ mod test {
 
     /// Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint
     #[test]
-    fn test_106() {
+    fn test_105() {
         let params = crate::config::endpoint::Params::builder()
             .access_point_name("arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint".to_string())
             .region("us-west-2".to_string())
@@ -2990,7 +3064,7 @@ mod test {
 
     /// outpost bucket arn@us-west-2
     #[test]
-    fn test_107() {
+    fn test_106() {
         let params = crate::config::endpoint::Params::builder()
             .bucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket".to_string())
             .region("us-west-2".to_string())
@@ -3025,7 +3099,7 @@ mod test {
 
     /// S3 Snow Control with bucket
     #[test]
-    fn test_108() {
+    fn test_107() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -3058,7 +3132,7 @@ mod test {
 
     /// S3 Snow Control without bucket
     #[test]
-    fn test_109() {
+    fn test_108() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .endpoint("https://10.0.1.12:433".to_string())
@@ -3090,7 +3164,7 @@ mod test {
 
     /// S3 Snow Control with bucket and without port
     #[test]
-    fn test_110() {
+    fn test_109() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -3123,7 +3197,7 @@ mod test {
 
     /// S3 Snow Control with bucket and with DNS
     #[test]
-    fn test_111() {
+    fn test_110() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -3156,7 +3230,7 @@ mod test {
 
     /// S3 Snow Control with FIPS enabled
     #[test]
-    fn test_112() {
+    fn test_111() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())
@@ -3173,7 +3247,7 @@ mod test {
 
     /// S3 Snow Control with Dualstack enabled
     #[test]
-    fn test_113() {
+    fn test_112() {
         let params = crate::config::endpoint::Params::builder()
             .region("snow".to_string())
             .bucket("bucketName".to_string())

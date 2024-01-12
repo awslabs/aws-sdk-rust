@@ -154,17 +154,17 @@ impl MonitorContactFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_monitor_capabilities`](Self::set_allowed_monitor_capabilities).
     ///
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn allowed_monitor_capabilities(mut self, input: crate::types::MonitorCapability) -> Self {
         self.inner = self.inner.allowed_monitor_capabilities(input);
         self
     }
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn set_allowed_monitor_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>>) -> Self {
         self.inner = self.inner.set_allowed_monitor_capabilities(input);
         self
     }
-    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge.</p>
+    /// <p>Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.</p>
     pub fn get_allowed_monitor_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MonitorCapability>> {
         self.inner.get_allowed_monitor_capabilities()
     }

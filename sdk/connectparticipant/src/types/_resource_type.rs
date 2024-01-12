@@ -18,6 +18,7 @@
 ///     ResourceType::HierarchyLevel => { /* ... */ },
 ///     ResourceType::Instance => { /* ... */ },
 ///     ResourceType::Participant => { /* ... */ },
+///     ResourceType::PhoneNumber => { /* ... */ },
 ///     ResourceType::User => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Participant,
     #[allow(missing_docs)] // documentation missing in model
+    PhoneNumber,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "HIERARCHY_LEVEL" => ResourceType::HierarchyLevel,
             "INSTANCE" => ResourceType::Instance,
             "PARTICIPANT" => ResourceType::Participant,
+            "PHONE_NUMBER" => ResourceType::PhoneNumber,
             "USER" => ResourceType::User,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -95,6 +99,7 @@ impl ResourceType {
             ResourceType::HierarchyLevel => "HIERARCHY_LEVEL",
             ResourceType::Instance => "INSTANCE",
             ResourceType::Participant => "PARTICIPANT",
+            ResourceType::PhoneNumber => "PHONE_NUMBER",
             ResourceType::User => "USER",
             ResourceType::Unknown(value) => value.as_str(),
         }
@@ -108,6 +113,7 @@ impl ResourceType {
             "HIERARCHY_LEVEL",
             "INSTANCE",
             "PARTICIPANT",
+            "PHONE_NUMBER",
             "USER",
         ]
     }

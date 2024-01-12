@@ -4,11 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationNote {
-    /// <p>The note for an item (section or question) in a contact evaluation.</p>
+    /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
+    /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
+    /// </note>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationNote {
-    /// <p>The note for an item (section or question) in a contact evaluation.</p>
+    /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
+    /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
+    /// </note>
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
@@ -27,17 +31,23 @@ pub struct EvaluationNoteBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationNoteBuilder {
-    /// <p>The note for an item (section or question) in a contact evaluation.</p>
+    /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
+    /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
+    /// </note>
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The note for an item (section or question) in a contact evaluation.</p>
+    /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
+    /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
+    /// </note>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
-    /// <p>The note for an item (section or question) in a contact evaluation.</p>
+    /// <p>The note for an item (section or question) in a contact evaluation.</p><note>
+    /// <p>Even though a note in an evaluation can have up to 3072 chars, there is also a limit on the total number of chars for all the notes in the evaluation combined. Assuming there are N questions in the evaluation being submitted, then the max char limit for all notes combined is N x 1024.</p>
+    /// </note>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }

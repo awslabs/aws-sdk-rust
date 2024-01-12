@@ -6,6 +6,21 @@ pub struct GetPlaceInput {
     /// <p>The name of the place index resource that you want to use for the search.</p>
     pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the place to find.</p>
+    /// <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p></li>
+    /// <li>
+    /// <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p></li>
+    /// <li>
+    /// <p>Grab: Place IDs can expire or become invalid in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p></li>
+    /// <li>
+    /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
+    /// </ul></li>
+    /// </ul>
     pub place_id: ::std::option::Option<::std::string::String>,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
@@ -22,6 +37,21 @@ impl GetPlaceInput {
         self.index_name.as_deref()
     }
     /// <p>The identifier of the place to find.</p>
+    /// <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p></li>
+    /// <li>
+    /// <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p></li>
+    /// <li>
+    /// <p>Grab: Place IDs can expire or become invalid in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p></li>
+    /// <li>
+    /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
+    /// </ul></li>
+    /// </ul>
     pub fn place_id(&self) -> ::std::option::Option<&str> {
         self.place_id.as_deref()
     }
@@ -81,17 +111,62 @@ impl GetPlaceInputBuilder {
         &self.index_name
     }
     /// <p>The identifier of the place to find.</p>
+    /// <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p></li>
+    /// <li>
+    /// <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p></li>
+    /// <li>
+    /// <p>Grab: Place IDs can expire or become invalid in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p></li>
+    /// <li>
+    /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
+    /// </ul></li>
+    /// </ul>
     /// This field is required.
     pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.place_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the place to find.</p>
+    /// <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p></li>
+    /// <li>
+    /// <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p></li>
+    /// <li>
+    /// <p>Grab: Place IDs can expire or become invalid in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p></li>
+    /// <li>
+    /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
+    /// </ul></li>
+    /// </ul>
     pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.place_id = input;
         self
     }
     /// <p>The identifier of the place to find.</p>
+    /// <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p></li>
+    /// <li>
+    /// <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p></li>
+    /// <li>
+    /// <p>Grab: Place IDs can expire or become invalid in the following situations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p></li>
+    /// <li>
+    /// <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p></li>
+    /// </ul></li>
+    /// </ul>
     pub fn get_place_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.place_id
     }

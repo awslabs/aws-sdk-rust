@@ -25,6 +25,8 @@ pub struct DescribedConnector {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A structure that contains the parameters for an SFTP connector object.</p>
     pub sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
+    pub service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -67,6 +69,12 @@ impl DescribedConnector {
     pub fn sftp_config(&self) -> ::std::option::Option<&crate::types::SftpConnectorConfig> {
         self.sftp_config.as_ref()
     }
+    /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.service_managed_egress_ip_addresses.is_none()`.
+    pub fn service_managed_egress_ip_addresses(&self) -> &[::std::string::String] {
+        self.service_managed_egress_ip_addresses.as_deref().unwrap_or_default()
+    }
 }
 impl DescribedConnector {
     /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::types::DescribedConnector).
@@ -87,6 +95,7 @@ pub struct DescribedConnectorBuilder {
     pub(crate) logging_role: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
+    pub(crate) service_managed_egress_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribedConnectorBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -223,6 +232,26 @@ impl DescribedConnectorBuilder {
     pub fn get_sftp_config(&self) -> &::std::option::Option<crate::types::SftpConnectorConfig> {
         &self.sftp_config
     }
+    /// Appends an item to `service_managed_egress_ip_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_service_managed_egress_ip_addresses`](Self::set_service_managed_egress_ip_addresses).
+    ///
+    /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
+    pub fn service_managed_egress_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.service_managed_egress_ip_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.service_managed_egress_ip_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
+    pub fn set_service_managed_egress_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.service_managed_egress_ip_addresses = input;
+        self
+    }
+    /// <p>The list of egress IP addresses of this connector. These IP addresses are assigned automatically when you create the connector.</p>
+    pub fn get_service_managed_egress_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.service_managed_egress_ip_addresses
+    }
     /// Consumes the builder and constructs a [`DescribedConnector`](crate::types::DescribedConnector).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedConnectorBuilder::arn)
@@ -241,6 +270,7 @@ impl DescribedConnectorBuilder {
             logging_role: self.logging_role,
             tags: self.tags,
             sftp_config: self.sftp_config,
+            service_managed_egress_ip_addresses: self.service_managed_egress_ip_addresses,
         })
     }
 }

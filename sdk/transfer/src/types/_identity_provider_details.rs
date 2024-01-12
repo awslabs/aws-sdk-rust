@@ -8,7 +8,7 @@ pub struct IdentityProviderDetails {
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
     pub invocation_role: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to use as your identity provider.</p>
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for a Lambda function to use for the Identity provider.</p>
     pub function: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl IdentityProviderDetails {
     pub fn invocation_role(&self) -> ::std::option::Option<&str> {
         self.invocation_role.as_deref()
     }
-    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to use as your identity provider.</p>
     pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
@@ -103,17 +103,17 @@ impl IdentityProviderDetailsBuilder {
     pub fn get_invocation_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.invocation_role
     }
-    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to use as your identity provider.</p>
     pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to use as your identity provider.</p>
     pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
-    /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
+    /// <p>The identifier of the Directory Service directory that you want to use as your identity provider.</p>
     pub fn get_directory_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.directory_id
     }

@@ -16,6 +16,7 @@
 ///     InstanceAttributeType::ContactflowLogs => { /* ... */ },
 ///     InstanceAttributeType::ContactLens => { /* ... */ },
 ///     InstanceAttributeType::EarlyMedia => { /* ... */ },
+///     InstanceAttributeType::EnhancedChatMonitoring => { /* ... */ },
 ///     InstanceAttributeType::EnhancedContactMonitoring => { /* ... */ },
 ///     InstanceAttributeType::HighVolumeOutbound => { /* ... */ },
 ///     InstanceAttributeType::InboundCalls => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     EarlyMedia,
     #[allow(missing_docs)] // documentation missing in model
+    EnhancedChatMonitoring,
+    #[allow(missing_docs)] // documentation missing in model
     EnhancedContactMonitoring,
     #[allow(missing_docs)] // documentation missing in model
     HighVolumeOutbound,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for InstanceAttributeType {
             "CONTACTFLOW_LOGS" => InstanceAttributeType::ContactflowLogs,
             "CONTACT_LENS" => InstanceAttributeType::ContactLens,
             "EARLY_MEDIA" => InstanceAttributeType::EarlyMedia,
+            "ENHANCED_CHAT_MONITORING" => InstanceAttributeType::EnhancedChatMonitoring,
             "ENHANCED_CONTACT_MONITORING" => InstanceAttributeType::EnhancedContactMonitoring,
             "HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
             "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
@@ -105,6 +109,7 @@ impl InstanceAttributeType {
             InstanceAttributeType::ContactflowLogs => "CONTACTFLOW_LOGS",
             InstanceAttributeType::ContactLens => "CONTACT_LENS",
             InstanceAttributeType::EarlyMedia => "EARLY_MEDIA",
+            InstanceAttributeType::EnhancedChatMonitoring => "ENHANCED_CHAT_MONITORING",
             InstanceAttributeType::EnhancedContactMonitoring => "ENHANCED_CONTACT_MONITORING",
             InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
             InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
@@ -121,6 +126,7 @@ impl InstanceAttributeType {
             "CONTACTFLOW_LOGS",
             "CONTACT_LENS",
             "EARLY_MEDIA",
+            "ENHANCED_CHAT_MONITORING",
             "ENHANCED_CONTACT_MONITORING",
             "HIGH_VOLUME_OUTBOUND",
             "INBOUND_CALLS",

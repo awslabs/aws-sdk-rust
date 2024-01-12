@@ -117,6 +117,20 @@ pub(crate) fn de_create_web_login_token(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AirflowIdentity" => {
+                    builder = builder.set_airflow_identity(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IamIdentity" => {
+                    builder = builder.set_iam_identity(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "WebServerHostname" => {
                     builder = builder.set_web_server_hostname(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
