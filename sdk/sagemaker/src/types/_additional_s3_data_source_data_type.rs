@@ -13,6 +13,7 @@
 /// # let additionals3datasourcedatatype = unimplemented!();
 /// match additionals3datasourcedatatype {
 ///     AdditionalS3DataSourceDataType::S3Object => { /* ... */ },
+///     AdditionalS3DataSourceDataType::S3Prefix => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,6 +43,8 @@
 pub enum AdditionalS3DataSourceDataType {
     #[allow(missing_docs)] // documentation missing in model
     S3Object,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Prefix,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,6 +53,7 @@ impl ::std::convert::From<&str> for AdditionalS3DataSourceDataType {
     fn from(s: &str) -> Self {
         match s {
             "S3Object" => AdditionalS3DataSourceDataType::S3Object,
+            "S3Prefix" => AdditionalS3DataSourceDataType::S3Prefix,
             other => AdditionalS3DataSourceDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,12 +70,13 @@ impl AdditionalS3DataSourceDataType {
     pub fn as_str(&self) -> &str {
         match self {
             AdditionalS3DataSourceDataType::S3Object => "S3Object",
+            AdditionalS3DataSourceDataType::S3Prefix => "S3Prefix",
             AdditionalS3DataSourceDataType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3Object"]
+        &["S3Object", "S3Prefix"]
     }
 }
 impl ::std::convert::AsRef<str> for AdditionalS3DataSourceDataType {

@@ -1888,9 +1888,9 @@ model_hash = 'f9e4b75c464276658ad02e6fb32ece96389662d9e55fe7db3a5a057bd9fb5b03'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.15.0'
-source_hash = 'db00bde63423997f000b5139ec07bc3017859d16a1b3816c5533d8484677602d'
-model_hash = '7a7dc91bb76e9fd0050e54af61827adbffd5b04392c266afa6dc64f358760d92'
+version = '1.16.0'
+source_hash = 'e501faa1888cce14acabddcfc0fe9c1f0b6432d8b81fe12b26b15b705cf2857e'
+model_hash = 'edbba31ff4b5ddc536190b5e48eadadc864277e7b5c54f2b95d33cadea64ef50'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2408,15 +2408,5 @@ source_hash = '349c182d6f8bd666a8de172375ce30939c47de5008b5f1c10457413dd982b1ff'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd1d1bd74b6caf2685c800c970da4abaef859ce109e48b901b9127db6364b4578'
-
-[release]
-tag = 'release-2024-01-12'
-
 [release.crates]
-aws-sdk-connect = '1.16.0'
-aws-sdk-connectparticipant = '1.11.0'
-aws-sdk-location = '1.12.1'
-aws-sdk-mwaa = '1.11.0'
-aws-sdk-s3control = '1.12.0'
-aws-sdk-supplychain = '1.0.0'
-aws-sdk-transfer = '1.11.0'
+aws-sdk-sagemaker = '1.16.0'

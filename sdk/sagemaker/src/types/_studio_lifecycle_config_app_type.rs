@@ -16,8 +16,6 @@
 ///     StudioLifecycleConfigAppType::JupyterLab => { /* ... */ },
 ///     StudioLifecycleConfigAppType::JupyterServer => { /* ... */ },
 ///     StudioLifecycleConfigAppType::KernelGateway => { /* ... */ },
-///     StudioLifecycleConfigAppType::Savitur => { /* ... */ },
-///     StudioLifecycleConfigAppType::VsCode => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,10 +51,6 @@ pub enum StudioLifecycleConfigAppType {
     JupyterServer,
     #[allow(missing_docs)] // documentation missing in model
     KernelGateway,
-    #[allow(missing_docs)] // documentation missing in model
-    Savitur,
-    #[allow(missing_docs)] // documentation missing in model
-    VsCode,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -68,8 +62,6 @@ impl ::std::convert::From<&str> for StudioLifecycleConfigAppType {
             "JupyterLab" => StudioLifecycleConfigAppType::JupyterLab,
             "JupyterServer" => StudioLifecycleConfigAppType::JupyterServer,
             "KernelGateway" => StudioLifecycleConfigAppType::KernelGateway,
-            "Savitur" => StudioLifecycleConfigAppType::Savitur,
-            "VSCode" => StudioLifecycleConfigAppType::VsCode,
             other => StudioLifecycleConfigAppType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -89,14 +81,12 @@ impl StudioLifecycleConfigAppType {
             StudioLifecycleConfigAppType::JupyterLab => "JupyterLab",
             StudioLifecycleConfigAppType::JupyterServer => "JupyterServer",
             StudioLifecycleConfigAppType::KernelGateway => "KernelGateway",
-            StudioLifecycleConfigAppType::Savitur => "Savitur",
-            StudioLifecycleConfigAppType::VsCode => "VSCode",
             StudioLifecycleConfigAppType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CodeEditor", "JupyterLab", "JupyterServer", "KernelGateway", "Savitur", "VSCode"]
+        &["CodeEditor", "JupyterLab", "JupyterServer", "KernelGateway"]
     }
 }
 impl ::std::convert::AsRef<str> for StudioLifecycleConfigAppType {
