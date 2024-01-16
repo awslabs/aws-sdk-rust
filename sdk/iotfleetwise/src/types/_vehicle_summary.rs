@@ -17,6 +17,9 @@ pub struct VehicleSummary {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub last_modification_time: ::aws_smithy_types::DateTime,
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VehicleSummary {
     /// <p>The unique ID of the vehicle.</p>
@@ -47,6 +50,11 @@ impl VehicleSummary {
     pub fn last_modification_time(&self) -> &::aws_smithy_types::DateTime {
         &self.last_modification_time
     }
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.attributes.as_ref()
+    }
 }
 impl VehicleSummary {
     /// Creates a new builder-style object to manufacture [`VehicleSummary`](crate::types::VehicleSummary).
@@ -65,6 +73,7 @@ pub struct VehicleSummaryBuilder {
     pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl VehicleSummaryBuilder {
     /// <p>The unique ID of the vehicle.</p>
@@ -157,6 +166,29 @@ impl VehicleSummaryBuilder {
     pub fn get_last_modification_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modification_time
     }
+    /// Adds a key-value pair to `attributes`.
+    ///
+    /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+    ///
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Static information about a vehicle in a key-value pair. For example:</p>
+    /// <p><code>"engineType"</code> : <code>"1.3 L R2"</code></p>
+    pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.attributes
+    }
     /// Consumes the builder and constructs a [`VehicleSummary`](crate::types::VehicleSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`vehicle_name`](crate::types::builders::VehicleSummaryBuilder::vehicle_name)
@@ -203,6 +235,7 @@ impl VehicleSummaryBuilder {
                     "last_modification_time was not specified but it is required when building VehicleSummary",
                 )
             })?,
+            attributes: self.attributes,
         })
     }
 }

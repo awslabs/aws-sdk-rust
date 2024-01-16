@@ -10,6 +10,8 @@ pub struct ListSignalCatalogNodesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The type of node in the signal catalog.</p>
+    pub signal_node_type: ::std::option::Option<crate::types::SignalNodeType>,
 }
 impl ListSignalCatalogNodesInput {
     /// <p>The name of the signal catalog to list information about.</p>
@@ -24,6 +26,10 @@ impl ListSignalCatalogNodesInput {
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn signal_node_type(&self) -> ::std::option::Option<&crate::types::SignalNodeType> {
+        self.signal_node_type.as_ref()
     }
 }
 impl ListSignalCatalogNodesInput {
@@ -40,6 +46,7 @@ pub struct ListSignalCatalogNodesInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) signal_node_type: ::std::option::Option<crate::types::SignalNodeType>,
 }
 impl ListSignalCatalogNodesInputBuilder {
     /// <p>The name of the signal catalog to list information about.</p>
@@ -88,6 +95,20 @@ impl ListSignalCatalogNodesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn signal_node_type(mut self, input: crate::types::SignalNodeType) -> Self {
+        self.signal_node_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn set_signal_node_type(mut self, input: ::std::option::Option<crate::types::SignalNodeType>) -> Self {
+        self.signal_node_type = input;
+        self
+    }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn get_signal_node_type(&self) -> &::std::option::Option<crate::types::SignalNodeType> {
+        &self.signal_node_type
+    }
     /// Consumes the builder and constructs a [`ListSignalCatalogNodesInput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput).
     pub fn build(
         self,
@@ -99,6 +120,7 @@ impl ListSignalCatalogNodesInputBuilder {
             name: self.name,
             next_token: self.next_token,
             max_results: self.max_results,
+            signal_node_type: self.signal_node_type,
         })
     }
 }

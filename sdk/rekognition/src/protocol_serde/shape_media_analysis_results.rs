@@ -17,6 +17,11 @@ where
                         "S3Object" => {
                             builder = builder.set_s3_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?);
                         }
+                        "ModelVersions" => {
+                            builder = builder.set_model_versions(
+                                crate::protocol_serde::shape_media_analysis_model_versions::de_media_analysis_model_versions(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

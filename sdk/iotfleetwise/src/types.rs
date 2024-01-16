@@ -29,6 +29,8 @@ pub use crate::types::_sensor::Sensor;
 
 pub use crate::types::_branch::Branch;
 
+pub use crate::types::_signal_node_type::SignalNodeType;
+
 pub use crate::types::_invalid_signal::InvalidSignal;
 
 pub use crate::types::_formatted_vss::FormattedVss;
@@ -268,6 +270,8 @@ mod _signal_decoder_failure_reason;
 mod _signal_decoder_type;
 
 mod _signal_information;
+
+mod _signal_node_type;
 
 mod _spooling_mode;
 

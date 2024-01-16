@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectCountByEncryptionType {
-    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    /// <p>The total number of objects that are encrypted with customer-provided keys. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
     pub customer_managed: ::std::option::Option<i64>,
-    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with KMS keys, either Amazon Web Services managed keys or customer managed keys. The objects use dual-layer server-side encryption or server-side encryption with KMS keys (DSSE-KMS or SSE-KMS).</p>
     pub kms_managed: ::std::option::Option<i64>,
-    /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    /// <p>The total number of objects that are encrypted with Amazon S3 managed keys. The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
     pub s3_managed: ::std::option::Option<i64>,
     /// <p>The total number of objects that use client-side encryption or aren't encrypted.</p>
     pub unencrypted: ::std::option::Option<i64>,
@@ -16,15 +16,15 @@ pub struct ObjectCountByEncryptionType {
     pub unknown: ::std::option::Option<i64>,
 }
 impl ObjectCountByEncryptionType {
-    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    /// <p>The total number of objects that are encrypted with customer-provided keys. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
     pub fn customer_managed(&self) -> ::std::option::Option<i64> {
         self.customer_managed
     }
-    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with KMS keys, either Amazon Web Services managed keys or customer managed keys. The objects use dual-layer server-side encryption or server-side encryption with KMS keys (DSSE-KMS or SSE-KMS).</p>
     pub fn kms_managed(&self) -> ::std::option::Option<i64> {
         self.kms_managed
     }
-    /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    /// <p>The total number of objects that are encrypted with Amazon S3 managed keys. The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
     pub fn s3_managed(&self) -> ::std::option::Option<i64> {
         self.s3_managed
     }
@@ -55,45 +55,45 @@ pub struct ObjectCountByEncryptionTypeBuilder {
     pub(crate) unknown: ::std::option::Option<i64>,
 }
 impl ObjectCountByEncryptionTypeBuilder {
-    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    /// <p>The total number of objects that are encrypted with customer-provided keys. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
     pub fn customer_managed(mut self, input: i64) -> Self {
         self.customer_managed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    /// <p>The total number of objects that are encrypted with customer-provided keys. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
     pub fn set_customer_managed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.customer_managed = input;
         self
     }
-    /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
+    /// <p>The total number of objects that are encrypted with customer-provided keys. The objects use server-side encryption with customer-provided keys (SSE-C).</p>
     pub fn get_customer_managed(&self) -> &::std::option::Option<i64> {
         &self.customer_managed
     }
-    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with KMS keys, either Amazon Web Services managed keys or customer managed keys. The objects use dual-layer server-side encryption or server-side encryption with KMS keys (DSSE-KMS or SSE-KMS).</p>
     pub fn kms_managed(mut self, input: i64) -> Self {
         self.kms_managed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with KMS keys, either Amazon Web Services managed keys or customer managed keys. The objects use dual-layer server-side encryption or server-side encryption with KMS keys (DSSE-KMS or SSE-KMS).</p>
     pub fn set_kms_managed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.kms_managed = input;
         self
     }
-    /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with KMS keys, either Amazon Web Services managed keys or customer managed keys. The objects use dual-layer server-side encryption or server-side encryption with KMS keys (DSSE-KMS or SSE-KMS).</p>
     pub fn get_kms_managed(&self) -> &::std::option::Option<i64> {
         &self.kms_managed
     }
-    /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    /// <p>The total number of objects that are encrypted with Amazon S3 managed keys. The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
     pub fn s3_managed(mut self, input: i64) -> Self {
         self.s3_managed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    /// <p>The total number of objects that are encrypted with Amazon S3 managed keys. The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
     pub fn set_s3_managed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.s3_managed = input;
         self
     }
-    /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
+    /// <p>The total number of objects that are encrypted with Amazon S3 managed keys. The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
     pub fn get_s3_managed(&self) -> &::std::option::Option<i64> {
         &self.s3_managed
     }

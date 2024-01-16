@@ -403,6 +403,8 @@ pub(crate) mod shape_compared_source_image_face;
 
 pub(crate) mod shape_content_moderation_detections;
 
+pub(crate) mod shape_content_types;
+
 pub(crate) mod shape_create_face_liveness_session_request_settings;
 
 pub(crate) mod shape_custom_labels;
@@ -585,6 +587,8 @@ pub(crate) mod shape_connected_home_settings_for_update;
 
 pub(crate) mod shape_content_moderation_detection;
 
+pub(crate) mod shape_content_type;
+
 pub(crate) mod shape_custom_label;
 
 pub(crate) mod shape_customization_feature_content_moderation_config;
@@ -642,6 +646,8 @@ pub(crate) mod shape_liveness_output_config;
 pub(crate) mod shape_media_analysis_detect_moderation_labels_config;
 
 pub(crate) mod shape_media_analysis_job_description;
+
+pub(crate) mod shape_media_analysis_model_versions;
 
 pub(crate) mod shape_moderation_label;
 

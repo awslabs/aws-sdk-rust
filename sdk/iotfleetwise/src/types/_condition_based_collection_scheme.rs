@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionBasedCollectionScheme {
-    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
     pub expression: ::std::string::String,
     /// <p>The minimum duration of time between two triggering events to collect data, in milliseconds.</p><note>
     /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
@@ -16,7 +16,7 @@ pub struct ConditionBasedCollectionScheme {
     pub condition_language_version: ::std::option::Option<i32>,
 }
 impl ConditionBasedCollectionScheme {
-    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
     pub fn expression(&self) -> &str {
         use std::ops::Deref;
         self.expression.deref()
@@ -53,18 +53,18 @@ pub struct ConditionBasedCollectionSchemeBuilder {
     pub(crate) condition_language_version: ::std::option::Option<i32>,
 }
 impl ConditionBasedCollectionSchemeBuilder {
-    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
     /// This field is required.
     pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
     pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
-    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+    /// <p>The logical expression used to recognize what data to collect. For example, <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
     pub fn get_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.expression
     }

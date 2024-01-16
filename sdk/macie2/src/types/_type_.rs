@@ -15,6 +15,7 @@
 ///     Type::Aes256 => { /* ... */ },
 ///     Type::None => { /* ... */ },
 ///     Type::AwsKms => { /* ... */ },
+///     Type::AwsKmsDsse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,6 +49,8 @@ pub enum Type {
     None,
     #[allow(missing_docs)] // documentation missing in model
     AwsKms,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsKmsDsse,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for Type {
             "AES256" => Type::Aes256,
             "NONE" => Type::None,
             "aws:kms" => Type::AwsKms,
+            "aws:kms:dsse" => Type::AwsKmsDsse,
             other => Type::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,12 +80,13 @@ impl Type {
             Type::Aes256 => "AES256",
             Type::None => "NONE",
             Type::AwsKms => "aws:kms",
+            Type::AwsKmsDsse => "aws:kms:dsse",
             Type::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES256", "NONE", "aws:kms"]
+        &["AES256", "NONE", "aws:kms", "aws:kms:dsse"]
     }
 }
 impl ::std::convert::AsRef<str> for Type {

@@ -12,6 +12,7 @@
 /// ```text
 /// # let keymaterialtype = unimplemented!();
 /// match keymaterialtype {
+///     KeyMaterialType::KeyCryptogram => { /* ... */ },
 ///     KeyMaterialType::RootPublicKeyCertificate => { /* ... */ },
 ///     KeyMaterialType::Tr31KeyBlock => { /* ... */ },
 ///     KeyMaterialType::Tr34KeyBlock => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum KeyMaterialType {
     #[allow(missing_docs)] // documentation missing in model
+    KeyCryptogram,
+    #[allow(missing_docs)] // documentation missing in model
     RootPublicKeyCertificate,
     #[allow(missing_docs)] // documentation missing in model
     Tr31KeyBlock,
@@ -58,6 +61,7 @@ pub enum KeyMaterialType {
 impl ::std::convert::From<&str> for KeyMaterialType {
     fn from(s: &str) -> Self {
         match s {
+            "KEY_CRYPTOGRAM" => KeyMaterialType::KeyCryptogram,
             "ROOT_PUBLIC_KEY_CERTIFICATE" => KeyMaterialType::RootPublicKeyCertificate,
             "TR31_KEY_BLOCK" => KeyMaterialType::Tr31KeyBlock,
             "TR34_KEY_BLOCK" => KeyMaterialType::Tr34KeyBlock,
@@ -77,6 +81,7 @@ impl KeyMaterialType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            KeyMaterialType::KeyCryptogram => "KEY_CRYPTOGRAM",
             KeyMaterialType::RootPublicKeyCertificate => "ROOT_PUBLIC_KEY_CERTIFICATE",
             KeyMaterialType::Tr31KeyBlock => "TR31_KEY_BLOCK",
             KeyMaterialType::Tr34KeyBlock => "TR34_KEY_BLOCK",
@@ -87,6 +92,7 @@ impl KeyMaterialType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "KEY_CRYPTOGRAM",
             "ROOT_PUBLIC_KEY_CERTIFICATE",
             "TR31_KEY_BLOCK",
             "TR34_KEY_BLOCK",

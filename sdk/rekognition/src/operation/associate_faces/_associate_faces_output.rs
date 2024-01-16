@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFacesOutput {
-    /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
+    /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
     pub associated_faces: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>,
     /// <p>An array of UnsuccessfulAssociation objects containing FaceIDs that are not successfully associated along with the reasons. Returned if the AssociateFaces action is successful.</p>
     pub unsuccessful_face_associations: ::std::option::Option<::std::vec::Vec<crate::types::UnsuccessfulFaceAssociation>>,
@@ -12,7 +12,7 @@ pub struct AssociateFacesOutput {
     _request_id: Option<String>,
 }
 impl AssociateFacesOutput {
-    /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
+    /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_faces.is_none()`.
     pub fn associated_faces(&self) -> &[crate::types::AssociatedFace] {
@@ -55,19 +55,19 @@ impl AssociateFacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_associated_faces`](Self::set_associated_faces).
     ///
-    /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
+    /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
     pub fn associated_faces(mut self, input: crate::types::AssociatedFace) -> Self {
         let mut v = self.associated_faces.unwrap_or_default();
         v.push(input);
         self.associated_faces = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
+    /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
     pub fn set_associated_faces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>>) -> Self {
         self.associated_faces = input;
         self
     }
-    /// <p>An array of AssociatedFace objects containing FaceIDs that are successfully associated with the UserID is returned. Returned if the AssociateFaces action is successful.</p>
+    /// <p>An array of AssociatedFace objects containing FaceIDs that have been successfully associated with the UserID. Returned if the AssociateFaces action is successful.</p>
     pub fn get_associated_faces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedFace>> {
         &self.associated_faces
     }

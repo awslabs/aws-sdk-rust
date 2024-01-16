@@ -11,6 +11,8 @@ pub struct DetectModerationLabelsOutput {
     pub human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
     pub project_version: ::std::option::Option<::std::string::String>,
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub content_types: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>,
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutput {
@@ -31,6 +33,12 @@ impl DetectModerationLabelsOutput {
     /// <p>Identifier of the custom adapter that was used during inference. If during inference the adapter was EXPIRED, then the parameter will not be returned, indicating that a base moderation detection project version was used.</p>
     pub fn project_version(&self) -> ::std::option::Option<&str> {
         self.project_version.as_deref()
+    }
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.content_types.is_none()`.
+    pub fn content_types(&self) -> &[crate::types::ContentType] {
+        self.content_types.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DetectModerationLabelsOutput {
@@ -53,6 +61,7 @@ pub struct DetectModerationLabelsOutputBuilder {
     pub(crate) moderation_model_version: ::std::option::Option<::std::string::String>,
     pub(crate) human_loop_activation_output: ::std::option::Option<crate::types::HumanLoopActivationOutput>,
     pub(crate) project_version: ::std::option::Option<::std::string::String>,
+    pub(crate) content_types: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>,
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutputBuilder {
@@ -118,6 +127,26 @@ impl DetectModerationLabelsOutputBuilder {
     pub fn get_project_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_version
     }
+    /// Appends an item to `content_types`.
+    ///
+    /// To override the contents of this collection use [`set_content_types`](Self::set_content_types).
+    ///
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub fn content_types(mut self, input: crate::types::ContentType) -> Self {
+        let mut v = self.content_types.unwrap_or_default();
+        v.push(input);
+        self.content_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub fn set_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContentType>>) -> Self {
+        self.content_types = input;
+        self
+    }
+    /// <p>A list of predicted results for the type of content an image contains. For example, the image content might be from animation, sports, or a video game.</p>
+    pub fn get_content_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContentType>> {
+        &self.content_types
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -134,6 +163,7 @@ impl DetectModerationLabelsOutputBuilder {
             moderation_model_version: self.moderation_model_version,
             human_loop_activation_output: self.human_loop_activation_output,
             project_version: self.project_version,
+            content_types: self.content_types,
             _request_id: self._request_id,
         }
     }

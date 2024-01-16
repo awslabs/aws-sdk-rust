@@ -161,4 +161,18 @@ impl ListSignalCatalogNodesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn signal_node_type(mut self, input: crate::types::SignalNodeType) -> Self {
+        self.inner = self.inner.signal_node_type(input);
+        self
+    }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn set_signal_node_type(mut self, input: ::std::option::Option<crate::types::SignalNodeType>) -> Self {
+        self.inner = self.inner.set_signal_node_type(input);
+        self
+    }
+    /// <p>The type of node in the signal catalog.</p>
+    pub fn get_signal_node_type(&self) -> &::std::option::Option<crate::types::SignalNodeType> {
+        self.inner.get_signal_node_type()
+    }
 }

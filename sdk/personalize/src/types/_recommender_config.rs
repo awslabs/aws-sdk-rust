@@ -10,7 +10,7 @@ pub struct RecommenderConfig {
     pub min_recommendation_requests_per_second: ::std::option::Option<i32>,
     /// <p>Specifies the training data configuration to use when creating a domain recommender.</p>
     pub training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
-    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response.</p>
+    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling metadata in recommendations for a recommender</a>.</p>
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub enable_metadata_with_recommendations: ::std::option::Option<bool>,
 }
@@ -27,7 +27,7 @@ impl RecommenderConfig {
     pub fn training_data_config(&self) -> ::std::option::Option<&crate::types::TrainingDataConfig> {
         self.training_data_config.as_ref()
     }
-    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response.</p>
+    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling metadata in recommendations for a recommender</a>.</p>
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn enable_metadata_with_recommendations(&self) -> ::std::option::Option<bool> {
         self.enable_metadata_with_recommendations
@@ -105,19 +105,19 @@ impl RecommenderConfigBuilder {
     pub fn get_training_data_config(&self) -> &::std::option::Option<crate::types::TrainingDataConfig> {
         &self.training_data_config
     }
-    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response.</p>
+    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling metadata in recommendations for a recommender</a>.</p>
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn enable_metadata_with_recommendations(mut self, input: bool) -> Self {
         self.enable_metadata_with_recommendations = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response.</p>
+    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling metadata in recommendations for a recommender</a>.</p>
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn set_enable_metadata_with_recommendations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_metadata_with_recommendations = input;
         self
     }
-    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response.</p>
+    /// <p>Whether metadata with recommendations is enabled for the recommender. If enabled, you can specify the columns from your Items dataset in your request for recommendations. Amazon Personalize returns this data for each item in the recommendation response. For information about enabling metadata for a recommender, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-recommenders.html#create-recommender-return-metadata">Enabling metadata in recommendations for a recommender</a>.</p>
     /// <p>If you enable metadata in recommendations, you will incur additional costs. For more information, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.</p>
     pub fn get_enable_metadata_with_recommendations(&self) -> &::std::option::Option<bool> {
         &self.enable_metadata_with_recommendations

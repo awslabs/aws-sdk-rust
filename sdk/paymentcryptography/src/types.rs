@@ -25,6 +25,10 @@ pub use crate::types::_alias::Alias;
 
 pub use crate::types::_import_key_material::ImportKeyMaterial;
 
+pub use crate::types::_import_key_cryptogram::ImportKeyCryptogram;
+
+pub use crate::types::_wrapping_key_spec::WrappingKeySpec;
+
 pub use crate::types::_import_tr34_key_block::ImportTr34KeyBlock;
 
 pub use crate::types::_tr34_key_block_format::Tr34KeyBlockFormat;
@@ -47,6 +51,8 @@ pub use crate::types::_export_dukpt_initial_key::ExportDukptInitialKey;
 
 pub use crate::types::_export_key_material::ExportKeyMaterial;
 
+pub use crate::types::_export_key_cryptogram::ExportKeyCryptogram;
+
 pub use crate::types::_export_tr34_key_block::ExportTr34KeyBlock;
 
 pub use crate::types::_export_tr31_key_block::ExportTr31KeyBlock;
@@ -57,11 +63,15 @@ mod _export_attributes;
 
 mod _export_dukpt_initial_key;
 
+mod _export_key_cryptogram;
+
 mod _export_key_material;
 
 mod _export_tr31_key_block;
 
 mod _export_tr34_key_block;
+
+mod _import_key_cryptogram;
 
 mod _import_key_material;
 
@@ -102,6 +112,8 @@ mod _trusted_certificate_public_key;
 mod _wrapped_key;
 
 mod _wrapped_key_material_format;
+
+mod _wrapping_key_spec;
 
 /// Builders
 pub mod builders;

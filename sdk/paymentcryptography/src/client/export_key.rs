@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`export_key_identifier(impl Into<String>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::export_key_identifier) / [`set_export_key_identifier(Option<String>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::set_export_key_identifier):<br>required: **true**<br><p>The <code>KeyARN</code> of the key under export from Amazon Web Services Payment Cryptography.</p><br>
     ///   - [`export_attributes(ExportAttributes)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::export_attributes) / [`set_export_attributes(Option<ExportAttributes>)`](crate::operation::export_key::builders::ExportKeyFluentBuilder::set_export_attributes):<br>required: **false**<br><p>The attributes for IPEK generation during export.</p><br>
     /// - On success, responds with [`ExportKeyOutput`](crate::operation::export_key::ExportKeyOutput) with field(s):
-    ///   - [`wrapped_key(Option<WrappedKey>)`](crate::operation::export_key::ExportKeyOutput::wrapped_key): <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock.</p>
+    ///   - [`wrapped_key(Option<WrappedKey>)`](crate::operation::export_key::ExportKeyOutput::wrapped_key): <p>The key material under export as a TR-34 WrappedKeyBlock or a TR-31 WrappedKeyBlock. or a RSA WrappedKeyCryptogram.</p>
     /// - On failure, responds with [`SdkError<ExportKeyError>`](crate::operation::export_key::ExportKeyError)
     pub fn export_key(&self) -> crate::operation::export_key::builders::ExportKeyFluentBuilder {
         crate::operation::export_key::builders::ExportKeyFluentBuilder::new(self.handle.clone())

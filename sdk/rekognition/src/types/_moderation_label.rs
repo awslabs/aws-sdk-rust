@@ -11,6 +11,8 @@ pub struct ModerationLabel {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
     pub parent_name: ::std::option::Option<::std::string::String>,
+    /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
+    pub taxonomy_level: ::std::option::Option<i32>,
 }
 impl ModerationLabel {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
@@ -25,6 +27,10 @@ impl ModerationLabel {
     /// <p>The name for the parent label. Labels at the top level of the hierarchy have the parent label <code>""</code>.</p>
     pub fn parent_name(&self) -> ::std::option::Option<&str> {
         self.parent_name.as_deref()
+    }
+    /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
+    pub fn taxonomy_level(&self) -> ::std::option::Option<i32> {
+        self.taxonomy_level
     }
 }
 impl ModerationLabel {
@@ -41,6 +47,7 @@ pub struct ModerationLabelBuilder {
     pub(crate) confidence: ::std::option::Option<f32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_name: ::std::option::Option<::std::string::String>,
+    pub(crate) taxonomy_level: ::std::option::Option<i32>,
 }
 impl ModerationLabelBuilder {
     /// <p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
@@ -88,12 +95,27 @@ impl ModerationLabelBuilder {
     pub fn get_parent_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_name
     }
+    /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
+    pub fn taxonomy_level(mut self, input: i32) -> Self {
+        self.taxonomy_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
+    pub fn set_taxonomy_level(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.taxonomy_level = input;
+        self
+    }
+    /// <p>The level of the moderation label with regard to its taxonomy, from 1 to 3.</p>
+    pub fn get_taxonomy_level(&self) -> &::std::option::Option<i32> {
+        &self.taxonomy_level
+    }
     /// Consumes the builder and constructs a [`ModerationLabel`](crate::types::ModerationLabel).
     pub fn build(self) -> crate::types::ModerationLabel {
         crate::types::ModerationLabel {
             confidence: self.confidence,
             name: self.name,
             parent_name: self.parent_name,
+            taxonomy_level: self.taxonomy_level,
         }
     }
 }

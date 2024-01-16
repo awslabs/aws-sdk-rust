@@ -5,7 +5,7 @@
 pub struct UpdateRevealConfigurationInput {
     /// <p>The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie account.</p>
     pub configuration: ::std::option::Option<crate::types::RevealConfiguration>,
-    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub retrieval_configuration: ::std::option::Option<crate::types::UpdateRetrievalConfiguration>,
 }
 impl UpdateRevealConfigurationInput {
@@ -13,7 +13,7 @@ impl UpdateRevealConfigurationInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::RevealConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn retrieval_configuration(&self) -> ::std::option::Option<&crate::types::UpdateRetrievalConfiguration> {
         self.retrieval_configuration.as_ref()
     }
@@ -48,17 +48,17 @@ impl UpdateRevealConfigurationInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::RevealConfiguration> {
         &self.configuration
     }
-    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn retrieval_configuration(mut self, input: crate::types::UpdateRetrievalConfiguration) -> Self {
         self.retrieval_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn set_retrieval_configuration(mut self, input: ::std::option::Option<crate::types::UpdateRetrievalConfiguration>) -> Self {
         self.retrieval_configuration = input;
         self
     }
-    /// <p>The access method and settings to use to retrieve the sensitive data.</p>
+    /// <p>The access method and settings to use when retrieving the sensitive data.</p>
     pub fn get_retrieval_configuration(&self) -> &::std::option::Option<crate::types::UpdateRetrievalConfiguration> {
         &self.retrieval_configuration
     }

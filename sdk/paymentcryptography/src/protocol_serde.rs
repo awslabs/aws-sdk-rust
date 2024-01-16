@@ -151,9 +151,13 @@ pub(crate) mod shape_wrapped_key;
 
 pub(crate) mod shape_export_dukpt_initial_key;
 
+pub(crate) mod shape_export_key_cryptogram;
+
 pub(crate) mod shape_export_tr31_key_block;
 
 pub(crate) mod shape_export_tr34_key_block;
+
+pub(crate) mod shape_import_key_cryptogram;
 
 pub(crate) mod shape_import_tr31_key_block;
 

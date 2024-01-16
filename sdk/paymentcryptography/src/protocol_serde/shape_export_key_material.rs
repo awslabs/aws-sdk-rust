@@ -16,6 +16,12 @@ pub fn ser_export_key_material(
             crate::protocol_serde::shape_export_tr34_key_block::ser_export_tr34_key_block(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::ExportKeyMaterial::KeyCryptogram(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("KeyCryptogram").start_object();
+            crate::protocol_serde::shape_export_key_cryptogram::ser_export_key_cryptogram(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::ExportKeyMaterial::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExportKeyMaterial",

@@ -117,6 +117,8 @@ pub use crate::types::_media_analysis_manifest_summary::MediaAnalysisManifestSum
 
 pub use crate::types::_media_analysis_results::MediaAnalysisResultsBuilder;
 
+pub use crate::types::_media_analysis_model_versions::MediaAnalysisModelVersionsBuilder;
+
 pub use crate::types::_media_analysis_job_failure_details::MediaAnalysisJobFailureDetailsBuilder;
 
 pub use crate::types::_dataset_label_description::DatasetLabelDescriptionBuilder;
@@ -200,6 +202,8 @@ pub use crate::types::_equipment_detection::EquipmentDetectionBuilder;
 pub use crate::types::_covers_body_part::CoversBodyPartBuilder;
 
 pub use crate::types::_protective_equipment_summarization_attributes::ProtectiveEquipmentSummarizationAttributesBuilder;
+
+pub use crate::types::_content_type::ContentTypeBuilder;
 
 pub use crate::types::_human_loop_activation_output::HumanLoopActivationOutputBuilder;
 

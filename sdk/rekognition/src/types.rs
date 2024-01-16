@@ -145,6 +145,8 @@ pub use crate::types::_media_analysis_manifest_summary::MediaAnalysisManifestSum
 
 pub use crate::types::_media_analysis_results::MediaAnalysisResults;
 
+pub use crate::types::_media_analysis_model_versions::MediaAnalysisModelVersions;
+
 pub use crate::types::_media_analysis_job_failure_details::MediaAnalysisJobFailureDetails;
 
 pub use crate::types::_media_analysis_job_failure_code::MediaAnalysisJobFailureCode;
@@ -266,6 +268,8 @@ pub use crate::types::_protective_equipment_type::ProtectiveEquipmentType;
 pub use crate::types::_body_part::BodyPart;
 
 pub use crate::types::_protective_equipment_summarization_attributes::ProtectiveEquipmentSummarizationAttributes;
+
+pub use crate::types::_content_type::ContentType;
 
 pub use crate::types::_human_loop_activation_output::HumanLoopActivationOutput;
 
@@ -420,6 +424,8 @@ mod _content_moderation_aggregate_by;
 mod _content_moderation_detection;
 
 mod _content_moderation_sort_by;
+
+mod _content_type;
 
 mod _covers_body_part;
 
@@ -584,6 +590,8 @@ mod _media_analysis_job_failure_details;
 mod _media_analysis_job_status;
 
 mod _media_analysis_manifest_summary;
+
+mod _media_analysis_model_versions;
 
 mod _media_analysis_operations_config;
 

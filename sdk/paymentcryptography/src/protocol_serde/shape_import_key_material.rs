@@ -28,6 +28,12 @@ pub fn ser_import_key_material(
             crate::protocol_serde::shape_import_tr34_key_block::ser_import_tr34_key_block(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::ImportKeyMaterial::KeyCryptogram(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_2.key("KeyCryptogram").start_object();
+            crate::protocol_serde::shape_import_key_cryptogram::ser_import_key_cryptogram(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::ImportKeyMaterial::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ImportKeyMaterial",

@@ -7,7 +7,7 @@ pub struct GetParametersForImportOutput {
     pub wrapping_key_certificate: ::std::string::String,
     /// <p>The Amazon Web Services Payment Cryptography root certificate authority (CA) that signed the wrapping key certificate in PEM format (base64 encoded).</p>
     pub wrapping_key_certificate_chain: ::std::string::String,
-    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.</p>
     pub wrapping_key_algorithm: crate::types::KeyAlgorithm,
     /// <p>The import token to initiate key import into Amazon Web Services Payment Cryptography. The import token expires after 7 days. You can use the same import token to import multiple keys to the same service account.</p>
     pub import_token: ::std::string::String,
@@ -26,7 +26,7 @@ impl GetParametersForImportOutput {
         use std::ops::Deref;
         self.wrapping_key_certificate_chain.deref()
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.</p>
     pub fn wrapping_key_algorithm(&self) -> &crate::types::KeyAlgorithm {
         &self.wrapping_key_algorithm
     }
@@ -106,18 +106,18 @@ impl GetParametersForImportOutputBuilder {
     pub fn get_wrapping_key_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.wrapping_key_certificate_chain
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.</p>
     /// This field is required.
     pub fn wrapping_key_algorithm(mut self, input: crate::types::KeyAlgorithm) -> Self {
         self.wrapping_key_algorithm = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.</p>
     pub fn set_wrapping_key_algorithm(mut self, input: ::std::option::Option<crate::types::KeyAlgorithm>) -> Self {
         self.wrapping_key_algorithm = input;
         self
     }
-    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock.</p>
+    /// <p>The algorithm of the wrapping key for use within TR-34 WrappedKeyBlock or RSA WrappedKeyCryptogram.</p>
     pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.wrapping_key_algorithm
     }

@@ -15,5 +15,8 @@ pub fn ser_list_signal_catalog_nodes_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.signal_node_type {
+        object.key("signalNodeType").string(var_4.as_str());
+    }
     Ok(())
 }

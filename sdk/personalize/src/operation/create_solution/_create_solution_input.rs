@@ -9,12 +9,12 @@ pub struct CreateSolutionInput {
     /// <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>
     pub perform_hpo: ::std::option::Option<bool>,
     /// <important>
-    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a></p>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     /// </important>
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub perform_auto_ml: ::std::option::Option<bool>,
-    /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub recipe_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</p>
     pub dataset_group_arn: ::std::option::Option<::std::string::String>,
@@ -39,14 +39,14 @@ impl CreateSolutionInput {
         self.perform_hpo
     }
     /// <important>
-    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a></p>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     /// </important>
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub fn perform_auto_ml(&self) -> ::std::option::Option<bool> {
         self.perform_auto_ml
     }
-    /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn recipe_arn(&self) -> ::std::option::Option<&str> {
         self.recipe_arn.as_deref()
     }
@@ -126,7 +126,7 @@ impl CreateSolutionInputBuilder {
         &self.perform_hpo
     }
     /// <important>
-    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a></p>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     /// </important>
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
@@ -135,7 +135,7 @@ impl CreateSolutionInputBuilder {
         self
     }
     /// <important>
-    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a></p>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     /// </important>
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
@@ -144,24 +144,24 @@ impl CreateSolutionInputBuilder {
         self
     }
     /// <important>
-    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining your use case.</a></p>
+    /// <p>We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     /// </important>
     /// <p>Whether to perform automated machine learning (AutoML). The default is <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
     /// <p>When set to <code>true</code>, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.</p>
     pub fn get_perform_auto_ml(&self) -> &::std::option::Option<bool> {
         &self.perform_auto_ml
     }
-    /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn set_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recipe_arn = input;
         self
     }
-    /// <p>The ARN of the recipe to use for model training. This is required when <code>performAutoML</code> is false.</p>
+    /// <p>The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when <code>performAutoML</code> is false. For information about different Amazon Personalize recipes and their ARNs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html">Choosing a recipe</a>.</p>
     pub fn get_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recipe_arn
     }

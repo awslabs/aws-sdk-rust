@@ -18,7 +18,7 @@ pub struct GetPersonalizedRankingInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     pub filter_values: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>.</p>
+    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling metadata in recommendations for a campaign</a>.</p>
     pub metadata_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl GetPersonalizedRankingInput {
@@ -51,7 +51,7 @@ impl GetPersonalizedRankingInput {
         self.filter_values.as_ref()
     }
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>.</p>
+    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling metadata in recommendations for a campaign</a>.</p>
     pub fn metadata_columns(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
@@ -196,7 +196,7 @@ impl GetPersonalizedRankingInputBuilder {
     /// To override the contents of this collection use [`set_metadata_columns`](Self::set_metadata_columns).
     ///
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>.</p>
+    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling metadata in recommendations for a campaign</a>.</p>
     pub fn metadata_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.metadata_columns.unwrap_or_default();
         hash_map.insert(k.into(), v);
@@ -204,7 +204,7 @@ impl GetPersonalizedRankingInputBuilder {
         self
     }
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>.</p>
+    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling metadata in recommendations for a campaign</a>.</p>
     pub fn set_metadata_columns(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -213,7 +213,7 @@ impl GetPersonalizedRankingInputBuilder {
         self
     }
     /// <p>If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.</p>
-    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/create-campaign-return-metadata.html">Enabling metadata in recommendations for a campaign</a>.</p>
+    /// <p>For information about enabling metadata for a campaign, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling metadata in recommendations for a campaign</a>.</p>
     pub fn get_metadata_columns(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
