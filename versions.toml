@@ -706,9 +706,9 @@ model_hash = '000505e799f4af313931c8163e24fc356010cc454de5a5c8aceed118f7adb6ae'
 
 [crates.aws-sdk-dynamodb]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '4f43f1eb1d65607cdabfbef0f6e91467a9f6947f0904bad78fb2215de32e931c'
-model_hash = '0564720efaf901c5c7285633ff493a26d0851f49864f7bda56404b8deb32a517'
+version = '1.10.1'
+source_hash = 'd9fde26c2a0bdf628d98ac61c0a983b854db516ed11700f50d16ee60d5c7b9b2'
+model_hash = '7b97c616a7d8cf8d0daa855f7b17012cf671b7eff5593b25b8ece1e310466bc2'
 
 [crates.aws-sdk-dynamodbstreams]
 category = 'AwsSdk'
@@ -1168,9 +1168,9 @@ model_hash = '1dc43d3164c0d60b6fff3ea824b56a6e5213bb665812174fa1754dc554bf727f'
 
 [crates.aws-sdk-keyspaces]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = 'c57a8f7d33829747c923e2e0763ba7526eada26b82b11cb3c1223b83924725bf'
-model_hash = '88d95b541acf3c316f9a288941ba231041c2a348264dd853f7987bc47342f4f4'
+version = '1.11.0'
+source_hash = '3e1df964ce9d2525ccd7a87a9bf5d67a3e38311b4f9ebe8f61d33218f07011f3'
+model_hash = '59cf818cb82fb09b136fe8f0df88a4713c7d18290ddb5521880252bc61cf913e'
 
 [crates.aws-sdk-kinesis]
 category = 'AwsSdk'
@@ -2408,16 +2408,6 @@ source_hash = '349c182d6f8bd666a8de172375ce30939c47de5008b5f1c10457413dd982b1ff'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd1d1bd74b6caf2685c800c970da4abaef859ce109e48b901b9127db6364b4578'
-
-[release]
-tag = 'release-2024-01-16'
-
 [release.crates]
-aws-sdk-iot = '1.11.0'
-aws-sdk-iotfleetwise = '1.11.0'
-aws-sdk-macie2 = '1.11.0'
-aws-sdk-paymentcryptography = '1.12.0'
-aws-sdk-personalize = '1.10.1'
-aws-sdk-personalizeruntime = '1.10.1'
-aws-sdk-rekognition = '1.11.0'
-aws-sdk-securityhub = '1.11.1'
+aws-sdk-dynamodb = '1.10.1'
+aws-sdk-keyspaces = '1.11.0'

@@ -46,6 +46,11 @@ pub struct RestoreTableInput {
     /// <p>A list of key-value pair tags to be attached to the restored table.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
 }
 impl RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
@@ -111,6 +116,17 @@ impl RestoreTableInput {
     pub fn tags_override(&self) -> &[crate::types::Tag] {
         self.tags_override.as_deref().unwrap_or_default()
     }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn auto_scaling_specification(&self) -> ::std::option::Option<&crate::types::AutoScalingSpecification> {
+        self.auto_scaling_specification.as_ref()
+    }
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_specifications.is_none()`.
+    pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecification] {
+        self.replica_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl RestoreTableInput {
     /// Creates a new builder-style object to manufacture [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
@@ -132,6 +148,8 @@ pub struct RestoreTableInputBuilder {
     pub(crate) encryption_specification_override: ::std::option::Option<crate::types::EncryptionSpecification>,
     pub(crate) point_in_time_recovery_override: ::std::option::Option<crate::types::PointInTimeRecovery>,
     pub(crate) tags_override: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
+    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
 }
 impl RestoreTableInputBuilder {
     /// <p>The keyspace name of the source table.</p>
@@ -345,6 +363,43 @@ impl RestoreTableInputBuilder {
     pub fn get_tags_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags_override
     }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn auto_scaling_specification(mut self, input: crate::types::AutoScalingSpecification) -> Self {
+        self.auto_scaling_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
+        self.auto_scaling_specification = input;
+        self
+    }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
+        &self.auto_scaling_specification
+    }
+    /// Appends an item to `replica_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_replica_specifications`](Self::set_replica_specifications).
+    ///
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecification) -> Self {
+        let mut v = self.replica_specifications.unwrap_or_default();
+        v.push(input);
+        self.replica_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
+        self.replica_specifications = input;
+        self
+    }
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+        &self.replica_specifications
+    }
     /// Consumes the builder and constructs a [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
     pub fn build(
         self,
@@ -359,6 +414,8 @@ impl RestoreTableInputBuilder {
             encryption_specification_override: self.encryption_specification_override,
             point_in_time_recovery_override: self.point_in_time_recovery_override,
             tags_override: self.tags_override,
+            auto_scaling_specification: self.auto_scaling_specification,
+            replica_specifications: self.replica_specifications,
         })
     }
 }

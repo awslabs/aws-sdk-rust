@@ -22,7 +22,7 @@ impl UpdateTableInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
-/// <p>Adds new columns to the table or updates one of the table's settings, for example capacity mode, encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update operation.</p>
+/// <p>Adds new columns to the table or updates one of the table's settings, for example capacity mode, auto scaling, encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -369,5 +369,43 @@ impl UpdateTableFluentBuilder {
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
         self.inner.get_client_side_timestamps()
+    }
+    /// <p>The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and maximum values or the auto scaling policy settings independently.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn auto_scaling_specification(mut self, input: crate::types::AutoScalingSpecification) -> Self {
+        self.inner = self.inner.auto_scaling_specification(input);
+        self
+    }
+    /// <p>The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and maximum values or the auto scaling policy settings independently.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
+        self.inner = self.inner.set_auto_scaling_specification(input);
+        self
+    }
+    /// <p>The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>If auto scaling is already enabled for the table, you can use <code>UpdateTable</code> to update the minimum and maximum values or the auto scaling policy settings independently.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
+        self.inner.get_auto_scaling_specification()
+    }
+    /// Appends an item to `replicaSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_replica_specifications`](Self::set_replica_specifications).
+    ///
+    /// <p>The Region specific settings of a multi-Regional table.</p>
+    pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecification) -> Self {
+        self.inner = self.inner.replica_specifications(input);
+        self
+    }
+    /// <p>The Region specific settings of a multi-Regional table.</p>
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
+        self.inner = self.inner.set_replica_specifications(input);
+        self
+    }
+    /// <p>The Region specific settings of a multi-Regional table.</p>
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+        self.inner.get_replica_specifications()
     }
 }

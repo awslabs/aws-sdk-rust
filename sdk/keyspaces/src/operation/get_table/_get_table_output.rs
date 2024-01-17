@@ -35,6 +35,8 @@ pub struct GetTableOutput {
     pub comment: ::std::option::Option<crate::types::Comment>,
     /// <p>The client-side timestamps setting of the table.</p>
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
+    /// <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
+    pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>>,
     _request_id: Option<String>,
 }
 impl GetTableOutput {
@@ -99,6 +101,12 @@ impl GetTableOutput {
     pub fn client_side_timestamps(&self) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
         self.client_side_timestamps.as_ref()
     }
+    /// <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_specifications.is_none()`.
+    pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecificationSummary] {
+        self.replica_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTableOutput {
     fn request_id(&self) -> Option<&str> {
@@ -129,6 +137,7 @@ pub struct GetTableOutputBuilder {
     pub(crate) default_time_to_live: ::std::option::Option<i32>,
     pub(crate) comment: ::std::option::Option<crate::types::Comment>,
     pub(crate) client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
+    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>>,
     _request_id: Option<String>,
 }
 impl GetTableOutputBuilder {
@@ -335,6 +344,26 @@ impl GetTableOutputBuilder {
     pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
         &self.client_side_timestamps
     }
+    /// Appends an item to `replica_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_replica_specifications`](Self::set_replica_specifications).
+    ///
+    /// <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
+    pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecificationSummary) -> Self {
+        let mut v = self.replica_specifications.unwrap_or_default();
+        v.push(input);
+        self.replica_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>>) -> Self {
+        self.replica_specifications = input;
+        self
+    }
+    /// <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecificationSummary>> {
+        &self.replica_specifications
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -379,6 +408,7 @@ impl GetTableOutputBuilder {
             default_time_to_live: self.default_time_to_live,
             comment: self.comment,
             client_side_timestamps: self.client_side_timestamps,
+            replica_specifications: self.replica_specifications,
             _request_id: self._request_id,
         })
     }

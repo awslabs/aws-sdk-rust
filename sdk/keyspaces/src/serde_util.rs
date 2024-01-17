@@ -47,6 +47,21 @@ pub(crate) fn get_table_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_table_auto_scaling_settings_output_output_correct_errors(
+    mut builder: crate::operation::get_table_auto_scaling_settings::builders::GetTableAutoScalingSettingsOutputBuilder,
+) -> crate::operation::get_table_auto_scaling_settings::builders::GetTableAutoScalingSettingsOutputBuilder {
+    if builder.keyspace_name.is_none() {
+        builder.keyspace_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_keyspaces_output_output_correct_errors(
     mut builder: crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder,
 ) -> crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder {
@@ -208,6 +223,15 @@ pub(crate) fn partition_key_correct_errors(mut builder: crate::types::builders::
 pub(crate) fn static_column_correct_errors(mut builder: crate::types::builders::StaticColumnBuilder) -> crate::types::builders::StaticColumnBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn target_tracking_scaling_policy_configuration_correct_errors(
+    mut builder: crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder,
+) -> crate::types::builders::TargetTrackingScalingPolicyConfigurationBuilder {
+    if builder.target_value.is_none() {
+        builder.target_value = Some(Default::default())
     }
     builder
 }

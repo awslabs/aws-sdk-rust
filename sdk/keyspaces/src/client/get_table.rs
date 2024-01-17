@@ -19,6 +19,7 @@ impl super::Client {
     ///   - [`default_time_to_live(Option<i32>)`](crate::operation::get_table::GetTableOutput::default_time_to_live): <p>The default Time to Live settings in seconds of the specified table.</p>
     ///   - [`comment(Option<Comment>)`](crate::operation::get_table::GetTableOutput::comment): <p>The the description of the specified table.</p>
     ///   - [`client_side_timestamps(Option<ClientSideTimestamps>)`](crate::operation::get_table::GetTableOutput::client_side_timestamps): <p>The client-side timestamps setting of the table.</p>
+    ///   - [`replica_specifications(Option<Vec::<ReplicaSpecificationSummary>>)`](crate::operation::get_table::GetTableOutput::replica_specifications): <p>Returns the Amazon Web Services Region specific settings of all Regions a multi-Region table is replicated in.</p>
     /// - On failure, responds with [`SdkError<GetTableError>`](crate::operation::get_table::GetTableError)
     pub fn get_table(&self) -> crate::operation::get_table::builders::GetTableFluentBuilder {
         crate::operation::get_table::builders::GetTableFluentBuilder::new(self.handle.clone())

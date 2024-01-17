@@ -22,16 +22,18 @@ impl RestoreTableInputBuilder {
 }
 /// Fluent builder constructing a request to `RestoreTable`.
 ///
-/// <p>Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"> Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+/// <p>Restores the table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"> Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 /// <p>Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.</p>
 /// <p>When you restore using point in time recovery, Amazon Keyspaces restores your source table's schema and data to the state based on the selected timestamp <code>(day:hour:minute:second)</code> to a new table. The Time to Live (TTL) settings are also restored to the state based on the selected timestamp.</p>
-/// <p>In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code> restores the capacity mode, encryption, and point-in-time recovery settings from the source table. Unlike the table's schema data and TTL settings, which are restored based on the selected timestamp, these settings are always restored based on the table's settings as of the current time or when the table was deleted.</p>
+/// <p>In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code> restores the capacity mode, auto scaling settings, encryption settings, and point-in-time recovery settings from the source table. Unlike the table's schema data and TTL settings, which are restored based on the selected timestamp, these settings are always restored based on the table's settings as of the current time or when the table was deleted.</p>
 /// <p>You can also overwrite these settings during restore:</p>
 /// <ul>
 /// <li>
 /// <p>Read/write capacity mode</p></li>
 /// <li>
-/// <p>Provisioned throughput capacity settings</p></li>
+/// <p>Provisioned throughput capacity units</p></li>
+/// <li>
+/// <p>Auto scaling settings</p></li>
 /// <li>
 /// <p>Point-in-time (PITR) settings</p></li>
 /// <li>
@@ -40,8 +42,6 @@ impl RestoreTableInputBuilder {
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 /// <p>Note that the following settings are not restored, and you must configure them manually for the new table:</p>
 /// <ul>
-/// <li>
-/// <p>Automatic scaling policies (for tables that use provisioned capacity mode)</p></li>
 /// <li>
 /// <p>Identity and Access Management (IAM) policies</p></li>
 /// <li>
@@ -336,5 +336,40 @@ impl RestoreTableFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn get_tags_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags_override()
+    }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn auto_scaling_specification(mut self, input: crate::types::AutoScalingSpecification) -> Self {
+        self.inner = self.inner.auto_scaling_specification(input);
+        self
+    }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
+        self.inner = self.inner.set_auto_scaling_specification(input);
+        self
+    }
+    /// <p>The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
+        self.inner.get_auto_scaling_specification()
+    }
+    /// Appends an item to `replicaSpecifications`.
+    ///
+    /// To override the contents of this collection use [`set_replica_specifications`](Self::set_replica_specifications).
+    ///
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecification) -> Self {
+        self.inner = self.inner.replica_specifications(input);
+        self
+    }
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
+        self.inner = self.inner.set_replica_specifications(input);
+        self
+    }
+    /// <p>The optional Region specific settings of a multi-Regional table.</p>
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+        self.inner.get_replica_specifications()
     }
 }

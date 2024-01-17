@@ -175,6 +175,8 @@ mod get_keyspace;
 
 mod get_table;
 
+mod get_table_auto_scaling_settings;
+
 mod list_keyspaces;
 
 mod list_tables;

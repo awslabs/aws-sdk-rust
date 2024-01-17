@@ -89,6 +89,21 @@ pub struct CreateTableInput {
     /// </ul>
     /// <p>Once client-side timestamps are enabled for a table, this setting cannot be disabled.</p>
     pub client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
+    /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
+    /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <p>By default, auto scaling is disabled for a table.</p>
+    pub auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
+    /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
+    /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>region</code>: The Region where these settings are applied. (Required)</p></li>
+    /// <li>
+    /// <p><code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)</p></li>
+    /// <li>
+    /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
+    /// </ul>
+    pub replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
 }
 impl CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
@@ -201,6 +216,27 @@ impl CreateTableInput {
     pub fn client_side_timestamps(&self) -> ::std::option::Option<&crate::types::ClientSideTimestamps> {
         self.client_side_timestamps.as_ref()
     }
+    /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
+    /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <p>By default, auto scaling is disabled for a table.</p>
+    pub fn auto_scaling_specification(&self) -> ::std::option::Option<&crate::types::AutoScalingSpecification> {
+        self.auto_scaling_specification.as_ref()
+    }
+    /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
+    /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>region</code>: The Region where these settings are applied. (Required)</p></li>
+    /// <li>
+    /// <p><code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)</p></li>
+    /// <li>
+    /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_specifications.is_none()`.
+    pub fn replica_specifications(&self) -> &[crate::types::ReplicaSpecification] {
+        self.replica_specifications.as_deref().unwrap_or_default()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -224,6 +260,8 @@ pub struct CreateTableInputBuilder {
     pub(crate) default_time_to_live: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_side_timestamps: ::std::option::Option<crate::types::ClientSideTimestamps>,
+    pub(crate) auto_scaling_specification: ::std::option::Option<crate::types::AutoScalingSpecification>,
+    pub(crate) replica_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>,
 }
 impl CreateTableInputBuilder {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
@@ -581,6 +619,73 @@ impl CreateTableInputBuilder {
     pub fn get_client_side_timestamps(&self) -> &::std::option::Option<crate::types::ClientSideTimestamps> {
         &self.client_side_timestamps
     }
+    /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
+    /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <p>By default, auto scaling is disabled for a table.</p>
+    pub fn auto_scaling_specification(mut self, input: crate::types::AutoScalingSpecification) -> Self {
+        self.auto_scaling_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
+    /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <p>By default, auto scaling is disabled for a table.</p>
+    pub fn set_auto_scaling_specification(mut self, input: ::std::option::Option<crate::types::AutoScalingSpecification>) -> Self {
+        self.auto_scaling_specification = input;
+        self
+    }
+    /// <p>The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.</p>
+    /// <p>Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
+    /// <p>By default, auto scaling is disabled for a table.</p>
+    pub fn get_auto_scaling_specification(&self) -> &::std::option::Option<crate::types::AutoScalingSpecification> {
+        &self.auto_scaling_specification
+    }
+    /// Appends an item to `replica_specifications`.
+    ///
+    /// To override the contents of this collection use [`set_replica_specifications`](Self::set_replica_specifications).
+    ///
+    /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
+    /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>region</code>: The Region where these settings are applied. (Required)</p></li>
+    /// <li>
+    /// <p><code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)</p></li>
+    /// <li>
+    /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
+    /// </ul>
+    pub fn replica_specifications(mut self, input: crate::types::ReplicaSpecification) -> Self {
+        let mut v = self.replica_specifications.unwrap_or_default();
+        v.push(input);
+        self.replica_specifications = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
+    /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>region</code>: The Region where these settings are applied. (Required)</p></li>
+    /// <li>
+    /// <p><code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)</p></li>
+    /// <li>
+    /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
+    /// </ul>
+    pub fn set_replica_specifications(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>>) -> Self {
+        self.replica_specifications = input;
+        self
+    }
+    /// <p>The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.</p>
+    /// <p>For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>region</code>: The Region where these settings are applied. (Required)</p></li>
+    /// <li>
+    /// <p><code>readCapacityUnits</code>: The provisioned read capacity units. (Optional)</p></li>
+    /// <li>
+    /// <p><code>readCapacityAutoScaling</code>: The read capacity auto scaling settings for the table. (Optional)</p></li>
+    /// </ul>
+    pub fn get_replica_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaSpecification>> {
+        &self.replica_specifications
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -595,6 +700,8 @@ impl CreateTableInputBuilder {
             default_time_to_live: self.default_time_to_live,
             tags: self.tags,
             client_side_timestamps: self.client_side_timestamps,
+            auto_scaling_specification: self.auto_scaling_specification,
+            replica_specifications: self.replica_specifications,
         })
     }
 }

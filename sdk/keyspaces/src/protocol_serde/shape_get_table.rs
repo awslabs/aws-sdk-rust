@@ -207,6 +207,11 @@ pub(crate) fn de_get_table(
                     builder =
                         builder.set_client_side_timestamps(crate::protocol_serde::shape_client_side_timestamps::de_client_side_timestamps(tokens)?);
                 }
+                "replicaSpecifications" => {
+                    builder = builder.set_replica_specifications(
+                        crate::protocol_serde::shape_replica_specification_summary_list::de_replica_specification_summary_list(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

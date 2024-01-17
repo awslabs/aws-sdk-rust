@@ -35,6 +35,8 @@ pub(crate) mod shape_get_keyspace;
 
 pub(crate) mod shape_get_table;
 
+pub(crate) mod shape_get_table_auto_scaling_settings;
+
 pub(crate) mod shape_list_keyspaces;
 
 pub(crate) mod shape_list_tables;
@@ -71,6 +73,8 @@ pub(crate) mod shape_delete_table_input;
 
 pub(crate) mod shape_get_keyspace_input;
 
+pub(crate) mod shape_get_table_auto_scaling_settings_input;
+
 pub(crate) mod shape_get_table_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -95,6 +99,8 @@ pub(crate) mod shape_update_table_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_auto_scaling_specification;
+
 pub(crate) mod shape_capacity_specification;
 
 pub(crate) mod shape_capacity_specification_summary;
@@ -115,6 +121,12 @@ pub(crate) mod shape_point_in_time_recovery_summary;
 
 pub(crate) mod shape_region_list;
 
+pub(crate) mod shape_replica_auto_scaling_specification_list;
+
+pub(crate) mod shape_replica_specification;
+
+pub(crate) mod shape_replica_specification_summary_list;
+
 pub(crate) mod shape_replication_specification;
 
 pub(crate) mod shape_schema_definition;
@@ -126,6 +138,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_time_to_live;
+
+pub(crate) mod shape_auto_scaling_settings;
 
 pub(crate) mod shape_clustering_key;
 
@@ -139,8 +153,16 @@ pub(crate) mod shape_partition_key;
 
 pub(crate) mod shape_partition_key_list;
 
+pub(crate) mod shape_replica_auto_scaling_specification;
+
+pub(crate) mod shape_replica_specification_summary;
+
 pub(crate) mod shape_static_column;
 
 pub(crate) mod shape_static_column_list;
 
 pub(crate) mod shape_table_summary;
+
+pub(crate) mod shape_auto_scaling_policy;
+
+pub(crate) mod shape_target_tracking_scaling_policy_configuration;

@@ -50,5 +50,23 @@ pub fn ser_restore_table_input_input(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.auto_scaling_specification {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("autoScalingSpecification").start_object();
+        crate::protocol_serde::shape_auto_scaling_specification::ser_auto_scaling_specification(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.replica_specifications {
+        let mut array_19 = object.key("replicaSpecifications").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_replica_specification::ser_replica_specification(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }

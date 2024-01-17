@@ -243,7 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTablesEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTablesError {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Amazon Keyspaces was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),

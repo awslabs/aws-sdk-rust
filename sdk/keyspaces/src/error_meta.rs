@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Amazon Keyspaces could not complete the requested action. This error may occur if you try to perform an action and the same or a different action is already in progress, or if you try to create a resource that already exists.</p>
+    /// <p>Amazon Keyspaces couldn't complete the requested action. This error may occur if you try to perform an action and the same or a different action is already in progress, or if you try to create a resource that already exists.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Amazon Keyspaces was unable to fully process this request because of an internal server error.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -224,6 +224,49 @@ impl From<crate::operation::get_table::GetTableError> for Error {
             crate::operation::get_table::GetTableError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_table::GetTableError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_table::GetTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError> for Error {
+    fn from(err: crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError) -> Self {
+        match err {
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -19,6 +19,9 @@ pub mod get_keyspace;
 /// Types for the `GetTable` operation.
 pub mod get_table;
 
+/// Types for the `GetTableAutoScalingSettings` operation.
+pub mod get_table_auto_scaling_settings;
+
 /// Types for the `ListKeyspaces` operation.
 pub mod list_keyspaces;
 

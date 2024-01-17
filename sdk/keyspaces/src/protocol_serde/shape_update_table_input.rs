@@ -57,5 +57,23 @@ pub fn ser_update_table_input_input(
         crate::protocol_serde::shape_client_side_timestamps::ser_client_side_timestamps(&mut object_17, var_16)?;
         object_17.finish();
     }
+    if let Some(var_18) = &input.auto_scaling_specification {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("autoScalingSpecification").start_object();
+        crate::protocol_serde::shape_auto_scaling_specification::ser_auto_scaling_specification(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.replica_specifications {
+        let mut array_21 = object.key("replicaSpecifications").start_array();
+        for item_22 in var_20 {
+            {
+                #[allow(unused_mut)]
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_replica_specification::ser_replica_specification(&mut object_23, item_22)?;
+                object_23.finish();
+            }
+        }
+        array_21.finish();
+    }
     Ok(())
 }
