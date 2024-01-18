@@ -2408,6 +2408,10 @@ source_hash = '349c182d6f8bd666a8de172375ce30939c47de5008b5f1c10457413dd982b1ff'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd1d1bd74b6caf2685c800c970da4abaef859ce109e48b901b9127db6364b4578'
+
+[release]
+tag = 'release-2024-01-18'
+
 [release.crates]
 aws-sdk-b2bi = '1.8.0'
 aws-sdk-cloudtrail = '1.11.0'
