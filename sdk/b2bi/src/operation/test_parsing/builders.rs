@@ -22,7 +22,7 @@ impl TestParsingInputBuilder {
 }
 /// Fluent builder constructing a request to `TestParsing`.
 ///
-/// <p>Parses the input EDI (electronic data interchange) file.</p>
+/// <p>Parses the input EDI (electronic data interchange) file. The input file has a file size limit of 250 KB.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestParsingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

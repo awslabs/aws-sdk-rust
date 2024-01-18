@@ -53,6 +53,8 @@ pub use crate::types::_query_status::QueryStatus;
 
 pub use crate::types::_public_key::PublicKey;
 
+pub use crate::types::_insights_metric_data_type::InsightsMetricDataType;
+
 pub use crate::types::_imports_list_item::ImportsListItem;
 
 pub use crate::types::_import_failure_list_item::ImportFailureListItem;
@@ -120,6 +122,8 @@ mod _ingestion_status;
 mod _insight_selector;
 
 mod _insight_type;
+
+mod _insights_metric_data_type;
 
 mod _lookup_attribute;
 

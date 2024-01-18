@@ -17,6 +17,20 @@ pub fn de_untag_resource_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InternalServerException" => crate::operation::untag_resource::UntagResourceError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::untag_resource::UntagResourceError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

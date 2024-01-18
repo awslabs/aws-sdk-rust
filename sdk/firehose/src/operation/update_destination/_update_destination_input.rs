@@ -26,6 +26,8 @@ pub struct UpdateDestinationInput {
     pub http_endpoint_destination_update: ::std::option::Option<crate::types::HttpEndpointDestinationUpdate>,
     /// <p>Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub amazon_open_search_serverless_destination_update: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
+    /// <p>Update to the Snowflake destination condiguration settings</p>
+    pub snowflake_destination_update: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>,
 }
 impl UpdateDestinationInput {
     /// <p>The name of the delivery stream.</p>
@@ -75,6 +77,10 @@ impl UpdateDestinationInput {
     ) -> ::std::option::Option<&crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
         self.amazon_open_search_serverless_destination_update.as_ref()
     }
+    /// <p>Update to the Snowflake destination condiguration settings</p>
+    pub fn snowflake_destination_update(&self) -> ::std::option::Option<&crate::types::SnowflakeDestinationUpdate> {
+        self.snowflake_destination_update.as_ref()
+    }
 }
 impl UpdateDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
@@ -98,6 +104,7 @@ pub struct UpdateDestinationInputBuilder {
     pub(crate) splunk_destination_update: ::std::option::Option<crate::types::SplunkDestinationUpdate>,
     pub(crate) http_endpoint_destination_update: ::std::option::Option<crate::types::HttpEndpointDestinationUpdate>,
     pub(crate) amazon_open_search_serverless_destination_update: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate>,
+    pub(crate) snowflake_destination_update: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>,
 }
 impl UpdateDestinationInputBuilder {
     /// <p>The name of the delivery stream.</p>
@@ -268,6 +275,20 @@ impl UpdateDestinationInputBuilder {
     ) -> &::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationUpdate> {
         &self.amazon_open_search_serverless_destination_update
     }
+    /// <p>Update to the Snowflake destination condiguration settings</p>
+    pub fn snowflake_destination_update(mut self, input: crate::types::SnowflakeDestinationUpdate) -> Self {
+        self.snowflake_destination_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update to the Snowflake destination condiguration settings</p>
+    pub fn set_snowflake_destination_update(mut self, input: ::std::option::Option<crate::types::SnowflakeDestinationUpdate>) -> Self {
+        self.snowflake_destination_update = input;
+        self
+    }
+    /// <p>Update to the Snowflake destination condiguration settings</p>
+    pub fn get_snowflake_destination_update(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationUpdate> {
+        &self.snowflake_destination_update
+    }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
     pub fn build(
         self,
@@ -284,6 +305,7 @@ impl UpdateDestinationInputBuilder {
             splunk_destination_update: self.splunk_destination_update,
             http_endpoint_destination_update: self.http_endpoint_destination_update,
             amazon_open_search_serverless_destination_update: self.amazon_open_search_serverless_destination_update,
+            snowflake_destination_update: self.snowflake_destination_update,
         })
     }
 }

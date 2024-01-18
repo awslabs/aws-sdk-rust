@@ -17,7 +17,7 @@ pub struct GetCurrentMetricDataInput {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
-    /// <p>When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.</p>
+    /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub filters: ::std::option::Option<crate::types::Filters>,
     /// <p>The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>, the metrics returned apply to each queue rather than aggregated for all queues.</p>
@@ -162,7 +162,7 @@ impl GetCurrentMetricDataInput {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
-    /// <p>When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.</p>
+    /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::Filters> {
         self.filters.as_ref()
@@ -355,7 +355,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
-    /// <p>When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.</p>
+    /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     /// This field is required.
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
@@ -374,7 +374,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
-    /// <p>When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.</p>
+    /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<crate::types::Filters>) -> Self {
         self.filters = input;
@@ -392,7 +392,7 @@ impl GetCurrentMetricDataInputBuilder {
     /// <p>RoutingStepExpressions: 50</p></li>
     /// </ul>
     /// <p>Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.</p>
-    /// <p>When using <code>RoutingStepExpression</code>, you need to pass exactly one <code>QueueId</code>.</p>
+    /// <p>When using the <code>RoutingStepExpression</code> filter, you need to pass exactly one <code>QueueId</code>. The filter is also case sensitive so when using the <code>RoutingStepExpression</code> filter, grouping by <code>ROUTING_STEP_EXPRESSION</code> is required.</p>
     /// <p>Currently tagging is only supported on the resources that are passed in the filter.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::Filters> {
         &self.filters

@@ -20,6 +20,8 @@ pub struct DestinationDescription {
     pub splunk_destination_description: ::std::option::Option<crate::types::SplunkDestinationDescription>,
     /// <p>Describes the specified HTTP endpoint destination.</p>
     pub http_endpoint_destination_description: ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
+    /// <p>Optional description for the destination</p>
+    pub snowflake_destination_description: ::std::option::Option<crate::types::SnowflakeDestinationDescription>,
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub amazon_open_search_serverless_destination_description: ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
 }
@@ -59,6 +61,10 @@ impl DestinationDescription {
     pub fn http_endpoint_destination_description(&self) -> ::std::option::Option<&crate::types::HttpEndpointDestinationDescription> {
         self.http_endpoint_destination_description.as_ref()
     }
+    /// <p>Optional description for the destination</p>
+    pub fn snowflake_destination_description(&self) -> ::std::option::Option<&crate::types::SnowflakeDestinationDescription> {
+        self.snowflake_destination_description.as_ref()
+    }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn amazon_open_search_serverless_destination_description(
         &self,
@@ -85,6 +91,7 @@ pub struct DestinationDescriptionBuilder {
     pub(crate) amazonopensearchservice_destination_description: ::std::option::Option<crate::types::AmazonopensearchserviceDestinationDescription>,
     pub(crate) splunk_destination_description: ::std::option::Option<crate::types::SplunkDestinationDescription>,
     pub(crate) http_endpoint_destination_description: ::std::option::Option<crate::types::HttpEndpointDestinationDescription>,
+    pub(crate) snowflake_destination_description: ::std::option::Option<crate::types::SnowflakeDestinationDescription>,
     pub(crate) amazon_open_search_serverless_destination_description:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationDescription>,
 }
@@ -213,6 +220,20 @@ impl DestinationDescriptionBuilder {
     pub fn get_http_endpoint_destination_description(&self) -> &::std::option::Option<crate::types::HttpEndpointDestinationDescription> {
         &self.http_endpoint_destination_description
     }
+    /// <p>Optional description for the destination</p>
+    pub fn snowflake_destination_description(mut self, input: crate::types::SnowflakeDestinationDescription) -> Self {
+        self.snowflake_destination_description = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional description for the destination</p>
+    pub fn set_snowflake_destination_description(mut self, input: ::std::option::Option<crate::types::SnowflakeDestinationDescription>) -> Self {
+        self.snowflake_destination_description = input;
+        self
+    }
+    /// <p>Optional description for the destination</p>
+    pub fn get_snowflake_destination_description(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationDescription> {
+        &self.snowflake_destination_description
+    }
     /// <p>The destination in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn amazon_open_search_serverless_destination_description(
         mut self,
@@ -253,6 +274,7 @@ impl DestinationDescriptionBuilder {
             amazonopensearchservice_destination_description: self.amazonopensearchservice_destination_description,
             splunk_destination_description: self.splunk_destination_description,
             http_endpoint_destination_description: self.http_endpoint_destination_description,
+            snowflake_destination_description: self.snowflake_destination_description,
             amazon_open_search_serverless_destination_description: self.amazon_open_search_serverless_destination_description,
         })
     }

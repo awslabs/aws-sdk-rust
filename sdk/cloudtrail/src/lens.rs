@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_imports_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_insights_metric_data_output_output_next_token(
+    input: &crate::operation::list_insights_metric_data::ListInsightsMetricDataOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_public_keys_output_output_next_token(
     input: &crate::operation::list_public_keys::ListPublicKeysOutput,
 ) -> ::std::option::Option<&::std::string::String> {

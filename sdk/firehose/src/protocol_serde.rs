@@ -139,6 +139,10 @@ pub(crate) mod shape_s3_destination_configuration;
 
 pub(crate) mod shape_s3_destination_update;
 
+pub(crate) mod shape_snowflake_destination_configuration;
+
+pub(crate) mod shape_snowflake_destination_update;
+
 pub(crate) mod shape_splunk_destination_configuration;
 
 pub(crate) mod shape_splunk_destination_update;
@@ -193,6 +197,12 @@ pub(crate) mod shape_put_record_batch_response_entry;
 
 pub(crate) mod shape_redshift_retry_options;
 
+pub(crate) mod shape_snowflake_retry_options;
+
+pub(crate) mod shape_snowflake_role_configuration;
+
+pub(crate) mod shape_snowflake_vpc_configuration;
+
 pub(crate) mod shape_source_description;
 
 pub(crate) mod shape_splunk_buffering_hints;
@@ -240,6 +250,8 @@ pub(crate) mod shape_redshift_destination_description;
 pub(crate) mod shape_s3_destination_description;
 
 pub(crate) mod shape_serializer;
+
+pub(crate) mod shape_snowflake_destination_description;
 
 pub(crate) mod shape_splunk_destination_description;
 

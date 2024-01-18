@@ -66,5 +66,11 @@ pub fn ser_update_destination_input_input(
         )?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.snowflake_destination_update {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("SnowflakeDestinationUpdate").start_object();
+        crate::protocol_serde::shape_snowflake_destination_update::ser_snowflake_destination_update(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

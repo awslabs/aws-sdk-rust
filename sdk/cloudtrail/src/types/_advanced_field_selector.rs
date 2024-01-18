@@ -4,9 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedFieldSelector {
-    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
-    /// <p>For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>.</p>
+    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
+    /// <p>For CloudTrail management events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, and <code>eventSource</code>.</p>
+    /// <p>For CloudTrail data events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
+    /// <p>For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p></li>
@@ -18,9 +19,14 @@ pub struct AdvancedFieldSelector {
     /// <p><b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.</p></li>
+    /// <p>For CloudTrail management events, the value must be <code>Management</code>.</p></li>
     /// <li>
-    /// <p>For CloudTrail Insights event records, the value must be <code>Insight</code>.</p></li>
+    /// <p>For CloudTrail data events, the value must be <code>Data</code>.</p></li>
+    /// </ul>
+    /// <p>The following are used only for event data stores:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For CloudTrail Insights events, the value must be <code>Insight</code>.</p></li>
     /// <li>
     /// <p>For Config configuration items, the value must be <code>ConfigurationItem</code>.</p></li>
     /// <li>
@@ -37,6 +43,16 @@ pub struct AdvancedFieldSelector {
     /// <p><code>AWS::Lambda::Function</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
+    /// <li>
+    /// <p><code>AWS::B2BI::Transformer</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::KnowledgeBase</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Cassandra::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::CloudFront::KeyValueStore</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudTrail::Channel</code></p></li>
     /// <li>
@@ -58,6 +74,10 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
     /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Workspace</code></p></li>
+    /// <li>
     /// <p><code>AWS::KendraRanking::ExecutionPlan</code></p></li>
     /// <li>
     /// <p><code>AWS::KinesisVideo::Stream</code></p></li>
@@ -68,7 +88,19 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::MedicalImaging::Datastore</code></p></li>
     /// <li>
+    /// <p><code>AWS::NeptuneGraph::Graph</code></p></li>
+    /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Application</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::DataSource</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Index</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::WebExperience</code></p></li>
+    /// <li>
+    /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
@@ -76,9 +108,17 @@ pub struct AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::SageMaker::FeatureGroup</code></p></li>
     /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Namespace </code></p></li>
+    /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Service</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SCN::Instance</code></p></li>
+    /// <li>
     /// <p><code>AWS::SNS::PlatformEndpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::AccessPoint</code></p></li>
     /// <li>
@@ -87,6 +127,10 @@ pub struct AdvancedFieldSelector {
     /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Device</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Environment</code></p></li>
     /// <li>
     /// <p><code>AWS::Timestream::Database</code></p></li>
     /// <li>
@@ -141,6 +185,82 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::B2BI::Transformer</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :b2bi:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :transformer/
+    /// <transformer_id></transformer_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::AgentAlias</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :agent-alias/
+    /// <agent_id>
+    /// /
+    /// <alias_id></alias_id>
+    /// </agent_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::KnowledgeBase</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :knowledge-base/
+    /// <knowledge_base_id></knowledge_base_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Cassandra::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cassandra:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :/keyspace/
+    /// <keyspace_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </keyspace_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::CloudFront::KeyValueStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cloudfront:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :key-value-store/
+    /// <kvs_name></kvs_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -235,8 +355,11 @@ pub struct AdvancedFieldSelector {
     /// <p><code>arn:<partition>
     /// :emrwal:
     /// <region>
-    /// ::workspace/
+    /// :
+    /// <account_id>
+    /// :workspace/
     /// <workspace_name></workspace_name>
+    /// </account_id>
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
@@ -285,6 +408,37 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id>
+    /// /entity/
+    /// <entity_id></entity_id>
+    /// </workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id></workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -309,6 +463,7 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :stream/
     /// <stream_name>
+    /// /
     /// <creation_time></creation_time>
     /// </stream_name>
     /// </account_id>
@@ -351,6 +506,20 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::NeptuneGraph::Graph</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :neptune-graph:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :graph/
+    /// <graph_id></graph_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -361,6 +530,88 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :connector/
     /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id></application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::DataSource</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id>
+    /// /data-source/
+    /// <datasource_id></datasource_id>
+    /// </index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Index</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id></index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::WebExperience</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /web-experience/
+    /// <web_experience_id></web_experience_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::RDS::DBCluster</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :rds:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cluster/
+    /// <cluster_name></cluster_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -407,6 +658,48 @@ pub struct AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SCN::Instance</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :scn:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Namespace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :namespace/
+    /// <namespace_id></namespace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Service</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :service/
+    /// <service_id></service_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -437,6 +730,20 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :
     /// <topic_name></topic_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :sqs:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <queue_name></queue_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -507,6 +814,34 @@ pub struct AdvancedFieldSelector {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Device</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :device/
+    /// <device_id></device_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -572,9 +907,10 @@ pub struct AdvancedFieldSelector {
     pub not_ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdvancedFieldSelector {
-    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
-    /// <p>For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>.</p>
+    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
+    /// <p>For CloudTrail management events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, and <code>eventSource</code>.</p>
+    /// <p>For CloudTrail data events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
+    /// <p>For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p></li>
@@ -586,9 +922,14 @@ impl AdvancedFieldSelector {
     /// <p><b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.</p></li>
+    /// <p>For CloudTrail management events, the value must be <code>Management</code>.</p></li>
     /// <li>
-    /// <p>For CloudTrail Insights event records, the value must be <code>Insight</code>.</p></li>
+    /// <p>For CloudTrail data events, the value must be <code>Data</code>.</p></li>
+    /// </ul>
+    /// <p>The following are used only for event data stores:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For CloudTrail Insights events, the value must be <code>Insight</code>.</p></li>
     /// <li>
     /// <p>For Config configuration items, the value must be <code>ConfigurationItem</code>.</p></li>
     /// <li>
@@ -605,6 +946,16 @@ impl AdvancedFieldSelector {
     /// <p><code>AWS::Lambda::Function</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
+    /// <li>
+    /// <p><code>AWS::B2BI::Transformer</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::KnowledgeBase</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Cassandra::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::CloudFront::KeyValueStore</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudTrail::Channel</code></p></li>
     /// <li>
@@ -626,6 +977,10 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
     /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Workspace</code></p></li>
+    /// <li>
     /// <p><code>AWS::KendraRanking::ExecutionPlan</code></p></li>
     /// <li>
     /// <p><code>AWS::KinesisVideo::Stream</code></p></li>
@@ -636,7 +991,19 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::MedicalImaging::Datastore</code></p></li>
     /// <li>
+    /// <p><code>AWS::NeptuneGraph::Graph</code></p></li>
+    /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Application</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::DataSource</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Index</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::WebExperience</code></p></li>
+    /// <li>
+    /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
@@ -644,9 +1011,17 @@ impl AdvancedFieldSelector {
     /// <li>
     /// <p><code>AWS::SageMaker::FeatureGroup</code></p></li>
     /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Namespace </code></p></li>
+    /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Service</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SCN::Instance</code></p></li>
+    /// <li>
     /// <p><code>AWS::SNS::PlatformEndpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::AccessPoint</code></p></li>
     /// <li>
@@ -655,6 +1030,10 @@ impl AdvancedFieldSelector {
     /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Device</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Environment</code></p></li>
     /// <li>
     /// <p><code>AWS::Timestream::Database</code></p></li>
     /// <li>
@@ -709,6 +1088,82 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::B2BI::Transformer</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :b2bi:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :transformer/
+    /// <transformer_id></transformer_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::AgentAlias</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :agent-alias/
+    /// <agent_id>
+    /// /
+    /// <alias_id></alias_id>
+    /// </agent_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::KnowledgeBase</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :knowledge-base/
+    /// <knowledge_base_id></knowledge_base_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Cassandra::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cassandra:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :/keyspace/
+    /// <keyspace_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </keyspace_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::CloudFront::KeyValueStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cloudfront:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :key-value-store/
+    /// <kvs_name></kvs_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -803,8 +1258,11 @@ impl AdvancedFieldSelector {
     /// <p><code>arn:<partition>
     /// :emrwal:
     /// <region>
-    /// ::workspace/
+    /// :
+    /// <account_id>
+    /// :workspace/
     /// <workspace_name></workspace_name>
+    /// </account_id>
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
@@ -853,6 +1311,37 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id>
+    /// /entity/
+    /// <entity_id></entity_id>
+    /// </workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id></workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -877,6 +1366,7 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :stream/
     /// <stream_name>
+    /// /
     /// <creation_time></creation_time>
     /// </stream_name>
     /// </account_id>
@@ -919,6 +1409,20 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::NeptuneGraph::Graph</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :neptune-graph:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :graph/
+    /// <graph_id></graph_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -929,6 +1433,88 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :connector/
     /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id></application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::DataSource</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id>
+    /// /data-source/
+    /// <datasource_id></datasource_id>
+    /// </index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Index</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id></index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::WebExperience</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /web-experience/
+    /// <web_experience_id></web_experience_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::RDS::DBCluster</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :rds:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cluster/
+    /// <cluster_name></cluster_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -975,6 +1561,48 @@ impl AdvancedFieldSelector {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SCN::Instance</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :scn:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Namespace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :namespace/
+    /// <namespace_id></namespace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Service</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :service/
+    /// <service_id></service_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1005,6 +1633,20 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :
     /// <topic_name></topic_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :sqs:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <queue_name></queue_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1075,6 +1717,34 @@ impl AdvancedFieldSelector {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Device</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :device/
+    /// <device_id></device_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1186,9 +1856,10 @@ pub struct AdvancedFieldSelectorBuilder {
     pub(crate) not_ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdvancedFieldSelectorBuilder {
-    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
-    /// <p>For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>.</p>
+    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
+    /// <p>For CloudTrail management events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, and <code>eventSource</code>.</p>
+    /// <p>For CloudTrail data events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
+    /// <p>For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p></li>
@@ -1200,9 +1871,14 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.</p></li>
+    /// <p>For CloudTrail management events, the value must be <code>Management</code>.</p></li>
     /// <li>
-    /// <p>For CloudTrail Insights event records, the value must be <code>Insight</code>.</p></li>
+    /// <p>For CloudTrail data events, the value must be <code>Data</code>.</p></li>
+    /// </ul>
+    /// <p>The following are used only for event data stores:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For CloudTrail Insights events, the value must be <code>Insight</code>.</p></li>
     /// <li>
     /// <p>For Config configuration items, the value must be <code>ConfigurationItem</code>.</p></li>
     /// <li>
@@ -1219,6 +1895,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::Lambda::Function</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
+    /// <li>
+    /// <p><code>AWS::B2BI::Transformer</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::KnowledgeBase</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Cassandra::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::CloudFront::KeyValueStore</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudTrail::Channel</code></p></li>
     /// <li>
@@ -1240,6 +1926,10 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
     /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Workspace</code></p></li>
+    /// <li>
     /// <p><code>AWS::KendraRanking::ExecutionPlan</code></p></li>
     /// <li>
     /// <p><code>AWS::KinesisVideo::Stream</code></p></li>
@@ -1250,7 +1940,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::MedicalImaging::Datastore</code></p></li>
     /// <li>
+    /// <p><code>AWS::NeptuneGraph::Graph</code></p></li>
+    /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Application</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::DataSource</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Index</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::WebExperience</code></p></li>
+    /// <li>
+    /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
@@ -1258,9 +1960,17 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SageMaker::FeatureGroup</code></p></li>
     /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Namespace </code></p></li>
+    /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Service</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SCN::Instance</code></p></li>
+    /// <li>
     /// <p><code>AWS::SNS::PlatformEndpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::AccessPoint</code></p></li>
     /// <li>
@@ -1269,6 +1979,10 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Device</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Environment</code></p></li>
     /// <li>
     /// <p><code>AWS::Timestream::Database</code></p></li>
     /// <li>
@@ -1323,6 +2037,82 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::B2BI::Transformer</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :b2bi:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :transformer/
+    /// <transformer_id></transformer_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::AgentAlias</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :agent-alias/
+    /// <agent_id>
+    /// /
+    /// <alias_id></alias_id>
+    /// </agent_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::KnowledgeBase</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :knowledge-base/
+    /// <knowledge_base_id></knowledge_base_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Cassandra::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cassandra:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :/keyspace/
+    /// <keyspace_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </keyspace_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::CloudFront::KeyValueStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cloudfront:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :key-value-store/
+    /// <kvs_name></kvs_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1417,8 +2207,11 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>arn:<partition>
     /// :emrwal:
     /// <region>
-    /// ::workspace/
+    /// :
+    /// <account_id>
+    /// :workspace/
     /// <workspace_name></workspace_name>
+    /// </account_id>
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
@@ -1467,6 +2260,37 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id>
+    /// /entity/
+    /// <entity_id></entity_id>
+    /// </workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id></workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1491,6 +2315,7 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :stream/
     /// <stream_name>
+    /// /
     /// <creation_time></creation_time>
     /// </stream_name>
     /// </account_id>
@@ -1533,6 +2358,20 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::NeptuneGraph::Graph</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :neptune-graph:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :graph/
+    /// <graph_id></graph_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1543,6 +2382,88 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :connector/
     /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id></application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::DataSource</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id>
+    /// /data-source/
+    /// <datasource_id></datasource_id>
+    /// </index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Index</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id></index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::WebExperience</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /web-experience/
+    /// <web_experience_id></web_experience_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::RDS::DBCluster</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :rds:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cluster/
+    /// <cluster_name></cluster_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1589,6 +2510,48 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SCN::Instance</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :scn:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Namespace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :namespace/
+    /// <namespace_id></namespace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Service</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :service/
+    /// <service_id></service_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -1619,6 +2582,20 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <topic_name></topic_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :sqs:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <queue_name></queue_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1689,6 +2666,34 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Device</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :device/
+    /// <device_id></device_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1744,9 +2749,10 @@ impl AdvancedFieldSelectorBuilder {
         self.field = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
-    /// <p>For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>.</p>
+    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
+    /// <p>For CloudTrail management events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, and <code>eventSource</code>.</p>
+    /// <p>For CloudTrail data events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
+    /// <p>For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p></li>
@@ -1758,9 +2764,14 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.</p></li>
+    /// <p>For CloudTrail management events, the value must be <code>Management</code>.</p></li>
     /// <li>
-    /// <p>For CloudTrail Insights event records, the value must be <code>Insight</code>.</p></li>
+    /// <p>For CloudTrail data events, the value must be <code>Data</code>.</p></li>
+    /// </ul>
+    /// <p>The following are used only for event data stores:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For CloudTrail Insights events, the value must be <code>Insight</code>.</p></li>
     /// <li>
     /// <p>For Config configuration items, the value must be <code>ConfigurationItem</code>.</p></li>
     /// <li>
@@ -1777,6 +2788,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::Lambda::Function</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
+    /// <li>
+    /// <p><code>AWS::B2BI::Transformer</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::KnowledgeBase</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Cassandra::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::CloudFront::KeyValueStore</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudTrail::Channel</code></p></li>
     /// <li>
@@ -1798,6 +2819,10 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
     /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Workspace</code></p></li>
+    /// <li>
     /// <p><code>AWS::KendraRanking::ExecutionPlan</code></p></li>
     /// <li>
     /// <p><code>AWS::KinesisVideo::Stream</code></p></li>
@@ -1808,7 +2833,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::MedicalImaging::Datastore</code></p></li>
     /// <li>
+    /// <p><code>AWS::NeptuneGraph::Graph</code></p></li>
+    /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Application</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::DataSource</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Index</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::WebExperience</code></p></li>
+    /// <li>
+    /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
@@ -1816,9 +2853,17 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SageMaker::FeatureGroup</code></p></li>
     /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Namespace </code></p></li>
+    /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Service</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SCN::Instance</code></p></li>
+    /// <li>
     /// <p><code>AWS::SNS::PlatformEndpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::AccessPoint</code></p></li>
     /// <li>
@@ -1827,6 +2872,10 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Device</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Environment</code></p></li>
     /// <li>
     /// <p><code>AWS::Timestream::Database</code></p></li>
     /// <li>
@@ -1881,6 +2930,82 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::B2BI::Transformer</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :b2bi:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :transformer/
+    /// <transformer_id></transformer_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::AgentAlias</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :agent-alias/
+    /// <agent_id>
+    /// /
+    /// <alias_id></alias_id>
+    /// </agent_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::KnowledgeBase</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :knowledge-base/
+    /// <knowledge_base_id></knowledge_base_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Cassandra::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cassandra:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :/keyspace/
+    /// <keyspace_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </keyspace_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::CloudFront::KeyValueStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cloudfront:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :key-value-store/
+    /// <kvs_name></kvs_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -1975,8 +3100,11 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>arn:<partition>
     /// :emrwal:
     /// <region>
-    /// ::workspace/
+    /// :
+    /// <account_id>
+    /// :workspace/
     /// <workspace_name></workspace_name>
+    /// </account_id>
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
@@ -2025,6 +3153,37 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id>
+    /// /entity/
+    /// <entity_id></entity_id>
+    /// </workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id></workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2049,6 +3208,7 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :stream/
     /// <stream_name>
+    /// /
     /// <creation_time></creation_time>
     /// </stream_name>
     /// </account_id>
@@ -2091,6 +3251,20 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::NeptuneGraph::Graph</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :neptune-graph:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :graph/
+    /// <graph_id></graph_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2101,6 +3275,88 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :connector/
     /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id></application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::DataSource</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id>
+    /// /data-source/
+    /// <datasource_id></datasource_id>
+    /// </index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Index</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id></index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::WebExperience</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /web-experience/
+    /// <web_experience_id></web_experience_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::RDS::DBCluster</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :rds:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cluster/
+    /// <cluster_name></cluster_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2147,6 +3403,48 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SCN::Instance</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :scn:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Namespace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :namespace/
+    /// <namespace_id></namespace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Service</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :service/
+    /// <service_id></service_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2177,6 +3475,20 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <topic_name></topic_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :sqs:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <queue_name></queue_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2247,6 +3559,34 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Device</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :device/
+    /// <device_id></device_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2301,9 +3641,10 @@ impl AdvancedFieldSelectorBuilder {
         self.field = input;
         self
     }
-    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported.</p>
-    /// <p>For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
-    /// <p>For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the only supported field is <code>eventCategory</code>.</p>
+    /// <p>A field in a CloudTrail event record on which to filter events to be logged. For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the field is used only for selecting events as filtering is not supported.</p>
+    /// <p>For CloudTrail management events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, and <code>eventSource</code>.</p>
+    /// <p>For CloudTrail data events, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.</p>
+    /// <p>For event data stores for CloudTrail Insights events, Config configuration items, Audit Manager evidence, or events outside of Amazon Web Services, the only supported field is <code>eventCategory</code>.</p>
     /// <ul>
     /// <li>
     /// <p><b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code> or <code>false</code>. If you do not add this field, CloudTrail logs both <code>read</code> and <code>write</code> events. A value of <code>true</code> logs only <code>read</code> events. A value of <code>false</code> logs only <code>write</code> events.</p></li>
@@ -2315,9 +3656,14 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><b> <code>eventCategory</code> </b> - This is required and must be set to <code>Equals</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>For CloudTrail event records, the value must be <code>Management</code> or <code>Data</code>.</p></li>
+    /// <p>For CloudTrail management events, the value must be <code>Management</code>.</p></li>
     /// <li>
-    /// <p>For CloudTrail Insights event records, the value must be <code>Insight</code>.</p></li>
+    /// <p>For CloudTrail data events, the value must be <code>Data</code>.</p></li>
+    /// </ul>
+    /// <p>The following are used only for event data stores:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For CloudTrail Insights events, the value must be <code>Insight</code>.</p></li>
     /// <li>
     /// <p>For Config configuration items, the value must be <code>ConfigurationItem</code>.</p></li>
     /// <li>
@@ -2334,6 +3680,16 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::Lambda::Function</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::Object</code></p></li>
+    /// <li>
+    /// <p><code>AWS::B2BI::Transformer</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::AgentAlias</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Bedrock::KnowledgeBase</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Cassandra::Table</code></p></li>
+    /// <li>
+    /// <p><code>AWS::CloudFront::KeyValueStore</code></p></li>
     /// <li>
     /// <p><code>AWS::CloudTrail::Channel</code></p></li>
     /// <li>
@@ -2355,6 +3711,10 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::GuardDuty::Detector</code></p></li>
     /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Entity</code></p></li>
+    /// <li>
+    /// <p><code>AWS::IoTTwinMaker::Workspace</code></p></li>
+    /// <li>
     /// <p><code>AWS::KendraRanking::ExecutionPlan</code></p></li>
     /// <li>
     /// <p><code>AWS::KinesisVideo::Stream</code></p></li>
@@ -2365,7 +3725,19 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::MedicalImaging::Datastore</code></p></li>
     /// <li>
+    /// <p><code>AWS::NeptuneGraph::Graph</code></p></li>
+    /// <li>
     /// <p><code>AWS::PCAConnectorAD::Connector</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Application</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::DataSource</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::Index</code></p></li>
+    /// <li>
+    /// <p><code>AWS::QBusiness::WebExperience</code></p></li>
+    /// <li>
+    /// <p><code>AWS::RDS::DBCluster</code></p></li>
     /// <li>
     /// <p><code>AWS::SageMaker::Endpoint</code></p></li>
     /// <li>
@@ -2373,9 +3745,17 @@ impl AdvancedFieldSelectorBuilder {
     /// <li>
     /// <p><code>AWS::SageMaker::FeatureGroup</code></p></li>
     /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Namespace </code></p></li>
+    /// <li>
+    /// <p><code>AWS::ServiceDiscovery::Service</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SCN::Instance</code></p></li>
+    /// <li>
     /// <p><code>AWS::SNS::PlatformEndpoint</code></p></li>
     /// <li>
     /// <p><code>AWS::SNS::Topic</code></p></li>
+    /// <li>
+    /// <p><code>AWS::SQS::Queue</code></p></li>
     /// <li>
     /// <p><code>AWS::S3::AccessPoint</code></p></li>
     /// <li>
@@ -2384,6 +3764,10 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>AWS::S3Outposts::Object</code></p></li>
     /// <li>
     /// <p><code>AWS::SSMMessages::ControlChannel</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Device</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ThinClient::Environment</code></p></li>
     /// <li>
     /// <p><code>AWS::Timestream::Database</code></p></li>
     /// <li>
@@ -2438,6 +3822,82 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :function:
     /// <function_name></function_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::B2BI::Transformer</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :b2bi:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :transformer/
+    /// <transformer_id></transformer_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::AgentAlias</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :agent-alias/
+    /// <agent_id>
+    /// /
+    /// <alias_id></alias_id>
+    /// </agent_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Bedrock::KnowledgeBase</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :bedrock:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :knowledge-base/
+    /// <knowledge_base_id></knowledge_base_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::Cassandra::Table</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cassandra:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :/keyspace/
+    /// <keyspace_name>
+    /// /table/
+    /// <table_name></table_name>
+    /// </keyspace_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When resources.type equals <code>AWS::CloudFront::KeyValueStore</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :cloudfront:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :key-value-store/
+    /// <kvs_name></kvs_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2532,8 +3992,11 @@ impl AdvancedFieldSelectorBuilder {
     /// <p><code>arn:<partition>
     /// :emrwal:
     /// <region>
-    /// ::workspace/
+    /// :
+    /// <account_id>
+    /// :workspace/
     /// <workspace_name></workspace_name>
+    /// </account_id>
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
@@ -2582,6 +4045,37 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id>
+    /// /entity/
+    /// <entity_id></entity_id>
+    /// </workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::IoTTwinMaker::Workspace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :iottwinmaker:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :workspace/
+    /// <workspace_id></workspace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2606,6 +4100,7 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :stream/
     /// <stream_name>
+    /// /
     /// <creation_time></creation_time>
     /// </stream_name>
     /// </account_id>
@@ -2648,6 +4143,20 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::NeptuneGraph::Graph</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :neptune-graph:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :graph/
+    /// <graph_id></graph_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::PCAConnectorAD::Connector</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2658,6 +4167,88 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :connector/
     /// <connector_id></connector_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Application</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id></application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::DataSource</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id>
+    /// /data-source/
+    /// <datasource_id></datasource_id>
+    /// </index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::Index</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /index/
+    /// <index_id></index_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::QBusiness::WebExperience</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :qbusiness:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :application/
+    /// <application_id>
+    /// /web-experience/
+    /// <web_experience_id></web_experience_id>
+    /// </application_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::RDS::DBCluster</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :rds:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :cluster/
+    /// <cluster_name></cluster_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2704,6 +4295,48 @@ impl AdvancedFieldSelectorBuilder {
     /// </region>
     /// </partition></code></p></li>
     /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SCN::Instance</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :scn:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :instance/
+    /// <instance_id></instance_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Namespace</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :namespace/
+    /// <namespace_id></namespace_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ServiceDiscovery::Service</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :servicediscovery:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :service/
+    /// <service_id></service_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
     /// <p>When <code>resources.type</code> equals <code>AWS::SNS::PlatformEndpoint</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
     /// <ul>
     /// <li>
@@ -2734,6 +4367,20 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :
     /// <topic_name></topic_name>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :sqs:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :
+    /// <queue_name></queue_name>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>
@@ -2804,6 +4451,34 @@ impl AdvancedFieldSelectorBuilder {
     /// <account_id>
     /// :control-channel/
     /// <channel_id></channel_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Device</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :device/
+    /// <device_id></device_id>
+    /// </account_id>
+    /// </region>
+    /// </partition></code></p></li>
+    /// </ul>
+    /// <p>When <code>resources.type</code> equals <code>AWS::ThinClient::Environment</code>, and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>arn:<partition>
+    /// :thinclient:
+    /// <region>
+    /// :
+    /// <account_id>
+    /// :environment/
+    /// <environment_id></environment_id>
     /// </account_id>
     /// </region>
     /// </partition></code></p></li>

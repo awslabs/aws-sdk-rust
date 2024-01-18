@@ -220,6 +220,15 @@ pub(crate) fn document_id_options_correct_errors(
     builder
 }
 
+pub(crate) fn snowflake_vpc_configuration_correct_errors(
+    mut builder: crate::types::builders::SnowflakeVpcConfigurationBuilder,
+) -> crate::types::builders::SnowflakeVpcConfigurationBuilder {
+    if builder.private_link_vpce_id.is_none() {
+        builder.private_link_vpce_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_configuration_description_correct_errors(
     mut builder: crate::types::builders::VpcConfigurationDescriptionBuilder,
 ) -> crate::types::builders::VpcConfigurationDescriptionBuilder {

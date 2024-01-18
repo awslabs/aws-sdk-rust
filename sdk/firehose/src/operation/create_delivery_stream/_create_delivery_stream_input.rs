@@ -40,6 +40,8 @@ pub struct CreateDeliveryStreamInput {
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
     /// <p>The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.</p>
     pub msk_source_configuration: ::std::option::Option<crate::types::MskSourceConfiguration>,
+    /// <p>Configure Snowflake destination</p>
+    pub snowflake_destination_configuration: ::std::option::Option<crate::types::SnowflakeDestinationConfiguration>,
 }
 impl CreateDeliveryStreamInput {
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
@@ -112,6 +114,10 @@ impl CreateDeliveryStreamInput {
     pub fn msk_source_configuration(&self) -> ::std::option::Option<&crate::types::MskSourceConfiguration> {
         self.msk_source_configuration.as_ref()
     }
+    /// <p>Configure Snowflake destination</p>
+    pub fn snowflake_destination_configuration(&self) -> ::std::option::Option<&crate::types::SnowflakeDestinationConfiguration> {
+        self.snowflake_destination_configuration.as_ref()
+    }
 }
 impl CreateDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamInput`](crate::operation::create_delivery_stream::CreateDeliveryStreamInput).
@@ -140,6 +146,7 @@ pub struct CreateDeliveryStreamInputBuilder {
     pub(crate) amazon_open_search_serverless_destination_configuration:
         ::std::option::Option<crate::types::AmazonOpenSearchServerlessDestinationConfiguration>,
     pub(crate) msk_source_configuration: ::std::option::Option<crate::types::MskSourceConfiguration>,
+    pub(crate) snowflake_destination_configuration: ::std::option::Option<crate::types::SnowflakeDestinationConfiguration>,
 }
 impl CreateDeliveryStreamInputBuilder {
     /// <p>The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple delivery streams with the same name.</p>
@@ -396,6 +403,20 @@ impl CreateDeliveryStreamInputBuilder {
     pub fn get_msk_source_configuration(&self) -> &::std::option::Option<crate::types::MskSourceConfiguration> {
         &self.msk_source_configuration
     }
+    /// <p>Configure Snowflake destination</p>
+    pub fn snowflake_destination_configuration(mut self, input: crate::types::SnowflakeDestinationConfiguration) -> Self {
+        self.snowflake_destination_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configure Snowflake destination</p>
+    pub fn set_snowflake_destination_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeDestinationConfiguration>) -> Self {
+        self.snowflake_destination_configuration = input;
+        self
+    }
+    /// <p>Configure Snowflake destination</p>
+    pub fn get_snowflake_destination_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationConfiguration> {
+        &self.snowflake_destination_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDeliveryStreamInput`](crate::operation::create_delivery_stream::CreateDeliveryStreamInput).
     pub fn build(
         self,
@@ -416,6 +437,7 @@ impl CreateDeliveryStreamInputBuilder {
             tags: self.tags,
             amazon_open_search_serverless_destination_configuration: self.amazon_open_search_serverless_destination_configuration,
             msk_source_configuration: self.msk_source_configuration,
+            snowflake_destination_configuration: self.snowflake_destination_configuration,
         })
     }
 }

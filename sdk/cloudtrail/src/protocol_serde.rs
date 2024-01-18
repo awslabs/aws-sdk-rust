@@ -77,6 +77,8 @@ pub(crate) mod shape_list_import_failures;
 
 pub(crate) mod shape_list_imports;
 
+pub(crate) mod shape_list_insights_metric_data;
+
 pub(crate) mod shape_list_public_keys;
 
 pub(crate) mod shape_list_queries;
@@ -305,6 +307,8 @@ pub(crate) mod shape_list_import_failures_input;
 
 pub(crate) mod shape_list_imports_input;
 
+pub(crate) mod shape_list_insights_metric_data_input;
+
 pub(crate) mod shape_list_public_keys_input;
 
 pub(crate) mod shape_list_queries_input;
@@ -423,6 +427,8 @@ pub(crate) mod shape_insight_selector;
 
 pub(crate) mod shape_insight_selectors;
 
+pub(crate) mod shape_insights_metric_values;
+
 pub(crate) mod shape_lookup_attribute;
 
 pub(crate) mod shape_public_key_list;
@@ -442,6 +448,8 @@ pub(crate) mod shape_source_config;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags_list;
+
+pub(crate) mod shape_timestamps;
 
 pub(crate) mod shape_trail;
 

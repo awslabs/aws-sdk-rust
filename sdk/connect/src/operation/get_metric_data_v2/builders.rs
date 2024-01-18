@@ -269,7 +269,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p>
-    /// <p>ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.</p></li>
+    /// <p><code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be kept as is.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::FilterV2) -> Self {
         self.inner = self.inner.filters(input);
@@ -302,7 +302,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p>
-    /// <p>ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.</p></li>
+    /// <p><code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be kept as is.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -335,7 +335,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
     /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p>
-    /// <p>ROUTING_STEP_EXPRESSION is a valid filter key with a filter value up to 3000 length.</p></li>
+    /// <p><code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be kept as is.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterV2>> {
         self.inner.get_filters()
@@ -645,6 +645,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
+    /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
     /// CONTACTS_HOLD_ABANDONS
     /// </dt>
     /// <dd>
@@ -692,6 +700,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_QUEUED_BY_ENQUEUE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
@@ -1193,6 +1208,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
+    /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
     /// CONTACTS_HOLD_ABANDONS
     /// </dt>
     /// <dd>
@@ -1240,6 +1263,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_QUEUED_BY_ENQUEUE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X
@@ -1741,6 +1771,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// CONTACTS_HANDLED_BY_CONNECTED_TO_AGENT
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid metric filter key: <code>INITIATION_METHOD</code></p>
+    /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
     /// CONTACTS_HOLD_ABANDONS
     /// </dt>
     /// <dd>
@@ -1788,6 +1826,13 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
+    /// </dd>
+    /// <dt>
+    /// CONTACTS_QUEUED_BY_ENQUEUE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype</p>
     /// </dd>
     /// <dt>
     /// CONTACTS_RESOLVED_IN_X

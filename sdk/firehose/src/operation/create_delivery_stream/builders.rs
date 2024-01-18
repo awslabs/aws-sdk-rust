@@ -376,4 +376,18 @@ impl CreateDeliveryStreamFluentBuilder {
     pub fn get_msk_source_configuration(&self) -> &::std::option::Option<crate::types::MskSourceConfiguration> {
         self.inner.get_msk_source_configuration()
     }
+    /// <p>Configure Snowflake destination</p>
+    pub fn snowflake_destination_configuration(mut self, input: crate::types::SnowflakeDestinationConfiguration) -> Self {
+        self.inner = self.inner.snowflake_destination_configuration(input);
+        self
+    }
+    /// <p>Configure Snowflake destination</p>
+    pub fn set_snowflake_destination_configuration(mut self, input: ::std::option::Option<crate::types::SnowflakeDestinationConfiguration>) -> Self {
+        self.inner = self.inner.set_snowflake_destination_configuration(input);
+        self
+    }
+    /// <p>Configure Snowflake destination</p>
+    pub fn get_snowflake_destination_configuration(&self) -> &::std::option::Option<crate::types::SnowflakeDestinationConfiguration> {
+        self.inner.get_snowflake_destination_configuration()
+    }
 }
