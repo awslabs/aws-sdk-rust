@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateProject`](crate::operation::create_project) operation has
-/// a [`Client::create_project`], function which returns a builder for that operation.
+/// For example, the [`CreateFleet`](crate::operation::create_fleet) operation has
+/// a [`Client::create_fleet`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_project()
+/// let result = client.create_fleet()
 ///     .name("example")
 ///     .send()
 ///     .await;
@@ -142,11 +142,15 @@ mod batch_get_build_batches;
 
 mod batch_get_builds;
 
+mod batch_get_fleets;
+
 mod batch_get_projects;
 
 mod batch_get_report_groups;
 
 mod batch_get_reports;
+
+mod create_fleet;
 
 mod create_project;
 
@@ -183,6 +187,8 @@ pub mod customize;
 
 mod delete_build_batch;
 
+mod delete_fleet;
+
 mod delete_project;
 
 mod delete_report;
@@ -217,6 +223,8 @@ mod list_builds_for_project;
 
 mod list_curated_environment_images;
 
+mod list_fleets;
+
 mod list_projects;
 
 mod list_report_groups;
@@ -244,6 +252,8 @@ mod start_build_batch;
 mod stop_build;
 
 mod stop_build_batch;
+
+mod update_fleet;
 
 mod update_project;
 

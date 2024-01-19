@@ -79,6 +79,8 @@ pub use crate::types::_provisioned_throughput::ProvisionedThroughputBuilder;
 
 pub use crate::types::_update_global_secondary_index_action::UpdateGlobalSecondaryIndexActionBuilder;
 
+pub use crate::types::_update_kinesis_streaming_configuration::UpdateKinesisStreamingConfigurationBuilder;
+
 pub use crate::types::_item_collection_metrics::ItemCollectionMetricsBuilder;
 
 pub use crate::types::_consumed_capacity::ConsumedCapacityBuilder;
@@ -166,6 +168,8 @@ pub use crate::types::_export_description::ExportDescriptionBuilder;
 pub use crate::types::_incremental_export_specification::IncrementalExportSpecificationBuilder;
 
 pub use crate::types::_parameterized_statement::ParameterizedStatementBuilder;
+
+pub use crate::types::_enable_kinesis_streaming_configuration::EnableKinesisStreamingConfigurationBuilder;
 
 pub use crate::types::_time_to_live_description::TimeToLiveDescriptionBuilder;
 

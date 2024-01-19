@@ -711,4 +711,18 @@ impl StartBuildFluentBuilder {
     pub fn get_debug_session_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_debug_session_enabled()
     }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn fleet_override(mut self, input: crate::types::ProjectFleet) -> Self {
+        self.inner = self.inner.fleet_override(input);
+        self
+    }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn set_fleet_override(mut self, input: ::std::option::Option<crate::types::ProjectFleet>) -> Self {
+        self.inner = self.inner.set_fleet_override(input);
+        self
+    }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn get_fleet_override(&self) -> &::std::option::Option<crate::types::ProjectFleet> {
+        self.inner.get_fleet_override()
+    }
 }

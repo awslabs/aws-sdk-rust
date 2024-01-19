@@ -101,6 +101,12 @@ pub use crate::types::_provisioned_throughput::ProvisionedThroughput;
 
 pub use crate::types::_update_global_secondary_index_action::UpdateGlobalSecondaryIndexAction;
 
+pub use crate::types::_update_kinesis_streaming_configuration::UpdateKinesisStreamingConfiguration;
+
+pub use crate::types::_approximate_creation_date_time_precision::ApproximateCreationDateTimePrecision;
+
+pub use crate::types::_destination_status::DestinationStatus;
+
 pub use crate::types::_attribute_value::AttributeValue;
 
 pub use crate::types::_item_collection_metrics::ItemCollectionMetrics;
@@ -239,7 +245,7 @@ pub use crate::types::_s3_sse_algorithm::S3SseAlgorithm;
 
 pub use crate::types::_parameterized_statement::ParameterizedStatement;
 
-pub use crate::types::_destination_status::DestinationStatus;
+pub use crate::types::_enable_kinesis_streaming_configuration::EnableKinesisStreamingConfiguration;
 
 pub use crate::types::_time_to_live_description::TimeToLiveDescription;
 
@@ -278,6 +284,8 @@ pub use crate::types::_batch_statement_error::BatchStatementError;
 pub use crate::types::_batch_statement_error_code_enum::BatchStatementErrorCodeEnum;
 
 pub use crate::types::_batch_statement_request::BatchStatementRequest;
+
+mod _approximate_creation_date_time_precision;
 
 mod _archival_summary;
 
@@ -368,6 +376,8 @@ mod _delete_replication_group_member_action;
 mod _delete_request;
 
 mod _destination_status;
+
+mod _enable_kinesis_streaming_configuration;
 
 mod _endpoint;
 
@@ -554,6 +564,8 @@ mod _transact_write_item;
 mod _update;
 
 mod _update_global_secondary_index_action;
+
+mod _update_kinesis_streaming_configuration;
 
 mod _update_replication_group_member_action;
 

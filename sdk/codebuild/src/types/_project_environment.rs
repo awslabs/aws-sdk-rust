@@ -9,7 +9,7 @@ pub struct ProjectEnvironment {
     /// <li>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
     /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
+    /// <p>The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
     /// <li>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
     /// </ul>
@@ -20,7 +20,9 @@ pub struct ProjectEnvironment {
     /// <ul>
     /// <li>
     /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>type</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub r#type: crate::types::EnvironmentType,
     /// <p>The image tag or image digest that identifies the Docker image to use for this build project. Use the following formats:</p>
@@ -89,9 +91,13 @@ pub struct ProjectEnvironment {
     /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
     /// <li>
     /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>computeType</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
     pub compute_type: crate::types::ComputeType,
+    /// <p>A ProjectFleet object to use for this build project.</p>
+    pub fleet: ::std::option::Option<crate::types::ProjectFleet>,
     /// <p>A set of environment variables to make available to builds for this build project.</p>
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is used to build Docker images. Otherwise, a build that attempts to interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
@@ -123,7 +129,7 @@ impl ProjectEnvironment {
     /// <li>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
     /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
+    /// <p>The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
     /// <li>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
     /// </ul>
@@ -134,7 +140,9 @@ impl ProjectEnvironment {
     /// <ul>
     /// <li>
     /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>type</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn r#type(&self) -> &crate::types::EnvironmentType {
         &self.r#type
@@ -208,10 +216,16 @@ impl ProjectEnvironment {
     /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
     /// <li>
     /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>computeType</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
     pub fn compute_type(&self) -> &crate::types::ComputeType {
         &self.compute_type
+    }
+    /// <p>A ProjectFleet object to use for this build project.</p>
+    pub fn fleet(&self) -> ::std::option::Option<&crate::types::ProjectFleet> {
+        self.fleet.as_ref()
     }
     /// <p>A set of environment variables to make available to builds for this build project.</p>
     ///
@@ -264,6 +278,7 @@ pub struct ProjectEnvironmentBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EnvironmentType>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
+    pub(crate) fleet: ::std::option::Option<crate::types::ProjectFleet>,
     pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     pub(crate) privileged_mode: ::std::option::Option<bool>,
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
@@ -276,7 +291,7 @@ impl ProjectEnvironmentBuilder {
     /// <li>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
     /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
+    /// <p>The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
     /// <li>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
     /// </ul>
@@ -287,7 +302,9 @@ impl ProjectEnvironmentBuilder {
     /// <ul>
     /// <li>
     /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>type</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::EnvironmentType) -> Self {
@@ -299,7 +316,7 @@ impl ProjectEnvironmentBuilder {
     /// <li>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
     /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
+    /// <p>The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
     /// <li>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
     /// </ul>
@@ -310,7 +327,9 @@ impl ProjectEnvironmentBuilder {
     /// <ul>
     /// <li>
     /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>type</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EnvironmentType>) -> Self {
         self.r#type = input;
@@ -321,7 +340,7 @@ impl ProjectEnvironmentBuilder {
     /// <li>
     /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p></li>
     /// <li>
-    /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type <code>build.general1.2xlarge</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
+    /// <p>The environment type <code>LINUX_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China (Ningxia).</p></li>
     /// <li>
     /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China (Ningxia).</p></li>
     /// </ul>
@@ -332,7 +351,9 @@ impl ProjectEnvironmentBuilder {
     /// <ul>
     /// <li>
     /// <p>The environment types <code>WINDOWS_CONTAINER</code> and <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions US East (N. Virginia), US East (Ohio), US West (Oregon), and EU (Ireland).</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>type</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EnvironmentType> {
         &self.r#type
@@ -464,7 +485,9 @@ impl ProjectEnvironmentBuilder {
     /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
     /// <li>
     /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>computeType</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
     /// This field is required.
     pub fn compute_type(mut self, input: crate::types::ComputeType) -> Self {
@@ -511,7 +534,9 @@ impl ProjectEnvironmentBuilder {
     /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
     /// <li>
     /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>computeType</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
     pub fn set_compute_type(mut self, input: ::std::option::Option<crate::types::ComputeType>) -> Self {
         self.compute_type = input;
@@ -557,10 +582,26 @@ impl ProjectEnvironmentBuilder {
     /// <p>For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p></li>
     /// <li>
     /// <p>For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on ARM-based processors for builds.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If you're using compute fleets during project creation, <code>computeType</code> will be ignored.</p>
+    /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment Compute Types</a> in the <i>CodeBuild User Guide.</i></p>
     pub fn get_compute_type(&self) -> &::std::option::Option<crate::types::ComputeType> {
         &self.compute_type
+    }
+    /// <p>A ProjectFleet object to use for this build project.</p>
+    pub fn fleet(mut self, input: crate::types::ProjectFleet) -> Self {
+        self.fleet = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A ProjectFleet object to use for this build project.</p>
+    pub fn set_fleet(mut self, input: ::std::option::Option<crate::types::ProjectFleet>) -> Self {
+        self.fleet = input;
+        self
+    }
+    /// <p>A ProjectFleet object to use for this build project.</p>
+    pub fn get_fleet(&self) -> &::std::option::Option<crate::types::ProjectFleet> {
+        &self.fleet
     }
     /// Appends an item to `environment_variables`.
     ///
@@ -705,6 +746,7 @@ impl ProjectEnvironmentBuilder {
                     "compute_type was not specified but it is required when building ProjectEnvironment",
                 )
             })?,
+            fleet: self.fleet,
             environment_variables: self.environment_variables,
             privileged_mode: self.privileged_mode,
             certificate: self.certificate,

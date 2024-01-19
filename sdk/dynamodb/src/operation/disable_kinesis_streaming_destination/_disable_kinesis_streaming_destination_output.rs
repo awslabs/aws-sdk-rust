@@ -9,6 +9,8 @@ pub struct DisableKinesisStreamingDestinationOutput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the replication.</p>
     pub destination_status: ::std::option::Option<crate::types::DestinationStatus>,
+    /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
+    pub enable_kinesis_streaming_configuration: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
     _request_id: Option<String>,
 }
 impl DisableKinesisStreamingDestinationOutput {
@@ -23,6 +25,10 @@ impl DisableKinesisStreamingDestinationOutput {
     /// <p>The current status of the replication.</p>
     pub fn destination_status(&self) -> ::std::option::Option<&crate::types::DestinationStatus> {
         self.destination_status.as_ref()
+    }
+    /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
+    pub fn enable_kinesis_streaming_configuration(&self) -> ::std::option::Option<&crate::types::EnableKinesisStreamingConfiguration> {
+        self.enable_kinesis_streaming_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DisableKinesisStreamingDestinationOutput {
@@ -44,6 +50,7 @@ pub struct DisableKinesisStreamingDestinationOutputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_status: ::std::option::Option<crate::types::DestinationStatus>,
+    pub(crate) enable_kinesis_streaming_configuration: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
     _request_id: Option<String>,
 }
 impl DisableKinesisStreamingDestinationOutputBuilder {
@@ -89,6 +96,23 @@ impl DisableKinesisStreamingDestinationOutputBuilder {
     pub fn get_destination_status(&self) -> &::std::option::Option<crate::types::DestinationStatus> {
         &self.destination_status
     }
+    /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
+    pub fn enable_kinesis_streaming_configuration(mut self, input: crate::types::EnableKinesisStreamingConfiguration) -> Self {
+        self.enable_kinesis_streaming_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
+    pub fn set_enable_kinesis_streaming_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
+    ) -> Self {
+        self.enable_kinesis_streaming_configuration = input;
+        self
+    }
+    /// <p>The destination for the Kinesis streaming information that is being enabled.</p>
+    pub fn get_enable_kinesis_streaming_configuration(&self) -> &::std::option::Option<crate::types::EnableKinesisStreamingConfiguration> {
+        &self.enable_kinesis_streaming_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -104,6 +128,7 @@ impl DisableKinesisStreamingDestinationOutputBuilder {
             table_name: self.table_name,
             stream_arn: self.stream_arn,
             destination_status: self.destination_status,
+            enable_kinesis_streaming_configuration: self.enable_kinesis_streaming_configuration,
             _request_id: self._request_id,
         }
     }

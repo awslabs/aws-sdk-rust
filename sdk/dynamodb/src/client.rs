@@ -263,6 +263,8 @@ mod update_global_table_settings;
 
 mod update_item;
 
+mod update_kinesis_streaming_destination;
+
 mod update_table;
 
 mod update_table_replica_auto_scaling;

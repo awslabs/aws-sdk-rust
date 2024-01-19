@@ -123,6 +123,8 @@ pub(crate) mod shape_update_global_table_settings;
 
 pub(crate) mod shape_update_item;
 
+pub(crate) mod shape_update_kinesis_streaming_destination;
+
 pub(crate) mod shape_update_table;
 
 pub(crate) mod shape_update_table_replica_auto_scaling;
@@ -297,6 +299,8 @@ pub(crate) mod shape_update_global_table_settings_input;
 
 pub(crate) mod shape_update_item_input;
 
+pub(crate) mod shape_update_kinesis_streaming_destination_input;
+
 pub(crate) mod shape_update_table_input;
 
 pub(crate) mod shape_update_table_replica_auto_scaling_input;
@@ -340,6 +344,8 @@ pub(crate) mod shape_continuous_backups_description;
 pub(crate) mod shape_contributor_insights_rule_list;
 
 pub(crate) mod shape_contributor_insights_summaries;
+
+pub(crate) mod shape_enable_kinesis_streaming_configuration;
 
 pub(crate) mod shape_endpoints;
 
@@ -434,6 +440,8 @@ pub(crate) mod shape_time_to_live_specification;
 pub(crate) mod shape_transact_get_item;
 
 pub(crate) mod shape_transact_write_item;
+
+pub(crate) mod shape_update_kinesis_streaming_configuration;
 
 pub(crate) mod shape_write_request;
 

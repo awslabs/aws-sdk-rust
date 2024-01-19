@@ -35,6 +35,8 @@ pub use crate::types::_registry_credential::RegistryCredentialBuilder;
 
 pub use crate::types::_environment_variable::EnvironmentVariableBuilder;
 
+pub use crate::types::_project_fleet::ProjectFleetBuilder;
+
 pub use crate::types::_project_cache::ProjectCacheBuilder;
 
 pub use crate::types::_project_artifacts::ProjectArtifactsBuilder;
@@ -48,6 +50,16 @@ pub use crate::types::_build_status_config::BuildStatusConfigBuilder;
 pub use crate::types::_source_auth::SourceAuthBuilder;
 
 pub use crate::types::_git_submodules_config::GitSubmodulesConfigBuilder;
+
+pub use crate::types::_fleet::FleetBuilder;
+
+pub use crate::types::_scaling_configuration_output::ScalingConfigurationOutputBuilder;
+
+pub use crate::types::_target_tracking_scaling_configuration::TargetTrackingScalingConfigurationBuilder;
+
+pub use crate::types::_fleet_status::FleetStatusBuilder;
+
+pub use crate::types::_scaling_configuration_input::ScalingConfigurationInputBuilder;
 
 pub use crate::types::_build_batch::BuildBatchBuilder;
 

@@ -22,7 +22,7 @@ impl ImportNotebookInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportNotebook`.
 ///
-/// <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.</p>
+/// <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. To import the notebook, the request must specify a value for either <code>Payload</code> or <code>NoteBookS3LocationUri</code>. If neither is specified or both are specified, an <code>InvalidRequestException</code> occurs. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportNotebookFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl ImportNotebookFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload(input.into());
         self
     }
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payload()
     }
@@ -163,6 +163,20 @@ impl ImportNotebookFluentBuilder {
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
         self.inner.get_type()
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn notebook_s3_location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.notebook_s3_location_uri(input.into());
+        self
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn set_notebook_s3_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_notebook_s3_location_uri(input);
+        self
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn get_notebook_s3_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_notebook_s3_location_uri()
     }
     /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>

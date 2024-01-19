@@ -151,6 +151,9 @@ pub mod update_global_table_settings;
 /// Types for the `UpdateItem` operation.
 pub mod update_item;
 
+/// Types for the `UpdateKinesisStreamingDestination` operation.
+pub mod update_kinesis_streaming_destination;
+
 /// Types for the `UpdateTable` operation.
 pub mod update_table;
 

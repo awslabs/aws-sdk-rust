@@ -136,4 +136,21 @@ impl DisableKinesisStreamingDestinationFluentBuilder {
     pub fn get_stream_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_arn()
     }
+    /// <p>The source for the Kinesis streaming information that is being enabled.</p>
+    pub fn enable_kinesis_streaming_configuration(mut self, input: crate::types::EnableKinesisStreamingConfiguration) -> Self {
+        self.inner = self.inner.enable_kinesis_streaming_configuration(input);
+        self
+    }
+    /// <p>The source for the Kinesis streaming information that is being enabled.</p>
+    pub fn set_enable_kinesis_streaming_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::EnableKinesisStreamingConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_enable_kinesis_streaming_configuration(input);
+        self
+    }
+    /// <p>The source for the Kinesis streaming information that is being enabled.</p>
+    pub fn get_enable_kinesis_streaming_configuration(&self) -> &::std::option::Option<crate::types::EnableKinesisStreamingConfiguration> {
+        self.inner.get_enable_kinesis_streaming_configuration()
+    }
 }

@@ -63,6 +63,8 @@ pub use crate::types::_environment_variable::EnvironmentVariable;
 
 pub use crate::types::_environment_variable_type::EnvironmentVariableType;
 
+pub use crate::types::_project_fleet::ProjectFleet;
+
 pub use crate::types::_compute_type::ComputeType;
 
 pub use crate::types::_environment_type::EnvironmentType;
@@ -94,6 +96,24 @@ pub use crate::types::_source_auth_type::SourceAuthType;
 pub use crate::types::_git_submodules_config::GitSubmodulesConfig;
 
 pub use crate::types::_source_type::SourceType;
+
+pub use crate::types::_fleet::Fleet;
+
+pub use crate::types::_scaling_configuration_output::ScalingConfigurationOutput;
+
+pub use crate::types::_target_tracking_scaling_configuration::TargetTrackingScalingConfiguration;
+
+pub use crate::types::_fleet_scaling_metric_type::FleetScalingMetricType;
+
+pub use crate::types::_fleet_scaling_type::FleetScalingType;
+
+pub use crate::types::_fleet_status::FleetStatus;
+
+pub use crate::types::_fleet_context_code::FleetContextCode;
+
+pub use crate::types::_fleet_status_code::FleetStatusCode;
+
+pub use crate::types::_scaling_configuration_input::ScalingConfigurationInput;
 
 pub use crate::types::_build_batch::BuildBatch;
 
@@ -146,6 +166,8 @@ pub use crate::types::_report_status_type::ReportStatusType;
 pub use crate::types::_report_group_sort_by_type::ReportGroupSortByType;
 
 pub use crate::types::_project_sort_by_type::ProjectSortByType;
+
+pub use crate::types::_fleet_sort_by_type::FleetSortByType;
 
 pub use crate::types::_environment_platform::EnvironmentPlatform;
 
@@ -251,6 +273,20 @@ mod _exported_environment_variable;
 
 mod _file_system_type;
 
+mod _fleet;
+
+mod _fleet_context_code;
+
+mod _fleet_scaling_metric_type;
+
+mod _fleet_scaling_type;
+
+mod _fleet_sort_by_type;
+
+mod _fleet_status;
+
+mod _fleet_status_code;
+
 mod _git_submodules_config;
 
 mod _image_pull_credentials_type;
@@ -282,6 +318,8 @@ mod _project_cache;
 mod _project_environment;
 
 mod _project_file_system_location;
+
+mod _project_fleet;
 
 mod _project_sort_by_type;
 
@@ -329,6 +367,10 @@ mod _s3_logs_config;
 
 mod _s3_report_export_config;
 
+mod _scaling_configuration_input;
+
+mod _scaling_configuration_output;
+
 mod _server_type;
 
 mod _shared_resource_sort_by_type;
@@ -346,6 +388,8 @@ mod _source_type;
 mod _status_type;
 
 mod _tag;
+
+mod _target_tracking_scaling_configuration;
 
 mod _test_case;
 

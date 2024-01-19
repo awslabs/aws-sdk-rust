@@ -10,6 +10,8 @@ pub struct KinesisDataStreamDestination {
     pub destination_status: ::std::option::Option<crate::types::DestinationStatus>,
     /// <p>The human-readable string that corresponds to the replica status.</p>
     pub destination_status_description: ::std::option::Option<::std::string::String>,
+    /// <p>The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+    pub approximate_creation_date_time_precision: ::std::option::Option<crate::types::ApproximateCreationDateTimePrecision>,
 }
 impl KinesisDataStreamDestination {
     /// <p>The ARN for a specific Kinesis data stream.</p>
@@ -23,6 +25,10 @@ impl KinesisDataStreamDestination {
     /// <p>The human-readable string that corresponds to the replica status.</p>
     pub fn destination_status_description(&self) -> ::std::option::Option<&str> {
         self.destination_status_description.as_deref()
+    }
+    /// <p>The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+    pub fn approximate_creation_date_time_precision(&self) -> ::std::option::Option<&crate::types::ApproximateCreationDateTimePrecision> {
+        self.approximate_creation_date_time_precision.as_ref()
     }
 }
 impl KinesisDataStreamDestination {
@@ -39,6 +45,7 @@ pub struct KinesisDataStreamDestinationBuilder {
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) destination_status: ::std::option::Option<crate::types::DestinationStatus>,
     pub(crate) destination_status_description: ::std::option::Option<::std::string::String>,
+    pub(crate) approximate_creation_date_time_precision: ::std::option::Option<crate::types::ApproximateCreationDateTimePrecision>,
 }
 impl KinesisDataStreamDestinationBuilder {
     /// <p>The ARN for a specific Kinesis data stream.</p>
@@ -83,12 +90,30 @@ impl KinesisDataStreamDestinationBuilder {
     pub fn get_destination_status_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_status_description
     }
+    /// <p>The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+    pub fn approximate_creation_date_time_precision(mut self, input: crate::types::ApproximateCreationDateTimePrecision) -> Self {
+        self.approximate_creation_date_time_precision = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+    pub fn set_approximate_creation_date_time_precision(
+        mut self,
+        input: ::std::option::Option<crate::types::ApproximateCreationDateTimePrecision>,
+    ) -> Self {
+        self.approximate_creation_date_time_precision = input;
+        self
+    }
+    /// <p>The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+    pub fn get_approximate_creation_date_time_precision(&self) -> &::std::option::Option<crate::types::ApproximateCreationDateTimePrecision> {
+        &self.approximate_creation_date_time_precision
+    }
     /// Consumes the builder and constructs a [`KinesisDataStreamDestination`](crate::types::KinesisDataStreamDestination).
     pub fn build(self) -> crate::types::KinesisDataStreamDestination {
         crate::types::KinesisDataStreamDestination {
             stream_arn: self.stream_arn,
             destination_status: self.destination_status,
             destination_status_description: self.destination_status_description,
+            approximate_creation_date_time_precision: self.approximate_creation_date_time_precision,
         }
     }
 }

@@ -17,6 +17,7 @@
 ///     DestinationStatus::Disabling => { /* ... */ },
 ///     DestinationStatus::EnableFailed => { /* ... */ },
 ///     DestinationStatus::Enabling => { /* ... */ },
+///     DestinationStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,6 +55,8 @@ pub enum DestinationStatus {
     EnableFailed,
     #[allow(missing_docs)] // documentation missing in model
     Enabling,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for DestinationStatus {
             "DISABLING" => DestinationStatus::Disabling,
             "ENABLE_FAILED" => DestinationStatus::EnableFailed,
             "ENABLING" => DestinationStatus::Enabling,
+            "UPDATING" => DestinationStatus::Updating,
             other => DestinationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -86,12 +90,13 @@ impl DestinationStatus {
             DestinationStatus::Disabling => "DISABLING",
             DestinationStatus::EnableFailed => "ENABLE_FAILED",
             DestinationStatus::Enabling => "ENABLING",
+            DestinationStatus::Updating => "UPDATING",
             DestinationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DISABLED", "DISABLING", "ENABLE_FAILED", "ENABLING"]
+        &["ACTIVE", "DISABLED", "DISABLING", "ENABLE_FAILED", "ENABLING", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for DestinationStatus {

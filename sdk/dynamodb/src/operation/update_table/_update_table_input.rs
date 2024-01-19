@@ -31,7 +31,7 @@ pub struct UpdateTableInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub global_secondary_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndexUpdate>>,
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>The new server-side encryption settings for the specified table.</p>
@@ -87,7 +87,7 @@ impl UpdateTableInput {
         self.global_secondary_index_updates.as_deref().unwrap_or_default()
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn stream_specification(&self) -> ::std::option::Option<&crate::types::StreamSpecification> {
         self.stream_specification.as_ref()
@@ -271,21 +271,21 @@ impl UpdateTableInputBuilder {
         &self.global_secondary_index_updates
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn stream_specification(mut self, input: crate::types::StreamSpecification) -> Self {
         self.stream_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::StreamSpecification>) -> Self {
         self.stream_specification = input;
         self
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::StreamSpecification> {
         &self.stream_specification

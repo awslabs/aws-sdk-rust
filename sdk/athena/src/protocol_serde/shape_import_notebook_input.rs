@@ -15,8 +15,11 @@ pub fn ser_import_notebook_input_input(
     if let Some(var_4) = &input.r#type {
         object.key("Type").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.client_request_token {
-        object.key("ClientRequestToken").string(var_5.as_str());
+    if let Some(var_5) = &input.notebook_s3_location_uri {
+        object.key("NotebookS3LocationUri").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.client_request_token {
+        object.key("ClientRequestToken").string(var_6.as_str());
     }
     Ok(())
 }

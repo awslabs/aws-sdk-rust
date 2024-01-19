@@ -162,5 +162,11 @@ pub fn ser_start_build_input_input(
     if let Some(var_50) = &input.debug_session_enabled {
         object.key("debugSessionEnabled").boolean(*var_50);
     }
+    if let Some(var_51) = &input.fleet_override {
+        #[allow(unused_mut)]
+        let mut object_52 = object.key("fleetOverride").start_object();
+        crate::protocol_serde::shape_project_fleet::ser_project_fleet(&mut object_52, var_51)?;
+        object_52.finish();
+    }
     Ok(())
 }

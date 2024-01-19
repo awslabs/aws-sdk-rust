@@ -115,6 +115,8 @@ pub struct StartBuildInput {
     pub image_pull_credentials_type_override: ::std::option::Option<crate::types::ImagePullCredentialsType>,
     /// <p>Specifies if session debugging is enabled for this build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>.</p>
     pub debug_session_enabled: ::std::option::Option<bool>,
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fleet_override: ::std::option::Option<crate::types::ProjectFleet>,
 }
 impl StartBuildInput {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -299,6 +301,10 @@ impl StartBuildInput {
     pub fn debug_session_enabled(&self) -> ::std::option::Option<bool> {
         self.debug_session_enabled
     }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn fleet_override(&self) -> ::std::option::Option<&crate::types::ProjectFleet> {
+        self.fleet_override.as_ref()
+    }
 }
 impl StartBuildInput {
     /// Creates a new builder-style object to manufacture [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
@@ -342,6 +348,7 @@ pub struct StartBuildInputBuilder {
     pub(crate) registry_credential_override: ::std::option::Option<crate::types::RegistryCredential>,
     pub(crate) image_pull_credentials_type_override: ::std::option::Option<crate::types::ImagePullCredentialsType>,
     pub(crate) debug_session_enabled: ::std::option::Option<bool>,
+    pub(crate) fleet_override: ::std::option::Option<crate::types::ProjectFleet>,
 }
 impl StartBuildInputBuilder {
     /// <p>The name of the CodeBuild build project to start running a build.</p>
@@ -956,6 +963,20 @@ impl StartBuildInputBuilder {
     pub fn get_debug_session_enabled(&self) -> &::std::option::Option<bool> {
         &self.debug_session_enabled
     }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn fleet_override(mut self, input: crate::types::ProjectFleet) -> Self {
+        self.fleet_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn set_fleet_override(mut self, input: ::std::option::Option<crate::types::ProjectFleet>) -> Self {
+        self.fleet_override = input;
+        self
+    }
+    /// <p>A ProjectFleet object specified for this build that overrides the one defined in the build project.</p>
+    pub fn get_fleet_override(&self) -> &::std::option::Option<crate::types::ProjectFleet> {
+        &self.fleet_override
+    }
     /// Consumes the builder and constructs a [`StartBuildInput`](crate::operation::start_build::StartBuildInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_build::StartBuildInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_build::StartBuildInput {
@@ -990,6 +1011,7 @@ impl StartBuildInputBuilder {
             registry_credential_override: self.registry_credential_override,
             image_pull_credentials_type_override: self.image_pull_credentials_type_override,
             debug_session_enabled: self.debug_session_enabled,
+            fleet_override: self.fleet_override,
         })
     }
 }

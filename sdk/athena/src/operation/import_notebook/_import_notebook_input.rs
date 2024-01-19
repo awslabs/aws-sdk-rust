@@ -7,10 +7,12 @@ pub struct ImportNotebookInput {
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the notebook to import.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub payload: ::std::option::Option<::std::string::String>,
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub r#type: ::std::option::Option<crate::types::NotebookType>,
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub notebook_s3_location_uri: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
@@ -25,13 +27,17 @@ impl ImportNotebookInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn payload(&self) -> ::std::option::Option<&str> {
         self.payload.as_deref()
     }
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
         self.r#type.as_ref()
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn notebook_s3_location_uri(&self) -> ::std::option::Option<&str> {
+        self.notebook_s3_location_uri.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -55,6 +61,7 @@ pub struct ImportNotebookInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
+    pub(crate) notebook_s3_location_uri: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportNotebookInputBuilder {
@@ -88,18 +95,17 @@ impl ImportNotebookInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The notebook content to be imported.</p>
-    /// This field is required.
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload = input;
         self
     }
-    /// <p>The notebook content to be imported.</p>
+    /// <p>The notebook content to be imported. The payload must be in <code>ipynb</code> format.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload
     }
@@ -117,6 +123,20 @@ impl ImportNotebookInputBuilder {
     /// <p>The notebook content type. Currently, the only valid type is <code>IPYNB</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
         &self.r#type
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn notebook_s3_location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.notebook_s3_location_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn set_notebook_s3_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.notebook_s3_location_uri = input;
+        self
+    }
+    /// <p>A URI that specifies the Amazon S3 location of a notebook file in <code>ipynb</code> format.</p>
+    pub fn get_notebook_s3_location_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.notebook_s3_location_uri
     }
     /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p><important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
@@ -147,6 +167,7 @@ impl ImportNotebookInputBuilder {
             name: self.name,
             payload: self.payload,
             r#type: self.r#type,
+            notebook_s3_location_uri: self.notebook_s3_location_uri,
             client_request_token: self.client_request_token,
         })
     }

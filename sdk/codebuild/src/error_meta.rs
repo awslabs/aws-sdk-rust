@@ -128,6 +128,28 @@ impl From<crate::operation::batch_get_builds::BatchGetBuildsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_fleets::BatchGetFleetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_fleets::BatchGetFleetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_fleets::BatchGetFleetsError> for Error {
+    fn from(err: crate::operation::batch_get_fleets::BatchGetFleetsError) -> Self {
+        match err {
+            crate::operation::batch_get_fleets::BatchGetFleetsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_fleets::BatchGetFleetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_projects::BatchGetProjectsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -193,6 +215,30 @@ impl From<crate::operation::batch_get_reports::BatchGetReportsError> for Error {
         match err {
             crate::operation::batch_get_reports::BatchGetReportsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::batch_get_reports::BatchGetReportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_fleet::CreateFleetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_fleet::CreateFleetError> for Error {
+    fn from(err: crate::operation::create_fleet::CreateFleetError) -> Self {
+        match err {
+            crate::operation::create_fleet::CreateFleetError::AccountLimitExceededException(inner) => Error::AccountLimitExceededException(inner),
+            crate::operation::create_fleet::CreateFleetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_fleet::CreateFleetError::ResourceAlreadyExistsException(inner) => Error::ResourceAlreadyExistsException(inner),
+            crate::operation::create_fleet::CreateFleetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -296,6 +342,28 @@ impl From<crate::operation::delete_build_batch::DeleteBuildBatchError> for Error
         match err {
             crate::operation::delete_build_batch::DeleteBuildBatchError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_build_batch::DeleteBuildBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_fleet::DeleteFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_fleet::DeleteFleetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_fleet::DeleteFleetError> for Error {
+    fn from(err: crate::operation::delete_fleet::DeleteFleetError) -> Self {
+        match err {
+            crate::operation::delete_fleet::DeleteFleetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_fleet::DeleteFleetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -733,6 +801,28 @@ impl From<crate::operation::list_curated_environment_images::ListCuratedEnvironm
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_fleets::ListFleetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_fleets::ListFleetsError> for Error {
+    fn from(err: crate::operation::list_fleets::ListFleetsError) -> Self {
+        match err {
+            crate::operation::list_fleets::ListFleetsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_fleets::ListFleetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_projects::ListProjectsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1066,6 +1156,30 @@ impl From<crate::operation::stop_build_batch::StopBuildBatchError> for Error {
             crate::operation::stop_build_batch::StopBuildBatchError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::stop_build_batch::StopBuildBatchError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_build_batch::StopBuildBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_fleet::UpdateFleetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_fleet::UpdateFleetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_fleet::UpdateFleetError> for Error {
+    fn from(err: crate::operation::update_fleet::UpdateFleetError) -> Self {
+        match err {
+            crate::operation::update_fleet::UpdateFleetError::AccountLimitExceededException(inner) => Error::AccountLimitExceededException(inner),
+            crate::operation::update_fleet::UpdateFleetError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_fleet::UpdateFleetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_fleet::UpdateFleetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

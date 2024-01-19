@@ -177,6 +177,11 @@ pub(crate) fn de_enable_kinesis_streaming_destination(
                             .transpose()?,
                     );
                 }
+                "EnableKinesisStreamingConfiguration" => {
+                    builder = builder.set_enable_kinesis_streaming_configuration(
+                        crate::protocol_serde::shape_enable_kinesis_streaming_configuration::de_enable_kinesis_streaming_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

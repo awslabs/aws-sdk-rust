@@ -29,11 +29,15 @@ pub(crate) mod shape_batch_get_build_batches;
 
 pub(crate) mod shape_batch_get_builds;
 
+pub(crate) mod shape_batch_get_fleets;
+
 pub(crate) mod shape_batch_get_projects;
 
 pub(crate) mod shape_batch_get_report_groups;
 
 pub(crate) mod shape_batch_get_reports;
+
+pub(crate) mod shape_create_fleet;
 
 pub(crate) mod shape_create_project;
 
@@ -42,6 +46,8 @@ pub(crate) mod shape_create_report_group;
 pub(crate) mod shape_create_webhook;
 
 pub(crate) mod shape_delete_build_batch;
+
+pub(crate) mod shape_delete_fleet;
 
 pub(crate) mod shape_delete_project;
 
@@ -77,6 +83,8 @@ pub(crate) mod shape_list_builds_for_project;
 
 pub(crate) mod shape_list_curated_environment_images;
 
+pub(crate) mod shape_list_fleets;
+
 pub(crate) mod shape_list_projects;
 
 pub(crate) mod shape_list_report_groups;
@@ -105,6 +113,8 @@ pub(crate) mod shape_stop_build;
 
 pub(crate) mod shape_stop_build_batch;
 
+pub(crate) mod shape_update_fleet;
+
 pub(crate) mod shape_update_project;
 
 pub(crate) mod shape_update_project_visibility;
@@ -129,11 +139,15 @@ pub(crate) mod shape_batch_get_build_batches_input;
 
 pub(crate) mod shape_batch_get_builds_input;
 
+pub(crate) mod shape_batch_get_fleets_input;
+
 pub(crate) mod shape_batch_get_projects_input;
 
 pub(crate) mod shape_batch_get_report_groups_input;
 
 pub(crate) mod shape_batch_get_reports_input;
+
+pub(crate) mod shape_create_fleet_input;
 
 pub(crate) mod shape_create_project_input;
 
@@ -142,6 +156,8 @@ pub(crate) mod shape_create_report_group_input;
 pub(crate) mod shape_create_webhook_input;
 
 pub(crate) mod shape_delete_build_batch_input;
+
+pub(crate) mod shape_delete_fleet_input;
 
 pub(crate) mod shape_delete_project_input;
 
@@ -177,6 +193,8 @@ pub(crate) mod shape_list_builds_for_project_input;
 
 pub(crate) mod shape_list_builds_input;
 
+pub(crate) mod shape_list_fleets_input;
+
 pub(crate) mod shape_list_projects_input;
 
 pub(crate) mod shape_list_report_groups_input;
@@ -208,6 +226,8 @@ pub(crate) mod shape_start_build_input;
 pub(crate) mod shape_stop_build_batch_input;
 
 pub(crate) mod shape_stop_build_input;
+
+pub(crate) mod shape_update_fleet_input;
 
 pub(crate) mod shape_update_project_input;
 
@@ -241,6 +261,14 @@ pub(crate) mod shape_environment_platforms;
 
 pub(crate) mod shape_environment_variable;
 
+pub(crate) mod shape_fleet;
+
+pub(crate) mod shape_fleet_arns;
+
+pub(crate) mod shape_fleet_names;
+
+pub(crate) mod shape_fleets;
+
 pub(crate) mod shape_git_submodules_config;
 
 pub(crate) mod shape_logs_config;
@@ -258,6 +286,8 @@ pub(crate) mod shape_project_cache;
 pub(crate) mod shape_project_environment;
 
 pub(crate) mod shape_project_file_system_location;
+
+pub(crate) mod shape_project_fleet;
 
 pub(crate) mod shape_project_names;
 
@@ -286,6 +316,8 @@ pub(crate) mod shape_report_group_trend_stats;
 pub(crate) mod shape_report_groups;
 
 pub(crate) mod shape_reports;
+
+pub(crate) mod shape_scaling_configuration_input;
 
 pub(crate) mod shape_source_auth;
 
@@ -331,6 +363,8 @@ pub(crate) mod shape_exported_environment_variables;
 
 pub(crate) mod shape_filter_groups;
 
+pub(crate) mod shape_fleet_status;
+
 pub(crate) mod shape_logs_location;
 
 pub(crate) mod shape_network_interface;
@@ -353,9 +387,13 @@ pub(crate) mod shape_s3_logs_config;
 
 pub(crate) mod shape_s3_report_export_config;
 
+pub(crate) mod shape_scaling_configuration_output;
+
 pub(crate) mod shape_source_credentials_info;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_target_tracking_scaling_configuration;
 
 pub(crate) mod shape_test_case;
 
@@ -380,6 +418,8 @@ pub(crate) mod shape_project_cache_modes;
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnets;
+
+pub(crate) mod shape_target_tracking_scaling_configurations;
 
 pub(crate) mod shape_test_report_summary;
 

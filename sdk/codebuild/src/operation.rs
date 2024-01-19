@@ -10,6 +10,9 @@ pub mod batch_get_build_batches;
 /// Types for the `BatchGetBuilds` operation.
 pub mod batch_get_builds;
 
+/// Types for the `BatchGetFleets` operation.
+pub mod batch_get_fleets;
+
 /// Types for the `BatchGetProjects` operation.
 pub mod batch_get_projects;
 
@@ -18,6 +21,9 @@ pub mod batch_get_report_groups;
 
 /// Types for the `BatchGetReports` operation.
 pub mod batch_get_reports;
+
+/// Types for the `CreateFleet` operation.
+pub mod create_fleet;
 
 /// Types for the `CreateProject` operation.
 pub mod create_project;
@@ -30,6 +36,9 @@ pub mod create_webhook;
 
 /// Types for the `DeleteBuildBatch` operation.
 pub mod delete_build_batch;
+
+/// Types for the `DeleteFleet` operation.
+pub mod delete_fleet;
 
 /// Types for the `DeleteProject` operation.
 pub mod delete_project;
@@ -82,6 +91,9 @@ pub mod list_builds_for_project;
 /// Types for the `ListCuratedEnvironmentImages` operation.
 pub mod list_curated_environment_images;
 
+/// Types for the `ListFleets` operation.
+pub mod list_fleets;
+
 /// Types for the `ListProjects` operation.
 pub mod list_projects;
 
@@ -123,6 +135,9 @@ pub mod stop_build;
 
 /// Types for the `StopBuildBatch` operation.
 pub mod stop_build_batch;
+
+/// Types for the `UpdateFleet` operation.
+pub mod update_fleet;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;

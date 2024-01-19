@@ -12,32 +12,38 @@ pub fn ser_project_environment(
     {
         object.key("computeType").string(input.compute_type.as_str());
     }
-    if let Some(var_1) = &input.environment_variables {
-        let mut array_2 = object.key("environmentVariables").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.fleet {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("fleet").start_object();
+        crate::protocol_serde::shape_project_fleet::ser_project_fleet(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.environment_variables {
+        let mut array_4 = object.key("environmentVariables").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.privileged_mode {
-        object.key("privilegedMode").boolean(*var_5);
+    if let Some(var_7) = &input.privileged_mode {
+        object.key("privilegedMode").boolean(*var_7);
     }
-    if let Some(var_6) = &input.certificate {
-        object.key("certificate").string(var_6.as_str());
+    if let Some(var_8) = &input.certificate {
+        object.key("certificate").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.registry_credential {
+    if let Some(var_9) = &input.registry_credential {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("registryCredential").start_object();
-        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_10 = object.key("registryCredential").start_object();
+        crate::protocol_serde::shape_registry_credential::ser_registry_credential(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_9) = &input.image_pull_credentials_type {
-        object.key("imagePullCredentialsType").string(var_9.as_str());
+    if let Some(var_11) = &input.image_pull_credentials_type {
+        object.key("imagePullCredentialsType").string(var_11.as_str());
     }
     Ok(())
 }
@@ -77,6 +83,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ComputeType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "fleet" => {
+                            builder = builder.set_fleet(crate::protocol_serde::shape_project_fleet::de_project_fleet(tokens)?);
                         }
                         "environmentVariables" => {
                             builder = builder
