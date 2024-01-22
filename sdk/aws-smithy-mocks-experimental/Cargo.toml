@@ -1,0 +1,27 @@
+[package]
+name = "aws-smithy-mocks-experimental"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
+description = "Experimental testing utilities for smithy-rs generated clients"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/smithy-lang/smithy-rs"
+
+[dependencies]
+aws-smithy-types = "1"
+aws-smithy-runtime-api = { version = "1", features = ["client", "http-02x"] }
+
+[dev-dependencies]
+aws-sdk-s3 = { version = "1", features = ["test-util"] }
+tokio = { version = "1", features = ["full"]}
+
+[package.metadata.docs.rs]
+all-features = true
+targets = ["x86_64-unknown-linux-gnu"]
+cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
+rustdoc-args = ["--cfg", "docsrs"]
+# End of docs.rs metadata
+
+[[example]]
+name = "s3-getobject-mocks"
+doc-scrape-examples = true

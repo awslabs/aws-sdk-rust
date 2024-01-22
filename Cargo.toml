@@ -56,6 +56,7 @@ members = [
     "sdk/aws-smithy-http-auth",
     "sdk/aws-smithy-http-tower",
     "sdk/aws-smithy-json",
+    "sdk/aws-smithy-mocks-experimental",
     "sdk/aws-smithy-protocol-test",
     "sdk/aws-smithy-query",
     "sdk/aws-smithy-runtime",
