@@ -90,7 +90,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSpa
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("ListSpaces", "codecatalyst"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "ListSpaces",
+            "codecatalyst",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

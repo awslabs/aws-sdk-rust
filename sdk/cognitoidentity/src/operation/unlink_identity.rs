@@ -91,7 +91,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UnlinkI
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("UnlinkIdentity", "cognitoidentity"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "UnlinkIdentity",
+            "cognitoidentity",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

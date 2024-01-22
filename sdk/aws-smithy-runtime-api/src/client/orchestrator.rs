@@ -23,6 +23,7 @@ use crate::client::interceptors::InterceptorError;
 use crate::client::result::{ConnectorError, SdkError};
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use bytes::Bytes;
+use std::borrow::Cow;
 use std::error::Error as StdError;
 use std::fmt;
 
@@ -286,4 +287,38 @@ impl From<Error> for OrchestratorError<Error> {
     fn from(err: Error) -> Self {
         Self::operation(err)
     }
+}
+
+/// Metadata added to the [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag) that identifies the API being called.
+#[derive(Clone, Debug)]
+pub struct Metadata {
+    operation: Cow<'static, str>,
+    service: Cow<'static, str>,
+}
+
+impl Metadata {
+    /// Returns the operation name.
+    pub fn name(&self) -> &str {
+        &self.operation
+    }
+
+    /// Returns the service name.
+    pub fn service(&self) -> &str {
+        &self.service
+    }
+
+    /// Creates [`Metadata`].
+    pub fn new(
+        operation: impl Into<Cow<'static, str>>,
+        service: impl Into<Cow<'static, str>>,
+    ) -> Self {
+        Metadata {
+            operation: operation.into(),
+            service: service.into(),
+        }
+    }
+}
+
+impl Storable for Metadata {
+    type Storer = StoreReplace<Self>;
 }

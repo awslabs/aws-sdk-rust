@@ -16,7 +16,9 @@ use http::HeaderValue;
 
 /// Interceptor that adds an Accept header to API Gateway requests.
 #[derive(Debug, Default)]
-pub(crate) struct AcceptHeaderInterceptor;
+pub(crate) struct AcceptHeaderInterceptor {
+    _priv: (),
+}
 
 impl Intercept for AcceptHeaderInterceptor {
     fn name(&self) -> &'static str {

@@ -97,7 +97,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListIma
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("ListImageSetVersions", "medicalimaging"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "ListImageSetVersions",
+            "medicalimaging",
+        ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;
@@ -270,7 +273,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListImageSetV
             .downcast_ref::<ListImageSetVersionsInput>()
             .ok_or("failed to downcast to ListImageSetVersionsInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("runtime-").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("runtime-").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

@@ -90,7 +90,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for VerifyS
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("VerifySession", "codecatalyst"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "VerifySession",
+            "codecatalyst",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

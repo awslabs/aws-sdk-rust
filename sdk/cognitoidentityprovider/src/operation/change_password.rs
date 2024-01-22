@@ -97,7 +97,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ChangeP
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("ChangePassword", "cognitoidentityprovider"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "ChangePassword",
+            "cognitoidentityprovider",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

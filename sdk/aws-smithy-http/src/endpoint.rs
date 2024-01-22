@@ -5,58 +5,41 @@
 
 //! Code for resolving an endpoint (URI) that a request should be sent to
 
+#![allow(deprecated)]
+
+use crate::endpoint::error::InvalidEndpointError;
+use http::uri::{Authority, Uri};
 use std::borrow::Cow;
-use std::fmt::Debug;
 use std::result::Result as StdResult;
 use std::str::FromStr;
 
-use http::uri::{Authority, Uri};
-
-use aws_smithy_types::config_bag::{Storable, StoreReplace};
+pub mod error;
 pub use error::ResolveEndpointError;
 
-use crate::endpoint::error::InvalidEndpointError;
-
-pub mod error;
-
 /// An endpoint-resolution-specific Result. Contains either an [`Endpoint`](aws_smithy_types::endpoint::Endpoint) or a [`ResolveEndpointError`].
+#[deprecated(since = "0.60.1", note = "Was never used.")]
 pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;
 
 /// A special type that adds support for services that have special URL-prefixing rules.
-#[derive(Clone, Debug, Eq, PartialEq)]
-pub struct EndpointPrefix(String);
-impl EndpointPrefix {
-    /// Create a new endpoint prefix from an `impl Into<String>`. If the prefix argument is invalid,
-    /// a [`InvalidEndpointError`] will be returned.
-    pub fn new(prefix: impl Into<String>) -> StdResult<Self, InvalidEndpointError> {
-        let prefix = prefix.into();
-        match Authority::from_str(&prefix) {
-            Ok(_) => Ok(EndpointPrefix(prefix)),
-            Err(err) => Err(InvalidEndpointError::failed_to_construct_authority(
-                prefix, err,
-            )),
-        }
-    }
-
-    /// Get the `str` representation of this `EndpointPrefix`.
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-}
-
-impl Storable for EndpointPrefix {
-    type Storer = StoreReplace<Self>;
-}
+#[deprecated(
+    since = "0.60.1",
+    note = "Use aws_smithy_runtime_api::client::endpoint::EndpointPrefix instead."
+)]
+pub type EndpointPrefix = aws_smithy_runtime_api::client::endpoint::EndpointPrefix;
 
 /// Apply `endpoint` to `uri`
 ///
 /// This method mutates `uri` by setting the `endpoint` on it
+#[deprecated(
+    since = "0.60.1",
+    note = "Use aws_smithy_runtime::client::endpoint::apply_endpoint instead."
+)]
 pub fn apply_endpoint(
     uri: &mut Uri,
     endpoint: &Uri,
     prefix: Option<&EndpointPrefix>,
 ) -> StdResult<(), InvalidEndpointError> {
-    let prefix = prefix.map(|p| p.0.as_str()).unwrap_or("");
+    let prefix = prefix.map(EndpointPrefix::as_str).unwrap_or("");
     let authority = endpoint
         .authority()
         .as_ref()

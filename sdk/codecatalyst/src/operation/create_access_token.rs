@@ -92,7 +92,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("CreateAccessToken", "codecatalyst"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "CreateAccessToken",
+            "codecatalyst",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

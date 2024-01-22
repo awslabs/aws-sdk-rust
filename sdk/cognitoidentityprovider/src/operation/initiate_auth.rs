@@ -98,7 +98,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Initiat
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("InitiateAuth", "cognitoidentityprovider"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "InitiateAuth",
+            "cognitoidentityprovider",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

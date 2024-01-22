@@ -95,7 +95,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for WriteGe
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("WriteGetObjectResponse", "s3"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "WriteGetObjectResponse",
+            "s3",
+        ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = true;
@@ -243,12 +246,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for WriteGetObjec
         let endpoint_prefix = {
             let request_route = _input.request_route.as_deref().unwrap_or_default();
             if request_route.is_empty() {
-                return Err(::aws_smithy_http::endpoint::error::InvalidEndpointError::failed_to_construct_uri(
-                    "request_route was unset or empty but must be set as part of the endpoint prefix",
-                )
-                .into());
+                return Err(
+                    ::aws_smithy_runtime_api::client::endpoint::error::InvalidEndpointError::failed_to_construct_uri(
+                        "request_route was unset or empty but must be set as part of the endpoint prefix",
+                    )
+                    .into(),
+                );
             }
-            ::aws_smithy_http::endpoint::EndpointPrefix::new(format!("{RequestRoute}.", RequestRoute = request_route))
+            ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new(format!("{RequestRoute}.", RequestRoute = request_route))
         }
         .map_err(|err| ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err))?;
         cfg.interceptor_state().store_put(endpoint_prefix);

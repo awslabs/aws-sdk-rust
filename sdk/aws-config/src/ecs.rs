@@ -49,7 +49,7 @@
 use crate::http_credential_provider::HttpCredentialProvider;
 use crate::provider_config::ProviderConfig;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_smithy_http::endpoint::apply_endpoint;
+use aws_smithy_runtime::client::endpoint::apply_endpoint;
 use aws_smithy_runtime_api::client::dns::{ResolveDns, ResolveDnsError, SharedDnsResolver};
 use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
 use aws_smithy_runtime_api::shared::IntoShared;

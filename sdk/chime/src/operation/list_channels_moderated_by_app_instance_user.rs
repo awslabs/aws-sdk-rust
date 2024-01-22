@@ -98,7 +98,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCha
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "ListChannelsModeratedByAppInstanceUser",
             "chime",
         ));
@@ -257,7 +257,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListChannelsM
             .downcast_ref::<ListChannelsModeratedByAppInstanceUserInput>()
             .ok_or("failed to downcast to ListChannelsModeratedByAppInstanceUserInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("messaging-").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("messaging-").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

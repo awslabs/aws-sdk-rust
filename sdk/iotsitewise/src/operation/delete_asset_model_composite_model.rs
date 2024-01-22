@@ -107,7 +107,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteA
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DeleteAssetModelCompositeModel",
             "iotsitewise",
         ));
@@ -281,7 +281,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteAssetMo
             .downcast_ref::<DeleteAssetModelCompositeModelInput>()
             .ok_or("failed to downcast to DeleteAssetModelCompositeModelInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("api.").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("api.").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

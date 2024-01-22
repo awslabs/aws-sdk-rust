@@ -90,7 +90,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetConn
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("GetConnection", "glue"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("GetConnection", "glue"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;

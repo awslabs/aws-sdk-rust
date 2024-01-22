@@ -97,7 +97,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchGe
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "BatchGetAssetPropertyAggregates",
             "iotsitewise",
         ));
@@ -235,7 +235,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchGetAsset
             .downcast_ref::<BatchGetAssetPropertyAggregatesInput>()
             .ok_or("failed to downcast to BatchGetAssetPropertyAggregatesInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("data.").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("data.").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

@@ -3,15 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_http::endpoint::error::ResolveEndpointError;
-use aws_smithy_http::endpoint::EndpointPrefix;
-use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::endpoint::{
-    EndpointFuture, EndpointResolverParams, ResolveEndpoint,
+    error::ResolveEndpointError, EndpointFuture, EndpointResolverParams, ResolveEndpoint,
 };
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_runtime_api::{box_error::BoxError, client::endpoint::EndpointPrefix};
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::endpoint::Endpoint;
 use http::header::HeaderName;
@@ -149,9 +147,7 @@ fn apply_endpoint(
 
 #[cfg(test)]
 mod test {
-    use aws_smithy_http::endpoint::EndpointPrefix;
-    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
-    use aws_smithy_types::endpoint::Endpoint;
+    use super::*;
 
     #[test]
     fn test_apply_endpoint() {

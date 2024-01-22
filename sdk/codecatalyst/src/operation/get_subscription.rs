@@ -91,7 +91,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSubs
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("GetSubscription", "codecatalyst"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "GetSubscription",
+            "codecatalyst",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

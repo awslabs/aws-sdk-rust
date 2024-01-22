@@ -90,7 +90,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAcc
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("ListAccounts", "sso"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("ListAccounts", "sso"));
 
         ::std::option::Option::Some(cfg.freeze())
     }

@@ -98,7 +98,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new(
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "DescribeChannelModeratedByAppInstanceUser",
             "chime",
         ));
@@ -261,7 +261,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeChann
             .downcast_ref::<DescribeChannelModeratedByAppInstanceUserInput>()
             .ok_or("failed to downcast to DescribeChannelModeratedByAppInstanceUserInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("messaging-").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("messaging-").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);

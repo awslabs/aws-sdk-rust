@@ -4,7 +4,6 @@
  */
 
 use crate::box_error::BoxError;
-use crate::client::auth::AuthSchemeId;
 use crate::client::runtime_components::sealed::ValidateConfig;
 use crate::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use crate::impl_shared_conversions;
@@ -108,6 +107,8 @@ impl ResolveCachedIdentity for SharedIdentityCache {
     }
 }
 
+impl ValidateConfig for SharedIdentityResolver {}
+
 impl ValidateConfig for SharedIdentityCache {
     fn validate_base_client_config(
         &self,
@@ -196,38 +197,6 @@ impl ResolveIdentity for SharedIdentityResolver {
 }
 
 impl_shared_conversions!(convert SharedIdentityResolver from ResolveIdentity using SharedIdentityResolver::new);
-
-/// An identity resolver paired with an auth scheme ID that it resolves for.
-#[derive(Clone, Debug)]
-pub(crate) struct ConfiguredIdentityResolver {
-    auth_scheme: AuthSchemeId,
-    identity_resolver: SharedIdentityResolver,
-}
-
-impl ConfiguredIdentityResolver {
-    /// Creates a new [`ConfiguredIdentityResolver`] from the given auth scheme and identity resolver.
-    pub(crate) fn new(
-        auth_scheme: AuthSchemeId,
-        identity_resolver: SharedIdentityResolver,
-    ) -> Self {
-        Self {
-            auth_scheme,
-            identity_resolver,
-        }
-    }
-
-    /// Returns the auth scheme ID.
-    pub(crate) fn scheme_id(&self) -> AuthSchemeId {
-        self.auth_scheme
-    }
-
-    /// Returns the identity resolver.
-    pub(crate) fn identity_resolver(&self) -> SharedIdentityResolver {
-        self.identity_resolver.clone()
-    }
-}
-
-impl ValidateConfig for ConfiguredIdentityResolver {}
 
 /// An identity that can be used for authentication.
 ///

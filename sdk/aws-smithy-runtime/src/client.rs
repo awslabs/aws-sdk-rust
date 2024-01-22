@@ -10,6 +10,8 @@ pub mod defaults;
 
 pub mod dns;
 
+pub mod endpoint;
+
 /// Built-in Smithy HTTP clients and connectors.
 ///
 /// See the [module docs in `aws-smithy-runtime-api`](aws_smithy_runtime_api::client::http)

@@ -83,7 +83,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SignUp 
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("SignUp", "cognitoidentityprovider"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "SignUp",
+            "cognitoidentityprovider",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

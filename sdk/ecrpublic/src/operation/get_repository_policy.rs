@@ -91,7 +91,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRepo
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("GetRepositoryPolicy", "ecrpublic"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "GetRepositoryPolicy",
+            "ecrpublic",
+        ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;

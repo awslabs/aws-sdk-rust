@@ -90,7 +90,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateH
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("CreateHsm", "cloudhsmv2"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("CreateHsm", "cloudhsmv2"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;

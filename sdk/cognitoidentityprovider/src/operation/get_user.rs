@@ -88,7 +88,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetUser
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("GetUser", "cognitoidentityprovider"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "GetUser",
+            "cognitoidentityprovider",
+        ));
 
         ::std::option::Option::Some(cfg.freeze())
     }

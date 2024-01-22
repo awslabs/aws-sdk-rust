@@ -91,7 +91,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRole
         ));
 
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("GetRoleCredentials", "sso"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("GetRoleCredentials", "sso"));
 
         ::std::option::Option::Some(cfg.freeze())
     }

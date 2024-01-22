@@ -86,7 +86,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSpac
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("GetSpace", "codecatalyst"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("GetSpace", "codecatalyst"));
 
         ::std::option::Option::Some(cfg.freeze())
     }

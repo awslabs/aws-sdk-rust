@@ -90,7 +90,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AddInst
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("AddInstanceGroups", "emr"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("AddInstanceGroups", "emr"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;

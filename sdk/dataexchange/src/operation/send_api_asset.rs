@@ -90,7 +90,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendApi
             ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolverParams::new(),
         ));
 
-        cfg.store_put(::aws_smithy_http::operation::Metadata::new("SendApiAsset", "dataexchange"));
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
+            "SendApiAsset",
+            "dataexchange",
+        ));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
         signing_options.content_sha256_header = false;
@@ -222,7 +225,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendApiAssetE
             .downcast_ref::<SendApiAssetInput>()
             .ok_or("failed to downcast to SendApiAssetInput")?;
 
-        let endpoint_prefix = ::aws_smithy_http::endpoint::EndpointPrefix::new("api-fulfill.").map_err(|err| {
+        let endpoint_prefix = ::aws_smithy_runtime_api::client::endpoint::EndpointPrefix::new("api-fulfill.").map_err(|err| {
             ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint prefix could not be built", err)
         })?;
         cfg.interceptor_state().store_put(endpoint_prefix);
