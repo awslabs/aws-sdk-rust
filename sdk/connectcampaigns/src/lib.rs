@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.2", features = ["behavior-version-latest"] }
-//! aws-sdk-connectcampaigns = "1.11.0"
+//! aws-sdk-connectcampaigns = "1.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

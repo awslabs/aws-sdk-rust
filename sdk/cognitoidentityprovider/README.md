@@ -36,7 +36,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.2", features = ["behavior-version-latest"] }
-aws-sdk-cognitoidentityprovider = "1.11.0"
+aws-sdk-cognitoidentityprovider = "1.12.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.2", features = ["behavior-version-latest"] }
-//! aws-sdk-wafv2 = "1.10.0"
+//! aws-sdk-wafv2 = "1.11.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
