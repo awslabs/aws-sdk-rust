@@ -1,4 +1,4 @@
-smithy_rs_revision = '336243c4e7800a1d015ef60c55b66caa0ac88fd6'
+smithy_rs_revision = 'bac720ef42a282cfc935bd06d03a39def59f5fda'
 aws_doc_sdk_examples_revision = '409b9c97b53f96abbe6a0fe52b3a768dcdbd8f5d'
 
 [manual_interventions]
@@ -15,8 +15,8 @@ source_hash = 'cdda94cfa88ac49254ea65cee591b593f7c18d5a2dc58f35037b46b8b2ee9fcf'
 
 [crates.aws-endpoint]
 category = 'AwsRuntime'
-version = '0.60.2'
-source_hash = '05df6ee84966c50dfa7a384bc491cc153320dfbc1a56043cb8ab8f483cfa7dda'
+version = '0.60.3'
+source_hash = 'd82bcef1427ba42f1a669ae9f46bcd5b8e2bf405c836f497584e947398ab75a9'
 
 [crates.aws-http]
 category = 'AwsRuntime'
@@ -25,8 +25,8 @@ source_hash = 'abdab3f68af63b7789b19b3c46391cd8c04ecd0843f4ae7a5512ba9457f8dba5'
 
 [crates.aws-hyper]
 category = 'AwsRuntime'
-version = '0.60.2'
-source_hash = 'abaf8dc43602ceae93d37a45e07f124f29963155fd6122be8833dc840fb886f5'
+version = '0.60.3'
+source_hash = '728ed2dae4d74acecaa81829d131ad5911944dac4a3da955b5d17bb1fe2fb4ab'
 
 [crates.aws-runtime]
 category = 'AwsRuntime'
@@ -2296,8 +2296,8 @@ model_hash = '25c4c2af8e9c134e34445bd47d23fc5f8a03662b3d89e4dc40d1762486069be3'
 
 [crates.aws-sig-auth]
 category = 'AwsRuntime'
-version = '0.60.2'
-source_hash = '0ffced8b7745768be0e126fdaa95bdc2d4842cfff3b18f61ca8403de6890e7e9'
+version = '0.60.3'
+source_hash = 'b748a6dfc4629c516cbb0ef8338767426913e055e2cebff9f112c4df7533f2d2'
 
 [crates.aws-sigv4]
 category = 'AwsRuntime'
@@ -2316,8 +2316,8 @@ source_hash = '61a657c78c4ab7c6b6a6fe8916b43969b7507bc073d49ebf9cdb49fd167fa86d'
 
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
-version = '0.60.2'
-source_hash = '3caf9a46348372d6ef7200203cddddcb9e84604a93a784c17a717e921930ebb1'
+version = '0.60.3'
+source_hash = '457f90aafb2642e8cd32274a527e61482f2fc97ec03928338b760501066eeadc'
 
 [crates.aws-smithy-eventstream]
 category = 'SmithyRuntime'
@@ -2336,8 +2336,8 @@ source_hash = 'a7a83652ec56ac4a993712a28d4983aa9eab971f0504c3b821465d73a3c99bb6'
 
 [crates.aws-smithy-http-auth]
 category = 'SmithyRuntime'
-version = '0.60.2'
-source_hash = 'c2d9df57fe131deebd3c4ec96d2dc344491e82149cc19b287ceea98461b248fe'
+version = '0.60.3'
+source_hash = '9c009a85e395313675582cf5d853ab1e75879bb350249e44072d057086546077'
 
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
@@ -2346,8 +2346,8 @@ source_hash = '921a930f30c3ee46f1d18f38892258ba19f32a719c23c950989c5fb7248ee31b'
 
 [crates.aws-smithy-http-tower]
 category = 'SmithyRuntime'
-version = '0.60.2'
-source_hash = '93733c0d04e17036617e2b6476303d1adcc53669748a9f49bbc5024dfd04738c'
+version = '0.60.3'
+source_hash = '782efee1d7db47f5948d8e418c9c5803404ad87df09492a85c6409ed423870af'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2409,6 +2409,8 @@ category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd1d1bd74b6caf2685c800c970da4abaef859ce109e48b901b9127db6364b4578'
 [release.crates]
+aws-endpoint = '0.60.3'
+aws-hyper = '0.60.3'
 aws-sdk-accessanalyzer = '1.12.0'
 aws-sdk-account = '1.11.0'
 aws-sdk-acm = '1.11.0'
@@ -2785,3 +2787,7 @@ aws-sdk-workspaces = '1.11.0'
 aws-sdk-workspacesthinclient = '1.9.0'
 aws-sdk-workspacesweb = '1.11.0'
 aws-sdk-xray = '1.11.0'
+aws-sig-auth = '0.60.3'
+aws-smithy-client = '0.60.3'
+aws-smithy-http-auth = '0.60.3'
+aws-smithy-http-tower = '0.60.3'
