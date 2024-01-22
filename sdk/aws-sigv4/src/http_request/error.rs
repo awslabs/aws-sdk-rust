@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use http::header::{InvalidHeaderName, InvalidHeaderValue};
-use http::uri::InvalidUri;
+use http0::header::{InvalidHeaderName, InvalidHeaderValue};
+use http0::uri::InvalidUri;
 use std::error::Error;
 use std::fmt;
 

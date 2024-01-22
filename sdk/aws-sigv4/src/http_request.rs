@@ -13,14 +13,15 @@
 //! # use aws_credential_types::Credentials;
 //! use aws_smithy_runtime_api::client::identity::Identity;
 //! # use aws_sigv4::http_request::SignableBody;
-//! #[cfg(feature = "http0-compat")]
+//! #[cfg(feature = "http1")]
 //! fn test() -> Result<(), aws_sigv4::http_request::SigningError> {
 //! use aws_sigv4::http_request::{sign, SigningSettings, SigningParams, SignableRequest};
 //! use aws_sigv4::sign::v4;
-//! use http;
+//! use http0;
 //! use std::time::SystemTime;
 //!
 //! // Set up information and settings for the signing
+//! // You can obtain credentials from `SdkConfig`.
 //! let identity = Credentials::new(
 //!     "AKIDEXAMPLE",
 //!     "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",
@@ -49,7 +50,7 @@
 //! let mut my_req = http::Request::new("...");
 //! // Sign and then apply the signature to the request
 //! let (signing_instructions, _signature) = sign(signable_request, &signing_params)?.into_parts();
-//! signing_instructions.apply_to_request_http0x(&mut my_req);
+//! signing_instructions.apply_to_request_http1x(&mut my_req);
 //! # Ok(())
 //! # }
 //! ```

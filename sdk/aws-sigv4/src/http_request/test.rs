@@ -6,7 +6,7 @@
 //! Functions shared between the tests of several modules.
 
 use crate::http_request::{SignableBody, SignableRequest};
-use http::{Method, Uri};
+use http0::{Method, Uri};
 use std::error::Error as StdError;
 
 pub(crate) mod v4 {
@@ -258,8 +258,8 @@ impl TestRequest {
         self.body = TestSignedBody::Signable(body);
     }
 
-    pub(crate) fn as_http_request(&self) -> http::Request<&'static str> {
-        let mut builder = http::Request::builder()
+    pub(crate) fn as_http_request(&self) -> http0::Request<&'static str> {
+        let mut builder = http0::Request::builder()
             .uri(&self.uri)
             .method(Method::from_bytes(self.method.as_bytes()).unwrap());
         for (k, v) in &self.headers {
@@ -269,8 +269,8 @@ impl TestRequest {
     }
 }
 
-impl<B: AsRef<[u8]>> From<http::Request<B>> for TestRequest {
-    fn from(value: http::Request<B>) -> Self {
+impl<B: AsRef<[u8]>> From<http0::Request<B>> for TestRequest {
+    fn from(value: http0::Request<B>) -> Self {
         let invalid = value
             .headers()
             .values()

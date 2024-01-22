@@ -27,9 +27,10 @@ rustdoc-args = ["--cfg", "docsrs"]
 stable = true
 
 [features]
-default = ["sign-http"]
-http0-compat = ["dep:http"]
-sign-http = ["dep:http", "dep:percent-encoding", "dep:form_urlencoded"]
+default = ["sign-http", "http1"]
+http0-compat = ["dep:http0"]
+http1 = ["dep:http"]
+sign-http = ["dep:http0", "dep:percent-encoding", "dep:form_urlencoded"]
 sign-eventstream = ["dep:aws-smithy-eventstream"]
 sigv4a = ["dep:p256", "dep:crypto-bigint", "dep:subtle", "dep:zeroize", "dep:ring"]
 
@@ -68,8 +69,13 @@ version = "1.1.2"
 version = "1.0"
 optional = true
 
-[dependencies.http]
+[dependencies.http0]
 version = "0.2"
+optional = true
+package = "http"
+
+[dependencies.http]
+version = "1"
 optional = true
 
 [dependencies.num-bigint]
