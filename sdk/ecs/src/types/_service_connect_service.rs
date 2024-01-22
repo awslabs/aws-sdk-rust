@@ -18,6 +18,10 @@ pub struct ServiceConnectService {
     /// <p>Use the value of this field to bypass the proxy for traffic on the port number specified in the named <code>portMapping</code> in the task definition of this application, and then use it in your VPC security groups to allow traffic into the proxy for this Amazon ECS service.</p>
     /// <p>In <code>awsvpc</code> mode and Fargate, the default value is the container port number. The container port number is in the <code>portMapping</code> in the task definition. In bridge mode, the default value is the ephemeral port of the Service Connect proxy.</p>
     pub ingress_port_override: ::std::option::Option<i32>,
+    /// <p>A reference to an object that represents the configured timeouts for Service Connect.</p>
+    pub timeout: ::std::option::Option<crate::types::TimeoutConfiguration>,
+    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    pub tls: ::std::option::Option<crate::types::ServiceConnectTlsConfiguration>,
 }
 impl ServiceConnectService {
     /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
@@ -45,6 +49,14 @@ impl ServiceConnectService {
     pub fn ingress_port_override(&self) -> ::std::option::Option<i32> {
         self.ingress_port_override
     }
+    /// <p>A reference to an object that represents the configured timeouts for Service Connect.</p>
+    pub fn timeout(&self) -> ::std::option::Option<&crate::types::TimeoutConfiguration> {
+        self.timeout.as_ref()
+    }
+    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    pub fn tls(&self) -> ::std::option::Option<&crate::types::ServiceConnectTlsConfiguration> {
+        self.tls.as_ref()
+    }
 }
 impl ServiceConnectService {
     /// Creates a new builder-style object to manufacture [`ServiceConnectService`](crate::types::ServiceConnectService).
@@ -61,6 +73,8 @@ pub struct ServiceConnectServiceBuilder {
     pub(crate) discovery_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_aliases: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectClientAlias>>,
     pub(crate) ingress_port_override: ::std::option::Option<i32>,
+    pub(crate) timeout: ::std::option::Option<crate::types::TimeoutConfiguration>,
+    pub(crate) tls: ::std::option::Option<crate::types::ServiceConnectTlsConfiguration>,
 }
 impl ServiceConnectServiceBuilder {
     /// <p>The <code>portName</code> must match the name of one of the <code>portMappings</code> from all the containers in the task definition of this Amazon ECS service.</p>
@@ -144,6 +158,34 @@ impl ServiceConnectServiceBuilder {
     pub fn get_ingress_port_override(&self) -> &::std::option::Option<i32> {
         &self.ingress_port_override
     }
+    /// <p>A reference to an object that represents the configured timeouts for Service Connect.</p>
+    pub fn timeout(mut self, input: crate::types::TimeoutConfiguration) -> Self {
+        self.timeout = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A reference to an object that represents the configured timeouts for Service Connect.</p>
+    pub fn set_timeout(mut self, input: ::std::option::Option<crate::types::TimeoutConfiguration>) -> Self {
+        self.timeout = input;
+        self
+    }
+    /// <p>A reference to an object that represents the configured timeouts for Service Connect.</p>
+    pub fn get_timeout(&self) -> &::std::option::Option<crate::types::TimeoutConfiguration> {
+        &self.timeout
+    }
+    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    pub fn tls(mut self, input: crate::types::ServiceConnectTlsConfiguration) -> Self {
+        self.tls = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    pub fn set_tls(mut self, input: ::std::option::Option<crate::types::ServiceConnectTlsConfiguration>) -> Self {
+        self.tls = input;
+        self
+    }
+    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    pub fn get_tls(&self) -> &::std::option::Option<crate::types::ServiceConnectTlsConfiguration> {
+        &self.tls
+    }
     /// Consumes the builder and constructs a [`ServiceConnectService`](crate::types::ServiceConnectService).
     /// This method will fail if any of the following fields are not set:
     /// - [`port_name`](crate::types::builders::ServiceConnectServiceBuilder::port_name)
@@ -158,6 +200,8 @@ impl ServiceConnectServiceBuilder {
             discovery_name: self.discovery_name,
             client_aliases: self.client_aliases,
             ingress_port_override: self.ingress_port_override,
+            timeout: self.timeout,
+            tls: self.tls,
         })
     }
 }

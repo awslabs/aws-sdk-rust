@@ -296,6 +296,18 @@ pub(crate) fn tmpfs_correct_errors(mut builder: crate::types::builders::TmpfsBui
     builder
 }
 
+pub(crate) fn service_connect_tls_configuration_correct_errors(
+    mut builder: crate::types::builders::ServiceConnectTlsConfigurationBuilder,
+) -> crate::types::builders::ServiceConnectTlsConfigurationBuilder {
+    if builder.issuer_certificate_authority.is_none() {
+        builder.issuer_certificate_authority = {
+            let builder = crate::types::builders::ServiceConnectTlsCertificateAuthorityBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn ebs_tag_specification_correct_errors(
     mut builder: crate::types::builders::EbsTagSpecificationBuilder,
 ) -> crate::types::builders::EbsTagSpecificationBuilder {

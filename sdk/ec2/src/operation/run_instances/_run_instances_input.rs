@@ -74,7 +74,9 @@ pub struct RunInstancesInput {
     /// <p>Only one private IP address can be designated as primary. You can't specify this option if you've specified the option to designate a private IP address as the primary IP address in a network interface specification. You cannot specify this option if you're launching more than one instance in the request.</p>
     /// <p>You cannot specify this option and the network interfaces option in the same request.</p>
     pub private_ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub elastic_gpu_specification: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>,
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
@@ -88,8 +90,6 @@ pub struct RunInstancesInput {
     /// <p>Instances</p></li>
     /// <li>
     /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
     /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>
@@ -261,7 +261,9 @@ impl RunInstancesInput {
     pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specification.is_none()`.
     pub fn elastic_gpu_specification(&self) -> &[crate::types::ElasticGpuSpecification] {
@@ -283,8 +285,6 @@ impl RunInstancesInput {
     /// <p>Instances</p></li>
     /// <li>
     /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
     /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>
@@ -909,19 +909,25 @@ impl RunInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_specification`](Self::set_elastic_gpu_specification).
     ///
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         let mut v = self.elastic_gpu_specification.unwrap_or_default();
         v.push(input);
         self.elastic_gpu_specification = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.elastic_gpu_specification = input;
         self
     }
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         &self.elastic_gpu_specification
     }
@@ -969,8 +975,6 @@ impl RunInstancesInputBuilder {
     /// <li>
     /// <p>Volumes</p></li>
     /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>
     /// <p>Network interfaces</p></li>
@@ -990,8 +994,6 @@ impl RunInstancesInputBuilder {
     /// <li>
     /// <p>Volumes</p></li>
     /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>
     /// <p>Network interfaces</p></li>
@@ -1008,8 +1010,6 @@ impl RunInstancesInputBuilder {
     /// <p>Instances</p></li>
     /// <li>
     /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
     /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>

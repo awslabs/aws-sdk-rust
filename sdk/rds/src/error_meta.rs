@@ -1175,6 +1175,9 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
             crate::operation::create_db_cluster::CreateDBClusterError::DbSubnetGroupNotFoundFault(inner) => Error::DbSubnetGroupNotFoundFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::DomainNotFoundFault(inner) => Error::DomainNotFoundFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::GlobalClusterNotFoundFault(inner) => Error::GlobalClusterNotFoundFault(inner),
+            crate::operation::create_db_cluster::CreateDBClusterError::InsufficientDbInstanceCapacityFault(inner) => {
+                Error::InsufficientDbInstanceCapacityFault(inner)
+            }
             crate::operation::create_db_cluster::CreateDBClusterError::InsufficientStorageClusterCapacityFault(inner) => {
                 Error::InsufficientStorageClusterCapacityFault(inner)
             }

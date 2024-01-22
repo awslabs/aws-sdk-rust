@@ -71,6 +71,12 @@ pub use crate::types::_log_driver::LogDriver;
 
 pub use crate::types::_service_connect_service::ServiceConnectService;
 
+pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfiguration;
+
+pub use crate::types::_service_connect_tls_certificate_authority::ServiceConnectTlsCertificateAuthority;
+
+pub use crate::types::_timeout_configuration::TimeoutConfiguration;
+
 pub use crate::types::_service_connect_client_alias::ServiceConnectClientAlias;
 
 pub use crate::types::_deployment_rollout_state::DeploymentRolloutState;
@@ -549,6 +555,10 @@ mod _service_connect_service;
 
 mod _service_connect_service_resource;
 
+mod _service_connect_tls_certificate_authority;
+
+mod _service_connect_tls_configuration;
+
 mod _service_event;
 
 mod _service_field;
@@ -608,6 +618,8 @@ mod _task_set_field;
 mod _task_stop_code;
 
 mod _task_volume_configuration;
+
+mod _timeout_configuration;
 
 mod _tmpfs;
 

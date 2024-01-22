@@ -31,6 +31,9 @@ pub mod delete_domain;
 /// Types for the `GetCase` operation.
 pub mod get_case;
 
+/// Types for the `GetCaseAuditEvents` operation.
+pub mod get_case_audit_events;
+
 /// Types for the `GetCaseEventConfiguration` operation.
 pub mod get_case_event_configuration;
 

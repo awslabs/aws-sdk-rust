@@ -260,6 +260,8 @@ pub enum CreateDBClusterError {
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.</p>
     GlobalClusterNotFoundFault(crate::types::error::GlobalClusterNotFoundFault),
+    /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
+    InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
     /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::types::error::InsufficientStorageClusterCapacityFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
@@ -324,6 +326,7 @@ impl CreateDBClusterError {
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DomainNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::GlobalClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientDbInstanceCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientStorageClusterCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -373,6 +376,10 @@ impl CreateDBClusterError {
     /// Returns `true` if the error kind is `CreateDBClusterError::GlobalClusterNotFoundFault`.
     pub fn is_global_cluster_not_found_fault(&self) -> bool {
         matches!(self, Self::GlobalClusterNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateDBClusterError::InsufficientDbInstanceCapacityFault`.
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(self, Self::InsufficientDbInstanceCapacityFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBClusterError::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
@@ -431,6 +438,7 @@ impl ::std::error::Error for CreateDBClusterError {
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DomainNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::GlobalClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InsufficientDbInstanceCapacityFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientStorageClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -458,6 +466,7 @@ impl ::std::fmt::Display for CreateDBClusterError {
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
             Self::GlobalClusterNotFoundFault(_inner) => _inner.fmt(f),
+            Self::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
             Self::InsufficientStorageClusterCapacityFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
@@ -499,6 +508,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBClust
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DomainNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::GlobalClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InsufficientDbInstanceCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientStorageClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

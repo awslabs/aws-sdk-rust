@@ -17,6 +17,7 @@ pub struct Subnet {
     /// <p>Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1).</p>
     pub enable_lni_at_device_index: ::std::option::Option<i32>,
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub map_public_ip_on_launch: ::std::option::Option<bool>,
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub map_customer_owned_ip_on_launch: ::std::option::Option<bool>,
@@ -73,6 +74,7 @@ impl Subnet {
         self.enable_lni_at_device_index
     }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn map_public_ip_on_launch(&self) -> ::std::option::Option<bool> {
         self.map_public_ip_on_launch
     }
@@ -256,16 +258,19 @@ impl SubnetBuilder {
         &self.enable_lni_at_device_index
     }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn map_public_ip_on_launch(mut self, input: bool) -> Self {
         self.map_public_ip_on_launch = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn set_map_public_ip_on_launch(mut self, input: ::std::option::Option<bool>) -> Self {
         self.map_public_ip_on_launch = input;
         self
     }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
+    /// <p>Starting on February 1, 2024, Amazon Web Services will charge for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i> tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
     pub fn get_map_public_ip_on_launch(&self) -> &::std::option::Option<bool> {
         &self.map_public_ip_on_launch
     }

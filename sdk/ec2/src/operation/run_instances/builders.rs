@@ -566,17 +566,23 @@ impl RunInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_specification`](Self::set_elastic_gpu_specification).
     ///
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn elastic_gpu_specification(mut self, input: crate::types::ElasticGpuSpecification) -> Self {
         self.inner = self.inner.elastic_gpu_specification(input);
         self
     }
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn set_elastic_gpu_specification(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>>) -> Self {
         self.inner = self.inner.set_elastic_gpu_specification(input);
         self
     }
-    /// <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your Windows instance to accelerate the graphics performance of your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn get_elastic_gpu_specification(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecification>> {
         self.inner.get_elastic_gpu_specification()
     }
@@ -622,8 +628,6 @@ impl RunInstancesFluentBuilder {
     /// <li>
     /// <p>Volumes</p></li>
     /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>
     /// <p>Network interfaces</p></li>
@@ -641,8 +645,6 @@ impl RunInstancesFluentBuilder {
     /// <li>
     /// <p>Volumes</p></li>
     /// <li>
-    /// <p>Elastic graphics</p></li>
-    /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>
     /// <p>Network interfaces</p></li>
@@ -659,8 +661,6 @@ impl RunInstancesFluentBuilder {
     /// <p>Instances</p></li>
     /// <li>
     /// <p>Volumes</p></li>
-    /// <li>
-    /// <p>Elastic graphics</p></li>
     /// <li>
     /// <p>Spot Instance requests</p></li>
     /// <li>

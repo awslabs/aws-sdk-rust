@@ -27,6 +27,18 @@ pub fn ser_service_connect_service(
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
+    if let Some(var_7) = &input.timeout {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("timeout").start_object();
+        crate::protocol_serde::shape_timeout_configuration::ser_timeout_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.tls {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tls").start_object();
+        crate::protocol_serde::shape_service_connect_tls_configuration::ser_service_connect_tls_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +81,14 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "timeout" => {
+                            builder = builder.set_timeout(crate::protocol_serde::shape_timeout_configuration::de_timeout_configuration(tokens)?);
+                        }
+                        "tls" => {
+                            builder = builder.set_tls(
+                                crate::protocol_serde::shape_service_connect_tls_configuration::de_service_connect_tls_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

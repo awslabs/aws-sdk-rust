@@ -22,6 +22,9 @@ impl UpdateCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateCase`.
 ///
+/// <note>
+/// <p>If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a> permission on the User ARN resource that you provide</p>
+/// </note>
 /// <p>Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the <code>CreateCase</code> input .</p>
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -154,5 +157,19 @@ impl UpdateCaseFluentBuilder {
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
         self.inner.get_fields()
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.inner = self.inner.performed_by(input);
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.inner = self.inner.set_performed_by(input);
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        self.inner.get_performed_by()
     }
 }

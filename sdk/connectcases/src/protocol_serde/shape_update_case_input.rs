@@ -15,5 +15,11 @@ pub fn ser_update_case_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.performed_by {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("performedBy").start_object();
+        crate::protocol_serde::shape_user_union::ser_user_union(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

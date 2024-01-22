@@ -47,6 +47,12 @@ pub use crate::types::_secret::SecretBuilder;
 
 pub use crate::types::_service_connect_service::ServiceConnectServiceBuilder;
 
+pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfigurationBuilder;
+
+pub use crate::types::_service_connect_tls_certificate_authority::ServiceConnectTlsCertificateAuthorityBuilder;
+
+pub use crate::types::_timeout_configuration::TimeoutConfigurationBuilder;
+
 pub use crate::types::_service_connect_client_alias::ServiceConnectClientAliasBuilder;
 
 pub use crate::types::_deployment_configuration::DeploymentConfigurationBuilder;

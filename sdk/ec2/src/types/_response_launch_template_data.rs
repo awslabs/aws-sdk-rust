@@ -44,7 +44,9 @@ pub struct ResponseLaunchTemplateData {
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The tags that are applied to the resources that are created during instance launch.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecification>>,
-    /// <p>The elastic GPU specification.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub elastic_gpu_specifications: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecificationResponse>>,
     /// <p>An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.</p>
     /// <p>You cannot specify accelerators from different generations in the same request.</p><note>
@@ -158,7 +160,9 @@ impl ResponseLaunchTemplateData {
     pub fn tag_specifications(&self) -> &[crate::types::LaunchTemplateTagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
-    /// <p>The elastic GPU specification.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_specifications.is_none()`.
     pub fn elastic_gpu_specifications(&self) -> &[crate::types::ElasticGpuSpecificationResponse] {
@@ -589,14 +593,18 @@ impl ResponseLaunchTemplateDataBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_specifications`](Self::set_elastic_gpu_specifications).
     ///
-    /// <p>The elastic GPU specification.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn elastic_gpu_specifications(mut self, input: crate::types::ElasticGpuSpecificationResponse) -> Self {
         let mut v = self.elastic_gpu_specifications.unwrap_or_default();
         v.push(input);
         self.elastic_gpu_specifications = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The elastic GPU specification.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn set_elastic_gpu_specifications(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecificationResponse>>,
@@ -604,7 +612,9 @@ impl ResponseLaunchTemplateDataBuilder {
         self.elastic_gpu_specifications = input;
         self
     }
-    /// <p>The elastic GPU specification.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn get_elastic_gpu_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuSpecificationResponse>> {
         &self.elastic_gpu_specifications
     }

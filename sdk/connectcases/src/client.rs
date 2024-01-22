@@ -183,6 +183,8 @@ mod delete_domain;
 
 mod get_case;
 
+mod get_case_audit_events;
+
 mod get_case_event_configuration;
 
 mod get_domain;

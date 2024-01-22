@@ -553,9 +553,13 @@ pub(crate) mod shape_proxy_configuration_properties;
 
 pub(crate) mod shape_service_connect_client_alias;
 
+pub(crate) mod shape_service_connect_tls_configuration;
+
 pub(crate) mod shape_service_event;
 
 pub(crate) mod shape_task_managed_ebs_volume_termination_policy;
+
+pub(crate) mod shape_timeout_configuration;
 
 pub(crate) mod shape_tmpfs;
 
@@ -590,6 +594,8 @@ pub(crate) mod shape_resource_requirements;
 pub(crate) mod shape_secret_list;
 
 pub(crate) mod shape_service_connect_service_resource_list;
+
+pub(crate) mod shape_service_connect_tls_certificate_authority;
 
 pub(crate) mod shape_service_volume_configurations;
 

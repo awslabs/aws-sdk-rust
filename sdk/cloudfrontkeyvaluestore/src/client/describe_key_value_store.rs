@@ -11,6 +11,8 @@ impl super::Client {
     ///   - [`created(DateTime)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::created): <p>Date and time when the Key Value Store was created.</p>
     ///   - [`e_tag(String)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::e_tag): <p>The version identifier for the current version of the Key Value Store.</p>
     ///   - [`last_modified(Option<DateTime>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::last_modified): <p>Date and time when the key value pairs in the Key Value Store was last modified.</p>
+    ///   - [`status(Option<String>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::status): <p>The current status of the Key Value Store.</p>
+    ///   - [`failure_reason(Option<String>)`](crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput::failure_reason): <p>The reason for Key Value Store creation failure.</p>
     /// - On failure, responds with [`SdkError<DescribeKeyValueStoreError>`](crate::operation::describe_key_value_store::DescribeKeyValueStoreError)
     pub fn describe_key_value_store(&self) -> crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder {
         crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreFluentBuilder::new(self.handle.clone())

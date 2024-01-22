@@ -167,6 +167,15 @@ pub(crate) fn get_case_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_case_audit_events_output_output_correct_errors(
+    mut builder: crate::operation::get_case_audit_events::builders::GetCaseAuditEventsOutputBuilder,
+) -> crate::operation::get_case_audit_events::builders::GetCaseAuditEventsOutputBuilder {
+    if builder.audit_events.is_none() {
+        builder.audit_events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_case_event_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder,
 ) -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationOutputBuilder {
@@ -313,6 +322,22 @@ pub(crate) fn event_bridge_configuration_correct_errors(
 ) -> crate::types::builders::EventBridgeConfigurationBuilder {
     if builder.enabled.is_none() {
         builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn audit_event_correct_errors(mut builder: crate::types::builders::AuditEventBuilder) -> crate::types::builders::AuditEventBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AuditEventType>().ok()
+    }
+    if builder.performed_time.is_none() {
+        builder.performed_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
     }
     builder
 }
@@ -505,6 +530,15 @@ pub(crate) fn template_summary_correct_errors(
     builder
 }
 
+pub(crate) fn audit_event_performed_by_correct_errors(
+    mut builder: crate::types::builders::AuditEventPerformedByBuilder,
+) -> crate::types::builders::AuditEventPerformedByBuilder {
+    if builder.iam_principal_arn.is_none() {
+        builder.iam_principal_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn case_event_included_data_correct_errors(
     mut builder: crate::types::builders::CaseEventIncludedDataBuilder,
 ) -> crate::types::builders::CaseEventIncludedDataBuilder {
@@ -519,6 +553,18 @@ pub(crate) fn related_item_event_included_data_correct_errors(
 ) -> crate::types::builders::RelatedItemEventIncludedDataBuilder {
     if builder.include_content.is_none() {
         builder.include_content = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn audit_event_field_correct_errors(
+    mut builder: crate::types::builders::AuditEventFieldBuilder,
+) -> crate::types::builders::AuditEventFieldBuilder {
+    if builder.event_field_id.is_none() {
+        builder.event_field_id = Some(Default::default())
+    }
+    if builder.new_value.is_none() {
+        builder.new_value = Some(crate::types::AuditEventFieldValueUnion::Unknown)
     }
     builder
 }

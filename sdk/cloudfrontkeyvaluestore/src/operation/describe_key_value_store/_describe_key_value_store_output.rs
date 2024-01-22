@@ -16,6 +16,10 @@ pub struct DescribeKeyValueStoreOutput {
     pub e_tag: ::std::string::String,
     /// <p>Date and time when the key value pairs in the Key Value Store was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The current status of the Key Value Store.</p>
+    pub status: ::std::option::Option<::std::string::String>,
+    /// <p>The reason for Key Value Store creation failure.</p>
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeKeyValueStoreOutput {
@@ -45,6 +49,14 @@ impl DescribeKeyValueStoreOutput {
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
+    /// <p>The current status of the Key Value Store.</p>
+    pub fn status(&self) -> ::std::option::Option<&str> {
+        self.status.as_deref()
+    }
+    /// <p>The reason for Key Value Store creation failure.</p>
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
+        self.failure_reason.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeKeyValueStoreOutput {
     fn request_id(&self) -> Option<&str> {
@@ -68,6 +80,8 @@ pub struct DescribeKeyValueStoreOutputBuilder {
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeKeyValueStoreOutputBuilder {
@@ -160,6 +174,34 @@ impl DescribeKeyValueStoreOutputBuilder {
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }
+    /// <p>The current status of the Key Value Store.</p>
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current status of the Key Value Store.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the Key Value Store.</p>
+    pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status
+    }
+    /// <p>The reason for Key Value Store creation failure.</p>
+    pub fn failure_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for Key Value Store creation failure.</p>
+    pub fn set_failure_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.failure_reason = input;
+        self
+    }
+    /// <p>The reason for Key Value Store creation failure.</p>
+    pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.failure_reason
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -214,6 +256,8 @@ impl DescribeKeyValueStoreOutputBuilder {
                 )
             })?,
             last_modified: self.last_modified,
+            status: self.status,
+            failure_reason: self.failure_reason,
             _request_id: self._request_id,
         })
     }

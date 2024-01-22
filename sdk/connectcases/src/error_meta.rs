@@ -353,6 +353,34 @@ impl From<crate::operation::get_case::GetCaseError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_case_audit_events::GetCaseAuditEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_case_audit_events::GetCaseAuditEventsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_case_audit_events::GetCaseAuditEventsError> for Error {
+    fn from(err: crate::operation::get_case_audit_events::GetCaseAuditEventsError) -> Self {
+        match err {
+            crate::operation::get_case_audit_events::GetCaseAuditEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_case_audit_events::GetCaseAuditEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_case_audit_events::GetCaseAuditEventsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_case_audit_events::GetCaseAuditEventsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_case_audit_events::GetCaseAuditEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_case_audit_events::GetCaseAuditEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_case_event_configuration::GetCaseEventConfigurationError, R>>
     for Error
 where

@@ -11,6 +11,8 @@ pub struct CreateCaseInput {
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl CreateCaseInput {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -31,6 +33,10 @@ impl CreateCaseInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+        self.performed_by.as_ref()
+    }
 }
 impl CreateCaseInput {
     /// Creates a new builder-style object to manufacture [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
@@ -47,6 +53,7 @@ pub struct CreateCaseInputBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl CreateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -113,6 +120,20 @@ impl CreateCaseInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.performed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.performed_by = input;
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        &self.performed_by
+    }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_case::CreateCaseInput {
@@ -120,6 +141,7 @@ impl CreateCaseInputBuilder {
             template_id: self.template_id,
             fields: self.fields,
             client_token: self.client_token,
+            performed_by: self.performed_by,
         })
     }
 }

@@ -67,7 +67,19 @@ pub use crate::types::_field_filter::FieldFilter;
 
 pub use crate::types::_case_summary::CaseSummary;
 
+pub use crate::types::_audit_event::AuditEvent;
+
+pub use crate::types::_audit_event_performed_by::AuditEventPerformedBy;
+
 pub use crate::types::_user_union::UserUnion;
+
+pub use crate::types::_audit_event_field::AuditEventField;
+
+pub use crate::types::_audit_event_field_value_union::AuditEventFieldValueUnion;
+
+pub use crate::types::_related_item_type::RelatedItemType;
+
+pub use crate::types::_audit_event_type::AuditEventType;
 
 pub use crate::types::_related_item_input_content::RelatedItemInputContent;
 
@@ -76,8 +88,6 @@ pub use crate::types::_comment_content::CommentContent;
 pub use crate::types::_comment_body_text_type::CommentBodyTextType;
 
 pub use crate::types::_contact::Contact;
-
-pub use crate::types::_related_item_type::RelatedItemType;
 
 pub use crate::types::_search_related_items_response_item::SearchRelatedItemsResponseItem;
 
@@ -90,6 +100,16 @@ pub use crate::types::_related_item_type_filter::RelatedItemTypeFilter;
 pub use crate::types::_comment_filter::CommentFilter;
 
 pub use crate::types::_contact_filter::ContactFilter;
+
+mod _audit_event;
+
+mod _audit_event_field;
+
+mod _audit_event_field_value_union;
+
+mod _audit_event_performed_by;
+
+mod _audit_event_type;
 
 mod _basic_layout;
 

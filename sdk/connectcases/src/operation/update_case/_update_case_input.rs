@@ -9,6 +9,8 @@ pub struct UpdateCaseInput {
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects with <code>fieldId</code> (matching ListFields/DescribeField) and value union data, structured identical to <code>CreateCase</code>.</p>
     pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl UpdateCaseInput {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -25,6 +27,10 @@ impl UpdateCaseInput {
     pub fn fields(&self) -> &[crate::types::FieldValue] {
         self.fields.as_deref().unwrap_or_default()
     }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn performed_by(&self) -> ::std::option::Option<&crate::types::UserUnion> {
+        self.performed_by.as_ref()
+    }
 }
 impl UpdateCaseInput {
     /// Creates a new builder-style object to manufacture [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
@@ -40,6 +46,7 @@ pub struct UpdateCaseInputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldValue>>,
+    pub(crate) performed_by: ::std::option::Option<crate::types::UserUnion>,
 }
 impl UpdateCaseInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -92,12 +99,27 @@ impl UpdateCaseInputBuilder {
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FieldValue>> {
         &self.fields
     }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.performed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.performed_by = input;
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        &self.performed_by
+    }
     /// Consumes the builder and constructs a [`UpdateCaseInput`](crate::operation::update_case::UpdateCaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_case::UpdateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_case::UpdateCaseInput {
             domain_id: self.domain_id,
             case_id: self.case_id,
             fields: self.fields,
+            performed_by: self.performed_by,
         })
     }
 }

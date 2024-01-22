@@ -22,6 +22,9 @@ impl CreateCaseInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateCase`.
 ///
+/// <note>
+/// <p>If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a> permission on the User ARN resource that you provide</p>
+/// </note>
 /// <p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p>
 /// <p>The following fields are required when creating a case:</p>
 /// <ul>
@@ -174,5 +177,19 @@ impl CreateCaseFluentBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn performed_by(mut self, input: crate::types::UserUnion) -> Self {
+        self.inner = self.inner.performed_by(input);
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn set_performed_by(mut self, input: ::std::option::Option<crate::types::UserUnion>) -> Self {
+        self.inner = self.inner.set_performed_by(input);
+        self
+    }
+    /// <p>Represents the identity of the person who performed the action.</p>
+    pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::UserUnion> {
+        self.inner.get_performed_by()
     }
 }

@@ -161,6 +161,24 @@ pub fn de_create_db_cluster_http_error(
             }
             tmp
         }),
+        "InsufficientDBInstanceCapacity" => crate::operation::create_db_cluster::CreateDBClusterError::InsufficientDbInstanceCapacityFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InsufficientDbInstanceCapacityFaultBuilder::default();
+                output = crate::protocol_serde::shape_insufficient_db_instance_capacity_fault::de_insufficient_db_instance_capacity_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InsufficientStorageClusterCapacity" => {
             crate::operation::create_db_cluster::CreateDBClusterError::InsufficientStorageClusterCapacityFault({
                 #[allow(unused_mut)]

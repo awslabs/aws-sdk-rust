@@ -43,6 +43,8 @@ pub(crate) mod shape_delete_domain;
 
 pub(crate) mod shape_get_case;
 
+pub(crate) mod shape_get_case_audit_events;
+
 pub(crate) mod shape_get_case_event_configuration;
 
 pub(crate) mod shape_get_domain;
@@ -111,6 +113,8 @@ pub(crate) mod shape_create_related_item_input;
 
 pub(crate) mod shape_create_template_input;
 
+pub(crate) mod shape_get_case_audit_events_input;
+
 pub(crate) mod shape_get_case_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -140,6 +144,8 @@ pub(crate) mod shape_update_layout_input;
 pub(crate) mod shape_update_template_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_audit_events_list;
 
 pub(crate) mod shape_batch_get_field_error_list;
 
@@ -193,6 +199,8 @@ pub(crate) mod shape_template_summary_list;
 
 pub(crate) mod shape_user_union;
 
+pub(crate) mod shape_audit_event;
+
 pub(crate) mod shape_basic_layout;
 
 pub(crate) mod shape_case_summary;
@@ -229,6 +237,10 @@ pub(crate) mod shape_search_related_items_response_item;
 
 pub(crate) mod shape_template_summary;
 
+pub(crate) mod shape_audit_event_field_list;
+
+pub(crate) mod shape_audit_event_performed_by;
+
 pub(crate) mod shape_case_event_included_data;
 
 pub(crate) mod shape_empty_field_value;
@@ -239,6 +251,8 @@ pub(crate) mod shape_related_item_content;
 
 pub(crate) mod shape_related_item_event_included_data;
 
+pub(crate) mod shape_audit_event_field;
+
 pub(crate) mod shape_contact_content;
 
 pub(crate) mod shape_field_identifier_list;
@@ -246,6 +260,8 @@ pub(crate) mod shape_field_identifier_list;
 pub(crate) mod shape_section;
 
 pub(crate) mod shape_sections_list;
+
+pub(crate) mod shape_audit_event_field_value_union;
 
 pub(crate) mod shape_field_group;
 

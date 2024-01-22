@@ -47,6 +47,12 @@ pub use crate::types::_sort::SortBuilder;
 
 pub use crate::types::_case_summary::CaseSummaryBuilder;
 
+pub use crate::types::_audit_event::AuditEventBuilder;
+
+pub use crate::types::_audit_event_performed_by::AuditEventPerformedByBuilder;
+
+pub use crate::types::_audit_event_field::AuditEventFieldBuilder;
+
 pub use crate::types::_comment_content::CommentContentBuilder;
 
 pub use crate::types::_contact::ContactBuilder;

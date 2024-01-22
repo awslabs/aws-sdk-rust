@@ -62,7 +62,9 @@ pub struct Instance {
     pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
     pub instance_lifecycle: ::std::option::Option<crate::types::InstanceLifecycleType>,
-    /// <p>The Elastic GPU associated with the instance.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub elastic_gpu_associations: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>,
     /// <p>The elastic inference accelerator associated with the instance.</p>
     pub elastic_inference_accelerator_associations: ::std::option::Option<::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
@@ -243,7 +245,9 @@ impl Instance {
     pub fn instance_lifecycle(&self) -> ::std::option::Option<&crate::types::InstanceLifecycleType> {
         self.instance_lifecycle.as_ref()
     }
-    /// <p>The Elastic GPU associated with the instance.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.elastic_gpu_associations.is_none()`.
     pub fn elastic_gpu_associations(&self) -> &[crate::types::ElasticGpuAssociation] {
@@ -860,19 +864,25 @@ impl InstanceBuilder {
     ///
     /// To override the contents of this collection use [`set_elastic_gpu_associations`](Self::set_elastic_gpu_associations).
     ///
-    /// <p>The Elastic GPU associated with the instance.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn elastic_gpu_associations(mut self, input: crate::types::ElasticGpuAssociation) -> Self {
         let mut v = self.elastic_gpu_associations.unwrap_or_default();
         v.push(input);
         self.elastic_gpu_associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Elastic GPU associated with the instance.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn set_elastic_gpu_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>) -> Self {
         self.elastic_gpu_associations = input;
         self
     }
-    /// <p>The Elastic GPU associated with the instance.</p>
+    /// <p>Deprecated.</p><note>
+    /// <p>Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.</p>
+    /// </note>
     pub fn get_elastic_gpu_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>> {
         &self.elastic_gpu_associations
     }

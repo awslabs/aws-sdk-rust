@@ -6,6 +6,8 @@ pub struct DescribeRouteTablesInput {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
+    /// <p><code>association.gateway-id</code> - The ID of the gateway involved in the association.</p></li>
+    /// <li>
     /// <p><code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p></li>
     /// <li>
     /// <p><code>association.route-table-id</code> - The ID of the route table involved in the association.</p></li>
@@ -66,6 +68,8 @@ pub struct DescribeRouteTablesInput {
 impl DescribeRouteTablesInput {
     /// <p>The filters.</p>
     /// <ul>
+    /// <li>
+    /// <p><code>association.gateway-id</code> - The ID of the gateway involved in the association.</p></li>
     /// <li>
     /// <p><code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p></li>
     /// <li>
@@ -163,6 +167,8 @@ impl DescribeRouteTablesInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
+    /// <p><code>association.gateway-id</code> - The ID of the gateway involved in the association.</p></li>
+    /// <li>
     /// <p><code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p></li>
     /// <li>
     /// <p><code>association.route-table-id</code> - The ID of the route table involved in the association.</p></li>
@@ -218,6 +224,8 @@ impl DescribeRouteTablesInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
+    /// <p><code>association.gateway-id</code> - The ID of the gateway involved in the association.</p></li>
+    /// <li>
     /// <p><code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p></li>
     /// <li>
     /// <p><code>association.route-table-id</code> - The ID of the route table involved in the association.</p></li>
@@ -270,6 +278,8 @@ impl DescribeRouteTablesInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
+    /// <li>
+    /// <p><code>association.gateway-id</code> - The ID of the gateway involved in the association.</p></li>
     /// <li>
     /// <p><code>association.route-table-association-id</code> - The ID of an association ID for the route table.</p></li>
     /// <li>

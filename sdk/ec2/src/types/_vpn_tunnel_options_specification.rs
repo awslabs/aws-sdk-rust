@@ -39,7 +39,7 @@ pub struct VpnTunnelOptionsSpecification {
     pub phase2_lifetime_seconds: ::std::option::Option<i32>,
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
-    /// <p>Default: <code>540</code></p>
+    /// <p>Default: <code>270</code></p>
     pub rekey_margin_time_seconds: ::std::option::Option<i32>,
     /// <p>The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>) during which the rekey time is randomly selected.</p>
     /// <p>Constraints: A value between 0 and 100.</p>
@@ -133,7 +133,7 @@ impl VpnTunnelOptionsSpecification {
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
-    /// <p>Default: <code>540</code></p>
+    /// <p>Default: <code>270</code></p>
     pub fn rekey_margin_time_seconds(&self) -> ::std::option::Option<i32> {
         self.rekey_margin_time_seconds
     }
@@ -425,21 +425,21 @@ impl VpnTunnelOptionsSpecificationBuilder {
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
-    /// <p>Default: <code>540</code></p>
+    /// <p>Default: <code>270</code></p>
     pub fn rekey_margin_time_seconds(mut self, input: i32) -> Self {
         self.rekey_margin_time_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
-    /// <p>Default: <code>540</code></p>
+    /// <p>Default: <code>270</code></p>
     pub fn set_rekey_margin_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rekey_margin_time_seconds = input;
         self
     }
     /// <p>The margin time, in seconds, before the phase 2 lifetime expires, during which the Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.</p>
     /// <p>Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.</p>
-    /// <p>Default: <code>540</code></p>
+    /// <p>Default: <code>270</code></p>
     pub fn get_rekey_margin_time_seconds(&self) -> &::std::option::Option<i32> {
         &self.rekey_margin_time_seconds
     }
