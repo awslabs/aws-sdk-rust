@@ -2413,5 +2413,9 @@ source_hash = '9d4ed0db84c39dfdb4cbe4bfbc403d8f02a4518c027149b0f4e7100b81a3812a'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '8c1edd1d81c8470cb23bf9a439e7b95fe29e001effe87b707efa0a2719e57da4'
+
+[release]
+tag = 'release-2024-01-23'
+
 [release.crates]
 aws-sdk-inspector2 = '1.12.0'
