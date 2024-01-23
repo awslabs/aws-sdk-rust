@@ -116,6 +116,15 @@ pub(crate) fn create_filter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_cis_scan_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_cis_scan_configuration::builders::DeleteCisScanConfigurationOutputBuilder,
+) -> crate::operation::delete_cis_scan_configuration::builders::DeleteCisScanConfigurationOutputBuilder {
+    if builder.scan_configuration_arn.is_none() {
+        builder.scan_configuration_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_filter_output_output_correct_errors(
     mut builder: crate::operation::delete_filter::builders::DeleteFilterOutputBuilder,
 ) -> crate::operation::delete_filter::builders::DeleteFilterOutputBuilder {
@@ -239,6 +248,15 @@ pub(crate) fn search_vulnerabilities_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cis_scan_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_cis_scan_configuration::builders::UpdateCisScanConfigurationOutputBuilder,
+) -> crate::operation::update_cis_scan_configuration::builders::UpdateCisScanConfigurationOutputBuilder {
+    if builder.scan_configuration_arn.is_none() {
+        builder.scan_configuration_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_filter_output_output_correct_errors(
     mut builder: crate::operation::update_filter::builders::UpdateFilterOutputBuilder,
 ) -> crate::operation::update_filter::builders::UpdateFilterOutputBuilder {
@@ -311,6 +329,52 @@ pub(crate) fn account_state_correct_errors(mut builder: crate::types::builders::
             let builder = crate::types::builders::ResourceStateBuilder::default();
             Some(crate::serde_util::resource_state_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn cis_check_aggregation_correct_errors(
+    mut builder: crate::types::builders::CisCheckAggregationBuilder,
+) -> crate::types::builders::CisCheckAggregationBuilder {
+    if builder.scan_arn.is_none() {
+        builder.scan_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cis_scan_correct_errors(mut builder: crate::types::builders::CisScanBuilder) -> crate::types::builders::CisScanBuilder {
+    if builder.scan_arn.is_none() {
+        builder.scan_arn = Some(Default::default())
+    }
+    if builder.scan_configuration_arn.is_none() {
+        builder.scan_configuration_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cis_scan_configuration_correct_errors(
+    mut builder: crate::types::builders::CisScanConfigurationBuilder,
+) -> crate::types::builders::CisScanConfigurationBuilder {
+    if builder.scan_configuration_arn.is_none() {
+        builder.scan_configuration_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cis_scan_result_details_correct_errors(
+    mut builder: crate::types::builders::CisScanResultDetailsBuilder,
+) -> crate::types::builders::CisScanResultDetailsBuilder {
+    if builder.scan_arn.is_none() {
+        builder.scan_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cis_target_resource_aggregation_correct_errors(
+    mut builder: crate::types::builders::CisTargetResourceAggregationBuilder,
+) -> crate::types::builders::CisTargetResourceAggregationBuilder {
+    if builder.scan_arn.is_none() {
+        builder.scan_arn = Some(Default::default())
     }
     builder
 }
@@ -813,6 +877,18 @@ pub(crate) fn cvss_score_details_correct_errors(
     builder
 }
 
+pub(crate) fn daily_schedule_correct_errors(
+    mut builder: crate::types::builders::DailyScheduleBuilder,
+) -> crate::types::builders::DailyScheduleBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = {
+            let builder = crate::types::builders::TimeBuilder::default();
+            crate::serde_util::time_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn free_trial_info_correct_errors(
     mut builder: crate::types::builders::FreeTrialInfoBuilder,
 ) -> crate::types::builders::FreeTrialInfoBuilder {
@@ -827,6 +903,21 @@ pub(crate) fn free_trial_info_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::FreeTrialStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn monthly_schedule_correct_errors(
+    mut builder: crate::types::builders::MonthlyScheduleBuilder,
+) -> crate::types::builders::MonthlyScheduleBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = {
+            let builder = crate::types::builders::TimeBuilder::default();
+            crate::serde_util::time_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.day.is_none() {
+        builder.day = "no value was set".parse::<crate::types::Day>().ok()
     }
     builder
 }
@@ -851,6 +942,21 @@ pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::Resou
     builder
 }
 
+pub(crate) fn weekly_schedule_correct_errors(
+    mut builder: crate::types::builders::WeeklyScheduleBuilder,
+) -> crate::types::builders::WeeklyScheduleBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = {
+            let builder = crate::types::builders::TimeBuilder::default();
+            crate::serde_util::time_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.days.is_none() {
+        builder.days = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cvss_score_correct_errors(mut builder: crate::types::builders::CvssScoreBuilder) -> crate::types::builders::CvssScoreBuilder {
     if builder.base_score.is_none() {
         builder.base_score = Some(Default::default())
@@ -863,6 +969,16 @@ pub(crate) fn cvss_score_correct_errors(mut builder: crate::types::builders::Cvs
     }
     if builder.source.is_none() {
         builder.source = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn time_correct_errors(mut builder: crate::types::builders::TimeBuilder) -> crate::types::builders::TimeBuilder {
+    if builder.time_of_day.is_none() {
+        builder.time_of_day = Some(Default::default())
+    }
+    if builder.timezone.is_none() {
+        builder.timezone = Some(Default::default())
     }
     builder
 }

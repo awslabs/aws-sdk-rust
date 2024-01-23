@@ -35,6 +35,38 @@ pub use crate::types::_ecr_configuration::EcrConfiguration;
 
 pub use crate::types::_ecr_rescan_duration::EcrRescanDuration;
 
+pub use crate::types::_update_cis_targets::UpdateCisTargets;
+
+pub use crate::types::_schedule::Schedule;
+
+pub use crate::types::_monthly_schedule::MonthlySchedule;
+
+pub use crate::types::_day::Day;
+
+pub use crate::types::_time::Time;
+
+pub use crate::types::_weekly_schedule::WeeklySchedule;
+
+pub use crate::types::_daily_schedule::DailySchedule;
+
+pub use crate::types::_one_time_schedule::OneTimeSchedule;
+
+pub use crate::types::_cis_security_level::CisSecurityLevel;
+
+pub use crate::types::_stop_cis_session_message::StopCisSessionMessage;
+
+pub use crate::types::_compute_platform::ComputePlatform;
+
+pub use crate::types::_stop_cis_message_progress::StopCisMessageProgress;
+
+pub use crate::types::_stop_cis_session_status::StopCisSessionStatus;
+
+pub use crate::types::_start_cis_session_message::StartCisSessionMessage;
+
+pub use crate::types::_cis_session_message::CisSessionMessage;
+
+pub use crate::types::_cis_rule_status::CisRuleStatus;
+
 pub use crate::types::_vulnerability::Vulnerability;
 
 pub use crate::types::_epss::Epss;
@@ -261,6 +293,76 @@ pub use crate::types::_scan_status_code::ScanStatusCode;
 
 pub use crate::types::_coverage_resource_type::CoverageResourceType;
 
+pub use crate::types::_cis_scan::CisScan;
+
+pub use crate::types::_cis_targets::CisTargets;
+
+pub use crate::types::_cis_scan_status::CisScanStatus;
+
+pub use crate::types::_cis_sort_order::CisSortOrder;
+
+pub use crate::types::_list_cis_scans_sort_by::ListCisScansSortBy;
+
+pub use crate::types::_list_cis_scans_detail_level::ListCisScansDetailLevel;
+
+pub use crate::types::_list_cis_scans_filter_criteria::ListCisScansFilterCriteria;
+
+pub use crate::types::_cis_string_filter::CisStringFilter;
+
+pub use crate::types::_cis_string_comparison::CisStringComparison;
+
+pub use crate::types::_cis_number_filter::CisNumberFilter;
+
+pub use crate::types::_cis_date_filter::CisDateFilter;
+
+pub use crate::types::_cis_scan_status_filter::CisScanStatusFilter;
+
+pub use crate::types::_cis_scan_status_comparison::CisScanStatusComparison;
+
+pub use crate::types::_tag_filter::TagFilter;
+
+pub use crate::types::_tag_comparison::TagComparison;
+
+pub use crate::types::_cis_target_resource_aggregation::CisTargetResourceAggregation;
+
+pub use crate::types::_cis_target_status_reason::CisTargetStatusReason;
+
+pub use crate::types::_cis_target_status::CisTargetStatus;
+
+pub use crate::types::_status_counts::StatusCounts;
+
+pub use crate::types::_cis_scan_results_aggregated_by_target_resource_sort_by::CisScanResultsAggregatedByTargetResourceSortBy;
+
+pub use crate::types::_cis_scan_results_aggregated_by_target_resource_filter_criteria::CisScanResultsAggregatedByTargetResourceFilterCriteria;
+
+pub use crate::types::_cis_target_status_reason_filter::CisTargetStatusReasonFilter;
+
+pub use crate::types::_cis_target_status_comparison::CisTargetStatusComparison;
+
+pub use crate::types::_cis_target_status_filter::CisTargetStatusFilter;
+
+pub use crate::types::_cis_result_status_filter::CisResultStatusFilter;
+
+pub use crate::types::_cis_result_status::CisResultStatus;
+
+pub use crate::types::_cis_result_status_comparison::CisResultStatusComparison;
+
+pub use crate::types::_cis_check_aggregation::CisCheckAggregation;
+
+pub use crate::types::_cis_scan_results_aggregated_by_checks_sort_by::CisScanResultsAggregatedByChecksSortBy;
+
+pub use crate::types::_cis_scan_results_aggregated_by_checks_filter_criteria::CisScanResultsAggregatedByChecksFilterCriteria;
+
+pub use crate::types::_cis_security_level_filter::CisSecurityLevelFilter;
+
+pub use crate::types::_cis_security_level_comparison::CisSecurityLevelComparison;
+
+pub use crate::types::_cis_scan_configuration::CisScanConfiguration;
+
+pub use crate::types::_cis_scan_configurations_sort_by::CisScanConfigurationsSortBy;
+
+pub use crate::types::_list_cis_scan_configurations_filter_criteria::ListCisScanConfigurationsFilterCriteria;
+
 pub use crate::types::_permission::Permission;
 
 pub use crate::types::_operation::Operation;
@@ -293,6 +395,20 @@ pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationState;
 
 pub use crate::types::_ecr_rescan_duration_status::EcrRescanDurationStatus;
 
+pub use crate::types::_cis_scan_result_details::CisScanResultDetails;
+
+pub use crate::types::_cis_finding_status::CisFindingStatus;
+
+pub use crate::types::_cis_scan_result_details_sort_by::CisScanResultDetailsSortBy;
+
+pub use crate::types::_cis_scan_result_details_filter_criteria::CisScanResultDetailsFilterCriteria;
+
+pub use crate::types::_cis_finding_status_filter::CisFindingStatusFilter;
+
+pub use crate::types::_cis_finding_status_comparison::CisFindingStatusComparison;
+
+pub use crate::types::_cis_report_status::CisReportStatus;
+
 pub use crate::types::_failed_account::FailedAccount;
 
 pub use crate::types::_error_code::ErrorCode;
@@ -306,6 +422,8 @@ pub use crate::types::_account::Account;
 pub use crate::types::_resource_scan_type::ResourceScanType;
 
 pub use crate::types::_report_format::ReportFormat;
+
+pub use crate::types::_create_cis_targets::CreateCisTargets;
 
 pub use crate::types::_failed_member_account_ec2_deep_inspection_status_state::FailedMemberAccountEc2DeepInspectionStatusState;
 
@@ -393,6 +511,82 @@ mod _aws_ecr_container_sort_by;
 
 mod _aws_lambda_function_details;
 
+mod _cis_check_aggregation;
+
+mod _cis_date_filter;
+
+mod _cis_finding_status;
+
+mod _cis_finding_status_comparison;
+
+mod _cis_finding_status_filter;
+
+mod _cis_number_filter;
+
+mod _cis_report_status;
+
+mod _cis_result_status;
+
+mod _cis_result_status_comparison;
+
+mod _cis_result_status_filter;
+
+mod _cis_rule_status;
+
+mod _cis_scan;
+
+mod _cis_scan_configuration;
+
+mod _cis_scan_configurations_sort_by;
+
+mod _cis_scan_result_details;
+
+mod _cis_scan_result_details_filter_criteria;
+
+mod _cis_scan_result_details_sort_by;
+
+mod _cis_scan_results_aggregated_by_checks_filter_criteria;
+
+mod _cis_scan_results_aggregated_by_checks_sort_by;
+
+mod _cis_scan_results_aggregated_by_target_resource_filter_criteria;
+
+mod _cis_scan_results_aggregated_by_target_resource_sort_by;
+
+mod _cis_scan_status;
+
+mod _cis_scan_status_comparison;
+
+mod _cis_scan_status_filter;
+
+mod _cis_security_level;
+
+mod _cis_security_level_comparison;
+
+mod _cis_security_level_filter;
+
+mod _cis_session_message;
+
+mod _cis_sort_order;
+
+mod _cis_string_comparison;
+
+mod _cis_string_filter;
+
+mod _cis_target_resource_aggregation;
+
+mod _cis_target_status;
+
+mod _cis_target_status_comparison;
+
+mod _cis_target_status_filter;
+
+mod _cis_target_status_reason;
+
+mod _cis_target_status_reason_filter;
+
+mod _cis_targets;
+
 mod _cisa_data;
 
 mod _code_file_path;
@@ -406,6 +600,8 @@ mod _code_snippet_error_code;
 mod _code_snippet_result;
 
 mod _code_vulnerability_details;
+
+mod _compute_platform;
 
 mod _counts;
 
@@ -425,6 +621,8 @@ mod _coverage_string_filter;
 
 mod _covered_resource;
 
+mod _create_cis_targets;
+
 mod _currency;
 
 mod _cvss2;
@@ -437,7 +635,11 @@ mod _cvss_score_adjustment;
 
 mod _cvss_score_details;
 
+mod _daily_schedule;
+
 mod _date_filter;
+
+mod _day;
 
 mod _delegated_admin;
 
@@ -559,6 +761,14 @@ mod _lambda_layer_sort_by;
 
 mod _lambda_vpc_config;
 
+mod _list_cis_scan_configurations_filter_criteria;
+
+mod _list_cis_scans_detail_level;
+
+mod _list_cis_scans_filter_criteria;
+
+mod _list_cis_scans_sort_by;
+
 mod _map_comparison;
 
 mod _map_filter;
@@ -569,6 +779,8 @@ mod _member_account_ec2_deep_inspection_status;
 
 mod _member_account_ec2_deep_inspection_status_state;
 
+mod _monthly_schedule;
+
 mod _network_path;
 
 mod _network_protocol;
@@ -576,6 +788,8 @@ mod _network_protocol;
 mod _network_reachability_details;
 
 mod _number_filter;
+
+mod _one_time_schedule;
 
 mod _operation;
 
@@ -651,6 +865,8 @@ mod _scan_status_reason;
 
 mod _scan_type;
 
+mod _schedule;
+
 mod _search_vulnerabilities_filter_criteria;
 
 mod _service;
@@ -665,11 +881,21 @@ mod _sort_field;
 
 mod _sort_order;
 
+mod _start_cis_session_message;
+
 mod _state;
 
 mod _status;
 
+mod _status_counts;
+
 mod _step;
+
+mod _stop_cis_message_progress;
+
+mod _stop_cis_session_message;
+
+mod _stop_cis_session_status;
 
 mod _string_comparison;
 
@@ -677,11 +903,19 @@ mod _string_filter;
 
 mod _suggested_fix;
 
+mod _tag_comparison;
+
+mod _tag_filter;
+
+mod _time;
+
 mod _title_aggregation;
 
 mod _title_aggregation_response;
 
 mod _title_sort_by;
+
+mod _update_cis_targets;
 
 mod _usage;
 
@@ -698,6 +932,8 @@ mod _vulnerability;
 mod _vulnerability_source;
 
 mod _vulnerable_package;
+
+mod _weekly_schedule;
 
 /// Builders
 pub mod builders;

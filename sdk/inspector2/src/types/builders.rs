@@ -19,6 +19,28 @@ pub use crate::types::_map_filter::MapFilterBuilder;
 
 pub use crate::types::_ecr_configuration::EcrConfigurationBuilder;
 
+pub use crate::types::_update_cis_targets::UpdateCisTargetsBuilder;
+
+pub use crate::types::_monthly_schedule::MonthlyScheduleBuilder;
+
+pub use crate::types::_time::TimeBuilder;
+
+pub use crate::types::_weekly_schedule::WeeklyScheduleBuilder;
+
+pub use crate::types::_daily_schedule::DailyScheduleBuilder;
+
+pub use crate::types::_one_time_schedule::OneTimeScheduleBuilder;
+
+pub use crate::types::_stop_cis_session_message::StopCisSessionMessageBuilder;
+
+pub use crate::types::_compute_platform::ComputePlatformBuilder;
+
+pub use crate::types::_stop_cis_message_progress::StopCisMessageProgressBuilder;
+
+pub use crate::types::_start_cis_session_message::StartCisSessionMessageBuilder;
+
+pub use crate::types::_cis_session_message::CisSessionMessageBuilder;
+
 pub use crate::types::_vulnerability::VulnerabilityBuilder;
 
 pub use crate::types::_epss::EpssBuilder;
@@ -163,6 +185,44 @@ pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadataBuilder;
 
 pub use crate::types::_scan_status::ScanStatusBuilder;
 
+pub use crate::types::_cis_scan::CisScanBuilder;
+
+pub use crate::types::_cis_targets::CisTargetsBuilder;
+
+pub use crate::types::_list_cis_scans_filter_criteria::ListCisScansFilterCriteriaBuilder;
+
+pub use crate::types::_cis_string_filter::CisStringFilterBuilder;
+
+pub use crate::types::_cis_number_filter::CisNumberFilterBuilder;
+
+pub use crate::types::_cis_date_filter::CisDateFilterBuilder;
+
+pub use crate::types::_cis_scan_status_filter::CisScanStatusFilterBuilder;
+
+pub use crate::types::_tag_filter::TagFilterBuilder;
+
+pub use crate::types::_cis_target_resource_aggregation::CisTargetResourceAggregationBuilder;
+
+pub use crate::types::_status_counts::StatusCountsBuilder;
+
+pub use crate::types::_cis_scan_results_aggregated_by_target_resource_filter_criteria::CisScanResultsAggregatedByTargetResourceFilterCriteriaBuilder;
+
+pub use crate::types::_cis_target_status_reason_filter::CisTargetStatusReasonFilterBuilder;
+
+pub use crate::types::_cis_target_status_filter::CisTargetStatusFilterBuilder;
+
+pub use crate::types::_cis_result_status_filter::CisResultStatusFilterBuilder;
+
+pub use crate::types::_cis_check_aggregation::CisCheckAggregationBuilder;
+
+pub use crate::types::_cis_scan_results_aggregated_by_checks_filter_criteria::CisScanResultsAggregatedByChecksFilterCriteriaBuilder;
+
+pub use crate::types::_cis_security_level_filter::CisSecurityLevelFilterBuilder;
+
+pub use crate::types::_cis_scan_configuration::CisScanConfigurationBuilder;
+
+pub use crate::types::_list_cis_scan_configurations_filter_criteria::ListCisScanConfigurationsFilterCriteriaBuilder;
+
 pub use crate::types::_permission::PermissionBuilder;
 
 pub use crate::types::_resource_filter_criteria::ResourceFilterCriteriaBuilder;
@@ -179,11 +239,19 @@ pub use crate::types::_ecr_configuration_state::EcrConfigurationStateBuilder;
 
 pub use crate::types::_ecr_rescan_duration_state::EcrRescanDurationStateBuilder;
 
+pub use crate::types::_cis_scan_result_details::CisScanResultDetailsBuilder;
+
+pub use crate::types::_cis_scan_result_details_filter_criteria::CisScanResultDetailsFilterCriteriaBuilder;
+
+pub use crate::types::_cis_finding_status_filter::CisFindingStatusFilterBuilder;
+
 pub use crate::types::_failed_account::FailedAccountBuilder;
 
 pub use crate::types::_resource_status::ResourceStatusBuilder;
 
 pub use crate::types::_account::AccountBuilder;
+
+pub use crate::types::_create_cis_targets::CreateCisTargetsBuilder;
 
 pub use crate::types::_failed_member_account_ec2_deep_inspection_status_state::FailedMemberAccountEc2DeepInspectionStatusStateBuilder;
 

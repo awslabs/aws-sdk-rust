@@ -154,6 +154,8 @@ mod cancel_findings_report;
 
 mod cancel_sbom_export;
 
+mod create_cis_scan_configuration;
+
 mod create_filter;
 
 mod create_findings_report;
@@ -187,6 +189,8 @@ mod create_sbom_export;
 /// ```
 pub mod customize;
 
+mod delete_cis_scan_configuration;
+
 mod delete_filter;
 
 mod describe_organization_configuration;
@@ -200,6 +204,10 @@ mod disassociate_member;
 mod enable;
 
 mod enable_delegated_admin_account;
+
+mod get_cis_scan_report;
+
+mod get_cis_scan_result_details;
 
 mod get_configuration;
 
@@ -216,6 +224,14 @@ mod get_member;
 mod get_sbom_export;
 
 mod list_account_permissions;
+
+mod list_cis_scan_configurations;
+
+mod list_cis_scan_results_aggregated_by_checks;
+
+mod list_cis_scan_results_aggregated_by_target_resource;
+
+mod list_cis_scans;
 
 mod list_coverage;
 
@@ -239,9 +255,19 @@ mod reset_encryption_key;
 
 mod search_vulnerabilities;
 
+mod send_cis_session_health;
+
+mod send_cis_session_telemetry;
+
+mod start_cis_session;
+
+mod stop_cis_session;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_cis_scan_configuration;
 
 mod update_configuration;
 

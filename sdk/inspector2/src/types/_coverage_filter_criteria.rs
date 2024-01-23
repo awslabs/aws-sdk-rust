@@ -12,7 +12,7 @@ pub struct CoverageFilterCriteria {
     pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
     pub scan_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
@@ -56,7 +56,7 @@ impl CoverageFilterCriteria {
     pub fn resource_id(&self) -> &[crate::types::CoverageStringFilter] {
         self.resource_id.as_deref().unwrap_or_default()
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
     pub fn resource_type(&self) -> &[crate::types::CoverageStringFilter] {
@@ -221,19 +221,19 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
     ///
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
     pub fn resource_type(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
         v.push(input);
         self.resource_type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code> or <code>AWS_ECR_REPOSITORY</code>.</p>
+    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.resource_type
     }

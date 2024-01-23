@@ -28,6 +28,9 @@ pub mod cancel_findings_report;
 /// Types for the `CancelSbomExport` operation.
 pub mod cancel_sbom_export;
 
+/// Types for the `CreateCisScanConfiguration` operation.
+pub mod create_cis_scan_configuration;
+
 /// Types for the `CreateFilter` operation.
 pub mod create_filter;
 
@@ -36,6 +39,9 @@ pub mod create_findings_report;
 
 /// Types for the `CreateSbomExport` operation.
 pub mod create_sbom_export;
+
+/// Types for the `DeleteCisScanConfiguration` operation.
+pub mod delete_cis_scan_configuration;
 
 /// Types for the `DeleteFilter` operation.
 pub mod delete_filter;
@@ -57,6 +63,12 @@ pub mod enable;
 
 /// Types for the `EnableDelegatedAdminAccount` operation.
 pub mod enable_delegated_admin_account;
+
+/// Types for the `GetCisScanReport` operation.
+pub mod get_cis_scan_report;
+
+/// Types for the `GetCisScanResultDetails` operation.
+pub mod get_cis_scan_result_details;
 
 /// Types for the `GetConfiguration` operation.
 pub mod get_configuration;
@@ -81,6 +93,18 @@ pub mod get_sbom_export;
 
 /// Types for the `ListAccountPermissions` operation.
 pub mod list_account_permissions;
+
+/// Types for the `ListCisScanConfigurations` operation.
+pub mod list_cis_scan_configurations;
+
+/// Types for the `ListCisScanResultsAggregatedByChecks` operation.
+pub mod list_cis_scan_results_aggregated_by_checks;
+
+/// Types for the `ListCisScanResultsAggregatedByTargetResource` operation.
+pub mod list_cis_scan_results_aggregated_by_target_resource;
+
+/// Types for the `ListCisScans` operation.
+pub mod list_cis_scans;
 
 /// Types for the `ListCoverage` operation.
 pub mod list_coverage;
@@ -115,11 +139,26 @@ pub mod reset_encryption_key;
 /// Types for the `SearchVulnerabilities` operation.
 pub mod search_vulnerabilities;
 
+/// Types for the `SendCisSessionHealth` operation.
+pub mod send_cis_session_health;
+
+/// Types for the `SendCisSessionTelemetry` operation.
+pub mod send_cis_session_telemetry;
+
+/// Types for the `StartCisSession` operation.
+pub mod start_cis_session;
+
+/// Types for the `StopCisSession` operation.
+pub mod stop_cis_session;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateCisScanConfiguration` operation.
+pub mod update_cis_scan_configuration;
 
 /// Types for the `UpdateConfiguration` operation.
 pub mod update_configuration;

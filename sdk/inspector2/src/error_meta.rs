@@ -359,6 +359,42 @@ impl From<crate::operation::cancel_sbom_export::CancelSbomExportError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError> for Error {
+    fn from(err: crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError) -> Self {
+        match err {
+            crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_cis_scan_configuration::CreateCisScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_filter::CreateFilterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -439,6 +475,45 @@ impl From<crate::operation::create_sbom_export::CreateSbomExportError> for Error
             crate::operation::create_sbom_export::CreateSbomExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_sbom_export::CreateSbomExportError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_sbom_export::CreateSbomExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError> for Error {
+    fn from(err: crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_cis_scan_configuration::DeleteCisScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -680,6 +755,67 @@ impl From<crate::operation::enable_delegated_admin_account::EnableDelegatedAdmin
                 Error::ValidationException(inner)
             }
             crate::operation::enable_delegated_admin_account::EnableDelegatedAdminAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cis_scan_report::GetCisScanReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cis_scan_report::GetCisScanReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cis_scan_report::GetCisScanReportError> for Error {
+    fn from(err: crate::operation::get_cis_scan_report::GetCisScanReportError) -> Self {
+        match err {
+            crate::operation::get_cis_scan_report::GetCisScanReportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_cis_scan_report::GetCisScanReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_cis_scan_report::GetCisScanReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_cis_scan_report::GetCisScanReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_cis_scan_report::GetCisScanReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError> for Error {
+    fn from(err: crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError) -> Self {
+        match err {
+            crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_cis_scan_result_details::GetCisScanResultDetailsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -937,6 +1073,149 @@ impl From<crate::operation::list_account_permissions::ListAccountPermissionsErro
             crate::operation::list_account_permissions::ListAccountPermissionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_account_permissions::ListAccountPermissionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_account_permissions::ListAccountPermissionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError> for Error {
+    fn from(err: crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_cis_scan_configurations::ListCisScanConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError> for Error {
+    fn from(err: crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError) -> Self {
+        match err {
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_cis_scan_results_aggregated_by_checks::ListCisScanResultsAggregatedByChecksError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError> for Error {
+    fn from(err: crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError) -> Self {
+        match err {
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_cis_scan_results_aggregated_by_target_resource::ListCisScanResultsAggregatedByTargetResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cis_scans::ListCisScansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cis_scans::ListCisScansError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cis_scans::ListCisScansError> for Error {
+    fn from(err: crate::operation::list_cis_scans::ListCisScansError) -> Self {
+        match err {
+            crate::operation::list_cis_scans::ListCisScansError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_cis_scans::ListCisScansError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_cis_scans::ListCisScansError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_cis_scans::ListCisScansError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_cis_scans::ListCisScansError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1246,6 +1525,125 @@ impl From<crate::operation::search_vulnerabilities::SearchVulnerabilitiesError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_cis_session_health::SendCisSessionHealthError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_cis_session_health::SendCisSessionHealthError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_cis_session_health::SendCisSessionHealthError> for Error {
+    fn from(err: crate::operation::send_cis_session_health::SendCisSessionHealthError) -> Self {
+        match err {
+            crate::operation::send_cis_session_health::SendCisSessionHealthError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_cis_session_health::SendCisSessionHealthError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_cis_session_health::SendCisSessionHealthError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::send_cis_session_health::SendCisSessionHealthError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::send_cis_session_health::SendCisSessionHealthError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_cis_session_health::SendCisSessionHealthError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError> for Error {
+    fn from(err: crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError) -> Self {
+        match err {
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::send_cis_session_telemetry::SendCisSessionTelemetryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cis_session::StartCisSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cis_session::StartCisSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_cis_session::StartCisSessionError> for Error {
+    fn from(err: crate::operation::start_cis_session::StartCisSessionError) -> Self {
+        match err {
+            crate::operation::start_cis_session::StartCisSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_cis_session::StartCisSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_cis_session::StartCisSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_cis_session::StartCisSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_cis_session::StartCisSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_cis_session::StartCisSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_cis_session::StopCisSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_cis_session::StopCisSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_cis_session::StopCisSessionError> for Error {
+    fn from(err: crate::operation::stop_cis_session::StopCisSessionError) -> Self {
+        match err {
+            crate::operation::stop_cis_session::StopCisSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_cis_session::StopCisSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_cis_session::StopCisSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_cis_session::StopCisSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_cis_session::StopCisSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_cis_session::StopCisSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1294,6 +1692,45 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError> for Error {
+    fn from(err: crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError) -> Self {
+        match err {
+            crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_cis_scan_configuration::UpdateCisScanConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
