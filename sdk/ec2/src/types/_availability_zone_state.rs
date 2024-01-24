@@ -13,6 +13,7 @@
 /// # let availabilityzonestate = unimplemented!();
 /// match availabilityzonestate {
 ///     AvailabilityZoneState::Available => { /* ... */ },
+///     AvailabilityZoneState::Constrained => { /* ... */ },
 ///     AvailabilityZoneState::Impaired => { /* ... */ },
 ///     AvailabilityZoneState::Information => { /* ... */ },
 ///     AvailabilityZoneState::Unavailable => { /* ... */ },
@@ -46,6 +47,8 @@ pub enum AvailabilityZoneState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    Constrained,
+    #[allow(missing_docs)] // documentation missing in model
     Impaired,
     #[allow(missing_docs)] // documentation missing in model
     Information,
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for AvailabilityZoneState {
     fn from(s: &str) -> Self {
         match s {
             "available" => AvailabilityZoneState::Available,
+            "constrained" => AvailabilityZoneState::Constrained,
             "impaired" => AvailabilityZoneState::Impaired,
             "information" => AvailabilityZoneState::Information,
             "unavailable" => AvailabilityZoneState::Unavailable,
@@ -78,6 +82,7 @@ impl AvailabilityZoneState {
     pub fn as_str(&self) -> &str {
         match self {
             AvailabilityZoneState::Available => "available",
+            AvailabilityZoneState::Constrained => "constrained",
             AvailabilityZoneState::Impaired => "impaired",
             AvailabilityZoneState::Information => "information",
             AvailabilityZoneState::Unavailable => "unavailable",
@@ -86,7 +91,7 @@ impl AvailabilityZoneState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "impaired", "information", "unavailable"]
+        &["available", "constrained", "impaired", "information", "unavailable"]
     }
 }
 impl ::std::convert::AsRef<str> for AvailabilityZoneState {

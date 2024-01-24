@@ -123,6 +123,10 @@ pub(crate) mod shape_create_db_security_group;
 
 pub(crate) mod shape_create_db_security_group_input;
 
+pub(crate) mod shape_create_db_shard_group;
+
+pub(crate) mod shape_create_db_shard_group_input;
+
 pub(crate) mod shape_create_db_snapshot;
 
 pub(crate) mod shape_create_db_snapshot_input;
@@ -202,6 +206,10 @@ pub(crate) mod shape_delete_db_proxy_input;
 pub(crate) mod shape_delete_db_security_group;
 
 pub(crate) mod shape_delete_db_security_group_input;
+
+pub(crate) mod shape_delete_db_shard_group;
+
+pub(crate) mod shape_delete_db_shard_group_input;
 
 pub(crate) mod shape_delete_db_snapshot;
 
@@ -326,6 +334,10 @@ pub(crate) mod shape_describe_db_recommendations_input;
 pub(crate) mod shape_describe_db_security_groups;
 
 pub(crate) mod shape_describe_db_security_groups_input;
+
+pub(crate) mod shape_describe_db_shard_groups;
+
+pub(crate) mod shape_describe_db_shard_groups_input;
 
 pub(crate) mod shape_describe_db_snapshot_attributes;
 
@@ -491,6 +503,10 @@ pub(crate) mod shape_modify_db_recommendation;
 
 pub(crate) mod shape_modify_db_recommendation_input;
 
+pub(crate) mod shape_modify_db_shard_group;
+
+pub(crate) mod shape_modify_db_shard_group_input;
+
 pub(crate) mod shape_modify_db_snapshot;
 
 pub(crate) mod shape_modify_db_snapshot_attribute;
@@ -538,6 +554,10 @@ pub(crate) mod shape_reboot_db_cluster_input;
 pub(crate) mod shape_reboot_db_instance;
 
 pub(crate) mod shape_reboot_db_instance_input;
+
+pub(crate) mod shape_reboot_db_shard_group;
+
+pub(crate) mod shape_reboot_db_shard_group_input;
 
 pub(crate) mod shape_register_db_proxy_targets;
 
@@ -753,6 +773,10 @@ pub(crate) mod shape_db_security_group_not_supported_fault;
 
 pub(crate) mod shape_db_security_group_quota_exceeded_fault;
 
+pub(crate) mod shape_db_shard_group_already_exists_fault;
+
+pub(crate) mod shape_db_shard_group_not_found_fault;
+
 pub(crate) mod shape_db_snapshot_already_exists_fault;
 
 pub(crate) mod shape_db_snapshot_not_found_fault;
@@ -839,6 +863,8 @@ pub(crate) mod shape_invalid_db_proxy_state_fault;
 
 pub(crate) mod shape_invalid_db_security_group_state_fault;
 
+pub(crate) mod shape_invalid_db_shard_group_state_fault;
+
 pub(crate) mod shape_invalid_db_snapshot_state_fault;
 
 pub(crate) mod shape_invalid_db_subnet_group_fault;
@@ -859,6 +885,8 @@ pub(crate) mod shape_invalid_global_cluster_state_fault;
 
 pub(crate) mod shape_invalid_integration_state_fault;
 
+pub(crate) mod shape_invalid_max_acu_fault;
+
 pub(crate) mod shape_invalid_option_group_state_fault;
 
 pub(crate) mod shape_invalid_resource_state_fault;
@@ -872,6 +900,8 @@ pub(crate) mod shape_invalid_subnet;
 pub(crate) mod shape_invalid_vpc_network_state_fault;
 
 pub(crate) mod shape_kms_key_not_accessible_fault;
+
+pub(crate) mod shape_max_db_shard_group_limit_reached;
 
 pub(crate) mod shape_network_type_not_supported;
 
@@ -947,6 +977,8 @@ pub(crate) mod shape_tenant_database_not_found_fault;
 
 pub(crate) mod shape_tenant_database_quota_exceeded_fault;
 
+pub(crate) mod shape_unsupported_db_engine_version_fault;
+
 pub(crate) mod shape_user_auth_config;
 
 pub(crate) mod shape_account_quota_list;
@@ -1018,6 +1050,8 @@ pub(crate) mod shape_db_recommendation_list;
 pub(crate) mod shape_db_security_group;
 
 pub(crate) mod shape_db_security_groups;
+
+pub(crate) mod shape_db_shard_groups_list;
 
 pub(crate) mod shape_db_snapshot;
 
@@ -1147,6 +1181,8 @@ pub(crate) mod shape_db_proxy_target;
 
 pub(crate) mod shape_db_security_group_membership_list;
 
+pub(crate) mod shape_db_shard_group;
+
 pub(crate) mod shape_db_snapshot_attribute_list;
 
 pub(crate) mod shape_db_snapshot_tenant_database;
@@ -1180,6 +1216,8 @@ pub(crate) mod shape_integration_error;
 pub(crate) mod shape_ip_range_list;
 
 pub(crate) mod shape_issue_details;
+
+pub(crate) mod shape_limitless_database;
 
 pub(crate) mod shape_master_user_secret;
 

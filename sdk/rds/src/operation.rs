@@ -76,6 +76,9 @@ pub mod create_db_proxy_endpoint;
 /// Types for the `CreateDBSecurityGroup` operation.
 pub mod create_db_security_group;
 
+/// Types for the `CreateDBShardGroup` operation.
+pub mod create_db_shard_group;
+
 /// Types for the `CreateDBSnapshot` operation.
 pub mod create_db_snapshot;
 
@@ -135,6 +138,9 @@ pub mod delete_db_proxy_endpoint;
 
 /// Types for the `DeleteDBSecurityGroup` operation.
 pub mod delete_db_security_group;
+
+/// Types for the `DeleteDBShardGroup` operation.
+pub mod delete_db_shard_group;
 
 /// Types for the `DeleteDBSnapshot` operation.
 pub mod delete_db_snapshot;
@@ -228,6 +234,9 @@ pub mod describe_db_recommendations;
 
 /// Types for the `DescribeDBSecurityGroups` operation.
 pub mod describe_db_security_groups;
+
+/// Types for the `DescribeDBShardGroups` operation.
+pub mod describe_db_shard_groups;
 
 /// Types for the `DescribeDBSnapshotAttributes` operation.
 pub mod describe_db_snapshot_attributes;
@@ -352,6 +361,9 @@ pub mod modify_db_proxy_target_group;
 /// Types for the `ModifyDBRecommendation` operation.
 pub mod modify_db_recommendation;
 
+/// Types for the `ModifyDBShardGroup` operation.
+pub mod modify_db_shard_group;
+
 /// Types for the `ModifyDBSnapshot` operation.
 pub mod modify_db_snapshot;
 
@@ -387,6 +399,9 @@ pub mod reboot_db_cluster;
 
 /// Types for the `RebootDBInstance` operation.
 pub mod reboot_db_instance;
+
+/// Types for the `RebootDBShardGroup` operation.
+pub mod reboot_db_shard_group;
 
 /// Types for the `RegisterDBProxyTargets` operation.
 pub mod register_db_proxy_targets;

@@ -58,6 +58,19 @@ pub fn de_create_route_table(
                 builder = builder.set_route_table(var_1);
             }
             ,
+            s if s.matches("clientToken") /* ClientToken com.amazonaws.ec2.synthetic#CreateRouteTableOutput$ClientToken */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_client_token(var_2);
+            }
+            ,
             _ => {}
         }
     }

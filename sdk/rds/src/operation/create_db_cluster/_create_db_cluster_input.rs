@@ -367,6 +367,9 @@ pub struct CreateDbClusterInput {
     /// <p>Default: <code>7</code> days</p>
     /// <p>If you specify a retention period that isn't valid, such as <code>94</code>, Amazon RDS issues an error.</p>
     pub performance_insights_retention_period: ::std::option::Option<i32>,
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub enable_limitless_database: ::std::option::Option<bool>,
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
@@ -860,6 +863,11 @@ impl CreateDbClusterInput {
     pub fn performance_insights_retention_period(&self) -> ::std::option::Option<i32> {
         self.performance_insights_retention_period
     }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_limitless_database(&self) -> ::std::option::Option<bool> {
+        self.enable_limitless_database
+    }
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfiguration> {
@@ -959,6 +967,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) enable_performance_insights: ::std::option::Option<bool>,
     pub(crate) performance_insights_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) performance_insights_retention_period: ::std::option::Option<i32>,
+    pub(crate) enable_limitless_database: ::std::option::Option<bool>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) db_system_id: ::std::option::Option<::std::string::String>,
@@ -2442,6 +2451,23 @@ impl CreateDbClusterInputBuilder {
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
         &self.performance_insights_retention_period
     }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_limitless_database(mut self, input: bool) -> Self {
+        self.enable_limitless_database = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_limitless_database = input;
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
+        &self.enable_limitless_database
+    }
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
@@ -2630,6 +2656,7 @@ impl CreateDbClusterInputBuilder {
             enable_performance_insights: self.enable_performance_insights,
             performance_insights_kms_key_id: self.performance_insights_kms_key_id,
             performance_insights_retention_period: self.performance_insights_retention_period,
+            enable_limitless_database: self.enable_limitless_database,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
             network_type: self.network_type,
             db_system_id: self.db_system_id,

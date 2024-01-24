@@ -107,6 +107,10 @@ pub enum Error {
     DbSecurityGroupNotSupportedFault(crate::types::error::DbSecurityGroupNotSupportedFault),
     /// <p>The request would result in the user exceeding the allowed number of DB security groups.</p>
     DbSecurityGroupQuotaExceededFault(crate::types::error::DbSecurityGroupQuotaExceededFault),
+    /// <p>The specified DB shard group name must be unique in your Amazon Web Services account in the specified Amazon Web Services Region.</p>
+    DbShardGroupAlreadyExistsFault(crate::types::error::DbShardGroupAlreadyExistsFault),
+    /// <p>The specified DB shard group name wasn't found.</p>
+    DbShardGroupNotFoundFault(crate::types::error::DbShardGroupNotFoundFault),
     /// <p><code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
     /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
@@ -191,6 +195,8 @@ pub enum Error {
     InvalidDbProxyStateFault(crate::types::error::InvalidDbProxyStateFault),
     /// <p>The state of the DB security group doesn't allow deletion.</p>
     InvalidDbSecurityGroupStateFault(crate::types::error::InvalidDbSecurityGroupStateFault),
+    /// <p>The DB shard group must be in the available state.</p>
+    InvalidDbShardGroupStateFault(crate::types::error::InvalidDbShardGroupStateFault),
     /// <p>The state of the DB snapshot doesn't allow deletion.</p>
     InvalidDbSnapshotStateFault(crate::types::error::InvalidDbSnapshotStateFault),
     /// <p>The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the same source instance.</p>
@@ -211,6 +217,8 @@ pub enum Error {
     InvalidGlobalClusterStateFault(crate::types::error::InvalidGlobalClusterStateFault),
     /// <p>The integration is in an invalid state and can't perform the requested operation.</p>
     InvalidIntegrationStateFault(crate::types::error::InvalidIntegrationStateFault),
+    /// <p>The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).</p>
+    InvalidMaxAcuFault(crate::types::error::InvalidMaxAcuFault),
     /// <p>The option group isn't in the <i>available</i> state.</p>
     InvalidOptionGroupStateFault(crate::types::error::InvalidOptionGroupStateFault),
     /// <p>The operation can't be performed because another operation is in progress.</p>
@@ -225,6 +233,8 @@ pub enum Error {
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>An error occurred accessing an Amazon Web Services KMS key.</p>
     KmsKeyNotAccessibleFault(crate::types::error::KmsKeyNotAccessibleFault),
+    /// <p>The maximum number of DB shard groups for your Amazon Web Services account in the specified Amazon Web Services Region has been reached.</p>
+    MaxDbShardGroupLimitReached(crate::types::error::MaxDbShardGroupLimitReached),
     /// <p>The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and <code>DUAL</code>.</p>
     NetworkTypeNotSupported(crate::types::error::NetworkTypeNotSupported),
     /// <p>The option group you are trying to create already exists.</p>
@@ -283,6 +293,8 @@ pub enum Error {
     TenantDatabaseNotFoundFault(crate::types::error::TenantDatabaseNotFoundFault),
     /// <p>You attempted to create more tenant databases than are permitted in your Amazon Web Services account.</p>
     TenantDatabaseQuotaExceededFault(crate::types::error::TenantDatabaseQuotaExceededFault),
+    /// <p>The specified DB engine version isn't supported for Aurora Limitless Database.</p>
+    UnsupportedDbEngineVersionFault(crate::types::error::UnsupportedDbEngineVersionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -346,6 +358,8 @@ impl ::std::fmt::Display for Error {
             Error::DbSecurityGroupNotFoundFault(inner) => inner.fmt(f),
             Error::DbSecurityGroupNotSupportedFault(inner) => inner.fmt(f),
             Error::DbSecurityGroupQuotaExceededFault(inner) => inner.fmt(f),
+            Error::DbShardGroupAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::DbShardGroupNotFoundFault(inner) => inner.fmt(f),
             Error::DbSnapshotAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbSnapshotNotFoundFault(inner) => inner.fmt(f),
             Error::DbSnapshotTenantDatabaseNotFoundFault(inner) => inner.fmt(f),
@@ -388,6 +402,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidDbProxyEndpointStateFault(inner) => inner.fmt(f),
             Error::InvalidDbProxyStateFault(inner) => inner.fmt(f),
             Error::InvalidDbSecurityGroupStateFault(inner) => inner.fmt(f),
+            Error::InvalidDbShardGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidDbSnapshotStateFault(inner) => inner.fmt(f),
             Error::InvalidDbSubnetGroupFault(inner) => inner.fmt(f),
             Error::InvalidDbSubnetGroupStateFault(inner) => inner.fmt(f),
@@ -398,6 +413,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidExportTaskStateFault(inner) => inner.fmt(f),
             Error::InvalidGlobalClusterStateFault(inner) => inner.fmt(f),
             Error::InvalidIntegrationStateFault(inner) => inner.fmt(f),
+            Error::InvalidMaxAcuFault(inner) => inner.fmt(f),
             Error::InvalidOptionGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidResourceStateFault(inner) => inner.fmt(f),
             Error::InvalidRestoreFault(inner) => inner.fmt(f),
@@ -405,6 +421,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidSubnet(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
             Error::KmsKeyNotAccessibleFault(inner) => inner.fmt(f),
+            Error::MaxDbShardGroupLimitReached(inner) => inner.fmt(f),
             Error::NetworkTypeNotSupported(inner) => inner.fmt(f),
             Error::OptionGroupAlreadyExistsFault(inner) => inner.fmt(f),
             Error::OptionGroupNotFoundFault(inner) => inner.fmt(f),
@@ -434,6 +451,7 @@ impl ::std::fmt::Display for Error {
             Error::TenantDatabaseAlreadyExistsFault(inner) => inner.fmt(f),
             Error::TenantDatabaseNotFoundFault(inner) => inner.fmt(f),
             Error::TenantDatabaseQuotaExceededFault(inner) => inner.fmt(f),
+            Error::UnsupportedDbEngineVersionFault(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -506,6 +524,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DbSecurityGroupNotFoundFault(inner) => inner.meta(),
             Self::DbSecurityGroupNotSupportedFault(inner) => inner.meta(),
             Self::DbSecurityGroupQuotaExceededFault(inner) => inner.meta(),
+            Self::DbShardGroupAlreadyExistsFault(inner) => inner.meta(),
+            Self::DbShardGroupNotFoundFault(inner) => inner.meta(),
             Self::DbSnapshotAlreadyExistsFault(inner) => inner.meta(),
             Self::DbSnapshotNotFoundFault(inner) => inner.meta(),
             Self::DbSnapshotTenantDatabaseNotFoundFault(inner) => inner.meta(),
@@ -548,6 +568,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidDbProxyEndpointStateFault(inner) => inner.meta(),
             Self::InvalidDbProxyStateFault(inner) => inner.meta(),
             Self::InvalidDbSecurityGroupStateFault(inner) => inner.meta(),
+            Self::InvalidDbShardGroupStateFault(inner) => inner.meta(),
             Self::InvalidDbSnapshotStateFault(inner) => inner.meta(),
             Self::InvalidDbSubnetGroupFault(inner) => inner.meta(),
             Self::InvalidDbSubnetGroupStateFault(inner) => inner.meta(),
@@ -558,6 +579,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidExportTaskStateFault(inner) => inner.meta(),
             Self::InvalidGlobalClusterStateFault(inner) => inner.meta(),
             Self::InvalidIntegrationStateFault(inner) => inner.meta(),
+            Self::InvalidMaxAcuFault(inner) => inner.meta(),
             Self::InvalidOptionGroupStateFault(inner) => inner.meta(),
             Self::InvalidResourceStateFault(inner) => inner.meta(),
             Self::InvalidRestoreFault(inner) => inner.meta(),
@@ -565,6 +587,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidSubnet(inner) => inner.meta(),
             Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
             Self::KmsKeyNotAccessibleFault(inner) => inner.meta(),
+            Self::MaxDbShardGroupLimitReached(inner) => inner.meta(),
             Self::NetworkTypeNotSupported(inner) => inner.meta(),
             Self::OptionGroupAlreadyExistsFault(inner) => inner.meta(),
             Self::OptionGroupNotFoundFault(inner) => inner.meta(),
@@ -594,6 +617,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TenantDatabaseAlreadyExistsFault(inner) => inner.meta(),
             Self::TenantDatabaseNotFoundFault(inner) => inner.meta(),
             Self::TenantDatabaseQuotaExceededFault(inner) => inner.meta(),
+            Self::UnsupportedDbEngineVersionFault(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -1606,6 +1630,44 @@ impl From<crate::operation::create_db_security_group::CreateDBSecurityGroupError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_shard_group::CreateDBShardGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_shard_group::CreateDBShardGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_db_shard_group::CreateDBShardGroupError> for Error {
+    fn from(err: crate::operation::create_db_shard_group::CreateDBShardGroupError) -> Self {
+        match err {
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::DbShardGroupAlreadyExistsFault(inner) => {
+                Error::DbShardGroupAlreadyExistsFault(inner)
+            }
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidMaxAcuFault(inner) => Error::InvalidMaxAcuFault(inner),
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::InvalidVpcNetworkStateFault(inner) => {
+                Error::InvalidVpcNetworkStateFault(inner)
+            }
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::MaxDbShardGroupLimitReached(inner) => {
+                Error::MaxDbShardGroupLimitReached(inner)
+            }
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::UnsupportedDbEngineVersionFault(inner) => {
+                Error::UnsupportedDbEngineVersionFault(inner)
+            }
+            crate::operation::create_db_shard_group::CreateDBShardGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_snapshot::CreateDBSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2255,6 +2317,36 @@ impl From<crate::operation::delete_db_security_group::DeleteDBSecurityGroupError
                 Error::InvalidDbSecurityGroupStateFault(inner)
             }
             crate::operation::delete_db_security_group::DeleteDBSecurityGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_shard_group::DeleteDBShardGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_shard_group::DeleteDBShardGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_db_shard_group::DeleteDBShardGroupError> for Error {
+    fn from(err: crate::operation::delete_db_shard_group::DeleteDBShardGroupError) -> Self {
+        match err {
+            crate::operation::delete_db_shard_group::DeleteDBShardGroupError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
+            }
+            crate::operation::delete_db_shard_group::DeleteDBShardGroupError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::delete_db_shard_group::DeleteDBShardGroupError::InvalidDbShardGroupStateFault(inner) => {
+                Error::InvalidDbShardGroupStateFault(inner)
+            }
+            crate::operation::delete_db_shard_group::DeleteDBShardGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3143,6 +3235,35 @@ impl From<crate::operation::describe_db_security_groups::DescribeDBSecurityGroup
                 Error::DbSecurityGroupNotFoundFault(inner)
             }
             crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError> for Error {
+    fn from(err: crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError) -> Self {
+        match err {
+            crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError::DbClusterNotFoundFault(inner) => {
+                Error::DbClusterNotFoundFault(inner)
+            }
+            crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
+            }
+            crate::operation::describe_db_shard_groups::DescribeDBShardGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4447,6 +4568,37 @@ impl From<crate::operation::modify_db_recommendation::ModifyDBRecommendationErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_shard_group::ModifyDBShardGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_shard_group::ModifyDBShardGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_db_shard_group::ModifyDBShardGroupError> for Error {
+    fn from(err: crate::operation::modify_db_shard_group::ModifyDBShardGroupError) -> Self {
+        match err {
+            crate::operation::modify_db_shard_group::ModifyDBShardGroupError::DbShardGroupAlreadyExistsFault(inner) => {
+                Error::DbShardGroupAlreadyExistsFault(inner)
+            }
+            crate::operation::modify_db_shard_group::ModifyDBShardGroupError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
+            }
+            crate::operation::modify_db_shard_group::ModifyDBShardGroupError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::modify_db_shard_group::ModifyDBShardGroupError::InvalidMaxAcuFault(inner) => Error::InvalidMaxAcuFault(inner),
+            crate::operation::modify_db_shard_group::ModifyDBShardGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_snapshot::ModifyDBSnapshotError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4809,6 +4961,33 @@ impl From<crate::operation::reboot_db_instance::RebootDBInstanceError> for Error
                 Error::InvalidDbInstanceStateFault(inner)
             }
             crate::operation::reboot_db_instance::RebootDBInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_shard_group::RebootDBShardGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reboot_db_shard_group::RebootDBShardGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reboot_db_shard_group::RebootDBShardGroupError> for Error {
+    fn from(err: crate::operation::reboot_db_shard_group::RebootDBShardGroupError) -> Self {
+        match err {
+            crate::operation::reboot_db_shard_group::RebootDBShardGroupError::DbShardGroupNotFoundFault(inner) => {
+                Error::DbShardGroupNotFoundFault(inner)
+            }
+            crate::operation::reboot_db_shard_group::RebootDBShardGroupError::InvalidDbShardGroupStateFault(inner) => {
+                Error::InvalidDbShardGroupStateFault(inner)
+            }
+            crate::operation::reboot_db_shard_group::RebootDBShardGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -6120,6 +6299,8 @@ impl ::std::error::Error for Error {
             Error::DbSecurityGroupNotFoundFault(inner) => inner.source(),
             Error::DbSecurityGroupNotSupportedFault(inner) => inner.source(),
             Error::DbSecurityGroupQuotaExceededFault(inner) => inner.source(),
+            Error::DbShardGroupAlreadyExistsFault(inner) => inner.source(),
+            Error::DbShardGroupNotFoundFault(inner) => inner.source(),
             Error::DbSnapshotAlreadyExistsFault(inner) => inner.source(),
             Error::DbSnapshotNotFoundFault(inner) => inner.source(),
             Error::DbSnapshotTenantDatabaseNotFoundFault(inner) => inner.source(),
@@ -6162,6 +6343,7 @@ impl ::std::error::Error for Error {
             Error::InvalidDbProxyEndpointStateFault(inner) => inner.source(),
             Error::InvalidDbProxyStateFault(inner) => inner.source(),
             Error::InvalidDbSecurityGroupStateFault(inner) => inner.source(),
+            Error::InvalidDbShardGroupStateFault(inner) => inner.source(),
             Error::InvalidDbSnapshotStateFault(inner) => inner.source(),
             Error::InvalidDbSubnetGroupFault(inner) => inner.source(),
             Error::InvalidDbSubnetGroupStateFault(inner) => inner.source(),
@@ -6172,6 +6354,7 @@ impl ::std::error::Error for Error {
             Error::InvalidExportTaskStateFault(inner) => inner.source(),
             Error::InvalidGlobalClusterStateFault(inner) => inner.source(),
             Error::InvalidIntegrationStateFault(inner) => inner.source(),
+            Error::InvalidMaxAcuFault(inner) => inner.source(),
             Error::InvalidOptionGroupStateFault(inner) => inner.source(),
             Error::InvalidResourceStateFault(inner) => inner.source(),
             Error::InvalidRestoreFault(inner) => inner.source(),
@@ -6179,6 +6362,7 @@ impl ::std::error::Error for Error {
             Error::InvalidSubnet(inner) => inner.source(),
             Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
             Error::KmsKeyNotAccessibleFault(inner) => inner.source(),
+            Error::MaxDbShardGroupLimitReached(inner) => inner.source(),
             Error::NetworkTypeNotSupported(inner) => inner.source(),
             Error::OptionGroupAlreadyExistsFault(inner) => inner.source(),
             Error::OptionGroupNotFoundFault(inner) => inner.source(),
@@ -6208,6 +6392,7 @@ impl ::std::error::Error for Error {
             Error::TenantDatabaseAlreadyExistsFault(inner) => inner.source(),
             Error::TenantDatabaseNotFoundFault(inner) => inner.source(),
             Error::TenantDatabaseQuotaExceededFault(inner) => inner.source(),
+            Error::UnsupportedDbEngineVersionFault(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -6266,6 +6451,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DbSecurityGroupNotFoundFault(e) => e.request_id(),
             Self::DbSecurityGroupNotSupportedFault(e) => e.request_id(),
             Self::DbSecurityGroupQuotaExceededFault(e) => e.request_id(),
+            Self::DbShardGroupAlreadyExistsFault(e) => e.request_id(),
+            Self::DbShardGroupNotFoundFault(e) => e.request_id(),
             Self::DbSnapshotAlreadyExistsFault(e) => e.request_id(),
             Self::DbSnapshotNotFoundFault(e) => e.request_id(),
             Self::DbSnapshotTenantDatabaseNotFoundFault(e) => e.request_id(),
@@ -6308,6 +6495,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidDbProxyEndpointStateFault(e) => e.request_id(),
             Self::InvalidDbProxyStateFault(e) => e.request_id(),
             Self::InvalidDbSecurityGroupStateFault(e) => e.request_id(),
+            Self::InvalidDbShardGroupStateFault(e) => e.request_id(),
             Self::InvalidDbSnapshotStateFault(e) => e.request_id(),
             Self::InvalidDbSubnetGroupFault(e) => e.request_id(),
             Self::InvalidDbSubnetGroupStateFault(e) => e.request_id(),
@@ -6318,6 +6506,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidExportTaskStateFault(e) => e.request_id(),
             Self::InvalidGlobalClusterStateFault(e) => e.request_id(),
             Self::InvalidIntegrationStateFault(e) => e.request_id(),
+            Self::InvalidMaxAcuFault(e) => e.request_id(),
             Self::InvalidOptionGroupStateFault(e) => e.request_id(),
             Self::InvalidResourceStateFault(e) => e.request_id(),
             Self::InvalidRestoreFault(e) => e.request_id(),
@@ -6325,6 +6514,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidSubnet(e) => e.request_id(),
             Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
             Self::KmsKeyNotAccessibleFault(e) => e.request_id(),
+            Self::MaxDbShardGroupLimitReached(e) => e.request_id(),
             Self::NetworkTypeNotSupported(e) => e.request_id(),
             Self::OptionGroupAlreadyExistsFault(e) => e.request_id(),
             Self::OptionGroupNotFoundFault(e) => e.request_id(),
@@ -6354,6 +6544,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TenantDatabaseAlreadyExistsFault(e) => e.request_id(),
             Self::TenantDatabaseNotFoundFault(e) => e.request_id(),
             Self::TenantDatabaseQuotaExceededFault(e) => e.request_id(),
+            Self::UnsupportedDbEngineVersionFault(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

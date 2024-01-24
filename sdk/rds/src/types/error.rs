@@ -129,6 +129,10 @@ pub use crate::types::error::_insufficient_available_ips_in_subnet_fault::Insuff
 
 pub use crate::types::error::_db_proxy_target_already_registered_fault::DbProxyTargetAlreadyRegisteredFault;
 
+pub use crate::types::error::_invalid_db_shard_group_state_fault::InvalidDbShardGroupStateFault;
+
+pub use crate::types::error::_db_shard_group_not_found_fault::DbShardGroupNotFoundFault;
+
 pub use crate::types::error::_reserved_db_instances_offering_not_found_fault::ReservedDbInstancesOfferingNotFoundFault;
 
 pub use crate::types::error::_reserved_db_instance_quota_exceeded_fault::ReservedDbInstanceQuotaExceededFault;
@@ -154,6 +158,10 @@ pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUse;
 pub use crate::types::error::_db_subnet_quota_exceeded_fault::DbSubnetQuotaExceededFault;
 
 pub use crate::types::error::_shared_snapshot_quota_exceeded_fault::SharedSnapshotQuotaExceededFault;
+
+pub use crate::types::error::_invalid_max_acu_fault::InvalidMaxAcuFault;
+
+pub use crate::types::error::_db_shard_group_already_exists_fault::DbShardGroupAlreadyExistsFault;
 
 pub use crate::types::error::_invalid_db_proxy_endpoint_state_fault::InvalidDbProxyEndpointStateFault;
 
@@ -224,6 +232,10 @@ pub use crate::types::error::_subscription_already_exist_fault::SubscriptionAlre
 pub use crate::types::error::_db_subnet_group_quota_exceeded_fault::DbSubnetGroupQuotaExceededFault;
 
 pub use crate::types::error::_db_subnet_group_already_exists_fault::DbSubnetGroupAlreadyExistsFault;
+
+pub use crate::types::error::_unsupported_db_engine_version_fault::UnsupportedDbEngineVersionFault;
+
+pub use crate::types::error::_max_db_shard_group_limit_reached::MaxDbShardGroupLimitReached;
 
 pub use crate::types::error::_db_security_group_quota_exceeded_fault::DbSecurityGroupQuotaExceededFault;
 
@@ -379,6 +391,10 @@ mod _db_security_group_not_supported_fault;
 
 mod _db_security_group_quota_exceeded_fault;
 
+mod _db_shard_group_already_exists_fault;
+
+mod _db_shard_group_not_found_fault;
+
 mod _db_snapshot_already_exists_fault;
 
 mod _db_snapshot_not_found_fault;
@@ -463,6 +479,8 @@ mod _invalid_db_proxy_state_fault;
 
 mod _invalid_db_security_group_state_fault;
 
+mod _invalid_db_shard_group_state_fault;
+
 mod _invalid_db_snapshot_state_fault;
 
 mod _invalid_db_subnet_group_fault;
@@ -483,6 +501,8 @@ mod _invalid_global_cluster_state_fault;
 
 mod _invalid_integration_state_fault;
 
+mod _invalid_max_acu_fault;
+
 mod _invalid_option_group_state_fault;
 
 mod _invalid_resource_state_fault;
@@ -496,6 +516,8 @@ mod _invalid_subnet;
 mod _invalid_vpc_network_state_fault;
 
 mod _kms_key_not_accessible_fault;
+
+mod _max_db_shard_group_limit_reached;
 
 mod _network_type_not_supported;
 
@@ -554,6 +576,8 @@ mod _tenant_database_already_exists_fault;
 mod _tenant_database_not_found_fault;
 
 mod _tenant_database_quota_exceeded_fault;
+
+mod _unsupported_db_engine_version_fault;
 
 /// Builders
 pub mod builders;

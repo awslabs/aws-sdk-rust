@@ -5,12 +5,18 @@
 pub struct CreateNetworkAclOutput {
     /// <p>Information about the network ACL.</p>
     pub network_acl: ::std::option::Option<crate::types::NetworkAcl>,
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNetworkAclOutput {
     /// <p>Information about the network ACL.</p>
     pub fn network_acl(&self) -> ::std::option::Option<&crate::types::NetworkAcl> {
         self.network_acl.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateNetworkAclOutput {
@@ -30,6 +36,7 @@ impl CreateNetworkAclOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateNetworkAclOutputBuilder {
     pub(crate) network_acl: ::std::option::Option<crate::types::NetworkAcl>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateNetworkAclOutputBuilder {
@@ -47,6 +54,20 @@ impl CreateNetworkAclOutputBuilder {
     pub fn get_network_acl(&self) -> &::std::option::Option<crate::types::NetworkAcl> {
         &self.network_acl
     }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl CreateNetworkAclOutputBuilder {
     pub fn build(self) -> crate::operation::create_network_acl::CreateNetworkAclOutput {
         crate::operation::create_network_acl::CreateNetworkAclOutput {
             network_acl: self.network_acl,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }

@@ -20,7 +20,7 @@ pub struct ServiceConnectService {
     pub ingress_port_override: ::std::option::Option<i32>,
     /// <p>A reference to an object that represents the configured timeouts for Service Connect.</p>
     pub timeout: ::std::option::Option<crate::types::TimeoutConfiguration>,
-    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) configuration.</p>
     pub tls: ::std::option::Option<crate::types::ServiceConnectTlsConfiguration>,
 }
 impl ServiceConnectService {
@@ -53,7 +53,7 @@ impl ServiceConnectService {
     pub fn timeout(&self) -> ::std::option::Option<&crate::types::TimeoutConfiguration> {
         self.timeout.as_ref()
     }
-    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) configuration.</p>
     pub fn tls(&self) -> ::std::option::Option<&crate::types::ServiceConnectTlsConfiguration> {
         self.tls.as_ref()
     }
@@ -172,17 +172,17 @@ impl ServiceConnectServiceBuilder {
     pub fn get_timeout(&self) -> &::std::option::Option<crate::types::TimeoutConfiguration> {
         &self.timeout
     }
-    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) configuration.</p>
     pub fn tls(mut self, input: crate::types::ServiceConnectTlsConfiguration) -> Self {
         self.tls = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) configuration.</p>
     pub fn set_tls(mut self, input: ::std::option::Option<crate::types::ServiceConnectTlsConfiguration>) -> Self {
         self.tls = input;
         self
     }
-    /// <p>An object that represents the configuration for Service Connect TLS.</p>
+    /// <p>A reference to an object that represents a Transport Layer Security (TLS) configuration.</p>
     pub fn get_tls(&self) -> &::std::option::Option<crate::types::ServiceConnectTlsConfiguration> {
         &self.tls
     }

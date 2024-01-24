@@ -997,6 +997,16 @@ pub fn de_db_cluster(
                 builder = builder.set_aws_backup_recovery_point_arn(var_76);
             }
             ,
+            s if s.matches("LimitlessDatabase") /* LimitlessDatabase com.amazonaws.rds#DBCluster$LimitlessDatabase */ =>  {
+                let var_77 =
+                    Some(
+                        crate::protocol_serde::shape_limitless_database::de_limitless_database(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_limitless_database(var_77);
+            }
+            ,
             _ => {}
         }
     }

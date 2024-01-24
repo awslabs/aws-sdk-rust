@@ -313,6 +313,9 @@ pub struct ModifyDbClusterInput {
     pub enable_local_write_forwarding: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub enable_limitless_database: ::std::option::Option<bool>,
 }
 impl ModifyDbClusterInput {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -712,6 +715,11 @@ impl ModifyDbClusterInput {
     pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.aws_backup_recovery_point_arn.as_deref()
     }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_limitless_database(&self) -> ::std::option::Option<bool> {
+        self.enable_limitless_database
+    }
 }
 impl ModifyDbClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
@@ -767,6 +775,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) allow_engine_mode_change: ::std::option::Option<bool>,
     pub(crate) enable_local_write_forwarding: ::std::option::Option<bool>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_limitless_database: ::std::option::Option<bool>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -2047,6 +2056,23 @@ impl ModifyDbClusterInputBuilder {
     pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_backup_recovery_point_arn
     }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_limitless_database(mut self, input: bool) -> Self {
+        self.enable_limitless_database = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_limitless_database = input;
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
+        &self.enable_limitless_database
+    }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
         self,
@@ -2095,6 +2121,7 @@ impl ModifyDbClusterInputBuilder {
             allow_engine_mode_change: self.allow_engine_mode_change,
             enable_local_write_forwarding: self.enable_local_write_forwarding,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            enable_limitless_database: self.enable_limitless_database,
         })
     }
 }

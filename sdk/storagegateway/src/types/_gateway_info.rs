@@ -23,6 +23,10 @@ pub struct GatewayInfo {
     pub host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     /// <p>A unique identifier for the specific instance of the host platform running the gateway. This value is only available for certain host environments, and its format depends on the host environment type.</p>
     pub host_environment_id: ::std::option::Option<::std::string::String>,
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub deprecation_date: ::std::option::Option<::std::string::String>,
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub software_version: ::std::option::Option<::std::string::String>,
 }
 impl GatewayInfo {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
@@ -62,6 +66,14 @@ impl GatewayInfo {
     pub fn host_environment_id(&self) -> ::std::option::Option<&str> {
         self.host_environment_id.as_deref()
     }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn deprecation_date(&self) -> ::std::option::Option<&str> {
+        self.deprecation_date.as_deref()
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn software_version(&self) -> ::std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
 }
 impl GatewayInfo {
     /// Creates a new builder-style object to manufacture [`GatewayInfo`](crate::types::GatewayInfo).
@@ -83,6 +95,8 @@ pub struct GatewayInfoBuilder {
     pub(crate) ec2_instance_region: ::std::option::Option<::std::string::String>,
     pub(crate) host_environment: ::std::option::Option<crate::types::HostEnvironment>,
     pub(crate) host_environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deprecation_date: ::std::option::Option<::std::string::String>,
+    pub(crate) software_version: ::std::option::Option<::std::string::String>,
 }
 impl GatewayInfoBuilder {
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part of the gateway Amazon Resource Name (ARN), which you use as input for other operations.</p>
@@ -214,6 +228,34 @@ impl GatewayInfoBuilder {
     pub fn get_host_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_environment_id
     }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn deprecation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.deprecation_date = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn set_deprecation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deprecation_date = input;
+        self
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn get_deprecation_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deprecation_date
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.software_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.software_version = input;
+        self
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
+    }
     /// Consumes the builder and constructs a [`GatewayInfo`](crate::types::GatewayInfo).
     pub fn build(self) -> crate::types::GatewayInfo {
         crate::types::GatewayInfo {
@@ -226,6 +268,8 @@ impl GatewayInfoBuilder {
             ec2_instance_region: self.ec2_instance_region,
             host_environment: self.host_environment,
             host_environment_id: self.host_environment_id,
+            deprecation_date: self.deprecation_date,
+            software_version: self.software_version,
         }
     }
 }

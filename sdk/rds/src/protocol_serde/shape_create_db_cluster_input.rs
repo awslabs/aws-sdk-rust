@@ -276,34 +276,39 @@ pub fn ser_create_db_cluster_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("ServerlessV2ScalingConfiguration");
-    if let Some(var_104) = &input.serverless_v2_scaling_configuration {
-        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_103, var_104)?;
+    let mut scope_103 = writer.prefix("EnableLimitlessDatabase");
+    if let Some(var_104) = &input.enable_limitless_database {
+        scope_103.boolean(*var_104);
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("NetworkType");
-    if let Some(var_106) = &input.network_type {
-        scope_105.string(var_106);
+    let mut scope_105 = writer.prefix("ServerlessV2ScalingConfiguration");
+    if let Some(var_106) = &input.serverless_v2_scaling_configuration {
+        crate::protocol_serde::shape_serverless_v2_scaling_configuration::ser_serverless_v2_scaling_configuration(scope_105, var_106)?;
     }
     #[allow(unused_mut)]
-    let mut scope_107 = writer.prefix("DBSystemId");
-    if let Some(var_108) = &input.db_system_id {
+    let mut scope_107 = writer.prefix("NetworkType");
+    if let Some(var_108) = &input.network_type {
         scope_107.string(var_108);
     }
     #[allow(unused_mut)]
-    let mut scope_109 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_110) = &input.manage_master_user_password {
-        scope_109.boolean(*var_110);
+    let mut scope_109 = writer.prefix("DBSystemId");
+    if let Some(var_110) = &input.db_system_id {
+        scope_109.string(var_110);
     }
     #[allow(unused_mut)]
-    let mut scope_111 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_112) = &input.master_user_secret_kms_key_id {
-        scope_111.string(var_112);
+    let mut scope_111 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_112) = &input.manage_master_user_password {
+        scope_111.boolean(*var_112);
     }
     #[allow(unused_mut)]
-    let mut scope_113 = writer.prefix("EnableLocalWriteForwarding");
-    if let Some(var_114) = &input.enable_local_write_forwarding {
-        scope_113.boolean(*var_114);
+    let mut scope_113 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_114) = &input.master_user_secret_kms_key_id {
+        scope_113.string(var_114);
+    }
+    #[allow(unused_mut)]
+    let mut scope_115 = writer.prefix("EnableLocalWriteForwarding");
+    if let Some(var_116) = &input.enable_local_write_forwarding {
+        scope_115.boolean(*var_116);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

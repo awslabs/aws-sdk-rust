@@ -26,6 +26,11 @@ pub fn ser_create_route_table_input_input_input(
         }
         list_8.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("ClientToken");
+    if let Some(var_11) = &input.client_token {
+        scope_10.string(var_11);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -1576,6 +1576,23 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_performance_insights_retention_period(&self) -> &::std::option::Option<i32> {
         self.inner.get_performance_insights_retention_period()
     }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_limitless_database(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_limitless_database(input);
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_limitless_database(input);
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_limitless_database()
+    }
     /// <p>Contains the scaling configuration of an Aurora Serverless v2 DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {

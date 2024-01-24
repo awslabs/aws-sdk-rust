@@ -247,6 +247,11 @@ pub fn ser_modify_db_cluster_input_input_input(
     if let Some(var_89) = &input.aws_backup_recovery_point_arn {
         scope_88.string(var_89);
     }
+    #[allow(unused_mut)]
+    let mut scope_90 = writer.prefix("EnableLimitlessDatabase");
+    if let Some(var_91) = &input.enable_limitless_database {
+        scope_90.boolean(*var_91);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

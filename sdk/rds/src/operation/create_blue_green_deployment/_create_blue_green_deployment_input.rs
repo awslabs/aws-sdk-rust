@@ -25,6 +25,7 @@ pub struct CreateBlueGreenDeploymentInput {
     /// <p>Tags to assign to the blue/green deployment.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub target_db_instance_class: ::std::option::Option<::std::string::String>,
     /// <p>Whether to upgrade the storage file system configuration on the green database. This option migrates the green DB instance from the older 32-bit file system to the preferred configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading the storage file system for a DB instance</a>.</p>
     pub upgrade_target_storage_config: ::std::option::Option<bool>,
@@ -66,6 +67,7 @@ impl CreateBlueGreenDeploymentInput {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub fn target_db_instance_class(&self) -> ::std::option::Option<&str> {
         self.target_db_instance_class.as_deref()
     }
@@ -215,16 +217,19 @@ impl CreateBlueGreenDeploymentInputBuilder {
         &self.tags
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub fn target_db_instance_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_db_instance_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub fn set_target_db_instance_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_db_instance_class = input;
         self
     }
     /// <p>Specify the DB instance class for the databases in the green environment.</p>
+    /// <p>This parameter only applies to RDS DB instances, because DB instances within an Aurora DB cluster can have multiple different instance classes. If you're creating a blue/green deployment from an Aurora DB cluster, don't specify this parameter. After the green environment is created, you can individually modify the instance classes of the DB instances within the green DB cluster.</p>
     pub fn get_target_db_instance_class(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_db_instance_class
     }

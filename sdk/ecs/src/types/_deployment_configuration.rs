@@ -22,7 +22,7 @@ pub struct DeploymentConfiguration {
     /// <li>
     /// <p>If a task has one or more essential containers with a health check defined, the service scheduler will wait for the task to reach a healthy status before counting it towards the minimum healthy percent total. A task is considered healthy when all essential containers within the task have passed their health checks. The amount of time the service scheduler can wait for is determined by the container health check settings.</p></li>
     /// </ul>
-    /// <p>For services are that <i>do</i> use a load balancer, the following should be noted:</p>
+    /// <p>For services that <i>do</i> use a load balancer, the following should be noted:</p>
     /// <ul>
     /// <li>
     /// <p>If a task has no essential containers with a health check defined, the service scheduler will wait for the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
@@ -57,7 +57,7 @@ impl DeploymentConfiguration {
     /// <li>
     /// <p>If a task has one or more essential containers with a health check defined, the service scheduler will wait for the task to reach a healthy status before counting it towards the minimum healthy percent total. A task is considered healthy when all essential containers within the task have passed their health checks. The amount of time the service scheduler can wait for is determined by the container health check settings.</p></li>
     /// </ul>
-    /// <p>For services are that <i>do</i> use a load balancer, the following should be noted:</p>
+    /// <p>For services that <i>do</i> use a load balancer, the following should be noted:</p>
     /// <ul>
     /// <li>
     /// <p>If a task has no essential containers with a health check defined, the service scheduler will wait for the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
@@ -140,7 +140,7 @@ impl DeploymentConfigurationBuilder {
     /// <li>
     /// <p>If a task has one or more essential containers with a health check defined, the service scheduler will wait for the task to reach a healthy status before counting it towards the minimum healthy percent total. A task is considered healthy when all essential containers within the task have passed their health checks. The amount of time the service scheduler can wait for is determined by the container health check settings.</p></li>
     /// </ul>
-    /// <p>For services are that <i>do</i> use a load balancer, the following should be noted:</p>
+    /// <p>For services that <i>do</i> use a load balancer, the following should be noted:</p>
     /// <ul>
     /// <li>
     /// <p>If a task has no essential containers with a health check defined, the service scheduler will wait for the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
@@ -162,7 +162,7 @@ impl DeploymentConfigurationBuilder {
     /// <li>
     /// <p>If a task has one or more essential containers with a health check defined, the service scheduler will wait for the task to reach a healthy status before counting it towards the minimum healthy percent total. A task is considered healthy when all essential containers within the task have passed their health checks. The amount of time the service scheduler can wait for is determined by the container health check settings.</p></li>
     /// </ul>
-    /// <p>For services are that <i>do</i> use a load balancer, the following should be noted:</p>
+    /// <p>For services that <i>do</i> use a load balancer, the following should be noted:</p>
     /// <ul>
     /// <li>
     /// <p>If a task has no essential containers with a health check defined, the service scheduler will wait for the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>
@@ -184,7 +184,7 @@ impl DeploymentConfigurationBuilder {
     /// <li>
     /// <p>If a task has one or more essential containers with a health check defined, the service scheduler will wait for the task to reach a healthy status before counting it towards the minimum healthy percent total. A task is considered healthy when all essential containers within the task have passed their health checks. The amount of time the service scheduler can wait for is determined by the container health check settings.</p></li>
     /// </ul>
-    /// <p>For services are that <i>do</i> use a load balancer, the following should be noted:</p>
+    /// <p>For services that <i>do</i> use a load balancer, the following should be noted:</p>
     /// <ul>
     /// <li>
     /// <p>If a task has no essential containers with a health check defined, the service scheduler will wait for the load balancer target group health check to return a healthy status before counting the task towards the minimum healthy percent total.</p></li>

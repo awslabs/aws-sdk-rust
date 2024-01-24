@@ -48,7 +48,6 @@ pub struct StartConnectionInputBuilder {
 }
 impl StartConnectionInputBuilder {
     /// <p>The serial number of the dongle.</p>
-    /// This field is required.
     pub fn device_serial_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_serial_number = ::std::option::Option::Some(input.into());
         self

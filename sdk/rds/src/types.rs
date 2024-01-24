@@ -73,6 +73,10 @@ pub use crate::types::_restore_window::RestoreWindow;
 
 pub use crate::types::_db_cluster::DbCluster;
 
+pub use crate::types::_limitless_database::LimitlessDatabase;
+
+pub use crate::types::_limitless_database_status::LimitlessDatabaseStatus;
+
 pub use crate::types::_local_write_forwarding_status::LocalWriteForwardingStatus;
 
 pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfo;
@@ -267,6 +271,8 @@ pub use crate::types::_engine_defaults::EngineDefaults;
 
 pub use crate::types::_db_snapshot_tenant_database::DbSnapshotTenantDatabase;
 
+pub use crate::types::_db_shard_group::DbShardGroup;
+
 pub use crate::types::_db_parameter_group::DbParameterGroup;
 
 pub use crate::types::_describe_db_log_files_details::DescribeDbLogFilesDetails;
@@ -393,6 +399,8 @@ mod _db_security_group;
 
 mod _db_security_group_membership;
 
+mod _db_shard_group;
+
 mod _db_snapshot;
 
 mod _db_snapshot_attribute;
@@ -452,6 +460,10 @@ mod _integration_status;
 mod _ip_range;
 
 mod _issue_details;
+
+mod _limitless_database;
+
+mod _limitless_database_status;
 
 mod _local_write_forwarding_status;
 

@@ -205,21 +205,21 @@ impl DescribeDBClustersFluentBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()
     }

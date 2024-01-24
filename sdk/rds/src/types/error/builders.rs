@@ -129,6 +129,10 @@ pub use crate::types::error::_insufficient_available_ips_in_subnet_fault::Insuff
 
 pub use crate::types::error::_db_proxy_target_already_registered_fault::DbProxyTargetAlreadyRegisteredFaultBuilder;
 
+pub use crate::types::error::_invalid_db_shard_group_state_fault::InvalidDbShardGroupStateFaultBuilder;
+
+pub use crate::types::error::_db_shard_group_not_found_fault::DbShardGroupNotFoundFaultBuilder;
+
 pub use crate::types::error::_reserved_db_instances_offering_not_found_fault::ReservedDbInstancesOfferingNotFoundFaultBuilder;
 
 pub use crate::types::error::_reserved_db_instance_quota_exceeded_fault::ReservedDbInstanceQuotaExceededFaultBuilder;
@@ -154,6 +158,10 @@ pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUseBuilder;
 pub use crate::types::error::_db_subnet_quota_exceeded_fault::DbSubnetQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_shared_snapshot_quota_exceeded_fault::SharedSnapshotQuotaExceededFaultBuilder;
+
+pub use crate::types::error::_invalid_max_acu_fault::InvalidMaxAcuFaultBuilder;
+
+pub use crate::types::error::_db_shard_group_already_exists_fault::DbShardGroupAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_invalid_db_proxy_endpoint_state_fault::InvalidDbProxyEndpointStateFaultBuilder;
 
@@ -224,6 +232,10 @@ pub use crate::types::error::_subscription_already_exist_fault::SubscriptionAlre
 pub use crate::types::error::_db_subnet_group_quota_exceeded_fault::DbSubnetGroupQuotaExceededFaultBuilder;
 
 pub use crate::types::error::_db_subnet_group_already_exists_fault::DbSubnetGroupAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_unsupported_db_engine_version_fault::UnsupportedDbEngineVersionFaultBuilder;
+
+pub use crate::types::error::_max_db_shard_group_limit_reached::MaxDbShardGroupLimitReachedBuilder;
 
 pub use crate::types::error::_db_security_group_quota_exceeded_fault::DbSecurityGroupQuotaExceededFaultBuilder;
 

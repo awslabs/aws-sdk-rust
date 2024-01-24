@@ -104,21 +104,6 @@ pub struct Task {
     pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
-    /// </ul>
     pub stop_code: ::std::option::Option<crate::types::TaskStopCode>,
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
     pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -317,21 +302,6 @@ impl Task {
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
-    /// </ul>
     pub fn stop_code(&self) -> ::std::option::Option<&crate::types::TaskStopCode> {
         self.stop_code.as_ref()
     }
@@ -972,63 +942,18 @@ impl TaskBuilder {
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
-    /// </ul>
     pub fn stop_code(mut self, input: crate::types::TaskStopCode) -> Self {
         self.stop_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
-    /// </ul>
     pub fn set_stop_code(mut self, input: ::std::option::Option<crate::types::TaskStopCode>) -> Self {
         self.stop_code = input;
         self
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>For more information about stop code, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/stopped-task-error-codes.html">Stopped tasks error codes</a> in the <i>Amazon ECS User Guide</i>.</p>
-    /// <p>The following are valid values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>TaskFailedToStart</code></p></li>
-    /// <li>
-    /// <p><code>EssentialContainerExited</code></p></li>
-    /// <li>
-    /// <p><code>UserInitiated</code></p></li>
-    /// <li>
-    /// <p><code>TerminationNotice</code></p></li>
-    /// <li>
-    /// <p><code>ServiceSchedulerInitiated</code></p></li>
-    /// <li>
-    /// <p><code>SpotInterruption</code></p></li>
-    /// </ul>
     pub fn get_stop_code(&self) -> &::std::option::Option<crate::types::TaskStopCode> {
         &self.stop_code
     }

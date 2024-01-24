@@ -28,7 +28,7 @@ pub struct DescribeDbClustersInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub max_records: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ impl DescribeDbClustersInput {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
@@ -187,21 +187,21 @@ impl DescribeDbClustersInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
-    /// <p>Constraints: Minimum 20, maximum 100.</p>
+    /// <p>Constraints: Minimum 20, maximum 100</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         &self.max_records
     }

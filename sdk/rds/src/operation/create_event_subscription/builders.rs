@@ -129,17 +129,23 @@ impl CreateEventSubscriptionFluentBuilder {
     pub fn get_subscription_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscription_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN when you create a topic and subscribe to it.</p><note>
+    /// <p>RDS doesn't support FIFO (first in, first out) topics. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
+    /// </note>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN when you create a topic and subscribe to it.</p><note>
+    /// <p>RDS doesn't support FIFO (first in, first out) topics. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
+    /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. SNS automatically creates the ARN when you create a topic and subscribe to it.</p><note>
+    /// <p>RDS doesn't support FIFO (first in, first out) topics. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
+    /// </note>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
     }

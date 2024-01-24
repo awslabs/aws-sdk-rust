@@ -186,6 +186,8 @@ mod create_db_proxy_endpoint;
 
 mod create_db_security_group;
 
+mod create_db_shard_group;
+
 mod create_db_snapshot;
 
 mod create_db_subnet_group;
@@ -253,6 +255,8 @@ mod delete_db_proxy_endpoint;
 
 mod delete_db_security_group;
 
+mod delete_db_shard_group;
+
 mod delete_db_snapshot;
 
 mod delete_db_subnet_group;
@@ -314,6 +318,8 @@ mod describe_db_proxy_targets;
 mod describe_db_recommendations;
 
 mod describe_db_security_groups;
+
+mod describe_db_shard_groups;
 
 mod describe_db_snapshot_attributes;
 
@@ -397,6 +403,8 @@ mod modify_db_proxy_target_group;
 
 mod modify_db_recommendation;
 
+mod modify_db_shard_group;
+
 mod modify_db_snapshot;
 
 mod modify_db_snapshot_attribute;
@@ -420,6 +428,8 @@ mod purchase_reserved_db_instances_offering;
 mod reboot_db_cluster;
 
 mod reboot_db_instance;
+
+mod reboot_db_shard_group;
 
 mod register_db_proxy_targets;
 

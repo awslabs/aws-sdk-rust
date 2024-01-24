@@ -1385,4 +1385,21 @@ impl ModifyDBClusterFluentBuilder {
     pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_backup_recovery_point_arn()
     }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn enable_limitless_database(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_limitless_database(input);
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn set_enable_limitless_database(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_limitless_database(input);
+        self
+    }
+    /// <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.</p>
+    /// <p>Valid for: Aurora DB clusters only</p>
+    pub fn get_enable_limitless_database(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_limitless_database()
+    }
 }

@@ -57,6 +57,8 @@ pub use crate::types::_restore_window::RestoreWindowBuilder;
 
 pub use crate::types::_db_cluster::DbClusterBuilder;
 
+pub use crate::types::_limitless_database::LimitlessDatabaseBuilder;
+
 pub use crate::types::_serverless_v2_scaling_configuration_info::ServerlessV2ScalingConfigurationInfoBuilder;
 
 pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValuesBuilder;
@@ -216,6 +218,8 @@ pub use crate::types::_event_categories_map::EventCategoriesMapBuilder;
 pub use crate::types::_engine_defaults::EngineDefaultsBuilder;
 
 pub use crate::types::_db_snapshot_tenant_database::DbSnapshotTenantDatabaseBuilder;
+
+pub use crate::types::_db_shard_group::DbShardGroupBuilder;
 
 pub use crate::types::_db_parameter_group::DbParameterGroupBuilder;
 

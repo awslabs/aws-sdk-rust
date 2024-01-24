@@ -199,6 +199,8 @@ pub struct DbCluster {
     pub local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
     /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
     pub aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The details for Aurora Limitless Database.</p>
+    pub limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
 }
 impl DbCluster {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -566,6 +568,10 @@ impl DbCluster {
     pub fn aws_backup_recovery_point_arn(&self) -> ::std::option::Option<&str> {
         self.aws_backup_recovery_point_arn.as_deref()
     }
+    /// <p>The details for Aurora Limitless Database.</p>
+    pub fn limitless_database(&self) -> ::std::option::Option<&crate::types::LimitlessDatabase> {
+        self.limitless_database.as_ref()
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -654,6 +660,7 @@ pub struct DbClusterBuilder {
     pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) local_write_forwarding_status: ::std::option::Option<crate::types::LocalWriteForwardingStatus>,
     pub(crate) aws_backup_recovery_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) limitless_database: ::std::option::Option<crate::types::LimitlessDatabase>,
 }
 impl DbClusterBuilder {
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
@@ -1909,6 +1916,20 @@ impl DbClusterBuilder {
     pub fn get_aws_backup_recovery_point_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_backup_recovery_point_arn
     }
+    /// <p>The details for Aurora Limitless Database.</p>
+    pub fn limitless_database(mut self, input: crate::types::LimitlessDatabase) -> Self {
+        self.limitless_database = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details for Aurora Limitless Database.</p>
+    pub fn set_limitless_database(mut self, input: ::std::option::Option<crate::types::LimitlessDatabase>) -> Self {
+        self.limitless_database = input;
+        self
+    }
+    /// <p>The details for Aurora Limitless Database.</p>
+    pub fn get_limitless_database(&self) -> &::std::option::Option<crate::types::LimitlessDatabase> {
+        &self.limitless_database
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -1988,6 +2009,7 @@ impl DbClusterBuilder {
             io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
             local_write_forwarding_status: self.local_write_forwarding_status,
             aws_backup_recovery_point_arn: self.aws_backup_recovery_point_arn,
+            limitless_database: self.limitless_database,
         }
     }
 }

@@ -5,12 +5,18 @@
 pub struct CreateRouteTableOutput {
     /// <p>Information about the route table.</p>
     pub route_table: ::std::option::Option<crate::types::RouteTable>,
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateRouteTableOutput {
     /// <p>Information about the route table.</p>
     pub fn route_table(&self) -> ::std::option::Option<&crate::types::RouteTable> {
         self.route_table.as_ref()
+    }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRouteTableOutput {
@@ -30,6 +36,7 @@ impl CreateRouteTableOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct CreateRouteTableOutputBuilder {
     pub(crate) route_table: ::std::option::Option<crate::types::RouteTable>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateRouteTableOutputBuilder {
@@ -47,6 +54,20 @@ impl CreateRouteTableOutputBuilder {
     pub fn get_route_table(&self) -> &::std::option::Option<crate::types::RouteTable> {
         &self.route_table
     }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl CreateRouteTableOutputBuilder {
     pub fn build(self) -> crate::operation::create_route_table::CreateRouteTableOutput {
         crate::operation::create_route_table::CreateRouteTableOutput {
             route_table: self.route_table,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }

@@ -14,6 +14,7 @@
 /// match subnetstate {
 ///     SubnetState::Available => { /* ... */ },
 ///     SubnetState::Pending => { /* ... */ },
+///     SubnetState::Unavailable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum SubnetState {
     Available,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Unavailable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for SubnetState {
         match s {
             "available" => SubnetState::Available,
             "pending" => SubnetState::Pending,
+            "unavailable" => SubnetState::Unavailable,
             other => SubnetState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl SubnetState {
         match self {
             SubnetState::Available => "available",
             SubnetState::Pending => "pending",
+            SubnetState::Unavailable => "unavailable",
             SubnetState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "pending"]
+        &["available", "pending", "unavailable"]
     }
 }
 impl ::std::convert::AsRef<str> for SubnetState {
