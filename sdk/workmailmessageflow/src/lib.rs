@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.3", features = ["behavior-version-latest"] }
-//! aws-sdk-workmailmessageflow = "1.11.0"
+//! aws-sdk-workmailmessageflow = "1.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

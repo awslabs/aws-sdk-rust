@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.3", features = ["behavior-version-latest"] }
-//! aws-sdk-iotdataplane = "1.11.0"
+//! aws-sdk-iotdataplane = "1.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

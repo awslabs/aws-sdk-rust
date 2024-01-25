@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.3", features = ["behavior-version-latest"] }
-//! aws-sdk-repostspace = "1.9.0"
+//! aws-sdk-repostspace = "1.10.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

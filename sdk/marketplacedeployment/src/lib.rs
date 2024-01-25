@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.3", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacedeployment = "1.8.0"
+//! aws-sdk-marketplacedeployment = "1.9.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

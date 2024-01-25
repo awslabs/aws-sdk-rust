@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.3", features = ["behavior-version-latest"] }
-//! aws-sdk-networkmonitor = "1.2.0"
+//! aws-sdk-networkmonitor = "1.3.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
