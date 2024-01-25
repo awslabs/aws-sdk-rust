@@ -63,7 +63,7 @@ impl SsoCredentialsProvider {
                     .start_url(&sso_provider_config.start_url)
                     .session_name(session_name)
                     .region(sso_provider_config.region.clone())
-                    .build_sync(),
+                    .build_with(env.clone(), fs.clone()),
             )
         } else {
             None

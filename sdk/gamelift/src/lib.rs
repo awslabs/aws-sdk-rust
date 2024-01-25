@@ -42,7 +42,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.3", features = ["behavior-version-latest"] }
+//! aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
 //! aws-sdk-gamelift = "1.12.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

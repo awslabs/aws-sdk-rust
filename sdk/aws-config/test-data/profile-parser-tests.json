@@ -11,7 +11,9 @@
         "configFile": ""
       },
       "output": {
-        "profiles": {}
+        "config": {
+          "profiles": {}
+        }
       }
     },
     {
@@ -20,8 +22,10 @@
         "configFile": "[profile foo]"
       },
       "output": {
-        "profiles": {
-          "foo": {}
+        "config": {
+          "profiles": {
+            "foo": {}
+          }
         }
       }
     },
@@ -31,8 +35,10 @@
         "configFile": "[profile some-thing:long/the_one%only.foo@bar+]\n[profile foo!bar]"
       },
       "output": {
-        "profiles": {
-          "some-thing:long/the_one%only.foo@bar+": {}
+        "config": {
+          "profiles": {
+            "some-thing:long/the_one%only.foo@bar+": {}
+          }
         }
       }
     },
@@ -51,8 +57,10 @@
         "configFile": "[profile \tfoo \t]"
       },
       "output": {
-        "profiles": {
-          "foo": {}
+        "config": {
+          "profiles": {
+            "foo": {}
+          }
         }
       }
     },
@@ -62,8 +70,10 @@
         "configFile": "[profile\tfoo]"
       },
       "output": {
-        "profiles": {
-          "foo": {}
+        "config": {
+          "profiles": {
+            "foo": {}
+          }
         }
       }
     },
@@ -82,9 +92,11 @@
         "configFile": "[profile foo]\nname = value"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -95,9 +107,11 @@
         "configFile": "[profile foo]\r\nname = value"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -108,9 +122,11 @@
         "configFile": "[profile foo]\nname = val=ue"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "val=ue"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "val=ue"
+            }
           }
         }
       }
@@ -121,9 +137,11 @@
         "configFile": "[profile foo]\nname = ðŸ˜‚"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "ðŸ˜‚"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "ðŸ˜‚"
+            }
           }
         }
       }
@@ -134,10 +152,12 @@
         "configFile": "[profile foo]\nname = value\nname2 = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value",
-            "name2": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value",
+              "name2": "value2"
+            }
           }
         }
       }
@@ -148,10 +168,12 @@
         "configFile": "[profile foo]\nname = value\nname2 = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value",
-            "name2": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value",
+              "name2": "value2"
+            }
           }
         }
       }
@@ -162,9 +184,11 @@
         "configFile": "[profile foo]\nname \t=  \tvalue \t"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -175,9 +199,11 @@
         "configFile": "[profile foo]\nname ="
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": ""
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": ""
+            }
           }
         }
       }
@@ -206,9 +232,11 @@
         "configFile": "[profile foo]\n[profile bar]"
       },
       "output": {
-        "profiles": {
-          "foo": {},
-          "bar": {}
+        "config": {
+          "profiles": {
+            "foo": {},
+            "bar": {}
+          }
         }
       }
     },
@@ -218,12 +246,14 @@
         "configFile": "[profile foo]\nname = value\n[profile bar]\nname2 = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
-          },
-          "bar": {
-            "name2": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            },
+            "bar": {
+              "name2": "value2"
+            }
           }
         }
       }
@@ -234,11 +264,13 @@
         "configFile": "\t \n[profile foo]\n\t\n \nname = value\n\t \n[profile bar]\n \t"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
-          },
-          "bar": {}
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            },
+            "bar": {}
+          }
         }
       }
     },
@@ -248,9 +280,11 @@
         "configFile": "# Comment\n[profile foo] # Comment\nname = value # Comment with # sign"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -261,9 +295,11 @@
         "configFile": "; Comment\n[profile foo] ; Comment\nname = value ; Comment with ; sign"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -274,9 +310,11 @@
         "configFile": "# Comment\n[profile foo] ; Comment\nname = value # Comment with ; sign"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -287,9 +325,11 @@
         "configFile": ";\n[profile foo];\nname = value ;\n"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -300,9 +340,11 @@
         "configFile": "[profile foo]; Adjacent semicolons\n[profile bar]# Adjacent pound signs"
       },
       "output": {
-        "profiles": {
-          "foo": {},
-          "bar": {}
+        "config": {
+          "profiles": {
+            "foo": {},
+            "bar": {}
+          }
         }
       }
     },
@@ -312,10 +354,12 @@
         "configFile": "[profile foo]\nname = value; Adjacent semicolons\nname2 = value# Adjacent pound signs"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value; Adjacent semicolons",
-            "name2": "value# Adjacent pound signs"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value; Adjacent semicolons",
+              "name2": "value# Adjacent pound signs"
+            }
           }
         }
       }
@@ -326,9 +370,11 @@
         "configFile": "[profile foo]\nname = value\n -continued"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value\n-continued"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value\n-continued"
+            }
           }
         }
       }
@@ -339,9 +385,11 @@
         "configFile": "[profile foo]\nname = value\n -continued\n -and-continued"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value\n-continued\n-and-continued"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value\n-continued\n-and-continued"
+            }
           }
         }
       }
@@ -352,9 +400,11 @@
         "configFile": "[profile foo]\nname = value\n \t -continued \t "
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value\n-continued"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value\n-continued"
+            }
           }
         }
       }
@@ -365,9 +415,11 @@
         "configFile": "[profile foo]\nname = value\n -continued # Comment"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value\n-continued # Comment"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value\n-continued # Comment"
+            }
           }
         }
       }
@@ -378,9 +430,11 @@
         "configFile": "[profile foo]\nname = value\n -continued ; Comment"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value\n-continued ; Comment"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value\n-continued ; Comment"
+            }
           }
         }
       }
@@ -418,10 +472,12 @@
         "configFile": "[profile foo]\nname = value\n[profile foo]\nname2 = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value",
-            "name2": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value",
+              "name2": "value2"
+            }
           }
         }
       }
@@ -432,9 +488,11 @@
         "configFile": "[profile foo]\nname = value\nname = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value2"
+            }
           }
         }
       }
@@ -445,9 +503,11 @@
         "configFile": "[profile foo]\nname = value\n[profile foo]\nname = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value2"
+            }
           }
         }
       }
@@ -458,9 +518,11 @@
         "configFile": "[profile foo]\nName = value\n[profile foo]\nname = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value2"
+            }
           }
         }
       }
@@ -471,9 +533,11 @@
         "configFile": "[profile default]\nname = value\n[default]\nname2 = value2"
       },
       "output": {
-        "profiles": {
-          "default": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "default": {
+              "name": "value"
+            }
           }
         }
       }
@@ -484,9 +548,11 @@
         "configFile": "[default]\nname2 = value2\n[profile default]\nname = value"
       },
       "output": {
-        "profiles": {
-          "default": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "default": {
+              "name": "value"
+            }
           }
         }
       }
@@ -498,7 +564,9 @@
         "credentialsFile": "[in valid 2]\nname2 = value2"
       },
       "output": {
-        "profiles": {}
+        "config": {
+          "profiles": {}
+        }
       }
     },
     {
@@ -507,8 +575,10 @@
         "configFile": "[profile foo]\nin valid = value"
       },
       "output": {
-        "profiles": {
-          "foo": {}
+        "config": {
+          "profiles": {
+            "foo": {}
+          }
         }
       }
     },
@@ -518,8 +588,10 @@
         "configFile": "[profile ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_]"
       },
       "output": {
-        "profiles": {
-          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_": {}
+        "config": {
+          "profiles": {
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_": {}
+          }
         }
       }
     },
@@ -529,9 +601,11 @@
         "configFile": "[profile foo]\nABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_ = value"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789-_": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789-_": "value"
+            }
           }
         }
       }
@@ -542,9 +616,11 @@
         "configFile": "[profile foo]\ns3 =\n name = value"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "s3": "\nname = value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "s3": "\nname = value"
+            }
           }
         }
       }
@@ -564,9 +640,11 @@
         "configFile": "[profile foo]\ns3 =\n name ="
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "s3": "\nname ="
+        "config": {
+          "profiles": {
+            "foo": {
+              "s3": "\nname ="
+            }
           }
         }
       }
@@ -586,9 +664,11 @@
         "configFile": "[profile foo]\ns3 =\n in valid = value"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "s3": "\nin valid = value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "s3": "\nin valid = value"
+            }
           }
         }
       }
@@ -599,9 +679,11 @@
         "configFile": "[profile foo]\ns3 =\n name = value\n\t \n name2 = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "s3": "\nname = value\nname2 = value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "s3": "\nname = value\nname2 = value2"
+            }
           }
         }
       }
@@ -613,10 +695,12 @@
         "credentialsFile": "[foo]\nname2 = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value",
-            "name2": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value",
+              "name2": "value2"
+            }
           }
         }
       }
@@ -627,10 +711,12 @@
         "configFile": "[profile default]\nname = value\n[default]\nname2 = value2\n[profile default]\nname3 = value3"
       },
       "output": {
-        "profiles": {
-          "default": {
-            "name": "value",
-            "name3": "value3"
+        "config": {
+          "profiles": {
+            "default": {
+              "name": "value",
+              "name3": "value3"
+            }
           }
         }
       }
@@ -642,11 +728,13 @@
         "credentialsFile": "[default]\nsecret=foo"
       },
       "output": {
-        "profiles": {
-          "default": {
-            "name": "value",
-            "name3": "value3",
-            "secret": "foo"
+        "config": {
+          "profiles": {
+            "default": {
+              "name": "value",
+              "name3": "value3",
+              "secret": "foo"
+            }
           }
         }
       }
@@ -658,9 +746,11 @@
         "credentialsFile": "[foo]\nname = value2"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value2"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value2"
+            }
           }
         }
       }
@@ -671,7 +761,9 @@
         "configFile": "[foo]\nname = value"
       },
       "output": {
-        "profiles": {}
+        "config": {
+          "profiles": {}
+        }
       }
     },
     {
@@ -680,7 +772,9 @@
         "credentialsFile": "[profile foo]\nname = value"
       },
       "output": {
-        "profiles": {}
+        "config": {
+          "profiles": {}
+        }
       }
     },
     {
@@ -689,9 +783,11 @@
         "configFile": "[profile foo]; semicolon\n[profile bar]# pound"
       },
       "output": {
-        "profiles": {
-          "foo": {},
-          "bar": {}
+        "config": {
+          "profiles": {
+            "foo": {},
+            "bar": {}
+          }
         }
       }
     },
@@ -710,8 +806,10 @@
         "configFile": "[profilefoo]\nname = value\n[profile bar]"
       },
       "output": {
-        "profiles": {
-          "bar": {}
+        "config": {
+          "profiles": {
+            "bar": {}
+          }
         }
       }
     },
@@ -721,10 +819,12 @@
         "configFile": "[   profile foo    ]\nname = value\n[profile bar]"
       },
       "output": {
-        "profiles": {
-          "bar": {},
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "bar": {},
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -735,9 +835,11 @@
         "credentialsFile": "[   foo    ]\nname = value\n[profile bar]"
       },
       "output": {
-        "profiles": {
-          "foo": {
-            "name": "value"
+        "config": {
+          "profiles": {
+            "foo": {
+              "name": "value"
+            }
           }
         }
       }
@@ -748,12 +850,63 @@
         "configFile": "[profile foo]\nname = value\n[profile in valid]\nx = 1\n[profile bar]\nname = value2"
       },
       "output": {
-        "profiles": {
-          "bar": {
-            "name": "value2"
+        "config": {
+          "profiles": {
+            "bar": {
+              "name": "value2"
+            },
+            "foo": {
+              "name": "value"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "sso-session with properties",
+      "input": {
+        "configFile": "[sso-session foo]\nname = value\n[profile bar]"
+      },
+      "output": {
+        "config": {
+          "profiles": {
+            "bar": {}
           },
-          "foo": {
-            "name": "value"
+          "sso_sessions": {
+            "foo": {
+              "name": "value"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "sso-session without the space before the name is a profile",
+      "input": {
+        "credentialsFile": "[sso-sessionfoo]\nname = value\n[bar]"
+      },
+      "output": {
+        "config": {
+          "profiles": {
+            "sso-sessionfoo": { "name": "value" },
+            "bar": {}
+          },
+          "sso_sessions": {
+          }
+        }
+      }
+    },
+    {
+      "name": "A typo'd sso-session will be ignored",
+      "input": {
+        "configFile": "[sso-sesion foo]\nname = value\n[profile bar]"
+      },
+      "output": {
+        "config": {
+          "profiles": {
+            "bar": {}
+          },
+          "sso_sessions": {
           }
         }
       }

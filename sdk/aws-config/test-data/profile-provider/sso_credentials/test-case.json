@@ -1,0 +1,12 @@
+{
+  "name": "sso_credentials",
+  "docs": "sso_credentials loads SSO credentials using a local SSO session",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1651516560
+    }
+  }
+}

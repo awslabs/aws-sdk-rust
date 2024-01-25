@@ -1,0 +1,7 @@
+{
+  "name": "sso_token",
+  "docs": "sso_token attempts to use an SSO access token (AWS Builder ID) through the credentials chain when it should go through the token provider chain",
+  "result": {
+    "ErrorContains": "foobaz"
+  }
+}

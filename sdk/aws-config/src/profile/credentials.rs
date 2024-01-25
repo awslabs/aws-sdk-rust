@@ -265,6 +265,29 @@ pub enum ProfileFileError {
         /// Additional information about the missing feature
         message: Option<Cow<'static, str>>,
     },
+
+    /// Missing sso-session section in config
+    #[non_exhaustive]
+    MissingSsoSession {
+        /// The name of the profile that specified `sso_session`
+        profile: String,
+        /// SSO session name
+        sso_session: String,
+    },
+
+    /// Invalid SSO configuration
+    #[non_exhaustive]
+    InvalidSsoConfig {
+        /// The name of the profile that the error originates in
+        profile: String,
+        /// Error message
+        message: Cow<'static, str>,
+    },
+
+    /// Profile is intended to be used in the token provider chain rather
+    /// than in the credentials chain.
+    #[non_exhaustive]
+    TokenProviderConfig {},
 }
 
 impl ProfileFileError {
@@ -322,6 +345,25 @@ impl Display for ProfileFileError {
                 write!(
                     f,
                     "This behavior requires following cargo feature(s) enabled: {feature}. {message}",
+                )
+            }
+            ProfileFileError::MissingSsoSession {
+                profile,
+                sso_session,
+            } => {
+                write!(f, "sso-session named `{sso_session}` (referenced by profile `{profile}`) was not found")
+            }
+            ProfileFileError::InvalidSsoConfig { profile, message } => {
+                write!(f, "profile `{profile}` has invalid SSO config: {message}")
+            }
+            ProfileFileError::TokenProviderConfig { .. } => {
+                // TODO(https://github.com/awslabs/aws-sdk-rust/issues/703): Update error message once token support is added
+                write!(
+                    f,
+                    "selected profile will resolve an access token instead of credentials \
+                     since it doesn't have `sso_account_id` and `sso_role_name` set. Access token \
+                     support for services such as Code Catalyst hasn't been implemented yet and is \
+                     being tracked in https://github.com/awslabs/aws-sdk-rust/issues/703"
                 )
             }
         }
@@ -497,4 +539,8 @@ mod test {
     make_test!(credential_process_failure);
     #[cfg(feature = "credentials-process")]
     make_test!(credential_process_invalid);
+    #[cfg(feature = "sso")]
+    make_test!(sso_credentials);
+    #[cfg(feature = "sso")]
+    make_test!(sso_token);
 }

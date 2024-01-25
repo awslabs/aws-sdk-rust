@@ -1,0 +1,7 @@
+{
+  "name": "sso_token",
+  "docs": "sso_token loads a profile that doesn't have `sso_account_id` and `sso_role_name` fields, indicating that it's intended for the token provider chain in a service that uses SSO with an AWS Builder ID instead of credentials",
+  "result": {
+    "ErrorContains": "selected profile will resolve an access token instead of credentials"
+  }
+}
