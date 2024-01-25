@@ -8,8 +8,8 @@
 
 //! Interceptor for handling Smithy `@httpChecksum` request checksumming with AWS SigV4
 
-use aws_http::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
-use aws_runtime::auth::SigV4OperationSigningConfig;
+use aws_runtime::content_encoding::{AwsChunkedBody, AwsChunkedBodyOptions};
+use aws_runtime::{auth::SigV4OperationSigningConfig, content_encoding::header_value::AWS_CHUNKED};
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_checksums::ChecksumAlgorithm;
 use aws_smithy_checksums::{body::calculate, http::HttpChecksum};
@@ -179,7 +179,7 @@ fn wrap_streaming_request_body_in_checksum_calculating_body(
     );
     headers.insert(
         http::header::CONTENT_ENCODING,
-        HeaderValue::from_str(aws_http::content_encoding::header_value::AWS_CHUNKED)
+        HeaderValue::from_str(AWS_CHUNKED)
             .map_err(BuildError::other)
             .expect("\"aws-chunked\" will always be a valid HeaderValue"),
     );

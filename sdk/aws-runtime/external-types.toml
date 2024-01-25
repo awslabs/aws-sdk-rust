@@ -3,4 +3,8 @@ allowed_external_types = [
     "aws_smithy_types::*",
     "aws_smithy_runtime_api::*",
     "aws_types::*",
+    "bytes::bytes::Bytes",
+
+    # Used by the aws-chunked implementation
+    "http_body::Body",
 ]

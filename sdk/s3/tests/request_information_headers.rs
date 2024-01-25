@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_http::user_agent::AwsUserAgent;
 use aws_runtime::invocation_id::{InvocationId, PredefinedInvocationIdGenerator};
+use aws_runtime::user_agent::AwsUserAgent;
 use aws_sdk_s3::config::interceptors::BeforeSerializationInterceptorContextMut;
 use aws_sdk_s3::config::interceptors::FinalizerInterceptorContextRef;
 use aws_sdk_s3::config::retry::RetryConfig;

@@ -226,7 +226,7 @@ async fn test_checksum_on_streaming_request<'a>(
         "x-amz-trailer is incorrect"
     );
     assert_eq!(
-        HeaderValue::from_static(aws_http::content_encoding::header_value::AWS_CHUNKED),
+        HeaderValue::from_static(aws_runtime::content_encoding::header_value::AWS_CHUNKED),
         content_encoding,
         "content-encoding wasn't set to aws-chunked"
     );
