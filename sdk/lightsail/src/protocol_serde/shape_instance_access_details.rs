@@ -34,6 +34,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ipv6Addresses" => {
+                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(tokens)?);
+                        }
                         "password" => {
                             builder = builder.set_password(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

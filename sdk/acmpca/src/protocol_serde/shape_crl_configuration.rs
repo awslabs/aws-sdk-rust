@@ -21,6 +21,15 @@ pub fn ser_crl_configuration(
     if let Some(var_4) = &input.s3_object_acl {
         object.key("S3ObjectAcl").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.crl_distribution_point_extension_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("CrlDistributionPointExtensionConfiguration").start_object();
+        crate::protocol_serde::shape_crl_distribution_point_extension_configuration::ser_crl_distribution_point_extension_configuration(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -69,6 +78,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::S3ObjectAcl::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "CrlDistributionPointExtensionConfiguration" => {
+                            builder = builder.set_crl_distribution_point_extension_configuration(
+                                    crate::protocol_serde::shape_crl_distribution_point_extension_configuration::de_crl_distribution_point_extension_configuration(tokens)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

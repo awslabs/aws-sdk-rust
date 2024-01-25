@@ -5,6 +5,8 @@ pub use crate::types::_ocsp_configuration::OcspConfigurationBuilder;
 
 pub use crate::types::_crl_configuration::CrlConfigurationBuilder;
 
+pub use crate::types::_crl_distribution_point_extension_configuration::CrlDistributionPointExtensionConfigurationBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_permission::PermissionBuilder;

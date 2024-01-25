@@ -195,6 +195,8 @@ pub(crate) mod shape_access_description;
 
 pub(crate) mod shape_action_list;
 
+pub(crate) mod shape_crl_distribution_point_extension_configuration;
+
 pub(crate) mod shape_custom_attribute;
 
 pub(crate) mod shape_custom_extension;

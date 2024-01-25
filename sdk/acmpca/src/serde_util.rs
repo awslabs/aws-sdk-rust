@@ -42,6 +42,15 @@ pub(crate) fn ocsp_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn crl_distribution_point_extension_configuration_correct_errors(
+    mut builder: crate::types::builders::CrlDistributionPointExtensionConfigurationBuilder,
+) -> crate::types::builders::CrlDistributionPointExtensionConfigurationBuilder {
+    if builder.omit_extension.is_none() {
+        builder.omit_extension = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn access_description_correct_errors(
     mut builder: crate::types::builders::AccessDescriptionBuilder,
 ) -> crate::types::builders::AccessDescriptionBuilder {

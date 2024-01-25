@@ -83,6 +83,13 @@ where
                             builder =
                                 builder.set_supported_app_categories(crate::protocol_serde::shape_app_category_list::de_app_category_list(tokens)?);
                         }
+                        "publicIpv4AddressCount" => {
+                            builder = builder.set_public_ipv4_address_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

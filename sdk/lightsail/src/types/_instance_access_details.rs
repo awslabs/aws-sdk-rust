@@ -10,6 +10,8 @@ pub struct InstanceAccessDetails {
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The IPv6 address of the Amazon Lightsail instance.</p>
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p><note>
     /// <p>If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty string.</p>
     /// <p>If you change the Administrator password on the instance, Lightsail will continue to return the original password value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
@@ -40,6 +42,12 @@ impl InstanceAccessDetails {
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
+    }
+    /// <p>The IPv6 address of the Amazon Lightsail instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p><note>
     /// <p>If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty string.</p>
@@ -89,6 +97,7 @@ pub struct InstanceAccessDetailsBuilder {
     pub(crate) cert_key: ::std::option::Option<::std::string::String>,
     pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) password_data: ::std::option::Option<crate::types::PasswordData>,
     pub(crate) private_key: ::std::option::Option<::std::string::String>,
@@ -139,6 +148,26 @@ impl InstanceAccessDetailsBuilder {
     /// <p>The public IP address of the Amazon Lightsail instance.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
+    }
+    /// Appends an item to `ipv6_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+    ///
+    /// <p>The IPv6 address of the Amazon Lightsail instance.</p>
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv6_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.ipv6_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 address of the Amazon Lightsail instance.</p>
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input;
+        self
+    }
+    /// <p>The IPv6 address of the Amazon Lightsail instance.</p>
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
     }
     /// <p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p><note>
     /// <p>If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>), <code>password</code> will always be an empty string.</p>
@@ -259,6 +288,7 @@ impl InstanceAccessDetailsBuilder {
             cert_key: self.cert_key,
             expires_at: self.expires_at,
             ip_address: self.ip_address,
+            ipv6_addresses: self.ipv6_addresses,
             password: self.password,
             password_data: self.password_data,
             private_key: self.private_key,

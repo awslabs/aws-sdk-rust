@@ -30,6 +30,8 @@ pub struct Bundle {
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     pub supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
+    /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
+    pub public_ipv4_address_count: ::std::option::Option<i32>,
 }
 impl Bundle {
     /// <p>The price in US dollars (<code>5.0</code>) of the bundle.</p>
@@ -86,6 +88,10 @@ impl Bundle {
     pub fn supported_app_categories(&self) -> &[crate::types::AppCategory] {
         self.supported_app_categories.as_deref().unwrap_or_default()
     }
+    /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
+    pub fn public_ipv4_address_count(&self) -> ::std::option::Option<i32> {
+        self.public_ipv4_address_count
+    }
 }
 impl Bundle {
     /// Creates a new builder-style object to manufacture [`Bundle`](crate::types::Bundle).
@@ -110,6 +116,7 @@ pub struct BundleBuilder {
     pub(crate) transfer_per_month_in_gb: ::std::option::Option<i32>,
     pub(crate) supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
     pub(crate) supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
+    pub(crate) public_ipv4_address_count: ::std::option::Option<i32>,
 }
 impl BundleBuilder {
     /// <p>The price in US dollars (<code>5.0</code>) of the bundle.</p>
@@ -298,6 +305,20 @@ impl BundleBuilder {
     pub fn get_supported_app_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppCategory>> {
         &self.supported_app_categories
     }
+    /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
+    pub fn public_ipv4_address_count(mut self, input: i32) -> Self {
+        self.public_ipv4_address_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
+    pub fn set_public_ipv4_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.public_ipv4_address_count = input;
+        self
+    }
+    /// <p>An integer that indicates the public ipv4 address count included in the bundle, the value is either 0 or 1.</p>
+    pub fn get_public_ipv4_address_count(&self) -> &::std::option::Option<i32> {
+        &self.public_ipv4_address_count
+    }
     /// Consumes the builder and constructs a [`Bundle`](crate::types::Bundle).
     pub fn build(self) -> crate::types::Bundle {
         crate::types::Bundle {
@@ -313,6 +334,7 @@ impl BundleBuilder {
             transfer_per_month_in_gb: self.transfer_per_month_in_gb,
             supported_platforms: self.supported_platforms,
             supported_app_categories: self.supported_app_categories,
+            public_ipv4_address_count: self.public_ipv4_address_count,
         }
     }
 }

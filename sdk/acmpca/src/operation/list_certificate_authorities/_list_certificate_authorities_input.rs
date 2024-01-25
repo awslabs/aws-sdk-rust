@@ -6,6 +6,7 @@ pub struct ListCertificateAuthoritiesInput {
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Use this parameter to filter the returned set of certificate authorities based on their owner. The default is SELF.</p>
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
@@ -16,6 +17,7 @@ impl ListCertificateAuthoritiesInput {
         self.next_token.as_deref()
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -55,16 +57,19 @@ impl ListCertificateAuthoritiesInputBuilder {
         &self.next_token
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>
+    /// <p>Although the maximum value is 1000, the action only returns a maximum of 100 items.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
