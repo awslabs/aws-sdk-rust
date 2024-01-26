@@ -8,7 +8,7 @@ pub struct ResourceStatus {
     pub ec2: crate::types::Status,
     /// <p>The status of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub ecr: crate::types::Status,
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
+    /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub lambda: ::std::option::Option<crate::types::Status>,
     /// <p>The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions.</p>
     pub lambda_code: ::std::option::Option<crate::types::Status>,
@@ -22,7 +22,7 @@ impl ResourceStatus {
     pub fn ecr(&self) -> &crate::types::Status {
         &self.ecr
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
+    /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub fn lambda(&self) -> ::std::option::Option<&crate::types::Status> {
         self.lambda.as_ref()
     }
@@ -78,17 +78,17 @@ impl ResourceStatusBuilder {
     pub fn get_ecr(&self) -> &::std::option::Option<crate::types::Status> {
         &self.ecr
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
+    /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub fn lambda(mut self, input: crate::types::Status) -> Self {
         self.lambda = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
+    /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.lambda = input;
         self
     }
-    /// <p>The status of Amazon Inspector scanning for AWS Lambda function.</p>
+    /// <p>The status of Amazon Inspector scanning for Amazon Web Services Lambda function.</p>
     pub fn get_lambda(&self) -> &::std::option::Option<crate::types::Status> {
         &self.lambda
     }

@@ -329,6 +329,8 @@ mod delete_hub_content;
 
 mod delete_human_task_ui;
 
+mod delete_hyper_parameter_tuning_job;
+
 mod delete_image;
 
 mod delete_image_version;

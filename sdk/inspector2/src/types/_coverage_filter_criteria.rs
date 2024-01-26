@@ -22,14 +22,16 @@ pub struct CoverageFilterCriteria {
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The Amazon EC2 instance tags to filter on.</p>
     pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by function names.</p>
     pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.</p>
     pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filters Amazon Web Services resources based on whether Amazon Inspector has checked them for vulnerabilities within the specified time range.</p>
     pub last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    /// <p>The date an image was last pulled at.</p>
+    pub image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteria {
     /// <p>The scan status code to filter on. Valid values are: <code>ValidationException</code>, <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>, and <code>ThrottlingException</code>.</p>
@@ -86,19 +88,19 @@ impl CoverageFilterCriteria {
     pub fn ec2_instance_tags(&self) -> &[crate::types::CoverageMapFilter] {
         self.ec2_instance_tags.as_deref().unwrap_or_default()
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by function names.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
     pub fn lambda_function_name(&self) -> &[crate::types::CoverageStringFilter] {
         self.lambda_function_name.as_deref().unwrap_or_default()
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_tags.is_none()`.
     pub fn lambda_function_tags(&self) -> &[crate::types::CoverageMapFilter] {
         self.lambda_function_tags.as_deref().unwrap_or_default()
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_runtime.is_none()`.
     pub fn lambda_function_runtime(&self) -> &[crate::types::CoverageStringFilter] {
@@ -109,6 +111,12 @@ impl CoverageFilterCriteria {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_scanned_at.is_none()`.
     pub fn last_scanned_at(&self) -> &[crate::types::CoverageDateFilter] {
         self.last_scanned_at.as_deref().unwrap_or_default()
+    }
+    /// <p>The date an image was last pulled at.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.image_pulled_at.is_none()`.
+    pub fn image_pulled_at(&self) -> &[crate::types::CoverageDateFilter] {
+        self.image_pulled_at.as_deref().unwrap_or_default()
     }
 }
 impl CoverageFilterCriteria {
@@ -135,6 +143,7 @@ pub struct CoverageFilterCriteriaBuilder {
     pub(crate) lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
     pub(crate) lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     pub(crate) last_scanned_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
+    pub(crate) image_pulled_at: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>,
 }
 impl CoverageFilterCriteriaBuilder {
     /// Appends an item to `scan_status_code`.
@@ -321,19 +330,19 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_name`](Self::set_lambda_function_name).
     ///
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by function names.</p>
     pub fn lambda_function_name(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.lambda_function_name.unwrap_or_default();
         v.push(input);
         self.lambda_function_name = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by function names.</p>
     pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.lambda_function_name = input;
         self
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by function names.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by function names.</p>
     pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.lambda_function_name
     }
@@ -341,19 +350,19 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_tags`](Self::set_lambda_function_tags).
     ///
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.</p>
     pub fn lambda_function_tags(mut self, input: crate::types::CoverageMapFilter) -> Self {
         let mut v = self.lambda_function_tags.unwrap_or_default();
         v.push(input);
         self.lambda_function_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.</p>
     pub fn set_lambda_function_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>) -> Self {
         self.lambda_function_tags = input;
         self
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by tag.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by tag.</p>
     pub fn get_lambda_function_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>> {
         &self.lambda_function_tags
     }
@@ -361,19 +370,19 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_runtime`](Self::set_lambda_function_runtime).
     ///
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     pub fn lambda_function_runtime(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.lambda_function_runtime.unwrap_or_default();
         v.push(input);
         self.lambda_function_runtime = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     pub fn set_lambda_function_runtime(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.lambda_function_runtime = input;
         self
     }
-    /// <p>Returns coverage statistics for AWS Lambda functions filtered by runtime.</p>
+    /// <p>Returns coverage statistics for Amazon Web Services Lambda functions filtered by runtime.</p>
     pub fn get_lambda_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.lambda_function_runtime
     }
@@ -397,6 +406,26 @@ impl CoverageFilterCriteriaBuilder {
     pub fn get_last_scanned_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
         &self.last_scanned_at
     }
+    /// Appends an item to `image_pulled_at`.
+    ///
+    /// To override the contents of this collection use [`set_image_pulled_at`](Self::set_image_pulled_at).
+    ///
+    /// <p>The date an image was last pulled at.</p>
+    pub fn image_pulled_at(mut self, input: crate::types::CoverageDateFilter) -> Self {
+        let mut v = self.image_pulled_at.unwrap_or_default();
+        v.push(input);
+        self.image_pulled_at = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The date an image was last pulled at.</p>
+    pub fn set_image_pulled_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>>) -> Self {
+        self.image_pulled_at = input;
+        self
+    }
+    /// <p>The date an image was last pulled at.</p>
+    pub fn get_image_pulled_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageDateFilter>> {
+        &self.image_pulled_at
+    }
     /// Consumes the builder and constructs a [`CoverageFilterCriteria`](crate::types::CoverageFilterCriteria).
     pub fn build(self) -> crate::types::CoverageFilterCriteria {
         crate::types::CoverageFilterCriteria {
@@ -413,6 +442,7 @@ impl CoverageFilterCriteriaBuilder {
             lambda_function_tags: self.lambda_function_tags,
             lambda_function_runtime: self.lambda_function_runtime,
             last_scanned_at: self.last_scanned_at,
+            image_pulled_at: self.image_pulled_at,
         }
     }
 }

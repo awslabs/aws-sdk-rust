@@ -250,6 +250,9 @@ pub mod delete_hub_content;
 /// Types for the `DeleteHumanTaskUi` operation.
 pub mod delete_human_task_ui;
 
+/// Types for the `DeleteHyperParameterTuningJob` operation.
+pub mod delete_hyper_parameter_tuning_job;
+
 /// Types for the `DeleteImage` operation.
 pub mod delete_image;
 

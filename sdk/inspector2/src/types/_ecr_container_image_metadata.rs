@@ -6,6 +6,8 @@
 pub struct EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The date an image was last pulled at.</p>
+    pub image_pulled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
@@ -13,6 +15,10 @@ impl EcrContainerImageMetadata {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[::std::string::String] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>The date an image was last pulled at.</p>
+    pub fn image_pulled_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.image_pulled_at.as_ref()
     }
 }
 impl EcrContainerImageMetadata {
@@ -27,6 +33,7 @@ impl EcrContainerImageMetadata {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct EcrContainerImageMetadataBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) image_pulled_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EcrContainerImageMetadataBuilder {
     /// Appends an item to `tags`.
@@ -49,8 +56,25 @@ impl EcrContainerImageMetadataBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tags
     }
+    /// <p>The date an image was last pulled at.</p>
+    pub fn image_pulled_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.image_pulled_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date an image was last pulled at.</p>
+    pub fn set_image_pulled_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.image_pulled_at = input;
+        self
+    }
+    /// <p>The date an image was last pulled at.</p>
+    pub fn get_image_pulled_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.image_pulled_at
+    }
     /// Consumes the builder and constructs a [`EcrContainerImageMetadata`](crate::types::EcrContainerImageMetadata).
     pub fn build(self) -> crate::types::EcrContainerImageMetadata {
-        crate::types::EcrContainerImageMetadata { tags: self.tags }
+        crate::types::EcrContainerImageMetadata {
+            tags: self.tags,
+            image_pulled_at: self.image_pulled_at,
+        }
     }
 }

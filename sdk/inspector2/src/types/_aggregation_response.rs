@@ -16,9 +16,9 @@ pub enum AggregationResponse {
     FindingTypeAggregation(crate::types::FindingTypeAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on container image layers.</p>
     ImageLayerAggregation(crate::types::ImageLayerAggregationResponse),
-    /// <p>An aggregation of findings by AWS Lambda function.</p>
+    /// <p>An aggregation of findings by Amazon Web Services Lambda function.</p>
     LambdaFunctionAggregation(crate::types::LambdaFunctionAggregationResponse),
-    /// <p>An aggregation of findings by AWS Lambda layer.</p>
+    /// <p>An aggregation of findings by Amazon Web Services Lambda layer.</p>
     LambdaLayerAggregation(crate::types::LambdaLayerAggregationResponse),
     /// <p>An object that contains details about an aggregation response based on operating system package type.</p>
     PackageAggregation(crate::types::PackageAggregationResponse),

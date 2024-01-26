@@ -9,7 +9,7 @@ pub struct DescribeDomainOutput {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    /// <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
     pub home_efs_file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM Identity Center managed application instance ID.</p>
     pub single_sign_on_managed_application_instance_id: ::std::option::Option<::std::string::String>,
@@ -69,7 +69,7 @@ impl DescribeDomainOutput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    /// <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
     pub fn home_efs_file_system_id(&self) -> ::std::option::Option<&str> {
         self.home_efs_file_system_id.as_deref()
     }
@@ -238,17 +238,17 @@ impl DescribeDomainOutputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    /// <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
     pub fn home_efs_file_system_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    /// <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
     pub fn set_home_efs_file_system_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_id = input;
         self
     }
-    /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    /// <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
     pub fn get_home_efs_file_system_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.home_efs_file_system_id
     }

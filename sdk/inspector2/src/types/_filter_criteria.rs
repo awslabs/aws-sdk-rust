@@ -68,17 +68,17 @@ pub struct FilterCriteria {
     pub related_vulnerabilities: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.</p>
     pub fix_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
     pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     pub lambda_function_layers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
     pub lambda_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub lambda_function_last_modified_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>Filters the list of AWS Lambda functions by execution role.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
     pub lambda_function_execution_role_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
     pub exploit_available: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.</p>
     pub code_vulnerability_detector_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -282,37 +282,37 @@ impl FilterCriteria {
     pub fn fix_available(&self) -> &[crate::types::StringFilter] {
         self.fix_available.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
     pub fn lambda_function_name(&self) -> &[crate::types::StringFilter] {
         self.lambda_function_name.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_layers.is_none()`.
     pub fn lambda_function_layers(&self) -> &[crate::types::StringFilter] {
         self.lambda_function_layers.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_runtime.is_none()`.
     pub fn lambda_function_runtime(&self) -> &[crate::types::StringFilter] {
         self.lambda_function_runtime.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_last_modified_at.is_none()`.
     pub fn lambda_function_last_modified_at(&self) -> &[crate::types::DateFilter] {
         self.lambda_function_last_modified_at.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda functions by execution role.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_execution_role_arn.is_none()`.
     pub fn lambda_function_execution_role_arn(&self) -> &[crate::types::StringFilter] {
         self.lambda_function_execution_role_arn.as_deref().unwrap_or_default()
     }
-    /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exploit_available.is_none()`.
     pub fn exploit_available(&self) -> &[crate::types::StringFilter] {
@@ -1042,19 +1042,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_name`](Self::set_lambda_function_name).
     ///
-    /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
     pub fn lambda_function_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_name.unwrap_or_default();
         v.push(input);
         self.lambda_function_name = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
     pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.lambda_function_name = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the name of the function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the name of the function.</p>
     pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.lambda_function_name
     }
@@ -1062,19 +1062,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_layers`](Self::set_lambda_function_layers).
     ///
-    /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     pub fn lambda_function_layers(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_layers.unwrap_or_default();
         v.push(input);
         self.lambda_function_layers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     pub fn set_lambda_function_layers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.lambda_function_layers = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.</p>
     pub fn get_lambda_function_layers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.lambda_function_layers
     }
@@ -1082,19 +1082,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_runtime`](Self::set_lambda_function_runtime).
     ///
-    /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
     pub fn lambda_function_runtime(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_runtime.unwrap_or_default();
         v.push(input);
         self.lambda_function_runtime = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
     pub fn set_lambda_function_runtime(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.lambda_function_runtime = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.</p>
     pub fn get_lambda_function_runtime(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.lambda_function_runtime
     }
@@ -1102,19 +1102,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_last_modified_at`](Self::set_lambda_function_last_modified_at).
     ///
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn lambda_function_last_modified_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.lambda_function_last_modified_at.unwrap_or_default();
         v.push(input);
         self.lambda_function_last_modified_at = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn set_lambda_function_last_modified_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.lambda_function_last_modified_at = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a></p>
     pub fn get_lambda_function_last_modified_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.lambda_function_last_modified_at
     }
@@ -1122,19 +1122,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_execution_role_arn`](Self::set_lambda_function_execution_role_arn).
     ///
-    /// <p>Filters the list of AWS Lambda functions by execution role.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
     pub fn lambda_function_execution_role_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.lambda_function_execution_role_arn.unwrap_or_default();
         v.push(input);
         self.lambda_function_execution_role_arn = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by execution role.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
     pub fn set_lambda_function_execution_role_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.lambda_function_execution_role_arn = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda functions by execution role.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda functions by execution role.</p>
     pub fn get_lambda_function_execution_role_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.lambda_function_execution_role_arn
     }
@@ -1142,19 +1142,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_exploit_available`](Self::set_exploit_available).
     ///
-    /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
     pub fn exploit_available(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.exploit_available.unwrap_or_default();
         v.push(input);
         self.exploit_available = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
     pub fn set_exploit_available(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.exploit_available = input;
         self
     }
-    /// <p>Filters the list of AWS Lambda findings by the availability of exploits.</p>
+    /// <p>Filters the list of Amazon Web Services Lambda findings by the availability of exploits.</p>
     pub fn get_exploit_available(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.exploit_available
     }

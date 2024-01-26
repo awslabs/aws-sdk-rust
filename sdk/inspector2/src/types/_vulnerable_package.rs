@@ -24,7 +24,7 @@ pub struct VulnerablePackage {
     pub fixed_in_version: ::std::option::Option<::std::string::String>,
     /// <p>The code to run in your environment to update packages with a fix available.</p>
     pub remediation: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
+    /// <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>
     pub source_lambda_layer_arn: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackage {
@@ -70,7 +70,7 @@ impl VulnerablePackage {
     pub fn remediation(&self) -> ::std::option::Option<&str> {
         self.remediation.as_deref()
     }
-    /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
+    /// <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>
     pub fn source_lambda_layer_arn(&self) -> ::std::option::Option<&str> {
         self.source_lambda_layer_arn.as_deref()
     }
@@ -241,17 +241,17 @@ impl VulnerablePackageBuilder {
     pub fn get_remediation(&self) -> &::std::option::Option<::std::string::String> {
         &self.remediation
     }
-    /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
+    /// <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>
     pub fn source_lambda_layer_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_lambda_layer_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
+    /// <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>
     pub fn set_source_lambda_layer_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_lambda_layer_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.</p>
+    /// <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>
     pub fn get_source_lambda_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_lambda_layer_arn
     }

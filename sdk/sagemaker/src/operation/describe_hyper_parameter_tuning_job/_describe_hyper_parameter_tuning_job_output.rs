@@ -13,7 +13,7 @@ pub struct DescribeHyperParameterTuningJobOutput {
     pub training_job_definition: ::std::option::Option<crate::types::HyperParameterTrainingJobDefinition>,
     /// <p>A list of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a> objects launched for this tuning job.</p>
     pub training_job_definitions: ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>>,
-    /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
+    /// <p>The status of the tuning job.</p>
     pub hyper_parameter_tuning_job_status: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     /// <p>The date and time that the tuning job started.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -64,7 +64,7 @@ impl DescribeHyperParameterTuningJobOutput {
     pub fn training_job_definitions(&self) -> &[crate::types::HyperParameterTrainingJobDefinition] {
         self.training_job_definitions.as_deref().unwrap_or_default()
     }
-    /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
+    /// <p>The status of the tuning job.</p>
     pub fn hyper_parameter_tuning_job_status(&self) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
         self.hyper_parameter_tuning_job_status.as_ref()
     }
@@ -236,18 +236,18 @@ impl DescribeHyperParameterTuningJobOutputBuilder {
     pub fn get_training_job_definitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTrainingJobDefinition>> {
         &self.training_job_definitions
     }
-    /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
+    /// <p>The status of the tuning job.</p>
     /// This field is required.
     pub fn hyper_parameter_tuning_job_status(mut self, input: crate::types::HyperParameterTuningJobStatus) -> Self {
         self.hyper_parameter_tuning_job_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
+    /// <p>The status of the tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_status(mut self, input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>) -> Self {
         self.hyper_parameter_tuning_job_status = input;
         self
     }
-    /// <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</p>
+    /// <p>The status of the tuning job.</p>
     pub fn get_hyper_parameter_tuning_job_status(&self) -> &::std::option::Option<crate::types::HyperParameterTuningJobStatus> {
         &self.hyper_parameter_tuning_job_status
     }

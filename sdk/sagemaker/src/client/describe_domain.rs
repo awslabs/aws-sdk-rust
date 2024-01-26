@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`domain_arn(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_arn): <p>The domain's Amazon Resource Name (ARN).</p>
     ///   - [`domain_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_id): <p>The domain ID.</p>
     ///   - [`domain_name(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_name): <p>The domain name.</p>
-    ///   - [`home_efs_file_system_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::home_efs_file_system_id): <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
+    ///   - [`home_efs_file_system_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::home_efs_file_system_id): <p>The ID of the Amazon Elastic File System managed by this Domain.</p>
     ///   - [`single_sign_on_managed_application_instance_id(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::single_sign_on_managed_application_instance_id): <p>The IAM Identity Center managed application instance ID.</p>
     ///   - [`single_sign_on_application_arn(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::single_sign_on_application_arn): <p>The ARN of the application managed by SageMaker in IAM Identity Center. This value is only returned for domains created after October 1, 2023.</p>
     ///   - [`status(Option<DomainStatus>)`](crate::operation::describe_domain::DescribeDomainOutput::status): <p>The status.</p>

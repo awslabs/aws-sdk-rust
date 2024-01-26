@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeModelPackageGroupInput {
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackageGroupInput {
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub fn model_package_group_name(&self) -> ::std::option::Option<&str> {
         self.model_package_group_name.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeModelPackageGroupInputBuilder {
     pub(crate) model_package_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeModelPackageGroupInputBuilder {
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     /// This field is required.
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_package_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_package_group_name = input;
         self
     }
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_package_group_name
     }

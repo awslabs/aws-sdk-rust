@@ -33,6 +33,8 @@ pub use crate::types::_ec2_deep_inspection_status::Ec2DeepInspectionStatus;
 
 pub use crate::types::_ecr_configuration::EcrConfiguration;
 
+pub use crate::types::_ecr_pull_date_rescan_duration::EcrPullDateRescanDuration;
+
 pub use crate::types::_ecr_rescan_duration::EcrRescanDuration;
 
 pub use crate::types::_update_cis_targets::UpdateCisTargets;
@@ -666,6 +668,8 @@ mod _ecr_configuration;
 mod _ecr_configuration_state;
 
 mod _ecr_container_image_metadata;
+
+mod _ecr_pull_date_rescan_duration;
 
 mod _ecr_repository_metadata;
 

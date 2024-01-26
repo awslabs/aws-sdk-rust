@@ -10,7 +10,7 @@ pub struct ResourceScanMetadata {
     pub ecr_image: ::std::option::Option<crate::types::EcrContainerImageMetadata>,
     /// <p>An object that contains metadata details for an Amazon EC2 instance.</p>
     pub ec2: ::std::option::Option<crate::types::Ec2Metadata>,
-    /// <p>An object that contains metadata details for an AWS Lambda function.</p>
+    /// <p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>
     pub lambda_function: ::std::option::Option<crate::types::LambdaFunctionMetadata>,
 }
 impl ResourceScanMetadata {
@@ -26,7 +26,7 @@ impl ResourceScanMetadata {
     pub fn ec2(&self) -> ::std::option::Option<&crate::types::Ec2Metadata> {
         self.ec2.as_ref()
     }
-    /// <p>An object that contains metadata details for an AWS Lambda function.</p>
+    /// <p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>
     pub fn lambda_function(&self) -> ::std::option::Option<&crate::types::LambdaFunctionMetadata> {
         self.lambda_function.as_ref()
     }
@@ -90,17 +90,17 @@ impl ResourceScanMetadataBuilder {
     pub fn get_ec2(&self) -> &::std::option::Option<crate::types::Ec2Metadata> {
         &self.ec2
     }
-    /// <p>An object that contains metadata details for an AWS Lambda function.</p>
+    /// <p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>
     pub fn lambda_function(mut self, input: crate::types::LambdaFunctionMetadata) -> Self {
         self.lambda_function = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains metadata details for an AWS Lambda function.</p>
+    /// <p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>
     pub fn set_lambda_function(mut self, input: ::std::option::Option<crate::types::LambdaFunctionMetadata>) -> Self {
         self.lambda_function = input;
         self
     }
-    /// <p>An object that contains metadata details for an AWS Lambda function.</p>
+    /// <p>An object that contains metadata details for an Amazon Web Services Lambda function.</p>
     pub fn get_lambda_function(&self) -> &::std::option::Option<crate::types::LambdaFunctionMetadata> {
         &self.lambda_function
     }

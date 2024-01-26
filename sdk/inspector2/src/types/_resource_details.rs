@@ -8,7 +8,7 @@ pub struct ResourceDetails {
     pub aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
-    /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
+    /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
 }
 impl ResourceDetails {
@@ -20,7 +20,7 @@ impl ResourceDetails {
     pub fn aws_ecr_container_image(&self) -> ::std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
         self.aws_ecr_container_image.as_ref()
     }
-    /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
+    /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub fn aws_lambda_function(&self) -> ::std::option::Option<&crate::types::AwsLambdaFunctionDetails> {
         self.aws_lambda_function.as_ref()
     }
@@ -69,17 +69,17 @@ impl ResourceDetailsBuilder {
     pub fn get_aws_ecr_container_image(&self) -> &::std::option::Option<crate::types::AwsEcrContainerImageDetails> {
         &self.aws_ecr_container_image
     }
-    /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
+    /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub fn aws_lambda_function(mut self, input: crate::types::AwsLambdaFunctionDetails) -> Self {
         self.aws_lambda_function = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
+    /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub fn set_aws_lambda_function(mut self, input: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>) -> Self {
         self.aws_lambda_function = input;
         self
     }
-    /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
+    /// <p>A summary of the information about an Amazon Web Services Lambda function affected by a finding.</p>
     pub fn get_aws_lambda_function(&self) -> &::std::option::Option<crate::types::AwsLambdaFunctionDetails> {
         &self.aws_lambda_function
     }

@@ -2125,6 +2125,38 @@ impl From<crate::operation::delete_human_task_ui::DeleteHumanTaskUiError> for Er
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobError> for Error {
+    fn from(err: crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobError) -> Self {
+        match err {
+            crate::operation::delete_hyper_parameter_tuning_job::DeleteHyperParameterTuningJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_image::DeleteImageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

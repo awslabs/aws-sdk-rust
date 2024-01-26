@@ -189,6 +189,8 @@ pub(crate) mod shape_delete_hub_content;
 
 pub(crate) mod shape_delete_human_task_ui;
 
+pub(crate) mod shape_delete_hyper_parameter_tuning_job;
+
 pub(crate) mod shape_delete_image;
 
 pub(crate) mod shape_delete_image_version;
@@ -834,6 +836,8 @@ pub(crate) mod shape_delete_hub_content_input;
 pub(crate) mod shape_delete_hub_input;
 
 pub(crate) mod shape_delete_human_task_ui_input;
+
+pub(crate) mod shape_delete_hyper_parameter_tuning_job_input;
 
 pub(crate) mod shape_delete_image_input;
 

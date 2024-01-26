@@ -108,17 +108,17 @@ impl DescribeModelPackageGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub fn model_package_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_package_group_name(input.into());
         self
     }
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub fn set_model_package_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_group_name(input);
         self
     }
-    /// <p>The name of gthe model group to describe.</p>
+    /// <p>The name of the model group to describe.</p>
     pub fn get_model_package_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_package_group_name()
     }

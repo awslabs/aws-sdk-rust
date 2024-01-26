@@ -12,13 +12,13 @@ pub struct ResourceFilterCriteria {
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The ECR repository names used as resource filter criteria.</p>
     pub ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    /// <p>The AWS Lambda function name used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
     pub lambda_function_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The ECR image tags used as resource filter criteria.</p>
     pub ecr_image_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The EC2 instance tags used as resource filter criteria.</p>
     pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
-    /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
 }
 impl ResourceFilterCriteria {
@@ -46,7 +46,7 @@ impl ResourceFilterCriteria {
     pub fn ecr_repository_name(&self) -> &[crate::types::ResourceStringFilter] {
         self.ecr_repository_name.as_deref().unwrap_or_default()
     }
-    /// <p>The AWS Lambda function name used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_name.is_none()`.
     pub fn lambda_function_name(&self) -> &[crate::types::ResourceStringFilter] {
@@ -64,7 +64,7 @@ impl ResourceFilterCriteria {
     pub fn ec2_instance_tags(&self) -> &[crate::types::ResourceMapFilter] {
         self.ec2_instance_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.lambda_function_tags.is_none()`.
     pub fn lambda_function_tags(&self) -> &[crate::types::ResourceMapFilter] {
@@ -176,19 +176,19 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_name`](Self::set_lambda_function_name).
     ///
-    /// <p>The AWS Lambda function name used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
     pub fn lambda_function_name(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.lambda_function_name.unwrap_or_default();
         v.push(input);
         self.lambda_function_name = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Lambda function name used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
     pub fn set_lambda_function_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
         self.lambda_function_name = input;
         self
     }
-    /// <p>The AWS Lambda function name used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function name used as resource filter criteria.</p>
     pub fn get_lambda_function_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
         &self.lambda_function_name
     }
@@ -236,19 +236,19 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_lambda_function_tags`](Self::set_lambda_function_tags).
     ///
-    /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     pub fn lambda_function_tags(mut self, input: crate::types::ResourceMapFilter) -> Self {
         let mut v = self.lambda_function_tags.unwrap_or_default();
         v.push(input);
         self.lambda_function_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     pub fn set_lambda_function_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>) -> Self {
         self.lambda_function_tags = input;
         self
     }
-    /// <p>The AWS Lambda function tags used as resource filter criteria.</p>
+    /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     pub fn get_lambda_function_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>> {
         &self.lambda_function_tags
     }

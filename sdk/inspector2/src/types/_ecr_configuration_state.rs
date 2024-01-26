@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrConfigurationState {
-    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    /// <p>An object that contains details about the state of the ECR re-scan settings.</p>
     pub rescan_duration_state: ::std::option::Option<crate::types::EcrRescanDurationState>,
 }
 impl EcrConfigurationState {
-    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    /// <p>An object that contains details about the state of the ECR re-scan settings.</p>
     pub fn rescan_duration_state(&self) -> ::std::option::Option<&crate::types::EcrRescanDurationState> {
         self.rescan_duration_state.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct EcrConfigurationStateBuilder {
     pub(crate) rescan_duration_state: ::std::option::Option<crate::types::EcrRescanDurationState>,
 }
 impl EcrConfigurationStateBuilder {
-    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    /// <p>An object that contains details about the state of the ECR re-scan settings.</p>
     pub fn rescan_duration_state(mut self, input: crate::types::EcrRescanDurationState) -> Self {
         self.rescan_duration_state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    /// <p>An object that contains details about the state of the ECR re-scan settings.</p>
     pub fn set_rescan_duration_state(mut self, input: ::std::option::Option<crate::types::EcrRescanDurationState>) -> Self {
         self.rescan_duration_state = input;
         self
     }
-    /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
+    /// <p>An object that contains details about the state of the ECR re-scan settings.</p>
     pub fn get_rescan_duration_state(&self) -> &::std::option::Option<crate::types::EcrRescanDurationState> {
         &self.rescan_duration_state
     }

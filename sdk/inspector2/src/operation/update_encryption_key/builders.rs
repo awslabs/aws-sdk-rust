@@ -22,7 +22,7 @@ impl UpdateEncryptionKeyInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateEncryptionKey`.
 ///
-/// <p>Updates an encryption key. A <code>ResourceNotFoundException</code> means that an AWS owned key is being used for encryption.</p>
+/// <p>Updates an encryption key. A <code>ResourceNotFoundException</code> means that an Amazon Web Services owned key is being used for encryption.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEncryptionKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

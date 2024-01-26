@@ -6,5 +6,8 @@ pub fn ser_ecr_configuration(
     {
         object.key("rescanDuration").string(input.rescan_duration.as_str());
     }
+    if let Some(var_1) = &input.pull_date_rescan_duration {
+        object.key("pullDateRescanDuration").string(var_1.as_str());
+    }
     Ok(())
 }

@@ -12,7 +12,7 @@ pub struct S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code></p></li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code></p></li>
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p>
@@ -52,7 +52,7 @@ impl S3DataSource {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code></p></li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code></p></li>
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p>
@@ -136,7 +136,7 @@ impl S3DataSourceBuilder {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code></p></li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code></p></li>
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p>
@@ -163,7 +163,7 @@ impl S3DataSourceBuilder {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code></p></li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code></p></li>
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p>
@@ -189,7 +189,7 @@ impl S3DataSourceBuilder {
     /// <p>Depending on the value specified for the <code>S3DataType</code>, identifies either a key name prefix or a manifest. For example:</p>
     /// <ul>
     /// <li>
-    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code></p></li>
+    /// <p>A key name prefix might look like this: <code>s3://bucketname/exampleprefix/</code></p></li>
     /// <li>
     /// <p>A manifest might look like this: <code>s3://bucketname/example.manifest</code></p>
     /// <p>A manifest is an S3 object which is a JSON file consisting of an array of elements. The first element is a prefix which is followed by one or more suffixes. SageMaker appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>. Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users from specifying a manifest whose individual <code>S3Uri</code> is sourced from different S3 buckets.</p>
