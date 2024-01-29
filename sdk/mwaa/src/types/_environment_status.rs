@@ -18,6 +18,7 @@
 ///     EnvironmentStatus::CreatingSnapshot => { /* ... */ },
 ///     EnvironmentStatus::Deleted => { /* ... */ },
 ///     EnvironmentStatus::Deleting => { /* ... */ },
+///     EnvironmentStatus::Maintenance => { /* ... */ },
 ///     EnvironmentStatus::Pending => { /* ... */ },
 ///     EnvironmentStatus::RollingBack => { /* ... */ },
 ///     EnvironmentStatus::Unavailable => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum EnvironmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
+    Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     RollingBack,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for EnvironmentStatus {
             "CREATING_SNAPSHOT" => EnvironmentStatus::CreatingSnapshot,
             "DELETED" => EnvironmentStatus::Deleted,
             "DELETING" => EnvironmentStatus::Deleting,
+            "MAINTENANCE" => EnvironmentStatus::Maintenance,
             "PENDING" => EnvironmentStatus::Pending,
             "ROLLING_BACK" => EnvironmentStatus::RollingBack,
             "UNAVAILABLE" => EnvironmentStatus::Unavailable,
@@ -111,6 +115,7 @@ impl EnvironmentStatus {
             EnvironmentStatus::CreatingSnapshot => "CREATING_SNAPSHOT",
             EnvironmentStatus::Deleted => "DELETED",
             EnvironmentStatus::Deleting => "DELETING",
+            EnvironmentStatus::Maintenance => "MAINTENANCE",
             EnvironmentStatus::Pending => "PENDING",
             EnvironmentStatus::RollingBack => "ROLLING_BACK",
             EnvironmentStatus::Unavailable => "UNAVAILABLE",
@@ -128,6 +133,7 @@ impl EnvironmentStatus {
             "CREATING_SNAPSHOT",
             "DELETED",
             "DELETING",
+            "MAINTENANCE",
             "PENDING",
             "ROLLING_BACK",
             "UNAVAILABLE",

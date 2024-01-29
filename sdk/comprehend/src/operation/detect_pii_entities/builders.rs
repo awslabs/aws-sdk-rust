@@ -122,17 +122,17 @@ impl DetectPiiEntitiesFluentBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_text()
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
         self
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         self.inner.get_language_code()
     }

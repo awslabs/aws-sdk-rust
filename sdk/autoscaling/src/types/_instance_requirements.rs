@@ -50,12 +50,25 @@ pub struct InstanceRequirements {
     /// </ul>
     /// <p>Default: Any current or previous generation</p>
     pub instance_generations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>>,
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified Spot price. The identified Spot price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified.</p>
+    /// </note>
     /// <p>Default: <code>100</code></p>
     pub spot_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To indicate no price protection threshold, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to <code>100</code>.</p>
+    /// </note>
+    pub max_spot_price_as_percentage_of_optimal_on_demand_price: ::std::option::Option<i32>,
+    /// <p>[Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per instance price.</p>
     /// <p>Default: <code>20</code></p>
     pub on_demand_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     /// <p>Indicates whether bare metal instance types are included, excluded, or required.</p>
@@ -203,14 +216,29 @@ impl InstanceRequirements {
     pub fn instance_generations(&self) -> &[crate::types::InstanceGeneration] {
         self.instance_generations.as_deref().unwrap_or_default()
     }
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified Spot price. The identified Spot price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified.</p>
+    /// </note>
     /// <p>Default: <code>100</code></p>
     pub fn spot_max_price_percentage_over_lowest_price(&self) -> ::std::option::Option<i32> {
         self.spot_max_price_percentage_over_lowest_price
     }
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To indicate no price protection threshold, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to <code>100</code>.</p>
+    /// </note>
+    pub fn max_spot_price_as_percentage_of_optimal_on_demand_price(&self) -> ::std::option::Option<i32> {
+        self.max_spot_price_as_percentage_of_optimal_on_demand_price
+    }
+    /// <p>[Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per instance price.</p>
     /// <p>Default: <code>20</code></p>
     pub fn on_demand_max_price_percentage_over_lowest_price(&self) -> ::std::option::Option<i32> {
         self.on_demand_max_price_percentage_over_lowest_price
@@ -364,6 +392,7 @@ pub struct InstanceRequirementsBuilder {
     pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_generations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>>,
     pub(crate) spot_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
+    pub(crate) max_spot_price_as_percentage_of_optimal_on_demand_price: ::std::option::Option<i32>,
     pub(crate) on_demand_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     pub(crate) bare_metal: ::std::option::Option<crate::types::BareMetal>,
     pub(crate) burstable_performance: ::std::option::Option<crate::types::BurstablePerformance>,
@@ -555,42 +584,89 @@ impl InstanceRequirementsBuilder {
     pub fn get_instance_generations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>> {
         &self.instance_generations
     }
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified Spot price. The identified Spot price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified.</p>
+    /// </note>
     /// <p>Default: <code>100</code></p>
     pub fn spot_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
         self.spot_max_price_percentage_over_lowest_price = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified Spot price. The identified Spot price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified.</p>
+    /// </note>
     /// <p>Default: <code>100</code></p>
     pub fn set_spot_max_price_percentage_over_lowest_price(mut self, input: ::std::option::Option<i32>) -> Self {
         self.spot_max_price_percentage_over_lowest_price = input;
         self
     }
-    /// <p>The price protection threshold for Spot Instances. This is the maximum you’ll pay for a Spot Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified Spot price. The identified Spot price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified.</p>
+    /// </note>
     /// <p>Default: <code>100</code></p>
     pub fn get_spot_max_price_percentage_over_lowest_price(&self) -> &::std::option::Option<i32> {
         &self.spot_max_price_percentage_over_lowest_price
     }
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To indicate no price protection threshold, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to <code>100</code>.</p>
+    /// </note>
+    pub fn max_spot_price_as_percentage_of_optimal_on_demand_price(mut self, input: i32) -> Self {
+        self.max_spot_price_as_percentage_of_optimal_on_demand_price = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To indicate no price protection threshold, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to <code>100</code>.</p>
+    /// </note>
+    pub fn set_max_spot_price_as_percentage_of_optimal_on_demand_price(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_spot_price_as_percentage_of_optimal_on_demand_price = input;
+        self
+    }
+    /// <p>[Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To indicate no price protection threshold, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is based on the per-vCPU or per-memory price instead of the per instance price.</p><note>
+    /// <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, then <code>SpotMaxPricePercentageOverLowestPrice</code> is used and the value for that parameter defaults to <code>100</code>.</p>
+    /// </note>
+    pub fn get_max_spot_price_as_percentage_of_optimal_on_demand_price(&self) -> &::std::option::Option<i32> {
+        &self.max_spot_price_as_percentage_of_optimal_on_demand_price
+    }
+    /// <p>[Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per instance price.</p>
     /// <p>Default: <code>20</code></p>
     pub fn on_demand_max_price_percentage_over_lowest_price(mut self, input: i32) -> Self {
         self.on_demand_max_price_percentage_over_lowest_price = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per instance price.</p>
     /// <p>Default: <code>20</code></p>
     pub fn set_on_demand_max_price_percentage_over_lowest_price(mut self, input: ::std::option::Option<i32>) -> Self {
         self.on_demand_max_price_percentage_over_lowest_price = input;
         self
     }
-    /// <p>The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance, expressed as a percentage higher than the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price is higher than your threshold. The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection, specify a high value, such as <code>999999</code>.</p>
-    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per vCPU or per memory price instead of the per instance price.</p>
+    /// <p>[Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type matches your attributes, then the identified price is from either the lowest priced current generation instance types or, failing that, the lowest priced previous generation instance types that match your attributes. When Amazon EC2 Auto Scaling selects instance types with your attributes, we will exclude instance types whose price exceeds your specified threshold.</p>
+    /// <p>The parameter accepts an integer, which Amazon EC2 Auto Scaling interprets as a percentage.</p>
+    /// <p>To turn off price protection, specify a high value, such as <code>999999</code>.</p>
+    /// <p>If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection threshold is applied based on the per-vCPU or per-memory price instead of the per instance price.</p>
     /// <p>Default: <code>20</code></p>
     pub fn get_on_demand_max_price_percentage_over_lowest_price(&self) -> &::std::option::Option<i32> {
         &self.on_demand_max_price_percentage_over_lowest_price
@@ -1025,6 +1101,7 @@ impl InstanceRequirementsBuilder {
             excluded_instance_types: self.excluded_instance_types,
             instance_generations: self.instance_generations,
             spot_max_price_percentage_over_lowest_price: self.spot_max_price_percentage_over_lowest_price,
+            max_spot_price_as_percentage_of_optimal_on_demand_price: self.max_spot_price_as_percentage_of_optimal_on_demand_price,
             on_demand_max_price_percentage_over_lowest_price: self.on_demand_max_price_percentage_over_lowest_price,
             bare_metal: self.bare_metal,
             burstable_performance: self.burstable_performance,

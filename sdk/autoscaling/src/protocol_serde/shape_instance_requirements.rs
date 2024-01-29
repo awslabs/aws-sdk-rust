@@ -61,117 +61,125 @@ pub fn ser_instance_requirements(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("OnDemandMaxPricePercentageOverLowestPrice");
-    if let Some(var_25) = &input.on_demand_max_price_percentage_over_lowest_price {
+    let mut scope_24 = writer.prefix("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice");
+    if let Some(var_25) = &input.max_spot_price_as_percentage_of_optimal_on_demand_price {
         scope_24.number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("BareMetal");
-    if let Some(var_27) = &input.bare_metal {
-        scope_26.string(var_27.as_str());
+    let mut scope_26 = writer.prefix("OnDemandMaxPricePercentageOverLowestPrice");
+    if let Some(var_27) = &input.on_demand_max_price_percentage_over_lowest_price {
+        scope_26.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("BurstablePerformance");
-    if let Some(var_29) = &input.burstable_performance {
+    let mut scope_28 = writer.prefix("BareMetal");
+    if let Some(var_29) = &input.bare_metal {
         scope_28.string(var_29.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_30 = writer.prefix("RequireHibernateSupport");
-    if let Some(var_31) = &input.require_hibernate_support {
-        scope_30.boolean(*var_31);
+    let mut scope_30 = writer.prefix("BurstablePerformance");
+    if let Some(var_31) = &input.burstable_performance {
+        scope_30.string(var_31.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_32 = writer.prefix("NetworkInterfaceCount");
-    if let Some(var_33) = &input.network_interface_count {
-        crate::protocol_serde::shape_network_interface_count_request::ser_network_interface_count_request(scope_32, var_33)?;
+    let mut scope_32 = writer.prefix("RequireHibernateSupport");
+    if let Some(var_33) = &input.require_hibernate_support {
+        scope_32.boolean(*var_33);
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("LocalStorage");
-    if let Some(var_35) = &input.local_storage {
-        scope_34.string(var_35.as_str());
+    let mut scope_34 = writer.prefix("NetworkInterfaceCount");
+    if let Some(var_35) = &input.network_interface_count {
+        crate::protocol_serde::shape_network_interface_count_request::ser_network_interface_count_request(scope_34, var_35)?;
     }
     #[allow(unused_mut)]
-    let mut scope_36 = writer.prefix("LocalStorageTypes");
-    if let Some(var_37) = &input.local_storage_types {
-        let mut list_39 = scope_36.start_list(false, None);
-        for item_38 in var_37 {
+    let mut scope_36 = writer.prefix("LocalStorage");
+    if let Some(var_37) = &input.local_storage {
+        scope_36.string(var_37.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_38 = writer.prefix("LocalStorageTypes");
+    if let Some(var_39) = &input.local_storage_types {
+        let mut list_41 = scope_38.start_list(false, None);
+        for item_40 in var_39 {
             #[allow(unused_mut)]
-            let mut entry_40 = list_39.entry();
-            entry_40.string(item_38.as_str());
+            let mut entry_42 = list_41.entry();
+            entry_42.string(item_40.as_str());
         }
-        list_39.finish();
+        list_41.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_41 = writer.prefix("TotalLocalStorageGB");
-    if let Some(var_42) = &input.total_local_storage_gb {
-        crate::protocol_serde::shape_total_local_storage_gb_request::ser_total_local_storage_gb_request(scope_41, var_42)?;
+    let mut scope_43 = writer.prefix("TotalLocalStorageGB");
+    if let Some(var_44) = &input.total_local_storage_gb {
+        crate::protocol_serde::shape_total_local_storage_gb_request::ser_total_local_storage_gb_request(scope_43, var_44)?;
     }
     #[allow(unused_mut)]
-    let mut scope_43 = writer.prefix("BaselineEbsBandwidthMbps");
-    if let Some(var_44) = &input.baseline_ebs_bandwidth_mbps {
-        crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps_request::ser_baseline_ebs_bandwidth_mbps_request(scope_43, var_44)?;
+    let mut scope_45 = writer.prefix("BaselineEbsBandwidthMbps");
+    if let Some(var_46) = &input.baseline_ebs_bandwidth_mbps {
+        crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps_request::ser_baseline_ebs_bandwidth_mbps_request(scope_45, var_46)?;
     }
     #[allow(unused_mut)]
-    let mut scope_45 = writer.prefix("AcceleratorTypes");
-    if let Some(var_46) = &input.accelerator_types {
-        let mut list_48 = scope_45.start_list(false, None);
-        for item_47 in var_46 {
+    let mut scope_47 = writer.prefix("AcceleratorTypes");
+    if let Some(var_48) = &input.accelerator_types {
+        let mut list_50 = scope_47.start_list(false, None);
+        for item_49 in var_48 {
             #[allow(unused_mut)]
-            let mut entry_49 = list_48.entry();
-            entry_49.string(item_47.as_str());
+            let mut entry_51 = list_50.entry();
+            entry_51.string(item_49.as_str());
         }
-        list_48.finish();
+        list_50.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_50 = writer.prefix("AcceleratorCount");
-    if let Some(var_51) = &input.accelerator_count {
-        crate::protocol_serde::shape_accelerator_count_request::ser_accelerator_count_request(scope_50, var_51)?;
+    let mut scope_52 = writer.prefix("AcceleratorCount");
+    if let Some(var_53) = &input.accelerator_count {
+        crate::protocol_serde::shape_accelerator_count_request::ser_accelerator_count_request(scope_52, var_53)?;
     }
     #[allow(unused_mut)]
-    let mut scope_52 = writer.prefix("AcceleratorManufacturers");
-    if let Some(var_53) = &input.accelerator_manufacturers {
-        let mut list_55 = scope_52.start_list(false, None);
-        for item_54 in var_53 {
+    let mut scope_54 = writer.prefix("AcceleratorManufacturers");
+    if let Some(var_55) = &input.accelerator_manufacturers {
+        let mut list_57 = scope_54.start_list(false, None);
+        for item_56 in var_55 {
             #[allow(unused_mut)]
-            let mut entry_56 = list_55.entry();
-            entry_56.string(item_54.as_str());
+            let mut entry_58 = list_57.entry();
+            entry_58.string(item_56.as_str());
         }
-        list_55.finish();
+        list_57.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_57 = writer.prefix("AcceleratorNames");
-    if let Some(var_58) = &input.accelerator_names {
-        let mut list_60 = scope_57.start_list(false, None);
-        for item_59 in var_58 {
+    let mut scope_59 = writer.prefix("AcceleratorNames");
+    if let Some(var_60) = &input.accelerator_names {
+        let mut list_62 = scope_59.start_list(false, None);
+        for item_61 in var_60 {
             #[allow(unused_mut)]
-            let mut entry_61 = list_60.entry();
-            entry_61.string(item_59.as_str());
+            let mut entry_63 = list_62.entry();
+            entry_63.string(item_61.as_str());
         }
-        list_60.finish();
+        list_62.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_62 = writer.prefix("AcceleratorTotalMemoryMiB");
-    if let Some(var_63) = &input.accelerator_total_memory_mib {
-        crate::protocol_serde::shape_accelerator_total_memory_mib_request::ser_accelerator_total_memory_mib_request(scope_62, var_63)?;
+    let mut scope_64 = writer.prefix("AcceleratorTotalMemoryMiB");
+    if let Some(var_65) = &input.accelerator_total_memory_mib {
+        crate::protocol_serde::shape_accelerator_total_memory_mib_request::ser_accelerator_total_memory_mib_request(scope_64, var_65)?;
     }
     #[allow(unused_mut)]
-    let mut scope_64 = writer.prefix("NetworkBandwidthGbps");
-    if let Some(var_65) = &input.network_bandwidth_gbps {
-        crate::protocol_serde::shape_network_bandwidth_gbps_request::ser_network_bandwidth_gbps_request(scope_64, var_65)?;
+    let mut scope_66 = writer.prefix("NetworkBandwidthGbps");
+    if let Some(var_67) = &input.network_bandwidth_gbps {
+        crate::protocol_serde::shape_network_bandwidth_gbps_request::ser_network_bandwidth_gbps_request(scope_66, var_67)?;
     }
     #[allow(unused_mut)]
-    let mut scope_66 = writer.prefix("AllowedInstanceTypes");
-    if let Some(var_67) = &input.allowed_instance_types {
-        let mut list_69 = scope_66.start_list(false, None);
-        for item_68 in var_67 {
+    let mut scope_68 = writer.prefix("AllowedInstanceTypes");
+    if let Some(var_69) = &input.allowed_instance_types {
+        let mut list_71 = scope_68.start_list(false, None);
+        for item_70 in var_69 {
             #[allow(unused_mut)]
-            let mut entry_70 = list_69.entry();
-            entry_70.string(item_68);
+            let mut entry_72 = list_71.entry();
+            entry_72.string(item_70);
         }
-        list_69.finish();
+        list_71.finish();
     }
     Ok(())
 }
@@ -185,67 +193,67 @@ pub fn de_instance_requirements(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("VCpuCount") /* VCpuCount com.amazonaws.autoscaling#InstanceRequirements$VCpuCount */ =>  {
-                let var_71 =
+                let var_73 =
                     Some(
                         crate::protocol_serde::shape_v_cpu_count_request::de_v_cpu_count_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_v_cpu_count(var_71);
+                builder = builder.set_v_cpu_count(var_73);
             }
             ,
             s if s.matches("MemoryMiB") /* MemoryMiB com.amazonaws.autoscaling#InstanceRequirements$MemoryMiB */ =>  {
-                let var_72 =
+                let var_74 =
                     Some(
                         crate::protocol_serde::shape_memory_mib_request::de_memory_mib_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_mib(var_72);
+                builder = builder.set_memory_mib(var_74);
             }
             ,
             s if s.matches("CpuManufacturers") /* CpuManufacturers com.amazonaws.autoscaling#InstanceRequirements$CpuManufacturers */ =>  {
-                let var_73 =
+                let var_75 =
                     Some(
                         crate::protocol_serde::shape_cpu_manufacturers::de_cpu_manufacturers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cpu_manufacturers(var_73);
+                builder = builder.set_cpu_manufacturers(var_75);
             }
             ,
             s if s.matches("MemoryGiBPerVCpu") /* MemoryGiBPerVCpu com.amazonaws.autoscaling#InstanceRequirements$MemoryGiBPerVCpu */ =>  {
-                let var_74 =
+                let var_76 =
                     Some(
                         crate::protocol_serde::shape_memory_gib_per_v_cpu_request::de_memory_gib_per_v_cpu_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_gib_per_v_cpu(var_74);
+                builder = builder.set_memory_gib_per_v_cpu(var_76);
             }
             ,
             s if s.matches("ExcludedInstanceTypes") /* ExcludedInstanceTypes com.amazonaws.autoscaling#InstanceRequirements$ExcludedInstanceTypes */ =>  {
-                let var_75 =
+                let var_77 =
                     Some(
                         crate::protocol_serde::shape_excluded_instance_types::de_excluded_instance_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_excluded_instance_types(var_75);
+                builder = builder.set_excluded_instance_types(var_77);
             }
             ,
             s if s.matches("InstanceGenerations") /* InstanceGenerations com.amazonaws.autoscaling#InstanceRequirements$InstanceGenerations */ =>  {
-                let var_76 =
+                let var_78 =
                     Some(
                         crate::protocol_serde::shape_instance_generations::de_instance_generations(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_generations(var_76);
+                builder = builder.set_instance_generations(var_78);
             }
             ,
             s if s.matches("SpotMaxPricePercentageOverLowestPrice") /* SpotMaxPricePercentageOverLowestPrice com.amazonaws.autoscaling#InstanceRequirements$SpotMaxPricePercentageOverLowestPrice */ =>  {
-                let var_77 =
+                let var_79 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -256,11 +264,26 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_spot_max_price_percentage_over_lowest_price(var_77);
+                builder = builder.set_spot_max_price_percentage_over_lowest_price(var_79);
+            }
+            ,
+            s if s.matches("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice") /* MaxSpotPriceAsPercentageOfOptimalOnDemandPrice com.amazonaws.autoscaling#InstanceRequirements$MaxSpotPriceAsPercentageOfOptimalOnDemandPrice */ =>  {
+                let var_80 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.autoscaling#NullablePositiveInteger`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_spot_price_as_percentage_of_optimal_on_demand_price(var_80);
             }
             ,
             s if s.matches("OnDemandMaxPricePercentageOverLowestPrice") /* OnDemandMaxPricePercentageOverLowestPrice com.amazonaws.autoscaling#InstanceRequirements$OnDemandMaxPricePercentageOverLowestPrice */ =>  {
-                let var_78 =
+                let var_81 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -271,11 +294,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_max_price_percentage_over_lowest_price(var_78);
+                builder = builder.set_on_demand_max_price_percentage_over_lowest_price(var_81);
             }
             ,
             s if s.matches("BareMetal") /* BareMetal com.amazonaws.autoscaling#InstanceRequirements$BareMetal */ =>  {
-                let var_79 =
+                let var_82 =
                     Some(
                         Result::<crate::types::BareMetal, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::BareMetal::from(
@@ -285,11 +308,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_bare_metal(var_79);
+                builder = builder.set_bare_metal(var_82);
             }
             ,
             s if s.matches("BurstablePerformance") /* BurstablePerformance com.amazonaws.autoscaling#InstanceRequirements$BurstablePerformance */ =>  {
-                let var_80 =
+                let var_83 =
                     Some(
                         Result::<crate::types::BurstablePerformance, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::BurstablePerformance::from(
@@ -299,11 +322,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_burstable_performance(var_80);
+                builder = builder.set_burstable_performance(var_83);
             }
             ,
             s if s.matches("RequireHibernateSupport") /* RequireHibernateSupport com.amazonaws.autoscaling#InstanceRequirements$RequireHibernateSupport */ =>  {
-                let var_81 =
+                let var_84 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -314,21 +337,21 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_require_hibernate_support(var_81);
+                builder = builder.set_require_hibernate_support(var_84);
             }
             ,
             s if s.matches("NetworkInterfaceCount") /* NetworkInterfaceCount com.amazonaws.autoscaling#InstanceRequirements$NetworkInterfaceCount */ =>  {
-                let var_82 =
+                let var_85 =
                     Some(
                         crate::protocol_serde::shape_network_interface_count_request::de_network_interface_count_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_count(var_82);
+                builder = builder.set_network_interface_count(var_85);
             }
             ,
             s if s.matches("LocalStorage") /* LocalStorage com.amazonaws.autoscaling#InstanceRequirements$LocalStorage */ =>  {
-                let var_83 =
+                let var_86 =
                     Some(
                         Result::<crate::types::LocalStorage, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::LocalStorage::from(
@@ -338,107 +361,107 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_local_storage(var_83);
+                builder = builder.set_local_storage(var_86);
             }
             ,
             s if s.matches("LocalStorageTypes") /* LocalStorageTypes com.amazonaws.autoscaling#InstanceRequirements$LocalStorageTypes */ =>  {
-                let var_84 =
+                let var_87 =
                     Some(
                         crate::protocol_serde::shape_local_storage_types::de_local_storage_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_local_storage_types(var_84);
+                builder = builder.set_local_storage_types(var_87);
             }
             ,
             s if s.matches("TotalLocalStorageGB") /* TotalLocalStorageGB com.amazonaws.autoscaling#InstanceRequirements$TotalLocalStorageGB */ =>  {
-                let var_85 =
+                let var_88 =
                     Some(
                         crate::protocol_serde::shape_total_local_storage_gb_request::de_total_local_storage_gb_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_total_local_storage_gb(var_85);
+                builder = builder.set_total_local_storage_gb(var_88);
             }
             ,
             s if s.matches("BaselineEbsBandwidthMbps") /* BaselineEbsBandwidthMbps com.amazonaws.autoscaling#InstanceRequirements$BaselineEbsBandwidthMbps */ =>  {
-                let var_86 =
+                let var_89 =
                     Some(
                         crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps_request::de_baseline_ebs_bandwidth_mbps_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_baseline_ebs_bandwidth_mbps(var_86);
+                builder = builder.set_baseline_ebs_bandwidth_mbps(var_89);
             }
             ,
             s if s.matches("AcceleratorTypes") /* AcceleratorTypes com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTypes */ =>  {
-                let var_87 =
+                let var_90 =
                     Some(
                         crate::protocol_serde::shape_accelerator_types::de_accelerator_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_types(var_87);
+                builder = builder.set_accelerator_types(var_90);
             }
             ,
             s if s.matches("AcceleratorCount") /* AcceleratorCount com.amazonaws.autoscaling#InstanceRequirements$AcceleratorCount */ =>  {
-                let var_88 =
+                let var_91 =
                     Some(
                         crate::protocol_serde::shape_accelerator_count_request::de_accelerator_count_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_count(var_88);
+                builder = builder.set_accelerator_count(var_91);
             }
             ,
             s if s.matches("AcceleratorManufacturers") /* AcceleratorManufacturers com.amazonaws.autoscaling#InstanceRequirements$AcceleratorManufacturers */ =>  {
-                let var_89 =
+                let var_92 =
                     Some(
                         crate::protocol_serde::shape_accelerator_manufacturers::de_accelerator_manufacturers(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_manufacturers(var_89);
+                builder = builder.set_accelerator_manufacturers(var_92);
             }
             ,
             s if s.matches("AcceleratorNames") /* AcceleratorNames com.amazonaws.autoscaling#InstanceRequirements$AcceleratorNames */ =>  {
-                let var_90 =
+                let var_93 =
                     Some(
                         crate::protocol_serde::shape_accelerator_names::de_accelerator_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_names(var_90);
+                builder = builder.set_accelerator_names(var_93);
             }
             ,
             s if s.matches("AcceleratorTotalMemoryMiB") /* AcceleratorTotalMemoryMiB com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTotalMemoryMiB */ =>  {
-                let var_91 =
+                let var_94 =
                     Some(
                         crate::protocol_serde::shape_accelerator_total_memory_mib_request::de_accelerator_total_memory_mib_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_total_memory_mib(var_91);
+                builder = builder.set_accelerator_total_memory_mib(var_94);
             }
             ,
             s if s.matches("NetworkBandwidthGbps") /* NetworkBandwidthGbps com.amazonaws.autoscaling#InstanceRequirements$NetworkBandwidthGbps */ =>  {
-                let var_92 =
+                let var_95 =
                     Some(
                         crate::protocol_serde::shape_network_bandwidth_gbps_request::de_network_bandwidth_gbps_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_network_bandwidth_gbps(var_92);
+                builder = builder.set_network_bandwidth_gbps(var_95);
             }
             ,
             s if s.matches("AllowedInstanceTypes") /* AllowedInstanceTypes com.amazonaws.autoscaling#InstanceRequirements$AllowedInstanceTypes */ =>  {
-                let var_93 =
+                let var_96 =
                     Some(
                         crate::protocol_serde::shape_allowed_instance_types::de_allowed_instance_types(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_instance_types(var_93);
+                builder = builder.set_allowed_instance_types(var_96);
             }
             ,
             _ => {}

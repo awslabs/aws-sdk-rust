@@ -268,6 +268,8 @@ pub enum RestoreDBClusterToPointInTimeError {
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The DB cluster doesn't have enough capacity for the current operation.</p>
     InsufficientDbClusterCapacityFault(crate::types::error::InsufficientDbClusterCapacityFault),
+    /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
+    InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
     /// <p>There is insufficient storage available for the current action. You might be able to resolve this error by updating your subnet group to use different Availability Zones that have more storage available.</p>
     InsufficientStorageClusterCapacityFault(crate::types::error::InsufficientStorageClusterCapacityFault),
     /// <p>The supplied value isn't a valid DB cluster snapshot state.</p>
@@ -330,6 +332,7 @@ impl RestoreDBClusterToPointInTimeError {
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DomainNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientDbClusterCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientDbInstanceCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientStorageClusterCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterSnapshotStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -378,6 +381,10 @@ impl RestoreDBClusterToPointInTimeError {
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::InsufficientDbClusterCapacityFault`.
     pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
         matches!(self, Self::InsufficientDbClusterCapacityFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::InsufficientDbInstanceCapacityFault`.
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(self, Self::InsufficientDbInstanceCapacityFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::InsufficientStorageClusterCapacityFault`.
     pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
@@ -432,6 +439,7 @@ impl ::std::error::Error for RestoreDBClusterToPointInTimeError {
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DomainNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDbClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InsufficientDbInstanceCapacityFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientStorageClusterCapacityFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -458,6 +466,7 @@ impl ::std::fmt::Display for RestoreDBClusterToPointInTimeError {
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
             Self::InsufficientDbClusterCapacityFault(_inner) => _inner.fmt(f),
+            Self::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
             Self::InsufficientStorageClusterCapacityFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
@@ -498,6 +507,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DomainNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientDbClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InsufficientDbInstanceCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientStorageClusterCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterSnapshotStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

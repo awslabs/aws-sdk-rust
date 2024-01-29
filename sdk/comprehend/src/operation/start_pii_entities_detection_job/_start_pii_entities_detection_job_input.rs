@@ -16,7 +16,7 @@ pub struct StartPiiEntitiesDetectionJobInput {
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Enter the language code for English (en) or Spanish (es).</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ impl StartPiiEntitiesDetectionJobInput {
     pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Enter the language code for English (en) or Spanish (es).</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -177,18 +177,18 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
     pub fn get_job_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_name
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Enter the language code for English (en) or Spanish (es).</p>
     /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Enter the language code for English (en) or Spanish (es).</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input documents. Enter the language code for English (en) or Spanish (es).</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }

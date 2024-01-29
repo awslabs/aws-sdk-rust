@@ -28,9 +28,11 @@ pub struct Environment {
     /// <li>
     /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
     /// <li>
-    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment did not return to its previous state and is not stable.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment was restored to its previous state successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>MAINTENANCE</code> - Indicates that the environment is undergoing maintenance. Depending on the type of work Amazon MWAA is performing, your environment might become unavailable during this process. After all operations are done, your environment will return to its status prior to mainteneace operations.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
@@ -38,13 +40,13 @@ pub struct Environment {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The day and time the environment was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub webserver_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.</p>
     pub service_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The KMS encryption key used to encrypt the data in your environment.</p>
     pub kms_key: ::std::option::Option<::std::string::String>,
     /// <p>The Apache Airflow version on your environment.</p>
     /// <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.</p>
@@ -133,9 +135,11 @@ impl Environment {
     /// <li>
     /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
     /// <li>
-    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment did not return to its previous state and is not stable.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment was restored to its previous state successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>MAINTENANCE</code> - Indicates that the environment is undergoing maintenance. Depending on the type of work Amazon MWAA is performing, your environment might become unavailable during this process. After all operations are done, your environment will return to its status prior to mainteneace operations.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
@@ -149,7 +153,7 @@ impl Environment {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub fn webserver_url(&self) -> ::std::option::Option<&str> {
         self.webserver_url.as_deref()
     }
@@ -161,7 +165,7 @@ impl Environment {
     pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The KMS encryption key used to encrypt the data in your environment.</p>
     pub fn kms_key(&self) -> ::std::option::Option<&str> {
         self.kms_key.as_deref()
     }
@@ -392,9 +396,11 @@ impl EnvironmentBuilder {
     /// <li>
     /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
     /// <li>
-    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment did not return to its previous state and is not stable.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment was restored to its previous state successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>MAINTENANCE</code> - Indicates that the environment is undergoing maintenance. Depending on the type of work Amazon MWAA is performing, your environment might become unavailable during this process. After all operations are done, your environment will return to its status prior to mainteneace operations.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
@@ -423,9 +429,11 @@ impl EnvironmentBuilder {
     /// <li>
     /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
     /// <li>
-    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment did not return to its previous state and is not stable.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment was restored to its previous state successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>MAINTENANCE</code> - Indicates that the environment is undergoing maintenance. Depending on the type of work Amazon MWAA is performing, your environment might become unavailable during this process. After all operations are done, your environment will return to its status prior to mainteneace operations.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::EnvironmentStatus>) -> Self {
@@ -454,9 +462,11 @@ impl EnvironmentBuilder {
     /// <li>
     /// <p><code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been deleted.</p></li>
     /// <li>
-    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in a stable state.</p></li>
+    /// <p><code>UNAVAILABLE</code> - Indicates the request failed, but the environment did not return to its previous state and is not stable.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has rolled back successfully and is ready to use.</p></li>
+    /// <p><code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment was restored to its previous state successfully and is ready to use.</p></li>
+    /// <li>
+    /// <p><code>MAINTENANCE</code> - Indicates that the environment is undergoing maintenance. Depending on the type of work Amazon MWAA is performing, your environment might become unavailable during this process. After all operations are done, your environment will return to its status prior to mainteneace operations.</p></li>
     /// </ul>
     /// <p>We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA troubleshooting</a>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
@@ -490,17 +500,17 @@ impl EnvironmentBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub fn webserver_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.webserver_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub fn set_webserver_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.webserver_url = input;
         self
     }
-    /// <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
+    /// <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow UI</a>.</p>
     pub fn get_webserver_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.webserver_url
     }
@@ -532,17 +542,17 @@ impl EnvironmentBuilder {
     pub fn get_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_role_arn
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The KMS encryption key used to encrypt the data in your environment.</p>
     pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The KMS encryption key used to encrypt the data in your environment.</p>
     pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key = input;
         self
     }
-    /// <p>The Amazon Web Services Key Management Service (KMS) encryption key used to encrypt the data in your environment.</p>
+    /// <p>The KMS encryption key used to encrypt the data in your environment.</p>
     pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key
     }

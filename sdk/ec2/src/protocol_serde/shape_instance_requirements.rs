@@ -173,6 +173,14 @@ pub fn ser_instance_requirements(
         }
         list_69.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_71 = writer.prefix("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice");
+    if let Some(var_72) = &input.max_spot_price_as_percentage_of_optimal_on_demand_price {
+        scope_71.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_72).into()),
+        );
+    }
     Ok(())
 }
 
@@ -185,67 +193,67 @@ pub fn de_instance_requirements(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("vCpuCount") /* VCpuCount com.amazonaws.ec2#InstanceRequirements$VCpuCount */ =>  {
-                let var_71 =
+                let var_73 =
                     Some(
                         crate::protocol_serde::shape_v_cpu_count_range::de_v_cpu_count_range(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_v_cpu_count(var_71);
+                builder = builder.set_v_cpu_count(var_73);
             }
             ,
             s if s.matches("memoryMiB") /* MemoryMiB com.amazonaws.ec2#InstanceRequirements$MemoryMiB */ =>  {
-                let var_72 =
+                let var_74 =
                     Some(
                         crate::protocol_serde::shape_memory_mib::de_memory_mib(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_mib(var_72);
+                builder = builder.set_memory_mib(var_74);
             }
             ,
             s if s.matches("cpuManufacturerSet") /* CpuManufacturers com.amazonaws.ec2#InstanceRequirements$CpuManufacturers */ =>  {
-                let var_73 =
+                let var_75 =
                     Some(
                         crate::protocol_serde::shape_cpu_manufacturer_set::de_cpu_manufacturer_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_cpu_manufacturers(var_73);
+                builder = builder.set_cpu_manufacturers(var_75);
             }
             ,
             s if s.matches("memoryGiBPerVCpu") /* MemoryGiBPerVCpu com.amazonaws.ec2#InstanceRequirements$MemoryGiBPerVCpu */ =>  {
-                let var_74 =
+                let var_76 =
                     Some(
                         crate::protocol_serde::shape_memory_gib_per_v_cpu::de_memory_gib_per_v_cpu(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_gib_per_v_cpu(var_74);
+                builder = builder.set_memory_gib_per_v_cpu(var_76);
             }
             ,
             s if s.matches("excludedInstanceTypeSet") /* ExcludedInstanceTypes com.amazonaws.ec2#InstanceRequirements$ExcludedInstanceTypes */ =>  {
-                let var_75 =
+                let var_77 =
                     Some(
                         crate::protocol_serde::shape_excluded_instance_type_set::de_excluded_instance_type_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_excluded_instance_types(var_75);
+                builder = builder.set_excluded_instance_types(var_77);
             }
             ,
             s if s.matches("instanceGenerationSet") /* InstanceGenerations com.amazonaws.ec2#InstanceRequirements$InstanceGenerations */ =>  {
-                let var_76 =
+                let var_78 =
                     Some(
                         crate::protocol_serde::shape_instance_generation_set::de_instance_generation_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_generations(var_76);
+                builder = builder.set_instance_generations(var_78);
             }
             ,
             s if s.matches("spotMaxPricePercentageOverLowestPrice") /* SpotMaxPricePercentageOverLowestPrice com.amazonaws.ec2#InstanceRequirements$SpotMaxPricePercentageOverLowestPrice */ =>  {
-                let var_77 =
+                let var_79 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -256,11 +264,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_spot_max_price_percentage_over_lowest_price(var_77);
+                builder = builder.set_spot_max_price_percentage_over_lowest_price(var_79);
             }
             ,
             s if s.matches("onDemandMaxPricePercentageOverLowestPrice") /* OnDemandMaxPricePercentageOverLowestPrice com.amazonaws.ec2#InstanceRequirements$OnDemandMaxPricePercentageOverLowestPrice */ =>  {
-                let var_78 =
+                let var_80 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -271,11 +279,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_max_price_percentage_over_lowest_price(var_78);
+                builder = builder.set_on_demand_max_price_percentage_over_lowest_price(var_80);
             }
             ,
             s if s.matches("bareMetal") /* BareMetal com.amazonaws.ec2#InstanceRequirements$BareMetal */ =>  {
-                let var_79 =
+                let var_81 =
                     Some(
                         Result::<crate::types::BareMetal, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::BareMetal::from(
@@ -285,11 +293,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_bare_metal(var_79);
+                builder = builder.set_bare_metal(var_81);
             }
             ,
             s if s.matches("burstablePerformance") /* BurstablePerformance com.amazonaws.ec2#InstanceRequirements$BurstablePerformance */ =>  {
-                let var_80 =
+                let var_82 =
                     Some(
                         Result::<crate::types::BurstablePerformance, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::BurstablePerformance::from(
@@ -299,11 +307,11 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_burstable_performance(var_80);
+                builder = builder.set_burstable_performance(var_82);
             }
             ,
             s if s.matches("requireHibernateSupport") /* RequireHibernateSupport com.amazonaws.ec2#InstanceRequirements$RequireHibernateSupport */ =>  {
-                let var_81 =
+                let var_83 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -314,21 +322,21 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_require_hibernate_support(var_81);
+                builder = builder.set_require_hibernate_support(var_83);
             }
             ,
             s if s.matches("networkInterfaceCount") /* NetworkInterfaceCount com.amazonaws.ec2#InstanceRequirements$NetworkInterfaceCount */ =>  {
-                let var_82 =
+                let var_84 =
                     Some(
                         crate::protocol_serde::shape_network_interface_count::de_network_interface_count(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_network_interface_count(var_82);
+                builder = builder.set_network_interface_count(var_84);
             }
             ,
             s if s.matches("localStorage") /* LocalStorage com.amazonaws.ec2#InstanceRequirements$LocalStorage */ =>  {
-                let var_83 =
+                let var_85 =
                     Some(
                         Result::<crate::types::LocalStorage, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::LocalStorage::from(
@@ -338,107 +346,122 @@ pub fn de_instance_requirements(
                         ?
                     )
                 ;
-                builder = builder.set_local_storage(var_83);
+                builder = builder.set_local_storage(var_85);
             }
             ,
             s if s.matches("localStorageTypeSet") /* LocalStorageTypes com.amazonaws.ec2#InstanceRequirements$LocalStorageTypes */ =>  {
-                let var_84 =
+                let var_86 =
                     Some(
                         crate::protocol_serde::shape_local_storage_type_set::de_local_storage_type_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_local_storage_types(var_84);
+                builder = builder.set_local_storage_types(var_86);
             }
             ,
             s if s.matches("totalLocalStorageGB") /* TotalLocalStorageGB com.amazonaws.ec2#InstanceRequirements$TotalLocalStorageGB */ =>  {
-                let var_85 =
+                let var_87 =
                     Some(
                         crate::protocol_serde::shape_total_local_storage_gb::de_total_local_storage_gb(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_total_local_storage_gb(var_85);
+                builder = builder.set_total_local_storage_gb(var_87);
             }
             ,
             s if s.matches("baselineEbsBandwidthMbps") /* BaselineEbsBandwidthMbps com.amazonaws.ec2#InstanceRequirements$BaselineEbsBandwidthMbps */ =>  {
-                let var_86 =
+                let var_88 =
                     Some(
                         crate::protocol_serde::shape_baseline_ebs_bandwidth_mbps::de_baseline_ebs_bandwidth_mbps(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_baseline_ebs_bandwidth_mbps(var_86);
+                builder = builder.set_baseline_ebs_bandwidth_mbps(var_88);
             }
             ,
             s if s.matches("acceleratorTypeSet") /* AcceleratorTypes com.amazonaws.ec2#InstanceRequirements$AcceleratorTypes */ =>  {
-                let var_87 =
+                let var_89 =
                     Some(
                         crate::protocol_serde::shape_accelerator_type_set::de_accelerator_type_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_types(var_87);
+                builder = builder.set_accelerator_types(var_89);
             }
             ,
             s if s.matches("acceleratorCount") /* AcceleratorCount com.amazonaws.ec2#InstanceRequirements$AcceleratorCount */ =>  {
-                let var_88 =
+                let var_90 =
                     Some(
                         crate::protocol_serde::shape_accelerator_count::de_accelerator_count(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_count(var_88);
+                builder = builder.set_accelerator_count(var_90);
             }
             ,
             s if s.matches("acceleratorManufacturerSet") /* AcceleratorManufacturers com.amazonaws.ec2#InstanceRequirements$AcceleratorManufacturers */ =>  {
-                let var_89 =
+                let var_91 =
                     Some(
                         crate::protocol_serde::shape_accelerator_manufacturer_set::de_accelerator_manufacturer_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_manufacturers(var_89);
+                builder = builder.set_accelerator_manufacturers(var_91);
             }
             ,
             s if s.matches("acceleratorNameSet") /* AcceleratorNames com.amazonaws.ec2#InstanceRequirements$AcceleratorNames */ =>  {
-                let var_90 =
+                let var_92 =
                     Some(
                         crate::protocol_serde::shape_accelerator_name_set::de_accelerator_name_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_names(var_90);
+                builder = builder.set_accelerator_names(var_92);
             }
             ,
             s if s.matches("acceleratorTotalMemoryMiB") /* AcceleratorTotalMemoryMiB com.amazonaws.ec2#InstanceRequirements$AcceleratorTotalMemoryMiB */ =>  {
-                let var_91 =
+                let var_93 =
                     Some(
                         crate::protocol_serde::shape_accelerator_total_memory_mib::de_accelerator_total_memory_mib(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_total_memory_mib(var_91);
+                builder = builder.set_accelerator_total_memory_mib(var_93);
             }
             ,
             s if s.matches("networkBandwidthGbps") /* NetworkBandwidthGbps com.amazonaws.ec2#InstanceRequirements$NetworkBandwidthGbps */ =>  {
-                let var_92 =
+                let var_94 =
                     Some(
                         crate::protocol_serde::shape_network_bandwidth_gbps::de_network_bandwidth_gbps(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_network_bandwidth_gbps(var_92);
+                builder = builder.set_network_bandwidth_gbps(var_94);
             }
             ,
             s if s.matches("allowedInstanceTypeSet") /* AllowedInstanceTypes com.amazonaws.ec2#InstanceRequirements$AllowedInstanceTypes */ =>  {
-                let var_93 =
+                let var_95 =
                     Some(
                         crate::protocol_serde::shape_allowed_instance_type_set::de_allowed_instance_type_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_allowed_instance_types(var_93);
+                builder = builder.set_allowed_instance_types(var_95);
+            }
+            ,
+            s if s.matches("maxSpotPriceAsPercentageOfOptimalOnDemandPrice") /* MaxSpotPriceAsPercentageOfOptimalOnDemandPrice com.amazonaws.ec2#InstanceRequirements$MaxSpotPriceAsPercentageOfOptimalOnDemandPrice */ =>  {
+                let var_96 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_spot_price_as_percentage_of_optimal_on_demand_price(var_96);
             }
             ,
             _ => {}

@@ -5413,6 +5413,9 @@ impl From<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFr
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::InsufficientDbClusterCapacityFault(inner) => {
                 Error::InsufficientDbClusterCapacityFault(inner)
             }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::InsufficientDbInstanceCapacityFault(inner) => {
+                Error::InsufficientDbInstanceCapacityFault(inner)
+            }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::InsufficientStorageClusterCapacityFault(inner) => {
                 Error::InsufficientStorageClusterCapacityFault(inner)
             }
@@ -5501,6 +5504,9 @@ impl From<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBCluste
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InsufficientDbClusterCapacityFault(inner) => {
                 Error::InsufficientDbClusterCapacityFault(inner)
+            }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InsufficientDbInstanceCapacityFault(inner) => {
+                Error::InsufficientDbInstanceCapacityFault(inner)
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::InsufficientStorageClusterCapacityFault(
                 inner,

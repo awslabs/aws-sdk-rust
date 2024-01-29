@@ -37,7 +37,7 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
     pub redaction_config: ::std::option::Option<crate::types::RedactionConfig>,
-    /// <p>The language code of the input documents</p>
+    /// <p>The language code of the input documents.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
@@ -98,7 +98,7 @@ impl PiiEntitiesDetectionJobProperties {
     pub fn redaction_config(&self) -> ::std::option::Option<&crate::types::RedactionConfig> {
         self.redaction_config.as_ref()
     }
-    /// <p>The language code of the input documents</p>
+    /// <p>The language code of the input documents.</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -316,17 +316,17 @@ impl PiiEntitiesDetectionJobPropertiesBuilder {
     pub fn get_redaction_config(&self) -> &::std::option::Option<crate::types::RedactionConfig> {
         &self.redaction_config
     }
-    /// <p>The language code of the input documents</p>
+    /// <p>The language code of the input documents.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language code of the input documents</p>
+    /// <p>The language code of the input documents.</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p>The language code of the input documents</p>
+    /// <p>The language code of the input documents.</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }

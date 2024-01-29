@@ -5,7 +5,7 @@
 pub struct DetectPiiEntitiesInput {
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
     pub text: ::std::option::Option<::std::string::String>,
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
 }
 impl DetectPiiEntitiesInput {
@@ -13,7 +13,7 @@ impl DetectPiiEntitiesInput {
     pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
@@ -48,18 +48,18 @@ impl DetectPiiEntitiesInputBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     /// This field is required.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.language_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.language_code = input;
         self
     }
-    /// <p>The language of the input documents. Currently, English is the only valid language.</p>
+    /// <p>The language of the input text. Enter the language code for English (en) or Spanish (es).</p>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         &self.language_code
     }

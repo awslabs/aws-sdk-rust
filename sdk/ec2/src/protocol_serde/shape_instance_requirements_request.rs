@@ -173,5 +173,13 @@ pub fn ser_instance_requirements_request(
         }
         list_69.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_71 = writer.prefix("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice");
+    if let Some(var_72) = &input.max_spot_price_as_percentage_of_optimal_on_demand_price {
+        scope_71.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_72).into()),
+        );
+    }
     Ok(())
 }
