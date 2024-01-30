@@ -7,6 +7,8 @@ pub struct DeleteDomainInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// Optional flag to delete all child entities within the domain
+    pub skip_deletion_check: ::std::option::Option<bool>,
 }
 impl DeleteDomainInput {
     /// <p>The identifier of the Amazon Web Services domain that is to be deleted.</p>
@@ -16,6 +18,10 @@ impl DeleteDomainInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// Optional flag to delete all child entities within the domain
+    pub fn skip_deletion_check(&self) -> ::std::option::Option<bool> {
+        self.skip_deletion_check
     }
 }
 impl DeleteDomainInput {
@@ -31,6 +37,7 @@ impl DeleteDomainInput {
 pub struct DeleteDomainInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) skip_deletion_check: ::std::option::Option<bool>,
 }
 impl DeleteDomainInputBuilder {
     /// <p>The identifier of the Amazon Web Services domain that is to be deleted.</p>
@@ -62,6 +69,20 @@ impl DeleteDomainInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Optional flag to delete all child entities within the domain
+    pub fn skip_deletion_check(mut self, input: bool) -> Self {
+        self.skip_deletion_check = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional flag to delete all child entities within the domain
+    pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_deletion_check = input;
+        self
+    }
+    /// Optional flag to delete all child entities within the domain
+    pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
+        &self.skip_deletion_check
+    }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl DeleteDomainInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainInput {
             identifier: self.identifier,
             client_token: self.client_token,
+            skip_deletion_check: self.skip_deletion_check,
         })
     }
 }

@@ -42,6 +42,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "projectStatus" => {
+                            builder = builder.set_project_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProjectStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "failureReasons" => {
+                            builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                        }
                         "createdBy" => {
                             builder = builder.set_created_by(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

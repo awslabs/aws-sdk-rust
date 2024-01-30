@@ -207,6 +207,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteDomain
                         query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.skip_deletion_check {
+                    {
+                        query.push_kv("skipDeletionCheck", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

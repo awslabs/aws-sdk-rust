@@ -75,6 +75,8 @@ pub use crate::types::_failure_cause::FailureCauseBuilder;
 
 pub use crate::types::_listing_revision::ListingRevisionBuilder;
 
+pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
+
 pub use crate::types::_custom_parameter::CustomParameterBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;

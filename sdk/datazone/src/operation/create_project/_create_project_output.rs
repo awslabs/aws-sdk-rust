@@ -11,6 +11,10 @@ pub struct CreateProjectOutput {
     pub name: ::std::string::String,
     /// <p>The description of the project.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// Status of the project
+    pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
+    /// Reasons for failed project deletion
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>>,
     /// <p>The Amazon DataZone user who created the project.</p>
     pub created_by: ::std::string::String,
     /// <p>The timestamp of when the project was created.</p>
@@ -41,6 +45,16 @@ impl CreateProjectOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// Status of the project
+    pub fn project_status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
+        self.project_status.as_ref()
+    }
+    /// Reasons for failed project deletion
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[crate::types::ProjectDeletionError] {
+        self.failure_reasons.as_deref().unwrap_or_default()
+    }
     /// <p>The Amazon DataZone user who created the project.</p>
     pub fn created_by(&self) -> &str {
         use std::ops::Deref;
@@ -68,6 +82,8 @@ impl ::std::fmt::Debug for CreateProjectOutput {
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("project_status", &self.project_status);
+        formatter.field("failure_reasons", &self.failure_reasons);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
@@ -96,6 +112,8 @@ pub struct CreateProjectOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) project_status: ::std::option::Option<crate::types::ProjectStatus>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -161,6 +179,40 @@ impl CreateProjectOutputBuilder {
     /// <p>The description of the project.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Status of the project
+    pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
+        self.project_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// Status of the project
+    pub fn set_project_status(mut self, input: ::std::option::Option<crate::types::ProjectStatus>) -> Self {
+        self.project_status = input;
+        self
+    }
+    /// Status of the project
+    pub fn get_project_status(&self) -> &::std::option::Option<crate::types::ProjectStatus> {
+        &self.project_status
+    }
+    /// Appends an item to `failure_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
+    ///
+    /// Reasons for failed project deletion
+    pub fn failure_reasons(mut self, input: crate::types::ProjectDeletionError) -> Self {
+        let mut v = self.failure_reasons.unwrap_or_default();
+        v.push(input);
+        self.failure_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// Reasons for failed project deletion
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>>) -> Self {
+        self.failure_reasons = input;
+        self
+    }
+    /// Reasons for failed project deletion
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectDeletionError>> {
+        &self.failure_reasons
     }
     /// <p>The Amazon DataZone user who created the project.</p>
     /// This field is required.
@@ -263,6 +315,8 @@ impl CreateProjectOutputBuilder {
                 )
             })?,
             description: self.description,
+            project_status: self.project_status,
+            failure_reasons: self.failure_reasons,
             created_by: self.created_by.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
@@ -283,6 +337,8 @@ impl ::std::fmt::Debug for CreateProjectOutputBuilder {
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("project_status", &self.project_status);
+        formatter.field("failure_reasons", &self.failure_reasons);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);

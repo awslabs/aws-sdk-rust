@@ -7,6 +7,8 @@ pub struct DeleteProjectInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the project that is to be deleted.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
+    /// Optional flag to asynchronously delete child entities within the project
+    pub skip_deletion_check: ::std::option::Option<bool>,
 }
 impl DeleteProjectInput {
     /// <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
@@ -16,6 +18,10 @@ impl DeleteProjectInput {
     /// <p>The identifier of the project that is to be deleted.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
+    }
+    /// Optional flag to asynchronously delete child entities within the project
+    pub fn skip_deletion_check(&self) -> ::std::option::Option<bool> {
+        self.skip_deletion_check
     }
 }
 impl DeleteProjectInput {
@@ -31,6 +37,7 @@ impl DeleteProjectInput {
 pub struct DeleteProjectInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) skip_deletion_check: ::std::option::Option<bool>,
 }
 impl DeleteProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which the project is deleted.</p>
@@ -63,6 +70,20 @@ impl DeleteProjectInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
+    /// Optional flag to asynchronously delete child entities within the project
+    pub fn skip_deletion_check(mut self, input: bool) -> Self {
+        self.skip_deletion_check = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional flag to asynchronously delete child entities within the project
+    pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_deletion_check = input;
+        self
+    }
+    /// Optional flag to asynchronously delete child entities within the project
+    pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
+        &self.skip_deletion_check
+    }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl DeleteProjectInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_project::DeleteProjectInput {
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,
+            skip_deletion_check: self.skip_deletion_check,
         })
     }
 }

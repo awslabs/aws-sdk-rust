@@ -131,6 +131,10 @@ pub use crate::types::_granted_entity::GrantedEntity;
 
 pub use crate::types::_listing_revision::ListingRevision;
 
+pub use crate::types::_project_deletion_error::ProjectDeletionError;
+
+pub use crate::types::_project_status::ProjectStatus;
+
 pub use crate::types::_group_profile_status::GroupProfileStatus;
 
 pub use crate::types::_custom_parameter::CustomParameter;
@@ -471,7 +475,11 @@ mod _notification_type;
 
 mod _prediction_configuration;
 
+mod _project_deletion_error;
+
 mod _project_member;
+
+mod _project_status;
 
 mod _project_summary;
 

@@ -383,6 +383,8 @@ pub(crate) mod shape_environment_summaries;
 
 pub(crate) mod shape_failure_cause;
 
+pub(crate) mod shape_failure_reasons;
+
 pub(crate) mod shape_filter_clause;
 
 pub(crate) mod shape_form_entry_input;
@@ -532,6 +534,8 @@ pub(crate) mod shape_listing_revision;
 pub(crate) mod shape_listing_revision_input;
 
 pub(crate) mod shape_notification_output;
+
+pub(crate) mod shape_project_deletion_error;
 
 pub(crate) mod shape_project_member;
 

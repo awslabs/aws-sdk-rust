@@ -202,6 +202,9 @@ pub(crate) fn de_update_project(
                             .transpose()?,
                     );
                 }
+                "failureReasons" => {
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
+                }
                 "glossaryTerms" => {
                     builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_terms::de_glossary_terms(tokens)?);
                 }
@@ -222,6 +225,13 @@ pub(crate) fn de_update_project(
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "projectStatus" => {
+                    builder = builder.set_project_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ProjectStatus::from(u.as_ref())))
                             .transpose()?,
                     );
                 }
