@@ -2413,6 +2413,10 @@ source_hash = 'f37dc1fbecec5502ed65bce4e9ef6ed8f12e782f0ab3c587b917ad3d858c0d96'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '1253a0429ba1049db057a6db291aed48358550e0ec45cb10b48731db204c2ed6'
+
+[release]
+tag = 'release-2024-01-31'
+
 [release.crates]
 aws-sdk-cloudformation = '1.14.0'
 aws-sdk-elasticloadbalancingv2 = '1.13.0'
