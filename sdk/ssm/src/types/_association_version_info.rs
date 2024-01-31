@@ -44,6 +44,8 @@ pub struct AssociationVersionInfo {
     pub target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     /// <p>Number of days to wait after the scheduled day to run an association.</p>
     pub schedule_offset: ::std::option::Option<i32>,
+    /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
+    pub duration: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
@@ -131,6 +133,10 @@ impl AssociationVersionInfo {
     pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
+    pub fn duration(&self) -> ::std::option::Option<i32> {
+        self.duration
+    }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
@@ -159,6 +165,7 @@ impl ::std::fmt::Debug for AssociationVersionInfo {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }
@@ -192,6 +199,7 @@ pub struct AssociationVersionInfoBuilder {
     pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     pub(crate) schedule_offset: ::std::option::Option<i32>,
+    pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
 }
@@ -489,6 +497,20 @@ impl AssociationVersionInfoBuilder {
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         &self.schedule_offset
     }
+    /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
+    pub fn duration(mut self, input: i32) -> Self {
+        self.duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
+    pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.duration = input;
+        self
+    }
+    /// <p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// Appends an item to `target_maps`.
     ///
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
@@ -535,6 +557,7 @@ impl AssociationVersionInfoBuilder {
             calendar_names: self.calendar_names,
             target_locations: self.target_locations,
             schedule_offset: self.schedule_offset,
+            duration: self.duration,
             target_maps: self.target_maps,
         }
     }
@@ -560,6 +583,7 @@ impl ::std::fmt::Debug for AssociationVersionInfoBuilder {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
         formatter.finish()
     }

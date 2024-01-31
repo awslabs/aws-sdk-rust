@@ -22,7 +22,9 @@ impl DescribeAvailablePatchesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAvailablePatches`.
 ///
-/// <p>Lists all patches eligible to be included in a patch baseline.</p>
+/// <p>Lists all patches eligible to be included in a patch baseline.</p><note>
+/// <p>Currently, <code>DescribeAvailablePatches</code> supports only the Amazon Linux 1, Amazon Linux 2, and Windows Server operating systems.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAvailablePatchesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

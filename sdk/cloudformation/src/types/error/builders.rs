@@ -15,19 +15,29 @@ pub use crate::types::error::_token_already_exists_exception::TokenAlreadyExists
 
 pub use crate::types::error::_insufficient_capabilities_exception::InsufficientCapabilitiesExceptionBuilder;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+
+pub use crate::types::error::_generated_template_not_found_exception::GeneratedTemplateNotFoundExceptionBuilder;
+
+pub use crate::types::error::_already_exists_exception::AlreadyExistsExceptionBuilder;
+
 pub use crate::types::error::_type_not_found_exception::TypeNotFoundExceptionBuilder;
 
 pub use crate::types::error::_cfn_registry_exception::CfnRegistryExceptionBuilder;
 
 pub use crate::types::error::_operation_not_found_exception::OperationNotFoundExceptionBuilder;
 
+pub use crate::types::error::_resource_scan_limit_exceeded_exception::ResourceScanLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_resource_scan_in_progress_exception::ResourceScanInProgressExceptionBuilder;
+
 pub use crate::types::error::_operation_status_check_failed_exception::OperationStatusCheckFailedExceptionBuilder;
 
 pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionExceptionBuilder;
 
-pub use crate::types::error::_stack_not_found_exception::StackNotFoundExceptionBuilder;
+pub use crate::types::error::_resource_scan_not_found_exception::ResourceScanNotFoundExceptionBuilder;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+pub use crate::types::error::_stack_not_found_exception::StackNotFoundExceptionBuilder;
 
 pub use crate::types::error::_change_set_not_found_exception::ChangeSetNotFoundExceptionBuilder;
 
@@ -35,10 +45,10 @@ pub use crate::types::error::_invalid_change_set_status_exception::InvalidChange
 
 pub use crate::types::error::_stack_set_not_empty_exception::StackSetNotEmptyExceptionBuilder;
 
+pub use crate::types::error::_concurrent_resources_limit_exceeded_exception::ConcurrentResourcesLimitExceededExceptionBuilder;
+
 pub use crate::types::error::_name_already_exists_exception::NameAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_created_but_modified_exception::CreatedButModifiedExceptionBuilder;
-
-pub use crate::types::error::_already_exists_exception::AlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_type_configuration_not_found_exception::TypeConfigurationNotFoundExceptionBuilder;

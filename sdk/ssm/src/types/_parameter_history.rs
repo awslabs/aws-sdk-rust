@@ -8,7 +8,7 @@ pub struct ParameterHistory {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter used.</p>
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
-    /// <p>The ID of the query key used for this parameter.</p>
+    /// <p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only</p>
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -42,7 +42,7 @@ impl ParameterHistory {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParameterType> {
         self.r#type.as_ref()
     }
-    /// <p>The ID of the query key used for this parameter.</p>
+    /// <p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only</p>
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
@@ -166,17 +166,17 @@ impl ParameterHistoryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ParameterType> {
         &self.r#type
     }
-    /// <p>The ID of the query key used for this parameter.</p>
+    /// <p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only</p>
     pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the query key used for this parameter.</p>
+    /// <p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only</p>
     pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
-    /// <p>The ID of the query key used for this parameter.</p>
+    /// <p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only</p>
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }

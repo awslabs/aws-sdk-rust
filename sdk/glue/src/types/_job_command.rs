@@ -10,7 +10,7 @@ pub struct JobCommand {
     pub script_location: ::std::option::Option<::std::string::String>,
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub python_version: ::std::option::Option<::std::string::String>,
-    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
+    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in the Glue Developer Guide.</p>
     pub runtime: ::std::option::Option<::std::string::String>,
 }
 impl JobCommand {
@@ -26,7 +26,7 @@ impl JobCommand {
     pub fn python_version(&self) -> ::std::option::Option<&str> {
         self.python_version.as_deref()
     }
-    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
+    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in the Glue Developer Guide.</p>
     pub fn runtime(&self) -> ::std::option::Option<&str> {
         self.runtime.as_deref()
     }
@@ -90,17 +90,17 @@ impl JobCommandBuilder {
     pub fn get_python_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.python_version
     }
-    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
+    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in the Glue Developer Guide.</p>
     pub fn runtime(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
+    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in the Glue Developer Guide.</p>
     pub fn set_runtime(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime = input;
         self
     }
-    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working with Ray jobs</a> in the Glue Developer Guide.</p>
+    /// <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional libraries available in your environment. This field is not used in other job types. For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported Ray runtime environments</a> in the Glue Developer Guide.</p>
     pub fn get_runtime(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime
     }

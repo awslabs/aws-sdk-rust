@@ -55,6 +55,15 @@ pub struct UpdateAssociationInput {
     /// <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it.</p>
     /// </note>
     pub schedule_offset: ::std::option::Option<i32>,
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub duration: ::std::option::Option<i32>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
@@ -156,6 +165,17 @@ impl UpdateAssociationInput {
     pub fn schedule_offset(&self) -> ::std::option::Option<i32> {
         self.schedule_offset
     }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn duration(&self) -> ::std::option::Option<i32> {
+        self.duration
+    }
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_maps.is_none()`.
@@ -188,6 +208,7 @@ impl ::std::fmt::Debug for UpdateAssociationInput {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
         formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()
@@ -222,6 +243,7 @@ pub struct UpdateAssociationInputBuilder {
     pub(crate) calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_locations: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     pub(crate) schedule_offset: ::std::option::Option<i32>,
+    pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
@@ -557,6 +579,41 @@ impl UpdateAssociationInputBuilder {
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         &self.schedule_offset
     }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn duration(mut self, input: i32) -> Self {
+        self.duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.duration = input;
+        self
+    }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        &self.duration
+    }
     /// Appends an item to `target_maps`.
     ///
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).
@@ -619,6 +676,7 @@ impl UpdateAssociationInputBuilder {
             calendar_names: self.calendar_names,
             target_locations: self.target_locations,
             schedule_offset: self.schedule_offset,
+            duration: self.duration,
             target_maps: self.target_maps,
             alarm_configuration: self.alarm_configuration,
         })
@@ -645,6 +703,7 @@ impl ::std::fmt::Debug for UpdateAssociationInputBuilder {
         formatter.field("calendar_names", &self.calendar_names);
         formatter.field("target_locations", &self.target_locations);
         formatter.field("schedule_offset", &self.schedule_offset);
+        formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
         formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.finish()

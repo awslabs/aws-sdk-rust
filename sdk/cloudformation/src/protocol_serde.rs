@@ -47,6 +47,10 @@ pub(crate) mod shape_create_change_set;
 
 pub(crate) mod shape_create_change_set_input;
 
+pub(crate) mod shape_create_generated_template;
+
+pub(crate) mod shape_create_generated_template_input;
+
 pub(crate) mod shape_create_stack;
 
 pub(crate) mod shape_create_stack_input;
@@ -70,6 +74,10 @@ pub(crate) mod shape_deactivate_type_input;
 pub(crate) mod shape_delete_change_set;
 
 pub(crate) mod shape_delete_change_set_input;
+
+pub(crate) mod shape_delete_generated_template;
+
+pub(crate) mod shape_delete_generated_template_input;
 
 pub(crate) mod shape_delete_stack;
 
@@ -99,6 +107,10 @@ pub(crate) mod shape_describe_change_set_hooks_input;
 
 pub(crate) mod shape_describe_change_set_input;
 
+pub(crate) mod shape_describe_generated_template;
+
+pub(crate) mod shape_describe_generated_template_input;
+
 pub(crate) mod shape_describe_organizations_access;
 
 pub(crate) mod shape_describe_organizations_access_input;
@@ -106,6 +118,10 @@ pub(crate) mod shape_describe_organizations_access_input;
 pub(crate) mod shape_describe_publisher;
 
 pub(crate) mod shape_describe_publisher_input;
+
+pub(crate) mod shape_describe_resource_scan;
+
+pub(crate) mod shape_describe_resource_scan_input;
 
 pub(crate) mod shape_describe_stack_drift_detection_status;
 
@@ -171,6 +187,10 @@ pub(crate) mod shape_execute_change_set;
 
 pub(crate) mod shape_execute_change_set_input;
 
+pub(crate) mod shape_get_generated_template;
+
+pub(crate) mod shape_get_generated_template_input;
+
 pub(crate) mod shape_get_stack_policy;
 
 pub(crate) mod shape_get_stack_policy_input;
@@ -195,9 +215,25 @@ pub(crate) mod shape_list_exports;
 
 pub(crate) mod shape_list_exports_input;
 
+pub(crate) mod shape_list_generated_templates;
+
+pub(crate) mod shape_list_generated_templates_input;
+
 pub(crate) mod shape_list_imports;
 
 pub(crate) mod shape_list_imports_input;
+
+pub(crate) mod shape_list_resource_scan_related_resources;
+
+pub(crate) mod shape_list_resource_scan_related_resources_input;
+
+pub(crate) mod shape_list_resource_scan_resources;
+
+pub(crate) mod shape_list_resource_scan_resources_input;
+
+pub(crate) mod shape_list_resource_scans;
+
+pub(crate) mod shape_list_resource_scans_input;
 
 pub(crate) mod shape_list_stack_instance_resource_drifts;
 
@@ -275,6 +311,10 @@ pub(crate) mod shape_signal_resource;
 
 pub(crate) mod shape_signal_resource_input;
 
+pub(crate) mod shape_start_resource_scan;
+
+pub(crate) mod shape_start_resource_scan_input;
+
 pub(crate) mod shape_stop_stack_set_operation;
 
 pub(crate) mod shape_stop_stack_set_operation_input;
@@ -282,6 +322,10 @@ pub(crate) mod shape_stop_stack_set_operation_input;
 pub(crate) mod shape_test_type;
 
 pub(crate) mod shape_test_type_input;
+
+pub(crate) mod shape_update_generated_template;
+
+pub(crate) mod shape_update_generated_template_input;
 
 pub(crate) mod shape_update_stack;
 
@@ -311,9 +355,13 @@ pub(crate) mod shape_cfn_registry_exception;
 
 pub(crate) mod shape_change_set_not_found_exception;
 
+pub(crate) mod shape_concurrent_resources_limit_exceeded_exception;
+
 pub(crate) mod shape_created_but_modified_exception;
 
 pub(crate) mod shape_deployment_targets;
+
+pub(crate) mod shape_generated_template_not_found_exception;
 
 pub(crate) mod shape_insufficient_capabilities_exception;
 
@@ -343,9 +391,19 @@ pub(crate) mod shape_operation_status_check_failed_exception;
 
 pub(crate) mod shape_parameter;
 
+pub(crate) mod shape_resource_definition;
+
+pub(crate) mod shape_resource_scan_in_progress_exception;
+
+pub(crate) mod shape_resource_scan_limit_exceeded_exception;
+
+pub(crate) mod shape_resource_scan_not_found_exception;
+
 pub(crate) mod shape_resource_to_import;
 
 pub(crate) mod shape_rollback_configuration;
+
+pub(crate) mod shape_scanned_resource_identifier;
 
 pub(crate) mod shape_stack_instance_filter;
 
@@ -362,6 +420,8 @@ pub(crate) mod shape_stack_set_operation_preferences;
 pub(crate) mod shape_stale_request_exception;
 
 pub(crate) mod shape_tag;
+
+pub(crate) mod shape_template_configuration;
 
 pub(crate) mod shape_template_summary_config;
 
@@ -399,13 +459,21 @@ pub(crate) mod shape_parameters;
 
 pub(crate) mod shape_registration_token_list;
 
+pub(crate) mod shape_related_resources;
+
 pub(crate) mod shape_required_activated_types;
 
+pub(crate) mod shape_resource_details;
+
 pub(crate) mod shape_resource_identifier_summaries;
+
+pub(crate) mod shape_resource_scan_summaries;
 
 pub(crate) mod shape_resource_types;
 
 pub(crate) mod shape_rollback_trigger;
+
+pub(crate) mod shape_scanned_resources;
 
 pub(crate) mod shape_stack_events;
 
@@ -445,6 +513,10 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_template_parameters;
 
+pub(crate) mod shape_template_progress;
+
+pub(crate) mod shape_template_summaries;
+
 pub(crate) mod shape_transforms_list;
 
 pub(crate) mod shape_type_configuration_details_list;
@@ -483,9 +555,15 @@ pub(crate) mod shape_region_list;
 
 pub(crate) mod shape_required_activated_type;
 
+pub(crate) mod shape_resource_detail;
+
 pub(crate) mod shape_resource_identifier_summary;
 
+pub(crate) mod shape_resource_scan_summary;
+
 pub(crate) mod shape_rollback_triggers;
+
+pub(crate) mod shape_scanned_resource;
 
 pub(crate) mod shape_stack;
 
@@ -517,6 +595,8 @@ pub(crate) mod shape_stack_summary;
 
 pub(crate) mod shape_template_parameter;
 
+pub(crate) mod shape_template_summary;
+
 pub(crate) mod shape_type_configuration_details;
 
 pub(crate) mod shape_type_summary;
@@ -528,6 +608,8 @@ pub(crate) mod shape_account_gate_result;
 pub(crate) mod shape_account_list;
 
 pub(crate) mod shape_change_set_hook_target_details;
+
+pub(crate) mod shape_jazz_resource_identifier_properties;
 
 pub(crate) mod shape_logical_resource_ids;
 
@@ -541,6 +623,8 @@ pub(crate) mod shape_property_difference;
 
 pub(crate) mod shape_resource_change;
 
+pub(crate) mod shape_resource_identifier_properties;
+
 pub(crate) mod shape_resource_identifiers;
 
 pub(crate) mod shape_stack_drift_information;
@@ -550,6 +634,8 @@ pub(crate) mod shape_stack_drift_information_summary;
 pub(crate) mod shape_stack_resource_drift_information_summary;
 
 pub(crate) mod shape_supported_major_versions;
+
+pub(crate) mod shape_warning_details;
 
 pub(crate) mod shape_allowed_values;
 
@@ -561,6 +647,12 @@ pub(crate) mod shape_resource_change_details;
 
 pub(crate) mod shape_scope;
 
+pub(crate) mod shape_warning_detail;
+
 pub(crate) mod shape_resource_change_detail;
 
+pub(crate) mod shape_warning_properties;
+
 pub(crate) mod shape_resource_target_definition;
+
+pub(crate) mod shape_warning_property;

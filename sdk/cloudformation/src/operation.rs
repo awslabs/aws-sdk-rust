@@ -19,6 +19,9 @@ pub mod continue_update_rollback;
 /// Types for the `CreateChangeSet` operation.
 pub mod create_change_set;
 
+/// Types for the `CreateGeneratedTemplate` operation.
+pub mod create_generated_template;
+
 /// Types for the `CreateStack` operation.
 pub mod create_stack;
 
@@ -36,6 +39,9 @@ pub mod deactivate_type;
 
 /// Types for the `DeleteChangeSet` operation.
 pub mod delete_change_set;
+
+/// Types for the `DeleteGeneratedTemplate` operation.
+pub mod delete_generated_template;
 
 /// Types for the `DeleteStack` operation.
 pub mod delete_stack;
@@ -58,11 +64,17 @@ pub mod describe_change_set;
 /// Types for the `DescribeChangeSetHooks` operation.
 pub mod describe_change_set_hooks;
 
+/// Types for the `DescribeGeneratedTemplate` operation.
+pub mod describe_generated_template;
+
 /// Types for the `DescribeOrganizationsAccess` operation.
 pub mod describe_organizations_access;
 
 /// Types for the `DescribePublisher` operation.
 pub mod describe_publisher;
+
+/// Types for the `DescribeResourceScan` operation.
+pub mod describe_resource_scan;
 
 /// Types for the `DescribeStackDriftDetectionStatus` operation.
 pub mod describe_stack_drift_detection_status;
@@ -112,6 +124,9 @@ pub mod estimate_template_cost;
 /// Types for the `ExecuteChangeSet` operation.
 pub mod execute_change_set;
 
+/// Types for the `GetGeneratedTemplate` operation.
+pub mod get_generated_template;
+
 /// Types for the `GetStackPolicy` operation.
 pub mod get_stack_policy;
 
@@ -130,8 +145,20 @@ pub mod list_change_sets;
 /// Types for the `ListExports` operation.
 pub mod list_exports;
 
+/// Types for the `ListGeneratedTemplates` operation.
+pub mod list_generated_templates;
+
 /// Types for the `ListImports` operation.
 pub mod list_imports;
+
+/// Types for the `ListResourceScanRelatedResources` operation.
+pub mod list_resource_scan_related_resources;
+
+/// Types for the `ListResourceScanResources` operation.
+pub mod list_resource_scan_resources;
+
+/// Types for the `ListResourceScans` operation.
+pub mod list_resource_scans;
 
 /// Types for the `ListStackInstanceResourceDrifts` operation.
 pub mod list_stack_instance_resource_drifts;
@@ -190,11 +217,17 @@ pub mod set_type_default_version;
 /// Types for the `SignalResource` operation.
 pub mod signal_resource;
 
+/// Types for the `StartResourceScan` operation.
+pub mod start_resource_scan;
+
 /// Types for the `StopStackSetOperation` operation.
 pub mod stop_stack_set_operation;
 
 /// Types for the `TestType` operation.
 pub mod test_type;
+
+/// Types for the `UpdateGeneratedTemplate` operation.
+pub mod update_generated_template;
 
 /// Types for the `UpdateStack` operation.
 pub mod update_stack;

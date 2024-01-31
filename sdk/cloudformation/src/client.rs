@@ -148,6 +148,8 @@ mod continue_update_rollback;
 
 mod create_change_set;
 
+mod create_generated_template;
+
 mod create_stack;
 
 mod create_stack_instances;
@@ -187,6 +189,8 @@ mod deactivate_type;
 
 mod delete_change_set;
 
+mod delete_generated_template;
+
 mod delete_stack;
 
 mod delete_stack_instances;
@@ -201,9 +205,13 @@ mod describe_change_set;
 
 mod describe_change_set_hooks;
 
+mod describe_generated_template;
+
 mod describe_organizations_access;
 
 mod describe_publisher;
+
+mod describe_resource_scan;
 
 mod describe_stack_drift_detection_status;
 
@@ -237,6 +245,8 @@ mod estimate_template_cost;
 
 mod execute_change_set;
 
+mod get_generated_template;
+
 mod get_stack_policy;
 
 mod get_template;
@@ -249,7 +259,15 @@ mod list_change_sets;
 
 mod list_exports;
 
+mod list_generated_templates;
+
 mod list_imports;
+
+mod list_resource_scan_related_resources;
+
+mod list_resource_scan_resources;
+
+mod list_resource_scans;
 
 mod list_stack_instance_resource_drifts;
 
@@ -289,9 +307,13 @@ mod set_type_default_version;
 
 mod signal_resource;
 
+mod start_resource_scan;
+
 mod stop_stack_set_operation;
 
 mod test_type;
+
+mod update_generated_template;
 
 mod update_stack;
 

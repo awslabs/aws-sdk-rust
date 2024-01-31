@@ -415,6 +415,41 @@ impl CreateAssociationFluentBuilder {
     pub fn get_schedule_offset(&self) -> &::std::option::Option<i32> {
         self.inner.get_schedule_offset()
     }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is created, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn duration(mut self, input: i32) -> Self {
+        self.inner = self.inner.duration(input);
+        self
+    }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is created, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_duration(input);
+        self
+    }
+    /// <p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot.</p>
+    /// <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution.</p></li>
+    /// <li>
+    /// <p>The command specifies the <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is created, but only according to the specified schedule.</p></li>
+    /// </ul>
+    pub fn get_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_duration()
+    }
     /// Appends an item to `TargetMaps`.
     ///
     /// To override the contents of this collection use [`set_target_maps`](Self::set_target_maps).

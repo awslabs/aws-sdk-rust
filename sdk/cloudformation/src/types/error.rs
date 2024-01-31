@@ -15,19 +15,29 @@ pub use crate::types::error::_token_already_exists_exception::TokenAlreadyExists
 
 pub use crate::types::error::_insufficient_capabilities_exception::InsufficientCapabilitiesException;
 
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
+pub use crate::types::error::_generated_template_not_found_exception::GeneratedTemplateNotFoundException;
+
+pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
+
 pub use crate::types::error::_type_not_found_exception::TypeNotFoundException;
 
 pub use crate::types::error::_cfn_registry_exception::CfnRegistryException;
 
 pub use crate::types::error::_operation_not_found_exception::OperationNotFoundException;
 
+pub use crate::types::error::_resource_scan_limit_exceeded_exception::ResourceScanLimitExceededException;
+
+pub use crate::types::error::_resource_scan_in_progress_exception::ResourceScanInProgressException;
+
 pub use crate::types::error::_operation_status_check_failed_exception::OperationStatusCheckFailedException;
 
 pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionException;
 
-pub use crate::types::error::_stack_not_found_exception::StackNotFoundException;
+pub use crate::types::error::_resource_scan_not_found_exception::ResourceScanNotFoundException;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+pub use crate::types::error::_stack_not_found_exception::StackNotFoundException;
 
 pub use crate::types::error::_change_set_not_found_exception::ChangeSetNotFoundException;
 
@@ -35,11 +45,11 @@ pub use crate::types::error::_invalid_change_set_status_exception::InvalidChange
 
 pub use crate::types::error::_stack_set_not_empty_exception::StackSetNotEmptyException;
 
+pub use crate::types::error::_concurrent_resources_limit_exceeded_exception::ConcurrentResourcesLimitExceededException;
+
 pub use crate::types::error::_name_already_exists_exception::NameAlreadyExistsException;
 
 pub use crate::types::error::_created_but_modified_exception::CreatedButModifiedException;
-
-pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
 
 pub use crate::types::error::_type_configuration_not_found_exception::TypeConfigurationNotFoundException;
 
@@ -49,7 +59,11 @@ mod _cfn_registry_exception;
 
 mod _change_set_not_found_exception;
 
+mod _concurrent_resources_limit_exceeded_exception;
+
 mod _created_but_modified_exception;
+
+mod _generated_template_not_found_exception;
 
 mod _insufficient_capabilities_exception;
 
@@ -70,6 +84,12 @@ mod _operation_in_progress_exception;
 mod _operation_not_found_exception;
 
 mod _operation_status_check_failed_exception;
+
+mod _resource_scan_in_progress_exception;
+
+mod _resource_scan_limit_exceeded_exception;
+
+mod _resource_scan_not_found_exception;
 
 mod _stack_instance_not_found_exception;
 

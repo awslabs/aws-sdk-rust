@@ -5,7 +5,7 @@
 pub struct GetConnectionStatusOutput {
     /// <p>The ID of the managed node to check connection status.</p>
     pub target: ::std::option::Option<::std::string::String>,
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    /// <p>The status of the connection to the managed node.</p>
     pub status: ::std::option::Option<crate::types::ConnectionStatus>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetConnectionStatusOutput {
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    /// <p>The status of the connection to the managed node.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
         self.status.as_ref()
     }
@@ -54,17 +54,17 @@ impl GetConnectionStatusOutputBuilder {
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    /// <p>The status of the connection to the managed node.</p>
     pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    /// <p>The status of the connection to the managed node.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ConnectionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>
+    /// <p>The status of the connection to the managed node.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectionStatus> {
         &self.status
     }

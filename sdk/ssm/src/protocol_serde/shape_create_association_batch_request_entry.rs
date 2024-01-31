@@ -97,33 +97,39 @@ pub fn ser_create_association_batch_request_entry(
             ::aws_smithy_types::Number::NegInt((*var_29).into()),
         );
     }
-    if let Some(var_30) = &input.target_maps {
-        let mut array_31 = object.key("TargetMaps").start_array();
-        for item_32 in var_30 {
+    if let Some(var_30) = &input.duration {
+        object.key("Duration").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+        );
+    }
+    if let Some(var_31) = &input.target_maps {
+        let mut array_32 = object.key("TargetMaps").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_33 = array_31.value().start_object();
-                for (key_34, value_35) in item_32 {
+                let mut object_34 = array_32.value().start_object();
+                for (key_35, value_36) in item_33 {
                     {
-                        let mut array_36 = object_33.key(key_34.as_str()).start_array();
-                        for item_37 in value_35 {
+                        let mut array_37 = object_34.key(key_35.as_str()).start_array();
+                        for item_38 in value_36 {
                             {
-                                array_36.value().string(item_37.as_str());
+                                array_37.value().string(item_38.as_str());
                             }
                         }
-                        array_36.finish();
+                        array_37.finish();
                     }
                 }
-                object_33.finish();
+                object_34.finish();
             }
         }
-        array_31.finish();
+        array_32.finish();
     }
-    if let Some(var_38) = &input.alarm_configuration {
+    if let Some(var_39) = &input.alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_39, var_38)?;
-        object_39.finish();
+        let mut object_40 = object.key("AlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_40, var_39)?;
+        object_40.finish();
     }
     Ok(())
 }
@@ -238,6 +244,13 @@ where
                         }
                         "ScheduleOffset" => {
                             builder = builder.set_schedule_offset(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "Duration" => {
+                            builder = builder.set_duration(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

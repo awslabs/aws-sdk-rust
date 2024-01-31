@@ -158,6 +158,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Duration" => {
+                            builder = builder.set_duration(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "TargetMaps" => {
                             builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens)?);
                         }

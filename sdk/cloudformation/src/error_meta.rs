@@ -9,8 +9,12 @@ pub enum Error {
     CfnRegistryException(crate::types::error::CfnRegistryException),
     /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a stack, use the <code>ListChangeSets</code> operation.</p>
     ChangeSetNotFoundException(crate::types::error::ChangeSetNotFoundException),
+    /// <p>No more than 5 generated templates can be in an <code>InProgress</code> or <code>Pending</code> status at one time. This error is also returned if a generated template that is in an <code>InProgress</code> or <code>Pending</code> status is attempted to be updated or deleted.</p>
+    ConcurrentResourcesLimitExceededException(crate::types::error::ConcurrentResourcesLimitExceededException),
     /// <p>The specified resource exists, but has been changed.</p>
     CreatedButModifiedException(crate::types::error::CreatedButModifiedException),
+    /// <p>The generated template was not found.</p>
+    GeneratedTemplateNotFoundException(crate::types::error::GeneratedTemplateNotFoundException),
     /// <p>The template contains resources with capabilities that weren't specified in the Capabilities parameter.</p>
     InsufficientCapabilitiesException(crate::types::error::InsufficientCapabilitiesException),
     /// <p>The specified change set can't be used to update the stack. For example, the change set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be <code>UPDATE_IN_PROGRESS</code>.</p>
@@ -32,6 +36,20 @@ pub enum Error {
     OperationNotFoundException(crate::types::error::OperationNotFoundException),
     /// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation doesn't return this error to users.</p>
     OperationStatusCheckFailedException(crate::types::error::OperationStatusCheckFailedException),
+    /// <p>A resource scan is currently in progress. Only one can be run at a time for an account in a Region.</p>
+    ResourceScanInProgressException(crate::types::error::ResourceScanInProgressException),
+    /// <p>The limit on resource scans has been exceeded. Reasons include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Exceeded the daily quota for resource scans.</p></li>
+    /// <li>
+    /// <p>A resource scan recently failed. You must wait 10 minutes before starting a new resource scan.</p></li>
+    /// <li>
+    /// <p>The last resource scan failed after exceeding 100,000 resources. When this happens, you must wait 24 hours before starting a new resource scan.</p></li>
+    /// </ul>
+    ResourceScanLimitExceededException(crate::types::error::ResourceScanLimitExceededException),
+    /// <p>The resource scan was not found.</p>
+    ResourceScanNotFoundException(crate::types::error::ResourceScanNotFoundException),
     /// <p>The specified stack instance doesn't exist.</p>
     StackInstanceNotFoundException(crate::types::error::StackInstanceNotFoundException),
     /// <p>The specified stack ARN doesn't exist or stack doesn't exist corresponding to the ARN in input.</p>
@@ -63,7 +81,9 @@ impl ::std::fmt::Display for Error {
             Error::AlreadyExistsException(inner) => inner.fmt(f),
             Error::CfnRegistryException(inner) => inner.fmt(f),
             Error::ChangeSetNotFoundException(inner) => inner.fmt(f),
+            Error::ConcurrentResourcesLimitExceededException(inner) => inner.fmt(f),
             Error::CreatedButModifiedException(inner) => inner.fmt(f),
+            Error::GeneratedTemplateNotFoundException(inner) => inner.fmt(f),
             Error::InsufficientCapabilitiesException(inner) => inner.fmt(f),
             Error::InvalidChangeSetStatusException(inner) => inner.fmt(f),
             Error::InvalidOperationException(inner) => inner.fmt(f),
@@ -74,6 +94,9 @@ impl ::std::fmt::Display for Error {
             Error::OperationInProgressException(inner) => inner.fmt(f),
             Error::OperationNotFoundException(inner) => inner.fmt(f),
             Error::OperationStatusCheckFailedException(inner) => inner.fmt(f),
+            Error::ResourceScanInProgressException(inner) => inner.fmt(f),
+            Error::ResourceScanLimitExceededException(inner) => inner.fmt(f),
+            Error::ResourceScanNotFoundException(inner) => inner.fmt(f),
             Error::StackInstanceNotFoundException(inner) => inner.fmt(f),
             Error::StackNotFoundException(inner) => inner.fmt(f),
             Error::StackSetNotEmptyException(inner) => inner.fmt(f),
@@ -106,7 +129,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AlreadyExistsException(inner) => inner.meta(),
             Self::CfnRegistryException(inner) => inner.meta(),
             Self::ChangeSetNotFoundException(inner) => inner.meta(),
+            Self::ConcurrentResourcesLimitExceededException(inner) => inner.meta(),
             Self::CreatedButModifiedException(inner) => inner.meta(),
+            Self::GeneratedTemplateNotFoundException(inner) => inner.meta(),
             Self::InsufficientCapabilitiesException(inner) => inner.meta(),
             Self::InvalidChangeSetStatusException(inner) => inner.meta(),
             Self::InvalidOperationException(inner) => inner.meta(),
@@ -117,6 +142,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::OperationInProgressException(inner) => inner.meta(),
             Self::OperationNotFoundException(inner) => inner.meta(),
             Self::OperationStatusCheckFailedException(inner) => inner.meta(),
+            Self::ResourceScanInProgressException(inner) => inner.meta(),
+            Self::ResourceScanLimitExceededException(inner) => inner.meta(),
+            Self::ResourceScanNotFoundException(inner) => inner.meta(),
             Self::StackInstanceNotFoundException(inner) => inner.meta(),
             Self::StackNotFoundException(inner) => inner.meta(),
             Self::StackSetNotEmptyException(inner) => inner.meta(),
@@ -296,6 +324,39 @@ impl From<crate::operation::create_change_set::CreateChangeSetError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_generated_template::CreateGeneratedTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_generated_template::CreateGeneratedTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_generated_template::CreateGeneratedTemplateError> for Error {
+    fn from(err: crate::operation::create_generated_template::CreateGeneratedTemplateError) -> Self {
+        match err {
+            crate::operation::create_generated_template::CreateGeneratedTemplateError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_generated_template::CreateGeneratedTemplateError::ConcurrentResourcesLimitExceededException(inner) => {
+                Error::ConcurrentResourcesLimitExceededException(inner)
+            }
+            crate::operation::create_generated_template::CreateGeneratedTemplateError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_generated_template::CreateGeneratedTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stack::CreateStackError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -462,6 +523,36 @@ impl From<crate::operation::delete_change_set::DeleteChangeSetError> for Error {
                 Error::InvalidChangeSetStatusException(inner)
             }
             crate::operation::delete_change_set::DeleteChangeSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_generated_template::DeleteGeneratedTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_generated_template::DeleteGeneratedTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_generated_template::DeleteGeneratedTemplateError> for Error {
+    fn from(err: crate::operation::delete_generated_template::DeleteGeneratedTemplateError) -> Self {
+        match err {
+            crate::operation::delete_generated_template::DeleteGeneratedTemplateError::ConcurrentResourcesLimitExceededException(inner) => {
+                Error::ConcurrentResourcesLimitExceededException(inner)
+            }
+            crate::operation::delete_generated_template::DeleteGeneratedTemplateError::GeneratedTemplateNotFoundException(inner) => {
+                Error::GeneratedTemplateNotFoundException(inner)
+            }
+            crate::operation::delete_generated_template::DeleteGeneratedTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -643,6 +734,33 @@ impl From<crate::operation::describe_change_set_hooks::DescribeChangeSetHooksErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_generated_template::DescribeGeneratedTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_generated_template::DescribeGeneratedTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_generated_template::DescribeGeneratedTemplateError> for Error {
+    fn from(err: crate::operation::describe_generated_template::DescribeGeneratedTemplateError) -> Self {
+        match err {
+            crate::operation::describe_generated_template::DescribeGeneratedTemplateError::GeneratedTemplateNotFoundException(inner) => {
+                Error::GeneratedTemplateNotFoundException(inner)
+            }
+            crate::operation::describe_generated_template::DescribeGeneratedTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_organizations_access::DescribeOrganizationsAccessError, R>>
     for Error
 where
@@ -692,6 +810,30 @@ impl From<crate::operation::describe_publisher::DescribePublisherError> for Erro
         match err {
             crate::operation::describe_publisher::DescribePublisherError::CfnRegistryException(inner) => Error::CfnRegistryException(inner),
             crate::operation::describe_publisher::DescribePublisherError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_scan::DescribeResourceScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_scan::DescribeResourceScanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_resource_scan::DescribeResourceScanError> for Error {
+    fn from(err: crate::operation::describe_resource_scan::DescribeResourceScanError) -> Self {
+        match err {
+            crate::operation::describe_resource_scan::DescribeResourceScanError::ResourceScanNotFoundException(inner) => {
+                Error::ResourceScanNotFoundException(inner)
+            }
+            crate::operation::describe_resource_scan::DescribeResourceScanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1105,6 +1247,30 @@ impl From<crate::operation::execute_change_set::ExecuteChangeSetError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_generated_template::GetGeneratedTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_generated_template::GetGeneratedTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_generated_template::GetGeneratedTemplateError> for Error {
+    fn from(err: crate::operation::get_generated_template::GetGeneratedTemplateError) -> Self {
+        match err {
+            crate::operation::get_generated_template::GetGeneratedTemplateError::GeneratedTemplateNotFoundException(inner) => {
+                Error::GeneratedTemplateNotFoundException(inner)
+            }
+            crate::operation::get_generated_template::GetGeneratedTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_stack_policy::GetStackPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1259,6 +1425,29 @@ impl From<crate::operation::list_exports::ListExportsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_generated_templates::ListGeneratedTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_generated_templates::ListGeneratedTemplatesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_generated_templates::ListGeneratedTemplatesError> for Error {
+    fn from(err: crate::operation::list_generated_templates::ListGeneratedTemplatesError) -> Self {
+        match err {
+            crate::operation::list_generated_templates::ListGeneratedTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_imports::ListImportsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1277,6 +1466,97 @@ impl From<crate::operation::list_imports::ListImportsError> for Error {
     fn from(err: crate::operation::list_imports::ListImportsError) -> Self {
         match err {
             crate::operation::list_imports::ListImportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError> for Error {
+    fn from(err: crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError) -> Self {
+        match err {
+            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError::ResourceScanInProgressException(inner) => {
+                Error::ResourceScanInProgressException(inner)
+            }
+            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError::ResourceScanNotFoundException(inner) => {
+                Error::ResourceScanNotFoundException(inner)
+            }
+            crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_scan_resources::ListResourceScanResourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_scan_resources::ListResourceScanResourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_scan_resources::ListResourceScanResourcesError> for Error {
+    fn from(err: crate::operation::list_resource_scan_resources::ListResourceScanResourcesError) -> Self {
+        match err {
+            crate::operation::list_resource_scan_resources::ListResourceScanResourcesError::ResourceScanInProgressException(inner) => {
+                Error::ResourceScanInProgressException(inner)
+            }
+            crate::operation::list_resource_scan_resources::ListResourceScanResourcesError::ResourceScanNotFoundException(inner) => {
+                Error::ResourceScanNotFoundException(inner)
+            }
+            crate::operation::list_resource_scan_resources::ListResourceScanResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_scans::ListResourceScansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_scans::ListResourceScansError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_scans::ListResourceScansError> for Error {
+    fn from(err: crate::operation::list_resource_scans::ListResourceScansError) -> Self {
+        match err {
+            crate::operation::list_resource_scans::ListResourceScansError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1747,6 +2027,33 @@ impl From<crate::operation::signal_resource::SignalResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_resource_scan::StartResourceScanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_resource_scan::StartResourceScanError> for Error {
+    fn from(err: crate::operation::start_resource_scan::StartResourceScanError) -> Self {
+        match err {
+            crate::operation::start_resource_scan::StartResourceScanError::ResourceScanInProgressException(inner) => {
+                Error::ResourceScanInProgressException(inner)
+            }
+            crate::operation::start_resource_scan::StartResourceScanError::ResourceScanLimitExceededException(inner) => {
+                Error::ResourceScanLimitExceededException(inner)
+            }
+            crate::operation::start_resource_scan::StartResourceScanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_stack_set_operation::StopStackSetOperationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1799,6 +2106,39 @@ impl From<crate::operation::test_type::TestTypeError> for Error {
             crate::operation::test_type::TestTypeError::CfnRegistryException(inner) => Error::CfnRegistryException(inner),
             crate::operation::test_type::TestTypeError::TypeNotFoundException(inner) => Error::TypeNotFoundException(inner),
             crate::operation::test_type::TestTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_generated_template::UpdateGeneratedTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_generated_template::UpdateGeneratedTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_generated_template::UpdateGeneratedTemplateError> for Error {
+    fn from(err: crate::operation::update_generated_template::UpdateGeneratedTemplateError) -> Self {
+        match err {
+            crate::operation::update_generated_template::UpdateGeneratedTemplateError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::update_generated_template::UpdateGeneratedTemplateError::GeneratedTemplateNotFoundException(inner) => {
+                Error::GeneratedTemplateNotFoundException(inner)
+            }
+            crate::operation::update_generated_template::UpdateGeneratedTemplateError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_generated_template::UpdateGeneratedTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1948,7 +2288,9 @@ impl ::std::error::Error for Error {
             Error::AlreadyExistsException(inner) => inner.source(),
             Error::CfnRegistryException(inner) => inner.source(),
             Error::ChangeSetNotFoundException(inner) => inner.source(),
+            Error::ConcurrentResourcesLimitExceededException(inner) => inner.source(),
             Error::CreatedButModifiedException(inner) => inner.source(),
+            Error::GeneratedTemplateNotFoundException(inner) => inner.source(),
             Error::InsufficientCapabilitiesException(inner) => inner.source(),
             Error::InvalidChangeSetStatusException(inner) => inner.source(),
             Error::InvalidOperationException(inner) => inner.source(),
@@ -1959,6 +2301,9 @@ impl ::std::error::Error for Error {
             Error::OperationInProgressException(inner) => inner.source(),
             Error::OperationNotFoundException(inner) => inner.source(),
             Error::OperationStatusCheckFailedException(inner) => inner.source(),
+            Error::ResourceScanInProgressException(inner) => inner.source(),
+            Error::ResourceScanLimitExceededException(inner) => inner.source(),
+            Error::ResourceScanNotFoundException(inner) => inner.source(),
             Error::StackInstanceNotFoundException(inner) => inner.source(),
             Error::StackNotFoundException(inner) => inner.source(),
             Error::StackSetNotEmptyException(inner) => inner.source(),
@@ -1977,7 +2322,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AlreadyExistsException(e) => e.request_id(),
             Self::CfnRegistryException(e) => e.request_id(),
             Self::ChangeSetNotFoundException(e) => e.request_id(),
+            Self::ConcurrentResourcesLimitExceededException(e) => e.request_id(),
             Self::CreatedButModifiedException(e) => e.request_id(),
+            Self::GeneratedTemplateNotFoundException(e) => e.request_id(),
             Self::InsufficientCapabilitiesException(e) => e.request_id(),
             Self::InvalidChangeSetStatusException(e) => e.request_id(),
             Self::InvalidOperationException(e) => e.request_id(),
@@ -1988,6 +2335,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::OperationInProgressException(e) => e.request_id(),
             Self::OperationNotFoundException(e) => e.request_id(),
             Self::OperationStatusCheckFailedException(e) => e.request_id(),
+            Self::ResourceScanInProgressException(e) => e.request_id(),
+            Self::ResourceScanLimitExceededException(e) => e.request_id(),
+            Self::ResourceScanNotFoundException(e) => e.request_id(),
             Self::StackInstanceNotFoundException(e) => e.request_id(),
             Self::StackNotFoundException(e) => e.request_id(),
             Self::StackSetNotEmptyException(e) => e.request_id(),

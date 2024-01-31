@@ -17,7 +17,9 @@ pub struct PatchComplianceData {
     pub state: crate::types::PatchComplianceDataState,
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
     pub installed_time: ::aws_smithy_types::DateTime,
-    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
+    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
+    /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
+    /// </note>
     pub cve_ids: ::std::option::Option<::std::string::String>,
 }
 impl PatchComplianceData {
@@ -50,7 +52,9 @@ impl PatchComplianceData {
     pub fn installed_time(&self) -> &::aws_smithy_types::DateTime {
         &self.installed_time
     }
-    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
+    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
+    /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
+    /// </note>
     pub fn cve_ids(&self) -> ::std::option::Option<&str> {
         self.cve_ids.as_deref()
     }
@@ -168,17 +172,23 @@ impl PatchComplianceDataBuilder {
     pub fn get_installed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.installed_time
     }
-    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
+    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
+    /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
+    /// </note>
     pub fn cve_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cve_ids = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
+    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
+    /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
+    /// </note>
     pub fn set_cve_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cve_ids = input;
         self
     }
-    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
+    /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p><note>
+    /// <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p>
+    /// </note>
     pub fn get_cve_ids(&self) -> &::std::option::Option<::std::string::String> {
         &self.cve_ids
     }

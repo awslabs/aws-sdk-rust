@@ -29,6 +29,14 @@ pub use crate::types::_rollback_configuration::RollbackConfiguration;
 
 pub use crate::types::_rollback_trigger::RollbackTrigger;
 
+pub use crate::types::_template_configuration::TemplateConfiguration;
+
+pub use crate::types::_generated_template_update_replace_policy::GeneratedTemplateUpdateReplacePolicy;
+
+pub use crate::types::_generated_template_deletion_policy::GeneratedTemplateDeletionPolicy;
+
+pub use crate::types::_resource_definition::ResourceDefinition;
+
 pub use crate::types::_third_party_type::ThirdPartyType;
 
 pub use crate::types::_resource_signal_status::ResourceSignalStatus;
@@ -121,6 +129,18 @@ pub use crate::types::_difference_type::DifferenceType;
 
 pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePair;
 
+pub use crate::types::_resource_scan_summary::ResourceScanSummary;
+
+pub use crate::types::_resource_scan_status::ResourceScanStatus;
+
+pub use crate::types::_scanned_resource::ScannedResource;
+
+pub use crate::types::_scanned_resource_identifier::ScannedResourceIdentifier;
+
+pub use crate::types::_template_summary::TemplateSummary;
+
+pub use crate::types::_generated_template_status::GeneratedTemplateStatus;
+
 pub use crate::types::_export::Export;
 
 pub use crate::types::_change_set_summary::ChangeSetSummary;
@@ -140,6 +160,8 @@ pub use crate::types::_parameter_constraints::ParameterConstraints;
 pub use crate::types::_template_summary_config::TemplateSummaryConfig;
 
 pub use crate::types::_template_stage::TemplateStage;
+
+pub use crate::types::_template_format::TemplateFormat;
 
 pub use crate::types::_stack_resource_drift::StackResourceDrift;
 
@@ -184,6 +206,18 @@ pub use crate::types::_stack_drift_detection_status::StackDriftDetectionStatus;
 pub use crate::types::_publisher_status::PublisherStatus;
 
 pub use crate::types::_organization_status::OrganizationStatus;
+
+pub use crate::types::_template_progress::TemplateProgress;
+
+pub use crate::types::_resource_detail::ResourceDetail;
+
+pub use crate::types::_warning_detail::WarningDetail;
+
+pub use crate::types::_warning_property::WarningProperty;
+
+pub use crate::types::_warning_type::WarningType;
+
+pub use crate::types::_generated_template_resource_status::GeneratedTemplateResourceStatus;
 
 pub use crate::types::_change_set_hooks_status::ChangeSetHooksStatus;
 
@@ -289,6 +323,14 @@ mod _execution_status;
 
 mod _export;
 
+mod _generated_template_deletion_policy;
+
+mod _generated_template_resource_status;
+
+mod _generated_template_status;
+
+mod _generated_template_update_replace_policy;
+
 mod _handler_error_code;
 
 mod _hook_failure_mode;
@@ -355,7 +397,15 @@ mod _resource_change;
 
 mod _resource_change_detail;
 
+mod _resource_definition;
+
+mod _resource_detail;
+
 mod _resource_identifier_summary;
+
+mod _resource_scan_status;
+
+mod _resource_scan_summary;
 
 mod _resource_signal_status;
 
@@ -368,6 +418,10 @@ mod _resource_to_import;
 mod _rollback_configuration;
 
 mod _rollback_trigger;
+
+mod _scanned_resource;
+
+mod _scanned_resource_identifier;
 
 mod _stack;
 
@@ -445,9 +499,17 @@ mod _stack_summary;
 
 mod _tag;
 
+mod _template_configuration;
+
+mod _template_format;
+
 mod _template_parameter;
 
+mod _template_progress;
+
 mod _template_stage;
+
+mod _template_summary;
 
 mod _template_summary_config;
 
@@ -468,6 +530,12 @@ mod _type_version_summary;
 mod _version_bump;
 
 mod _visibility;
+
+mod _warning_detail;
+
+mod _warning_property;
+
+mod _warning_type;
 
 mod _warnings;
 

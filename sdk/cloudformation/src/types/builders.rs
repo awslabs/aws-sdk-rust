@@ -17,6 +17,10 @@ pub use crate::types::_rollback_configuration::RollbackConfigurationBuilder;
 
 pub use crate::types::_rollback_trigger::RollbackTriggerBuilder;
 
+pub use crate::types::_template_configuration::TemplateConfigurationBuilder;
+
+pub use crate::types::_resource_definition::ResourceDefinitionBuilder;
+
 pub use crate::types::_logging_config::LoggingConfigBuilder;
 
 pub use crate::types::_type_version_summary::TypeVersionSummaryBuilder;
@@ -59,6 +63,14 @@ pub use crate::types::_property_difference::PropertyDifferenceBuilder;
 
 pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePairBuilder;
 
+pub use crate::types::_resource_scan_summary::ResourceScanSummaryBuilder;
+
+pub use crate::types::_scanned_resource::ScannedResourceBuilder;
+
+pub use crate::types::_scanned_resource_identifier::ScannedResourceIdentifierBuilder;
+
+pub use crate::types::_template_summary::TemplateSummaryBuilder;
+
 pub use crate::types::_export::ExportBuilder;
 
 pub use crate::types::_change_set_summary::ChangeSetSummaryBuilder;
@@ -98,6 +110,14 @@ pub use crate::types::_stack_resource_detail::StackResourceDetailBuilder;
 pub use crate::types::_stack_instance::StackInstanceBuilder;
 
 pub use crate::types::_stack_event::StackEventBuilder;
+
+pub use crate::types::_template_progress::TemplateProgressBuilder;
+
+pub use crate::types::_resource_detail::ResourceDetailBuilder;
+
+pub use crate::types::_warning_detail::WarningDetailBuilder;
+
+pub use crate::types::_warning_property::WarningPropertyBuilder;
 
 pub use crate::types::_change_set_hook::ChangeSetHookBuilder;
 

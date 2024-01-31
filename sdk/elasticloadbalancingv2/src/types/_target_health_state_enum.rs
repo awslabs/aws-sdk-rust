@@ -17,6 +17,7 @@
 ///     TargetHealthStateEnum::Initial => { /* ... */ },
 ///     TargetHealthStateEnum::Unavailable => { /* ... */ },
 ///     TargetHealthStateEnum::Unhealthy => { /* ... */ },
+///     TargetHealthStateEnum::UnhealthyDraining => { /* ... */ },
 ///     TargetHealthStateEnum::Unused => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum TargetHealthStateEnum {
     #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     #[allow(missing_docs)] // documentation missing in model
+    UnhealthyDraining,
+    #[allow(missing_docs)] // documentation missing in model
     Unused,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for TargetHealthStateEnum {
             "initial" => TargetHealthStateEnum::Initial,
             "unavailable" => TargetHealthStateEnum::Unavailable,
             "unhealthy" => TargetHealthStateEnum::Unhealthy,
+            "unhealthy.draining" => TargetHealthStateEnum::UnhealthyDraining,
             "unused" => TargetHealthStateEnum::Unused,
             other => TargetHealthStateEnum::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -90,13 +94,22 @@ impl TargetHealthStateEnum {
             TargetHealthStateEnum::Initial => "initial",
             TargetHealthStateEnum::Unavailable => "unavailable",
             TargetHealthStateEnum::Unhealthy => "unhealthy",
+            TargetHealthStateEnum::UnhealthyDraining => "unhealthy.draining",
             TargetHealthStateEnum::Unused => "unused",
             TargetHealthStateEnum::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["draining", "healthy", "initial", "unavailable", "unhealthy", "unused"]
+        &[
+            "draining",
+            "healthy",
+            "initial",
+            "unavailable",
+            "unhealthy",
+            "unhealthy.draining",
+            "unused",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TargetHealthStateEnum {

@@ -100,33 +100,39 @@ pub fn ser_update_association_input_input(
             ::aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_33) = &input.target_maps {
-        let mut array_34 = object.key("TargetMaps").start_array();
-        for item_35 in var_33 {
+    if let Some(var_33) = &input.duration {
+        object.key("Duration").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_33).into()),
+        );
+    }
+    if let Some(var_34) = &input.target_maps {
+        let mut array_35 = object.key("TargetMaps").start_array();
+        for item_36 in var_34 {
             {
                 #[allow(unused_mut)]
-                let mut object_36 = array_34.value().start_object();
-                for (key_37, value_38) in item_35 {
+                let mut object_37 = array_35.value().start_object();
+                for (key_38, value_39) in item_36 {
                     {
-                        let mut array_39 = object_36.key(key_37.as_str()).start_array();
-                        for item_40 in value_38 {
+                        let mut array_40 = object_37.key(key_38.as_str()).start_array();
+                        for item_41 in value_39 {
                             {
-                                array_39.value().string(item_40.as_str());
+                                array_40.value().string(item_41.as_str());
                             }
                         }
-                        array_39.finish();
+                        array_40.finish();
                     }
                 }
-                object_36.finish();
+                object_37.finish();
             }
         }
-        array_34.finish();
+        array_35.finish();
     }
-    if let Some(var_41) = &input.alarm_configuration {
+    if let Some(var_42) = &input.alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_42, var_41)?;
-        object_42.finish();
+        let mut object_43 = object.key("AlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_43, var_42)?;
+        object_43.finish();
     }
     Ok(())
 }

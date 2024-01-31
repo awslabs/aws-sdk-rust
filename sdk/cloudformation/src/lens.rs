@@ -59,8 +59,48 @@ pub(crate) fn reflens_list_exports_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_generated_templates_output_output_next_token(
+    input: &crate::operation::list_generated_templates::ListGeneratedTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_imports_output_output_next_token(
     input: &crate::operation::list_imports::ListImportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_scan_related_resources_output_output_next_token(
+    input: &crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_scan_resources_output_output_next_token(
+    input: &crate::operation::list_resource_scan_resources::ListResourceScanResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_scans_output_output_next_token(
+    input: &crate::operation::list_resource_scans::ListResourceScansOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -209,10 +249,50 @@ pub(crate) fn lens_list_exports_output_output_exports(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_generated_templates_output_output_summaries(
+    input: crate::operation::list_generated_templates::ListGeneratedTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TemplateSummary>> {
+    let input = match input.summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_imports_output_output_imports(
     input: crate::operation::list_imports::ListImportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.imports {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_scan_related_resources_output_output_related_resources(
+    input: crate::operation::list_resource_scan_related_resources::ListResourceScanRelatedResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScannedResource>> {
+    let input = match input.related_resources {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_scan_resources_output_output_resources(
+    input: crate::operation::list_resource_scan_resources::ListResourceScanResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScannedResource>> {
+    let input = match input.resources {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_scans_output_output_resource_scan_summaries(
+    input: crate::operation::list_resource_scans::ListResourceScansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanSummary>> {
+    let input = match input.resource_scan_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

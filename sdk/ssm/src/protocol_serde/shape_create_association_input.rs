@@ -97,45 +97,51 @@ pub fn ser_create_association_input_input(
             ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
-    if let Some(var_32) = &input.target_maps {
-        let mut array_33 = object.key("TargetMaps").start_array();
-        for item_34 in var_32 {
+    if let Some(var_32) = &input.duration {
+        object.key("Duration").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_32).into()),
+        );
+    }
+    if let Some(var_33) = &input.target_maps {
+        let mut array_34 = object.key("TargetMaps").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_35 = array_33.value().start_object();
-                for (key_36, value_37) in item_34 {
+                let mut object_36 = array_34.value().start_object();
+                for (key_37, value_38) in item_35 {
                     {
-                        let mut array_38 = object_35.key(key_36.as_str()).start_array();
-                        for item_39 in value_37 {
+                        let mut array_39 = object_36.key(key_37.as_str()).start_array();
+                        for item_40 in value_38 {
                             {
-                                array_38.value().string(item_39.as_str());
+                                array_39.value().string(item_40.as_str());
                             }
                         }
-                        array_38.finish();
+                        array_39.finish();
                     }
                 }
-                object_35.finish();
+                object_36.finish();
             }
         }
-        array_33.finish();
+        array_34.finish();
     }
-    if let Some(var_40) = &input.tags {
-        let mut array_41 = object.key("Tags").start_array();
-        for item_42 in var_40 {
+    if let Some(var_41) = &input.tags {
+        let mut array_42 = object.key("Tags").start_array();
+        for item_43 in var_41 {
             {
                 #[allow(unused_mut)]
-                let mut object_43 = array_41.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_43, item_42)?;
-                object_43.finish();
+                let mut object_44 = array_42.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_44, item_43)?;
+                object_44.finish();
             }
         }
-        array_41.finish();
+        array_42.finish();
     }
-    if let Some(var_44) = &input.alarm_configuration {
+    if let Some(var_45) = &input.alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("AlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_45, var_44)?;
-        object_45.finish();
+        let mut object_46 = object.key("AlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_46, var_45)?;
+        object_46.finish();
     }
     Ok(())
 }
