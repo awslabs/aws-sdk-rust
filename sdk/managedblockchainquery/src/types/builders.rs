@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_transaction_output_item::TransactionOutputItemBuilder;
 
+pub use crate::types::_confirmation_status_filter::ConfirmationStatusFilterBuilder;
+
 pub use crate::types::_list_transactions_sort::ListTransactionsSortBuilder;
 
 pub use crate::types::_blockchain_instant::BlockchainInstantBuilder;

@@ -84,7 +84,7 @@ pub struct CreateUserPoolClientInput {
     /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The allowed OAuth flows.</p>
+    /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
     /// <dl>
     /// <dt>
     /// code
@@ -264,7 +264,7 @@ impl CreateUserPoolClientInput {
     pub fn default_redirect_uri(&self) -> ::std::option::Option<&str> {
         self.default_redirect_uri.as_deref()
     }
-    /// <p>The allowed OAuth flows.</p>
+    /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
     /// <dl>
     /// <dt>
     /// code
@@ -772,7 +772,7 @@ impl CreateUserPoolClientInputBuilder {
     ///
     /// To override the contents of this collection use [`set_allowed_o_auth_flows`](Self::set_allowed_o_auth_flows).
     ///
-    /// <p>The allowed OAuth flows.</p>
+    /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
     /// <dl>
     /// <dt>
     /// code
@@ -799,7 +799,7 @@ impl CreateUserPoolClientInputBuilder {
         self.allowed_o_auth_flows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The allowed OAuth flows.</p>
+    /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
     /// <dl>
     /// <dt>
     /// code
@@ -824,7 +824,7 @@ impl CreateUserPoolClientInputBuilder {
         self.allowed_o_auth_flows = input;
         self
     }
-    /// <p>The allowed OAuth flows.</p>
+    /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
     /// <dl>
     /// <dt>
     /// code

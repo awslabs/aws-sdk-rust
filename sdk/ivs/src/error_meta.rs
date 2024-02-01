@@ -195,6 +195,53 @@ impl From<crate::operation::create_channel::CreateChannelError> for Error {
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError> for Error {
+    fn from(err: crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError) -> Self {
+        match err {
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_playback_restriction_policy::CreatePlaybackRestrictionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recording_configuration::CreateRecordingConfigurationError, R>>
     for Error
 where
@@ -326,6 +373,53 @@ impl From<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairError
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError> for Error {
+    fn from(err: crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError) -> Self {
+        match err {
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_playback_restriction_policy::DeletePlaybackRestrictionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recording_configuration::DeleteRecordingConfigurationError, R>>
     for Error
 where
@@ -440,6 +534,46 @@ impl From<crate::operation::get_playback_key_pair::GetPlaybackKeyPairError> for 
             }
             crate::operation::get_playback_key_pair::GetPlaybackKeyPairError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_playback_key_pair::GetPlaybackKeyPairError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError> for Error {
+    fn from(err: crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError) -> Self {
+        match err {
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_playback_restriction_policy::GetPlaybackRestrictionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -630,6 +764,50 @@ impl From<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError> 
             crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError> for Error {
+    fn from(err: crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError) -> Self {
+        match err {
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -936,6 +1114,53 @@ impl From<crate::operation::update_channel::UpdateChannelError> for Error {
             crate::operation::update_channel::UpdateChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_channel::UpdateChannelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_channel::UpdateChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError> for Error {
+    fn from(err: crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError) -> Self {
+        match err {
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError::PendingVerification(inner) => {
+                Error::PendingVerification(inner)
+            }
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_playback_restriction_policy::UpdatePlaybackRestrictionPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -178,17 +178,17 @@ impl UpdateChannelFluentBuilder {
     pub fn get_authorized(&self) -> &::std::option::Option<bool> {
         self.inner.get_authorized()
     }
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
     pub fn recording_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recording_configuration_arn(input.into());
         self
     }
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
     pub fn set_recording_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recording_configuration_arn(input);
         self
     }
-    /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.</p>
     pub fn get_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recording_configuration_arn()
     }
@@ -219,5 +219,19 @@ impl UpdateChannelFluentBuilder {
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub fn get_preset(&self) -> &::std::option::Option<crate::types::TranscodePreset> {
         self.inner.get_preset()
+    }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
+    pub fn playback_restriction_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.playback_restriction_policy_arn(input.into());
+        self
+    }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
+    pub fn set_playback_restriction_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_playback_restriction_policy_arn(input);
+        self
+    }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.</p>
+    pub fn get_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_playback_restriction_policy_arn()
     }
 }

@@ -229,8 +229,6 @@ pub(crate) mod shape_caption_selector;
 
 pub(crate) mod shape_cmfc_settings;
 
-pub(crate) mod shape_color_conversion3_dlut_settings;
-
 pub(crate) mod shape_esam_manifest_confirm_condition_notification;
 
 pub(crate) mod shape_esam_signal_processing_notification;
@@ -250,6 +248,8 @@ pub(crate) mod shape_input_video_generator;
 pub(crate) mod shape_list_of_audio_description;
 
 pub(crate) mod shape_list_of_caption_description_preset;
+
+pub(crate) mod shape_list_of_color_conversion3_dlut_setting;
 
 pub(crate) mod shape_list_of_input;
 

@@ -1,6 +1,6 @@
 # aws-sdk-neptunegraph
 
-Neptune Analytics is a serverless in-memory graph database service for analytics that delivers high-performance analytics and real-time queries for any graph type. It complements the Amazon Neptune Database, an industry-leading managed graph database.
+Neptune Analytics is a new analytics database engine for Amazon Neptune that helps customers get to insights faster by quickly processing large amounts of graph data, invoking popular graph analytic algorithms in low-latency queries, and getting analytics results in seconds.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
-aws-sdk-neptunegraph = "1.5.0"
+aws-sdk-neptunegraph = "1.6.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

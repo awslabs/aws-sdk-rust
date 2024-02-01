@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetTokenBalanceErrorItem {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
-    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub token_identifier: ::std::option::Option<crate::types::TokenIdentifier>,
     /// <p>The container for the identifier of the owner.</p>
@@ -21,7 +21,7 @@ pub struct BatchGetTokenBalanceErrorItem {
 }
 impl BatchGetTokenBalanceErrorItem {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
-    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn token_identifier(&self) -> ::std::option::Option<&crate::types::TokenIdentifier> {
         self.token_identifier.as_ref()
@@ -69,21 +69,21 @@ pub struct BatchGetTokenBalanceErrorItemBuilder {
 }
 impl BatchGetTokenBalanceErrorItemBuilder {
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
-    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn token_identifier(mut self, input: crate::types::TokenIdentifier) -> Self {
         self.token_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
-    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn set_token_identifier(mut self, input: ::std::option::Option<crate::types::TokenIdentifier>) -> Self {
         self.token_identifier = input;
         self
     }
     /// <p>The container for the identifier for the token including the unique token ID and its blockchain network.</p><note>
-    /// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+    /// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
     /// </note>
     pub fn get_token_identifier(&self) -> &::std::option::Option<crate::types::TokenIdentifier> {
         &self.token_identifier

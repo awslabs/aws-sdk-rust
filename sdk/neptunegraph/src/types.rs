@@ -29,15 +29,45 @@ pub use crate::types::_graph_status::GraphStatus;
 
 pub use crate::types::_graph_summary::GraphSummary;
 
+pub use crate::types::_query_summary::QuerySummary;
+
+pub use crate::types::_query_state::QueryState;
+
+pub use crate::types::_query_state_input::QueryStateInput;
+
+pub use crate::types::_graph_data_summary::GraphDataSummary;
+
+pub use crate::types::_edge_structure::EdgeStructure;
+
+pub use crate::types::_node_structure::NodeStructure;
+
+pub use crate::types::_graph_summary_mode::GraphSummaryMode;
+
+pub use crate::types::_unprocessable_exception_reason::UnprocessableExceptionReason;
+
+pub use crate::types::_explain_mode::ExplainMode;
+
+pub use crate::types::_plan_cache_type::PlanCacheType;
+
+pub use crate::types::_query_language::QueryLanguage;
+
 mod _conflict_exception_reason;
 
+mod _edge_structure;
+
+mod _explain_mode;
+
 mod _format;
+
+mod _graph_data_summary;
 
 mod _graph_snapshot_summary;
 
 mod _graph_status;
 
 mod _graph_summary;
+
+mod _graph_summary_mode;
 
 mod _import_options;
 
@@ -49,11 +79,25 @@ mod _import_task_summary;
 
 mod _neptune_import_options;
 
+mod _node_structure;
+
+mod _plan_cache_type;
+
 mod _private_graph_endpoint_status;
 
 mod _private_graph_endpoint_summary;
 
+mod _query_language;
+
+mod _query_state;
+
+mod _query_state_input;
+
+mod _query_summary;
+
 mod _snapshot_status;
+
+mod _unprocessable_exception_reason;
 
 mod _validation_exception_reason;
 

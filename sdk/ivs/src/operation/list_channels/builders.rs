@@ -142,6 +142,20 @@ impl ListChannelsFluentBuilder {
     pub fn get_filter_by_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_filter_by_recording_configuration_arn()
     }
+    /// <p>Filters the channel list to match the specified policy.</p>
+    pub fn filter_by_playback_restriction_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.filter_by_playback_restriction_policy_arn(input.into());
+        self
+    }
+    /// <p>Filters the channel list to match the specified policy.</p>
+    pub fn set_filter_by_playback_restriction_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_filter_by_playback_restriction_policy_arn(input);
+        self
+    }
+    /// <p>Filters the channel list to match the specified policy.</p>
+    pub fn get_filter_by_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filter_by_playback_restriction_policy_arn()
+    }
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

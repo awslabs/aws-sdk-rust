@@ -9,85 +9,54 @@ pub struct CreateIdentityProviderInput {
     pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The IdP type.</p>
     pub provider_type: ::std::option::Option<crate::types::IdentityProviderTypeType>,
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Facebook:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>api_version</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>team_id</p></li>
-    /// <li>
-    /// <p>key_id</p></li>
-    /// <li>
-    /// <p>private_key</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>attributes_request_method</p></li>
-    /// <li>
-    /// <p>oidc_issuer</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li>
-    /// <p>authorize_url</p></li>
-    /// <li>
-    /// <p>token_url</p></li>
-    /// <li>
-    /// <p>attributes_url</p></li>
-    /// <li>
-    /// <p>jwks_uri</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li>
-    /// <p>attributes_url_add_attributes</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For SAML providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>MetadataFile or MetadataURL</p></li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i></p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
+    /// <dl>
+    /// <dt>
+    /// OpenID Connect (OIDC)
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Cognito accepts the following elements when it can't discover endpoint URLs from <code>oidc_issuer</code>: <code>attributes_url</code>, <code>authorize_url</code>, <code>jwks_uri</code>, <code>token_url</code>.</p>
+    /// <p>Create or update request: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SAML
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request with Metadata URL: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>Create or update request with Metadata file: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>The value of <code>MetadataFile</code> must be the plaintext metadata document with all quote (") characters escaped by backslashes.</p>
+    /// <p>Describe response: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// LoginWithAmazon
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Google
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SignInWithApple
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Facebook
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
+    /// </dd>
+    /// </dl>
     pub provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -107,85 +76,54 @@ impl CreateIdentityProviderInput {
     pub fn provider_type(&self) -> ::std::option::Option<&crate::types::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Facebook:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>api_version</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>team_id</p></li>
-    /// <li>
-    /// <p>key_id</p></li>
-    /// <li>
-    /// <p>private_key</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>attributes_request_method</p></li>
-    /// <li>
-    /// <p>oidc_issuer</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li>
-    /// <p>authorize_url</p></li>
-    /// <li>
-    /// <p>token_url</p></li>
-    /// <li>
-    /// <p>attributes_url</p></li>
-    /// <li>
-    /// <p>jwks_uri</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li>
-    /// <p>attributes_url_add_attributes</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For SAML providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>MetadataFile or MetadataURL</p></li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i></p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
+    /// <dl>
+    /// <dt>
+    /// OpenID Connect (OIDC)
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Cognito accepts the following elements when it can't discover endpoint URLs from <code>oidc_issuer</code>: <code>attributes_url</code>, <code>authorize_url</code>, <code>jwks_uri</code>, <code>token_url</code>.</p>
+    /// <p>Create or update request: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SAML
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request with Metadata URL: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>Create or update request with Metadata file: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>The value of <code>MetadataFile</code> must be the plaintext metadata document with all quote (") characters escaped by backslashes.</p>
+    /// <p>Describe response: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// LoginWithAmazon
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Google
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SignInWithApple
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Facebook
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
+    /// </dd>
+    /// </dl>
     pub fn provider_details(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.provider_details.as_ref()
     }
@@ -268,85 +206,54 @@ impl CreateIdentityProviderInputBuilder {
     ///
     /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
     ///
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Facebook:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>api_version</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>team_id</p></li>
-    /// <li>
-    /// <p>key_id</p></li>
-    /// <li>
-    /// <p>private_key</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>attributes_request_method</p></li>
-    /// <li>
-    /// <p>oidc_issuer</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li>
-    /// <p>authorize_url</p></li>
-    /// <li>
-    /// <p>token_url</p></li>
-    /// <li>
-    /// <p>attributes_url</p></li>
-    /// <li>
-    /// <p>jwks_uri</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li>
-    /// <p>attributes_url_add_attributes</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For SAML providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>MetadataFile or MetadataURL</p></li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i></p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
+    /// <dl>
+    /// <dt>
+    /// OpenID Connect (OIDC)
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Cognito accepts the following elements when it can't discover endpoint URLs from <code>oidc_issuer</code>: <code>attributes_url</code>, <code>authorize_url</code>, <code>jwks_uri</code>, <code>token_url</code>.</p>
+    /// <p>Create or update request: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SAML
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request with Metadata URL: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>Create or update request with Metadata file: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>The value of <code>MetadataFile</code> must be the plaintext metadata document with all quote (") characters escaped by backslashes.</p>
+    /// <p>Describe response: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// LoginWithAmazon
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Google
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SignInWithApple
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Facebook
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
+    /// </dd>
+    /// </dl>
     pub fn provider_details(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -357,85 +264,54 @@ impl CreateIdentityProviderInputBuilder {
         self.provider_details = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Facebook:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>api_version</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>team_id</p></li>
-    /// <li>
-    /// <p>key_id</p></li>
-    /// <li>
-    /// <p>private_key</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>attributes_request_method</p></li>
-    /// <li>
-    /// <p>oidc_issuer</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li>
-    /// <p>authorize_url</p></li>
-    /// <li>
-    /// <p>token_url</p></li>
-    /// <li>
-    /// <p>attributes_url</p></li>
-    /// <li>
-    /// <p>jwks_uri</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li>
-    /// <p>attributes_url_add_attributes</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For SAML providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>MetadataFile or MetadataURL</p></li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i></p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
+    /// <dl>
+    /// <dt>
+    /// OpenID Connect (OIDC)
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Cognito accepts the following elements when it can't discover endpoint URLs from <code>oidc_issuer</code>: <code>attributes_url</code>, <code>authorize_url</code>, <code>jwks_uri</code>, <code>token_url</code>.</p>
+    /// <p>Create or update request: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SAML
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request with Metadata URL: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>Create or update request with Metadata file: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>The value of <code>MetadataFile</code> must be the plaintext metadata document with all quote (") characters escaped by backslashes.</p>
+    /// <p>Describe response: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// LoginWithAmazon
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Google
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SignInWithApple
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Facebook
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
+    /// </dd>
+    /// </dl>
     pub fn set_provider_details(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -443,85 +319,54 @@ impl CreateIdentityProviderInputBuilder {
         self.provider_details = input;
         self
     }
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
-    /// <ul>
-    /// <li>
-    /// <p>For Google and Login with Amazon:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Facebook:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>api_version</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For Sign in with Apple:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>team_id</p></li>
-    /// <li>
-    /// <p>key_id</p></li>
-    /// <li>
-    /// <p>private_key</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For OpenID Connect (OIDC) providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>client_id</p></li>
-    /// <li>
-    /// <p>client_secret</p></li>
-    /// <li>
-    /// <p>attributes_request_method</p></li>
-    /// <li>
-    /// <p>oidc_issuer</p></li>
-    /// <li>
-    /// <p>authorize_scopes</p></li>
-    /// <li>
-    /// <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
-    /// <ul>
-    /// <li>
-    /// <p>authorize_url</p></li>
-    /// <li>
-    /// <p>token_url</p></li>
-    /// <li>
-    /// <p>attributes_url</p></li>
-    /// <li>
-    /// <p>jwks_uri</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
-    /// <ul>
-    /// <li>
-    /// <p>attributes_url_add_attributes</p></li>
-    /// </ul></li>
-    /// </ul></li>
-    /// <li>
-    /// <p>For SAML providers:</p>
-    /// <ul>
-    /// <li>
-    /// <p>MetadataFile or MetadataURL</p></li>
-    /// <li>
-    /// <p>IDPSignout <i>optional</i></p></li>
-    /// </ul></li>
-    /// </ul>
+    /// <p>The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP <code>authorize_scopes</code> values must match the values listed here.</p>
+    /// <dl>
+    /// <dt>
+    /// OpenID Connect (OIDC)
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon Cognito accepts the following elements when it can't discover endpoint URLs from <code>oidc_issuer</code>: <code>attributes_url</code>, <code>authorize_url</code>, <code>jwks_uri</code>, <code>token_url</code>.</p>
+    /// <p>Create or update request: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SAML
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request with Metadata URL: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>Create or update request with Metadata file: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }</code></p>
+    /// <p>The value of <code>MetadataFile</code> must be the plaintext metadata document with all quote (") characters escaped by backslashes.</p>
+    /// <p>Describe response: <code>"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// LoginWithAmazon
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Google
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// SignInWithApple
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }</code></p>
+    /// </dd>
+    /// <dt>
+    /// Facebook
+    /// </dt>
+    /// <dd>
+    /// <p>Create or update request: <code>"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }</code></p>
+    /// <p>Describe response: <code>"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }</code></p>
+    /// </dd>
+    /// </dl>
     pub fn get_provider_details(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.provider_details
     }

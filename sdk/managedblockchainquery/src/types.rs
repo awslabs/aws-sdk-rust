@@ -7,7 +7,11 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_transaction_output_item::TransactionOutputItem;
 
+pub use crate::types::_confirmation_status::ConfirmationStatus;
+
 pub use crate::types::_query_network::QueryNetwork;
+
+pub use crate::types::_confirmation_status_filter::ConfirmationStatusFilter;
 
 pub use crate::types::_list_transactions_sort::ListTransactionsSort;
 
@@ -43,10 +47,6 @@ pub use crate::types::_transaction::Transaction;
 
 pub use crate::types::_execution_status::ExecutionStatus;
 
-pub use crate::types::_confirmation_status::ConfirmationStatus;
-
-pub use crate::types::_query_transaction_status::QueryTransactionStatus;
-
 pub use crate::types::_contract_metadata::ContractMetadata;
 
 pub use crate::types::_batch_get_token_balance_error_item::BatchGetTokenBalanceErrorItem;
@@ -68,6 +68,8 @@ mod _batch_get_token_balance_output_item;
 mod _blockchain_instant;
 
 mod _confirmation_status;
+
+mod _confirmation_status_filter;
 
 mod _contract_filter;
 
@@ -92,8 +94,6 @@ mod _query_network;
 mod _query_token_standard;
 
 mod _query_transaction_event_type;
-
-mod _query_transaction_status;
 
 mod _resource_type;
 

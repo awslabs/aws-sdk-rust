@@ -170,17 +170,17 @@ impl ListTransactionsFluentBuilder {
     pub fn get_to_blockchain_instant(&self) -> &::std::option::Option<crate::types::BlockchainInstant> {
         self.inner.get_to_blockchain_instant()
     }
-    /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
+    /// <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be ordered by <code>fromTime</code>.</p>
     pub fn sort(mut self, input: crate::types::ListTransactionsSort) -> Self {
         self.inner = self.inner.sort(input);
         self
     }
-    /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
+    /// <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be ordered by <code>fromTime</code>.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ListTransactionsSort>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
-    /// <p>Sorts items in an ascending order if the first page starts at <code>fromTime</code>. Sorts items in a descending order if the first page starts at <code>toTime</code>.</p>
+    /// <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is selected, the results will be ordered by <code>fromTime</code>.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::ListTransactionsSort> {
         self.inner.get_sort()
     }
@@ -198,7 +198,8 @@ impl ListTransactionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of transactions to list.</p><note>
+    /// <p>The maximum number of transactions to list.</p>
+    /// <p>Default:<code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -206,7 +207,8 @@ impl ListTransactionsFluentBuilder {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of transactions to list.</p><note>
+    /// <p>The maximum number of transactions to list.</p>
+    /// <p>Default:<code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -214,11 +216,26 @@ impl ListTransactionsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of transactions to list.</p><note>
+    /// <p>The maximum number of transactions to list.</p>
+    /// <p>Default:<code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finiality are always part of the response.</p>
+    pub fn confirmation_status_filter(mut self, input: crate::types::ConfirmationStatusFilter) -> Self {
+        self.inner = self.inner.confirmation_status_filter(input);
+        self
+    }
+    /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finiality are always part of the response.</p>
+    pub fn set_confirmation_status_filter(mut self, input: ::std::option::Option<crate::types::ConfirmationStatusFilter>) -> Self {
+        self.inner = self.inner.set_confirmation_status_filter(input);
+        self
+    }
+    /// <p>This filter is used to include transactions in the response that haven't reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality"> <i>finality</i> </a>. Transactions that have reached finiality are always part of the response.</p>
+    pub fn get_confirmation_status_filter(&self) -> &::std::option::Option<crate::types::ConfirmationStatusFilter> {
+        self.inner.get_confirmation_status_filter()
     }
 }

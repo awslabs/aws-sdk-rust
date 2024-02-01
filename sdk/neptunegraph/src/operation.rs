@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CancelImportTask` operation.
 pub mod cancel_import_task;
 
+/// Types for the `CancelQuery` operation.
+pub mod cancel_query;
+
 /// Types for the `CreateGraph` operation.
 pub mod create_graph;
 
@@ -25,17 +28,26 @@ pub mod delete_graph_snapshot;
 /// Types for the `DeletePrivateGraphEndpoint` operation.
 pub mod delete_private_graph_endpoint;
 
+/// Types for the `ExecuteQuery` operation.
+pub mod execute_query;
+
 /// Types for the `GetGraph` operation.
 pub mod get_graph;
 
 /// Types for the `GetGraphSnapshot` operation.
 pub mod get_graph_snapshot;
 
+/// Types for the `GetGraphSummary` operation.
+pub mod get_graph_summary;
+
 /// Types for the `GetImportTask` operation.
 pub mod get_import_task;
 
 /// Types for the `GetPrivateGraphEndpoint` operation.
 pub mod get_private_graph_endpoint;
+
+/// Types for the `GetQuery` operation.
+pub mod get_query;
 
 /// Types for the `ListGraphSnapshots` operation.
 pub mod list_graph_snapshots;
@@ -48,6 +60,9 @@ pub mod list_import_tasks;
 
 /// Types for the `ListPrivateGraphEndpoints` operation.
 pub mod list_private_graph_endpoints;
+
+/// Types for the `ListQueries` operation.
+pub mod list_queries;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

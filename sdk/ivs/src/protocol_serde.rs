@@ -31,6 +31,8 @@ pub(crate) mod shape_batch_start_viewer_session_revocation;
 
 pub(crate) mod shape_create_channel;
 
+pub(crate) mod shape_create_playback_restriction_policy;
+
 pub(crate) mod shape_create_recording_configuration;
 
 pub(crate) mod shape_create_stream_key;
@@ -39,6 +41,8 @@ pub(crate) mod shape_delete_channel;
 
 pub(crate) mod shape_delete_playback_key_pair;
 
+pub(crate) mod shape_delete_playback_restriction_policy;
+
 pub(crate) mod shape_delete_recording_configuration;
 
 pub(crate) mod shape_delete_stream_key;
@@ -46,6 +50,8 @@ pub(crate) mod shape_delete_stream_key;
 pub(crate) mod shape_get_channel;
 
 pub(crate) mod shape_get_playback_key_pair;
+
+pub(crate) mod shape_get_playback_restriction_policy;
 
 pub(crate) mod shape_get_recording_configuration;
 
@@ -60,6 +66,8 @@ pub(crate) mod shape_import_playback_key_pair;
 pub(crate) mod shape_list_channels;
 
 pub(crate) mod shape_list_playback_key_pairs;
+
+pub(crate) mod shape_list_playback_restriction_policies;
 
 pub(crate) mod shape_list_recording_configurations;
 
@@ -83,6 +91,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_channel;
 
+pub(crate) mod shape_update_playback_restriction_policy;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -105,6 +115,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_channel_input;
 
+pub(crate) mod shape_create_playback_restriction_policy_input;
+
 pub(crate) mod shape_create_recording_configuration_input;
 
 pub(crate) mod shape_create_stream_key_input;
@@ -113,6 +125,8 @@ pub(crate) mod shape_delete_channel_input;
 
 pub(crate) mod shape_delete_playback_key_pair_input;
 
+pub(crate) mod shape_delete_playback_restriction_policy_input;
+
 pub(crate) mod shape_delete_recording_configuration_input;
 
 pub(crate) mod shape_delete_stream_key_input;
@@ -120,6 +134,8 @@ pub(crate) mod shape_delete_stream_key_input;
 pub(crate) mod shape_get_channel_input;
 
 pub(crate) mod shape_get_playback_key_pair_input;
+
+pub(crate) mod shape_get_playback_restriction_policy_input;
 
 pub(crate) mod shape_get_recording_configuration_input;
 
@@ -136,6 +152,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_list_channels_input;
 
 pub(crate) mod shape_list_playback_key_pairs_input;
+
+pub(crate) mod shape_list_playback_restriction_policies_input;
 
 pub(crate) mod shape_list_recording_configurations_input;
 
@@ -165,6 +183,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_channel_input;
 
+pub(crate) mod shape_update_playback_restriction_policy_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_batch_errors;
@@ -184,6 +204,10 @@ pub(crate) mod shape_destination_configuration;
 pub(crate) mod shape_playback_key_pair;
 
 pub(crate) mod shape_playback_key_pair_list;
+
+pub(crate) mod shape_playback_restriction_policy;
+
+pub(crate) mod shape_playback_restriction_policy_list;
 
 pub(crate) mod shape_recording_configuration;
 
@@ -220,6 +244,12 @@ pub(crate) mod shape_channel_summary;
 pub(crate) mod shape_ingest_configuration;
 
 pub(crate) mod shape_playback_key_pair_summary;
+
+pub(crate) mod shape_playback_restriction_policy_allowed_country_list;
+
+pub(crate) mod shape_playback_restriction_policy_allowed_origin_list;
+
+pub(crate) mod shape_playback_restriction_policy_summary;
 
 pub(crate) mod shape_recording_configuration_summary;
 

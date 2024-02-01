@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>Raised in case of an authentication or authorization failure.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Raised when a conflict is encountered.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>A failure occurred on the server.</p>
@@ -13,7 +15,9 @@ pub enum Error {
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The exception was interrupted by throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>A resource could not be validated</p>
+    /// <p>Request cannot be processed due to known reasons. Eg. partition full.</p>
+    UnprocessableException(crate::types::error::UnprocessableException),
+    /// <p>A resource could not be validated.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -27,11 +31,13 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::UnprocessableException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -54,11 +60,13 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::UnprocessableException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -87,6 +95,32 @@ impl From<crate::operation::cancel_import_task::CancelImportTaskError> for Error
             crate::operation::cancel_import_task::CancelImportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::cancel_import_task::CancelImportTaskError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_import_task::CancelImportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_query::CancelQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_query::CancelQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_query::CancelQueryError> for Error {
+    fn from(err: crate::operation::cancel_query::CancelQueryError) -> Self {
+        match err {
+            crate::operation::cancel_query::CancelQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_query::CancelQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_query::CancelQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::cancel_query::CancelQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_query::CancelQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_query::CancelQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -325,6 +359,33 @@ impl From<crate::operation::delete_private_graph_endpoint::DeletePrivateGraphEnd
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_query::ExecuteQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_query::ExecuteQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::execute_query::ExecuteQueryError> for Error {
+    fn from(err: crate::operation::execute_query::ExecuteQueryError) -> Self {
+        match err {
+            crate::operation::execute_query::ExecuteQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::execute_query::ExecuteQueryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::execute_query::ExecuteQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::execute_query::ExecuteQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::execute_query::ExecuteQueryError::UnprocessableException(inner) => Error::UnprocessableException(inner),
+            crate::operation::execute_query::ExecuteQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::execute_query::ExecuteQueryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_graph::GetGraphError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -372,6 +433,32 @@ impl From<crate::operation::get_graph_snapshot::GetGraphSnapshotError> for Error
             crate::operation::get_graph_snapshot::GetGraphSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_graph_snapshot::GetGraphSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_graph_snapshot::GetGraphSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_graph_summary::GetGraphSummaryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_graph_summary::GetGraphSummaryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_graph_summary::GetGraphSummaryError> for Error {
+    fn from(err: crate::operation::get_graph_summary::GetGraphSummaryError) -> Self {
+        match err {
+            crate::operation::get_graph_summary::GetGraphSummaryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_graph_summary::GetGraphSummaryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_graph_summary::GetGraphSummaryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_graph_summary::GetGraphSummaryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_graph_summary::GetGraphSummaryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_graph_summary::GetGraphSummaryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -433,6 +520,32 @@ impl From<crate::operation::get_private_graph_endpoint::GetPrivateGraphEndpointE
                 Error::ValidationException(inner)
             }
             crate::operation::get_private_graph_endpoint::GetPrivateGraphEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query::GetQueryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_query::GetQueryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_query::GetQueryError> for Error {
+    fn from(err: crate::operation::get_query::GetQueryError) -> Self {
+        match err {
+            crate::operation::get_query::GetQueryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_query::GetQueryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_query::GetQueryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_query::GetQueryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_query::GetQueryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_query::GetQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -545,6 +658,31 @@ impl From<crate::operation::list_private_graph_endpoints::ListPrivateGraphEndpoi
                 Error::ValidationException(inner)
             }
             crate::operation::list_private_graph_endpoints::ListPrivateGraphEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_queries::ListQueriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_queries::ListQueriesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_queries::ListQueriesError> for Error {
+    fn from(err: crate::operation::list_queries::ListQueriesError) -> Self {
+        match err {
+            crate::operation::list_queries::ListQueriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_queries::ListQueriesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_queries::ListQueriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_queries::ListQueriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_queries::ListQueriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -722,11 +860,13 @@ impl From<crate::operation::update_graph::UpdateGraphError> for Error {
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::UnprocessableException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -735,11 +875,13 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::UnprocessableException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

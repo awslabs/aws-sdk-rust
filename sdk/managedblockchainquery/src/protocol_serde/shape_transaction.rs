@@ -62,13 +62,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "status" => {
-                            builder = builder.set_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::QueryTransactionStatus::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
                         "to" => {
                             builder = builder.set_to(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

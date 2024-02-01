@@ -22,7 +22,9 @@ impl ListTransactionEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTransactionEvents`.
 ///
-/// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.</p>
+/// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.</p><note>
+/// <p>This action will return transaction details for all transactions that are <i>confirmed</i> on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTransactionEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -156,7 +158,8 @@ impl ListTransactionEventsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The maximum number of transaction events to list.</p><note>
+    /// <p>The maximum number of transaction events to list.</p>
+    /// <p>Default:<code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -164,7 +167,8 @@ impl ListTransactionEventsFluentBuilder {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of transaction events to list.</p><note>
+    /// <p>The maximum number of transaction events to list.</p>
+    /// <p>Default:<code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>
@@ -172,7 +176,8 @@ impl ListTransactionEventsFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of transaction events to list.</p><note>
+    /// <p>The maximum number of transaction events to list.</p>
+    /// <p>Default:<code>100</code></p><note>
     /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
     /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
     /// </note>

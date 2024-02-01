@@ -24,19 +24,6 @@ pub struct Transaction {
     pub transaction_index: i64,
     /// <p>The number of transactions in the block.</p>
     pub number_of_transactions: i64,
-    /// <p>The status of the transaction.</p><important>
-    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
-    /// </ul>
-    /// </important>
-    #[deprecated(
-        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
-    )]
-    pub status: ::std::option::Option<crate::types::QueryTransactionStatus>,
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub to: ::std::string::String,
     /// <p>The initiator of the transaction. It is either in the form a public key or a contract address.</p>
@@ -93,21 +80,6 @@ impl Transaction {
     /// <p>The number of transactions in the block.</p>
     pub fn number_of_transactions(&self) -> i64 {
         self.number_of_transactions
-    }
-    /// <p>The status of the transaction.</p><important>
-    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
-    /// </ul>
-    /// </important>
-    #[deprecated(
-        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
-    )]
-    pub fn status(&self) -> ::std::option::Option<&crate::types::QueryTransactionStatus> {
-        self.status.as_ref()
     }
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     pub fn to(&self) -> &str {
@@ -181,7 +153,6 @@ pub struct TransactionBuilder {
     pub(crate) transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) transaction_index: ::std::option::Option<i64>,
     pub(crate) number_of_transactions: ::std::option::Option<i64>,
-    pub(crate) status: ::std::option::Option<crate::types::QueryTransactionStatus>,
     pub(crate) to: ::std::option::Option<::std::string::String>,
     pub(crate) from: ::std::option::Option<::std::string::String>,
     pub(crate) contract_address: ::std::option::Option<::std::string::String>,
@@ -299,53 +270,6 @@ impl TransactionBuilder {
     /// <p>The number of transactions in the block.</p>
     pub fn get_number_of_transactions(&self) -> &::std::option::Option<i64> {
         &self.number_of_transactions
-    }
-    /// <p>The status of the transaction.</p><important>
-    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
-    /// </ul>
-    /// </important>
-    #[deprecated(
-        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
-    )]
-    pub fn status(mut self, input: crate::types::QueryTransactionStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The status of the transaction.</p><important>
-    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
-    /// </ul>
-    /// </important>
-    #[deprecated(
-        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
-    )]
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueryTransactionStatus>) -> Self {
-        self.status = input;
-        self
-    }
-    /// <p>The status of the transaction.</p><important>
-    /// <p>This property is deprecated. You must use the <code>confirmationStatus</code> and the <code>executionStatus</code> properties to determine if the <code>status</code> of the transaction is <code>FINAL</code> or <code>FAILED</code>.</p>
-    /// <ul>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.</p></li>
-    /// <li>
-    /// <p>Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code> set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.</p></li>
-    /// </ul>
-    /// </important>
-    #[deprecated(
-        note = "The status field in the GetTransaction response is deprecated and is replaced with the confirmationStatus and executionStatus fields."
-    )]
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::QueryTransactionStatus> {
-        &self.status
     }
     /// <p>The identifier of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
     /// This field is required.
@@ -572,7 +496,6 @@ impl TransactionBuilder {
                     "number_of_transactions was not specified but it is required when building Transaction",
                 )
             })?,
-            status: self.status,
             to: self.to.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "to",

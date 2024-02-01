@@ -3,22 +3,34 @@ pub fn ser_remix_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RemixSettings,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.channel_mapping {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("channelMapping").start_object();
-        crate::protocol_serde::shape_channel_mapping::ser_channel_mapping(&mut object_2, var_1)?;
-        object_2.finish();
-    }
-    if let Some(var_3) = &input.channels_in {
-        object.key("channelsIn").number(
+    if let Some(var_1) = &input.audio_description_audio_channel {
+        object.key("audioDescriptionAudioChannel").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_4) = &input.channels_out {
+    if let Some(var_2) = &input.audio_description_data_channel {
+        object.key("audioDescriptionDataChannel").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.channel_mapping {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("channelMapping").start_object();
+        crate::protocol_serde::shape_channel_mapping::ser_channel_mapping(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.channels_in {
+        object.key("channelsIn").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.channels_out {
         object.key("channelsOut").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())
@@ -39,6 +51,20 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioDescriptionAudioChannel" => {
+                            builder = builder.set_audio_description_audio_channel(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "audioDescriptionDataChannel" => {
+                            builder = builder.set_audio_description_data_channel(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "channelMapping" => {
                             builder = builder.set_channel_mapping(crate::protocol_serde::shape_channel_mapping::de_channel_mapping(tokens)?);
                         }

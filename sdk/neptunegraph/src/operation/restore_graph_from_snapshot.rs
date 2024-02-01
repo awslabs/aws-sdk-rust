@@ -279,7 +279,7 @@ pub enum RestoreGraphFromSnapshotError {
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The exception was interrupted by throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>A resource could not be validated</p>
+    /// <p>A resource could not be validated.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

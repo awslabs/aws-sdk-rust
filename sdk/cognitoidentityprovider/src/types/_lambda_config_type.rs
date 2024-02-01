@@ -24,10 +24,10 @@ pub struct LambdaConfigType {
     /// <p>Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>, its value must be identical to <code>PreTokenGeneration</code>. For new instances of pre token generation triggers, set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.</p>
     /// <p>You can set <code></code></p>
     pub pre_token_generation: ::std::option::Option<::std::string::String>,
-    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
-    pub pre_token_generation_config: ::std::option::Option<crate::types::PreTokenGenerationVersionConfigType>,
     /// <p>The user migration Lambda config type.</p>
     pub user_migration: ::std::option::Option<::std::string::String>,
+    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
+    pub pre_token_generation_config: ::std::option::Option<crate::types::PreTokenGenerationVersionConfigType>,
     /// <p>A custom SMS sender Lambda trigger.</p>
     pub custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     /// <p>A custom email sender Lambda trigger.</p>
@@ -74,13 +74,13 @@ impl LambdaConfigType {
     pub fn pre_token_generation(&self) -> ::std::option::Option<&str> {
         self.pre_token_generation.as_deref()
     }
-    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
-    pub fn pre_token_generation_config(&self) -> ::std::option::Option<&crate::types::PreTokenGenerationVersionConfigType> {
-        self.pre_token_generation_config.as_ref()
-    }
     /// <p>The user migration Lambda config type.</p>
     pub fn user_migration(&self) -> ::std::option::Option<&str> {
         self.user_migration.as_deref()
+    }
+    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
+    pub fn pre_token_generation_config(&self) -> ::std::option::Option<&crate::types::PreTokenGenerationVersionConfigType> {
+        self.pre_token_generation_config.as_ref()
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
     pub fn custom_sms_sender(&self) -> ::std::option::Option<&crate::types::CustomSmsLambdaVersionConfigType> {
@@ -115,8 +115,8 @@ pub struct LambdaConfigTypeBuilder {
     pub(crate) create_auth_challenge: ::std::option::Option<::std::string::String>,
     pub(crate) verify_auth_challenge_response: ::std::option::Option<::std::string::String>,
     pub(crate) pre_token_generation: ::std::option::Option<::std::string::String>,
-    pub(crate) pre_token_generation_config: ::std::option::Option<crate::types::PreTokenGenerationVersionConfigType>,
     pub(crate) user_migration: ::std::option::Option<::std::string::String>,
+    pub(crate) pre_token_generation_config: ::std::option::Option<crate::types::PreTokenGenerationVersionConfigType>,
     pub(crate) custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     pub(crate) custom_email_sender: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -254,20 +254,6 @@ impl LambdaConfigTypeBuilder {
     pub fn get_pre_token_generation(&self) -> &::std::option::Option<::std::string::String> {
         &self.pre_token_generation
     }
-    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
-    pub fn pre_token_generation_config(mut self, input: crate::types::PreTokenGenerationVersionConfigType) -> Self {
-        self.pre_token_generation_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
-    pub fn set_pre_token_generation_config(mut self, input: ::std::option::Option<crate::types::PreTokenGenerationVersionConfigType>) -> Self {
-        self.pre_token_generation_config = input;
-        self
-    }
-    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
-    pub fn get_pre_token_generation_config(&self) -> &::std::option::Option<crate::types::PreTokenGenerationVersionConfigType> {
-        &self.pre_token_generation_config
-    }
     /// <p>The user migration Lambda config type.</p>
     pub fn user_migration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_migration = ::std::option::Option::Some(input.into());
@@ -281,6 +267,20 @@ impl LambdaConfigTypeBuilder {
     /// <p>The user migration Lambda config type.</p>
     pub fn get_user_migration(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_migration
+    }
+    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
+    pub fn pre_token_generation_config(mut self, input: crate::types::PreTokenGenerationVersionConfigType) -> Self {
+        self.pre_token_generation_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
+    pub fn set_pre_token_generation_config(mut self, input: ::std::option::Option<crate::types::PreTokenGenerationVersionConfigType>) -> Self {
+        self.pre_token_generation_config = input;
+        self
+    }
+    /// <p>The detailed configuration of a pre token generation trigger. If you also set an ARN in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.</p>
+    pub fn get_pre_token_generation_config(&self) -> &::std::option::Option<crate::types::PreTokenGenerationVersionConfigType> {
+        &self.pre_token_generation_config
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
     pub fn custom_sms_sender(mut self, input: crate::types::CustomSmsLambdaVersionConfigType) -> Self {
@@ -336,8 +336,8 @@ impl LambdaConfigTypeBuilder {
             create_auth_challenge: self.create_auth_challenge,
             verify_auth_challenge_response: self.verify_auth_challenge_response,
             pre_token_generation: self.pre_token_generation,
-            pre_token_generation_config: self.pre_token_generation_config,
             user_migration: self.user_migration,
+            pre_token_generation_config: self.pre_token_generation_config,
             custom_sms_sender: self.custom_sms_sender,
             custom_email_sender: self.custom_email_sender,
             kms_key_id: self.kms_key_id,

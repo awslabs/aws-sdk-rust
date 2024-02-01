@@ -17,6 +17,15 @@ pub(crate) fn list_playback_key_pairs_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_playback_restriction_policies_output_output_correct_errors(
+    mut builder: crate::operation::list_playback_restriction_policies::builders::ListPlaybackRestrictionPoliciesOutputBuilder,
+) -> crate::operation::list_playback_restriction_policies::builders::ListPlaybackRestrictionPoliciesOutputBuilder {
+    if builder.playback_restriction_policies.is_none() {
+        builder.playback_restriction_policies = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_recording_configurations_output_output_correct_errors(
     mut builder: crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder,
 ) -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsOutputBuilder {
@@ -62,6 +71,21 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn playback_restriction_policy_correct_errors(
+    mut builder: crate::types::builders::PlaybackRestrictionPolicyBuilder,
+) -> crate::types::builders::PlaybackRestrictionPolicyBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.allowed_countries.is_none() {
+        builder.allowed_countries = Some(Default::default())
+    }
+    if builder.allowed_origins.is_none() {
+        builder.allowed_origins = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn recording_configuration_correct_errors(
     mut builder: crate::types::builders::RecordingConfigurationBuilder,
 ) -> crate::types::builders::RecordingConfigurationBuilder {
@@ -88,6 +112,21 @@ pub(crate) fn batch_start_viewer_session_revocation_error_correct_errors(
     }
     if builder.viewer_id.is_none() {
         builder.viewer_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn playback_restriction_policy_summary_correct_errors(
+    mut builder: crate::types::builders::PlaybackRestrictionPolicySummaryBuilder,
+) -> crate::types::builders::PlaybackRestrictionPolicySummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.allowed_countries.is_none() {
+        builder.allowed_countries = Some(Default::default())
+    }
+    if builder.allowed_origins.is_none() {
+        builder.allowed_origins = Some(Default::default())
     }
     builder
 }

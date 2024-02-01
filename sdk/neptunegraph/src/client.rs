@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`CancelQuery`](crate::operation::cancel_query) operation has
+/// a [`Client::cancel_query`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.cancel_query()
+///     .graph_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -138,6 +138,8 @@ impl Client {
 
 mod cancel_import_task;
 
+mod cancel_query;
+
 mod create_graph;
 
 mod create_graph_snapshot;
@@ -157,7 +159,7 @@ mod create_private_graph_endpoint;
 /// # let client: aws_sdk_neptunegraph::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_tags_for_resource()
+/// let result = client.cancel_query()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -179,13 +181,19 @@ mod delete_graph_snapshot;
 
 mod delete_private_graph_endpoint;
 
+mod execute_query;
+
 mod get_graph;
 
 mod get_graph_snapshot;
 
+mod get_graph_summary;
+
 mod get_import_task;
 
 mod get_private_graph_endpoint;
+
+mod get_query;
 
 mod list_graph_snapshots;
 
@@ -194,6 +202,8 @@ mod list_graphs;
 mod list_import_tasks;
 
 mod list_private_graph_endpoints;
+
+mod list_queries;
 
 mod list_tags_for_resource;
 

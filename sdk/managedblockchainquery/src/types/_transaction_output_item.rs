@@ -10,6 +10,8 @@ pub struct TransactionOutputItem {
     pub network: crate::types::QueryNetwork,
     /// <p>The time when the transaction occurred.</p>
     pub transaction_timestamp: ::aws_smithy_types::DateTime,
+    /// <p>Specifies whether to list transactions that have not reached Finality.</p>
+    pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
 }
 impl TransactionOutputItem {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
@@ -24,6 +26,10 @@ impl TransactionOutputItem {
     /// <p>The time when the transaction occurred.</p>
     pub fn transaction_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.transaction_timestamp
+    }
+    /// <p>Specifies whether to list transactions that have not reached Finality.</p>
+    pub fn confirmation_status(&self) -> ::std::option::Option<&crate::types::ConfirmationStatus> {
+        self.confirmation_status.as_ref()
     }
 }
 impl TransactionOutputItem {
@@ -40,6 +46,7 @@ pub struct TransactionOutputItemBuilder {
     pub(crate) transaction_hash: ::std::option::Option<::std::string::String>,
     pub(crate) network: ::std::option::Option<crate::types::QueryNetwork>,
     pub(crate) transaction_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
 }
 impl TransactionOutputItemBuilder {
     /// <p>The hash of the transaction. It is generated whenever a transaction is verified and added to the blockchain.</p>
@@ -87,6 +94,20 @@ impl TransactionOutputItemBuilder {
     pub fn get_transaction_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.transaction_timestamp
     }
+    /// <p>Specifies whether to list transactions that have not reached Finality.</p>
+    pub fn confirmation_status(mut self, input: crate::types::ConfirmationStatus) -> Self {
+        self.confirmation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to list transactions that have not reached Finality.</p>
+    pub fn set_confirmation_status(mut self, input: ::std::option::Option<crate::types::ConfirmationStatus>) -> Self {
+        self.confirmation_status = input;
+        self
+    }
+    /// <p>Specifies whether to list transactions that have not reached Finality.</p>
+    pub fn get_confirmation_status(&self) -> &::std::option::Option<crate::types::ConfirmationStatus> {
+        &self.confirmation_status
+    }
     /// Consumes the builder and constructs a [`TransactionOutputItem`](crate::types::TransactionOutputItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`transaction_hash`](crate::types::builders::TransactionOutputItemBuilder::transaction_hash)
@@ -112,6 +133,7 @@ impl TransactionOutputItemBuilder {
                     "transaction_timestamp was not specified but it is required when building TransactionOutputItem",
                 )
             })?,
+            confirmation_status: self.confirmation_status,
         })
     }
 }

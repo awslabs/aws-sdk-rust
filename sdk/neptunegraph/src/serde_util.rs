@@ -62,6 +62,15 @@ pub(crate) fn cancel_import_task_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn access_denied_exception_correct_errors(
+    mut builder: crate::types::error::builders::AccessDeniedExceptionBuilder,
+) -> crate::types::error::builders::AccessDeniedExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -179,6 +188,18 @@ pub(crate) fn delete_private_graph_endpoint_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn unprocessable_exception_correct_errors(
+    mut builder: crate::types::error::builders::UnprocessableExceptionBuilder,
+) -> crate::types::error::builders::UnprocessableExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = "no value was set".parse::<crate::types::UnprocessableExceptionReason>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_graph_output_output_correct_errors(
     mut builder: crate::operation::get_graph::builders::GetGraphOutputBuilder,
 ) -> crate::operation::get_graph::builders::GetGraphOutputBuilder {
@@ -274,6 +295,15 @@ pub(crate) fn list_private_graph_endpoints_output_output_correct_errors(
 ) -> crate::operation::list_private_graph_endpoints::builders::ListPrivateGraphEndpointsOutputBuilder {
     if builder.private_graph_endpoints.is_none() {
         builder.private_graph_endpoints = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_queries_output_output_correct_errors(
+    mut builder: crate::operation::list_queries::builders::ListQueriesOutputBuilder,
+) -> crate::operation::list_queries::builders::ListQueriesOutputBuilder {
+    if builder.queries.is_none() {
+        builder.queries = Some(Default::default())
     }
     builder
 }

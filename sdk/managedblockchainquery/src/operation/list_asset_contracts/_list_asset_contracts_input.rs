@@ -8,6 +8,10 @@ pub struct ListAssetContractsInput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of contracts to list.</p>
+    /// <p>Default:<code>100</code></p><note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListAssetContractsInput {
@@ -20,6 +24,10 @@ impl ListAssetContractsInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of contracts to list.</p>
+    /// <p>Default:<code>100</code></p><note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -70,16 +78,28 @@ impl ListAssetContractsInputBuilder {
         &self.next_token
     }
     /// <p>The maximum number of contracts to list.</p>
+    /// <p>Default:<code>100</code></p><note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of contracts to list.</p>
+    /// <p>Default:<code>100</code></p><note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The maximum number of contracts to list.</p>
+    /// <p>Default:<code>100</code></p><note>
+    /// <p>Even if additional results can be retrieved, the request can return less results than <code>maxResults</code> or an empty array of results.</p>
+    /// <p>To retrieve the next set of results, make another request with the returned <code>nextToken</code> value. The value of <code>nextToken</code> is <code>null</code> when there are no more results to return</p>
+    /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -11,6 +11,9 @@ impl super::Client {
     ///   - [`endpoints(Option<Vec::<Endpoint>>)`](crate::operation::describe_endpoints::DescribeEndpointsOutput::endpoints): List of endpoints
     ///   - [`next_token(Option<String>)`](crate::operation::describe_endpoints::DescribeEndpointsOutput::next_token): Use this string to request the next batch of endpoints.
     /// - On failure, responds with [`SdkError<DescribeEndpointsError>`](crate::operation::describe_endpoints::DescribeEndpointsError)
+    #[deprecated(
+        note = "DescribeEndpoints and account specific endpoints are no longer required. We recommend that you send your requests directly to the regional endpoint instead."
+    )]
     pub fn describe_endpoints(&self) -> crate::operation::describe_endpoints::builders::DescribeEndpointsFluentBuilder {
         crate::operation::describe_endpoints::builders::DescribeEndpointsFluentBuilder::new(self.handle.clone())
     }

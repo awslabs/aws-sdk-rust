@@ -8,7 +8,7 @@ pub struct CreateGraphUsingImportTaskInput {
     pub graph_name: ::std::option::Option<::std::string::String>,
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>Specifies a KMS key to use to encrypt data imported into the new graph.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ impl CreateGraphUsingImportTaskInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub fn public_connectivity(&self) -> ::std::option::Option<bool> {
         self.public_connectivity
     }
@@ -159,17 +159,17 @@ impl CreateGraphUsingImportTaskInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub fn public_connectivity(mut self, input: bool) -> Self {
         self.public_connectivity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_connectivity = input;
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable).</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         &self.public_connectivity
     }

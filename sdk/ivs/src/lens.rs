@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_playback_key_pairs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_playback_restriction_policies_output_output_next_token(
+    input: &crate::operation::list_playback_restriction_policies::ListPlaybackRestrictionPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recording_configurations_output_output_next_token(
     input: &crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {

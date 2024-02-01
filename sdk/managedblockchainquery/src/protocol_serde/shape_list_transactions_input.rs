@@ -6,35 +6,41 @@ pub fn ser_list_transactions_input_input(
     if let Some(var_1) = &input.address {
         object.key("address").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.from_blockchain_instant {
+    if let Some(var_2) = &input.confirmation_status_filter {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("fromBlockchainInstant").start_object();
-        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_3, var_2)?;
+        let mut object_3 = object.key("confirmationStatusFilter").start_object();
+        crate::protocol_serde::shape_confirmation_status_filter::ser_confirmation_status_filter(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_4) = &input.from_blockchain_instant {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("fromBlockchainInstant").start_object();
+        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.network {
-        object.key("network").string(var_5.as_str());
+    if let Some(var_7) = &input.network {
+        object.key("network").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("nextToken").string(var_6.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.sort {
+    if let Some(var_9) = &input.sort {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("sort").start_object();
-        crate::protocol_serde::shape_list_transactions_sort::ser_list_transactions_sort(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.to_blockchain_instant {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("toBlockchainInstant").start_object();
-        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_10, var_9)?;
+        let mut object_10 = object.key("sort").start_object();
+        crate::protocol_serde::shape_list_transactions_sort::ser_list_transactions_sort(&mut object_10, var_9)?;
         object_10.finish();
+    }
+    if let Some(var_11) = &input.to_blockchain_instant {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("toBlockchainInstant").start_object();
+        crate::protocol_serde::shape_blockchain_instant::ser_blockchain_instant(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

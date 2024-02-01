@@ -13,6 +13,9 @@ pub mod batch_start_viewer_session_revocation;
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
+/// Types for the `CreatePlaybackRestrictionPolicy` operation.
+pub mod create_playback_restriction_policy;
+
 /// Types for the `CreateRecordingConfiguration` operation.
 pub mod create_recording_configuration;
 
@@ -25,6 +28,9 @@ pub mod delete_channel;
 /// Types for the `DeletePlaybackKeyPair` operation.
 pub mod delete_playback_key_pair;
 
+/// Types for the `DeletePlaybackRestrictionPolicy` operation.
+pub mod delete_playback_restriction_policy;
+
 /// Types for the `DeleteRecordingConfiguration` operation.
 pub mod delete_recording_configuration;
 
@@ -36,6 +42,9 @@ pub mod get_channel;
 
 /// Types for the `GetPlaybackKeyPair` operation.
 pub mod get_playback_key_pair;
+
+/// Types for the `GetPlaybackRestrictionPolicy` operation.
+pub mod get_playback_restriction_policy;
 
 /// Types for the `GetRecordingConfiguration` operation.
 pub mod get_recording_configuration;
@@ -57,6 +66,9 @@ pub mod list_channels;
 
 /// Types for the `ListPlaybackKeyPairs` operation.
 pub mod list_playback_key_pairs;
+
+/// Types for the `ListPlaybackRestrictionPolicies` operation.
+pub mod list_playback_restriction_policies;
 
 /// Types for the `ListRecordingConfigurations` operation.
 pub mod list_recording_configurations;
@@ -90,3 +102,6 @@ pub mod untag_resource;
 
 /// Types for the `UpdateChannel` operation.
 pub mod update_channel;
+
+/// Types for the `UpdatePlaybackRestrictionPolicy` operation.
+pub mod update_playback_restriction_policy;

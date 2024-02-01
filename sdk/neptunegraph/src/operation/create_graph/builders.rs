@@ -185,17 +185,17 @@ impl CreateGraphFluentBuilder {
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
         self.inner.get_vector_search_configuration()
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.inner = self.inner.replica_count(input);
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replica_count(input);
         self
     }
-    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default =1</p>
+    /// <p>The number of replicas in other AZs. Min =0, Max = 2, Default = 1.</p>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_replica_count()
     }

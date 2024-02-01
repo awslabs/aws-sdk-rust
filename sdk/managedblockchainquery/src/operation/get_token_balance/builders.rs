@@ -23,7 +23,7 @@ impl GetTokenBalanceInputBuilder {
 /// Fluent builder constructing a request to `GetTokenBalance`.
 ///
 /// <p>Gets the balance of a specific token, including native tokens, for a given address (wallet or contract) on the blockchain.</p><note>
-/// <p>Only the native tokens BTC,ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
+/// <p>Only the native tokens BTC and ETH, and the ERC-20, ERC-721, and ERC 1155 token standards are supported.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTokenBalanceFluentBuilder {

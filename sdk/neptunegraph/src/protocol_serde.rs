@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_cancel_import_task;
 
+pub(crate) mod shape_cancel_query;
+
 pub(crate) mod shape_create_graph;
 
 pub(crate) mod shape_create_graph_snapshot;
@@ -39,13 +41,19 @@ pub(crate) mod shape_delete_graph_snapshot;
 
 pub(crate) mod shape_delete_private_graph_endpoint;
 
+pub(crate) mod shape_execute_query;
+
 pub(crate) mod shape_get_graph;
 
 pub(crate) mod shape_get_graph_snapshot;
 
+pub(crate) mod shape_get_graph_summary;
+
 pub(crate) mod shape_get_import_task;
 
 pub(crate) mod shape_get_private_graph_endpoint;
+
+pub(crate) mod shape_get_query;
 
 pub(crate) mod shape_list_graph_snapshots;
 
@@ -54,6 +62,8 @@ pub(crate) mod shape_list_graphs;
 pub(crate) mod shape_list_import_tasks;
 
 pub(crate) mod shape_list_private_graph_endpoints;
+
+pub(crate) mod shape_list_queries;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -75,6 +85,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_graph_input;
@@ -84,6 +96,10 @@ pub(crate) mod shape_create_graph_snapshot_input;
 pub(crate) mod shape_create_graph_using_import_task_input;
 
 pub(crate) mod shape_create_private_graph_endpoint_input;
+
+pub(crate) mod shape_execute_query_input;
+
+pub(crate) mod shape_execute_query_output;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -99,9 +115,13 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
+pub(crate) mod shape_unprocessable_exception;
+
 pub(crate) mod shape_update_graph_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_graph_data_summary;
 
 pub(crate) mod shape_graph_snapshot_summary_list;
 
@@ -115,11 +135,17 @@ pub(crate) mod shape_import_task_summary_list;
 
 pub(crate) mod shape_private_graph_endpoint_summary_list;
 
+pub(crate) mod shape_query_summary_list;
+
 pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_vector_search_configuration;
+
+pub(crate) mod shape_edge_labels;
+
+pub(crate) mod shape_edge_structures;
 
 pub(crate) mod shape_graph_snapshot_summary;
 
@@ -127,6 +153,26 @@ pub(crate) mod shape_graph_summary;
 
 pub(crate) mod shape_import_task_summary;
 
+pub(crate) mod shape_long_valued_map_list;
+
 pub(crate) mod shape_neptune_import_options;
 
+pub(crate) mod shape_node_labels;
+
+pub(crate) mod shape_node_structures;
+
 pub(crate) mod shape_private_graph_endpoint_summary;
+
+pub(crate) mod shape_query_summary;
+
+pub(crate) mod shape_edge_structure;
+
+pub(crate) mod shape_long_valued_map;
+
+pub(crate) mod shape_node_structure;
+
+pub(crate) mod shape_edge_properties;
+
+pub(crate) mod shape_node_properties;
+
+pub(crate) mod shape_outgoing_edge_labels;

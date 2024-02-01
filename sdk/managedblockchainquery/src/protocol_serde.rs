@@ -85,6 +85,8 @@ pub(crate) mod shape_batch_get_token_balance_output_list;
 
 pub(crate) mod shape_blockchain_instant;
 
+pub(crate) mod shape_confirmation_status_filter;
+
 pub(crate) mod shape_contract_filter;
 
 pub(crate) mod shape_contract_identifier;

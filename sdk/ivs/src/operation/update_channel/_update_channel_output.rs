@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelOutput {
-    /// <p>Object specifying a channel.</p>
+    /// <p>Object specifying the updated channel.</p>
     pub channel: ::std::option::Option<crate::types::Channel>,
     _request_id: Option<String>,
 }
 impl UpdateChannelOutput {
-    /// <p>Object specifying a channel.</p>
+    /// <p>Object specifying the updated channel.</p>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateChannelOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateChannelOutputBuilder {
-    /// <p>Object specifying a channel.</p>
+    /// <p>Object specifying the updated channel.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Object specifying a channel.</p>
+    /// <p>Object specifying the updated channel.</p>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>Object specifying a channel.</p>
+    /// <p>Object specifying the updated channel.</p>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }

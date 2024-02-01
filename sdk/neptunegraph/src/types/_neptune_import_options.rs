@@ -10,7 +10,7 @@ pub struct NeptuneImportOptions {
     pub s3_export_kms_key_id: ::std::string::String,
     /// <p>Neptune Analytics supports label-less vertices and no labels are assigned unless one is explicitly provided. Neptune assigns default labels when none is explicitly provided. When importing the data into Neptune Analytics, the default vertex labels can be omitted by setting <i>preserveDefaultVertexLabels</i> to false. Note that if the vertex only has default labels, and has no other properties or edges, then the vertex will effectively not get imported into Neptune Analytics when preserveDefaultVertexLabels is set to false.</p>
     pub preserve_default_vertex_labels: ::std::option::Option<bool>,
-    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name neptuneEdgeId.</p>
+    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub preserve_edge_ids: ::std::option::Option<bool>,
 }
 impl NeptuneImportOptions {
@@ -28,7 +28,7 @@ impl NeptuneImportOptions {
     pub fn preserve_default_vertex_labels(&self) -> ::std::option::Option<bool> {
         self.preserve_default_vertex_labels
     }
-    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name neptuneEdgeId.</p>
+    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub fn preserve_edge_ids(&self) -> ::std::option::Option<bool> {
         self.preserve_edge_ids
     }
@@ -94,17 +94,17 @@ impl NeptuneImportOptionsBuilder {
     pub fn get_preserve_default_vertex_labels(&self) -> &::std::option::Option<bool> {
         &self.preserve_default_vertex_labels
     }
-    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name neptuneEdgeId.</p>
+    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub fn preserve_edge_ids(mut self, input: bool) -> Self {
         self.preserve_edge_ids = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name neptuneEdgeId.</p>
+    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub fn set_preserve_edge_ids(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_edge_ids = input;
         self
     }
-    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name neptuneEdgeId.</p>
+    /// <p>Neptune Analytics currently does not support user defined edge ids. The edge ids are not imported by default. They are imported if <i>preserveEdgeIds</i> is set to true, and ids are stored as properties on the relationships with the property name <i>neptuneEdgeId</i>.</p>
     pub fn get_preserve_edge_ids(&self) -> &::std::option::Option<bool> {
         &self.preserve_edge_ids
     }

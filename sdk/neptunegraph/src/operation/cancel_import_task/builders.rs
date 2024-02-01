@@ -22,7 +22,7 @@ impl CancelImportTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `CancelImportTask`.
 ///
-/// <p>Deletes the specified import task</p>
+/// <p>Deletes the specified import task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelImportTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

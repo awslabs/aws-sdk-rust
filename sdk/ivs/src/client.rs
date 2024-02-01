@@ -144,6 +144,8 @@ mod batch_start_viewer_session_revocation;
 
 mod create_channel;
 
+mod create_playback_restriction_policy;
+
 mod create_recording_configuration;
 
 mod create_stream_key;
@@ -179,6 +181,8 @@ mod delete_channel;
 
 mod delete_playback_key_pair;
 
+mod delete_playback_restriction_policy;
+
 mod delete_recording_configuration;
 
 mod delete_stream_key;
@@ -186,6 +190,8 @@ mod delete_stream_key;
 mod get_channel;
 
 mod get_playback_key_pair;
+
+mod get_playback_restriction_policy;
 
 mod get_recording_configuration;
 
@@ -200,6 +206,8 @@ mod import_playback_key_pair;
 mod list_channels;
 
 mod list_playback_key_pairs;
+
+mod list_playback_restriction_policies;
 
 mod list_recording_configurations;
 
@@ -222,3 +230,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_channel;
+
+mod update_playback_restriction_policy;

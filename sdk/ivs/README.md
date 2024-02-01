@@ -22,6 +22,7 @@ The following resources contain information about your IVS live stream (see [Get
   - __Stream key__ — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize streaming. See the StreamKey endpoints for more information. _ __Treat the stream key like a secret, since it allows anyone to stream to the channel.__ _
   - __Playback key pair__ — Video playback may be restricted using playback-authorization tokens, which use public-key encryption. A playback key pair is the public-private pair of keys used to sign and validate the playback-authorization token. See the PlaybackKeyPair endpoints for more information.
   - __Recording configuration__ — Stores configuration related to recording a live stream and where to store the recorded content. Multiple channels can reference the same recording configuration. See the Recording Configuration endpoints for more information.
+  - __Playback restriction policy__ — Restricts playback by countries and/or origin sites. See the Playback Restriction Policy endpoints for more information.
 
 __Tagging__
 
@@ -61,20 +62,12 @@ __Channel Endpoints__
   - UpdateChannel — Updates a channel's configuration. This does not affect an ongoing stream of this channel. You must stop and restart the stream for the changes to take effect.
   - DeleteChannel — Deletes the specified channel.
 
-__StreamKey Endpoints__
-  - CreateStreamKey — Creates a stream key, used to initiate a stream, for the specified channel ARN.
-  - GetStreamKey — Gets stream key information for the specified ARN.
-  - BatchGetStreamKey — Performs GetStreamKey on multiple ARNs simultaneously.
-  - ListStreamKeys — Gets summary information about stream keys for the specified channel.
-  - DeleteStreamKey — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
-
-__Stream Endpoints__
-  - GetStream — Gets information about the active (live) stream on a specified channel.
-  - GetStreamSession — Gets metadata on a specified stream.
-  - ListStreams — Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed.
-  - ListStreamSessions — Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed.
-  - StopStream — Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with DeleteStreamKey to prevent further streaming to a channel.
-  - PutMetadata — Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed.
+__Playback Restriction Policy Endpoints__
+  - CreatePlaybackRestrictionPolicy — Creates a new playback restriction policy, for constraining playback by countries and/or origins.
+  - DeletePlaybackRestrictionPolicy — Deletes the specified playback restriction policy
+  - GetPlaybackRestrictionPolicy — Gets the specified playback restriction policy.
+  - ListPlaybackRestrictionPolicies — Gets summary information about playback restriction policies.
+  - UpdatePlaybackRestrictionPolicy — Updates a specified playback restriction policy.
 
 __Private Channel Endpoints__
 
@@ -91,6 +84,21 @@ __RecordingConfiguration Endpoints__
   - GetRecordingConfiguration — Gets the recording-configuration metadata for the specified ARN.
   - ListRecordingConfigurations — Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed.
   - DeleteRecordingConfiguration — Deletes the recording configuration for the specified ARN.
+
+__Stream Endpoints__
+  - GetStream — Gets information about the active (live) stream on a specified channel.
+  - GetStreamSession — Gets metadata on a specified stream.
+  - ListStreams — Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed.
+  - ListStreamSessions — Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed.
+  - StopStream — Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with DeleteStreamKey to prevent further streaming to a channel.
+  - PutMetadata — Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed.
+
+__StreamKey Endpoints__
+  - CreateStreamKey — Creates a stream key, used to initiate a stream, for the specified channel ARN.
+  - GetStreamKey — Gets stream key information for the specified ARN.
+  - BatchGetStreamKey — Performs GetStreamKey on multiple ARNs simultaneously.
+  - ListStreamKeys — Gets summary information about stream keys for the specified channel.
+  - DeleteStreamKey — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
 
 __Amazon Web Services Tags Endpoints__
   - TagResource — Adds or updates tags for the Amazon Web Services resource with the specified ARN.
@@ -109,7 +117,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
-aws-sdk-ivs = "1.12.0"
+aws-sdk-ivs = "1.13.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

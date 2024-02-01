@@ -22,7 +22,9 @@ impl GetTransactionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTransaction`.
 ///
-/// <p>Get the details of a transaction.</p>
+/// <p>Gets the details of a transaction.</p><note>
+/// <p>This action will return transaction details for all transactions that are <i>confirmed</i> on the blockchain, even if they have not reached <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTransactionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

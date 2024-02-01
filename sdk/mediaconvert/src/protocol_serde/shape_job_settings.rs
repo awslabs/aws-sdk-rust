@@ -135,7 +135,9 @@ where
                         }
                         "colorConversion3DLUTSettings" => {
                             builder = builder.set_color_conversion3_dlut_settings(
-                                crate::protocol_serde::shape_color_conversion3_dlut_settings::de_color_conversion3_dlut_settings(tokens)?,
+                                crate::protocol_serde::shape_list_of_color_conversion3_dlut_setting::de_list_of_color_conversion3_dlut_setting(
+                                    tokens,
+                                )?,
                             );
                         }
                         "esam" => {

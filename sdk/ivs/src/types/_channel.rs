@@ -12,7 +12,7 @@ pub struct Channel {
     pub latency_mode: ::std::option::Option<crate::types::ChannelLatencyMode>,
     /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.</i> Default: <code>STANDARD</code>. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel Types</a>.</p>
     pub r#type: ::std::option::Option<crate::types::ChannelType>,
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).</p>
     pub recording_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>Channel ingest endpoint, part of the definition of an ingest server, used when you set up streaming software.</p>
     pub ingest_endpoint: ::std::option::Option<::std::string::String>,
@@ -26,6 +26,8 @@ pub struct Channel {
     pub insecure_ingest: bool,
     /// <p>Optional transcode preset for the channel. This is selectable only for <code>ADVANCED_HD</code> and <code>ADVANCED_SD</code> channel types. For those channel types, the default <code>preset</code> is <code>HIGHER_BANDWIDTH_DELIVERY</code>. For other channel types (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty string (<code>""</code>).</p>
     pub preset: ::std::option::Option<crate::types::TranscodePreset>,
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
+    pub playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl Channel {
     /// <p>Channel ARN.</p>
@@ -44,7 +46,7 @@ impl Channel {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
         self.r#type.as_ref()
     }
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).</p>
     pub fn recording_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.recording_configuration_arn.as_deref()
     }
@@ -72,6 +74,10 @@ impl Channel {
     pub fn preset(&self) -> ::std::option::Option<&crate::types::TranscodePreset> {
         self.preset.as_ref()
     }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
+    pub fn playback_restriction_policy_arn(&self) -> ::std::option::Option<&str> {
+        self.playback_restriction_policy_arn.as_deref()
+    }
 }
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
@@ -95,6 +101,7 @@ pub struct ChannelBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) insecure_ingest: ::std::option::Option<bool>,
     pub(crate) preset: ::std::option::Option<crate::types::TranscodePreset>,
+    pub(crate) playback_restriction_policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl ChannelBuilder {
     /// <p>Channel ARN.</p>
@@ -153,17 +160,17 @@ impl ChannelBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChannelType> {
         &self.r#type
     }
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).</p>
     pub fn recording_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recording_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).</p>
     pub fn set_recording_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recording_configuration_arn = input;
         self
     }
-    /// <p>Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: "" (empty string, recording is disabled).</p>
+    /// <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).</p>
     pub fn get_recording_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_configuration_arn
     }
@@ -257,6 +264,20 @@ impl ChannelBuilder {
     pub fn get_preset(&self) -> &::std::option::Option<crate::types::TranscodePreset> {
         &self.preset
     }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
+    pub fn playback_restriction_policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.playback_restriction_policy_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
+    pub fn set_playback_restriction_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.playback_restriction_policy_arn = input;
+        self
+    }
+    /// <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).</p>
+    pub fn get_playback_restriction_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.playback_restriction_policy_arn
+    }
     /// Consumes the builder and constructs a [`Channel`](crate::types::Channel).
     pub fn build(self) -> crate::types::Channel {
         crate::types::Channel {
@@ -271,6 +292,7 @@ impl ChannelBuilder {
             tags: self.tags,
             insecure_ingest: self.insecure_ingest.unwrap_or_default(),
             preset: self.preset,
+            playback_restriction_policy_arn: self.playback_restriction_policy_arn,
         }
     }
 }
