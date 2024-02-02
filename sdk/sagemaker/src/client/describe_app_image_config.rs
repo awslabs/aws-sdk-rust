@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`app_image_config_name(impl Into<String>)`](crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder::app_image_config_name) / [`set_app_image_config_name(Option<String>)`](crate::operation::describe_app_image_config::builders::DescribeAppImageConfigFluentBuilder::set_app_image_config_name):<br>required: **true**<br><p>The name of the AppImageConfig to describe.</p><br>
     /// - On success, responds with [`DescribeAppImageConfigOutput`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput) with field(s):
-    ///   - [`app_image_config_arn(Option<String>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::app_image_config_arn): <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+    ///   - [`app_image_config_arn(Option<String>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::app_image_config_arn): <p>The ARN of the AppImageConfig.</p>
     ///   - [`app_image_config_name(Option<String>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::app_image_config_name): <p>The name of the AppImageConfig.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::creation_time): <p>When the AppImageConfig was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_app_image_config::DescribeAppImageConfigOutput::last_modified_time): <p>When the AppImageConfig was last modified.</p>

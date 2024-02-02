@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`auto_ml_job_arn(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_arn): <p>Returns the ARN of the AutoML job.</p>
     ///   - [`input_data_config(Option<Vec::<AutoMlChannel>>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::input_data_config): <p>Returns the input data configuration for the AutoML job.</p>
     ///   - [`output_data_config(Option<AutoMlOutputDataConfig>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::output_data_config): <p>Returns the job's output data config.</p>
-    ///   - [`role_arn(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::role_arn): <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    ///   - [`role_arn(Option<String>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::role_arn): <p>The ARN of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     ///   - [`auto_ml_job_objective(Option<AutoMlJobObjective>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_objective): <p>Returns the job's objective.</p>
     ///   - [`problem_type(Option<ProblemType>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::problem_type): <p>Returns the job's problem type.</p>
     ///   - [`auto_ml_job_config(Option<AutoMlJobConfig>)`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobOutput::auto_ml_job_config): <p>Returns the configuration for the AutoML job.</p>

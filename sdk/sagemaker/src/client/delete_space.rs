@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSpace`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::set_domain_id):<br>required: **true**<br><p>The ID of the associated Domain.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::set_domain_id):<br>required: **true**<br><p>The ID of the associated domain.</p><br>
     ///   - [`space_name(impl Into<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::delete_space::builders::DeleteSpaceFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     /// - On success, responds with [`DeleteSpaceOutput`](crate::operation::delete_space::DeleteSpaceOutput)
     /// - On failure, responds with [`SdkError<DeleteSpaceError>`](crate::operation::delete_space::DeleteSpaceError)

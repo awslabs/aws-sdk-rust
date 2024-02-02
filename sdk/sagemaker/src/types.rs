@@ -53,6 +53,8 @@ pub use crate::types::_code_editor_app_settings::CodeEditorAppSettings;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
+pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
+
 pub use crate::types::_kendra_settings::KendraSettings;
 
 pub use crate::types::_feature_status::FeatureStatus;
@@ -2218,6 +2220,8 @@ mod _flow_definition_status;
 mod _flow_definition_summary;
 
 mod _framework;
+
+mod _generative_ai_settings;
 
 mod _git_config;
 

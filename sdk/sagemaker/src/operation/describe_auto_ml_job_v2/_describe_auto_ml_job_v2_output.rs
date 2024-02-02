@@ -11,7 +11,7 @@ pub struct DescribeAutoMlJobV2Output {
     pub auto_ml_job_input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlJobChannel>>,
     /// <p>Returns the job's output data config.</p>
     pub output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
-    /// <p>The ARN of the Identity and Access Management role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The ARN of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Returns the job's objective.</p>
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
@@ -68,7 +68,7 @@ impl DescribeAutoMlJobV2Output {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::AutoMlOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The ARN of the Identity and Access Management role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The ARN of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
@@ -249,18 +249,18 @@ impl DescribeAutoMlJobV2OutputBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>The ARN of the Identity and Access Management role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The ARN of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     /// This field is required.
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Identity and Access Management role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The ARN of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
-    /// <p>The ARN of the Identity and Access Management role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The ARN of the IAM role that has read permission to the input data location and write permission to the output data location in Amazon S3.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }

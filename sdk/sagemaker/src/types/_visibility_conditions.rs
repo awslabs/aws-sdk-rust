@@ -4,13 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisibilityConditions {
-    /// <p>The key for that specifies the tag that you're using to filter the search results. The key must start with <code>Tags.</code>.</p>
+    /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key>
+    /// /EqualsIfExists
+    /// </key></code>.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for the tag that you're using to filter the search results.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl VisibilityConditions {
-    /// <p>The key for that specifies the tag that you're using to filter the search results. The key must start with <code>Tags.</code>.</p>
+    /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key>
+    /// /EqualsIfExists
+    /// </key></code>.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
@@ -34,17 +38,23 @@ pub struct VisibilityConditionsBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl VisibilityConditionsBuilder {
-    /// <p>The key for that specifies the tag that you're using to filter the search results. The key must start with <code>Tags.</code>.</p>
+    /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key>
+    /// /EqualsIfExists
+    /// </key></code>.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The key for that specifies the tag that you're using to filter the search results. The key must start with <code>Tags.</code>.</p>
+    /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key>
+    /// /EqualsIfExists
+    /// </key></code>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>The key for that specifies the tag that you're using to filter the search results. The key must start with <code>Tags.</code>.</p>
+    /// <p>The key that specifies the tag that you're using to filter the search results. It must be in the following format: <code>Tags.<key>
+    /// /EqualsIfExists
+    /// </key></code>.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }

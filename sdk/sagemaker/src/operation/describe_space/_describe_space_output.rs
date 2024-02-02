@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpaceOutput {
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The space's Amazon Resource Name (ARN).</p>
     pub space_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    /// <p>The ID of the space's profile in the Amazon EFS volume.</p>
     pub home_efs_file_system_uid: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::SpaceStatus>,
@@ -41,7 +41,7 @@ pub struct DescribeSpaceOutput {
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutput {
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -53,7 +53,7 @@ impl DescribeSpaceOutput {
     pub fn space_name(&self) -> ::std::option::Option<&str> {
         self.space_name.as_deref()
     }
-    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    /// <p>The ID of the space's profile in the Amazon EFS volume.</p>
     pub fn home_efs_file_system_uid(&self) -> ::std::option::Option<&str> {
         self.home_efs_file_system_uid.as_deref()
     }
@@ -135,17 +135,17 @@ pub struct DescribeSpaceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeSpaceOutputBuilder {
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
@@ -177,17 +177,17 @@ impl DescribeSpaceOutputBuilder {
     pub fn get_space_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.space_name
     }
-    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    /// <p>The ID of the space's profile in the Amazon EFS volume.</p>
     pub fn home_efs_file_system_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    /// <p>The ID of the space's profile in the Amazon EFS volume.</p>
     pub fn set_home_efs_file_system_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = input;
         self
     }
-    /// <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    /// <p>The ID of the space's profile in the Amazon EFS volume.</p>
     pub fn get_home_efs_file_system_uid(&self) -> &::std::option::Option<::std::string::String> {
         &self.home_efs_file_system_uid
     }

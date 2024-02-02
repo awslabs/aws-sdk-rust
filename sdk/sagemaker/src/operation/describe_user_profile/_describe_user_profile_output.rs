@@ -9,7 +9,7 @@ pub struct DescribeUserProfileOutput {
     pub user_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user profile name.</p>
     pub user_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub home_efs_file_system_uid: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::UserProfileStatus>,
@@ -40,7 +40,7 @@ impl DescribeUserProfileOutput {
     pub fn user_profile_name(&self) -> ::std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
-    /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub fn home_efs_file_system_uid(&self) -> ::std::option::Option<&str> {
         self.home_efs_file_system_uid.as_deref()
     }
@@ -145,17 +145,17 @@ impl DescribeUserProfileOutputBuilder {
     pub fn get_user_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_profile_name
     }
-    /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub fn home_efs_file_system_uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub fn set_home_efs_file_system_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_efs_file_system_uid = input;
         self
     }
-    /// <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    /// <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     pub fn get_home_efs_file_system_uid(&self) -> &::std::option::Option<::std::string::String> {
         &self.home_efs_file_system_uid
     }

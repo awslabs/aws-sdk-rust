@@ -3,13 +3,13 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeSpace`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_domain_id):<br>required: **true**<br><p>The ID of the associated Domain.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_domain_id):<br>required: **true**<br><p>The ID of the associated domain.</p><br>
     ///   - [`space_name(impl Into<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::space_name) / [`set_space_name(Option<String>)`](crate::operation::describe_space::builders::DescribeSpaceFluentBuilder::set_space_name):<br>required: **true**<br><p>The name of the space.</p><br>
     /// - On success, responds with [`DescribeSpaceOutput`](crate::operation::describe_space::DescribeSpaceOutput) with field(s):
-    ///   - [`domain_id(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::domain_id): <p>The ID of the associated Domain.</p>
+    ///   - [`domain_id(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::domain_id): <p>The ID of the associated domain.</p>
     ///   - [`space_arn(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::space_arn): <p>The space's Amazon Resource Name (ARN).</p>
     ///   - [`space_name(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::space_name): <p>The name of the space.</p>
-    ///   - [`home_efs_file_system_uid(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::home_efs_file_system_uid): <p>The ID of the space's profile in the Amazon Elastic File System volume.</p>
+    ///   - [`home_efs_file_system_uid(Option<String>)`](crate::operation::describe_space::DescribeSpaceOutput::home_efs_file_system_uid): <p>The ID of the space's profile in the Amazon EFS volume.</p>
     ///   - [`status(Option<SpaceStatus>)`](crate::operation::describe_space::DescribeSpaceOutput::status): <p>The status.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_space::DescribeSpaceOutput::last_modified_time): <p>The last modified time.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_space::DescribeSpaceOutput::creation_time): <p>The creation time.</p>

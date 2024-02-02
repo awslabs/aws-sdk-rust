@@ -11,7 +11,7 @@ pub struct ListSpacesInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub sort_by: ::std::option::Option<crate::types::SpaceSortKey>,
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub domain_id_equals: ::std::option::Option<::std::string::String>,
     /// <p>A parameter by which to filter the results.</p>
     pub space_name_contains: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl ListSpacesInput {
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SpaceSortKey> {
         self.sort_by.as_ref()
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn domain_id_equals(&self) -> ::std::option::Option<&str> {
         self.domain_id_equals.as_deref()
     }
@@ -117,17 +117,17 @@ impl ListSpacesInputBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SpaceSortKey> {
         &self.sort_by
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id_equals = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id_equals = input;
         self
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn get_domain_id_equals(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id_equals
     }

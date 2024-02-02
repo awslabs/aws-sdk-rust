@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`domain_id(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::domain_id): <p>The ID of the domain that contains the profile.</p>
     ///   - [`user_profile_arn(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>
     ///   - [`user_profile_name(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::user_profile_name): <p>The user profile name.</p>
-    ///   - [`home_efs_file_system_uid(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::home_efs_file_system_uid): <p>The ID of the user's profile in the Amazon Elastic File System (EFS) volume.</p>
+    ///   - [`home_efs_file_system_uid(Option<String>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::home_efs_file_system_uid): <p>The ID of the user's profile in the Amazon Elastic File System volume.</p>
     ///   - [`status(Option<UserProfileStatus>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::status): <p>The status.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::last_modified_time): <p>The last modified time.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_user_profile::DescribeUserProfileOutput::creation_time): <p>The creation time.</p>

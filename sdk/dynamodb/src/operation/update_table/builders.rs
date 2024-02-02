@@ -250,21 +250,21 @@ impl UpdateTableFluentBuilder {
         self.inner.get_global_secondary_index_updates()
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn stream_specification(mut self, input: crate::types::StreamSpecification) -> Self {
         self.inner = self.inner.stream_specification(input);
         self
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn set_stream_specification(mut self, input: ::std::option::Option<crate::types::StreamSpecification>) -> Self {
         self.inner = self.inner.set_stream_specification(input);
         self
     }
     /// <p>Represents the DynamoDB Streams configuration for the table.</p><note>
-    /// <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
+    /// <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p>
     /// </note>
     pub fn get_stream_specification(&self) -> &::std::option::Option<crate::types::StreamSpecification> {
         self.inner.get_stream_specification()

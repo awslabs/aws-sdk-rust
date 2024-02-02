@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageVersionInput {
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>
@@ -58,7 +58,7 @@ pub struct CreateImageVersionInput {
     pub release_notes: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageVersionInput {
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>
@@ -160,7 +160,7 @@ pub struct CreateImageVersionInputBuilder {
     pub(crate) release_notes: ::std::option::Option<::std::string::String>,
 }
 impl CreateImageVersionInputBuilder {
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>
@@ -173,7 +173,7 @@ impl CreateImageVersionInputBuilder {
         self.base_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>
@@ -185,7 +185,7 @@ impl CreateImageVersionInputBuilder {
         self.base_image = input;
         self
     }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>

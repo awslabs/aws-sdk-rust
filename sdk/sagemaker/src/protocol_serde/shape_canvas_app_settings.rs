@@ -45,6 +45,12 @@ pub fn ser_canvas_app_settings(
         crate::protocol_serde::shape_kendra_settings::ser_kendra_settings(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.generative_ai_settings {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("GenerativeAiSettings").start_object();
+        crate::protocol_serde::shape_generative_ai_settings::ser_generative_ai_settings(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -87,6 +93,10 @@ where
                         }
                         "KendraSettings" => {
                             builder = builder.set_kendra_settings(crate::protocol_serde::shape_kendra_settings::de_kendra_settings(tokens)?);
+                        }
+                        "GenerativeAiSettings" => {
+                            builder = builder
+                                .set_generative_ai_settings(crate::protocol_serde::shape_generative_ai_settings::de_generative_ai_settings(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

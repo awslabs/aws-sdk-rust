@@ -78,7 +78,7 @@ pub(super) fn resolve_endpoint(
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
-                                out.push_str("https://api-fips.sagemaker.");
+                                out.push_str("https://api.sagemaker.");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&region);
                                 out.push_str(".amazonaws.com");

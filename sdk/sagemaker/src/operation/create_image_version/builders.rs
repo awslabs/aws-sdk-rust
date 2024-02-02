@@ -22,7 +22,7 @@ impl CreateImageVersionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateImageVersion`.
 ///
-/// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
+/// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon ECR container image specified by <code>BaseImage</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,7 +108,7 @@ impl CreateImageVersionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>
@@ -120,7 +120,7 @@ impl CreateImageVersionFluentBuilder {
         self.inner = self.inner.base_image(input.into());
         self
     }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>
@@ -132,7 +132,7 @@ impl CreateImageVersionFluentBuilder {
         self.inner = self.inner.set_base_image(input);
         self
     }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:</p>
     /// <p><code><acct-id>
     /// .dkr.ecr.
     /// <region>

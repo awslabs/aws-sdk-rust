@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpaceDetails {
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the space.</p>
     pub space_name: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct SpaceDetails {
     pub space_display_name: ::std::option::Option<::std::string::String>,
 }
 impl SpaceDetails {
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
@@ -83,17 +83,17 @@ pub struct SpaceDetailsBuilder {
     pub(crate) space_display_name: ::std::option::Option<::std::string::String>,
 }
 impl SpaceDetailsBuilder {
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_id = input;
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }

@@ -45,6 +45,8 @@ pub use crate::types::_code_editor_app_settings::CodeEditorAppSettingsBuilder;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
+pub use crate::types::_generative_ai_settings::GenerativeAiSettingsBuilder;
+
 pub use crate::types::_kendra_settings::KendraSettingsBuilder;
 
 pub use crate::types::_direct_deploy_settings::DirectDeploySettingsBuilder;

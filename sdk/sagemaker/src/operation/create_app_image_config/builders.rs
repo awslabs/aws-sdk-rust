@@ -22,7 +22,7 @@ impl CreateAppImageConfigInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateAppImageConfig`.
 ///
-/// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.</p>
+/// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the Amazon Elastic File System storage volume on the image, and a list of the kernels in the image.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAppImageConfigFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

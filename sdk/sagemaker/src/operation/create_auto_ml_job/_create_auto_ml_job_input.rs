@@ -9,7 +9,7 @@ pub struct CreateAutoMlJobInput {
     pub input_data_config: ::std::option::Option<::std::vec::Vec<crate::types::AutoMlChannel>>,
     /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.</p>
     pub output_data_config: ::std::option::Option<crate::types::AutoMlOutputDataConfig>,
-    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
+    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> SageMaker Autopilot problem types</a>.</p>
     pub problem_type: ::std::option::Option<crate::types::ProblemType>,
     /// <p>Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. See <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a> for the default values.</p>
     pub auto_ml_job_objective: ::std::option::Option<crate::types::AutoMlJobObjective>,
@@ -39,7 +39,7 @@ impl CreateAutoMlJobInput {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::AutoMlOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
+    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> SageMaker Autopilot problem types</a>.</p>
     pub fn problem_type(&self) -> ::std::option::Option<&crate::types::ProblemType> {
         self.problem_type.as_ref()
     }
@@ -143,17 +143,17 @@ impl CreateAutoMlJobInputBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::AutoMlOutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
+    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> SageMaker Autopilot problem types</a>.</p>
     pub fn problem_type(mut self, input: crate::types::ProblemType) -> Self {
         self.problem_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
+    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> SageMaker Autopilot problem types</a>.</p>
     pub fn set_problem_type(mut self, input: ::std::option::Option<crate::types::ProblemType>) -> Self {
         self.problem_type = input;
         self
     }
-    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> Amazon SageMaker Autopilot problem types</a>.</p>
+    /// <p>Defines the type of supervised learning problem available for the candidates. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types"> SageMaker Autopilot problem types</a>.</p>
     pub fn get_problem_type(&self) -> &::std::option::Option<crate::types::ProblemType> {
         &self.problem_type
     }

@@ -11,7 +11,7 @@ pub struct UpdateDomainInput {
     pub domain_settings_for_update: ::std::option::Option<crate::types::DomainSettingsForUpdate>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub app_security_group_management: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
-    /// <p>The default settings used to create a space within the Domain.</p>
+    /// <p>The default settings used to create a space within the domain.</p>
     pub default_space_settings: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     /// <p>The VPC subnets that Studio uses for communication.</p>
     /// <p>If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>, or <code>Deleting</code> state.</p>
@@ -43,7 +43,7 @@ impl UpdateDomainInput {
     pub fn app_security_group_management(&self) -> ::std::option::Option<&crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
+    /// <p>The default settings used to create a space within the domain.</p>
     pub fn default_space_settings(&self) -> ::std::option::Option<&crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
@@ -143,17 +143,17 @@ impl UpdateDomainInputBuilder {
     pub fn get_app_security_group_management(&self) -> &::std::option::Option<crate::types::AppSecurityGroupManagement> {
         &self.app_security_group_management
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
+    /// <p>The default settings used to create a space within the domain.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
         self.default_space_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
+    /// <p>The default settings used to create a space within the domain.</p>
     pub fn set_default_space_settings(mut self, input: ::std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
         self.default_space_settings = input;
         self
     }
-    /// <p>The default settings used to create a space within the Domain.</p>
+    /// <p>The default settings used to create a space within the domain.</p>
     pub fn get_default_space_settings(&self) -> &::std::option::Option<crate::types::DefaultSpaceSettings> {
         &self.default_space_settings
     }

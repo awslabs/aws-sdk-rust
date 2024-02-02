@@ -2615,6 +2615,8 @@ pub(crate) mod shape_file_system_data_source;
 
 pub(crate) mod shape_forecast_quantiles;
 
+pub(crate) mod shape_generative_ai_settings;
+
 pub(crate) mod shape_holiday_config;
 
 pub(crate) mod shape_holiday_config_attributes;

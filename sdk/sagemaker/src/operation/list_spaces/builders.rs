@@ -170,17 +170,17 @@ impl ListSpacesFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SpaceSortKey> {
         self.inner.get_sort_by()
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn domain_id_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id_equals(input.into());
         self
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn set_domain_id_equals(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id_equals(input);
         self
     }
-    /// <p>A parameter to search for the Domain ID.</p>
+    /// <p>A parameter to search for the domain ID.</p>
     pub fn get_domain_id_equals(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id_equals()
     }

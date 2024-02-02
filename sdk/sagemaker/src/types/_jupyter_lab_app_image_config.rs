@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JupyterLabAppImageConfig {
-    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
     pub file_system_config: ::std::option::Option<crate::types::FileSystemConfig>,
     /// <p>The configuration used to run the application image container.</p>
     pub container_config: ::std::option::Option<crate::types::ContainerConfig>,
 }
 impl JupyterLabAppImageConfig {
-    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
     pub fn file_system_config(&self) -> ::std::option::Option<&crate::types::FileSystemConfig> {
         self.file_system_config.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct JupyterLabAppImageConfigBuilder {
     pub(crate) container_config: ::std::option::Option<crate::types::ContainerConfig>,
 }
 impl JupyterLabAppImageConfigBuilder {
-    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
     pub fn file_system_config(mut self, input: crate::types::FileSystemConfig) -> Self {
         self.file_system_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
     pub fn set_file_system_config(mut self, input: ::std::option::Option<crate::types::FileSystemConfig>) -> Self {
         self.file_system_config = input;
         self
     }
-    /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
+    /// <p>The Amazon Elastic File System storage configuration for a SageMaker image.</p>
     pub fn get_file_system_config(&self) -> &::std::option::Option<crate::types::FileSystemConfig> {
         &self.file_system_config
     }

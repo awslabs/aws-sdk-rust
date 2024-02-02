@@ -18,7 +18,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
-aws-sdk-dynamodb = "1.13.0"
+aws-sdk-dynamodb = "1.13.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

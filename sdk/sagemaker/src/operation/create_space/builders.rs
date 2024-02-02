@@ -22,7 +22,7 @@ impl CreateSpaceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSpace`.
 ///
-/// <p>Creates a space used for real time collaboration in a Domain.</p>
+/// <p>Creates a space used for real time collaboration in a domain.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSpaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateSpaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
-    /// <p>The ID of the associated Domain.</p>
+    /// <p>The ID of the associated domain.</p>
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain_id()
     }
