@@ -8,6 +8,8 @@ pub struct EncryptionAtRest {
     pub catalog_encryption_mode: crate::types::CatalogEncryptionMode,
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>
+    pub catalog_encryption_service_role: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
@@ -17,6 +19,10 @@ impl EncryptionAtRest {
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub fn sse_aws_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.sse_aws_kms_key_id.as_deref()
+    }
+    /// <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>
+    pub fn catalog_encryption_service_role(&self) -> ::std::option::Option<&str> {
+        self.catalog_encryption_service_role.as_deref()
     }
 }
 impl EncryptionAtRest {
@@ -32,6 +38,7 @@ impl EncryptionAtRest {
 pub struct EncryptionAtRestBuilder {
     pub(crate) catalog_encryption_mode: ::std::option::Option<crate::types::CatalogEncryptionMode>,
     pub(crate) sse_aws_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_encryption_service_role: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionAtRestBuilder {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
@@ -63,6 +70,20 @@ impl EncryptionAtRestBuilder {
     pub fn get_sse_aws_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.sse_aws_kms_key_id
     }
+    /// <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>
+    pub fn catalog_encryption_service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_encryption_service_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>
+    pub fn set_catalog_encryption_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_encryption_service_role = input;
+        self
+    }
+    /// <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>
+    pub fn get_catalog_encryption_service_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_encryption_service_role
+    }
     /// Consumes the builder and constructs a [`EncryptionAtRest`](crate::types::EncryptionAtRest).
     /// This method will fail if any of the following fields are not set:
     /// - [`catalog_encryption_mode`](crate::types::builders::EncryptionAtRestBuilder::catalog_encryption_mode)
@@ -75,6 +96,7 @@ impl EncryptionAtRestBuilder {
                 )
             })?,
             sse_aws_kms_key_id: self.sse_aws_kms_key_id,
+            catalog_encryption_service_role: self.catalog_encryption_service_role,
         })
     }
 }

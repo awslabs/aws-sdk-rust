@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CatalogEncryptionServiceRole" => {
+                            builder = builder.set_catalog_encryption_service_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -57,6 +64,9 @@ pub fn ser_encryption_at_rest(
     }
     if let Some(var_1) = &input.sse_aws_kms_key_id {
         object.key("SseAwsKmsKeyId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.catalog_encryption_service_role {
+        object.key("CatalogEncryptionServiceRole").string(var_2.as_str());
     }
     Ok(())
 }

@@ -14,6 +14,7 @@
 /// match catalogencryptionmode {
 ///     CatalogEncryptionMode::Disabled => { /* ... */ },
 ///     CatalogEncryptionMode::Ssekms => { /* ... */ },
+///     CatalogEncryptionMode::Ssekmswithservicerole => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,6 +46,8 @@ pub enum CatalogEncryptionMode {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Ssekms,
+    #[allow(missing_docs)] // documentation missing in model
+    Ssekmswithservicerole,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for CatalogEncryptionMode {
         match s {
             "DISABLED" => CatalogEncryptionMode::Disabled,
             "SSE-KMS" => CatalogEncryptionMode::Ssekms,
+            "SSE-KMS-WITH-SERVICE-ROLE" => CatalogEncryptionMode::Ssekmswithservicerole,
             other => CatalogEncryptionMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,12 +75,13 @@ impl CatalogEncryptionMode {
         match self {
             CatalogEncryptionMode::Disabled => "DISABLED",
             CatalogEncryptionMode::Ssekms => "SSE-KMS",
+            CatalogEncryptionMode::Ssekmswithservicerole => "SSE-KMS-WITH-SERVICE-ROLE",
             CatalogEncryptionMode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "SSE-KMS"]
+        &["DISABLED", "SSE-KMS", "SSE-KMS-WITH-SERVICE-ROLE"]
     }
 }
 impl ::std::convert::AsRef<str> for CatalogEncryptionMode {
