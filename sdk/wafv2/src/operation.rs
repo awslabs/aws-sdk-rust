@@ -22,6 +22,9 @@ pub mod create_rule_group;
 /// Types for the `CreateWebACL` operation.
 pub mod create_web_acl;
 
+/// Types for the `DeleteAPIKey` operation.
+pub mod delete_api_key;
+
 /// Types for the `DeleteFirewallManagerRuleGroups` operation.
 pub mod delete_firewall_manager_rule_groups;
 

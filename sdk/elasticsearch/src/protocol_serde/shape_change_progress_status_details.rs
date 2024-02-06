@@ -52,6 +52,26 @@ where
                                 crate::protocol_serde::shape_change_progress_stage_list::de_change_progress_stage_list(tokens)?,
                             );
                         }
+                        "ConfigChangeStatus" => {
+                            builder = builder.set_config_change_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConfigChangeStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastUpdatedTime" => {
+                            builder = builder.set_last_updated_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
+                        "InitiatedBy" => {
+                            builder = builder.set_initiated_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InitiatedBy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

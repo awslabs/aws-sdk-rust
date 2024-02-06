@@ -130,6 +130,18 @@ where
                                 crate::protocol_serde::shape_change_progress_details::de_change_progress_details(tokens)?,
                             );
                         }
+                        "DomainProcessingStatus" => {
+                            builder = builder.set_domain_processing_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DomainProcessingStatusType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ModifyingProperties" => {
+                            builder = builder.set_modifying_properties(
+                                crate::protocol_serde::shape_modifying_properties_list::de_modifying_properties_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

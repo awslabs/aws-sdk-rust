@@ -18,6 +18,7 @@ pub struct LoadBalancer {
     /// <p>If you are using an Application Load Balancer or a Network Load Balancer the load balancer name parameter should be omitted.</p>
     pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
+    /// <p>You need to specify the container name when configuring the target group for an Amazon ECS load balancer.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they're launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
     pub container_port: ::std::option::Option<i32>,
@@ -38,6 +39,7 @@ impl LoadBalancer {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
+    /// <p>You need to specify the container name when configuring the target group for an Amazon ECS load balancer.</p>
     pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
@@ -110,16 +112,19 @@ impl LoadBalancerBuilder {
         &self.load_balancer_name
     }
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
+    /// <p>You need to specify the container name when configuring the target group for an Amazon ECS load balancer.</p>
     pub fn container_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
+    /// <p>You need to specify the container name when configuring the target group for an Amazon ECS load balancer.</p>
     pub fn set_container_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_name = input;
         self
     }
     /// <p>The name of the container (as it appears in a container definition) to associate with the load balancer.</p>
+    /// <p>You need to specify the container name when configuring the target group for an Amazon ECS load balancer.</p>
     pub fn get_container_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_name
     }

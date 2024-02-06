@@ -87,6 +87,8 @@ pub(crate) mod shape_get_function;
 
 pub(crate) mod shape_get_graphql_api;
 
+pub(crate) mod shape_get_graphql_api_environment_variables;
+
 pub(crate) mod shape_get_introspection_schema;
 
 pub(crate) mod shape_get_resolver;
@@ -118,6 +120,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_list_types;
 
 pub(crate) mod shape_list_types_by_association;
+
+pub(crate) mod shape_put_graphql_api_environment_variables;
 
 pub(crate) mod shape_start_data_source_introspection;
 
@@ -203,6 +207,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_put_graphql_api_environment_variables_input;
+
 pub(crate) mod shape_start_data_source_introspection_input;
 
 pub(crate) mod shape_start_schema_creation_input;
@@ -258,6 +264,8 @@ pub(crate) mod shape_domain_name_configs;
 pub(crate) mod shape_dynamodb_data_source_config;
 
 pub(crate) mod shape_elasticsearch_data_source_config;
+
+pub(crate) mod shape_environment_variable_map;
 
 pub(crate) mod shape_error_detail;
 

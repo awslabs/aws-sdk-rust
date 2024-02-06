@@ -211,6 +211,41 @@ impl From<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointA
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError> for Error {
+    fn from(err: crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError) -> Self {
+        match err {
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_domain_config_change::CancelDomainConfigChangeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

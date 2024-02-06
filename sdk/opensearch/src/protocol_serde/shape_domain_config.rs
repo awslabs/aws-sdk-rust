@@ -95,6 +95,11 @@ where
                                 crate::protocol_serde::shape_software_update_options_status::de_software_update_options_status(tokens)?,
                             );
                         }
+                        "ModifyingProperties" => {
+                            builder = builder.set_modifying_properties(
+                                crate::protocol_serde::shape_modifying_properties_list::de_modifying_properties_list(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

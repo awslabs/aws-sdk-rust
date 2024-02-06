@@ -18,6 +18,12 @@ pub struct ChangeProgressStatusDetails {
     pub total_number_of_stages: i32,
     /// <p>The specific stages that the domain is going through to perform the configuration change.</p>
     pub change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    /// <p>The current status of the configuration change.</p>
+    pub config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
+    /// <p>The last time that the status of the configuration change was updated.</p>
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
 }
 impl ChangeProgressStatusDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -54,6 +60,18 @@ impl ChangeProgressStatusDetails {
     pub fn change_progress_stages(&self) -> &[crate::types::ChangeProgressStage] {
         self.change_progress_stages.as_deref().unwrap_or_default()
     }
+    /// <p>The current status of the configuration change.</p>
+    pub fn config_change_status(&self) -> ::std::option::Option<&crate::types::ConfigChangeStatus> {
+        self.config_change_status.as_ref()
+    }
+    /// <p>The last time that the status of the configuration change was updated.</p>
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn initiated_by(&self) -> ::std::option::Option<&crate::types::InitiatedBy> {
+        self.initiated_by.as_ref()
+    }
 }
 impl ChangeProgressStatusDetails {
     /// Creates a new builder-style object to manufacture [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
@@ -73,6 +91,9 @@ pub struct ChangeProgressStatusDetailsBuilder {
     pub(crate) completed_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) total_number_of_stages: ::std::option::Option<i32>,
     pub(crate) change_progress_stages: ::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>>,
+    pub(crate) config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
 }
 impl ChangeProgressStatusDetailsBuilder {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -191,6 +212,48 @@ impl ChangeProgressStatusDetailsBuilder {
     pub fn get_change_progress_stages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeProgressStage>> {
         &self.change_progress_stages
     }
+    /// <p>The current status of the configuration change.</p>
+    pub fn config_change_status(mut self, input: crate::types::ConfigChangeStatus) -> Self {
+        self.config_change_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the configuration change.</p>
+    pub fn set_config_change_status(mut self, input: ::std::option::Option<crate::types::ConfigChangeStatus>) -> Self {
+        self.config_change_status = input;
+        self
+    }
+    /// <p>The current status of the configuration change.</p>
+    pub fn get_config_change_status(&self) -> &::std::option::Option<crate::types::ConfigChangeStatus> {
+        &self.config_change_status
+    }
+    /// <p>The last time that the status of the configuration change was updated.</p>
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last time that the status of the configuration change was updated.</p>
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input;
+        self
+    }
+    /// <p>The last time that the status of the configuration change was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn initiated_by(mut self, input: crate::types::InitiatedBy) -> Self {
+        self.initiated_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn set_initiated_by(mut self, input: ::std::option::Option<crate::types::InitiatedBy>) -> Self {
+        self.initiated_by = input;
+        self
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn get_initiated_by(&self) -> &::std::option::Option<crate::types::InitiatedBy> {
+        &self.initiated_by
+    }
     /// Consumes the builder and constructs a [`ChangeProgressStatusDetails`](crate::types::ChangeProgressStatusDetails).
     pub fn build(self) -> crate::types::ChangeProgressStatusDetails {
         crate::types::ChangeProgressStatusDetails {
@@ -201,6 +264,9 @@ impl ChangeProgressStatusDetailsBuilder {
             completed_properties: self.completed_properties,
             total_number_of_stages: self.total_number_of_stages.unwrap_or_default(),
             change_progress_stages: self.change_progress_stages,
+            config_change_status: self.config_change_status,
+            last_updated_time: self.last_updated_time,
+            initiated_by: self.initiated_by,
         }
     }
 }

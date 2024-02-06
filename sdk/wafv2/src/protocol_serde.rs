@@ -37,6 +37,8 @@ pub(crate) mod shape_create_rule_group;
 
 pub(crate) mod shape_create_web_acl;
 
+pub(crate) mod shape_delete_api_key;
+
 pub(crate) mod shape_delete_firewall_manager_rule_groups;
 
 pub(crate) mod shape_delete_ip_set;
@@ -150,6 +152,8 @@ pub(crate) mod shape_create_regex_pattern_set_input;
 pub(crate) mod shape_create_rule_group_input;
 
 pub(crate) mod shape_create_web_acl_input;
+
+pub(crate) mod shape_delete_api_key_input;
 
 pub(crate) mod shape_delete_firewall_manager_rule_groups_input;
 

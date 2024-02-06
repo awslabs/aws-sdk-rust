@@ -97,6 +97,9 @@ pub mod get_function;
 /// Types for the `GetGraphqlApi` operation.
 pub mod get_graphql_api;
 
+/// Types for the `GetGraphqlApiEnvironmentVariables` operation.
+pub mod get_graphql_api_environment_variables;
+
 /// Types for the `GetIntrospectionSchema` operation.
 pub mod get_introspection_schema;
 
@@ -144,6 +147,9 @@ pub mod list_types;
 
 /// Types for the `ListTypesByAssociation` operation.
 pub mod list_types_by_association;
+
+/// Types for the `PutGraphqlApiEnvironmentVariables` operation.
+pub mod put_graphql_api_environment_variables;
 
 /// Types for the `StartDataSourceIntrospection` operation.
 pub mod start_data_source_introspection;

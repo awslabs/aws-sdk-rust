@@ -34,6 +34,8 @@ pub struct ElasticsearchDomainConfig {
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     /// <p>Specifies change details of the domain configuration change.</p>
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
 }
 impl ElasticsearchDomainConfig {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -96,6 +98,12 @@ impl ElasticsearchDomainConfig {
     pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modifying_properties.is_none()`.
+    pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
+        self.modifying_properties.as_deref().unwrap_or_default()
+    }
 }
 impl ElasticsearchDomainConfig {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
@@ -123,6 +131,7 @@ pub struct ElasticsearchDomainConfigBuilder {
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
 }
 impl ElasticsearchDomainConfigBuilder {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -335,6 +344,26 @@ impl ElasticsearchDomainConfigBuilder {
     pub fn get_change_progress_details(&self) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
         &self.change_progress_details
     }
+    /// Appends an item to `modifying_properties`.
+    ///
+    /// To override the contents of this collection use [`set_modifying_properties`](Self::set_modifying_properties).
+    ///
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn modifying_properties(mut self, input: crate::types::ModifyingProperties) -> Self {
+        let mut v = self.modifying_properties.unwrap_or_default();
+        v.push(input);
+        self.modifying_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn set_modifying_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>) -> Self {
+        self.modifying_properties = input;
+        self
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
+        &self.modifying_properties
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
     pub fn build(self) -> crate::types::ElasticsearchDomainConfig {
         crate::types::ElasticsearchDomainConfig {
@@ -353,6 +382,7 @@ impl ElasticsearchDomainConfigBuilder {
             advanced_security_options: self.advanced_security_options,
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
+            modifying_properties: self.modifying_properties,
         }
     }
 }

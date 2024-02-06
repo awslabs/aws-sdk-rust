@@ -31,6 +31,8 @@ impl CreateLogGroupInputBuilder {
 /// <p>Log group names can be between 1 and 512 characters long.</p></li>
 /// <li>
 /// <p>Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)</p></li>
+/// <li>
+/// <p>Log group names can't start with the string <code>aws/</code></p></li>
 /// </ul>
 /// <p>When you create a log group, by default the log events in the log group do not expire. To set a retention policy so that events expire and are deleted after a specified time, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.</p>
 /// <p>If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.</p>

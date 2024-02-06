@@ -150,17 +150,17 @@ impl PutDeliverySourceFluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
-    /// <p>Defines the type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
+    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
     pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_type(input.into());
         self
     }
-    /// <p>Defines the type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
+    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_type(input);
         self
     }
-    /// <p>Defines the type of log that the source is sending. For valid values for this parameter, see the documentation for the source service.</p>
+    /// <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_type()
     }

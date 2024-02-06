@@ -62,6 +62,10 @@ pub struct DomainStatus {
     pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>Service software update options for the domain.</p>
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
 }
 impl DomainStatus {
     /// <p>Unique identifier for the domain.</p>
@@ -185,6 +189,16 @@ impl DomainStatus {
     pub fn software_update_options(&self) -> ::std::option::Option<&crate::types::SoftwareUpdateOptions> {
         self.software_update_options.as_ref()
     }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn domain_processing_status(&self) -> ::std::option::Option<&crate::types::DomainProcessingStatusType> {
+        self.domain_processing_status.as_ref()
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modifying_properties.is_none()`.
+    pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
+        self.modifying_properties.as_deref().unwrap_or_default()
+    }
 }
 impl DomainStatus {
     /// Creates a new builder-style object to manufacture [`DomainStatus`](crate::types::DomainStatus).
@@ -226,6 +240,8 @@ pub struct DomainStatusBuilder {
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
+    pub(crate) domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
+    pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
 }
 impl DomainStatusBuilder {
     /// <p>Unique identifier for the domain.</p>
@@ -668,6 +684,40 @@ impl DomainStatusBuilder {
     pub fn get_software_update_options(&self) -> &::std::option::Option<crate::types::SoftwareUpdateOptions> {
         &self.software_update_options
     }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn domain_processing_status(mut self, input: crate::types::DomainProcessingStatusType) -> Self {
+        self.domain_processing_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn set_domain_processing_status(mut self, input: ::std::option::Option<crate::types::DomainProcessingStatusType>) -> Self {
+        self.domain_processing_status = input;
+        self
+    }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn get_domain_processing_status(&self) -> &::std::option::Option<crate::types::DomainProcessingStatusType> {
+        &self.domain_processing_status
+    }
+    /// Appends an item to `modifying_properties`.
+    ///
+    /// To override the contents of this collection use [`set_modifying_properties`](Self::set_modifying_properties).
+    ///
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn modifying_properties(mut self, input: crate::types::ModifyingProperties) -> Self {
+        let mut v = self.modifying_properties.unwrap_or_default();
+        v.push(input);
+        self.modifying_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn set_modifying_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>) -> Self {
+        self.modifying_properties = input;
+        self
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
+        &self.modifying_properties
+    }
     /// Consumes the builder and constructs a [`DomainStatus`](crate::types::DomainStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::DomainStatusBuilder::domain_id)
@@ -719,6 +769,8 @@ impl DomainStatusBuilder {
             change_progress_details: self.change_progress_details,
             off_peak_window_options: self.off_peak_window_options,
             software_update_options: self.software_update_options,
+            domain_processing_status: self.domain_processing_status,
+            modifying_properties: self.modifying_properties,
         })
     }
 }

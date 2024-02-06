@@ -25,6 +25,8 @@ pub use crate::types::_dry_run_results::DryRunResultsBuilder;
 
 pub use crate::types::_domain_config::DomainConfigBuilder;
 
+pub use crate::types::_modifying_properties::ModifyingPropertiesBuilder;
+
 pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatusBuilder;
 
 pub use crate::types::_option_status::OptionStatusBuilder;
@@ -198,3 +200,5 @@ pub use crate::types::_auto_tune_details::AutoTuneDetailsBuilder;
 pub use crate::types::_scheduled_auto_tune_details::ScheduledAutoTuneDetailsBuilder;
 
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInputBuilder;
+
+pub use crate::types::_cancelled_change_property::CancelledChangePropertyBuilder;

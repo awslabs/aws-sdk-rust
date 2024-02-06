@@ -146,6 +146,8 @@ mod associate_package;
 
 mod authorize_vpc_endpoint_access;
 
+mod cancel_domain_config_change;
+
 mod cancel_service_software_update;
 
 mod create_domain;

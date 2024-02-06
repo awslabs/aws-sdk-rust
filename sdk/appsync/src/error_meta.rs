@@ -1020,6 +1020,55 @@ impl From<crate::operation::get_graphql_api::GetGraphqlApiError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError> for Error {
+    fn from(err: crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError) -> Self {
+        match err {
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_graphql_api_environment_variables::GetGraphqlApiEnvironmentVariablesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_introspection_schema::GetIntrospectionSchemaError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1476,6 +1525,58 @@ impl From<crate::operation::list_types_by_association::ListTypesByAssociationErr
                 Error::UnauthorizedException(inner)
             }
             crate::operation::list_types_by_association::ListTypesByAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError> for Error {
+    fn from(err: crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError) -> Self {
+        match err {
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::ConcurrentModificationException(
+                inner,
+            ) => Error::ConcurrentModificationException(inner),
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::put_graphql_api_environment_variables::PutGraphqlApiEnvironmentVariablesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

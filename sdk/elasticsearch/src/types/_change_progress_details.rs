@@ -8,6 +8,14 @@ pub struct ChangeProgressDetails {
     pub change_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an optional message associated with the domain configuration change.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of the configuration change.</p>
+    pub config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
+    /// <p>The time that the configuration change was initiated, in Universal Coordinated Time (UTC).</p>
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The last time that the configuration change was updated.</p>
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
 }
 impl ChangeProgressDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -17,6 +25,22 @@ impl ChangeProgressDetails {
     /// <p>Contains an optional message associated with the domain configuration change.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
+    }
+    /// <p>The current status of the configuration change.</p>
+    pub fn config_change_status(&self) -> ::std::option::Option<&crate::types::ConfigChangeStatus> {
+        self.config_change_status.as_ref()
+    }
+    /// <p>The time that the configuration change was initiated, in Universal Coordinated Time (UTC).</p>
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
+    }
+    /// <p>The last time that the configuration change was updated.</p>
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_updated_time.as_ref()
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn initiated_by(&self) -> ::std::option::Option<&crate::types::InitiatedBy> {
+        self.initiated_by.as_ref()
     }
 }
 impl ChangeProgressDetails {
@@ -32,6 +56,10 @@ impl ChangeProgressDetails {
 pub struct ChangeProgressDetailsBuilder {
     pub(crate) change_id: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) config_change_status: ::std::option::Option<crate::types::ConfigChangeStatus>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) initiated_by: ::std::option::Option<crate::types::InitiatedBy>,
 }
 impl ChangeProgressDetailsBuilder {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
@@ -62,11 +90,71 @@ impl ChangeProgressDetailsBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The current status of the configuration change.</p>
+    pub fn config_change_status(mut self, input: crate::types::ConfigChangeStatus) -> Self {
+        self.config_change_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the configuration change.</p>
+    pub fn set_config_change_status(mut self, input: ::std::option::Option<crate::types::ConfigChangeStatus>) -> Self {
+        self.config_change_status = input;
+        self
+    }
+    /// <p>The current status of the configuration change.</p>
+    pub fn get_config_change_status(&self) -> &::std::option::Option<crate::types::ConfigChangeStatus> {
+        &self.config_change_status
+    }
+    /// <p>The time that the configuration change was initiated, in Universal Coordinated Time (UTC).</p>
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that the configuration change was initiated, in Universal Coordinated Time (UTC).</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input;
+        self
+    }
+    /// <p>The time that the configuration change was initiated, in Universal Coordinated Time (UTC).</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_time
+    }
+    /// <p>The last time that the configuration change was updated.</p>
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last time that the configuration change was updated.</p>
+    pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input;
+        self
+    }
+    /// <p>The last time that the configuration change was updated.</p>
+    pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_updated_time
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn initiated_by(mut self, input: crate::types::InitiatedBy) -> Self {
+        self.initiated_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn set_initiated_by(mut self, input: ::std::option::Option<crate::types::InitiatedBy>) -> Self {
+        self.initiated_by = input;
+        self
+    }
+    /// <p>The IAM principal who initiated the configuration change.</p>
+    pub fn get_initiated_by(&self) -> &::std::option::Option<crate::types::InitiatedBy> {
+        &self.initiated_by
+    }
     /// Consumes the builder and constructs a [`ChangeProgressDetails`](crate::types::ChangeProgressDetails).
     pub fn build(self) -> crate::types::ChangeProgressDetails {
         crate::types::ChangeProgressDetails {
             change_id: self.change_id,
             message: self.message,
+            config_change_status: self.config_change_status,
+            start_time: self.start_time,
+            last_updated_time: self.last_updated_time,
+            initiated_by: self.initiated_by,
         }
     }
 }

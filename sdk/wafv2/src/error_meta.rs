@@ -400,6 +400,32 @@ impl From<crate::operation::create_web_acl::CreateWebACLError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_api_key::DeleteAPIKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_api_key::DeleteAPIKeyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_api_key::DeleteAPIKeyError> for Error {
+    fn from(err: crate::operation::delete_api_key::DeleteAPIKeyError) -> Self {
+        match err {
+            crate::operation::delete_api_key::DeleteAPIKeyError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::delete_api_key::DeleteAPIKeyError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::delete_api_key::DeleteAPIKeyError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::delete_api_key::DeleteAPIKeyError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::delete_api_key::DeleteAPIKeyError::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
+            crate::operation::delete_api_key::DeleteAPIKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

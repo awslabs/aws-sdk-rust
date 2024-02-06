@@ -177,6 +177,8 @@ mod create_web_acl;
 /// ```
 pub mod customize;
 
+mod delete_api_key;
+
 mod delete_firewall_manager_rule_groups;
 
 mod delete_ip_set;

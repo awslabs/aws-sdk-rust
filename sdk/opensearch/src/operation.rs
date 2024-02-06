@@ -16,6 +16,9 @@ pub mod associate_package;
 /// Types for the `AuthorizeVpcEndpointAccess` operation.
 pub mod authorize_vpc_endpoint_access;
 
+/// Types for the `CancelDomainConfigChange` operation.
+pub mod cancel_domain_config_change;
+
 /// Types for the `CancelServiceSoftwareUpdate` operation.
 pub mod cancel_service_software_update;
 

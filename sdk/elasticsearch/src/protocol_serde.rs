@@ -31,6 +31,8 @@ pub(crate) mod shape_associate_package;
 
 pub(crate) mod shape_authorize_vpc_endpoint_access;
 
+pub(crate) mod shape_cancel_domain_config_change;
+
 pub(crate) mod shape_cancel_elasticsearch_service_software_update;
 
 pub(crate) mod shape_create_elasticsearch_domain;
@@ -139,6 +141,8 @@ pub(crate) mod shape_authorize_vpc_endpoint_access_input;
 
 pub(crate) mod shape_base_exception;
 
+pub(crate) mod shape_cancel_domain_config_change_input;
+
 pub(crate) mod shape_cancel_elasticsearch_service_software_update_input;
 
 pub(crate) mod shape_conflict_exception;
@@ -207,6 +211,8 @@ pub(crate) mod shape_auto_tune_options;
 
 pub(crate) mod shape_auto_tune_options_input;
 
+pub(crate) mod shape_cancelled_change_property_list;
+
 pub(crate) mod shape_change_progress_details;
 
 pub(crate) mod shape_change_progress_status_details;
@@ -246,6 +252,8 @@ pub(crate) mod shape_elasticsearch_version_list;
 pub(crate) mod shape_encryption_at_rest_options;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_guid_list;
 
 pub(crate) mod shape_inbound_cross_cluster_search_connection;
 
@@ -315,6 +323,8 @@ pub(crate) mod shape_auto_tune_options_output;
 
 pub(crate) mod shape_auto_tune_options_status;
 
+pub(crate) mod shape_cancelled_change_property;
+
 pub(crate) mod shape_change_progress_stage_list;
 
 pub(crate) mod shape_cognito_options_status;
@@ -348,6 +358,8 @@ pub(crate) mod shape_log_publishing_options;
 pub(crate) mod shape_log_publishing_options_status;
 
 pub(crate) mod shape_master_user_options;
+
+pub(crate) mod shape_modifying_properties_list;
 
 pub(crate) mod shape_node_to_node_encryption_options_status;
 
@@ -384,6 +396,8 @@ pub(crate) mod shape_change_progress_stage;
 pub(crate) mod shape_duration;
 
 pub(crate) mod shape_instance_limits;
+
+pub(crate) mod shape_modifying_properties;
 
 pub(crate) mod shape_option_status;
 

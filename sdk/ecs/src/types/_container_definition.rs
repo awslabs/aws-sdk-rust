@@ -218,13 +218,7 @@ pub struct ContainerDefinition {
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>The container health check command and associated configuration parameters for the container. This parameter maps to <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>HEALTHCHECK</code> parameter of <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p>
     pub health_check: ::std::option::Option<crate::types::HealthCheck>,
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p><note>
-    /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is not supported for Windows containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
-    /// </note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p>
     pub system_controls: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>,
     /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
@@ -570,13 +564,7 @@ impl ContainerDefinition {
     pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p><note>
-    /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is not supported for Windows containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
-    /// </note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_controls.is_none()`.
     pub fn system_controls(&self) -> &[crate::types::SystemControl] {
@@ -1705,37 +1693,19 @@ impl ContainerDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_system_controls`](Self::set_system_controls).
     ///
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p><note>
-    /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is not supported for Windows containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
-    /// </note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p>
     pub fn system_controls(mut self, input: crate::types::SystemControl) -> Self {
         let mut v = self.system_controls.unwrap_or_default();
         v.push(input);
         self.system_controls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p><note>
-    /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is not supported for Windows containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
-    /// </note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p>
     pub fn set_system_controls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemControl>>) -> Self {
         self.system_controls = input;
         self
     }
-    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p><note>
-    /// <p>We don't recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network modes. For tasks that use the <code>awsvpc</code> network mode, the container that's started last determines which <code>systemControls</code> parameters take effect. For tasks that use the <code>host</code> network mode, it changes the container instance's namespaced kernel parameters as well as the containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is not supported for Windows containers.</p>
-    /// </note> <note>
-    /// <p>This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.</p>
-    /// </note>
+    /// <p>A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer lived connections.</p>
     pub fn get_system_controls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemControl>> {
         &self.system_controls
     }

@@ -227,6 +227,8 @@ mod get_function;
 
 mod get_graphql_api;
 
+mod get_graphql_api_environment_variables;
+
 mod get_introspection_schema;
 
 mod get_resolver;
@@ -258,6 +260,8 @@ mod list_tags_for_resource;
 mod list_types;
 
 mod list_types_by_association;
+
+mod put_graphql_api_environment_variables;
 
 mod start_data_source_introspection;
 

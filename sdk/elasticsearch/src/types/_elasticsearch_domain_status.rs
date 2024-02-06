@@ -54,6 +54,10 @@ pub struct ElasticsearchDomainStatus {
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     /// <p>Specifies change details of the domain configuration change.</p>
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
 }
 impl ElasticsearchDomainStatus {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
@@ -161,6 +165,16 @@ impl ElasticsearchDomainStatus {
     pub fn change_progress_details(&self) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn domain_processing_status(&self) -> ::std::option::Option<&crate::types::DomainProcessingStatusType> {
+        self.domain_processing_status.as_ref()
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.modifying_properties.is_none()`.
+    pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
+        self.modifying_properties.as_deref().unwrap_or_default()
+    }
 }
 impl ElasticsearchDomainStatus {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
@@ -198,6 +212,8 @@ pub struct ElasticsearchDomainStatusBuilder {
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsOutput>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
+    pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
 }
 impl ElasticsearchDomainStatusBuilder {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
@@ -584,6 +600,40 @@ impl ElasticsearchDomainStatusBuilder {
     pub fn get_change_progress_details(&self) -> &::std::option::Option<crate::types::ChangeProgressDetails> {
         &self.change_progress_details
     }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn domain_processing_status(mut self, input: crate::types::DomainProcessingStatusType) -> Self {
+        self.domain_processing_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn set_domain_processing_status(mut self, input: ::std::option::Option<crate::types::DomainProcessingStatusType>) -> Self {
+        self.domain_processing_status = input;
+        self
+    }
+    /// <p>The status of any changes that are currently in progress for the domain.</p>
+    pub fn get_domain_processing_status(&self) -> &::std::option::Option<crate::types::DomainProcessingStatusType> {
+        &self.domain_processing_status
+    }
+    /// Appends an item to `modifying_properties`.
+    ///
+    /// To override the contents of this collection use [`set_modifying_properties`](Self::set_modifying_properties).
+    ///
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn modifying_properties(mut self, input: crate::types::ModifyingProperties) -> Self {
+        let mut v = self.modifying_properties.unwrap_or_default();
+        v.push(input);
+        self.modifying_properties = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn set_modifying_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>) -> Self {
+        self.modifying_properties = input;
+        self
+    }
+    /// <p>Information about the domain properties that are currently being modified.</p>
+    pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
+        &self.modifying_properties
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_id)
@@ -631,6 +681,8 @@ impl ElasticsearchDomainStatusBuilder {
             advanced_security_options: self.advanced_security_options,
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
+            domain_processing_status: self.domain_processing_status,
+            modifying_properties: self.modifying_properties,
         })
     }
 }
