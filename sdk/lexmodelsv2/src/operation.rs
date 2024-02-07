@@ -22,6 +22,9 @@ pub mod create_bot_alias;
 /// Types for the `CreateBotLocale` operation.
 pub mod create_bot_locale;
 
+/// Types for the `CreateBotReplica` operation.
+pub mod create_bot_replica;
+
 /// Types for the `CreateBotVersion` operation.
 pub mod create_bot_version;
 
@@ -57,6 +60,9 @@ pub mod delete_bot_alias;
 
 /// Types for the `DeleteBotLocale` operation.
 pub mod delete_bot_locale;
+
+/// Types for the `DeleteBotReplica` operation.
+pub mod delete_bot_replica;
 
 /// Types for the `DeleteBotVersion` operation.
 pub mod delete_bot_version;
@@ -102,6 +108,9 @@ pub mod describe_bot_locale;
 
 /// Types for the `DescribeBotRecommendation` operation.
 pub mod describe_bot_recommendation;
+
+/// Types for the `DescribeBotReplica` operation.
+pub mod describe_bot_replica;
 
 /// Types for the `DescribeBotResourceGeneration` operation.
 pub mod describe_bot_resource_generation;
@@ -151,6 +160,9 @@ pub mod get_test_execution_artifacts_url;
 /// Types for the `ListAggregatedUtterances` operation.
 pub mod list_aggregated_utterances;
 
+/// Types for the `ListBotAliasReplicas` operation.
+pub mod list_bot_alias_replicas;
+
 /// Types for the `ListBotAliases` operation.
 pub mod list_bot_aliases;
 
@@ -160,8 +172,14 @@ pub mod list_bot_locales;
 /// Types for the `ListBotRecommendations` operation.
 pub mod list_bot_recommendations;
 
+/// Types for the `ListBotReplicas` operation.
+pub mod list_bot_replicas;
+
 /// Types for the `ListBotResourceGenerations` operation.
 pub mod list_bot_resource_generations;
+
+/// Types for the `ListBotVersionReplicas` operation.
+pub mod list_bot_version_replicas;
 
 /// Types for the `ListBotVersions` operation.
 pub mod list_bot_versions;

@@ -16,6 +16,8 @@ pub struct DescribeTaskExecutionOutput {
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    pub manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     /// <p>The time when the task execution started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The expected number of files, objects, and directories that DataSync will transfer over the network. This value is calculated during the task execution's <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing the content of the source and destination locations and finding the difference that needs to be transferred.</p>
@@ -29,11 +31,11 @@ pub struct DescribeTaskExecutionOutput {
     pub bytes_written: i64,
     /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>.</p>
     pub bytes_transferred: i64,
-    /// <p>The result of the task execution.</p>
-    pub result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     pub bytes_compressed: i64,
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer.</p>
+    /// <p>The result of the task execution.</p>
+    pub result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
+    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     /// <p>The number of files, objects, and directories that DataSync deleted in your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure your task</a> to delete data in the destination that isn't in the source, the value is always <code>0</code>.</p>
     pub files_deleted: i64,
@@ -76,6 +78,10 @@ impl DescribeTaskExecutionOutput {
     pub fn includes(&self) -> &[crate::types::FilterRule] {
         self.includes.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
+        self.manifest_config.as_ref()
+    }
     /// <p>The time when the task execution started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
@@ -101,15 +107,15 @@ impl DescribeTaskExecutionOutput {
     pub fn bytes_transferred(&self) -> i64 {
         self.bytes_transferred
     }
-    /// <p>The result of the task execution.</p>
-    pub fn result(&self) -> ::std::option::Option<&crate::types::TaskExecutionResultDetail> {
-        self.result.as_ref()
-    }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     pub fn bytes_compressed(&self) -> i64 {
         self.bytes_compressed
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer.</p>
+    /// <p>The result of the task execution.</p>
+    pub fn result(&self) -> ::std::option::Option<&crate::types::TaskExecutionResultDetail> {
+        self.result.as_ref()
+    }
+    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
         self.task_report_config.as_ref()
     }
@@ -157,14 +163,15 @@ pub struct DescribeTaskExecutionOutputBuilder {
     pub(crate) options: ::std::option::Option<crate::types::Options>,
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) estimated_files_to_transfer: ::std::option::Option<i64>,
     pub(crate) estimated_bytes_to_transfer: ::std::option::Option<i64>,
     pub(crate) files_transferred: ::std::option::Option<i64>,
     pub(crate) bytes_written: ::std::option::Option<i64>,
     pub(crate) bytes_transferred: ::std::option::Option<i64>,
-    pub(crate) result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
     pub(crate) bytes_compressed: ::std::option::Option<i64>,
+    pub(crate) result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     pub(crate) files_deleted: ::std::option::Option<i64>,
     pub(crate) files_skipped: ::std::option::Option<i64>,
@@ -262,6 +269,20 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_includes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.includes
     }
+    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    pub fn manifest_config(mut self, input: crate::types::ManifestConfig) -> Self {
+        self.manifest_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    pub fn set_manifest_config(mut self, input: ::std::option::Option<crate::types::ManifestConfig>) -> Self {
+        self.manifest_config = input;
+        self
+    }
+    /// <p>The configuration of the manifest that lists the files or objects to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    pub fn get_manifest_config(&self) -> &::std::option::Option<crate::types::ManifestConfig> {
+        &self.manifest_config
+    }
     /// <p>The time when the task execution started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -349,20 +370,6 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_bytes_transferred(&self) -> &::std::option::Option<i64> {
         &self.bytes_transferred
     }
-    /// <p>The result of the task execution.</p>
-    pub fn result(mut self, input: crate::types::TaskExecutionResultDetail) -> Self {
-        self.result = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The result of the task execution.</p>
-    pub fn set_result(mut self, input: ::std::option::Option<crate::types::TaskExecutionResultDetail>) -> Self {
-        self.result = input;
-        self
-    }
-    /// <p>The result of the task execution.</p>
-    pub fn get_result(&self) -> &::std::option::Option<crate::types::TaskExecutionResultDetail> {
-        &self.result
-    }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     pub fn bytes_compressed(mut self, input: i64) -> Self {
         self.bytes_compressed = ::std::option::Option::Some(input);
@@ -377,17 +384,31 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn get_bytes_compressed(&self) -> &::std::option::Option<i64> {
         &self.bytes_compressed
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer.</p>
+    /// <p>The result of the task execution.</p>
+    pub fn result(mut self, input: crate::types::TaskExecutionResultDetail) -> Self {
+        self.result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The result of the task execution.</p>
+    pub fn set_result(mut self, input: ::std::option::Option<crate::types::TaskExecutionResultDetail>) -> Self {
+        self.result = input;
+        self
+    }
+    /// <p>The result of the task execution.</p>
+    pub fn get_result(&self) -> &::std::option::Option<crate::types::TaskExecutionResultDetail> {
+        &self.result
+    }
+    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
         self.task_report_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer.</p>
+    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
         self.task_report_config = input;
         self
     }
-    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer.</p>
+    /// <p>The configuration of your task report, which provides detailed information about for your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating a task report</a>.</p>
     pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
         &self.task_report_config
     }
@@ -484,14 +505,15 @@ impl DescribeTaskExecutionOutputBuilder {
             options: self.options,
             excludes: self.excludes,
             includes: self.includes,
+            manifest_config: self.manifest_config,
             start_time: self.start_time,
             estimated_files_to_transfer: self.estimated_files_to_transfer.unwrap_or_default(),
             estimated_bytes_to_transfer: self.estimated_bytes_to_transfer.unwrap_or_default(),
             files_transferred: self.files_transferred.unwrap_or_default(),
             bytes_written: self.bytes_written.unwrap_or_default(),
             bytes_transferred: self.bytes_transferred.unwrap_or_default(),
-            result: self.result,
             bytes_compressed: self.bytes_compressed.unwrap_or_default(),
+            result: self.result,
             task_report_config: self.task_report_config,
             files_deleted: self.files_deleted.unwrap_or_default(),
             files_skipped: self.files_skipped.unwrap_or_default(),

@@ -22,7 +22,7 @@ impl DescribeLocationFsxLustreInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLocationFsxLustre`.
 ///
-/// <p>Provides details about how an DataSync location for an Amazon FSx for Lustre file system is configured.</p>
+/// <p>Provides details about how an DataSync transfer location for an Amazon FSx for Lustre file system is configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxLustreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

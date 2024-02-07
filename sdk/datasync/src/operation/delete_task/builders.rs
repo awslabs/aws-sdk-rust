@@ -22,7 +22,7 @@ impl DeleteTaskInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTask`.
 ///
-/// <p>Deletes an DataSync transfer task.</p>
+/// <p>Deletes a transfer task resource from DataSync.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

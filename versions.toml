@@ -634,9 +634,9 @@ model_hash = '481a634abb604c1cff5824bd15503ce726661dec63a755e44575bb41e20190d6'
 
 [crates.aws-sdk-datasync]
 category = 'AwsSdk'
-version = '1.12.0'
-source_hash = 'f4dbc59489aa9f16365cce2030474103b84573a18c792e341dae31057bb9bb96'
-model_hash = '4b7ace7dc4ebdbe68ac31325d1c98e732852a491e1c12a4992158a0d759f9771'
+version = '1.13.0'
+source_hash = '389664187a31f46d726ad5146249bf2a71e515f8267a49d4f9a8647261b0118d'
+model_hash = 'c4fb5a85639fb378d3eddfe570d7ad5cbe18d68b485f13184ab6f21140de642c'
 
 [crates.aws-sdk-datazone]
 category = 'AwsSdk'
@@ -1252,9 +1252,9 @@ model_hash = '35c3a19d228343d030ddd9373b5bed448dc3d27fd807c3f716c95e6f30bffaec'
 
 [crates.aws-sdk-lexmodelsv2]
 category = 'AwsSdk'
-version = '1.12.0'
-source_hash = '0e505e35592d5996fcaeb282f89c365bdcd8205617cbf8d087d87bcc3e8f7f13'
-model_hash = 'd0b90d606035d33fe29b51f9023a51059bc7bf3c0e0cacaf5a874b230149510c'
+version = '1.13.0'
+source_hash = '1fd31e3047f174d32f110a9404d1d1cc0fb0c46ed28d0a3c1d38e5c1b5313441'
+model_hash = '7921130212edb1190035675f351541d8fb388f1293a3adeee78e8f1cac9546ff'
 
 [crates.aws-sdk-lexruntime]
 category = 'AwsSdk'
@@ -1762,9 +1762,9 @@ model_hash = 'e142ccf8cbcef73d30ac9d2c9cd00dfbe0e023baad5cf540b3ef2f950344184a'
 
 [crates.aws-sdk-redshift]
 category = 'AwsSdk'
-version = '1.12.0'
-source_hash = 'f816be715693b16436913cd06f46c5c64350a4fc2020a96f80a2ee20c8615cd7'
-model_hash = '12bedab9667fe03fe51eb9e57ed4fc284578b65daa0819516d5052b9422894c5'
+version = '1.13.0'
+source_hash = 'e16a9594ce682ab7080ad22a0f36a98991f74b1571e84c47c441522e0ef9ba63'
+model_hash = 'ccd5e55d3bbc9947273c8ed60976bff8aa39055225d4445d79feb20fde2989d2'
 
 [crates.aws-sdk-redshiftdata]
 category = 'AwsSdk'
@@ -2413,14 +2413,7 @@ source_hash = 'f37dc1fbecec5502ed65bce4e9ef6ed8f12e782f0ab3c587b917ad3d858c0d96'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '1253a0429ba1049db057a6db291aed48358550e0ec45cb10b48731db204c2ed6'
-
-[release]
-tag = 'release-2024-02-06'
-
 [release.crates]
-aws-sdk-appsync = '1.14.0'
-aws-sdk-cloudwatchlogs = '1.14.0'
-aws-sdk-ecs = '1.13.1'
-aws-sdk-elasticsearch = '1.14.0'
-aws-sdk-opensearch = '1.15.0'
-aws-sdk-wafv2 = '1.13.0'
+aws-sdk-datasync = '1.13.0'
+aws-sdk-lexmodelsv2 = '1.13.0'
+aws-sdk-redshift = '1.13.0'

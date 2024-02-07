@@ -361,6 +361,8 @@ mod get_reserved_node_exchange_offerings;
 
 mod get_resource_policy;
 
+mod list_recommendations;
+
 mod modify_aqua_configuration;
 
 mod modify_authentication_profile;

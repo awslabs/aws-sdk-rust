@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageInput {
-    /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationObjectStorageInput {
-    /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct DescribeLocationObjectStorageInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeLocationObjectStorageInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     /// This field is required.
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the object storage system location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }

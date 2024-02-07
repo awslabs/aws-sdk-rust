@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_aggregated_utterances_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_bot_alias_replicas_output_output_next_token(
+    input: &crate::operation::list_bot_alias_replicas::ListBotAliasReplicasOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_bot_aliases_output_output_next_token(
     input: &crate::operation::list_bot_aliases::ListBotAliasesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -41,6 +51,16 @@ pub(crate) fn reflens_list_bot_recommendations_output_output_next_token(
 
 pub(crate) fn reflens_list_bot_resource_generations_output_output_next_token(
     input: &crate::operation::list_bot_resource_generations::ListBotResourceGenerationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_bot_version_replicas_output_output_next_token(
+    input: &crate::operation::list_bot_version_replicas::ListBotVersionReplicasOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

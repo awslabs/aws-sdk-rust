@@ -583,6 +583,14 @@ pub use crate::types::_bot_version_sort_by::BotVersionSortBy;
 
 pub use crate::types::_bot_version_sort_attribute::BotVersionSortAttribute;
 
+pub use crate::types::_bot_version_replica_summary::BotVersionReplicaSummary;
+
+pub use crate::types::_bot_version_replication_status::BotVersionReplicationStatus;
+
+pub use crate::types::_bot_version_replica_sort_by::BotVersionReplicaSortBy;
+
+pub use crate::types::_bot_version_replica_sort_attribute::BotVersionReplicaSortAttribute;
+
 pub use crate::types::_bot_summary::BotSummary;
 
 pub use crate::types::_bot_filter::BotFilter;
@@ -601,6 +609,10 @@ pub use crate::types::_generation_sort_by::GenerationSortBy;
 
 pub use crate::types::_generation_sort_by_attribute::GenerationSortByAttribute;
 
+pub use crate::types::_bot_replica_summary::BotReplicaSummary;
+
+pub use crate::types::_bot_replica_status::BotReplicaStatus;
+
 pub use crate::types::_bot_recommendation_summary::BotRecommendationSummary;
 
 pub use crate::types::_bot_locale_summary::BotLocaleSummary;
@@ -614,6 +626,10 @@ pub use crate::types::_bot_locale_filter_name::BotLocaleFilterName;
 pub use crate::types::_bot_locale_sort_by::BotLocaleSortBy;
 
 pub use crate::types::_bot_locale_sort_attribute::BotLocaleSortAttribute;
+
+pub use crate::types::_bot_alias_replica_summary::BotAliasReplicaSummary;
+
+pub use crate::types::_bot_alias_replication_status::BotAliasReplicationStatus;
 
 pub use crate::types::_bot_alias_summary::BotAliasSummary;
 
@@ -827,6 +843,10 @@ mod _bot_alias_history_event;
 
 mod _bot_alias_locale_settings;
 
+mod _bot_alias_replica_summary;
+
+mod _bot_alias_replication_status;
+
 mod _bot_alias_status;
 
 mod _bot_alias_summary;
@@ -873,6 +893,10 @@ mod _bot_recommendation_status;
 
 mod _bot_recommendation_summary;
 
+mod _bot_replica_status;
+
+mod _bot_replica_summary;
+
 mod _bot_sort_attribute;
 
 mod _bot_sort_by;
@@ -884,6 +908,14 @@ mod _bot_summary;
 mod _bot_type;
 
 mod _bot_version_locale_details;
+
+mod _bot_version_replica_sort_attribute;
+
+mod _bot_version_replica_sort_by;
+
+mod _bot_version_replica_summary;
+
+mod _bot_version_replication_status;
 
 mod _bot_version_sort_attribute;
 

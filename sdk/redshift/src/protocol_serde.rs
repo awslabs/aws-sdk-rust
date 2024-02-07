@@ -419,6 +419,10 @@ pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_resource_policy_input;
 
+pub(crate) mod shape_list_recommendations;
+
+pub(crate) mod shape_list_recommendations_input;
+
 pub(crate) mod shape_modify_aqua_configuration;
 
 pub(crate) mod shape_modify_aqua_configuration_input;
@@ -923,6 +927,8 @@ pub(crate) mod shape_partner_integration_info_list;
 
 pub(crate) mod shape_pause_cluster_message;
 
+pub(crate) mod shape_recommendation_list;
+
 pub(crate) mod shape_redshift_idc_application;
 
 pub(crate) mod shape_redshift_idc_application_list;
@@ -1053,6 +1059,8 @@ pub(crate) mod shape_pending_actions_list;
 
 pub(crate) mod shape_pending_modified_values;
 
+pub(crate) mod shape_recommendation;
+
 pub(crate) mod shape_recurring_charge_list;
 
 pub(crate) mod shape_reserved_node_configuration_option;
@@ -1119,7 +1127,11 @@ pub(crate) mod shape_ip_range;
 
 pub(crate) mod shape_network_interface;
 
+pub(crate) mod shape_recommended_action_list;
+
 pub(crate) mod shape_recurring_charge;
+
+pub(crate) mod shape_reference_link_list;
 
 pub(crate) mod shape_revision_targets_list;
 
@@ -1142,6 +1154,10 @@ pub(crate) mod shape_event_info_map;
 pub(crate) mod shape_integration_error;
 
 pub(crate) mod shape_lake_formation_service_integrations;
+
+pub(crate) mod shape_recommended_action;
+
+pub(crate) mod shape_reference_link;
 
 pub(crate) mod shape_revision_target;
 

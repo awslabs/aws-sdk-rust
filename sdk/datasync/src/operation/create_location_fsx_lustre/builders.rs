@@ -22,7 +22,8 @@ impl CreateLocationFsxLustreInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocationFsxLustre`.
 ///
-/// <p>Creates an endpoint for an Amazon FSx for Lustre file system.</p>
+/// <p>Creates a transfer <i>location</i> for an Amazon FSx for Lustre file system. DataSync can use this location as a source or destination for transferring data.</p>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-lustre-location.html#create-lustre-location-access">accesses FSx for Lustre file systems</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFsxLustreFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

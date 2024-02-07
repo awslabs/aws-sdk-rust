@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTaskExecutionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.</p>
     pub task_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of executed tasks to list.</p>
+    /// <p>Specifies how many results you want in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
+    /// <p>Specifies an opaque string that indicates the position at which to begin the next list of results in the response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTaskExecutionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.</p>
     pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
-    /// <p>The maximum number of executed tasks to list.</p>
+    /// <p>Specifies how many results you want in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
+    /// <p>Specifies an opaque string that indicates the position at which to begin the next list of results in the response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -41,45 +41,45 @@ pub struct ListTaskExecutionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTaskExecutionsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.</p>
     pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.</p>
     pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want execution information about.</p>
     pub fn get_task_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_arn
     }
-    /// <p>The maximum number of executed tasks to list.</p>
+    /// <p>Specifies how many results you want in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of executed tasks to list.</p>
+    /// <p>Specifies how many results you want in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of executed tasks to list.</p>
+    /// <p>Specifies how many results you want in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
+    /// <p>Specifies an opaque string that indicates the position at which to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
+    /// <p>Specifies an opaque string that indicates the position at which to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An opaque string that indicates the position at which to begin the next list of the executed tasks.</p>
+    /// <p>Specifies an opaque string that indicates the position at which to begin the next list of results in the response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

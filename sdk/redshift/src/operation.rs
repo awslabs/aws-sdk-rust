@@ -298,6 +298,9 @@ pub mod get_reserved_node_exchange_offerings;
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
+/// Types for the `ListRecommendations` operation.
+pub mod list_recommendations;
+
 /// Types for the `ModifyAquaConfiguration` operation.
 pub mod modify_aqua_configuration;
 

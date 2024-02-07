@@ -22,7 +22,7 @@ impl DescribeLocationHdfsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLocationHdfs`.
 ///
-/// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File System (HDFS) location.</p>
+/// <p>Provides details about how an DataSync transfer location for a Hadoop Distributed File System (HDFS) is configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationHdfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeLocationHdfsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the HDFS location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location_arn()
     }

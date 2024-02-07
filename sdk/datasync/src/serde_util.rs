@@ -70,6 +70,18 @@ pub(crate) fn hdfs_name_node_correct_errors(mut builder: crate::types::builders:
     builder
 }
 
+pub(crate) fn source_manifest_config_correct_errors(
+    mut builder: crate::types::builders::SourceManifestConfigBuilder,
+) -> crate::types::builders::SourceManifestConfigBuilder {
+    if builder.s3.is_none() {
+        builder.s3 = {
+            let builder = crate::types::builders::S3ManifestConfigBuilder::default();
+            crate::serde_util::s3_manifest_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn tag_list_entry_correct_errors(mut builder: crate::types::builders::TagListEntryBuilder) -> crate::types::builders::TagListEntryBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -85,6 +97,21 @@ pub(crate) fn report_destination_s3_correct_errors(
     }
     if builder.bucket_access_role_arn.is_none() {
         builder.bucket_access_role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_manifest_config_correct_errors(
+    mut builder: crate::types::builders::S3ManifestConfigBuilder,
+) -> crate::types::builders::S3ManifestConfigBuilder {
+    if builder.manifest_object_path.is_none() {
+        builder.manifest_object_path = Some(Default::default())
+    }
+    if builder.bucket_access_role_arn.is_none() {
+        builder.bucket_access_role_arn = Some(Default::default())
+    }
+    if builder.s3_bucket_arn.is_none() {
+        builder.s3_bucket_arn = Some(Default::default())
     }
     builder
 }

@@ -6,7 +6,7 @@
 pub struct DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the object storage system location.</p>
+    /// <p>The URI of the object storage system location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub access_key: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct DescribeLocationObjectStorageOutput {
     pub server_port: ::std::option::Option<i32>,
     /// <p>The protocol that your object storage system uses to communicate.</p>
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
-    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your object storage system.</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -27,7 +27,7 @@ impl DescribeLocationObjectStorageOutput {
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The URL of the object storage system location.</p>
+    /// <p>The URI of the object storage system location.</p>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
@@ -43,7 +43,7 @@ impl DescribeLocationObjectStorageOutput {
     pub fn server_protocol(&self) -> ::std::option::Option<&crate::types::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
-    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your object storage system.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
@@ -99,17 +99,17 @@ impl DescribeLocationObjectStorageOutputBuilder {
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The URL of the object storage system location.</p>
+    /// <p>The URI of the object storage system location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the object storage system location.</p>
+    /// <p>The URI of the object storage system location.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
-    /// <p>The URL of the object storage system location.</p>
+    /// <p>The URI of the object storage system location.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }
@@ -159,19 +159,19 @@ impl DescribeLocationObjectStorageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your object storage system.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your object storage system.</p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your object storage system.</p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }

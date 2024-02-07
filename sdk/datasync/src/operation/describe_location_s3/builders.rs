@@ -22,7 +22,7 @@ impl DescribeLocationS3InputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLocationS3`.
 ///
-/// <p>Returns metadata, such as bucket name, about an Amazon S3 bucket location.</p>
+/// <p>Provides details about how an DataSync transfer location for an S3 bucket is configured.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLocationS3FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeLocationS3FluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_location_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
+    /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon S3 location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_location_arn()
     }

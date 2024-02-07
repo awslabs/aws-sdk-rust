@@ -22,7 +22,7 @@ impl DescribeLocationFsxOpenZfsInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLocationFsxOpenZfs`.
 ///
-/// <p>Provides details about how an DataSync location for an Amazon FSx for OpenZFS file system is configured.</p><note>
+/// <p>Provides details about how an DataSync transfer location for an Amazon FSx for OpenZFS file system is configured.</p><note>
 /// <p>Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code> operation.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

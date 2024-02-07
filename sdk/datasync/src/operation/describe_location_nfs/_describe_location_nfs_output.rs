@@ -6,7 +6,7 @@
 pub struct DescribeLocationNfsOutput {
     /// <p>The ARN of the NFS location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the NFS location.</p>
+    /// <p>The URI of the NFS location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The DataSync agents that are connecting to a Network File System (NFS) location.</p>
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
@@ -21,7 +21,7 @@ impl DescribeLocationNfsOutput {
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The URL of the NFS location.</p>
+    /// <p>The URI of the NFS location.</p>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
@@ -76,17 +76,17 @@ impl DescribeLocationNfsOutputBuilder {
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The URL of the NFS location.</p>
+    /// <p>The URI of the NFS location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the NFS location.</p>
+    /// <p>The URI of the NFS location.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
-    /// <p>The URL of the NFS location.</p>
+    /// <p>The URI of the NFS location.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }

@@ -48,11 +48,17 @@ pub fn ser_update_task_input_input(
         }
         array_13.finish();
     }
-    if let Some(var_16) = &input.task_report_config {
+    if let Some(var_16) = &input.manifest_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("TaskReportConfig").start_object();
-        crate::protocol_serde::shape_task_report_config::ser_task_report_config(&mut object_17, var_16)?;
+        let mut object_17 = object.key("ManifestConfig").start_object();
+        crate::protocol_serde::shape_manifest_config::ser_manifest_config(&mut object_17, var_16)?;
         object_17.finish();
+    }
+    if let Some(var_18) = &input.task_report_config {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("TaskReportConfig").start_object();
+        crate::protocol_serde::shape_task_report_config::ser_task_report_config(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

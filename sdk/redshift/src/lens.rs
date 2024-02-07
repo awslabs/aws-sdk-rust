@@ -353,6 +353,16 @@ pub(crate) fn reflens_get_reserved_node_exchange_offerings_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_recommendations_output_output_marker(
+    input: &crate::operation::list_recommendations::ListRecommendationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_cluster_db_revisions_output_output_cluster_db_revisions(
     input: crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterDbRevision>> {
@@ -701,6 +711,16 @@ pub(crate) fn lens_get_reserved_node_exchange_offerings_output_output_reserved_n
     input: crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>> {
     let input = match input.reserved_node_offerings {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recommendations_output_output_recommendations(
+    input: crate::operation::list_recommendations::ListRecommendationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>> {
+    let input = match input.recommendations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

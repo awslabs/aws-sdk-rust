@@ -120,6 +120,9 @@ pub(crate) fn de_describe_task_execution(
                 "Includes" => {
                     builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
                 }
+                "ManifestConfig" => {
+                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens)?);
+                }
                 "StartTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -161,15 +164,15 @@ pub(crate) fn de_describe_task_execution(
                             .transpose()?,
                     );
                 }
-                "Result" => {
-                    builder = builder.set_result(crate::protocol_serde::shape_task_execution_result_detail::de_task_execution_result_detail(tokens)?);
-                }
                 "BytesCompressed" => {
                     builder = builder.set_bytes_compressed(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?,
                     );
+                }
+                "Result" => {
+                    builder = builder.set_result(crate::protocol_serde::shape_task_execution_result_detail::de_task_execution_result_detail(tokens)?);
                 }
                 "TaskReportConfig" => {
                     builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);

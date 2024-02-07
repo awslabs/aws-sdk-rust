@@ -127,6 +127,16 @@ pub use crate::types::_availability_zone::AvailabilityZone;
 
 pub use crate::types::_supported_platform::SupportedPlatform;
 
+pub use crate::types::_recommendation::Recommendation;
+
+pub use crate::types::_reference_link::ReferenceLink;
+
+pub use crate::types::_recommended_action::RecommendedAction;
+
+pub use crate::types::_recommended_action_type::RecommendedActionType;
+
+pub use crate::types::_impact_ranking_type::ImpactRankingType;
+
 pub use crate::types::_reserved_node_offering::ReservedNodeOffering;
 
 pub use crate::types::_reserved_node_configuration_option::ReservedNodeConfigurationOption;
@@ -325,6 +335,8 @@ mod _hsm_configuration;
 
 mod _hsm_status;
 
+mod _impact_ranking_type;
+
 mod _inbound_integration;
 
 mod _integration_error;
@@ -365,9 +377,17 @@ mod _pause_cluster_message;
 
 mod _pending_modified_values;
 
+mod _recommendation;
+
+mod _recommended_action;
+
+mod _recommended_action_type;
+
 mod _recurring_charge;
 
 mod _redshift_idc_application;
+
+mod _reference_link;
 
 mod _reserved_node;
 

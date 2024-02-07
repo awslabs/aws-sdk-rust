@@ -325,6 +325,37 @@ impl From<crate::operation::create_bot_locale::CreateBotLocaleError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_bot_replica::CreateBotReplicaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_bot_replica::CreateBotReplicaError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_bot_replica::CreateBotReplicaError> for Error {
+    fn from(err: crate::operation::create_bot_replica::CreateBotReplicaError) -> Self {
+        match err {
+            crate::operation::create_bot_replica::CreateBotReplicaError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_bot_replica::CreateBotReplicaError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_bot_replica::CreateBotReplicaError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::create_bot_replica::CreateBotReplicaError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_bot_replica::CreateBotReplicaError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_bot_replica::CreateBotReplicaError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_bot_replica::CreateBotReplicaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_bot_version::CreateBotVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -711,6 +742,37 @@ impl From<crate::operation::delete_bot_locale::DeleteBotLocaleError> for Error {
             crate::operation::delete_bot_locale::DeleteBotLocaleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_bot_locale::DeleteBotLocaleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_bot_locale::DeleteBotLocaleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_bot_replica::DeleteBotReplicaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_bot_replica::DeleteBotReplicaError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_bot_replica::DeleteBotReplicaError> for Error {
+    fn from(err: crate::operation::delete_bot_replica::DeleteBotReplicaError) -> Self {
+        match err {
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::PreconditionFailedException(inner) => {
+                Error::PreconditionFailedException(inner)
+            }
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_bot_replica::DeleteBotReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1157,6 +1219,36 @@ impl From<crate::operation::describe_bot_recommendation::DescribeBotRecommendati
                 Error::ValidationException(inner)
             }
             crate::operation::describe_bot_recommendation::DescribeBotRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bot_replica::DescribeBotReplicaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_bot_replica::DescribeBotReplicaError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_bot_replica::DescribeBotReplicaError> for Error {
+    fn from(err: crate::operation::describe_bot_replica::DescribeBotReplicaError) -> Self {
+        match err {
+            crate::operation::describe_bot_replica::DescribeBotReplicaError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::describe_bot_replica::DescribeBotReplicaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_bot_replica::DescribeBotReplicaError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::describe_bot_replica::DescribeBotReplicaError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_bot_replica::DescribeBotReplicaError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_bot_replica::DescribeBotReplicaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1730,6 +1822,37 @@ impl From<crate::operation::list_bot_aliases::ListBotAliasesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError> for Error {
+    fn from(err: crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError) -> Self {
+        match err {
+            crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_locales::ListBotLocalesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1785,6 +1908,33 @@ impl From<crate::operation::list_bot_recommendations::ListBotRecommendationsErro
             crate::operation::list_bot_recommendations::ListBotRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_bot_recommendations::ListBotRecommendationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_bot_recommendations::ListBotRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_replicas::ListBotReplicasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_replicas::ListBotReplicasError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_bot_replicas::ListBotReplicasError> for Error {
+    fn from(err: crate::operation::list_bot_replicas::ListBotReplicasError) -> Self {
+        match err {
+            crate::operation::list_bot_replicas::ListBotReplicasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_bot_replicas::ListBotReplicasError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_bot_replicas::ListBotReplicasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_bot_replicas::ListBotReplicasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_bot_replicas::ListBotReplicasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1846,6 +1996,38 @@ impl From<crate::operation::list_bots::ListBotsError> for Error {
             crate::operation::list_bots::ListBotsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_bots::ListBotsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_bots::ListBotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_version_replicas::ListBotVersionReplicasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_version_replicas::ListBotVersionReplicasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_bot_version_replicas::ListBotVersionReplicasError> for Error {
+    fn from(err: crate::operation::list_bot_version_replicas::ListBotVersionReplicasError) -> Self {
+        match err {
+            crate::operation::list_bot_version_replicas::ListBotVersionReplicasError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_bot_version_replicas::ListBotVersionReplicasError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_bot_version_replicas::ListBotVersionReplicasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_bot_version_replicas::ListBotVersionReplicasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_bot_version_replicas::ListBotVersionReplicasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

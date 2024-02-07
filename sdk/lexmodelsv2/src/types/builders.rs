@@ -421,6 +421,10 @@ pub use crate::types::_bot_version_summary::BotVersionSummaryBuilder;
 
 pub use crate::types::_bot_version_sort_by::BotVersionSortByBuilder;
 
+pub use crate::types::_bot_version_replica_summary::BotVersionReplicaSummaryBuilder;
+
+pub use crate::types::_bot_version_replica_sort_by::BotVersionReplicaSortByBuilder;
+
 pub use crate::types::_bot_summary::BotSummaryBuilder;
 
 pub use crate::types::_bot_filter::BotFilterBuilder;
@@ -431,6 +435,8 @@ pub use crate::types::_generation_summary::GenerationSummaryBuilder;
 
 pub use crate::types::_generation_sort_by::GenerationSortByBuilder;
 
+pub use crate::types::_bot_replica_summary::BotReplicaSummaryBuilder;
+
 pub use crate::types::_bot_recommendation_summary::BotRecommendationSummaryBuilder;
 
 pub use crate::types::_bot_locale_summary::BotLocaleSummaryBuilder;
@@ -438,6 +444,8 @@ pub use crate::types::_bot_locale_summary::BotLocaleSummaryBuilder;
 pub use crate::types::_bot_locale_filter::BotLocaleFilterBuilder;
 
 pub use crate::types::_bot_locale_sort_by::BotLocaleSortByBuilder;
+
+pub use crate::types::_bot_alias_replica_summary::BotAliasReplicaSummaryBuilder;
 
 pub use crate::types::_bot_alias_summary::BotAliasSummaryBuilder;
 

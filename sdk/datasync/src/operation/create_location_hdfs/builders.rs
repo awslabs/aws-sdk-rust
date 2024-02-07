@@ -22,7 +22,8 @@ impl CreateLocationHdfsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocationHdfs`.
 ///
-/// <p>Creates an endpoint for a Hadoop Distributed File System (HDFS).</p>
+/// <p>Creates a transfer <i>location</i> for a Hadoop Distributed File System (HDFS). DataSync can use this location as a source or destination for transferring data.</p>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html#accessing-hdfs">accesses HDFS clusters</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationHdfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

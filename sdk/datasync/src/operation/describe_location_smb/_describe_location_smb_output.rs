@@ -4,46 +4,46 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationSmbOutput {
-    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    /// <p>The ARN of the SMB location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the source SMB location that was described.</p>
+    /// <p>The URI of the SMB location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub user: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutput {
-    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    /// <p>The ARN of the SMB location.</p>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The URL of the source SMB location that was described.</p>
+    /// <p>The URI of the SMB location.</p>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.agent_arns.is_none()`.
     pub fn agent_arns(&self) -> &[::std::string::String] {
         self.agent_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub fn mount_options(&self) -> ::std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
@@ -78,31 +78,31 @@ pub struct DescribeLocationSmbOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    /// <p>The ARN of the SMB location.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    /// <p>The ARN of the SMB location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
+    /// <p>The ARN of the SMB location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The URL of the source SMB location that was described.</p>
+    /// <p>The URI of the SMB location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the source SMB location that was described.</p>
+    /// <p>The URI of the SMB location.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
-    /// <p>The URL of the source SMB location that was described.</p>
+    /// <p>The URI of the SMB location.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }
@@ -110,61 +110,61 @@ impl DescribeLocationSmbOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
         self.agent_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     pub fn set_agent_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.agent_arns = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
+    /// <p>The ARNs of the DataSync agents that can connect with your SMB file server.</p>
     pub fn get_agent_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.agent_arns
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+    /// <p>The user that can mount and access the files, folders, and file metadata in your SMB file server.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the Windows domain that the SMB server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the SMB file server belongs to.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
         self.mount_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub fn set_mount_options(mut self, input: ::std::option::Option<crate::types::SmbMountOptions>) -> Self {
         self.mount_options = input;
         self
     }
-    /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
+    /// <p>The protocol that DataSync use to access your SMB file.</p>
     pub fn get_mount_options(&self) -> &::std::option::Option<crate::types::SmbMountOptions> {
         &self.mount_options
     }

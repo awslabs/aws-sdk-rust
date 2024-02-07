@@ -150,6 +150,8 @@ mod create_bot_alias;
 
 mod create_bot_locale;
 
+mod create_bot_replica;
+
 mod create_bot_version;
 
 mod create_export;
@@ -201,6 +203,8 @@ mod delete_bot_alias;
 
 mod delete_bot_locale;
 
+mod delete_bot_replica;
+
 mod delete_bot_version;
 
 mod delete_custom_vocabulary;
@@ -230,6 +234,8 @@ mod describe_bot_alias;
 mod describe_bot_locale;
 
 mod describe_bot_recommendation;
+
+mod describe_bot_replica;
 
 mod describe_bot_resource_generation;
 
@@ -263,13 +269,19 @@ mod get_test_execution_artifacts_url;
 
 mod list_aggregated_utterances;
 
+mod list_bot_alias_replicas;
+
 mod list_bot_aliases;
 
 mod list_bot_locales;
 
 mod list_bot_recommendations;
 
+mod list_bot_replicas;
+
 mod list_bot_resource_generations;
+
+mod list_bot_version_replicas;
 
 mod list_bot_versions;
 

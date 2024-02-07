@@ -37,6 +37,8 @@ pub(crate) mod shape_create_bot_alias;
 
 pub(crate) mod shape_create_bot_locale;
 
+pub(crate) mod shape_create_bot_replica;
+
 pub(crate) mod shape_create_bot_version;
 
 pub(crate) mod shape_create_export;
@@ -60,6 +62,8 @@ pub(crate) mod shape_delete_bot;
 pub(crate) mod shape_delete_bot_alias;
 
 pub(crate) mod shape_delete_bot_locale;
+
+pub(crate) mod shape_delete_bot_replica;
 
 pub(crate) mod shape_delete_bot_version;
 
@@ -90,6 +94,8 @@ pub(crate) mod shape_describe_bot_alias;
 pub(crate) mod shape_describe_bot_locale;
 
 pub(crate) mod shape_describe_bot_recommendation;
+
+pub(crate) mod shape_describe_bot_replica;
 
 pub(crate) mod shape_describe_bot_resource_generation;
 
@@ -123,13 +129,19 @@ pub(crate) mod shape_get_test_execution_artifacts_url;
 
 pub(crate) mod shape_list_aggregated_utterances;
 
+pub(crate) mod shape_list_bot_alias_replicas;
+
 pub(crate) mod shape_list_bot_aliases;
 
 pub(crate) mod shape_list_bot_locales;
 
 pub(crate) mod shape_list_bot_recommendations;
 
+pub(crate) mod shape_list_bot_replicas;
+
 pub(crate) mod shape_list_bot_resource_generations;
+
+pub(crate) mod shape_list_bot_version_replicas;
 
 pub(crate) mod shape_list_bot_versions;
 
@@ -237,6 +249,8 @@ pub(crate) mod shape_create_bot_input;
 
 pub(crate) mod shape_create_bot_locale_input;
 
+pub(crate) mod shape_create_bot_replica_input;
+
 pub(crate) mod shape_create_bot_version_input;
 
 pub(crate) mod shape_create_export_input;
@@ -259,6 +273,8 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_aggregated_utterances_input;
 
+pub(crate) mod shape_list_bot_alias_replicas_input;
+
 pub(crate) mod shape_list_bot_aliases_input;
 
 pub(crate) mod shape_list_bot_locales_input;
@@ -266,6 +282,8 @@ pub(crate) mod shape_list_bot_locales_input;
 pub(crate) mod shape_list_bot_recommendations_input;
 
 pub(crate) mod shape_list_bot_resource_generations_input;
+
+pub(crate) mod shape_list_bot_version_replicas_input;
 
 pub(crate) mod shape_list_bot_versions_input;
 
@@ -411,6 +429,8 @@ pub(crate) mod shape_bot_alias_locale_settings;
 
 pub(crate) mod shape_bot_alias_locale_settings_map;
 
+pub(crate) mod shape_bot_alias_replica_summary_list;
+
 pub(crate) mod shape_bot_alias_summary_list;
 
 pub(crate) mod shape_bot_filter;
@@ -431,6 +451,8 @@ pub(crate) mod shape_bot_recommendation_results;
 
 pub(crate) mod shape_bot_recommendation_summary_list;
 
+pub(crate) mod shape_bot_replica_summary_list;
+
 pub(crate) mod shape_bot_sort_by;
 
 pub(crate) mod shape_bot_summary_list;
@@ -438,6 +460,10 @@ pub(crate) mod shape_bot_summary_list;
 pub(crate) mod shape_bot_version_locale_details;
 
 pub(crate) mod shape_bot_version_locale_specification;
+
+pub(crate) mod shape_bot_version_replica_sort_by;
+
+pub(crate) mod shape_bot_version_replica_summary_list;
 
 pub(crate) mod shape_bot_version_sort_by;
 
@@ -627,6 +653,8 @@ pub(crate) mod shape_audio_log_settings_list;
 
 pub(crate) mod shape_bot_alias_history_event;
 
+pub(crate) mod shape_bot_alias_replica_summary;
+
 pub(crate) mod shape_bot_alias_summary;
 
 pub(crate) mod shape_bot_alias_test_execution_target;
@@ -647,7 +675,11 @@ pub(crate) mod shape_bot_recommendation_result_statistics;
 
 pub(crate) mod shape_bot_recommendation_summary;
 
+pub(crate) mod shape_bot_replica_summary;
+
 pub(crate) mod shape_bot_summary;
+
+pub(crate) mod shape_bot_version_replica_summary;
 
 pub(crate) mod shape_bot_version_summary;
 

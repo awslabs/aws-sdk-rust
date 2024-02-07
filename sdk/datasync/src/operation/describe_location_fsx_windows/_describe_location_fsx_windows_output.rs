@@ -3,30 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
+    /// <p>The ARN of the FSx for Windows File Server location.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for Windows File Server location.</p>
     pub location_uri: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time that the FSx for Windows File Server location was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    /// <p>The user with the permissions to mount and access the FSx for Windows File Server file system.</p>
     pub user: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeLocationFsxWindowsOutput {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
+    /// <p>The ARN of the FSx for Windows File Server location.</p>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for Windows File Server location.</p>
     pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
     pub fn security_group_arns(&self) -> &[::std::string::String] {
@@ -36,11 +36,11 @@ impl DescribeLocationFsxWindowsOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    /// <p>The user with the permissions to mount and access the FSx for Windows File Server file system.</p>
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
-    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
@@ -70,31 +70,31 @@ pub struct DescribeLocationFsxWindowsOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeLocationFsxWindowsOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
+    /// <p>The ARN of the FSx for Windows File Server location.</p>
     pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
+    /// <p>The ARN of the FSx for Windows File Server location.</p>
     pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
+    /// <p>The ARN of the FSx for Windows File Server location.</p>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for Windows File Server location.</p>
     pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for Windows File Server location.</p>
     pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
-    /// <p>The URL of the FSx for Windows File Server location that was described.</p>
+    /// <p>The uniform resource identifier (URI) of the FSx for Windows File Server location.</p>
     pub fn get_location_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_uri
     }
@@ -102,19 +102,19 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
+    /// <p>The ARNs of the security groups that are configured for the FSx for Windows File Server file system.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
@@ -132,31 +132,31 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    /// <p>The user with the permissions to mount and access the FSx for Windows File Server file system.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    /// <p>The user with the permissions to mount and access the FSx for Windows File Server file system.</p>
     pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
     }
-    /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
+    /// <p>The user with the permissions to mount and access the FSx for Windows File Server file system.</p>
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
-    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
-    /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
+    /// <p>The name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }

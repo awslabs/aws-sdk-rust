@@ -22,7 +22,8 @@ impl CreateLocationEfsInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocationEfs`.
 ///
-/// <p>Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating a location for Amazon EFS</a>.</p>
+/// <p>Creates a transfer <i>location</i> for an Amazon EFS file system. DataSync can use this location as a source or destination for transferring data.</p>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-access">accesses Amazon EFS file systems</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationEfsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

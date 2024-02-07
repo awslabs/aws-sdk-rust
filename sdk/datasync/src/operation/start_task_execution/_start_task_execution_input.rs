@@ -13,11 +13,17 @@ pub struct StartTaskExecutionInput {
     pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
     pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
+    pub manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a task report configuration, specify this parameter as empty.</p>
+    pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
-    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
-    pub task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
 }
 impl StartTaskExecutionInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
@@ -41,16 +47,24 @@ impl StartTaskExecutionInput {
     pub fn excludes(&self) -> &[crate::types::FilterRule] {
         self.excludes.as_deref().unwrap_or_default()
     }
+    /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
+    pub fn manifest_config(&self) -> ::std::option::Option<&crate::types::ManifestConfig> {
+        self.manifest_config.as_ref()
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a task report configuration, specify this parameter as empty.</p>
+    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
+        self.task_report_config.as_ref()
+    }
     /// <p>Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.</p>
     /// <p><i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::TagListEntry] {
         self.tags.as_deref().unwrap_or_default()
-    }
-    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
-    pub fn task_report_config(&self) -> ::std::option::Option<&crate::types::TaskReportConfig> {
-        self.task_report_config.as_ref()
     }
 }
 impl StartTaskExecutionInput {
@@ -68,8 +82,9 @@ pub struct StartTaskExecutionInputBuilder {
     pub(crate) override_options: ::std::option::Option<crate::types::Options>,
     pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
+    pub(crate) manifest_config: ::std::option::Option<crate::types::ManifestConfig>,
     pub(crate) task_report_config: ::std::option::Option<crate::types::TaskReportConfig>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
 }
 impl StartTaskExecutionInputBuilder {
     /// <p>Specifies the Amazon Resource Name (ARN) of the task that you want to start.</p>
@@ -144,6 +159,46 @@ impl StartTaskExecutionInputBuilder {
     pub fn get_excludes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterRule>> {
         &self.excludes
     }
+    /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
+    pub fn manifest_config(mut self, input: crate::types::ManifestConfig) -> Self {
+        self.manifest_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
+    pub fn set_manifest_config(mut self, input: ::std::option::Option<crate::types::ManifestConfig>) -> Self {
+        self.manifest_config = input;
+        self
+    }
+    /// <p>Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more information and configuration examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync transfers by using a manifest</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a manifest configuration, specify this parameter with an empty value.</p>
+    pub fn get_manifest_config(&self) -> &::std::option::Option<crate::types::ManifestConfig> {
+        &self.manifest_config
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a task report configuration, specify this parameter as empty.</p>
+    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
+        self.task_report_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a task report configuration, specify this parameter as empty.</p>
+    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
+        self.task_report_config = input;
+        self
+    }
+    /// <p>Specifies how you want to configure a task report, which provides detailed information about your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers with task reports</a>.</p>
+    /// <p>When using this parameter, your caller identity (the role that you're using DataSync with) must have the <code>iam:PassRole</code> permission. The <a href="https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess">AWSDataSyncFullAccess</a> policy includes this permission.</p>
+    /// <p>To remove a task report configuration, specify this parameter as empty.</p>
+    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
+        &self.task_report_config
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -167,20 +222,6 @@ impl StartTaskExecutionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>> {
         &self.tags
     }
-    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
-    pub fn task_report_config(mut self, input: crate::types::TaskReportConfig) -> Self {
-        self.task_report_config = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
-    pub fn set_task_report_config(mut self, input: ::std::option::Option<crate::types::TaskReportConfig>) -> Self {
-        self.task_report_config = input;
-        self
-    }
-    /// <p>Specifies how you want to configure a task report, which provides detailed information about for your DataSync transfer.</p>
-    pub fn get_task_report_config(&self) -> &::std::option::Option<crate::types::TaskReportConfig> {
-        &self.task_report_config
-    }
     /// Consumes the builder and constructs a [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
     pub fn build(
         self,
@@ -191,8 +232,9 @@ impl StartTaskExecutionInputBuilder {
             override_options: self.override_options,
             includes: self.includes,
             excludes: self.excludes,
-            tags: self.tags,
+            manifest_config: self.manifest_config,
             task_report_config: self.task_report_config,
+            tags: self.tags,
         })
     }
 }

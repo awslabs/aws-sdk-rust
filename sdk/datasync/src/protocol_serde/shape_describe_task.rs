@@ -179,6 +179,9 @@ pub(crate) fn de_describe_task(
                 "Includes" => {
                     builder = builder.set_includes(crate::protocol_serde::shape_filter_list::de_filter_list(tokens)?);
                 }
+                "ManifestConfig" => {
+                    builder = builder.set_manifest_config(crate::protocol_serde::shape_manifest_config::de_manifest_config(tokens)?);
+                }
                 "TaskReportConfig" => {
                     builder = builder.set_task_report_config(crate::protocol_serde::shape_task_report_config::de_task_report_config(tokens)?);
                 }

@@ -309,6 +309,8 @@ pub(crate) mod shape_location_filter;
 
 pub(crate) mod shape_location_list;
 
+pub(crate) mod shape_manifest_config;
+
 pub(crate) mod shape_metrics;
 
 pub(crate) mod shape_nfs_mount_options;
@@ -377,6 +379,8 @@ pub(crate) mod shape_report_overrides;
 
 pub(crate) mod shape_resource_metrics;
 
+pub(crate) mod shape_source_manifest_config;
+
 pub(crate) mod shape_storage_system_list_entry;
 
 pub(crate) mod shape_task_execution_list_entry;
@@ -396,6 +400,8 @@ pub(crate) mod shape_p95_metrics;
 pub(crate) mod shape_report_destination_s3;
 
 pub(crate) mod shape_report_override;
+
+pub(crate) mod shape_s3_manifest_config;
 
 pub(crate) mod shape_enabled_protocols;
 

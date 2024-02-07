@@ -45,6 +45,16 @@ pub use crate::types::_report_destination::ReportDestination;
 
 pub use crate::types::_report_destination_s3::ReportDestinationS3;
 
+pub use crate::types::_manifest_config::ManifestConfig;
+
+pub use crate::types::_source_manifest_config::SourceManifestConfig;
+
+pub use crate::types::_s3_manifest_config::S3ManifestConfig;
+
+pub use crate::types::_manifest_format::ManifestFormat;
+
+pub use crate::types::_manifest_action::ManifestAction;
+
 pub use crate::types::_filter_rule::FilterRule;
 
 pub use crate::types::_filter_type::FilterType;
@@ -245,6 +255,12 @@ mod _location_list_entry;
 
 mod _log_level;
 
+mod _manifest_action;
+
+mod _manifest_config;
+
+mod _manifest_format;
+
 mod _max_p95_performance;
 
 mod _mtime;
@@ -313,6 +329,8 @@ mod _resource_metrics;
 
 mod _s3_config;
 
+mod _s3_manifest_config;
+
 mod _s3_storage_class;
 
 mod _smb_mount_options;
@@ -320,6 +338,8 @@ mod _smb_mount_options;
 mod _smb_security_descriptor_copy_flags;
 
 mod _smb_version;
+
+mod _source_manifest_config;
 
 mod _storage_system_connectivity_status;
 

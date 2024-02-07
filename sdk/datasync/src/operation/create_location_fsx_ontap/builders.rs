@@ -22,8 +22,8 @@ impl CreateLocationFsxOntapInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateLocationFsxOntap`.
 ///
-/// <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can use for a data transfer.</p>
-/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses an FSx for ONTAP file system</a>.</p>
+/// <p>Creates a transfer <i>location</i> for an Amazon FSx for NetApp ONTAP file system. DataSync can use this location as a source or destination for transferring data.</p>
+/// <p>Before you begin, make sure that you understand how DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">accesses FSx for ONTAP file systems</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLocationFsxOntapFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -91,6 +91,12 @@ pub use crate::types::_availability_zone::AvailabilityZoneBuilder;
 
 pub use crate::types::_supported_platform::SupportedPlatformBuilder;
 
+pub use crate::types::_recommendation::RecommendationBuilder;
+
+pub use crate::types::_reference_link::ReferenceLinkBuilder;
+
+pub use crate::types::_recommended_action::RecommendedActionBuilder;
+
 pub use crate::types::_reserved_node_offering::ReservedNodeOfferingBuilder;
 
 pub use crate::types::_reserved_node_configuration_option::ReservedNodeConfigurationOptionBuilder;

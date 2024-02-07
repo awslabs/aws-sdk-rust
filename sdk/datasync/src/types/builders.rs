@@ -11,6 +11,12 @@ pub use crate::types::_report_destination::ReportDestinationBuilder;
 
 pub use crate::types::_report_destination_s3::ReportDestinationS3Builder;
 
+pub use crate::types::_manifest_config::ManifestConfigBuilder;
+
+pub use crate::types::_source_manifest_config::SourceManifestConfigBuilder;
+
+pub use crate::types::_s3_manifest_config::S3ManifestConfigBuilder;
+
 pub use crate::types::_filter_rule::FilterRuleBuilder;
 
 pub use crate::types::_task_schedule::TaskScheduleBuilder;
