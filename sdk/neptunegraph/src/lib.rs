@@ -28,8 +28,8 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = { version = "1.1.4", features = ["behavior-version-latest"] }
-//! aws-sdk-neptunegraph = "1.6.0"
+//! aws-config = { version = "1.1.5", features = ["behavior-version-latest"] }
+//! aws-sdk-neptunegraph = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
