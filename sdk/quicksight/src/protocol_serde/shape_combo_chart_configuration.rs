@@ -108,6 +108,12 @@ pub fn ser_combo_chart_configuration(
         crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_35, var_34)?;
         object_35.finish();
     }
+    if let Some(var_36) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_37, var_36)?;
+        object_37.finish();
+    }
     Ok(())
 }
 
@@ -196,6 +202,11 @@ where
                         }
                         "VisualPalette" => {
                             builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

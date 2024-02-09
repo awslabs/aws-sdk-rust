@@ -18,6 +18,8 @@ pub struct ActionExecutionDetail {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last update time of the action execution.</p>
     pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ARN of the user who changed the pipeline execution details.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub status: ::std::option::Option<crate::types::ActionExecutionStatus>,
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
@@ -54,6 +56,10 @@ impl ActionExecutionDetail {
     pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
+    /// <p>The ARN of the user who changed the pipeline execution details.</p>
+    pub fn updated_by(&self) -> ::std::option::Option<&str> {
+        self.updated_by.as_deref()
+    }
     /// <p>The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ActionExecutionStatus> {
         self.status.as_ref()
@@ -85,6 +91,7 @@ pub struct ActionExecutionDetailBuilder {
     pub(crate) action_name: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ActionExecutionStatus>,
     pub(crate) input: ::std::option::Option<crate::types::ActionExecutionInput>,
     pub(crate) output: ::std::option::Option<crate::types::ActionExecutionOutput>,
@@ -188,6 +195,20 @@ impl ActionExecutionDetailBuilder {
     pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_time
     }
+    /// <p>The ARN of the user who changed the pipeline execution details.</p>
+    pub fn updated_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the user who changed the pipeline execution details.</p>
+    pub fn set_updated_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.updated_by = input;
+        self
+    }
+    /// <p>The ARN of the user who changed the pipeline execution details.</p>
+    pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.updated_by
+    }
     /// <p>The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub fn status(mut self, input: crate::types::ActionExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -240,6 +261,7 @@ impl ActionExecutionDetailBuilder {
             action_name: self.action_name,
             start_time: self.start_time,
             last_update_time: self.last_update_time,
+            updated_by: self.updated_by,
             status: self.status,
             input: self.input,
             output: self.output,

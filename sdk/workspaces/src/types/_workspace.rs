@@ -12,43 +12,7 @@ pub struct Workspace {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The IP address of the WorkSpace.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
-    /// <p>The operational state of the WorkSpace.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The WorkSpace is in a waiting state (for example, the WorkSpace is being created).</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> – The WorkSpace is running and has passed the health checks.</p></li>
-    /// <li>
-    /// <p><code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The WorkSpace is not responding to health checks.</p></li>
-    /// <li>
-    /// <p><code>REBOOTING</code> – The WorkSpace is being rebooted (restarted).</p></li>
-    /// <li>
-    /// <p><code>STARTING</code> – The WorkSpace is starting up and health checks are being run.</p></li>
-    /// <li>
-    /// <p><code>REBUILDING</code> – The WorkSpace is being rebuilt.</p></li>
-    /// <li>
-    /// <p><code>RESTORING</code> – The WorkSpace is being restored.</p></li>
-    /// <li>
-    /// <p><code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by Amazon Web Services.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_MAINTENANCE</code> – The WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p></li>
-    /// <li>
-    /// <p><code>TERMINATING</code> – The WorkSpace is being deleted.</p></li>
-    /// <li>
-    /// <p><code>TERMINATED</code> – The WorkSpace has been deleted.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> – The WorkSpace has been suspended for image creation.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> – The WorkSpace is undergoing an update.</p></li>
-    /// <li>
-    /// <p><code>STOPPING</code> – The WorkSpace is being stopped.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> – The WorkSpace has been stopped.</p></li>
-    /// <li>
-    /// <p><code>ERROR </code> – The WorkSpace is an error state (for example, an error occurred during startup).</p></li>
-    /// </ul><note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub state: ::std::option::Option<crate::types::WorkspaceState>,
@@ -68,6 +32,8 @@ pub struct Workspace {
     pub user_volume_encryption_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
     pub root_volume_encryption_enabled: ::std::option::Option<bool>,
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The properties of the WorkSpace.</p>
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The modification states of the WorkSpace.</p>
@@ -96,43 +62,7 @@ impl Workspace {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
-    /// <p>The operational state of the WorkSpace.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The WorkSpace is in a waiting state (for example, the WorkSpace is being created).</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> – The WorkSpace is running and has passed the health checks.</p></li>
-    /// <li>
-    /// <p><code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The WorkSpace is not responding to health checks.</p></li>
-    /// <li>
-    /// <p><code>REBOOTING</code> – The WorkSpace is being rebooted (restarted).</p></li>
-    /// <li>
-    /// <p><code>STARTING</code> – The WorkSpace is starting up and health checks are being run.</p></li>
-    /// <li>
-    /// <p><code>REBUILDING</code> – The WorkSpace is being rebuilt.</p></li>
-    /// <li>
-    /// <p><code>RESTORING</code> – The WorkSpace is being restored.</p></li>
-    /// <li>
-    /// <p><code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by Amazon Web Services.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_MAINTENANCE</code> – The WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p></li>
-    /// <li>
-    /// <p><code>TERMINATING</code> – The WorkSpace is being deleted.</p></li>
-    /// <li>
-    /// <p><code>TERMINATED</code> – The WorkSpace has been deleted.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> – The WorkSpace has been suspended for image creation.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> – The WorkSpace is undergoing an update.</p></li>
-    /// <li>
-    /// <p><code>STOPPING</code> – The WorkSpace is being stopped.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> – The WorkSpace has been stopped.</p></li>
-    /// <li>
-    /// <p><code>ERROR </code> – The WorkSpace is an error state (for example, an error occurred during startup).</p></li>
-    /// </ul><note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn state(&self) -> ::std::option::Option<&crate::types::WorkspaceState> {
@@ -169,6 +99,10 @@ impl Workspace {
     /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
     pub fn root_volume_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.root_volume_encryption_enabled
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
     /// <p>The properties of the WorkSpace.</p>
     pub fn workspace_properties(&self) -> ::std::option::Option<&crate::types::WorkspaceProperties> {
@@ -221,6 +155,7 @@ pub struct WorkspaceBuilder {
     pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) user_volume_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) root_volume_encryption_enabled: ::std::option::Option<bool>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     pub(crate) modification_states: ::std::option::Option<::std::vec::Vec<crate::types::ModificationState>>,
     pub(crate) related_workspaces: ::std::option::Option<::std::vec::Vec<crate::types::RelatedWorkspaceProperties>>,
@@ -284,129 +219,21 @@ impl WorkspaceBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
-    /// <p>The operational state of the WorkSpace.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The WorkSpace is in a waiting state (for example, the WorkSpace is being created).</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> – The WorkSpace is running and has passed the health checks.</p></li>
-    /// <li>
-    /// <p><code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The WorkSpace is not responding to health checks.</p></li>
-    /// <li>
-    /// <p><code>REBOOTING</code> – The WorkSpace is being rebooted (restarted).</p></li>
-    /// <li>
-    /// <p><code>STARTING</code> – The WorkSpace is starting up and health checks are being run.</p></li>
-    /// <li>
-    /// <p><code>REBUILDING</code> – The WorkSpace is being rebuilt.</p></li>
-    /// <li>
-    /// <p><code>RESTORING</code> – The WorkSpace is being restored.</p></li>
-    /// <li>
-    /// <p><code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by Amazon Web Services.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_MAINTENANCE</code> – The WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p></li>
-    /// <li>
-    /// <p><code>TERMINATING</code> – The WorkSpace is being deleted.</p></li>
-    /// <li>
-    /// <p><code>TERMINATED</code> – The WorkSpace has been deleted.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> – The WorkSpace has been suspended for image creation.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> – The WorkSpace is undergoing an update.</p></li>
-    /// <li>
-    /// <p><code>STOPPING</code> – The WorkSpace is being stopped.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> – The WorkSpace has been stopped.</p></li>
-    /// <li>
-    /// <p><code>ERROR </code> – The WorkSpace is an error state (for example, an error occurred during startup).</p></li>
-    /// </ul><note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn state(mut self, input: crate::types::WorkspaceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operational state of the WorkSpace.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The WorkSpace is in a waiting state (for example, the WorkSpace is being created).</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> – The WorkSpace is running and has passed the health checks.</p></li>
-    /// <li>
-    /// <p><code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The WorkSpace is not responding to health checks.</p></li>
-    /// <li>
-    /// <p><code>REBOOTING</code> – The WorkSpace is being rebooted (restarted).</p></li>
-    /// <li>
-    /// <p><code>STARTING</code> – The WorkSpace is starting up and health checks are being run.</p></li>
-    /// <li>
-    /// <p><code>REBUILDING</code> – The WorkSpace is being rebuilt.</p></li>
-    /// <li>
-    /// <p><code>RESTORING</code> – The WorkSpace is being restored.</p></li>
-    /// <li>
-    /// <p><code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by Amazon Web Services.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_MAINTENANCE</code> – The WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p></li>
-    /// <li>
-    /// <p><code>TERMINATING</code> – The WorkSpace is being deleted.</p></li>
-    /// <li>
-    /// <p><code>TERMINATED</code> – The WorkSpace has been deleted.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> – The WorkSpace has been suspended for image creation.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> – The WorkSpace is undergoing an update.</p></li>
-    /// <li>
-    /// <p><code>STOPPING</code> – The WorkSpace is being stopped.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> – The WorkSpace has been stopped.</p></li>
-    /// <li>
-    /// <p><code>ERROR </code> – The WorkSpace is an error state (for example, an error occurred during startup).</p></li>
-    /// </ul><note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The operational state of the WorkSpace.</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PENDING</code> – The WorkSpace is in a waiting state (for example, the WorkSpace is being created).</p></li>
-    /// <li>
-    /// <p><code>AVAILABLE</code> – The WorkSpace is running and has passed the health checks.</p></li>
-    /// <li>
-    /// <p><code>IMPAIRED</code> – Refer to <code>UNHEALTHY</code> state.</p></li>
-    /// <li>
-    /// <p><code>UNHEALTHY</code> – The WorkSpace is not responding to health checks.</p></li>
-    /// <li>
-    /// <p><code>REBOOTING</code> – The WorkSpace is being rebooted (restarted).</p></li>
-    /// <li>
-    /// <p><code>STARTING</code> – The WorkSpace is starting up and health checks are being run.</p></li>
-    /// <li>
-    /// <p><code>REBUILDING</code> – The WorkSpace is being rebuilt.</p></li>
-    /// <li>
-    /// <p><code>RESTORING</code> – The WorkSpace is being restored.</p></li>
-    /// <li>
-    /// <p><code>MAINTENANCE</code> – The WorkSpace is undergoing scheduled maintenance by Amazon Web Services.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_MAINTENANCE</code> – The WorkSpace is undergoing maintenance by the WorkSpaces administrator.</p></li>
-    /// <li>
-    /// <p><code>TERMINATING</code> – The WorkSpace is being deleted.</p></li>
-    /// <li>
-    /// <p><code>TERMINATED</code> – The WorkSpace has been deleted.</p></li>
-    /// <li>
-    /// <p><code>SUSPENDED</code> – The WorkSpace has been suspended for image creation.</p></li>
-    /// <li>
-    /// <p><code>UPDATING</code> – The WorkSpace is undergoing an update.</p></li>
-    /// <li>
-    /// <p><code>STOPPING</code> – The WorkSpace is being stopped.</p></li>
-    /// <li>
-    /// <p><code>STOPPED</code> – The WorkSpace has been stopped.</p></li>
-    /// <li>
-    /// <p><code>ERROR </code> – The WorkSpace is an error state (for example, an error occurred during startup).</p></li>
-    /// </ul><note>
+    /// <p>The operational state of the WorkSpace.</p><note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p>
     /// </note>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::WorkspaceState> {
@@ -524,6 +351,20 @@ impl WorkspaceBuilder {
     pub fn get_root_volume_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.root_volume_encryption_enabled
     }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// <p>The properties of the WorkSpace.</p>
     pub fn workspace_properties(mut self, input: crate::types::WorkspaceProperties) -> Self {
         self.workspace_properties = ::std::option::Option::Some(input);
@@ -631,6 +472,7 @@ impl WorkspaceBuilder {
             volume_encryption_key: self.volume_encryption_key,
             user_volume_encryption_enabled: self.user_volume_encryption_enabled,
             root_volume_encryption_enabled: self.root_volume_encryption_enabled,
+            workspace_name: self.workspace_name,
             workspace_properties: self.workspace_properties,
             modification_states: self.modification_states,
             related_workspaces: self.related_workspaces,

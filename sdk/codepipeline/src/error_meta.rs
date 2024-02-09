@@ -11,6 +11,8 @@ pub enum Error {
     ApprovalAlreadyCompletedException(crate::types::error::ApprovalAlreadyCompletedException),
     /// <p>Unable to modify the tag due to a simultaneous update request.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>The pipeline has reached the limit for concurrent pipeline executions.</p>
+    ConcurrentPipelineExecutionsLimitExceededException(crate::types::error::ConcurrentPipelineExecutionsLimitExceededException),
     /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The pipeline execution is already in a <code>Stopping</code> state. If you already chose to stop and wait, you cannot make that request again. You can choose to stop and abandon now, but be aware that this option can lead to failed tasks or out of sequence tasks. If you already chose to stop and abandon, you cannot make that request again.</p>
@@ -91,6 +93,7 @@ impl ::std::fmt::Display for Error {
             Error::ActionTypeNotFoundException(inner) => inner.fmt(f),
             Error::ApprovalAlreadyCompletedException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::ConcurrentPipelineExecutionsLimitExceededException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DuplicatedStopRequestException(inner) => inner.fmt(f),
             Error::InvalidActionDeclarationException(inner) => inner.fmt(f),
@@ -148,6 +151,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ActionTypeNotFoundException(inner) => inner.meta(),
             Self::ApprovalAlreadyCompletedException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::ConcurrentPipelineExecutionsLimitExceededException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::DuplicatedStopRequestException(inner) => inner.meta(),
             Self::InvalidActionDeclarationException(inner) => inner.meta(),
@@ -1190,6 +1194,9 @@ where
 impl From<crate::operation::start_pipeline_execution::StartPipelineExecutionError> for Error {
     fn from(err: crate::operation::start_pipeline_execution::StartPipelineExecutionError) -> Self {
         match err {
+            crate::operation::start_pipeline_execution::StartPipelineExecutionError::ConcurrentPipelineExecutionsLimitExceededException(inner) => {
+                Error::ConcurrentPipelineExecutionsLimitExceededException(inner)
+            }
             crate::operation::start_pipeline_execution::StartPipelineExecutionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_pipeline_execution::StartPipelineExecutionError::PipelineNotFoundException(inner) => {
                 Error::PipelineNotFoundException(inner)
@@ -1354,6 +1361,7 @@ impl ::std::error::Error for Error {
             Error::ActionTypeNotFoundException(inner) => inner.source(),
             Error::ApprovalAlreadyCompletedException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::ConcurrentPipelineExecutionsLimitExceededException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::DuplicatedStopRequestException(inner) => inner.source(),
             Error::InvalidActionDeclarationException(inner) => inner.source(),
@@ -1397,6 +1405,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ActionTypeNotFoundException(e) => e.request_id(),
             Self::ApprovalAlreadyCompletedException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConcurrentPipelineExecutionsLimitExceededException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::DuplicatedStopRequestException(e) => e.request_id(),
             Self::InvalidActionDeclarationException(e) => e.request_id(),

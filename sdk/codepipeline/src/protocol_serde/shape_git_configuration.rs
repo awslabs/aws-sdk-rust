@@ -18,6 +18,18 @@ pub fn ser_git_configuration(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.pull_request {
+        let mut array_6 = object.key("pullRequest").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_git_pull_request_filter::ser_git_pull_request_filter(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -45,6 +57,11 @@ where
                         }
                         "push" => {
                             builder = builder.set_push(crate::protocol_serde::shape_git_push_filter_list::de_git_push_filter_list(tokens)?);
+                        }
+                        "pullRequest" => {
+                            builder = builder.set_pull_request(
+                                crate::protocol_serde::shape_git_pull_request_filter_list::de_git_pull_request_filter_list(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

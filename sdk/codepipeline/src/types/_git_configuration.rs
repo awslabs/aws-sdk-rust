@@ -2,8 +2,6 @@
 
 /// <p>A type of trigger configuration for Git-based source actions.</p><note>
 /// <p>You can specify the Git configuration trigger type for all third-party Git-based source actions that are supported by the <code>CodeStarSourceConnection</code> action type.</p>
-/// </note> <note>
-/// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
@@ -12,10 +10,10 @@ pub struct GitConfiguration {
     /// <p>You can only specify one trigger configuration per source action.</p>
     /// </note>
     pub source_action_name: ::std::string::String,
-    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p><note>
-    /// <p>Git tags is the only supported event type.</p>
-    /// </note>
+    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
     pub push: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>,
+    /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
+    pub pull_request: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>>,
 }
 impl GitConfiguration {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p><note>
@@ -25,13 +23,17 @@ impl GitConfiguration {
         use std::ops::Deref;
         self.source_action_name.deref()
     }
-    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p><note>
-    /// <p>Git tags is the only supported event type.</p>
-    /// </note>
+    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.push.is_none()`.
     pub fn push(&self) -> &[crate::types::GitPushFilter] {
         self.push.as_deref().unwrap_or_default()
+    }
+    /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pull_request.is_none()`.
+    pub fn pull_request(&self) -> &[crate::types::GitPullRequestFilter] {
+        self.pull_request.as_deref().unwrap_or_default()
     }
 }
 impl GitConfiguration {
@@ -47,6 +49,7 @@ impl GitConfiguration {
 pub struct GitConfigurationBuilder {
     pub(crate) source_action_name: ::std::option::Option<::std::string::String>,
     pub(crate) push: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>,
+    pub(crate) pull_request: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>>,
 }
 impl GitConfigurationBuilder {
     /// <p>The name of the pipeline source action where the trigger configuration, such as Git tags, is specified. The trigger configuration will start the pipeline upon the specified change only.</p><note>
@@ -74,27 +77,41 @@ impl GitConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_push`](Self::set_push).
     ///
-    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p><note>
-    /// <p>Git tags is the only supported event type.</p>
-    /// </note>
+    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
     pub fn push(mut self, input: crate::types::GitPushFilter) -> Self {
         let mut v = self.push.unwrap_or_default();
         v.push(input);
         self.push = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p><note>
-    /// <p>Git tags is the only supported event type.</p>
-    /// </note>
+    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
     pub fn set_push(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>>) -> Self {
         self.push = input;
         self
     }
-    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p><note>
-    /// <p>Git tags is the only supported event type.</p>
-    /// </note>
+    /// <p>The field where the repository event that will start the pipeline, such as pushing Git tags, is specified with details.</p>
     pub fn get_push(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GitPushFilter>> {
         &self.push
+    }
+    /// Appends an item to `pull_request`.
+    ///
+    /// To override the contents of this collection use [`set_pull_request`](Self::set_pull_request).
+    ///
+    /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
+    pub fn pull_request(mut self, input: crate::types::GitPullRequestFilter) -> Self {
+        let mut v = self.pull_request.unwrap_or_default();
+        v.push(input);
+        self.pull_request = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
+    pub fn set_pull_request(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>>) -> Self {
+        self.pull_request = input;
+        self
+    }
+    /// <p>The field where the repository event that will start the pipeline is specified as pull requests.</p>
+    pub fn get_pull_request(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GitPullRequestFilter>> {
+        &self.pull_request
     }
     /// Consumes the builder and constructs a [`GitConfiguration`](crate::types::GitConfiguration).
     /// This method will fail if any of the following fields are not set:
@@ -108,6 +125,7 @@ impl GitConfigurationBuilder {
                 )
             })?,
             push: self.push,
+            pull_request: self.pull_request,
         })
     }
 }

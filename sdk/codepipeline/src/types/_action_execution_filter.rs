@@ -6,11 +6,21 @@
 pub struct ActionExecutionFilter {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
     pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    /// <p>The latest execution in the pipeline.</p><note>
+    /// <p>Filtering on the latest execution is available for executions run on or after February 08, 2024.</p>
+    /// </note>
+    pub latest_in_pipeline_execution: ::std::option::Option<crate::types::LatestInPipelineExecutionFilter>,
 }
 impl ActionExecutionFilter {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
     pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
+    }
+    /// <p>The latest execution in the pipeline.</p><note>
+    /// <p>Filtering on the latest execution is available for executions run on or after February 08, 2024.</p>
+    /// </note>
+    pub fn latest_in_pipeline_execution(&self) -> ::std::option::Option<&crate::types::LatestInPipelineExecutionFilter> {
+        self.latest_in_pipeline_execution.as_ref()
     }
 }
 impl ActionExecutionFilter {
@@ -25,6 +35,7 @@ impl ActionExecutionFilter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ActionExecutionFilterBuilder {
     pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_in_pipeline_execution: ::std::option::Option<crate::types::LatestInPipelineExecutionFilter>,
 }
 impl ActionExecutionFilterBuilder {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
@@ -41,10 +52,31 @@ impl ActionExecutionFilterBuilder {
     pub fn get_pipeline_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.pipeline_execution_id
     }
+    /// <p>The latest execution in the pipeline.</p><note>
+    /// <p>Filtering on the latest execution is available for executions run on or after February 08, 2024.</p>
+    /// </note>
+    pub fn latest_in_pipeline_execution(mut self, input: crate::types::LatestInPipelineExecutionFilter) -> Self {
+        self.latest_in_pipeline_execution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The latest execution in the pipeline.</p><note>
+    /// <p>Filtering on the latest execution is available for executions run on or after February 08, 2024.</p>
+    /// </note>
+    pub fn set_latest_in_pipeline_execution(mut self, input: ::std::option::Option<crate::types::LatestInPipelineExecutionFilter>) -> Self {
+        self.latest_in_pipeline_execution = input;
+        self
+    }
+    /// <p>The latest execution in the pipeline.</p><note>
+    /// <p>Filtering on the latest execution is available for executions run on or after February 08, 2024.</p>
+    /// </note>
+    pub fn get_latest_in_pipeline_execution(&self) -> &::std::option::Option<crate::types::LatestInPipelineExecutionFilter> {
+        &self.latest_in_pipeline_execution
+    }
     /// Consumes the builder and constructs a [`ActionExecutionFilter`](crate::types::ActionExecutionFilter).
     pub fn build(self) -> crate::types::ActionExecutionFilter {
         crate::types::ActionExecutionFilter {
             pipeline_execution_id: self.pipeline_execution_id,
+            latest_in_pipeline_execution: self.latest_in_pipeline_execution,
         }
     }
 }

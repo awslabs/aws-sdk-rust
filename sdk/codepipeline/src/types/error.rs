@@ -33,6 +33,8 @@ pub use crate::types::error::_duplicated_stop_request_exception::DuplicatedStopR
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_concurrent_pipeline_executions_limit_exceeded_exception::ConcurrentPipelineExecutionsLimitExceededException;
+
 pub use crate::types::error::_stage_not_retryable_exception::StageNotRetryableException;
 
 pub use crate::types::error::_stage_not_found_exception::StageNotFoundException;
@@ -78,6 +80,8 @@ mod _action_type_not_found_exception;
 mod _approval_already_completed_exception;
 
 mod _concurrent_modification_exception;
+
+mod _concurrent_pipeline_executions_limit_exceeded_exception;
 
 mod _conflict_exception;
 

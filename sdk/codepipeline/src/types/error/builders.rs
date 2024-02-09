@@ -33,6 +33,8 @@ pub use crate::types::error::_duplicated_stop_request_exception::DuplicatedStopR
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
+pub use crate::types::error::_concurrent_pipeline_executions_limit_exceeded_exception::ConcurrentPipelineExecutionsLimitExceededExceptionBuilder;
+
 pub use crate::types::error::_stage_not_retryable_exception::StageNotRetryableExceptionBuilder;
 
 pub use crate::types::error::_stage_not_found_exception::StageNotFoundExceptionBuilder;

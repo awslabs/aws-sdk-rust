@@ -27,6 +27,12 @@ pub fn ser_word_cloud_chart_configuration(
         crate::protocol_serde::shape_word_cloud_options::ser_word_cloud_options(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -61,6 +67,11 @@ where
                         }
                         "WordCloudOptions" => {
                             builder = builder.set_word_cloud_options(crate::protocol_serde::shape_word_cloud_options::de_word_cloud_options(tokens)?);
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

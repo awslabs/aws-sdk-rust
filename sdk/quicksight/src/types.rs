@@ -461,6 +461,14 @@ pub use crate::types::_visual_custom_action_trigger::VisualCustomActionTrigger;
 
 pub use crate::types::_radar_chart_configuration::RadarChartConfiguration;
 
+pub use crate::types::_visual_interaction_options::VisualInteractionOptions;
+
+pub use crate::types::_context_menu_option::ContextMenuOption;
+
+pub use crate::types::_dashboard_behavior::DashboardBehavior;
+
+pub use crate::types::_visual_menu_option::VisualMenuOption;
+
 pub use crate::types::_radar_chart_axes_range_scale::RadarChartAxesRangeScale;
 
 pub use crate::types::_legend_options::LegendOptions;
@@ -706,6 +714,10 @@ pub use crate::types::_histogram_aggregated_field_wells::HistogramAggregatedFiel
 pub use crate::types::_waterfall_visual::WaterfallVisual;
 
 pub use crate::types::_waterfall_chart_configuration::WaterfallChartConfiguration;
+
+pub use crate::types::_waterfall_chart_color_configuration::WaterfallChartColorConfiguration;
+
+pub use crate::types::_waterfall_chart_group_color_configuration::WaterfallChartGroupColorConfiguration;
 
 pub use crate::types::_waterfall_chart_options::WaterfallChartOptions;
 
@@ -1515,8 +1527,6 @@ pub use crate::types::_dashboard_publish_options::DashboardPublishOptions;
 
 pub use crate::types::_data_point_tooltip_option::DataPointTooltipOption;
 
-pub use crate::types::_dashboard_behavior::DashboardBehavior;
-
 pub use crate::types::_data_point_menu_label_option::DataPointMenuLabelOption;
 
 pub use crate::types::_data_point_drill_up_down_option::DataPointDrillUpDownOption;
@@ -1524,8 +1534,6 @@ pub use crate::types::_data_point_drill_up_down_option::DataPointDrillUpDownOpti
 pub use crate::types::_export_with_hidden_fields_option::ExportWithHiddenFieldsOption;
 
 pub use crate::types::_visual_axis_sort_option::VisualAxisSortOption;
-
-pub use crate::types::_visual_menu_option::VisualMenuOption;
 
 pub use crate::types::_sheet_layout_element_maximization_option::SheetLayoutElementMaximizationOption;
 
@@ -2318,6 +2326,8 @@ mod _conditional_formatting_icon_set_type;
 mod _conditional_formatting_solid_color;
 
 mod _constant_type;
+
+mod _context_menu_option;
 
 mod _contribution_analysis_default;
 
@@ -3795,6 +3805,8 @@ mod _visual_custom_action_operation;
 
 mod _visual_custom_action_trigger;
 
+mod _visual_interaction_options;
+
 mod _visual_menu_option;
 
 mod _visual_palette;
@@ -3815,9 +3827,13 @@ mod _vpc_connection_summary;
 
 mod _waterfall_chart_aggregated_field_wells;
 
+mod _waterfall_chart_color_configuration;
+
 mod _waterfall_chart_configuration;
 
 mod _waterfall_chart_field_wells;
+
+mod _waterfall_chart_group_color_configuration;
 
 mod _waterfall_chart_options;
 

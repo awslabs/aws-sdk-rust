@@ -21,6 +21,12 @@ pub fn ser_kpi_configuration(
         crate::protocol_serde::shape_kpi_options::ser_kpi_options(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -48,6 +54,11 @@ where
                         }
                         "KPIOptions" => {
                             builder = builder.set_kpi_options(crate::protocol_serde::shape_kpi_options::de_kpi_options(tokens)?);
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

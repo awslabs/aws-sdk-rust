@@ -75,6 +75,12 @@ pub fn ser_box_plot_chart_configuration(
         crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }
 
@@ -133,6 +139,11 @@ where
                         }
                         "VisualPalette" => {
                             builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

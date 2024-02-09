@@ -51,6 +51,13 @@ where
                             builder =
                                 builder.set_stop_trigger(crate::protocol_serde::shape_stop_execution_trigger::de_stop_execution_trigger(tokens)?);
                         }
+                        "executionMode" => {
+                            builder = builder.set_execution_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

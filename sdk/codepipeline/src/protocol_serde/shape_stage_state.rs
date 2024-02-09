@@ -24,6 +24,10 @@ where
                         "inboundExecution" => {
                             builder = builder.set_inbound_execution(crate::protocol_serde::shape_stage_execution::de_stage_execution(tokens)?);
                         }
+                        "inboundExecutions" => {
+                            builder =
+                                builder.set_inbound_executions(crate::protocol_serde::shape_stage_execution_list::de_stage_execution_list(tokens)?);
+                        }
                         "inboundTransitionState" => {
                             builder =
                                 builder.set_inbound_transition_state(crate::protocol_serde::shape_transition_state::de_transition_state(tokens)?);

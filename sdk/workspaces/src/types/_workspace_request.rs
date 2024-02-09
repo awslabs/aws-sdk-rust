@@ -7,6 +7,7 @@ pub struct WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
     pub directory_id: ::std::string::String,
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub user_name: ::std::string::String,
     /// <p>The identifier of the bundle for the WorkSpace. You can use <code>DescribeWorkspaceBundles</code> to list the available bundles.</p>
     pub bundle_id: ::std::string::String,
@@ -20,6 +21,8 @@ pub struct WorkspaceRequest {
     pub workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     /// <p>The tags for the WorkSpace.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceRequest {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
@@ -28,6 +31,7 @@ impl WorkspaceRequest {
         self.directory_id.deref()
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn user_name(&self) -> &str {
         use std::ops::Deref;
         self.user_name.deref()
@@ -59,6 +63,10 @@ impl WorkspaceRequest {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
 }
 impl WorkspaceRequest {
     /// Creates a new builder-style object to manufacture [`WorkspaceRequest`](crate::types::WorkspaceRequest).
@@ -79,6 +87,7 @@ pub struct WorkspaceRequestBuilder {
     pub(crate) root_volume_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) workspace_properties: ::std::option::Option<crate::types::WorkspaceProperties>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceRequestBuilder {
     /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use <code>DescribeWorkspaceDirectories</code> to list the available directories.</p>
@@ -97,17 +106,20 @@ impl WorkspaceRequestBuilder {
         &self.directory_id
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
     /// This field is required.
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service directory for the WorkSpace.</p>
+    /// <p>The reserved keyword, <code>[UNDEFINED]</code>, is used when creating user-decoupled WorkSpaces.</p>
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_name
     }
@@ -202,6 +214,20 @@ impl WorkspaceRequestBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`WorkspaceRequest`](crate::types::WorkspaceRequest).
     /// This method will fail if any of the following fields are not set:
     /// - [`directory_id`](crate::types::builders::WorkspaceRequestBuilder::directory_id)
@@ -232,6 +258,7 @@ impl WorkspaceRequestBuilder {
             root_volume_encryption_enabled: self.root_volume_encryption_enabled,
             workspace_properties: self.workspace_properties,
             tags: self.tags,
+            workspace_name: self.workspace_name,
         })
     }
 }

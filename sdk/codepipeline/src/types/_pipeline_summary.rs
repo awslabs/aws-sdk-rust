@@ -17,11 +17,11 @@ pub struct PipelineSummary {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
@@ -45,12 +45,14 @@ impl PipelineSummary {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
         self.pipeline_type.as_ref()
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+        self.execution_mode.as_ref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -75,6 +77,7 @@ pub struct PipelineSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i32>,
     pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
+    pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
     pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -116,10 +119,8 @@ impl PipelineSummaryBuilder {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn pipeline_type(mut self, input: crate::types::PipelineType) -> Self {
         self.pipeline_type = ::std::option::Option::Some(input);
         self
@@ -133,10 +134,8 @@ impl PipelineSummaryBuilder {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
         self.pipeline_type = input;
         self
@@ -150,12 +149,24 @@ impl PipelineSummaryBuilder {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {
         &self.pipeline_type
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(mut self, input: crate::types::ExecutionMode) -> Self {
+        self.execution_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
+        self.execution_mode = input;
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
+        &self.execution_mode
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -191,6 +202,7 @@ impl PipelineSummaryBuilder {
             name: self.name,
             version: self.version,
             pipeline_type: self.pipeline_type,
+            execution_mode: self.execution_mode,
             created: self.created,
             updated: self.updated,
         }

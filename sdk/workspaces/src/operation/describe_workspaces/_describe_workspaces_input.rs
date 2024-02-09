@@ -16,6 +16,8 @@ pub struct DescribeWorkspacesInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspacesInput {
     /// <p>The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.</p>
@@ -45,6 +47,10 @@ impl DescribeWorkspacesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
 }
 impl DescribeWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
@@ -63,6 +69,7 @@ pub struct DescribeWorkspacesInputBuilder {
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspacesInputBuilder {
     /// Appends an item to `workspace_ids`.
@@ -158,6 +165,20 @@ impl DescribeWorkspacesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the user-decoupled WorkSpace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspacesInput`](crate::operation::describe_workspaces::DescribeWorkspacesInput).
     pub fn build(
         self,
@@ -169,6 +190,7 @@ impl DescribeWorkspacesInputBuilder {
             bundle_id: self.bundle_id,
             limit: self.limit,
             next_token: self.next_token,
+            workspace_name: self.workspace_name,
         })
     }
 }

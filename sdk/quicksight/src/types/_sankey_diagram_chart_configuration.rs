@@ -10,6 +10,8 @@ pub struct SankeyDiagramChartConfiguration {
     pub sort_configuration: ::std::option::Option<crate::types::SankeyDiagramSortConfiguration>,
     /// <p>The data label configuration of a sankey diagram.</p>
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl SankeyDiagramChartConfiguration {
     /// <p>The field well configuration of a sankey diagram.</p>
@@ -23,6 +25,10 @@ impl SankeyDiagramChartConfiguration {
     /// <p>The data label configuration of a sankey diagram.</p>
     pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
     }
 }
 impl SankeyDiagramChartConfiguration {
@@ -39,6 +45,7 @@ pub struct SankeyDiagramChartConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::SankeyDiagramFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::SankeyDiagramSortConfiguration>,
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl SankeyDiagramChartConfigurationBuilder {
     /// <p>The field well configuration of a sankey diagram.</p>
@@ -83,12 +90,27 @@ impl SankeyDiagramChartConfigurationBuilder {
     pub fn get_data_labels(&self) -> &::std::option::Option<crate::types::DataLabelOptions> {
         &self.data_labels
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`SankeyDiagramChartConfiguration`](crate::types::SankeyDiagramChartConfiguration).
     pub fn build(self) -> crate::types::SankeyDiagramChartConfiguration {
         crate::types::SankeyDiagramChartConfiguration {
             field_wells: self.field_wells,
             sort_configuration: self.sort_configuration,
             data_labels: self.data_labels,
+            interactions: self.interactions,
         }
     }
 }

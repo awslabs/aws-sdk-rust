@@ -51,6 +51,12 @@ pub fn ser_table_configuration(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -94,6 +100,11 @@ where
                         "TableInlineVisualizations" => {
                             builder = builder.set_table_inline_visualizations(
                                 crate::protocol_serde::shape_table_inline_visualization_list::de_table_inline_visualization_list(tokens)?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

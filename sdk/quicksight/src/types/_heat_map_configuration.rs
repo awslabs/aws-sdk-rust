@@ -20,6 +20,8 @@ pub struct HeatMapConfiguration {
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl HeatMapConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -54,6 +56,10 @@ impl HeatMapConfiguration {
     pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl HeatMapConfiguration {
     /// Creates a new builder-style object to manufacture [`HeatMapConfiguration`](crate::types::HeatMapConfiguration).
@@ -74,6 +80,7 @@ pub struct HeatMapConfigurationBuilder {
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl HeatMapConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -188,6 +195,20 @@ impl HeatMapConfigurationBuilder {
     pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
         &self.tooltip
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`HeatMapConfiguration`](crate::types::HeatMapConfiguration).
     pub fn build(self) -> crate::types::HeatMapConfiguration {
         crate::types::HeatMapConfiguration {
@@ -199,6 +220,7 @@ impl HeatMapConfigurationBuilder {
             legend: self.legend,
             data_labels: self.data_labels,
             tooltip: self.tooltip,
+            interactions: self.interactions,
         }
     }
 }

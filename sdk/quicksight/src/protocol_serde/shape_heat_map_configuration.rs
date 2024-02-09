@@ -51,6 +51,12 @@ pub fn ser_heat_map_configuration(
         crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -98,6 +104,11 @@ where
                         }
                         "Tooltip" => {
                             builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

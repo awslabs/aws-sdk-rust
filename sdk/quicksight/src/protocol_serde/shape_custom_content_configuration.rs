@@ -12,6 +12,12 @@ pub fn ser_custom_content_configuration(
     if let Some(var_3) = &input.image_scaling {
         object.key("ImageScaling").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -52,6 +58,11 @@ where
                                             .map(|u| crate::types::CustomContentImageScalingConfiguration::from(u.as_ref()))
                                     })
                                     .transpose()?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

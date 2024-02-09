@@ -39,6 +39,12 @@ pub fn ser_pivot_table_configuration(
         crate::protocol_serde::shape_pivot_table_paginated_report_options::ser_pivot_table_paginated_report_options(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -82,6 +88,11 @@ where
                         "PaginatedReportOptions" => {
                             builder = builder.set_paginated_report_options(
                                 crate::protocol_serde::shape_pivot_table_paginated_report_options::de_pivot_table_paginated_report_options(tokens)?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

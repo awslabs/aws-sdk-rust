@@ -335,6 +335,12 @@ pub use crate::types::_filter_operation_selected_fields_configuration::FilterOpe
 
 pub use crate::types::_radar_chart_configuration::RadarChartConfigurationBuilder;
 
+pub use crate::types::_visual_interaction_options::VisualInteractionOptionsBuilder;
+
+pub use crate::types::_context_menu_option::ContextMenuOptionBuilder;
+
+pub use crate::types::_visual_menu_option::VisualMenuOptionBuilder;
+
 pub use crate::types::_legend_options::LegendOptionsBuilder;
 
 pub use crate::types::_label_options::LabelOptionsBuilder;
@@ -528,6 +534,10 @@ pub use crate::types::_histogram_aggregated_field_wells::HistogramAggregatedFiel
 pub use crate::types::_waterfall_visual::WaterfallVisualBuilder;
 
 pub use crate::types::_waterfall_chart_configuration::WaterfallChartConfigurationBuilder;
+
+pub use crate::types::_waterfall_chart_color_configuration::WaterfallChartColorConfigurationBuilder;
+
+pub use crate::types::_waterfall_chart_group_color_configuration::WaterfallChartGroupColorConfigurationBuilder;
 
 pub use crate::types::_waterfall_chart_options::WaterfallChartOptionsBuilder;
 
@@ -1194,8 +1204,6 @@ pub use crate::types::_data_point_drill_up_down_option::DataPointDrillUpDownOpti
 pub use crate::types::_export_with_hidden_fields_option::ExportWithHiddenFieldsOptionBuilder;
 
 pub use crate::types::_visual_axis_sort_option::VisualAxisSortOptionBuilder;
-
-pub use crate::types::_visual_menu_option::VisualMenuOptionBuilder;
 
 pub use crate::types::_sheet_layout_element_maximization_option::SheetLayoutElementMaximizationOptionBuilder;
 

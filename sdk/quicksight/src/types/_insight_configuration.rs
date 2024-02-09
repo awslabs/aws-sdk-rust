@@ -8,6 +8,8 @@ pub struct InsightConfiguration {
     pub computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     /// <p>The custom narrative of the insight visual.</p>
     pub custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl InsightConfiguration {
     /// <p>The computations configurations of the insight visual</p>
@@ -19,6 +21,10 @@ impl InsightConfiguration {
     /// <p>The custom narrative of the insight visual.</p>
     pub fn custom_narrative(&self) -> ::std::option::Option<&crate::types::CustomNarrativeOptions> {
         self.custom_narrative.as_ref()
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
     }
 }
 impl InsightConfiguration {
@@ -34,6 +40,7 @@ impl InsightConfiguration {
 pub struct InsightConfigurationBuilder {
     pub(crate) computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     pub(crate) custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl InsightConfigurationBuilder {
     /// Appends an item to `computations`.
@@ -70,11 +77,26 @@ impl InsightConfigurationBuilder {
     pub fn get_custom_narrative(&self) -> &::std::option::Option<crate::types::CustomNarrativeOptions> {
         &self.custom_narrative
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`InsightConfiguration`](crate::types::InsightConfiguration).
     pub fn build(self) -> crate::types::InsightConfiguration {
         crate::types::InsightConfiguration {
             computations: self.computations,
             custom_narrative: self.custom_narrative,
+            interactions: self.interactions,
         }
     }
 }

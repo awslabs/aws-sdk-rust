@@ -22,6 +22,8 @@ pub struct TreeMapConfiguration {
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The tooltip display setup of the visual.</p>
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl TreeMapConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -60,6 +62,10 @@ impl TreeMapConfiguration {
     pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl TreeMapConfiguration {
     /// Creates a new builder-style object to manufacture [`TreeMapConfiguration`](crate::types::TreeMapConfiguration).
@@ -81,6 +87,7 @@ pub struct TreeMapConfigurationBuilder {
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl TreeMapConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -209,6 +216,20 @@ impl TreeMapConfigurationBuilder {
     pub fn get_tooltip(&self) -> &::std::option::Option<crate::types::TooltipOptions> {
         &self.tooltip
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`TreeMapConfiguration`](crate::types::TreeMapConfiguration).
     pub fn build(self) -> crate::types::TreeMapConfiguration {
         crate::types::TreeMapConfiguration {
@@ -221,6 +242,7 @@ impl TreeMapConfigurationBuilder {
             legend: self.legend,
             data_labels: self.data_labels,
             tooltip: self.tooltip,
+            interactions: self.interactions,
         }
     }
 }

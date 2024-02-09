@@ -99,6 +99,13 @@ where
                             builder = builder
                                 .set_root_volume_encryption_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "WorkspaceName" => {
+                            builder = builder.set_workspace_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "WorkspaceProperties" => {
                             builder =
                                 builder.set_workspace_properties(crate::protocol_serde::shape_workspace_properties::de_workspace_properties(tokens)?);

@@ -1937,7 +1937,11 @@ pub(crate) mod shape_tree_map_sort_configuration;
 
 pub(crate) mod shape_visual_custom_action_operation;
 
+pub(crate) mod shape_visual_interaction_options;
+
 pub(crate) mod shape_visual_palette;
+
+pub(crate) mod shape_waterfall_chart_color_configuration;
 
 pub(crate) mod shape_waterfall_chart_field_wells;
 
@@ -1990,6 +1994,8 @@ pub(crate) mod shape_column_tag_names;
 pub(crate) mod shape_combo_chart_aggregated_field_wells;
 
 pub(crate) mod shape_comparison_configuration;
+
+pub(crate) mod shape_context_menu_option;
 
 pub(crate) mod shape_custom_action_filter_operation;
 
@@ -2198,6 +2204,8 @@ pub(crate) mod shape_unique_values_computation;
 pub(crate) mod shape_visual_custom_action_list;
 
 pub(crate) mod shape_waterfall_chart_aggregated_field_wells;
+
+pub(crate) mod shape_waterfall_chart_group_color_configuration;
 
 pub(crate) mod shape_word_cloud_aggregated_field_wells;
 

@@ -57,6 +57,12 @@ pub fn ser_tree_map_configuration(
         crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
@@ -109,6 +115,11 @@ where
                         }
                         "Tooltip" => {
                             builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens)?);
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

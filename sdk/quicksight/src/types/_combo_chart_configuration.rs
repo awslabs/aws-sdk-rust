@@ -48,6 +48,8 @@ pub struct ComboChartConfiguration {
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl ComboChartConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -130,6 +132,10 @@ impl ComboChartConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl ComboChartConfiguration {
     /// Creates a new builder-style object to manufacture [`ComboChartConfiguration`](crate::types::ComboChartConfiguration).
@@ -159,6 +165,7 @@ pub struct ComboChartConfigurationBuilder {
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl ComboChartConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -435,6 +442,20 @@ impl ComboChartConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`ComboChartConfiguration`](crate::types::ComboChartConfiguration).
     pub fn build(self) -> crate::types::ComboChartConfiguration {
         crate::types::ComboChartConfiguration {
@@ -455,6 +476,7 @@ impl ComboChartConfigurationBuilder {
             tooltip: self.tooltip,
             reference_lines: self.reference_lines,
             visual_palette: self.visual_palette,
+            interactions: self.interactions,
         }
     }
 }

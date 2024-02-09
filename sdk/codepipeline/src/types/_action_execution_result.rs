@@ -10,6 +10,8 @@ pub struct ActionExecutionResult {
     pub external_execution_summary: ::std::option::Option<::std::string::String>,
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     pub external_execution_url: ::std::option::Option<::std::string::String>,
+    /// <p>Represents information about an error in CodePipeline.</p>
+    pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
@@ -23,6 +25,10 @@ impl ActionExecutionResult {
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
     pub fn external_execution_url(&self) -> ::std::option::Option<&str> {
         self.external_execution_url.as_deref()
+    }
+    /// <p>Represents information about an error in CodePipeline.</p>
+    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+        self.error_details.as_ref()
     }
 }
 impl ActionExecutionResult {
@@ -39,6 +45,7 @@ pub struct ActionExecutionResultBuilder {
     pub(crate) external_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) external_execution_summary: ::std::option::Option<::std::string::String>,
     pub(crate) external_execution_url: ::std::option::Option<::std::string::String>,
+    pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl ActionExecutionResultBuilder {
     /// <p>The action provider's external ID for the action execution.</p>
@@ -83,12 +90,27 @@ impl ActionExecutionResultBuilder {
     pub fn get_external_execution_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_execution_url
     }
+    /// <p>Represents information about an error in CodePipeline.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
+        self.error_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Represents information about an error in CodePipeline.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>Represents information about an error in CodePipeline.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error_details
+    }
     /// Consumes the builder and constructs a [`ActionExecutionResult`](crate::types::ActionExecutionResult).
     pub fn build(self) -> crate::types::ActionExecutionResult {
         crate::types::ActionExecutionResult {
             external_execution_id: self.external_execution_id,
             external_execution_summary: self.external_execution_summary,
             external_execution_url: self.external_execution_url,
+            error_details: self.error_details,
         }
     }
 }

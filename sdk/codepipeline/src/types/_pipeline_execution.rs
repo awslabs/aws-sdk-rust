@@ -32,10 +32,12 @@ pub struct PipelineExecution {
     pub status_summary: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
     pub artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
-    /// <p>The interaction or event that started a pipeline execution.</p>
-    pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
     pub variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
 }
 impl PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -80,15 +82,19 @@ impl PipelineExecution {
     pub fn artifact_revisions(&self) -> &[crate::types::ArtifactRevision] {
         self.artifact_revisions.as_deref().unwrap_or_default()
     }
-    /// <p>The interaction or event that started a pipeline execution.</p>
-    pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {
-        self.trigger.as_ref()
-    }
     /// <p>A list of pipeline variables used for the pipeline execution.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
     pub fn variables(&self) -> &[crate::types::ResolvedPipelineVariable] {
         self.variables.as_deref().unwrap_or_default()
+    }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn trigger(&self) -> ::std::option::Option<&crate::types::ExecutionTrigger> {
+        self.trigger.as_ref()
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+        self.execution_mode.as_ref()
     }
 }
 impl PipelineExecution {
@@ -108,8 +114,9 @@ pub struct PipelineExecutionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PipelineExecutionStatus>,
     pub(crate) status_summary: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_revisions: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>>,
-    pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>>,
+    pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
+    pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
 }
 impl PipelineExecutionBuilder {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -250,20 +257,6 @@ impl PipelineExecutionBuilder {
     pub fn get_artifact_revisions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ArtifactRevision>> {
         &self.artifact_revisions
     }
-    /// <p>The interaction or event that started a pipeline execution.</p>
-    pub fn trigger(mut self, input: crate::types::ExecutionTrigger) -> Self {
-        self.trigger = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The interaction or event that started a pipeline execution.</p>
-    pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::ExecutionTrigger>) -> Self {
-        self.trigger = input;
-        self
-    }
-    /// <p>The interaction or event that started a pipeline execution.</p>
-    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::ExecutionTrigger> {
-        &self.trigger
-    }
     /// Appends an item to `variables`.
     ///
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
@@ -284,6 +277,34 @@ impl PipelineExecutionBuilder {
     pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResolvedPipelineVariable>> {
         &self.variables
     }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn trigger(mut self, input: crate::types::ExecutionTrigger) -> Self {
+        self.trigger = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::ExecutionTrigger>) -> Self {
+        self.trigger = input;
+        self
+    }
+    /// <p>The interaction or event that started a pipeline execution.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::ExecutionTrigger> {
+        &self.trigger
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(mut self, input: crate::types::ExecutionMode) -> Self {
+        self.execution_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
+        self.execution_mode = input;
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
+        &self.execution_mode
+    }
     /// Consumes the builder and constructs a [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn build(self) -> crate::types::PipelineExecution {
         crate::types::PipelineExecution {
@@ -293,8 +314,9 @@ impl PipelineExecutionBuilder {
             status: self.status,
             status_summary: self.status_summary,
             artifact_revisions: self.artifact_revisions,
-            trigger: self.trigger,
             variables: self.variables,
+            trigger: self.trigger,
+            execution_mode: self.execution_mode,
         }
     }
 }

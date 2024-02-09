@@ -30,5 +30,8 @@ pub fn ser_describe_workspaces_input_input(
     if let Some(var_8) = &input.next_token {
         object.key("NextToken").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.workspace_name {
+        object.key("WorkspaceName").string(var_9.as_str());
+    }
     Ok(())
 }

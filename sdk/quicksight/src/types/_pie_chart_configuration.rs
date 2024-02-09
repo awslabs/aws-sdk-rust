@@ -26,6 +26,8 @@ pub struct PieChartConfiguration {
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
     pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl PieChartConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -74,6 +76,10 @@ impl PieChartConfiguration {
     pub fn contribution_analysis_defaults(&self) -> &[crate::types::ContributionAnalysisDefault] {
         self.contribution_analysis_defaults.as_deref().unwrap_or_default()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl PieChartConfiguration {
     /// Creates a new builder-style object to manufacture [`PieChartConfiguration`](crate::types::PieChartConfiguration).
@@ -97,6 +103,7 @@ pub struct PieChartConfigurationBuilder {
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
     pub(crate) contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl PieChartConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -262,6 +269,20 @@ impl PieChartConfigurationBuilder {
     pub fn get_contribution_analysis_defaults(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>> {
         &self.contribution_analysis_defaults
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`PieChartConfiguration`](crate::types::PieChartConfiguration).
     pub fn build(self) -> crate::types::PieChartConfiguration {
         crate::types::PieChartConfiguration {
@@ -276,6 +297,7 @@ impl PieChartConfigurationBuilder {
             tooltip: self.tooltip,
             visual_palette: self.visual_palette,
             contribution_analysis_defaults: self.contribution_analysis_defaults,
+            interactions: self.interactions,
         }
     }
 }

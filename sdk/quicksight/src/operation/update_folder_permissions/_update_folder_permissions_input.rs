@@ -7,9 +7,9 @@ pub struct UpdateFolderPermissionsInput {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the folder.</p>
     pub folder_id: ::std::option::Option<::std::string::String>,
-    /// <p>The permissions that you want to grant on a resource.</p>
+    /// <p>The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub grant_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
-    /// <p>The permissions that you want to revoke from a resource.</p>
+    /// <p>The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub revoke_permissions: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateFolderPermissionsInput {
@@ -21,13 +21,13 @@ impl UpdateFolderPermissionsInput {
     pub fn folder_id(&self) -> ::std::option::Option<&str> {
         self.folder_id.as_deref()
     }
-    /// <p>The permissions that you want to grant on a resource.</p>
+    /// <p>The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.grant_permissions.is_none()`.
     pub fn grant_permissions(&self) -> &[crate::types::ResourcePermission] {
         self.grant_permissions.as_deref().unwrap_or_default()
     }
-    /// <p>The permissions that you want to revoke from a resource.</p>
+    /// <p>The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revoke_permissions.is_none()`.
     pub fn revoke_permissions(&self) -> &[crate::types::ResourcePermission] {
@@ -85,19 +85,19 @@ impl UpdateFolderPermissionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_grant_permissions`](Self::set_grant_permissions).
     ///
-    /// <p>The permissions that you want to grant on a resource.</p>
+    /// <p>The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub fn grant_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.grant_permissions.unwrap_or_default();
         v.push(input);
         self.grant_permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The permissions that you want to grant on a resource.</p>
+    /// <p>The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub fn set_grant_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.grant_permissions = input;
         self
     }
-    /// <p>The permissions that you want to grant on a resource.</p>
+    /// <p>The permissions that you want to grant on a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub fn get_grant_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.grant_permissions
     }
@@ -105,19 +105,19 @@ impl UpdateFolderPermissionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_revoke_permissions`](Self::set_revoke_permissions).
     ///
-    /// <p>The permissions that you want to revoke from a resource.</p>
+    /// <p>The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub fn revoke_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.revoke_permissions.unwrap_or_default();
         v.push(input);
         self.revoke_permissions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The permissions that you want to revoke from a resource.</p>
+    /// <p>The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub fn set_revoke_permissions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.revoke_permissions = input;
         self
     }
-    /// <p>The permissions that you want to revoke from a resource.</p>
+    /// <p>The permissions that you want to revoke from a resource. Namespace ARNs are not supported <code>Principal</code> values for folder permissions.</p>
     pub fn get_revoke_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>> {
         &self.revoke_permissions
     }

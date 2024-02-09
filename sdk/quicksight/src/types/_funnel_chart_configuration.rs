@@ -18,6 +18,8 @@ pub struct FunnelChartConfiguration {
     pub data_label_options: ::std::option::Option<crate::types::FunnelChartDataLabelOptions>,
     /// <p>The visual palette configuration of a <code>FunnelChartVisual</code>.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl FunnelChartConfiguration {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
@@ -48,6 +50,10 @@ impl FunnelChartConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl FunnelChartConfiguration {
     /// Creates a new builder-style object to manufacture [`FunnelChartConfiguration`](crate::types::FunnelChartConfiguration).
@@ -67,6 +73,7 @@ pub struct FunnelChartConfigurationBuilder {
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) data_label_options: ::std::option::Option<crate::types::FunnelChartDataLabelOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl FunnelChartConfigurationBuilder {
     /// <p>The field well configuration of a <code>FunnelChartVisual</code>.</p>
@@ -167,6 +174,20 @@ impl FunnelChartConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`FunnelChartConfiguration`](crate::types::FunnelChartConfiguration).
     pub fn build(self) -> crate::types::FunnelChartConfiguration {
         crate::types::FunnelChartConfiguration {
@@ -177,6 +198,7 @@ impl FunnelChartConfigurationBuilder {
             tooltip: self.tooltip,
             data_label_options: self.data_label_options,
             visual_palette: self.visual_palette,
+            interactions: self.interactions,
         }
     }
 }

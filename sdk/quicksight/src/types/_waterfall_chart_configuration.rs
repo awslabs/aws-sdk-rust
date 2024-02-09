@@ -24,6 +24,10 @@ pub struct WaterfallChartConfiguration {
     pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The visual palette configuration of a waterfall visual.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The color configuration of a waterfall visual.</p>
+    pub color_configuration: ::std::option::Option<crate::types::WaterfallChartColorConfiguration>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl WaterfallChartConfiguration {
     /// <p>The field well configuration of a waterfall visual.</p>
@@ -66,6 +70,14 @@ impl WaterfallChartConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The color configuration of a waterfall visual.</p>
+    pub fn color_configuration(&self) -> ::std::option::Option<&crate::types::WaterfallChartColorConfiguration> {
+        self.color_configuration.as_ref()
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl WaterfallChartConfiguration {
     /// Creates a new builder-style object to manufacture [`WaterfallChartConfiguration`](crate::types::WaterfallChartConfiguration).
@@ -88,6 +100,8 @@ pub struct WaterfallChartConfigurationBuilder {
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) color_configuration: ::std::option::Option<crate::types::WaterfallChartColorConfiguration>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl WaterfallChartConfigurationBuilder {
     /// <p>The field well configuration of a waterfall visual.</p>
@@ -230,6 +244,34 @@ impl WaterfallChartConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The color configuration of a waterfall visual.</p>
+    pub fn color_configuration(mut self, input: crate::types::WaterfallChartColorConfiguration) -> Self {
+        self.color_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The color configuration of a waterfall visual.</p>
+    pub fn set_color_configuration(mut self, input: ::std::option::Option<crate::types::WaterfallChartColorConfiguration>) -> Self {
+        self.color_configuration = input;
+        self
+    }
+    /// <p>The color configuration of a waterfall visual.</p>
+    pub fn get_color_configuration(&self) -> &::std::option::Option<crate::types::WaterfallChartColorConfiguration> {
+        &self.color_configuration
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`WaterfallChartConfiguration`](crate::types::WaterfallChartConfiguration).
     pub fn build(self) -> crate::types::WaterfallChartConfiguration {
         crate::types::WaterfallChartConfiguration {
@@ -243,6 +285,8 @@ impl WaterfallChartConfigurationBuilder {
             legend: self.legend,
             data_labels: self.data_labels,
             visual_palette: self.visual_palette,
+            color_configuration: self.color_configuration,
+            interactions: self.interactions,
         }
     }
 }

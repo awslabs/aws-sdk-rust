@@ -6,5 +6,11 @@ pub fn ser_action_execution_filter(
     if let Some(var_1) = &input.pipeline_execution_id {
         object.key("pipelineExecutionId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.latest_in_pipeline_execution {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("latestInPipelineExecution").start_object();
+        crate::protocol_serde::shape_latest_in_pipeline_execution_filter::ser_latest_in_pipeline_execution_filter(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

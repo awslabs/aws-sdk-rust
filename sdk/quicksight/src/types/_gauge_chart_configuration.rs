@@ -14,6 +14,8 @@ pub struct GaugeChartConfiguration {
     pub tooltip_options: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl GaugeChartConfiguration {
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
@@ -36,6 +38,10 @@ impl GaugeChartConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl GaugeChartConfiguration {
     /// Creates a new builder-style object to manufacture [`GaugeChartConfiguration`](crate::types::GaugeChartConfiguration).
@@ -53,6 +59,7 @@ pub struct GaugeChartConfigurationBuilder {
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip_options: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl GaugeChartConfigurationBuilder {
     /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
@@ -125,6 +132,20 @@ impl GaugeChartConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`GaugeChartConfiguration`](crate::types::GaugeChartConfiguration).
     pub fn build(self) -> crate::types::GaugeChartConfiguration {
         crate::types::GaugeChartConfiguration {
@@ -133,6 +154,7 @@ impl GaugeChartConfigurationBuilder {
             data_labels: self.data_labels,
             tooltip_options: self.tooltip_options,
             visual_palette: self.visual_palette,
+            interactions: self.interactions,
         }
     }
 }

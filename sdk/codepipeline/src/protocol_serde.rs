@@ -121,6 +121,8 @@ pub(crate) mod shape_approval_already_completed_exception;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
+pub(crate) mod shape_concurrent_pipeline_executions_limit_exceeded_exception;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_custom_action_type_input;
@@ -351,6 +353,8 @@ pub(crate) mod shape_job;
 
 pub(crate) mod shape_job_data;
 
+pub(crate) mod shape_latest_in_pipeline_execution_filter;
+
 pub(crate) mod shape_pipeline_execution_summary;
 
 pub(crate) mod shape_pipeline_stage_declaration_list;
@@ -413,6 +417,8 @@ pub(crate) mod shape_source_revision_list;
 
 pub(crate) mod shape_stage_execution;
 
+pub(crate) mod shape_stage_execution_list;
+
 pub(crate) mod shape_stop_execution_trigger;
 
 pub(crate) mod shape_transition_state;
@@ -430,6 +436,8 @@ pub(crate) mod shape_action_state;
 pub(crate) mod shape_artifact;
 
 pub(crate) mod shape_artifact_detail_list;
+
+pub(crate) mod shape_git_pull_request_filter;
 
 pub(crate) mod shape_git_push_filter;
 
@@ -459,6 +467,14 @@ pub(crate) mod shape_artifact_detail;
 
 pub(crate) mod shape_artifact_location;
 
+pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_git_branch_filter_criteria;
+
+pub(crate) mod shape_git_file_path_filter_criteria;
+
+pub(crate) mod shape_git_pull_request_filter_list;
+
 pub(crate) mod shape_git_push_filter_list;
 
 pub(crate) mod shape_git_tag_filter_criteria;
@@ -467,8 +483,6 @@ pub(crate) mod shape_polling_account_list;
 
 pub(crate) mod shape_polling_service_principal_list;
 
-pub(crate) mod shape_error_details;
-
 pub(crate) mod shape_input_artifact_list;
 
 pub(crate) mod shape_output_artifact_list;
@@ -476,5 +490,11 @@ pub(crate) mod shape_output_artifact_list;
 pub(crate) mod shape_s3_artifact_location;
 
 pub(crate) mod shape_s3_location;
+
+pub(crate) mod shape_git_pull_request_event_type_list;
+
+pub(crate) mod shape_git_branch_pattern_list;
+
+pub(crate) mod shape_git_file_path_pattern_list;
 
 pub(crate) mod shape_git_tag_pattern_list;

@@ -267,6 +267,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartPipeline
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartPipelineExecutionError {
+    /// <p>The pipeline has reached the limit for concurrent pipeline executions.</p>
+    ConcurrentPipelineExecutionsLimitExceededException(crate::types::error::ConcurrentPipelineExecutionsLimitExceededException),
     /// <p>Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The pipeline was specified in an invalid format or cannot be found.</p>
@@ -306,11 +308,16 @@ impl StartPipelineExecutionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentPipelineExecutionsLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PipelineNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartPipelineExecutionError::ConcurrentPipelineExecutionsLimitExceededException`.
+    pub fn is_concurrent_pipeline_executions_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentPipelineExecutionsLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `StartPipelineExecutionError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -328,6 +335,7 @@ impl StartPipelineExecutionError {
 impl ::std::error::Error for StartPipelineExecutionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentPipelineExecutionsLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::PipelineNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
@@ -338,6 +346,7 @@ impl ::std::error::Error for StartPipelineExecutionError {
 impl ::std::fmt::Display for StartPipelineExecutionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentPipelineExecutionsLimitExceededException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::PipelineNotFoundException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
@@ -362,6 +371,9 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartPipelineExecutionError
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartPipelineExecutionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentPipelineExecutionsLimitExceededException(_inner) => {
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PipelineNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

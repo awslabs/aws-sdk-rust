@@ -32,6 +32,8 @@ pub struct PipelineExecutionSummary {
     pub trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     /// <p>The interaction that stopped a pipeline execution.</p>
     pub stop_trigger: ::std::option::Option<crate::types::StopExecutionTrigger>,
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
 }
 impl PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
@@ -78,6 +80,10 @@ impl PipelineExecutionSummary {
     pub fn stop_trigger(&self) -> ::std::option::Option<&crate::types::StopExecutionTrigger> {
         self.stop_trigger.as_ref()
     }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+        self.execution_mode.as_ref()
+    }
 }
 impl PipelineExecutionSummary {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
@@ -97,6 +103,7 @@ pub struct PipelineExecutionSummaryBuilder {
     pub(crate) source_revisions: ::std::option::Option<::std::vec::Vec<crate::types::SourceRevision>>,
     pub(crate) trigger: ::std::option::Option<crate::types::ExecutionTrigger>,
     pub(crate) stop_trigger: ::std::option::Option<crate::types::StopExecutionTrigger>,
+    pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
 }
 impl PipelineExecutionSummaryBuilder {
     /// <p>The ID of the pipeline execution.</p>
@@ -245,6 +252,20 @@ impl PipelineExecutionSummaryBuilder {
     pub fn get_stop_trigger(&self) -> &::std::option::Option<crate::types::StopExecutionTrigger> {
         &self.stop_trigger
     }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(mut self, input: crate::types::ExecutionMode) -> Self {
+        self.execution_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
+        self.execution_mode = input;
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
+        &self.execution_mode
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
     pub fn build(self) -> crate::types::PipelineExecutionSummary {
         crate::types::PipelineExecutionSummary {
@@ -255,6 +276,7 @@ impl PipelineExecutionSummaryBuilder {
             source_revisions: self.source_revisions,
             trigger: self.trigger,
             stop_trigger: self.stop_trigger,
+            execution_mode: self.execution_mode,
         }
     }
 }

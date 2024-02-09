@@ -39,6 +39,9 @@ pub fn ser_workspace_request(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.workspace_name {
+        object.key("WorkspaceName").string(var_10.as_str());
+    }
     Ok(())
 }
 
@@ -99,6 +102,13 @@ where
                         }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens)?);
+                        }
+                        "WorkspaceName" => {
+                            builder = builder.set_workspace_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

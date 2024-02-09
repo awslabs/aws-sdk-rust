@@ -63,6 +63,18 @@ pub fn ser_waterfall_chart_configuration(
         crate::protocol_serde::shape_visual_palette::ser_visual_palette(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.color_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("ColorConfiguration").start_object();
+        crate::protocol_serde::shape_waterfall_chart_color_configuration::ser_waterfall_chart_color_configuration(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }
 
@@ -124,6 +136,16 @@ where
                         }
                         "VisualPalette" => {
                             builder = builder.set_visual_palette(crate::protocol_serde::shape_visual_palette::de_visual_palette(tokens)?);
+                        }
+                        "ColorConfiguration" => {
+                            builder = builder.set_color_configuration(
+                                crate::protocol_serde::shape_waterfall_chart_color_configuration::de_waterfall_chart_color_configuration(tokens)?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

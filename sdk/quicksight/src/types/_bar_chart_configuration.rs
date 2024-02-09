@@ -42,6 +42,8 @@ pub struct BarChartConfiguration {
     pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
     pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl BarChartConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -118,6 +120,10 @@ impl BarChartConfiguration {
     pub fn contribution_analysis_defaults(&self) -> &[crate::types::ContributionAnalysisDefault] {
         self.contribution_analysis_defaults.as_deref().unwrap_or_default()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl BarChartConfiguration {
     /// Creates a new builder-style object to manufacture [`BarChartConfiguration`](crate::types::BarChartConfiguration).
@@ -146,6 +152,7 @@ pub struct BarChartConfigurationBuilder {
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     pub(crate) contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl BarChartConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -405,6 +412,20 @@ impl BarChartConfigurationBuilder {
     pub fn get_contribution_analysis_defaults(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>> {
         &self.contribution_analysis_defaults
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`BarChartConfiguration`](crate::types::BarChartConfiguration).
     pub fn build(self) -> crate::types::BarChartConfiguration {
         crate::types::BarChartConfiguration {
@@ -424,6 +445,7 @@ impl BarChartConfigurationBuilder {
             tooltip: self.tooltip,
             reference_lines: self.reference_lines,
             contribution_analysis_defaults: self.contribution_analysis_defaults,
+            interactions: self.interactions,
         }
     }
 }

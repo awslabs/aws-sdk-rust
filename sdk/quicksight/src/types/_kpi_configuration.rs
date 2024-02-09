@@ -10,6 +10,8 @@ pub struct KpiConfiguration {
     pub sort_configuration: ::std::option::Option<crate::types::KpiSortConfiguration>,
     /// <p>The options that determine the presentation of a KPI visual.</p>
     pub kpi_options: ::std::option::Option<crate::types::KpiOptions>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl KpiConfiguration {
     /// <p>The field well configuration of a KPI visual.</p>
@@ -23,6 +25,10 @@ impl KpiConfiguration {
     /// <p>The options that determine the presentation of a KPI visual.</p>
     pub fn kpi_options(&self) -> ::std::option::Option<&crate::types::KpiOptions> {
         self.kpi_options.as_ref()
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
     }
 }
 impl KpiConfiguration {
@@ -39,6 +45,7 @@ pub struct KpiConfigurationBuilder {
     pub(crate) field_wells: ::std::option::Option<crate::types::KpiFieldWells>,
     pub(crate) sort_configuration: ::std::option::Option<crate::types::KpiSortConfiguration>,
     pub(crate) kpi_options: ::std::option::Option<crate::types::KpiOptions>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl KpiConfigurationBuilder {
     /// <p>The field well configuration of a KPI visual.</p>
@@ -83,12 +90,27 @@ impl KpiConfigurationBuilder {
     pub fn get_kpi_options(&self) -> &::std::option::Option<crate::types::KpiOptions> {
         &self.kpi_options
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`KpiConfiguration`](crate::types::KpiConfiguration).
     pub fn build(self) -> crate::types::KpiConfiguration {
         crate::types::KpiConfiguration {
             field_wells: self.field_wells,
             sort_configuration: self.sort_configuration,
             kpi_options: self.kpi_options,
+            interactions: self.interactions,
         }
     }
 }

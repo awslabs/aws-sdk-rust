@@ -39,6 +39,12 @@ pub fn ser_filled_map_configuration(
         crate::protocol_serde::shape_geospatial_map_style_options::ser_geospatial_map_style_options(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -80,6 +86,11 @@ where
                         "MapStyleOptions" => {
                             builder = builder.set_map_style_options(
                                 crate::protocol_serde::shape_geospatial_map_style_options::de_geospatial_map_style_options(tokens)?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

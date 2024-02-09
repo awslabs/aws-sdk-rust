@@ -46,6 +46,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "executionMode" => {
+                            builder = builder.set_execution_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "pipelineType" => {
                             builder = builder.set_pipeline_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -53,14 +60,14 @@ where
                                     .transpose()?,
                             );
                         }
-                        "triggers" => {
-                            builder = builder.set_triggers(
-                                crate::protocol_serde::shape_pipeline_trigger_declaration_list::de_pipeline_trigger_declaration_list(tokens)?,
-                            );
-                        }
                         "variables" => {
                             builder = builder.set_variables(
                                 crate::protocol_serde::shape_pipeline_variable_declaration_list::de_pipeline_variable_declaration_list(tokens)?,
+                            );
+                        }
+                        "triggers" => {
+                            builder = builder.set_triggers(
+                                crate::protocol_serde::shape_pipeline_trigger_declaration_list::de_pipeline_trigger_declaration_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
@@ -130,32 +137,35 @@ pub fn ser_pipeline_declaration(
             ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_12) = &input.pipeline_type {
-        object.key("pipelineType").string(var_12.as_str());
+    if let Some(var_12) = &input.execution_mode {
+        object.key("executionMode").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.triggers {
-        let mut array_14 = object.key("triggers").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.pipeline_type {
+        object.key("pipelineType").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.variables {
+        let mut array_15 = object.key("variables").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_pipeline_trigger_declaration::ser_pipeline_trigger_declaration(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_pipeline_variable_declaration::ser_pipeline_variable_declaration(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.variables {
-        let mut array_18 = object.key("variables").start_array();
-        for item_19 in var_17 {
+    if let Some(var_18) = &input.triggers {
+        let mut array_19 = object.key("triggers").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = array_18.value().start_object();
-                crate::protocol_serde::shape_pipeline_variable_declaration::ser_pipeline_variable_declaration(&mut object_20, item_19)?;
-                object_20.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_pipeline_trigger_declaration::ser_pipeline_trigger_declaration(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_18.finish();
+        array_19.finish();
     }
     Ok(())
 }

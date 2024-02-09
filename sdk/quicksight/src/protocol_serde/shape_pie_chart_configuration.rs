@@ -75,6 +75,12 @@ pub fn ser_pie_chart_configuration(
         }
         array_22.finish();
     }
+    if let Some(var_25) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }
 
@@ -134,6 +140,11 @@ where
                         "ContributionAnalysisDefaults" => {
                             builder = builder.set_contribution_analysis_defaults(
                                 crate::protocol_serde::shape_contribution_analysis_default_list::de_contribution_analysis_default_list(tokens)?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

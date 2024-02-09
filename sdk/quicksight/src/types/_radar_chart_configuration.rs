@@ -34,6 +34,8 @@ pub struct RadarChartConfiguration {
     pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The axis behavior options of a radar chart.</p>
     pub axes_range_scale: ::std::option::Option<crate::types::RadarChartAxesRangeScale>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl RadarChartConfiguration {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
@@ -96,6 +98,10 @@ impl RadarChartConfiguration {
     pub fn axes_range_scale(&self) -> ::std::option::Option<&crate::types::RadarChartAxesRangeScale> {
         self.axes_range_scale.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl RadarChartConfiguration {
     /// Creates a new builder-style object to manufacture [`RadarChartConfiguration`](crate::types::RadarChartConfiguration).
@@ -123,6 +129,7 @@ pub struct RadarChartConfigurationBuilder {
     pub(crate) color_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
     pub(crate) axes_range_scale: ::std::option::Option<crate::types::RadarChartAxesRangeScale>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl RadarChartConfigurationBuilder {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
@@ -335,6 +342,20 @@ impl RadarChartConfigurationBuilder {
     pub fn get_axes_range_scale(&self) -> &::std::option::Option<crate::types::RadarChartAxesRangeScale> {
         &self.axes_range_scale
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`RadarChartConfiguration`](crate::types::RadarChartConfiguration).
     pub fn build(self) -> crate::types::RadarChartConfiguration {
         crate::types::RadarChartConfiguration {
@@ -353,6 +374,7 @@ impl RadarChartConfigurationBuilder {
             color_label_options: self.color_label_options,
             legend: self.legend,
             axes_range_scale: self.axes_range_scale,
+            interactions: self.interactions,
         }
     }
 }

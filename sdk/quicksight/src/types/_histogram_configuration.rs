@@ -20,6 +20,8 @@ pub struct HistogramConfiguration {
     pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The visual palette configuration of a histogram.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl HistogramConfiguration {
     /// <p>The field well configuration of a histogram.</p>
@@ -54,6 +56,10 @@ impl HistogramConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl HistogramConfiguration {
     /// Creates a new builder-style object to manufacture [`HistogramConfiguration`](crate::types::HistogramConfiguration).
@@ -74,6 +80,7 @@ pub struct HistogramConfigurationBuilder {
     pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl HistogramConfigurationBuilder {
     /// <p>The field well configuration of a histogram.</p>
@@ -188,6 +195,20 @@ impl HistogramConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`HistogramConfiguration`](crate::types::HistogramConfiguration).
     pub fn build(self) -> crate::types::HistogramConfiguration {
         crate::types::HistogramConfiguration {
@@ -199,6 +220,7 @@ impl HistogramConfigurationBuilder {
             data_labels: self.data_labels,
             tooltip: self.tooltip,
             visual_palette: self.visual_palette,
+            interactions: self.interactions,
         }
     }
 }

@@ -44,6 +44,8 @@ pub struct LineChartConfiguration {
     pub contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
     /// <p>The visual palette configuration of a line chart.</p>
     pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl LineChartConfiguration {
     /// <p>The field well configuration of a line chart.</p>
@@ -134,6 +136,10 @@ impl LineChartConfiguration {
     pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl LineChartConfiguration {
     /// Creates a new builder-style object to manufacture [`LineChartConfiguration`](crate::types::LineChartConfiguration).
@@ -166,6 +172,7 @@ pub struct LineChartConfigurationBuilder {
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) contribution_analysis_defaults: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
     pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl LineChartConfigurationBuilder {
     /// <p>The field well configuration of a line chart.</p>
@@ -475,6 +482,20 @@ impl LineChartConfigurationBuilder {
     pub fn get_visual_palette(&self) -> &::std::option::Option<crate::types::VisualPalette> {
         &self.visual_palette
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`LineChartConfiguration`](crate::types::LineChartConfiguration).
     pub fn build(self) -> crate::types::LineChartConfiguration {
         crate::types::LineChartConfiguration {
@@ -498,6 +519,7 @@ impl LineChartConfigurationBuilder {
             tooltip: self.tooltip,
             contribution_analysis_defaults: self.contribution_analysis_defaults,
             visual_palette: self.visual_palette,
+            interactions: self.interactions,
         }
     }
 }

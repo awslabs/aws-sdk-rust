@@ -9,6 +9,18 @@ pub fn ser_git_push_filter(
         crate::protocol_serde::shape_git_tag_filter_criteria::ser_git_tag_filter_criteria(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.branches {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("branches").start_object();
+        crate::protocol_serde::shape_git_branch_filter_criteria::ser_git_branch_filter_criteria(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.file_paths {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("filePaths").start_object();
+        crate::protocol_serde::shape_git_file_path_filter_criteria::ser_git_file_path_filter_criteria(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -29,6 +41,16 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_git_tag_filter_criteria::de_git_tag_filter_criteria(tokens)?);
+                        }
+                        "branches" => {
+                            builder = builder.set_branches(crate::protocol_serde::shape_git_branch_filter_criteria::de_git_branch_filter_criteria(
+                                tokens,
+                            )?);
+                        }
+                        "filePaths" => {
+                            builder = builder.set_file_paths(
+                                crate::protocol_serde::shape_git_file_path_filter_criteria::de_git_file_path_filter_criteria(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

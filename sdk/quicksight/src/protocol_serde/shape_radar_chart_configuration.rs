@@ -78,6 +78,12 @@ pub fn ser_radar_chart_configuration(
     if let Some(var_24) = &input.axes_range_scale {
         object.key("AxesRangeScale").string(var_24.as_str());
     }
+    if let Some(var_25) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }
 
@@ -170,6 +176,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::RadarChartAxesRangeScale::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "Interactions" => {
+                            builder = builder.set_interactions(
+                                crate::protocol_serde::shape_visual_interaction_options::de_visual_interaction_options(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

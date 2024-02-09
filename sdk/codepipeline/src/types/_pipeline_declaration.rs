@@ -20,6 +20,8 @@ pub struct PipelineDeclaration {
     pub stages: ::std::vec::Vec<crate::types::StageDeclaration>,
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
     pub version: ::std::option::Option<i32>,
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
     /// <li>
@@ -29,17 +31,15 @@ pub struct PipelineDeclaration {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub pipeline_type: ::std::option::Option<crate::types::PipelineType>,
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>,
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
     /// </note>
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>,
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>,
 }
 impl PipelineDeclaration {
     /// <p>The name of the pipeline.</p>
@@ -73,6 +73,10 @@ impl PipelineDeclaration {
     pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(&self) -> ::std::option::Option<&crate::types::ExecutionMode> {
+        self.execution_mode.as_ref()
+    }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
     /// <li>
@@ -82,12 +86,16 @@ impl PipelineDeclaration {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn pipeline_type(&self) -> ::std::option::Option<&crate::types::PipelineType> {
         self.pipeline_type.as_ref()
+    }
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
+    pub fn variables(&self) -> &[crate::types::PipelineVariableDeclaration] {
+        self.variables.as_deref().unwrap_or_default()
     }
     /// <p>The trigger configuration specifying a type of event, such as Git tags, that starts the pipeline.</p><note>
     /// <p>When a trigger configuration is specified, default change detection for repository and branch commits is disabled.</p>
@@ -96,12 +104,6 @@ impl PipelineDeclaration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.triggers.is_none()`.
     pub fn triggers(&self) -> &[crate::types::PipelineTriggerDeclaration] {
         self.triggers.as_deref().unwrap_or_default()
-    }
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variables.is_none()`.
-    pub fn variables(&self) -> &[crate::types::PipelineVariableDeclaration] {
-        self.variables.as_deref().unwrap_or_default()
     }
 }
 impl PipelineDeclaration {
@@ -121,9 +123,10 @@ pub struct PipelineDeclarationBuilder {
     pub(crate) artifact_stores: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ArtifactStore>>,
     pub(crate) stages: ::std::option::Option<::std::vec::Vec<crate::types::StageDeclaration>>,
     pub(crate) version: ::std::option::Option<i32>,
+    pub(crate) execution_mode: ::std::option::Option<crate::types::ExecutionMode>,
     pub(crate) pipeline_type: ::std::option::Option<crate::types::PipelineType>,
-    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>,
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>>,
 }
 impl PipelineDeclarationBuilder {
     /// <p>The name of the pipeline.</p>
@@ -239,6 +242,20 @@ impl PipelineDeclarationBuilder {
     pub fn get_version(&self) -> &::std::option::Option<i32> {
         &self.version
     }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn execution_mode(mut self, input: crate::types::ExecutionMode) -> Self {
+        self.execution_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn set_execution_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
+        self.execution_mode = input;
+        self
+    }
+    /// <p>The method that the pipeline will use to handle multiple executions. The default mode is SUPERSEDED.</p>
+    pub fn get_execution_mode(&self) -> &::std::option::Option<crate::types::ExecutionMode> {
+        &self.execution_mode
+    }
     /// <p>CodePipeline provides the following pipeline types, which differ in characteristics and price, so that you can tailor your pipeline features and cost to the needs of your applications.</p>
     /// <ul>
     /// <li>
@@ -248,10 +265,8 @@ impl PipelineDeclarationBuilder {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn pipeline_type(mut self, input: crate::types::PipelineType) -> Self {
         self.pipeline_type = ::std::option::Option::Some(input);
         self
@@ -265,10 +280,8 @@ impl PipelineDeclarationBuilder {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn set_pipeline_type(mut self, input: ::std::option::Option<crate::types::PipelineType>) -> Self {
         self.pipeline_type = input;
         self
@@ -282,12 +295,30 @@ impl PipelineDeclarationBuilder {
     /// </ul><important>
     /// <p>Including V2 parameters, such as triggers on Git tags, in the pipeline JSON when creating or updating a pipeline will result in the pipeline having the V2 type of pipeline and the associated costs.</p>
     /// </important>
-    /// <p>For information about pricing for CodePipeline, see <a href="https://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
-    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p><note>
-    /// <p>V2 type pipelines, along with triggers on Git tags and pipeline-level variables, are not currently supported for CloudFormation and CDK resources in CodePipeline. For more information about V2 type pipelines, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types.html">Pipeline types</a> in the <i>CodePipeline User Guide</i>.</p>
-    /// </note>
+    /// <p>For information about pricing for CodePipeline, see <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p>
+    /// <p>For information about which type of pipeline to choose, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What type of pipeline is right for me?</a>.</p>
     pub fn get_pipeline_type(&self) -> &::std::option::Option<crate::types::PipelineType> {
         &self.pipeline_type
+    }
+    /// Appends an item to `variables`.
+    ///
+    /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+    ///
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    pub fn variables(mut self, input: crate::types::PipelineVariableDeclaration) -> Self {
+        let mut v = self.variables.unwrap_or_default();
+        v.push(input);
+        self.variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>) -> Self {
+        self.variables = input;
+        self
+    }
+    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
+    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>> {
+        &self.variables
     }
     /// Appends an item to `triggers`.
     ///
@@ -314,26 +345,6 @@ impl PipelineDeclarationBuilder {
     /// </note>
     pub fn get_triggers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineTriggerDeclaration>> {
         &self.triggers
-    }
-    /// Appends an item to `variables`.
-    ///
-    /// To override the contents of this collection use [`set_variables`](Self::set_variables).
-    ///
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub fn variables(mut self, input: crate::types::PipelineVariableDeclaration) -> Self {
-        let mut v = self.variables.unwrap_or_default();
-        v.push(input);
-        self.variables = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub fn set_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>>) -> Self {
-        self.variables = input;
-        self
-    }
-    /// <p>A list that defines the pipeline variables for a pipeline resource. Variable names can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.</p>
-    pub fn get_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PipelineVariableDeclaration>> {
-        &self.variables
     }
     /// Consumes the builder and constructs a [`PipelineDeclaration`](crate::types::PipelineDeclaration).
     /// This method will fail if any of the following fields are not set:
@@ -363,9 +374,10 @@ impl PipelineDeclarationBuilder {
                 )
             })?,
             version: self.version,
+            execution_mode: self.execution_mode,
             pipeline_type: self.pipeline_type,
-            triggers: self.triggers,
             variables: self.variables,
+            triggers: self.triggers,
         })
     }
 }

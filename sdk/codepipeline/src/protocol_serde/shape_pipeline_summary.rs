@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "executionMode" => {
+                            builder = builder.set_execution_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExecutionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "created" => {
                             builder = builder.set_created(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

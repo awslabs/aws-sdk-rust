@@ -16,6 +16,8 @@ pub struct FilledMapConfiguration {
     pub window_options: ::std::option::Option<crate::types::GeospatialWindowOptions>,
     /// <p>The map style options of the filled map visual.</p>
     pub map_style_options: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl FilledMapConfiguration {
     /// <p>The field wells of the visual.</p>
@@ -42,6 +44,10 @@ impl FilledMapConfiguration {
     pub fn map_style_options(&self) -> ::std::option::Option<&crate::types::GeospatialMapStyleOptions> {
         self.map_style_options.as_ref()
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(&self) -> ::std::option::Option<&crate::types::VisualInteractionOptions> {
+        self.interactions.as_ref()
+    }
 }
 impl FilledMapConfiguration {
     /// Creates a new builder-style object to manufacture [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).
@@ -60,6 +66,7 @@ pub struct FilledMapConfigurationBuilder {
     pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) window_options: ::std::option::Option<crate::types::GeospatialWindowOptions>,
     pub(crate) map_style_options: ::std::option::Option<crate::types::GeospatialMapStyleOptions>,
+    pub(crate) interactions: ::std::option::Option<crate::types::VisualInteractionOptions>,
 }
 impl FilledMapConfigurationBuilder {
     /// <p>The field wells of the visual.</p>
@@ -146,6 +153,20 @@ impl FilledMapConfigurationBuilder {
     pub fn get_map_style_options(&self) -> &::std::option::Option<crate::types::GeospatialMapStyleOptions> {
         &self.map_style_options
     }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn interactions(mut self, input: crate::types::VisualInteractionOptions) -> Self {
+        self.interactions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn set_interactions(mut self, input: ::std::option::Option<crate::types::VisualInteractionOptions>) -> Self {
+        self.interactions = input;
+        self
+    }
+    /// <p>The general visual interactions setup for a visual.</p>
+    pub fn get_interactions(&self) -> &::std::option::Option<crate::types::VisualInteractionOptions> {
+        &self.interactions
+    }
     /// Consumes the builder and constructs a [`FilledMapConfiguration`](crate::types::FilledMapConfiguration).
     pub fn build(self) -> crate::types::FilledMapConfiguration {
         crate::types::FilledMapConfiguration {
@@ -155,6 +176,7 @@ impl FilledMapConfigurationBuilder {
             tooltip: self.tooltip,
             window_options: self.window_options,
             map_style_options: self.map_style_options,
+            interactions: self.interactions,
         }
     }
 }
