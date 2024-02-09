@@ -133,6 +133,9 @@ pub(crate) fn de_list_enrollment_statuses(
                         tokens,
                     )?);
                 }
+                "includeMemberAccounts" => {
+                    builder = builder.set_include_member_accounts(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "nextToken" => {
                     builder = builder.set_next_token(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

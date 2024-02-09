@@ -22,7 +22,12 @@ impl CreateScraperInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateScraper`.
 ///
-/// Create a scraper.
+/// <p>The <code>CreateScraper</code> operation creates a scraper to collect metrics. A scraper pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and sends them to your Amazon Managed Service for Prometheus workspace. You can configure the scraper to control what metrics are collected, and what transformations are applied prior to sending them to your workspace.</p>
+/// <p>If needed, an IAM role will be created for you that gives Amazon Managed Service for Prometheus access to the metrics in your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/using-service-linked-roles.html#using-service-linked-roles-prom-scraper">Using roles for scraping metrics from EKS</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+/// <p>You cannot update a scraper. If you want to change the configuration of the scraper, create a new scraper and delete the old one.</p>
+/// <p>The <code>scrapeConfiguration</code> parameter contains the base64-encoded version of the YAML configuration file.</p><note>
+/// <p>For more information about collectors, including what metrics are collected, and how to configure the scraper, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector.html">Amazon Web Services managed collectors</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateScraperFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,73 +113,73 @@ impl CreateScraperFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// An optional user-assigned alias for this scraper. This alias is for user reference and does not need to be unique.
+    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
-    /// An optional user-assigned alias for this scraper. This alias is for user reference and does not need to be unique.
+    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
-    /// An optional user-assigned alias for this scraper. This alias is for user reference and does not need to be unique.
+    /// <p>(optional) a name to associate with the scraper. This is for your use, and does not need to be unique.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias()
     }
-    /// The configuration used to create the scraper.
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn scrape_configuration(mut self, input: crate::types::ScrapeConfiguration) -> Self {
         self.inner = self.inner.scrape_configuration(input);
         self
     }
-    /// The configuration used to create the scraper.
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn set_scrape_configuration(mut self, input: ::std::option::Option<crate::types::ScrapeConfiguration>) -> Self {
         self.inner = self.inner.set_scrape_configuration(input);
         self
     }
-    /// The configuration used to create the scraper.
+    /// <p>The configuration file to use in the new scraper. For more information, see <a href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn get_scrape_configuration(&self) -> &::std::option::Option<crate::types::ScrapeConfiguration> {
         self.inner.get_scrape_configuration()
     }
-    /// The source that the scraper will be discovering and collecting metrics from.
+    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.inner = self.inner.source(input);
         self
     }
-    /// The source that the scraper will be discovering and collecting metrics from.
+    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
-    /// The source that the scraper will be discovering and collecting metrics from.
+    /// <p>The Amazon EKS cluster from which the scraper will collect metrics.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
         self.inner.get_source()
     }
-    /// The destination that the scraper will be producing metrics to.
+    /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
         self.inner = self.inner.destination(input);
         self
     }
-    /// The destination that the scraper will be producing metrics to.
+    /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
-    /// The destination that the scraper will be producing metrics to.
+    /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         self.inner.get_destination()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -182,17 +187,17 @@ impl CreateScraperFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Optional, user-provided tags for this scraper.
+    /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Optional, user-provided tags for this scraper.
+    /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Optional, user-provided tags for this scraper.
+    /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

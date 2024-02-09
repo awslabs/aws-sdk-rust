@@ -3,18 +3,24 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnrollmentStatusesOutput {
-    /// <p>The account enrollment statuses.</p>
+    /// <p>The enrollment status of a specific account ID, including creation and last updated timestamps.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    pub include_member_accounts: ::std::option::Option<bool>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEnrollmentStatusesOutput {
-    /// <p>The account enrollment statuses.</p>
+    /// <p>The enrollment status of a specific account ID, including creation and last updated timestamps.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::AccountEnrollmentStatus] {
         self.items.as_deref().unwrap_or_default()
+    }
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    pub fn include_member_accounts(&self) -> ::std::option::Option<bool> {
+        self.include_member_accounts
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -38,6 +44,7 @@ impl ListEnrollmentStatusesOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListEnrollmentStatusesOutputBuilder {
     pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>,
+    pub(crate) include_member_accounts: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -46,21 +53,35 @@ impl ListEnrollmentStatusesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>The account enrollment statuses.</p>
+    /// <p>The enrollment status of a specific account ID, including creation and last updated timestamps.</p>
     pub fn items(mut self, input: crate::types::AccountEnrollmentStatus) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The account enrollment statuses.</p>
+    /// <p>The enrollment status of a specific account ID, including creation and last updated timestamps.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>The account enrollment statuses.</p>
+    /// <p>The enrollment status of a specific account ID, including creation and last updated timestamps.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountEnrollmentStatus>> {
         &self.items
+    }
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    pub fn include_member_accounts(mut self, input: bool) -> Self {
+        self.include_member_accounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_member_accounts = input;
+        self
+    }
+    /// <p>The enrollment status of all member accounts in the organization if the account is the management account.</p>
+    pub fn get_include_member_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_member_accounts
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +110,7 @@ impl ListEnrollmentStatusesOutputBuilder {
     pub fn build(self) -> crate::operation::list_enrollment_statuses::ListEnrollmentStatusesOutput {
         crate::operation::list_enrollment_statuses::ListEnrollmentStatusesOutput {
             items: self.items,
+            include_member_accounts: self.include_member_accounts,
             next_token: self.next_token,
             _request_id: self._request_id,
         }

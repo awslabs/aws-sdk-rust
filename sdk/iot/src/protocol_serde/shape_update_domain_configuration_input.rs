@@ -15,11 +15,17 @@ pub fn ser_update_domain_configuration_input_input(
     if let Some(var_4) = &input.remove_authorizer_config {
         object.key("removeAuthorizerConfig").boolean(*var_4);
     }
-    if let Some(var_5) = &input.tls_config {
+    if let Some(var_5) = &input.server_certificate_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_6, var_5)?;
+        let mut object_6 = object.key("serverCertificateConfig").start_object();
+        crate::protocol_serde::shape_server_certificate_config::ser_server_certificate_config(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.tls_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

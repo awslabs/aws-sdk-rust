@@ -22,7 +22,7 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeRuleGroupsNamespace`.
 ///
-/// Describe a rule groups namespace.
+/// <p>Returns complete information about one rule groups namespace. To retrieve a list of rule groups namespaces, use <code>ListRuleGroupsNamespaces</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeRuleGroupsNamespaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace to describe.
+    /// <p>The ID of the workspace containing the rule groups namespace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace to describe.
+    /// <p>The ID of the workspace containing the rule groups namespace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace to describe.
+    /// <p>The ID of the workspace containing the rule groups namespace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// The rule groups namespace.
+    /// <p>The name of the rule groups namespace that you want information for.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The rule groups namespace.
+    /// <p>The name of the rule groups namespace that you want information for.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The rule groups namespace.
+    /// <p>The name of the rule groups namespace that you want information for.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }

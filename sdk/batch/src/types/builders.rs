@@ -69,6 +69,8 @@ pub use crate::types::_node_range_property::NodeRangePropertyBuilder;
 
 pub use crate::types::_container_properties::ContainerPropertiesBuilder;
 
+pub use crate::types::_repository_credentials::RepositoryCredentialsBuilder;
+
 pub use crate::types::_runtime_platform::RuntimePlatformBuilder;
 
 pub use crate::types::_ephemeral_storage::EphemeralStorageBuilder;

@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`domain_type(Option<DomainType>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::domain_type): <p>The type of the domain.</p>
     ///   - [`last_status_change_date(Option<DateTime>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::last_status_change_date): <p>The date and time the domain configuration's status was last changed.</p>
     ///   - [`tls_config(Option<TlsConfig>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::tls_config): <p>An object that specifies the TLS configuration for a domain.</p>
+    ///   - [`server_certificate_config(Option<ServerCertificateConfig>)`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput::server_certificate_config): <p>The server certificate configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeDomainConfigurationError>`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationError)
     pub fn describe_domain_configuration(
         &self,

@@ -215,6 +215,8 @@ pub(crate) mod shape_node_property_override;
 
 pub(crate) mod shape_node_range_property;
 
+pub(crate) mod shape_repository_credentials;
+
 pub(crate) mod shape_resource_requirement;
 
 pub(crate) mod shape_runtime_platform;

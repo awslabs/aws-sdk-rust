@@ -23,6 +23,8 @@ pub struct DescribeDomainConfigurationOutput {
     pub last_status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    /// <p>The server certificate configuration.</p>
+    pub server_certificate_config: ::std::option::Option<crate::types::ServerCertificateConfig>,
     _request_id: Option<String>,
 }
 impl DescribeDomainConfigurationOutput {
@@ -68,6 +70,10 @@ impl DescribeDomainConfigurationOutput {
     pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(&self) -> ::std::option::Option<&crate::types::ServerCertificateConfig> {
+        self.server_certificate_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeDomainConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +101,7 @@ pub struct DescribeDomainConfigurationOutputBuilder {
     pub(crate) domain_type: ::std::option::Option<crate::types::DomainType>,
     pub(crate) last_status_change_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    pub(crate) server_certificate_config: ::std::option::Option<crate::types::ServerCertificateConfig>,
     _request_id: Option<String>,
 }
 impl DescribeDomainConfigurationOutputBuilder {
@@ -244,6 +251,20 @@ impl DescribeDomainConfigurationOutputBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         &self.tls_config
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(mut self, input: crate::types::ServerCertificateConfig) -> Self {
+        self.server_certificate_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn set_server_certificate_config(mut self, input: ::std::option::Option<crate::types::ServerCertificateConfig>) -> Self {
+        self.server_certificate_config = input;
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn get_server_certificate_config(&self) -> &::std::option::Option<crate::types::ServerCertificateConfig> {
+        &self.server_certificate_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -266,6 +287,7 @@ impl DescribeDomainConfigurationOutputBuilder {
             domain_type: self.domain_type,
             last_status_change_date: self.last_status_change_date,
             tls_config: self.tls_config,
+            server_certificate_config: self.server_certificate_config,
             _request_id: self._request_id,
         }
     }

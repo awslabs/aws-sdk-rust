@@ -235,6 +235,15 @@ pub(crate) fn log_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn repository_credentials_correct_errors(
+    mut builder: crate::types::builders::RepositoryCredentialsBuilder,
+) -> crate::types::builders::RepositoryCredentialsBuilder {
+    if builder.credentials_parameter.is_none() {
+        builder.credentials_parameter = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ec2_configuration_correct_errors(
     mut builder: crate::types::builders::Ec2ConfigurationBuilder,
 ) -> crate::types::builders::Ec2ConfigurationBuilder {

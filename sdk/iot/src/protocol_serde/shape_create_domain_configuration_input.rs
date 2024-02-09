@@ -21,29 +21,35 @@ pub fn ser_create_domain_configuration_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.service_type {
-        object.key("serviceType").string(var_7.as_str());
+    if let Some(var_7) = &input.server_certificate_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("serverCertificateConfig").start_object();
+        crate::protocol_serde::shape_server_certificate_config::ser_server_certificate_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.service_type {
+        object.key("serviceType").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.tls_config {
+    if let Some(var_14) = &input.tls_config {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tlsConfig").start_object();
-        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_15 = object.key("tlsConfig").start_object();
+        crate::protocol_serde::shape_tls_config::ser_tls_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_14) = &input.validation_certificate_arn {
-        object.key("validationCertificateArn").string(var_14.as_str());
+    if let Some(var_16) = &input.validation_certificate_arn {
+        object.key("validationCertificateArn").string(var_16.as_str());
     }
     Ok(())
 }

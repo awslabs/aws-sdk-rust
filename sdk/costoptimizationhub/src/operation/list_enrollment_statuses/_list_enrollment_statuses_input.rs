@@ -5,7 +5,7 @@
 pub struct ListEnrollmentStatusesInput {
     /// <p>Indicates whether to return the enrollment status for the organization.</p>
     pub include_organization_info: ::std::option::Option<bool>,
-    /// <p>The enrollment status of a specific account ID in the organization.</p>
+    /// <p>The account ID of a member account in the organization.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The token to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl ListEnrollmentStatusesInput {
     pub fn include_organization_info(&self) -> ::std::option::Option<bool> {
         self.include_organization_info
     }
-    /// <p>The enrollment status of a specific account ID in the organization.</p>
+    /// <p>The account ID of a member account in the organization.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListEnrollmentStatusesInputBuilder {
     pub fn get_include_organization_info(&self) -> &::std::option::Option<bool> {
         &self.include_organization_info
     }
-    /// <p>The enrollment status of a specific account ID in the organization.</p>
+    /// <p>The account ID of a member account in the organization.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The enrollment status of a specific account ID in the organization.</p>
+    /// <p>The account ID of a member account in the organization.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The enrollment status of a specific account ID in the organization.</p>
+    /// <p>The account ID of a member account in the organization.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

@@ -15,7 +15,13 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Amazon Managed Service for Prometheus
+//! Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible monitoring service for container metrics that makes it easier to securely monitor container environments at scale. With Amazon Managed Service for Prometheus, you can use the same open-source Prometheus data model and query language that you use today to monitor the performance of your containerized workloads, and also enjoy improved scalability, availability, and security without having to manage the underlying infrastructure.
+//!
+//! For more information about Amazon Managed Service for Prometheus, see the [Amazon Managed Service for Prometheus](https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html) User Guide.
+//!
+//! Amazon Managed Service for Prometheus includes two APIs.
+//!   - Use the Amazon Web Services API described in this guide to manage Amazon Managed Service for Prometheus resources, such as workspaces, rule groups, and alert managers.
+//!   - Use the [Prometheus-compatible API](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis) to work within your Prometheus workspace.
 //!
 //! ## Getting Started
 //!
@@ -29,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.5", features = ["behavior-version-latest"] }
-//! aws-sdk-amp = "1.13.0"
+//! aws-sdk-amp = "1.13.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -22,7 +22,7 @@ impl ListScrapersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListScrapers`.
 ///
-/// Lists all scrapers in a customer account, including scrapers being created or deleted. You may provide filters to return a more specific list of results.
+/// <p>The <code>ListScrapers</code> operation lists all of the scrapers in your account. This includes scrapers being created or deleted. You can optionally filter the returned list.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListScrapersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -118,12 +118,20 @@ impl ListScrapersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// A list of scraper filters.
+    /// <p>(Optional) A list of key-value pairs to filter the list of scrapers returned. Keys include <code>status</code>, <code>sourceArn</code>, <code>destinationArn</code>, and <code>alias</code>.</p>
+    /// <p>Filters on the same key are <code>OR</code>'d together, and filters on different keys are <code>AND</code>'d together. For example, <code>status=ACTIVE&amp;status=CREATING&amp;alias=Test</code>, will return all scrapers that have the alias Test, and are either in status ACTIVE or CREATING.</p>
+    /// <p>To find all active scrapers that are sending metrics to a specific Amazon Managed Service for Prometheus workspace, you would use the ARN of the workspace in a query:</p>
+    /// <p><code>status=ACTIVE&amp;destinationArn=arn:aws:aps:us-east-1:123456789012:workspace/ws-example1-1234-abcd-56ef-123456789012</code></p>
+    /// <p>If this is included, it filters the results to only the scrapers that match the filter.</p>
     pub fn filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filters(k.into(), v);
         self
     }
-    /// A list of scraper filters.
+    /// <p>(Optional) A list of key-value pairs to filter the list of scrapers returned. Keys include <code>status</code>, <code>sourceArn</code>, <code>destinationArn</code>, and <code>alias</code>.</p>
+    /// <p>Filters on the same key are <code>OR</code>'d together, and filters on different keys are <code>AND</code>'d together. For example, <code>status=ACTIVE&amp;status=CREATING&amp;alias=Test</code>, will return all scrapers that have the alias Test, and are either in status ACTIVE or CREATING.</p>
+    /// <p>To find all active scrapers that are sending metrics to a specific Amazon Managed Service for Prometheus workspace, you would use the ARN of the workspace in a query:</p>
+    /// <p><code>status=ACTIVE&amp;destinationArn=arn:aws:aps:us-east-1:123456789012:workspace/ws-example1-1234-abcd-56ef-123456789012</code></p>
+    /// <p>If this is included, it filters the results to only the scrapers that match the filter.</p>
     pub fn set_filters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -131,35 +139,42 @@ impl ListScrapersFluentBuilder {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// A list of scraper filters.
+    /// <p>(Optional) A list of key-value pairs to filter the list of scrapers returned. Keys include <code>status</code>, <code>sourceArn</code>, <code>destinationArn</code>, and <code>alias</code>.</p>
+    /// <p>Filters on the same key are <code>OR</code>'d together, and filters on different keys are <code>AND</code>'d together. For example, <code>status=ACTIVE&amp;status=CREATING&amp;alias=Test</code>, will return all scrapers that have the alias Test, and are either in status ACTIVE or CREATING.</p>
+    /// <p>To find all active scrapers that are sending metrics to a specific Amazon Managed Service for Prometheus workspace, you would use the ARN of the workspace in a query:</p>
+    /// <p><code>status=ACTIVE&amp;destinationArn=arn:aws:aps:us-east-1:123456789012:workspace/ws-example1-1234-abcd-56ef-123456789012</code></p>
+    /// <p>If this is included, it filters the results to only the scrapers that match the filter.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_filters()
     }
-    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListScrapers request.
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListScrapers request.
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListScrapers request.
+    /// <p>(Optional) The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Maximum results to return in response (default=100, maximum=1000).
+    /// <p>Optional) The maximum number of scrapers to return in one <code>ListScrapers</code> operation. The range is 1-1000.</p>
+    /// <p>If you omit this parameter, the default of 100 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum results to return in response (default=100, maximum=1000).
+    /// <p>Optional) The maximum number of scrapers to return in one <code>ListScrapers</code> operation. The range is 1-1000.</p>
+    /// <p>If you omit this parameter, the default of 100 is used.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum results to return in response (default=100, maximum=1000).
+    /// <p>Optional) The maximum number of scrapers to return in one <code>ListScrapers</code> operation. The range is 1-1000.</p>
+    /// <p>If you omit this parameter, the default of 100 is used.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

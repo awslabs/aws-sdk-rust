@@ -197,6 +197,11 @@ pub(crate) fn de_describe_domain_configuration(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "serverCertificateConfig" => {
+                    builder = builder.set_server_certificate_config(
+                        crate::protocol_serde::shape_server_certificate_config::de_server_certificate_config(tokens)?,
+                    );
+                }
                 "serverCertificates" => {
                     builder = builder.set_server_certificates(crate::protocol_serde::shape_server_certificates::de_server_certificates(tokens)?);
                 }

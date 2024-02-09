@@ -22,7 +22,7 @@ impl DeleteScraperInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteScraper`.
 ///
-/// Deletes a scraper.
+/// <p>The <code>DeleteScraper</code> operation deletes one scraper, and stops any metrics collection that the scraper performs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteScraperFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteScraperFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the scraper to delete.
+    /// <p>The ID of the scraper to delete.</p>
     pub fn scraper_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scraper_id(input.into());
         self
     }
-    /// The ID of the scraper to delete.
+    /// <p>The ID of the scraper to delete.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scraper_id(input);
         self
     }
-    /// The ID of the scraper to delete.
+    /// <p>The ID of the scraper to delete.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scraper_id()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

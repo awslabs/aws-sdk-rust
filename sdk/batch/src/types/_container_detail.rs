@@ -76,6 +76,8 @@ pub struct ContainerDetail {
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
+    /// <p>The private repository authentication credentials to use.</p>
+    pub repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
 }
 impl ContainerDetail {
     /// <p>The image used to start the container.</p>
@@ -222,6 +224,10 @@ impl ContainerDetail {
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn repository_credentials(&self) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
+        self.repository_credentials.as_ref()
+    }
 }
 impl ContainerDetail {
     /// Creates a new builder-style object to manufacture [`ContainerDetail`](crate::types::ContainerDetail).
@@ -262,6 +268,7 @@ pub struct ContainerDetailBuilder {
     pub(crate) fargate_platform_configuration: ::std::option::Option<crate::types::FargatePlatformConfiguration>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
+    pub(crate) repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
 }
 impl ContainerDetailBuilder {
     /// <p>The image used to start the container.</p>
@@ -752,6 +759,20 @@ impl ContainerDetailBuilder {
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         &self.runtime_platform
     }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn repository_credentials(mut self, input: crate::types::RepositoryCredentials) -> Self {
+        self.repository_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn set_repository_credentials(mut self, input: ::std::option::Option<crate::types::RepositoryCredentials>) -> Self {
+        self.repository_credentials = input;
+        self
+    }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn get_repository_credentials(&self) -> &::std::option::Option<crate::types::RepositoryCredentials> {
+        &self.repository_credentials
+    }
     /// Consumes the builder and constructs a [`ContainerDetail`](crate::types::ContainerDetail).
     pub fn build(self) -> crate::types::ContainerDetail {
         crate::types::ContainerDetail {
@@ -783,6 +804,7 @@ impl ContainerDetailBuilder {
             fargate_platform_configuration: self.fargate_platform_configuration,
             ephemeral_storage: self.ephemeral_storage,
             runtime_platform: self.runtime_platform,
+            repository_credentials: self.repository_credentials,
         }
     }
 }

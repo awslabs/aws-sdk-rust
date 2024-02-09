@@ -22,7 +22,7 @@ impl DescribeScraperInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeScraper`.
 ///
-/// Describe an existing scraper.
+/// <p>The <code>DescribeScraper</code> operation displays information about an existing scraper.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeScraperFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeScraperFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The IDs of the scraper to describe.
+    /// <p>The ID of the scraper to describe.</p>
     pub fn scraper_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scraper_id(input.into());
         self
     }
-    /// The IDs of the scraper to describe.
+    /// <p>The ID of the scraper to describe.</p>
     pub fn set_scraper_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scraper_id(input);
         self
     }
-    /// The IDs of the scraper to describe.
+    /// <p>The ID of the scraper to describe.</p>
     pub fn get_scraper_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scraper_id()
     }

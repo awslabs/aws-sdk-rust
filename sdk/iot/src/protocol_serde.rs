@@ -1033,6 +1033,8 @@ pub(crate) mod shape_security_profile_target_mappings;
 
 pub(crate) mod shape_security_profile_targets;
 
+pub(crate) mod shape_server_certificate_config;
+
 pub(crate) mod shape_server_certificates;
 
 pub(crate) mod shape_statistics;

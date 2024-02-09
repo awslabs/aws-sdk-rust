@@ -22,7 +22,7 @@ impl CreateWorkspaceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWorkspace`.
 ///
-/// Creates a new AMP workspace.
+/// <p>Creates a Prometheus workspace. A workspace is a logical space dedicated to the storage and querying of Prometheus metrics. You can have one or more workspaces in each Region in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkspaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,34 @@ impl CreateWorkspaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
+    /// <p>An alias that you assign to this workspace to help you identify it. It does not need to be unique.</p>
+    /// <p>Blank spaces at the beginning or end of the alias that you specify will be trimmed from the value used.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
-    /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
+    /// <p>An alias that you assign to this workspace to help you identify it. It does not need to be unique.</p>
+    /// <p>Blank spaces at the beginning or end of the alias that you specify will be trimmed from the value used.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
-    /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
+    /// <p>An alias that you assign to this workspace to help you identify it. It does not need to be unique.</p>
+    /// <p>Blank spaces at the beginning or end of the alias that you specify will be trimmed from the value used.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -140,31 +143,31 @@ impl CreateWorkspaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Optional, user-provided tags for this workspace.
+    /// <p>The list of tag keys and values to associate with the workspace.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Optional, user-provided tags for this workspace.
+    /// <p>The list of tag keys and values to associate with the workspace.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Optional, user-provided tags for this workspace.
+    /// <p>The list of tag keys and values to associate with the workspace.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    /// <p>(optional) The ARN for a customer managed KMS key to use for encrypting data within your workspace. For more information about using your own key in your workspace, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
         self
     }
-    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    /// <p>(optional) The ARN for a customer managed KMS key to use for encrypting data within your workspace. For more information about using your own key in your workspace, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
-    /// Optional, customer managed KMS key used to encrypt data for this workspace
+    /// <p>(optional) The ARN for a customer managed KMS key to use for encrypting data within your workspace. For more information about using your own key in your workspace, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html">Encryption at rest</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }

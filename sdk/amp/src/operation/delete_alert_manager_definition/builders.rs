@@ -22,7 +22,7 @@ impl DeleteAlertManagerDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAlertManagerDefinition`.
 ///
-/// Deletes an alert manager definition.
+/// <p>Deletes the alert manager definition from a workspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAlertManagerDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeleteAlertManagerDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace in which to delete the alert manager definition.
+    /// <p>The ID of the workspace to delete the alert manager definition from.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace in which to delete the alert manager definition.
+    /// <p>The ID of the workspace to delete the alert manager definition from.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace in which to delete the alert manager definition.
+    /// <p>The ID of the workspace to delete the alert manager definition from.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

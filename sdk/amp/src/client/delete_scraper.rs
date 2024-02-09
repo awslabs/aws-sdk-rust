@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScraper`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scraper_id(impl Into<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::scraper_id) / [`set_scraper_id(Option<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::set_scraper_id):<br>required: **true**<br>The ID of the scraper to delete.<br>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::set_client_token):<br>required: **false**<br>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.<br>
+    ///   - [`scraper_id(impl Into<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::scraper_id) / [`set_scraper_id(Option<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::set_scraper_id):<br>required: **true**<br><p>The ID of the scraper to delete.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::set_client_token):<br>required: **false**<br><p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p><br>
     /// - On success, responds with [`DeleteScraperOutput`](crate::operation::delete_scraper::DeleteScraperOutput) with field(s):
-    ///   - [`scraper_id(String)`](crate::operation::delete_scraper::DeleteScraperOutput::scraper_id): The ID of the scraper that was deleted.
-    ///   - [`status(Option<ScraperStatus>)`](crate::operation::delete_scraper::DeleteScraperOutput::status): The status of the scraper that is being deleted.
+    ///   - [`scraper_id(String)`](crate::operation::delete_scraper::DeleteScraperOutput::scraper_id): <p>The ID of the scraper to delete.</p>
+    ///   - [`status(Option<ScraperStatus>)`](crate::operation::delete_scraper::DeleteScraperOutput::status): <p>The current status of the scraper.</p>
     /// - On failure, responds with [`SdkError<DeleteScraperError>`](crate::operation::delete_scraper::DeleteScraperError)
     pub fn delete_scraper(&self) -> crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder {
         crate::operation::delete_scraper::builders::DeleteScraperFluentBuilder::new(self.handle.clone())

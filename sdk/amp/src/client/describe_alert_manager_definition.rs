@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAlertManagerDefinition`](crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder::set_workspace_id):<br>required: **true**<br>The ID of the workspace to describe.<br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to retrieve the alert manager definition from.</p><br>
     /// - On success, responds with [`DescribeAlertManagerDefinitionOutput`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionOutput) with field(s):
-    ///   - [`alert_manager_definition(Option<AlertManagerDefinitionDescription>)`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionOutput::alert_manager_definition): The properties of the selected workspace's alert manager definition.
+    ///   - [`alert_manager_definition(Option<AlertManagerDefinitionDescription>)`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionOutput::alert_manager_definition): <p>The alert manager definition.</p>
     /// - On failure, responds with [`SdkError<DescribeAlertManagerDefinitionError>`](crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionError)
     pub fn describe_alert_manager_definition(
         &self,

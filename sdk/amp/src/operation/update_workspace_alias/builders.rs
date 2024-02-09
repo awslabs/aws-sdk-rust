@@ -22,7 +22,7 @@ impl UpdateWorkspaceAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateWorkspaceAlias`.
 ///
-/// Updates an AMP workspace alias.
+/// <p>Updates the alias of an existing workspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,48 @@ impl UpdateWorkspaceAliasFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace being updated.
+    /// <p>The ID of the workspace to update.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace being updated.
+    /// <p>The ID of the workspace to update.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace being updated.
+    /// <p>The ID of the workspace to update.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// The new alias of the workspace.
+    /// <p>The new alias for the workspace. It does not need to be unique.</p>
+    /// <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p>
     pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
-    /// The new alias of the workspace.
+    /// <p>The new alias for the workspace. It does not need to be unique.</p>
+    /// <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p>
     pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
-    /// The new alias of the workspace.
+    /// <p>The new alias for the workspace. It does not need to be unique.</p>
+    /// <p>Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.</p>
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

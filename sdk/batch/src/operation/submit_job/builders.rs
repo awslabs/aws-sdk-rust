@@ -151,19 +151,19 @@ impl SubmitJobFluentBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_share_identifier()
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority_override(mut self, input: i32) -> Self {
         self.inner = self.inner.scheduling_priority_override(input);
         self
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn set_scheduling_priority_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scheduling_priority_override(input);
         self
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn get_scheduling_priority_override(&self) -> &::std::option::Option<i32> {
         self.inner.get_scheduling_priority_override()

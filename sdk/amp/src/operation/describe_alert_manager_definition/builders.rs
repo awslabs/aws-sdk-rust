@@ -22,7 +22,7 @@ impl DescribeAlertManagerDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeAlertManagerDefinition`.
 ///
-/// Describes an alert manager definition.
+/// <p>Retrieves the full information about the alert manager definition for a workspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeAlertManagerDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace to describe.
+    /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace to describe.
+    /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace to describe.
+    /// <p>The ID of the workspace to retrieve the alert manager definition from.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }

@@ -152,6 +152,10 @@ where
                         "runtimePlatform" => {
                             builder = builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens)?);
                         }
+                        "repositoryCredentials" => {
+                            builder = builder
+                                .set_repository_credentials(crate::protocol_serde::shape_repository_credentials::de_repository_credentials(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

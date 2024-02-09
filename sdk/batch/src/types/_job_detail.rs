@@ -28,7 +28,7 @@ pub struct JobDetail {
     pub created_at: ::std::option::Option<i64>,
     /// <p>The retry strategy to use for this job if an attempt fails.</p>
     pub retry_strategy: ::std::option::Option<crate::types::RetryStrategy>,
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub started_at: ::std::option::Option<i64>,
     /// <p>The Unix timestamp (in milliseconds) for when the job was stopped. More specifically, it's when the job transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>.</p>
     pub stopped_at: ::std::option::Option<i64>,
@@ -114,7 +114,7 @@ impl JobDetail {
     pub fn retry_strategy(&self) -> ::std::option::Option<&crate::types::RetryStrategy> {
         self.retry_strategy.as_ref()
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
     }
@@ -402,18 +402,18 @@ impl JobDetailBuilder {
     pub fn get_retry_strategy(&self) -> &::std::option::Option<crate::types::RetryStrategy> {
         &self.retry_strategy
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     /// This field is required.
     pub fn started_at(mut self, input: i64) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_at = input;
         self
     }
-    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state. This parameter isn't provided for child jobs of array jobs or multi-node parallel jobs.</p>
+    /// <p>The Unix timestamp (in milliseconds) for when the job was started. More specifically, it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state.</p>
     pub fn get_started_at(&self) -> &::std::option::Option<i64> {
         &self.started_at
     }

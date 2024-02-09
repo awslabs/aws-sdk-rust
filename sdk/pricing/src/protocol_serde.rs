@@ -63,6 +63,8 @@ pub(crate) mod shape_list_price_lists_input;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_attribute_value_list;
 
 pub(crate) mod shape_filter;

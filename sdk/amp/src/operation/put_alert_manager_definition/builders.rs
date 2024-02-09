@@ -22,7 +22,7 @@ impl PutAlertManagerDefinitionInputBuilder {
 }
 /// Fluent builder constructing a request to `PutAlertManagerDefinition`.
 ///
-/// Update an alert manager definition.
+/// <p>Updates an existing alert manager definition in a workspace. If the workspace does not already have an alert manager definition, don't use this operation to create it. Instead, use <code>CreateAlertManagerDefinition</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAlertManagerDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,48 @@ impl PutAlertManagerDefinitionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace in which to update the alert manager definition.
+    /// <p>The ID of the workspace to update the alert manager definition in.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace in which to update the alert manager definition.
+    /// <p>The ID of the workspace to update the alert manager definition in.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace in which to update the alert manager definition.
+    /// <p>The ID of the workspace to update the alert manager definition in.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// The alert manager definition data.
+    /// <p>The alert manager definition to use. A base64-encoded version of the YAML alert manager definition file.</p>
+    /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.data(input);
         self
     }
-    /// The alert manager definition data.
+    /// <p>The alert manager definition to use. A base64-encoded version of the YAML alert manager definition file.</p>
+    /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
-    /// The alert manager definition data.
+    /// <p>The alert manager definition to use. A base64-encoded version of the YAML alert manager definition file.</p>
+    /// <p>For details about the alert manager definition, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html">AlertManagedDefinitionData</a>.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_data()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

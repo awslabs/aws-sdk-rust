@@ -85,6 +85,8 @@ pub use crate::types::_node_range_property::NodeRangeProperty;
 
 pub use crate::types::_container_properties::ContainerProperties;
 
+pub use crate::types::_repository_credentials::RepositoryCredentials;
+
 pub use crate::types::_runtime_platform::RuntimePlatform;
 
 pub use crate::types::_ephemeral_storage::EphemeralStorage;
@@ -348,6 +350,8 @@ mod _node_range_property;
 mod _orchestration_type;
 
 mod _platform_capability;
+
+mod _repository_credentials;
 
 mod _resource_requirement;
 

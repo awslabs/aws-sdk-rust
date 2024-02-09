@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoggingConfiguration`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::set_workspace_id):<br>required: **true**<br>The ID of the workspace to vend logs to.<br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to describe the logging configuration for.</p><br>
     /// - On success, responds with [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput) with field(s):
-    ///   - [`logging_configuration(Option<LoggingConfigurationMetadata>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::logging_configuration): Metadata object containing information about the logging configuration of a workspace.
+    ///   - [`logging_configuration(Option<LoggingConfigurationMetadata>)`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput::logging_configuration): <p>A structure that displays the information about the logging configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeLoggingConfigurationError>`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError)
     pub fn describe_logging_configuration(
         &self,

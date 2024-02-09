@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRuleGroupsNamespace`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::set_workspace_id):<br>required: **true**<br>The ID of the workspace to describe.<br>
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::set_name):<br>required: **true**<br>The rule groups namespace.<br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace containing the rule groups namespace.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceFluentBuilder::set_name):<br>required: **true**<br><p>The name of the rule groups namespace that you want information for.</p><br>
     /// - On success, responds with [`DescribeRuleGroupsNamespaceOutput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput) with field(s):
-    ///   - [`rule_groups_namespace(Option<RuleGroupsNamespaceDescription>)`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput::rule_groups_namespace): The selected rule groups namespace.
+    ///   - [`rule_groups_namespace(Option<RuleGroupsNamespaceDescription>)`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput::rule_groups_namespace): <p>The information about the rule groups namespace.</p>
     /// - On failure, responds with [`SdkError<DescribeRuleGroupsNamespaceError>`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceError)
     pub fn describe_rule_groups_namespace(
         &self,

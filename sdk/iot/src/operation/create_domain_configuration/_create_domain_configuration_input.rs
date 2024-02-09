@@ -25,6 +25,8 @@ pub struct CreateDomainConfigurationInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    /// <p>The server certificate configuration.</p>
+    pub server_certificate_config: ::std::option::Option<crate::types::ServerCertificateConfig>,
 }
 impl CreateDomainConfigurationInput {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
@@ -69,6 +71,10 @@ impl CreateDomainConfigurationInput {
     pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(&self) -> ::std::option::Option<&crate::types::ServerCertificateConfig> {
+        self.server_certificate_config.as_ref()
+    }
 }
 impl CreateDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainConfigurationInput`](crate::operation::create_domain_configuration::CreateDomainConfigurationInput).
@@ -89,6 +95,7 @@ pub struct CreateDomainConfigurationInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::ServiceType>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    pub(crate) server_certificate_config: ::std::option::Option<crate::types::ServerCertificateConfig>,
 }
 impl CreateDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration. This value must be unique to a region.</p>
@@ -234,6 +241,20 @@ impl CreateDomainConfigurationInputBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         &self.tls_config
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(mut self, input: crate::types::ServerCertificateConfig) -> Self {
+        self.server_certificate_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn set_server_certificate_config(mut self, input: ::std::option::Option<crate::types::ServerCertificateConfig>) -> Self {
+        self.server_certificate_config = input;
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn get_server_certificate_config(&self) -> &::std::option::Option<crate::types::ServerCertificateConfig> {
+        &self.server_certificate_config
+    }
     /// Consumes the builder and constructs a [`CreateDomainConfigurationInput`](crate::operation::create_domain_configuration::CreateDomainConfigurationInput).
     pub fn build(
         self,
@@ -250,6 +271,7 @@ impl CreateDomainConfigurationInputBuilder {
             service_type: self.service_type,
             tags: self.tags,
             tls_config: self.tls_config,
+            server_certificate_config: self.server_certificate_config,
         })
     }
 }

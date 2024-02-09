@@ -23,6 +23,7 @@ impl GetRegistrationCodeInputBuilder {
 /// Fluent builder constructing a request to `GetRegistrationCode`.
 ///
 /// <p>Gets a registration code used to register a CA certificate with IoT.</p>
+/// <p>IoT will create a registration code as part of this API call if the registration code doesn't exist or has been deleted. If you already have a registration code, this API call will return the same registration code.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRegistrationCodeFluentBuilder {

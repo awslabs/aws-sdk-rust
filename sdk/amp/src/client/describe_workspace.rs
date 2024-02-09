@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorkspace`](crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br>The ID of the workspace to describe.<br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace to describe.</p><br>
     /// - On success, responds with [`DescribeWorkspaceOutput`](crate::operation::describe_workspace::DescribeWorkspaceOutput) with field(s):
-    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::describe_workspace::DescribeWorkspaceOutput::workspace): The properties of the selected workspace.
+    ///   - [`workspace(Option<WorkspaceDescription>)`](crate::operation::describe_workspace::DescribeWorkspaceOutput::workspace): <p>A structure that contains details about the workspace.</p>
     /// - On failure, responds with [`SdkError<DescribeWorkspaceError>`](crate::operation::describe_workspace::DescribeWorkspaceError)
     pub fn describe_workspace(&self) -> crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder {
         crate::operation::describe_workspace::builders::DescribeWorkspaceFluentBuilder::new(self.handle.clone())

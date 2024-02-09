@@ -13,6 +13,8 @@ pub struct UpdateDomainConfigurationInput {
     pub remove_authorizer_config: ::std::option::Option<bool>,
     /// <p>An object that specifies the TLS configuration for a domain.</p>
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    /// <p>The server certificate configuration.</p>
+    pub server_certificate_config: ::std::option::Option<crate::types::ServerCertificateConfig>,
 }
 impl UpdateDomainConfigurationInput {
     /// <p>The name of the domain configuration to be updated.</p>
@@ -35,6 +37,10 @@ impl UpdateDomainConfigurationInput {
     pub fn tls_config(&self) -> ::std::option::Option<&crate::types::TlsConfig> {
         self.tls_config.as_ref()
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(&self) -> ::std::option::Option<&crate::types::ServerCertificateConfig> {
+        self.server_certificate_config.as_ref()
+    }
 }
 impl UpdateDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
@@ -52,6 +58,7 @@ pub struct UpdateDomainConfigurationInputBuilder {
     pub(crate) domain_configuration_status: ::std::option::Option<crate::types::DomainConfigurationStatus>,
     pub(crate) remove_authorizer_config: ::std::option::Option<bool>,
     pub(crate) tls_config: ::std::option::Option<crate::types::TlsConfig>,
+    pub(crate) server_certificate_config: ::std::option::Option<crate::types::ServerCertificateConfig>,
 }
 impl UpdateDomainConfigurationInputBuilder {
     /// <p>The name of the domain configuration to be updated.</p>
@@ -125,6 +132,20 @@ impl UpdateDomainConfigurationInputBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         &self.tls_config
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(mut self, input: crate::types::ServerCertificateConfig) -> Self {
+        self.server_certificate_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn set_server_certificate_config(mut self, input: ::std::option::Option<crate::types::ServerCertificateConfig>) -> Self {
+        self.server_certificate_config = input;
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn get_server_certificate_config(&self) -> &::std::option::Option<crate::types::ServerCertificateConfig> {
+        &self.server_certificate_config
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigurationInput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationInput).
     pub fn build(
         self,
@@ -138,6 +159,7 @@ impl UpdateDomainConfigurationInputBuilder {
             domain_configuration_status: self.domain_configuration_status,
             remove_authorizer_config: self.remove_authorizer_config,
             tls_config: self.tls_config,
+            server_certificate_config: self.server_certificate_config,
         })
     }
 }

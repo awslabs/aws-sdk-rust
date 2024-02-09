@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetDefaultScraperConfigurationOutput`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput) with field(s):
-    ///   - [`configuration(Blob)`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput::configuration): The default configuration.
+    ///   - [`configuration(Blob)`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationOutput::configuration): <p>The configuration file. Base 64 encoded. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper configuration</a>in the <i>Amazon Managed Service for Prometheus User Guide</i>.</p>
     /// - On failure, responds with [`SdkError<GetDefaultScraperConfigurationError>`](crate::operation::get_default_scraper_configuration::GetDefaultScraperConfigurationError)
     pub fn get_default_scraper_configuration(
         &self,

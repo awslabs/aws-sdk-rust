@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeScraper`](crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scraper_id(impl Into<String>)`](crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder::scraper_id) / [`set_scraper_id(Option<String>)`](crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder::set_scraper_id):<br>required: **true**<br>The IDs of the scraper to describe.<br>
+    ///   - [`scraper_id(impl Into<String>)`](crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder::scraper_id) / [`set_scraper_id(Option<String>)`](crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder::set_scraper_id):<br>required: **true**<br><p>The ID of the scraper to describe.</p><br>
     /// - On success, responds with [`DescribeScraperOutput`](crate::operation::describe_scraper::DescribeScraperOutput) with field(s):
-    ///   - [`scraper(Option<ScraperDescription>)`](crate::operation::describe_scraper::DescribeScraperOutput::scraper): The properties of the selected scrapers.
+    ///   - [`scraper(Option<ScraperDescription>)`](crate::operation::describe_scraper::DescribeScraperOutput::scraper): <p>Contains details about the scraper.</p>
     /// - On failure, responds with [`SdkError<DescribeScraperError>`](crate::operation::describe_scraper::DescribeScraperError)
     pub fn describe_scraper(&self) -> crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder {
         crate::operation::describe_scraper::builders::DescribeScraperFluentBuilder::new(self.handle.clone())

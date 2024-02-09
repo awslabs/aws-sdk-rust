@@ -275,15 +275,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRuleGroup
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListRuleGroupsNamespacesError {
-    /// User does not have sufficient access to perform this action.
+    /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// Unexpected error during processing of request.
+    /// <p>An unexpected error occurred during the processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// Request references a resource which does not exist.
+    /// <p>The request references a resources that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// Request was denied due to request throttling.
+    /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// The input fails to satisfy the constraints specified by an AWS service.
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

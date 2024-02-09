@@ -22,7 +22,8 @@ impl CreateRuleGroupsNamespaceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateRuleGroupsNamespace`.
 ///
-/// Create a rule group namespace.
+/// <p>The <code>CreateRuleGroupsNamespace</code> operation creates a rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.</p>
+/// <p>Use this operation only to create new rule groups namespaces. To update an existing rule groups namespace, use <code>PutRuleGroupsNamespace</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleGroupsNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +109,65 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace in which to create the rule group namespace.
+    /// <p>The ID of the workspace to add the rule groups namespace.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace in which to create the rule group namespace.
+    /// <p>The ID of the workspace to add the rule groups namespace.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace in which to create the rule group namespace.
+    /// <p>The ID of the workspace to add the rule groups namespace.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// The rule groups namespace name.
+    /// <p>The name for the new rule groups namespace.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The rule groups namespace name.
+    /// <p>The name for the new rule groups namespace.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The rule groups namespace name.
+    /// <p>The name for the new rule groups namespace.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// The namespace data that define the rule groups.
+    /// <p>The rules file to use in the new namespace.</p>
+    /// <p>Contains the base64-encoded version of the YAML rules file.</p>
+    /// <p>For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.</p>
     pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.data(input);
         self
     }
-    /// The namespace data that define the rule groups.
+    /// <p>The rules file to use in the new namespace.</p>
+    /// <p>Contains the base64-encoded version of the YAML rules file.</p>
+    /// <p>For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
-    /// The namespace data that define the rule groups.
+    /// <p>The rules file to use in the new namespace.</p>
+    /// <p>Contains the base64-encoded version of the YAML rules file.</p>
+    /// <p>For details about the rule groups namespace structure, see <a href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html">RuleGroupsNamespaceData</a>.</p>
     pub fn get_data(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_data()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -168,17 +175,17 @@ impl CreateRuleGroupsNamespaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Optional, user-provided tags for this rule groups namespace.
+    /// <p>The list of tag keys and values to associate with the rule groups namespace.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Optional, user-provided tags for this rule groups namespace.
+    /// <p>The list of tag keys and values to associate with the rule groups namespace.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Optional, user-provided tags for this rule groups namespace.
+    /// <p>The list of tag keys and values to associate with the rule groups namespace.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

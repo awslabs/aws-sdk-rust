@@ -151,6 +151,7 @@ impl From<crate::operation::create_job::CreateJobError> for Error {
         match err {
             crate::operation::create_job::CreateJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_job::CreateJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_job::CreateJobError::DeviceOfflineException(inner) => Error::DeviceOfflineException(inner),
             crate::operation::create_job::CreateJobError::DeviceRetiredException(inner) => Error::DeviceRetiredException(inner),
             crate::operation::create_job::CreateJobError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::create_job::CreateJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),

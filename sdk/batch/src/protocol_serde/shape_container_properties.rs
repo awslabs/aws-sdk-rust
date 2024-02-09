@@ -153,6 +153,12 @@ pub fn ser_container_properties(
         crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(&mut object_48, var_47)?;
         object_48.finish();
     }
+    if let Some(var_49) = &input.repository_credentials {
+        #[allow(unused_mut)]
+        let mut object_50 = object.key("repositoryCredentials").start_object();
+        crate::protocol_serde::shape_repository_credentials::ser_repository_credentials(&mut object_50, var_49)?;
+        object_50.finish();
+    }
     Ok(())
 }
 
@@ -269,6 +275,10 @@ where
                         }
                         "runtimePlatform" => {
                             builder = builder.set_runtime_platform(crate::protocol_serde::shape_runtime_platform::de_runtime_platform(tokens)?);
+                        }
+                        "repositoryCredentials" => {
+                            builder = builder
+                                .set_repository_credentials(crate::protocol_serde::shape_repository_credentials::de_repository_credentials(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -127,6 +127,8 @@ pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_event_type::EventType;
 
+pub use crate::types::_server_certificate_config::ServerCertificateConfig;
+
 pub use crate::types::_tls_config::TlsConfig;
 
 pub use crate::types::_domain_configuration_status::DomainConfigurationStatus;
@@ -1006,6 +1008,8 @@ mod _security_profile_identifier;
 mod _security_profile_target;
 
 mod _security_profile_target_mapping;
+
+mod _server_certificate_config;
 
 mod _server_certificate_status;
 

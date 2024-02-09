@@ -258,6 +258,8 @@ pub enum DescribeServicesError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The requested resource can't be found.</p>
     NotFoundException(crate::types::error::NotFoundException),
+    /// <p>You've made too many requests exceeding service quotas.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -296,6 +298,7 @@ impl DescribeServicesError {
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -319,6 +322,10 @@ impl DescribeServicesError {
     pub fn is_not_found_exception(&self) -> bool {
         matches!(self, Self::NotFoundException(_))
     }
+    /// Returns `true` if the error kind is `DescribeServicesError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
 }
 impl ::std::error::Error for DescribeServicesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -328,6 +335,7 @@ impl ::std::error::Error for DescribeServicesError {
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -340,6 +348,7 @@ impl ::std::fmt::Display for DescribeServicesError {
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -355,7 +364,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DescribeServicesError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::InternalErrorException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ThrottlingException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeServicesError {
@@ -366,6 +379,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeServi
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerProperties {
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Required. The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
@@ -84,9 +84,11 @@ pub struct ContainerProperties {
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
+    /// <p>The private repository authentication credentials to use.</p>
+    pub repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
 }
 impl ContainerProperties {
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Required. The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
@@ -224,6 +226,10 @@ impl ContainerProperties {
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn repository_credentials(&self) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
+        self.repository_credentials.as_ref()
+    }
 }
 impl ContainerProperties {
     /// Creates a new builder-style object to manufacture [`ContainerProperties`](crate::types::ContainerProperties).
@@ -258,9 +264,10 @@ pub struct ContainerPropertiesBuilder {
     pub(crate) fargate_platform_configuration: ::std::option::Option<crate::types::FargatePlatformConfiguration>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
+    pub(crate) repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
 }
 impl ContainerPropertiesBuilder {
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Required. The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
@@ -282,7 +289,7 @@ impl ContainerPropertiesBuilder {
         self.image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Required. The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
@@ -304,7 +311,7 @@ impl ContainerPropertiesBuilder {
         self.image = input;
         self
     }
-    /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Required. The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with <code> <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>Docker image architecture must match the processor architecture of the compute resources that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based compute resources.</p>
     /// </note>
     /// <ul>
@@ -718,6 +725,20 @@ impl ContainerPropertiesBuilder {
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         &self.runtime_platform
     }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn repository_credentials(mut self, input: crate::types::RepositoryCredentials) -> Self {
+        self.repository_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn set_repository_credentials(mut self, input: ::std::option::Option<crate::types::RepositoryCredentials>) -> Self {
+        self.repository_credentials = input;
+        self
+    }
+    /// <p>The private repository authentication credentials to use.</p>
+    pub fn get_repository_credentials(&self) -> &::std::option::Option<crate::types::RepositoryCredentials> {
+        &self.repository_credentials
+    }
     /// Consumes the builder and constructs a [`ContainerProperties`](crate::types::ContainerProperties).
     pub fn build(self) -> crate::types::ContainerProperties {
         crate::types::ContainerProperties {
@@ -743,6 +764,7 @@ impl ContainerPropertiesBuilder {
             fargate_platform_configuration: self.fargate_platform_configuration,
             ephemeral_storage: self.ephemeral_storage,
             runtime_platform: self.runtime_platform,
+            repository_credentials: self.repository_credentials,
         }
     }
 }

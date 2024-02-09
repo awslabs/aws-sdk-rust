@@ -247,4 +247,18 @@ impl CreateDomainConfigurationFluentBuilder {
     pub fn get_tls_config(&self) -> &::std::option::Option<crate::types::TlsConfig> {
         self.inner.get_tls_config()
     }
+    /// <p>The server certificate configuration.</p>
+    pub fn server_certificate_config(mut self, input: crate::types::ServerCertificateConfig) -> Self {
+        self.inner = self.inner.server_certificate_config(input);
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn set_server_certificate_config(mut self, input: ::std::option::Option<crate::types::ServerCertificateConfig>) -> Self {
+        self.inner = self.inner.set_server_certificate_config(input);
+        self
+    }
+    /// <p>The server certificate configuration.</p>
+    pub fn get_server_certificate_config(&self) -> &::std::option::Option<crate::types::ServerCertificateConfig> {
+        self.inner.get_server_certificate_config()
+    }
 }

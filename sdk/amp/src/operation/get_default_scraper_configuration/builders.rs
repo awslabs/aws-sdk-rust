@@ -22,7 +22,7 @@ impl GetDefaultScraperConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetDefaultScraperConfiguration`.
 ///
-/// Gets a default configuration.
+/// <p>The <code>GetDefaultScraperConfiguration</code> operation returns the default scraper configuration used when Amazon EKS creates a scraper for you.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDefaultScraperConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -7,6 +7,7 @@ pub struct RunTaskOutput {
     /// <p></p>
     pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>Any failures associated with the call.</p>
+    /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }
@@ -19,6 +20,7 @@ impl RunTaskOutput {
         self.tasks.as_deref().unwrap_or_default()
     }
     /// <p>Any failures associated with the call.</p>
+    /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failures.is_none()`.
     pub fn failures(&self) -> &[crate::types::Failure] {
@@ -74,6 +76,7 @@ impl RunTaskOutputBuilder {
     /// To override the contents of this collection use [`set_failures`](Self::set_failures).
     ///
     /// <p>Any failures associated with the call.</p>
+    /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
         v.push(input);
@@ -81,11 +84,13 @@ impl RunTaskOutputBuilder {
         self
     }
     /// <p>Any failures associated with the call.</p>
+    /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Failure>>) -> Self {
         self.failures = input;
         self
     }
     /// <p>Any failures associated with the call.</p>
+    /// <p>For information about how to address failures, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list">Service event messages</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Failure>> {
         &self.failures
     }

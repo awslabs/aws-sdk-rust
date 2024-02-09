@@ -22,7 +22,7 @@ impl UpdateLoggingConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
 ///
-/// Update logging configuration.
+/// <p>Updates the log group ARN or the workspace ID of the current logging configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateLoggingConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace to vend logs to.
+    /// <p>The ID of the workspace to update the logging configuration for.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace to vend logs to.
+    /// <p>The ID of the workspace to update the logging configuration for.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace to vend logs to.
+    /// <p>The ID of the workspace to update the logging configuration for.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }
-    /// The ARN of the CW log group to which the vended log data will be published.
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published.</p>
     pub fn log_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_group_arn(input.into());
         self
     }
-    /// The ARN of the CW log group to which the vended log data will be published.
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published.</p>
     pub fn set_log_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_log_group_arn(input);
         self
     }
-    /// The ARN of the CW log group to which the vended log data will be published.
+    /// <p>The ARN of the CloudWatch log group to which the vended log data will be published.</p>
     pub fn get_log_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_group_arn()
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+    /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

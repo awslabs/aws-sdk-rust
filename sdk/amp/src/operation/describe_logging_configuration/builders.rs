@@ -22,7 +22,7 @@ impl DescribeLoggingConfigurationInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
 ///
-/// Describes logging configuration.
+/// <p>Returns complete information about the current logging configuration of the workspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeLoggingConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ID of the workspace to vend logs to.
+    /// <p>The ID of the workspace to describe the logging configuration for.</p>
     pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
         self
     }
-    /// The ID of the workspace to vend logs to.
+    /// <p>The ID of the workspace to describe the logging configuration for.</p>
     pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workspace_id(input);
         self
     }
-    /// The ID of the workspace to vend logs to.
+    /// <p>The ID of the workspace to describe the logging configuration for.</p>
     pub fn get_workspace_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workspace_id()
     }

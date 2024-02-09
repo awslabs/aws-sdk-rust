@@ -251,6 +251,8 @@ pub enum CreateJobError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An error occurred due to a conflict.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The specified device is currently offline.</p>
+    DeviceOfflineException(crate::types::error::DeviceOfflineException),
     /// <p>The specified device has been retired.</p>
     DeviceRetiredException(crate::types::error::DeviceRetiredException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
@@ -296,6 +298,7 @@ impl CreateJobError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DeviceOfflineException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DeviceRetiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -311,6 +314,10 @@ impl CreateJobError {
     /// Returns `true` if the error kind is `CreateJobError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `CreateJobError::DeviceOfflineException`.
+    pub fn is_device_offline_exception(&self) -> bool {
+        matches!(self, Self::DeviceOfflineException(_))
     }
     /// Returns `true` if the error kind is `CreateJobError::DeviceRetiredException`.
     pub fn is_device_retired_exception(&self) -> bool {
@@ -338,6 +345,7 @@ impl ::std::error::Error for CreateJobError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeviceOfflineException(_inner) => ::std::option::Option::Some(_inner),
             Self::DeviceRetiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -352,6 +360,7 @@ impl ::std::fmt::Display for CreateJobError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::DeviceOfflineException(_inner) => _inner.fmt(f),
             Self::DeviceRetiredException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -380,6 +389,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateJobErro
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeviceOfflineException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DeviceRetiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
