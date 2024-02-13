@@ -5,7 +5,7 @@
 pub struct UpdateGraphInput {
     /// <p>The unique identifier of the Neptune Analytics graph.</p>
     pub graph_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Min = 128</p>
     pub provisioned_memory: ::std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl UpdateGraphInput {
     pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
         self.graph_identifier.as_deref()
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn public_connectivity(&self) -> ::std::option::Option<bool> {
         self.public_connectivity
     }
@@ -62,17 +62,17 @@ impl UpdateGraphInputBuilder {
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_identifier
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn public_connectivity(mut self, input: bool) -> Self {
         self.public_connectivity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_connectivity = input;
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         &self.public_connectivity
     }

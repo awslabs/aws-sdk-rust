@@ -22,7 +22,9 @@ impl GetQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `GetQuery`.
 ///
-/// <p>Retrieves the status of a specified query.</p>
+/// <p>Retrieves the status of a specified query.</p><note>
+/// <p>When invoking this operation in a Neptune Analytics cluster, the IAM user or role making the request must have the <code>neptune-graph:GetQueryStatus</code> IAM action attached.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

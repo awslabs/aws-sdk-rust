@@ -30,5 +30,11 @@ pub fn ser_update_domain_contact_input_input(
         crate::protocol_serde::shape_consent::ser_consent(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.billing_contact {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("BillingContact").start_object();
+        crate::protocol_serde::shape_contact_detail::ser_contact_detail(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

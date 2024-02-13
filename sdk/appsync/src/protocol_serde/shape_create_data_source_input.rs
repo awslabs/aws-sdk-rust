@@ -36,26 +36,29 @@ pub fn ser_create_data_source_input_input(
         crate::protocol_serde::shape_lambda_data_source_config::ser_lambda_data_source_config(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_12) = &input.metrics_config {
+        object.key("metricsConfig").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.open_search_service_config {
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.open_search_service_config {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("openSearchServiceConfig").start_object();
-        crate::protocol_serde::shape_open_search_service_data_source_config::ser_open_search_service_data_source_config(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("openSearchServiceConfig").start_object();
+        crate::protocol_serde::shape_open_search_service_data_source_config::ser_open_search_service_data_source_config(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.relational_database_config {
+    if let Some(var_16) = &input.relational_database_config {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("relationalDatabaseConfig").start_object();
-        crate::protocol_serde::shape_relational_database_data_source_config::ser_relational_database_data_source_config(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("relationalDatabaseConfig").start_object();
+        crate::protocol_serde::shape_relational_database_data_source_config::ser_relational_database_data_source_config(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_17) = &input.service_role_arn {
-        object.key("serviceRoleArn").string(var_17.as_str());
+    if let Some(var_18) = &input.service_role_arn {
+        object.key("serviceRoleArn").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.r#type {
-        object.key("type").string(var_18.as_str());
+    if let Some(var_19) = &input.r#type {
+        object.key("type").string(var_19.as_str());
     }
     Ok(())
 }

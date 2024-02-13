@@ -5,11 +5,11 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_nameserver::NameserverBuilder;
 
-pub use crate::types::_consent::ConsentBuilder;
-
 pub use crate::types::_contact_detail::ContactDetailBuilder;
 
 pub use crate::types::_extra_param::ExtraParamBuilder;
+
+pub use crate::types::_consent::ConsentBuilder;
 
 pub use crate::types::_domain_price::DomainPriceBuilder;
 

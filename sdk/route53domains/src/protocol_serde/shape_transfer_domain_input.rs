@@ -60,5 +60,14 @@ pub fn ser_transfer_domain_input_input(
     if let Some(var_18) = &input.privacy_protect_tech_contact {
         object.key("PrivacyProtectTechContact").boolean(*var_18);
     }
+    if let Some(var_19) = &input.billing_contact {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("BillingContact").start_object();
+        crate::protocol_serde::shape_contact_detail::ser_contact_detail(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.privacy_protect_billing_contact {
+        object.key("PrivacyProtectBillingContact").boolean(*var_21);
+    }
     Ok(())
 }

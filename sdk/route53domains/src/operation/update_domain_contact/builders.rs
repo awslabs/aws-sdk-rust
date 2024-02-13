@@ -179,4 +179,18 @@ impl UpdateDomainContactFluentBuilder {
     pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
         self.inner.get_consent()
     }
+    /// <p>Provides detailed contact information.</p>
+    pub fn billing_contact(mut self, input: crate::types::ContactDetail) -> Self {
+        self.inner = self.inner.billing_contact(input);
+        self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn set_billing_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
+        self.inner = self.inner.set_billing_contact(input);
+        self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_billing_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        self.inner.get_billing_contact()
+    }
 }

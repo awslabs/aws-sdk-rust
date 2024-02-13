@@ -264,6 +264,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteFunctio
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteFunctionError {
+    /// <p>The request is not well formed. For example, a value is invalid or a required field is missing. Check the field values, and then try again.</p>
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>Another modification is in progress at this time and it must complete before you can make your change.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>An internal AppSync error occurred. Try your request again.</p>
@@ -305,12 +307,17 @@ impl DeleteFunctionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteFunctionError::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(self, Self::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteFunctionError::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
@@ -332,6 +339,7 @@ impl DeleteFunctionError {
 impl ::std::error::Error for DeleteFunctionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -343,6 +351,7 @@ impl ::std::error::Error for DeleteFunctionError {
 impl ::std::fmt::Display for DeleteFunctionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::BadRequestException(_inner) => _inner.fmt(f),
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
@@ -368,6 +377,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteFunctionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteFunctionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

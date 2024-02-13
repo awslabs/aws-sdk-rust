@@ -20,7 +20,7 @@ pub struct CreateGraphOutput {
     pub provisioned_memory: ::std::option::Option<i32>,
     /// <p>The graph endpoint.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
     pub public_connectivity: ::std::option::Option<bool>,
     /// <p>The vector-search configuration for the graph, which specifies the vector dimension to use in the vector index, if any.</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
@@ -73,7 +73,7 @@ impl CreateGraphOutput {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
     pub fn public_connectivity(&self) -> ::std::option::Option<bool> {
         self.public_connectivity
     }
@@ -254,17 +254,17 @@ impl CreateGraphOutputBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
     pub fn public_connectivity(mut self, input: bool) -> Self {
         self.public_connectivity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.public_connectivity = input;
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated.</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         &self.public_connectivity
     }

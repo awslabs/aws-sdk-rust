@@ -122,17 +122,17 @@ impl UpdateGraphFluentBuilder {
     pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_graph_identifier()
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn public_connectivity(mut self, input: bool) -> Self {
         self.inner = self.inner.public_connectivity(input);
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn set_public_connectivity(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_public_connectivity(input);
         self
     }
-    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
+    /// <p>Specifies whether or not the graph can be reachable over the internet. All access to graphs is IAM authenticated. (<code>true</code> to enable, or <code>false</code> to disable.</p>
     pub fn get_public_connectivity(&self) -> &::std::option::Option<bool> {
         self.inner.get_public_connectivity()
     }

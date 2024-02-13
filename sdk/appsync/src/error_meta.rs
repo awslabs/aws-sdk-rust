@@ -320,6 +320,7 @@ where
 impl From<crate::operation::create_function::CreateFunctionError> for Error {
     fn from(err: crate::operation::create_function::CreateFunctionError) -> Self {
         match err {
+            crate::operation::create_function::CreateFunctionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::create_function::CreateFunctionError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
@@ -539,6 +540,7 @@ where
 impl From<crate::operation::delete_function::DeleteFunctionError> for Error {
     fn from(err: crate::operation::delete_function::DeleteFunctionError) -> Self {
         match err {
+            crate::operation::delete_function::DeleteFunctionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::delete_function::DeleteFunctionError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
@@ -1862,6 +1864,7 @@ where
 impl From<crate::operation::update_function::UpdateFunctionError> for Error {
     fn from(err: crate::operation::update_function::UpdateFunctionError) -> Self {
         match err {
+            crate::operation::update_function::UpdateFunctionError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::update_function::UpdateFunctionError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }

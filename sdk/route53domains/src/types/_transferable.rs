@@ -64,7 +64,7 @@
 /// </dd>
 /// <dt>DOMAIN_IN_ANOTHER_ACCOUNT</dt>
 /// <dd>
-/// <p> the domain exists in another Amazon Web Services account.</p>
+/// <p> The domain exists in another Amazon Web Services account.</p>
 /// </dd>
 /// <dt>PREMIUM_DOMAIN</dt>
 /// <dd>

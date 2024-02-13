@@ -28,6 +28,9 @@ pub struct CreateDataSourceInput {
     pub relational_database_config: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
     /// <p>Amazon EventBridge settings.</p>
     pub event_bridge_config: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub metrics_config: ::std::option::Option<crate::types::DataSourceLevelMetricsConfig>,
 }
 impl CreateDataSourceInput {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
@@ -79,6 +82,11 @@ impl CreateDataSourceInput {
     pub fn event_bridge_config(&self) -> ::std::option::Option<&crate::types::EventBridgeDataSourceConfig> {
         self.event_bridge_config.as_ref()
     }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::DataSourceLevelMetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl CreateDataSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
@@ -103,6 +111,7 @@ pub struct CreateDataSourceInputBuilder {
     pub(crate) http_config: ::std::option::Option<crate::types::HttpDataSourceConfig>,
     pub(crate) relational_database_config: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
     pub(crate) event_bridge_config: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::DataSourceLevelMetricsConfig>,
 }
 impl CreateDataSourceInputBuilder {
     /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
@@ -279,6 +288,23 @@ impl CreateDataSourceInputBuilder {
     pub fn get_event_bridge_config(&self) -> &::std::option::Option<crate::types::EventBridgeDataSourceConfig> {
         &self.event_bridge_config
     }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn metrics_config(mut self, input: crate::types::DataSourceLevelMetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::DataSourceLevelMetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::DataSourceLevelMetricsConfig> {
+        &self.metrics_config
+    }
     /// Consumes the builder and constructs a [`CreateDataSourceInput`](crate::operation::create_data_source::CreateDataSourceInput).
     pub fn build(
         self,
@@ -296,6 +322,7 @@ impl CreateDataSourceInputBuilder {
             http_config: self.http_config,
             relational_database_config: self.relational_database_config,
             event_bridge_config: self.event_bridge_config,
+            metrics_config: self.metrics_config,
         })
     }
 }

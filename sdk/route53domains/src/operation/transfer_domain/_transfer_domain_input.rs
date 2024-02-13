@@ -42,16 +42,22 @@ pub struct TransferDomainInput {
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub privacy_protect_admin_contact: ::std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub privacy_protect_registrant_contact: ::std::option::Option<bool>,
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub privacy_protect_tech_contact: ::std::option::Option<bool>,
+    /// <p>Provides detailed contact information.</p>
+    pub billing_contact: ::std::option::Option<crate::types::ContactDetail>,
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
+    /// </note>
+    pub privacy_protect_billing_contact: ::std::option::Option<bool>,
 }
 impl TransferDomainInput {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -114,19 +120,29 @@ impl TransferDomainInput {
     pub fn privacy_protect_admin_contact(&self) -> ::std::option::Option<bool> {
         self.privacy_protect_admin_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn privacy_protect_registrant_contact(&self) -> ::std::option::Option<bool> {
         self.privacy_protect_registrant_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn privacy_protect_tech_contact(&self) -> ::std::option::Option<bool> {
         self.privacy_protect_tech_contact
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn billing_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+        self.billing_contact.as_ref()
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn privacy_protect_billing_contact(&self) -> ::std::option::Option<bool> {
+        self.privacy_protect_billing_contact
     }
 }
 impl ::std::fmt::Debug for TransferDomainInput {
@@ -144,6 +160,8 @@ impl ::std::fmt::Debug for TransferDomainInput {
         formatter.field("privacy_protect_admin_contact", &self.privacy_protect_admin_contact);
         formatter.field("privacy_protect_registrant_contact", &self.privacy_protect_registrant_contact);
         formatter.field("privacy_protect_tech_contact", &self.privacy_protect_tech_contact);
+        formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
+        formatter.field("privacy_protect_billing_contact", &self.privacy_protect_billing_contact);
         formatter.finish()
     }
 }
@@ -170,6 +188,8 @@ pub struct TransferDomainInputBuilder {
     pub(crate) privacy_protect_admin_contact: ::std::option::Option<bool>,
     pub(crate) privacy_protect_registrant_contact: ::std::option::Option<bool>,
     pub(crate) privacy_protect_tech_contact: ::std::option::Option<bool>,
+    pub(crate) billing_contact: ::std::option::Option<crate::types::ContactDetail>,
+    pub(crate) privacy_protect_billing_contact: ::std::option::Option<bool>,
 }
 impl TransferDomainInputBuilder {
     /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -377,51 +397,85 @@ impl TransferDomainInputBuilder {
     pub fn get_privacy_protect_admin_contact(&self) -> &::std::option::Option<bool> {
         &self.privacy_protect_admin_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn privacy_protect_registrant_contact(mut self, input: bool) -> Self {
         self.privacy_protect_registrant_contact = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_registrant_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privacy_protect_registrant_contact = input;
         self
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn get_privacy_protect_registrant_contact(&self) -> &::std::option::Option<bool> {
         &self.privacy_protect_registrant_contact
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn privacy_protect_tech_contact(mut self, input: bool) -> Self {
         self.privacy_protect_tech_contact = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn set_privacy_protect_tech_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privacy_protect_tech_contact = input;
         self
     }
-    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
-    /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code></p>
     pub fn get_privacy_protect_tech_contact(&self) -> &::std::option::Option<bool> {
         &self.privacy_protect_tech_contact
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn billing_contact(mut self, input: crate::types::ContactDetail) -> Self {
+        self.billing_contact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn set_billing_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
+        self.billing_contact = input;
+        self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_billing_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.billing_contact
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn privacy_protect_billing_contact(mut self, input: bool) -> Self {
+        self.privacy_protect_billing_contact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn set_privacy_protect_billing_contact(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.privacy_protect_billing_contact = input;
+        self
+    }
+    /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p><note>
+    /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
+    /// </note>
+    pub fn get_privacy_protect_billing_contact(&self) -> &::std::option::Option<bool> {
+        &self.privacy_protect_billing_contact
     }
     /// Consumes the builder and constructs a [`TransferDomainInput`](crate::operation::transfer_domain::TransferDomainInput).
     pub fn build(
@@ -440,6 +494,8 @@ impl TransferDomainInputBuilder {
             privacy_protect_admin_contact: self.privacy_protect_admin_contact,
             privacy_protect_registrant_contact: self.privacy_protect_registrant_contact,
             privacy_protect_tech_contact: self.privacy_protect_tech_contact,
+            billing_contact: self.billing_contact,
+            privacy_protect_billing_contact: self.privacy_protect_billing_contact,
         })
     }
 }
@@ -458,6 +514,8 @@ impl ::std::fmt::Debug for TransferDomainInputBuilder {
         formatter.field("privacy_protect_admin_contact", &self.privacy_protect_admin_contact);
         formatter.field("privacy_protect_registrant_contact", &self.privacy_protect_registrant_contact);
         formatter.field("privacy_protect_tech_contact", &self.privacy_protect_tech_contact);
+        formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
+        formatter.field("privacy_protect_billing_contact", &self.privacy_protect_billing_contact);
         formatter.finish()
     }
 }

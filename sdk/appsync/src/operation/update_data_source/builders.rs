@@ -279,4 +279,21 @@ impl UpdateDataSourceFluentBuilder {
     pub fn get_event_bridge_config(&self) -> &::std::option::Option<crate::types::EventBridgeDataSourceConfig> {
         self.inner.get_event_bridge_config()
     }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn metrics_config(mut self, input: crate::types::DataSourceLevelMetricsConfig) -> Self {
+        self.inner = self.inner.metrics_config(input);
+        self
+    }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::DataSourceLevelMetricsConfig>) -> Self {
+        self.inner = self.inner.set_metrics_config(input);
+        self
+    }
+    /// <p>Enables or disables enhanced data source metrics for specified data sources. Note that <code>metricsConfig</code> won't be used unless the <code>dataSourceLevelMetricsBehavior</code> value is set to <code>PER_DATA_SOURCE_METRICS</code>. If the <code>dataSourceLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_DATA_SOURCE_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::DataSourceLevelMetricsConfig> {
+        self.inner.get_metrics_config()
+    }
 }

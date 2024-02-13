@@ -15,5 +15,8 @@ pub fn ser_update_domain_contact_privacy_input_input(
     if let Some(var_4) = &input.tech_privacy {
         object.key("TechPrivacy").boolean(*var_4);
     }
+    if let Some(var_5) = &input.billing_privacy {
+        object.key("BillingPrivacy").boolean(*var_5);
+    }
     Ok(())
 }

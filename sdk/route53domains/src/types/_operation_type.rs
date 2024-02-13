@@ -24,9 +24,11 @@
 ///     OperationType::InternalTransferOutDomain => { /* ... */ },
 ///     OperationType::PushDomain => { /* ... */ },
 ///     OperationType::RegisterDomain => { /* ... */ },
+///     OperationType::ReleaseToGandi => { /* ... */ },
 ///     OperationType::RemoveDnssec => { /* ... */ },
 ///     OperationType::RenewDomain => { /* ... */ },
 ///     OperationType::TransferInDomain => { /* ... */ },
+///     OperationType::TransferOnRenew => { /* ... */ },
 ///     OperationType::TransferOutDomain => { /* ... */ },
 ///     OperationType::UpdateDomainContact => { /* ... */ },
 ///     OperationType::UpdateNameserver => { /* ... */ },
@@ -82,11 +84,15 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     RegisterDomain,
     #[allow(missing_docs)] // documentation missing in model
+    ReleaseToGandi,
+    #[allow(missing_docs)] // documentation missing in model
     RemoveDnssec,
     #[allow(missing_docs)] // documentation missing in model
     RenewDomain,
     #[allow(missing_docs)] // documentation missing in model
     TransferInDomain,
+    #[allow(missing_docs)] // documentation missing in model
+    TransferOnRenew,
     #[allow(missing_docs)] // documentation missing in model
     TransferOutDomain,
     #[allow(missing_docs)] // documentation missing in model
@@ -112,9 +118,11 @@ impl ::std::convert::From<&str> for OperationType {
             "INTERNAL_TRANSFER_OUT_DOMAIN" => OperationType::InternalTransferOutDomain,
             "PUSH_DOMAIN" => OperationType::PushDomain,
             "REGISTER_DOMAIN" => OperationType::RegisterDomain,
+            "RELEASE_TO_GANDI" => OperationType::ReleaseToGandi,
             "REMOVE_DNSSEC" => OperationType::RemoveDnssec,
             "RENEW_DOMAIN" => OperationType::RenewDomain,
             "TRANSFER_IN_DOMAIN" => OperationType::TransferInDomain,
+            "TRANSFER_ON_RENEW" => OperationType::TransferOnRenew,
             "TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
             "UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
             "UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
@@ -145,9 +153,11 @@ impl OperationType {
             OperationType::InternalTransferOutDomain => "INTERNAL_TRANSFER_OUT_DOMAIN",
             OperationType::PushDomain => "PUSH_DOMAIN",
             OperationType::RegisterDomain => "REGISTER_DOMAIN",
+            OperationType::ReleaseToGandi => "RELEASE_TO_GANDI",
             OperationType::RemoveDnssec => "REMOVE_DNSSEC",
             OperationType::RenewDomain => "RENEW_DOMAIN",
             OperationType::TransferInDomain => "TRANSFER_IN_DOMAIN",
+            OperationType::TransferOnRenew => "TRANSFER_ON_RENEW",
             OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
             OperationType::UpdateDomainContact => "UPDATE_DOMAIN_CONTACT",
             OperationType::UpdateNameserver => "UPDATE_NAMESERVER",
@@ -169,9 +179,11 @@ impl OperationType {
             "INTERNAL_TRANSFER_OUT_DOMAIN",
             "PUSH_DOMAIN",
             "REGISTER_DOMAIN",
+            "RELEASE_TO_GANDI",
             "REMOVE_DNSSEC",
             "RENEW_DOMAIN",
             "TRANSFER_IN_DOMAIN",
+            "TRANSFER_ON_RENEW",
             "TRANSFER_OUT_DOMAIN",
             "UPDATE_DOMAIN_CONTACT",
             "UPDATE_NAMESERVER",

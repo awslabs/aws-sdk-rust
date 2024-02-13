@@ -137,6 +137,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "enhancedMetricsConfig" => {
+                            builder = builder.set_enhanced_metrics_config(
+                                crate::protocol_serde::shape_enhanced_metrics_config::de_enhanced_metrics_config(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

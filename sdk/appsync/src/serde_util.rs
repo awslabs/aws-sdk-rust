@@ -44,6 +44,21 @@ pub(crate) fn elasticsearch_data_source_config_correct_errors(
     builder
 }
 
+pub(crate) fn enhanced_metrics_config_correct_errors(
+    mut builder: crate::types::builders::EnhancedMetricsConfigBuilder,
+) -> crate::types::builders::EnhancedMetricsConfigBuilder {
+    if builder.resolver_level_metrics_behavior.is_none() {
+        builder.resolver_level_metrics_behavior = "no value was set".parse::<crate::types::ResolverLevelMetricsBehavior>().ok()
+    }
+    if builder.data_source_level_metrics_behavior.is_none() {
+        builder.data_source_level_metrics_behavior = "no value was set".parse::<crate::types::DataSourceLevelMetricsBehavior>().ok()
+    }
+    if builder.operation_level_metrics_config.is_none() {
+        builder.operation_level_metrics_config = "no value was set".parse::<crate::types::OperationLevelMetricsConfig>().ok()
+    }
+    builder
+}
+
 pub(crate) fn event_bridge_data_source_config_correct_errors(
     mut builder: crate::types::builders::EventBridgeDataSourceConfigBuilder,
 ) -> crate::types::builders::EventBridgeDataSourceConfigBuilder {

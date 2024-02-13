@@ -51,6 +51,8 @@ pub struct GraphqlApi {
     pub query_depth_limit: i32,
     /// <p>The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of bounds.</p>
     pub resolver_count_limit: i32,
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub enhanced_metrics_config: ::std::option::Option<crate::types::EnhancedMetricsConfig>,
 }
 impl GraphqlApi {
     /// <p>The API name.</p>
@@ -146,6 +148,10 @@ impl GraphqlApi {
     pub fn resolver_count_limit(&self) -> i32 {
         self.resolver_count_limit
     }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn enhanced_metrics_config(&self) -> ::std::option::Option<&crate::types::EnhancedMetricsConfig> {
+        self.enhanced_metrics_config.as_ref()
+    }
 }
 impl GraphqlApi {
     /// Creates a new builder-style object to manufacture [`GraphqlApi`](crate::types::GraphqlApi).
@@ -180,6 +186,7 @@ pub struct GraphqlApiBuilder {
     pub(crate) introspection_config: ::std::option::Option<crate::types::GraphQlApiIntrospectionConfig>,
     pub(crate) query_depth_limit: ::std::option::Option<i32>,
     pub(crate) resolver_count_limit: ::std::option::Option<i32>,
+    pub(crate) enhanced_metrics_config: ::std::option::Option<crate::types::EnhancedMetricsConfig>,
 }
 impl GraphqlApiBuilder {
     /// <p>The API name.</p>
@@ -526,6 +533,20 @@ impl GraphqlApiBuilder {
     pub fn get_resolver_count_limit(&self) -> &::std::option::Option<i32> {
         &self.resolver_count_limit
     }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn enhanced_metrics_config(mut self, input: crate::types::EnhancedMetricsConfig) -> Self {
+        self.enhanced_metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn set_enhanced_metrics_config(mut self, input: ::std::option::Option<crate::types::EnhancedMetricsConfig>) -> Self {
+        self.enhanced_metrics_config = input;
+        self
+    }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn get_enhanced_metrics_config(&self) -> &::std::option::Option<crate::types::EnhancedMetricsConfig> {
+        &self.enhanced_metrics_config
+    }
     /// Consumes the builder and constructs a [`GraphqlApi`](crate::types::GraphqlApi).
     pub fn build(self) -> crate::types::GraphqlApi {
         crate::types::GraphqlApi {
@@ -551,6 +572,7 @@ impl GraphqlApiBuilder {
             introspection_config: self.introspection_config,
             query_depth_limit: self.query_depth_limit.unwrap_or_default(),
             resolver_count_limit: self.resolver_count_limit.unwrap_or_default(),
+            enhanced_metrics_config: self.enhanced_metrics_config,
         }
     }
 }

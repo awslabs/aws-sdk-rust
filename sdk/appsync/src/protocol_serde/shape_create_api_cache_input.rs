@@ -9,17 +9,20 @@ pub fn ser_create_api_cache_input_input(
     if let Some(var_2) = &input.at_rest_encryption_enabled {
         object.key("atRestEncryptionEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.transit_encryption_enabled {
-        object.key("transitEncryptionEnabled").boolean(*var_3);
+    if let Some(var_3) = &input.health_metrics_config {
+        object.key("healthMetricsConfig").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.ttl {
+    if let Some(var_4) = &input.transit_encryption_enabled {
+        object.key("transitEncryptionEnabled").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.ttl {
         object.key("ttl").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("type").string(var_5.as_str());
+    if let Some(var_6) = &input.r#type {
+        object.key("type").string(var_6.as_str());
     }
     Ok(())
 }

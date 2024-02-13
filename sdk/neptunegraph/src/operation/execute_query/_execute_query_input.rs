@@ -9,6 +9,8 @@ pub struct ExecuteQueryInput {
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub language: ::std::option::Option<crate::types::QueryLanguage>,
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub plan_cache: ::std::option::Option<crate::types::PlanCacheType>,
     /// <p>The explain mode parameter returns a query explain instead of the actual query results. A query explain can be used to gather insights about the query execution such as planning decisions, time spent on each operator, solutions flowing etc.</p>
@@ -28,6 +30,10 @@ impl ExecuteQueryInput {
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub fn language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
         self.language.as_ref()
+    }
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.parameters.as_ref()
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub fn plan_cache(&self) -> ::std::option::Option<&crate::types::PlanCacheType> {
@@ -56,6 +62,7 @@ pub struct ExecuteQueryInputBuilder {
     pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) language: ::std::option::Option<crate::types::QueryLanguage>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     pub(crate) plan_cache: ::std::option::Option<crate::types::PlanCacheType>,
     pub(crate) explain_mode: ::std::option::Option<crate::types::ExplainMode>,
     pub(crate) query_timeout_milliseconds: ::std::option::Option<i32>,
@@ -105,6 +112,29 @@ impl ExecuteQueryInputBuilder {
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
         &self.language
+    }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.parameters
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub fn plan_cache(mut self, input: crate::types::PlanCacheType) -> Self {
@@ -156,6 +186,7 @@ impl ExecuteQueryInputBuilder {
             graph_identifier: self.graph_identifier,
             query_string: self.query_string,
             language: self.language,
+            parameters: self.parameters,
             plan_cache: self.plan_cache,
             explain_mode: self.explain_mode,
             query_timeout_milliseconds: self.query_timeout_milliseconds,

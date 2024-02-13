@@ -16,6 +16,8 @@
 ///     DomainAvailability::AvailablePreorder => { /* ... */ },
 ///     DomainAvailability::AvailableReserved => { /* ... */ },
 ///     DomainAvailability::DontKnow => { /* ... */ },
+///     DomainAvailability::InvalidNameForTld => { /* ... */ },
+///     DomainAvailability::Pending => { /* ... */ },
 ///     DomainAvailability::Reserved => { /* ... */ },
 ///     DomainAvailability::Unavailable => { /* ... */ },
 ///     DomainAvailability::UnavailablePremium => { /* ... */ },
@@ -56,6 +58,10 @@ pub enum DomainAvailability {
     #[allow(missing_docs)] // documentation missing in model
     DontKnow,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidNameForTld,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Reserved,
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
@@ -74,6 +80,8 @@ impl ::std::convert::From<&str> for DomainAvailability {
             "AVAILABLE_PREORDER" => DomainAvailability::AvailablePreorder,
             "AVAILABLE_RESERVED" => DomainAvailability::AvailableReserved,
             "DONT_KNOW" => DomainAvailability::DontKnow,
+            "INVALID_NAME_FOR_TLD" => DomainAvailability::InvalidNameForTld,
+            "PENDING" => DomainAvailability::Pending,
             "RESERVED" => DomainAvailability::Reserved,
             "UNAVAILABLE" => DomainAvailability::Unavailable,
             "UNAVAILABLE_PREMIUM" => DomainAvailability::UnavailablePremium,
@@ -97,6 +105,8 @@ impl DomainAvailability {
             DomainAvailability::AvailablePreorder => "AVAILABLE_PREORDER",
             DomainAvailability::AvailableReserved => "AVAILABLE_RESERVED",
             DomainAvailability::DontKnow => "DONT_KNOW",
+            DomainAvailability::InvalidNameForTld => "INVALID_NAME_FOR_TLD",
+            DomainAvailability::Pending => "PENDING",
             DomainAvailability::Reserved => "RESERVED",
             DomainAvailability::Unavailable => "UNAVAILABLE",
             DomainAvailability::UnavailablePremium => "UNAVAILABLE_PREMIUM",
@@ -111,6 +121,8 @@ impl DomainAvailability {
             "AVAILABLE_PREORDER",
             "AVAILABLE_RESERVED",
             "DONT_KNOW",
+            "INVALID_NAME_FOR_TLD",
+            "PENDING",
             "RESERVED",
             "UNAVAILABLE",
             "UNAVAILABLE_PREMIUM",

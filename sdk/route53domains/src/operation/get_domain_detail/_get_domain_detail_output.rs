@@ -16,13 +16,13 @@ pub struct GetDomainDetailOutput {
     pub registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides details about the domain technical contact.</p>
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub admin_privacy: ::std::option::Option<bool>,
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub registrant_privacy: ::std::option::Option<bool>,
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub tech_privacy: ::std::option::Option<bool>,
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry.</p>
     pub registrar_name: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified name of the WHOIS server that can answer the WHOIS query for the domain.</p>
     pub who_is_server: ::std::option::Option<::std::string::String>,
@@ -50,6 +50,10 @@ pub struct GetDomainDetailOutput {
     pub status_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A complex type that contains information about the DNSSEC configuration.</p>
     pub dnssec_keys: ::std::option::Option<::std::vec::Vec<crate::types::DnssecKey>>,
+    /// <p>Provides details about the domain billing contact.</p>
+    pub billing_contact: ::std::option::Option<crate::types::ContactDetail>,
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p>
+    pub billing_privacy: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetDomainDetailOutput {
@@ -79,19 +83,19 @@ impl GetDomainDetailOutput {
     pub fn tech_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
         self.tech_contact.as_ref()
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub fn admin_privacy(&self) -> ::std::option::Option<bool> {
         self.admin_privacy
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub fn registrant_privacy(&self) -> ::std::option::Option<bool> {
         self.registrant_privacy
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub fn tech_privacy(&self) -> ::std::option::Option<bool> {
         self.tech_privacy
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry.</p>
     pub fn registrar_name(&self) -> ::std::option::Option<&str> {
         self.registrar_name.as_deref()
     }
@@ -149,6 +153,14 @@ impl GetDomainDetailOutput {
     pub fn dnssec_keys(&self) -> &[crate::types::DnssecKey] {
         self.dnssec_keys.as_deref().unwrap_or_default()
     }
+    /// <p>Provides details about the domain billing contact.</p>
+    pub fn billing_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+        self.billing_contact.as_ref()
+    }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p>
+    pub fn billing_privacy(&self) -> ::std::option::Option<bool> {
+        self.billing_privacy
+    }
 }
 impl ::std::fmt::Debug for GetDomainDetailOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -175,6 +187,8 @@ impl ::std::fmt::Debug for GetDomainDetailOutput {
         formatter.field("dns_sec", &self.dns_sec);
         formatter.field("status_list", &self.status_list);
         formatter.field("dnssec_keys", &self.dnssec_keys);
+        formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
+        formatter.field("billing_privacy", &self.billing_privacy);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -217,6 +231,8 @@ pub struct GetDomainDetailOutputBuilder {
     pub(crate) dns_sec: ::std::option::Option<::std::string::String>,
     pub(crate) status_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dnssec_keys: ::std::option::Option<::std::vec::Vec<crate::types::DnssecKey>>,
+    pub(crate) billing_contact: ::std::option::Option<crate::types::ContactDetail>,
+    pub(crate) billing_privacy: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetDomainDetailOutputBuilder {
@@ -310,59 +326,59 @@ impl GetDomainDetailOutputBuilder {
     pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
         &self.tech_contact
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub fn admin_privacy(mut self, input: bool) -> Self {
         self.admin_privacy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub fn set_admin_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.admin_privacy = input;
         self
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the admin contact.</p>
     pub fn get_admin_privacy(&self) -> &::std::option::Option<bool> {
         &self.admin_privacy
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub fn registrant_privacy(mut self, input: bool) -> Self {
         self.registrant_privacy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub fn set_registrant_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.registrant_privacy = input;
         self
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
     pub fn get_registrant_privacy(&self) -> &::std::option::Option<bool> {
         &self.registrant_privacy
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub fn tech_privacy(mut self, input: bool) -> Self {
         self.tech_privacy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub fn set_tech_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.tech_privacy = input;
         self
     }
-    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the technical contact.</p>
     pub fn get_tech_privacy(&self) -> &::std::option::Option<bool> {
         &self.tech_privacy
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry.</p>
     pub fn registrar_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registrar_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry.</p>
     pub fn set_registrar_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registrar_name = input;
         self
     }
-    /// <p>Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.</p>
+    /// <p>Name of the registrar of the domain as identified in the registry.</p>
     pub fn get_registrar_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.registrar_name
     }
@@ -552,6 +568,34 @@ impl GetDomainDetailOutputBuilder {
     pub fn get_dnssec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnssecKey>> {
         &self.dnssec_keys
     }
+    /// <p>Provides details about the domain billing contact.</p>
+    pub fn billing_contact(mut self, input: crate::types::ContactDetail) -> Self {
+        self.billing_contact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides details about the domain billing contact.</p>
+    pub fn set_billing_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
+        self.billing_contact = input;
+        self
+    }
+    /// <p>Provides details about the domain billing contact.</p>
+    pub fn get_billing_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.billing_contact
+    }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p>
+    pub fn billing_privacy(mut self, input: bool) -> Self {
+        self.billing_privacy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p>
+    pub fn set_billing_privacy(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.billing_privacy = input;
+        self
+    }
+    /// <p>Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If the value is <code>false</code>, WHOIS queries return the information that you entered for the billing contact.</p>
+    pub fn get_billing_privacy(&self) -> &::std::option::Option<bool> {
+        &self.billing_privacy
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -586,6 +630,8 @@ impl GetDomainDetailOutputBuilder {
             dns_sec: self.dns_sec,
             status_list: self.status_list,
             dnssec_keys: self.dnssec_keys,
+            billing_contact: self.billing_contact,
+            billing_privacy: self.billing_privacy,
             _request_id: self._request_id,
         }
     }
@@ -615,6 +661,8 @@ impl ::std::fmt::Debug for GetDomainDetailOutputBuilder {
         formatter.field("dns_sec", &self.dns_sec);
         formatter.field("status_list", &self.status_list);
         formatter.field("dnssec_keys", &self.dnssec_keys);
+        formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
+        formatter.field("billing_privacy", &self.billing_privacy);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

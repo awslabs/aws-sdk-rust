@@ -265,6 +265,8 @@ pub(crate) mod shape_dynamodb_data_source_config;
 
 pub(crate) mod shape_elasticsearch_data_source_config;
 
+pub(crate) mod shape_enhanced_metrics_config;
+
 pub(crate) mod shape_environment_variable_map;
 
 pub(crate) mod shape_error_detail;

@@ -9,16 +9,26 @@ pub fn ser_execute_query_input_input(
     if let Some(var_2) = &input.language {
         object.key("language").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.plan_cache {
-        object.key("planCache").string(var_3.as_str());
+    if let Some(var_3) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("parameters").start_object();
+        for (key_5, value_6) in var_3 {
+            {
+                object_4.key(key_5.as_str()).document(value_6);
+            }
+        }
+        object_4.finish();
     }
-    if let Some(var_4) = &input.query_string {
-        object.key("query").string(var_4.as_str());
+    if let Some(var_7) = &input.plan_cache {
+        object.key("planCache").string(var_7.as_str());
     }
-    if let Some(var_5) = &input.query_timeout_milliseconds {
+    if let Some(var_8) = &input.query_string {
+        object.key("query").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.query_timeout_milliseconds {
         object.key("queryTimeoutMilliseconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
     Ok(())

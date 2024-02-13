@@ -71,6 +71,15 @@ pub struct ApiCache {
     /// <p><b>FAILED</b>: The instance has failed creation.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ApiCacheStatus>,
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub health_metrics_config: ::std::option::Option<crate::types::CacheHealthMetricsConfig>,
 }
 impl ApiCache {
     /// <p>TTL in seconds for cache entries.</p>
@@ -152,6 +161,17 @@ impl ApiCache {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApiCacheStatus> {
         self.status.as_ref()
     }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn health_metrics_config(&self) -> ::std::option::Option<&crate::types::CacheHealthMetricsConfig> {
+        self.health_metrics_config.as_ref()
+    }
 }
 impl ApiCache {
     /// Creates a new builder-style object to manufacture [`ApiCache`](crate::types::ApiCache).
@@ -170,6 +190,7 @@ pub struct ApiCacheBuilder {
     pub(crate) at_rest_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApiCacheType>,
     pub(crate) status: ::std::option::Option<crate::types::ApiCacheStatus>,
+    pub(crate) health_metrics_config: ::std::option::Option<crate::types::CacheHealthMetricsConfig>,
 }
 impl ApiCacheBuilder {
     /// <p>TTL in seconds for cache entries.</p>
@@ -421,6 +442,41 @@ impl ApiCacheBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApiCacheStatus> {
         &self.status
     }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn health_metrics_config(mut self, input: crate::types::CacheHealthMetricsConfig) -> Self {
+        self.health_metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn set_health_metrics_config(mut self, input: ::std::option::Option<crate::types::CacheHealthMetricsConfig>) -> Self {
+        self.health_metrics_config = input;
+        self
+    }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The network packets dropped because the throughput exceeded the aggregated bandwidth limit. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The CPU utilization (percentage) allocated to the Redis process. This is useful for diagnosing bottlenecks in a cache configuration.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_health_metrics_config(&self) -> &::std::option::Option<crate::types::CacheHealthMetricsConfig> {
+        &self.health_metrics_config
+    }
     /// Consumes the builder and constructs a [`ApiCache`](crate::types::ApiCache).
     pub fn build(self) -> crate::types::ApiCache {
         crate::types::ApiCache {
@@ -430,6 +486,7 @@ impl ApiCacheBuilder {
             at_rest_encryption_enabled: self.at_rest_encryption_enabled.unwrap_or_default(),
             r#type: self.r#type,
             status: self.status,
+            health_metrics_config: self.health_metrics_config,
         }
     }
 }

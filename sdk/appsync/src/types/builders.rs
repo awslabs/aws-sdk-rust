@@ -25,6 +25,8 @@ pub use crate::types::_pipeline_config::PipelineConfigBuilder;
 
 pub use crate::types::_graphql_api::GraphqlApiBuilder;
 
+pub use crate::types::_enhanced_metrics_config::EnhancedMetricsConfigBuilder;
+
 pub use crate::types::_lambda_authorizer_config::LambdaAuthorizerConfigBuilder;
 
 pub use crate::types::_additional_authentication_provider::AdditionalAuthenticationProviderBuilder;

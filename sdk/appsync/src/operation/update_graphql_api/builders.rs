@@ -320,4 +320,18 @@ impl UpdateGraphqlApiFluentBuilder {
     pub fn get_resolver_count_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_resolver_count_limit()
     }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn enhanced_metrics_config(mut self, input: crate::types::EnhancedMetricsConfig) -> Self {
+        self.inner = self.inner.enhanced_metrics_config(input);
+        self
+    }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn set_enhanced_metrics_config(mut self, input: ::std::option::Option<crate::types::EnhancedMetricsConfig>) -> Self {
+        self.inner = self.inner.set_enhanced_metrics_config(input);
+        self
+    }
+    /// <p>The <code>enhancedMetricsConfig</code> object.</p>
+    pub fn get_enhanced_metrics_config(&self) -> &::std::option::Option<crate::types::EnhancedMetricsConfig> {
+        self.inner.get_enhanced_metrics_config()
+    }
 }

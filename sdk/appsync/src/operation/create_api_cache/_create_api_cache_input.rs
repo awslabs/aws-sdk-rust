@@ -59,6 +59,15 @@ pub struct CreateApiCacheInput {
     /// <p><b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ApiCacheType>,
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub health_metrics_config: ::std::option::Option<crate::types::CacheHealthMetricsConfig>,
 }
 impl CreateApiCacheInput {
     /// <p>The GraphQL API ID.</p>
@@ -128,6 +137,17 @@ impl CreateApiCacheInput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApiCacheType> {
         self.r#type.as_ref()
     }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn health_metrics_config(&self) -> ::std::option::Option<&crate::types::CacheHealthMetricsConfig> {
+        self.health_metrics_config.as_ref()
+    }
 }
 impl CreateApiCacheInput {
     /// Creates a new builder-style object to manufacture [`CreateApiCacheInput`](crate::operation::create_api_cache::CreateApiCacheInput).
@@ -146,6 +166,7 @@ pub struct CreateApiCacheInputBuilder {
     pub(crate) at_rest_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
     pub(crate) r#type: ::std::option::Option<crate::types::ApiCacheType>,
+    pub(crate) health_metrics_config: ::std::option::Option<crate::types::CacheHealthMetricsConfig>,
 }
 impl CreateApiCacheInputBuilder {
     /// <p>The GraphQL API ID.</p>
@@ -365,6 +386,41 @@ impl CreateApiCacheInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ApiCacheType> {
         &self.r#type
     }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn health_metrics_config(mut self, input: crate::types::CacheHealthMetricsConfig) -> Self {
+        self.health_metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn set_health_metrics_config(mut self, input: ::std::option::Option<crate::types::CacheHealthMetricsConfig>) -> Self {
+        self.health_metrics_config = input;
+        self
+    }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_health_metrics_config(&self) -> &::std::option::Option<crate::types::CacheHealthMetricsConfig> {
+        &self.health_metrics_config
+    }
     /// Consumes the builder and constructs a [`CreateApiCacheInput`](crate::operation::create_api_cache::CreateApiCacheInput).
     pub fn build(
         self,
@@ -376,6 +432,7 @@ impl CreateApiCacheInputBuilder {
             at_rest_encryption_enabled: self.at_rest_encryption_enabled,
             api_caching_behavior: self.api_caching_behavior,
             r#type: self.r#type,
+            health_metrics_config: self.health_metrics_config,
         })
     }
 }

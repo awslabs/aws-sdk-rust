@@ -21,6 +21,8 @@ pub use crate::types::_merge_type::MergeType;
 
 pub use crate::types::_resolver::Resolver;
 
+pub use crate::types::_resolver_level_metrics_config::ResolverLevelMetricsConfig;
+
 pub use crate::types::_app_sync_runtime::AppSyncRuntime;
 
 pub use crate::types::_runtime_name::RuntimeName;
@@ -40,6 +42,14 @@ pub use crate::types::_pipeline_config::PipelineConfig;
 pub use crate::types::_resolver_kind::ResolverKind;
 
 pub use crate::types::_graphql_api::GraphqlApi;
+
+pub use crate::types::_enhanced_metrics_config::EnhancedMetricsConfig;
+
+pub use crate::types::_operation_level_metrics_config::OperationLevelMetricsConfig;
+
+pub use crate::types::_data_source_level_metrics_behavior::DataSourceLevelMetricsBehavior;
+
+pub use crate::types::_resolver_level_metrics_behavior::ResolverLevelMetricsBehavior;
 
 pub use crate::types::_graph_ql_api_introspection_config::GraphQlApiIntrospectionConfig;
 
@@ -70,6 +80,8 @@ pub use crate::types::_function_configuration::FunctionConfiguration;
 pub use crate::types::_domain_name_config::DomainNameConfig;
 
 pub use crate::types::_data_source::DataSource;
+
+pub use crate::types::_data_source_level_metrics_config::DataSourceLevelMetricsConfig;
 
 pub use crate::types::_event_bridge_data_source_config::EventBridgeDataSourceConfig;
 
@@ -102,6 +114,8 @@ pub use crate::types::_data_source_type::DataSourceType;
 pub use crate::types::_api_key::ApiKey;
 
 pub use crate::types::_api_cache::ApiCache;
+
+pub use crate::types::_cache_health_metrics_config::CacheHealthMetricsConfig;
 
 pub use crate::types::_api_cache_status::ApiCacheStatus;
 
@@ -169,6 +183,8 @@ mod _bad_request_detail;
 
 mod _bad_request_reason;
 
+mod _cache_health_metrics_config;
+
 mod _caching_config;
 
 mod _code_error;
@@ -195,6 +211,10 @@ mod _data_source_introspection_result;
 
 mod _data_source_introspection_status;
 
+mod _data_source_level_metrics_behavior;
+
+mod _data_source_level_metrics_config;
+
 mod _data_source_type;
 
 mod _default_action;
@@ -206,6 +226,8 @@ mod _domain_name_config;
 mod _dynamodb_data_source_config;
 
 mod _elasticsearch_data_source_config;
+
+mod _enhanced_metrics_config;
 
 mod _error_detail;
 
@@ -241,6 +263,8 @@ mod _open_id_connect_config;
 
 mod _open_search_service_data_source_config;
 
+mod _operation_level_metrics_config;
+
 mod _output_type;
 
 mod _ownership;
@@ -258,6 +282,10 @@ mod _relational_database_source_type;
 mod _resolver;
 
 mod _resolver_kind;
+
+mod _resolver_level_metrics_behavior;
+
+mod _resolver_level_metrics_config;
 
 mod _runtime_name;
 

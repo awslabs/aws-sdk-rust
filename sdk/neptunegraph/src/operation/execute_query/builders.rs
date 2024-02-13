@@ -22,7 +22,16 @@ impl ExecuteQueryInputBuilder {
 }
 /// Fluent builder constructing a request to `ExecuteQuery`.
 ///
-/// <p>Execute an openCypher query. Currently, the SDK does not support parameterized queries. If you want to make a parameterized query call, you can use an HTTP request.</p><note>
+/// <p>Execute an openCypher query. Currently, the SDK does not support parameterized queries. If you want to make a parameterized query call, you can use an HTTP request.</p>
+/// <p>When invoking this operation in a Neptune Analytics cluster, the IAM user or role making the request must have a policy attached that allows one of the following IAM actions in that cluster, depending on the query:</p>
+/// <ul>
+/// <li>
+/// <p>neptune-graph:ReadDataViaQuery</p></li>
+/// <li>
+/// <p>neptune-graph:WriteDataViaQuery</p></li>
+/// <li>
+/// <p>neptune-graph:DeleteDataViaQuery</p></li>
+/// </ul><note>
 /// <p>Non-parametrized queries are not considered for plan caching. You can force plan caching with <code>planCache=enabled</code>. The plan cache will be reused only for the same exact query. Slight variations in the query will not be able to reuse the query plan cache.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -151,6 +160,27 @@ impl ExecuteQueryFluentBuilder {
     /// <p>The query language the query is written in. Currently only openCypher is supported.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
         self.inner.get_language()
+    }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        self.inner = self.inner.parameters(k.into(), v);
+        self
+    }
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.inner = self.inner.set_parameters(input);
+        self
+    }
+    /// <p>The data parameters the query can use in JSON format. For example: {"name": "john", "age": 20}. (optional)</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.inner.get_parameters()
     }
     /// <p>Query plan cache is a feature that saves the query plan and reuses it on successive executions of the same query. This reduces query latency, and works for both <code>READ</code> and <code>UPDATE</code> queries. The plan cache is an LRU cache with a 5 minute TTL and a capacity of 1000.</p>
     pub fn plan_cache(mut self, input: crate::types::PlanCacheType) -> Self {

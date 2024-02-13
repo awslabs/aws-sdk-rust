@@ -7,8 +7,6 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_nameserver::Nameserver;
 
-pub use crate::types::_consent::Consent;
-
 pub use crate::types::_contact_detail::ContactDetail;
 
 pub use crate::types::_extra_param::ExtraParam;
@@ -18,6 +16,8 @@ pub use crate::types::_extra_param_name::ExtraParamName;
 pub use crate::types::_country_code::CountryCode;
 
 pub use crate::types::_contact_type::ContactType;
+
+pub use crate::types::_consent::Consent;
 
 pub use crate::types::_domain_price::DomainPrice;
 

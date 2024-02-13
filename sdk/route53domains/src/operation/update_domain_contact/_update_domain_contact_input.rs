@@ -14,6 +14,8 @@ pub struct UpdateDomainContactInput {
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
     pub consent: ::std::option::Option<crate::types::Consent>,
+    /// <p>Provides detailed contact information.</p>
+    pub billing_contact: ::std::option::Option<crate::types::ContactDetail>,
 }
 impl UpdateDomainContactInput {
     /// <p>The name of the domain that you want to update contact information for.</p>
@@ -36,6 +38,10 @@ impl UpdateDomainContactInput {
     pub fn consent(&self) -> ::std::option::Option<&crate::types::Consent> {
         self.consent.as_ref()
     }
+    /// <p>Provides detailed contact information.</p>
+    pub fn billing_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
+        self.billing_contact.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateDomainContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for UpdateDomainContactInput {
         formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("consent", &self.consent);
+        formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -64,6 +71,7 @@ pub struct UpdateDomainContactInputBuilder {
     pub(crate) registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     pub(crate) tech_contact: ::std::option::Option<crate::types::ContactDetail>,
     pub(crate) consent: ::std::option::Option<crate::types::Consent>,
+    pub(crate) billing_contact: ::std::option::Option<crate::types::ContactDetail>,
 }
 impl UpdateDomainContactInputBuilder {
     /// <p>The name of the domain that you want to update contact information for.</p>
@@ -137,6 +145,20 @@ impl UpdateDomainContactInputBuilder {
     pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
         &self.consent
     }
+    /// <p>Provides detailed contact information.</p>
+    pub fn billing_contact(mut self, input: crate::types::ContactDetail) -> Self {
+        self.billing_contact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn set_billing_contact(mut self, input: ::std::option::Option<crate::types::ContactDetail>) -> Self {
+        self.billing_contact = input;
+        self
+    }
+    /// <p>Provides detailed contact information.</p>
+    pub fn get_billing_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
+        &self.billing_contact
+    }
     /// Consumes the builder and constructs a [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
     pub fn build(
         self,
@@ -148,6 +170,7 @@ impl UpdateDomainContactInputBuilder {
             registrant_contact: self.registrant_contact,
             tech_contact: self.tech_contact,
             consent: self.consent,
+            billing_contact: self.billing_contact,
         })
     }
 }
@@ -159,6 +182,7 @@ impl ::std::fmt::Debug for UpdateDomainContactInputBuilder {
         formatter.field("registrant_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("tech_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("consent", &self.consent);
+        formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

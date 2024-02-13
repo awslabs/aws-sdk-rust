@@ -199,6 +199,12 @@ pub(crate) fn de_get_domain_detail(
                 "DnssecKeys" => {
                     builder = builder.set_dnssec_keys(crate::protocol_serde::shape_dnssec_key_list::de_dnssec_key_list(tokens)?);
                 }
+                "BillingContact" => {
+                    builder = builder.set_billing_contact(crate::protocol_serde::shape_contact_detail::de_contact_detail(tokens)?);
+                }
+                "BillingPrivacy" => {
+                    builder = builder.set_billing_privacy(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

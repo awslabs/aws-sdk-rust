@@ -321,4 +321,39 @@ impl CreateApiCacheFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ApiCacheType> {
         self.inner.get_type()
     }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn health_metrics_config(mut self, input: crate::types::CacheHealthMetricsConfig) -> Self {
+        self.inner = self.inner.health_metrics_config(input);
+        self
+    }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn set_health_metrics_config(mut self, input: ::std::option::Option<crate::types::CacheHealthMetricsConfig>) -> Self {
+        self.inner = self.inner.set_health_metrics_config(input);
+        self
+    }
+    /// <p>Controls how cache health metrics will be emitted to CloudWatch. Cache health metrics include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>NetworkBandwidthOutAllowanceExceeded: The number of times a specified GraphQL operation was called.</p></li>
+    /// <li>
+    /// <p>EngineCPUUtilization: The number of GraphQL errors that occurred during a specified GraphQL operation.</p></li>
+    /// </ul>
+    /// <p>Metrics will be recorded by API ID. You can set the value to <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_health_metrics_config(&self) -> &::std::option::Option<crate::types::CacheHealthMetricsConfig> {
+        self.inner.get_health_metrics_config()
+    }
 }

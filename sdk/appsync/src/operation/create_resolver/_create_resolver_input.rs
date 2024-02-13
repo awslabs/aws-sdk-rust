@@ -37,6 +37,9 @@ pub struct CreateResolverInput {
     pub runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub code: ::std::option::Option<::std::string::String>,
+    /// <p>Enables or disables enhanced resolver metrics for specified resolvers. Note that <code>metricsConfig</code> won't be used unless the <code>resolverLevelMetricsBehavior</code> value is set to <code>PER_RESOLVER_METRICS</code>. If the <code>resolverLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub metrics_config: ::std::option::Option<crate::types::ResolverLevelMetricsConfig>,
 }
 impl CreateResolverInput {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -99,6 +102,11 @@ impl CreateResolverInput {
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
+    /// <p>Enables or disables enhanced resolver metrics for specified resolvers. Note that <code>metricsConfig</code> won't be used unless the <code>resolverLevelMetricsBehavior</code> value is set to <code>PER_RESOLVER_METRICS</code>. If the <code>resolverLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::ResolverLevelMetricsConfig> {
+        self.metrics_config.as_ref()
+    }
 }
 impl CreateResolverInput {
     /// Creates a new builder-style object to manufacture [`CreateResolverInput`](crate::operation::create_resolver::CreateResolverInput).
@@ -124,6 +132,7 @@ pub struct CreateResolverInputBuilder {
     pub(crate) max_batch_size: ::std::option::Option<i32>,
     pub(crate) runtime: ::std::option::Option<crate::types::AppSyncRuntime>,
     pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_config: ::std::option::Option<crate::types::ResolverLevelMetricsConfig>,
 }
 impl CreateResolverInputBuilder {
     /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -335,6 +344,23 @@ impl CreateResolverInputBuilder {
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }
+    /// <p>Enables or disables enhanced resolver metrics for specified resolvers. Note that <code>metricsConfig</code> won't be used unless the <code>resolverLevelMetricsBehavior</code> value is set to <code>PER_RESOLVER_METRICS</code>. If the <code>resolverLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn metrics_config(mut self, input: crate::types::ResolverLevelMetricsConfig) -> Self {
+        self.metrics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables or disables enhanced resolver metrics for specified resolvers. Note that <code>metricsConfig</code> won't be used unless the <code>resolverLevelMetricsBehavior</code> value is set to <code>PER_RESOLVER_METRICS</code>. If the <code>resolverLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn set_metrics_config(mut self, input: ::std::option::Option<crate::types::ResolverLevelMetricsConfig>) -> Self {
+        self.metrics_config = input;
+        self
+    }
+    /// <p>Enables or disables enhanced resolver metrics for specified resolvers. Note that <code>metricsConfig</code> won't be used unless the <code>resolverLevelMetricsBehavior</code> value is set to <code>PER_RESOLVER_METRICS</code>. If the <code>resolverLevelMetricsBehavior</code> is set to <code>FULL_REQUEST_RESOLVER_METRICS</code> instead, <code>metricsConfig</code> will be ignored. However, you can still set its value.</p>
+    /// <p><code>metricsConfig</code> can be <code>ENABLED</code> or <code>DISABLED</code>.</p>
+    pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::ResolverLevelMetricsConfig> {
+        &self.metrics_config
+    }
     /// Consumes the builder and constructs a [`CreateResolverInput`](crate::operation::create_resolver::CreateResolverInput).
     pub fn build(
         self,
@@ -353,6 +379,7 @@ impl CreateResolverInputBuilder {
             max_batch_size: self.max_batch_size,
             runtime: self.runtime,
             code: self.code,
+            metrics_config: self.metrics_config,
         })
     }
 }

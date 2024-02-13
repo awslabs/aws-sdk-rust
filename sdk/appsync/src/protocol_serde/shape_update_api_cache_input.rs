@@ -6,14 +6,17 @@ pub fn ser_update_api_cache_input_input(
     if let Some(var_1) = &input.api_caching_behavior {
         object.key("apiCachingBehavior").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.ttl {
+    if let Some(var_2) = &input.health_metrics_config {
+        object.key("healthMetricsConfig").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.ttl {
         object.key("ttl").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("type").string(var_3.as_str());
+    if let Some(var_4) = &input.r#type {
+        object.key("type").string(var_4.as_str());
     }
     Ok(())
 }
