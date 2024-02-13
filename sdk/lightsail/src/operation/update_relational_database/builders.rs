@@ -355,4 +355,21 @@ impl UpdateRelationalDatabaseFluentBuilder {
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ca_certificate_identifier()
     }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn relational_database_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.relational_database_blueprint_id(input.into());
+        self
+    }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn set_relational_database_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_relational_database_blueprint_id(input);
+        self
+    }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn get_relational_database_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_relational_database_blueprint_id()
+    }
 }

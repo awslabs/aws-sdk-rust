@@ -33,5 +33,8 @@ pub fn ser_update_relational_database_input_input(
     if let Some(var_10) = &input.ca_certificate_identifier {
         object.key("caCertificateIdentifier").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.relational_database_blueprint_id {
+        object.key("relationalDatabaseBlueprintId").string(var_11.as_str());
+    }
     Ok(())
 }

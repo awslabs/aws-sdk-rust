@@ -1288,9 +1288,9 @@ model_hash = '16446970b85eea4a8a7ba6488541f28cdad132ecd2fd0de394d3db9a3ed1b89f'
 
 [crates.aws-sdk-lightsail]
 category = 'AwsSdk'
-version = '1.14.0'
-source_hash = 'ea288c86997b498cb1f5a9e74d15c55c6f20ee21bc3981331f92e05e9e2f192a'
-model_hash = 'b6fb91cb8fccf38d93c245da1bca558d21666567ae1afe69b3fbef5411b98a6d'
+version = '1.15.0'
+source_hash = 'd6b4932180cdd8eca6a9d696684d0fe7a0a151cfad96ea9da6656c4db10d7782'
+model_hash = 'c9f79b22590289429ef979ce3d8d93c78a4cf1de7e3b599a01f3f641daa5fdd2'
 
 [crates.aws-sdk-location]
 category = 'AwsSdk'
@@ -1354,9 +1354,9 @@ model_hash = '7628550e920b50e1c9e3e9a0318647c0a33fb2c0d8d7bf6baa29e4a7d711b860'
 
 [crates.aws-sdk-marketplacecatalog]
 category = 'AwsSdk'
-version = '1.15.0'
-source_hash = 'a2a773e5ea555921a943c1443451dd078e0f7d5e572c27790752f653864a467e'
-model_hash = '1eb3b039ea43d4ccb6e66529f5233e11036ca04ea005103157ce42d75570b9f3'
+version = '1.16.0'
+source_hash = '39cfaaae41e781700049ee0b995f464f57b5f472b7fd17d5838535b4302d7a5a'
+model_hash = '7514b2c027a00194f412822d4342efa4ac1feb37980a45549c387a2c2f634500'
 
 [crates.aws-sdk-marketplacecommerceanalytics]
 category = 'AwsSdk'
@@ -1798,9 +1798,9 @@ model_hash = '3b7c4073b58550739ced02a559e747f674b70a91a8799ffe7fc4a644257d6161'
 
 [crates.aws-sdk-resourceexplorer2]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = 'a36e95c6009a47e25c0eec6ca989c83f6ff14395a231ab76464615e6bdd34023'
-model_hash = 'b867449074ce6410f4def667d1ca35635788638e5fb5e4784b450709d0eb482d'
+version = '1.14.0'
+source_hash = 'bd8f3e6d9ef8b5d2ea314889ecc9dbbb266e1a018bfc5aa914ef5fed21fdb83f'
+model_hash = '6a9b7c6d06bc70080c2046687f333f012f4afd3063dbaa0b8ce2138432087d79'
 
 [crates.aws-sdk-resourcegroups]
 category = 'AwsSdk'
@@ -1960,9 +1960,9 @@ model_hash = 'c0aaa63689de78965d6bcd667cb038b7ba95b3bcbc4bbee790911d42addad26d'
 
 [crates.aws-sdk-securitylake]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = '87ea622d3ea34858abb28ac395e446873e64d6aa5d68653fd3a099518973d1c8'
-model_hash = '6d17d6fa1a40ae6cffebbf1dfc321ade20c241e0d4fb1af24fdce669ff76ac0e'
+version = '1.13.1'
+source_hash = '8b5f3826564dc70b9de9ca12db952d62b64ac6e74bfd14dd6c852673aed985c3'
+model_hash = '518f538584fb82950388ade15aa9438a161c927fb81484b818ddcd83a483d295'
 
 [crates.aws-sdk-serverlessapplicationrepository]
 category = 'AwsSdk'
@@ -2413,12 +2413,8 @@ source_hash = '4fd2d545d2a156185c8c71b6a40ccc7cc9981c1b75fd73cc3c7bbb01f0dbbcb5'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7bec66f5e4d17b0301fe04d9e7df0b5dc9696047ad3d2d3292ff65d22a3a515d'
-
-[release]
-tag = 'release-2024-02-13'
-
 [release.crates]
-aws-sdk-appsync = '1.16.0'
-aws-sdk-cloudwatch = '1.15.0'
-aws-sdk-neptunegraph = '1.8.0'
-aws-sdk-route53domains = '1.14.0'
+aws-sdk-lightsail = '1.15.0'
+aws-sdk-marketplacecatalog = '1.16.0'
+aws-sdk-resourceexplorer2 = '1.14.0'
+aws-sdk-securitylake = '1.13.1'

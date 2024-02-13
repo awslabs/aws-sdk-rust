@@ -9,6 +9,8 @@ pub struct DescribeChangeSetOutput {
     pub change_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
+    /// <p>The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent, <code>APPLY</code> is set by default.</p>
+    pub intent: ::std::option::Option<crate::types::Intent>,
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.</p>
@@ -35,6 +37,10 @@ impl DescribeChangeSetOutput {
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub fn change_set_name(&self) -> ::std::option::Option<&str> {
         self.change_set_name.as_deref()
+    }
+    /// <p>The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent, <code>APPLY</code> is set by default.</p>
+    pub fn intent(&self) -> ::std::option::Option<&crate::types::Intent> {
+        self.intent.as_ref()
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&str> {
@@ -82,6 +88,7 @@ pub struct DescribeChangeSetOutputBuilder {
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_arn: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) intent: ::std::option::Option<crate::types::Intent>,
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ChangeStatus>,
@@ -132,6 +139,20 @@ impl DescribeChangeSetOutputBuilder {
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub fn get_change_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_set_name
+    }
+    /// <p>The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent, <code>APPLY</code> is set by default.</p>
+    pub fn intent(mut self, input: crate::types::Intent) -> Self {
+        self.intent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent, <code>APPLY</code> is set by default.</p>
+    pub fn set_intent(mut self, input: ::std::option::Option<crate::types::Intent>) -> Self {
+        self.intent = input;
+        self
+    }
+    /// <p>The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent, <code>APPLY</code> is set by default.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::Intent> {
+        &self.intent
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,6 +259,7 @@ impl DescribeChangeSetOutputBuilder {
             change_set_id: self.change_set_id,
             change_set_arn: self.change_set_arn,
             change_set_name: self.change_set_name,
+            intent: self.intent,
             start_time: self.start_time,
             end_time: self.end_time,
             status: self.status,

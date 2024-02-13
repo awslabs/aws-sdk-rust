@@ -13,6 +13,8 @@ pub struct StartChangeSetInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.</p>
     pub change_set_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub intent: ::std::option::Option<crate::types::Intent>,
 }
 impl StartChangeSetInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
@@ -39,6 +41,10 @@ impl StartChangeSetInput {
     pub fn change_set_tags(&self) -> &[crate::types::Tag] {
         self.change_set_tags.as_deref().unwrap_or_default()
     }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn intent(&self) -> ::std::option::Option<&crate::types::Intent> {
+        self.intent.as_ref()
+    }
 }
 impl StartChangeSetInput {
     /// Creates a new builder-style object to manufacture [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
@@ -56,6 +62,7 @@ pub struct StartChangeSetInputBuilder {
     pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) intent: ::std::option::Option<crate::types::Intent>,
 }
 impl StartChangeSetInputBuilder {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
@@ -141,6 +148,20 @@ impl StartChangeSetInputBuilder {
     pub fn get_change_set_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.change_set_tags
     }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn intent(mut self, input: crate::types::Intent) -> Self {
+        self.intent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn set_intent(mut self, input: ::std::option::Option<crate::types::Intent>) -> Self {
+        self.intent = input;
+        self
+    }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::Intent> {
+        &self.intent
+    }
     /// Consumes the builder and constructs a [`StartChangeSetInput`](crate::operation::start_change_set::StartChangeSetInput).
     pub fn build(
         self,
@@ -151,6 +172,7 @@ impl StartChangeSetInputBuilder {
             change_set_name: self.change_set_name,
             client_request_token: self.client_request_token,
             change_set_tags: self.change_set_tags,
+            intent: self.intent,
         })
     }
 }

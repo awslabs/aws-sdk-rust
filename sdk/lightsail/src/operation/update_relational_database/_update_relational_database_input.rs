@@ -58,6 +58,9 @@ pub struct UpdateRelationalDatabaseInput {
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>Indicates the certificate that needs to be associated with the database.</p>
     pub ca_certificate_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub relational_database_blueprint_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRelationalDatabaseInput {
     /// <p>The name of your Lightsail database resource to update.</p>
@@ -135,6 +138,11 @@ impl UpdateRelationalDatabaseInput {
     pub fn ca_certificate_identifier(&self) -> ::std::option::Option<&str> {
         self.ca_certificate_identifier.as_deref()
     }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn relational_database_blueprint_id(&self) -> ::std::option::Option<&str> {
+        self.relational_database_blueprint_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateRelationalDatabaseInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -149,6 +157,7 @@ impl ::std::fmt::Debug for UpdateRelationalDatabaseInput {
         formatter.field("publicly_accessible", &self.publicly_accessible);
         formatter.field("apply_immediately", &self.apply_immediately);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("relational_database_blueprint_id", &self.relational_database_blueprint_id);
         formatter.finish()
     }
 }
@@ -173,6 +182,7 @@ pub struct UpdateRelationalDatabaseInputBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) apply_immediately: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) relational_database_blueprint_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRelationalDatabaseInputBuilder {
     /// <p>The name of your Lightsail database resource to update.</p>
@@ -421,6 +431,23 @@ impl UpdateRelationalDatabaseInputBuilder {
     pub fn get_ca_certificate_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.ca_certificate_identifier
     }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn relational_database_blueprint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.relational_database_blueprint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn set_relational_database_blueprint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.relational_database_blueprint_id = input;
+        self
+    }
+    /// <p>This parameter is used to update the major version of the database. Enter the <code>blueprintId</code> for the major version that you want to update to.</p>
+    /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a> action to get a list of available blueprint IDs.</p>
+    pub fn get_relational_database_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.relational_database_blueprint_id
+    }
     /// Consumes the builder and constructs a [`UpdateRelationalDatabaseInput`](crate::operation::update_relational_database::UpdateRelationalDatabaseInput).
     pub fn build(
         self,
@@ -439,6 +466,7 @@ impl UpdateRelationalDatabaseInputBuilder {
             publicly_accessible: self.publicly_accessible,
             apply_immediately: self.apply_immediately,
             ca_certificate_identifier: self.ca_certificate_identifier,
+            relational_database_blueprint_id: self.relational_database_blueprint_id,
         })
     }
 }
@@ -455,6 +483,7 @@ impl ::std::fmt::Debug for UpdateRelationalDatabaseInputBuilder {
         formatter.field("publicly_accessible", &self.publicly_accessible);
         formatter.field("apply_immediately", &self.apply_immediately);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
+        formatter.field("relational_database_blueprint_id", &self.relational_database_blueprint_id);
         formatter.finish()
     }
 }

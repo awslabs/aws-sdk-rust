@@ -36,5 +36,8 @@ pub fn ser_start_change_set_input_input(
     if let Some(var_11) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.intent {
+        object.key("Intent").string(var_12.as_str());
+    }
     Ok(())
 }

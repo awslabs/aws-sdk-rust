@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataLakeExceptionsInput {
-    /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+    /// <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List the maximum number of failures in Security Lake.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct ListDataLakeExceptionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDataLakeExceptionsInput {
-    /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+    /// <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
     pub fn regions(&self) -> &[::std::string::String] {
@@ -48,19 +48,19 @@ impl ListDataLakeExceptionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+    /// <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+    /// <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
+    /// <p>The Amazon Web Services Regions from which exceptions are retrieved.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }

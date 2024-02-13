@@ -171,6 +171,13 @@ pub(crate) fn de_describe_change_set(
                             .transpose()?,
                     );
                 }
+                "Intent" => {
+                    builder = builder.set_intent(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::Intent::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "StartTime" => {
                     builder = builder.set_start_time(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

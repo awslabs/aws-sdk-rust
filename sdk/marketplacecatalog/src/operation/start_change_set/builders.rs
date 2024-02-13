@@ -188,4 +188,18 @@ impl StartChangeSetFluentBuilder {
     pub fn get_change_set_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_change_set_tags()
     }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn intent(mut self, input: crate::types::Intent) -> Self {
+        self.inner = self.inner.intent(input);
+        self
+    }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn set_intent(mut self, input: ::std::option::Option<crate::types::Intent>) -> Self {
+        self.inner = self.inner.set_intent(input);
+        self
+    }
+    /// <p>The intent related to the request. The default is <code>APPLY</code>. To test your request before applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to single-AMI products. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add a new version</a>.</p>
+    pub fn get_intent(&self) -> &::std::option::Option<crate::types::Intent> {
+        self.inner.get_intent()
+    }
 }

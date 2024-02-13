@@ -22,7 +22,7 @@ impl BatchDescribeEntitiesInputBuilder {
 }
 /// Fluent builder constructing a request to `BatchDescribeEntities`.
 ///
-/// <p>Returns metadata and content for multiple entities.</p>
+/// <p>Returns metadata and content for multiple entities. This is the Batch version of the <code>DescribeEntity</code> API and uses the same IAM permission action as <code>DescribeEntity</code> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDescribeEntitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
