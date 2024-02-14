@@ -2413,6 +2413,10 @@ source_hash = '4fd2d545d2a156185c8c71b6a40ccc7cc9981c1b75fd73cc3c7bbb01f0dbbcb5'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7bec66f5e4d17b0301fe04d9e7df0b5dc9696047ad3d2d3292ff65d22a3a515d'
+
+[release]
+tag = 'release-2024-02-14'
+
 [release.crates]
 aws-sdk-controltower = '1.14.0'
 aws-sdk-lookoutequipment = '1.14.0'
