@@ -9,6 +9,8 @@ pub struct UpdateModelInput {
     pub labels_input_configuration: ::std::option::Option<crate::types::LabelsInputConfiguration>,
     /// <p>The ARN of the model to update.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
 }
 impl UpdateModelInput {
     /// <p>The name of the model to update.</p>
@@ -22,6 +24,10 @@ impl UpdateModelInput {
     /// <p>The ARN of the model to update.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
+        self.model_diagnostics_output_configuration.as_ref()
     }
 }
 impl UpdateModelInput {
@@ -38,6 +44,7 @@ pub struct UpdateModelInputBuilder {
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) labels_input_configuration: ::std::option::Option<crate::types::LabelsInputConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
 }
 impl UpdateModelInputBuilder {
     /// <p>The name of the model to update.</p>
@@ -83,12 +90,30 @@ impl UpdateModelInputBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn model_diagnostics_output_configuration(mut self, input: crate::types::ModelDiagnosticsOutputConfiguration) -> Self {
+        self.model_diagnostics_output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn set_model_diagnostics_output_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    ) -> Self {
+        self.model_diagnostics_output_configuration = input;
+        self
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics for the model. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
+        &self.model_diagnostics_output_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_model::UpdateModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
             model_name: self.model_name,
             labels_input_configuration: self.labels_input_configuration,
             role_arn: self.role_arn,
+            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
         })
     }
 }

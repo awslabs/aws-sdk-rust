@@ -71,5 +71,11 @@ pub fn ser_create_model_input_input(
     if let Some(var_20) = &input.off_condition {
         object.key("OffCondition").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.model_diagnostics_output_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("ModelDiagnosticsOutputConfiguration").start_object();
+        crate::protocol_serde::shape_model_diagnostics_output_configuration::ser_model_diagnostics_output_configuration(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }

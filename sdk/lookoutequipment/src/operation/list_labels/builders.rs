@@ -114,17 +114,17 @@ impl ListLabelsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_labels::paginator::ListLabelsPaginator {
         crate::operation::list_labels::paginator::ListLabelsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_label_group_name()
     }

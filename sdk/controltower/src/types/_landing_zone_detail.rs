@@ -6,11 +6,11 @@
 pub struct LandingZoneDetail {
     /// <p>The landing zone's current deployed version.</p>
     pub version: ::std::string::String,
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub manifest: ::aws_smithy_types::Document,
     /// <p>The ARN of the landing zone.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The landing zone deployment status.</p>
+    /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub status: ::std::option::Option<crate::types::LandingZoneStatus>,
     /// <p>The latest available version of the landing zone.</p>
     pub latest_available_version: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl LandingZoneDetail {
         use std::ops::Deref;
         self.version.deref()
     }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn manifest(&self) -> &::aws_smithy_types::Document {
         &self.manifest
     }
@@ -31,7 +31,7 @@ impl LandingZoneDetail {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The landing zone deployment status.</p>
+    /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LandingZoneStatus> {
         self.status.as_ref()
     }
@@ -78,18 +78,18 @@ impl LandingZoneDetailBuilder {
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     /// This field is required.
     pub fn manifest(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.manifest = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn set_manifest(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.manifest = input;
         self
     }
-    /// <p>The landing zone manifest JSON text file that specifies the landing zone configurations.</p>
+    /// <p>The landing zone <code>manifest.yaml</code> text file that specifies the landing zone configurations.</p>
     pub fn get_manifest(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.manifest
     }
@@ -107,17 +107,17 @@ impl LandingZoneDetailBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The landing zone deployment status.</p>
+    /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::LandingZoneStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The landing zone deployment status.</p>
+    /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LandingZoneStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The landing zone deployment status.</p>
+    /// <p>The landing zone deployment status. One of <code>ACTIVE</code>, <code>PROCESSING</code>, <code>FAILED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LandingZoneStatus> {
         &self.status
     }

@@ -17,8 +17,12 @@
 ///     MessageUsefulnessReason::HarmfulOrUnsafe => { /* ... */ },
 ///     MessageUsefulnessReason::Helpful => { /* ... */ },
 ///     MessageUsefulnessReason::IncorrectOrMissingSources => { /* ... */ },
+///     MessageUsefulnessReason::NotBasedOnDocuments => { /* ... */ },
+///     MessageUsefulnessReason::NotComplete => { /* ... */ },
+///     MessageUsefulnessReason::NotConcise => { /* ... */ },
 ///     MessageUsefulnessReason::NotFactuallyCorrect => { /* ... */ },
 ///     MessageUsefulnessReason::NotHelpful => { /* ... */ },
+///     MessageUsefulnessReason::Other => { /* ... */ },
 ///     MessageUsefulnessReason::RelevantSources => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -58,9 +62,17 @@ pub enum MessageUsefulnessReason {
     #[allow(missing_docs)] // documentation missing in model
     IncorrectOrMissingSources,
     #[allow(missing_docs)] // documentation missing in model
+    NotBasedOnDocuments,
+    #[allow(missing_docs)] // documentation missing in model
+    NotComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    NotConcise,
+    #[allow(missing_docs)] // documentation missing in model
     NotFactuallyCorrect,
     #[allow(missing_docs)] // documentation missing in model
     NotHelpful,
+    #[allow(missing_docs)] // documentation missing in model
+    Other,
     #[allow(missing_docs)] // documentation missing in model
     RelevantSources,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -75,8 +87,12 @@ impl ::std::convert::From<&str> for MessageUsefulnessReason {
             "HARMFUL_OR_UNSAFE" => MessageUsefulnessReason::HarmfulOrUnsafe,
             "HELPFUL" => MessageUsefulnessReason::Helpful,
             "INCORRECT_OR_MISSING_SOURCES" => MessageUsefulnessReason::IncorrectOrMissingSources,
+            "NOT_BASED_ON_DOCUMENTS" => MessageUsefulnessReason::NotBasedOnDocuments,
+            "NOT_COMPLETE" => MessageUsefulnessReason::NotComplete,
+            "NOT_CONCISE" => MessageUsefulnessReason::NotConcise,
             "NOT_FACTUALLY_CORRECT" => MessageUsefulnessReason::NotFactuallyCorrect,
             "NOT_HELPFUL" => MessageUsefulnessReason::NotHelpful,
+            "OTHER" => MessageUsefulnessReason::Other,
             "RELEVANT_SOURCES" => MessageUsefulnessReason::RelevantSources,
             other => MessageUsefulnessReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -98,8 +114,12 @@ impl MessageUsefulnessReason {
             MessageUsefulnessReason::HarmfulOrUnsafe => "HARMFUL_OR_UNSAFE",
             MessageUsefulnessReason::Helpful => "HELPFUL",
             MessageUsefulnessReason::IncorrectOrMissingSources => "INCORRECT_OR_MISSING_SOURCES",
+            MessageUsefulnessReason::NotBasedOnDocuments => "NOT_BASED_ON_DOCUMENTS",
+            MessageUsefulnessReason::NotComplete => "NOT_COMPLETE",
+            MessageUsefulnessReason::NotConcise => "NOT_CONCISE",
             MessageUsefulnessReason::NotFactuallyCorrect => "NOT_FACTUALLY_CORRECT",
             MessageUsefulnessReason::NotHelpful => "NOT_HELPFUL",
+            MessageUsefulnessReason::Other => "OTHER",
             MessageUsefulnessReason::RelevantSources => "RELEVANT_SOURCES",
             MessageUsefulnessReason::Unknown(value) => value.as_str(),
         }
@@ -112,8 +132,12 @@ impl MessageUsefulnessReason {
             "HARMFUL_OR_UNSAFE",
             "HELPFUL",
             "INCORRECT_OR_MISSING_SOURCES",
+            "NOT_BASED_ON_DOCUMENTS",
+            "NOT_COMPLETE",
+            "NOT_CONCISE",
             "NOT_FACTUALLY_CORRECT",
             "NOT_HELPFUL",
+            "OTHER",
             "RELEVANT_SOURCES",
         ]
     }

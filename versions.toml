@@ -580,9 +580,9 @@ model_hash = 'f9c0ababfaf3dc75f4c524094c097c7009b1e470ec61ad68c35b16166837814e'
 
 [crates.aws-sdk-controltower]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = 'fbc1b39b16703c9497e9a66c6ed1c8b940a809cb64301028f00c5cf9547c0564'
-model_hash = '74950739de8c4acb1db522eb1d908de1b4f3a04b46718a43774ee0159ba19e59'
+version = '1.14.0'
+source_hash = '523f9c15914e43db5c65dd8412f377bcfb6bd2f944028bf548f4ec3d13c08086'
+model_hash = 'e93b72e93bd564d2f690a4ce126806b377cae8c0c9911fc9fd4d9b6f3249c77f'
 
 [crates.aws-sdk-costandusagereport]
 category = 'AwsSdk'
@@ -1300,9 +1300,9 @@ model_hash = '1b8f46fc496caa47e4ef56863ec96430e1a4c451341d6ebdb6214feb54150461'
 
 [crates.aws-sdk-lookoutequipment]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = 'd991de34b90a68685807340b5bcf9c17aee3d0fe9550edea92b196106bc61254'
-model_hash = 'a2104352d253154c72c1e83a6556e84c1e886fb336fe9c039bfc140a42f492fc'
+version = '1.14.0'
+source_hash = '855fbf970570c8d0eb45491347b615b52a6e8c6e5eef03ad971eeeb08d516482'
+model_hash = 'bb1abdba4226cc488f12fdfeaa1933e8677697a6b46a0e60335e0244aa051b5c'
 
 [crates.aws-sdk-lookoutmetrics]
 category = 'AwsSdk'
@@ -1708,9 +1708,9 @@ model_hash = '70d8c095cad5fe369c404229900eba9fbc267d4db2cfd7fb925fe0bc65181dcb'
 
 [crates.aws-sdk-qbusiness]
 category = 'AwsSdk'
-version = '1.10.0'
-source_hash = '76e0dba39ec42090ab82ce76e7f76d5edcfd356ce220f65c5d320b72cb4ae840'
-model_hash = 'f13f835b7ec8715131f5900a4499bdf71b9b80446f7e5281f78d368f56c7e248'
+version = '1.11.0'
+source_hash = '9900eb9b59cd6377ed45952ead0d26345caf3eaf068bec8fd1c5343293257bd5'
+model_hash = 'b52e94624d3f5c8bd869b857a522cae23d355353600b4daeb95ae3121e64e3f0'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'
@@ -2413,12 +2413,7 @@ source_hash = '4fd2d545d2a156185c8c71b6a40ccc7cc9981c1b75fd73cc3c7bbb01f0dbbcb5'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '7bec66f5e4d17b0301fe04d9e7df0b5dc9696047ad3d2d3292ff65d22a3a515d'
-
-[release]
-tag = 'release-2024-02-13.2'
-
 [release.crates]
-aws-sdk-lightsail = '1.15.0'
-aws-sdk-marketplacecatalog = '1.16.0'
-aws-sdk-resourceexplorer2 = '1.14.0'
-aws-sdk-securitylake = '1.13.1'
+aws-sdk-controltower = '1.14.0'
+aws-sdk-lookoutequipment = '1.14.0'
+aws-sdk-qbusiness = '1.11.0'

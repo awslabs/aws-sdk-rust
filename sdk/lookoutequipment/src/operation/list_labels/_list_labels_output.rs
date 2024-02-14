@@ -5,7 +5,9 @@
 pub struct ListLabelsOutput {
     /// <p>An opaque pagination token indicating where to continue the listing of datasets.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>A summary of the items in the label group.</p>
+    /// <p>A summary of the items in the label group.</p><note>
+    /// <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p>
+    /// </note>
     pub label_summaries: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +16,9 @@ impl ListLabelsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A summary of the items in the label group.</p>
+    /// <p>A summary of the items in the label group.</p><note>
+    /// <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.label_summaries.is_none()`.
     pub fn label_summaries(&self) -> &[crate::types::LabelSummary] {
@@ -60,19 +64,25 @@ impl ListLabelsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_label_summaries`](Self::set_label_summaries).
     ///
-    /// <p>A summary of the items in the label group.</p>
+    /// <p>A summary of the items in the label group.</p><note>
+    /// <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p>
+    /// </note>
     pub fn label_summaries(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.label_summaries.unwrap_or_default();
         v.push(input);
         self.label_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of the items in the label group.</p>
+    /// <p>A summary of the items in the label group.</p><note>
+    /// <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p>
+    /// </note>
     pub fn set_label_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>>) -> Self {
         self.label_summaries = input;
         self
     }
-    /// <p>A summary of the items in the label group.</p>
+    /// <p>A summary of the items in the label group.</p><note>
+    /// <p>If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.</p>
+    /// </note>
     pub fn get_label_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LabelSummary>> {
         &self.label_summaries
     }

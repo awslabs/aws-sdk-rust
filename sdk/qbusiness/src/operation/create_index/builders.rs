@@ -24,7 +24,7 @@ impl CreateIndexInputBuilder {
 ///
 /// <p>Creates an Amazon Q index.</p>
 /// <p>To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
-/// <p>Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_BatchPutDocument.html"> <code>BatchPutDocument</code> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html"> <code>CreateDataSource</code> </a> API.</p>
+/// <p>Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html"> <code>BatchPutDocument</code> </a> API or the <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html"> <code>CreateDataSource</code> </a> API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIndexFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

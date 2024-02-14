@@ -253,3 +253,39 @@ pub(crate) fn action_execution_payload_field_correct_errors(
     }
     builder
 }
+
+pub(crate) fn date_attribute_boosting_configuration_correct_errors(
+    mut builder: crate::types::builders::DateAttributeBoostingConfigurationBuilder,
+) -> crate::types::builders::DateAttributeBoostingConfigurationBuilder {
+    if builder.boosting_level.is_none() {
+        builder.boosting_level = "no value was set".parse::<crate::types::DocumentAttributeBoostingLevel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn number_attribute_boosting_configuration_correct_errors(
+    mut builder: crate::types::builders::NumberAttributeBoostingConfigurationBuilder,
+) -> crate::types::builders::NumberAttributeBoostingConfigurationBuilder {
+    if builder.boosting_level.is_none() {
+        builder.boosting_level = "no value was set".parse::<crate::types::DocumentAttributeBoostingLevel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn string_attribute_boosting_configuration_correct_errors(
+    mut builder: crate::types::builders::StringAttributeBoostingConfigurationBuilder,
+) -> crate::types::builders::StringAttributeBoostingConfigurationBuilder {
+    if builder.boosting_level.is_none() {
+        builder.boosting_level = "no value was set".parse::<crate::types::DocumentAttributeBoostingLevel>().ok()
+    }
+    builder
+}
+
+pub(crate) fn string_list_attribute_boosting_configuration_correct_errors(
+    mut builder: crate::types::builders::StringListAttributeBoostingConfigurationBuilder,
+) -> crate::types::builders::StringListAttributeBoostingConfigurationBuilder {
+    if builder.boosting_level.is_none() {
+        builder.boosting_level = "no value was set".parse::<crate::types::DocumentAttributeBoostingLevel>().ok()
+    }
+    builder
+}

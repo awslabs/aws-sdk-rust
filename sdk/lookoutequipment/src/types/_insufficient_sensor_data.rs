@@ -6,7 +6,7 @@
 pub struct InsufficientSensorData {
     /// <p>Parameter that describes the total number of sensors that have data completely missing for it.</p>
     pub missing_complete_sensor_data: ::std::option::Option<crate::types::MissingCompleteSensorData>,
-    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall.</p>
+    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 14 days of data overall.</p>
     pub sensors_with_short_date_range: ::std::option::Option<crate::types::SensorsWithShortDateRange>,
 }
 impl InsufficientSensorData {
@@ -14,7 +14,7 @@ impl InsufficientSensorData {
     pub fn missing_complete_sensor_data(&self) -> ::std::option::Option<&crate::types::MissingCompleteSensorData> {
         self.missing_complete_sensor_data.as_ref()
     }
-    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall.</p>
+    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 14 days of data overall.</p>
     pub fn sensors_with_short_date_range(&self) -> ::std::option::Option<&crate::types::SensorsWithShortDateRange> {
         self.sensors_with_short_date_range.as_ref()
     }
@@ -49,18 +49,18 @@ impl InsufficientSensorDataBuilder {
     pub fn get_missing_complete_sensor_data(&self) -> &::std::option::Option<crate::types::MissingCompleteSensorData> {
         &self.missing_complete_sensor_data
     }
-    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall.</p>
+    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 14 days of data overall.</p>
     /// This field is required.
     pub fn sensors_with_short_date_range(mut self, input: crate::types::SensorsWithShortDateRange) -> Self {
         self.sensors_with_short_date_range = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall.</p>
+    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 14 days of data overall.</p>
     pub fn set_sensors_with_short_date_range(mut self, input: ::std::option::Option<crate::types::SensorsWithShortDateRange>) -> Self {
         self.sensors_with_short_date_range = input;
         self
     }
-    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 90 days of data overall.</p>
+    /// <p>Parameter that describes the total number of sensors that have a short date range of less than 14 days of data overall.</p>
     pub fn get_sensors_with_short_date_range(&self) -> &::std::option::Option<crate::types::SensorsWithShortDateRange> {
         &self.sensors_with_short_date_range
     }

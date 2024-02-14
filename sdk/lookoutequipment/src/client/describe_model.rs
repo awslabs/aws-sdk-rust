@@ -45,6 +45,7 @@ impl super::Client {
     ///   - [`accumulated_inference_data_start_time(Option<DateTime>)`](crate::operation::describe_model::DescribeModelOutput::accumulated_inference_data_start_time): <p>Indicates the start time of the inference data that has been accumulated.</p>
     ///   - [`accumulated_inference_data_end_time(Option<DateTime>)`](crate::operation::describe_model::DescribeModelOutput::accumulated_inference_data_end_time): <p>Indicates the end time of the inference data that has been accumulated.</p>
     ///   - [`retraining_scheduler_status(Option<RetrainingSchedulerStatus>)`](crate::operation::describe_model::DescribeModelOutput::retraining_scheduler_status): <p>Indicates the status of the retraining scheduler.</p>
+    ///   - [`model_diagnostics_output_configuration(Option<ModelDiagnosticsOutputConfiguration>)`](crate::operation::describe_model::DescribeModelOutput::model_diagnostics_output_configuration): <p>Configuration information for the model's pointwise model diagnostics.</p>
     /// - On failure, responds with [`SdkError<DescribeModelError>`](crate::operation::describe_model::DescribeModelError)
     pub fn describe_model(&self) -> crate::operation::describe_model::builders::DescribeModelFluentBuilder {
         crate::operation::describe_model::builders::DescribeModelFluentBuilder::new(self.handle.clone())

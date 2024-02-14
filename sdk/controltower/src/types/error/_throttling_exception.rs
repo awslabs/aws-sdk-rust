@@ -10,7 +10,7 @@ pub struct ThrottlingException {
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service quota that was exceeded.</p>
     pub quota_code: ::std::option::Option<::std::string::String>,
-    /// <p>The number of seconds to wait before retrying.</p>
+    /// <p>The number of seconds the caller should wait before retrying.</p>
     pub retry_after_seconds: ::std::option::Option<i32>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -23,7 +23,7 @@ impl ThrottlingException {
     pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
-    /// <p>The number of seconds to wait before retrying.</p>
+    /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn retry_after_seconds(&self) -> ::std::option::Option<i32> {
         self.retry_after_seconds
     }
@@ -120,17 +120,17 @@ impl ThrottlingExceptionBuilder {
     pub fn get_quota_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.quota_code
     }
-    /// <p>The number of seconds to wait before retrying.</p>
+    /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
         self.retry_after_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds to wait before retrying.</p>
+    /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn set_retry_after_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retry_after_seconds = input;
         self
     }
-    /// <p>The number of seconds to wait before retrying.</p>
+    /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn get_retry_after_seconds(&self) -> &::std::option::Option<i32> {
         &self.retry_after_seconds
     }

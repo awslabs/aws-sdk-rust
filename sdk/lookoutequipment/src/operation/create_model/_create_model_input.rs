@@ -32,6 +32,8 @@ pub struct CreateModelInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
     pub off_condition: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
 }
 impl CreateModelInput {
     /// <p>The name for the machine learning model to be created.</p>
@@ -93,6 +95,10 @@ impl CreateModelInput {
     pub fn off_condition(&self) -> ::std::option::Option<&str> {
         self.off_condition.as_deref()
     }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
+        self.model_diagnostics_output_configuration.as_ref()
+    }
 }
 impl CreateModelInput {
     /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
@@ -119,6 +125,7 @@ pub struct CreateModelInputBuilder {
     pub(crate) server_side_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) off_condition: ::std::option::Option<::std::string::String>,
+    pub(crate) model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
 }
 impl CreateModelInputBuilder {
     /// <p>The name for the machine learning model to be created.</p>
@@ -329,6 +336,23 @@ impl CreateModelInputBuilder {
     pub fn get_off_condition(&self) -> &::std::option::Option<::std::string::String> {
         &self.off_condition
     }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn model_diagnostics_output_configuration(mut self, input: crate::types::ModelDiagnosticsOutputConfiguration) -> Self {
+        self.model_diagnostics_output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn set_model_diagnostics_output_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    ) -> Self {
+        self.model_diagnostics_output_configuration = input;
+        self
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
+        &self.model_diagnostics_output_configuration
+    }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_model::CreateModelInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_model::CreateModelInput {
@@ -346,6 +370,7 @@ impl CreateModelInputBuilder {
             server_side_kms_key_id: self.server_side_kms_key_id,
             tags: self.tags,
             off_condition: self.off_condition,
+            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
         })
     }
 }

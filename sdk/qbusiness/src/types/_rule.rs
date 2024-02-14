@@ -8,7 +8,7 @@ pub struct Rule {
     pub included_users_and_groups: ::std::option::Option<crate::types::UsersAndGroups>,
     /// <p>Users and groups to be excluded from a rule.</p>
     pub excluded_users_and_groups: ::std::option::Option<crate::types::UsersAndGroups>,
-    /// <p>The type fo rule.</p>
+    /// <p>The type of rule.</p>
     pub rule_type: crate::types::RuleType,
     /// <p>The configuration information for a rule.</p>
     pub rule_configuration: ::std::option::Option<crate::types::RuleConfiguration>,
@@ -22,7 +22,7 @@ impl Rule {
     pub fn excluded_users_and_groups(&self) -> ::std::option::Option<&crate::types::UsersAndGroups> {
         self.excluded_users_and_groups.as_ref()
     }
-    /// <p>The type fo rule.</p>
+    /// <p>The type of rule.</p>
     pub fn rule_type(&self) -> &crate::types::RuleType {
         &self.rule_type
     }
@@ -76,18 +76,18 @@ impl RuleBuilder {
     pub fn get_excluded_users_and_groups(&self) -> &::std::option::Option<crate::types::UsersAndGroups> {
         &self.excluded_users_and_groups
     }
-    /// <p>The type fo rule.</p>
+    /// <p>The type of rule.</p>
     /// This field is required.
     pub fn rule_type(mut self, input: crate::types::RuleType) -> Self {
         self.rule_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type fo rule.</p>
+    /// <p>The type of rule.</p>
     pub fn set_rule_type(mut self, input: ::std::option::Option<crate::types::RuleType>) -> Self {
         self.rule_type = input;
         self
     }
-    /// <p>The type fo rule.</p>
+    /// <p>The type of rule.</p>
     pub fn get_rule_type(&self) -> &::std::option::Option<crate::types::RuleType> {
         &self.rule_type
     }

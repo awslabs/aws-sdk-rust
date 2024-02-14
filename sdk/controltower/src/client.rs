@@ -167,11 +167,21 @@ pub mod customize;
 
 mod delete_landing_zone;
 
+mod disable_baseline;
+
 mod disable_control;
+
+mod enable_baseline;
 
 mod enable_control;
 
+mod get_baseline;
+
+mod get_baseline_operation;
+
 mod get_control_operation;
+
+mod get_enabled_baseline;
 
 mod get_enabled_control;
 
@@ -179,17 +189,25 @@ mod get_landing_zone;
 
 mod get_landing_zone_operation;
 
+mod list_baselines;
+
+mod list_enabled_baselines;
+
 mod list_enabled_controls;
 
 mod list_landing_zones;
 
 mod list_tags_for_resource;
 
+mod reset_enabled_baseline;
+
 mod reset_landing_zone;
 
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_enabled_baseline;
 
 mod update_enabled_control;
 

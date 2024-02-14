@@ -347,6 +347,14 @@ pub(crate) fn de_describe_model_version(
                             .transpose()?,
                     );
                 }
+                "ModelDiagnosticsOutputConfiguration" => {
+                    builder = builder.set_model_diagnostics_output_configuration(
+                        crate::protocol_serde::shape_model_diagnostics_output_configuration::de_model_diagnostics_output_configuration(tokens)?,
+                    );
+                }
+                "ModelDiagnosticsResultsObject" => {
+                    builder = builder.set_model_diagnostics_results_object(crate::protocol_serde::shape_s3_object::de_s3_object(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

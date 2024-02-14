@@ -108,17 +108,17 @@ impl EnableControlFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.control_identifier(input.into());
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_control_identifier(input);
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_control_identifier()
     }
@@ -158,17 +158,17 @@ impl EnableControlFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn parameters(mut self, input: crate::types::EnabledControlParameter) -> Self {
         self.inner = self.inner.parameters(input);
         self
     }
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>> {
         self.inner.get_parameters()
     }

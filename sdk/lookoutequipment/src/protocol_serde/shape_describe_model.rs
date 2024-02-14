@@ -388,6 +388,11 @@ pub(crate) fn de_describe_model(
                             .transpose()?,
                     );
                 }
+                "ModelDiagnosticsOutputConfiguration" => {
+                    builder = builder.set_model_diagnostics_output_configuration(
+                        crate::protocol_serde::shape_model_diagnostics_output_configuration::de_model_diagnostics_output_configuration(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

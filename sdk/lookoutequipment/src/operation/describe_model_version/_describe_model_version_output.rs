@@ -68,6 +68,10 @@ pub struct DescribeModelVersionOutput {
     pub auto_promotion_result: ::std::option::Option<crate::types::AutoPromotionResult>,
     /// <p>Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model might not be promoted if its performance was worse than the active version, if there was an error during training, or if the retraining scheduler was using <code>MANUAL</code> promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the performance is better than the previous model.</p>
     pub auto_promotion_result_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub model_diagnostics_results_object: ::std::option::Option<crate::types::S3Object>,
     _request_id: Option<String>,
 }
 impl DescribeModelVersionOutput {
@@ -200,6 +204,14 @@ impl DescribeModelVersionOutput {
     pub fn auto_promotion_result_reason(&self) -> ::std::option::Option<&str> {
         self.auto_promotion_result_reason.as_deref()
     }
+    /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
+        self.model_diagnostics_output_configuration.as_ref()
+    }
+    /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn model_diagnostics_results_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
+        self.model_diagnostics_results_object.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelVersionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -249,6 +261,8 @@ pub struct DescribeModelVersionOutputBuilder {
     pub(crate) retraining_available_data_in_days: ::std::option::Option<i32>,
     pub(crate) auto_promotion_result: ::std::option::Option<crate::types::AutoPromotionResult>,
     pub(crate) auto_promotion_result_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    pub(crate) model_diagnostics_results_object: ::std::option::Option<crate::types::S3Object>,
     _request_id: Option<String>,
 }
 impl DescribeModelVersionOutputBuilder {
@@ -703,6 +717,37 @@ impl DescribeModelVersionOutputBuilder {
     pub fn get_auto_promotion_result_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_promotion_result_reason
     }
+    /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn model_diagnostics_output_configuration(mut self, input: crate::types::ModelDiagnosticsOutputConfiguration) -> Self {
+        self.model_diagnostics_output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn set_model_diagnostics_output_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    ) -> Self {
+        self.model_diagnostics_output_configuration = input;
+        self
+    }
+    /// <p>The Amazon S3 location where Amazon Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
+        &self.model_diagnostics_output_configuration
+    }
+    /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn model_diagnostics_results_object(mut self, input: crate::types::S3Object) -> Self {
+        self.model_diagnostics_results_object = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn set_model_diagnostics_results_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
+        self.model_diagnostics_results_object = input;
+        self
+    }
+    /// <p>The Amazon S3 output prefix for where Lookout for Equipment saves the pointwise model diagnostics for the model version.</p>
+    pub fn get_model_diagnostics_results_object(&self) -> &::std::option::Option<crate::types::S3Object> {
+        &self.model_diagnostics_results_object
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -747,6 +792,8 @@ impl DescribeModelVersionOutputBuilder {
             retraining_available_data_in_days: self.retraining_available_data_in_days,
             auto_promotion_result: self.auto_promotion_result,
             auto_promotion_result_reason: self.auto_promotion_result_reason,
+            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
+            model_diagnostics_results_object: self.model_diagnostics_results_object,
             _request_id: self._request_id,
         }
     }

@@ -15,5 +15,11 @@ pub fn ser_update_model_input_input(
     if let Some(var_4) = &input.role_arn {
         object.key("RoleArn").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.model_diagnostics_output_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("ModelDiagnosticsOutputConfiguration").start_object();
+        crate::protocol_serde::shape_model_diagnostics_output_configuration::ser_model_diagnostics_output_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

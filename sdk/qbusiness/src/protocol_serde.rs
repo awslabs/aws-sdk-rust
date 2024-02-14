@@ -367,6 +367,10 @@ pub(crate) mod shape_action_review_payload_field;
 
 pub(crate) mod shape_data_source_sync_job_metrics;
 
+pub(crate) mod shape_document_attribute_boosting_configuration;
+
+pub(crate) mod shape_document_attribute_boosting_override_map;
+
 pub(crate) mod shape_document_attribute_condition;
 
 pub(crate) mod shape_document_attribute_target;
@@ -393,7 +397,15 @@ pub(crate) mod shape_content_blocker_rule;
 
 pub(crate) mod shape_content_retrieval_rule;
 
+pub(crate) mod shape_date_attribute_boosting_configuration;
+
+pub(crate) mod shape_number_attribute_boosting_configuration;
+
 pub(crate) mod shape_principal;
+
+pub(crate) mod shape_string_attribute_boosting_configuration;
+
+pub(crate) mod shape_string_list_attribute_boosting_configuration;
 
 pub(crate) mod shape_text_segment;
 
@@ -406,6 +418,8 @@ pub(crate) mod shape_eligible_data_source;
 pub(crate) mod shape_principal_group;
 
 pub(crate) mod shape_principal_user;
+
+pub(crate) mod shape_string_attribute_value_boosting;
 
 pub(crate) mod shape_user_groups;
 

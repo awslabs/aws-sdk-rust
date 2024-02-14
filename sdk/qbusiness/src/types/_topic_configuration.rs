@@ -6,7 +6,7 @@
 pub struct TopicConfiguration {
     /// <p>A name for your topic control configuration.</p>
     pub name: ::std::string::String,
-    /// <p>A description for your topic control configuration. Use this outline how the large language model (LLM) should use this topic control configuration.</p>
+    /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of example phrases that you expect the end user to use in relation to the topic.</p>
     pub example_chat_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,7 +19,7 @@ impl TopicConfiguration {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>A description for your topic control configuration. Use this outline how the large language model (LLM) should use this topic control configuration.</p>
+    /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -67,17 +67,17 @@ impl TopicConfigurationBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>A description for your topic control configuration. Use this outline how the large language model (LLM) should use this topic control configuration.</p>
+    /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description for your topic control configuration. Use this outline how the large language model (LLM) should use this topic control configuration.</p>
+    /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description for your topic control configuration. Use this outline how the large language model (LLM) should use this topic control configuration.</p>
+    /// <p>A description for your topic control configuration. Use this to outline how the large language model (LLM) should use this topic control configuration.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

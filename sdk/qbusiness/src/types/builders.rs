@@ -21,6 +21,14 @@ pub use crate::types::_kendra_index_configuration::KendraIndexConfigurationBuild
 
 pub use crate::types::_native_index_configuration::NativeIndexConfigurationBuilder;
 
+pub use crate::types::_string_list_attribute_boosting_configuration::StringListAttributeBoostingConfigurationBuilder;
+
+pub use crate::types::_date_attribute_boosting_configuration::DateAttributeBoostingConfigurationBuilder;
+
+pub use crate::types::_string_attribute_boosting_configuration::StringAttributeBoostingConfigurationBuilder;
+
+pub use crate::types::_number_attribute_boosting_configuration::NumberAttributeBoostingConfigurationBuilder;
+
 pub use crate::types::_retriever::RetrieverBuilder;
 
 pub use crate::types::_o_auth2_client_credential_configuration::OAuth2ClientCredentialConfigurationBuilder;

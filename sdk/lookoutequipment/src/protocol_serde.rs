@@ -273,11 +273,15 @@ pub(crate) mod shape_label_summaries;
 
 pub(crate) mod shape_labels_input_configuration;
 
+pub(crate) mod shape_model_diagnostics_output_configuration;
+
 pub(crate) mod shape_model_summaries;
 
 pub(crate) mod shape_model_version_summaries;
 
 pub(crate) mod shape_retraining_scheduler_summaries;
+
+pub(crate) mod shape_s3_object;
 
 pub(crate) mod shape_sensor_statistics_summaries;
 
@@ -319,6 +323,8 @@ pub(crate) mod shape_list_of_discarded_files;
 
 pub(crate) mod shape_missing_sensor_data;
 
+pub(crate) mod shape_model_diagnostics_s3_output_configuration;
+
 pub(crate) mod shape_model_summary;
 
 pub(crate) mod shape_model_version_summary;
@@ -340,7 +346,5 @@ pub(crate) mod shape_missing_complete_sensor_data;
 pub(crate) mod shape_monotonic_values;
 
 pub(crate) mod shape_multiple_operating_modes;
-
-pub(crate) mod shape_s3_object;
 
 pub(crate) mod shape_sensors_with_short_date_range;

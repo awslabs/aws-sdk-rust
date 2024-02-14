@@ -84,6 +84,8 @@ pub struct DescribeModelOutput {
     pub accumulated_inference_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the retraining scheduler.</p>
     pub retraining_scheduler_status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
+    /// <p>Configuration information for the model's pointwise model diagnostics.</p>
+    pub model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeModelOutput {
@@ -248,6 +250,10 @@ impl DescribeModelOutput {
     pub fn retraining_scheduler_status(&self) -> ::std::option::Option<&crate::types::RetrainingSchedulerStatus> {
         self.retraining_scheduler_status.as_ref()
     }
+    /// <p>Configuration information for the model's pointwise model diagnostics.</p>
+    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
+        self.model_diagnostics_output_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -305,6 +311,7 @@ pub struct DescribeModelOutputBuilder {
     pub(crate) accumulated_inference_data_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) accumulated_inference_data_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) retraining_scheduler_status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
+    pub(crate) model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeModelOutputBuilder {
@@ -871,6 +878,23 @@ impl DescribeModelOutputBuilder {
     pub fn get_retraining_scheduler_status(&self) -> &::std::option::Option<crate::types::RetrainingSchedulerStatus> {
         &self.retraining_scheduler_status
     }
+    /// <p>Configuration information for the model's pointwise model diagnostics.</p>
+    pub fn model_diagnostics_output_configuration(mut self, input: crate::types::ModelDiagnosticsOutputConfiguration) -> Self {
+        self.model_diagnostics_output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration information for the model's pointwise model diagnostics.</p>
+    pub fn set_model_diagnostics_output_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    ) -> Self {
+        self.model_diagnostics_output_configuration = input;
+        self
+    }
+    /// <p>Configuration information for the model's pointwise model diagnostics.</p>
+    pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
+        &self.model_diagnostics_output_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -923,6 +947,7 @@ impl DescribeModelOutputBuilder {
             accumulated_inference_data_start_time: self.accumulated_inference_data_start_time,
             accumulated_inference_data_end_time: self.accumulated_inference_data_end_time,
             retraining_scheduler_status: self.retraining_scheduler_status,
+            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
             _request_id: self._request_id,
         }
     }

@@ -15,6 +15,26 @@
 #![allow(rustdoc::redundant_explicit_links)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
+//! This is the _Amazon Q (for business use)_ API Reference. Amazon Q is a fully managed, generative-AI powered enterprise chat assistant that you can deploy within your organization. Amazon Q enhances employee productivity by supporting key tasks such as question-answering, knowledge discovery, writing email messages, summarizing text, drafting document outlines, and brainstorming ideas. Users ask questions of Amazon Q and get answers that are presented in a conversational manner. For an introduction to the service, see the [_Amazon Q (for business use) Developer Guide_](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/what-is.html).
+//!
+//! For an overview of the Amazon Q APIs, see [Overview of Amazon Q API operations](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/api-ref.html#api-overview).
+//!
+//! For information about the IAM access control permissions you need to use this API, see [IAM roles for Amazon Q](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/iam-roles.html) in the _Amazon Q (for business use) Developer Guide_.
+//!
+//! You can use the following AWS SDKs to access Amazon Q APIs:
+//!   - [AWS SDK for C++](https://docs.aws.amazon.com/sdk-for-cpp)
+//!   - [AWS SDK for Go](https://docs.aws.amazon.com/sdk-for-go)
+//!   - [AWS SDK for Java](https://docs.aws.amazon.com/sdk-for-java)
+//!   - [AWS SDK for JavaScript](https://docs.aws.amazon.com/sdk-for-javascript)
+//!   - [AWS SDK for .NET](https://docs.aws.amazon.com/sdk-for-net)
+//!   - [AWS SDK for Python (Boto3)](https://docs.aws.amazon.com/pythonsdk)
+//!   - [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby)
+//!
+//! The following resources provide additional information about using the Amazon Q API:
+//!   - _ [Setting up for Amazon Q](https://docs.aws.amazon.com/amazonq/latest/business-use-dg/setting-up.html) _
+//!   - _ [Amazon Q CLI Reference](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/qbusiness/index.html) _
+//!   - _ [Amazon Web Services General Reference](https://docs.aws.amazon.com/general/latest/gr/amazonq.html) _
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -27,7 +47,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.5", features = ["behavior-version-latest"] }
-//! aws-sdk-qbusiness = "1.10.0"
+//! aws-sdk-qbusiness = "1.11.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

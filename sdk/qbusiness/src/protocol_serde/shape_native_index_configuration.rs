@@ -6,6 +6,22 @@ pub fn ser_native_index_configuration(
     {
         object.key("indexId").string(input.index_id.as_str());
     }
+    if let Some(var_1) = &input.boosting_override {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("boostingOverride").start_object();
+        for (key_3, value_4) in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = object_2.key(key_3.as_str()).start_object();
+                crate::protocol_serde::shape_document_attribute_boosting_configuration::ser_document_attribute_boosting_configuration(
+                    &mut object_5,
+                    value_4,
+                )?;
+                object_5.finish();
+            }
+        }
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -23,16 +39,23 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "indexId" => {
-                            builder = builder.set_index_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "indexId" => {
+                                builder = builder.set_index_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "boostingOverride" => {
+                                builder = builder.set_boosting_override(
+                                    crate::protocol_serde::shape_document_attribute_boosting_override_map::de_document_attribute_boosting_override_map(tokens)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

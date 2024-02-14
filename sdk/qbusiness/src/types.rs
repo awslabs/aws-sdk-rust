@@ -37,6 +37,22 @@ pub use crate::types::_kendra_index_configuration::KendraIndexConfiguration;
 
 pub use crate::types::_native_index_configuration::NativeIndexConfiguration;
 
+pub use crate::types::_document_attribute_boosting_configuration::DocumentAttributeBoostingConfiguration;
+
+pub use crate::types::_string_list_attribute_boosting_configuration::StringListAttributeBoostingConfiguration;
+
+pub use crate::types::_document_attribute_boosting_level::DocumentAttributeBoostingLevel;
+
+pub use crate::types::_date_attribute_boosting_configuration::DateAttributeBoostingConfiguration;
+
+pub use crate::types::_string_attribute_boosting_configuration::StringAttributeBoostingConfiguration;
+
+pub use crate::types::_string_attribute_value_boosting_level::StringAttributeValueBoostingLevel;
+
+pub use crate::types::_number_attribute_boosting_configuration::NumberAttributeBoostingConfiguration;
+
+pub use crate::types::_number_attribute_boosting_type::NumberAttributeBoostingType;
+
 pub use crate::types::_retriever_status::RetrieverStatus;
 
 pub use crate::types::_retriever_type::RetrieverType;
@@ -271,11 +287,17 @@ mod _data_source_sync_job_status;
 
 mod _data_source_vpc_configuration;
 
+mod _date_attribute_boosting_configuration;
+
 mod _delete_document;
 
 mod _document;
 
 mod _document_attribute;
+
+mod _document_attribute_boosting_configuration;
+
+mod _document_attribute_boosting_level;
 
 mod _document_attribute_condition;
 
@@ -349,6 +371,10 @@ mod _message_usefulness_reason;
 
 mod _native_index_configuration;
 
+mod _number_attribute_boosting_configuration;
+
+mod _number_attribute_boosting_type;
+
 mod _o_auth2_client_credential_configuration;
 
 mod _plugin;
@@ -390,6 +416,12 @@ mod _saml_configuration;
 mod _source_attribution;
 
 mod _status;
+
+mod _string_attribute_boosting_configuration;
+
+mod _string_attribute_value_boosting_level;
+
+mod _string_list_attribute_boosting_configuration;
 
 mod _tag;
 

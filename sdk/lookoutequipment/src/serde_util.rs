@@ -134,6 +134,30 @@ pub(crate) fn ingestion_input_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn model_diagnostics_output_configuration_correct_errors(
+    mut builder: crate::types::builders::ModelDiagnosticsOutputConfigurationBuilder,
+) -> crate::types::builders::ModelDiagnosticsOutputConfigurationBuilder {
+    if builder.s3_output_configuration.is_none() {
+        builder.s3_output_configuration = {
+            let builder = crate::types::builders::ModelDiagnosticsS3OutputConfigurationBuilder::default();
+            crate::serde_util::model_diagnostics_s3_output_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn s3_object_correct_errors(mut builder: crate::types::builders::S3ObjectBuilder) -> crate::types::builders::S3ObjectBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn duplicate_timestamps_correct_errors(
     mut builder: crate::types::builders::DuplicateTimestampsBuilder,
 ) -> crate::types::builders::DuplicateTimestampsBuilder {
@@ -221,6 +245,15 @@ pub(crate) fn missing_sensor_data_correct_errors(
     builder
 }
 
+pub(crate) fn model_diagnostics_s3_output_configuration_correct_errors(
+    mut builder: crate::types::builders::ModelDiagnosticsS3OutputConfigurationBuilder,
+) -> crate::types::builders::ModelDiagnosticsS3OutputConfigurationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -291,16 +324,6 @@ pub(crate) fn multiple_operating_modes_correct_errors(
 ) -> crate::types::builders::MultipleOperatingModesBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::StatisticalIssueStatus>().ok()
-    }
-    builder
-}
-
-pub(crate) fn s3_object_correct_errors(mut builder: crate::types::builders::S3ObjectBuilder) -> crate::types::builders::S3ObjectBuilder {
-    if builder.bucket.is_none() {
-        builder.bucket = Some(Default::default())
-    }
-    if builder.key.is_none() {
-        builder.key = Some(Default::default())
     }
     builder
 }

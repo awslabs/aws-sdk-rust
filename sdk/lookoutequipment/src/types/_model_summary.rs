@@ -30,6 +30,8 @@ pub struct ModelSummary {
     pub next_scheduled_retraining_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the retraining scheduler.</p>
     pub retraining_scheduler_status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
+    /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
+    pub model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
 }
 impl ModelSummary {
     /// <p>The name of the machine learning model.</p>
@@ -84,6 +86,10 @@ impl ModelSummary {
     pub fn retraining_scheduler_status(&self) -> ::std::option::Option<&crate::types::RetrainingSchedulerStatus> {
         self.retraining_scheduler_status.as_ref()
     }
+    /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
+    pub fn model_diagnostics_output_configuration(&self) -> ::std::option::Option<&crate::types::ModelDiagnosticsOutputConfiguration> {
+        self.model_diagnostics_output_configuration.as_ref()
+    }
 }
 impl ModelSummary {
     /// Creates a new builder-style object to manufacture [`ModelSummary`](crate::types::ModelSummary).
@@ -109,6 +115,7 @@ pub struct ModelSummaryBuilder {
     pub(crate) latest_scheduled_retraining_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_scheduled_retraining_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) retraining_scheduler_status: ::std::option::Option<crate::types::RetrainingSchedulerStatus>,
+    pub(crate) model_diagnostics_output_configuration: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
 }
 impl ModelSummaryBuilder {
     /// <p>The name of the machine learning model.</p>
@@ -293,6 +300,23 @@ impl ModelSummaryBuilder {
     pub fn get_retraining_scheduler_status(&self) -> &::std::option::Option<crate::types::RetrainingSchedulerStatus> {
         &self.retraining_scheduler_status
     }
+    /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
+    pub fn model_diagnostics_output_configuration(mut self, input: crate::types::ModelDiagnosticsOutputConfiguration) -> Self {
+        self.model_diagnostics_output_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
+    pub fn set_model_diagnostics_output_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    ) -> Self {
+        self.model_diagnostics_output_configuration = input;
+        self
+    }
+    /// <p>Output configuration information for the pointwise model diagnostics for an Amazon Lookout for Equipment model.</p>
+    pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
+        &self.model_diagnostics_output_configuration
+    }
     /// Consumes the builder and constructs a [`ModelSummary`](crate::types::ModelSummary).
     pub fn build(self) -> crate::types::ModelSummary {
         crate::types::ModelSummary {
@@ -309,6 +333,7 @@ impl ModelSummaryBuilder {
             latest_scheduled_retraining_start_time: self.latest_scheduled_retraining_start_time,
             next_scheduled_retraining_start_date: self.next_scheduled_retraining_start_date,
             retraining_scheduler_status: self.retraining_scheduler_status,
+            model_diagnostics_output_configuration: self.model_diagnostics_output_configuration,
         }
     }
 }

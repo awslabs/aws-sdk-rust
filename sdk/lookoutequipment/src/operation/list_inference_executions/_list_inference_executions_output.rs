@@ -5,7 +5,9 @@
 pub struct ListInferenceExecutionsOutput {
     /// <p>An opaque pagination token indicating where to continue the listing of inference executions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p><note>
+    /// <p>If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in <code>InferenceExecutionSummaries</code>.</p>
+    /// </note>
     pub inference_execution_summaries: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +16,9 @@ impl ListInferenceExecutionsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p><note>
+    /// <p>If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in <code>InferenceExecutionSummaries</code>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_execution_summaries.is_none()`.
     pub fn inference_execution_summaries(&self) -> &[crate::types::InferenceExecutionSummary] {
@@ -60,14 +64,18 @@ impl ListInferenceExecutionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_inference_execution_summaries`](Self::set_inference_execution_summaries).
     ///
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p><note>
+    /// <p>If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in <code>InferenceExecutionSummaries</code>.</p>
+    /// </note>
     pub fn inference_execution_summaries(mut self, input: crate::types::InferenceExecutionSummary) -> Self {
         let mut v = self.inference_execution_summaries.unwrap_or_default();
         v.push(input);
         self.inference_execution_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p><note>
+    /// <p>If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in <code>InferenceExecutionSummaries</code>.</p>
+    /// </note>
     pub fn set_inference_execution_summaries(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>>,
@@ -75,7 +83,9 @@ impl ListInferenceExecutionsOutputBuilder {
         self.inference_execution_summaries = input;
         self
     }
-    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p>
+    /// <p>Provides an array of information about the individual inference executions returned from the <code>ListInferenceExecutions</code> operation, including model used, inference scheduler, data configuration, and so on.</p><note>
+    /// <p>If you don't supply the <code>InferenceSchedulerName</code> request parameter, or if you supply the name of an inference scheduler that doesn't exist, <code>ListInferenceExecutions</code> returns an empty array in <code>InferenceExecutionSummaries</code>.</p>
+    /// </note>
     pub fn get_inference_execution_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceExecutionSummary>> {
         &self.inference_execution_summaries
     }

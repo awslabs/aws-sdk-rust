@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLabelsInput {
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub label_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns all the labels with a end time equal to or later than the start time given.</p>
     pub interval_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -19,7 +19,7 @@ pub struct ListLabelsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListLabelsInput {
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub fn label_group_name(&self) -> ::std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
@@ -68,18 +68,18 @@ pub struct ListLabelsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListLabelsInputBuilder {
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     /// This field is required.
     pub fn label_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub fn set_label_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_group_name = input;
         self
     }
-    /// <p>Retruns the name of the label group.</p>
+    /// <p>Returns the name of the label group.</p>
     pub fn get_label_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_group_name
     }

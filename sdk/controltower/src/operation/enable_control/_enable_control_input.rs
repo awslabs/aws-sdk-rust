@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableControlInput {
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub target_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be applied to the <code>EnabledControl</code> resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
 }
 impl EnableControlInput {
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn control_identifier(&self) -> ::std::option::Option<&str> {
         self.control_identifier.as_deref()
     }
@@ -25,7 +25,7 @@ impl EnableControlInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
     pub fn parameters(&self) -> &[crate::types::EnabledControlParameter] {
@@ -49,18 +49,18 @@ pub struct EnableControlInputBuilder {
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>,
 }
 impl EnableControlInputBuilder {
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     /// This field is required.
     pub fn control_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.control_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_control_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.control_identifier = input;
         self
     }
-    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>landing zone Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_control_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.control_identifier
     }
@@ -103,19 +103,19 @@ impl EnableControlInputBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn parameters(mut self, input: crate::types::EnabledControlParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
         self.parameters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>An array of <code>EnabledControlParameter</code> objects</p>
+    /// <p>A list of input parameter values, which are specified to configure the control when you enable it.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledControlParameter>> {
         &self.parameters
     }

@@ -5,7 +5,9 @@
 pub struct ListModelVersionsOutput {
     /// <p>If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the <code>NextToken</code> field in the request to list the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p>
+    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
+    /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
+    /// </note>
     pub model_version_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>>,
     _request_id: Option<String>,
 }
@@ -14,7 +16,9 @@ impl ListModelVersionsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p>
+    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
+    /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.model_version_summaries.is_none()`.
     pub fn model_version_summaries(&self) -> &[crate::types::ModelVersionSummary] {
@@ -60,19 +64,25 @@ impl ListModelVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_model_version_summaries`](Self::set_model_version_summaries).
     ///
-    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p>
+    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
+    /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
+    /// </note>
     pub fn model_version_summaries(mut self, input: crate::types::ModelVersionSummary) -> Self {
         let mut v = self.model_version_summaries.unwrap_or_default();
         v.push(input);
         self.model_version_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p>
+    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
+    /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
+    /// </note>
     pub fn set_model_version_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>>) -> Self {
         self.model_version_summaries = input;
         self
     }
-    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p>
+    /// <p>Provides information on the specified model version, including the created time, model and dataset ARNs, and status.</p><note>
+    /// <p>If you don't supply the <code>ModelName</code> request parameter, or if you supply the name of a model that doesn't exist, <code>ListModelVersions</code> returns an empty array in <code>ModelVersionSummaries</code>.</p>
+    /// </note>
     pub fn get_model_version_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModelVersionSummary>> {
         &self.model_version_summaries
     }

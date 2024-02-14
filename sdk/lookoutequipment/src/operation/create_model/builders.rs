@@ -313,4 +313,21 @@ impl CreateModelFluentBuilder {
     pub fn get_off_condition(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_off_condition()
     }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn model_diagnostics_output_configuration(mut self, input: crate::types::ModelDiagnosticsOutputConfiguration) -> Self {
+        self.inner = self.inner.model_diagnostics_output_configuration(input);
+        self
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn set_model_diagnostics_output_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_model_diagnostics_output_configuration(input);
+        self
+    }
+    /// <p>The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You must also specify the <code>RoleArn</code> request parameter.</p>
+    pub fn get_model_diagnostics_output_configuration(&self) -> &::std::option::Option<crate::types::ModelDiagnosticsOutputConfiguration> {
+        self.inner.get_model_diagnostics_output_configuration()
+    }
 }
